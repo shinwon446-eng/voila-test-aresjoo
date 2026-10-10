@@ -266,7 +266,9 @@
     "retry": "Reload",
     "toBoxes": "See boxes",
     "offline": "You are offline. The app continues when you reconnect.",
-    "sessionLost": "Your session ended. Log in again to continue where you were."
+    "sessionLost": "Your session ended. Log in again to continue where you were.",
+    "movedTitle": "This page moved",
+    "movedDesc": "The screen at this address now lives in the new design."
   },
   "guide": {
     "title": "How it works",

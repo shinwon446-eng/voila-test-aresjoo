@@ -266,7 +266,9 @@
     "retry": "重新加载",
     "toBoxes": "查看盲盒",
     "offline": "网络已断开。恢复连接后继续。",
-    "sessionLost": "会话已结束。重新登录后可从原处继续。"
+    "sessionLost": "会话已结束。重新登录后可从原处继续。",
+    "movedTitle": "页面已迁移",
+    "movedDesc": "此地址的页面已迁移到新界面。"
   },
   "guide": {
     "title": "使用方法",

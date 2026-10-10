@@ -1,3 +1,9 @@
-import { CommunityBoard } from "@/components/community/CommunityBoard";
-import { Suspense } from "react";
-export default function BoardPage() { return <Suspense fallback={<main className="min-h-screen bg-canvas p-12" role="status">게시판을 불러오는 중…</main>}><CommunityBoard /></Suspense>; }
+import { setRequestLocale } from "next-intl/server";
+import { AppShell } from "@/components/shell/AppShell";
+import { MovedScreen } from "@/components/shell/MovedScreen";
+
+/** 옛 주소. 새 화면(/)으로 가는 길 하나. */
+export default function MovedPage({ params: { locale } }: { params: { locale: string } }) {
+  setRequestLocale(locale);
+  return <AppShell><MovedScreen to="/" labelKey="nav.boxes" /></AppShell>;
+}

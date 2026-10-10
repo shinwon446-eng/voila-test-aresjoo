@@ -16,7 +16,8 @@ const VIEWS = (process.env.QUICK_VIEWS || "mobile,desktop").split(",").map((k) =
 
 for (const [view, opts] of VIEWS) {
   for (const target of targets) {
-    const [name, rest] = target.split("=");
+    // 첫 "=" 에서만 나눈다(주소에 ?layout=b 같은 값이 올 수 있다)
+    const eq = target.indexOf("="); const name = target.slice(0, eq); const rest = target.slice(eq + 1);
     const [path, actionText = ""] = rest.split("#");
     const actions = actionText.split(",").filter(Boolean);
     const context = await browser.newContext({ ...opts, locale: "ko-KR", reducedMotion: actions.includes("motion") ? "no-preference" : "reduce" });

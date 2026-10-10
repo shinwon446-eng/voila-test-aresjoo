@@ -10,6 +10,9 @@ const UA = "voila-image-sourcing/2.0 (test site; contact via repository)";
 const ROOT = new URL("../../", import.meta.url);
 const [mode, ...rest] = process.argv.slice(2);
 const only = (rest.includes("--only") ? rest[rest.indexOf("--only") + 1] : "").split(",").filter(Boolean);
+const retry = rest.includes("--retry");
+/** 모델 번호처럼 생긴 토큰(글자와 숫자가 섞인 5자 이상)을 빼서 Commons 가 찾을 만한 검색어로 */
+const simplify = (q) => q.split(/\s+/).filter((w) => !(w.length >= 5 && /[A-Za-z]/.test(w) && /\d/.test(w))).join(" ");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const BAD = /teardown|broken|event|exhibition|museum|wrist|hand|person|man |woman|people|unboxing|packaging|logo|icon|diagram|map|drawing|screenshot|interior|engine bay|dashboard|wheel\b|badge|emblem|crash|damaged|toy|model car|diecast|lego|19[0-9]0s|wikidata/i;
 const OK_LICENSE = /^(cc-by-sa-4\.0|cc-by-4\.0|cc-by-sa-3\.0|cc-by-3\.0|cc0|pd|public domain|cc-by-sa-2\.0|cc-by-2\.0)/i;
@@ -38,7 +41,9 @@ async function search(items) {
   for (const item of items) {
     if (only.length && !only.some((o) => item.id.includes(o))) continue;
     if (out[item.id]?.length) continue;
-    const q = item.query.replace(/\(.*?\)/g, "").replace(/\b(set of \d+|with .*|\d+GB|\d+TB|\d+m\b)/gi, "").trim();
+    if (!retry && item.id in out) continue;
+    let q = item.query.replace(/\(.*?\)/g, "").replace(/\b(set of \d+|with .*|\d+GB|\d+TB|\d+m\b)/gi, "").trim();
+    if (retry) q = simplify(q);
     const data = await api({ action: "query", generator: "search", gsrsearch: q + " filetype:bitmap", gsrnamespace: 6, gsrlimit: 12, prop: "imageinfo", iiprop: "url|size|extmetadata", iiurlwidth: 1200 });
     await sleep(2600);
     const pages = Object.values(data.query?.pages ?? {});

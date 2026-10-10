@@ -259,6 +259,9 @@ button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 
 .v-boxlayout-main > header { order: 1; }
 .v-boxlayout-hero { order: 2; } /* 사진 띠가 먼저, 띠 머리와 타일마다 확률을 붙여 희귀한 결과가 보통처럼 보이지 않게 한다 */
 .v-boxside { order: 3; }
+/* EXPERIMENT B안: 비용과 결과 묶음이 사진 띠 위 */
+.v-boxlayout--b .v-boxlayout-hero { order: 3; }
+.v-boxlayout--b .v-boxside { order: 2; }
 .v-boxlayout-contents { order: 4; }
 .v-item-glyph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--v-mute); }
 @media (min-width: 1024px) {

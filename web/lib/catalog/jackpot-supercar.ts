@@ -1,0 +1,67 @@
+import type { ItemSpec } from "@/lib/catalogTypes";
+
+/**
+ * 슈퍼카 박스 (100 USDT). 시중 정가는 2026년 기준 대략의 미국 시장가(1 USDT = 1 USD)로, 제조사 공시가와 자동차 매체의 가격을 참고한 어림값이다. 세금 제외.
+ * 위 구간(2,000 USDT 이상)에 슈퍼카와 스포츠카, 고성능 바이크. 아래로 레이싱 시뮬레이터, 드라이빙 장비, 차량 용품. 100 USDT 미만 실물은 넣지 않는다.
+ */
+export const JACKPOT_SUPERCAR_ITEMS: ItemSpec[] = [
+  // 2,000 USDT 이상
+  ["sc-ferrari-296", "페라리 296 GTB", "Ferrari 296 GTB", "法拉利 296 GTB", 340000],
+  ["sc-ferrari-roma", "페라리 로마 스파이더", "Ferrari Roma Spider", "法拉利 Roma Spider", 280000],
+  ["sc-lambo-revuelto", "람보르기니 레부엘토", "Lamborghini Revuelto", "兰博基尼 Revuelto", 610000],
+  ["sc-lambo-temerario", "람보르기니 테메라리오", "Lamborghini Temerario", "兰博基尼 Temerario", 350000],
+  ["sc-lambo-urus", "람보르기니 우루스 SE", "Lamborghini Urus SE", "兰博基尼 Urus SE", 260000],
+  ["sc-mclaren-750s", "맥라렌 750S", "McLaren 750S", "迈凯伦 750S", 330000],
+  ["sc-mclaren-artura", "맥라렌 아르투라 스파이더", "McLaren Artura Spider", "迈凯伦 Artura Spider", 275000],
+  ["sc-aston-vantage", "애스턴마틴 밴티지", "Aston Martin Vantage", "阿斯顿马丁 Vantage", 195000],
+  ["sc-aston-db12", "애스턴마틴 DB12", "Aston Martin DB12", "阿斯顿马丁 DB12", 250000],
+  ["sc-porsche-911-turbo-s", "포르쉐 911 터보 S", "Porsche 911 Turbo S", "保时捷 911 Turbo S", 240000],
+  ["sc-porsche-911-gt3", "포르쉐 911 GT3", "Porsche 911 GT3", "保时捷 911 GT3", 225000],
+  ["sc-porsche-911-gts", "포르쉐 911 카레라 GTS", "Porsche 911 Carrera GTS", "保时捷 911 Carrera GTS", 180000],
+  ["sc-porsche-911", "포르쉐 911 카레라", "Porsche 911 Carrera", "保时捷 911 Carrera", 135000],
+  ["sc-porsche-taycan-turbo", "포르쉐 타이칸 터보 S", "Porsche Taycan Turbo S", "保时捷 Taycan Turbo S", 230000],
+  ["sc-porsche-718-gt4", "포르쉐 718 카이맨 GT4 RS", "Porsche 718 Cayman GT4 RS", "保时捷 718 Cayman GT4 RS", 170000],
+  ["sc-mercedes-amg-gt", "메르세데스 AMG GT 63", "Mercedes-AMG GT 63", "梅赛德斯 AMG GT 63", 180000],
+  ["sc-bmw-m4-cs", "BMW M4 CS", "BMW M4 CS", "宝马 M4 CS", 125000],
+  ["sc-bmw-m5", "BMW M5", "BMW M5", "宝马 M5", 125000],
+  ["sc-audi-rs6", "아우디 RS6 아반트", "Audi RS6 Avant", "奥迪 RS6 Avant", 130000],
+  ["sc-corvette-z06", "쉐보레 콜벳 Z06", "Chevrolet Corvette Z06", "雪佛兰科尔维特 Z06", 115000],
+  ["sc-corvette-stingray", "쉐보레 콜벳 스팅레이", "Chevrolet Corvette Stingray", "雪佛兰科尔维特 Stingray", 70000],
+  ["sc-nissan-gtr", "닛산 GT-R 니스모", "Nissan GT-R NISMO", "日产 GT-R NISMO", 220000],
+  ["sc-lotus-emira", "로터스 에미라", "Lotus Emira", "路特斯 Emira", 105000],
+  ["sc-alpine-a110", "알핀 A110 S", "Alpine A110 S", "Alpine A110 S", 95000],
+  ["sc-toyota-supra", "토요타 GR 수프라", "Toyota GR Supra", "丰田 GR Supra", 58000],
+  ["sc-mustang-dark-horse", "포드 머스탱 다크 호스", "Ford Mustang Dark Horse", "福特野马 Dark Horse", 65000],
+  ["sc-tesla-s-plaid", "테슬라 모델 S 플래드", "Tesla Model S Plaid", "特斯拉 Model S Plaid", 95000],
+  ["sc-ducati-v4-s", "두카티 파니갈레 V4 S", "Ducati Panigale V4 S", "杜卡迪 Panigale V4 S", 36000],
+  ["sc-ducati-streetfighter", "두카티 스트리트파이터 V4", "Ducati Streetfighter V4", "杜卡迪 Streetfighter V4", 25000],
+  ["sc-bmw-m1000rr", "BMW M 1000 RR", "BMW M 1000 RR", "宝马 M 1000 RR", 37000],
+  ["sc-kawasaki-h2", "가와사키 닌자 H2", "Kawasaki Ninja H2", "川崎 Ninja H2", 32000],
+  ["sc-yamaha-r1", "야마하 YZF-R1", "Yamaha YZF-R1", "雅马哈 YZF-R1", 19000],
+  ["sc-aprilia-rsv4", "아프릴리아 RSV4 팩토리", "Aprilia RSV4 Factory", "阿普利亚 RSV4 Factory", 27000],
+  ["sc-triumph-speed-triple", "트라이엄프 스피드 트리플 1200 RS", "Triumph Speed Triple 1200 RS", "凯旋 Speed Triple 1200 RS", 20000],
+  ["sc-sim-rig", "시뮬라기 알파 레이싱 시뮬레이터", "Simucube Alpha Racing Simulator Rig", "Simucube Alpha 赛车模拟器", 8000],
+  ["sc-fanatec-dd", "파나텍 포디움 DD2 휠베이스", "Fanatec Podium DD2 Wheel Base", "Fanatec Podium DD2 基座", 2500],
+  // 600 USDT 이상
+  ["sc-moza-r9", "모자 R9 휠베이스 번들", "Moza R9 Wheel Base Bundle", "Moza R9 基座套装", 900],
+  ["sc-helmet-arai", "아라이 RX-7V 에보 헬멧", "Arai RX-7V Evo Helmet", "Arai RX-7V Evo 头盔", 900],
+  ["sc-helmet-shoei", "쇼에이 X-15 헬멧", "Shoei X-Fifteen Helmet", "Shoei X-Fifteen 头盔", 1000],
+  ["sc-alpinestars-suit", "알파인스타 GP 프로 레이싱 수트", "Alpinestars GP Pro Racing Suit", "Alpinestars GP Pro 赛车服", 1600],
+  ["sc-dainese-jacket", "다이네즈 가죽 재킷", "Dainese Leather Jacket", "Dainese 皮夹克", 700],
+  ["sc-logitech-g-pro", "로지텍 G 프로 레이싱 휠", "Logitech G Pro Racing Wheel", "罗技 G Pro 赛车方向盘", 1000],
+  ["sc-playseat", "플레이시트 트로피", "Playseat Trophy", "Playseat Trophy", 600],
+  // 200 USDT 이상
+  ["sc-gopro-13", "고프로 히어로 13 블랙", "GoPro HERO13 Black", "GoPro HERO13 Black", 400],
+  ["sc-insta360-x5", "인스타360 X5", "Insta360 X5", "Insta360 X5", 550],
+  ["sc-garmin-catalyst", "가민 카탈리스트 드라이빙 코치", "Garmin Catalyst", "佳明 Catalyst", 1000],
+  ["sc-alpinestars-gloves", "알파인스타 테크 1 레이싱 장갑", "Alpinestars Tech-1 Racing Gloves", "Alpinestars Tech-1 赛车手套", 200],
+  ["sc-racing-shoes", "스파르코 레이싱 슈즈", "Sparco Racing Shoes", "Sparco 赛车鞋", 250],
+  ["sc-tire-pressure", "레이싱 타이어 압력 게이지 세트", "Racing Tire Pressure Gauge Set", "赛车胎压表套装", 200],
+  ["sc-car-care-pro", "프로 디테일링 키트", "Pro Detailing Kit", "专业汽车美容套装", 300],
+  ["sc-ceramic-coating", "세라믹 코팅 시공권", "Ceramic Coating Service", "陶瓷镀膜服务", 600, "digital"],
+  // 100 USDT 이상
+  ["sc-driving-gloves", "가죽 드라이빙 장갑", "Leather Driving Gloves", "真皮驾驶手套", 120],
+  ["sc-track-day", "트랙 데이 참가권", "Track Day Entry", "赛道日入场券", 400, "digital"],
+  ["gc-amazon100", "아마존 글로벌 기프트카드 $100", "Amazon Global Gift Card $100", "Amazon 全球礼品卡 $100", 100, "digital"],
+  ["usdt-100", "100 USDT 인스턴트 드롭", "100 USDT Instant Drop", "100 USDT 即时到账", 100, "cash"],
+];

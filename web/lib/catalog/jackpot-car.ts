@@ -1,0 +1,66 @@
+import type { ItemSpec } from "@/lib/catalogTypes";
+
+/**
+ * 자동차 박스 (100 USDT). 시중 정가는 2026년 기준 대략의 미국 시장가(1 USDT = 1 USD)이고, 제조사 공시가와 주요 판매처 가격을 참고한 어림값이다.
+ * 위 구간(2,000 USDT 이상)에 차와 바이크, 그 아래에 자전거와 차량 용품. 100 USDT 미만 상품은 넣지 않는다(박스 가격 미만의 실물은 꽝이 된다).
+ */
+export const JACKPOT_CAR_ITEMS: ItemSpec[] = [
+  // 2,000 USDT 이상
+  ["car-rr-cullinan", "롤스로이스 컬리넌 시리즈 II", "Rolls-Royce Cullinan Series II", "劳斯莱斯库里南 Series II", 400000],
+  ["car-rr-phantom", "롤스로이스 팬텀 시리즈 II", "Rolls-Royce Phantom Series II", "劳斯莱斯幻影 Series II", 500000],
+  ["car-rr-spectre", "롤스로이스 스펙터", "Rolls-Royce Spectre", "劳斯莱斯闪灵", 420000],
+  ["car-rr-ghost", "롤스로이스 고스트 시리즈 II", "Rolls-Royce Ghost Series II", "劳斯莱斯古思特 Series II", 350000],
+  ["car-rr-cullinan-bb", "롤스로이스 컬리넌 블랙 배지", "Rolls-Royce Cullinan Black Badge", "劳斯莱斯库里南 Black Badge", 480000],
+  ["car-bentley-bentayga", "벤틀리 벤테이가 EWB", "Bentley Bentayga EWB", "宾利添越 EWB", 230000],
+  ["car-bentley-gt", "벤틀리 컨티넨탈 GT 스피드", "Bentley Continental GT Speed", "宾利欧陆 GT Speed", 300000],
+  ["car-bentley-spur", "벤틀리 플라잉스퍼", "Bentley Flying Spur", "宾利飞驰", 250000],
+  ["car-maybach-s680", "메르세데스 마이바흐 S680", "Mercedes-Maybach S680", "梅赛德斯迈巴赫 S680", 230000],
+  ["car-g63", "메르세데스 AMG G63", "Mercedes-AMG G63", "梅赛德斯 AMG G63", 180000],
+  ["car-rangerover-sv", "레인지로버 SV", "Range Rover SV", "揽胜 SV", 200000],
+  ["car-cayenne", "포르쉐 카이엔 터보 E-하이브리드", "Porsche Cayenne Turbo E-Hybrid", "保时捷卡宴 Turbo E-Hybrid", 150000],
+  ["car-macan-ev", "포르쉐 마칸 일렉트릭", "Porsche Macan Electric", "保时捷 Macan 纯电", 80000],
+  ["car-tesla-s", "테슬라 모델 S 플래드", "Tesla Model S Plaid", "特斯拉 Model S Plaid", 95000],
+  ["car-tesla-x", "테슬라 모델 X", "Tesla Model X", "特斯拉 Model X", 100000],
+  ["car-cybertruck", "테슬라 사이버트럭", "Tesla Cybertruck", "特斯拉 Cybertruck", 80000],
+  ["car-tesla-y", "테슬라 모델 Y 롱레인지", "Tesla Model Y Long Range", "特斯拉 Model Y 长续航版", 45000],
+  ["car-bmw-i7", "BMW i7", "BMW i7", "宝马 i7", 120000],
+  ["car-bmw-x7", "BMW X7", "BMW X7", "宝马 X7", 90000],
+  ["car-lexus-lx", "렉서스 LX 600", "Lexus LX 600", "雷克萨斯 LX 600", 110000],
+  ["car-genesis-gv80", "제네시스 GV80 쿠페", "Genesis GV80 Coupe", "捷尼赛思 GV80 Coupe", 80000],
+  ["car-audi-etron-gt", "아우디 RS e-트론 GT", "Audi RS e-tron GT", "奥迪 RS e-tron GT", 150000],
+  ["car-lucid-air", "루시드 에어 그랜드 투어링", "Lucid Air Grand Touring", "Lucid Air Grand Touring", 110000],
+  ["car-ducati-v4", "두카티 파니갈레 V4", "Ducati Panigale V4", "杜卡迪 Panigale V4", 30000],
+  ["car-bmw-gs", "BMW R 1300 GS", "BMW R 1300 GS", "宝马 R 1300 GS", 22000],
+  ["car-harley-rg", "할리데이비슨 로드 글라이드", "Harley-Davidson Road Glide", "哈雷戴维森 Road Glide", 28000],
+  ["car-goldwing", "혼다 골드윙", "Honda Gold Wing", "本田金翼", 30000],
+  ["car-zero-srf", "제로 SR/F 전기 바이크", "Zero SR/F", "Zero SR/F 电动摩托车", 25000],
+  ["car-vespa-gts", "베스파 GTS 300", "Vespa GTS 300", "Vespa GTS 300", 8000],
+  ["car-sworks", "스페셜라이즈드 S-Works 타막", "Specialized S-Works Tarmac", "Specialized S-Works Tarmac", 14000],
+  ["car-madone", "트렉 마돈 SLR", "Trek Madone SLR", "Trek Madone SLR", 13000],
+  ["car-brompton-t", "브롬톤 T 라인", "Brompton T Line", "Brompton T Line", 5000],
+  ["car-vanmoof", "반무프 S5 전기자전거", "VanMoof S5", "VanMoof S5 电动自行车", 3200],
+  // 600 USDT 이상
+  ["car-segway-g3", "세그웨이 나인봇 맥스 G3", "Segway Ninebot Max G3", "赛格威九号 Max G3", 1200],
+  ["car-thule-box", "툴레 모션 XT 루프박스", "Thule Motion XT Roof Box", "Thule Motion XT 车顶箱", 1100],
+  ["car-michelin", "미쉐린 파일럿 스포츠 5 타이어 4개", "Michelin Pilot Sport 5, set of 4", "米其林 Pilot Sport 5 轮胎 4 条", 900],
+  ["car-thule-rack", "툴레 자전거 캐리어", "Thule Bike Rack", "Thule 自行车架", 800],
+  ["car-pioneer", "파이오니아 무선 카플레이 헤드유닛", "Pioneer Wireless CarPlay Head Unit", "先锋无线 CarPlay 车机", 700],
+  ["car-garmin-edge", "가민 엣지 1050", "Garmin Edge 1050", "佳明 Edge 1050", 700],
+  ["car-dyson-v12", "다이슨 V12 차량 청소 세트", "Dyson V12 with Car Kit", "戴森 V12 车载清洁套装", 650],
+  // 200 USDT 이상
+  ["car-blackvue", "블랙뷰 DR970X 블랙박스", "BlackVue DR970X Dashcam", "BlackVue DR970X 行车记录仪", 500],
+  ["car-tesla-wall", "테슬라 월 커넥터", "Tesla Wall Connector", "特斯拉壁挂充电器", 450],
+  ["car-karcher", "카처 K5 고압세척기", "Karcher K5 Pressure Washer", "凯驰 K5 高压清洗机", 400],
+  ["car-garmin-dash", "가민 대시캠 X310", "Garmin Dash Cam X310", "佳明 Dash Cam X310", 400],
+  ["car-ev-cable", "EV 충전 케이블 7m", "EV Charging Cable 7m", "电动车充电线 7m", 300],
+  ["car-yeti", "예티 툰드라 쿨러", "Yeti Tundra Cooler", "Yeti Tundra 保温箱", 300],
+  ["car-weathertech", "웨더텍 바닥 매트 세트", "WeatherTech Floor Mats", "WeatherTech 脚垫套装", 200],
+  ["car-noco", "노코 GB70 점프스타터", "NOCO GB70 Jump Starter", "NOCO GB70 应急启动电源", 200],
+  // 100 USDT 이상 (박스 가격의 2배 미만)
+  ["car-detail-kit", "케미컬 가이즈 디테일링 키트", "Chemical Guys Detailing Kit", "Chemical Guys 汽车美容套装", 150],
+  ["car-inflator", "휴대용 타이어 공기주입기", "Portable Tire Inflator", "便携式轮胎充气泵", 150],
+  ["car-cover", "맞춤 차량 커버", "Fitted Car Cover", "定制车衣", 150],
+  ["car-carplay-adapter", "무선 카플레이 어댑터", "Wireless CarPlay Adapter", "无线 CarPlay 适配器", 120],
+  ["gc-amazon100", "아마존 글로벌 기프트카드 $100", "Amazon Global Gift Card $100", "Amazon 全球礼品卡 $100", 100, "digital"],
+  ["usdt-100", "100 USDT 인스턴트 드롭", "100 USDT Instant Drop", "100 USDT 即时到账", 100, "cash"],
+];

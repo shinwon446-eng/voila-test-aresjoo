@@ -8,7 +8,10 @@
     "start": "next start",
     "test": "tsx --test tests/**/*.test.ts",
     "lint:design": "node scripts/design-lint/lint.mjs --scope new",
-    "lint:design:all": "node scripts/design-lint/lint.mjs --scope all"
+    "lint:design:all": "node scripts/design-lint/lint.mjs --scope all",
+    "products:md": "tsx scripts/products-md.ts",
+    "messages:products": "tsx scripts/gen-product-messages.ts",
+    "catalog:check": "tsx scripts/catalog-check.ts"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.4",

@@ -259,5 +259,41 @@
       "CANCELLED": "已取消",
       "FAILED": "失败"
     }
+  },
+  "withdraw": {
+    "title": "提现",
+    "desc": "填写网络、收款地址和金额。",
+    "address": "收款地址",
+    "amount": "金额（{currency}）",
+    "all": "全部",
+    "next": "确认提现",
+    "errAddress": {
+      "TRC20": "TRC-20 地址以 T 开头，共 34 位。",
+      "BEP20": "BEP-20 地址以 0x 开头，共 42 位。"
+    },
+    "errNan": "请用数字填写金额。",
+    "errMin": "最低提现金额为 {min}。",
+    "errInsufficient": "金额超过了余额 {balance}。",
+    "securityFail": "未能加载安全设置。",
+    "gateTitle": "绑定验证器",
+    "gateDesc": "提现前需先绑定验证器（Google OTP）。",
+    "gateCta": "到账户设置绑定",
+    "emailPath": "使用邮箱验证提现（{hours} 小时后发送）",
+    "confirmTitle": "确认提现",
+    "confirmDesc": "请完整核对到账金额和地址。",
+    "toAuth": "验证并提现",
+    "otpTitle": "验证码",
+    "otpDesc": "请输入验证器中显示的 6 位验证码。",
+    "otpWrong": "验证码不正确。还可以输入 {left} 次。",
+    "submit": "提现 {amount}",
+    "emailTitle": "邮箱验证",
+    "emailDesc": "使用邮件中的验证码验证后，将在 {hours} 小时后发送。",
+    "emailExpired": "验证码已过期。请重新获取。",
+    "sendCode": "发送验证码",
+    "doneTitle": "已申请提现",
+    "doneDesc": "可在钱包记录中查看发送状态。",
+    "doneHold": "将在 {hours} 小时后发送，在此之前可在钱包记录中取消。",
+    "doneReview": "通过安全审核后发送，可在钱包记录中查看状态。",
+    "toWallet": "返回钱包"
   }
 }

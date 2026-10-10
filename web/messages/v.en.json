@@ -259,5 +259,41 @@
       "CANCELLED": "Cancelled",
       "FAILED": "Failed"
     }
+  },
+  "withdraw": {
+    "title": "Withdraw",
+    "desc": "Enter the network, the destination address and the amount.",
+    "address": "Destination address",
+    "amount": "Amount ({currency})",
+    "all": "All",
+    "next": "Review withdrawal",
+    "errAddress": {
+      "TRC20": "A TRC-20 address starts with T and has 34 characters.",
+      "BEP20": "A BEP-20 address starts with 0x and has 42 characters."
+    },
+    "errNan": "Enter the amount in digits.",
+    "errMin": "Withdrawals start at {min}.",
+    "errInsufficient": "The amount is more than your balance of {balance}.",
+    "securityFail": "Your security settings could not be loaded.",
+    "gateTitle": "Connect an authenticator app",
+    "gateDesc": "To withdraw, connect an authenticator app (Google OTP) first.",
+    "gateCta": "Connect in account settings",
+    "emailPath": "Withdraw with email verification (sent after {hours} hours)",
+    "confirmTitle": "Review withdrawal",
+    "confirmDesc": "Check the amount you receive and the full address.",
+    "toAuth": "Verify and withdraw",
+    "otpTitle": "Verification code",
+    "otpDesc": "Enter the 6-digit code shown in your authenticator app.",
+    "otpWrong": "The code is incorrect. You have {left} more attempts.",
+    "submit": "Withdraw {amount}",
+    "emailTitle": "Email verification",
+    "emailDesc": "Verify with the emailed code, and the withdrawal is sent after {hours} hours.",
+    "emailExpired": "The code has expired. Request a new code.",
+    "sendCode": "Send code",
+    "doneTitle": "Withdrawal requested",
+    "doneDesc": "You can follow the status in your wallet history.",
+    "doneHold": "It is sent after {hours} hours, and you can cancel it in your wallet history before then.",
+    "doneReview": "It is sent after a safety review, and you can follow the status in your wallet history.",
+    "toWallet": "Back to wallet"
   }
 }

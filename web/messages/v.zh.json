@@ -101,7 +101,11 @@
     "takeTitle": "领取 USDT",
     "takeDesc": "将以 {amount} 代替 {name}，且无法撤销。",
     "rowHint": "点击某一行即可验证该结果。",
-    "shippedDesc": "已申请配送，可在保管箱查看进度。"
+    "shippedDesc": "已申请配送，可在保管箱查看进度。",
+    "receive": "领取",
+    "shippedTag": "已申请配送",
+    "takenTag": "已领取 USDT",
+    "rowHintReceive": "点按一行即可领取或验证该商品。"
   },
   "login": {
     "title": "登录",

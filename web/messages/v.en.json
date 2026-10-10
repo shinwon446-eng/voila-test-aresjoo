@@ -101,7 +101,11 @@
     "takeTitle": "Take USDT",
     "takeDesc": "You receive {amount} instead of {name}, and this cannot be undone.",
     "rowHint": "Select a row to verify that result.",
-    "shippedDesc": "Shipping is requested, and you can follow it in your inventory."
+    "shippedDesc": "Shipping is requested, and you can follow it in your inventory.",
+    "receive": "Receive",
+    "shippedTag": "shipping requested",
+    "takenTag": "taken as USDT",
+    "rowHintReceive": "Tap a row to receive or verify that item."
   },
   "login": {
     "title": "Log in",

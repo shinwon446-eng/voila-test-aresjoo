@@ -83,6 +83,10 @@
     "file": "commons-car-rr-spectre.webp",
     "credit": "Maxhdtenda, CC BY-SA 4.0, via Wikimedia Commons"
   },
+  "car-rr-cullinan": {
+    "file": "commons-car-rr-cullinan.webp",
+    "credit": "Calreyn88, CC BY-SA 4.0, via Wikimedia Commons"
+  },
   "car-rr-ghost": {
     "file": "commons-car-rr-ghost.webp",
     "credit": "Ank Kumar, CC BY-SA 4.0, via Wikimedia Commons"
@@ -339,18 +343,6 @@
     "file": "commons-bg-constance-18.webp",
     "credit": "Jazz 名品匯 from 台北, CC BY-SA 2.0, via Wikimedia Commons"
   },
-  "bg-dior-lady": {
-    "file": "commons-bg-dior-lady.webp",
-    "credit": "Hans Holbein the Younger, Public domain, via Wikimedia Commons"
-  },
-  "bg-dior-saddle": {
-    "file": "commons-bg-dior-saddle.webp",
-    "credit": "Jules &amp; Jenny from Lincoln, UK, CC BY 2.0, via Wikimedia Commons"
-  },
-  "bg-dior-book-tote": {
-    "file": "commons-bg-dior-book-tote.webp",
-    "credit": "Wilhelm von Diez, Public domain, via Wikimedia Commons"
-  },
   "bg-rimowa-cabin": {
     "file": "commons-bg-rimowa-cabin.webp",
     "credit": "Paulgruber2, CC BY-SA 4.0, via Wikimedia Commons"
@@ -359,77 +351,25 @@
     "file": "commons-bg-mk-jet-set.webp",
     "credit": "SPERA.de Designerschuhe, Taschen und Accessoires from Deutschland, CC BY 2.0, via Wikimedia Commons"
   },
-  "bg-bag-charm": {
-    "file": "commons-bg-bag-charm.webp",
-    "credit": "Wikimedia Commons, CC BY 4.0, via Wikimedia Commons"
-  },
-  "bg-dust-bag-set": {
-    "file": "commons-bg-dust-bag-set.webp",
-    "credit": "Ra'ike (see also: de:Benutzer:Ra'ike), Public domain, via Wikimedia Commons"
-  },
-  "gd-bar-1kg": {
-    "file": "commons-gd-bar-1kg.webp",
-    "credit": "Salisbury and South Wiltshire Museum, Richard Henry, 2013-04-22 17:04:44, CC BY-SA 2.0, via Wikimedia Commons"
-  },
   "gd-bar-250g": {
     "file": "commons-gd-bar-250g.webp",
     "credit": "Apollo2005, CC BY-SA 3.0, via Wikimedia Commons"
-  },
-  "gd-bar-100g": {
-    "file": "commons-gd-bar-100g.webp",
-    "credit": "The British Museum, Ian Richardson, 2012-06-15 12:22:42, CC BY-SA 2.0, via Wikimedia Commons"
-  },
-  "gd-bar-50g": {
-    "file": "commons-gd-bar-50g.webp",
-    "credit": "The British Museum, Emma Traherne, 2013-03-13 15:58:27, CC BY-SA 4.0, via Wikimedia Commons"
-  },
-  "gd-silver-100oz": {
-    "file": "commons-gd-silver-100oz.webp",
-    "credit": "Erik Lernestål, Public domain, via Wikimedia Commons"
   },
   "gd-bar-1oz": {
     "file": "commons-gd-bar-1oz.webp",
     "credit": "Realterm, CC BY-SA 3.0, via Wikimedia Commons"
   },
-  "gd-bar-20g": {
-    "file": "commons-gd-bar-20g.webp",
-    "credit": "The Portable Antiquities Scheme, Stuart Noon, 2015-04-13 10:18:59, CC BY 2.0, via Wikimedia Commons"
-  },
-  "gd-bar-10g": {
-    "file": "commons-gd-bar-10g.webp",
-    "credit": "The Portable Antiquities Scheme, Kevin Leahy, 2014-01-03 13:57:53, CC BY-SA 4.0, via Wikimedia Commons"
-  },
   "gd-gold-coin-quarter": {
     "file": "commons-gd-gold-coin-quarter.webp",
     "credit": "Zopssin, Public domain, via Wikimedia Commons"
-  },
-  "gd-bar-5g": {
-    "file": "commons-gd-bar-5g.webp",
-    "credit": "The British Museum, Lucy Ellis, 2013-09-12 13:52:02, CC BY-SA 2.0, via Wikimedia Commons"
-  },
-  "gd-silver-10oz": {
-    "file": "commons-gd-silver-10oz.webp",
-    "credit": "Erik Lernestål, Public domain, via Wikimedia Commons"
-  },
-  "gd-bar-2g": {
-    "file": "commons-gd-bar-2g.webp",
-    "credit": "The British Museum, Siorna McFarlane, 2010-10-05 15:12:43, CC BY-SA 4.0, via Wikimedia Commons"
   },
   "gd-silver-coin-5": {
     "file": "commons-gd-silver-coin-5.webp",
     "credit": "Bruxton, CC BY-SA 4.0, via Wikimedia Commons"
   },
-  "gd-jewelry-box": {
-    "file": "commons-gd-jewelry-box.webp",
-    "credit": "Unknown authorUnknown author, Public domain, via Wikimedia Commons"
-  },
   "gd-bar-1g": {
     "file": "commons-gd-bar-1g.webp",
     "credit": "Kjmonkey, CC0, via Wikimedia Commons"
-  },
-  "gd-silver-chain": {
-    "file": "commons-gd-silver-chain.webp",
-    "credit": "Durova, CC BY-SA 3.0, via Wikimedia Commons"
   },
   "gd-silver-earrings": {
     "file": "commons-gd-silver-earrings.webp",
@@ -438,10 +378,6 @@
   "gd-silver-coin-1": {
     "file": "commons-gd-silver-coin-1.webp",
     "credit": "Bruxton, CC BY-SA 4.0, via Wikimedia Commons"
-  },
-  "gd-scale": {
-    "file": "commons-gd-scale.webp",
-    "credit": "Keystone View Company -- Photographer, Public domain, via Wikimedia Commons"
   },
   "gx-fold7-256": {
     "file": "commons-gx-fold7-256.webp",
@@ -466,6 +402,10 @@
   "cs-rog-xbox-ally": {
     "file": "commons-cs-rog-xbox-ally.webp",
     "credit": "XBOX 360 ONE, Public domain, via Wikimedia Commons"
+  },
+  "cs-psvr2": {
+    "file": "commons-cs-psvr2.webp",
+    "credit": "This image is a work by Wikipedia and Wikimedia Commons user C.Suthorn. When reusing, credit me as described in the Licensing information below.  I would appreciate being notified (wikimail, talk page, email, Social Media) if you use my work outside Wikimedia.\nDo not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me to negotiate terms.\n\nMore of my work can be found in my personal gallery or at my Peertube channel.\n\n\n\n\nA prepared attribution especially for use in Social Media and Print (newspapers, flyers, books, murals, mousepads, mugs, posters, t-shirts) can be copied here, CC BY-SA 4.0, via Wikimedia Commons"
   },
   "cs-g923": {
     "file": "commons-cs-g923.webp",
@@ -706,13 +646,5 @@
   "sc-driving-gloves": {
     "file": "commons-sc-driving-gloves.webp",
     "credit": "-oo0(GoldTrader)0oo-, Public domain, via Wikimedia Commons"
-  },
-  "car-rr-cullinan": {
-    "file": "commons-car-rr-cullinan.webp",
-    "credit": "Calreyn88, CC BY-SA 4.0, via Wikimedia Commons"
-  },
-  "cs-psvr2": {
-    "file": "commons-cs-psvr2.webp",
-    "credit": "This image is a work by Wikipedia and Wikimedia Commons user C.Suthorn. When reusing, credit me as described in the Licensing information below.  I would appreciate being notified (wikimail, talk page, email, Social Media) if you use my work outside Wikimedia.\nDo not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me to negotiate terms.\n\nMore of my work can be found in my personal gallery or at my Peertube channel.\n\n\n\n\nA prepared attribution especially for use in Social Media and Print (newspapers, flyers, books, murals, mousepads, mugs, posters, t-shirts) can be copied here, CC BY-SA 4.0, via Wikimedia Commons"
   }
 }

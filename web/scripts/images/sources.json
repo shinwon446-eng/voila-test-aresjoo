@@ -83,10 +83,6 @@
     "file": "commons-car-rr-spectre.webp",
     "credit": "Maxhdtenda, CC BY-SA 4.0, via Wikimedia Commons"
   },
-  "car-rr-cullinan": {
-    "file": "commons-car-rr-cullinan.webp",
-    "credit": "David Merrett from Daventry, England, CC BY 2.0, via Wikimedia Commons"
-  },
   "car-rr-ghost": {
     "file": "commons-car-rr-ghost.webp",
     "credit": "Ank Kumar, CC BY-SA 4.0, via Wikimedia Commons"
@@ -471,10 +467,6 @@
     "file": "commons-cs-rog-xbox-ally.webp",
     "credit": "XBOX 360 ONE, Public domain, via Wikimedia Commons"
   },
-  "cs-psvr2": {
-    "file": "commons-cs-psvr2.webp",
-    "credit": "This image is a work by Wikipedia and Wikimedia Commons user C.Suthorn. When reusing, credit me as described in the Licensing information below.  I would appreciate being notified (wikimail, talk page, email, Social Media) if you use my work outside Wikimedia.\nDo not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me to negotiate terms.\n\nMore of my work can be found in my personal gallery or at my Peertube channel.\n\n\n\n\nA prepared attribution especially for use in Social Media and Print (newspapers, flyers, books, murals, mousepads, mugs, posters, t-shirts) can be copied here, CC BY-SA 4.0, via Wikimedia Commons"
-  },
   "cs-g923": {
     "file": "commons-cs-g923.webp",
     "credit": "FreeMediaKid!, CC BY 4.0, via Wikimedia Commons"
@@ -714,5 +706,13 @@
   "sc-driving-gloves": {
     "file": "commons-sc-driving-gloves.webp",
     "credit": "-oo0(GoldTrader)0oo-, Public domain, via Wikimedia Commons"
+  },
+  "car-rr-cullinan": {
+    "file": "commons-car-rr-cullinan.webp",
+    "credit": "Calreyn88, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "cs-psvr2": {
+    "file": "commons-cs-psvr2.webp",
+    "credit": "This image is a work by Wikipedia and Wikimedia Commons user C.Suthorn. When reusing, credit me as described in the Licensing information below.  I would appreciate being notified (wikimail, talk page, email, Social Media) if you use my work outside Wikimedia.\nDo not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me to negotiate terms.\n\nMore of my work can be found in my personal gallery or at my Peertube channel.\n\n\n\n\nA prepared attribution especially for use in Social Media and Print (newspapers, flyers, books, murals, mousepads, mugs, posters, t-shirts) can be copied here, CC BY-SA 4.0, via Wikimedia Commons"
   }
 }

@@ -33,7 +33,8 @@
     "searchNone": "No item with that name.",
     "searchIn": "{box}, {price} per open",
     "real": "Item odds {pct}",
-    "common": "Most common result {amount}, {pct}"
+    "common": "Most common result {amount}, {pct}",
+    "refPrice": "{amount}"
   },
   "box": {
     "desc": "This box holds {n} items, and each tier shows its odds.",
@@ -41,7 +42,7 @@
     "price": "Box price",
     "top": "Top item value",
     "low": "Lowest item value",
-    "ev": "Expected value ratio",
+    "ev": "Expected value ratio (average)",
     "contents": "Contents and odds",
     "tierRoyal": "20× the box price or more",
     "tierPrestige": "6x to 20x the box price",
@@ -73,17 +74,19 @@
     "reviews": "Reviews",
     "noReviews": "No reviews yet. Only real openings can be reviewed.",
     "reviewProof": "Tied to a real opening record.",
-    "stripNote": "Highest value first. The odds of any physical item are <n>{pct}</n>.",
-    "mostLikely": "{price} per open. The most common result is {amount} cashback, with a {pct} chance.",
+    "stripNote": "Highest value first.",
+    "mostLikely": "{price} per open. The most common result is {amount} cashback ({pct} chance); the odds of any physical item are {real}.",
     "compareNote": "Price per open and odds for this item. No box sells the item outright.",
     "guestNote": "{n} open, {amount}. After login, your USDT balance pays.",
-    "takeAmount": "If taken as USDT ({pct}% of retail)",
+    "takeAmount": "If taken as USDT ({pct}% of reference price)",
     "reviewReceived": "Receipt confirmed",
     "reviewOpened": "Opening review",
     "priceBasis": "Price basis",
     "priceBasisV": "Approximate 2026 US market price, before tax",
     "shipFee": "Shipping fee",
-    "shipFeeV": "0 USDT to {n} countries (chosen on the shipping sheet)"
+    "shipFeeV": "0 USDT to {n} countries (chosen on the shipping sheet)",
+    "countriesLink": "Show shipping countries",
+    "countriesHide": "Hide shipping countries"
   },
   "reveal": {
     "skip": "Skip",
@@ -227,7 +230,9 @@
     "cancelFailed": "The request could not be cancelled. The item may have shipped already.",
     "writeReview": "Write a review",
     "reviewed": "Review posted",
-    "takeLine": "{amount} if taken as USDT"
+    "takeLine": "{amount} if taken as USDT",
+    "refLine": "Reference price {amount}",
+    "takeLabel": "If taken as USDT"
   },
   "ship": {
     "title": "Ship it",

@@ -73,6 +73,9 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   // 실물(현금 아닌 것)이 하나라도 나올 확률의 합. 카드와 띠 머리에 그대로 적는다
   const realOdds = useMemo(() => +table.filter((i) => i.kind !== "cash" && !i.id.startsWith("wave-")).reduce((s, i) => s + i.dropRate, 0).toFixed(4), [table]);
   const [comparing, setComparing] = useState(false);
+  const [countries, setCountries] = useState(false);
+  // 나라 이름은 브라우저의 지역 이름(배송 시트와 같은 방식)
+  const regionNames = useMemo(() => new Intl.DisplayNames([locale], { type: "region" }), [locale]);
   const current = itemId ? table.find((i) => i.id === itemId) ?? null : null;
   const elsewhere = useMemo(() => (current ? BOXES.filter((b) => b.slug !== box.slug && b.items.some((i) => i.id === current.id)) : []), [current, box.slug]);
   // 이 박스의 후기: 실제 개봉 기록에 묶인 것만. 예시 후기는 보여 주지 않는다
@@ -98,10 +101,10 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   return (
     <div className="v-boxlayout">
       <div className="v-boxlayout-main">
-      <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.mostLikely", { price: fmt(box.price), amount: fmt(box.price * 0.5), pct: formatRate(table.find((i) => i.id.startsWith("wave-cashback-") && i.value === +(box.price * 0.5).toFixed(2))?.dropRate ?? 50) })} />
+      <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.mostLikely", { price: fmt(box.price), amount: fmt(box.price * 0.5), pct: formatRate(table.find((i) => i.id.startsWith("wave-cashback-") && i.value === +(box.price * 0.5).toFixed(2))?.dropRate ?? 50), real: formatRate(realOdds) })} />
       {strip.length >= 3 ? (
         <div className="v-boxlayout-hero">
-          <p className="v-sub">{t.rich("box.stripNote", { pct: formatRate(realOdds), n: (c) => <span className="v-num">{c}</span> })}</p>
+          <p className="v-sub">{t("box.stripNote")}</p>
           <ul className="v-strip" aria-label={t("box.strip")}>
             {strip.map((item) => (
               <li key={item.id}>
@@ -189,7 +192,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       </section>
       </div>
 
-      <Sheet open={!!current && !opened} onClose={() => { setItemId(null); setComparing(false); }} title={current ? itemName(current) : ""} closeLabel={t("common.close")}>
+      <Sheet open={!!current && !opened} onClose={() => { setItemId(null); setComparing(false); setCountries(false); }} title={current ? itemName(current) : ""} closeLabel={t("common.close")}>
         {current && (
           <>
             {current.image.src && <div className="v-sheet-photo"><img src={current.image.src} alt="" /></div>}
@@ -201,6 +204,12 @@ export function BoxScreen({ box }: { box: ProductBox }) {
               {current.kind !== "cash" && <Row label={t("box.priceBasis")}>{t("box.priceBasisV")}</Row>}
               {current.kind === "physical" && <Row label={t("box.shipFee")}>{t("box.shipFeeV", { n: COUNTRIES.length })}</Row>}
             </Rows>
+            {current.kind === "physical" && (
+              <>
+                <div className="v-links"><TextLink onClick={() => setCountries((v) => !v)}>{t(countries ? "box.countriesHide" : "box.countriesLink")}</TextLink></div>
+                {countries && <p className="v-small">{COUNTRIES.map((c) => regionNames.of(c) ?? c).join(", ")}</p>}
+              </>
+            )}
             {elsewhere.length > 0 && !comparing && <div className="v-links"><TextLink onClick={() => setComparing(true)}>{t("box.alsoIn", { n: elsewhere.length })}</TextLink></div>}
             {elsewhere.length > 0 && comparing && (
               <div className="v-stack v-stack--sm">

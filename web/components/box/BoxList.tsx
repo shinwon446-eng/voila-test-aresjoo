@@ -59,7 +59,7 @@ export function BoxList() {
                 <Link href={"/box/" + box.slug} className="v-itemrow">
                   {item.image.src && <span className="v-itemrow-photo"><img src={item.image.src} alt="" loading="lazy" decoding="async" /></span>}
                   <span className="v-itemrow-body"><span className="v-card-title">{itemName(item)}</span><span className="v-small">{t("home.searchIn", { box: boxTitle(box), price: fmt(box.price) })}</span></span>
-                  <span className="v-itemrow-meta"><span className="v-num">{fmt(item.value)}</span><span className="v-num v-small">{formatRate(item.dropRate)}</span></span>
+                  <span className="v-itemrow-meta"><span className="v-num v-small">{t("home.refPrice", { amount: fmt(item.value) })}</span><span className="v-num v-small">{formatRate(item.dropRate)}</span></span>
                 </Link>
               </li>
             ))}

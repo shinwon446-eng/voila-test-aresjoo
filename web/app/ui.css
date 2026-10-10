@@ -213,7 +213,7 @@ button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 
 .v-itemrow-name { flex: 1 1 auto; min-width: 0; color: var(--v-title); font-size: var(--v-fs-small); line-height: 1.4; word-break: keep-all; overflow-wrap: anywhere; }
 /* 검색 결과와 보관함 행의 이름은 두 줄까지(모델을 구별할 수 있게) */
 .v-itemrow-body .v-card-title { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; }
-.v-itemrow-meta { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; color: var(--v-sub); font-size: var(--v-fs-small); line-height: 1.3; }
+.v-itemrow-meta { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; max-width: 40%; color: var(--v-sub); font-size: var(--v-fs-small); line-height: 1.3; text-align: right; }
 .v-itemrow-meta .v-small { color: var(--v-mute); }
 @media (min-width: 768px) {
   .v-items { gap: 14px; }

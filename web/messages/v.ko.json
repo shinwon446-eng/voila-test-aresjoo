@@ -22,7 +22,7 @@
   },
   "home": {
     "title": "박스",
-    "desc": "USDT로 박스를 열어 실물 또는 USDT를 받습니다. 나온 실물은 배송받거나 정가의 95%를 USDT로 받습니다.",
+    "desc": "USDT로 박스를 열어 실물 또는 USDT를 받습니다. 나온 실물은 배송받거나 참고가의 95%를 USDT로 받습니다.",
     "filter": "분류",
     "all": "전체 박스",
     "price": "{price} / 1회",
@@ -33,7 +33,8 @@
     "searchNone": "그 이름의 상품이 없습니다.",
     "searchIn": "{box}, 1회 {price}",
     "real": "실물 확률 {pct}",
-    "common": "가장 흔한 결과 {amount}, {pct}"
+    "common": "가장 흔한 결과 {amount}, {pct}",
+    "refPrice": "{amount}"
   },
   "box": {
     "desc": "구성품 {n}종이 들어 있고, 구간마다 나올 확률이 적혀 있습니다.",
@@ -41,7 +42,7 @@
     "price": "박스 가격",
     "top": "최고 상품가",
     "low": "가장 낮은 상품가",
-    "ev": "기대 가치 비율",
+    "ev": "기대 가치 비율 (평균)",
     "contents": "구성품과 확률",
     "tierRoyal": "박스 가격의 20배 이상",
     "tierPrestige": "박스 가격의 6배 이상 20배 미만",
@@ -73,17 +74,19 @@
     "reviews": "후기",
     "noReviews": "아직 후기가 없습니다. 실제로 연 기록에만 후기를 쓸 수 있습니다.",
     "reviewProof": "실제 개봉 기록에 묶인 후기입니다.",
-    "stripNote": "값이 큰 실물부터. 실물이 하나라도 나올 확률은 <n>{pct}</n>입니다.",
-    "mostLikely": "1회 {price}. 가장 흔한 결과는 {amount} 캐시백이고, 나올 확률은 {pct}입니다.",
+    "stripNote": "값이 큰 실물부터.",
+    "mostLikely": "1회 {price}. 가장 흔한 결과는 {amount} 캐시백(나올 확률 {pct}), 실물이 하나라도 나올 확률은 {real}입니다.",
     "compareNote": "같은 상품의 1회 가격과 확률입니다. 어느 박스든 상품을 바로 사는 것은 아닙니다.",
     "guestNote": "{n}개, {amount}. 로그인한 뒤 USDT 잔액으로 결제합니다.",
-    "takeAmount": "USDT로 받으면 (정가의 {pct}%)",
+    "takeAmount": "USDT로 받으면 (참고가의 {pct}%)",
     "reviewReceived": "수령 확인된 후기",
     "reviewOpened": "개봉 후기",
     "priceBasis": "참고가 기준",
     "priceBasisV": "2026년 미국 시장가 어림값, 세금 제외",
     "shipFee": "배송비",
-    "shipFeeV": "0 USDT, 배송 가능 나라 {n}곳(배송 시트에서 고릅니다)"
+    "shipFeeV": "0 USDT, 배송 가능 나라 {n}곳(배송 시트에서 고릅니다)",
+    "countriesLink": "배송 가능 나라 보기",
+    "countriesHide": "배송 가능 나라 닫기"
   },
   "reveal": {
     "skip": "건너뛰기",
@@ -227,7 +230,9 @@
     "cancelFailed": "취소하지 못했습니다. 이미 출고됐을 수 있습니다.",
     "writeReview": "후기 쓰기",
     "reviewed": "후기를 올렸습니다",
-    "takeLine": "USDT로 받으면 {amount}"
+    "takeLine": "USDT로 받으면 {amount}",
+    "refLine": "참고가 {amount}",
+    "takeLabel": "USDT로 받으면"
   },
   "ship": {
     "title": "배송 받기",

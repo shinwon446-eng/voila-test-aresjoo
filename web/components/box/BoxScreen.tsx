@@ -93,7 +93,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   return (
     <div className="v-boxlayout">
       <div className="v-boxlayout-main">
-      <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.desc", { n: box.items.length })} />
+      <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.mostLikely", { price: fmt(box.price), amount: fmt(box.price * 0.5), pct: formatRate(table.find((i) => i.id.startsWith("wave-cashback-") && i.value === +(box.price * 0.5).toFixed(2))?.dropRate ?? 50) })} />
       {strip.length >= 3 ? (
         <div className="v-boxlayout-hero">
           <p className="v-sub">{t("box.stripNote", { pct: formatRate(realOdds) })}</p>
@@ -120,7 +120,6 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         <Row label={t("box.ev")}>{(retailReturn(box) * 100).toFixed(1)}%</Row>
       </Rows>
       <p className="v-small">{t("box.evNote", { pct: Math.round(REFUND_RATE * 100) })}</p>
-      <p className="v-small">{t("box.mostLikely", { amount: fmt(box.price * 0.5), pct: formatRate(table.find((i) => i.id.startsWith("wave-cashback-") && i.value === +(box.price * 0.5).toFixed(2))?.dropRate ?? 50) })}</p>
       <Rows label={t("box.tiers")}>
         {groups.map((g) => <Row key={g.key} label={t(TIER_LABEL[g.key])}>{formatRate(g.rate)}</Row>)}
       </Rows>
@@ -130,7 +129,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
           {ready && user && short && <Line>{t("box.short", { balance: fmt(balance), missing: fmt(cost - balance) })}</Line>}
           <Chips scroll label={t("box.qty")} value={qty} onChange={(n) => { setQty(n); setFailed(false); }} disabled={busy} options={OPEN_PRESETS.map((n) => ({ value: n as number, label: t("box.qtyN", { n }) }))} />
           {!ready ? <Button disabled>{t("common.loading")}</Button>
-            : !user ? <><Button onClick={() => openLogin("login")}>{t("box.loginToOpen")}</Button><p className="v-small">{t("box.guestNote")}</p></>
+            : !user ? <><Button onClick={() => openLogin("login")}>{t("box.loginToOpen")}</Button><p className="v-small">{t("box.guestNote", { n: qty, amount: fmt(cost) })}</p></>
             : short ? <Button onClick={openCharge}>{t("box.charge")}</Button>
             : <Button onClick={press} busy={busy} busyLabel={t("box.opening")}>{t("box.open", { n: qty, amount: fmt(cost) })}</Button>}
         </div>
@@ -192,7 +191,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
             <Rows>
               <Row label={t("reveal.value")}>{fmt(current.value)}</Row>
               <Row label={t("reveal.odds")}>{formatRate(current.dropRate)}</Row>
-              <Row label={t("box.receive")}>{current.kind === "physical" ? t("box.receivePhysical", { amount: fmt(+(current.value * REFUND_RATE).toFixed(2)) }) : current.kind === "digital" ? t("box.receiveDigital", { amount: fmt(+(current.value * REFUND_RATE).toFixed(2)) }) : t("box.receiveCash")}</Row>
+              <Row label={t("box.receive")}>{current.kind === "physical" ? t("box.receivePhysical") : current.kind === "digital" ? t("box.receiveDigital") : t("box.receiveCash")}</Row>
+              {current.kind !== "cash" && <Row label={t("box.takeAmount", { pct: Math.round(REFUND_RATE * 100) })}>{fmt(+(current.value * REFUND_RATE).toFixed(2))}</Row>}
             </Rows>
             {elsewhere.length > 0 && !comparing && <div className="v-links"><TextLink onClick={() => setComparing(true)}>{t("box.alsoIn", { n: elsewhere.length })}</TextLink></div>}
             {elsewhere.length > 0 && comparing && (

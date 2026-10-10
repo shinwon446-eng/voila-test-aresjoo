@@ -20,6 +20,9 @@ import { Button, ButtonLink, Chips, Empty, Line, Row, Rows, ScreenHead, Skeleton
 import { Confirm, Sheet } from "@/components/ui/Sheet";
 import { ShipSheet } from "@/components/flow/ShipSheet";
 import { VerifySheet, type VerifyRecord } from "@/components/flow/VerifySheet";
+import { ReviewSheet } from "@/components/flow/ReviewSheet";
+import { canReview } from "@/lib/community";
+import { useCommunityStore } from "@/stores/communityStore";
 
 const PAGE = 30;
 
@@ -42,6 +45,8 @@ export function InventoryScreen() {
   const [busy, setBusy] = useState(false);
   const [cancelFailed, setCancelFailed] = useState(false);
   const [verifying, setVerifying] = useState<VerifyRecord | null>(null);
+  const [reviewing, setReviewing] = useState(false);
+  const myReviews = useCommunityStore((s) => s.mine);
 
   // 출고된 상품의 운송장은 계정 서비스가 발급한 것만 들어온다(옛 화면과 같은 주기)
   useEffect(() => {
@@ -75,7 +80,10 @@ export function InventoryScreen() {
   };
   const verify = (item: OwnedItem) => setVerifying({ itemId: item.itemId, fair: item.fair });
 
-  const sheetOpen = !!current && !shipIds && !taking && !cancelling && !verifying;
+  const sheetOpen = !!current && !shipIds && !taking && !cancelling && !verifying && !reviewing;
+  // 후기는 실제 개봉 기록에만. 하나에 하나
+  const reviewable = !!current && canReview(current, myReviews);
+  const reviewed = !!current && myReviews.some((r) => r.ownedId === current.id);
 
   return (
     <div className="v-stack v-stack--lg">
@@ -129,13 +137,16 @@ export function InventoryScreen() {
             <div className="v-links">
               {current.status === "IN_STORAGE" && product?.kind === "physical" && <TextLink onClick={() => setTaking(true)}>{t("reveal.take", { amount: fmt(takeAmount) })}</TextLink>}
               <TextLink onClick={() => verify(current)}>{t("nav.verify")}</TextLink>
+              {reviewable && <TextLink onClick={() => setReviewing(true)}>{t("inv.writeReview")}</TextLink>}
             </div>
+            {reviewed && <p className="v-small">{t("inv.reviewed")}</p>}
           </>
         )}
       </Sheet>
 
       <ShipSheet ownedIds={shipIds} onClose={() => setShipIds(null)} onDone={() => { setShipIds(null); closeItem(); setTab("shipping"); }} />
       <VerifySheet record={verifying} onClose={() => setVerifying(null)} />
+      <ReviewSheet item={reviewing ? current : null} itemName={current ? nameOf(current) : ""} onClose={() => setReviewing(false)} onDone={() => setReviewing(false)} />
       {current && <Confirm open={taking} onCancel={() => setTaking(false)} onConfirm={take} title={t("reveal.takeTitle")} desc={t("reveal.takeDesc", { name: nameOf(current), amount: fmt(takeAmount) })} confirmLabel={t("reveal.take", { amount: fmt(takeAmount) })} cancelLabel={t("common.cancel")} />}
       {current && <Confirm open={cancelling} onCancel={() => setCancelling(false)} onConfirm={cancel} busy={busy} busyLabel={t("common.checking")} title={t("inv.cancelTitle")} desc={t("inv.cancelDesc")} confirmLabel={t("inv.cancelShip")} cancelLabel={t("common.cancel")} />}
     </div>

@@ -39,14 +39,14 @@ export function AccountScreen() {
 
   return (
     <div className="v-stack v-stack--lg">
-      <ScreenHead title={t("account.title")} desc={t("account.desc")} />
+      <ScreenHead title={t("account.title")} desc={user ? t("account.desc") : t("account.loginLine")} />
       {!ready ? <Skeleton height={240} label={t("common.loading")} />
-        : !user ? <div className="v-stack"><Line>{t("account.loginLine")}</Line><Button onClick={() => openLogin("login")}>{t("nav.login")}</Button><div className="v-links"><TextLink onClick={() => openLogin("signup")}>{t("login.signupTitle")}</TextLink></div></div>
+        : !user ? <div className="v-stack"><Button onClick={() => openLogin("login")}>{t("nav.login")}</Button><div className="v-links"><TextLink onClick={() => openLogin("signup")}>{t("login.signupTitle")}</TextLink></div></div>
         : (
           <>
             <Rows label={t("account.wallet")}>
               <div className="v-rowitem"><Link href="/wallet" className="v-row v-row--link"><span>{t("account.balance")}</span><span className="v-num">{fmt(balance)}</span></Link></div>
-              <div className="v-rowitem"><Link href="/wallet/withdraw" className="v-row v-row--link"><span>{t("wallet.withdraw")}</span><span className="v-num">{t("common.go")}</span></Link></div>
+              <div className="v-rowitem"><Link href="/wallet/withdraw" className="v-row v-row--link"><span>{t("wallet.withdraw")}</span><span aria-hidden>›</span></Link></div>
             </Rows>
             <Rows label={t("account.vault")}>
               <div className="v-rowitem"><Link href="/inventory" className="v-row v-row--link"><span>{t("account.held")}</span><span className="v-num">{t("account.countN", { n: counts.held })}</span></Link></div>
@@ -57,9 +57,9 @@ export function AccountScreen() {
               <Row label={t("account.email")}>{user.email ?? user.label}</Row>
             </Rows>
             <Rows label={t("account.help")}>
-              <div className="v-rowitem"><Link href="/guide" className="v-row v-row--link"><span>{t("nav.guide")}</span><span className="v-num">{t("common.go")}</span></Link></div>
-              <div className="v-rowitem"><Link href="/fairness" className="v-row v-row--link"><span>{t("nav.verify")}</span><span className="v-num">{t("common.go")}</span></Link></div>
-              <div className="v-rowitem"><Link href="/legal" className="v-row v-row--link"><span>{t("nav.legal")}</span><span className="v-num">{t("common.go")}</span></Link></div>
+              <div className="v-rowitem"><Link href="/guide" className="v-row v-row--link"><span>{t("nav.guide")}</span><span aria-hidden>›</span></Link></div>
+              <div className="v-rowitem"><Link href="/fairness" className="v-row v-row--link"><span>{t("nav.verify")}</span><span aria-hidden>›</span></Link></div>
+              <div className="v-rowitem"><Link href="/legal" className="v-row v-row--link"><span>{t("nav.legal")}</span><span aria-hidden>›</span></Link></div>
             </Rows>
             <Button onClick={() => setLeaving(true)}>{t("account.logout")}</Button>
             <div className="v-links"><TextLink href="/profile">{t("account.more")}</TextLink></div>

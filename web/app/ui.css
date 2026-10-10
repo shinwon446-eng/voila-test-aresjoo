@@ -84,6 +84,10 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-field-label { display: block; margin-bottom: 8px; color: var(--v-sub); font-size: var(--v-fs-small); }
 .v-input { width: 100%; height: 56px; border: 2px solid transparent; border-radius: var(--v-r-field); background: var(--v-pill); padding: 0 18px; color: var(--v-title); font-size: var(--v-fs-body); outline: none; transition: border-color var(--v-fast); }
 .v-input::placeholder { color: var(--v-mute); }
+/* 여러 줄 입력과 파일 고르기도 같은 칸 모양 */
+.v-input--area { height: auto; min-height: 120px; padding: 14px 18px; resize: vertical; line-height: 1.5; font: inherit; }
+.v-input--file { padding-top: 14px; font-size: var(--v-fs-small); color: var(--v-sub); }
+.v-input--file::file-selector-button { margin-right: 12px; border: 0; border-radius: 999px; background: var(--v-card); padding: 6px 14px; color: var(--v-text); font: inherit; }
 .v-input:focus { border-color: var(--v-selected); }
 
 /* ── 상태 한 줄 */
@@ -194,6 +198,8 @@ button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 
 .v-itemrow { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; min-height: 44px; padding: 10px 0; border-top: 1px solid var(--v-divider); }
 .v-itemrow:first-child { border-top: 0; }
 .v-itemrow-name { flex: 1 1 auto; min-width: 0; color: var(--v-title); font-size: var(--v-fs-small); line-height: 1.4; word-break: keep-all; overflow-wrap: anywhere; }
+/* 검색 결과와 보관함 행의 이름은 두 줄까지(모델을 구별할 수 있게) */
+.v-itemrow-body .v-card-title { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; white-space: normal; }
 .v-itemrow-meta { flex: 0 0 auto; display: flex; flex-direction: column; align-items: flex-end; gap: 2px; color: var(--v-sub); font-size: var(--v-fs-small); line-height: 1.3; }
 .v-itemrow-meta .v-small { color: var(--v-mute); }
 @media (min-width: 768px) {
@@ -280,7 +286,6 @@ button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 
 .v-itemrow-photo { position: relative; width: 52px; height: 52px; flex: none; overflow: hidden; border-radius: 12px; background: var(--v-photo); }
 .v-itemrow-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .v-itemrow-body { display: flex; min-width: 0; flex: 1; flex-direction: column; }
-.v-itemrow-body .v-card-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* 스크롤되는 시트 안에서 항목이 눌려 사라지지 않게 */
 .v-sheet-body > * { flex-shrink: 0; }

@@ -57,7 +57,7 @@ export function BoxList() {
             {hits.map(({ box, item }) => (
               <li key={box.slug + item.id}>
                 <Link href={"/box/" + box.slug} className="v-itemrow">
-                  <span className="v-itemrow-photo">{item.image.src && <img src={item.image.src} alt="" loading="lazy" decoding="async" />}</span>
+                  {item.image.src && <span className="v-itemrow-photo"><img src={item.image.src} alt="" loading="lazy" decoding="async" /></span>}
                   <span className="v-itemrow-body"><span className="v-card-title">{itemName(item)}</span><span className="v-small">{t("home.searchIn", { box: boxTitle(box), price: fmt(box.price) })}</span></span>
                   <span className="v-itemrow-meta"><span className="v-num">{fmt(item.value)}</span><span className="v-num v-small">{formatRate(item.dropRate)}</span></span>
                 </Link>
@@ -69,7 +69,7 @@ export function BoxList() {
         <>
           <Chips scroll label={t("home.filter")} value={category} onChange={setCategory} options={CATEGORY_FILTERS.map((c) => ({ value: c.key as Category, label: c.key === "all" ? t("home.all") : tc(c.key) }))} />
           <ul className="v-boxgrid">
-            {boxes.map((box, i) => <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={t("home.price", { price: fmt(box.price) })} top={t("home.top", { amount: fmt(ceilingValue(box)) })} real={t("home.real", { pct: formatRate(realOdds(box)) })} count={t("home.count", { n: box.items.length })} leads={topItems(box)} leadName={itemName} eager={i < 4} /></li>)}
+            {boxes.map((box, i) => <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={t("home.price", { price: fmt(box.price) })} top={t("home.top", { amount: fmt(ceilingValue(box)) })} real={t("home.real", { pct: formatRate(realOdds(box)) })} common={t("home.common", { amount: fmt(box.price * 0.5), pct: formatRate(dropTable(box).find((i) => i.id.startsWith("wave-cashback-") && i.value === +(box.price * 0.5).toFixed(2))?.dropRate ?? 50) })} count={t("home.count", { n: box.items.length })} leads={topItems(box)} leadName={itemName} eager={i < 4} /></li>)}
           </ul>
         </>
       )}
@@ -87,7 +87,7 @@ const topItems = (box: ProductBox) => {
 /** 실물(현금 아닌 것)이 하나라도 나올 확률의 합 */
 const realOdds = (box: ProductBox) => +dropTable(box).filter((i) => i.kind !== "cash" && !i.id.startsWith("wave-")).reduce((s, i) => s + i.dropRate, 0).toFixed(4);
 
-function BoxCard({ box, title, price, top, real, count, leads, leadName, eager }: { box: ProductBox; title: string; price: string; top: string; real: string; count: string; leads: ProductItem[]; leadName: (i: ProductItem) => string; eager: boolean }) {
+function BoxCard({ box, title, price, top, real, common, count, leads, leadName, eager }: { box: ProductBox; title: string; price: string; top: string; real: string; common: string; count: string; leads: ProductItem[]; leadName: (i: ProductItem) => string; eager: boolean }) {
   const photos = leads.every((i) => i.image.src);
   return (
     <Link href={"/box/" + box.slug} className={"v-boxcard" + (photos ? " v-boxcard--photos" : "")}>
@@ -99,8 +99,9 @@ function BoxCard({ box, title, price, top, real, count, leads, leadName, eager }
       <span className="v-boxcard-body">
         <span className="v-card-title">{title}</span>
         <span className="v-num v-sub">{price}</span>
-        {!photos && <span className="v-boxcard-leads">{leads.map((i) => <span key={i.id}>{leadName(i)}</span>)}</span>}
+        <span className="v-boxcard-leads">{leads.map((i) => <span key={i.id}>{leadName(i)}</span>)}</span>
         <span className="v-boxcard-meta"><span className="v-num">{top}</span><span className="v-num">{real}</span><span>{count}</span></span>
+        <span className="v-boxcard-meta"><span className="v-num">{common}</span></span>
       </span>
     </Link>
   );

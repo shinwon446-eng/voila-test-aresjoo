@@ -32,7 +32,8 @@
     "searchHint": "e.g. iPhone, Rolex, Charizard",
     "searchNone": "No item with that name.",
     "searchIn": "{box}, {price}",
-    "real": "Item odds {pct}"
+    "real": "Item odds {pct}",
+    "common": "Most common result {amount}, {pct}"
   },
   "box": {
     "desc": "This box holds {n} items, and each tier shows its odds.",
@@ -65,17 +66,18 @@
     "tiers": "Odds by tier",
     "evNote": "Expected value uses retail prices. Taking USDT pays {pct}% of retail.",
     "receive": "How you get it",
-    "receivePhysical": "Shipped, or {amount}",
-    "receiveDigital": "As a code, or {amount}",
+    "receivePhysical": "Shipped, or taken as USDT",
+    "receiveDigital": "As a code, or taken as USDT",
     "receiveCash": "Added to your balance on open",
     "alsoIn": "Compare with {n} other boxes",
     "reviews": "Reviews",
     "noReviews": "No reviews yet. Only items you received can be reviewed.",
     "reviewProof": "Tied to a real opening record.",
     "stripNote": "Highest value first. The odds of any physical item are {pct}.",
-    "mostLikely": "The most common result is {amount} cashback, {pct}.",
+    "mostLikely": "{price} per open. The most common result is {amount} cashback, {pct}.",
     "compareNote": "Price per open and odds for this item. No box sells the item outright.",
-    "guestNote": "After login, your USDT balance pays for the open."
+    "guestNote": "{n} open, {amount}. After login, your USDT balance pays.",
+    "takeAmount": "If taken as USDT ({pct}% of retail)"
   },
   "reveal": {
     "skip": "Skip",
@@ -190,7 +192,9 @@
     "cancelShip": "Cancel shipping request",
     "cancelTitle": "Cancel shipping request",
     "cancelDesc": "The item returns to your inventory, and the shipping fee returns to your balance.",
-    "cancelFailed": "The request could not be cancelled. The item may have shipped already."
+    "cancelFailed": "The request could not be cancelled. The item may have shipped already.",
+    "writeReview": "Write a review",
+    "reviewed": "Review posted"
   },
   "ship": {
     "title": "Ship it",
@@ -341,5 +345,19 @@
     "logoutDesc": "Your balance and vault stay with the account.",
     "loggedOut": "Logged out.",
     "more": "Nickname, password, delete account"
+  },
+  "review": {
+    "title": "Write a review",
+    "desc": "Posted with your record of receiving {name}.",
+    "rating": "Rating",
+    "stars": "{n}",
+    "text": "Review",
+    "textHint": "At least {n} characters",
+    "photo": "Photo (optional)",
+    "tooShort": "Write at least {n} characters.",
+    "photoFail": "The photo could not be read. Choose another file.",
+    "saveFail": "Could not save. This item already has a review or storage is full.",
+    "send": "Post review",
+    "proofNote": "Shown on the box screen with the real opening record."
   }
 }

@@ -10,7 +10,9 @@ const [out, ...targets] = process.argv.slice(2);
 const base = process.env.CAPTURE_BASE || "http://localhost:3002";
 fs.mkdirSync(out, { recursive: true });
 const browser = await chromium.launch({ channel: "chrome", headless: true });
-const VIEWS = [["mobile", { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }], ["desktop", { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 }]];
+// QUICK_VIEWS=mobile,narrow,desktop 로 고른다. narrow 는 320 폭(가장 좁은 폰)
+const ALL_VIEWS = { mobile: { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }, narrow: { viewport: { width: 320, height: 640 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }, desktop: { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 } };
+const VIEWS = (process.env.QUICK_VIEWS || "mobile,desktop").split(",").map((k) => [k, ALL_VIEWS[k]]);
 
 for (const [view, opts] of VIEWS) {
   for (const target of targets) {
@@ -40,7 +42,7 @@ for (const [view, opts] of VIEWS) {
     if (actions.includes("menu")) { await page.locator(".v-menu-btn").click(); await page.waitForTimeout(400); }
     if (actions.includes("qty5")) { await page.locator(".v-openbar .v-chip").nth(1).click(); await page.waitForTimeout(200); }
     if (actions.includes("open")) { await page.locator(".v-openbar .v-btn").click(); await page.waitForSelector(".v-reveal-result", { timeout: 15000 }); await page.waitForTimeout(1800); }
-    for (const act of actions.filter((x) => x.startsWith("fill:"))) { const [label, value] = act.slice(5).split("~"); await page.getByLabel(label).fill(value); }
+    for (const act of actions.filter((x) => x.startsWith("fill:"))) { const [label, value] = act.slice(5).split("~"); await page.getByLabel(label, { exact: true }).fill(value); }
     if (actions.includes("submit")) { await page.locator("form .v-btn[type=submit]").click(); await page.waitForTimeout(700); }
     if (actions.includes("row")) { await page.locator(".v-itemrow").first().click(); await page.waitForTimeout(700); }
     for (const act of actions.filter((x) => x.startsWith("click:"))) { await page.getByText(act.slice(6), { exact: false }).last().click(); await page.waitForTimeout(900); }

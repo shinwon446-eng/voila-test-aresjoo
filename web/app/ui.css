@@ -302,6 +302,8 @@ button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 
 .v-itemrow-photo { position: relative; width: 52px; height: 52px; flex: none; overflow: hidden; border-radius: 12px; background: var(--v-photo); }
 .v-itemrow-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .v-itemrow-body { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+.v-itemrow-body .v-small { word-break: keep-all; }
+@media (max-width: 359px) { .v-itemrow-photo { width: 44px; height: 44px; } .v-itemrow-meta { max-width: 46%; } }
 
 /* 스크롤되는 시트 안에서 항목이 눌려 사라지지 않게 */
 .v-sheet-body > * { flex-shrink: 0; }

@@ -71,13 +71,15 @@
     "receiveCash": "Added to your balance on open",
     "alsoIn": "Compare with {n} other boxes",
     "reviews": "Reviews",
-    "noReviews": "No reviews yet. Only items you received can be reviewed.",
+    "noReviews": "No reviews yet. Only real openings can be reviewed.",
     "reviewProof": "Tied to a real opening record.",
     "stripNote": "Highest value first. The odds of any physical item are {pct}.",
     "mostLikely": "{price} per open. The most common result is {amount} cashback, {pct}.",
     "compareNote": "Price per open and odds for this item. No box sells the item outright.",
     "guestNote": "{n} open, {amount}. After login, your USDT balance pays.",
-    "takeAmount": "If taken as USDT ({pct}% of retail)"
+    "takeAmount": "If taken as USDT ({pct}% of retail)",
+    "reviewReceived": "Receipt confirmed",
+    "reviewOpened": "Opening review"
   },
   "reveal": {
     "skip": "Skip",

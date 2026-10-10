@@ -22,6 +22,7 @@ import { useAuthStore } from "@/stores/authStore";
 import { useWalletStore } from "@/stores/walletStore";
 import { useFlow } from "@/stores/flowStore";
 import { usePublishedReviews } from "@/stores/usePublishedReviews";
+import { useInventoryStore } from "@/stores/inventoryStore";
 import { Button, Chips, Empty, Line, Row, Rows, ScreenHead, TextLink } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
 import { Reveal } from "@/components/box/Reveal";
@@ -47,6 +48,9 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const balance = useWalletStore((s) => s.balance);
   const openCharge = useFlow((s) => s.openCharge);
   const reviews = usePublishedReviews();
+  const owned = useInventoryStore((s) => s.items);
+  // 후기 두 종류: 개봉 후기(연 직후)와 수령 후기(배송 완료나 USDT 받기 뒤). 내 기록으로 아는 것만 수령으로 표시한다
+  const receivedTag = (ownedId: string) => { const o = owned.find((i) => i.id === ownedId); return o && (o.status === "DELIVERED" || o.status === "SOLD") ? t("box.reviewReceived") : t("box.reviewOpened"); };
   const [qty, setQty] = useState<number>(1);
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -174,7 +178,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
                   <div className="v-review-head"><span className="v-card-title">{item ? itemName(item) : r.itemId}</span><span className="v-small">{relativeReviewTime(r.at, Date.now(), locale)}</span></div>
                   <p className="v-body">{r.text}</p>
                   {r.photo && <span className="v-review-photo"><img src={r.photo} alt="" loading="lazy" /></span>}
-                  <p className="v-small">{t("box.reviewProof")}</p>
+                  <p className="v-small">{receivedTag(r.ownedId)}. {t("box.reviewProof")}</p>
                 </li>
               );
             })}

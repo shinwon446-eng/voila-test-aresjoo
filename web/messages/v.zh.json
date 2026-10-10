@@ -71,13 +71,15 @@
     "receiveCash": "开箱后直接计入余额",
     "alsoIn": "与其他 {n} 个盲盒比较",
     "reviews": "评价",
-    "noReviews": "暂无评价。只有已领取的商品才能评价。",
+    "noReviews": "暂无评价。只有真实开箱记录才能评价。",
     "reviewProof": "与真实开箱记录绑定的评价。",
     "stripNote": "按价值从高到低。任意实物出现的概率为 {pct}。",
     "mostLikely": "每次 {price}。最常见的结果是 {amount} 返现，{pct}。",
     "compareNote": "同一商品的单次价格与概率。任何盲盒都不是直接购买该商品。",
     "guestNote": "{n} 次，{amount}。登录后用 USDT 余额支付。",
-    "takeAmount": "领取 USDT 时（零售价的 {pct}%）"
+    "takeAmount": "领取 USDT 时（零售价的 {pct}%）",
+    "reviewReceived": "已确认领取",
+    "reviewOpened": "开箱评价"
   },
   "reveal": {
     "skip": "跳过",

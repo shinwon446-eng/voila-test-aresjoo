@@ -56,9 +56,9 @@ async function search(items) {
 async function fetchPicks(items) {
   const cands = JSON.parse(readFileSync(new URL("candidates.json", import.meta.url), "utf8"));
   const picks = JSON.parse(readFileSync(new URL("picks.json", import.meta.url), "utf8"));
-  const dir = new URL("../../public/assets/photography/", ROOT);
+  const dir = new URL("public/assets/photography/", ROOT);
   mkdirSync(dir, { recursive: true });
-  const ledgerPath = new URL("../../public/assets/photography/ATTRIBUTION-commons.md", ROOT);
+  const ledgerPath = new URL("public/assets/photography/ATTRIBUTION-commons.md", ROOT);
   const ledger = existsSync(ledgerPath) ? readFileSync(ledgerPath, "utf8") : "# Wikimedia Commons photography\n\n상품 사진. 파일마다 저작자와 라이선스를 적는다(CC BY, CC BY-SA 는 표기 의무).\n\n| Local file | Item | Source page | Author | License |\n| --- | --- | --- | --- | --- |\n";
   const browser = await chromium.launch({ channel: "chrome", headless: true });
   const page = await browser.newPage();
@@ -81,13 +81,14 @@ async function fetchPicks(items) {
         return canvas.toDataURL("image/webp", 0.82).split(",")[1];
       }, dataUrl);
       writeFileSync(target, Buffer.from(webp, "base64"));
-      rows.push(`| ${file} | ${item.id} | ${c.page} | ${c.author || "unknown"} | ${c.license} |`);
       console.log(item.id, "saved", file, c.license);
     }
+    // 출처 대장은 고른 것 전체로 매번 다시 쓴다(이미 받은 파일도 줄이 있어야 한다)
+    rows.push(`| ${file} | ${item.id} | ${c.page} | ${c.author || "unknown"} | ${c.license} |`);
     sources[item.id] = { file, credit: `${c.author || "Wikimedia Commons"}, ${c.license}, via Wikimedia Commons` };
   }
   await browser.close();
-  if (rows.length) writeFileSync(ledgerPath, ledger.trimEnd() + "\n" + rows.join("\n") + "\n");
+  if (rows.length) writeFileSync(ledgerPath, ledger.split("\n").filter((l) => !l.startsWith("| commons-")).join("\n").trimEnd() + "\n" + rows.join("\n") + "\n");
   writeFileSync(new URL("sources.json", import.meta.url), JSON.stringify(sources, null, 2) + "\n");
   console.log("sources.json", Object.keys(sources).length);
 }

@@ -52,3 +52,4 @@ Source: Unsplash. License: https://unsplash.com/license
 | photo-1624365169364-0640dd10e180.webp | https://images.unsplash.com/photo-1624365169364-0640dd10e180?auto=format&fit=crop&w=1200&q=80 |
 | photo-1695048133142-1a20484d2569.webp | https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1200&q=80 |
 | photo-1695048133142-1a20484d2569.webp | https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1600&q=80 |
+| unsplash-pokemon-cover.webp | https://unsplash.com/photos/W7KDN4OB_zI (Giorgio Trovato, Unsplash License) |

@@ -54,6 +54,7 @@
 | 2026-10-10 | 4-2 | Codex 독립 전수 조사 시작(`qa/codex/inventory-prompt.md`, 결과는 `qa/codex/UI_INVENTORY_codex.md`) |
 | 2026-10-10 | 4-3 | 상품 전면 개편(`81310fc`): 13개 박스 768개 상품, 박스마다 `web/lib/catalog/<slug>.ts`, `catalogSpecs.ts` 로 묶음, `messages:products` 와 `products:md` 생성기, `catalog:check`. 파운더 지시로 `main` 에 올려 테스트 사이트 배포(Pages 환경이 `main` 만 허용). 옛 화면은 `before-redesign` 태그 |
 | 2026-10-11 | 4-3 | 포켓몬 카드 박스(20 USDT, 75종, Codex 가격 조사 `qa/codex/catalog-2.md` 를 바탕으로 머리 상품 둘 추가), 컬렉션 카테고리(`collect`) 신설, 게이밍 박스에 RTX 5090 추가(설명과 어긋나던 것), 3,499.99 같은 어중간한 값 정리 |
+| 2026-10-11 | 4-3 | 상품 사진: 파운더 허락 뒤 Wikimedia Commons 에서 153종 후보를 받아 사람이 모음 사진(`qa/work/commons-sheet-*.png`)으로 한 장씩 보고 90장만 남김(첫 후보 54장 제외, 다음 후보로 바꿔 16장 살림, 36종은 사진 없음). 출처는 `public/assets/photography/ATTRIBUTION-commons.md`, 매핑은 `scripts/images/sources.json` 을 `lib/productImages.ts` 가 읽음. 포켓몬 커버는 Unsplash 1장(Giorgio Trovato). 박스 커버는 대표 실물 사진(`COVER_BY_ITEM`: 자동차 컬리넌, 시계 GMT 마스터, 골드 250g 바). 도구: `scripts/images/{pick-first,reject,sheet,unsplash-one}.mjs`. 함정: `commons.mjs` 의 저장 경로가 `../../` 하나 더 올라가 바탕 화면에 저장되던 것 고침 |
 | 2026-10-11 | 4-6 | 모바일 390 전 화면 촬영(`qa/work/r2`, `quick.mjs`), 내 검수로 고친 것: 사진 없는 구성품은 타일 대신 행(박스 화면 길이 14,752px → 약 1/3), 홈 카드에 대표 실물 3종 이름, 구간 상품과 USDT 상품 이름에서 금액 제거(결과 화면 "2 USDT 디지털 기프트카드 / 2 USDT" 중복), 충전 주소 실패 문구. Codex 독립 검수 `qa/codex/mobile-review-1.md` |
 
 ## 다음 할 일 (2026-10-10 저녁 기준)

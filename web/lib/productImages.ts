@@ -1,3 +1,5 @@
+import commonsSources from "../scripts/images/sources.json";
+
 const ASSET_BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 /**
@@ -45,8 +47,7 @@ const SOURCES: Record<string, ProductImage> = {
   "vault-gold": { src: `${ASSET_BASE}/assets/photography/photo-1610375461246-83df859d849d.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "starter-audio": { src: `${ASSET_BASE}/assets/photography/photo-1618366712010-f4ae9c647dcb.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "starter-camera": { src: `${ASSET_BASE}/assets/photography/photo-1473968512647-3e447244af8f.webp`, credit: "Unsplash , Unsplash License", cutout: false },
-  // 임시 커버: Commons 에서 고른 포켓몬 카드 사진으로 바꾼다
-  "vault-pokemon": { src: `${ASSET_BASE}/assets/photography/photo-1606813907291-d86efa9b94db.webp`, credit: "Unsplash , Unsplash License", cutout: false },
+  "vault-pokemon": { src: `${ASSET_BASE}/assets/photography/unsplash-pokemon-cover.webp`, credit: "Giorgio Trovato, Unsplash License", cutout: false },
   "vault-home": { src: `${ASSET_BASE}/assets/photography/photo-1517336714731-489689fd1ca8.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "jackpot-car": { src: `${ASSET_BASE}/assets/photography/photo-1617788138017-80ad40651399.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "jackpot-cybertruck": { src: `${ASSET_BASE}/assets/photography/photo-1617788138017-80ad40651399.webp`, credit: "Unsplash , Unsplash License", cutout: false },
@@ -103,10 +104,30 @@ const SOURCES: Record<string, ProductImage> = {
   "ctd-helmet": { src: `${ASSET_BASE}/assets/photography/photo-1558981001-792f6c0d5068.webp`, credit: "Unsplash , Unsplash License", cutout: false },
 };
 
-export const imageFor = (id: string): ProductImage => SOURCES[id] ?? NONE;
+/**
+ * Wikimedia Commons 에서 받은 상품 사진(scripts/images/commons.mjs fetch 가 쓴 sources.json).
+ * 파일은 public/assets/photography/commons-<id>.webp, 출처는 같은 폴더의 ATTRIBUTION-commons.md.
+ * 위 SOURCES 에 직접 적은 것이 먼저고, 없으면 여기서 찾는다.
+ */
+const COMMONS: Record<string, ProductImage> = Object.fromEntries(
+  Object.entries(commonsSources as Record<string, { file: string; credit: string }>).map(([id, s]) => [id, { src: `${ASSET_BASE}/assets/photography/${s.file}`, credit: s.credit, cutout: false }]),
+);
+
+/** 박스 커버는 그 박스의 대표 실물 사진으로 쓴다. 상품 사진이 없으면 SOURCES 의 커버로 돌아간다 */
+const COVER_BY_ITEM: Record<string, string> = {
+  "jackpot-car": "car-rr-cullinan",
+  "vault-submariner": "wt-gmt-master",
+  "vault-gold": "gd-bar-250g",
+};
+
+export const imageFor = (id: string): ProductImage => {
+  const lead = COVER_BY_ITEM[id];
+  const fromLead = lead ? SOURCES[lead] ?? COMMONS[lead] : undefined;
+  return fromLead ?? SOURCES[id] ?? COMMONS[id] ?? NONE;
+};
 
 /** 자산 확보율, 관리 화면과 테스트에서 쓴다. */
 export const imageCoverage = (ids: string[]): { have: number; total: number } => ({
-  have: ids.filter((id) => SOURCES[id]?.src).length,
+  have: ids.filter((id) => imageFor(id).src).length,
   total: ids.length,
 });

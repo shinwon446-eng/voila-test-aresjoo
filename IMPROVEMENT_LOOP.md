@@ -45,4 +45,14 @@
 - 채택: 채택. 커밋 `08ae4b0`
 - 다음: 사이클 4 = Codex 2차 감사 반영 + 오프라인과 세션 만료 상태 + 옛 화면 잔여(/profile 닉네임과 비밀번호, /legal, /community) 처리
 
+## 사이클 4 (04:25~05:10)
+- 가장 큰 문제: 예외 상태(세션 만료 안내 없음), 옛 디자인 잔여(약관, 출금 관문이 /profile 로), Codex 2차 감사 지적
+- 구현: 세션 만료 한 줄(SessionLine)과 오프라인 흐름 확인, /legal 둘 새 디자인, 출금 관문 안의 인증 앱 시트, Codex 2차 반영 7건(DECISION_LOG 사이클 4), 촬영 도구의 지연 로딩 훑기
+- Claude 평가: 세션 줄과 오프라인 줄은 같은 자리에 같은 모양. 약관은 읽기만 남김. 남은 옛 디자인: TwoFactorSetup 내부(금색 테두리, 아이콘), /profile(닉네임, 비밀번호, 탈퇴), /community
+- Codex 평가: 2차 감사 64/100 (1차 54). 해소 5, 부분 4, 미해소 4(그중 2 는 REJECT, 2 는 다음 사이클)
+- 스크린샷: `qa/cycles/c4/` (session-lost, offline, legal, terms, wdgate, home-full)
+- 테스트: 296 통과, design-lint 0
+- 채택: 채택. 커밋 `69a6b5c`, `c189d79`
+- 다음: 사이클 5 = TwoFactorSetup 새 디자인(출금과 계정 둘 다 쓰는 부품), 보관함 행 끝 화살표, 상품 시트에 배송 가능 나라 수, 스위치 2 사진 교체, 그다음 Codex 시나리오 QA 2차(A~G 재실행)
+
 (옛 메모) 사이클 2 = 남은 8개 박스 사진(Commons 검색 완료 뒤 picks → fetch → 검수 → studio) + 생활가전 커버 교체 + 상품 시트에 정가 기준과 배송비 행. 그다음 EXPERIMENT: 박스 첫 화면 B안(비용과 결과 묶음을 사진 띠 위에)

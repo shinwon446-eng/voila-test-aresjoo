@@ -2,3 +2,13 @@ __pycache__/
 *.pyc
 .venv/
 .pytest_cache/
+
+# 전면 개편 QA 산출물: 스크린샷과 자동 검사 결과는 저장소에 넣지 않는다
+qa/**/*.png
+qa/**/*.jpg
+qa/**/*.webp
+qa/auto-report.json
+web/test-results/
+web/playwright-report/
+qa/codex/*-log.txt
+qa/codex/*.log

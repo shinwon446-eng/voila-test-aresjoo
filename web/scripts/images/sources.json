@@ -3,10 +3,6 @@
     "file": "commons-ap-vision-pro.webp",
     "credit": "Steve Zhang, CC BY-SA 4.0, via Wikimedia Commons"
   },
-  "ap-ipad-pro-13": {
-    "file": "commons-ap-ipad-pro-13.webp",
-    "credit": "Kyu3a, CC BY-SA 4.0, via Wikimedia Commons"
-  },
   "ap-mba-15": {
     "file": "commons-ap-mba-15.webp",
     "credit": "AzureSaturn, CC0, via Wikimedia Commons"
@@ -23,10 +19,6 @@
     "file": "commons-ap-watch-ultra-2.webp",
     "credit": "KKPCW（Kyu3）, CC BY-SA 4.0, via Wikimedia Commons"
   },
-  "ap-iphone-16e": {
-    "file": "commons-ap-iphone-16e.webp",
-    "credit": "茅野ふたば, CC BY-SA 4.0, via Wikimedia Commons"
-  },
   "ap-mac-mini": {
     "file": "commons-ap-mac-mini.webp",
     "credit": "Seasider53, CC BY 4.0, via Wikimedia Commons"
@@ -34,14 +26,6 @@
   "ap-ipad-mini": {
     "file": "commons-ap-ipad-mini.webp",
     "credit": "茅野ふたば, CC BY-SA 4.0, via Wikimedia Commons"
-  },
-  "ap-watch-s10": {
-    "file": "commons-ap-watch-s10.webp",
-    "credit": "thomersch, CC BY 4.0, via Wikimedia Commons"
-  },
-  "ap-ipad-11": {
-    "file": "commons-ap-ipad-11.webp",
-    "credit": "Pengjiajie, CC BY-SA 4.0, via Wikimedia Commons"
   },
   "ap-magic-keyboard-ipad": {
     "file": "commons-ap-magic-keyboard-ipad.webp",
@@ -90,10 +74,6 @@
   "ap-watch-band": {
     "file": "commons-ap-watch-band.webp",
     "credit": "Gregory Varnum, CC BY-SA 4.0, via Wikimedia Commons"
-  },
-  "car-rr-phantom": {
-    "file": "commons-car-rr-phantom.webp",
-    "credit": "Clément Bucco-Lechat, CC BY-SA 3.0, via Wikimedia Commons"
   },
   "car-rr-spectre": {
     "file": "commons-car-rr-spectre.webp",
@@ -169,7 +149,7 @@
   },
   "car-cybertruck": {
     "file": "commons-car-cybertruck.webp",
-    "credit": "Votpuske, CC BY 4.0, via Wikimedia Commons"
+    "credit": "A1C6, CC0, via Wikimedia Commons"
   },
   "car-genesis-gv80": {
     "file": "commons-car-genesis-gv80.webp",
@@ -214,10 +194,6 @@
   "car-garmin-edge": {
     "file": "commons-car-garmin-edge.webp",
     "credit": "Hugo LUC, CC BY-SA 4.0, via Wikimedia Commons"
-  },
-  "car-tesla-wall": {
-    "file": "commons-car-tesla-wall.webp",
-    "credit": "Bidgee, CC BY-SA 3.0 au, via Wikimedia Commons"
   },
   "car-weathertech": {
     "file": "commons-car-weathertech.webp",
@@ -306,10 +282,6 @@
   "wt-seiko-5": {
     "file": "commons-wt-seiko-5.webp",
     "credit": "Ash Crow, CC BY-SA 3.0, via Wikimedia Commons"
-  },
-  "wt-orient-bambino": {
-    "file": "commons-wt-orient-bambino.webp",
-    "credit": "MIKI Yoshihito from Sapporo City,Hokkaido., JAPAN, CC BY 2.0, via Wikimedia Commons"
   },
   "wt-casio-edifice": {
     "file": "commons-wt-casio-edifice.webp",

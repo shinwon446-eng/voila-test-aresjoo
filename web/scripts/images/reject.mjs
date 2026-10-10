@@ -12,10 +12,16 @@ const picksPath = new URL("picks.json", import.meta.url);
 const sourcesPath = new URL("sources.json", import.meta.url);
 const picks = JSON.parse(readFileSync(picksPath, "utf8"));
 const sources = existsSync(sourcesPath) ? JSON.parse(readFileSync(sourcesPath, "utf8")) : {};
+const studioPath = new URL("studio.json", import.meta.url);
+const studio = existsSync(studioPath) ? JSON.parse(readFileSync(studioPath, "utf8")) : {};
 for (const id of ids) {
   const file = new URL(`commons-${id}.webp`, dir);
   if (existsSync(file)) unlinkSync(file);
   delete sources[id];
+  // 스튜디오 판도 같이 뺀다
+  const studioFile = new URL(`studio-${id}.webp`, dir);
+  if (existsSync(studioFile)) unlinkSync(studioFile);
+  delete studio[id];
   const list = cands[id] ?? [];
   const at = list.findIndex((c) => c.title === picks[id]);
   if (next && list[at + 1]) { picks[id] = list[at + 1].title; console.log(id, "→ 다음 후보:", picks[id]); }

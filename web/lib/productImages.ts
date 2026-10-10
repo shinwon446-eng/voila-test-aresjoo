@@ -1,4 +1,5 @@
 import commonsSources from "../scripts/images/sources.json";
+import studioFiles from "../scripts/images/studio.json";
 
 const ASSET_BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -109,8 +110,10 @@ const SOURCES: Record<string, ProductImage> = {
  * 파일은 public/assets/photography/commons-<id>.webp, 출처는 같은 폴더의 ATTRIBUTION-commons.md.
  * 위 SOURCES 에 직접 적은 것이 먼저고, 없으면 여기서 찾는다.
  */
+// 같은 사진을 우리 톤으로 다시 만든 것(scripts/images/studio.mjs: 배경을 걷어내고 어두운 스튜디오 배경에 올림)이 있으면 그것을 쓴다. 출처는 원본 그대로다.
+const STUDIO = studioFiles as Record<string, string>;
 const COMMONS: Record<string, ProductImage> = Object.fromEntries(
-  Object.entries(commonsSources as Record<string, { file: string; credit: string }>).map(([id, s]) => [id, { src: `${ASSET_BASE}/assets/photography/${s.file}`, credit: s.credit, cutout: false }]),
+  Object.entries(commonsSources as Record<string, { file: string; credit: string }>).map(([id, s]) => [id, { src: `${ASSET_BASE}/assets/photography/${STUDIO[id] ?? s.file}`, credit: s.credit, cutout: !!STUDIO[id] }]),
 );
 
 /** 박스 커버는 그 박스의 대표 실물 사진으로 쓴다. 상품 사진이 없으면 SOURCES 의 커버로 돌아간다 */

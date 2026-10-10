@@ -8,9 +8,11 @@ const start = +(rest[rest.indexOf("--start") + 1] || 0) || 0;
 const count = +(rest[rest.indexOf("--count") + 1] || 30) || 30;
 const dir = new URL("../../public/assets/photography/", import.meta.url);
 // --ids a,b,c 를 주면 그 상품들만(순서는 준 대로)
-const only = (rest[rest.indexOf("--ids") + 1] || "").split(",").filter(Boolean);
-const all = readdirSync(dir).filter((f) => f.startsWith("commons-")).sort();
-const files = only.length ? only.map((id) => `commons-${id}.webp`).filter((f) => all.includes(f)) : all.slice(start, start + count);
+const only = (rest.includes("--ids") ? rest[rest.indexOf("--ids") + 1] : "").split(",").filter(Boolean);
+// --prefix studio- 로 스튜디오 판을 본다
+const prefix = rest[rest.indexOf("--prefix") + 1] && rest.includes("--prefix") ? rest[rest.indexOf("--prefix") + 1] : "commons-";
+const all = readdirSync(dir).filter((f) => f.startsWith(prefix)).sort();
+const files = only.length ? only.map((id) => `${prefix}${id}.webp`).filter((f) => all.includes(f)) : all.slice(start, start + count);
 const html = `<!doctype html><meta charset="utf-8"><body style="margin:0;background:#000;color:#fff;font:12px sans-serif">
 <div style="display:grid;grid-template-columns:repeat(5,240px);gap:8px;padding:8px">
 ${files.map((f) => `<figure style="margin:0"><img src="${new URL(f, dir).href}" style="width:240px;height:180px;object-fit:cover;display:block"><figcaption style="padding:4px 0">${f.replace(/^commons-|\.webp$/g, "")}</figcaption></figure>`).join("")}

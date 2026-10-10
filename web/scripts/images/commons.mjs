@@ -62,7 +62,9 @@ async function fetchPicks(items) {
   const ledger = existsSync(ledgerPath) ? readFileSync(ledgerPath, "utf8") : "# Wikimedia Commons photography\n\n상품 사진. 파일마다 저작자와 라이선스를 적는다(CC BY, CC BY-SA 는 표기 의무).\n\n| Local file | Item | Source page | Author | License |\n| --- | --- | --- | --- | --- |\n";
   const browser = await chromium.launch({ channel: "chrome", headless: true });
   const page = await browser.newPage();
-  const rows = []; const sources = {};
+  // --only 로 일부만 받을 때도 나머지 출처는 지우지 않는다
+  const sourcesPath = new URL("sources.json", import.meta.url);
+  const rows = []; const sources = only.length && existsSync(sourcesPath) ? JSON.parse(readFileSync(sourcesPath, "utf8")) : {};
   for (const item of items) {
     const title = picks[item.id]; if (!title) continue;
     if (only.length && !only.some((o) => item.id.includes(o))) continue;

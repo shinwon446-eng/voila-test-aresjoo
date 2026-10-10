@@ -258,7 +258,7 @@ test("컬렉션 이미지는 유효한 로컬 WebP이며 출처와 imageUrl 별�
         have += 1;
         assert.match(
           x.image.src,
-          /^\/(?:voila-test-aresjoo\/)?assets\/photography\/(?:photo|commons|unsplash)-[\w.-]+\.webp$/,
+          /^\/(?:voila-test-aresjoo\/)?assets\/photography\/(?:photo|commons|unsplash|studio)-[\w.-]+\.webp$/,
           `${x.id}: 검증된 로컬 이미지 경로 필요`,
         );
         const assetPath = x.image.src.slice(x.image.src.indexOf("/assets/"));

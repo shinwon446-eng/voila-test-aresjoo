@@ -83,7 +83,7 @@
     "priceBasis": "参考价依据",
     "priceBasisV": "2026 年美国市场估价，不含税",
     "shipFee": "运费",
-    "shipFeeV": "配送表所列国家内 0 USDT"
+    "shipFeeV": "0 USDT，可配送 {n} 个国家（在配送表中选择）"
   },
   "reveal": {
     "skip": "跳过",

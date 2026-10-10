@@ -13,6 +13,7 @@ import { CreditCard, Coins, Package } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { BOXES, REFUND_RATE, ceilingValue, dropTable, formatRate, retailReturn, type ProductBox, type ProductItem } from "@/lib/products";
 import { TIERS, tierOf, type TierKey } from "@/lib/tiers";
+import { COUNTRIES } from "@/lib/shipping";
 import { OPEN_PRESETS } from "@/lib/autoplay";
 import { InsufficientOpeningBalance, createOpeningPurchase, type OpeningResult } from "@/lib/opening";
 import { isExampleReview, relativeReviewTime } from "@/lib/community";
@@ -198,7 +199,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
               <Row label={t("box.receive")}>{current.kind === "physical" ? t("box.receivePhysical") : current.kind === "digital" ? t("box.receiveDigital") : t("box.receiveCash")}</Row>
               {current.kind !== "cash" && <Row label={t("box.takeAmount", { pct: Math.round(REFUND_RATE * 100) })}>{fmt(+(current.value * REFUND_RATE).toFixed(2))}</Row>}
               {current.kind !== "cash" && <Row label={t("box.priceBasis")}>{t("box.priceBasisV")}</Row>}
-              {current.kind === "physical" && <Row label={t("box.shipFee")}>{t("box.shipFeeV")}</Row>}
+              {current.kind === "physical" && <Row label={t("box.shipFee")}>{t("box.shipFeeV", { n: COUNTRIES.length })}</Row>}
             </Rows>
             {elsewhere.length > 0 && !comparing && <div className="v-links"><TextLink onClick={() => setComparing(true)}>{t("box.alsoIn", { n: elsewhere.length })}</TextLink></div>}
             {elsewhere.length > 0 && comparing && (

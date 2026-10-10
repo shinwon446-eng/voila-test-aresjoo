@@ -32,6 +32,16 @@ More of my work can be found in my personal gallery or at my Peertube channel.
 
 
 A prepared attribution especially for use in Social Media and Print (newspapers, flyers, books, murals, mousepads, mugs, posters, t-shirts) can be copied here | CC BY-SA 4.0 |
+
+Fotograf: Olaf Köster | CC BY-SA 3.0 de |
+Do not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me to negotiate terms.
+
+More of my work can be found in my personal gallery or at my Peertube channel.
+
+
+
+
+A prepared attribution especially for use in Social Media and Print (newspapers, flyers, books, murals, mousepads, mugs, posters, t-shirts) can be copied here | CC BY-SA 4.0 |
 | commons-ap-vision-pro.webp | ap-vision-pro | https://commons.wikimedia.org/wiki/File:AR-_Apple_Vision_Pro_(2023).png | Steve Zhang | CC BY-SA 4.0 |
 | commons-ap-mba-15.webp | ap-mba-15 | https://commons.wikimedia.org/wiki/File:MacBook_Air_(15-inch,_M4,_Silver).jpg | AzureSaturn | CC0 |
 | commons-da-iphone16.webp | da-iphone16 | https://commons.wikimedia.org/wiki/File:Back_view_of_iPhone_16_Pro_Max_Natural_Titanium.jpg | メイド理世 | CC BY-SA 4.0 |
@@ -152,7 +162,6 @@ Fotograf: Olaf Köster | CC BY-SA 3.0 de |
 | commons-gm-blackwidow-v4.webp | gm-blackwidow-v4 | https://commons.wikimedia.org/wiki/File:Tokyo-Game-Show-2025_2035.jpg | RuinDig/Yuki Uchida | CC BY 4.0 |
 | commons-gm-g-pro-superlight2.webp | gm-g-pro-superlight2 | https://commons.wikimedia.org/wiki/File:Logitech_Pro_X_Superlight_2_sample_20231216.jpg | Solomon203 | CC BY-SA 4.0 |
 | commons-cs-rog-xbox-ally.webp | cs-rog-xbox-ally | https://commons.wikimedia.org/wiki/File:ROG_Xbox_Ally.jpeg | XBOX 360 ONE | Public domain |
-| commons-cs-switch2.webp | cs-switch2 | https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_20250605_HOF4489_RAW-Export.png | PantheraLeo1359531 | CC BY 4.0 |
 | commons-cs-psvr2.webp | cs-psvr2 | https://commons.wikimedia.org/wiki/File:PSVR2.png | This image is a work by Wikipedia and Wikimedia Commons user C.Suthorn. When reusing, credit me as described in the Licensing information below.  I would appreciate being notified (wikimail, talk page, email, Social Media) if you use my work outside Wikimedia.
 Do not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me to negotiate terms.
 

@@ -3,6 +3,7 @@
  * VOILA 새 화면의 기본 부품(DESIGN.md 3장). 모양은 app/ui.css 의 v- 클래스가 정한다.
  * 화면 하나에 주 단추(Button) 하나, 보조 행동은 TextLink 최대 둘.
  */
+import { forwardRef } from "react";
 import type { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode } from "react";
 import { ChevronLeft } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -67,9 +68,9 @@ export function Card({ outline, className, children }: { outline?: boolean; clas
   return <div className={cx("v-card", outline && "v-card--outline", className)}>{children}</div>;
 }
 
-export function Field({ label, ...rest }: InputHTMLAttributes<HTMLInputElement> & { label: string }) {
-  return <label className="v-field"><span className="v-field-label">{label}</span><input {...rest} className="v-input" /></label>;
-}
+export const Field = forwardRef<HTMLInputElement, InputHTMLAttributes<HTMLInputElement> & { label: string }>(function Field({ label, ...rest }, ref) {
+  return <label className="v-field"><span className="v-field-label">{label}</span><input {...rest} ref={ref} className="v-input" /></label>;
+});
 
 /** 상태 한 줄. 막힌 경우와 실패는 팝업이 아니라 이 한 줄로 쓴다. 빨강은 fail 에만. */
 export function Line({ fail, children, live = true }: { fail?: boolean; children: ReactNode; live?: boolean }) {

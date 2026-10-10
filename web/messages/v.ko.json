@@ -83,7 +83,7 @@
     "priceBasis": "참고가 기준",
     "priceBasisV": "2026년 미국 시장가 어림값, 세금 제외",
     "shipFee": "배송비",
-    "shipFeeV": "0 USDT, 배송 시트의 나라 목록 안에서"
+    "shipFeeV": "0 USDT, 배송 가능 나라 {n}곳(배송 시트에서 고릅니다)"
   },
   "reveal": {
     "skip": "건너뛰기",

@@ -83,7 +83,7 @@
     "priceBasis": "Price basis",
     "priceBasisV": "Approximate 2026 US market price, before tax",
     "shipFee": "Shipping fee",
-    "shipFeeV": "0 USDT within the countries on the shipping sheet"
+    "shipFeeV": "0 USDT to {n} countries (chosen on the shipping sheet)"
   },
   "reveal": {
     "skip": "Skip",

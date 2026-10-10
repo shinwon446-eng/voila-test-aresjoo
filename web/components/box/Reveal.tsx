@@ -19,6 +19,7 @@ import { useModal } from "@/lib/useModal";
 import { Button, ButtonLink, Row, Rows, TextLink } from "@/components/ui/kit";
 import { Confirm } from "@/components/ui/Sheet";
 import { VerifySheet, type VerifyRecord } from "@/components/flow/VerifySheet";
+import { ShipSheet } from "@/components/flow/ShipSheet";
 
 const ANIM_MS = 1500;
 
@@ -31,6 +32,8 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
   const [verifying, setVerifying] = useState<VerifyRecord | null>(null);
   const [taking, setTaking] = useState(false);
   const [taken, setTaken] = useState<number | null>(null);
+  const [shipping, setShipping] = useState(false);
+  const [shipped, setShipped] = useState(false);
   useModal(true, onClose, panel);
 
   useEffect(() => {
@@ -86,13 +89,15 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
                   <div>
                     <h2 className="v-title">{itemName(single.item)}</h2>
                     <p className="v-reveal-value" data-size={single.item.value >= box.price * 20 ? "lg" : single.item.value < box.price ? "sm" : undefined}>{fmt(single.item.value)}</p>
-                    <p className="v-desc">{t("reveal.itemDesc")}</p>
+                    <p className="v-desc">{t(shipped ? "reveal.shippedDesc" : "reveal.itemDesc")}</p>
                   </div>
                   <Rows><Row label={t("reveal.value")}>{fmt(single.item.value)}</Row><Row label={t("reveal.odds")}>{formatRate(single.item.dropRate)}</Row></Rows>
                 </div>
                 <div className="v-reveal-actions">
-                  <ButtonLink href="/inventory">{t(single.item.kind === "digital" ? "reveal.code" : "reveal.ship")}</ButtonLink>
-                  <div className="v-links"><TextLink onClick={() => setTaking(true)}>{t("reveal.take", { amount: fmt(sellValueOf(single.item)) })}</TextLink><TextLink onClick={() => verify(single)}>{t("nav.verify")}</TextLink></div>
+                  {shipped ? <ButtonLink href="/inventory">{t("reveal.toInventory")}</ButtonLink>
+                    : single.item.kind === "physical" ? <Button onClick={() => setShipping(true)}>{t("reveal.ship")}</Button>
+                    : <Button onClick={() => setTaking(true)}>{t("reveal.take", { amount: fmt(sellValueOf(single.item)) })}</Button>}
+                  <div className="v-links">{!shipped && single.item.kind === "physical" && <TextLink onClick={() => setTaking(true)}>{t("reveal.take", { amount: fmt(sellValueOf(single.item)) })}</TextLink>}<TextLink onClick={() => verify(single)}>{t("nav.verify")}</TextLink></div>
                 </div>
               </>
             )}
@@ -123,6 +128,7 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
         </>
       )}
       <VerifySheet record={verifying} onClose={() => setVerifying(null)} />
+      {single && <ShipSheet ownedIds={shipping ? [single.ownedId] : null} onClose={() => setShipping(false)} onDone={() => { setShipping(false); setShipped(true); }} />}
       {single && <Confirm open={taking} onCancel={() => setTaking(false)} onConfirm={take} title={t("reveal.takeTitle")} desc={t("reveal.takeDesc", { name: itemName(single.item), amount: fmt(sellValueOf(single.item)) })} confirmLabel={t("reveal.take", { amount: fmt(sellValueOf(single.item)) })} cancelLabel={t("common.cancel")} />}
     </div>
   );

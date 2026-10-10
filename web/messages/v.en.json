@@ -77,7 +77,8 @@
     "takenDesc": "You took USDT instead of the item.",
     "takeTitle": "Take USDT",
     "takeDesc": "You receive {amount} instead of {name}, and this cannot be undone.",
-    "rowHint": "Select a row to verify that result."
+    "rowHint": "Select a row to verify that result.",
+    "shippedDesc": "Shipping is requested, and you can follow it in your inventory."
   },
   "login": {
     "title": "Log in",
@@ -131,5 +132,65 @@
     "bad": "The recalculated result does not match the item you received.",
     "failed": "The result could not be calculated. The record has empty values.",
     "manual": "Verify with your own values"
+  },
+  "inv": {
+    "title": "Inventory",
+    "desc": "Select an item to ship it or take USDT.",
+    "filter": "Status",
+    "tab": {
+      "held": "Stored {n}",
+      "shipping": "Shipping {n}",
+      "done": "Received {n}"
+    },
+    "empty": {
+      "held": "You have no stored items.",
+      "shipping": "You have no items in shipping.",
+      "done": "You have no received records."
+    },
+    "toBoxes": "See boxes",
+    "more": "Show {n} more",
+    "loginLine": "Log in to see your items.",
+    "status": "Status",
+    "stHeld": "Stored",
+    "stRequested": "Shipping requested",
+    "stShipping": "In transit",
+    "stDelivered": "Delivered",
+    "stTaken": "Taken as USDT",
+    "acquired": "Received on",
+    "keepUntil": "Stored until",
+    "takenAmount": "Amount received",
+    "requestedAt": "Shipping requested on",
+    "carrier": "Carrier",
+    "tracking": "Tracking number",
+    "waitingTracking": "The tracking number appears once the item ships.",
+    "track": "Track shipment",
+    "cancelShip": "Cancel shipping request",
+    "cancelTitle": "Cancel shipping request",
+    "cancelDesc": "The item returns to your inventory, and the shipping fee returns to your balance.",
+    "cancelFailed": "The request could not be cancelled. The item may have shipped already."
+  },
+  "ship": {
+    "title": "Ship it",
+    "desc": "Enter the delivery address, and the item ships after inspection.",
+    "country": "Destination",
+    "recipient": "Recipient",
+    "phone": "Phone number",
+    "postal": "Postal code",
+    "address": "Address (including unit)",
+    "pccc": "Personal customs code (P and 12 digits)",
+    "residentId": "ID number (18 characters)",
+    "errRecipient": "Enter a recipient name of two or more characters.",
+    "errPhone": "Enter the phone number in digits.",
+    "errPostal": "Enter the postal code.",
+    "errAddress": "Enter the full address including the unit.",
+    "errPccc": "The personal customs code is P followed by 12 digits.",
+    "errResidentId": "The ID number has 18 characters.",
+    "count": "Items to ship",
+    "countN": "{n}",
+    "fee": "Shipping fee",
+    "submit": "Request shipping",
+    "confirmTitle": "Request shipping",
+    "confirmDesc": "The item ships to {address}, and the request cannot be cancelled after dispatch.",
+    "failed": "The shipping request was not accepted. The item is still in your inventory."
   }
 }

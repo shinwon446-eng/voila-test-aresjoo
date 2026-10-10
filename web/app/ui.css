@@ -231,3 +231,17 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 /* 행 전체가 단추일 때 */
 .v-row--button { width: 100%; text-align: left; }
 .v-rows > li + li { border-top: 1px solid var(--v-divider); }
+
+/* ── 보관함: 상품 행. 사진, 이름과 상태, 값 */
+.v-itemrows { border-radius: var(--v-r-card); background: var(--v-card); padding: 4px 12px; }
+.v-itemrows > li + li { border-top: 1px solid var(--v-divider); }
+.v-itemrow { display: flex; width: 100%; min-height: 72px; align-items: center; gap: 12px; padding: 10px 8px; color: var(--v-title); text-align: left; }
+.v-itemrow:hover .v-card-title { text-decoration: underline; text-underline-offset: 3px; }
+.v-itemrow-photo { position: relative; width: 52px; height: 52px; flex: none; overflow: hidden; border-radius: 12px; background: var(--v-photo); }
+.v-itemrow-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.v-itemrow-body { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+.v-itemrow-body .v-card-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* 스크롤되는 시트 안에서 항목이 눌려 사라지지 않게 */
+.v-sheet-body > * { flex-shrink: 0; }
+.v-chips { flex: none; }

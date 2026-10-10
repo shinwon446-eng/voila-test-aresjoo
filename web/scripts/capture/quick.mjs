@@ -40,6 +40,7 @@ for (const [view, opts] of VIEWS) {
     if (actions.includes("menu")) { await page.locator(".v-menu-btn").click(); await page.waitForTimeout(400); }
     if (actions.includes("qty5")) { await page.locator(".v-openbar .v-chip").nth(1).click(); await page.waitForTimeout(200); }
     if (actions.includes("open")) { await page.locator(".v-openbar .v-btn").click(); await page.waitForSelector(".v-reveal-result", { timeout: 15000 }); await page.waitForTimeout(1800); }
+    if (actions.includes("row")) { await page.locator(".v-itemrow").first().click(); await page.waitForTimeout(700); }
     for (const act of actions.filter((x) => x.startsWith("click:"))) { await page.getByText(act.slice(6), { exact: false }).last().click(); await page.waitForTimeout(900); }
     if (actions.includes("full")) await page.screenshot({ path: `${out}/${name}-full-${view}.png`, fullPage: true });
     await page.screenshot({ path: `${out}/${name}-${view}.png` });

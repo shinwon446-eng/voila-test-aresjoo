@@ -1,0 +1,63 @@
+{
+  "scopes": {
+    "new": [
+      "app/tokens.css",
+      "app/ui.css",
+      "components/ui/kit.tsx",
+      "components/ui/Sheet.tsx",
+      "components/ui/toast.tsx",
+      "components/shell/**",
+      "components/flow/**",
+      "components/box/BoxList.tsx",
+      "components/box/BoxScreen.tsx",
+      "components/box/Reveal.tsx",
+      "app/[locale]/page.tsx",
+      "app/[locale]/box/**",
+      "messages/v.ko.json",
+      "messages/v.en.json",
+      "messages/v.zh.json"
+    ],
+    "all": ["app/**", "components/**", "messages/**"]
+  },
+  "exceptions": [
+    {
+      "file": "app/tokens.css",
+      "rules": ["color-outside-tokens"],
+      "reason": "색을 정의하는 유일한 토큰 파일이다. 다른 규칙은 검사한다."
+    },
+    {
+      "file": "components/layout/BrandLogo.tsx",
+      "rules": ["weight-over-400", "color-outside-tokens"],
+      "reason": "기존 로고 워드마크의 굵기와 색을 보존한다."
+    },
+    {
+      "file": "components/flow/ProviderMark.tsx",
+      "rules": ["color-outside-tokens"],
+      "reason": "로그인 공급자 표식의 고유 색을 보존한다."
+    },
+    {
+      "file": "messages/*.json",
+      "keyPattern": "^footer\\.(tagline|slogan)$",
+      "rules": ["copy-emdash", "copy-middledot", "copy-exclamation", "copy-question", "copy-apology"],
+      "reason": "브랜드 슬로건 원문만 보존하며 상품별 tagline에는 적용하지 않는다."
+    },
+    {
+      "file": "messages/*.json",
+      "keyPattern": "faq",
+      "rules": ["copy-question"],
+      "reason": "FAQ 키 아래의 질문은 사용자가 묻는 말을 옮긴 문구로 허용한다."
+    },
+    {
+      "file": "components/layout/LabBadge.tsx",
+      "rules": ["*"],
+      "reason": "테스트 사이트를 운영 사이트와 구분하는 표식이다."
+    },
+    {
+      "file": "**/*.css",
+      "rules": ["weight-over-400"],
+      "selector": ".v-card-title",
+      "value": "600",
+      "reason": "카드 제목 클래스에만 굵기 600을 허용한다."
+    }
+  ]
+}

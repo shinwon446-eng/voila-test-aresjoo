@@ -77,7 +77,8 @@
     "takenDesc": "已改为领取 USDT。",
     "takeTitle": "领取 USDT",
     "takeDesc": "将以 {amount} 代替 {name}，且无法撤销。",
-    "rowHint": "点击某一行即可验证该结果。"
+    "rowHint": "点击某一行即可验证该结果。",
+    "shippedDesc": "已申请配送，可在保管箱查看进度。"
   },
   "login": {
     "title": "登录",
@@ -131,5 +132,65 @@
     "bad": "重新计算的结果与获得的商品不一致。",
     "failed": "无法计算。记录中的值为空。",
     "manual": "输入数值自行验证"
+  },
+  "inv": {
+    "title": "保管箱",
+    "desc": "点击获得的商品，选择配送或领取 USDT。",
+    "filter": "状态",
+    "tab": {
+      "held": "保管中 {n}",
+      "shipping": "配送 {n}",
+      "done": "已领取 {n}"
+    },
+    "empty": {
+      "held": "没有保管中的商品。",
+      "shipping": "没有配送中的商品。",
+      "done": "没有领取记录。"
+    },
+    "toBoxes": "查看盲盒",
+    "more": "再显示 {n} 个",
+    "loginLine": "登录后显示获得的商品。",
+    "status": "状态",
+    "stHeld": "保管中",
+    "stRequested": "已申请配送",
+    "stShipping": "配送中",
+    "stDelivered": "已送达",
+    "stTaken": "已领取 USDT",
+    "acquired": "获得日期",
+    "keepUntil": "保管期限",
+    "takenAmount": "领取金额",
+    "requestedAt": "配送申请日期",
+    "carrier": "快递公司",
+    "tracking": "运单号",
+    "waitingTracking": "发货后显示运单号。",
+    "track": "查询配送",
+    "cancelShip": "取消配送申请",
+    "cancelTitle": "取消配送申请",
+    "cancelDesc": "商品回到保管箱，已付运费退回余额。",
+    "cancelFailed": "未能取消。商品可能已经发货。"
+  },
+  "ship": {
+    "title": "配送到家",
+    "desc": "填写收货地址，验货后发出。",
+    "country": "收货国家",
+    "recipient": "收件人",
+    "phone": "手机号码",
+    "postal": "邮政编码",
+    "address": "地址（含门牌号）",
+    "pccc": "个人通关号码（P 加 12 位数字）",
+    "residentId": "身份证号码（18 位）",
+    "errRecipient": "请填写两个字以上的收件人姓名。",
+    "errPhone": "请用数字填写手机号码。",
+    "errPostal": "请填写邮政编码。",
+    "errAddress": "请填写包含门牌号的完整地址。",
+    "errPccc": "个人通关号码为 P 加 12 位数字。",
+    "errResidentId": "身份证号码为 18 位。",
+    "count": "配送商品",
+    "countN": "{n} 个",
+    "fee": "运费",
+    "submit": "申请配送",
+    "confirmTitle": "申请配送",
+    "confirmDesc": "将发往 {address}，发货后无法取消。",
+    "failed": "未能受理配送申请。商品仍在保管箱中。"
   }
 }

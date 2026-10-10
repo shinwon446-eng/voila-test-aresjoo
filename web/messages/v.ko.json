@@ -77,7 +77,8 @@
     "takenDesc": "상품 대신 USDT로 받았습니다.",
     "takeTitle": "USDT로 받기",
     "takeDesc": "{name} 대신 {amount} 받고, 되돌릴 수 없습니다.",
-    "rowHint": "행을 누르면 그 결과를 검증합니다."
+    "rowHint": "행을 누르면 그 결과를 검증합니다.",
+    "shippedDesc": "배송을 신청했고, 진행 상황은 보관함에서 볼 수 있습니다."
   },
   "login": {
     "title": "로그인",
@@ -131,5 +132,65 @@
     "bad": "다시 계산한 결과가 받은 상품과 다릅니다.",
     "failed": "계산하지 못했습니다. 기록의 값이 비어 있습니다.",
     "manual": "값을 직접 넣어 검증"
+  },
+  "inv": {
+    "title": "보관함",
+    "desc": "받은 상품을 눌러 배송 받거나 USDT로 받습니다.",
+    "filter": "상태",
+    "tab": {
+      "held": "보관 중 {n}",
+      "shipping": "배송 {n}",
+      "done": "받은 것 {n}"
+    },
+    "empty": {
+      "held": "보관 중인 상품이 없습니다.",
+      "shipping": "배송 중인 상품이 없습니다.",
+      "done": "받은 기록이 없습니다."
+    },
+    "toBoxes": "박스 보기",
+    "more": "{n}개 더 보기",
+    "loginLine": "로그인하면 받은 상품이 표시됩니다.",
+    "status": "상태",
+    "stHeld": "보관 중",
+    "stRequested": "배송 신청함",
+    "stShipping": "배송 중",
+    "stDelivered": "배송 완료",
+    "stTaken": "USDT로 받음",
+    "acquired": "받은 날",
+    "keepUntil": "보관 기한",
+    "takenAmount": "받은 금액",
+    "requestedAt": "배송 신청일",
+    "carrier": "택배사",
+    "tracking": "운송장 번호",
+    "waitingTracking": "운송장 번호는 출고되면 표시됩니다.",
+    "track": "배송 조회",
+    "cancelShip": "배송 신청 취소",
+    "cancelTitle": "배송 신청 취소",
+    "cancelDesc": "상품이 보관함으로 돌아오고, 낸 배송비는 잔액으로 돌아옵니다.",
+    "cancelFailed": "취소하지 못했습니다. 이미 출고됐을 수 있습니다."
+  },
+  "ship": {
+    "title": "배송 받기",
+    "desc": "받을 주소를 넣으면 검수한 뒤 보냅니다.",
+    "country": "받는 나라",
+    "recipient": "받는 사람",
+    "phone": "휴대폰 번호",
+    "postal": "우편번호",
+    "address": "주소 (상세 주소까지)",
+    "pccc": "개인통관고유부호 (P로 시작하는 13자리)",
+    "residentId": "신분증 번호 (18자리)",
+    "errRecipient": "받는 사람 이름을 두 글자 이상 넣습니다.",
+    "errPhone": "휴대폰 번호를 숫자로 넣습니다.",
+    "errPostal": "우편번호를 넣습니다.",
+    "errAddress": "주소를 상세 주소까지 넣습니다.",
+    "errPccc": "개인통관고유부호는 P와 숫자 12자리입니다.",
+    "errResidentId": "신분증 번호는 18자리입니다.",
+    "count": "보낼 상품",
+    "countN": "{n}개",
+    "fee": "배송비",
+    "submit": "배송 신청",
+    "confirmTitle": "배송 신청",
+    "confirmDesc": "{address} 주소로 보내고, 출고된 뒤에는 취소할 수 없습니다.",
+    "failed": "배송 신청을 접수하지 못했습니다. 상품은 보관함에 그대로 있습니다."
   }
 }

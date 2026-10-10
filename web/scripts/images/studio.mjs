@@ -1,5 +1,6 @@
 // 실제 상품 사진을 우리 톤으로: 배경을 걷어내고 같은 어두운 스튜디오 배경(검정, 가운데 은은한 조명, 4:3, 같은 여백)에 올린다.
-//   node scripts/images/studio.mjs [--only id,id] [--force]
+//   node scripts/images/studio.mjs [--only id,id] [--force] [--extra photo-a.webp,photo-b.webp]
+//   --extra 는 Commons 가 아닌 파일(Unsplash 커버 등)도 같은 톤으로 만든다. 키는 "file:<원본 파일명>"
 // 입력: public/assets/photography/commons-<id>.webp (sources.json 의 것들). 출력: public/assets/photography/studio-<id>.webp
 // 결과는 scripts/images/studio.json 에 { id: "studio-<id>.webp" } 로 적고, lib/productImages.ts 가 있으면 그것을 먼저 쓴다.
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
@@ -9,6 +10,7 @@ import { chromium } from "playwright";
 const args = process.argv.slice(2);
 const only = (args.includes("--only") ? args[args.indexOf("--only") + 1] : "").split(",").filter(Boolean);
 const force = args.includes("--force");
+const extra = (args.includes("--extra") ? args[args.indexOf("--extra") + 1] : "").split(",").filter(Boolean);
 const dir = new URL("../../public/assets/photography/", import.meta.url);
 const sources = JSON.parse(readFileSync(new URL("sources.json", import.meta.url), "utf8"));
 const outPath = new URL("studio.json", import.meta.url);
@@ -17,10 +19,12 @@ const studio = existsSync(outPath) ? JSON.parse(readFileSync(outPath, "utf8")) :
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const page = await browser.newPage();
 let n = 0;
-for (const [id, s] of Object.entries(sources)) {
+const jobs = extra.length ? extra.map((file) => ["file:" + file, { file }]) : Object.entries(sources);
+for (const [id, s] of jobs) {
   if (only.length && !only.some((o) => id.includes(o))) continue;
-  const target = new URL(`studio-${id}.webp`, dir);
-  if (existsSync(target) && !force) { studio[id] = `studio-${id}.webp`; continue; }
+  const base = id.startsWith("file:") ? id.slice(5).replace(/.webp$/, "") : id;
+  const target = new URL(`studio-${base}.webp`, dir);
+  if (existsSync(target) && !force) { studio[id] = `studio-${base}.webp`; continue; }
   const src = new URL(s.file, dir);
   if (!existsSync(src)) continue;
   try {
@@ -51,7 +55,7 @@ for (const [id, s] of Object.entries(sources)) {
     }, "data:image/png;base64," + png);
     if (!webp) { console.log(id, "cutout empty"); continue; }
     writeFileSync(target, Buffer.from(webp, "base64"));
-    studio[id] = `studio-${id}.webp`;
+    studio[id] = `studio-${base}.webp`;
     n += 1;
     console.log(id, "studio ok");
   } catch (e) { console.log(id, "failed:", String(e).slice(0, 120)); }

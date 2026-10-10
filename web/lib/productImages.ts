@@ -39,7 +39,7 @@ const SOURCES: Record<string, ProductImage> = {
   "dollar-apple": { src: `${ASSET_BASE}/assets/photography/photo-1695048133142-1a20484d2569.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "dollar-galaxy": { src: `${ASSET_BASE}/assets/photography/photo-1610945415295-d9bbf067e59c.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "dollar-gaming": { src: `${ASSET_BASE}/assets/photography/photo-1587202372634-32705e3bf49c.webp`, credit: "Unsplash , Unsplash License", cutout: false },
-  "starter-ps5": { src: `${ASSET_BASE}/assets/photography/photo-1606813907291-d86efa9b94db.webp`, credit: "Unsplash , Unsplash License", cutout: false },
+  "starter-ps5": { src: `${ASSET_BASE}/assets/photography/photo-1578303512597-81e6cc155b3e.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "starter-macbook": { src: `${ASSET_BASE}/assets/photography/photo-1517336714731-489689fd1ca8.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "starter-phone": { src: `${ASSET_BASE}/assets/photography/photo-1592750475338-74b7b21085ab.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "vault-submariner": { src: `${ASSET_BASE}/assets/photography/photo-1587836374828-4dbafa94cf0e.webp`, credit: "Unsplash , Unsplash License", cutout: false },
@@ -123,10 +123,18 @@ const COVER_BY_ITEM: Record<string, string> = {
   "vault-gold": "gd-bar-250g",
 };
 
+/** Unsplash 사진도 같은 톤으로 만든 판이 있으면 바꿔 끼운다(studio.json 의 "file:<원본>" 키) */
+const toned = (img: ProductImage): ProductImage => {
+  if (!img.src) return img;
+  const file = img.src.slice(img.src.lastIndexOf("/") + 1);
+  const studio = STUDIO["file:" + file];
+  return studio ? { ...img, src: img.src.slice(0, img.src.lastIndexOf("/") + 1) + studio, cutout: true } : img;
+};
+
 export const imageFor = (id: string): ProductImage => {
   const lead = COVER_BY_ITEM[id];
   const fromLead = lead ? SOURCES[lead] ?? COMMONS[lead] : undefined;
-  return fromLead ?? SOURCES[id] ?? COMMONS[id] ?? NONE;
+  return toned(fromLead ?? SOURCES[id] ?? COMMONS[id] ?? NONE);
 };
 
 /** 자산 확보율, 관리 화면과 테스트에서 쓴다. */

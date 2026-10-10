@@ -27,8 +27,8 @@ body,
 
 html,
 body {
-  background-color: #101112;
-  color: #f1eee7;
+  background-color: var(--v-bg);
+  color: var(--v-text);
 }
 
 /* 가로 클리핑은 html(=뷰포트)에만. body 에도 걸면 body 가 스크롤 컨테이너가 되어 position: sticky 헤더·탭이 뷰포트에 붙지 않는다 */
@@ -67,21 +67,6 @@ html[lang^="zh"] .break-keep {
 }
 
 /* 얇은 스크롤바 — 무채색 */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #101112;
-}
-::-webkit-scrollbar-thumb {
-  background: #2a2a2a;
-  border-radius: 0;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #a27b1e;
-}
-
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -516,6 +501,4 @@ html[lang^="zh"] .break-keep {
   .hot-pulse, .gold-rimlight::after { animation: none; }
 }
 
-:focus-visible { outline: 2px solid #d9c39a; outline-offset: 4px; }
-::selection { background: #d9c39a; color: #101112; }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }

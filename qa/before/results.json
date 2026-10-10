@@ -233,6 +233,5287 @@
       ],
       "httpStatus": 200,
       "durationMs": 2906
+    },
+    {
+      "id": "home",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "home-first-en-desktop.png",
+        "home-first-full-en-desktop.png",
+        "home-footer-en-desktop.png",
+        "home-footer-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "first",
+          "findings": 3,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "footer",
+          "findings": 2,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2972
+    },
+    {
+      "id": "home",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "first",
+          "findings": 15,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "footer",
+          "findings": 13,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1965
+    },
+    {
+      "id": "home",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "home-first-zh-mobile.png",
+        "home-first-full-zh-mobile.png",
+        "home-footer-zh-mobile.png",
+        "home-footer-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "first",
+          "findings": 15,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "footer",
+          "findings": 13,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2841
+    },
+    {
+      "id": "home",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "home-first-zh-desktop.png",
+        "home-first-full-zh-desktop.png",
+        "home-footer-zh-desktop.png",
+        "home-footer-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "first",
+          "findings": 3,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "footer",
+          "findings": 2,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3086
+    },
+    {
+      "id": "home",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "first",
+          "findings": 15,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "footer",
+          "findings": 12,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1983
+    },
+    {
+      "id": "root-redirect",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "root-redirect-redirect-ko-mobile.png",
+        "root-redirect-redirect-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "redirect",
+          "findings": 15,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2070
+    },
+    {
+      "id": "root-redirect",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "root-redirect-redirect-ko-desktop.png",
+        "root-redirect-redirect-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "redirect",
+          "findings": 3,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2207
+    },
+    {
+      "id": "root-redirect",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "redirect",
+          "findings": 15,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1663
+    },
+    {
+      "id": "root-redirect",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "root-redirect-redirect-en-mobile.png",
+        "root-redirect-redirect-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "redirect",
+          "findings": 15,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2056
+    },
+    {
+      "id": "root-redirect",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "root-redirect-redirect-en-desktop.png",
+        "root-redirect-redirect-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "redirect",
+          "findings": 3,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2303
+    },
+    {
+      "id": "root-redirect",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "redirect",
+          "findings": 15,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1591
+    },
+    {
+      "id": "root-redirect",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "root-redirect-redirect-zh-mobile.png",
+        "root-redirect-redirect-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "redirect",
+          "findings": 15,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2148
+    },
+    {
+      "id": "root-redirect",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "root-redirect-redirect-zh-desktop.png",
+        "root-redirect-redirect-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "redirect",
+          "findings": 3,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2175
+    },
+    {
+      "id": "root-redirect",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "redirect",
+          "findings": 15,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1608
+    },
+    {
+      "id": "route-about",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-about-screen-ko-mobile.png",
+        "route-about-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 8,
+          "url": "http://localhost:3004/ko/about"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3368
+    },
+    {
+      "id": "route-about",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-about-screen-ko-desktop.png",
+        "route-about-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/about"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2283
+    },
+    {
+      "id": "route-about",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 8,
+          "url": "http://localhost:3004/ko/about"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1734
+    },
+    {
+      "id": "route-about",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-about-screen-en-mobile.png",
+        "route-about-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/about"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2288
+    },
+    {
+      "id": "route-about",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-about-screen-en-desktop.png",
+        "route-about-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/about"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2428
+    },
+    {
+      "id": "route-about",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 7,
+          "url": "http://localhost:3004/en/about"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1547
+    },
+    {
+      "id": "route-about",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-about-screen-zh-mobile.png",
+        "route-about-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 8,
+          "url": "http://localhost:3004/zh/about"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2512
+    },
+    {
+      "id": "route-about",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-about-screen-zh-desktop.png",
+        "route-about-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/about"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2295
+    },
+    {
+      "id": "route-about",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 8,
+          "url": "http://localhost:3004/zh/about"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1527
+    },
+    {
+      "id": "route-community",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-community-screen-ko-mobile.png",
+        "route-community-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 12,
+          "url": "http://localhost:3004/ko/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2608
+    },
+    {
+      "id": "route-community",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-community-screen-ko-desktop.png",
+        "route-community-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 13,
+          "url": "http://localhost:3004/ko/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1967
+    },
+    {
+      "id": "route-community",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 12,
+          "url": "http://localhost:3004/ko/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1536
+    },
+    {
+      "id": "route-community",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-community-screen-en-mobile.png",
+        "route-community-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 12,
+          "url": "http://localhost:3004/en/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1985
+    },
+    {
+      "id": "route-community",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-community-screen-en-desktop.png",
+        "route-community-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 13,
+          "url": "http://localhost:3004/en/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1942
+    },
+    {
+      "id": "route-community",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 12,
+          "url": "http://localhost:3004/en/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1517
+    },
+    {
+      "id": "route-community",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-community-screen-zh-mobile.png",
+        "route-community-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 12,
+          "url": "http://localhost:3004/zh/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1894
+    },
+    {
+      "id": "route-community",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-community-screen-zh-desktop.png",
+        "route-community-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 13,
+          "url": "http://localhost:3004/zh/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1865
+    },
+    {
+      "id": "route-community",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 12,
+          "url": "http://localhost:3004/zh/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1671
+    },
+    {
+      "id": "route-community-board",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-community-board-screen-ko-mobile.png",
+        "route-community-board-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 21,
+          "url": "http://localhost:3004/ko/community/board"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2481
+    },
+    {
+      "id": "route-community-board",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-community-board-screen-ko-desktop.png",
+        "route-community-board-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/community/board"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1796
+    },
+    {
+      "id": "route-community-board",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 21,
+          "url": "http://localhost:3004/ko/community/board"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1526
+    },
+    {
+      "id": "route-community-board",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-community-board-screen-en-mobile.png",
+        "route-community-board-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 21,
+          "url": "http://localhost:3004/en/community/board"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1981
+    },
+    {
+      "id": "route-community-board",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-community-board-screen-en-desktop.png",
+        "route-community-board-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/community/board"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1791
+    },
+    {
+      "id": "route-community-board",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 21,
+          "url": "http://localhost:3004/en/community/board"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1569
+    },
+    {
+      "id": "route-community-board",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-community-board-screen-zh-mobile.png",
+        "route-community-board-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 21,
+          "url": "http://localhost:3004/zh/community/board"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2005
+    },
+    {
+      "id": "route-community-board",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-community-board-screen-zh-desktop.png",
+        "route-community-board-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/community/board"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1788
+    },
+    {
+      "id": "route-community-board",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 21,
+          "url": "http://localhost:3004/zh/community/board"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1537
+    },
+    {
+      "id": "route-fairness",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-fairness-screen-ko-mobile.png",
+        "route-fairness-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/ko/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2718
+    },
+    {
+      "id": "route-fairness",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-fairness-screen-ko-desktop.png",
+        "route-fairness-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1749
+    },
+    {
+      "id": "route-fairness",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/ko/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1634
+    },
+    {
+      "id": "route-fairness",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-fairness-screen-en-mobile.png",
+        "route-fairness-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/en/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1834
+    },
+    {
+      "id": "route-fairness",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-fairness-screen-en-desktop.png",
+        "route-fairness-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1776
+    },
+    {
+      "id": "route-fairness",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/en/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1643
+    },
+    {
+      "id": "route-fairness",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-fairness-screen-zh-mobile.png",
+        "route-fairness-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/zh/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1852
+    },
+    {
+      "id": "route-fairness",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-fairness-screen-zh-desktop.png",
+        "route-fairness-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1804
+    },
+    {
+      "id": "route-fairness",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/zh/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1497
+    },
+    {
+      "id": "route-inventory",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-inventory-screen-ko-mobile.png",
+        "route-inventory-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/inventory"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2645
+    },
+    {
+      "id": "route-inventory",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-inventory-screen-ko-desktop.png",
+        "route-inventory-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/inventory"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1869
+    },
+    {
+      "id": "route-inventory",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/inventory"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1478
+    },
+    {
+      "id": "route-inventory",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-inventory-screen-en-mobile.png",
+        "route-inventory-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/inventory"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1820
+    },
+    {
+      "id": "route-inventory",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-inventory-screen-en-desktop.png",
+        "route-inventory-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/inventory"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1844
+    },
+    {
+      "id": "route-inventory",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/inventory"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1486
+    },
+    {
+      "id": "route-inventory",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-inventory-screen-zh-mobile.png",
+        "route-inventory-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/inventory"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1771
+    },
+    {
+      "id": "route-inventory",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-inventory-screen-zh-desktop.png",
+        "route-inventory-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/inventory"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1931
+    },
+    {
+      "id": "route-inventory",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/inventory"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1644
+    },
+    {
+      "id": "route-profile",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-profile-screen-ko-mobile.png",
+        "route-profile-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/ko/profile"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2314
+    },
+    {
+      "id": "route-profile",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-profile-screen-ko-desktop.png",
+        "route-profile-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/profile"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1741
+    },
+    {
+      "id": "route-profile",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/ko/profile"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1449
+    },
+    {
+      "id": "route-profile",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-profile-screen-en-mobile.png",
+        "route-profile-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/en/profile"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1697
+    },
+    {
+      "id": "route-profile",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-profile-screen-en-desktop.png",
+        "route-profile-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/profile"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1763
+    },
+    {
+      "id": "route-profile",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/en/profile"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1472
+    },
+    {
+      "id": "route-profile",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-profile-screen-zh-mobile.png",
+        "route-profile-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/zh/profile"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1675
+    },
+    {
+      "id": "route-profile",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-profile-screen-zh-desktop.png",
+        "route-profile-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/profile"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1690
+    },
+    {
+      "id": "route-profile",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/zh/profile"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1616
+    },
+    {
+      "id": "route-legal",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-legal-screen-ko-mobile.png",
+        "route-legal-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/ko/legal"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2430
+    },
+    {
+      "id": "route-legal",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-legal-screen-ko-desktop.png",
+        "route-legal-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1799
+    },
+    {
+      "id": "route-legal",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/ko/legal"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1516
+    },
+    {
+      "id": "route-legal",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-legal-screen-en-mobile.png",
+        "route-legal-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/en/legal"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1756
+    },
+    {
+      "id": "route-legal",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-legal-screen-en-desktop.png",
+        "route-legal-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1698
+    },
+    {
+      "id": "route-legal",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/en/legal"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1478
+    },
+    {
+      "id": "route-legal",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-legal-screen-zh-mobile.png",
+        "route-legal-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/zh/legal"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1947
+    },
+    {
+      "id": "route-legal",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "route-legal-screen-zh-desktop.png",
+        "route-legal-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1732
+    },
+    {
+      "id": "route-legal",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 0,
+          "url": "http://localhost:3004/zh/legal"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1452
+    },
+    {
+      "id": "legal-terms",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-terms-screen-ko-mobile.png",
+        "legal-terms-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/terms"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2399
+    },
+    {
+      "id": "legal-terms",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-terms-screen-ko-desktop.png",
+        "legal-terms-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/terms"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1837
+    },
+    {
+      "id": "legal-terms",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/terms"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1460
+    },
+    {
+      "id": "legal-terms",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-terms-screen-en-mobile.png",
+        "legal-terms-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/terms"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2010
+    },
+    {
+      "id": "legal-terms",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-terms-screen-en-desktop.png",
+        "legal-terms-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/terms"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1765
+    },
+    {
+      "id": "legal-terms",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/terms"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1497
+    },
+    {
+      "id": "legal-terms",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-terms-screen-zh-mobile.png",
+        "legal-terms-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/terms"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1955
+    },
+    {
+      "id": "legal-terms",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-terms-screen-zh-desktop.png",
+        "legal-terms-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/terms"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1992
+    },
+    {
+      "id": "legal-terms",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/terms"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1503
+    },
+    {
+      "id": "legal-privacy",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-privacy-screen-ko-mobile.png",
+        "legal-privacy-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/privacy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1884
+    },
+    {
+      "id": "legal-privacy",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-privacy-screen-ko-desktop.png",
+        "legal-privacy-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/privacy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1780
+    },
+    {
+      "id": "legal-privacy",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/privacy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1598
+    },
+    {
+      "id": "legal-privacy",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-privacy-screen-en-mobile.png",
+        "legal-privacy-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/privacy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2013
+    },
+    {
+      "id": "legal-privacy",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-privacy-screen-en-desktop.png",
+        "legal-privacy-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/privacy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1884
+    },
+    {
+      "id": "legal-privacy",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/privacy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1486
+    },
+    {
+      "id": "legal-privacy",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-privacy-screen-zh-mobile.png",
+        "legal-privacy-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/privacy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2108
+    },
+    {
+      "id": "legal-privacy",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-privacy-screen-zh-desktop.png",
+        "legal-privacy-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/privacy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1801
+    },
+    {
+      "id": "legal-privacy",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/privacy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1503
+    },
+    {
+      "id": "legal-payments",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-payments-screen-ko-mobile.png",
+        "legal-payments-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/payments"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1812
+    },
+    {
+      "id": "legal-payments",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-payments-screen-ko-desktop.png",
+        "legal-payments-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/payments"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1839
+    },
+    {
+      "id": "legal-payments",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/payments"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1466
+    },
+    {
+      "id": "legal-payments",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-payments-screen-en-mobile.png",
+        "legal-payments-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/payments"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1903
+    },
+    {
+      "id": "legal-payments",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-payments-screen-en-desktop.png",
+        "legal-payments-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/payments"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1760
+    },
+    {
+      "id": "legal-payments",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/payments"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1611
+    },
+    {
+      "id": "legal-payments",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-payments-screen-zh-mobile.png",
+        "legal-payments-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/payments"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1873
+    },
+    {
+      "id": "legal-payments",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-payments-screen-zh-desktop.png",
+        "legal-payments-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/payments"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1747
+    },
+    {
+      "id": "legal-payments",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/payments"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1623
+    },
+    {
+      "id": "legal-withdrawals",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-withdrawals-screen-ko-mobile.png",
+        "legal-withdrawals-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/withdrawals"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1915
+    },
+    {
+      "id": "legal-withdrawals",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-withdrawals-screen-ko-desktop.png",
+        "legal-withdrawals-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/withdrawals"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1746
+    },
+    {
+      "id": "legal-withdrawals",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/withdrawals"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1576
+    },
+    {
+      "id": "legal-withdrawals",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-withdrawals-screen-en-mobile.png",
+        "legal-withdrawals-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/withdrawals"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1848
+    },
+    {
+      "id": "legal-withdrawals",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-withdrawals-screen-en-desktop.png",
+        "legal-withdrawals-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/withdrawals"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1841
+    },
+    {
+      "id": "legal-withdrawals",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/withdrawals"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1482
+    },
+    {
+      "id": "legal-withdrawals",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-withdrawals-screen-zh-mobile.png",
+        "legal-withdrawals-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/withdrawals"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2114
+    },
+    {
+      "id": "legal-withdrawals",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-withdrawals-screen-zh-desktop.png",
+        "legal-withdrawals-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/withdrawals"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1750
+    },
+    {
+      "id": "legal-withdrawals",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/withdrawals"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1477
+    },
+    {
+      "id": "legal-refunds",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-refunds-screen-ko-mobile.png",
+        "legal-refunds-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/refunds"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1923
+    },
+    {
+      "id": "legal-refunds",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-refunds-screen-ko-desktop.png",
+        "legal-refunds-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/refunds"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1824
+    },
+    {
+      "id": "legal-refunds",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/refunds"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1541
+    },
+    {
+      "id": "legal-refunds",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-refunds-screen-en-mobile.png",
+        "legal-refunds-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/refunds"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1884
+    },
+    {
+      "id": "legal-refunds",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-refunds-screen-en-desktop.png",
+        "legal-refunds-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/refunds"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1823
+    },
+    {
+      "id": "legal-refunds",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/refunds"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1473
+    },
+    {
+      "id": "legal-refunds",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-refunds-screen-zh-mobile.png",
+        "legal-refunds-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/refunds"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1878
+    },
+    {
+      "id": "legal-refunds",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-refunds-screen-zh-desktop.png",
+        "legal-refunds-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/refunds"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1791
+    },
+    {
+      "id": "legal-refunds",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/refunds"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1489
+    },
+    {
+      "id": "legal-policy",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-policy-screen-ko-mobile.png",
+        "legal-policy-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/policy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1804
+    },
+    {
+      "id": "legal-policy",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-policy-screen-ko-desktop.png",
+        "legal-policy-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/policy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1732
+    },
+    {
+      "id": "legal-policy",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/policy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1478
+    },
+    {
+      "id": "legal-policy",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-policy-screen-en-mobile.png",
+        "legal-policy-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/policy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1931
+    },
+    {
+      "id": "legal-policy",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-policy-screen-en-desktop.png",
+        "legal-policy-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/policy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1732
+    },
+    {
+      "id": "legal-policy",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/policy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1476
+    },
+    {
+      "id": "legal-policy",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-policy-screen-zh-mobile.png",
+        "legal-policy-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/policy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1971
+    },
+    {
+      "id": "legal-policy",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-policy-screen-zh-desktop.png",
+        "legal-policy-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/policy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1763
+    },
+    {
+      "id": "legal-policy",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/policy"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1475
+    },
+    {
+      "id": "legal-fairness",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-fairness-screen-ko-mobile.png",
+        "legal-fairness-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1764
+    },
+    {
+      "id": "legal-fairness",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-fairness-screen-ko-desktop.png",
+        "legal-fairness-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1709
+    },
+    {
+      "id": "legal-fairness",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1485
+    },
+    {
+      "id": "legal-fairness",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-fairness-screen-en-mobile.png",
+        "legal-fairness-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1753
+    },
+    {
+      "id": "legal-fairness",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-fairness-screen-en-desktop.png",
+        "legal-fairness-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1826
+    },
+    {
+      "id": "legal-fairness",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1483
+    },
+    {
+      "id": "legal-fairness",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-fairness-screen-zh-mobile.png",
+        "legal-fairness-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1974
+    },
+    {
+      "id": "legal-fairness",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-fairness-screen-zh-desktop.png",
+        "legal-fairness-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1730
+    },
+    {
+      "id": "legal-fairness",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/fairness"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1669
+    },
+    {
+      "id": "legal-safety",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-safety-screen-ko-mobile.png",
+        "legal-safety-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/safety"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1872
+    },
+    {
+      "id": "legal-safety",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-safety-screen-ko-desktop.png",
+        "legal-safety-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/safety"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1703
+    },
+    {
+      "id": "legal-safety",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/safety"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1493
+    },
+    {
+      "id": "legal-safety",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-safety-screen-en-mobile.png",
+        "legal-safety-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/safety"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1865
+    },
+    {
+      "id": "legal-safety",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-safety-screen-en-desktop.png",
+        "legal-safety-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/safety"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1790
+    },
+    {
+      "id": "legal-safety",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/safety"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1460
+    },
+    {
+      "id": "legal-safety",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-safety-screen-zh-mobile.png",
+        "legal-safety-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/safety"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1826
+    },
+    {
+      "id": "legal-safety",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-safety-screen-zh-desktop.png",
+        "legal-safety-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/safety"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1948
+    },
+    {
+      "id": "legal-safety",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/safety"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1658
+    },
+    {
+      "id": "legal-community",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-community-screen-ko-mobile.png",
+        "legal-community-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1767
+    },
+    {
+      "id": "legal-community",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-community-screen-ko-desktop.png",
+        "legal-community-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1713
+    },
+    {
+      "id": "legal-community",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1477
+    },
+    {
+      "id": "legal-community",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-community-screen-en-mobile.png",
+        "legal-community-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1770
+    },
+    {
+      "id": "legal-community",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-community-screen-en-desktop.png",
+        "legal-community-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1724
+    },
+    {
+      "id": "legal-community",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1541
+    },
+    {
+      "id": "legal-community",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-community-screen-zh-mobile.png",
+        "legal-community-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1818
+    },
+    {
+      "id": "legal-community",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-community-screen-zh-desktop.png",
+        "legal-community-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1747
+    },
+    {
+      "id": "legal-community",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/community"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1447
+    },
+    {
+      "id": "legal-cookies",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-cookies-screen-ko-mobile.png",
+        "legal-cookies-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/cookies"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1794
+    },
+    {
+      "id": "legal-cookies",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-cookies-screen-ko-desktop.png",
+        "legal-cookies-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/cookies"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1818
+    },
+    {
+      "id": "legal-cookies",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/cookies"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1447
+    },
+    {
+      "id": "legal-cookies",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-cookies-screen-en-mobile.png",
+        "legal-cookies-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/cookies"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1809
+    },
+    {
+      "id": "legal-cookies",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-cookies-screen-en-desktop.png",
+        "legal-cookies-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/cookies"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1734
+    },
+    {
+      "id": "legal-cookies",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/cookies"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1452
+    },
+    {
+      "id": "legal-cookies",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-cookies-screen-zh-mobile.png",
+        "legal-cookies-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/cookies"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1826
+    },
+    {
+      "id": "legal-cookies",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-cookies-screen-zh-desktop.png",
+        "legal-cookies-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/cookies"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1956
+    },
+    {
+      "id": "legal-cookies",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/cookies"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1540
+    },
+    {
+      "id": "legal-complaints",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-complaints-screen-ko-mobile.png",
+        "legal-complaints-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/complaints"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1822
     }
   ]
 }

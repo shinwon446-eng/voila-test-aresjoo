@@ -46,20 +46,25 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
       ) : (
         <>
           <button type="button" className="v-sheet-close" onClick={onClose} aria-label={t("common.close")}><X size={20} aria-hidden /></button>
-          <div className="v-reveal-result v-stack">
+          <div className="v-reveal-result">
             {single && single.item.kind === "cash" && (
               <>
+                <div className="v-reveal-head">
                 <div>
                   <h2 className="v-title">{t("reveal.cashTitle", { amount: fmt(single.item.value) })}</h2>
                   <p className="v-desc">{t("reveal.cashDesc")}</p>
                 </div>
                 <Rows><Row label={t("reveal.odds")}>{formatRate(single.item.dropRate)}</Row></Rows>
+                </div>
+                <div className="v-reveal-actions">
                 {canAgain ? <Button onClick={onAgain} busy={againBusy} busyLabel={t("box.opening")}>{again}</Button> : <Button onClick={onClose}>{t("common.close")}</Button>}
                 <div className="v-links"><TextLink href="/fairness">{t("nav.verify")}</TextLink><TextLink href="/">{t("reveal.boxes")}</TextLink></div>
+                </div>
               </>
             )}
             {single && single.item.kind !== "cash" && (
               <>
+                <div className="v-reveal-head">
                 {single.item.image.src && <div className="v-reveal-photo"><img src={single.item.image.src} alt="" /></div>}
                 <div>
                   <h2 className="v-title">{itemName(single.item)}</h2>
@@ -67,12 +72,16 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
                   <p className="v-desc">{t("reveal.itemDesc")}</p>
                 </div>
                 <Rows><Row label={t("reveal.value")}>{fmt(single.item.value)}</Row><Row label={t("reveal.odds")}>{formatRate(single.item.dropRate)}</Row></Rows>
+                </div>
+                <div className="v-reveal-actions">
                 <ButtonLink href="/inventory">{t(single.item.kind === "digital" ? "reveal.code" : "reveal.ship")}</ButtonLink>
                 <div className="v-links"><TextLink href="/inventory">{t("reveal.take", { amount: fmt(sellValueOf(single.item)) })}</TextLink><TextLink href="/fairness">{t("nav.verify")}</TextLink></div>
+                </div>
               </>
             )}
             {!single && (
               <>
+                <div className="v-reveal-head">
                 <div>
                   <h2 className="v-title">{t("reveal.multiTitle", { n: results.length })}</h2>
                   <p className="v-desc">{t("reveal.multiDesc")}</p>
@@ -81,8 +90,11 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
                 <Rows label={t("reveal.results")}>
                   {sorted.map((r, i) => <div key={r.ownedId || i} className="v-row v-resultrow" style={{ animationDelay: Math.min(i * 0.1, 1.4) + "s" }}><dt>{itemName(r.item)}</dt><dd className="v-num">{fmt(r.item.value)}</dd></div>)}
                 </Rows>
+                </div>
+                <div className="v-reveal-actions">
                 <ButtonLink href="/inventory">{t("reveal.toInventory")}</ButtonLink>
                 <div className="v-links">{canAgain && <TextLink onClick={onAgain}>{again}</TextLink>}<TextLink href="/fairness">{t("nav.verify")}</TextLink></div>
+                </div>
               </>
             )}
           </div>

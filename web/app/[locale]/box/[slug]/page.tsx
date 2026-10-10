@@ -14,5 +14,5 @@ export default function BoxPage({ params: { locale, slug } }: { params: { locale
   setRequestLocale(locale);
   const box = getBoxBySlug(slug);
   if (!box) notFound();
-  return <AppShell><BoxScreen box={box} /></AppShell>;
+  return <AppShell wide><BoxScreen box={box} /></AppShell>;
 }

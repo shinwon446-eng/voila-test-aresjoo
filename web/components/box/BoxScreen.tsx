@@ -7,6 +7,7 @@
  * 구매 확정 단계는 없다. 단추에 수량과 금액이 적혀 있다. 큰 금액(50 USDT 이상이거나 10개 이상)만 확인창을 띄운다.
  */
 import { useMemo, useState } from "react";
+import { CreditCard, Coins, Package } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { ceilingValue, dropTable, formatRate, retailReturn, type ProductBox, type ProductItem } from "@/lib/products";
 import { TIERS, tierOf, type TierKey } from "@/lib/tiers";
@@ -65,28 +66,17 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const press = () => { if (cost >= CONFIRM_COST_USDT || qty >= CONFIRM_COUNT) setConfirming(true); else void open(); };
 
   return (
-    <div className="v-stack v-stack--lg">
+    <div className="v-boxlayout">
+      <div className="v-boxlayout-main">
       <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.desc", { n: box.items.length })} />
-      {box.image.src && <div><div className="v-boxhero"><img src={box.image.src} alt="" /></div><p className="v-small">{t("box.photoNote")}</p></div>}
+      {box.image.src && <div className="v-boxlayout-hero"><div className="v-boxhero"><img src={box.image.src} alt="" /></div><p className="v-small">{t("box.photoNote")}</p></div>}
+      <aside className="v-boxside">
       <Rows label={t("box.facts")}>
         <Row label={t("box.price")}>{fmt(box.price)}</Row>
         <Row label={t("box.top")}>{fmt(ceilingValue(box))}</Row>
         <Row label={t("box.low")}>{fmt(box.guaranteedMin)}</Row>
         <Row label={t("box.ev")}>{(retailReturn(box) * 100).toFixed(1)}%</Row>
       </Rows>
-
-      <section className="v-stack v-stack--lg" aria-labelledby="box-contents">
-        <h2 id="box-contents" className="v-section">{t("box.contents")}</h2>
-        {groups.map((g) => (
-          <div key={g.key}>
-            <div className="v-tierhead"><h3 className="v-sub">{t(TIER_LABEL[g.key])}</h3><span className="v-small v-num">{t("box.tierOdds", { pct: formatRate(g.rate) })}</span></div>
-            <ul className={"v-items v-items--" + TIER_SIZE[g.key]}>
-              {g.items.map((item) => <li key={item.id}><ItemCard item={item} name={itemName(item)} value={fmt(item.value)} odds={formatRate(item.dropRate)} /></li>)}
-            </ul>
-          </div>
-        ))}
-      </section>
-
       <div className="v-openbar">
         <div className="v-openbar-in">
           {failed && <Line fail>{t("box.openFail")}</Line>}
@@ -98,6 +88,20 @@ export function BoxScreen({ box }: { box: ProductBox }) {
             : <Button onClick={press} busy={busy} busyLabel={t("box.opening")}>{t("box.open", { n: qty, amount: fmt(cost) })}</Button>}
         </div>
       </div>
+      </aside>
+
+      <section className="v-boxlayout-contents v-stack v-stack--lg" aria-labelledby="box-contents">
+        <h2 id="box-contents" className="v-section">{t("box.contents")}</h2>
+        {groups.map((g) => (
+          <div key={g.key}>
+            <div className="v-tierhead"><h3 className="v-sub">{t(TIER_LABEL[g.key])}</h3><span className="v-small v-num">{t("box.tierOdds", { pct: formatRate(g.rate) })}</span></div>
+            <ul className={"v-items v-items--" + TIER_SIZE[g.key]}>
+              {g.items.map((item) => <li key={item.id}><ItemCard item={item} name={itemName(item)} value={fmt(item.value)} odds={formatRate(item.dropRate)} /></li>)}
+            </ul>
+          </div>
+        ))}
+      </section>
+      </div>
 
       <Confirm open={confirming} onCancel={() => setConfirming(false)} onConfirm={open} busy={busy} busyLabel={t("box.opening")} title={t("box.confirmTitle", { n: qty })} desc={t("box.confirmDesc", { amount: fmt(cost) })} confirmLabel={t("box.open", { n: qty, amount: fmt(cost) })} cancelLabel={t("common.cancel")} />
       {opened && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} onClose={() => setOpened(null)} onAgain={open} againBusy={busy} canAgain={!short} />}
@@ -108,7 +112,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
 function ItemCard({ item, name, value, odds }: { item: ProductItem; name: string; value: string; odds: string }) {
   return (
     <div className="v-item">
-      <div className="v-item-photo">{item.image.src && <img src={item.image.src} alt="" loading="lazy" decoding="async" />}</div>
+      <div className="v-item-photo">{item.image.src ? <img src={item.image.src} alt="" loading="lazy" decoding="async" /> : <span className="v-item-glyph" aria-hidden>{item.kind === "cash" ? <Coins size={28} strokeWidth={1.4} /> : item.kind === "digital" ? <CreditCard size={28} strokeWidth={1.4} /> : <Package size={28} strokeWidth={1.4} />}</span>}</div>
       <div className="v-item-body">
         <div className="v-item-name">{name}</div>
         <div className="v-item-meta"><span className="v-num">{value}</span><span className="v-num">{odds}</span></div>

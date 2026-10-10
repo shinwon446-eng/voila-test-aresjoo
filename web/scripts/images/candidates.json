@@ -11113,7 +11113,19 @@
   "hm-delonghi-rivelia": [],
   "hm-lg-wm4000": [],
   "hm-dyson-bp03": [],
-  "hm-dyson-gen5": [],
+  "hm-dyson-gen5": [
+    {
+      "title": "Dyson Cyclone V10 Absolute cordless stick vacuum.jpg",
+      "width": 5472,
+      "height": 3648,
+      "license": "CC BY-SA 4.0",
+      "licenseId": "cc-by-sa-4.0",
+      "author": "MattClayt",
+      "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Dyson_Cyclone_V10_Absolute_cordless_stick_vacuum.jpg/1280px-Dyson_Cyclone_V10_Absolute_cordless_stick_vacuum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Dyson_Cyclone_V10_Absolute_cordless_stick_vacuum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "page": "https://commons.wikimedia.org/wiki/File:Dyson_Cyclone_V10_Absolute_cordless_stick_vacuum.jpg"
+    }
+  ],
   "hm-delonghi-evo": [],
   "hm-dyson-v15": [],
   "hm-dyson-hp09": [],

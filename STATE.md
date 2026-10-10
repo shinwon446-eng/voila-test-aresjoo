@@ -2,7 +2,7 @@
 
 - 시작: 2026-10-11 02:34 (로컬) / 종료 예정: 2026-10-12 02:34
 - 브랜치: `voila-redesign` (커밋은 여기에만). 테스트 사이트 배포는 `main` 푸시(파운더가 허락한 범위: 사진과 화면. 운영 저장소 gacha-sim 은 손대지 않는다)
-- 마지막 정상 지점: `5eaa5fc` (테스트 296 통과, design-lint 0, build 통과, main 배포 성공)
+- 마지막 정상 지점: `5d069fa` (테스트 296 통과, design-lint 0, build 통과, main 배포 성공 04:00, 공개 주소 /ko/verify 와 스튜디오 사진 확인)
 - 개발 서버: `.claude/launch.json` 의 `voila-test-aresjoo`(3002). `next build` 뒤에는 `.next` 를 지우고 다시 띄운다(OneDrive 에서 readlink EINVAL)
 - 정본: DESIGN.md(규칙), JOURNEY.md(여정), qa/PROGRESS.md(진행), IMPROVEMENT_LOOP.md(사이클 기록), DECISION_LOG.md(Claude 와 Codex 충돌과 결정)
 

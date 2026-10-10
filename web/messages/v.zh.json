@@ -73,7 +73,11 @@
     "again": "再开一次，{amount}",
     "toInventory": "到保管箱领取",
     "boxes": "盲盒列表",
-    "results": "开箱结果"
+    "results": "开箱结果",
+    "takenDesc": "已改为领取 USDT。",
+    "takeTitle": "领取 USDT",
+    "takeDesc": "将以 {amount} 代替 {name}，且无法撤销。",
+    "rowHint": "点击某一行即可验证该结果。"
   },
   "login": {
     "title": "登录",
@@ -113,5 +117,19 @@
     "loginDesc": "登录后显示充值地址。",
     "addressFail": "未能获取地址。请重新选择网络。",
     "confirmations": "确认 {n} 次后到账。"
+  },
+  "verify": {
+    "title": "验证开箱结果",
+    "desc": "用开箱前锁定的值在此浏览器中重新计算号码。",
+    "locked": "预先锁定的值",
+    "seed": "公开的值",
+    "client": "本机的值",
+    "round": "回合",
+    "number": "计算出的号码",
+    "item": "号码对应的商品",
+    "ok": "重新计算的结果与获得的商品一致。",
+    "bad": "重新计算的结果与获得的商品不一致。",
+    "failed": "无法计算。记录中的值为空。",
+    "manual": "输入数值自行验证"
   }
 }

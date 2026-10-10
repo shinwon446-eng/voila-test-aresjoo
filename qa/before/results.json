@@ -5514,6 +5514,4459 @@
       ],
       "httpStatus": 200,
       "durationMs": 1822
+    },
+    {
+      "id": "legal-complaints",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-complaints-screen-ko-desktop.png",
+        "legal-complaints-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/complaints"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1761
+    },
+    {
+      "id": "legal-complaints",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/complaints"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1488
+    },
+    {
+      "id": "legal-complaints",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-complaints-screen-en-mobile.png",
+        "legal-complaints-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/complaints"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1775
+    },
+    {
+      "id": "legal-complaints",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-complaints-screen-en-desktop.png",
+        "legal-complaints-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/complaints"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1748
+    },
+    {
+      "id": "legal-complaints",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/complaints"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1484
+    },
+    {
+      "id": "legal-complaints",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-complaints-screen-zh-mobile.png",
+        "legal-complaints-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/complaints"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1792
+    },
+    {
+      "id": "legal-complaints",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-complaints-screen-zh-desktop.png",
+        "legal-complaints-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/complaints"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1740
+    },
+    {
+      "id": "legal-complaints",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/complaints"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1488
+    },
+    {
+      "id": "legal-business",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-business-screen-ko-mobile.png",
+        "legal-business-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/business"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1772
+    },
+    {
+      "id": "legal-business",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-business-screen-ko-desktop.png",
+        "legal-business-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/business"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1838
+    },
+    {
+      "id": "legal-business",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/business"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1446
+    },
+    {
+      "id": "legal-business",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-business-screen-en-mobile.png",
+        "legal-business-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/business"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1778
+    },
+    {
+      "id": "legal-business",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-business-screen-en-desktop.png",
+        "legal-business-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/business"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1788
+    },
+    {
+      "id": "legal-business",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/business"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1479
+    },
+    {
+      "id": "legal-business",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-business-screen-zh-mobile.png",
+        "legal-business-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/business"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1987
+    },
+    {
+      "id": "legal-business",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-business-screen-zh-desktop.png",
+        "legal-business-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/business"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1758
+    },
+    {
+      "id": "legal-business",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/business"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1452
+    },
+    {
+      "id": "legal-faq",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-faq-screen-ko-mobile.png",
+        "legal-faq-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/faq"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1888
+    },
+    {
+      "id": "legal-faq",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-faq-screen-ko-desktop.png",
+        "legal-faq-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/faq"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1737
+    },
+    {
+      "id": "legal-faq",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/ko/legal/faq"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1463
+    },
+    {
+      "id": "legal-faq",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-faq-screen-en-mobile.png",
+        "legal-faq-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/faq"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1794
+    },
+    {
+      "id": "legal-faq",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-faq-screen-en-desktop.png",
+        "legal-faq-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/faq"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1731
+    },
+    {
+      "id": "legal-faq",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/en/legal/faq"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1470
+    },
+    {
+      "id": "legal-faq",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-faq-screen-zh-mobile.png",
+        "legal-faq-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/faq"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2004
+    },
+    {
+      "id": "legal-faq",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "legal-faq-screen-zh-desktop.png",
+        "legal-faq-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/faq"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1882
+    },
+    {
+      "id": "legal-faq",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 6,
+          "url": "http://localhost:3004/zh/legal/faq"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1477
+    },
+    {
+      "id": "missing-route",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "missing-route-404-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 2,
+          "url": "http://localhost:3004/ko/capture-missing-page"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1985
+    },
+    {
+      "id": "missing-route",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "missing-route-404-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/capture-missing-page"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1547
+    },
+    {
+      "id": "missing-route",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/capture-missing-page"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1483
+    },
+    {
+      "id": "missing-route",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "missing-route-404-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/en/capture-missing-page"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1549
+    },
+    {
+      "id": "missing-route",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "missing-route-404-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/en/capture-missing-page"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1592
+    },
+    {
+      "id": "missing-route",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/en/capture-missing-page"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1478
+    },
+    {
+      "id": "missing-route",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "missing-route-404-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/capture-missing-page"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1587
+    },
+    {
+      "id": "missing-route",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "missing-route-404-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/capture-missing-page"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1573
+    },
+    {
+      "id": "missing-route",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/capture-missing-page"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1468
+    },
+    {
+      "id": "missing-legal",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "missing-legal-404-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/capture-missing-document"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1552
+    },
+    {
+      "id": "missing-legal",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "missing-legal-404-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/capture-missing-document"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1579
+    },
+    {
+      "id": "missing-legal",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/ko/legal/capture-missing-document"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1528
+    },
+    {
+      "id": "missing-legal",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "missing-legal-404-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/capture-missing-document"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1534
+    },
+    {
+      "id": "missing-legal",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "missing-legal-404-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/capture-missing-document"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1559
+    },
+    {
+      "id": "missing-legal",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/en/legal/capture-missing-document"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1473
+    },
+    {
+      "id": "missing-legal",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "missing-legal-404-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/capture-missing-document"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1592
+    },
+    {
+      "id": "missing-legal",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "missing-legal-404-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/capture-missing-document"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1551
+    },
+    {
+      "id": "missing-legal",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "404",
+          "findings": 1,
+          "url": "http://localhost:3004/zh/legal/capture-missing-document"
+        }
+      ],
+      "network": [
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 404,
+      "durationMs": 1500
+    },
+    {
+      "id": "skin-netflix",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "skin-netflix-screen-ko-mobile.png",
+        "skin-netflix-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 21,
+          "url": "http://localhost:3004/ko?skin=netflix"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2061
+    },
+    {
+      "id": "skin-netflix",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "skin-netflix-screen-ko-desktop.png",
+        "skin-netflix-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 12,
+          "url": "http://localhost:3004/ko?skin=netflix"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2019
+    },
+    {
+      "id": "skin-netflix",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 21,
+          "url": "http://localhost:3004/ko?skin=netflix"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1641
+    },
+    {
+      "id": "skin-netflix",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "skin-netflix-screen-en-mobile.png",
+        "skin-netflix-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 21,
+          "url": "http://localhost:3004/en?skin=netflix"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1971
+    },
+    {
+      "id": "skin-netflix",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "skin-netflix-screen-en-desktop.png",
+        "skin-netflix-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 12,
+          "url": "http://localhost:3004/en?skin=netflix"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2042
+    },
+    {
+      "id": "skin-netflix",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 21,
+          "url": "http://localhost:3004/en?skin=netflix"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1593
+    },
+    {
+      "id": "skin-netflix",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "skin-netflix-screen-zh-mobile.png",
+        "skin-netflix-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 25,
+          "url": "http://localhost:3004/zh?skin=netflix"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2132
+    },
+    {
+      "id": "skin-netflix",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "skin-netflix-screen-zh-desktop.png",
+        "skin-netflix-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 13,
+          "url": "http://localhost:3004/zh?skin=netflix"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2062
+    },
+    {
+      "id": "skin-netflix",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 24,
+          "url": "http://localhost:3004/zh?skin=netflix"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/personas/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/thumbs/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1540
+    },
+    {
+      "id": "skin-commerce",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "skin-commerce-screen-ko-mobile.png",
+        "skin-commerce-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 13,
+          "url": "http://localhost:3004/ko?skin=commerce"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2113
+    },
+    {
+      "id": "skin-commerce",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "skin-commerce-screen-ko-desktop.png",
+        "skin-commerce-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 9,
+          "url": "http://localhost:3004/ko?skin=commerce"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1999
+    },
+    {
+      "id": "skin-commerce",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 13,
+          "url": "http://localhost:3004/ko?skin=commerce"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1555
+    },
+    {
+      "id": "skin-commerce",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "skin-commerce-screen-en-mobile.png",
+        "skin-commerce-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 13,
+          "url": "http://localhost:3004/en?skin=commerce"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2168
+    },
+    {
+      "id": "skin-commerce",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "skin-commerce-screen-en-desktop.png",
+        "skin-commerce-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 9,
+          "url": "http://localhost:3004/en?skin=commerce"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2003
+    },
+    {
+      "id": "skin-commerce",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 14,
+          "url": "http://localhost:3004/en?skin=commerce"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1606
+    },
+    {
+      "id": "skin-commerce",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "skin-commerce-screen-zh-mobile.png",
+        "skin-commerce-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 13,
+          "url": "http://localhost:3004/zh?skin=commerce"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2166
+    },
+    {
+      "id": "skin-commerce",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "skin-commerce-screen-zh-desktop.png",
+        "skin-commerce-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 9,
+          "url": "http://localhost:3004/zh?skin=commerce"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2033
+    },
+    {
+      "id": "skin-commerce",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 13,
+          "url": "http://localhost:3004/zh?skin=commerce"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/lorelei-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/micah/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/notionists-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1543
+    },
+    {
+      "id": "category-dollar",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-dollar-screen-ko-mobile.png",
+        "category-dollar-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/ko#category-dollar"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1891
+    },
+    {
+      "id": "category-dollar",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-dollar-screen-ko-desktop.png",
+        "category-dollar-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 3,
+          "url": "http://localhost:3004/ko#category-dollar"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1900
+    },
+    {
+      "id": "category-dollar",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/ko#category-dollar"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1530
+    },
+    {
+      "id": "category-dollar",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-dollar-screen-en-mobile.png",
+        "category-dollar-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/en#category-dollar"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1889
+    },
+    {
+      "id": "category-dollar",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-dollar-screen-en-desktop.png",
+        "category-dollar-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 3,
+          "url": "http://localhost:3004/en#category-dollar"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1887
+    },
+    {
+      "id": "category-dollar",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/en#category-dollar"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1592
+    },
+    {
+      "id": "category-dollar",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-dollar-screen-zh-mobile.png",
+        "category-dollar-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/zh#category-dollar"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1897
+    },
+    {
+      "id": "category-dollar",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-dollar-screen-zh-desktop.png",
+        "category-dollar-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 3,
+          "url": "http://localhost:3004/zh#category-dollar"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1885
+    },
+    {
+      "id": "category-dollar",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/zh#category-dollar"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1502
+    },
+    {
+      "id": "category-tech",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-tech-screen-ko-mobile.png",
+        "category-tech-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/ko#category-tech"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1899
+    },
+    {
+      "id": "category-tech",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-tech-screen-ko-desktop.png",
+        "category-tech-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 3,
+          "url": "http://localhost:3004/ko#category-tech"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1941
+    },
+    {
+      "id": "category-tech",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/ko#category-tech"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1546
+    },
+    {
+      "id": "category-tech",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-tech-screen-en-mobile.png",
+        "category-tech-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/en#category-tech"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1865
+    },
+    {
+      "id": "category-tech",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-tech-screen-en-desktop.png",
+        "category-tech-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 3,
+          "url": "http://localhost:3004/en#category-tech"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1968
+    },
+    {
+      "id": "category-tech",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/en#category-tech"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1500
+    },
+    {
+      "id": "category-tech",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-tech-screen-zh-mobile.png",
+        "category-tech-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/zh#category-tech"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1863
+    },
+    {
+      "id": "category-tech",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-tech-screen-zh-desktop.png",
+        "category-tech-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 3,
+          "url": "http://localhost:3004/zh#category-tech"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1905
+    },
+    {
+      "id": "category-tech",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/zh#category-tech"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1543
+    },
+    {
+      "id": "category-luxury",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-luxury-screen-ko-mobile.png",
+        "category-luxury-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/ko#category-luxury"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1901
+    },
+    {
+      "id": "category-luxury",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-luxury-screen-ko-desktop.png",
+        "category-luxury-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 3,
+          "url": "http://localhost:3004/ko#category-luxury"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1893
+    },
+    {
+      "id": "category-luxury",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/ko#category-luxury"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1532
+    },
+    {
+      "id": "category-luxury",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-luxury-screen-en-mobile.png",
+        "category-luxury-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/en#category-luxury"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1876
+    },
+    {
+      "id": "category-luxury",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-luxury-screen-en-desktop.png",
+        "category-luxury-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 3,
+          "url": "http://localhost:3004/en#category-luxury"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2007
+    },
+    {
+      "id": "category-luxury",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/en#category-luxury"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1531
+    },
+    {
+      "id": "category-luxury",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-luxury-screen-zh-mobile.png",
+        "category-luxury-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/zh#category-luxury"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1946
+    },
+    {
+      "id": "category-luxury",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-luxury-screen-zh-desktop.png",
+        "category-luxury-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 3,
+          "url": "http://localhost:3004/zh#category-luxury"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1956
+    },
+    {
+      "id": "category-luxury",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/zh#category-luxury"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1571
+    },
+    {
+      "id": "category-jackpot",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-jackpot-screen-ko-mobile.png",
+        "category-jackpot-screen-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/ko#category-jackpot"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1900
+    },
+    {
+      "id": "category-jackpot",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-jackpot-screen-ko-desktop.png",
+        "category-jackpot-screen-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 3,
+          "url": "http://localhost:3004/ko#category-jackpot"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1927
+    },
+    {
+      "id": "category-jackpot",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/ko#category-jackpot"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1637
+    },
+    {
+      "id": "category-jackpot",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-jackpot-screen-en-mobile.png",
+        "category-jackpot-screen-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/en#category-jackpot"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1875
+    },
+    {
+      "id": "category-jackpot",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-jackpot-screen-en-desktop.png",
+        "category-jackpot-screen-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 3,
+          "url": "http://localhost:3004/en#category-jackpot"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1922
+    },
+    {
+      "id": "category-jackpot",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/en#category-jackpot"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1570
+    },
+    {
+      "id": "category-jackpot",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-jackpot-screen-zh-mobile.png",
+        "category-jackpot-screen-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/zh#category-jackpot"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1845
+    },
+    {
+      "id": "category-jackpot",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "category-jackpot-screen-zh-desktop.png",
+        "category-jackpot-screen-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 3,
+          "url": "http://localhost:3004/zh#category-jackpot"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1913
+    },
+    {
+      "id": "category-jackpot",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "screen",
+          "findings": 15,
+          "url": "http://localhost:3004/zh#category-jackpot"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1562
     }
   ]
 }

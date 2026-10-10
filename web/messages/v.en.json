@@ -73,7 +73,11 @@
     "again": "Open again, {amount}",
     "toInventory": "Receive from inventory",
     "boxes": "All boxes",
-    "results": "Results"
+    "results": "Results",
+    "takenDesc": "You took USDT instead of the item.",
+    "takeTitle": "Take USDT",
+    "takeDesc": "You receive {amount} instead of {name}, and this cannot be undone.",
+    "rowHint": "Select a row to verify that result."
   },
   "login": {
     "title": "Log in",
@@ -113,5 +117,19 @@
     "loginDesc": "Log in to see your deposit address.",
     "addressFail": "The address could not be loaded. Choose the network again.",
     "confirmations": "Added after {n} confirmations."
+  },
+  "verify": {
+    "title": "Verify result",
+    "desc": "The number is recalculated in this browser from the value locked before opening.",
+    "locked": "Locked value",
+    "seed": "Revealed value",
+    "client": "Your device value",
+    "round": "Round",
+    "number": "Calculated number",
+    "item": "Item for this number",
+    "ok": "The recalculated result matches the item you received.",
+    "bad": "The recalculated result does not match the item you received.",
+    "failed": "The result could not be calculated. The record has empty values.",
+    "manual": "Verify with your own values"
   }
 }

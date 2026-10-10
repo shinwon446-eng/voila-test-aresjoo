@@ -227,3 +227,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
   .v-reveal-head { flex: none; }
   .v-reveal-actions { margin-top: 8px; }
 }
+
+/* 행 전체가 단추일 때 */
+.v-row--button { width: 100%; text-align: left; }
+.v-rows > li + li { border-top: 1px solid var(--v-divider); }

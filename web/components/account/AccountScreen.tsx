@@ -61,8 +61,7 @@ export function AccountScreen() {
               <div className="v-rowitem"><Link href="/verify" className="v-row v-row--link"><span>{t("nav.verify")}</span><span aria-hidden>›</span></Link></div>
               <div className="v-rowitem"><Link href="/legal" className="v-row v-row--link"><span>{t("nav.legal")}</span><span aria-hidden>›</span></Link></div>
             </Rows>
-            <Button onClick={() => setLeaving(true)}>{t("account.logout")}</Button>
-            <div className="v-links"><TextLink href="/profile">{t("account.more")}</TextLink></div>
+            <div className="v-links"><TextLink onClick={() => setLeaving(true)}>{t("account.logout")}</TextLink><TextLink href="/profile">{t("account.more")}</TextLink></div>
           </>
         )}
 

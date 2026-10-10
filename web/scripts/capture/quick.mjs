@@ -47,7 +47,12 @@ for (const [view, opts] of VIEWS) {
     if (actions.includes("submit")) { await page.locator("form .v-btn[type=submit]").click(); await page.waitForTimeout(700); }
     if (actions.includes("row")) { await page.locator(".v-itemrow").first().click(); await page.waitForTimeout(700); }
     for (const act of actions.filter((x) => x.startsWith("click:"))) { await page.getByText(act.slice(6), { exact: false }).last().click(); await page.waitForTimeout(900); }
-    if (actions.includes("full")) await page.screenshot({ path: `${out}/${name}-full-${view}.png`, fullPage: true });
+    if (actions.includes("full")) {
+      // 전체 길이로 찍기 전에 끝까지 훑어 지연 로딩 사진을 전부 불러온다(빈 칸이 사진 없음으로 오해되지 않게)
+      await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 120)); } window.scrollTo(0, 0); });
+      await page.waitForTimeout(400);
+      await page.screenshot({ path: `${out}/${name}-full-${view}.png`, fullPage: true });
+    }
     await page.screenshot({ path: `${out}/${name}-${view}.png` });
     const info = await page.evaluate(() => ({ docW: document.documentElement.scrollWidth, winW: innerWidth, h1: document.querySelector("h1")?.textContent ?? null }));
     console.log(view, name, JSON.stringify(info), errors.length ? "console errors: " + errors.join(" | ") : "");

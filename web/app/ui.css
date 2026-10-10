@@ -140,6 +140,9 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-boxcard--photos { display: block; }
 .v-boxcard-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; }
 .v-boxcard-photos .v-boxcard-photo { aspect-ratio: 1; }
+.v-boxcard-photos[data-n="1"] { grid-template-columns: 1fr; }
+.v-boxcard-photos[data-n="1"] .v-boxcard-photo { aspect-ratio: 16 / 9; }
+.v-boxcard-photos[data-n="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (min-width: 768px) { .v-boxcard-photos .v-boxcard-photo { aspect-ratio: 4 / 3; } }
 /* 대표 실물 셋: 한 줄에 하나, 길면 줄임표 */
 .v-boxcard-leads { display: flex; flex-direction: column; gap: 1px; margin: 4px 0 6px; color: var(--v-text); font-size: var(--v-fs-small); line-height: 1.4; }
@@ -190,6 +193,8 @@ button.v-item .v-item-photo, button.v-item .v-item-body { display: block; }
 button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 0; background: none; color: inherit; cursor: pointer; }
 .v-sheet-photo { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--v-r-card); background: var(--v-photo); }
 .v-sheet-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* 약관 본문: 줄바꿈 보존 */
+.v-prose { white-space: pre-line; margin: 0; }
 /* 단계 설명: 라벨 위, 문장 아래 */
 .v-step { padding: 6px 0; }
 .v-step .v-small { display: block; margin-bottom: 4px; }

@@ -20,6 +20,8 @@ import { useWalletStore, type TxStatus } from "@/stores/walletStore";
 import { useSecurityStore } from "@/stores/securityStore";
 import { useAuthStore } from "@/stores/authStore";
 import { Button, ButtonLink, Chips, Field, Line, Row, Rows, ScreenHead, Skeleton, TextLink } from "@/components/ui/kit";
+import { TwoFactorSetup } from "@/components/wallet/TwoFactorSetup";
+import { Sheet } from "@/components/ui/Sheet";
 
 /** 인증 코드를 몇 번 틀리면 이메일 인증 경로로 보내는가(옛 화면과 같다) */
 const OTP_MAX_ATTEMPTS = 3;
@@ -41,6 +43,7 @@ export function WithdrawScreen() {
 
   const [stage, setStage] = useState<Stage>({ kind: "form" });
   const [emailOnly, setEmailOnly] = useState(false);
+  const [connecting, setConnecting] = useState(false);
   const [network, setNetwork] = useState<Network>("TRC20");
   const [address, setAddress] = useState("");
   const [amountText, setAmountText] = useState("");
@@ -151,8 +154,12 @@ export function WithdrawScreen() {
   if (!twoFactorEnabled && !emailOnly && stage.kind !== "done") return (
     <div className="v-stack v-stack--lg">
       <ScreenHead title={t("withdraw.gateTitle")} desc={t("withdraw.gateDesc")} back="/wallet" backLabel={t("common.back")} />
-      <ButtonLink href="/profile">{t("withdraw.gateCta")}</ButtonLink>
+      {/* 출금 화면 안에서 연결한다. 계정 화면으로 보내지 않는다(Codex 1차 검수) */}
+      <Button onClick={() => setConnecting(true)}>{t("withdraw.gateCta")}</Button>
       <div className="v-links"><TextLink onClick={() => setEmailOnly(true)}>{t("withdraw.emailPath", { hours: HOLD_HOURS })}</TextLink></div>
+      <Sheet open={connecting} onClose={() => setConnecting(false)} title={t("account.twoFactor")} desc={t("account.twoFactorDesc")} closeLabel={t("common.close")} wide>
+        <TwoFactorSetup compact autoStart onEnabled={() => setConnecting(false)} />
+      </Sheet>
     </div>
   );
 

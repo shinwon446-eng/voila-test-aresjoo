@@ -80,22 +80,19 @@ export function BoxList() {
 /** 카드에 올리는 대표 실물 셋: 사진 있는 것 가운데 값이 큰 순서. 사진이 셋이 안 되면 이름으로 */
 const topItems = (box: ProductBox) => {
   const real = [...box.items].filter((i) => i.kind !== "cash").sort((a, b) => b.value - a.value);
+  // 사진이 있는 상품을 앞에, 없으면 이름만. 사진 수에 맞춰 띠가 1~3칸이 된다(빈 칸을 남기지 않는다)
   const withPhoto = real.filter((i) => i.image.src).slice(0, 3);
-  return withPhoto.length >= 3 ? withPhoto : real.slice(0, 3);
+  return withPhoto.length ? withPhoto : real.slice(0, 3);
 };
 
 /** 실물(현금 아닌 것)이 하나라도 나올 확률의 합 */
 const realOdds = (box: ProductBox) => +dropTable(box).filter((i) => i.kind !== "cash" && !i.id.startsWith("wave-")).reduce((s, i) => s + i.dropRate, 0).toFixed(4);
 
 function BoxCard({ box, title, price, top, real, common, count, leads, leadName, eager }: { box: ProductBox; title: string; price: string; top: string; real: string; common: string; count: string; leads: ProductItem[]; leadName: (i: ProductItem) => string; eager: boolean }) {
-  const photos = leads.every((i) => i.image.src);
+  const shots = leads.filter((i) => i.image.src);
   return (
-    <Link href={"/box/" + box.slug} className={"v-boxcard" + (photos ? " v-boxcard--photos" : "")}>
-      {photos ? (
-        <span className="v-boxcard-photos">{leads.map((i) => <span key={i.id} className="v-boxcard-photo"><img src={i.image.src!} alt={leadName(i)} loading={eager ? "eager" : "lazy"} decoding="async" /></span>)}</span>
-      ) : (
-        <span className="v-boxcard-photo">{box.image.src && <img src={box.image.src} alt="" loading={eager ? "eager" : "lazy"} decoding="async" />}</span>
-      )}
+    <Link href={"/box/" + box.slug} className="v-boxcard v-boxcard--photos">
+      {shots.length > 0 && <span className="v-boxcard-photos" data-n={shots.length}>{shots.map((i) => <span key={i.id} className="v-boxcard-photo"><img src={i.image.src!} alt={leadName(i)} loading={eager ? "eager" : "lazy"} decoding="async" /></span>)}</span>}
       <span className="v-boxcard-body">
         <span className="v-card-title">{title}</span>
         <span className="v-num v-sub">{price}</span>

@@ -35,6 +35,10 @@
     "file": "commons-ap-homepod.webp",
     "credit": "FASTILY, CC BY-SA 4.0, via Wikimedia Commons"
   },
+  "da-watchse": {
+    "file": "commons-da-watchse.webp",
+    "credit": "Joe Ravi (Shutterstock iStock Dreamstime), CC BY-SA 3.0, via Wikimedia Commons"
+  },
   "ap-airpods-pro-2": {
     "file": "commons-ap-airpods-pro-2.webp",
     "credit": "— aconcagua (talk), CC BY-SA 4.0, via Wikimedia Commons"
@@ -171,6 +175,10 @@
     "file": "commons-car-harley-rg.webp",
     "credit": "User:Lightburst, CC BY-SA 4.0, via Wikimedia Commons"
   },
+  "car-zero-srf": {
+    "file": "commons-car-zero-srf.webp",
+    "credit": "Karsten Ratzke, CC0, via Wikimedia Commons"
+  },
   "car-bmw-gs": {
     "file": "commons-car-bmw-gs.webp",
     "credit": "Corvettec6r, CC BY 4.0, via Wikimedia Commons"
@@ -182,6 +190,10 @@
   "car-vespa-gts": {
     "file": "commons-car-vespa-gts.webp",
     "credit": "Ottili from www.vespaforum.de, CC0, via Wikimedia Commons"
+  },
+  "car-brompton-t": {
+    "file": "commons-car-brompton-t.webp",
+    "credit": "Wikimedia Commons, CC BY 4.0, via Wikimedia Commons"
   },
   "car-vanmoof": {
     "file": "commons-car-vanmoof.webp",
@@ -195,9 +207,21 @@
     "file": "commons-car-garmin-edge.webp",
     "credit": "Hugo LUC, CC BY-SA 4.0, via Wikimedia Commons"
   },
+  "car-ev-cable": {
+    "file": "commons-car-ev-cable.webp",
+    "credit": "Christopher J. Fynn, CC BY-SA 4.0, via Wikimedia Commons"
+  },
   "car-weathertech": {
     "file": "commons-car-weathertech.webp",
     "credit": "Ryan Gsell, CC BY 2.0, via Wikimedia Commons"
+  },
+  "car-inflator": {
+    "file": "commons-car-inflator.webp",
+    "credit": "Michael Sheehan, CC BY 2.0, via Wikimedia Commons"
+  },
+  "car-cover": {
+    "file": "commons-car-cover.webp",
+    "credit": "Tennen-Gas, CC BY-SA 3.0, via Wikimedia Commons"
   },
   "wt-daytona": {
     "file": "commons-wt-daytona.webp",
@@ -263,6 +287,10 @@
     "file": "commons-wt-apple-ultra-2.webp",
     "credit": "KKPCW（Kyu3）, CC BY-SA 4.0, via Wikimedia Commons"
   },
+  "wt-casio-frogman": {
+    "file": "commons-wt-casio-frogman.webp",
+    "credit": "Aaron Carlson from Menomonie, WI, USA, CC BY-SA 2.0, via Wikimedia Commons"
+  },
   "wt-citizen-promaster": {
     "file": "commons-wt-citizen-promaster.webp",
     "credit": "Francis Flinch, Public domain, via Wikimedia Commons"
@@ -283,9 +311,29 @@
     "file": "commons-wt-seiko-5.webp",
     "credit": "Ash Crow, CC BY-SA 3.0, via Wikimedia Commons"
   },
+  "wt-watch-box-12": {
+    "file": "commons-wt-watch-box-12.webp",
+    "credit": "Mathey; George Lumsden, CC BY 4.0, via Wikimedia Commons"
+  },
   "wt-casio-edifice": {
     "file": "commons-wt-casio-edifice.webp",
     "credit": "Ansgar Koreng, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "wt-leather-strap": {
+    "file": "commons-wt-leather-strap.webp",
+    "credit": "Pieter Brueghel the Elder, Public domain, via Wikimedia Commons"
+  },
+  "wt-timex-expedition": {
+    "file": "commons-wt-timex-expedition.webp",
+    "credit": "NASA, Public domain, via Wikimedia Commons"
+  },
+  "wt-strap-tool": {
+    "file": "commons-wt-strap-tool.webp",
+    "credit": "Jason Hollinger, CC BY 2.0, via Wikimedia Commons"
+  },
+  "wt-watch-roll": {
+    "file": "commons-wt-watch-roll.webp",
+    "credit": "AnonymousUnknown author, Public domain, via Wikimedia Commons"
   },
   "wt-casio-f91w": {
     "file": "commons-wt-casio-f91w.webp",
@@ -295,6 +343,18 @@
     "file": "commons-bg-constance-18.webp",
     "credit": "Jazz 名品匯 from 台北, CC BY-SA 2.0, via Wikimedia Commons"
   },
+  "bg-dior-lady": {
+    "file": "commons-bg-dior-lady.webp",
+    "credit": "Hans Holbein the Younger, Public domain, via Wikimedia Commons"
+  },
+  "bg-dior-saddle": {
+    "file": "commons-bg-dior-saddle.webp",
+    "credit": "Jules &amp; Jenny from Lincoln, UK, CC BY 2.0, via Wikimedia Commons"
+  },
+  "bg-dior-book-tote": {
+    "file": "commons-bg-dior-book-tote.webp",
+    "credit": "Wilhelm von Diez, Public domain, via Wikimedia Commons"
+  },
   "bg-rimowa-cabin": {
     "file": "commons-bg-rimowa-cabin.webp",
     "credit": "Paulgruber2, CC BY-SA 4.0, via Wikimedia Commons"
@@ -303,25 +363,77 @@
     "file": "commons-bg-mk-jet-set.webp",
     "credit": "SPERA.de Designerschuhe, Taschen und Accessoires from Deutschland, CC BY 2.0, via Wikimedia Commons"
   },
+  "bg-bag-charm": {
+    "file": "commons-bg-bag-charm.webp",
+    "credit": "Wikimedia Commons, CC BY 4.0, via Wikimedia Commons"
+  },
+  "bg-dust-bag-set": {
+    "file": "commons-bg-dust-bag-set.webp",
+    "credit": "Ra'ike (see also: de:Benutzer:Ra'ike), Public domain, via Wikimedia Commons"
+  },
+  "gd-bar-1kg": {
+    "file": "commons-gd-bar-1kg.webp",
+    "credit": "Salisbury and South Wiltshire Museum, Richard Henry, 2013-04-22 17:04:44, CC BY-SA 2.0, via Wikimedia Commons"
+  },
   "gd-bar-250g": {
     "file": "commons-gd-bar-250g.webp",
     "credit": "Apollo2005, CC BY-SA 3.0, via Wikimedia Commons"
+  },
+  "gd-bar-100g": {
+    "file": "commons-gd-bar-100g.webp",
+    "credit": "The British Museum, Ian Richardson, 2012-06-15 12:22:42, CC BY-SA 2.0, via Wikimedia Commons"
+  },
+  "gd-bar-50g": {
+    "file": "commons-gd-bar-50g.webp",
+    "credit": "The British Museum, Emma Traherne, 2013-03-13 15:58:27, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "gd-silver-100oz": {
+    "file": "commons-gd-silver-100oz.webp",
+    "credit": "Erik Lernestål, Public domain, via Wikimedia Commons"
   },
   "gd-bar-1oz": {
     "file": "commons-gd-bar-1oz.webp",
     "credit": "Realterm, CC BY-SA 3.0, via Wikimedia Commons"
   },
+  "gd-bar-20g": {
+    "file": "commons-gd-bar-20g.webp",
+    "credit": "The Portable Antiquities Scheme, Stuart Noon, 2015-04-13 10:18:59, CC BY 2.0, via Wikimedia Commons"
+  },
+  "gd-bar-10g": {
+    "file": "commons-gd-bar-10g.webp",
+    "credit": "The Portable Antiquities Scheme, Kevin Leahy, 2014-01-03 13:57:53, CC BY-SA 4.0, via Wikimedia Commons"
+  },
   "gd-gold-coin-quarter": {
     "file": "commons-gd-gold-coin-quarter.webp",
     "credit": "Zopssin, Public domain, via Wikimedia Commons"
+  },
+  "gd-bar-5g": {
+    "file": "commons-gd-bar-5g.webp",
+    "credit": "The British Museum, Lucy Ellis, 2013-09-12 13:52:02, CC BY-SA 2.0, via Wikimedia Commons"
+  },
+  "gd-silver-10oz": {
+    "file": "commons-gd-silver-10oz.webp",
+    "credit": "Erik Lernestål, Public domain, via Wikimedia Commons"
+  },
+  "gd-bar-2g": {
+    "file": "commons-gd-bar-2g.webp",
+    "credit": "The British Museum, Siorna McFarlane, 2010-10-05 15:12:43, CC BY-SA 4.0, via Wikimedia Commons"
   },
   "gd-silver-coin-5": {
     "file": "commons-gd-silver-coin-5.webp",
     "credit": "Bruxton, CC BY-SA 4.0, via Wikimedia Commons"
   },
+  "gd-jewelry-box": {
+    "file": "commons-gd-jewelry-box.webp",
+    "credit": "Unknown authorUnknown author, Public domain, via Wikimedia Commons"
+  },
   "gd-bar-1g": {
     "file": "commons-gd-bar-1g.webp",
     "credit": "Kjmonkey, CC0, via Wikimedia Commons"
+  },
+  "gd-silver-chain": {
+    "file": "commons-gd-silver-chain.webp",
+    "credit": "Durova, CC BY-SA 3.0, via Wikimedia Commons"
   },
   "gd-silver-earrings": {
     "file": "commons-gd-silver-earrings.webp",
@@ -330,5 +442,281 @@
   "gd-silver-coin-1": {
     "file": "commons-gd-silver-coin-1.webp",
     "credit": "Bruxton, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "gd-scale": {
+    "file": "commons-gd-scale.webp",
+    "credit": "Keystone View Company -- Photographer, Public domain, via Wikimedia Commons"
+  },
+  "gx-fold7-256": {
+    "file": "commons-gx-fold7-256.webp",
+    "credit": "Megapro17, CC0, via Wikimedia Commons"
+  },
+  "gx-buds4": {
+    "file": "commons-gx-buds4.webp",
+    "credit": "Dinkun Chen, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "gm-ryzen9950x3d": {
+    "file": "commons-gm-ryzen9950x3d.webp",
+    "credit": "MoreThanTech, CC BY 3.0, via Wikimedia Commons"
+  },
+  "gm-blackwidow-v4": {
+    "file": "commons-gm-blackwidow-v4.webp",
+    "credit": "RuinDig/Yuki Uchida, CC BY 4.0, via Wikimedia Commons"
+  },
+  "gm-g-pro-superlight2": {
+    "file": "commons-gm-g-pro-superlight2.webp",
+    "credit": "Solomon203, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "cs-rog-xbox-ally": {
+    "file": "commons-cs-rog-xbox-ally.webp",
+    "credit": "XBOX 360 ONE, Public domain, via Wikimedia Commons"
+  },
+  "cs-switch2": {
+    "file": "commons-cs-switch2.webp",
+    "credit": "PantheraLeo1359531, CC BY 4.0, via Wikimedia Commons"
+  },
+  "cs-psvr2": {
+    "file": "commons-cs-psvr2.webp",
+    "credit": "This image is a work by Wikipedia and Wikimedia Commons user C.Suthorn. When reusing, credit me as described in the Licensing information below.  I would appreciate being notified (wikimail, talk page, email, Social Media) if you use my work outside Wikimedia.\nDo not copy this image illegally by ignoring the terms of the license below, as it is not in the public domain. If you would like special permission to use, license, or purchase the image please contact me to negotiate terms.\n\nMore of my work can be found in my personal gallery or at my Peertube channel.\n\n\n\n\nA prepared attribution especially for use in Social Media and Print (newspapers, flyers, books, murals, mousepads, mugs, posters, t-shirts) can be copied here, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "cs-g923": {
+    "file": "commons-cs-g923.webp",
+    "credit": "FreeMediaKid!, CC BY 4.0, via Wikimedia Commons"
+  },
+  "cs-dualsense-edge": {
+    "file": "commons-cs-dualsense-edge.webp",
+    "credit": "Sonson2, CC0, via Wikimedia Commons"
+  },
+  "cs-xbox-elite2": {
+    "file": "commons-cs-xbox-elite2.webp",
+    "credit": "mliu92, CC BY-SA 2.0, via Wikimedia Commons"
+  },
+  "cs-8bitdo-ultimate2": {
+    "file": "commons-cs-8bitdo-ultimate2.webp",
+    "credit": "Hayden Schiff, CC BY 4.0, via Wikimedia Commons"
+  },
+  "au-xtreme4": {
+    "file": "commons-au-xtreme4.webp",
+    "credit": "Pittigrilli, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "au-shure-mv7plus": {
+    "file": "commons-au-shure-mv7plus.webp",
+    "credit": "Panos Sakalakis, CC BY 2.0, via Wikimedia Commons"
+  },
+  "au-charge6": {
+    "file": "commons-au-charge6.webp",
+    "credit": "Yanki01, CC BY 2.0, via Wikimedia Commons"
+  },
+  "au-rode-ntusbplus": {
+    "file": "commons-au-rode-ntusbplus.webp",
+    "credit": "Nicolas Rück (WMDE), CC BY-SA 3.0, via Wikimedia Commons"
+  },
+  "au-flip7": {
+    "file": "commons-au-flip7.webp",
+    "credit": "Freekhou5, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "au-koss-portapro": {
+    "file": "commons-au-koss-portapro.webp",
+    "credit": "Cooper55566, CC0, via Wikimedia Commons"
+  },
+  "au-jbl-go4": {
+    "file": "commons-au-jbl-go4.webp",
+    "credit": "Jdp84, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "mb-mac-studio-max": {
+    "file": "commons-mb-mac-studio-max.webp",
+    "credit": "极客湾Geekerwan, CC BY 3.0, via Wikimedia Commons"
+  },
+  "mb-herman-aeron": {
+    "file": "commons-mb-herman-aeron.webp",
+    "credit": "Badudoy at English Wikipedia, CC BY-SA 3.0, via Wikimedia Commons"
+  },
+  "mb-mac-mini-pro": {
+    "file": "commons-mb-mac-mini-pro.webp",
+    "credit": "Seasider53, CC BY 4.0, via Wikimedia Commons"
+  },
+  "mb-mac-mini": {
+    "file": "commons-mb-mac-mini.webp",
+    "credit": "Seasider53, CC BY 4.0, via Wikimedia Commons"
+  },
+  "mb-lacie-rugged-4tb": {
+    "file": "commons-mb-lacie-rugged-4tb.webp",
+    "credit": "TaurusEmerald, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "mb-shure-mv7": {
+    "file": "commons-mb-shure-mv7.webp",
+    "credit": "Panos Sakalakis, CC BY 2.0, via Wikimedia Commons"
+  },
+  "mb-airpods-pro-2": {
+    "file": "commons-mb-airpods-pro-2.webp",
+    "credit": "— aconcagua (talk), CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "mb-magic-keyboard": {
+    "file": "commons-mb-magic-keyboard.webp",
+    "credit": "Shujenchang, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "mb-magic-trackpad": {
+    "file": "commons-mb-magic-trackpad.webp",
+    "credit": "Fabián Rodríguez, Public domain, via Wikimedia Commons"
+  },
+  "mb-apple-pencil-pro": {
+    "file": "commons-mb-apple-pencil-pro.webp",
+    "credit": "Brett Jordan, CC BY 2.0, via Wikimedia Commons"
+  },
+  "mb-logitech-mx-master": {
+    "file": "commons-mb-logitech-mx-master.webp",
+    "credit": "Jacek Halicki, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "mb-magic-mouse": {
+    "file": "commons-mb-magic-mouse.webp",
+    "credit": "Julian Berry, CC BY-SA 2.0, via Wikimedia Commons"
+  },
+  "cm-leica-q3": {
+    "file": "commons-cm-leica-q3.webp",
+    "credit": "Peachyeung316, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "cm-canon-r5ii": {
+    "file": "commons-cm-canon-r5ii.webp",
+    "credit": "D. Benjamin Miller, CC0, via Wikimedia Commons"
+  },
+  "cm-sony-a7rv": {
+    "file": "commons-cm-sony-a7rv.webp",
+    "credit": "Franz van Duns, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "cm-sony-70200gm2": {
+    "file": "commons-cm-sony-70200gm2.webp",
+    "credit": "Henry Söderlund from Helsinki, Finland, Finland, CC BY 2.0, via Wikimedia Commons"
+  },
+  "cm-nikon-z2470ii": {
+    "file": "commons-cm-nikon-z2470ii.webp",
+    "credit": "Wilfredor, CC0, via Wikimedia Commons"
+  },
+  "cm-nikon-z6iii": {
+    "file": "commons-cm-nikon-z6iii.webp",
+    "credit": "Shixart1985, CC BY 2.0, via Wikimedia Commons"
+  },
+  "cm-canon-rf2470": {
+    "file": "commons-cm-canon-rf2470.webp",
+    "credit": "Henry Söderlund from Helsinki, Finland, CC BY 2.0, via Wikimedia Commons"
+  },
+  "cm-sony-2470gm2": {
+    "file": "commons-cm-sony-2470gm2.webp",
+    "credit": "PantheraLeo1359531, CC BY 4.0, via Wikimedia Commons"
+  },
+  "cm-nikon-z180600": {
+    "file": "commons-cm-nikon-z180600.webp",
+    "credit": "TTTNIS, CC0, via Wikimedia Commons"
+  },
+  "cm-fuji-x100vi": {
+    "file": "commons-cm-fuji-x100vi.webp",
+    "credit": "昼落ち, CC0, via Wikimedia Commons"
+  },
+  "cm-sony-a6700": {
+    "file": "commons-cm-sony-a6700.webp",
+    "credit": "Tsungam, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "cm-sony-35gm": {
+    "file": "commons-cm-sony-35gm.webp",
+    "credit": "Henry Söderlund from Helsinki, Finland, CC BY 2.0, via Wikimedia Commons"
+  },
+  "cm-tamron-70180g2": {
+    "file": "commons-cm-tamron-70180g2.webp",
+    "credit": "Henry Söderlund, CC BY 2.0, via Wikimedia Commons"
+  },
+  "cm-dji-mini4pro": {
+    "file": "commons-cm-dji-mini4pro.webp",
+    "credit": "Jacek Halicki, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "cm-sony-50f18": {
+    "file": "commons-cm-sony-50f18.webp",
+    "credit": "Dllu, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "cm-sandisk-128": {
+    "file": "commons-cm-sandisk-128.webp",
+    "credit": "Rektal Trauma, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-lambo-revuelto": {
+    "file": "commons-sc-lambo-revuelto.webp",
+    "credit": "Alexander-93, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-ferrari-296": {
+    "file": "commons-sc-ferrari-296.webp",
+    "credit": "Alexander Migl, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-mclaren-750s": {
+    "file": "commons-sc-mclaren-750s.webp",
+    "credit": "Alexander-93, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-ferrari-roma": {
+    "file": "commons-sc-ferrari-roma.webp",
+    "credit": "Alexander-93, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-lambo-urus": {
+    "file": "commons-sc-lambo-urus.webp",
+    "credit": "JustAnotherCarDesigner, CC0, via Wikimedia Commons"
+  },
+  "sc-aston-db12": {
+    "file": "commons-sc-aston-db12.webp",
+    "credit": "Alexander-93, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-nissan-gtr": {
+    "file": "commons-sc-nissan-gtr.webp",
+    "credit": "Romain D C, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-aston-vantage": {
+    "file": "commons-sc-aston-vantage.webp",
+    "credit": "Matti Blume, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-porsche-718-gt4": {
+    "file": "commons-sc-porsche-718-gt4.webp",
+    "credit": "Matti Blume, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-audi-rs6": {
+    "file": "commons-sc-audi-rs6.webp",
+    "credit": "Alexander Migl, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-bmw-m4-cs": {
+    "file": "commons-sc-bmw-m4-cs.webp",
+    "credit": "MrWalkr, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-corvette-z06": {
+    "file": "commons-sc-corvette-z06.webp",
+    "credit": "Jason Lawrence, CC BY 2.0, via Wikimedia Commons"
+  },
+  "sc-lotus-emira": {
+    "file": "commons-sc-lotus-emira.webp",
+    "credit": "MrWalkr, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-alpine-a110": {
+    "file": "commons-sc-alpine-a110.webp",
+    "credit": "Alexander Migl, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-tesla-s-plaid": {
+    "file": "commons-sc-tesla-s-plaid.webp",
+    "credit": "Granada, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-corvette-stingray": {
+    "file": "commons-sc-corvette-stingray.webp",
+    "credit": "Ermell, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-mustang-dark-horse": {
+    "file": "commons-sc-mustang-dark-horse.webp",
+    "credit": "UltraTech66, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-bmw-m1000rr": {
+    "file": "commons-sc-bmw-m1000rr.webp",
+    "credit": "Franc from USA / CA, CC BY-SA 2.0, via Wikimedia Commons"
+  },
+  "sc-ducati-v4-s": {
+    "file": "commons-sc-ducati-v4-s.webp",
+    "credit": "TaurusEmerald, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-yamaha-r1": {
+    "file": "commons-sc-yamaha-r1.webp",
+    "credit": "PekePON (talk), CC BY-SA 3.0, via Wikimedia Commons"
+  },
+  "sc-driving-gloves": {
+    "file": "commons-sc-driving-gloves.webp",
+    "credit": "-oo0(GoldTrader)0oo-, Public domain, via Wikimedia Commons"
   }
 }

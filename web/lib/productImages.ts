@@ -121,6 +121,14 @@ const COVER_BY_ITEM: Record<string, string> = {
   "jackpot-car": "car-rr-cullinan",
   "vault-submariner": "wt-gmt-master",
   "vault-gold": "gd-bar-250g",
+  "dollar-apple": "ap-vision-pro",
+  "dollar-galaxy": "gx-fold7-256",
+  "dollar-gaming": "gm-ryzen9950x3d",
+  "starter-ps5": "cs-rog-xbox-ally",
+  "starter-audio": "au-xtreme4",
+  "starter-macbook": "mb-mac-studio-max",
+  "starter-camera": "cm-leica-q3",
+  "jackpot-supercar": "sc-lambo-revuelto",
 };
 
 /** Unsplash 사진도 같은 톤으로 만든 판이 있으면 바꿔 끼운다(studio.json 의 "file:<원본>" 키) */

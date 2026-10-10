@@ -42,6 +42,7 @@ async function search(items) {
     if (only.length && !only.some((o) => item.id.includes(o))) continue;
     if (out[item.id]?.length) continue;
     if (!retry && item.id in out) continue;
+    if (retry && !only.length) continue;
     let q = item.query.replace(/\(.*?\)/g, "").replace(/\b(set of \d+|with .*|\d+GB|\d+TB|\d+m\b)/gi, "").trim();
     if (retry) q = simplify(q);
     const data = await api({ action: "query", generator: "search", gsrsearch: q + " filetype:bitmap", gsrnamespace: 6, gsrlimit: 12, prop: "imageinfo", iiprop: "url|size|extmetadata", iiurlwidth: 1200 });

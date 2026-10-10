@@ -178,7 +178,8 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-strip-item { display: block; width: 100%; padding: 0; border: 0; background: none; color: var(--v-text); text-align: left; cursor: pointer; }
 .v-strip-photo { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--v-r-card); background: var(--v-photo); }
 .v-strip-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.v-strip-name { display: block; overflow: hidden; margin-top: 8px; color: var(--v-title); font-size: var(--v-fs-small); line-height: 1.4; white-space: nowrap; text-overflow: ellipsis; }
+/* 이름은 두 줄 높이로 고정해 옆 타일과 값 줄이 나란히 선다 */
+.v-strip-name { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; height: calc(var(--v-fs-small) * 1.4 * 2); margin-top: 8px; color: var(--v-title); font-size: var(--v-fs-small); line-height: 1.4; word-break: keep-all; overflow-wrap: anywhere; }
 .v-strip-value { display: block; color: var(--v-sub); font-size: var(--v-fs-small); }
 @media (min-width: 768px) { .v-strip > li { flex-basis: 22%; } }
 /* 상품 타일은 단추다(눌러서 상품 시트) */

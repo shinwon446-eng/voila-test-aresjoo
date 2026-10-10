@@ -4,9 +4,12 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 const cands = JSON.parse(readFileSync(new URL("candidates.json", import.meta.url), "utf8"));
 const path = new URL("picks.json", import.meta.url);
 const picks = existsSync(path) ? JSON.parse(readFileSync(path, "utf8")) : {};
+// 사람이 뺀 상품(reject.mjs 가 적는다)은 다시 고르지 않는다
+const rejectedPath = new URL("rejected.json", import.meta.url);
+const rejected = new Set(existsSync(rejectedPath) ? JSON.parse(readFileSync(rejectedPath, "utf8")) : []);
 let added = 0;
 for (const [id, list] of Object.entries(cands)) {
-  if (!list.length || picks[id]) continue;
+  if (!list.length || picks[id] || rejected.has(id)) continue;
   picks[id] = list[0].title;
   added += 1;
 }

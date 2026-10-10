@@ -12,3 +12,4 @@ web/test-results/
 web/playwright-report/
 qa/codex/*-log.txt
 qa/codex/*.log
+qa/before/results.json

@@ -184,7 +184,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
             })}
           </ul>
         )}
-        <div className="v-links"><TextLink href="/fairness">{t("nav.verify")}</TextLink></div>
+        <div className="v-links"><TextLink href="/verify">{t("nav.verify")}</TextLink></div>
       </section>
       </div>
 

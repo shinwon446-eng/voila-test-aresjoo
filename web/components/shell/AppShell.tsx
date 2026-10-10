@@ -23,7 +23,7 @@ export const NAV = [
   { key: "boxes", href: "/" },
   { key: "inventory", href: "/inventory" },
   { key: "wallet", href: "/wallet" },
-  { key: "verify", href: "/fairness" },
+  { key: "verify", href: "/verify" },
   { key: "guide", href: "/guide" },
   { key: "account", href: "/account" },
 ] as const;

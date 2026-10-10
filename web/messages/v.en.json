@@ -22,7 +22,7 @@
   },
   "home": {
     "title": "Boxes",
-    "desc": "Open a box and receive an item or USDT at published odds. Verify each result on the spot.",
+    "desc": "Open boxes with USDT. A physical item is shipped to you or taken as 95% of retail in USDT. Verify each result on the spot.",
     "filter": "Category",
     "all": "All boxes",
     "price": "{price} / open",
@@ -64,7 +64,7 @@
     "photoNote": "Photos are staged images.",
     "strip": "Top items",
     "tiers": "Odds by tier",
-    "evNote": "Expected value uses retail prices. Taking USDT pays {pct}% of retail.",
+    "evNote": "Expected value is the odds-weighted average retail value divided by the box price. It does not guarantee what a single open returns. Taking USDT pays {pct}% of retail.",
     "receive": "How you get it",
     "receivePhysical": "Shipped, or taken as USDT",
     "receiveDigital": "As a code, or taken as USDT",
@@ -74,7 +74,7 @@
     "noReviews": "No reviews yet. Only real openings can be reviewed.",
     "reviewProof": "Tied to a real opening record.",
     "stripNote": "Highest value first. The odds of any physical item are {pct}.",
-    "mostLikely": "{price} per open. The most common result is {amount} cashback, {pct}.",
+    "mostLikely": "{price} per open. The most common result is {amount} cashback, with a {pct} chance.",
     "compareNote": "Price per open and odds for this item. No box sells the item outright.",
     "guestNote": "{n} open, {amount}. After login, your USDT balance pays.",
     "takeAmount": "If taken as USDT ({pct}% of retail)",
@@ -162,7 +162,28 @@
     "bad": "The recalculated result does not match the item you received.",
     "failed": "The result could not be calculated. The record has empty values.",
     "manual": "Verify with your own values",
-    "partial": "The number was recalculated and matches. This record has no odds table from that time, so the item could not be checked."
+    "partial": "The number was recalculated and matches. This record has no odds table from that time, so the item could not be checked.",
+    "records": "My openings",
+    "loginLine": "Log in to recompute each of your openings.",
+    "noRecords": "No openings yet.",
+    "manualTitle": "Compute from values",
+    "manualDesc": "Paste the values from a result screen or the vault and you get the same number.",
+    "lockedOptional": "Locked value (optional)",
+    "box": "Box",
+    "compute": "Compute",
+    "inputFail": "Enter the revealed value, your device value and the round.",
+    "hash": "Hash of the revealed value",
+    "hashOk": "Matches the locked value",
+    "hashBad": "Differs from the locked value",
+    "currentTableNote": "The item was found with the current odds table. Past openings are checked against the table saved at the time, under My openings.",
+    "howTitle": "How it works",
+    "how1": "Before opening",
+    "how1v": "The server picks a value and shows only its hash",
+    "how2": "On opening",
+    "how2v": "The number comes from the server value, your device value and the round",
+    "how3": "After opening",
+    "how3v": "The server value is revealed so anyone can recompute the number",
+    "scope": "Verification confirms the number followed the revealed values. Shipping and retail prices are checked separately."
   },
   "inv": {
     "title": "Inventory",
@@ -200,7 +221,8 @@
     "cancelDesc": "The item returns to your inventory, and the shipping fee returns to your balance.",
     "cancelFailed": "The request could not be cancelled. The item may have shipped already.",
     "writeReview": "Write a review",
-    "reviewed": "Review posted"
+    "reviewed": "Review posted",
+    "takeLine": "{amount} if taken as USDT"
   },
   "ship": {
     "title": "Ship it",
@@ -350,7 +372,8 @@
     "logoutTitle": "Log out",
     "logoutDesc": "Your balance and vault stay with the account.",
     "loggedOut": "Logged out.",
-    "more": "Nickname, password, delete account"
+    "more": "Nickname, password, delete account",
+    "connect": "Connect"
   },
   "review": {
     "title": "Write a review",

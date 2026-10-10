@@ -22,7 +22,7 @@
   },
   "home": {
     "title": "盲盒",
-    "desc": "打开盲盒，按公开概率获得商品或 USDT。结果当场验证。",
+    "desc": "用 USDT 开盲盒。实物可配送到家，或按零售价 95% 领取 USDT。结果当场验证。",
     "filter": "分类",
     "all": "全部盲盒",
     "price": "{price} / 次",
@@ -64,7 +64,7 @@
     "photoNote": "图片为演示图。",
     "strip": "代表实物",
     "tiers": "各区间概率",
-    "evNote": "期望价值比例按市场零售价计算。领取 USDT 时为零售价的 {pct}%。",
+    "evNote": "期望价值比例是按概率加权的平均商品价除以盲盒价格，不保证单次开箱的回收额。领取 USDT 时为零售价的 {pct}%。",
     "receive": "领取方式",
     "receivePhysical": "配送，或领取 USDT",
     "receiveDigital": "兑换码，或领取 USDT",
@@ -74,7 +74,7 @@
     "noReviews": "暂无评价。只有真实开箱记录才能评价。",
     "reviewProof": "与真实开箱记录绑定的评价。",
     "stripNote": "按价值从高到低。任意实物出现的概率为 {pct}。",
-    "mostLikely": "每次 {price}。最常见的结果是 {amount} 返现，{pct}。",
+    "mostLikely": "每次 {price}。最常见的结果是 {amount} 返现，出现概率 {pct}。",
     "compareNote": "同一商品的单次价格与概率。任何盲盒都不是直接购买该商品。",
     "guestNote": "{n} 次，{amount}。登录后用 USDT 余额支付。",
     "takeAmount": "领取 USDT 时（零售价的 {pct}%）",
@@ -162,7 +162,28 @@
     "bad": "重新计算的结果与获得的商品不一致。",
     "failed": "无法计算。记录中的值为空。",
     "manual": "输入数值自行验证",
-    "partial": "已重新计算号码并确认一致。此记录没有当时的概率表，无法核对商品。"
+    "partial": "已重新计算号码并确认一致。此记录没有当时的概率表，无法核对商品。",
+    "records": "我的开箱记录",
+    "loginLine": "登录后可逐条重新计算我的开箱记录。",
+    "noRecords": "还没有开箱记录。",
+    "manualTitle": "手动输入计算",
+    "manualDesc": "粘贴结果页或仓库中的值，即可得到相同的号码。",
+    "lockedOptional": "预先锁定的值（可选）",
+    "box": "盲盒",
+    "compute": "计算",
+    "inputFail": "需要输入公开值、我的设备值和回合。",
+    "hash": "公开值的哈希",
+    "hashOk": "与锁定值一致",
+    "hashBad": "与锁定值不一致",
+    "currentTableNote": "商品按当前概率表查找。过去的记录在“我的开箱记录”中按当时的概率表核对。",
+    "howTitle": "方式",
+    "how1": "开箱前",
+    "how1v": "服务器确定一个值，只公开其哈希",
+    "how2": "开箱时",
+    "how2v": "由服务器值、我的设备值和回合计算号码",
+    "how3": "开箱后",
+    "how3v": "公开服务器值，任何人都能重新计算同一号码",
+    "scope": "验证确认号码按公开值计算。配送与零售价另行确认。"
   },
   "inv": {
     "title": "保管箱",
@@ -200,7 +221,8 @@
     "cancelDesc": "商品回到保管箱，已付运费退回余额。",
     "cancelFailed": "未能取消。商品可能已经发货。",
     "writeReview": "写评价",
-    "reviewed": "评价已发布"
+    "reviewed": "评价已发布",
+    "takeLine": "领取 USDT 可得 {amount}"
   },
   "ship": {
     "title": "配送到家",
@@ -350,7 +372,8 @@
     "logoutTitle": "退出登录",
     "logoutDesc": "余额与仓库仍保留在账户中。",
     "loggedOut": "已退出登录。",
-    "more": "昵称、密码、注销账户"
+    "more": "昵称、密码、注销账户",
+    "connect": "连接"
   },
   "review": {
     "title": "写评价",

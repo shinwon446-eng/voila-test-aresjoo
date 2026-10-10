@@ -54,7 +54,7 @@ export function VerifySheet({ record, onClose }: { record: VerifyRecord | null; 
           </Rows>
           {verdict && <Line fail={verdict === "bad"}>{t("verify." + verdict)}</Line>}
           {outcome.state === "failed" && <Line fail>{t("verify.failed")}</Line>}
-          <div className="v-links"><TextLink href="/fairness">{t("verify.manual")}</TextLink></div>
+          <div className="v-links"><TextLink href="/verify">{t("verify.manual")}</TextLink></div>
         </>
       )}
     </Sheet>

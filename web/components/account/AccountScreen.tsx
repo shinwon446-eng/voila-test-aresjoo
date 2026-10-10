@@ -49,16 +49,16 @@ export function AccountScreen() {
               <div className="v-rowitem"><Link href="/wallet/withdraw" className="v-row v-row--link"><span>{t("wallet.withdraw")}</span><span aria-hidden>›</span></Link></div>
             </Rows>
             <Rows label={t("account.vault")}>
-              <div className="v-rowitem"><Link href="/inventory" className="v-row v-row--link"><span>{t("account.held")}</span><span className="v-num">{t("account.countN", { n: counts.held })}</span></Link></div>
-              <div className="v-rowitem"><Link href="/inventory" className="v-row v-row--link"><span>{t("account.shippingNow")}</span><span className="v-num">{t("account.countN", { n: counts.shipping })}</span></Link></div>
+              <div className="v-rowitem"><Link href="/inventory" className="v-row v-row--link"><span>{t("account.held")}</span><span className="v-num">{t("account.countN", { n: counts.held })} ›</span></Link></div>
+              <div className="v-rowitem"><Link href="/inventory" className="v-row v-row--link"><span>{t("account.shippingNow")}</span><span className="v-num">{t("account.countN", { n: counts.shipping })} ›</span></Link></div>
             </Rows>
             <Rows label={t("account.security")}>
-              <div className="v-rowitem"><button type="button" className="v-row v-row--link v-row--button" onClick={() => setSecuring(true)}><span>{t("account.twoFactor")}</span><span className="v-num">{twoFactor ? t("account.on") : t("account.off")}</span></button></div>
+              <div className="v-rowitem"><button type="button" className="v-row v-row--link v-row--button" onClick={() => setSecuring(true)}><span>{t("account.twoFactor")}</span><span className="v-num">{twoFactor ? t("account.on") : t("account.connect")} ›</span></button></div>
               <Row label={t("account.email")}>{user.email ?? user.label}</Row>
             </Rows>
             <Rows label={t("account.help")}>
               <div className="v-rowitem"><Link href="/guide" className="v-row v-row--link"><span>{t("nav.guide")}</span><span aria-hidden>›</span></Link></div>
-              <div className="v-rowitem"><Link href="/fairness" className="v-row v-row--link"><span>{t("nav.verify")}</span><span aria-hidden>›</span></Link></div>
+              <div className="v-rowitem"><Link href="/verify" className="v-row v-row--link"><span>{t("nav.verify")}</span><span aria-hidden>›</span></Link></div>
               <div className="v-rowitem"><Link href="/legal" className="v-row v-row--link"><span>{t("nav.legal")}</span><span aria-hidden>›</span></Link></div>
             </Rows>
             <Button onClick={() => setLeaving(true)}>{t("account.logout")}</Button>

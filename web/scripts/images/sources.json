@@ -618,5 +618,37 @@
   "sc-driving-gloves": {
     "file": "commons-sc-driving-gloves.webp",
     "credit": "-oo0(GoldTrader)0oo-, Public domain, via Wikimedia Commons"
+  },
+  "sc-lambo-temerario": {
+    "file": "commons-sc-lambo-temerario.webp",
+    "credit": "Alexander Migl, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-mclaren-artura": {
+    "file": "commons-sc-mclaren-artura.webp",
+    "credit": "MrWalkr, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-porsche-taycan-turbo": {
+    "file": "commons-sc-porsche-taycan-turbo.webp",
+    "credit": "Rutger van der Maar from Leiden, The Netherlands, CC BY 2.0, via Wikimedia Commons"
+  },
+  "sc-mercedes-amg-gt": {
+    "file": "commons-sc-mercedes-amg-gt.webp",
+    "credit": "Alexander-93, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-bmw-m5": {
+    "file": "commons-sc-bmw-m5.webp",
+    "credit": "Matti Blume, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-kawasaki-h2": {
+    "file": "commons-sc-kawasaki-h2.webp",
+    "credit": "PekePON, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "sc-aprilia-rsv4": {
+    "file": "commons-sc-aprilia-rsv4.webp",
+    "credit": "Daniel Hartwig from San Mateo, CA, USA, CC BY 2.0, via Wikimedia Commons"
+  },
+  "sc-ducati-streetfighter": {
+    "file": "commons-sc-ducati-streetfighter.webp",
+    "credit": "Alexandre Prevot from Nancy, France, CC BY-SA 4.0, via Wikimedia Commons"
   }
 }

@@ -69,7 +69,6 @@ A prepared attribution especially for use in Social Media and Print (newspapers,
 | commons-ap-ipad-mini.webp | ap-ipad-mini | https://commons.wikimedia.org/wiki/File:IPad_mini_(A17_Pro)_backside.jpg | 茅野ふたば | CC BY-SA 4.0 |
 | commons-ap-magic-keyboard-ipad.webp | ap-magic-keyboard-ipad | https://commons.wikimedia.org/wiki/File:Apple_Keyboards_2nd_3rd_Gen_right.png | Filterkaffee | CC BY-SA 4.0 |
 | commons-ap-homepod.webp | ap-homepod | https://commons.wikimedia.org/wiki/File:HomePod_2_2018-02-23.jpg | FASTILY | CC BY-SA 4.0 |
-| commons-da-watchse.webp | da-watchse | https://commons.wikimedia.org/wiki/File:Apple_Headquarters_in_Cupertino.jpg | Joe Ravi (Shutterstock iStock Dreamstime) | CC BY-SA 3.0 |
 | commons-ap-airpods-pro-2.webp | ap-airpods-pro-2 | https://commons.wikimedia.org/wiki/File:AirPods_Pro_case.jpg | — aconcagua (talk) | CC BY-SA 4.0 |
 | commons-ap-beats-fit-pro.webp | ap-beats-fit-pro | https://commons.wikimedia.org/wiki/File:Beats_Fit_Pro_-_1.jpg | Kyu3a | CC BY-SA 4.0 |
 | commons-ap-airpods-4-anc.webp | ap-airpods-4-anc | https://commons.wikimedia.org/wiki/File:AirPods_4_ANC_and_case.jpg | SimplyPops | CC0 |
@@ -104,18 +103,12 @@ A prepared attribution especially for use in Social Media and Print (newspapers,
 | commons-car-ducati-v4.webp | car-ducati-v4 | https://commons.wikimedia.org/wiki/File:Ducati_Panigale_V4_-_Tuning_World_Bodensee_2018,_Friedrichshafen_(OW1A0484).jpg | Matti Blume | CC BY-SA 4.0 |
 | commons-car-goldwing.webp | car-goldwing | https://commons.wikimedia.org/wiki/File:Honda_Gold_Wing_Trike_-_Flickr_-_mick_-_Lumix.jpg | Mick from Northamptonshire, England | CC BY 2.0 |
 | commons-car-harley-rg.webp | car-harley-rg | https://commons.wikimedia.org/wiki/File:2019_Harley-Davidson_CVO_Road_Glide_in_Red_Pepper_%26_Magnetic_Grey_With_Black_Hole.jpg | User:Lightburst | CC BY-SA 4.0 |
-| commons-car-zero-srf.webp | car-zero-srf | https://commons.wikimedia.org/wiki/File:Seulberger_Mark,_Dreim%C3%A4rker_GI_OE_42,_HH_SR_P_46._HH_F,_Petterweiler_Seite.jpg | Karsten Ratzke | CC0 |
 | commons-car-bmw-gs.webp | car-bmw-gs | https://commons.wikimedia.org/wiki/File:BMW_R1300_GS_Option_719_Tramuntana.jpg | Corvettec6r | CC BY 4.0 |
 | commons-car-sworks.webp | car-sworks | https://commons.wikimedia.org/wiki/File:2026_Fleche_Wallonne_bike_FDJ_Demi_Vollering_1.jpg | Hoebele | CC BY-SA 4.0 |
 | commons-car-vespa-gts.webp | car-vespa-gts | https://commons.wikimedia.org/wiki/File:Vespa_GTS_300_Super_2.jpg | Ottili from www.vespaforum.de | CC0 |
-| commons-car-brompton-t.webp | car-brompton-t | https://commons.wikimedia.org/wiki/File:The_Hospital_for_Consumption,_Brompton_Road,_Fulham;_viewed_Wellcome_L0050925.jpg | unknown | CC BY 4.0 |
-| commons-car-vanmoof.webp | car-vanmoof | https://commons.wikimedia.org/wiki/File:VanMoof_S,_S2,_S3_and_S5.jpg | Sanderadio | CC BY-SA 4.0 |
 | commons-car-michelin.webp | car-michelin | https://commons.wikimedia.org/wiki/File:Ford_Focus_RS-4_(30428698211).jpg | bez_uk | CC BY-SA 2.0 |
 | commons-car-garmin-edge.webp | car-garmin-edge | https://commons.wikimedia.org/wiki/File:Garmin_Edge_1050_box_isometric_view.jpg | Hugo LUC | CC BY-SA 4.0 |
-| commons-car-ev-cable.webp | car-ev-cable | https://commons.wikimedia.org/wiki/File:EV_Charging_station,_Mothitang.jpg | Christopher J. Fynn | CC BY-SA 4.0 |
 | commons-car-weathertech.webp | car-weathertech | https://commons.wikimedia.org/wiki/File:WeatherTech_Digital_Fit_Floor_Mat.jpg | Ryan Gsell | CC BY 2.0 |
-| commons-car-inflator.webp | car-inflator | https://commons.wikimedia.org/wiki/File:%22Spare_Tire%22-Pump_-_2012_Buick_Regal_GS_(6914581279).jpg | Michael Sheehan | CC BY 2.0 |
-| commons-car-cover.webp | car-cover | https://commons.wikimedia.org/wiki/File:Suzuki_Swift_JWRC_%2705_005.JPG | Tennen-Gas | CC BY-SA 3.0 |
 | commons-wt-daytona.webp | wt-daytona | https://commons.wikimedia.org/wiki/File:Black_and_diamonds_(26404429138).jpg | Thomas Quine | CC BY 2.0 |
 | commons-wt-gmt-master.webp | wt-gmt-master | https://commons.wikimedia.org/wiki/File:Rolex_GMT_Master_II_(4657617812).jpg | Håkan Dahlström from Malmö, Sweden | CC BY 2.0 |
 | commons-wt-submariner-date.webp | wt-submariner-date | https://commons.wikimedia.org/wiki/File:Rolex_Submariner_Professional.JPG | Dr.K. | CC BY-SA 3.0 |

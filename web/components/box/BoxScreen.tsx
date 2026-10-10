@@ -125,9 +125,10 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         <Row label={t("box.price")}>{fmt(box.price)}</Row>
         <Row label={t("box.top")}>{fmt(ceilingValue(box))}</Row>
         <Row label={t("box.low")}>{fmt(box.guaranteedMin)}</Row>
-        <Row label={t("box.ev")}>{(retailReturn(box) * 100).toFixed(1)}%</Row>
+        <Row label={t("box.ev")}>{(retailReturn(box) * 100).toFixed(1)}%, {t("box.evBasis")}</Row>
       </Rows>
       <p className="v-small">{t("box.evNote", { pct: Math.round(REFUND_RATE * 100) })}</p>
+      <div className="v-links"><TextLink href="/verify">{t("box.verifyLink")}</TextLink></div>
       <Rows label={t("box.tiers")}>
         {groups.map((g) => <Row key={g.key} label={t(TIER_LABEL[g.key])}>{formatRate(g.rate)}</Row>)}
       </Rows>

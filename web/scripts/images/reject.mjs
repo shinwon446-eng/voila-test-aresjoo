@@ -29,6 +29,7 @@ for (const id of ids) {
 }
 writeFileSync(picksPath, JSON.stringify(picks, null, 2) + "\n");
 writeFileSync(sourcesPath, JSON.stringify(sources, null, 2) + "\n");
+writeFileSync(studioPath, JSON.stringify(studio, null, 2) + "\n");
 // 출처 대장에서도 뺀다(fetch 가 다시 쓰지만 중간 상태도 맞춰 둔다)
 const ledgerPath = new URL("ATTRIBUTION-commons.md", dir);
 if (existsSync(ledgerPath)) {

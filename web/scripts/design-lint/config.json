@@ -21,7 +21,9 @@
       "app/[locale]/guide/**",
       "app/[locale]/not-found.tsx",
       "app/[locale]/error.tsx",
-      "app/not-found.tsx"
+      "app/not-found.tsx",
+      "components/dev/**",
+      "app/[locale]/dev/**"
     ],
     "all": [
       "app/**",

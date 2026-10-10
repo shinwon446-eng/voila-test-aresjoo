@@ -53,7 +53,16 @@ try { previous = JSON.parse(await readFile(reportPath, 'utf8')); if (!Array.isAr
 catch (error) { if (error.code !== 'ENOENT') throw new Error(`기존 검사 결과를 보존하기 위해 중단합니다: ${error.message}`); }
 const rows = [], results = [];
 const summary = { startedAt: new Date().toISOString(), baseURL, plan: path.resolve(args.plan), totalPlanItems: items.length, selectedItems: selected.length, locales, viewports: [...sizes, 'mobile360'], unavailable, results };
-const atomicJSON = async (target, value) => { const tmp = target + '.tmp'; await writeFile(tmp, JSON.stringify(value, null, 2) + '\n'); await rename(tmp, target); };
+// 동기화 프로그램이 파일을 잡고 있으면 이름 바꾸기가 잠깐 막힌다(EPERM, EBUSY). 몇 번 다시 해 보고, 그래도 안 되면 바로 쓴다.
+const atomicJSON = async (target, value) => {
+  const tmp = target + '.tmp', text = JSON.stringify(value, null, 2) + '\n';
+  await writeFile(tmp, text);
+  for (let i = 0; i < 6; i++) {
+    try { await rename(tmp, target); return; }
+    catch (error) { if (!['EPERM', 'EBUSY', 'EACCES'].includes(error.code)) throw error; await new Promise(r => setTimeout(r, 400 * (i + 1))); }
+  }
+  await writeFile(target, text);
+};
 const persist = async () => {
   await atomicJSON(path.join(out, 'results.json'), summary);
   await atomicJSON(reportPath, [...previous, ...rows.map(row => [...row.slice(0, 5), { ...row[5], runStartedAt: summary.startedAt }])]);

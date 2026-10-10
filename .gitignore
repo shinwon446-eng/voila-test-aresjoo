@@ -13,3 +13,5 @@ web/playwright-report/
 qa/codex/*-log.txt
 qa/codex/*.log
 qa/before/results.json
+qa/before/*.json
+qa/after/*.json

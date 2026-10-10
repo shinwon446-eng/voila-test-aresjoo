@@ -402,9 +402,9 @@
     "codeRule": "请输入 6 位验证器验证码。",
     "passwordSave": "修改密码",
     "closeTitle": "注销账户",
-    "closeDesc": "请先领取余额和仓库中的商品。注销后账户和记录将被删除。",
+    "closeDesc": "注销后账户、记录、剩余余额和仓库中的商品都会删除。请在注销前领取。",
     "closeCta": "注销账户",
-    "closeConfirm": "无法撤销。余额和仓库商品将丢失。"
+    "closeConfirm": "无法撤销。账户、记录、剩余余额和仓库商品将被删除。"
   },
   "review": {
     "title": "写评价",

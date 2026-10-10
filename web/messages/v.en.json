@@ -402,9 +402,9 @@
     "codeRule": "Enter the 6-digit authenticator code.",
     "passwordSave": "Change password",
     "closeTitle": "Delete account",
-    "closeDesc": "Take your balance and vault items first. Deleting removes the account and its records.",
+    "closeDesc": "Deleting removes the account, its records, any remaining balance and items in the vault. Take what you want before deleting.",
     "closeCta": "Delete account",
-    "closeConfirm": "This cannot be undone. Balance and vault items are lost."
+    "closeConfirm": "This cannot be undone. The account, its records, remaining balance and vault items are removed."
   },
   "review": {
     "title": "Write a review",

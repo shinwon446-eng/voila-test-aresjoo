@@ -192,5 +192,32 @@
     "confirmTitle": "배송 신청",
     "confirmDesc": "{address} 주소로 보내고, 출고된 뒤에는 취소할 수 없습니다.",
     "failed": "배송 신청을 접수하지 못했습니다. 상품은 보관함에 그대로 있습니다."
+  },
+  "state": {
+    "notFoundTitle": "없는 주소",
+    "notFoundDesc": "주소가 바뀌었거나 없는 화면입니다.",
+    "errorTitle": "화면을 불러오지 못했습니다",
+    "errorDesc": "다시 불러오면 하던 곳에서 이어집니다.",
+    "retry": "다시 불러오기",
+    "toBoxes": "박스 보기",
+    "offline": "인터넷 연결이 끊겼습니다. 연결되면 이어집니다."
+  },
+  "guide": {
+    "title": "이용 방법",
+    "desc": "박스를 고르고, 열고, 받은 상품을 배송 받거나 USDT로 받습니다.",
+    "pickTitle": "박스를 고릅니다",
+    "pickBody": "박스마다 구성품과 구간별 확률, 상품별 확률이 적혀 있습니다.",
+    "openTitle": "엽니다",
+    "openBody": "단추에 적힌 금액이 잔액에서 결제되고 결과가 바로 나옵니다.",
+    "getTitle": "받습니다",
+    "getBody": "받은 상품은 보관함에 들어가고, 배송 받거나 USDT로 받을 수 있습니다.",
+    "facts": "알아 둘 값",
+    "takeRate": "USDT로 받을 때",
+    "takeRateValue": "시중 정가의 {pct}%",
+    "cashItems": "USDT 상품",
+    "cashItemsValue": "열면 바로 잔액에",
+    "shipFee": "배송비",
+    "minCharge": "가장 적은 충전 금액",
+    "verifyBody": "모든 결과는 열기 전에 잠가 둔 값으로 다시 계산해 볼 수 있습니다."
   }
 }

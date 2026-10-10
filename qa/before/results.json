@@ -15758,16 +15758,1895 @@
       "locale": "zh",
       "viewport": "mobile",
       "state": "guest",
-      "status": "진행 중",
+      "status": "완료",
       "files": [
         "wallet-guest-deposit-zh-mobile.png",
-        "wallet-guest-deposit-full-zh-mobile.png"
+        "wallet-guest-deposit-full-zh-mobile.png",
+        "wallet-guest-withdraw-zh-mobile.png",
+        "wallet-guest-withdraw-full-zh-mobile.png",
+        "wallet-guest-history-zh-mobile.png",
+        "wallet-guest-history-full-zh-mobile.png"
       ],
       "shots": [
         {
           "name": "deposit",
           "findings": 7,
           "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "history",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3648
+    },
+    {
+      "id": "wallet-guest",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "wallet-guest-deposit-zh-desktop.png",
+        "wallet-guest-deposit-full-zh-desktop.png",
+        "wallet-guest-withdraw-zh-desktop.png",
+        "wallet-guest-withdraw-full-zh-desktop.png",
+        "wallet-guest-history-zh-desktop.png",
+        "wallet-guest-history-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 3,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "withdraw",
+          "findings": 0,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "history",
+          "findings": 0,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3806
+    },
+    {
+      "id": "wallet-guest",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 7,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "history",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2405
+    },
+    {
+      "id": "wallet-funded",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "funded",
+      "status": "완료",
+      "files": [
+        "wallet-funded-deposit-ko-mobile.png",
+        "wallet-funded-deposit-full-ko-mobile.png",
+        "wallet-funded-withdraw-ko-mobile.png",
+        "wallet-funded-withdraw-full-ko-mobile.png",
+        "wallet-funded-history-ko-mobile.png",
+        "wallet-funded-history-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 8,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "history",
+          "findings": 4,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3757
+    },
+    {
+      "id": "wallet-funded",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "funded",
+      "status": "완료",
+      "files": [
+        "wallet-funded-deposit-ko-desktop.png",
+        "wallet-funded-deposit-full-ko-desktop.png",
+        "wallet-funded-withdraw-ko-desktop.png",
+        "wallet-funded-withdraw-full-ko-desktop.png",
+        "wallet-funded-history-ko-desktop.png",
+        "wallet-funded-history-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 4,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "withdraw",
+          "findings": 2,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "history",
+          "findings": 0,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3787
+    },
+    {
+      "id": "wallet-funded",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "funded",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 8,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "history",
+          "findings": 4,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2457
+    },
+    {
+      "id": "wallet-funded",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "funded",
+      "status": "완료",
+      "files": [
+        "wallet-funded-deposit-en-mobile.png",
+        "wallet-funded-deposit-full-en-mobile.png",
+        "wallet-funded-withdraw-en-mobile.png",
+        "wallet-funded-withdraw-full-en-mobile.png",
+        "wallet-funded-history-en-mobile.png",
+        "wallet-funded-history-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 8,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "history",
+          "findings": 4,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3667
+    },
+    {
+      "id": "wallet-funded",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "funded",
+      "status": "완료",
+      "files": [
+        "wallet-funded-deposit-en-desktop.png",
+        "wallet-funded-deposit-full-en-desktop.png",
+        "wallet-funded-withdraw-en-desktop.png",
+        "wallet-funded-withdraw-full-en-desktop.png",
+        "wallet-funded-history-en-desktop.png",
+        "wallet-funded-history-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 4,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "withdraw",
+          "findings": 2,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "history",
+          "findings": 0,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3807
+    },
+    {
+      "id": "wallet-funded",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "funded",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 8,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "history",
+          "findings": 4,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2446
+    },
+    {
+      "id": "wallet-funded",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "funded",
+      "status": "완료",
+      "files": [
+        "wallet-funded-deposit-zh-mobile.png",
+        "wallet-funded-deposit-full-zh-mobile.png",
+        "wallet-funded-withdraw-zh-mobile.png",
+        "wallet-funded-withdraw-full-zh-mobile.png",
+        "wallet-funded-history-zh-mobile.png",
+        "wallet-funded-history-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 8,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "history",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3853
+    },
+    {
+      "id": "wallet-funded",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "funded",
+      "status": "완료",
+      "files": [
+        "wallet-funded-deposit-zh-desktop.png",
+        "wallet-funded-deposit-full-zh-desktop.png",
+        "wallet-funded-withdraw-zh-desktop.png",
+        "wallet-funded-withdraw-full-zh-desktop.png",
+        "wallet-funded-history-zh-desktop.png",
+        "wallet-funded-history-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "withdraw",
+          "findings": 2,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "history",
+          "findings": 0,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3728
+    },
+    {
+      "id": "wallet-funded",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "funded",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 8,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "history",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2448
+    },
+    {
+      "id": "wallet-pending",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "pending",
+      "status": "완료",
+      "files": [
+        "wallet-pending-deposit-ko-mobile.png",
+        "wallet-pending-deposit-full-ko-mobile.png",
+        "wallet-pending-withdraw-ko-mobile.png",
+        "wallet-pending-withdraw-full-ko-mobile.png",
+        "wallet-pending-history-ko-mobile.png",
+        "wallet-pending-history-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 8,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "history",
+          "findings": 7,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3744
+    },
+    {
+      "id": "wallet-pending",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "pending",
+      "status": "완료",
+      "files": [
+        "wallet-pending-deposit-ko-desktop.png",
+        "wallet-pending-deposit-full-ko-desktop.png",
+        "wallet-pending-withdraw-ko-desktop.png",
+        "wallet-pending-withdraw-full-ko-desktop.png",
+        "wallet-pending-history-ko-desktop.png",
+        "wallet-pending-history-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 4,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "withdraw",
+          "findings": 2,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "history",
+          "findings": 1,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3819
+    },
+    {
+      "id": "wallet-pending",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "pending",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 8,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "history",
+          "findings": 7,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2533
+    },
+    {
+      "id": "wallet-pending",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "pending",
+      "status": "완료",
+      "files": [
+        "wallet-pending-deposit-en-mobile.png",
+        "wallet-pending-deposit-full-en-mobile.png",
+        "wallet-pending-withdraw-en-mobile.png",
+        "wallet-pending-withdraw-full-en-mobile.png",
+        "wallet-pending-history-en-mobile.png",
+        "wallet-pending-history-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 8,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "history",
+          "findings": 7,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3659
+    },
+    {
+      "id": "wallet-pending",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "pending",
+      "status": "완료",
+      "files": [
+        "wallet-pending-deposit-en-desktop.png",
+        "wallet-pending-deposit-full-en-desktop.png",
+        "wallet-pending-withdraw-en-desktop.png",
+        "wallet-pending-withdraw-full-en-desktop.png",
+        "wallet-pending-history-en-desktop.png",
+        "wallet-pending-history-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 4,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "withdraw",
+          "findings": 2,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "history",
+          "findings": 1,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3876
+    },
+    {
+      "id": "wallet-pending",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "pending",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 8,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "history",
+          "findings": 7,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2506
+    },
+    {
+      "id": "wallet-pending",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "pending",
+      "status": "완료",
+      "files": [
+        "wallet-pending-deposit-zh-mobile.png",
+        "wallet-pending-deposit-full-zh-mobile.png",
+        "wallet-pending-withdraw-zh-mobile.png",
+        "wallet-pending-withdraw-full-zh-mobile.png",
+        "wallet-pending-history-zh-mobile.png",
+        "wallet-pending-history-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 8,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "history",
+          "findings": 7,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3839
+    },
+    {
+      "id": "wallet-pending",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "pending",
+      "status": "완료",
+      "files": [
+        "wallet-pending-deposit-zh-desktop.png",
+        "wallet-pending-deposit-full-zh-desktop.png",
+        "wallet-pending-withdraw-zh-desktop.png",
+        "wallet-pending-withdraw-full-zh-desktop.png",
+        "wallet-pending-history-zh-desktop.png",
+        "wallet-pending-history-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "withdraw",
+          "findings": 2,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "history",
+          "findings": 1,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3770
+    },
+    {
+      "id": "wallet-pending",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "pending",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "deposit",
+          "findings": 8,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "withdraw",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "history",
+          "findings": 7,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2480
+    },
+    {
+      "id": "auth-login",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "auth-login-email-ko-mobile.png",
+        "auth-login-email-full-ko-mobile.png",
+        "auth-login-password-ko-mobile.png",
+        "auth-login-password-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 5,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "password",
+          "findings": 4,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2964
+    },
+    {
+      "id": "auth-login",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "auth-login-email-ko-desktop.png",
+        "auth-login-email-full-ko-desktop.png",
+        "auth-login-password-ko-desktop.png",
+        "auth-login-password-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 3,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "password",
+          "findings": 0,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2831
+    },
+    {
+      "id": "auth-login",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 5,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "password",
+          "findings": 4,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2068
+    },
+    {
+      "id": "auth-login",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "auth-login-email-en-mobile.png",
+        "auth-login-email-full-en-mobile.png",
+        "auth-login-password-en-mobile.png",
+        "auth-login-password-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 5,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "password",
+          "findings": 4,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2913
+    },
+    {
+      "id": "auth-login",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "auth-login-email-en-desktop.png",
+        "auth-login-email-full-en-desktop.png",
+        "auth-login-password-en-desktop.png",
+        "auth-login-password-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 3,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "password",
+          "findings": 0,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2897
+    },
+    {
+      "id": "auth-login",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 5,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "password",
+          "findings": 4,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2168
+    },
+    {
+      "id": "auth-login",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "auth-login-email-zh-mobile.png",
+        "auth-login-email-full-zh-mobile.png",
+        "auth-login-password-zh-mobile.png",
+        "auth-login-password-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 5,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "password",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2949
+    },
+    {
+      "id": "auth-login",
+      "locale": "zh",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "auth-login-email-zh-desktop.png",
+        "auth-login-email-full-zh-desktop.png",
+        "auth-login-password-zh-desktop.png",
+        "auth-login-password-full-zh-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 3,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "password",
+          "findings": 0,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2944
+    },
+    {
+      "id": "auth-login",
+      "locale": "zh",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 5,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "password",
+          "findings": 4,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2186
+    },
+    {
+      "id": "auth-signup",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "auth-signup-email-ko-mobile.png",
+        "auth-signup-email-full-ko-mobile.png",
+        "auth-signup-password-ko-mobile.png",
+        "auth-signup-password-full-ko-mobile.png",
+        "auth-signup-verify-ko-mobile.png",
+        "auth-signup-verify-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 5,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "password",
+          "findings": 3,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "verify",
+          "findings": 3,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3911
+    },
+    {
+      "id": "auth-signup",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "auth-signup-email-ko-desktop.png",
+        "auth-signup-email-full-ko-desktop.png",
+        "auth-signup-password-ko-desktop.png",
+        "auth-signup-password-full-ko-desktop.png",
+        "auth-signup-verify-ko-desktop.png",
+        "auth-signup-verify-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 3,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "password",
+          "findings": 0,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "verify",
+          "findings": 0,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3776
+    },
+    {
+      "id": "auth-signup",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 5,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "password",
+          "findings": 3,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "verify",
+          "findings": 3,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2569
+    },
+    {
+      "id": "auth-signup",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "진행 중",
+      "files": [
+        "auth-signup-email-en-mobile.png",
+        "auth-signup-email-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 5,
+          "url": "http://localhost:3004/en"
         }
       ],
       "network": [

@@ -192,5 +192,32 @@
     "confirmTitle": "Request shipping",
     "confirmDesc": "The item ships to {address}, and the request cannot be cancelled after dispatch.",
     "failed": "The shipping request was not accepted. The item is still in your inventory."
+  },
+  "state": {
+    "notFoundTitle": "Address not found",
+    "notFoundDesc": "The address has changed or the screen does not exist.",
+    "errorTitle": "The screen did not load",
+    "errorDesc": "Reload to continue where you left off.",
+    "retry": "Reload",
+    "toBoxes": "See boxes",
+    "offline": "You are offline. The app continues when you reconnect."
+  },
+  "guide": {
+    "title": "How it works",
+    "desc": "Choose a box, open it, then ship the item or take USDT.",
+    "pickTitle": "Choose a box",
+    "pickBody": "Each box lists its contents, the odds for each tier and the odds for each item.",
+    "openTitle": "Open it",
+    "openBody": "The amount on the button is paid from your balance and the result appears right away.",
+    "getTitle": "Receive it",
+    "getBody": "Items go to your inventory, and you can ship them or take USDT.",
+    "facts": "Values to know",
+    "takeRate": "Taking USDT",
+    "takeRateValue": "{pct}% of market value",
+    "cashItems": "USDT items",
+    "cashItemsValue": "Added to balance on open",
+    "shipFee": "Shipping fee",
+    "minCharge": "Smallest deposit",
+    "verifyBody": "Every result can be recalculated from the value locked before opening."
   }
 }

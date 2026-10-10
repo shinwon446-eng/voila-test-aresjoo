@@ -39,7 +39,7 @@ export function BoxList() {
         {boxes.map((box, i) => <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={t("home.price", { price: fmt(box.price) })} top={t("home.top", { amount: fmt(ceilingValue(box)) })} count={t("home.count", { n: box.items.length })} eager={i < 4} /></li>)}
       </ul>
       <div className="v-links">
-        <TextLink href="/about">{t("nav.guide")}</TextLink>
+        <TextLink href="/guide">{t("nav.guide")}</TextLink>
         <TextLink href="/fairness">{t("nav.verify")}</TextLink>
       </div>
     </div>

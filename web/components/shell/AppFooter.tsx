@@ -13,7 +13,7 @@ export function AppFooter() {
       <div className="v-footer-in">
         <span>© 2026 VOILA</span>
         <Link href="/legal">{t("nav.legal")}</Link>
-        <Link href="/about">{t("nav.guide")}</Link>
+        <Link href="/guide">{t("nav.guide")}</Link>
         {LOCALES.filter((l) => l !== locale).map((l) => <Link key={l} href={pathname} locale={l} hrefLang={l}>{LOCALE_LABEL[l]}</Link>)}
       </div>
     </footer>

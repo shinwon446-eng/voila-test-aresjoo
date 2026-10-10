@@ -245,3 +245,6 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 /* 스크롤되는 시트 안에서 항목이 눌려 사라지지 않게 */
 .v-sheet-body > * { flex-shrink: 0; }
 .v-chips { flex: none; }
+
+/* ── 오프라인 한 줄 */
+.v-offline { background: var(--v-card); padding: 10px var(--v-gutter); color: var(--v-text); font-size: var(--v-fs-small); text-align: center; }

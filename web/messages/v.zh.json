@@ -192,5 +192,32 @@
     "confirmTitle": "申请配送",
     "confirmDesc": "将发往 {address}，发货后无法取消。",
     "failed": "未能受理配送申请。商品仍在保管箱中。"
+  },
+  "state": {
+    "notFoundTitle": "地址不存在",
+    "notFoundDesc": "地址已更改或页面不存在。",
+    "errorTitle": "页面未能加载",
+    "errorDesc": "重新加载后可从原处继续。",
+    "retry": "重新加载",
+    "toBoxes": "查看盲盒",
+    "offline": "网络已断开。恢复连接后继续。"
+  },
+  "guide": {
+    "title": "使用方法",
+    "desc": "选择盲盒、开箱，然后配送商品或领取 USDT。",
+    "pickTitle": "选择盲盒",
+    "pickBody": "每个盲盒都标有内容、各区间概率和各商品概率。",
+    "openTitle": "开箱",
+    "openBody": "按钮上的金额从余额支付，结果立即显示。",
+    "getTitle": "领取",
+    "getBody": "获得的商品进入保管箱，可以配送或领取 USDT。",
+    "facts": "需要了解的数值",
+    "takeRate": "领取 USDT 时",
+    "takeRateValue": "市场价的 {pct}%",
+    "cashItems": "USDT 商品",
+    "cashItemsValue": "开箱后立即计入余额",
+    "shipFee": "运费",
+    "minCharge": "最低充值金额",
+    "verifyBody": "所有结果都可以用开箱前锁定的值重新计算。"
   }
 }

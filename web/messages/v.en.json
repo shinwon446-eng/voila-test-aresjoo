@@ -259,7 +259,8 @@
     "errorDesc": "Reload to continue where you left off.",
     "retry": "Reload",
     "toBoxes": "See boxes",
-    "offline": "You are offline. The app continues when you reconnect."
+    "offline": "You are offline. The app continues when you reconnect.",
+    "sessionLost": "Your session ended. Log in again to continue where you were."
   },
   "guide": {
     "title": "How it works",

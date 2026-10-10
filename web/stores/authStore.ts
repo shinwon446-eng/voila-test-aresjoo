@@ -10,6 +10,8 @@ interface AuthState {
   user: AuthUser | null; isModalOpen: boolean; modalMode: AuthMode; toast: AuthToast | null; hydrated: boolean;
   openAuthModal: (mode?: AuthMode) => void; closeAuthModal: () => void; setModalMode: (mode: AuthMode) => void;
   acceptSession: (user: ServerAccount) => void; clearSession: () => void; logout: (text: string) => Promise<void>;
+  /** 세션이 사용자 뜻 없이 끝났다(다른 탭의 로그아웃, 비밀번호 변경, 서버 거절). 화면에 한 줄로 알리고 로그인하면 지운다 */
+  sessionLost: boolean; markSessionLost: () => void;
   updateNickname: (nickname: string) => Promise<boolean>;
   checkNicknameAvailability: (nickname: string) => Promise<NicknameAvailability>;
   updateAvatar: (avatar: string | null) => Promise<boolean>;
@@ -19,10 +21,12 @@ interface AuthState {
 }
 let sequence = 0;
 export const useAuthStore = create<AuthState>()(persist((set, get) => ({
-  user: null, isModalOpen: false, modalMode: "login", toast: null, hydrated: false,
+  user: null, isModalOpen: false, modalMode: "login", toast: null, hydrated: false, sessionLost: false,
+  markSessionLost: () => { if (get().user) { get().clearSession(); set({ sessionLost: true }); } },
   openAuthModal: (modalMode = "login") => set({ isModalOpen: true, modalMode }),
   closeAuthModal: () => set({ isModalOpen: false }), setModalMode: (modalMode) => set({ modalMode }),
   acceptSession: (user) => {
+    set({ sessionLost: false });
     if (get().user?.id !== user.id) useSecurityStore.getState().reset(user.id);
     const nicknameAt = [user.nicknameUpdatedAt, user.nicknameChangedAt].filter((value): value is string => !!value).sort((a, b) => Date.parse(b) - Date.parse(a))[0];
     set({ user: { id: user.id, label: user.nickname || user.email, nickname: user.nickname, nicknameUpdatedAt: nicknameAt, nicknameChangedAt: nicknameAt, nextNicknameChangeAt: user.nextNicknameChangeAt, avatarUrl: user.avatarUrl, email: user.email, provider: user.provider ?? "email", passwordFailures: user.passwordFailures ?? 0, passwordChangedAt: user.passwordChangedAt, sessionVersion: user.sessionVersion ?? 0, twoFactorEnabled: user.twoFactorEnabled, subLabel: user.email, createdAt: user.createdAt, local: browserAccountsEnabled() && user.local === true }, isModalOpen: false });
@@ -95,26 +99,26 @@ if (typeof window !== "undefined") {
   const sync = (event: StorageEvent) => {
     const user = useAuthStore.getState().user;
     if (user && event.key === "voila.account-revocation.v1") {
-      try { if (JSON.parse(event.newValue ?? "{}").accountId === user.id) useAuthStore.getState().clearSession(); } catch { /* Ignore malformed unrelated storage. */ }
+      try { if (JSON.parse(event.newValue ?? "{}").accountId === user.id) useAuthStore.getState().markSessionLost(); } catch { /* Ignore malformed unrelated storage. */ }
     }
     if (!user?.local || !browserAccountsEnabled()) return;
-    if (event.key === "voila.browser-session.v1" && event.newValue !== user.id) useAuthStore.getState().clearSession();
+    if (event.key === "voila.browser-session.v1" && event.newValue !== user.id) useAuthStore.getState().markSessionLost();
     if (event.key === "voila.browser-accounts.v1") {
       try {
         const record = (JSON.parse(event.newValue ?? "[]") as { user: ServerAccount }[]).find(a => a.user.id === user.id);
-        if (!record || (record.user.sessionVersion ?? 0) !== (user.sessionVersion ?? 0)) useAuthStore.getState().clearSession();
-      } catch { useAuthStore.getState().clearSession(); }
+        if (!record || (record.user.sessionVersion ?? 0) !== (user.sessionVersion ?? 0)) useAuthStore.getState().markSessionLost();
+      } catch { useAuthStore.getState().markSessionLost(); }
     }
-    if (event.key === null) useAuthStore.getState().clearSession();
+    if (event.key === null) useAuthStore.getState().markSessionLost();
   };
   const recheck = () => {
     const user = useAuthStore.getState().user;
     if (!user || document.visibilityState === "hidden") return;
     void getAccountSession().then(account => {
       if (useAuthStore.getState().user?.id !== user.id) return;
-      if (account.id !== user.id || (account.sessionVersion ?? 0) !== (user.sessionVersion ?? 0)) useAuthStore.getState().clearSession();
+      if (account.id !== user.id || (account.sessionVersion ?? 0) !== (user.sessionVersion ?? 0)) useAuthStore.getState().markSessionLost();
     }).catch(error => {
-      if (error instanceof AccountError && error.code === "credentials" && useAuthStore.getState().user?.id === user.id) useAuthStore.getState().clearSession();
+      if (error instanceof AccountError && error.code === "credentials" && useAuthStore.getState().user?.id === user.id) useAuthStore.getState().markSessionLost();
     });
   };
   window.addEventListener("storage", sync);

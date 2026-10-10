@@ -16,7 +16,7 @@ import { useCurrency } from "@/lib/useCurrency";
 import { Sheet } from "@/components/ui/Sheet";
 import { ToastHost } from "@/components/ui/toast";
 import { ChargeSheet } from "@/components/flow/ChargeSheet";
-import { OfflineLine } from "@/components/shell/StateScreens";
+import { OfflineLine, SessionLine } from "@/components/shell/StateScreens";
 
 /** 옮기는 동안 일부 주소는 옛 화면을 가리킨다. 화면을 새로 만들면 여기만 바꾼다. */
 export const NAV = [
@@ -52,6 +52,7 @@ export function AppShell({ children, wide }: { children: ReactNode; wide?: boole
         </div>
       </header>
       <OfflineLine />
+      <SessionLine />
       <main className={"v-main " + (wide ? "v-main--wide" : "v-main--col")}>{children}</main>
       <Sheet open={menu} onClose={closeMenu} title={t("nav.menu")} closeLabel={t("common.close")}>
         <nav className="v-rows" aria-label={t("nav.menu")}>

@@ -56,9 +56,9 @@ export async function verifyOpening(item: OwnedItem): Promise<boolean> {
 }
 
 const copy = {
-  ko: { odds: "공개 확률 항목", openings: "확인된 개봉 기록", payback: "즉시 페이백 누적", latest: "최근 개봉", verified: "검증 완료", total: "건", rows: "항목", updated: "마지막 기록", empty: "아직 개봉 기록이 없습니다. 첫 박스를 열면 이곳에 바로 기록됩니다.", paid: "페이백" },
-  en: { odds: "Published odds", openings: "Verified openings", payback: "Instant payback total", latest: "Recent openings", verified: "Verified", total: "openings", rows: "items", updated: "Last record", empty: "No openings yet. Your first box shows up here the moment you open it.", paid: "Payback" },
-  zh: { odds: "公开概率项目", openings: "已验证开箱记录", payback: "即时返现累计", latest: "最近开箱", verified: "已验证", total: "次", rows: "项目", updated: "最新记录", empty: "还没有开箱记录。打开第一个盲盒后会立即显示在这里。", paid: "返现" },
+  ko: { odds: "공개 확률 항목", openings: "확인된 개봉 기록", payback: "즉시 페이백 누적", latest: "최근 개봉", verified: "검증 완료", total: "건", rows: "항목", updated: "마지막 기록", empty: "박스를 열면 이곳에 기록됩니다.", paid: "페이백" },
+  en: { odds: "Published odds", openings: "Verified openings", payback: "Instant payback total", latest: "Recent openings", verified: "Verified", total: "openings", rows: "items", updated: "Last record", empty: "Openings appear here once you open a box.", paid: "Payback" },
+  zh: { odds: "公开概率项目", openings: "已验证开箱记录", payback: "即时返现累计", latest: "最近开箱", verified: "已验证", total: "次", rows: "项目", updated: "最新记录", empty: "打开盲盒后会记录在这里。", paid: "返现" },
 } as const;
 
 export function ProofFeed({ limit = 4 }: { limit?: number }) {

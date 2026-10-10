@@ -107,7 +107,7 @@ export function UsdtDepositTab({ onCredited }: { onCredited: (amountUsdt: number
     return () => { active = false; clearTimeout(timer); };
   }, [address, depositReady, network, userKey, meta.confirmations]);
 
-  if (!user) return <LoginRequired />;
+  if (!user) return <LoginRequired scope="wallet" />;
 
   return (
     <div className="grid gap-5 md:grid-cols-5">

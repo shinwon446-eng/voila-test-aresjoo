@@ -209,7 +209,7 @@ export function WithdrawTab({ onRequested, onBlocked, onDone }: WithdrawTabProps
   };
 
   // ── 1단계 관문: 2FA 미등록이면 출금 입력 앞에 Google OTP 설정이 선다 ──
-  if (!user) return <LoginRequired />;
+  if (!user) return <LoginRequired scope="wallet" />;
   if (!securityReady) return <div className="mt-4 text-sm text-secondary"><p role="status">{ts(securityError ? "loadFailed" : "loading")}</p>{securityError && <button type="button" onClick={() => void useSecurityStore.getState().refresh(user.id)} className="mt-2 min-h-11 text-gold-champagne">{ts("retry")}</button>}</div>;
   if (!twoFactorEnabled && !emailOnly && stage.kind !== "done") {
     return (

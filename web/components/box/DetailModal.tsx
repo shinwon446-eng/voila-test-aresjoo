@@ -23,7 +23,7 @@ import {
   boxFloorTier,
   boxTopTier,
   breakEvenRate,
-  formatMultiple,
+  formatMultipleGrouped,
   glow,
   tierBreakdown,
   tierOf,
@@ -56,13 +56,13 @@ function PrizeCard({ item, tier }: { item: ProductItem; tier: Tier }) {
   const { itemName } = useProductText();
   return (
     <li
-      className="relative overflow-hidden rounded-xl border bg-obsidian transition-colors duration-200 hover:bg-elevation"
+      className="detail-prize relative overflow-hidden rounded-xl border bg-obsidian transition-colors duration-200 hover:bg-elevation"
       style={{ borderColor: glow(tier.accent, 0.38) }}
     >
       {/* 상단 등급 라인 */}
       <span
         aria-hidden
-        className="absolute inset-x-0 top-0 h-[2px]"
+        className="detail-prize-line absolute inset-x-0 top-0 h-[2px]"
         style={{
           background: `linear-gradient(90deg, ${tier.accent} 0%, ${tier.deep} 100%)`,
           boxShadow: `0 0 10px ${glow(tier.accent, 0.6)}`,
@@ -71,16 +71,16 @@ function PrizeCard({ item, tier }: { item: ProductItem; tier: Tier }) {
 
       <div className="relative aspect-[16/10] w-full overflow-hidden">
         <ProductArt image={item.image} alt={itemName(item)} accent={tier.accent} glowStrength={0.28} fallbackSize="sm" kind={item.kind} />
-        <span className="absolute left-1.5 top-1.5">
+        <span className="detail-prize-tier absolute left-1.5 top-1.5">
           <TierBadge tier={tier} size="xs" />
         </span>
       </div>
 
       <div className="p-3 sm:p-4">
-        <div className="line-clamp-2 min-h-[40px] text-sm font-semibold leading-snug text-white">
+        <div className="detail-prize-name line-clamp-2 min-h-[40px] text-sm font-semibold leading-snug text-white">
           {itemName(item)}
         </div>
-        <div className="mt-1.5 border-t border-white/10 pt-1.5">
+        <div className="detail-prize-value mt-1.5 border-t border-white/10 pt-1.5">
           <div className="min-w-0">
             <div className="text-xs font-semibold uppercase tracking-[0.16em] text-[#757575]">
               {t("marketValue")}
@@ -100,7 +100,7 @@ function PrizeCard({ item, tier }: { item: ProductItem; tier: Tier }) {
 
 function Stat({ label, value, tone = "#FFFFFF" }: { label: string; value: string; tone?: string }) {
   return (
-    <div className="min-w-0">
+    <div className="detail-stat min-w-0">
       <div className="text-xs font-semibold uppercase tracking-[0.16em] text-[#757575]">{label}</div>
       <div
         className="mt-1 font-display text-[22px] font-bold leading-none tracking-tight"
@@ -180,26 +180,26 @@ export function DetailModal({ box, onClose, onOpen, onAutoplay, onDeposit, pendi
           onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
           <motion.div ref={panelRef} tabIndex={-1} role="dialog" aria-modal="true"
             aria-label={t("modal.details", { title: boxTitle(box) })}
-            className="relative mx-auto w-full max-w-5xl overflow-hidden rounded-2xl border border-hairline bg-surface shadow-2xl outline-none"
+            className="detail-modal relative mx-auto w-full max-w-5xl overflow-hidden rounded-2xl border border-hairline bg-surface shadow-2xl outline-none"
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 12 }} transition={{ duration: 0.25, ease: EASE }}>
             <button type="button" onClick={close} disabled={pending} aria-label={t("modal.close")}
-              className="absolute right-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-obsidian/90 text-white hover:bg-elevation">
+              className="detail-close absolute right-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-obsidian/90 text-white hover:bg-elevation">
               <X className="h-5 w-5" strokeWidth={1.8} />
             </button>
             <header className="grid md:grid-cols-[0.95fr_1.05fr]">
-              <div className="relative h-[190px] overflow-hidden border-b border-hairline bg-obsidian min-[400px]:h-[220px] sm:h-[260px] md:h-auto md:min-h-[480px] md:border-b-0 md:border-r">
+              <div className="detail-hero relative h-[190px] overflow-hidden border-b border-hairline bg-obsidian min-[400px]:h-[220px] sm:h-[260px] md:h-auto md:min-h-[480px] md:border-b-0 md:border-r">
                 <ProductArt image={box.image} alt={boxTitle(box)} accent={meta.top.accent} glowStrength={0.12} fallbackSize="lg" bordered={false} priority className="absolute inset-0" />
-                <div className="absolute left-5 top-5"><TierBadge tier={meta.top} size="md" /></div>
-                <p className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-obsidian via-obsidian/90 to-transparent px-5 pb-4 pt-10 text-xs leading-relaxed text-secondary">{t("modal.imageNote")}</p>
+                <div className="detail-tier absolute left-5 top-5"><TierBadge tier={meta.top} size="md" /></div>
+                <p className="detail-image-note absolute inset-x-0 bottom-0 bg-gradient-to-t from-obsidian via-obsidian/90 to-transparent px-5 pb-4 pt-10 text-xs leading-relaxed text-secondary">{t("modal.imageNote")}</p>
               </div>
-              <div className="flex min-w-0 flex-col justify-center px-4 py-5 sm:px-8 sm:py-7 md:py-10">
-                <p className="eyebrow pr-8">{boxBadge(box)}</p>
-                <h2 className="mt-2 break-keep font-display text-[26px] font-semibold leading-tight tracking-[-0.04em] text-white sm:mt-3 sm:text-3xl md:text-4xl">{boxTitle(box)}</h2>
-                <div className="mt-5 flex items-baseline gap-3">
+              <div className="detail-main flex min-w-0 flex-col justify-center px-4 py-5 sm:px-8 sm:py-7 md:py-10">
+                <p className="detail-eyebrow eyebrow pr-8">{boxBadge(box)}</p>
+                <h2 className="detail-title mt-2 break-keep font-display text-[26px] font-semibold leading-tight tracking-[-0.04em] text-white sm:mt-3 sm:text-3xl md:text-4xl">{boxTitle(box)}</h2>
+                <div className="detail-price mt-5 flex items-baseline gap-3">
                   <span className="font-display text-3xl font-semibold tracking-tight text-white">{fmt(box.price)}</span>
                   <span className="text-xs text-muted">{t("modal.perOpen")}</span>
                 </div>
-                <div className="mt-4 border-t border-hairline pt-4 sm:mt-6 sm:pt-5">
+                <div className="detail-qty mt-4 border-t border-hairline pt-4 sm:mt-6 sm:pt-5">
                   <div className="mb-3 text-xs font-medium text-secondary">{t("unbox.qty")}</div>
                   <div role="group" className="grid grid-cols-5 gap-1 sm:gap-1.5" aria-label={t("unbox.qty")}>
                     {OPEN_PRESETS.map((n) => (
@@ -210,13 +210,12 @@ export function DetailModal({ box, onClose, onOpen, onAutoplay, onDeposit, pendi
                     ))}
                   </div>
                   {balance < box.price * qty ? (
-                    <div className="mt-4 rounded-lg border border-gold-champagne/30 bg-gold-champagne/5 p-4">
-                      <p className="text-sm font-semibold text-white">{t("unbox.insufficient", { price: fmt(box.price * qty) })}</p>
-                      <p className="mt-1 text-sm leading-relaxed text-secondary">{t("modal.balanceShortfall", { balance: fmt(balance), missing: fmt(box.price * qty - balance) })}</p>
+                    <div className="detail-need mt-4 rounded-lg border border-gold-champagne/30 bg-gold-champagne/5 p-4">
+                      <p className="text-sm font-semibold text-white">{t("modal.balanceShortfall", { balance: fmt(balance), missing: fmt(box.price * qty - balance) })}</p>
                       <button type="button" onClick={() => onDeposit?.(box, qty)} className="btn-primary mt-3 min-h-12 w-full">{t("unbox.topUpAction")}</button>
                     </div>
                   ) : confirming ? (
-                    <div className="mt-4 rounded-lg border border-gold-champagne/30 bg-gold-champagne/5 p-4" role="group" aria-label={t("modal.confirmPurchase")}>
+                    <div className="detail-confirm mt-4 rounded-lg border border-gold-champagne/30 bg-gold-champagne/5 p-4" role="group" aria-label={t("modal.confirmPurchase")}>
                       <p className="text-sm font-semibold text-white">{t("modal.openCount", { n: qty, amount: fmt(box.price * qty) })}</p>
                       <p className="mt-2 text-sm leading-relaxed text-secondary">{t("modal.batchCommitment")}</p>
                       <div className="mt-4 grid grid-cols-2 gap-2">
@@ -225,13 +224,12 @@ export function DetailModal({ box, onClose, onOpen, onAutoplay, onDeposit, pendi
                       </div>
                     </div>
                   ) : (
-                    <button type="button" onClick={() => setConfirming(true)} className="btn-primary mt-4 flex min-h-12 w-full items-center justify-center gap-2 rounded-lg px-3 py-3 text-sm">
+                    <button type="button" onClick={() => setConfirming(true)} className="detail-open btn-primary mt-4 flex min-h-12 w-full items-center justify-center gap-2 rounded-lg px-3 py-3 text-sm">
                       {t("modal.openCount", { n: qty, amount: fmt(box.price * qty) })}<ArrowUpRight className="h-4 w-4 flex-none" />
                     </button>
                   )}
-                  <p className="mt-3 break-keep text-xs leading-relaxed text-muted">{t("modal.quantityNote")}</p>
                 </div>
-                <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1">
+                <div className="detail-links mt-4 flex flex-wrap gap-x-5 gap-y-1">
                   <button type="button" onClick={() => { const details = oddsRef.current; if (!details) return; details.open = true; requestAnimationFrame(() => { details.focus({ preventScroll: true }); details.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" }); }); }} className="inline-flex min-h-11 items-center gap-2 text-xs font-medium text-gold-champagne hover:text-white">
                     <Percent className="h-4 w-4" />{t("modal.viewOdds")}
                   </button>
@@ -241,13 +239,13 @@ export function DetailModal({ box, onClose, onOpen, onAutoplay, onDeposit, pendi
                 </div>
               </div>
             </header>
-            <section className="grid grid-cols-2 gap-5 border-y border-hairline bg-obsidian/40 px-5 py-6 sm:grid-cols-4 sm:px-8">
+            <section className="detail-stats grid grid-cols-2 gap-5 border-y border-hairline bg-obsidian/40 px-5 py-6 sm:grid-cols-4 sm:px-8">
               <Stat label={t("modal.guaranteedMin")} value={fmt(meta.floor)} />
               <Stat label={t("modal.topPrize")} value={fmt(meta.table[0].value)} />
               <Stat label={t("modal.rtpLabel")} value={`${(meta.retail * 100).toFixed(1)}%`} />
-              <Stat label={t("modal.topMultiple")} value={t("tiers.multiple", { n: formatMultiple(meta.mult) })} />
+              <Stat label={t("modal.topMultiple")} value={t("tiers.multiple", { n: formatMultipleGrouped(meta.mult) })} />
             </section>
-            <section aria-label={t("modal.allPrizes")} id="drop-table" className="px-4 py-6 sm:px-8 sm:py-7">
+            <section aria-label={t("modal.allPrizes")} id="drop-table" className="detail-prizes px-4 py-6 sm:px-8 sm:py-7">
               <div className="mb-5 flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="text-lg font-semibold text-white">{t("modal.allPrizes")} <span className="ml-1 text-sm font-normal text-muted">{t("modal.count", { n: meta.table.length })}</span></h3>
                 <span className="text-xs text-muted">{t("modal.sortedByValue")}</span>
@@ -256,7 +254,7 @@ export function DetailModal({ box, onClose, onOpen, onAutoplay, onDeposit, pendi
                 {meta.table.map((item) => <PrizeCard key={item.id} item={item} tier={tierOf(item.value, box.price)} />)}
               </ul>
             </section>
-            <section id="provably-fair" className="px-4 pb-6 sm:px-8 sm:pb-8">
+            <section id="provably-fair" className="detail-odds px-4 pb-6 sm:px-8 sm:pb-8">
               <details ref={oddsRef} tabIndex={-1} className="scroll-mt-4 rounded-xl border border-hairline bg-obsidian outline-none">
                 <summary className="min-h-12 cursor-pointer px-5 py-4 text-sm font-semibold text-white">{t("modal.preciseOdds")}</summary>
                 <div className="border-t border-hairline p-5">
@@ -277,7 +275,7 @@ export function DetailModal({ box, onClose, onOpen, onAutoplay, onDeposit, pendi
               </details>
               <p className="mt-5 break-keep text-xs leading-relaxed text-muted">{t("modal.settleBody")}</p>
             </section>
-            {credits.length > 0 && <footer className="border-t border-hairline px-5 py-5 sm:px-8">
+            {credits.length > 0 && <footer className="detail-credits border-t border-hairline px-5 py-5 sm:px-8">
               <details><summary className="cursor-pointer text-xs text-muted">{t("modal.imageCredits")}</summary>
                 <ul className="mt-3 space-y-2">{credits.map((credit) => <li key={credit} className="break-words text-xs leading-relaxed text-muted">{credit}</li>)}</ul>
               </details>

@@ -1,0 +1,163 @@
+/*
+ * 메인 페이지 시안 (2026-10-10): TETH 디자인 정본(DESIGN_PROMPT.md)의 값을 VOILA 메인에만 입힌다.
+ * 검정 바탕, 윤곽 카드 반경 26, 제목 32px 400, 알약 단추, 금색 장식 없음. 로고와 상품 사진의 색은 그대로 둔다.
+ * 범위는 main.gpt-home 과 그 페이지의 푸터뿐이다. 다른 페이지와 창(모달)은 건드리지 않는다.
+ */
+html:has(.gpt-home), html:has(.gpt-home) body { background-color: #000; color: #ececec; }
+.gpt-home.bg-canvas { background-color: #000; }
+.gpt-home .page-shell { width: min(100%, 1184px); padding-inline: 32px; }
+
+/* ── 헤더 */
+.gpt-home > header { background: #000; border-bottom-color: rgba(255,255,255,.1); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.gpt-home > header nav a { font-size: 15px; font-weight: 400; color: #cdcdcd; }
+.gpt-home > header nav a[aria-current="page"], .gpt-home > header nav a:hover { color: #fff; }
+.gpt-home > header .border-hairline { border-color: rgba(255,255,255,.1); }
+.gpt-home > header .text-gold-champagne { color: #cdcdcd; }
+.gpt-home > header button.bg-surface { height: 36px; border-radius: 999px; border-color: transparent; background: #2f2f2f; padding-inline: 14px; font-size: 14px; font-weight: 400; color: #ececec; }
+.gpt-home > header button.bg-surface:hover { background: #3a3a3a; border-color: transparent; }
+.gpt-home > header select { height: 36px; border-radius: 999px; border-color: rgba(255,255,255,.15); background-color: #000; font-size: 14px; font-weight: 400; color: #ececec; }
+.gpt-home > header button.w-11 { height: 36px; width: 36px; border-radius: 999px; }
+.gpt-home > header button.hover\:text-gold-champagne { height: 36px; border: 1px solid rgba(255,255,255,.15); border-radius: 999px; padding-inline: 16px; font-size: 14px; font-weight: 400; color: #ececec; }
+.gpt-home > header button.hover\:text-gold-champagne:hover { background: #1f1f1f; color: #fff; }
+.gpt-home > header button[class*="f1eee7"] { height: 36px; border-radius: 999px; background: #fff; padding-inline: 16px; font-size: 14px; font-weight: 400; color: #000; }
+.gpt-home > header button[class*="f1eee7"]:hover { background: #e4e4e4; }
+.gpt-home > header #site-menu { background: #000; border-color: rgba(255,255,255,.1); }
+.gpt-home > header #site-menu nav a { font-size: 16px; }
+.gpt-home > header #site-menu .bg-gold-champagne { border-radius: 999px; background: #fff; font-weight: 500; color: #000; }
+.gpt-home > header #site-menu .grid > button + button { border-radius: 999px; border-color: rgba(255,255,255,.15); font-weight: 400; }
+html:has(.gpt-home) a[aria-label="VOILA"] svg { color: #d9c39a; }
+
+/* ── 첫 화면: 제목, 한 줄, 분류, 정렬 */
+.gpt-home .collection-section { padding-top: 0; padding-bottom: 72px; }
+.gpt-home .home-hero { padding: 64px 0 28px; text-align: center; }
+.gpt-home .home-hero h1 { color: #fff; font-size: 32px; font-weight: 400; line-height: 1.3; letter-spacing: -.01em; }
+.gpt-home .home-hero p { margin-top: 10px; color: #cdcdcd; font-size: 18px; line-height: 1.5; }
+.gpt-home .collection-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; margin-bottom: 0; border: 0; }
+.gpt-home .collection-filters { flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0; padding: 0; overflow: visible; }
+.gpt-home .collection-filter { min-height: 40px; padding: 0 16px; border: 2px solid transparent; border-radius: 999px; background: #303030; color: #ececec; font-size: 15px; font-weight: 400; }
+.gpt-home .collection-filter svg { display: none; }
+.gpt-home .collection-filter:hover { background: #3a3a3a; }
+.gpt-home .collection-filter.is-active { border-color: #9a9a9a; color: #fff; }
+.gpt-home .collection-sort { display: block; border: 0; }
+.gpt-home .collection-sort select { height: 36px; min-height: 36px; max-width: none; border-radius: 999px; background-color: #2f2f2f; padding: 0 30px 0 14px; color: #ececec; font-size: 14px; }
+.gpt-home .collection-meta { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin: 28px 0 14px; }
+.gpt-home .collection-count { display: inline; padding: 0; color: #9a9a9a; font-size: 14px; }
+.gpt-home .text-link { min-height: 0; gap: 0; color: #cdcdcd; font-size: 14px; font-weight: 400; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.gpt-home .text-link:hover { color: #fff; }
+
+/* ── 박스 카드: 사진 아래에 이름과 가격. 사진 위에는 아무것도 얹지 않는다 */
+.gpt-home .collection-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.gpt-home .collection-card { border: 1px solid rgba(255,255,255,.15); border-radius: 26px; background: transparent; transition: border-color .15s, background .15s; }
+.gpt-home .collection-card:hover { border-color: rgba(255,255,255,.32); background: #141414; }
+.gpt-home .collection-card:focus-visible { outline: 2px solid #9a9a9a; outline-offset: 2px; }
+.gpt-home .collection-card-image { background: #141414; }
+.gpt-home .collection-card:hover .collection-card-image img { transform: none; }
+/* 사진 틀의 금색 안쪽 선과 그림자는 장식이라 걷는다. 사진 색은 그대로 */
+.gpt-home .collection-card-image .pointer-events-none[aria-hidden], .gpt-home .home-review-thumb .pointer-events-none[aria-hidden] { box-shadow: none !important; }
+.gpt-home .collection-card-image > div, .gpt-home .home-review-thumb > div { border: 0 !important; }
+.gpt-home .collection-category, .gpt-home .collection-image-action { display: none; }
+.gpt-home .collection-card-body { padding: 16px 20px 20px; }
+.gpt-home .collection-card-title { color: #fff; font-size: 16px; font-weight: 400; line-height: 1.45; letter-spacing: 0; }
+.gpt-home .collection-card-meta { margin-top: 8px; gap: 8px; }
+.gpt-home .collection-price span { color: #ececec; font-size: 16px !important; font-weight: 400 !important; }
+.gpt-home .collection-price .text-neutral-400, .gpt-home .collection-price > span:last-child { color: #9a9a9a; font-size: 14px !important; }
+.gpt-home .collection-multiple { color: #9a9a9a; font-size: 14px; }
+.gpt-home .btn-secondary { min-height: 44px; border: 0; border-radius: 999px; background: #2f2f2f; padding: 10px 22px; color: #ececec; font-size: 15px; font-weight: 400; }
+.gpt-home .btn-secondary:hover { background: #3a3a3a; }
+
+/* ── 아래 구역 공통: 제목 18px 400, 한 줄 설명, 오른쪽에 밑줄 링크 하나 */
+.gpt-home .home-assurance, .gpt-home .home-reviews, .gpt-home .discovery-guide, .gpt-home .home-proof { padding-block: 0 56px; }
+.gpt-home .guide-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
+.gpt-home .guide-heading > div { animation: none; }
+.gpt-home .guide-heading h2 { margin: 0; color: #fff; font-size: 18px; font-weight: 400; line-height: 1.4; letter-spacing: 0; }
+.gpt-home .guide-intro { max-width: none; margin-top: 4px; color: #cdcdcd; font-size: 18px; font-weight: 400; line-height: 1.5; }
+
+/* 박스를 열기 전에: 행 목록 */
+.gpt-home .assurance-strip { display: block; padding: 0; border-top: 1px solid rgba(255,255,255,.1); }
+.gpt-home .assurance-item, .gpt-home .assurance-item:first-child, .gpt-home .assurance-item:last-child { display: flex; align-items: center; gap: 14px; padding: 16px 0; border: 0; border-bottom: 1px solid rgba(255,255,255,.1); color: #cdcdcd; }
+.gpt-home .assurance-item > svg { width: 20px; height: 20px; flex: none; }
+.gpt-home .assurance-item > span { display: flex; flex: 1; align-items: baseline; justify-content: space-between; gap: 16px; min-width: 0; }
+.gpt-home .assurance-item strong { color: #ececec; font-size: 16px; font-weight: 400; }
+.gpt-home .assurance-item > span > span { margin-top: 0; color: #9a9a9a; font-size: 14px; text-align: right; }
+.gpt-home .assurance-item:hover strong { color: #fff; }
+
+/* 상품 후기: 고정 카드 세 장 */
+.gpt-home .home-review-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.gpt-home .home-review-card { width: auto; border: 1px solid rgba(255,255,255,.15); border-radius: 26px; background: transparent; }
+.gpt-home .home-review-link { display: block; height: 100%; padding: 20px; border-radius: 26px; }
+.gpt-home .home-review-link:focus-visible { outline: 2px solid #9a9a9a; outline-offset: 2px; }
+.gpt-home .home-review-product { display: flex; align-items: center; gap: 12px; }
+.gpt-home .home-review-thumb { position: relative; width: 56px; height: 56px; flex: none; overflow: hidden; border-radius: 14px; background: #141414; }
+.gpt-home .home-review-product h3 { color: #fff; font-size: 16px; font-weight: 400; line-height: 1.4; overflow-wrap: anywhere; }
+.gpt-home .home-review-product p { margin-top: 2px; color: #9a9a9a; font-size: 14px; }
+.gpt-home .home-review-text { display: -webkit-box; margin-top: 14px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; color: #ececec; font-size: 16px; line-height: 1.6; }
+.gpt-home .home-review-meta { display: flex; align-items: center; gap: 8px; margin-top: 16px; color: #9a9a9a; font-size: 14px; }
+.gpt-home .home-review-rating { display: inline-flex; align-items: center; gap: 4px; margin-left: auto; color: #cdcdcd; }
+
+/* 이용 방법: 카드 하나 안에 세 줄 */
+.gpt-home .guide-steps { display: block; margin: 0; padding: 4px 24px; list-style: none; overflow: visible; border: 0; border-radius: 26px; background: #303030; }
+.gpt-home .guide-step { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; }
+.gpt-home .guide-step + .guide-step { border-left: 0; border-top: 1px solid rgba(255,255,255,.1); }
+.gpt-home .guide-step > svg { flex: none; margin-top: 2px; color: #cdcdcd; }
+.gpt-home .guide-step h3 { margin: 0; color: #fff; font-size: 16px; font-weight: 400; letter-spacing: 0; }
+.gpt-home .guide-step p { max-width: none; margin-top: 4px; color: #cdcdcd; font-size: 14px; line-height: 1.6; }
+
+/* 개봉 결과 검증: 윤곽 카드, 숫자는 크기로만 */
+.gpt-home .home-proof .rounded-xl { border-color: rgba(255,255,255,.15); border-radius: 26px; background: transparent; padding: 20px 22px; }
+.gpt-home .home-proof .proof-live-card > svg { display: none; }
+.gpt-home .home-proof .proof-live-card > p:first-of-type { margin-top: 0; color: #cdcdcd; font-size: 16px; }
+.gpt-home .home-proof .proof-live-value { margin-top: 6px; color: #fff; font-size: 32px; font-weight: 400; line-height: 1.2; animation: none; }
+.gpt-home .home-proof .proof-live-value span { font-weight: 400; }
+.gpt-home .home-proof .proof-live-value .font-display { font-size: 32px; font-weight: 400; }
+.gpt-home .home-proof .proof-live-value .text-neutral-400 { font-size: 14px; }
+.gpt-home .home-proof .proof-live-value .text-sm { color: #9a9a9a; font-size: 14px; }
+.gpt-home .home-proof h3 { color: #fff; font-size: 16px; font-weight: 400; }
+.gpt-home .home-proof .text-muted { color: #9a9a9a; }
+.gpt-home .home-proof .text-gold-champagne { color: #cdcdcd; }
+.gpt-home .home-proof .proof-feed-row { animation: none; }
+.gpt-home .home-proof .divide-hairline > * + * { border-color: rgba(255,255,255,.1); }
+
+/* ── 푸터 */
+html:has(.gpt-home) footer { background: #000; border-color: rgba(255,255,255,.1); }
+html:has(.gpt-home) footer .border-hairline { border-color: rgba(255,255,255,.1); }
+html:has(.gpt-home) footer a.text-gold-champagne { color: #cdcdcd; font-weight: 400; text-decoration: underline; text-underline-offset: 3px; }
+html:has(.gpt-home) footer a:hover { color: #fff; }
+html:has(.gpt-home) footer h2 { font-weight: 400; }
+/* 푸터 글자는 전부 400. 개인정보 처리방침 링크는 굵기 대신 흰색으로 구별된다 */
+html:has(.gpt-home) footer .font-semibold, html:has(.gpt-home) footer .font-medium { font-weight: 400; }
+html:has(.gpt-home) footer select { border-radius: 999px; border-color: rgba(255,255,255,.15); background-color: #000; }
+
+@media (max-width: 900px) {
+  .gpt-home .collection-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gpt-home .home-review-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+  .gpt-home .page-shell { padding-inline: 16px; }
+  .gpt-home .collection-section { padding-bottom: 44px; }
+  .gpt-home .home-hero { padding: 36px 0 20px; }
+  .gpt-home .home-hero h1 { font-size: 28px; }
+  .gpt-home .home-hero p { font-size: 16px; }
+  .gpt-home .guide-intro { font-size: 16px; }
+  .gpt-home .collection-toolbar { display: flex; margin-bottom: 0; }
+  /* 분류와 정렬을 같은 줄 흐름에 둔다(정렬만 따로 한 줄을 쓰지 않게) */
+  .gpt-home .collection-filters { display: contents; }
+  .gpt-home .collection-filter { min-height: 40px; padding: 0 14px; font-size: 14px; }
+  .gpt-home .collection-sort { display: block; border: 0; }
+  .gpt-home .collection-meta { margin: 22px 0 12px; }
+  /* 한 줄에 박스 하나: 사진 왼쪽, 이름과 가격 오른쪽 */
+  .gpt-home .collection-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .gpt-home .collection-card { display: grid; grid-template-columns: 116px minmax(0, 1fr); border-radius: 20px; }
+  .gpt-home .collection-card-image { aspect-ratio: auto; height: 100%; min-height: 116px; }
+  .gpt-home .collection-card-body { display: flex; flex-direction: column; justify-content: center; padding: 14px 16px; }
+  .gpt-home .collection-card-title { min-height: 0; font-size: 16px; -webkit-line-clamp: 2; }
+  .gpt-home .collection-card-meta { display: flex; margin-top: 6px; }
+  .gpt-home .collection-multiple { display: inline; margin-top: 0; font-size: 14px; }
+  .gpt-home .home-assurance, .gpt-home .home-reviews, .gpt-home .discovery-guide, .gpt-home .home-proof { padding-block: 0 44px; }
+  .gpt-home .guide-heading { flex-direction: row; align-items: flex-end; gap: 12px; }
+  .gpt-home .assurance-item > span { display: block; }
+  .gpt-home .assurance-item > span > span { display: block; margin-top: 2px; text-align: left; }
+  .gpt-home .home-review-card, .gpt-home .home-review-link { border-radius: 20px; }
+  .gpt-home .guide-steps { padding: 2px 18px; border-radius: 20px; }
+  .gpt-home .home-proof .rounded-xl { border-radius: 20px; padding: 18px; }
+  .gpt-home .home-proof .proof-live-value, .gpt-home .home-proof .proof-live-value .font-display { font-size: 28px; }
+}

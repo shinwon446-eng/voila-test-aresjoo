@@ -4,13 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import { useModal } from "@/lib/useModal";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { X, Wallet, Coins, ArrowUpRight, ReceiptText } from "lucide-react";
+import { X, Coins, ArrowUpRight, ReceiptText } from "lucide-react";
 import { cn } from "@/lib/format";
 import { UsdtDepositTab } from "@/components/wallet/UsdtDepositTab";
 import { WithdrawTab } from "@/components/wallet/WithdrawTab";
 import { useWalletStore } from "@/stores/walletStore";
 import { Money } from "@/components/ui/Money";
 import { HistoryTab } from "@/components/wallet/HistoryTab";
+import { useAuthStore } from "@/stores/authStore";
 
 type Tab = "usdt" | "withdraw" | "history";
 
@@ -51,6 +52,7 @@ export function DepositModal({ open, onClose, onCredited, onWithdrawn, onWithdra
   const th = useTranslations("history");
   const [tab, setTab] = useState<Tab>(initialTab);
   const panelRef = useRef<HTMLDivElement>(null);
+  const user = useAuthStore((s) => s.user);
 
   useEffect(() => {
     if (open) setTab(initialTab);
@@ -77,26 +79,20 @@ export function DepositModal({ open, onClose, onCredited, onWithdrawn, onWithdra
             role="dialog"
             aria-modal="true"
             aria-label={t("title")}
-            className="border border-hairline relative mx-auto w-full max-w-3xl rounded-2xl bg-surface p-6 outline-none md:p-8"
+            className="wallet-modal border border-hairline relative mx-auto w-full max-w-3xl rounded-2xl bg-surface p-6 outline-none md:p-8"
             initial={{ opacity: 0, y: 20, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 12 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            <button type="button" onClick={onClose} aria-label={t("close")} className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full text-muted transition-colors hover:bg-elevation hover:text-white">
+            <button type="button" onClick={onClose} aria-label={t("close")} className="wallet-close absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full text-muted transition-colors hover:bg-elevation hover:text-white">
               <X className="h-5 w-5" strokeWidth={2} />
             </button>
 
-            <div className="flex items-center gap-3 pr-10">
-              <Wallet className="h-5 w-5 text-gold-champagne" strokeWidth={2.2} />
-              <div>
-                <div className="caption-luxury">{tab === "withdraw" ? t("eyebrowWithdraw") : tab === "history" ? t("eyebrowHistory") : t("eyebrow")}</div>
-                <h2 className="font-display text-2xl font-bold uppercase tracking-tight text-white">{tab === "withdraw" ? tw("title") : tab === "history" ? th("title") : t("title")}</h2>
-              </div>
-            </div>
+            <h2 className="wallet-title pr-10 font-display text-2xl font-bold tracking-tight text-white">{tab === "withdraw" ? tw("title") : tab === "history" ? th("title") : t("title")}</h2>
 
             {/* 탭 */}
-            <div aria-label={t("title")} className="mt-5 grid grid-cols-3 gap-1 rounded-lg bg-obsidian p-1">
+            <div aria-label={t("title")} className="wallet-tabs mt-5 grid grid-cols-3 gap-1 rounded-lg bg-obsidian p-1">
               {(
                 [
                   { key: "usdt", label: t("tabUsdt"), Icon: Coins },
@@ -125,7 +121,7 @@ export function DepositModal({ open, onClose, onCredited, onWithdrawn, onWithdra
               {tab === "withdraw" && <WithdrawTab onRequested={(a) => onWithdrawn?.(a)} onBlocked={onWithdrawBlocked} onDone={onClose} />}
               {tab === "history" && <HistoryTab />}
             </div>
-            {tab !== "history" && (
+            {tab !== "history" && user && (
               <section className="mt-8 border-t border-hairline pt-6" aria-label={t("tabHistory")} aria-live="polite">
                 <HistoryTab />
               </section>

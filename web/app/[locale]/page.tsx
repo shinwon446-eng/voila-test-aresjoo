@@ -2,13 +2,14 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { BOXES, SORTS, byCategory, heroBox, sortBoxes, type ProductBox, type SortKey } from "@/lib/products";
+import { BOXES, SORTS, byCategory, sortBoxes, type ProductBox, type SortKey } from "@/lib/products";
 import { createOpeningPurchase, InsufficientOpeningBalance, type OpeningResult } from "@/lib/opening";
 import { preloadUnboxingAudio, primeUnboxingAudio } from "@/lib/audio";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { DiscoveryGuide } from "@/components/home/DiscoveryGuide";
+import { NetflixHome } from "@/components/home/NetflixHome";
+import { CommerceHome } from "@/components/home/CommerceHome";
 import { LiveReviewsSection } from "@/components/home/LiveReviewsSection";
-import { BillboardHero } from "@/components/home/BillboardHero";
 import { AboutBanner } from "@/components/home/AboutBanner";
 import { DailyFreeBoxModal } from "@/components/home/DailyFreeBox";
 import { QuickTabs, type CategoryTab } from "@/components/home/QuickTabs";
@@ -18,7 +19,6 @@ import { DetailModal } from "@/components/box/DetailModal";
 import { useLocale, useTranslations } from "next-intl";
 import { useCurrency } from "@/lib/useCurrency";
 import { Link } from "@/i18n/navigation";
-import { ArrowUpRight } from "lucide-react";
 import { useWalletStore } from "@/stores/walletStore";
 import { UnboxingRoulette, type UnboxResult } from "@/components/unboxing/UnboxingRoulette";
 import { BulkOpenModal } from "@/components/unboxing/BulkOpenModal";
@@ -56,6 +56,9 @@ export default function BoxesPage() {
   const t = useTranslations();
   const copy = copyFor(useLocale());
   const { fmt } = useCurrency();
+  /* 메인 시안 셋을 주소로 고른다: 기본은 ChatGPT 식(A), ?skin=netflix 는 넷플릭스 앱 식(B), ?skin=commerce 는 사진 중심 커머스형(C) */
+  const [skin, setSkin] = useState<"gpt" | "netflix" | "commerce">("gpt");
+  useEffect(() => { const s = new URLSearchParams(window.location.search).get("skin"); if (s === "netflix" || s === "commerce") setSkin(s); }, []);
   const [detail, setDetail] = useState<ProductBox | null>(null);
   useEffect(() => { if (detail) preloadUnboxingAudio(); }, [detail]);
   const [category, setCategory] = useState<CategoryTab>("all");
@@ -128,8 +131,9 @@ export default function BoxesPage() {
   }, []);
 
   // 오픈: 가격 × 횟수 차감 → 룰렛. 부족하면 토스트만.
-  const openDepositForPurchase = useCallback((cost: number) => {
-    pushToast({ title: t("unbox.insufficient", { price: fmt(cost) }), body: t("unbox.topUp"), tone: "#E6CA65" });
+  const openDepositForPurchase = useCallback((cost: number, quiet = false) => {
+    // 상세 창에서 모자란 금액을 읽고 충전을 고른 경우에는 같은 말을 알림으로 한 번 더 띄우지 않는다
+    if (!quiet) pushToast({ title: t("unbox.insufficient", { price: fmt(cost) }), body: t("unbox.topUp"), tone: "#E6CA65" });
     setDetail(null);
     setWalletTab("usdt");
     setDepositOpen(true);
@@ -174,43 +178,42 @@ export default function BoxesPage() {
     pushToast({ title: t("inventory.shipRequestedToast"), body: t("unbox.shippingBody"), tone: "#93C5FD" });
   }, [pushToast, t]);
 
-  // 빌보드: 사이버트럭 / 롤렉스 / 하이엔드 테크 순환
-  const billboard = useMemo(
-    () => ["vault-submariner", "dollar-apple", "vault-gold"].map((slug) => BOXES.find((b) => b.slug === slug) ?? heroBox()),
-    [],
-  );
   const grid = useMemo(() => sortBoxes(byCategory(category), sort), [category, sort]);
   const visible = grid.slice(0, shown);
 
   return (
-    <main className="min-h-screen bg-canvas">
+    <main className={(skin === "netflix" ? "nfx-home" : skin === "commerce" ? "shop-home" : "gpt-home") + " min-h-screen bg-canvas"}>
       <SiteHeader onWallet={(tab) => { setWalletTab(tab); setDepositOpen(true); }} onDaily={() => setDailyOpen(true)} />
 
-      <BillboardHero boxes={billboard} onOpen={setDetail} onInspect={setDetail} />
-
-      <AboutBanner />
-
-      <section ref={gridRef} id="boxes" className="collection-section page-shell" aria-labelledby="collection-title">
-        <div className="collection-heading">
-          <div><p className="eyebrow">{copy.collectionEyebrow}</p><h2 id="collection-title">{copy.collectionTitle}</h2><p className="collection-intro">{copy.collectionBody}</p></div>
-          <span className="collection-count">{t("design.collectionCount", { count: BOXES.length })}</span>
+      {skin === "netflix" ? <NetflixHome category={category} onCategory={(key) => pickCategory(key, false)} sort={sort} onSort={setSort} onPick={setDetail} /> : skin === "commerce" ? <CommerceHome category={category} onCategory={(key) => pickCategory(key, false)} sort={sort} onSort={setSort} onPick={setDetail} /> : <>
+      {/* 첫 화면: 제목 하나, 한 줄, 분류 알약, 곧바로 박스 목록. 고르는 일이 이 화면의 결정이다. */}
+      <section ref={gridRef} id="boxes" className="collection-section page-shell" aria-labelledby="hero-title">
+        <div className="home-hero">
+          <h1 id="hero-title">{copy.heroTitle}</h1>
+          <p>{copy.heroBody}</p>
         </div>
         <div className="collection-toolbar">
           <QuickTabs value={category} onChange={(key) => pickCategory(key, false)} />
           <label className="collection-sort"><span className="sr-only">{t("grid.sort")}</span><select value={sort} onChange={(e) => setSort(e.target.value as SortKey)}>{SORTS.map((s) => <option key={s.key} value={s.key}>{t(`sorts.${s.key}`)}</option>)}</select></label>
         </div>
-        <p className="sr-only" role="status">{t("design.resultsCount", { count: grid.length })}</p>
+        <div className="collection-meta"><span className="collection-count" role="status">{t("design.resultsCount", { count: grid.length })}</span><Link href="/fairness" className="text-link">{t("design.fairnessCta")}</Link></div>
         <BoxGrid boxes={visible} onPick={setDetail} />
         {shown < grid.length && <div className="mt-10 flex justify-center"><button type="button" onClick={() => setShown((n) => n + PAGE_SIZE)} className="btn-secondary">{t("grid.loadMore", { n: grid.length - shown })}</button></div>}
       </section>
+
+      <section className="home-assurance page-shell" aria-labelledby="assurance-title">
+        <div className="guide-heading"><h2 id="assurance-title">{copy.assuranceTitle}</h2></div>
+        <AboutBanner />
+      </section>
       <LiveReviewsSection />
       <DiscoveryGuide />
-      <section className="page-shell pb-20" aria-labelledby="proof-section-title">
-        <div className="guide-heading"><div><p className="eyebrow">{copy.proofEyebrow}</p><h2 id="proof-section-title">{copy.proofTitle}</h2><p className="guide-intro max-w-2xl whitespace-pre-line">{copy.proofBody}</p></div><Link href="/fairness" className="text-link">{copy.verify}<ArrowUpRight size={16} aria-hidden /></Link></div>
+      <section className="home-proof page-shell" aria-labelledby="proof-section-title">
+        <div className="guide-heading"><div><h2 id="proof-section-title">{copy.proofTitle}</h2><p className="guide-intro">{copy.proofBody}</p></div><Link href="/fairness" className="text-link">{copy.verify}</Link></div>
         <ProofFeed limit={4} />
       </section>
+      </>}
 
-      <DetailModal pending={openingPending} onDeposit={(box, count) => openDepositForPurchase(box.price * count)} box={detail} onClose={() => setDetail(null)} onOpen={openBox} onAutoplay={(b, cfg) => { if (useWalletStore.getState().balance < b.price) { openDepositForPurchase(b.price); return; } const ready = primeUnboxingAudio(); setDetail(null); void ready.then(() => setUnbox({ box: b, count: 1, auto: cfg })); }} />
+      <DetailModal pending={openingPending} onDeposit={(box, count) => openDepositForPurchase(box.price * count, true)} box={detail} onClose={() => setDetail(null)} onOpen={openBox} onAutoplay={(b, cfg) => { if (useWalletStore.getState().balance < b.price) { openDepositForPurchase(b.price); return; } const ready = primeUnboxingAudio(); setDetail(null); void ready.then(() => setUnbox({ box: b, count: 1, auto: cfg })); }} />
       <BulkOpenModal prepared={bulk?.prepared} box={bulk?.box ?? null} count={bulk?.count ?? 0} funding={bulk?.funding} onClose={() => setBulk(null)} onRetry={(b, c) => { setBulk(null); setTimeout(() => void openBox(b, c), 60); }} onSellBack={(ids, amount, split) => { if (split) creditSplit(split.toCrypto, split.toCard); else credit(amount); addTransaction({ type: "sellback", amountUsdt: amount, ref: ids.join(",") }); pushToast({ title: t("unbox.sold", { amount: fmt(amount) }), tone: "#E6CA65" }); }} />
 
       <DepositModal

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, Star } from "lucide-react";
+import { Star } from "lucide-react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ProductArt } from "@/components/box/ProductArt";
@@ -57,7 +57,7 @@ function reviewAuthor(review: MyReview, fallback: string) {
   return fallback + " #" + suffix;
 }
 
-export function LiveReviewsSection() {
+export function LiveReviewsSection({ count = 3 }: { count?: number } = {}) {
   const locale = useLocale();
   const home = copyFor(locale);
   const copy = communityFeedCopy(locale);
@@ -67,32 +67,25 @@ export function LiveReviewsSection() {
     ? reviews
     : [...reviews, ...HOME_DEMO_REVIEWS.slice(0, HOME_REVIEW_COUNT - reviews.length)];
 
+  /* 메인에는 후기 몇 건만 고정해서 보인다(기본 세 건). 흐르는 연출과 반복 목록은 쓰지 않는다. */
+  const shown = reviewFeed.slice(0, count);
   return <section className="home-reviews page-shell" aria-labelledby="live-reviews-heading">
-    <div className="mb-6 flex flex-wrap items-end justify-between gap-5">
-      <div><p className="eyebrow">{home.reviewEyebrow}</p><h2 id="live-reviews-heading" className="mt-3 text-2xl font-medium tracking-tight text-white md:text-3xl">{home.reviewTitle}</h2><p className="mt-3 max-w-2xl text-sm leading-7 text-muted">{home.reviewBody}</p></div>
-      <Link href="/community?tab=public" className="workspace-text-link">{copy.all}<ArrowUpRight className="h-4 w-4" aria-hidden="true" /></Link>
-    </div>
-    <div className="mb-5 flex items-center gap-2 text-xs text-secondary"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-gold-champagne motion-safe:animate-pulse" />{copy.auto}</div>
-    <div className="home-review-viewport" data-testid="live-review-cards">
-      <div className="home-review-track">
-        {[0, 1].map(loop => <div key={loop} className="home-review-loop" aria-hidden={loop === 1}>
-          {reviewFeed.map((review, index) => {
-            const box = BOX_BY_SLUG[review.boxSlug];
-            const product = box?.items.find(item => item.id === review.itemId);
-            const author = reviewAuthor(review, copy.member);
-            const isDemo = review.source === "example";
-            const href = isDemo ? "/community" : "/community?tab=public&review=" + encodeURIComponent(review.id) + "#review-" + encodeURIComponent(review.id);
-            return <article key={loop + "-" + review.id} data-review-id={review.id} data-source={isDemo ? "demo" : "member"} className="home-review-card rounded-2xl border border-hairline bg-surface">
-              <Link href={href} tabIndex={loop === 1 ? -1 : undefined} className="block h-full p-5 outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold-champagne">
-                <div className="flex items-center gap-4"><div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl bg-obsidian">{product && <ProductArt image={product.image} alt={itemName(product)} fallbackSize="sm" kind={product.kind} />}</div><div className="min-w-0"><h3 className="break-words text-sm font-medium text-white">{product ? itemName(product) : review.itemId}</h3><p className="mt-1 text-xs leading-5 text-muted">{box ? boxTitle(box) : review.boxSlug}</p>{product && <p className="mt-2 text-xs text-secondary">{copy.price} <span className="font-medium text-gold-champagne">{product.value.toLocaleString(locale)} USDT</span></p>}</div></div>
-                <div className="mt-5 flex items-center justify-between gap-2"><span className="flex items-center gap-1 text-gold-champagne" aria-label={copy.rating + " " + review.rating + "/5"}>{[1, 2, 3, 4, 5].map(n => <Star key={n} className={"h-3.5 w-3.5 " + (n <= review.rating ? "fill-current" : "text-muted")} aria-hidden="true" />)}<span className="ml-1 text-xs">{review.rating}/5</span></span><time dateTime={review.at} className="text-xs text-muted">{new Date(review.at).toLocaleDateString(locale)}</time></div>
-                <p className="mt-4 line-clamp-4 break-words text-sm leading-7 text-secondary">{review.text}</p>
-                <div className="mt-5 flex items-center gap-3 border-t border-hairline pt-4"><ProfileAvatar src={review.authorAvatarUrl || demoAvatar(review.id, index)} name={author} className="h-10 w-10" /><p className="min-w-0 truncate text-xs font-medium text-white">{author}</p></div>
-              </Link>
-            </article>;
-          })}
-        </div>)}
-      </div>
+    <div className="guide-heading"><div><h2 id="live-reviews-heading">{home.reviewTitle}</h2><p className="guide-intro">{home.reviewBody}</p></div><Link href="/community?tab=public" className="text-link">{copy.all}</Link></div>
+    <div className="home-review-grid" data-testid="live-review-cards">
+      {shown.map((review, index) => {
+        const box = BOX_BY_SLUG[review.boxSlug];
+        const product = box?.items.find(item => item.id === review.itemId);
+        const author = reviewAuthor(review, copy.member);
+        const isDemo = review.source === "example";
+        const href = isDemo ? "/community" : "/community?tab=public&review=" + encodeURIComponent(review.id) + "#review-" + encodeURIComponent(review.id);
+        return <article key={review.id} data-review-id={review.id} data-source={isDemo ? "demo" : "member"} className="home-review-card">
+          <Link href={href} className="home-review-link">
+            <div className="home-review-product"><div className="home-review-thumb">{product && <ProductArt image={product.image} alt={itemName(product)} fallbackSize="sm" kind={product.kind} />}</div><div className="min-w-0"><h3>{product ? itemName(product) : review.itemId}</h3><p>{box ? boxTitle(box) : review.boxSlug}</p></div></div>
+            <p className="home-review-text">{review.text}</p>
+            <div className="home-review-meta"><ProfileAvatar src={review.authorAvatarUrl || demoAvatar(review.id, index)} name={author} className="h-8 w-8" /><span className="min-w-0 truncate">{author}</span><span className="home-review-rating" aria-label={copy.rating + " " + review.rating + "/5"}><Star className="h-3.5 w-3.5 fill-current" aria-hidden="true" />{review.rating}/5</span><time dateTime={review.at}>{new Date(review.at).toLocaleDateString(locale)}</time></div>
+          </Link>
+        </article>;
+      })}
     </div>
   </section>;
 }

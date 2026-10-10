@@ -141,7 +141,7 @@ export function HistoryTab() {
     }).catch(() => setError(t("copyFailed")));
   };
 
-  if (!user) return <LoginRequired />;
+  if (!user) return <LoginRequired scope="wallet" />;
   return (
     <div className="mt-4">
       {error && <p role="alert" className="mb-3 text-sm text-red-200">{error}</p>}

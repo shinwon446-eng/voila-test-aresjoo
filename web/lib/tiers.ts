@@ -111,3 +111,5 @@ export const breakEvenRate = (box: ProductBox): number =>
 /** 배수 숫자만. 단위(배 / x / 倍)는 로케일 딕셔너리 tiers.multiple 이 붙인다. */
 export const formatMultiple = (m: number): string =>
   m >= 100 ? `${Math.round(m)}` : m >= 10 ? m.toFixed(0) : m.toFixed(1);
+/** 화면 표기용: 1000 이상이면 천 단위 쉼표를 넣는다(1,144). */
+export const formatMultipleGrouped = (m: number): string => (m >= 1000 ? Math.round(m).toLocaleString("en-US") : formatMultiple(m));

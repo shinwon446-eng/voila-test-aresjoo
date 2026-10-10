@@ -1,4 +1,8 @@
 @import "./design.css";
+@import "./gpt-skin.css";
+@import "./gpt-flow.css";
+@import "./nfx-skin.css";
+@import "./shop-skin.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

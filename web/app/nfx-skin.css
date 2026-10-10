@@ -1,0 +1,222 @@
+/*
+ * 메인 페이지 시안 B (2026-10-10, 2차): 넷플릭스 모바일 앱 화면을 재어 옮긴 값. 주소에 ?skin=netflix 를 붙이면 켜진다.
+ * 390 폭 기준 실측: 칩 높이 45 반경 14, 빌보드 351×507 반경 12, 줄 제목 18 굵게 왼쪽 12, 포스터 110×154 반경 6 간격 6,
+ * 떠 있는 하단 탭 236×60. 배경은 검정이고 맨 위만 빌보드 사진의 대표색이 번진다.
+ * 빨강(#e50914)은 인기 순위 배지와 상세 창의 작은 표식에만 쓴다. 넷플릭스의 로고, 이름, 글꼴, 그림은 쓰지 않는다.
+ * 범위는 main.nfx-home(그 안의 상세 창 포함)과 그 페이지의 푸터뿐이다.
+ */
+html:has(.nfx-home), html:has(.nfx-home) body { background-color: #000; color: #fff; }
+.nfx-home.bg-canvas { background-color: #000; }
+html:has(.nfx-home) a[aria-label="VOILA"] svg { color: #d9c39a; }
+
+/* ── 배경: 맨 위에만 대표색이 번지고 아래로 검정 */
+.nfx-body { position: relative; }
+.nfx-ambient { position: absolute; top: -64px; right: 0; left: 0; z-index: 0; height: 660px; pointer-events: none; background: linear-gradient(180deg, var(--nfx-ambient) 0%, color-mix(in srgb, var(--nfx-ambient) 58%, #000) 36%, #000 100%); }
+.nfx-body[data-view="grid"] .nfx-ambient { display: none; }
+.nfx-body > section, .nfx-body > .nfx-chips { position: relative; z-index: 1; }
+
+/* ── 머리줄: 맨 위에서는 투명, 내려가면 검정 */
+.nfx-home > header { border-bottom: 0; background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; transition: background-color .2s; }
+html[data-nfx-scrolled] .nfx-home > header { background: #000; }
+.nfx-home > header > div:first-child { height: 64px; max-width: none; padding-inline: 48px; }
+.nfx-home > header nav a { font-size: 14px; font-weight: 600; color: #e5e5e5; }
+.nfx-home > header nav a[aria-current="page"] { font-weight: 700; color: #fff; }
+.nfx-home > header nav a:hover { color: #b3b3b3; }
+.nfx-home > header .text-gold-champagne { color: #fff; }
+.nfx-home > header button.bg-surface { height: 36px; border: 0; border-radius: 6px; background: rgba(255,255,255,.12); font-size: 14px; font-weight: 600; color: #fff; }
+.nfx-home > header button.bg-surface:hover { background: rgba(255,255,255,.2); }
+.nfx-home > header select { height: 36px; border: 1px solid rgba(255,255,255,.3); border-radius: 4px; background-color: rgba(0,0,0,.4); font-size: 14px; font-weight: 600; color: #fff; }
+.nfx-home > header button.w-11 { border: 0; border-radius: 6px; }
+.nfx-home > header button.hover\:text-gold-champagne { height: 36px; border-radius: 4px; font-size: 14px; font-weight: 600; color: #fff; }
+.nfx-home > header button.hover\:text-gold-champagne:hover { color: #b3b3b3; }
+.nfx-home > header button[class*="f1eee7"] { height: 36px; border-radius: 4px; background: #fff; padding-inline: 16px; font-size: 14px; font-weight: 700; color: #000; }
+.nfx-home > header button[class*="f1eee7"]:hover { background: rgba(255,255,255,.78); }
+.nfx-home > header #site-menu { background: #000; border-color: rgba(255,255,255,.1); }
+.nfx-home > header #site-menu .bg-gold-champagne { border-radius: 4px; background: #fff; font-weight: 700; color: #000; }
+.nfx-home > header #site-menu .grid > button + button { border-radius: 4px; border-color: rgba(255,255,255,.3); }
+
+/* ── 칩: 알약이 아니라 둥근 사각, 옅은 면과 테두리 */
+.nfx-chips { display: flex; align-items: center; gap: 6px; padding: 4px 48px 0; overflow-x: auto; scroll-margin-top: 68px; scrollbar-width: none; }
+.nfx-chips::-webkit-scrollbar { display: none; }
+.nfx-chip { height: 45px; flex: none; padding: 0 15px; border: 1px solid rgba(255,255,255,.15); border-radius: 14px; background: rgba(255,255,255,.1); color: #d9d9d9; font-size: 14px; font-weight: 600; white-space: nowrap; transition: background .15s, border-color .15s; }
+.nfx-chip:hover { background: rgba(255,255,255,.18); }
+.nfx-chip.is-active { border-color: rgba(255,255,255,.45); background: rgba(255,255,255,.3); color: #fff; }
+.nfx-chip-clear { display: grid; height: 45px; width: 45px; flex: none; place-items: center; border: 1px solid rgba(255,255,255,.15); border-radius: 999px; background: rgba(255,255,255,.1); color: #fff; }
+.nfx-chip:focus-visible, .nfx-chip-clear:focus-visible, .nfx-btn:focus-visible, .nfx-poster:focus-visible, .nfx-arrow:focus-visible, .nfx-tabbar a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* ── 포스터 그림: 채워 자르기(fill) 또는 흐린 바탕 위에 사진 전체(keep) */
+.nfx-poster-art { position: absolute; inset: 0; display: block; overflow: hidden; background: #151515; }
+.nfx-poster-img { position: absolute; }
+.nfx-poster-img.fill { inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.nfx-poster-blur { position: absolute; top: -12%; left: -12%; width: 124%; height: 124%; max-width: none; object-fit: cover; filter: blur(16px) brightness(.8) saturate(1.1); }
+.nfx-poster-img.keep { top: 9%; left: 0; width: 100%; max-width: none; height: auto; aspect-ratio: 4 / 3; object-fit: cover; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 26%, #000 82%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 26%, #000 82%, transparent 100%); }
+.nfx-poster-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 45%, rgba(0,0,0,.35) 75%, rgba(0,0,0,.85) 100%); }
+
+/* ── 빌보드: 세로형 큰 카드. 그림이 카드를 채우고 제목, 꼬리표, 단추 둘이 아래에 얹힌다 */
+.nfx-billboard { position: relative; width: calc(100% - 40px); max-width: 420px; aspect-ratio: 351 / 507; margin: 16px auto 0; overflow: hidden; border: 1px solid rgba(255,255,255,.25); border-radius: 12px; background: #111; }
+.nfx-billboard-copy { position: absolute; right: 14px; bottom: 14px; left: 14px; z-index: 2; text-align: center; }
+.nfx-billboard h1 { font-size: 28px; font-weight: 800; line-height: 34px; letter-spacing: -.025em; text-wrap: balance; word-break: keep-all; text-shadow: 0 1px 3px rgba(0,0,0,.6); }
+.nfx-tags { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin: 10px 0 0; padding: 0; list-style: none; color: #d0d0d0; font-size: 12px; line-height: 18px; }
+.nfx-tags li { display: inline-flex; align-items: center; }
+.nfx-tags li:first-child { color: #fff; font-weight: 600; }
+.nfx-tags li + li::before { content: ""; width: 3px; height: 3px; margin: 0 7px; border-radius: 50%; background: #8c8c8c; }
+.nfx-billboard-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 12px; }
+.nfx-btn { position: relative; display: inline-flex; height: 38px; align-items: center; justify-content: center; gap: 8px; border-radius: 4px; background: rgba(109,109,110,.65); color: #fff; font-size: 15px; font-weight: 700; white-space: nowrap; transition: background .15s; }
+.nfx-btn::after { content: ""; position: absolute; inset: -3px 0; }
+.nfx-btn:hover { background: rgba(109,109,110,.45); }
+.nfx-btn.primary { background: #fff; color: #000; }
+.nfx-btn.primary:hover { background: rgba(255,255,255,.8); }
+
+/* ── 줄 */
+.nfx-row { margin-top: 20px; }
+.nfx-billboard + .nfx-row { margin-top: 24px; }
+.nfx-row h2, .nfx-info h2, .nfx-home .home-reviews .guide-heading h2 { color: #fff; font-size: 18px; font-weight: 700; line-height: 24px; letter-spacing: -.02em; }
+.nfx-row h2 { margin-bottom: 10px; padding-inline: 12px; }
+.nfx-row-wrap { position: relative; }
+.nfx-track, .nfx-home .home-review-grid { display: flex; gap: 6px; overflow-x: auto; padding: 0 12px; scroll-padding-inline: 12px; scroll-snap-type: x proximity; scrollbar-width: none; }
+.nfx-track::-webkit-scrollbar, .nfx-home .home-review-grid::-webkit-scrollbar { display: none; }
+.nfx-arrow { display: none; }
+
+/* ── 포스터: 110×154, 반경 6. 제목은 그림 위, 가격은 아래 가운데 검정 띠, 인기 순위는 왼쪽 위 빨간 배지 */
+.nfx-poster { position: relative; display: block; width: 110px; aspect-ratio: 110 / 154; flex: none; overflow: hidden; border-radius: 6px; background: #151515; scroll-snap-align: start; text-align: center; }
+.nfx-poster-title { position: absolute; right: 8px; bottom: 24px; left: 8px; z-index: 2; display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; color: #fff; font-size: 13px; font-weight: 700; line-height: 17px; letter-spacing: -.02em; text-wrap: balance; word-break: keep-all; text-shadow: 0 1px 3px rgba(0,0,0,.6); }
+.nfx-price-badge { position: absolute; bottom: 0; left: 50%; z-index: 2; height: 18px; transform: translateX(-50%); border-radius: 2px 2px 0 0; background: rgba(0,0,0,.8); padding: 0 8px; color: #fff; font-size: 11px; font-weight: 700; line-height: 18px; white-space: nowrap; }
+.nfx-rank-badge { position: absolute; top: 0; left: 0; z-index: 2; display: flex; width: 24px; height: 28px; flex-direction: column; align-items: center; justify-content: center; border-radius: 0 0 2px 0; background: #e50914; color: #fff; }
+.nfx-rank-badge span { font-size: 8px; font-weight: 800; line-height: 9px; letter-spacing: -.02em; }
+.nfx-rank-badge b { font-size: 13px; font-weight: 800; line-height: 13px; }
+
+/* ── 상품 후기 줄 */
+.nfx-home .home-reviews.page-shell { width: 100%; margin-top: 24px; padding: 0; }
+.nfx-home .home-reviews .guide-heading { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; padding-inline: 12px; }
+.nfx-home .home-reviews .guide-heading > div { animation: none; }
+.nfx-home .home-reviews .guide-heading h2 { margin: 0; }
+.nfx-home .home-reviews .guide-intro { display: none; }
+.nfx-home .home-reviews .text-link { min-height: 0; color: #b3b3b3; font-size: 14px; font-weight: 600; }
+.nfx-home .home-reviews .text-link:hover { color: #fff; }
+.nfx-home .home-review-grid { gap: 8px; }
+.nfx-home .home-review-card { width: 280px; flex: none; border: 0; border-radius: 6px; background: #1f1f1f; scroll-snap-align: start; }
+.nfx-home .home-review-link { display: block; height: 100%; padding: 12px; border-radius: 6px; }
+.nfx-home .home-review-link:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.nfx-home .home-review-product { display: flex; align-items: center; gap: 12px; }
+.nfx-home .home-review-thumb { position: relative; width: 44px; height: 44px; flex: none; overflow: hidden; border-radius: 4px; background: #111; }
+.nfx-home .home-review-thumb .pointer-events-none[aria-hidden] { box-shadow: none !important; }
+.nfx-home .home-review-product h3 { color: #fff; font-size: 14px; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
+.nfx-home .home-review-product p { margin-top: 2px; color: #b3b3b3; font-size: 13px; }
+.nfx-home .home-review-text { display: -webkit-box; margin-top: 10px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; color: #e5e5e5; font-size: 14px; line-height: 21px; }
+.nfx-home .home-review-meta { display: flex; align-items: center; gap: 8px; margin-top: 10px; color: #808080; font-size: 13px; }
+.nfx-home .home-review-rating { display: inline-flex; align-items: center; gap: 4px; margin-left: auto; color: #b3b3b3; }
+
+/* ── 분류 화면: 포스터 격자와 정렬 */
+.nfx-grid-view { padding: 16px 12px 0; }
+.nfx-grid-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 14px; }
+.nfx-grid-head h1 { font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+.nfx-grid-count { color: #a3a3a3; font-size: 12px; }
+.nfx-sort { margin-left: auto; }
+.nfx-sort select { height: 36px; border: 1px solid rgba(255,255,255,.22); border-radius: 4px; background-color: #000; padding: 0 26px 0 10px; color: #d9d9d9; font-size: 13px; font-weight: 600; }
+.nfx-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.nfx-grid .nfx-poster { width: auto; }
+
+/* ── 이용 안내 */
+.nfx-info { margin-top: 32px; padding: 0 12px 28px; }
+.nfx-info h2 { margin-bottom: 10px; }
+.nfx-info-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.nfx-info-item { display: flex; align-items: flex-start; gap: 14px; border-radius: 6px; background: #1f1f1f; padding: 13px 16px; color: #fff; transition: background .15s; }
+.nfx-info-item:hover { background: #2a2a2a; }
+.nfx-info-item > svg { flex: none; margin-top: 1px; color: #e5e5e5; }
+.nfx-info-item strong { display: block; font-size: 15px; font-weight: 700; }
+.nfx-info-item > span > span { display: block; margin-top: 2px; color: #b3b3b3; font-size: 13px; line-height: 19px; }
+.nfx-info-links { display: flex; gap: 24px; margin-top: 6px; }
+.nfx-info-links a { display: inline-flex; min-height: 44px; align-items: center; color: #b3b3b3; font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.nfx-info-links a:hover { color: #fff; }
+
+/* ── 떠 있는 하단 탭: 어두운 알약, 고른 항목은 더 밝은 알약 */
+.nfx-tabbar { position: fixed; bottom: calc(env(safe-area-inset-bottom, 0px) + 8px); left: 50%; z-index: 60; display: flex; width: 236px; height: 60px; transform: translateX(-50%); align-items: center; gap: 2px; border: 1px solid rgba(255,255,255,.08); border-radius: 30px; background: rgba(43,43,43,.97); padding: 7px; box-shadow: 0 8px 24px rgba(0,0,0,.55); }
+.nfx-tabbar a { display: flex; height: 46px; flex: 1; flex-direction: column; align-items: center; justify-content: center; gap: 2px; border-radius: 23px; color: #b3b3b3; font-size: 11px; font-weight: 500; line-height: 14px; }
+.nfx-tabbar a.is-active { background: #383838; color: #fff; font-weight: 600; }
+.nfx-tabbar a svg { width: 22px; height: 22px; }
+
+/* ── 푸터 */
+html:has(.nfx-home) footer { background: #000; border-color: rgba(255,255,255,.1); color: #808080; padding-bottom: 84px; }
+html:has(.nfx-home) footer .border-hairline { border-color: rgba(255,255,255,.1); }
+html:has(.nfx-home) footer a.text-gold-champagne { color: #b3b3b3; }
+html:has(.nfx-home) footer a:hover { color: #fff; }
+
+/* ── 박스 상세 창: 구조와 기능은 그대로, 겉모습만. 꽉 찬 흰 주 단추, 진회색 보조 단추, 반경 4, 굵은 제목, 빨간 작은 표식 */
+.nfx-home [role="dialog"] { border: 0; border-radius: 10px; background: #141414; }
+.nfx-home [role="dialog"] .border-hairline { border-color: rgba(255,255,255,.1); }
+.nfx-home [role="dialog"] .bg-obsidian { background-color: #000; }
+.nfx-home [role="dialog"] .eyebrow { color: #e50914; font-size: 12px; font-weight: 800; letter-spacing: .06em; }
+.nfx-home [role="dialog"] h2 { font-size: 24px; font-weight: 700; line-height: 30px; letter-spacing: -.02em; }
+.nfx-home [role="dialog"] header .text-3xl { font-size: 24px; line-height: 30px; }
+.nfx-home [role="dialog"] header .mt-5.items-baseline { margin-top: 12px; }
+.nfx-home [role="dialog"] header .text-sm.text-secondary, .nfx-home [role="dialog"] header p.text-sm:not(.font-semibold) { font-size: 13px; }
+.nfx-home [role="dialog"] .btn-primary { min-height: 45px; border: 0; border-radius: 4px; background: #fff; color: #000; font-size: 16px; font-weight: 700; }
+.nfx-home [role="dialog"] .btn-primary:hover { background: rgba(255,255,255,.8); }
+.nfx-home [role="dialog"] .btn-secondary { min-height: 45px; border: 0; border-radius: 4px; background: #2a2a2a; color: #fff; font-size: 16px; font-weight: 700; }
+.nfx-home [role="dialog"] .btn-secondary:hover { background: #3a3a3a; }
+.nfx-home [role="dialog"] button[aria-pressed] { border-color: transparent; border-radius: 4px; background: #2a2a2a; color: #fff; font-size: 13px; font-weight: 700; }
+.nfx-home [role="dialog"] button[aria-pressed="true"] { background: #fff; color: #000; }
+.nfx-home [role="dialog"] header > div:first-child .pointer-events-none[aria-hidden] { box-shadow: none !important; }
+.nfx-home [role="dialog"] header .flex.flex-wrap.gap-x-5 { display: grid; gap: 4px; }
+.nfx-home [role="dialog"] header .flex.flex-wrap.gap-x-5 > button:first-child { min-height: 45px; justify-content: center; border-radius: 4px; background: #2a2a2a; color: #fff; font-size: 15px; font-weight: 700; }
+.nfx-home [role="dialog"] header .flex.flex-wrap.gap-x-5 > button:first-child:hover { background: #3a3a3a; }
+.nfx-home [role="dialog"] header .flex.flex-wrap.gap-x-5 > button + button { justify-content: center; font-size: 14px; color: #b3b3b3; }
+.nfx-home [role="dialog"] .text-gold-champagne { color: #fff; }
+.nfx-home [role="dialog"] [class*="border-gold-champagne"] { border-color: rgba(255,255,255,.12); border-radius: 6px; background: #1f1f1f; }
+.nfx-home [role="dialog"] h3 { display: inline-block; padding-top: 10px; border-top: 4px solid #e50914; font-size: 18px; font-weight: 700; }
+.nfx-home [role="dialog"] .rounded-xl, .nfx-home [role="dialog"] .rounded-lg { border-radius: 6px; }
+
+/* 영어 박스 이름은 낱말이 길어 두 줄에 안 들어간다. 세 줄까지 허용 */
+html[lang="en"] .nfx-poster-title { -webkit-line-clamp: 3; }
+@media (max-width: 767px) {
+  html[lang="en"] .nfx-poster-title { font-size: 12px; line-height: 15px; }
+  .nfx-home > header > div:first-child { height: 50px; padding-inline: 14px; }
+  .nfx-ambient { top: -50px; height: 620px; }
+  .nfx-chips { padding: 4px 15px 0; scroll-margin-top: 54px; }
+}
+@media (min-width: 768px) {
+  /* PC: 실제 앱 화면이 근거가 아니라 같은 문법을 넓힌 제안이다. 빌보드는 가로형, 포스터는 180×252 */
+  .nfx-tabbar { display: none; }
+  html:has(.nfx-home) footer { padding-bottom: 0; }
+  .nfx-chip, .nfx-chip-clear { height: 40px; }
+  .nfx-chip-clear { width: 40px; }
+  .nfx-billboard { width: auto; max-width: none; height: 460px; aspect-ratio: auto; margin: 20px 48px 0; }
+  .nfx-billboard .nfx-poster-art { right: 0; left: auto; width: min(64%, 613px); }
+  .nfx-billboard .nfx-poster-img.fill { transform: none !important; }
+  .nfx-billboard .nfx-poster-blur { display: none; }
+  .nfx-billboard .nfx-poster-img.keep { top: 0; height: 100%; aspect-ratio: auto; -webkit-mask-image: none; mask-image: none; }
+  .nfx-billboard .nfx-poster-shade { background: linear-gradient(90deg, #111 0%, rgba(17,17,17,.6) 22%, rgba(17,17,17,0) 55%), linear-gradient(0deg, rgba(17,17,17,.7) 0%, rgba(17,17,17,0) 30%); }
+  .nfx-billboard-copy { right: auto; bottom: 72px; left: 44px; max-width: 460px; text-align: left; }
+  .nfx-billboard h1 { font-size: 44px; line-height: 50px; }
+  .nfx-tags { justify-content: flex-start; font-size: 14px; }
+  .nfx-billboard-actions { display: flex; gap: 12px; margin-top: 20px; }
+  .nfx-btn { height: 44px; padding: 0 22px; font-size: 16px; }
+  .nfx-row { margin-top: 32px; }
+  .nfx-billboard + .nfx-row { margin-top: 36px; }
+  .nfx-row h2, .nfx-info h2, .nfx-home .home-reviews .guide-heading h2 { font-size: 22px; }
+  .nfx-row h2, .nfx-home .home-reviews .guide-heading { padding-inline: 48px; }
+  .nfx-track, .nfx-home .home-review-grid { gap: 12px; padding: 4px 48px 8px; scroll-padding-inline: 48px; }
+  .nfx-poster { width: 180px; }
+  .nfx-poster-title { right: 12px; bottom: 34px; left: 12px; font-size: 19px; line-height: 24px; }
+  .nfx-price-badge { height: 24px; padding: 0 12px; font-size: 13px; line-height: 24px; }
+  .nfx-rank-badge { width: 34px; height: 40px; }
+  .nfx-rank-badge span { font-size: 10px; line-height: 12px; }
+  .nfx-rank-badge b { font-size: 18px; line-height: 18px; }
+  .nfx-arrow { position: absolute; top: 4px; bottom: 8px; z-index: 3; display: grid; width: 48px; place-items: center; background: rgba(0,0,0,.6); color: #fff; opacity: 0; pointer-events: none; transition: opacity .15s; }
+  .nfx-arrow.prev { left: 0; }
+  .nfx-arrow.next { right: 0; }
+  .nfx-row-wrap.has-prev .nfx-arrow.prev, .nfx-row-wrap.has-next .nfx-arrow.next { pointer-events: auto; opacity: .7; }
+  .nfx-row-wrap.has-prev .nfx-arrow.prev:hover, .nfx-row-wrap.has-next .nfx-arrow.next:hover, .nfx-arrow:focus-visible { opacity: 1; }
+  .nfx-home .home-reviews.page-shell { margin-top: 36px; }
+  .nfx-home .home-review-card { width: 320px; }
+  .nfx-grid-view { padding: 20px 48px 0; }
+  .nfx-grid-head h1 { font-size: 32px; }
+  .nfx-grid { grid-template-columns: repeat(auto-fill, 180px); gap: 12px; }
+  .nfx-info { margin-top: 48px; padding: 0 48px 56px; }
+  .nfx-info-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+}
+@media (min-width: 768px) and (hover: hover) {
+  .nfx-poster { transition: transform .16s; }
+  .nfx-poster:hover { transform: scale(1.04); }
+}
+@media (prefers-reduced-motion: reduce) { .nfx-poster { transition: none; } .nfx-poster:hover { transform: none; } }

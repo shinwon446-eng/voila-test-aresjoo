@@ -2,7 +2,7 @@
 
 - 시작: 2026-10-11 02:34 (로컬) / 종료 예정: 2026-10-12 02:34
 - 브랜치: `voila-redesign` (커밋은 여기에만). 테스트 사이트 배포는 `main` 푸시(파운더가 허락한 범위: 사진과 화면. 운영 저장소 gacha-sim 은 손대지 않는다)
-- 마지막 정상 지점: `3da457d` (테스트 296 통과, design-lint 0, build 통과, main 배포 성공 06:05, 공개 주소 /ko/account 확인)
+- 마지막 정상 지점: `440c242` (테스트 296 통과, design-lint 0, tsc 통과, build 128 페이지, main 배포 성공 06:50, 공개 주소 /ko/box/dollar-apple 확인)
 - 개발 서버: `.claude/launch.json` 의 `voila-test-aresjoo`(3002). `next build` 뒤에는 `.next` 를 지우고 다시 띄운다(OneDrive 에서 readlink EINVAL)
 - 정본: DESIGN.md(규칙), JOURNEY.md(여정), qa/PROGRESS.md(진행), IMPROVEMENT_LOOP.md(사이클 기록), DECISION_LOG.md(Claude 와 Codex 충돌과 결정)
 
@@ -24,8 +24,8 @@
 - 사이클 6 (04:53~05:35) 끝: 계정 관리 시트 셋, Codex 3차 감사 73점 반영. 커밋 `f6ea85a`, `543804b` (main 미배포)
 - 사이클 7 (05:20~06:05) 끝: 사진 둘 재변환, 카드 세 덩이, Codex QA 3차(2차 실패 전부 해소) → 탈퇴 문구. main 배포
 - 사이클 8 (~05:55) 끝: 옛 주소 안내 화면, 320 폭, Codex 4차 75점, 사진 불일치 17장 제거(studio.json 162 = sources 162), studio.mjs 끝에 출처 없는 판 삭제 가드. 커밋 `aa1d42f`, `6bfb3d5`. main 미배포(사이클 9 에서)
-- 사이클 9 (06:17~06:50) 끝: 검증 링크, "참고가 기준", 기준일 2026년 10월, 이름과 다른 사진 24건 제거(스튜디오 7 + Unsplash 매핑 16 + 생활가전 커버), Commons 우선. 커밋 `440c242`. main 배포 런 38091284481(결과는 사이클 10 시작 때 확인)
-- 사이클 10 (다음 깨어남): (a) main 배포 결과 확인(실패나 취소면 `gh workflow run deploy-pages.yml --ref main`), 공개 주소 /ko/box/dollar-apple 에서 "참고가 기준" 확인 (b) Codex 5차 감사: 새 스크린샷(home-full, box, item, verify, account, inventory, reveal 390 폭), 이전 프롬프트 `qa/codex/audit-prompt*.md` 재사용, 결과 `qa/codex/audit-c10.md`, 점수표 갱신 (c) 사진 빠진 상품 가운데 값 큰 것부터 `reject.mjs --next` 로 다음 후보 재탐색 후 시트로 검수 (d) 가방과 골드 사진은 파운더 결정 대기(묻지 않는다)
+- 사이클 9 (06:17~06:50) 끝: 검증 링크, "참고가 기준", 기준일 2026년 10월, 이름과 다른 사진 24건 제거(스튜디오 7 + Unsplash 매핑 16 + 생활가전 커버), Commons 우선. 커밋 `440c242`. main 배포 성공(런 38091284481, 공개 주소 /ko/box/dollar-apple 에서 "참고가 기준"과 검증 링크 확인). 기록 커밋 `fec9510`
+- 사이클 10 (다음 깨어남): (a) Codex 5차 감사: 새 스크린샷(home-full, box, item, verify, account, inventory, reveal 390 폭), 이전 프롬프트 `qa/codex/audit-prompt*.md` 재사용, 결과 `qa/codex/audit-c10.md`, 점수표 갱신 (c) 사진 빠진 상품 가운데 값 큰 것부터 `reject.mjs --next` 로 다음 후보 재탐색 후 시트로 검수 (d) 가방과 골드 사진은 파운더 결정 대기(묻지 않는다)
 - (옛 계획) 사이클 8: (a) Codex 감사 4차(새 스크린샷 8장, 점수 추이 54→64→73→?) (b) /community 와 /about 처리: 메뉴에 없고 옛 디자인이라 접근 경로를 끊거나 새 디자인. 먼저 어디서 링크되는지 grep (c) 여럿 결과의 상품 시트 사진 확인 (d) 320 폭 재검수(홈, 박스, 계정, 보관함)
 - (옛 계획) 사이클 7: (a) VR2 사진 다음 후보, 컬리넌 배경 잔여 손질(studio 재변환 또는 다른 후보) (b) 홈 카드 정보 간격(이름과 가격 / 대표 상품 / 확률 요약을 세 덩이로) (c) Codex 시나리오 QA 3차(계정 시트 셋, 배송 나라 보기, 검증 값 전달 포함) (d) 반영 뒤 main 배포
 - (옛 계획) 사이클 5: (a) TwoFactorSetup 을 새 디자인으로(금색 테두리와 아이콘 제거, 행과 입력칸만) (b) 보관함 행 끝 화살표, 상품 시트에 배송 가능 나라 수 (c) 스위치 2 사진을 다음 후보로 (d) Codex 시나리오 QA 2차(A~G 재실행, scenario-prompt.md 재사용) (e) 그 결과 반영 뒤 main 배포

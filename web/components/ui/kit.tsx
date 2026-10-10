@@ -27,7 +27,7 @@ export function ButtonLink({ href, quiet, className, children }: { href: string;
 /** 보조 행동: 14px 밑줄 링크. href 가 있으면 이동, 없으면 단추. */
 export function TextLink({ href, onClick, external, children, className }: { href?: string; onClick?: () => void; external?: boolean; children: ReactNode; className?: string }) {
   if (href && external) return <a href={href} target="_blank" rel="noreferrer" className={cx("v-link", className)}>{children} ↗</a>;
-  if (href) return <Link href={href} className={cx("v-link", className)}>{children}</Link>;
+  if (href) return <Link href={href} onClick={onClick} className={cx("v-link", className)}>{children}</Link>;
   return <button type="button" onClick={onClick} className={cx("v-link", className)}>{children}</button>;
 }
 

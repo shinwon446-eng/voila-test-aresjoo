@@ -37,6 +37,9 @@ export function VerifySheet({ record, onClose }: { record: VerifyRecord | null; 
   }, [record]);
 
   const done = outcome.state === "done" ? outcome.out : null;
+  // 직접 계산 화면으로 값을 실어 보낸다(모바일에서 긴 값을 손으로 옮기지 않게). 박스는 상품 id 로 찾는다
+  const boxSlug = record ? BOXES.find((b) => b.items.some((i) => i.id === record.itemId))?.slug ?? "" : "";
+  const manualHref = record ? "/verify?" + new URLSearchParams({ s: record.fair.serverSeed, h: record.fair.serverSeedHash, c: record.fair.clientSeed, n: String(record.fair.nonce), box: boxSlug }).toString() : "/verify";
   const expected = done?.expectedItemId ? products.get(done.expectedItemId) : undefined;
   const verdict = !done ? null : !done.hashMatch || !done.rollMatch || done.itemMatch === false ? "bad" : done.itemMatch === null ? "partial" : "ok";
 
@@ -54,7 +57,7 @@ export function VerifySheet({ record, onClose }: { record: VerifyRecord | null; 
           </Rows>
           {verdict && <Line fail={verdict === "bad"}>{t("verify." + verdict)}</Line>}
           {outcome.state === "failed" && <Line fail>{t("verify.failed")}</Line>}
-          <div className="v-links"><TextLink href="/verify">{t("verify.manual")}</TextLink></div>
+          <div className="v-links"><TextLink href={manualHref} onClick={onClose}>{t("verify.manual")}</TextLink></div>
         </>
       )}
     </Sheet>

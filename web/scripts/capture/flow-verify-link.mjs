@@ -1,0 +1,21 @@
+// /verify 의 내 기록 시트에서 "값을 직접 넣어 검증" 을 누르면 시트가 닫히고 값이 채워지는지
+import { chromium } from "playwright";
+import { installState, makeState } from "./states.mjs";
+const [out] = process.argv.slice(2);
+const base = process.env.CAPTURE_BASE || "http://localhost:3002";
+const browser = await chromium.launch({ channel: "chrome", headless: true });
+const context = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, locale: "ko-KR", reducedMotion: "reduce" });
+await installState(context, await makeState("inventory", "ko"), new URL(base).origin);
+const page = await context.newPage();
+await page.goto(base + "/ko/verify", { waitUntil: "networkidle" });
+await page.locator(".v-itemrow").first().click();
+await page.waitForTimeout(900);
+await page.getByText("값을 직접 넣어 검증", { exact: true }).click();
+await page.waitForTimeout(900);
+const sheetOpen = await page.locator(".v-sheet").count();
+const seed = await page.getByLabel("공개된 값", { exact: true }).inputValue();
+const nonce = await page.getByLabel("회차", { exact: true }).inputValue();
+const pressed = await page.locator('.v-chips--scroll .v-chip[aria-pressed="true"]').innerText();
+console.log("sheet open:", sheetOpen, "| seed filled:", seed.length > 20, "| nonce:", nonce, "| box:", pressed, "| url:", page.url().slice(0, 60));
+await page.screenshot({ path: `${out}/verify-prefilled-mobile.png` });
+await browser.close();

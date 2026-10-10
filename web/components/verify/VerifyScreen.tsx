@@ -4,7 +4,8 @@
  * 위: 내 개봉 기록(보관함의 실제 기록, 누르면 그 자리 검증 시트). 아래: 값을 직접 넣어 계산(공개된 값, 내 기기 값, 회차, 박스).
  * 계산은 전부 이 브라우저에서 한다. 직접 넣은 값은 지금의 확률표로 맞춰 보므로, 그 사실을 한 줄로 말한다.
  */
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { BOXES, dropTable, type ProductBox } from "@/lib/products";
 import { calculateRollResult, determineItem, hashServerSeed } from "@/lib/fairness";
@@ -36,6 +37,14 @@ export function VerifyScreen() {
   const [manual, setManual] = useState<Manual | null>(null);
   const [failed, setFailed] = useState(false);
   const [busy, setBusy] = useState(false);
+  const params = useSearchParams();
+  // 결과 시트의 "값을 직접 넣어 검증" 이 값을 실어 보내면 미리 채우고 그 절로 내려간다
+  useEffect(() => {
+    const seed = params?.get("s"); if (!seed) return;
+    setServerSeed(seed); setLockedHash(params?.get("h") ?? ""); setClientSeed(params?.get("c") ?? ""); setNonce(params?.get("n") ?? "");
+    const slug = params?.get("box"); if (slug && BOXES.some((b) => b.slug === slug)) setBoxSlug(slug);
+    document.getElementById("verify-manual")?.scrollIntoView({ block: "start" });
+  }, [params]);
 
   const products = useMemo(() => new Map(BOXES.flatMap((box) => box.items).map((item) => [item.id, item])), []);
   const records = useMemo(() => [...items].sort((a, b) => (Date.parse(b.acquiredAt) || 0) - (Date.parse(a.acquiredAt) || 0)), [items]);

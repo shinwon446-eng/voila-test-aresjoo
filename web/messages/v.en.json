@@ -5,7 +5,8 @@
     "cancel": "Cancel",
     "loading": "Loading",
     "checking": "Checking",
-    "copied": "Address copied"
+    "copied": "Address copied",
+    "go": "Open"
   },
   "nav": {
     "boxes": "Boxes",
@@ -21,12 +22,17 @@
   },
   "home": {
     "title": "Boxes",
-    "desc": "See the contents and odds first, then verify each result on the spot.",
+    "desc": "Open a box and receive an item or USDT at published odds. Verify each result on the spot.",
     "filter": "Category",
     "all": "All boxes",
     "price": "{price} / open",
     "top": "Top item value {amount}",
-    "count": "{n} items"
+    "count": "{n} items",
+    "search": "Find by item",
+    "searchHint": "e.g. iPhone, Rolex, Charizard",
+    "searchNone": "No item with that name.",
+    "searchIn": "{box}, {price}",
+    "real": "Item odds {pct}"
   },
   "box": {
     "desc": "This box holds {n} items, and each tier shows its odds.",
@@ -54,7 +60,22 @@
     "confirmTitle": "{amount} payment",
     "confirmDesc": "Paid from your balance, then opened right away.",
     "openFail": "The box did not open. Your balance is unchanged.",
-    "photoNote": "Photos are staged images."
+    "photoNote": "Photos are staged images.",
+    "strip": "Top items",
+    "tiers": "Odds by tier",
+    "evNote": "Expected value uses retail prices. Taking USDT pays {pct}% of retail.",
+    "receive": "How you get it",
+    "receivePhysical": "Shipped, or {amount}",
+    "receiveDigital": "As a code, or {amount}",
+    "receiveCash": "Added to your balance on open",
+    "alsoIn": "Compare with {n} other boxes",
+    "reviews": "Reviews",
+    "noReviews": "No reviews yet. Only items you received can be reviewed.",
+    "reviewProof": "Tied to a real opening record.",
+    "stripNote": "Highest value first. The odds of any physical item are {pct}.",
+    "mostLikely": "The most common result is {amount} cashback, {pct}.",
+    "compareNote": "Price per open and odds for this item. No box sells the item outright.",
+    "guestNote": "After login, your USDT balance pays for the open."
   },
   "reveal": {
     "skip": "Skip",
@@ -297,5 +318,28 @@
     "doneHold": "It is sent after {hours} hours, and you can cancel it in your wallet history before then.",
     "doneReview": "It is sent after a safety review, and you can follow the status in your wallet history.",
     "toWallet": "Back to wallet"
+  },
+  "account": {
+    "title": "Account",
+    "desc": "Balance, vault and security in one place.",
+    "loginLine": "Log in to see your balance, vault and security settings.",
+    "wallet": "Wallet",
+    "balance": "Balance",
+    "vault": "Vault",
+    "held": "In storage",
+    "shippingNow": "Shipping",
+    "countN": "{n}",
+    "security": "Security",
+    "twoFactor": "Authenticator app",
+    "twoFactorDesc": "Withdrawals use the 6-digit code from your authenticator app.",
+    "on": "Connected",
+    "off": "Not connected",
+    "email": "Email",
+    "help": "Help",
+    "logout": "Log out",
+    "logoutTitle": "Log out",
+    "logoutDesc": "Your balance and vault stay with the account.",
+    "loggedOut": "Logged out.",
+    "more": "Nickname, password, delete account"
   }
 }

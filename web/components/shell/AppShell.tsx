@@ -25,7 +25,7 @@ export const NAV = [
   { key: "wallet", href: "/wallet" },
   { key: "verify", href: "/fairness" },
   { key: "guide", href: "/guide" },
-  { key: "account", href: "/profile" },
+  { key: "account", href: "/account" },
 ] as const;
 
 export function AppShell({ children, wide }: { children: ReactNode; wide?: boolean }) {

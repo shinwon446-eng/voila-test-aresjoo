@@ -5,7 +5,8 @@
     "cancel": "取消",
     "loading": "加载中",
     "checking": "确认中",
-    "copied": "已复制地址"
+    "copied": "已复制地址",
+    "go": "打开"
   },
   "nav": {
     "boxes": "盲盒",
@@ -21,12 +22,17 @@
   },
   "home": {
     "title": "盲盒",
-    "desc": "先看内容与概率，开箱结果当场验证。",
+    "desc": "打开盲盒，按公开概率获得商品或 USDT。结果当场验证。",
     "filter": "分类",
     "all": "全部盲盒",
     "price": "{price} / 次",
     "top": "最高商品价值 {amount}",
-    "count": "内容 {n} 种"
+    "count": "内容 {n} 种",
+    "search": "按商品查找",
+    "searchHint": "例如：iPhone、劳力士、喷火龙",
+    "searchNone": "没有该名称的商品。",
+    "searchIn": "{box}，{price}",
+    "real": "实物概率 {pct}"
   },
   "box": {
     "desc": "内含 {n} 种商品，每个区间都标有出现概率。",
@@ -54,7 +60,22 @@
     "confirmTitle": "支付 {amount}",
     "confirmDesc": "从余额支付后立即开箱。",
     "openFail": "未能开箱。余额没有变化。",
-    "photoNote": "图片为演示图。"
+    "photoNote": "图片为演示图。",
+    "strip": "代表实物",
+    "tiers": "各区间概率",
+    "evNote": "期望价值比例按市场零售价计算。领取 USDT 时为零售价的 {pct}%。",
+    "receive": "领取方式",
+    "receivePhysical": "配送，或 {amount}",
+    "receiveDigital": "兑换码，或 {amount}",
+    "receiveCash": "开箱后直接计入余额",
+    "alsoIn": "与其他 {n} 个盲盒比较",
+    "reviews": "评价",
+    "noReviews": "暂无评价。只有已领取的商品才能评价。",
+    "reviewProof": "与真实开箱记录绑定的评价。",
+    "stripNote": "按价值从高到低。任意实物出现的概率为 {pct}。",
+    "mostLikely": "最常见的结果是 {amount} 返现，{pct}。",
+    "compareNote": "同一商品的单次价格与概率。任何盲盒都不是直接购买该商品。",
+    "guestNote": "登录后用 USDT 余额支付。"
   },
   "reveal": {
     "skip": "跳过",
@@ -297,5 +318,28 @@
     "doneHold": "将在 {hours} 小时后发送，在此之前可在钱包记录中取消。",
     "doneReview": "通过安全审核后发送，可在钱包记录中查看状态。",
     "toWallet": "返回钱包"
+  },
+  "account": {
+    "title": "账户",
+    "desc": "余额、仓库与安全集中查看。",
+    "loginLine": "登录后可查看余额、仓库和安全设置。",
+    "wallet": "钱包",
+    "balance": "余额",
+    "vault": "仓库",
+    "held": "保管中",
+    "shippingNow": "配送中",
+    "countN": "{n} 件",
+    "security": "安全",
+    "twoFactor": "验证器应用",
+    "twoFactorDesc": "提现时使用验证器应用的 6 位验证码。",
+    "on": "已连接",
+    "off": "未连接",
+    "email": "邮箱",
+    "help": "帮助",
+    "logout": "退出登录",
+    "logoutTitle": "退出登录",
+    "logoutDesc": "余额与仓库仍保留在账户中。",
+    "loggedOut": "已退出登录。",
+    "more": "昵称、密码、注销账户"
   }
 }

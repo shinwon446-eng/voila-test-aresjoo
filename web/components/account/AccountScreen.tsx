@@ -16,6 +16,7 @@ import { useSecurityStore } from "@/stores/securityStore";
 import { Button, Line, Row, Rows, ScreenHead, Skeleton, TextLink } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
 import { TwoFactorSetup } from "@/components/wallet/TwoFactorSetup";
+import { CloseAccountSheet, NicknameSheet, PasswordSheet } from "@/components/account/AccountSheets";
 
 export function AccountScreen() {
   const t = useTranslations("v");
@@ -30,6 +31,7 @@ export function AccountScreen() {
   const [leaving, setLeaving] = useState(false);
   const [busy, setBusy] = useState(false);
   const [securing, setSecuring] = useState(false);
+  const [sheet, setSheet] = useState<"nickname" | "password" | "close" | null>(null);
   const counts = useMemo(() => items.reduce((acc, item) => { acc[vaultTab(item)]++; return acc; }, { held: 0, shipping: 0, done: 0 }), [items]);
 
   const leave = async () => {
@@ -56,18 +58,26 @@ export function AccountScreen() {
               <div className="v-rowitem"><button type="button" className="v-row v-row--link v-row--button" onClick={() => setSecuring(true)}><span>{t("account.twoFactor")}</span><span className="v-num">{twoFactor ? t("account.on") : t("account.connect")} ›</span></button></div>
               <Row label={t("account.email")}>{user.email ?? user.label}</Row>
             </Rows>
+            <Rows label={t("account.manage")}>
+              <div className="v-rowitem"><button type="button" className="v-row v-row--link v-row--button" onClick={() => setSheet("nickname")}><span>{t("account.nickname")}</span><span className="v-num">{user.nickname || t("account.none")} ›</span></button></div>
+              <div className="v-rowitem"><button type="button" className="v-row v-row--link v-row--button" onClick={() => setSheet("password")}><span>{t("account.password")}</span><span aria-hidden>›</span></button></div>
+              <div className="v-rowitem"><button type="button" className="v-row v-row--link v-row--button" onClick={() => setSheet("close")}><span>{t("account.closeTitle")}</span><span aria-hidden>›</span></button></div>
+            </Rows>
             <Rows label={t("account.help")}>
               <div className="v-rowitem"><Link href="/guide" className="v-row v-row--link"><span>{t("nav.guide")}</span><span aria-hidden>›</span></Link></div>
               <div className="v-rowitem"><Link href="/verify" className="v-row v-row--link"><span>{t("nav.verify")}</span><span aria-hidden>›</span></Link></div>
               <div className="v-rowitem"><Link href="/legal" className="v-row v-row--link"><span>{t("nav.legal")}</span><span aria-hidden>›</span></Link></div>
             </Rows>
-            <div className="v-links"><TextLink onClick={() => setLeaving(true)}>{t("account.logout")}</TextLink><TextLink href="/profile">{t("account.more")}</TextLink></div>
+            <div className="v-links"><TextLink onClick={() => setLeaving(true)}>{t("account.logout")}</TextLink></div>
           </>
         )}
 
       <Sheet open={securing} onClose={() => setSecuring(false)} title={t("account.twoFactor")} desc={t("account.twoFactorDesc")} closeLabel={t("common.close")} wide>
         <TwoFactorSetup compact onEnabled={() => setSecuring(false)} />
       </Sheet>
+      <NicknameSheet open={sheet === "nickname"} onClose={() => setSheet(null)} />
+      <PasswordSheet open={sheet === "password"} onClose={() => setSheet(null)} />
+      <CloseAccountSheet open={sheet === "close"} onClose={() => setSheet(null)} />
       <Confirm open={leaving} onCancel={() => setLeaving(false)} onConfirm={leave} busy={busy} busyLabel={t("common.checking")} title={t("account.logoutTitle")} desc={t("account.logoutDesc")} confirmLabel={t("account.logout")} cancelLabel={t("common.cancel")} />
     </div>
   );

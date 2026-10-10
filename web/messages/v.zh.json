@@ -187,7 +187,8 @@
     "how2v": "由服务器值、我的设备值和回合计算号码",
     "how3": "开箱后",
     "how3v": "公开服务器值，任何人都能重新计算同一号码",
-    "scope": "验证确认号码按公开值计算。配送与零售价另行确认。"
+    "scope": "验证确认号码按公开值计算。配送与零售价另行确认。",
+    "codeLabel": "验证器验证码"
   },
   "inv": {
     "title": "保管箱",
@@ -378,7 +379,27 @@
     "logoutDesc": "余额与仓库仍保留在账户中。",
     "loggedOut": "已退出登录。",
     "more": "昵称、密码、注销账户",
-    "connect": "连接"
+    "connect": "连接",
+    "manage": "账户管理",
+    "nickname": "昵称",
+    "nicknameDesc": "显示在评价和记录中。2 到 20 个字符。",
+    "nicknameRule": "请输入 2 到 20 个字符。",
+    "nicknameLocked": "{date} 起可再次修改。",
+    "none": "无",
+    "save": "保存",
+    "saveFail": "无法保存。",
+    "password": "密码",
+    "passwordDesc": "输入当前密码、新密码（12 位以上）和验证器验证码。",
+    "passwordSocial": "社交账户的密码由该服务管理。",
+    "passwordCurrent": "当前密码",
+    "passwordNew": "新密码",
+    "passwordRule": "新密码需 12 到 128 个字符。",
+    "codeRule": "请输入 6 位验证器验证码。",
+    "passwordSave": "修改密码",
+    "closeTitle": "注销账户",
+    "closeDesc": "请先领取余额和仓库中的商品。注销后账户和记录将被删除。",
+    "closeCta": "注销账户",
+    "closeConfirm": "无法撤销。余额和仓库商品将丢失。"
   },
   "review": {
     "title": "写评价",

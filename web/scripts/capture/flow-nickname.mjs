@@ -1,0 +1,20 @@
+// 계정 시트에서 닉네임을 바꾸고 계정 행에 반영되는지(브라우저 시험 장부)
+import { chromium } from "playwright";
+import { installState, makeState } from "./states.mjs";
+const [out] = process.argv.slice(2);
+const base = process.env.CAPTURE_BASE || "http://localhost:3002";
+const browser = await chromium.launch({ channel: "chrome", headless: true });
+const context = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, locale: "ko-KR", reducedMotion: "reduce" });
+await installState(context, await makeState("funded", "ko"), new URL(base).origin);
+const page = await context.newPage();
+await page.goto(base + "/ko/account", { waitUntil: "networkidle" });
+await page.getByRole("button", { name: /^닉네임/ }).click();
+await page.waitForTimeout(600);
+await page.locator(".v-sheet input").fill("랩테스터");
+await page.getByRole("button", { name: "저장하기" }).click();
+await page.waitForTimeout(900);
+const sheet = await page.locator(".v-sheet").count();
+const row = await page.getByRole("button", { name: /^닉네임/ }).innerText();
+console.log("sheet open after save:", sheet, "| row:", row.replace(/\s+/g, " "));
+await page.screenshot({ path: `${out}/nickname-saved-mobile.png` });
+await browser.close();

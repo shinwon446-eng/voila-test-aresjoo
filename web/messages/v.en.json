@@ -187,7 +187,8 @@
     "how2v": "The number comes from the server value, your device value and the round",
     "how3": "After opening",
     "how3v": "The server value is revealed so anyone can recompute the number",
-    "scope": "Verification confirms the number followed the revealed values. Shipping and retail prices are checked separately."
+    "scope": "Verification confirms the number followed the revealed values. Shipping and retail prices are checked separately.",
+    "codeLabel": "Authenticator code"
   },
   "inv": {
     "title": "Inventory",
@@ -378,7 +379,27 @@
     "logoutDesc": "Your balance and vault stay with the account.",
     "loggedOut": "Logged out.",
     "more": "Nickname, password, delete account",
-    "connect": "Connect"
+    "connect": "Connect",
+    "manage": "Account",
+    "nickname": "Nickname",
+    "nicknameDesc": "Shown on your reviews and records. 2 to 20 characters.",
+    "nicknameRule": "Use 2 to 20 characters.",
+    "nicknameLocked": "You can change it again from {date}.",
+    "none": "None",
+    "save": "Save",
+    "saveFail": "Could not save.",
+    "password": "Password",
+    "passwordDesc": "Enter your current password, a new one (12+ characters) and the authenticator code.",
+    "passwordSocial": "Social accounts manage their password with that provider.",
+    "passwordCurrent": "Current password",
+    "passwordNew": "New password",
+    "passwordRule": "The new password needs 12 to 128 characters.",
+    "codeRule": "Enter the 6-digit authenticator code.",
+    "passwordSave": "Change password",
+    "closeTitle": "Delete account",
+    "closeDesc": "Take your balance and vault items first. Deleting removes the account and its records.",
+    "closeCta": "Delete account",
+    "closeConfirm": "This cannot be undone. Balance and vault items are lost."
   },
   "review": {
     "title": "Write a review",

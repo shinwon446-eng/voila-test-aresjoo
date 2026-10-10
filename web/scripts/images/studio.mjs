@@ -3,7 +3,7 @@
 //   --extra 는 Commons 가 아닌 파일(Unsplash 커버 등)도 같은 톤으로 만든다. 키는 "file:<원본 파일명>"
 // 입력: public/assets/photography/commons-<id>.webp (sources.json 의 것들). 출력: public/assets/photography/studio-<id>.webp
 // 결과는 scripts/images/studio.json 에 { id: "studio-<id>.webp" } 로 적고, lib/productImages.ts 가 있으면 그것을 먼저 쓴다.
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, unlinkSync } from "node:fs";
 import { removeBackground } from "@imgly/background-removal-node";
 import { chromium } from "playwright";
 
@@ -61,5 +61,13 @@ for (const [id, s] of jobs) {
   } catch (e) { console.log(id, "failed:", String(e).slice(0, 120)); }
 }
 await browser.close();
+// 출처(sources.json)가 없는 상품의 스튜디오 판은 지운다. reject 뒤에 남은 옛 파일이 다시 화면에 오르지 않게
+for (const id of Object.keys(studio)) {
+  if (id.startsWith("file:") || sources[id]) continue;
+  const stale = new URL(studio[id], dir);
+  if (existsSync(stale)) unlinkSync(stale);
+  delete studio[id];
+  console.log(id, "dropped (no source)");
+}
 writeFileSync(outPath, JSON.stringify(studio, null, 2) + "\n");
 console.log("studio.json", Object.keys(studio).length, "new", n);

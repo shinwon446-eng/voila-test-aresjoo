@@ -57,6 +57,7 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
   };
   const againButton = canAgain ? <Button onClick={onAgain} busy={againBusy} busyLabel={t("box.opening")}>{again}</Button> : <Button onClick={onClose}>{t("common.close")}</Button>;
   const cashLike = single && (single.item.kind === "cash" || taken !== null);
+  const allCash = results.length > 1 && results.every((r) => r.item.kind === "cash");
 
   return (
     <div ref={panel} role="dialog" aria-modal="true" aria-label={t("reveal.results")} tabIndex={-1} className="v-reveal">
@@ -92,7 +93,8 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
                     <p className="v-reveal-value" data-size={single.item.value >= box.price * 20 ? "lg" : single.item.value < box.price ? "sm" : undefined}>{fmt(single.item.value)}</p>
                     <p className="v-desc">{t(shipped ? "reveal.shippedDesc" : "reveal.itemDesc")}</p>
                   </div>
-                  <Rows><Row label={t("reveal.value")}>{fmt(single.item.value)}</Row><Row label={t("reveal.odds")}>{formatRate(single.item.dropRate)}</Row></Rows>
+                  {/* 큰 숫자가 시중 정가다. 같은 값을 행으로 또 찍지 않는다 */}
+                  <Rows><Row label={t("reveal.odds")}>{formatRate(single.item.dropRate)}</Row></Rows>
                 </div>
                 <div className="v-reveal-actions">
                   {shipped ? <ButtonLink href="/inventory">{t("reveal.toInventory")}</ButtonLink>
@@ -106,8 +108,9 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
               <>
                 <div className="v-reveal-head">
                   <div>
-                    <h2 className="v-title">{t("reveal.multiTitle", { n: results.length })}</h2>
-                    <p className="v-desc">{t("reveal.multiDesc")}</p>
+                    {/* 전부 USDT 상품이면 이미 잔액에 들어왔다. 보관함으로 보내지 않는다 */}
+                    <h2 className="v-title">{allCash ? t("reveal.cashTitle", { amount: fmt(total) }) : t("reveal.multiTitle", { n: results.length })}</h2>
+                    <p className="v-desc">{t(allCash ? "reveal.cashDesc" : "reveal.multiDesc")}</p>
                   </div>
                   <Rows><Row label={t("reveal.spent")}>{fmt(cost)}</Row><Row label={t("reveal.got")}>{fmt(total)}</Row></Rows>
                   <ul className="v-rows" aria-label={t("reveal.results")}>
@@ -120,8 +123,8 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
                   <p className="v-small">{t("reveal.rowHint")}</p>
                 </div>
                 <div className="v-reveal-actions">
-                  <ButtonLink href="/inventory">{t("reveal.toInventory")}</ButtonLink>
-                  <div className="v-links">{canAgain && <TextLink onClick={() => { if (!againBusy) onAgain(); }}>{again}</TextLink>}<TextLink href="/">{t("reveal.boxes")}</TextLink></div>
+                  {allCash ? againButton : <ButtonLink href="/inventory">{t("reveal.toInventory")}</ButtonLink>}
+                  <div className="v-links">{!allCash && canAgain && <TextLink onClick={() => { if (!againBusy) onAgain(); }}>{again}</TextLink>}<TextLink href="/">{t("reveal.boxes")}</TextLink></div>
                 </div>
               </>
             )}

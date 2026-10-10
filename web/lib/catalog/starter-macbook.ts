@@ -62,7 +62,7 @@ export const STARTER_MACBOOK_ITEMS: ItemSpec[] = [
   ["mb-sleeve-16", "16인치 노트북 슬리브", "16-inch Laptop Sleeve", "16 英寸笔记本内胆包", 40],
   ["gc-apple100", "애플 기프트카드 $100", "Apple Gift Card $100", "Apple 礼品卡 $100", 100, "digital"],
   ["gc-apple50", "애플 기프트카드 $50", "Apple Gift Card $50", "Apple 礼品卡 $50", 50, "digital"],
-  ["usdt-50", "50 USDT 인스턴트 드롭", "50 USDT Instant Drop", "50 USDT 即时到账", 50, "cash"],
+  ["usdt-50", "인스턴트 드롭", "Instant Drop", "即时到账", 50, "cash"],
   // 10 USDT 이상
   ["mb-cable-240w", "USB-C 240W 케이블 2m", "USB-C 240W Cable 2m", "USB-C 240W 数据线 2m", 30],
   ["mb-screen-cleaner", "화면 클리닝 키트", "Screen Cleaning Kit", "屏幕清洁套装", 15],

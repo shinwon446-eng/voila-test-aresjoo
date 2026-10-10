@@ -5,7 +5,7 @@
  */
 export type ItemKind = "physical" | "digital" | "cash";
 export type ItemSpec = [id: string, name: string, nameEn: string, nameZh: string, value: number, kind?: ItemKind];
-export type BoxCategory = "dollar" | "tech" | "luxury" | "jackpot";
+export type BoxCategory = "dollar" | "tech" | "luxury" | "jackpot" | "collect";
 
 export interface BoxSpec {
   slug: string;

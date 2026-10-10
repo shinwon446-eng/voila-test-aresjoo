@@ -6,7 +6,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { BOXES } from "../lib/products";
 
-const BADGE_KEY: Record<string, string> = { "드림 박스": "dream", "모빌리티": "mobility", "테크": "tech", "오디오": "audio", "워치": "watch", "럭셔리": "luxury", "라이프스타일": "lifestyle", "1달러": "dollar", "골드": "gold" };
+const BADGE_KEY: Record<string, string> = { "드림 박스": "dream", "모빌리티": "mobility", "테크": "tech", "오디오": "audio", "워치": "watch", "럭셔리": "luxury", "라이프스타일": "lifestyle", "1달러": "dollar", "골드": "gold", "카드": "card" };
 for (const locale of ["ko", "en", "zh"] as const) {
   const path = new URL(`../messages/${locale}.json`, import.meta.url);
   const json = JSON.parse(readFileSync(path, "utf8").replace(/^﻿/, ""));

@@ -45,7 +45,7 @@ export const DOLLAR_GALAXY_ITEMS: ItemSpec[] = [
   ["gx-charger-trio", "삼성 65W 트리오 전원 어댑터", "Samsung 65W Power Adapter Trio", "三星 65W 三口电源适配器", 59.99],
   ["gx-battery-20k", "삼성 45W 배터리 팩 20000mAh", "Samsung 45W Battery Pack 20000mAh", "三星 45W 移动电源 20000mAh", 59.99],
   ["gx-battery-wireless", "삼성 25W 무선 배터리 팩 10000mAh", "Samsung 25W Wireless Battery Pack 10000mAh", "三星 25W 无线移动电源 10000mAh", 59.99],
-  ["usdt-50", "50 USDT 인스턴트 드롭", "50 USDT Instant Drop", "50 USDT 即时到账", 50, "cash"],
+  ["usdt-50", "인스턴트 드롭", "Instant Drop", "即时到账", 50, "cash"],
   ["gx-charger-45w", "삼성 45W 전원 어댑터", "Samsung 45W Power Adapter", "三星 45W 电源适配器", 49.99],
   ["gx-watch-charger", "삼성 갤럭시 워치 급속 충전기 USB-C", "Samsung Galaxy Watch Fast Wireless Charger USB-C", "三星 Galaxy Watch USB-C 快速无线充电器", 39.99],
   ["gx-pro-plus-256", "삼성 프로 플러스 마이크로SD 256GB", "Samsung PRO Plus microSD 256GB", "三星 PRO Plus microSD 存储卡 256GB", 34.99], // 추정

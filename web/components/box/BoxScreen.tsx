@@ -99,15 +99,28 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         {groups.map((g) => (
           <div key={g.key}>
             <div className="v-tierhead"><h3 className="v-sub">{t(TIER_LABEL[g.key])}</h3><span className="v-small v-num">{t("box.tierOdds", { pct: formatRate(g.rate) })}</span></div>
-            <ul className={"v-items v-items--" + TIER_SIZE[g.key]}>
-              {g.items.map((item) => <li key={item.id}><ItemCard item={item} name={itemName(item)} value={fmt(item.value)} odds={formatRate(item.dropRate)} /></li>)}
-            </ul>
+            {/* 사진이 있는 상품은 타일, 없는 상품은 행. 빈 사진 칸을 늘어놓지 않는다 */}
+            {g.items.some((i) => i.image.src) && (
+              <ul className={"v-items v-items--" + TIER_SIZE[g.key]}>
+                {g.items.filter((i) => i.image.src).map((item) => <li key={item.id}><ItemCard item={item} name={itemName(item)} value={fmt(item.value)} odds={formatRate(item.dropRate)} /></li>)}
+              </ul>
+            )}
+            {g.items.some((i) => !i.image.src) && (
+              <ul className="v-itemrows">
+                {g.items.filter((i) => !i.image.src).map((item) => (
+                  <li key={item.id} className="v-itemrow">
+                    <span className="v-itemrow-name">{itemName(item)}</span>
+                    <span className="v-itemrow-meta"><span className="v-num">{fmt(item.value)}</span><span className="v-num v-small">{formatRate(item.dropRate)}</span></span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         ))}
       </section>
       </div>
 
-      <Confirm open={confirming} onCancel={() => setConfirming(false)} onConfirm={open} busy={busy} busyLabel={t("box.opening")} title={t("box.confirmTitle", { n: qty })} desc={t("box.confirmDesc", { amount: fmt(cost) })} confirmLabel={t("box.open", { n: qty, amount: fmt(cost) })} cancelLabel={t("common.cancel")} />
+      <Confirm open={confirming} onCancel={() => setConfirming(false)} onConfirm={open} busy={busy} busyLabel={t("box.opening")} title={t("box.confirmTitle", { amount: fmt(cost) })} desc={t("box.confirmDesc")} confirmLabel={t("box.open", { n: qty, amount: fmt(cost) })} cancelLabel={t("common.cancel")} />
       {opened && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} onClose={() => setOpened(null)} onAgain={press} againBusy={busy} canAgain={!short} />}
     </div>
   );

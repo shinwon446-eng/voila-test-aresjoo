@@ -15,7 +15,8 @@ export type DepositStatus = { kind: "preparing" } | { kind: "waiting" } | { kind
 
 const CHECK_INTERVAL_MS = 5_000;
 
-export function useUsdtDeposit(network: DepositNetwork, enabled: boolean, onCredited: (amountUsdt: number) => void) {
+/** attempt 는 "주소 다시 받기"를 누를 때마다 1씩 올려 같은 네트워크로 다시 요청한다 */
+export function useUsdtDeposit(network: DepositNetwork, enabled: boolean, onCredited: (amountUsdt: number) => void, attempt = 0) {
   const userKey = useAuthStore((s) => s.user?.id ?? "");
   const [status, setStatus] = useState<DepositStatus>({ kind: "preparing" });
   const [issued, setIssued] = useState<{ address: string; network: DepositNetwork; accountId: string } | null>(null);
@@ -37,7 +38,7 @@ export function useUsdtDeposit(network: DepositNetwork, enabled: boolean, onCred
       })
       .catch(() => alive && setStatus({ kind: "addressFailed" }));
     return () => { alive = false; };
-  }, [network, userKey, envAddress, enabled]);
+  }, [network, userKey, envAddress, enabled, attempt]);
 
   const address = resolveDepositAddress(network, envAddress, issued?.network === network && issued.accountId === userKey ? issued.address : null);
 

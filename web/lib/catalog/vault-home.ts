@@ -54,7 +54,7 @@ export const VAULT_HOME_ITEMS: ItemSpec[] = [
   ["hm-levoit-core300s", "르보이트 코어 300S 공기청정기", "Levoit Core 300S Air Purifier", "Levoit Core 300S 空气净化器", 149.99],
   ["hm-shark-s3501", "샤크 스팀 포켓 S3501 스팀 청소기", "Shark Steam Pocket S3501 Steam Mop", "Shark Steam Pocket S3501 蒸汽拖把", 129.99],
   // 40 USDT 이상, 120 USDT 미만
-  ["usdt-100", "100 USDT 인스턴트 드롭", "100 USDT Instant Drop", "100 USDT 即时到账", 100, "cash"],
+  ["usdt-100", "인스턴트 드롭", "Instant Drop", "即时到账", 100, "cash"],
   ["hm-braun-multiquick", "브라운 멀티퀵 5 MQ505 핸드블렌더", "Braun MultiQuick 5 MQ505 Hand Blender", "博朗 MultiQuick 5 MQ505 手持搅拌机", 69.95],
   ["hm-cosori-kettle", "코소리 전기 주전자 1.7L", "COSORI Electric Kettle 1.7L", "COSORI 电热水壶 1.7L", 49.99],
   ["hm-hamilton-iron", "해밀턴비치 듀라톤 19900 스팀 다리미", "Hamilton Beach Durathon 19900 Steam Iron", "Hamilton Beach Durathon 19900 蒸汽熨斗", 49.99],

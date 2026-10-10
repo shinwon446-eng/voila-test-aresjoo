@@ -23,8 +23,10 @@ export function ChargeSheet() {
   const openLogin = useAuthStore((s) => s.openAuthModal);
   const toast = useToast((s) => s.show);
   const [network, setNetwork] = useState<DepositNetwork>("TRC20");
+  const [attempt, setAttempt] = useState(0);
   const onCredited = useCallback(() => close(), [close]);
-  const { address, status, meta } = useUsdtDeposit(network, open && !!user, onCredited);
+  const { address, status, meta } = useUsdtDeposit(network, open && !!user, onCredited, attempt);
+  const failed = status.kind === "addressFailed";
 
   const copy = async () => {
     if (!address) return;
@@ -50,7 +52,8 @@ export function ChargeSheet() {
         ) : <Line fail={status.kind === "addressFailed"}>{t(status.kind === "addressFailed" ? "charge.addressFail" : "charge.preparing")}</Line>}
       </div>
       {address && <Line>{status.kind === "pending" ? t("charge.confirming", { n: status.confirmations, total: status.total }) : t("charge.waiting")}</Line>}
-      <Button onClick={copy} disabled={!address}>{t("charge.copy")}</Button>
+      {/* 주소를 못 받았으면 복사 단추 자리가 다시 받기가 된다. 막힌 자리에서 푼다 */}
+      {failed ? <Button onClick={() => setAttempt((n) => n + 1)}>{t("charge.retry")}</Button> : <Button onClick={copy} disabled={!address}>{t("charge.copy")}</Button>}
       <p className="v-small">{t("charge.min")} {t("charge.confirmations", { n: meta.confirmations })}</p>
     </Sheet>
   );

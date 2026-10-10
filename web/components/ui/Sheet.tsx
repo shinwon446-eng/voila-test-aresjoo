@@ -7,7 +7,7 @@
 import { useRef, type ReactNode } from "react";
 import { X } from "lucide-react";
 import { useModal } from "@/lib/useModal";
-import { Button } from "@/components/ui/kit";
+import { Button, TextLink } from "@/components/ui/kit";
 
 export function Sheet({ open, onClose, title, desc, closeLabel, wide, children, locked }: { open: boolean; onClose: () => void; title: ReactNode; desc?: ReactNode; closeLabel: string; wide?: boolean; children: ReactNode; locked?: boolean }) {
   const panel = useRef<HTMLDivElement>(null);
@@ -39,9 +39,10 @@ export function Confirm({ open, onCancel, onConfirm, title, desc, confirmLabel, 
         <div className="v-sheet-body">
           <h2 id="v-confirm-title" className="v-title">{title}</h2>
           {desc && <p className="v-desc">{desc}</p>}
+          {/* 주 단추 하나, 취소는 밑줄 링크(보조 행동 규칙) */}
           <div className="v-confirm-actions">
-            <Button quiet onClick={onCancel} disabled={busy}>{cancelLabel}</Button>
             <Button onClick={onConfirm} busy={busy} busyLabel={busyLabel}>{confirmLabel}</Button>
+            <div className="v-links"><TextLink onClick={() => { if (!busy) onCancel(); }}>{cancelLabel}</TextLink></div>
           </div>
         </div>
       </div>

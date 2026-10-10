@@ -55,7 +55,7 @@ export const VAULT_WATCH_ITEMS: ItemSpec[] = [
   ["wt-rubber-strap", "FKM 러버 스트랩", "FKM Rubber Strap", "FKM 橡胶表带", 60],
   ["wt-strap-tool", "스프링바 공구 세트", "Spring Bar Tool Kit", "弹簧杆工具套装", 40],
   ["gc-amazon100", "아마존 글로벌 기프트카드 $100", "Amazon Global Gift Card $100", "Amazon 全球礼品卡 $100", 100, "digital"],
-  ["usdt-100", "100 USDT 인스턴트 드롭", "100 USDT Instant Drop", "100 USDT 即时到账", 100, "cash"],
+  ["usdt-100", "인스턴트 드롭", "Instant Drop", "即时到账", 100, "cash"],
   // 40 USDT 미만
   ["wt-casio-f91w", "카시오 F-91W", "Casio F-91W", "卡西欧 F-91W", 25],
   ["wt-watch-roll", "가죽 시계 롤 (3구)", "Leather Watch Roll for 3", "3 格皮质表卷", 35],

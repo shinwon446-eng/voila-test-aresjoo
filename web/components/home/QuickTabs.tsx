@@ -1,11 +1,11 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { Grid2X2, Sparkles, Headphones, Watch, Gem } from "lucide-react";
+import { Grid2X2, Sparkles, Headphones, Watch, Gem, Layers } from "lucide-react";
 import { cn } from "@/lib/format";
 import { CATEGORY_FILTERS, type BoxCategory } from "@/lib/products";
 export type CategoryTab = BoxCategory | "all";
 export const TABS_STICKY_TOP = 72;
-const icons = { all: Grid2X2, dollar: Sparkles, tech: Headphones, luxury: Watch, jackpot: Gem };
+const icons = { all: Grid2X2, dollar: Sparkles, tech: Headphones, luxury: Watch, jackpot: Gem, collect: Layers };
 export interface QuickTabsProps { value: CategoryTab; onChange: (key: CategoryTab) => void; className?: string; }
 export function QuickTabs({ value, onChange, className }: QuickTabsProps) {
   const t = useTranslations("categories");

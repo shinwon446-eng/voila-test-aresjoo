@@ -47,7 +47,7 @@ export const DOLLAR_APPLE_ITEMS: ItemSpec[] = [
   // 6 USDT 이상
   ["gc-apple500", "애플 기프트카드 $500", "Apple Gift Card $500", "Apple 礼品卡 $500", 500, "digital"],
   ["gc-apple100", "애플 기프트카드 $100", "Apple Gift Card $100", "Apple 礼品卡 $100", 100, "digital"],
-  ["usdt-50", "50 USDT 인스턴트 드롭", "50 USDT Instant Drop", "50 USDT 即时到账", 50, "cash"],
+  ["usdt-50", "인스턴트 드롭", "Instant Drop", "即时到账", 50, "cash"],
   ["gc-apple25", "애플 기프트카드 $25", "Apple Gift Card $25", "Apple 礼品卡 $25", 25, "digital"],
   ["gc-apple10", "애플 기프트카드 $10", "Apple Gift Card $10", "Apple 礼品卡 $10", 10, "digital"],
 ];

@@ -58,7 +58,7 @@ export const VAULT_HANDBAG_ITEMS: ItemSpec[] = [
   ["bg-coach-wristlet", "코치 리스틀렛", "Coach Wristlet", "蔻驰手拿包", 100],
   ["bg-bag-organizer", "펠트 가방 정리함", "Felt Bag Organizer", "毛毡包中包", 60],
   ["gc-amazon100", "아마존 글로벌 기프트카드 $100", "Amazon Global Gift Card $100", "Amazon 全球礼品卡 $100", 100, "digital"],
-  ["usdt-100", "100 USDT 인스턴트 드롭", "100 USDT Instant Drop", "100 USDT 即时到账", 100, "cash"],
+  ["usdt-100", "인스턴트 드롭", "Instant Drop", "即时到账", 100, "cash"],
   // 60 USDT 미만
   ["bg-bag-charm", "가죽 백 참", "Leather Bag Charm", "皮质包饰", 40],
   ["bg-dust-bag-set", "가방 보관용 더스트백 3개", "Dust Bag Set of 3", "包袋防尘袋 3 件", 30],

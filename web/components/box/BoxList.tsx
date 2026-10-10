@@ -11,14 +11,14 @@ import { CATEGORY_FILTERS, byCategory, ceilingValue, sortBoxes, type BoxCategory
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useInventoryStore } from "@/stores/inventoryStore";
-import { Chips, ScreenHead, TextLink } from "@/components/ui/kit";
+import { Chips, ScreenHead } from "@/components/ui/kit";
 
 type Category = BoxCategory | "all";
 
 export function BoxList() {
   const t = useTranslations("v");
   const tc = useTranslations("categories");
-  const { boxTitle } = useProductText();
+  const { boxTitle, itemName } = useProductText();
   const { fmt } = useCurrency();
   const [category, setCategory] = useState<Category>("all");
   const owned = useInventoryStore((s) => s.items);
@@ -36,23 +36,23 @@ export function BoxList() {
       <ScreenHead title={t("home.title")} desc={t("home.desc")} />
       <Chips scroll label={t("home.filter")} value={category} onChange={setCategory} options={CATEGORY_FILTERS.map((c) => ({ value: c.key as Category, label: c.key === "all" ? t("home.all") : tc(c.key) }))} />
       <ul className="v-boxgrid">
-        {boxes.map((box, i) => <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={t("home.price", { price: fmt(box.price) })} top={t("home.top", { amount: fmt(ceilingValue(box)) })} count={t("home.count", { n: box.items.length })} eager={i < 4} /></li>)}
+        {boxes.map((box, i) => <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={t("home.price", { price: fmt(box.price) })} top={t("home.top", { amount: fmt(ceilingValue(box)) })} count={t("home.count", { n: box.items.length })} leads={topItems(box).map((item) => itemName(item))} eager={i < 4} /></li>)}
       </ul>
-      <div className="v-links">
-        <TextLink href="/guide">{t("nav.guide")}</TextLink>
-        <TextLink href="/fairness">{t("nav.verify")}</TextLink>
-      </div>
     </div>
   );
 }
 
-function BoxCard({ box, title, price, top, count, eager }: { box: ProductBox; title: string; price: string; top: string; count: string; eager: boolean }) {
+/** 카드에 이름을 적는 대표 실물 셋: 값이 가장 큰 순서. 무엇이 들었는지가 박스를 고르게 한다 */
+const topItems = (box: ProductBox) => [...box.items].filter((i) => i.kind !== "cash").sort((a, b) => b.value - a.value).slice(0, 3);
+
+function BoxCard({ box, title, price, top, count, leads, eager }: { box: ProductBox; title: string; price: string; top: string; count: string; leads: string[]; eager: boolean }) {
   return (
     <Link href={"/box/" + box.slug} className="v-boxcard">
       <span className="v-boxcard-photo">{box.image.src && <img src={box.image.src} alt="" loading={eager ? "eager" : "lazy"} decoding="async" />}</span>
       <span className="v-boxcard-body">
         <span className="v-card-title">{title}</span>
         <span className="v-num v-sub">{price}</span>
+        <span className="v-boxcard-leads">{leads.map((name) => <span key={name}>{name}</span>)}</span>
         <span className="v-boxcard-meta"><span className="v-num">{top}</span><span>{count}</span></span>
       </span>
     </Link>

@@ -23,7 +23,7 @@ export const LEGACY_SPECS: BoxSpec[] = [
       ["da-watchse", "애플워치 SE 3", "Apple Watch SE 3", "Apple Watch SE 3", 249],
       ["da-airpods4", "에어팟 4 ANC", "AirPods 4 ANC", "AirPods 4 ANC", 129],
       ["gc-apple100", "애플 기프트카드 $100", "Apple Gift Card $100", "Apple 礼品卡 $100", 100, "digital"],
-      ["usdt-50", "50 USDT 인스턴트 드롭", "50 USDT Instant Drop", "50 USDT 即时到账", 50, "cash"],
+      ["usdt-50", "인스턴트 드롭", "Instant Drop", "即时到账", 50, "cash"],
     ],
   },
   {
@@ -46,7 +46,7 @@ export const LEGACY_SPECS: BoxSpec[] = [
       ["da-buds", "갤럭시 버즈4 프로", "Galaxy Buds4 Pro", "Galaxy Buds4 Pro", 199],
       ["gc-amazon100", "아마존 글로벌 기프트카드 $100", "Amazon Global Gift Card $100", "Amazon 全球礼品卡 $100", 100, "digital"],
       ["da-charger", "삼성 45W 초고속 충전기", "Samsung 45W Charger", "三星 45W 超快充充电器", 39],
-      ["usdt-50", "50 USDT 인스턴트 드롭", "50 USDT Instant Drop", "50 USDT 即时到账", 50, "cash"],
+      ["usdt-50", "인스턴트 드롭", "Instant Drop", "即时到账", 50, "cash"],
     ],
   },
   {
@@ -69,7 +69,7 @@ export const LEGACY_SPECS: BoxSpec[] = [
       ["dg-switch2", "닌텐도 스위치 2", "Nintendo Switch 2", "任天堂 Switch 2", 449],
       ["gpu-kb", "웃키 HE65 자석축 키보드", "Wooting HE65", "Wooting HE65 磁轴键盘", 199],
       ["gc-steam50", "스팀 월렛 $50", "Steam Wallet $50", "Steam 钱包 $50", 50, "digital"],
-      ["usdt-50", "50 USDT 인스턴트 드롭", "50 USDT Instant Drop", "50 USDT 即时到账", 50, "cash"],
+      ["usdt-50", "인스턴트 드롭", "Instant Drop", "即时到账", 50, "cash"],
     ],
   },
   // ── ⚡ 커피&버거 스타터 (3 ~ 5 USDT) ────────────────────────
@@ -139,7 +139,7 @@ export const LEGACY_SPECS: BoxSpec[] = [
       ["flg-watch", "애플워치 울트라 3", "Apple Watch Ultra 3", "Apple Watch Ultra 3", 799],
       ["sp2-airpods", "에어팟 4", "AirPods 4", "AirPods 4", 129],
       ["gc-amazon100", "아마존 글로벌 기프트카드 $100", "Amazon Global Gift Card $100", "Amazon 全球礼品卡 $100", 100, "digital"],
-      ["usdt-50", "50 USDT 인스턴트 드롭", "50 USDT Instant Drop", "50 USDT 即时到账", 50, "cash"],
+      ["usdt-50", "인스턴트 드롭", "Instant Drop", "即时到账", 50, "cash"],
     ],
   },
   // ── 👑 럭셔리 볼트 (20 ~ 50 USDT) ───────────────────────────
@@ -163,7 +163,7 @@ export const LEGACY_SPECS: BoxSpec[] = [
       ["rlx-tudor", "튜더 블랙베이 58", "Tudor Black Bay 58", "帝舵碧湾 58", 3830],
       ["rlx-seiko", "세이코 프로스펙스 마린마스터", "Seiko Prospex Marinemaster", "精工 Prospex Marinemaster", 935],
       ["rlx-hamilton", "해밀턴 카키 필드 메카니컬", "Hamilton Khaki Field Mech", "汉米尔顿卡其野战机械款", 500],
-      ["usdt-100", "100 USDT 인스턴트 드롭", "100 USDT Instant Drop", "100 USDT 即时到账", 100, "cash"],
+      ["usdt-100", "인스턴트 드롭", "Instant Drop", "即时到账", 100, "cash"],
     ],
   },
   {
@@ -185,7 +185,7 @@ export const LEGACY_SPECS: BoxSpec[] = [
       ["sws-longines", "론진 스피릿 줄루 5", "Longines Spirit Zulu 5", "浪琴先行者 Zulu Time", 2300],
       ["sws-oris", "오리스 아퀴스 데이트", "Oris Aquis Date", "豪利时 Aquis Date", 2100],
       ["sws-tissot", "티쏘 PRX 파워매틱 80", "Tissot PRX Powermatic 80", "天梭 PRX Powermatic 80", 650],
-      ["usdt-100", "100 USDT 인스턴트 드롭", "100 USDT Instant Drop", "100 USDT 即时到账", 100, "cash"],
+      ["usdt-100", "인스턴트 드롭", "Instant Drop", "即时到账", 100, "cash"],
     ],
   },
   {
@@ -208,7 +208,7 @@ export const LEGACY_SPECS: BoxSpec[] = [
       ["grl-dior", "디올 레이디 디올 미디움", "Dior Lady Dior Medium", "迪奥 Lady Dior 中号", 4500],
       ["grl-polene", "폴렌 넘버원 나노", "Polène Numéro Un Nano", "Polène Numéro Un Nano", 380],
       ["glx-scarf", "에르메스 트윌리 스카프", "Hermès Twilly Scarf", "爱马仕 Twilly 丝巾", 305],
-      ["usdt-100", "100 USDT 인스턴트 드롭", "100 USDT Instant Drop", "100 USDT 即时到账", 100, "cash"],
+      ["usdt-100", "인스턴트 드롭", "Instant Drop", "即时到账", 100, "cash"],
     ],
   },
   // ── 🚀 슈퍼카 & 골드바 잭팟 ─────────────────────────────────

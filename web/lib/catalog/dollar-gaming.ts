@@ -6,7 +6,8 @@ import type { ItemSpec } from "@/lib/catalogTypes";
  */
 export const DOLLAR_GAMING_ITEMS: ItemSpec[] = [
   // 20 USDT 이상 (위 구간)
-  ["gm-zephyrus-g16", "에이수스 ROG 제피러스 G16 RTX 5080 1TB", "ASUS ROG Zephyrus G16 RTX 5080 1TB", "华硕 ROG 幻16 RTX 5080 1TB", 3499.99], // 추정
+  ["gm-rtx5090", "엔비디아 지포스 RTX 5090 파운더스 에디션 32GB", "NVIDIA GeForce RTX 5090 Founders Edition 32GB", "英伟达 GeForce RTX 5090 Founders Edition 32GB", 2000],
+  ["gm-zephyrus-g16", "에이수스 ROG 제피러스 G16 RTX 5080 1TB", "ASUS ROG Zephyrus G16 RTX 5080 1TB", "华硕 ROG 幻16 RTX 5080 1TB", 3500], // 추정
   ["gm-legion-pro7i", "레노버 리전 프로 7i RTX 5080 1TB", "Lenovo Legion Pro 7i RTX 5080 1TB", "联想 Legion Pro 7i RTX 5080 1TB", 3299.99], // 추정
   ["gm-zephyrus-g14", "에이수스 ROG 제피러스 G14 RTX 5070 1TB", "ASUS ROG Zephyrus G14 RTX 5070 1TB", "华硕 ROG 幻14 RTX 5070 1TB", 2499.99], // 추정
   ["gm-omen-max16", "HP 오멘 맥스 16 RTX 5070 Ti 1TB", "HP OMEN MAX 16 RTX 5070 Ti 1TB", "惠普 OMEN MAX 16 RTX 5070 Ti 1TB", 2499.99], // 추정
@@ -48,7 +49,7 @@ export const DOLLAR_GAMING_ITEMS: ItemSpec[] = [
   ["gm-pulsefire-haste2", "하이퍼엑스 펄스파이어 헤이스트 2", "HyperX Pulsefire Haste 2", "HyperX Pulsefire Haste 2", 59.99],
   ["gm-fifine-am8", "파이파인 AM8 USB 마이크", "FIFINE AM8 USB Microphone", "FIFINE AM8 USB 麦克风", 54.99],
   ["gc-steam50", "스팀 기프트카드 $50", "Steam Gift Card $50", "Steam 礼品卡 $50", 50, "digital"],
-  ["usdt-50", "50 USDT 인스턴트 드롭", "50 USDT Instant Drop", "50 USDT 即时到账", 50, "cash"],
+  ["usdt-50", "인스턴트 드롭", "Instant Drop", "即时到账", 50, "cash"],
   ["gm-g840", "로지텍 G840 XL 게이밍 마우스 패드", "Logitech G840 XL Gaming Mouse Pad", "罗技 G840 XL 游戏鼠标垫", 49.99],
   ["gm-qck-heavy", "스틸시리즈 QcK 헤비 미디엄 마우스 패드", "SteelSeries QcK Heavy Medium Mouse Pad", "赛睿 QcK Heavy 中号鼠标垫", 24.99],
   // 6 USDT 이상, 20 USDT 미만

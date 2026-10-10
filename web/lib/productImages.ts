@@ -45,6 +45,8 @@ const SOURCES: Record<string, ProductImage> = {
   "vault-gold": { src: `${ASSET_BASE}/assets/photography/photo-1610375461246-83df859d849d.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "starter-audio": { src: `${ASSET_BASE}/assets/photography/photo-1618366712010-f4ae9c647dcb.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "starter-camera": { src: `${ASSET_BASE}/assets/photography/photo-1473968512647-3e447244af8f.webp`, credit: "Unsplash , Unsplash License", cutout: false },
+  // 임시 커버: Commons 에서 고른 포켓몬 카드 사진으로 바꾼다
+  "vault-pokemon": { src: `${ASSET_BASE}/assets/photography/photo-1606813907291-d86efa9b94db.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "vault-home": { src: `${ASSET_BASE}/assets/photography/photo-1517336714731-489689fd1ca8.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "jackpot-car": { src: `${ASSET_BASE}/assets/photography/photo-1617788138017-80ad40651399.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "jackpot-cybertruck": { src: `${ASSET_BASE}/assets/photography/photo-1617788138017-80ad40651399.webp`, credit: "Unsplash , Unsplash License", cutout: false },

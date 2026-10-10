@@ -51,7 +51,7 @@ export const VAULT_GOLD_ITEMS: ItemSpec[] = [
   ["gd-silver-chain", "스털링 실버 체인 목걸이", "Sterling Silver Chain Necklace", "925 银链项链", 120],
   ["gd-jewelry-box", "가죽 주얼리 보관함", "Leather Jewelry Box", "皮质首饰盒", 150],
   ["gc-amazon100", "아마존 글로벌 기프트카드 $100", "Amazon Global Gift Card $100", "Amazon 全球礼品卡 $100", 100, "digital"],
-  ["usdt-100", "100 USDT 인스턴트 드롭", "100 USDT Instant Drop", "100 USDT 即时到账", 100, "cash"],
+  ["usdt-100", "인스턴트 드롭", "Instant Drop", "即时到账", 100, "cash"],
   // 100 USDT 미만
   ["gd-silver-coin-1", "실버 코인 1온스", "Silver Coin 1 oz", "银币 1 盎司", 50],
   ["gd-silver-earrings", "스털링 실버 귀걸이", "Sterling Silver Earrings", "925 银耳环", 60],

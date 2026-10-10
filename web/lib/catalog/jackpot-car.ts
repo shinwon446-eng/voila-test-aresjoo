@@ -62,5 +62,5 @@ export const JACKPOT_CAR_ITEMS: ItemSpec[] = [
   ["car-cover", "맞춤 차량 커버", "Fitted Car Cover", "定制车衣", 150],
   ["car-carplay-adapter", "무선 카플레이 어댑터", "Wireless CarPlay Adapter", "无线 CarPlay 适配器", 120],
   ["gc-amazon100", "아마존 글로벌 기프트카드 $100", "Amazon Global Gift Card $100", "Amazon 全球礼品卡 $100", 100, "digital"],
-  ["usdt-100", "100 USDT 인스턴트 드롭", "100 USDT Instant Drop", "100 USDT 即时到账", 100, "cash"],
+  ["usdt-100", "인스턴트 드롭", "Instant Drop", "即时到账", 100, "cash"],
 ];

@@ -61,5 +61,5 @@ test("정책 상수 — 95% 즉시 회수 · 3배 보상 · 24시간 출고 기�
   assert.equal(AUTHENTICITY_COMPENSATION_MULTIPLE, 3);
   assert.equal(SHIPPING_SLA_HOURS, 24);
   assert.equal(MUTABLE_RESULTS, 0);
-  assert.equal(CATEGORY_COUNT, 4);
+  assert.equal(CATEGORY_COUNT, 5);
 });

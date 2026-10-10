@@ -9,7 +9,7 @@ import type { BoxSpec } from "./catalogTypes";
 import { SPECS } from "./catalogSpecs";
 import { REFUND_RATE } from "./types";
 
-export type BoxCategory = "dollar" | "tech" | "luxury" | "jackpot";
+export type BoxCategory = "dollar" | "tech" | "luxury" | "jackpot" | "collect";
 
 export interface CategoryFilter {
   key: BoxCategory | "all";
@@ -23,6 +23,7 @@ export const CATEGORY_FILTERS: CategoryFilter[] = [
   { key: "tech", label: "애플&테크" },
   { key: "luxury", label: "명품&시계" },
   { key: "jackpot", label: "슈퍼카&골드바" },
+  { key: "collect", label: "컬렉션" },
 ];
 
 export type SortKey = "featured" | "price-asc" | "price-desc" | "popularity";
@@ -161,10 +162,11 @@ function waveItem(value: number, kind: "cash" | "digital", role: "cashback" | "d
   const amount = +value.toFixed(2);
   const id = `wave-${role}-${Math.round(amount * 100)}`;
   const image = imageFor(id);
+  // 이름에 금액을 넣지 않는다. 금액은 value 가 들고 화면이 따로 찍는다(같은 말 두 번 금지).
   const label = role === "cashback" ? "즉시 캐시백" : role === "drop" ? "인스턴트 드롭" : "디지털 기프트카드";
   const labelEn = role === "cashback" ? "Instant Cashback" : role === "drop" ? "Instant Drop" : "Digital Gift Card";
   const labelZh = role === "cashback" ? "即时返现" : role === "drop" ? "即时到账" : "数字礼品卡";
-  return { id, name: `${amount} USDT ${label}`, nameEn: `${amount} USDT ${labelEn}`, nameZh: `${amount} USDT ${labelZh}`, kind, value: amount,
+  return { id, name: label, nameEn: labelEn, nameZh: labelZh, kind, value: amount,
     dropRate: slots / 10_000, code: `W${role[0].toUpperCase()}${Math.round(amount * 100)}`, tone: T.coal, image, imageUrl: image.src };
 }
 
@@ -257,6 +259,8 @@ export const techRow = rowOf("tech");
 export const luxuryRow = rowOf("luxury");
 /** 🚗 슈퍼카&골드바 */
 export const jackpotRow = rowOf("jackpot");
+/** 카드, 레고, 스니커즈 같은 수집품 */
+export const collectRow = rowOf("collect");
 
 /** 히어로, 1 USDT 박스 우선 */
 export const heroBox = (): ProductBox => dollarRow()[0] ?? trending(1)[0];

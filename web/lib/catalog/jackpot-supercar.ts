@@ -63,5 +63,5 @@ export const JACKPOT_SUPERCAR_ITEMS: ItemSpec[] = [
   ["sc-driving-gloves", "가죽 드라이빙 장갑", "Leather Driving Gloves", "真皮驾驶手套", 120],
   ["sc-track-day", "트랙 데이 참가권", "Track Day Entry", "赛道日入场券", 400, "digital"],
   ["gc-amazon100", "아마존 글로벌 기프트카드 $100", "Amazon Global Gift Card $100", "Amazon 全球礼品卡 $100", 100, "digital"],
-  ["usdt-100", "100 USDT 인스턴트 드롭", "100 USDT Instant Drop", "100 USDT 即时到账", 100, "cash"],
+  ["usdt-100", "인스턴트 드롭", "Instant Drop", "即时到账", 100, "cash"],
 ];

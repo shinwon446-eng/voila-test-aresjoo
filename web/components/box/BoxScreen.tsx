@@ -11,7 +11,6 @@
 import { useMemo, useRef, useState } from "react";
 import { CreditCard, Coins, Package } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useSearchParams } from "next/navigation";
 import { BOXES, REFUND_RATE, ceilingValue, dropTable, formatRate, retailReturn, type ProductBox, type ProductItem } from "@/lib/products";
 import { TIERS, tierOf, type TierKey } from "@/lib/tiers";
 import { OPEN_PRESETS } from "@/lib/autoplay";
@@ -41,8 +40,6 @@ const STRIP_MAX = 12;
 export function BoxScreen({ box }: { box: ProductBox }) {
   const t = useTranslations("v");
   const locale = useLocale();
-  // EXPERIMENT (사이클 2): ?layout=b 면 비용과 결과 묶음이 사진 띠 위에 온다. 비교가 끝나면 하나만 남긴다
-  const layoutB = useSearchParams()?.get("layout") === "b";
   const { boxTitle, itemName } = useProductText();
   const { fmt } = useCurrency();
   const user = useAuthStore((s) => s.user);
@@ -98,7 +95,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const press = () => { if (opening.current) return; if (cost >= CONFIRM_COST_USDT || qty >= CONFIRM_COUNT) setConfirming(true); else void open(); };
 
   return (
-    <div className={"v-boxlayout" + (layoutB ? " v-boxlayout--b" : "")}>
+    <div className="v-boxlayout">
       <div className="v-boxlayout-main">
       <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.mostLikely", { price: fmt(box.price), amount: fmt(box.price * 0.5), pct: formatRate(table.find((i) => i.id.startsWith("wave-cashback-") && i.value === +(box.price * 0.5).toFixed(2))?.dropRate ?? 50) })} />
       {strip.length >= 3 ? (

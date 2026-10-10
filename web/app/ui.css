@@ -174,13 +174,13 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 /* 첫 화면 사진 띠: 값이 큰 실물을 가로로. 한 장이 화면의 2/3 쯤, 다음 장이 살짝 보여 넘길 수 있음을 안다 */
 .v-strip { display: flex; gap: 10px; margin: 0; padding: 0; overflow-x: auto; list-style: none; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .v-strip::-webkit-scrollbar { display: none; }
-.v-strip > li { flex: 0 0 68%; scroll-snap-align: start; }
+.v-strip > li { flex: 0 0 44%; scroll-snap-align: start; } /* 사이클 2 EXPERIMENT 결과: 작은 띠(약 120px 높이)로. 사진은 남기되 확률 숫자보다 크게 기억되지 않게 */
 .v-strip-item { display: block; width: 100%; padding: 0; border: 0; background: none; color: var(--v-text); text-align: left; cursor: pointer; }
 .v-strip-photo { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--v-r-card); background: var(--v-photo); }
 .v-strip-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .v-strip-name { display: block; overflow: hidden; margin-top: 8px; color: var(--v-title); font-size: var(--v-fs-small); line-height: 1.4; white-space: nowrap; text-overflow: ellipsis; }
 .v-strip-value { display: block; color: var(--v-sub); font-size: var(--v-fs-small); }
-@media (min-width: 768px) { .v-strip > li { flex-basis: 36%; } }
+@media (min-width: 768px) { .v-strip > li { flex-basis: 22%; } }
 /* 상품 타일은 단추다(눌러서 상품 시트) */
 button.v-item { display: block; width: 100%; padding: 0; border: 0; color: inherit; text-align: left; cursor: pointer; }
 button.v-item .v-item-photo, button.v-item .v-item-body { display: block; }
@@ -259,9 +259,6 @@ button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 
 .v-boxlayout-main > header { order: 1; }
 .v-boxlayout-hero { order: 2; } /* 사진 띠가 먼저, 띠 머리와 타일마다 확률을 붙여 희귀한 결과가 보통처럼 보이지 않게 한다 */
 .v-boxside { order: 3; }
-/* EXPERIMENT B안: 비용과 결과 묶음이 사진 띠 위 */
-.v-boxlayout--b .v-boxlayout-hero { order: 3; }
-.v-boxlayout--b .v-boxside { order: 2; }
 .v-boxlayout-contents { order: 4; }
 .v-item-glyph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--v-mute); }
 @media (min-width: 1024px) {

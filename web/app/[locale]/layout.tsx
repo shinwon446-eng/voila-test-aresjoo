@@ -4,7 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
 import { LocaleHtmlLang } from "@/components/layout/LocaleHtmlLang";
-import { Footer } from "@/components/layout/Footer";
+import { AppFooter } from "@/components/shell/AppFooter";
 import { AuthHost } from "@/components/auth/AuthHost";
 import { MotionPreferences } from "@/components/layout/MotionPreferences";
 import { LabBadge } from "@/components/layout/LabBadge";
@@ -70,7 +70,7 @@ export default async function LocaleLayout({
       <LocaleHtmlLang locale={locale as Locale} />
       <div>
         {children}
-        <Footer />
+        <AppFooter />
       </div>
       {/* 로그인, 회원가입 모달과 확인 토스트, 어느 페이지에서든 열린다 */}
       <AuthHost />

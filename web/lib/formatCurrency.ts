@@ -3,7 +3,8 @@
  *
  * 입력은 항상 USDT 기준 금액이고, 출력은 선택 통화 "하나"의 표기다.
  *   USDT → "80 USDT"   USD → "$80"   KRW → "₩110,400"
- * 모든 통화는 반올림한 정수로 표시한다.
+ * USDT 와 USD 는 필요한 자리만 소수 둘째 자리까지(0.5, 2.65), KRW 는 정수로 표시한다.
+ * 0.5 USDT 를 "1 USDT"로 보이게 하던 정수 반올림은 사실과 다른 표기라 없앴다(DESIGN.md 정한 것 A.5).
  * 다른 통화 기호, 단위가 섞여 나오는 경로는 존재하지 않는다, 이 함수 말고는 금액을 문자열로 만들지 않는다.
  */
 
@@ -13,8 +14,8 @@ import { DEFAULT_RATES, type Currency } from "@/stores/currencyStore";
 export const NBSP = " ";
 
 const SPEC: Record<Currency, { decimals: number; render: (n: string) => string }> = {
-  USDT: { decimals: 0, render: (n) => `${n}${NBSP}USDT` },
-  USD: { decimals: 0, render: (n) => `$${n}` },
+  USDT: { decimals: 2, render: (n) => `${n}${NBSP}USDT` },
+  USD: { decimals: 2, render: (n) => `$${n}` },
   KRW: { decimals: 0, render: (n) => `₩${n}` },
 };
 

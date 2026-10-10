@@ -1,0 +1,238 @@
+{
+  "startedAt": "2026-10-10T12:02:55.350Z",
+  "baseURL": "http://localhost:3004",
+  "plan": "C:\\Users\\hyun1\\OneDrive\\바탕 화면\\VOILA-test-aresjoo\\web\\scripts\\capture\\plan.before.json",
+  "totalPlanItems": 100,
+  "selectedItems": 100,
+  "locales": [
+    "ko",
+    "en",
+    "zh"
+  ],
+  "viewports": [
+    "mobile",
+    "desktop",
+    "mobile360"
+  ],
+  "unavailable": [
+    "실제 외부 OAuth, 인증 메일 수신함, 실입금과 실출금, 실제 운송장 발급: 외부 서비스는 호출하지 않습니다.",
+    "브라우저 모드 입금 주소와 입금 완료: 주소가 환경 설정에 의존하며 로컬 어댑터는 page.route를 통과하지 않습니다. 환경 설정을 읽거나 바꾸지 않습니다.",
+    "배송 접수 완료: 개봉 결과의 requestEnabled가 false이며 browserAccount.ts에는 /shipping/request 처리기도 없습니다. 보관함에서 입력과 제출 오류까지 촬영합니다.",
+    "미연결 컴포넌트, 승급 반전, 니어미스, 데모 개봉, AML 차단 토스트: 현행 사용자 진입 경로가 없습니다.",
+    "전용 오프라인, 세션 만료, 전역 오류 디자인: 현행 구현이 없습니다. 기본 화면과 요청별 오류만 관찰할 수 있습니다.",
+    "브라우저 탭 UI, OS 파일 선택창, 네이티브 select 펼친 팝업: headless 페이지 스크린샷 범위 밖입니다."
+  ],
+  "results": [
+    {
+      "id": "home",
+      "locale": "ko",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "home-first-ko-mobile.png",
+        "home-first-full-ko-mobile.png",
+        "home-footer-ko-mobile.png",
+        "home-footer-full-ko-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "first",
+          "findings": 15,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "footer",
+          "findings": 13,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3033
+    },
+    {
+      "id": "home",
+      "locale": "ko",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "home-first-ko-desktop.png",
+        "home-first-full-ko-desktop.png",
+        "home-footer-ko-desktop.png",
+        "home-footer-full-ko-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "first",
+          "findings": 3,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "footer",
+          "findings": 2,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2955
+    },
+    {
+      "id": "home",
+      "locale": "ko",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "first",
+          "findings": 15,
+          "url": "http://localhost:3004/ko"
+        },
+        {
+          "name": "footer",
+          "findings": 12,
+          "url": "http://localhost:3004/ko"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 1936
+    },
+    {
+      "id": "home",
+      "locale": "en",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "home-first-en-mobile.png",
+        "home-first-full-en-mobile.png",
+        "home-footer-en-mobile.png",
+        "home-footer-full-en-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "first",
+          "findings": 15,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "footer",
+          "findings": 12,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2906
+    }
+  ]
+}

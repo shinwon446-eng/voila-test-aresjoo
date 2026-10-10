@@ -8,6 +8,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     : routing.defaultLocale;
   return {
     locale,
-    messages: (await import(`../messages/${locale}.json`)).default,
+    // v: 전면 개편에서 새로 쓰는 문구 묶음(messages/v.<locale>.json). 옛 묶음은 화면을 옮기면서 지운다.
+    messages: { ...(await import(`../messages/${locale}.json`)).default, v: (await import(`../messages/v.${locale}.json`)).default },
   };
 });

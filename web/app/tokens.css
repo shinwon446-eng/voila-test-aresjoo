@@ -1,0 +1,63 @@
+/*
+ * VOILA 디자인 토큰. 색 값은 이 파일에서만 정의한다(DESIGN.md 3장).
+ * 다른 파일은 var(--v-...)만 쓴다. scripts/design-lint 가 이 파일 밖의 색 값을 막는다.
+ */
+:root {
+  color-scheme: dark;
+
+  /* 면 */
+  --v-bg: #000;
+  --v-card: #303030;
+  --v-pill: #2f2f2f;
+  --v-pill-hover: #3a3a3a;
+  --v-scrim: rgba(0, 0, 0, 0.72);
+  --v-photo: #1a1a1a;
+
+  /* 선 */
+  --v-outline: rgba(255, 255, 255, 0.15);
+  --v-divider: rgba(255, 255, 255, 0.1);
+  --v-selected: #9a9a9a;
+
+  /* 글자 */
+  --v-title: #fff;
+  --v-text: #ececec;
+  --v-sub: #cdcdcd;
+  --v-mute: #9a9a9a;
+
+  /* 주 단추 */
+  --v-primary: #fff;
+  --v-primary-hover: #e6e6e6;
+  --v-on-primary: #000;
+
+  /* 실패 한 곳에만 */
+  --v-fail: #ff7b72;
+
+  /* 형태 */
+  --v-r-card: 26px;
+  --v-r-field: 19px;
+  --v-r-pill: 999px;
+  --v-btn-h: 52px;
+  --v-touch: 44px;
+  --v-gutter: 16px;
+  --v-col: 560px;
+  --v-wide: 1120px;
+
+  /* 글자 크기 */
+  --v-fs-title: 32px;
+  --v-fs-desc: 18px;
+  --v-fs-section: 18px;
+  --v-fs-body: 16px;
+  --v-fs-small: 14px;
+
+  /* 움직임 */
+  --v-fast: 0.1s;
+  --v-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@media (max-width: 767px) {
+  :root {
+    --v-r-card: 20px;
+    --v-fs-title: 28px;
+    --v-fs-desc: 16px;
+  }
+}

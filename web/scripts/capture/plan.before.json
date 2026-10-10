@@ -1,0 +1,2655 @@
+{
+  "version": 1,
+  "description": "UI_INVENTORY.md의 개편 전 라우트, 오버레이, 저장 상태, 토스트와 핵심 흐름. 실제 외부 거래 없이 새 Chrome 컨텍스트에서 실행합니다.",
+  "items": [
+    {
+      "id": "home",
+      "path": "",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "first",
+          "expect": "#hero-title"
+        },
+        {
+          "action": "scroll",
+          "y": "bottom"
+        },
+        {
+          "action": "shot",
+          "name": "footer",
+          "expect": "footer"
+        },
+        {
+          "action": "scroll",
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "root-redirect",
+      "path": "",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "redirect",
+          "expect": "#hero-title"
+        }
+      ],
+      "root": true
+    },
+    {
+      "id": "route-about",
+      "path": "/about",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "route-community",
+      "path": "/community",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "route-community-board",
+      "path": "/community/board",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "route-fairness",
+      "path": "/fairness",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "route-inventory",
+      "path": "/inventory",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "route-profile",
+      "path": "/profile",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "route-legal",
+      "path": "/legal",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-terms",
+      "path": "/legal/terms",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-privacy",
+      "path": "/legal/privacy",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-payments",
+      "path": "/legal/payments",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-withdrawals",
+      "path": "/legal/withdrawals",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-refunds",
+      "path": "/legal/refunds",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-policy",
+      "path": "/legal/policy",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-fairness",
+      "path": "/legal/fairness",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-safety",
+      "path": "/legal/safety",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-community",
+      "path": "/legal/community",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-cookies",
+      "path": "/legal/cookies",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-complaints",
+      "path": "/legal/complaints",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-business",
+      "path": "/legal/business",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "legal-faq",
+      "path": "/legal/faq",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "missing-route",
+      "path": "/capture-missing-page",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "404"
+        }
+      ],
+      "allowHttpError": true
+    },
+    {
+      "id": "missing-legal",
+      "path": "/legal/capture-missing-document",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "404"
+        }
+      ],
+      "allowHttpError": true
+    },
+    {
+      "id": "skin-netflix",
+      "path": "?skin=netflix",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "skin-commerce",
+      "path": "?skin=commerce",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "category-dollar",
+      "path": "#category-dollar",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "category-tech",
+      "path": "#category-tech",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "category-luxury",
+      "path": "#category-luxury",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "category-jackpot",
+      "path": "#category-jackpot",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "sort-price-asc",
+      "path": "",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "fill",
+          "target": ".collection-sort select",
+          "select": "price-asc"
+        },
+        {
+          "action": "shot",
+          "name": "sorted"
+        }
+      ]
+    },
+    {
+      "id": "sort-price-desc",
+      "path": "",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "fill",
+          "target": ".collection-sort select",
+          "select": "price-desc"
+        },
+        {
+          "action": "shot",
+          "name": "sorted"
+        }
+      ]
+    },
+    {
+      "id": "sort-popularity",
+      "path": "",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "fill",
+          "target": ".collection-sort select",
+          "select": "popularity"
+        },
+        {
+          "action": "shot",
+          "name": "sorted"
+        }
+      ]
+    },
+    {
+      "id": "mobile-menu",
+      "path": "",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "click",
+          "target": "button[aria-controls=\"site-menu\"]",
+          "viewports": [
+            "mobile"
+          ]
+        },
+        {
+          "action": "shot",
+          "name": "menu",
+          "expect": "#site-menu"
+        }
+      ],
+      "viewports": [
+        "mobile"
+      ]
+    },
+    {
+      "id": "box-detail",
+      "path": "",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": ".detail-links button:first-child"
+        },
+        {
+          "action": "shot",
+          "name": "odds",
+          "expect": "#provably-fair details[open]"
+        },
+        {
+          "action": "click",
+          "target": ".detail-credits summary"
+        },
+        {
+          "action": "shot",
+          "name": "credits",
+          "expect": ".detail-credits details[open]"
+        }
+      ]
+    },
+    {
+      "id": "balance-zero",
+      "path": "",
+      "state": "zero",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        }
+      ]
+    },
+    {
+      "id": "balance-insufficient",
+      "path": "",
+      "state": "insufficient",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        }
+      ]
+    },
+    {
+      "id": "balance-funded",
+      "path": "",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        }
+      ]
+    },
+    {
+      "id": "quantity-5",
+      "path": "",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.quantity",
+            "scope": ".detail-qty",
+            "params": {
+              "n": 5
+            }
+          }
+        },
+        {
+          "action": "shot",
+          "name": "quantity"
+        },
+        {
+          "action": "click",
+          "target": ".detail-open"
+        },
+        {
+          "action": "shot",
+          "name": "confirm",
+          "expect": ".detail-confirm"
+        }
+      ]
+    },
+    {
+      "id": "quantity-10",
+      "path": "",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.quantity",
+            "scope": ".detail-qty",
+            "params": {
+              "n": 10
+            }
+          }
+        },
+        {
+          "action": "shot",
+          "name": "quantity"
+        },
+        {
+          "action": "click",
+          "target": ".detail-open"
+        },
+        {
+          "action": "shot",
+          "name": "confirm",
+          "expect": ".detail-confirm"
+        }
+      ]
+    },
+    {
+      "id": "quantity-50",
+      "path": "",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.quantity",
+            "scope": ".detail-qty",
+            "params": {
+              "n": 50
+            }
+          }
+        },
+        {
+          "action": "shot",
+          "name": "quantity"
+        },
+        {
+          "action": "click",
+          "target": ".detail-open"
+        },
+        {
+          "action": "shot",
+          "name": "confirm",
+          "expect": ".detail-confirm"
+        }
+      ]
+    },
+    {
+      "id": "quantity-100",
+      "path": "",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.quantity",
+            "scope": ".detail-qty",
+            "params": {
+              "n": 100
+            }
+          }
+        },
+        {
+          "action": "shot",
+          "name": "quantity"
+        },
+        {
+          "action": "click",
+          "target": ".detail-open"
+        },
+        {
+          "action": "shot",
+          "name": "confirm",
+          "expect": ".detail-confirm"
+        }
+      ]
+    },
+    {
+      "id": "wallet-guest",
+      "path": "#deposit",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "deposit",
+          "expect": ".wallet-modal"
+        },
+        {
+          "action": "click",
+          "target": ".wallet-tabs button:nth-child(2)"
+        },
+        {
+          "action": "shot",
+          "name": "withdraw",
+          "expect": ".wallet-modal"
+        },
+        {
+          "action": "click",
+          "target": ".wallet-tabs button:nth-child(3)"
+        },
+        {
+          "action": "shot",
+          "name": "history",
+          "expect": ".wallet-modal"
+        }
+      ]
+    },
+    {
+      "id": "wallet-funded",
+      "path": "#deposit",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "deposit",
+          "expect": ".wallet-modal"
+        },
+        {
+          "action": "click",
+          "target": ".wallet-tabs button:nth-child(2)"
+        },
+        {
+          "action": "shot",
+          "name": "withdraw",
+          "expect": ".wallet-modal"
+        },
+        {
+          "action": "click",
+          "target": ".wallet-tabs button:nth-child(3)"
+        },
+        {
+          "action": "shot",
+          "name": "history",
+          "expect": ".wallet-modal"
+        }
+      ]
+    },
+    {
+      "id": "wallet-pending",
+      "path": "#deposit",
+      "state": "pending",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "deposit",
+          "expect": ".wallet-modal"
+        },
+        {
+          "action": "click",
+          "target": ".wallet-tabs button:nth-child(2)"
+        },
+        {
+          "action": "shot",
+          "name": "withdraw",
+          "expect": ".wallet-modal"
+        },
+        {
+          "action": "click",
+          "target": ".wallet-tabs button:nth-child(3)"
+        },
+        {
+          "action": "shot",
+          "name": "history",
+          "expect": ".wallet-modal"
+        }
+      ]
+    },
+    {
+      "id": "auth-login",
+      "path": "",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "click",
+          "target": "button[aria-controls=\"site-menu\"]",
+          "viewports": [
+            "mobile"
+          ]
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "auth.login",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "email",
+          "expect": ".auth-modal"
+        },
+        {
+          "action": "fill",
+          "target": ".auth-modal input[type=\"email\"]",
+          "value": "capture@example.invalid"
+        },
+        {
+          "action": "click",
+          "target": ".auth-modal form button.auth-primary"
+        },
+        {
+          "action": "shot",
+          "name": "password",
+          "expect": ".auth-modal input[type=\"password\"]"
+        }
+      ]
+    },
+    {
+      "id": "auth-signup",
+      "path": "",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "click",
+          "target": "button[aria-controls=\"site-menu\"]",
+          "viewports": [
+            "mobile"
+          ]
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "auth.login",
+            "nth": 0
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "account.signupLink",
+            "scope": ".auth-modal"
+          }
+        },
+        {
+          "action": "shot",
+          "name": "email",
+          "expect": ".auth-modal"
+        },
+        {
+          "action": "fill",
+          "target": ".auth-modal input[type=\"email\"]",
+          "value": "new-capture@example.invalid"
+        },
+        {
+          "action": "click",
+          "target": ".auth-modal form button.auth-primary"
+        },
+        {
+          "action": "shot",
+          "name": "password"
+        },
+        {
+          "action": "fill",
+          "target": ".auth-modal input[type=\"password\"]",
+          "value": "CaptureOnly123!"
+        },
+        {
+          "action": "click",
+          "target": ".auth-modal form button.auth-primary"
+        },
+        {
+          "action": "shot",
+          "name": "verify",
+          "expect": ".auth-modal input[autocomplete=\"one-time-code\"]"
+        }
+      ]
+    },
+    {
+      "id": "auth-recover",
+      "path": "",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "click",
+          "target": "button[aria-controls=\"site-menu\"]",
+          "viewports": [
+            "mobile"
+          ]
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "auth.login",
+            "nth": 0
+          }
+        },
+        {
+          "action": "fill",
+          "target": ".auth-modal input[type=\"email\"]",
+          "value": "capture@example.invalid"
+        },
+        {
+          "action": "click",
+          "target": ".auth-modal form button.auth-primary"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "account.forgot",
+            "scope": ".auth-modal"
+          }
+        },
+        {
+          "action": "shot",
+          "name": "recover"
+        },
+        {
+          "action": "fill",
+          "target": ".auth-modal input[type=\"email\"]",
+          "value": "capture@example.invalid"
+        },
+        {
+          "action": "click",
+          "target": ".auth-modal form button.auth-primary"
+        },
+        {
+          "action": "shot",
+          "name": "reset",
+          "expect": ".auth-modal input[autocomplete=\"one-time-code\"]"
+        }
+      ]
+    },
+    {
+      "id": "daily-box",
+      "path": "",
+      "state": "guest",
+      "steps": [
+        {
+          "action": "click",
+          "target": "button[aria-controls=\"site-menu\"]",
+          "viewports": [
+            "mobile"
+          ]
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "daily.title",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "pick",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "css": "[role=\"dialog\"] button[aria-label]",
+            "nth": 1
+          }
+        },
+        {
+          "action": "wait",
+          "ms": 1100
+        },
+        {
+          "action": "shot",
+          "name": "done"
+        },
+        {
+          "action": "shot",
+          "name": "toast",
+          "expect": {
+            "css": ".pointer-events-auto",
+            "nth": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "daily-cooldown",
+      "path": "",
+      "state": "dailyUsed",
+      "steps": [
+        {
+          "action": "click",
+          "target": "button[aria-controls=\"site-menu\"]",
+          "viewports": [
+            "mobile"
+          ]
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "daily.title",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "pick",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "autoplay-settings",
+      "path": "",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "autoplay.title",
+            "scope": ".detail-links"
+          }
+        },
+        {
+          "action": "shot",
+          "name": "settings",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "opening-single",
+      "path": "",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": ".detail-open"
+        },
+        {
+          "action": "shot",
+          "name": "confirm",
+          "expect": ".detail-confirm"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.confirmPurchase",
+            "scope": ".detail-confirm"
+          }
+        },
+        {
+          "action": "wait",
+          "target": {
+            "role": "button",
+            "key": "unbox.retry",
+            "nth": 0,
+            "contains": true
+          },
+          "timeout": 30000
+        },
+        {
+          "action": "shot",
+          "name": "result",
+          "expect": {
+            "role": "button",
+            "key": "unbox.retry",
+            "nth": 0,
+            "contains": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "opening-motion",
+      "path": "",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": ".detail-open"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.confirmPurchase",
+            "scope": ".detail-confirm"
+          }
+        },
+        {
+          "action": "wait",
+          "ms": 300
+        },
+        {
+          "action": "shot",
+          "name": "animation",
+          "settleMs": 0
+        },
+        {
+          "action": "wait",
+          "target": {
+            "role": "button",
+            "key": "unbox.retry",
+            "nth": 0,
+            "contains": true
+          },
+          "timeout": 30000
+        },
+        {
+          "action": "shot",
+          "name": "result"
+        }
+      ],
+      "motion": "allow"
+    },
+    {
+      "id": "opening-multi",
+      "path": "",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.quantity",
+            "scope": ".detail-qty",
+            "params": {
+              "n": 5
+            }
+          }
+        },
+        {
+          "action": "click",
+          "target": ".detail-open"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.confirmPurchase",
+            "scope": ".detail-confirm"
+          }
+        },
+        {
+          "action": "wait",
+          "target": {
+            "role": "button",
+            "key": "unbox.retry",
+            "nth": 0,
+            "contains": true
+          },
+          "timeout": 30000
+        },
+        {
+          "action": "shot",
+          "name": "result"
+        }
+      ]
+    },
+    {
+      "id": "opening-verify",
+      "path": "",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": ".detail-open"
+        },
+        {
+          "action": "shot",
+          "name": "confirm",
+          "expect": ".detail-confirm"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.confirmPurchase",
+            "scope": ".detail-confirm"
+          }
+        },
+        {
+          "action": "wait",
+          "target": {
+            "role": "button",
+            "key": "unbox.retry",
+            "nth": 0,
+            "contains": true
+          },
+          "timeout": 30000
+        },
+        {
+          "action": "shot",
+          "name": "result",
+          "expect": {
+            "role": "button",
+            "key": "unbox.retry",
+            "nth": 0,
+            "contains": true
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "unbox.verify",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "verification",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulk-summary",
+      "path": "",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.quantity",
+            "scope": ".detail-qty",
+            "params": {
+              "n": 50
+            }
+          }
+        },
+        {
+          "action": "click",
+          "target": ".detail-open"
+        },
+        {
+          "action": "shot",
+          "name": "confirm"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.confirmPurchase",
+            "scope": ".detail-confirm"
+          }
+        },
+        {
+          "action": "wait",
+          "target": {
+            "role": "button",
+            "key": "bulk.retry",
+            "nth": 0,
+            "contains": true
+          },
+          "timeout": 30000
+        },
+        {
+          "action": "shot",
+          "name": "summary",
+          "expect": {
+            "role": "button",
+            "key": "bulk.retry",
+            "nth": 0,
+            "contains": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "inventory-items",
+      "path": "/inventory",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "items",
+          "expect": {
+            "css": ".vault-product",
+            "nth": 0
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "css": ".vault-product button[aria-pressed]",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "selection",
+          "expect": ".vault-selection-bar"
+        }
+      ]
+    },
+    {
+      "id": "inventory-empty-shipping",
+      "path": "/inventory?tab=shipping",
+      "state": "zero",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "inventory-empty-done",
+      "path": "/inventory?tab=done",
+      "state": "zero",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "inventory-no-results",
+      "path": "/inventory",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "fill",
+          "target": ".workspace-search input",
+          "value": "존재하지않는촬영상품"
+        },
+        {
+          "action": "shot",
+          "name": "empty",
+          "expect": ".workspace-empty"
+        }
+      ]
+    },
+    {
+      "id": "sell-confirm",
+      "path": "/inventory",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "refinement.sellback",
+            "scope": ".vault-product",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "confirm",
+          "expect": "[role=\"alertdialog\"]"
+        }
+      ]
+    },
+    {
+      "id": "shipping-form",
+      "path": "/inventory",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "refinement.requestDelivery",
+            "scope": ".vault-product",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "form",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "shipping-country-sg",
+      "path": "/inventory",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "refinement.requestDelivery",
+            "scope": ".vault-product",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "form",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        },
+        {
+          "action": "fill",
+          "target": "[role=\"dialog\"] select",
+          "select": "SG"
+        },
+        {
+          "action": "shot",
+          "name": "country"
+        }
+      ]
+    },
+    {
+      "id": "shipping-country-cn",
+      "path": "/inventory",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "refinement.requestDelivery",
+            "scope": ".vault-product",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "form",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        },
+        {
+          "action": "fill",
+          "target": "[role=\"dialog\"] select",
+          "select": "CN"
+        },
+        {
+          "action": "shot",
+          "name": "country"
+        }
+      ]
+    },
+    {
+      "id": "shipping-validation",
+      "path": "/inventory",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "refinement.requestDelivery",
+            "scope": ".vault-product",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "form",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "css": "[role=\"dialog\"] button",
+            "nth": 1
+          }
+        },
+        {
+          "action": "shot",
+          "name": "invalid"
+        }
+      ]
+    },
+    {
+      "id": "shipping-tracking",
+      "path": "/inventory?tab=shipping",
+      "state": "shipping",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "records",
+          "expect": {
+            "css": ".record-item",
+            "nth": 0
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "css": ".record-details summary",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "expanded"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "inventory.track",
+            "scope": ".record-details",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "tracking",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "shipping-in-transit",
+      "path": "/inventory?tab=shipping",
+      "state": "shipping",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".record-details summary",
+            "nth": 1
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "inventory.track",
+            "scope": ".record-details",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "tracking",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "shipping-cancel",
+      "path": "/inventory?tab=shipping",
+      "state": "shipping",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": ".record-details summary",
+            "nth": 0
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "cancellation.confirm",
+            "scope": ".record-details",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "confirm",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "inventory-verify",
+      "path": "/inventory",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "inventory.verify",
+            "scope": ".vault-product",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "verification",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        }
+      ],
+      "note": "프리셋 기록은 옛 기록 형식입니다. 정상 검증 성공 화면은 opening-verify가 실제 로컬 추첨 기록으로 촬영합니다."
+    },
+    {
+      "id": "profile-overview",
+      "path": "/profile?section=overview",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "profile-profile",
+      "path": "/profile?section=profile",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "profile-security",
+      "path": "/profile?section=security",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "profile-wallet",
+      "path": "/profile?section=wallet",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "profile-activity",
+      "path": "/profile?section=activity",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "profile-account",
+      "path": "/profile?section=account",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "security-enabled",
+      "path": "/profile?section=security",
+      "state": "security",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "password-change",
+      "path": "/profile?section=security",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "account.updatePassword",
+            "scope": "#account-panel",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "current-password"
+        }
+      ]
+    },
+    {
+      "id": "closure-blocked",
+      "path": "/profile?section=account",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "click",
+          "target": "#account-panel summary"
+        },
+        {
+          "action": "shot",
+          "name": "closure"
+        }
+      ]
+    },
+    {
+      "id": "withdraw-otp",
+      "path": "/#withdraw",
+      "state": "security",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "form",
+          "expect": ".wallet-modal"
+        },
+        {
+          "action": "fill",
+          "target": ".wallet-modal input[autocomplete=\"off\"]",
+          "value": "T111111111111111111111111111111111"
+        },
+        {
+          "action": "fill",
+          "target": ".wallet-modal input[inputmode=\"decimal\"]",
+          "value": "50"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "withdraw.submitAmount",
+            "params": {
+              "amount": "50 USDT"
+            },
+            "scope": ".wallet-modal"
+          }
+        },
+        {
+          "action": "shot",
+          "name": "confirm"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "withdraw.confirmNext",
+            "scope": ".wallet-modal"
+          }
+        },
+        {
+          "action": "shot",
+          "name": "otp",
+          "expect": ".wallet-modal input[autocomplete=\"one-time-code\"]"
+        },
+        {
+          "action": "fill",
+          "target": ".wallet-modal input[autocomplete=\"one-time-code\"]",
+          "value": "123456"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "account.verifyCode",
+            "scope": ".wallet-modal"
+          }
+        },
+        {
+          "action": "wait",
+          "target": {
+            "role": "button",
+            "key": "withdraw.done",
+            "scope": ".wallet-modal"
+          },
+          "timeout": 15000
+        },
+        {
+          "action": "shot",
+          "name": "pending",
+          "expect": {
+            "role": "button",
+            "key": "withdraw.done",
+            "scope": ".wallet-modal"
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdraw-email",
+      "path": "/#withdraw",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "security-choice",
+          "expect": ".wallet-modal"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "withdraw.otpFallback",
+            "scope": ".wallet-modal",
+            "params": {
+              "hours": 72
+            }
+          }
+        },
+        {
+          "action": "shot",
+          "name": "form"
+        },
+        {
+          "action": "fill",
+          "target": ".wallet-modal input[autocomplete=\"off\"]",
+          "value": "T111111111111111111111111111111111"
+        },
+        {
+          "action": "fill",
+          "target": ".wallet-modal input[inputmode=\"decimal\"]",
+          "value": "50"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "withdraw.submitAmount",
+            "scope": ".wallet-modal",
+            "params": {
+              "amount": "50 USDT"
+            }
+          }
+        },
+        {
+          "action": "shot",
+          "name": "confirm"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "withdraw.confirmNext",
+            "scope": ".wallet-modal"
+          }
+        },
+        {
+          "action": "shot",
+          "name": "email"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "withdraw.emailSend",
+            "scope": ".wallet-modal"
+          }
+        },
+        {
+          "action": "shot",
+          "name": "code",
+          "expect": ".wallet-modal input[autocomplete=\"one-time-code\"]"
+        },
+        {
+          "action": "fill",
+          "target": ".wallet-modal input[autocomplete=\"one-time-code\"]",
+          "value": "123456"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "account.verifyCode",
+            "scope": ".wallet-modal"
+          }
+        },
+        {
+          "action": "wait",
+          "target": {
+            "role": "button",
+            "key": "withdraw.done",
+            "scope": ".wallet-modal"
+          },
+          "timeout": 15000
+        },
+        {
+          "action": "shot",
+          "name": "hold",
+          "expect": {
+            "role": "button",
+            "key": "withdraw.done",
+            "scope": ".wallet-modal"
+          }
+        }
+      ]
+    },
+    {
+      "id": "withdraw-standalone",
+      "path": "/inventory",
+      "state": "pending",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "refinement.manageBalance",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "withdraw",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        }
+      ]
+    },
+    {
+      "id": "review-write",
+      "path": "/community?tab=eligible&item=capture-item-1",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "form",
+          "expect": "[aria-labelledby=\"review-heading\"]"
+        },
+        {
+          "action": "fill",
+          "target": "[aria-labelledby=\"review-heading\"] textarea",
+          "value": "촬영용 후기입니다. 화면 검수에 사용하는 내용입니다."
+        },
+        {
+          "action": "click",
+          "target": "[aria-labelledby=\"review-heading\"] label:has(input[name=\"rating\"][value=\"5\"])"
+        },
+        {
+          "action": "shot",
+          "name": "filled"
+        },
+        {
+          "action": "click",
+          "target": "[aria-labelledby=\"review-heading\"] button[type=\"submit\"]"
+        },
+        {
+          "action": "shot",
+          "name": "toast",
+          "expect": ".workspace-toast"
+        }
+      ]
+    },
+    {
+      "id": "community-mine",
+      "path": "/community?tab=mine",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "community-eligible",
+      "path": "/community?tab=eligible",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "screen"
+        }
+      ]
+    },
+    {
+      "id": "board-composer",
+      "path": "/community/board",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "글쓰기"
+          }
+        },
+        {
+          "action": "shot",
+          "name": "form",
+          "expect": "[aria-labelledby=\"board-composer-title\"]"
+        },
+        {
+          "action": "fill",
+          "target": "input[aria-label=\"제목\"]",
+          "value": "촬영용 게시글"
+        },
+        {
+          "action": "fill",
+          "target": "textarea[aria-label=\"본문\"]",
+          "value": "화면 검수를 위한 촬영용 게시글입니다."
+        },
+        {
+          "action": "shot",
+          "name": "filled"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "게시하기"
+          }
+        },
+        {
+          "action": "shot",
+          "name": "toast",
+          "expect": ".workspace-toast"
+        }
+      ]
+    },
+    {
+      "id": "board-draft-discard",
+      "path": "/community/board",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "글쓰기"
+          }
+        },
+        {
+          "action": "fill",
+          "target": "input[aria-label=\"제목\"]",
+          "value": "촬영용 초안"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "임시 글 삭제"
+          }
+        },
+        {
+          "action": "shot",
+          "name": "confirm"
+        }
+      ]
+    },
+    {
+      "id": "toast-auth",
+      "path": "/profile",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "profileSettings.logout",
+            "scope": "main",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "logout",
+          "expect": "[role=\"status\"]"
+        }
+      ]
+    },
+    {
+      "id": "toast-inventory",
+      "path": "/inventory",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "refinement.sellback",
+            "scope": ".vault-product",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "confirm",
+          "expect": "[role=\"alertdialog\"]"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "inventory.confirm",
+            "scope": "[role=\"alertdialog\"]"
+          }
+        },
+        {
+          "action": "shot",
+          "name": "sold",
+          "expect": ".workspace-toast"
+        }
+      ]
+    },
+    {
+      "id": "flow-first-opening",
+      "path": "",
+      "state": "firstVisit",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "arrival",
+          "expect": "#hero-title"
+        },
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "guest-detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": ".detail-need button"
+        },
+        {
+          "action": "shot",
+          "name": "wallet-login-needed",
+          "expect": ".wallet-modal"
+        },
+        {
+          "action": "click",
+          "target": ".wallet-close"
+        },
+        {
+          "action": "click",
+          "target": "button[aria-controls=\"site-menu\"]",
+          "viewports": [
+            "mobile"
+          ]
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "auth.login",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "login-email",
+          "expect": ".auth-modal"
+        },
+        {
+          "action": "fill",
+          "target": ".auth-modal input[type=\"email\"]",
+          "value": "capture@example.invalid"
+        },
+        {
+          "action": "click",
+          "target": ".auth-modal form button.auth-primary"
+        },
+        {
+          "action": "shot",
+          "name": "login-password"
+        },
+        {
+          "action": "fill",
+          "target": ".auth-modal input[type=\"password\"]",
+          "value": "CaptureOnly123!"
+        },
+        {
+          "action": "click",
+          "target": ".auth-modal form button.auth-primary"
+        },
+        {
+          "action": "wait",
+          "target": ".auth-modal",
+          "state": "hidden"
+        },
+        {
+          "action": "shot",
+          "name": "logged-in"
+        },
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": ".detail-open"
+        },
+        {
+          "action": "shot",
+          "name": "confirm",
+          "expect": ".detail-confirm"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.confirmPurchase",
+            "scope": ".detail-confirm"
+          }
+        },
+        {
+          "action": "wait",
+          "target": {
+            "role": "button",
+            "key": "unbox.retry",
+            "nth": 0,
+            "contains": true
+          },
+          "timeout": 30000
+        },
+        {
+          "action": "shot",
+          "name": "result",
+          "expect": {
+            "role": "button",
+            "key": "unbox.retry",
+            "nth": 0,
+            "contains": true
+          }
+        }
+      ],
+      "note": "현행 첫 로그인 보너스를 사용합니다. 실입금은 하지 않습니다. 충전 창의 중첩 로그인은 지갑이 인증 창을 가릴 수 있어 지갑을 닫고 헤더 로그인으로 진행합니다. 개편 전 추가 클릭을 그대로 기록합니다."
+    },
+    {
+      "id": "flow-returning-opening",
+      "path": "",
+      "state": "funded",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "arrival",
+          "expect": "#hero-title"
+        },
+        {
+          "action": "click",
+          "target": {
+            "css": ".collection-card",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "detail",
+          "expect": ".detail-title"
+        },
+        {
+          "action": "click",
+          "target": ".detail-open"
+        },
+        {
+          "action": "shot",
+          "name": "confirm",
+          "expect": ".detail-confirm"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "modal.confirmPurchase",
+            "scope": ".detail-confirm"
+          }
+        },
+        {
+          "action": "wait",
+          "target": {
+            "role": "button",
+            "key": "unbox.retry",
+            "nth": 0,
+            "contains": true
+          },
+          "timeout": 30000
+        },
+        {
+          "action": "shot",
+          "name": "result",
+          "expect": {
+            "role": "button",
+            "key": "unbox.retry",
+            "nth": 0,
+            "contains": true
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "unbox.retry",
+            "nth": 0,
+            "contains": true
+          }
+        },
+        {
+          "action": "wait",
+          "ms": 900
+        },
+        {
+          "action": "wait",
+          "target": {
+            "role": "button",
+            "key": "unbox.retry",
+            "nth": 0,
+            "contains": true
+          },
+          "timeout": 30000
+        },
+        {
+          "action": "shot",
+          "name": "second-result"
+        }
+      ]
+    },
+    {
+      "id": "flow-claim-shipping",
+      "path": "/inventory",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "inventory",
+          "expect": {
+            "css": ".vault-product",
+            "nth": 0
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "refinement.requestDelivery",
+            "scope": ".vault-product",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "form",
+          "expect": {
+            "css": "[role=\"dialog\"]",
+            "nth": -1
+          }
+        },
+        {
+          "action": "fill",
+          "target": "[role=\"dialog\"] select",
+          "select": "SG"
+        },
+        {
+          "action": "fill",
+          "target": {
+            "css": "[role=\"dialog\"] input",
+            "nth": 0
+          },
+          "value": "촬영 수령인"
+        },
+        {
+          "action": "fill",
+          "target": {
+            "css": "[role=\"dialog\"] input",
+            "nth": 1
+          },
+          "value": "+6500000000"
+        },
+        {
+          "action": "fill",
+          "target": {
+            "css": "[role=\"dialog\"] input",
+            "nth": 2
+          },
+          "value": "000000"
+        },
+        {
+          "action": "fill",
+          "target": {
+            "css": "[role=\"dialog\"] input",
+            "nth": 3
+          },
+          "value": "Capture fixture street 123"
+        },
+        {
+          "action": "fill",
+          "target": {
+            "css": "[role=\"dialog\"] input",
+            "nth": 4
+          },
+          "value": "촬영용 주소"
+        },
+        {
+          "action": "shot",
+          "name": "address"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "delivery.submit",
+            "scope": "[role=\"dialog\"]",
+            "params": {
+              "fee": "0.00 USDT"
+            }
+          }
+        },
+        {
+          "action": "wait",
+          "target": "[role=\"dialog\"] [role=\"alert\"]",
+          "timeout": 15000
+        },
+        {
+          "action": "shot",
+          "name": "submit-error",
+          "expect": "[role=\"dialog\"] [role=\"alert\"]"
+        }
+      ],
+      "completionLimit": "브라우저 모드에는 /shipping/request 처리기가 없습니다. 수령 정보 입력과 제출 오류까지 촬영했습니다. 완료와 운송장 화면은 shipping 프리셋의 별도 항목으로만 촬영할 수 있습니다."
+    },
+    {
+      "id": "flow-claim-usdt",
+      "path": "/inventory",
+      "state": "inventory",
+      "steps": [
+        {
+          "action": "shot",
+          "name": "inventory",
+          "expect": {
+            "css": ".vault-product",
+            "nth": 0
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "refinement.sellback",
+            "scope": ".vault-product",
+            "nth": 0
+          }
+        },
+        {
+          "action": "shot",
+          "name": "confirm",
+          "expect": "[role=\"alertdialog\"]"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "inventory.confirm",
+            "scope": "[role=\"alertdialog\"]"
+          }
+        },
+        {
+          "action": "shot",
+          "name": "received",
+          "expect": ".workspace-toast"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "key": "refinement.tabs.done",
+            "scope": ".workspace-tabs",
+            "contains": true
+          }
+        },
+        {
+          "action": "shot",
+          "name": "done-record"
+        }
+      ]
+    },
+    {
+      "id": "unavailable-external-auth",
+      "path": "",
+      "state": "guest",
+      "steps": [],
+      "unavailable": "외부 인증 제공자와 메일 수신함은 호출하지 않습니다."
+    },
+    {
+      "id": "unavailable-deposit-credit",
+      "path": "#deposit",
+      "state": "guest",
+      "steps": [],
+      "unavailable": "브라우저 모드 주소 발급과 입금 영수증은 환경 설정에 의존하며 page.route를 통과하지 않습니다. 실입금 없이 입금 완료를 보장할 수 없습니다."
+    },
+    {
+      "id": "unavailable-opening-shipping",
+      "path": "",
+      "state": "guest",
+      "steps": [],
+      "unavailable": "결과 배송 창은 requestEnabled=false이고 브라우저 계정 어댑터에는 /shipping/request 처리기가 없습니다. flow-claim-shipping은 제출 오류까지 기록합니다."
+    },
+    {
+      "id": "unavailable-legacy-widgets",
+      "path": "",
+      "state": "guest",
+      "steps": [],
+      "unavailable": "UI_INVENTORY.md 14장의 미연결 컴포넌트 17종은 현재 진입 경로가 없습니다."
+    },
+    {
+      "id": "unavailable-upgrade-nearmiss",
+      "path": "",
+      "state": "guest",
+      "steps": [],
+      "unavailable": "승급 반전과 니어미스 상태를 켜는 현행 경로가 없습니다."
+    },
+    {
+      "id": "unavailable-aml-toast",
+      "path": "#withdraw",
+      "state": "guest",
+      "steps": [],
+      "unavailable": "WithdrawTab에서 onBlocked 콜백을 호출하지 않습니다."
+    },
+    {
+      "id": "unavailable-framework-error",
+      "path": "",
+      "state": "guest",
+      "steps": [],
+      "unavailable": "전용 오류 경계와 오류 유발 경로가 없습니다. 앱을 변조하지 않습니다."
+    },
+    {
+      "id": "unavailable-native-surfaces",
+      "path": "",
+      "state": "guest",
+      "steps": [],
+      "unavailable": "OS 파일 선택창, 탭 UI, select 팝업은 headless 페이지 촬영 범위 밖입니다."
+    }
+  ]
+}

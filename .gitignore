@@ -15,3 +15,4 @@ qa/codex/*.log
 qa/before/results.json
 qa/before/*.json
 qa/after/*.json
+qa/work/

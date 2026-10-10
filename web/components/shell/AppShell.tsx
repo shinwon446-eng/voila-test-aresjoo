@@ -22,6 +22,7 @@ import { OfflineLine } from "@/components/shell/StateScreens";
 export const NAV = [
   { key: "boxes", href: "/" },
   { key: "inventory", href: "/inventory" },
+  { key: "wallet", href: "/wallet" },
   { key: "verify", href: "/fairness" },
   { key: "guide", href: "/guide" },
   { key: "account", href: "/profile" },
@@ -35,7 +36,7 @@ export function AppShell({ children, wide }: { children: ReactNode; wide?: boole
   const openLogin = useAuthStore((s) => s.openAuthModal);
   const balance = useWalletStore((s) => s.balance);
   const { fmt } = useCurrency();
-  const { menu, openMenu, closeMenu, openCharge } = useFlow();
+  const { menu, openMenu, closeMenu } = useFlow();
 
   return (
     <div className="v-app">
@@ -45,7 +46,7 @@ export function AppShell({ children, wide }: { children: ReactNode; wide?: boole
           <nav className="v-nav" aria-label={t("nav.menu")}>
             {NAV.map((n) => <Link key={n.key} href={n.href} aria-current={pathname === n.href ? "page" : undefined}>{t("nav." + n.key)}</Link>)}
           </nav>
-          {ready && user && <button type="button" className="v-headbtn v-num" onClick={openCharge}>{t("nav.balance", { amount: fmt(balance) })}</button>}
+          {ready && user && <Link href="/wallet" className="v-headbtn v-num">{t("nav.balance", { amount: fmt(balance) })}</Link>}
           {ready && !user && <button type="button" className="v-headbtn" onClick={() => openLogin("login")}>{t("nav.login")}</button>}
           <button type="button" className="v-headbtn v-menu-btn" onClick={openMenu} aria-label={t("nav.menu")}><Menu size={20} aria-hidden /></button>
         </div>

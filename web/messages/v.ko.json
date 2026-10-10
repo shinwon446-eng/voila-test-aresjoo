@@ -219,5 +219,45 @@
     "shipFee": "배송비",
     "minCharge": "가장 적은 충전 금액",
     "verifyBody": "모든 결과는 열기 전에 잠가 둔 값으로 다시 계산해 볼 수 있습니다."
+  },
+  "wallet": {
+    "title": "지갑",
+    "desc": "USDT를 충전하고, 출금하고, 내역을 봅니다.",
+    "loginLine": "로그인하면 잔액과 내역이 표시됩니다.",
+    "balance": "출금할 수 있는 잔액",
+    "cardBalance": "카드로 충전한 잔액 (출금 불가)",
+    "withdraw": "출금",
+    "history": "내역",
+    "empty": "아직 내역이 없습니다.",
+    "amount": "금액",
+    "fee": "네트워크 수수료",
+    "net": "받는 금액",
+    "toAddress": "받는 주소",
+    "holdLeft": "{h}시간 {m}분 뒤에 전송됩니다. 그 전에는 취소할 수 있습니다.",
+    "reviewLine": "안전 심사를 거친 뒤 전송됩니다.",
+    "cancel": "출금 취소",
+    "cancelTitle": "출금 취소",
+    "cancelDesc": "출금을 취소하고 금액을 잔액으로 되돌립니다.",
+    "cancelFailed": "취소하지 못했습니다. 이미 전송이 시작됐을 수 있습니다.",
+    "explorer": "{name}에서 거래 보기",
+    "type": {
+      "deposit_usdt": "USDT 충전",
+      "deposit_card": "카드 충전",
+      "open": "박스 열기",
+      "sellback": "USDT로 받기",
+      "withdraw": "출금",
+      "bonus": "보너스",
+      "shipping_refund": "배송비 환불",
+      "order_refund": "환불"
+    },
+    "status": {
+      "PENDING": "처리 대기",
+      "PENDING_ADMIN_REVIEW": "안전 심사 대기",
+      "PENDING_72H_HOLD": "72시간 보안 대기",
+      "BROADCASTING": "전송 중",
+      "COMPLETED": "완료",
+      "CANCELLED": "취소됨",
+      "FAILED": "실패"
+    }
   }
 }

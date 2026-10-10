@@ -219,5 +219,45 @@
     "shipFee": "运费",
     "minCharge": "最低充值金额",
     "verifyBody": "所有结果都可以用开箱前锁定的值重新计算。"
+  },
+  "wallet": {
+    "title": "钱包",
+    "desc": "充值 USDT、提现并查看记录。",
+    "loginLine": "登录后显示余额和记录。",
+    "balance": "可提现余额",
+    "cardBalance": "银行卡充值余额（不可提现）",
+    "withdraw": "提现",
+    "history": "记录",
+    "empty": "暂无记录。",
+    "amount": "金额",
+    "fee": "网络手续费",
+    "net": "到账金额",
+    "toAddress": "收款地址",
+    "holdLeft": "{h} 小时 {m} 分钟后发送。在此之前可以取消。",
+    "reviewLine": "通过安全审核后发送。",
+    "cancel": "取消提现",
+    "cancelTitle": "取消提现",
+    "cancelDesc": "取消提现并将金额退回余额。",
+    "cancelFailed": "未能取消。可能已经开始发送。",
+    "explorer": "在 {name} 查看交易",
+    "type": {
+      "deposit_usdt": "USDT 充值",
+      "deposit_card": "银行卡充值",
+      "open": "开箱",
+      "sellback": "领取 USDT",
+      "withdraw": "提现",
+      "bonus": "奖励",
+      "shipping_refund": "运费退款",
+      "order_refund": "退款"
+    },
+    "status": {
+      "PENDING": "等待处理",
+      "PENDING_ADMIN_REVIEW": "等待安全审核",
+      "PENDING_72H_HOLD": "72 小时安全等待",
+      "BROADCASTING": "发送中",
+      "COMPLETED": "完成",
+      "CANCELLED": "已取消",
+      "FAILED": "失败"
+    }
   }
 }

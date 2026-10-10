@@ -23,7 +23,10 @@
       "app/[locale]/error.tsx",
       "app/not-found.tsx",
       "components/dev/**",
-      "app/[locale]/dev/**"
+      "app/[locale]/dev/**",
+      "components/wallet/WalletScreen.tsx",
+      "components/wallet/WithdrawScreen.tsx",
+      "app/[locale]/wallet/**"
     ],
     "all": [
       "app/**",

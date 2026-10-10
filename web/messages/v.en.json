@@ -219,5 +219,45 @@
     "shipFee": "Shipping fee",
     "minCharge": "Smallest deposit",
     "verifyBody": "Every result can be recalculated from the value locked before opening."
+  },
+  "wallet": {
+    "title": "Wallet",
+    "desc": "Add USDT, withdraw, and see your history.",
+    "loginLine": "Log in to see your balance and history.",
+    "balance": "Withdrawable balance",
+    "cardBalance": "Card-funded balance (not withdrawable)",
+    "withdraw": "Withdraw",
+    "history": "History",
+    "empty": "You have no history yet.",
+    "amount": "Amount",
+    "fee": "Network fee",
+    "net": "You receive",
+    "toAddress": "Destination address",
+    "holdLeft": "Sent in {h}h {m}m. You can cancel before then.",
+    "reviewLine": "Sent after a safety review.",
+    "cancel": "Cancel withdrawal",
+    "cancelTitle": "Cancel withdrawal",
+    "cancelDesc": "The withdrawal is cancelled and the amount returns to your balance.",
+    "cancelFailed": "The withdrawal could not be cancelled. Sending may have started.",
+    "explorer": "View on {name}",
+    "type": {
+      "deposit_usdt": "USDT deposit",
+      "deposit_card": "Card deposit",
+      "open": "Box opened",
+      "sellback": "Took USDT",
+      "withdraw": "Withdrawal",
+      "bonus": "Bonus",
+      "shipping_refund": "Shipping fee refund",
+      "order_refund": "Refund"
+    },
+    "status": {
+      "PENDING": "Pending",
+      "PENDING_ADMIN_REVIEW": "Awaiting safety review",
+      "PENDING_72H_HOLD": "72-hour security hold",
+      "BROADCASTING": "Sending",
+      "COMPLETED": "Completed",
+      "CANCELLED": "Cancelled",
+      "FAILED": "Failed"
+    }
   }
 }

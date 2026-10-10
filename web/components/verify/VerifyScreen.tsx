@@ -79,8 +79,8 @@ export function VerifyScreen() {
                 {records.slice(0, shown).map((o) => (
                   <li key={o.id}>
                     <button type="button" className="v-itemrow" onClick={() => setVerifying({ itemId: o.itemId, fair: o.fair })}>
-                      <span className="v-itemrow-body"><span className="v-card-title">{nameOf(o)}</span><span className="v-small">{BOXES.find((b) => b.slug === o.boxSlug) ? boxTitle(BOXES.find((b) => b.slug === o.boxSlug)!) : o.boxSlug}, {date(o.acquiredAt)}</span></span>
-                      <span className="v-num v-small">{t("verify.round")} {o.fair.nonce.toLocaleString("en-US")}</span>
+                      <span className="v-itemrow-body"><span className="v-card-title">{nameOf(o)}</span><span className="v-small">{BOXES.find((b) => b.slug === o.boxSlug) ? boxTitle(BOXES.find((b) => b.slug === o.boxSlug)!) : o.boxSlug}, {date(o.acquiredAt)}, {t("verify.round")} {o.fair.nonce.toLocaleString("en-US")}</span></span>
+                      <span className="v-small">{t("verify.rowGo")} ›</span>
                     </button>
                   </li>
                 ))}

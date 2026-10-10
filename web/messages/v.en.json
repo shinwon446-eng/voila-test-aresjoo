@@ -171,6 +171,7 @@
     "bad": "The recalculated result does not match the item you received.",
     "failed": "The result could not be calculated. The record has empty values.",
     "manual": "Verify with your own values",
+    "rowGo": "Verify",
     "partial": "The number was recalculated and matches. This record has no odds table from that time, so the item could not be checked.",
     "records": "My openings",
     "loginLine": "Log in to recompute each of your openings.",
@@ -197,7 +198,7 @@
   },
   "inv": {
     "title": "Inventory",
-    "desc": "Select an item to ship it or take USDT.",
+    "desc": "Select an item to ship it or take USDT. The amount on the right is what you get in USDT (95% of the reference price).",
     "filter": "Status",
     "tab": {
       "held": "Stored {n}",

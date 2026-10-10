@@ -102,8 +102,8 @@ export function InventoryScreen() {
                   return (
                     <li key={item.id}>
                       <button type="button" className="v-itemrow" onClick={() => setOpenId(item.id)}>
-                        <span className="v-itemrow-photo">{p?.image.src && <img src={p.image.src} alt="" loading="lazy" decoding="async" />}</span>
-                        <span className="v-itemrow-body"><span className="v-card-title">{nameOf(item)}</span><span className="v-small">{item.status === "IN_STORAGE" ? t("inv.takeLabel") + ", " + t("inv.refLine", { amount: fmt(item.valueUsdt) }) : statusOf(item) + (date(processedAt(item)) ? ", " + date(processedAt(item)) : "")}</span></span>
+                        {p?.image.src && <span className="v-itemrow-photo"><img src={p.image.src} alt="" loading="lazy" decoding="async" /></span>}
+                        <span className="v-itemrow-body"><span className="v-card-title">{nameOf(item)}</span><span className="v-small">{item.status === "IN_STORAGE" ? t("inv.refLine", { amount: fmt(item.valueUsdt) }) : statusOf(item) + (date(processedAt(item)) ? ", " + date(processedAt(item)) : "")}</span></span>
                         <span className="v-num">{fmt(item.status === "IN_STORAGE" ? +(item.valueUsdt * REFUND_RATE).toFixed(2) : item.status === "SOLD" ? item.soldForUsdt ?? 0 : item.valueUsdt)} ›</span>
                       </button>
                     </li>

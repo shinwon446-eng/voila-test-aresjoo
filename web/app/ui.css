@@ -76,7 +76,9 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-rows { border-radius: var(--v-r-card); background: var(--v-card); padding: 4px 20px; }
 .v-row { display: flex; min-height: 52px; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 0; color: var(--v-sub); }
 .v-row + .v-row { border-top: 1px solid var(--v-divider); }
-.v-row > :last-child { color: var(--v-title); text-align: right; }
+.v-row > :first-child { flex: 1 1 auto; min-width: 0; }
+/* 긴 값(정가 기준, 배송비 설명)은 줄바꿈해 오른쪽으로 넘치지 않게. 숫자는 단위와 함께 한 줄 */
+.v-row > :last-child { flex: 0 1 auto; max-width: 70%; color: var(--v-title); text-align: right; white-space: normal; word-break: keep-all; }
 .v-row--link { color: var(--v-text); }
 .v-row--link:hover > :first-child { color: var(--v-title); }
 
@@ -231,7 +233,9 @@ button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 
 .v-reveal-photo { position: relative; overflow: hidden; width: 100%; max-width: 320px; aspect-ratio: 4 / 3; margin: 0 auto 24px; border-radius: var(--v-r-card); background: var(--v-photo); }
 .v-reveal-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .v-reveal-value { margin-top: 4px; color: var(--v-title); font-size: 40px; line-height: 1.15; font-variant-numeric: tabular-nums; }
-.v-reveal-value[data-size="lg"] { font-size: 52px; }
+/* 큰 숫자는 단위가 다음 줄로 넘어가지 않게, 글자 수가 많으면(300,000 USDT) 한 단계 작게 */
+.v-reveal-value { white-space: nowrap; }
+.v-reveal-value[data-size="lg"] { font-size: clamp(32px, 11vw, 52px); }
 .v-reveal-value[data-size="sm"] { font-size: 28px; }
 @media (prefers-reduced-motion: no-preference) {
   .v-reveal { animation: v-fade 0.3s ease-out; }

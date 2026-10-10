@@ -11,7 +11,7 @@ const base = process.env.CAPTURE_BASE || "http://localhost:3002";
 fs.mkdirSync(out, { recursive: true });
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 // QUICK_VIEWS=mobile,narrow,desktop 로 고른다. narrow 는 320 폭(가장 좁은 폰)
-const ALL_VIEWS = { mobile: { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }, narrow: { viewport: { width: 320, height: 640 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }, desktop: { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 } };
+const ALL_VIEWS = { mobile: { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }, narrow: { viewport: { width: 320, height: 640 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }, m360: { viewport: { width: 360, height: 800 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }, m430: { viewport: { width: 430, height: 932 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }, tablet: { viewport: { width: 768, height: 1024 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true }, desktop: { viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 } };
 const VIEWS = (process.env.QUICK_VIEWS || "mobile,desktop").split(",").map((k) => [k, ALL_VIEWS[k]]);
 
 for (const [view, opts] of VIEWS) {
@@ -20,7 +20,7 @@ for (const [view, opts] of VIEWS) {
     const eq = target.indexOf("="); const name = target.slice(0, eq); const rest = target.slice(eq + 1);
     const [path, actionText = ""] = rest.split("#");
     const actions = actionText.split(",").filter(Boolean);
-    const context = await browser.newContext({ ...opts, locale: "ko-KR", reducedMotion: actions.includes("motion") ? "no-preference" : "reduce" });
+    const context = await browser.newContext({ ...opts, locale: process.env.QUICK_LOCALE === "en" ? "en-US" : process.env.QUICK_LOCALE === "zh" ? "zh-CN" : "ko-KR", reducedMotion: actions.includes("motion") ? "no-preference" : "reduce" });
     const preset = actions.find((a) => a.startsWith("state:"))?.slice(6);
     if (preset) await installState(context, await makeState(preset, "ko"), new URL(base).origin);
     const page = await context.newPage();

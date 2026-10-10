@@ -92,7 +92,7 @@ export function Gallery() {
       </>)}
 
       {section("Confirm", <>
-        <Button quiet onClick={() => setConfirm("open")}>{t("box.confirmTitle", { n: 50 })}</Button>
+        <Button quiet onClick={() => setConfirm("open")}>{t("box.confirmTitle", { amount: fmt(50) })}</Button>
         <Button quiet onClick={() => setConfirm("take")}>{t("reveal.takeTitle")}</Button>
         <Button quiet onClick={() => setConfirm("ship")}>{t("ship.confirmTitle")}</Button>
         <Button quiet onClick={() => setConfirm("cancel")}>{t("inv.cancelTitle")}</Button>

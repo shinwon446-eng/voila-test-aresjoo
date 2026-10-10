@@ -73,7 +73,7 @@
     "reviews": "Reviews",
     "noReviews": "No reviews yet. Only real openings can be reviewed.",
     "reviewProof": "Tied to a real opening record.",
-    "stripNote": "Highest value first. The odds of any physical item are {pct}.",
+    "stripNote": "Highest value first. The odds of any physical item are <n>{pct}</n>.",
     "mostLikely": "{price} per open. The most common result is {amount} cashback, with a {pct} chance.",
     "compareNote": "Price per open and odds for this item. No box sells the item outright.",
     "guestNote": "{n} open, {amount}. After login, your USDT balance pays.",

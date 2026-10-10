@@ -73,7 +73,7 @@
     "reviews": "评价",
     "noReviews": "暂无评价。只有真实开箱记录才能评价。",
     "reviewProof": "与真实开箱记录绑定的评价。",
-    "stripNote": "按价值从高到低。任意实物出现的概率为 {pct}。",
+    "stripNote": "按价值从高到低。任意实物出现的概率为 <n>{pct}</n>。",
     "mostLikely": "每次 {price}。最常见的结果是 {amount} 返现，出现概率 {pct}。",
     "compareNote": "同一商品的单次价格与概率。任何盲盒都不是直接购买该商品。",
     "guestNote": "{n} 次，{amount}。登录后用 USDT 余额支付。",

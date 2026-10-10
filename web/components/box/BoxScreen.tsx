@@ -100,7 +100,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.mostLikely", { price: fmt(box.price), amount: fmt(box.price * 0.5), pct: formatRate(table.find((i) => i.id.startsWith("wave-cashback-") && i.value === +(box.price * 0.5).toFixed(2))?.dropRate ?? 50) })} />
       {strip.length >= 3 ? (
         <div className="v-boxlayout-hero">
-          <p className="v-sub">{t("box.stripNote", { pct: formatRate(realOdds) })}</p>
+          <p className="v-sub">{t.rich("box.stripNote", { pct: formatRate(realOdds), n: (c) => <span className="v-num">{c}</span> })}</p>
           <ul className="v-strip" aria-label={t("box.strip")}>
             {strip.map((item) => (
               <li key={item.id}>

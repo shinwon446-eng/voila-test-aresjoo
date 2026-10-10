@@ -2,7 +2,7 @@
 
 - 시작: 2026-10-11 02:34 (로컬) / 종료 예정: 2026-10-12 02:34
 - 브랜치: `voila-redesign` (커밋은 여기에만). 테스트 사이트 배포는 `main` 푸시(파운더가 허락한 범위: 사진과 화면. 운영 저장소 gacha-sim 은 손대지 않는다)
-- 마지막 정상 지점: `5d069fa` (테스트 296 통과, design-lint 0, build 통과, main 배포 성공 04:00, 공개 주소 /ko/verify 와 스튜디오 사진 확인)
+- 마지막 정상 지점: `b511a76`+Suspense 수정 (테스트 296 통과, design-lint 0, build 통과, main 배포 성공 04:45, 공개 주소 /ko/verify 와 /ko/legal 확인)
 - 개발 서버: `.claude/launch.json` 의 `voila-test-aresjoo`(3002). `next build` 뒤에는 `.next` 를 지우고 다시 띄운다(OneDrive 에서 readlink EINVAL)
 - 정본: DESIGN.md(규칙), JOURNEY.md(여정), qa/PROGRESS.md(진행), IMPROVEMENT_LOOP.md(사이클 기록), DECISION_LOG.md(Claude 와 Codex 충돌과 결정)
 
@@ -20,7 +20,7 @@
 - 사이클 2 (03:05~03:50) 끝: 7개 박스에 스튜디오 사진, 커버 전부 대표 실물, 첫 화면 EXPERIMENT → 합성안. 커밋 `866127f`, `3c16e60`. 생활가전은 Commons 에 사진 없음
 - 사이클 3 (03:41~04:25) 끝: 세 언어와 360/430/768 폭 검수, 줄바꿈 셋 고침. 커밋 `08ae4b0`. Codex 2차 감사 `qa/codex/audit-c3.md` 진행 중(끝나면 1차 54점과 비교해 STATE 점수표 갱신)
 - 사이클 4 (04:25~05:10) 끝: 세션 만료 한 줄, 약관 새 디자인, 출금 관문 시트, Codex 2차 감사 64점 반영. 커밋 `69a6b5c`, `c189d79`
-- 사이클 5 (04:13~) 구현 끝, 커밋 `0099401`. Codex 시나리오 QA 2차 실행 중(`qa/codex/scenario-review-2.md`). 끝나면 반영 → main 배포
+- 사이클 5 (04:13~04:45) 끝: 인증 앱 부품 새 디자인, 보관함 행, 배송 나라 수, Codex QA 2차(A~G 통과, 실패 1 → 검증 값 전달 고침). main 배포. 함정: useSearchParams 는 Suspense 로 감싸야 정적 빌드가 된다
 - 사이클 6 (다음): Codex 감사 3차(점수 비교), /profile 잔여(닉네임, 비밀번호, 탈퇴)를 계정 시트로, 홈 카드 비교 구조(제목, 가격, 대표 상품, 확률 위치 통일 검수)
 - (옛 계획) 사이클 5: (a) TwoFactorSetup 을 새 디자인으로(금색 테두리와 아이콘 제거, 행과 입력칸만) (b) 보관함 행 끝 화살표, 상품 시트에 배송 가능 나라 수 (c) 스위치 2 사진을 다음 후보로 (d) Codex 시나리오 QA 2차(A~G 재실행, scenario-prompt.md 재사용) (e) 그 결과 반영 뒤 main 배포
 - (옛 계획) 사이클 4: (a) Codex 2차 감사 반영 (b) 오프라인과 세션 만료 상태(지금 세션 만료 안내 없음) (c) 옛 화면 잔여: /profile 의 닉네임, 비밀번호, 탈퇴를 새 계정 화면 시트로 옮기거나 링크 유지 결정, /legal 과 /community 는 새 디자인 또는 메뉴에서 제외

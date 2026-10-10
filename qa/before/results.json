@@ -17637,15 +17637,29 @@
       "locale": "en",
       "viewport": "mobile",
       "state": "guest",
-      "status": "진행 중",
+      "status": "완료",
       "files": [
         "auth-signup-email-en-mobile.png",
-        "auth-signup-email-full-en-mobile.png"
+        "auth-signup-email-full-en-mobile.png",
+        "auth-signup-password-en-mobile.png",
+        "auth-signup-password-full-en-mobile.png",
+        "auth-signup-verify-en-mobile.png",
+        "auth-signup-verify-full-en-mobile.png"
       ],
       "shots": [
         {
           "name": "email",
           "findings": 5,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "password",
+          "findings": 3,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "verify",
+          "findings": 3,
           "url": "http://localhost:3004/en"
         }
       ],
@@ -17676,7 +17690,184 @@
           "blocked": "websocket"
         }
       ],
-      "httpStatus": 200
+      "httpStatus": 200,
+      "durationMs": 3906
+    },
+    {
+      "id": "auth-signup",
+      "locale": "en",
+      "viewport": "desktop",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "auth-signup-email-en-desktop.png",
+        "auth-signup-email-full-en-desktop.png",
+        "auth-signup-password-en-desktop.png",
+        "auth-signup-password-full-en-desktop.png",
+        "auth-signup-verify-en-desktop.png",
+        "auth-signup-verify-full-en-desktop.png"
+      ],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 3,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "password",
+          "findings": 0,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "verify",
+          "findings": 0,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3705
+    },
+    {
+      "id": "auth-signup",
+      "locale": "en",
+      "viewport": "mobile360",
+      "state": "guest",
+      "status": "완료",
+      "files": [],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 5,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "password",
+          "findings": 3,
+          "url": "http://localhost:3004/en"
+        },
+        {
+          "name": "verify",
+          "findings": 3,
+          "url": "http://localhost:3004/en"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 2600
+    },
+    {
+      "id": "auth-signup",
+      "locale": "zh",
+      "viewport": "mobile",
+      "state": "guest",
+      "status": "완료",
+      "files": [
+        "auth-signup-email-zh-mobile.png",
+        "auth-signup-email-full-zh-mobile.png",
+        "auth-signup-password-zh-mobile.png",
+        "auth-signup-password-full-zh-mobile.png",
+        "auth-signup-verify-zh-mobile.png",
+        "auth-signup-verify-full-zh-mobile.png"
+      ],
+      "shots": [
+        {
+          "name": "email",
+          "findings": 5,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "password",
+          "findings": 3,
+          "url": "http://localhost:3004/zh"
+        },
+        {
+          "name": "verify",
+          "findings": 3,
+          "url": "http://localhost:3004/zh"
+        }
+      ],
+      "network": [
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/adventurer-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/avataaars-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "method": "GET",
+          "url": "https://api.dicebear.com/9.x/bottts-neutral/svg",
+          "status": 503,
+          "mocked": true,
+          "unsupported": true
+        },
+        {
+          "url": "ws://localhost:3004/_next/webpack-hmr",
+          "blocked": "websocket"
+        }
+      ],
+      "httpStatus": 200,
+      "durationMs": 3841
     }
   ]
 }

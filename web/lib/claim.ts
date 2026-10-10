@@ -49,7 +49,11 @@ export async function requestShipment(ownedIds: string[], address: ShippingAddre
  * 배송 신청 취소. 출고 전(SHIPPING_REQUESTED)인 건만 되돌리고 배송비를 낸 출처대로 돌려준다.
  * 서비스에 연결된 환경에서는 서버가 상태를 다시 확인하고 환불까지 한 번에 처리한다. 먼저 잔액을 올리지 않는다.
  */
-export async function cancelShipment(item: OwnedItem): Promise<void> {
+export async function cancelShipment(target: OwnedItem): Promise<void> {
+  const item = useInventoryStore.getState().items.find((o) => o.id === target.id);
+  const unknownFee = !!item?.shipping?.feeUsdt && (!item.shipping.requestId || !item.shipping.feeFundingRatio);
+  if (!item || item.status !== "SHIPPING_REQUESTED" || item.shipping?.shippedAt) throw new Error("notPreparing");
+  if (unknownFee) throw new Error("unknownFee");
   if (isLive()) {
     const result = await api.cancelShipping(item.id, item.shipping?.requestId ?? item.shipping?.requestedAt ?? "");
     if (result.status !== "CANCELLED" || result.item?.id !== item.id || result.item.status !== "IN_STORAGE" || !result.wallet ||

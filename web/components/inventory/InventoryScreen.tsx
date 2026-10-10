@@ -6,7 +6,7 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { BOX_BY_SLUG, REFUND_RATE, dropTable } from "@/lib/products";
+import { BOX_BY_SLUG, REFUND_RATE } from "@/lib/products";
 import { productOf, processedAt, vaultTab, type VaultTab } from "@/lib/vault";
 import { trackingUrl } from "@/lib/carriers";
 import { cancelShipment, takeUsdt } from "@/lib/claim";
@@ -73,11 +73,7 @@ export function InventoryScreen() {
     catch { setCancelling(false); setCancelFailed(true); }
     finally { setBusy(false); }
   };
-  const verify = (item: OwnedItem) => {
-    const box = BOX_BY_SLUG[item.boxSlug];
-    if (!box) return;
-    setVerifying({ serverSeed: item.fair.serverSeed, serverSeedHash: item.fair.serverSeedHash, clientSeed: item.fair.clientSeed, nonce: item.fair.nonce, roll: item.fair.roll, itemId: item.itemId, table: dropTable(box) });
-  };
+  const verify = (item: OwnedItem) => setVerifying({ itemId: item.itemId, fair: item.fair });
 
   const sheetOpen = !!current && !shipIds && !taking && !cancelling && !verifying;
 

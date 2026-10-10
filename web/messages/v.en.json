@@ -131,7 +131,8 @@
     "ok": "The recalculated result matches the item you received.",
     "bad": "The recalculated result does not match the item you received.",
     "failed": "The result could not be calculated. The record has empty values.",
-    "manual": "Verify with your own values"
+    "manual": "Verify with your own values",
+    "partial": "The number was recalculated and matches. This record has no odds table from that time, so the item could not be checked."
   },
   "inv": {
     "title": "Inventory",

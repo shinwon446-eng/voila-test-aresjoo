@@ -6,7 +6,7 @@
  *   로그인 전 → "로그인하고 열기" / 잔액 부족 → 한 줄 안내와 "USDT 충전하기" / 충분 → "N개 열기, 금액"
  * 구매 확정 단계는 없다. 단추에 수량과 금액이 적혀 있다. 큰 금액(50 USDT 이상이거나 10개 이상)만 확인창을 띄운다.
  */
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { CreditCard, Coins, Package } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { ceilingValue, dropTable, formatRate, retailReturn, type ProductBox, type ProductItem } from "@/lib/products";
@@ -43,6 +43,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const [failed, setFailed] = useState(false);
   const [confirming, setConfirming] = useState(false);
   const [opened, setOpened] = useState<{ results: OpeningResult[]; cost: number; round: number } | null>(null);
+  // 상태(busy)는 다음 그리기에야 바뀐다. 같은 순간에 두 번 불려도 구매가 한 번만 나가게 동기 잠금을 둔다(옛 purchasePending 과 같다).
+  const opening = useRef(false);
 
   const cost = +(box.price * qty).toFixed(2);
   const short = balance < cost;
@@ -53,7 +55,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   }).filter((g) => g.items.length > 0), [table, box.price]);
 
   const open = async () => {
-    if (busy) return;
+    if (opening.current) return;
+    opening.current = true;
     setBusy(true); setFailed(false); setConfirming(false);
     try {
       const results = await createOpeningPurchase(box, qty)();
@@ -61,9 +64,10 @@ export function BoxScreen({ box }: { box: ProductBox }) {
     } catch (error) {
       // 잔액이 모자라면 막대의 안내 한 줄이 이미 그 사실을 말한다. 그 밖의 실패만 따로 적는다.
       if (!(error instanceof InsufficientOpeningBalance)) setFailed(true);
-    } finally { setBusy(false); }
+    } finally { opening.current = false; setBusy(false); }
   };
-  const press = () => { if (cost >= CONFIRM_COST_USDT || qty >= CONFIRM_COUNT) setConfirming(true); else void open(); };
+  // 열기 단추와 결과 화면의 "한 번 더 열기"가 모두 이 함수를 거친다. 큰 금액은 어디서 눌러도 확인창이 뜬다.
+  const press = () => { if (opening.current) return; if (cost >= CONFIRM_COST_USDT || qty >= CONFIRM_COUNT) setConfirming(true); else void open(); };
 
   return (
     <div className="v-boxlayout">
@@ -104,7 +108,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       </div>
 
       <Confirm open={confirming} onCancel={() => setConfirming(false)} onConfirm={open} busy={busy} busyLabel={t("box.opening")} title={t("box.confirmTitle", { n: qty })} desc={t("box.confirmDesc", { amount: fmt(cost) })} confirmLabel={t("box.open", { n: qty, amount: fmt(cost) })} cancelLabel={t("common.cancel")} />
-      {opened && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} onClose={() => setOpened(null)} onAgain={open} againBusy={busy} canAgain={!short} />}
+      {opened && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} onClose={() => setOpened(null)} onAgain={press} againBusy={busy} canAgain={!short} />}
     </div>
   );
 }

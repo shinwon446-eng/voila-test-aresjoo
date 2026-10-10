@@ -47,7 +47,8 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
   const single = results.length === 1 ? results[0] : null;
   const total = results.reduce((sum, r) => sum + r.item.value, 0);
   const again = t("reveal.again", { amount: fmt(cost) });
-  const verify = (r: OpeningResult) => setVerifying({ serverSeed: r.serverSeed, serverSeedHash: r.serverSeedHash, clientSeed: r.clientSeed, nonce: r.nonce, roll: r.roll, itemId: r.item.id, table });
+  // 방금 연 결과라서 지금의 확률표가 곧 구매 당시의 확률표다
+  const verify = (r: OpeningResult) => setVerifying({ itemId: r.item.id, fair: { serverSeed: r.serverSeed, serverSeedHash: r.serverSeedHash, clientSeed: r.clientSeed, nonce: r.nonce, roll: r.roll, dropTable: table.map(({ id, dropRate }) => ({ id, dropRate })) } });
   const take = () => {
     if (!single) return;
     const out = takeUsdt([single.ownedId]);
@@ -120,7 +121,7 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
                 </div>
                 <div className="v-reveal-actions">
                   <ButtonLink href="/inventory">{t("reveal.toInventory")}</ButtonLink>
-                  <div className="v-links">{canAgain && <TextLink onClick={onAgain}>{again}</TextLink>}<TextLink href="/">{t("reveal.boxes")}</TextLink></div>
+                  <div className="v-links">{canAgain && <TextLink onClick={() => { if (!againBusy) onAgain(); }}>{again}</TextLink>}<TextLink href="/">{t("reveal.boxes")}</TextLink></div>
                 </div>
               </>
             )}

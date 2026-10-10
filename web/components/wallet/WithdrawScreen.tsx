@@ -54,9 +54,13 @@ export function WithdrawScreen() {
   const requestId = useRef("");
   const requestDraft = useRef("");
   const lock = useRef(false);
+  // 요청 세대: 단계가 바뀐 뒤에 도착한 인증 응답으로 출금이 접수되지 않게 한다
+  const generation = useRef(0);
 
   useEffect(() => { setStage({ kind: "form" }); setEmailOnly(false); }, [user?.id]);
-  useEffect(() => { setCode(""); setError(""); setChallenge(null); setLeft(OTP_MAX_ATTEMPTS); }, [stage.kind]);
+  useEffect(() => { generation.current++; setCode(""); setError(""); setChallenge(null); setLeft(OTP_MAX_ATTEMPTS); }, [stage.kind]);
+  /** 인증과 접수를 기다리는 동안에는 단계를 옮기지 않는다(옛 화면도 그동안 뒤로 가기와 방식 변경을 막았다) */
+  const go = (next: Stage) => { if (!busy && !lock.current && !submission.current) setStage(next); };
 
   const meta = WITHDRAW_NETWORK_BY_KEY[network];
   const decimals = currency === "KRW" ? 0 : 2;
@@ -78,12 +82,12 @@ export function WithdrawScreen() {
   };
 
   /** 인증을 통과한 뒤에만 불린다. 여기서 잔액이 차감되고 출금 내역이 생긴다(옛 화면의 commit 과 같은 순서). */
-  const commit = useCallback(async (draft: Draft, proof: WithdrawalProof) => {
+  const commit = useCallback(async (draft: Draft, proof: WithdrawalProof, rid: string) => {
     if (submission.current || !user || useAuthStore.getState().user?.id !== user.id) return;
     if (validateWithdrawal({ ...draft, balanceUsdt: useWalletStore.getState().cryptoBalance }).length) { setStage({ kind: "form" }); setTouched(true); return; }
     submission.current = true; setBusy(true); setError("");
     try {
-      const result = await api.withdraw({ ...draft, requestId: requestId.current, authorization: proof.authorization, authMethod: proof.method });
+      const result = await api.withdraw({ ...draft, requestId: rid, authorization: proof.authorization, authMethod: proof.method });
       if (useAuthStore.getState().user?.id !== user.id) return;
       const wallet = useWalletStore.getState();
       if (wallet.transactions.some((x) => x.serverId === result.id)) { setStage({ kind: "form" }); return; }
@@ -105,14 +109,14 @@ export function WithdrawScreen() {
   const submitOtp = async () => {
     if (stage.kind !== "otp" || lock.current || left <= 0 || code.length !== 6) return;
     lock.current = true; setBusy(true); setError("");
-    const draft = draftOf(stage);
-    try { const proof = await verifyWithdrawalOtp(draft, code); lock.current = false; setBusy(false); await commit(draft, proof); return; }
+    const draft = draftOf(stage), rid = requestId.current, mine = generation.current;
+    try { const proof = await verifyWithdrawalOtp(draft, code); if (generation.current !== mine) return; await commit(draft, proof, rid); return; }
     catch (cause) {
       setCode("");
       if (cause instanceof AccountError && ["credentials", "invalid", "rateLimit"].includes(cause.code)) {
         const remaining = cause.code === "rateLimit" ? 0 : left - 1;
         setLeft(remaining);
-        if (remaining <= 0) { setStage({ kind: "email", ...draft }); return; }
+        if (remaining <= 0) { if (generation.current === mine) setStage({ kind: "email", ...draft }); return; }
         setError(t("withdraw.otpWrong", { left: remaining }));
       } else setError(te(cause instanceof AccountError ? cause.code : "network"));
     } finally { lock.current = false; setBusy(false); }
@@ -128,8 +132,8 @@ export function WithdrawScreen() {
     if (stage.kind !== "email" || lock.current || !challenge || code.length !== 6) return;
     if (Date.now() >= challenge.expiresAt) { setError(t("withdraw.emailExpired")); return; }
     lock.current = true; setBusy(true); setError("");
-    const draft = draftOf(stage);
-    try { const proof = await verifyWithdrawalEmail(draft, challenge.challengeId, code); lock.current = false; setBusy(false); await commit(draft, proof); return; }
+    const draft = draftOf(stage), rid = requestId.current, mine = generation.current;
+    try { const proof = await verifyWithdrawalEmail(draft, challenge.challengeId, code); if (generation.current !== mine) return; await commit(draft, proof, rid); return; }
     catch (cause) { setCode(""); setError(te(cause instanceof AccountError ? cause.code : "network")); }
     finally { lock.current = false; setBusy(false); }
   };
@@ -154,7 +158,7 @@ export function WithdrawScreen() {
 
   if (stage.kind === "confirm") return (
     <div className="v-stack v-stack--lg">
-      <ScreenHead title={t("withdraw.confirmTitle")} desc={t("withdraw.confirmDesc")} back={() => setStage({ kind: "form" })} backLabel={t("common.back")} />
+      <ScreenHead title={t("withdraw.confirmTitle")} desc={t("withdraw.confirmDesc")} back={() => go({ kind: "form" })} backLabel={t("common.back")} />
       <Rows>
         <Row label={t("wallet.net")}>{fmt(netReceive(stage.amountUsdt, stage.network))}</Row>
         <Row label={t("wallet.amount")}>{fmt(stage.amountUsdt)}</Row>
@@ -162,27 +166,27 @@ export function WithdrawScreen() {
         <Row label={t("charge.network")}>{WITHDRAW_NETWORK_BY_KEY[stage.network].token}</Row>
       </Rows>
       <div className="v-card"><p className="v-small">{t("wallet.toAddress")}</p><code className="v-address">{stage.address}</code></div>
-      <Button onClick={() => setStage({ kind: emailOnly ? "email" : "otp", ...draftOf(stage) })}>{t("withdraw.toAuth")}</Button>
+      <Button onClick={() => go({ kind: emailOnly ? "email" : "otp", ...draftOf(stage) })}>{t("withdraw.toAuth")}</Button>
     </div>
   );
 
   if (stage.kind === "otp") return (
     <form className="v-stack v-stack--lg" onSubmit={(e) => { e.preventDefault(); void submitOtp(); }} noValidate>
-      <ScreenHead title={t("withdraw.otpTitle")} desc={t("withdraw.otpDesc")} back={() => setStage({ kind: "confirm", ...draftOf(stage) })} backLabel={t("common.back")} />
+      <ScreenHead title={t("withdraw.otpTitle")} desc={t("withdraw.otpDesc")} back={() => go({ kind: "confirm", ...draftOf(stage) })} backLabel={t("common.back")} />
       <Field label={t("login.code")} inputMode="numeric" autoComplete="one-time-code" maxLength={6} value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))} disabled={busy} autoFocus />
       {error && <Line fail>{error}</Line>}
       <Button type="submit" busy={busy} busyLabel={t("common.checking")}>{t("withdraw.submit", { amount: fmt(netReceive(stage.amountUsdt, stage.network)) })}</Button>
-      <div className="v-links"><TextLink onClick={() => setStage({ kind: "email", ...draftOf(stage) })}>{t("withdraw.emailPath", { hours: HOLD_HOURS })}</TextLink></div>
+      <div className="v-links"><TextLink onClick={() => go({ kind: "email", ...draftOf(stage) })}>{t("withdraw.emailPath", { hours: HOLD_HOURS })}</TextLink></div>
     </form>
   );
 
   if (stage.kind === "email") return (
     <form className="v-stack v-stack--lg" onSubmit={(e) => { e.preventDefault(); void (challenge ? verifyEmail() : sendEmail()); }} noValidate>
-      <ScreenHead title={t("withdraw.emailTitle")} desc={t("withdraw.emailDesc", { hours: HOLD_HOURS })} back={() => setStage({ kind: "confirm", ...draftOf(stage) })} backLabel={t("common.back")} />
+      <ScreenHead title={t("withdraw.emailTitle")} desc={t("withdraw.emailDesc", { hours: HOLD_HOURS })} back={() => go({ kind: "confirm", ...draftOf(stage) })} backLabel={t("common.back")} />
       {challenge && <Field label={t("login.code")} inputMode="numeric" autoComplete="one-time-code" maxLength={6} value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))} disabled={busy} autoFocus />}
       {error && <Line fail>{error}</Line>}
       <Button type="submit" busy={busy} busyLabel={t("common.checking")}>{challenge ? t("withdraw.submit", { amount: fmt(netReceive(stage.amountUsdt, stage.network)) }) : t("withdraw.sendCode")}</Button>
-      {challenge && <div className="v-links"><TextLink onClick={() => void sendEmail()}>{t("login.resend")}</TextLink></div>}
+      {challenge && <div className="v-links"><TextLink onClick={() => { if (!busy) void sendEmail(); }}>{t("login.resend")}</TextLink></div>}
     </form>
   );
 

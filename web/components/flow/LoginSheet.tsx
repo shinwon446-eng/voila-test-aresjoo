@@ -21,6 +21,8 @@ export function LoginSheet() {
   const locale = useLocale();
   const { isModalOpen: open, modalMode: mode, closeAuthModal: close, setModalMode: setMode, acceptSession } = useAuthStore();
   const lock = useRef(false);
+  // 요청 세대: 흐름이 바뀐 뒤에 도착한 응답으로 로그인되지 않게 한다
+  const generation = useRef(0);
   const [step, setStep] = useState<Step>("email");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -31,44 +33,50 @@ export function LoginSheet() {
   const recover = mode === "recover";
 
   useEffect(() => {
+    generation.current++;
     setStep("email"); setPassword(""); setCode(""); setError("");
     if (!open) setEmail("");
   }, [open, mode]);
 
-  const run = async (work: () => Promise<void>) => {
+  const run = async (work: (fresh: () => boolean) => Promise<void>) => {
     if (lock.current) return;
+    const mine = generation.current;
+    const fresh = () => generation.current === mine;
     lock.current = true; setBusy(true); setError("");
-    try { await work(); }
+    try { await work(fresh); }
     catch (cause) { setError(te(cause instanceof AccountError ? cause.code : "network")); }
     finally { lock.current = false; setBusy(false); }
   };
 
   const submit = (event: FormEvent) => {
     event.preventDefault();
-    void run(async () => {
+    void run(async (fresh) => {
+      const accept = (user: Parameters<typeof acceptSession>[0]) => { if (fresh()) acceptSession(user); };
       if (step === "email") {
         if (!validAccountEmail(email)) throw new AccountError("invalid");
         setEmail(email.trim());
-        if (recover) { await recoverAccount(email, locale); setStep("reset"); }
+        if (recover) { await recoverAccount(email, locale); if (fresh()) setStep("reset"); }
         else setStep("password");
       } else if (step === "password") {
         if (signup) {
           if (!validAccountPassword(password)) throw new AccountError("invalid");
           const user = await signupAccount(email, password, locale);
-          if (user) acceptSession(user); else { setPassword(""); setStep("verify"); }
-        } else acceptSession(await loginAccount(email, password));
-      } else if (step === "verify") acceptSession(await verifyAccountEmail(email, code));
-      else if (step === "reset") { await completePasswordRecovery(email, code, password); setPassword(""); setStep("done"); }
+          if (user) accept(user); else if (fresh()) { setPassword(""); setStep("verify"); }
+        } else accept(await loginAccount(email, password));
+      } else if (step === "verify") accept(await verifyAccountEmail(email, code));
+      else if (step === "reset") { await completePasswordRecovery(email, code, password); if (fresh()) { setPassword(""); setStep("done"); } }
     });
   };
 
-  const social = (provider: SocialProvider) => void run(async () => {
+  const social = (provider: SocialProvider) => void run(async (fresh) => {
     const result = await beginSocialLogin(provider, window.location.href);
+    if (!fresh()) return;
     if (result.user) acceptSession(result.user);
     else if (result.redirectUrl) window.location.assign(result.redirectUrl);
   });
 
-  const back = () => { setStep("email"); setPassword(""); setCode(""); setError(""); };
+  const back = () => { if (busy) return; generation.current++; setStep("email"); setPassword(""); setCode(""); setError(""); };
+  const switchMode = (next: Parameters<typeof setMode>[0]) => { if (!busy) setMode(next); };
   const title = step === "done" ? t("login.doneTitle") : step === "verify" ? t("login.verifyTitle") : step === "reset" ? t("login.resetTitle") : recover ? t("login.recoverTitle") : signup ? t("login.signupTitle") : t("login.title");
   const desc = step === "verify" || step === "reset" ? t("login.codeDesc") : step === "password" ? email : recover && step === "email" ? t("login.recoverDesc") : undefined;
 
@@ -94,9 +102,9 @@ export function LoginSheet() {
         </div>
       )}
       <div className="v-links">
-        {step === "email" && <TextLink onClick={() => setMode(signup || recover ? "login" : "signup")}>{t(signup || recover ? "login.loginLink" : "login.signupLink")}</TextLink>}
+        {step === "email" && <TextLink onClick={() => switchMode(signup || recover ? "login" : "signup")}>{t(signup || recover ? "login.loginLink" : "login.signupLink")}</TextLink>}
         {step === "password" && <TextLink onClick={back}>{t("login.editEmail")}</TextLink>}
-        {step === "password" && !signup && <TextLink onClick={() => setMode("recover")}>{t("login.forgot")}</TextLink>}
+        {step === "password" && !signup && <TextLink onClick={() => switchMode("recover")}>{t("login.forgot")}</TextLink>}
         {(step === "verify" || step === "reset") && <TextLink onClick={() => void run(async () => { if (step === "verify") await resendAccountEmail(email, locale); else await recoverAccount(email, locale); setCode(""); })}>{t("login.resend")}</TextLink>}
       </div>
       {step === "email" && <p className="v-small">{t("login.terms")}</p>}

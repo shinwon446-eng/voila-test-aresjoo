@@ -113,7 +113,7 @@ export function Gallery() {
       <Confirm open={confirm === "take"} onCancel={() => setConfirm(null)} onConfirm={() => setConfirm(null)} title={t("reveal.takeTitle")} desc={t("reveal.takeDesc", { name: "iPhone", amount: fmt(950) })} confirmLabel={t("reveal.take", { amount: fmt(950) })} cancelLabel={t("common.cancel")} />
       <Confirm open={confirm === "ship"} onCancel={() => setConfirm(null)} onConfirm={() => setConfirm(null)} title={t("ship.confirmTitle")} desc={t("ship.confirmDesc", { address: "Seoul" })} confirmLabel={t("ship.submit")} cancelLabel={t("common.cancel")} />
       <Confirm open={confirm === "cancel"} onCancel={() => setConfirm(null)} onConfirm={() => setConfirm(null)} title={t("inv.cancelTitle")} desc={t("inv.cancelDesc")} confirmLabel={t("inv.cancelShip")} cancelLabel={t("common.cancel")} />
-      <VerifySheet record={verify ? { serverSeed: "a".repeat(64), serverSeedHash: "b".repeat(64), clientSeed: "c".repeat(32), nonce: 0, roll: 0, itemId: sample.item[0].item.id, table: dropTable(box) } : null} onClose={() => setVerify(false)} />
+      <VerifySheet record={verify ? { itemId: sample.item[0].item.id, fair: { serverSeed: "a".repeat(64), serverSeedHash: "b".repeat(64), clientSeed: "c".repeat(32), nonce: 0, roll: 0, dropTable: dropTable(box).map(({ id, dropRate }) => ({ id, dropRate })) } } : null} onClose={() => setVerify(false)} />
       <ShipSheet ownedIds={ship ? ["gallery-0"] : null} onClose={() => setShip(false)} onDone={() => setShip(false)} />
       {reveal && <Reveal box={box} results={sample[reveal]} cost={reveal === "multi" ? box.price * 5 : box.price} onClose={() => setReveal(null)} onAgain={() => setReveal(null)} againBusy={false} canAgain />}
     </div>

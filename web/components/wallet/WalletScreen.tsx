@@ -63,7 +63,7 @@ export function WalletScreen() {
   // 남은 대기 시간은 화면이 뜬 뒤에만 흐른다
   useEffect(() => { setNow(Date.now()); const id = window.setInterval(() => setNow(Date.now()), 60000); return () => window.clearInterval(id); }, []);
 
-  const rows = useMemo(() => transactions.filter((x) => x.accountId === user?.id || (!x.accountId && !!user)).sort((a, b) => Date.parse(b.at) - Date.parse(a.at)), [transactions, user]);
+  const rows = useMemo(() => transactions.filter((x) => !!user && x.accountId === user.id).sort((a, b) => Date.parse(b.at) - Date.parse(a.at)), [transactions, user]);
   const current = rows.find((x) => x.id === openId) ?? null;
   const date = (value: string) => new Intl.DateTimeFormat(locale, { year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(value));
   const kind = (tx: Transaction) => t("wallet.type." + tx.type);

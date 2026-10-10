@@ -79,7 +79,11 @@
     "guestNote": "{n}개, {amount}. 로그인한 뒤 USDT 잔액으로 결제합니다.",
     "takeAmount": "USDT로 받으면 (정가의 {pct}%)",
     "reviewReceived": "수령 확인된 후기",
-    "reviewOpened": "개봉 후기"
+    "reviewOpened": "개봉 후기",
+    "priceBasis": "정가 기준",
+    "priceBasisV": "2026년 미국 시장가 어림값, 세금 제외",
+    "shipFee": "배송비",
+    "shipFeeV": "0 USDT, 배송 시트의 나라 목록 안에서"
   },
   "reveal": {
     "skip": "건너뛰기",

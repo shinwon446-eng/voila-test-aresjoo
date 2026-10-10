@@ -79,7 +79,11 @@
     "guestNote": "{n} 次，{amount}。登录后用 USDT 余额支付。",
     "takeAmount": "领取 USDT 时（零售价的 {pct}%）",
     "reviewReceived": "已确认领取",
-    "reviewOpened": "开箱评价"
+    "reviewOpened": "开箱评价",
+    "priceBasis": "价格依据",
+    "priceBasisV": "2026 年美国市场估价，不含税",
+    "shipFee": "运费",
+    "shipFeeV": "配送表所列国家内 0 USDT"
   },
   "reveal": {
     "skip": "跳过",

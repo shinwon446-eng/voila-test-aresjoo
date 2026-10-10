@@ -197,6 +197,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
               <Row label={t("reveal.odds")}>{formatRate(current.dropRate)}</Row>
               <Row label={t("box.receive")}>{current.kind === "physical" ? t("box.receivePhysical") : current.kind === "digital" ? t("box.receiveDigital") : t("box.receiveCash")}</Row>
               {current.kind !== "cash" && <Row label={t("box.takeAmount", { pct: Math.round(REFUND_RATE * 100) })}>{fmt(+(current.value * REFUND_RATE).toFixed(2))}</Row>}
+              {current.kind !== "cash" && <Row label={t("box.priceBasis")}>{t("box.priceBasisV")}</Row>}
+              {current.kind === "physical" && <Row label={t("box.shipFee")}>{t("box.shipFeeV")}</Row>}
             </Rows>
             {elsewhere.length > 0 && !comparing && <div className="v-links"><TextLink onClick={() => setComparing(true)}>{t("box.alsoIn", { n: elsewhere.length })}</TextLink></div>}
             {elsewhere.length > 0 && comparing && (

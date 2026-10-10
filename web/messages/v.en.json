@@ -79,7 +79,11 @@
     "guestNote": "{n} open, {amount}. After login, your USDT balance pays.",
     "takeAmount": "If taken as USDT ({pct}% of retail)",
     "reviewReceived": "Receipt confirmed",
-    "reviewOpened": "Opening review"
+    "reviewOpened": "Opening review",
+    "priceBasis": "Price basis",
+    "priceBasisV": "Approximate 2026 US market price, before tax",
+    "shipFee": "Shipping fee",
+    "shipFeeV": "0 USDT within the countries on the shipping sheet"
   },
   "reveal": {
     "skip": "Skip",

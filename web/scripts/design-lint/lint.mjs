@@ -324,7 +324,7 @@ function inspectTsx(source, emit) {
   const classRanges = [], handledColors = new Set();
   for (let i = 0; i < tokens.length; i++) {
     const t = tokens[i];
-    if (t.value === 'className' && tokens[i + 1]?.value === '=') {
+    if (/className$/i.test(t.value) && tokens[i + 1]?.value === '=') {
       const start = i + 2; classRanges.push([start, pairs.get(start) ?? start]);
     }
     if (/^(?:cn|cx|clsx|classNames|cva|twMerge)$/.test(t.value) && tokens[i + 1]?.value === '(') classRanges.push([i + 1, pairs.get(i + 1) ?? i + 1]);
@@ -355,12 +355,27 @@ function inspectTsx(source, emit) {
     if ((t.kind === 'word' || t.kind === 'string') && [':', '='].includes(next?.value)) {
       const prop = kebab(t.value);
       if (/^(?:--[\w-]+|(?:-webkit-)?(?:font-weight|font|text-transform|letter-spacing|box-shadow|text-shadow|filter|backdrop-filter|background(?:-\w+)?|color|fill|stroke|stop-color|flood-color|border(?:-\w+)?|outline(?:-\w+)?|text-decoration-color|caret-color|accent-color))$/.test(prop)) {
-        let j = i + 2;
-        if (tokens[j]?.value === '{') j++;
-        const literal = ['string', 'template'].includes(tokens[j]?.kind);
-        const number = /^[+-]?(?:\d*\.)?\d+(?:e[+-]?\d+)?\b/i.exec(source.slice(tokens[j]?.start));
-        const value = literal ? tokens[j].value : number?.[0];
-        if (value) { inspectValue(t.value, value, t.start, emit); handledColors.add(j); }
+        const start = i + 2;
+        let end = start;
+        if (next.value === '=') end = pairs.get(start) ?? start;
+        else {
+          while (end < tokens.length && ![',', '}', ';'].includes(tokens[end].value)) {
+            if (pairs.has(end) && ['(', '[', '{'].includes(tokens[end].value)) end = pairs.get(end);
+            end++;
+          }
+          end--;
+        }
+        // 조건식의 두 갈래와 애니메이션 배열 안의 정적 값도 검사한다.
+        for (let j = start; j <= end; j++) {
+          const literal = ['string', 'template'].includes(tokens[j]?.kind);
+          const number = /^[+-]?(?:\d*\.)?\d+(?:e[+-]?\d+)?\b/i.exec(source.slice(tokens[j]?.start));
+          const value = literal ? tokens[j].value : number?.[0];
+          if (value) { inspectValue(t.value, value, t.start, emit); handledColors.add(j); }
+          if (!literal && number) {
+            const limit = tokens[j].start + number[0].length;
+            while (j + 1 <= end && tokens[j + 1].start < limit) j++;
+          }
+        }
       }
     }
     if (!['string', 'template'].includes(t.kind)) continue;

@@ -28,7 +28,7 @@
     "filter": "分类",
     "all": "全部盲盒",
     "search": "搜索商品",
-    "searchHint": "搜索宝可梦卡牌或想要的车",
+    "searchHint": "宝可梦卡牌、劳力士、兰博基尼",
     "searchNone": "没有该名称的商品。",
     "searchIn": "{box}，每次 {price}",
     "refPrice": "{amount}",
@@ -512,5 +512,16 @@
     "ctaIn": "查看盲盒",
     "descFree": "还可免费开启 {n} 个。",
     "ctaFree": "免费开启"
+  },
+  "footer": {
+    "crs": "客户关系摘要",
+    "follow": "关注我们",
+    "colProduct": "产品",
+    "colHelp": "帮助",
+    "colTerms": "条款",
+    "colSettings": "设置",
+    "about1": "VOILA 是一项开启盲盒获得实物商品或 USDT 的服务。每个盲盒都列出内容与概率，获得的商品可以选择配送或领取 USDT。",
+    "about2": "所有结果均由开启前锁定的数值计算得出，您可以在开箱结果验证中自行重新计算。资金以 USDT 结算，韩元金额仅为显示换算。",
+    "rights": "© 2026 VOILA. 保留所有权利。"
   }
 }

@@ -3,6 +3,8 @@
     "new": [
       "app/tokens.css",
       "app/ui.css",
+      "app/footer.css",
+      "app/scroll-fade.css",
       "components/ui/kit.tsx",
       "components/ui/Sheet.tsx",
       "components/ui/toast.tsx",
@@ -92,6 +94,21 @@
       "selector": ".v-card-title",
       "value": "600",
       "reason": "카드 제목 클래스에만 굵기 600을 허용한다."
+    },
+    {
+      "file": "app/footer.css",
+      "rules": [
+        "weight-over-400",
+        "letter-spacing-positive"
+      ],
+      "reason": "파운더 지시(2026-10-11): TETH 꼬리말과 같은 짜임. 묶음 제목과 구호는 굵게, 화면 폭을 채우는 이름은 가장 굵게 쓴다."
+    },
+    {
+      "file": "app/scroll-fade.css",
+      "rules": [
+        "gradient"
+      ],
+      "reason": "파운더 지시(2026-10-11): 옆으로 넘기는 줄의 끝을 흐리게 하는 가림이다. 꾸밈 그라데이션이 아니다."
     }
   ]
 }

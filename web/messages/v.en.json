@@ -28,7 +28,7 @@
     "filter": "Category",
     "all": "All boxes",
     "search": "Search items",
-    "searchHint": "Search Pokemon cards or the car you want",
+    "searchHint": "Pokemon card, Rolex, Lamborghini",
     "searchNone": "No item with that name.",
     "searchIn": "{box}, {price} per open",
     "refPrice": "{amount}",
@@ -512,5 +512,16 @@
     "ctaIn": "View box",
     "descFree": "You have {n} free opens left.",
     "ctaFree": "Open for free"
+  },
+  "footer": {
+    "crs": "Customer relationship summary",
+    "follow": "Follow us",
+    "colProduct": "Product",
+    "colHelp": "Help",
+    "colTerms": "Terms",
+    "colSettings": "Settings",
+    "about1": "VOILA is a service where you open boxes to receive physical items or USDT. Every box lists its contents and odds, and items you receive can be shipped to you or taken as USDT.",
+    "about2": "Every result is computed from values locked before you open, and you can recompute it yourself under Verify a result. Money moves in USDT, and won amounts are a display conversion.",
+    "rights": "© 2026 VOILA. All rights reserved."
   }
 }

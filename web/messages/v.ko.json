@@ -28,7 +28,7 @@
     "filter": "분류",
     "all": "전체 박스",
     "search": "상품 검색",
-    "searchHint": "포켓몬 카드나 갖고 싶은 차를 찾아보세요",
+    "searchHint": "포켓몬 카드, 롤렉스, 람보르기니",
     "searchNone": "그 이름의 상품이 없습니다.",
     "searchIn": "{box}, 1회 {price}",
     "refPrice": "{amount}",
@@ -512,5 +512,16 @@
     "ctaIn": "박스 보기",
     "descFree": "무료로 열 수 있는 박스가 {n}개 남았습니다.",
     "ctaFree": "무료로 열기"
+  },
+  "footer": {
+    "crs": "고객 관계 요약",
+    "follow": "팔로우하십시오",
+    "colProduct": "제품",
+    "colHelp": "도움",
+    "colTerms": "약관",
+    "colSettings": "설정",
+    "about1": "VOILA는 박스를 열어 실물 상품이나 USDT를 받는 서비스입니다. 박스마다 구성품과 확률이 적혀 있고, 받은 상품은 배송 받거나 USDT로 받을 수 있습니다.",
+    "about2": "모든 결과는 열기 전에 잠가 둔 값으로 계산하며, 개봉 결과 검증에서 직접 다시 계산해 볼 수 있습니다. 돈은 USDT로 움직이고, 원화 금액은 보기 위한 환산입니다.",
+    "rights": "© 2026 VOILA. 모든 권리 보유."
   }
 }

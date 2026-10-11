@@ -96,11 +96,12 @@
 .v-hero-orb--ball { background: none; box-shadow: 0 18px 40px color-mix(in srgb, var(--v-bg) 70%, transparent); }
 .v-hero-orb--ball > canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
 .v-hero:is([data-phase="open"], [data-phase="sweep"]) .v-hero-orb { opacity: 1; transform: scale(1); transition: transform 0.44s cubic-bezier(0.2, 1.35, 0.35, 1), opacity 0.14s ease-out; }
-.v-hero-orb[data-i="0"] { --d: 190px; right: -3.5%; bottom: -30%; z-index: 3; transition-delay: 0.2s; }
+/* 휴대폰은 절제한다(2026-10-11 파운더): 공은 넷, 큰 공은 작게 줄여 장면 안에 두고 아래의 단추를 덮지 않는다 */
+.v-hero-orb[data-i="0"] { --d: 124px; right: -2.5%; bottom: 9%; z-index: 3; transition-delay: 0.2s; }
 .v-hero-orb[data-i="1"] { --d: 112px; left: 3%; top: 4%; transition-delay: 0.04s; animation-delay: -1.4s; }
-.v-hero-orb[data-i="2"] { --d: 54px; left: 13%; bottom: 10%; transition-delay: 0.12s; animation-delay: -2.6s; }
+.v-hero-orb[data-i="2"] { display: none; --d: 54px; left: 13%; bottom: 10%; transition-delay: 0.12s; animation-delay: -2.6s; }
 .v-hero-orb[data-i="3"] { --d: 40px; right: 12%; top: 9%; transition-delay: 0.16s; animation-delay: -0.8s; }
-.v-hero-orb[data-i="4"] { --d: 76px; left: -3.5%; top: 40%; z-index: 3; transition-delay: 0.08s; animation-delay: -3.3s; }
+.v-hero-orb[data-i="4"] { --d: 64px; left: -2.5%; top: 44%; z-index: 3; transition-delay: 0.08s; animation-delay: -3.3s; }
 .v-hero[data-phase="fade"] .v-hero-orb, .v-hero[data-phase="closed"] .v-hero-orb, .v-hero[data-phase="anticipation"] .v-hero-orb { transition-delay: 0s; }
 
 /* 빛 조각 */
@@ -133,7 +134,9 @@
   .v-hero-scene { margin-left: -230px; }
   /* 위로는 머리줄(붙어 있는 메뉴) 밑으로 들어가 잘리지 않을 만큼만 나간다: 배너 위 틈 24px 에서 흔들림 8px 를 뺀 만큼 */
   .v-hero-orb[data-i="1"] { left: 6%; top: -4%; }
-  .v-hero-orb[data-i="0"] { right: -4%; bottom: -22%; }
+  .v-hero-orb[data-i="0"] { --d: 190px; right: -4%; bottom: -22%; }
+  .v-hero-orb[data-i="2"] { display: block; }
+  .v-hero-orb[data-i="4"] { --d: 76px; left: -3.5%; top: 40%; }
   .v-hero-orb[data-i="3"] { right: -2%; top: 22%; }
 }
 

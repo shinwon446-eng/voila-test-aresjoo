@@ -8,6 +8,7 @@
  * 최근에 연 박스가 맨 앞에 온다. 남의 당첨 소식, 인기 순위, 타이머는 없다.
  */
 import { useMemo, useState } from "react";
+import { Search } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { BOXES, CATEGORY_FILTERS, byCategory, dropTable, formatRate, sortBoxes, type BoxCategory, type ProductBox, type ProductItem } from "@/lib/products";
@@ -61,7 +62,8 @@ export function BoxList() {
       {!q && <HeroBanner />}
       <ScreenHead title={t("home.title")} desc={t("home.desc")} />
       {/* 이름표를 따로 두지 않는다. 칸 안의 글이 곧 이름표다(화면 읽기 도구에는 aria-label 로 읽힌다) */}
-      <input type="search" className="v-input" aria-label={t("home.search")} placeholder={t("home.searchHint")} value={query} onChange={(e) => setQuery(e.target.value)} autoComplete="off" />
+      {/* 돋보기가 "찾는 곳"임을 말하고, 안내 글은 실제로 찾아지는 예 셋만 적는다(2026-10-11 파운더: 문장은 읽기 힘들다) */}
+      <label className="v-search"><Search size={18} aria-hidden /><input type="search" className="v-input" aria-label={t("home.search")} placeholder={t("home.searchHint")} value={query} onChange={(e) => setQuery(e.target.value)} autoComplete="off" /></label>
       {q ? (
         hits.length === 0 ? <Empty>{t("home.searchNone")}</Empty> : (
           <ul className="v-itemrows">

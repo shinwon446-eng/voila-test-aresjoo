@@ -7,6 +7,8 @@
 @import "./ui.css";
 @import "./opening.css";
 @import "./hero.css";
+@import "./footer.css";
+@import "./scroll-fade.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

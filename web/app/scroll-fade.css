@@ -1,0 +1,8 @@
+/*
+ * 옆으로 넘기는 줄의 끝 흐림. 가림(mask)에 쓰는 그라데이션은 이 파일에서만 쓴다(scripts/design-lint/config.json 의 예외).
+ */
+/* 옆으로 넘기는 줄(후기, 상품 띠): 오른쪽 끝이 칼로 자른 듯 끊기지 않고 흐려지며 사라진다(2026-10-11 파운더).
+   끝까지 넘기면 마지막 것이 흐림 밖으로 나오게 줄 끝을 그만큼 비운다. 가림은 불투명한 정도만 쓰므로 색은 아무 토큰이나 된다 */
+.v-rvrow, .v-strip { --fade: 40px; -webkit-mask-image: linear-gradient(to right, var(--v-bg) calc(100% - var(--fade)), transparent); mask-image: linear-gradient(to right, var(--v-bg) calc(100% - var(--fade)), transparent); }
+.v-rvrow::after, .v-strip::after { content: ""; flex: 0 0 calc(var(--fade) - 10px); }
+@media (min-width: 720px) { .v-rvrow, .v-strip { --fade: 72px; } }

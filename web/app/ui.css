@@ -50,7 +50,8 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-back:hover { background: var(--v-pill); }
 
 /* ── 단추와 링크 */
-.v-btn { display: flex; width: 100%; min-height: var(--v-btn-h); align-items: center; justify-content: center; gap: 8px; border-radius: var(--v-r-pill); background: var(--v-primary); padding: 0 24px; color: var(--v-on-primary); font-size: var(--v-fs-body); font-weight: 400; line-height: 1.25; text-align: center; transition: background var(--v-fast), transform var(--v-fast); }
+/* 단추와 글 링크는 브라우저 기본 모양(회색 바탕, 테두리)을 여기서 직접 지운다. 다른 초기화 규칙이 늦게 오거나 빠져도 회색 상자로 보이지 않게 */
+.v-btn { display: flex; width: 100%; min-height: var(--v-btn-h); align-items: center; justify-content: center; gap: 8px; border: 0; font-family: inherit; cursor: pointer; border-radius: var(--v-r-pill); background: var(--v-primary); padding: 0 24px; color: var(--v-on-primary); font-size: var(--v-fs-body); font-weight: 400; line-height: 1.25; text-align: center; transition: background var(--v-fast), transform var(--v-fast); }
 .v-btn:hover { background: var(--v-primary-hover); }
 .v-btn:active { transform: scale(0.985); }
 .v-btn:disabled, .v-btn[aria-disabled="true"] { background: var(--v-pill); color: var(--v-mute); cursor: default; transform: none; }
@@ -58,7 +59,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-btn--quiet { background: var(--v-pill); color: var(--v-text); }
 .v-btn--quiet:hover { background: var(--v-pill-hover); }
 .v-btn--auto { width: auto; }
-.v-link { display: inline-flex; min-height: var(--v-touch); align-items: center; color: var(--v-sub); font-size: var(--v-fs-small); text-decoration: underline; text-underline-offset: 3px; }
+.v-link { display: inline-flex; min-height: var(--v-touch); align-items: center; border: 0; background: none; padding: 0; font-family: inherit; cursor: pointer; color: var(--v-sub); font-size: var(--v-fs-small); text-decoration: underline; text-underline-offset: 3px; }
 .v-link:hover { color: var(--v-title); }
 .v-links { display: flex; flex-wrap: wrap; column-gap: 20px; }
 
@@ -93,6 +94,10 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-input--file { padding-top: 14px; font-size: var(--v-fs-small); color: var(--v-sub); }
 .v-input--file::file-selector-button { margin-right: 12px; border: 0; border-radius: 999px; background: var(--v-card); padding: 6px 14px; color: var(--v-text); font: inherit; }
 .v-input:focus { border-color: var(--v-selected); }
+/* 찾기 칸: 왼쪽에 돋보기 */
+.v-search { position: relative; display: block; }
+.v-search > svg { position: absolute; left: 20px; top: 50%; translate: 0 -50%; color: var(--v-mute); pointer-events: none; }
+.v-search > .v-input { padding-left: 50px; }
 
 /* ── 상태 한 줄 */
 .v-line { color: var(--v-text); font-size: var(--v-fs-body); line-height: 1.5; }
@@ -271,11 +276,6 @@ button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 
 @keyframes v-lid { 0%, 38% { transform: rotate(0) translateY(0); } 100% { transform: rotate(-34deg) translateY(-18px); } }
 
 /* ── 꼬리말 */
-.v-footer { border-top: 1px solid var(--v-divider); color: var(--v-mute); font-size: var(--v-fs-small); }
-.v-footer-in { display: flex; max-width: calc(var(--v-wide) + var(--v-gutter) * 2); flex-wrap: wrap; align-items: center; gap: 4px 20px; margin: 0 auto; padding: 16px var(--v-gutter) calc(16px + env(safe-area-inset-bottom, 0px)); }
-.v-footer a { display: inline-flex; min-height: var(--v-touch); align-items: center; color: var(--v-sub); text-decoration: underline; text-underline-offset: 3px; }
-.v-footer a:hover, .v-footer button:hover { color: var(--v-title); }
-.v-footer button { display: inline-flex; min-height: var(--v-touch); align-items: center; padding: 0; border: 0; background: none; color: var(--v-sub); font: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 
 /* ── 충전 시트: QR 과 주소 */
 .v-qr { display: flex; justify-content: center; }

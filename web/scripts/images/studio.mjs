@@ -13,22 +13,27 @@ const force = args.includes("--force");
 const extra = (args.includes("--extra") ? args[args.indexOf("--extra") + 1] : "").split(",").filter(Boolean);
 const dir = new URL("../../public/assets/photography/", import.meta.url);
 const sources = JSON.parse(readFileSync(new URL("sources.json", import.meta.url), "utf8"));
+const generatedPath = new URL("generated.json", import.meta.url);
+const generated = existsSync(generatedPath) ? JSON.parse(readFileSync(generatedPath, "utf8")) : {};
+const rawDir = new URL("gen-raw/", import.meta.url);
 const outPath = new URL("studio.json", import.meta.url);
 const studio = existsSync(outPath) ? JSON.parse(readFileSync(outPath, "utf8")) : {};
 
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const page = await browser.newPage();
 let n = 0;
-const jobs = extra.length ? extra.map((file) => ["file:" + file, { file }]) : Object.entries(sources);
+// 생성 이미지(generated.json, 원본은 scripts/images/gen-raw/<id>.png)도 같은 캔버스에 올린다. 실제 사진(sources.json)이 있는 상품은 사진이 먼저다.
+const genJobs = Object.entries(generated).filter(([id]) => !sources[id]).map(([id, g]) => [id, { ...g, raw: true }]);
+const jobs = extra.length ? extra.map((file) => ["file:" + file, { file }]) : [...Object.entries(sources), ...genJobs];
 for (const [id, s] of jobs) {
   if (only.length && !only.some((o) => id.includes(o))) continue;
   const base = id.startsWith("file:") ? id.slice(5).replace(/.webp$/, "") : id;
   const target = new URL(`studio-${base}.webp`, dir);
   if (existsSync(target) && !force) { studio[id] = `studio-${base}.webp`; continue; }
-  const src = new URL(s.file, dir);
+  const src = new URL(s.file, s.raw ? rawDir : dir);
   if (!existsSync(src)) continue;
   try {
-    const input = new Blob([readFileSync(src)], { type: "image/webp" });
+    const input = new Blob([readFileSync(src)], { type: s.file.endsWith(".png") ? "image/png" : "image/webp" });
     const cut = await removeBackground(input, { output: { format: "image/png", quality: 1 } });
     const png = Buffer.from(await cut.arrayBuffer()).toString("base64");
     // 1200x900 캔버스. 바탕은 검정에 가까운 회색, 가운데 아래쪽에 은은한 빛. 상품은 폭 78% 안에, 바닥에 희미한 그림자.
@@ -63,7 +68,7 @@ for (const [id, s] of jobs) {
 await browser.close();
 // 출처(sources.json)가 없는 상품의 스튜디오 판은 지운다. reject 뒤에 남은 옛 파일이 다시 화면에 오르지 않게
 for (const id of Object.keys(studio)) {
-  if (id.startsWith("file:") || sources[id]) continue;
+  if (id.startsWith("file:") || sources[id] || generated[id]) continue;
   const stale = new URL(studio[id], dir);
   if (existsSync(stale)) unlinkSync(stale);
   delete studio[id];

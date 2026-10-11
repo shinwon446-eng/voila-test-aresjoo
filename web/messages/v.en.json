@@ -67,6 +67,7 @@
     "tiers": "Odds by tier",
     "evNote": "Expected value is the odds-weighted average retail value divided by the box price. It does not guarantee what a single open returns. Taking USDT pays {pct}% of retail.",
     "evBasis": "of reference price",
+    "genNote": "This is a generated reference image, not a photo. The item you receive is the model named above.",
     "verifyLink": "How to verify a result from the value locked before opening",
     "receive": "How you get it",
     "receivePhysical": "Shipped, or taken as USDT",

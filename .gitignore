@@ -16,3 +16,6 @@ qa/before/results.json
 qa/before/*.json
 qa/after/*.json
 qa/work/
+
+# Codex 가 만든 생성 이미지 원본(크다). 화면에는 studio-<id>.webp 만 쓴다
+web/scripts/images/gen-raw/

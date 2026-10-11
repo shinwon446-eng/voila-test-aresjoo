@@ -197,6 +197,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         {current && (
           <>
             {current.image.src && <div className="v-sheet-photo"><img src={current.image.src} alt="" /></div>}
+            {current.image.src && current.image.generated && <p className="v-small">{t("box.genNote")}</p>}
             <Rows>
               <Row label={t("reveal.value")}>{fmt(current.value)}</Row>
               <Row label={t("reveal.odds")}>{formatRate(current.dropRate)}</Row>

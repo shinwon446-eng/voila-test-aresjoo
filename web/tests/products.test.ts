@@ -268,7 +268,8 @@ test("컬렉션 이미지는 유효한 로컬 WebP이며 출처와 imageUrl 별�
         assert.equal(image.toString("ascii", 8, 12), "WEBP", `${x.id}: 잘못된 WebP 형식`);
         assert.ok(x.image.credit && x.image.credit.length > 8, `${x.id}: 출처 누락`);
         // Unsplash 사진은 Unsplash License, Wikimedia Commons 사진은 CC BY / CC BY-SA / CC0 / Public domain 가운데 하나
-        assert.match(x.image.credit!, /Unsplash License|CC BY|CC0|Public domain|CC-BY/i, `${x.id}: 라이선스 표기 누락`);
+        // 생성 이미지는 라이선스 대신 "생성 이미지" 라고 적는다(lib/productImages.ts GENERATED)
+        assert.match(x.image.credit!, /Unsplash License|CC BY|CC0|Public domain|CC-BY|생성 이미지/i, `${x.id}: 라이선스 표기 누락`);
       }
     }
   }

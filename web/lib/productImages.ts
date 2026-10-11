@@ -1,5 +1,6 @@
 import commonsSources from "../scripts/images/sources.json";
 import studioFiles from "../scripts/images/studio.json";
+import generatedSources from "../scripts/images/generated.json";
 
 const ASSET_BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -27,6 +28,8 @@ export interface ProductImage {
   credit?: string;
   /** 누끼 컷이면 true, 다크 배경 위에 그대로 얹는다. false 면 object-cover 로 채운다. */
   cutout?: boolean;
+  /** 실제 사진이 아니라 생성한 참고 이미지면 true. 상품 시트가 그 사실을 한 줄로 적는다. */
+  generated?: boolean;
 }
 
 const NONE: ProductImage = { src: null };
@@ -99,11 +102,23 @@ const COMMONS: Record<string, ProductImage> = Object.fromEntries(
   Object.entries(commonsSources as Record<string, { file: string; credit: string }>).map(([id, s]) => [id, { src: `${ASSET_BASE}/assets/photography/${STUDIO[id] ?? s.file}`, credit: s.credit, cutout: !!STUDIO[id] }]),
 );
 
+/**
+ * 맞는 실제 사진을 구하지 못한 상품의 생성 이미지(2026-10-11 파운더 결정: 가방과 골드는 Codex 로 같은 톤으로 만든다).
+ * 원본은 scripts/images/gen-raw/<id>.png(저장소에 올리지 않는다), 화면에 쓰는 것은 studio.mjs 가 만든 studio-<id>.webp 뿐이다.
+ * 실제 사진(COMMONS)이 생기면 그것이 먼저다.
+ */
+const GENERATED: Record<string, ProductImage> = Object.fromEntries(
+  Object.entries(generatedSources as Record<string, { file: string; credit: string }>)
+    .filter(([id]) => STUDIO[id])
+    .map(([id, g]) => [id, { src: `${ASSET_BASE}/assets/photography/${STUDIO[id]}`, credit: g.credit, cutout: true, generated: true }]),
+);
+
 /** 박스 커버는 그 박스의 대표 실물 사진으로 쓴다. 상품 사진이 없으면 SOURCES 의 커버로 돌아간다 */
 const COVER_BY_ITEM: Record<string, string> = {
   "jackpot-car": "car-rr-cullinan",
   "vault-submariner": "wt-gmt-master",
   "vault-gold": "gd-bar-250g",
+  "vault-handbag": "bg-birkin-25",
   "dollar-apple": "ap-vision-pro",
   "dollar-galaxy": "gx-fold7-256",
   "dollar-gaming": "gm-ryzen9950x3d",
@@ -125,8 +140,8 @@ const toned = (img: ProductImage): ProductImage => {
 export const imageFor = (id: string): ProductImage => {
   const lead = COVER_BY_ITEM[id];
   // 그 상품을 찍은 Commons 사진이 먼저, 없을 때만 SOURCES 의 일반 사진(같은 종류의 다른 물건일 수 있다)
-  const fromLead = lead ? COMMONS[lead] ?? SOURCES[lead] : undefined;
-  return toned(fromLead ?? COMMONS[id] ?? SOURCES[id] ?? NONE);
+  const fromLead = lead ? COMMONS[lead] ?? GENERATED[lead] ?? SOURCES[lead] : undefined;
+  return toned(fromLead ?? COMMONS[id] ?? GENERATED[id] ?? SOURCES[id] ?? NONE);
 };
 
 /** 자산 확보율, 관리 화면과 테스트에서 쓴다. */

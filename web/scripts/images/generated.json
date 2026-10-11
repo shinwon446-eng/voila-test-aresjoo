@@ -1,4 +1,264 @@
 {
+  "ap-adapter-20w": {
+    "file": "ap-adapter-20w.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-adapter-35w": {
+    "file": "ap-adapter-35w.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-airtag-1": {
+    "file": "ap-airtag-1.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-airtag-4": {
+    "file": "ap-airtag-4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-beats-pill": {
+    "file": "ap-beats-pill.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-beats-studio-pro": {
+    "file": "ap-beats-studio-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-cable-2m": {
+    "file": "ap-cable-2m.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-ipad-11": {
+    "file": "ap-ipad-11.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-ipad-air-13": {
+    "file": "ap-ipad-air-13.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-ipad-pro-13": {
+    "file": "ap-ipad-pro-13.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-iphone-16": {
+    "file": "ap-iphone-16.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-iphone-16-pro-max": {
+    "file": "ap-iphone-16-pro-max.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-iphone-16e": {
+    "file": "ap-iphone-16e.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-iphone-case": {
+    "file": "ap-iphone-case.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-magsafe": {
+    "file": "ap-magsafe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-studio-display": {
+    "file": "ap-studio-display.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-watch-band": {
+    "file": "ap-watch-band.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "ap-watch-s10": {
+    "file": "ap-watch-s10.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-acton3": {
+    "file": "au-acton3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-arc-ultra": {
+    "file": "au-arc-ultra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-atlp120xusb": {
+    "file": "au-atlp120xusb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-atlp70xbt": {
+    "file": "au-atlp70xbt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-authentics300": {
+    "file": "au-authentics300.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-aux-cable": {
+    "file": "au-aux-cable.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-behringer-ha400": {
+    "file": "au-behringer-ha400.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-beoplay-h100": {
+    "file": "au-beoplay-h100.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-beoplay-h95": {
+    "file": "au-beoplay-h95.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-beoplay-hx": {
+    "file": "au-beoplay-hx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-debut-evo2": {
+    "file": "au-debut-evo2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-emberton3": {
+    "file": "au-emberton3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-era100": {
+    "file": "au-era100.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-era300": {
+    "file": "au-era300.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-fiio-k7": {
+    "file": "au-fiio-k7.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-hd600": {
+    "file": "au-hd600.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-hd660s2": {
+    "file": "au-hd660s2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-hd800s": {
+    "file": "au-hd800s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-hifi-headphone-stand": {
+    "file": "au-hifi-headphone-stand.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-ie200": {
+    "file": "au-ie200.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-ie600": {
+    "file": "au-ie600.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-jack-adapter": {
+    "file": "au-jack-adapter.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-mdrzx110": {
+    "file": "au-mdrzx110.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-momentum4": {
+    "file": "au-momentum4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-move2": {
+    "file": "au-move2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-partybox120": {
+    "file": "au-partybox120.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-qc-earbuds2": {
+    "file": "au-qc-earbuds2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-qc-ultra2": {
+    "file": "au-qc-ultra2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-record-brush": {
+    "file": "au-record-brush.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-roam2": {
+    "file": "au-roam2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-rphje120": {
+    "file": "au-rphje120.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-shure-sm7b": {
+    "file": "au-shure-sm7b.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-soundcore-p20i": {
+    "file": "au-soundcore-p20i.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-soundlink-flex2": {
+    "file": "au-soundlink-flex2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-soundlink-max": {
+    "file": "au-soundlink-max.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-stanmore3": {
+    "file": "au-stanmore3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-sub4": {
+    "file": "au-sub4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-ult-wear": {
+    "file": "au-ult-wear.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-wf1000xm6": {
+    "file": "au-wf1000xm6.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-wh1000xm6": {
+    "file": "au-wh1000xm6.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-whch720n": {
+    "file": "au-whch720n.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-wiim-amp-pro": {
+    "file": "au-wiim-amp-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-woburn3": {
+    "file": "au-woburn3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-xlr-cable": {
+    "file": "au-xlr-cable.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-yamaha-as301": {
+    "file": "au-yamaha-as301.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "au-zen-dac3": {
+    "file": "au-zen-dac3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "aud-airpods": {
+    "file": "aud-airpods.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bg-bag-charm": {
     "file": "bg-bag-charm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -279,6 +539,342 @@
     "file": "car-zero-srf.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "cm-canon-r50": {
+    "file": "cm-canon-r50.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-canon-r6iii": {
+    "file": "cm-canon-r6iii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-canon-rf100500": {
+    "file": "cm-canon-rf100500.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-canon-rf50": {
+    "file": "cm-canon-rf50.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-dji-air3s": {
+    "file": "cm-dji-air3s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-dji-pocket3": {
+    "file": "cm-dji-pocket3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-dji-rs4": {
+    "file": "cm-dji-rs4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-dji-rs4mini": {
+    "file": "cm-dji-rs4mini.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-fuji-xf1655ii": {
+    "file": "cm-fuji-xf1655ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-fuji-xs20": {
+    "file": "cm-fuji-xs20.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-fuji-xt5": {
+    "file": "cm-fuji-xt5.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-giottos-rocket": {
+    "file": "cm-giottos-rocket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-godox-v1s": {
+    "file": "cm-godox-v1s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-gopro-hero13": {
+    "file": "cm-gopro-hero13.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-insta360-x5": {
+    "file": "cm-insta360-x5.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-joby-gorillapod": {
+    "file": "cm-joby-gorillapod.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-leica-sl3": {
+    "file": "cm-leica-sl3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-lenspen": {
+    "file": "cm-lenspen.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-lexar-cfexpress": {
+    "file": "cm-lexar-cfexpress.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-lowepro-protactic": {
+    "file": "cm-lowepro-protactic.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-manfrotto-befree": {
+    "file": "cm-manfrotto-befree.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-nikon-z50ii": {
+    "file": "cm-nikon-z50ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-nikon-z8": {
+    "file": "cm-nikon-z8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-nikon-zf": {
+    "file": "cm-nikon-zf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-peak-backpack": {
+    "file": "cm-peak-backpack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-peak-cuff": {
+    "file": "cm-peak-cuff.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-peak-leash": {
+    "file": "cm-peak-leash.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-peak-tripod": {
+    "file": "cm-peak-tripod.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-sandisk-256": {
+    "file": "cm-sandisk-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-sandisk-reader": {
+    "file": "cm-sandisk-reader.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-sigma-2470ii": {
+    "file": "cm-sigma-2470ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-smallrig-led": {
+    "file": "cm-smallrig-led.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-sony-a1ii": {
+    "file": "cm-sony-a1ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-sony-a7cii": {
+    "file": "cm-sony-a7cii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-sony-a9iii": {
+    "file": "cm-sony-a9iii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-thinktank-pouch": {
+    "file": "cm-thinktank-pouch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-tiffen-uv": {
+    "file": "cm-tiffen-uv.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cm-zeiss-wipes": {
+    "file": "cm-zeiss-wipes.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-8bitdo-adapter2": {
+    "file": "cs-8bitdo-adapter2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-access": {
+    "file": "cs-access.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-arctis-nova7p": {
+    "file": "cs-arctis-nova7p.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-cleaning-cloth": {
+    "file": "cs-cleaning-cloth.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-controller-grip": {
+    "file": "cs-controller-grip.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-dualsense": {
+    "file": "cs-dualsense.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-dualsense-dock": {
+    "file": "cs-dualsense-dock.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-gamesir-g7pro": {
+    "file": "cs-gamesir-g7pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-hdmi-cable": {
+    "file": "cs-hdmi-cable.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-hori-alpha": {
+    "file": "cs-hori-alpha.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-hori-playstand": {
+    "file": "cs-hori-playstand.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-joycon2": {
+    "file": "cs-joycon2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-joycon2-grip": {
+    "file": "cs-joycon2-grip.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-joycon2-wheel": {
+    "file": "cs-joycon2-wheel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-jsaux-dock": {
+    "file": "cs-jsaux-dock.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-kontrolfreek": {
+    "file": "cs-kontrolfreek.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-legion-go-s": {
+    "file": "cs-legion-go-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-nacon-revolution5": {
+    "file": "cs-nacon-revolution5.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-portal": {
+    "file": "cs-portal.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-powera-case": {
+    "file": "cs-powera-case.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-ps5": {
+    "file": "cs-ps5.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-ps5-digital": {
+    "file": "cs-ps5-digital.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-ps5-pro": {
+    "file": "cs-ps5-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-ps5-stand": {
+    "file": "cs-ps5-stand.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-pulse-elite": {
+    "file": "cs-pulse-elite.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-pulse-explore": {
+    "file": "cs-pulse-explore.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-razer-wolverine3": {
+    "file": "cs-razer-wolverine3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-rog-xbox-ally-x": {
+    "file": "cs-rog-xbox-ally-x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-seagate-expansion": {
+    "file": "cs-seagate-expansion.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-stealth600": {
+    "file": "cs-stealth600.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-steamdeck-1tb": {
+    "file": "cs-steamdeck-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-steamdeck-512": {
+    "file": "cs-steamdeck-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-steamdeck-dock": {
+    "file": "cs-steamdeck-dock.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-switch2": {
+    "file": "cs-switch2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-switch2-camera": {
+    "file": "cs-switch2-camera.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-switch2-dock": {
+    "file": "cs-switch2-dock.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-switch2-pro": {
+    "file": "cs-switch2-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-thumb-grips": {
+    "file": "cs-thumb-grips.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-usb-c-cable": {
+    "file": "cs-usb-c-cable.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-xbox-battery": {
+    "file": "cs-xbox-battery.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-xbox-controller": {
+    "file": "cs-xbox-controller.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-xbox-headset": {
+    "file": "cs-xbox-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-xbox-series-s": {
+    "file": "cs-xbox-series-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-xbox-series-x": {
+    "file": "cs-xbox-series-x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "cs-xbox-series-x-digital": {
+    "file": "cs-xbox-series-x-digital.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "da-watchse": {
+    "file": "da-watchse.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gd-bar-100g": {
     "file": "gd-bar-100g.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -435,6 +1031,418 @@
     "file": "gd-vca-sweet.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gm-aerox3": {
+    "file": "gm-aerox3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-alienware-aw2725df": {
+    "file": "gm-alienware-aw2725df.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-apex-pro": {
+    "file": "gm-apex-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-arctis-nova-pro": {
+    "file": "gm-arctis-nova-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-benq-xl2566x": {
+    "file": "gm-benq-xl2566x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-blackshark-v3-pro": {
+    "file": "gm-blackshark-v3-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-cable-clip": {
+    "file": "gm-cable-clip.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-cable-sleeve": {
+    "file": "gm-cable-sleeve.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-cable-ties": {
+    "file": "gm-cable-ties.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-cloud3-wireless": {
+    "file": "gm-cloud3-wireless.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-core265k": {
+    "file": "gm-core265k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-core285k": {
+    "file": "gm-core285k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-corsair-tc100": {
+    "file": "gm-corsair-tc100.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-deathadder-v3": {
+    "file": "gm-deathadder-v3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-elgato-4kx": {
+    "file": "gm-elgato-4kx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-elgato-streamdeck": {
+    "file": "gm-elgato-streamdeck.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-fifine-am8": {
+    "file": "gm-fifine-am8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-g-pro-x-tkl": {
+    "file": "gm-g-pro-x-tkl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-g-pro-x2": {
+    "file": "gm-g-pro-x2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-g502x": {
+    "file": "gm-g502x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-g840": {
+    "file": "gm-g840.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-headset-hook": {
+    "file": "gm-headset-hook.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-hs80-max": {
+    "file": "gm-hs80-max.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-huntsman-v3": {
+    "file": "gm-huntsman-v3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-iskur-v2": {
+    "file": "gm-iskur-v2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-k70-core": {
+    "file": "gm-k70-core.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-keyboard-brush": {
+    "file": "gm-keyboard-brush.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-keychron-q1-he": {
+    "file": "gm-keychron-q1-he.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-legion-pro7i": {
+    "file": "gm-legion-pro7i.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-lg-32gs95ue": {
+    "file": "gm-lg-32gs95ue.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-mouse-bungee": {
+    "file": "gm-mouse-bungee.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-mouse-grip": {
+    "file": "gm-mouse-grip.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-msi-271qpx": {
+    "file": "gm-msi-271qpx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-omen-max16": {
+    "file": "gm-omen-max16.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-pulsefire-haste2": {
+    "file": "gm-pulsefire-haste2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-qck-heavy": {
+    "file": "gm-qck-heavy.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-qck-mini": {
+    "file": "gm-qck-mini.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-rog-pg32ucdm": {
+    "file": "gm-rog-pg32ucdm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-rtx5070": {
+    "file": "gm-rtx5070.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-rtx5070ti": {
+    "file": "gm-rtx5070ti.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-rtx5080": {
+    "file": "gm-rtx5080.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-rtx5090": {
+    "file": "gm-rtx5090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-rx9070xt": {
+    "file": "gm-rx9070xt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-ryzen9700x": {
+    "file": "gm-ryzen9700x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-ryzen9800x3d": {
+    "file": "gm-ryzen9800x3d.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-switch-puller": {
+    "file": "gm-switch-puller.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-titan-evo": {
+    "file": "gm-titan-evo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-usb-extension": {
+    "file": "gm-usb-extension.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-viper-v3-pro": {
+    "file": "gm-viper-v3-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-zephyrus-g14": {
+    "file": "gm-zephyrus-g14.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gm-zephyrus-g16": {
+    "file": "gm-zephyrus-g16.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-9100-pro": {
+    "file": "gx-9100-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-990-pro-1tb": {
+    "file": "gx-990-pro-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-990-pro-2tb": {
+    "file": "gx-990-pro-2tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-a36": {
+    "file": "gx-a36.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-anker-cable": {
+    "file": "gx-anker-cable.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-bar-plus-256": {
+    "file": "gx-bar-plus-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-battery-20k": {
+    "file": "gx-battery-20k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-battery-wireless": {
+    "file": "gx-battery-wireless.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-book5-360": {
+    "file": "gx-book5-360.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-book6-pro": {
+    "file": "gx-book6-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-book6-ultra": {
+    "file": "gx-book6-ultra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-buds3-fe": {
+    "file": "gx-buds3-fe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-buds4-pro": {
+    "file": "gx-buds4-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-cable-3a": {
+    "file": "gx-cable-3a.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-cable-5a": {
+    "file": "gx-cable-5a.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-cable-clips": {
+    "file": "gx-cable-clips.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-cable-tie": {
+    "file": "gx-cable-tie.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-charger-25w": {
+    "file": "gx-charger-25w.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-charger-45w": {
+    "file": "gx-charger-45w.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-charger-trio": {
+    "file": "gx-charger-trio.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-evo-plus-64": {
+    "file": "gx-evo-plus-64.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-fit-plus-64": {
+    "file": "gx-fit-plus-64.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-flip7": {
+    "file": "gx-flip7.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-flip7-fe": {
+    "file": "gx-flip7-fe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-fold7-512": {
+    "file": "gx-fold7-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-odyssey-g6": {
+    "file": "gx-odyssey-g6.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-odyssey-g8": {
+    "file": "gx-odyssey-g8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-phone-stand": {
+    "file": "gx-phone-stand.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-pro-plus-256": {
+    "file": "gx-pro-plus-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-s25-fe": {
+    "file": "gx-s25-fe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-s26": {
+    "file": "gx-s26.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-s26-plus": {
+    "file": "gx-s26-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-s26-ultra-256": {
+    "file": "gx-s26-ultra-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-s26-ultra-512": {
+    "file": "gx-s26-ultra-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-smart-m7": {
+    "file": "gx-smart-m7.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-t7-shield": {
+    "file": "gx-t7-shield.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-t9-1tb": {
+    "file": "gx-t9-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-t9-2tb": {
+    "file": "gx-t9-2tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-tab-s10-fe": {
+    "file": "gx-tab-s10-fe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-tab-s10-fe-plus": {
+    "file": "gx-tab-s10-fe-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-tab-s10-lite": {
+    "file": "gx-tab-s10-lite.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-tab-s11": {
+    "file": "gx-tab-s11.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-tab-s11-ultra": {
+    "file": "gx-tab-s11-ultra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-ugreen-adapter": {
+    "file": "gx-ugreen-adapter.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-usb-c-cap": {
+    "file": "gx-usb-c-cap.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-viewfinity-s8": {
+    "file": "gx-viewfinity-s8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-watch-charger": {
+    "file": "gx-watch-charger.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-watch-ultra2": {
+    "file": "gx-watch-ultra2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-watch8-classic": {
+    "file": "gx-watch8-classic.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-watch9-40": {
+    "file": "gx-watch9-40.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-watch9-44": {
+    "file": "gx-watch9-44.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gx-wireless-duo": {
+    "file": "gx-wireless-duo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "hm-balmuda-brew": {
     "file": "hm-balmuda-brew.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -451,12 +1459,124 @@
     "file": "hm-balmuda-toaster.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "hm-baratza-encore": {
+    "file": "hm-baratza-encore.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-blackdecker-iron": {
+    "file": "hm-blackdecker-iron.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-blueair-211i": {
+    "file": "hm-blueair-211i.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "hm-bosch-b36": {
     "file": "hm-bosch-b36.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "hm-braun-multiquick": {
+    "file": "hm-braun-multiquick.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-breville-bambinoplus": {
+    "file": "hm-breville-bambinoplus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-breville-express": {
+    "file": "hm-breville-express.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-breville-oraclejet": {
+    "file": "hm-breville-oraclejet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-breville-oven": {
+    "file": "hm-breville-oven.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-breville-touchimpress": {
+    "file": "hm-breville-touchimpress.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-cosori-kettle": {
+    "file": "hm-cosori-kettle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "hm-coway-airmega400": {
     "file": "hm-coway-airmega400.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-cuisinart-toaster": {
+    "file": "hm-cuisinart-toaster.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-dash-waffle": {
+    "file": "hm-dash-waffle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-delonghi-evo": {
+    "file": "hm-delonghi-evo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-delonghi-rivelia": {
+    "file": "hm-delonghi-rivelia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-dyson-airwrap": {
+    "file": "hm-dyson-airwrap.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-dyson-bp03": {
+    "file": "hm-dyson-bp03.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-dyson-gen5": {
+    "file": "hm-dyson-gen5.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-dyson-hp09": {
+    "file": "hm-dyson-hp09.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-dyson-supersonic": {
+    "file": "hm-dyson-supersonic.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-dyson-v12": {
+    "file": "hm-dyson-v12.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-dyson-v15": {
+    "file": "hm-dyson-v15.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-dyson-washg1": {
+    "file": "hm-dyson-washg1.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-hamilton-iron": {
+    "file": "hm-hamilton-iron.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-instant-milk": {
+    "file": "hm-instant-milk.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-instantpot-pro": {
+    "file": "hm-instantpot-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-kitchenaid-artisan": {
+    "file": "hm-kitchenaid-artisan.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-levoit-core300s": {
+    "file": "hm-levoit-core300s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-levoit-dual150": {
+    "file": "hm-levoit-dual150.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "hm-lg-c6-55": {
@@ -475,12 +1595,32 @@
     "file": "hm-lg-lrflc2706s.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "hm-lg-washcombo": {
+    "file": "hm-lg-washcombo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "hm-lg-washtower": {
     "file": "hm-lg-washtower.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "hm-lg-wm4000": {
     "file": "hm-lg-wm4000.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-ninja-airfryer": {
+    "file": "hm-ninja-airfryer.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-ninja-luxecafe": {
+    "file": "hm-ninja-luxecafe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-roborock-saros10r": {
+    "file": "hm-roborock-saros10r.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-roborock-z70": {
+    "file": "hm-roborock-z70.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "hm-samsung-combo": {
@@ -505,6 +1645,186 @@
   },
   "hm-samsung-s95f": {
     "file": "hm-samsung-s95f.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-shark-s3501": {
+    "file": "hm-shark-s3501.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-vitamix-ascent-x4": {
+    "file": "hm-vitamix-ascent-x4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-zojirushi-ns": {
+    "file": "hm-zojirushi-ns.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-adapter-70w": {
+    "file": "mb-adapter-70w.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-airpods-max": {
+    "file": "mb-airpods-max.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-anker-737": {
+    "file": "mb-anker-737.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-benq-pd3225u": {
+    "file": "mb-benq-pd3225u.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-benq-screenbar": {
+    "file": "mb-benq-screenbar.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-cable-240w": {
+    "file": "mb-cable-240w.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-cable-mgmt": {
+    "file": "mb-cable-mgmt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-caldigit-ts5": {
+    "file": "mb-caldigit-ts5.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-dell-u3225qe": {
+    "file": "mb-dell-u3225qe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-desk-mat": {
+    "file": "mb-desk-mat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-elgato-stream-deck": {
+    "file": "mb-elgato-stream-deck.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-ergotron-arm": {
+    "file": "mb-ergotron-arm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-fully-jarvis": {
+    "file": "mb-fully-jarvis.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-herman-embody": {
+    "file": "mb-herman-embody.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-hhkb": {
+    "file": "mb-hhkb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-imac-24": {
+    "file": "mb-imac-24.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-ipad-air-11": {
+    "file": "mb-ipad-air-11.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-keychron-q1": {
+    "file": "mb-keychron-q1.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-laptop-stand": {
+    "file": "mb-laptop-stand.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-lg-ultrafine-5k": {
+    "file": "mb-lg-ultrafine-5k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-logitech-brio": {
+    "file": "mb-logitech-brio.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-logitech-mx-keys": {
+    "file": "mb-logitech-mx-keys.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-mac-pro": {
+    "file": "mb-mac-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-mac-studio-ultra": {
+    "file": "mb-mac-studio-ultra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-mba-13": {
+    "file": "mb-mba-13.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-mba-15": {
+    "file": "mb-mba-15.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-mbp-14": {
+    "file": "mb-mbp-14.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-mbp-14-pro": {
+    "file": "mb-mbp-14-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-mbp-16-max": {
+    "file": "mb-mbp-16-max.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-mbp-16-pro": {
+    "file": "mb-mbp-16-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-pro-display": {
+    "file": "mb-pro-display.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-samsung-odyssey-oled": {
+    "file": "mb-samsung-odyssey-oled.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-samsung-t9-2tb": {
+    "file": "mb-samsung-t9-2tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-screen-cleaner": {
+    "file": "mb-screen-cleaner.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-sleeve-16": {
+    "file": "mb-sleeve-16.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-sonos-era-300": {
+    "file": "mb-sonos-era-300.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-steelcase-leap": {
+    "file": "mb-steelcase-leap.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-studio-display": {
+    "file": "mb-studio-display.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-twelve-south-stand": {
+    "file": "mb-twelve-south-stand.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-uplift-desk": {
+    "file": "mb-uplift-desk.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-usbc-hub": {
+    "file": "mb-usbc-hub.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mb-wacom-intuos-pro": {
+    "file": "mb-wacom-intuos-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sc-alpinestars-gloves": {
@@ -593,6 +1913,82 @@
   },
   "sc-triumph-speed-triple": {
     "file": "sc-triumph-speed-triple.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-breitling-navitimer": {
+    "file": "wt-breitling-navitimer.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-casio-ga2100": {
+    "file": "wt-casio-ga2100.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-datejust-41": {
+    "file": "wt-datejust-41.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-garmin-epix": {
+    "file": "wt-garmin-epix.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-garmin-fenix-8": {
+    "file": "wt-garmin-fenix-8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-gs-snowflake": {
+    "file": "wt-gs-snowflake.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-gs-white-birch": {
+    "file": "wt-gs-white-birch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-hamilton-khaki": {
+    "file": "wt-hamilton-khaki.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-iwc-pilot": {
+    "file": "wt-iwc-pilot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-op-41": {
+    "file": "wt-op-41.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-orient-bambino": {
+    "file": "wt-orient-bambino.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-rubber-strap": {
+    "file": "wt-rubber-strap.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-seiko-presage": {
+    "file": "wt-seiko-presage.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-seiko-prospex": {
+    "file": "wt-seiko-prospex.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-tag-aquaracer": {
+    "file": "wt-tag-aquaracer.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-tissot-prx": {
+    "file": "wt-tissot-prx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-tudor-pelagos": {
+    "file": "wt-tudor-pelagos.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-wolf-winder": {
+    "file": "wt-wolf-winder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "wt-zenith-chronomaster": {
+    "file": "wt-zenith-chronomaster.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   }
 }

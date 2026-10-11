@@ -24,7 +24,8 @@ const page = await browser.newPage();
 let n = 0;
 // 생성 이미지(generated.json, 원본은 scripts/images/gen-raw/<id>.png)도 같은 캔버스에 올린다. 실제 사진(sources.json)이 있는 상품은 사진이 먼저다.
 const genJobs = Object.entries(generated).filter(([id]) => !sources[id]).map(([id, g]) => [id, { ...g, raw: true }]);
-const jobs = extra.length ? extra.map((file) => ["file:" + file, { file }]) : [...Object.entries(sources), ...genJobs];
+// --generated 는 생성 이미지만 다시 만든다(변환 방식을 고쳤을 때 실제 사진은 건드리지 않게)
+const jobs = extra.length ? extra.map((file) => ["file:" + file, { file }]) : args.includes("--generated") ? genJobs : [...Object.entries(sources), ...genJobs];
 for (const [id, s] of jobs) {
   if (only.length && !only.some((o) => id.includes(o))) continue;
   const base = id.startsWith("file:") ? id.slice(5).replace(/.webp$/, "") : id;
@@ -36,9 +37,34 @@ for (const [id, s] of jobs) {
     const input = new Blob([readFileSync(src)], { type: s.file.endsWith(".png") ? "image/png" : "image/webp" });
     const cut = await removeBackground(input, { output: { format: "image/png", quality: 1 } });
     const png = Buffer.from(await cut.arrayBuffer()).toString("base64");
+    // 생성 원본은 배경이 단색이라, 배경 제거가 잘못 지운 밝은 면(흰 옆판 등)을 원본 색으로 되살릴 수 있다
+    const orig = s.raw ? "data:image/png;base64," + readFileSync(src).toString("base64") : null;
     // 1200x900 캔버스. 바탕은 검정에 가까운 회색, 가운데 아래쪽에 은은한 빛. 상품은 폭 78% 안에, 바닥에 희미한 그림자.
-    const webp = await page.evaluate(async (dataUrl) => {
-      const img = new Image(); img.src = dataUrl; await img.decode();
+    const webp = await page.evaluate(async ({ dataUrl, origUrl }) => {
+      let img = new Image(); img.src = dataUrl; await img.decode();
+      if (origUrl) {
+        const o = new Image(); o.src = origUrl; await o.decode();
+        if (o.width === img.width && o.height === img.height) {
+          const w = img.width, h = img.height;
+          const cc = document.createElement("canvas"); cc.width = w; cc.height = h; const cg = cc.getContext("2d"); cg.drawImage(img, 0, 0);
+          const oc = document.createElement("canvas"); oc.width = w; oc.height = h; const og = oc.getContext("2d"); og.drawImage(o, 0, 0);
+          const cd = cg.getImageData(0, 0, w, h), od = og.getImageData(0, 0, w, h).data, a = cd.data;
+          // 배경색: 네 모서리 근처의 평균
+          let br = 0, bgc = 0, bb = 0, bn = 0;
+          for (const [sx, sy] of [[4, 4], [w - 24, 4], [4, h - 24], [w - 24, h - 24]]) for (let y = sy; y < sy + 20; y++) for (let x = sx; x < sx + 20; x++) { const i = (y * w + x) * 4; br += od[i]; bgc += od[i + 1]; bb += od[i + 2]; bn++; }
+          br /= bn; bgc /= bn; bb /= bn;
+          // 또렷이 남은 부분의 경계 상자 안에서만, 배경보다 뚜렷이 밝은데 지워진 점을 되살린다(그림자는 배경보다 어두우므로 건드리지 않는다)
+          let x0 = w, y0 = h, x1 = 0, y1 = 0;
+          for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) if (a[(y * w + x) * 4 + 3] > 200) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+          for (let y = y0; y <= y1; y++) for (let x = x0; x <= x1; x++) {
+            const i = (y * w + x) * 4;
+            if (a[i + 3] > 245) continue;
+            if (od[i] - br > 60 && od[i + 1] - bgc > 60 && od[i + 2] - bb > 60) { a[i] = od[i]; a[i + 1] = od[i + 1]; a[i + 2] = od[i + 2]; a[i + 3] = 255; }
+          }
+          cg.putImageData(cd, 0, 0);
+          img = cc;
+        }
+      }
       const W = 1200, H = 900; const c = document.createElement("canvas"); c.width = W; c.height = H; const g = c.getContext("2d");
       const bg = g.createRadialGradient(W / 2, H * 0.62, 40, W / 2, H * 0.62, W * 0.75);
       bg.addColorStop(0, "#2b2b2b"); bg.addColorStop(0.55, "#161616"); bg.addColorStop(1, "#0a0a0a");
@@ -57,7 +83,7 @@ for (const [id, s] of jobs) {
       g.save(); g.scale(1, 0.22); g.fillStyle = sh; g.fillRect(0, (dy + dh) / 0.22 - dw * 0.6, W, dw * 1.2); g.restore();
       g.drawImage(img, x0, y0, bw, bh, dx, dy, dw, dh);
       return c.toDataURL("image/webp", 0.84).split(",")[1];
-    }, "data:image/png;base64," + png);
+    }, { dataUrl: "data:image/png;base64," + png, origUrl: orig });
     if (!webp) { console.log(id, "cutout empty"); continue; }
     writeFileSync(target, Buffer.from(webp, "base64"));
     studio[id] = `studio-${base}.webp`;

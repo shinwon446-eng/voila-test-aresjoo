@@ -1,3 +1,4 @@
+// 이 파일의 BOXES 는 옛 박스(사다리 방식)만이다. 새 카탈로그의 박스(실물 전용)는 tests/physical.test.ts 가 본다
 // 실물 상품 데이터셋 무결성 테스트
 //   npm test
 import { CATEGORIES_V2 } from "../lib/catalogTypes";
@@ -10,7 +11,8 @@ test("published probability labels retain every configured decimal place", () =>
 });
 import { readFileSync } from "node:fs";
 import {
-  BOXES,
+  LEGACY_BOXES as BOXES,
+  BOXES as ALL_BOXES,
   BOX_BY_SLUG,
   CATEGORY_FILTERS,
   REFUND_RATE,
@@ -41,7 +43,8 @@ test("박스 12종 이상, slug 고유", () => {
   assert.ok(BOXES.length >= 12, `박스 ${BOXES.length}종`);
   const slugs = BOXES.map((b) => b.slug);
   assert.equal(new Set(slugs).size, slugs.length, "slug 중복");
-  assert.equal(Object.keys(BOX_BY_SLUG).length, BOXES.length);
+  assert.equal(Object.keys(BOX_BY_SLUG).length, ALL_BOXES.length);
+  assert.equal(new Set(ALL_BOXES.map((b) => b.slug)).size, ALL_BOXES.length, "새 카탈로그까지 합쳐도 slug 가 겹치지 않는다");
 });
 
 test("박스마다 항목 7종 이상, item id 는 박스 안에서 고유 (기프트카드·캐시백은 박스 간 공유)", () => {
@@ -222,7 +225,7 @@ test("카테고리는 필터 목록 안의 값만 쓰고, 필터마다 결과가
   const allowed = new Set<string>([...keys, ...CATEGORIES_V2]);
   for (const b of BOXES) assert.ok(allowed.has(b.category), `${b.slug}: ${b.category}`);
   for (const k of keys) assert.ok(byCategory(k).length > 0, `빈 카테고리: ${k}`);
-  assert.equal(byCategory("all").length, BOXES.length);
+  assert.equal(byCategory("all").length, ALL_BOXES.length);
 });
 
 test("이미지 경로는 데이터가 아니라 productImages 가 쥔다", () => {

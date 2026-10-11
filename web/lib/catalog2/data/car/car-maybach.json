@@ -1,0 +1,20 @@
+{ "slug": "car-maybach", "items": [
+["car-maybach-s-580-4matic", "메르세데스-마이바흐 S 580 4MATIC", "Mercedes-Maybach S 580 4MATIC", "梅赛德斯-迈巴赫 S 580 4MATIC", 203000],
+["car-maybach-s-680-4matic", "메르세데스-마이바흐 S 680 4MATIC", "Mercedes-Maybach S 680 4MATIC", "梅赛德斯-迈巴赫 S 680 4MATIC", 240800],
+["car-maybach-gls-600-4matic", "메르세데스-마이바흐 GLS 600 4MATIC", "Mercedes-Maybach GLS 600 4MATIC", "梅赛德斯-迈巴赫 GLS 600 4MATIC", 178900],
+["car-maybach-eqs-680-suv", "메르세데스-마이바흐 EQS 680 SUV", "Mercedes-Maybach EQS 680 SUV", "梅赛德斯-迈巴赫 EQS 680 SUV", 179900],
+["car-maybach-sl-680-monogram-series", "메르세데스-마이바흐 SL 680 모노그램 시리즈", "Mercedes-Maybach SL 680 Monogram Series", "梅赛德斯-迈巴赫 SL 680 Monogram Series", 226000],
+["car-maybach-s-580-4matic-2021", "메르세데스-마이바흐 S 580 4MATIC (2021)", "Mercedes-Maybach S 580 4MATIC (2021)", "梅赛德斯-迈巴赫 S 580 4MATIC (2021)", 184900],
+["car-maybach-gls-600-4matic-2021", "메르세데스-마이바흐 GLS 600 4MATIC (2021)", "Mercedes-Maybach GLS 600 4MATIC (2021)", "梅赛德斯-迈巴赫 GLS 600 4MATIC (2021)", 160500],
+["car-maybach-s-560-4matic-2020", "메르세데스-마이바흐 S 560 4MATIC (2020)", "Mercedes-Maybach S 560 4MATIC (2020)", "梅赛德斯-迈巴赫 S 560 4MATIC (2020)", 173000],
+["car-maybach-s-650-2020", "메르세데스-마이바흐 S 650 (2020)", "Mercedes-Maybach S 650 (2020)", "梅赛德斯-迈巴赫 S 650 (2020)", 202550],
+["car-maybach-s-600-2017", "메르세데스-마이바흐 S 600 (2017)", "Mercedes-Maybach S 600 (2017)", "梅赛德斯-迈巴赫 S 600 (2017)", 191300],
+["car-maybach-s-650-cabriolet-2017", "메르세데스-마이바흐 S 650 카브리올레 (2017)", "Mercedes-Maybach S 650 Cabriolet (2017)", "梅赛德斯-迈巴赫 S 650 Cabriolet (2017)", 335000],
+["car-maybach-g-650-landaulet-2018", "메르세데스-마이바흐 G 650 랜덜렛 (2018)", "Mercedes-Maybach G 650 Landaulet (2018)", "梅赛德斯-迈巴赫 G 650 Landaulet (2018)", 750000],
+["car-maybach-s-600-pullman-2016", "메르세데스-마이바흐 S 600 풀만 (2016)", "Mercedes-Maybach S 600 Pullman (2016)", "梅赛德斯-迈巴赫 S 600 Pullman (2016)", 570000],
+["car-maybach-57-2012", "마이바흐 57 (2012)", "Maybach 57 (2012)", "迈巴赫 57 (2012)", 379050],
+["car-maybach-57-s-2012", "마이바흐 57 S (2012)", "Maybach 57 S (2012)", "迈巴赫 57 S (2012)", 417750],
+["car-maybach-62-2012", "마이바흐 62 (2012)", "Maybach 62 (2012)", "迈巴赫 62 (2012)", 430450],
+["car-maybach-62-s-2012", "마이바흐 62 S (2012)", "Maybach 62 S (2012)", "迈巴赫 62 S (2012)", 470750],
+["car-maybach-62-landaulet-2012", "마이바흐 62 랜덜렛 (2012)", "Maybach 62 Landaulet (2012)", "迈巴赫 62 Landaulet (2012)", 1382750]
+], "use": [] }

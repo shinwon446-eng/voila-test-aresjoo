@@ -5,7 +5,7 @@
  * "총 누적 지급액", "조작 적발 0건", "평균 출고 24시간" 같은 운영 실적은 우리가 가진 적이 없으므로
  * 지어내지 않는다(부록 C), live 모드에서 백엔드가 실적을 주면 그 값이 이 자리에 들어간다.
  */
-import { BOXES, dropTable, floorRatio, retailReturn } from "@/lib/products";
+import { LEGACY_BOXES as BOXES, dropTable, floorRatio, retailReturn } from "@/lib/products";
 import { REFUND_RATE } from "@/lib/types";
 
 /** 즉시 회수 비율, 실제로 지급되는 비율(95%). 정책이자 코드가 쓰는 값이다. */

@@ -1,10 +1,11 @@
+// 이 파일의 BOXES 는 옛 박스(사다리 방식)만이다. 새 카탈로그의 박스(실물 전용)는 tests/physical.test.ts 가 본다
 // 3개 언어 딕셔너리 — 키 완전 일치 + 지정 문구 + 언어 혼선 없음
 //   npm test
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { BOXES } from "../lib/products";
+import { LEGACY_BOXES as BOXES } from "../lib/products";
 
 type Dict = Record<string, unknown>;
 const load = (l: string): Dict => JSON.parse(readFileSync(join(process.cwd(), "messages", `${l}.json`), "utf8"));

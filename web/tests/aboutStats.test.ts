@@ -1,3 +1,4 @@
+// 이 파일의 BOXES 는 옛 박스(사다리 방식)만이다. 새 카탈로그의 박스(실물 전용)는 tests/physical.test.ts 가 본다
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
@@ -14,7 +15,7 @@ import {
   rtpRangePct,
   totalJackpotValueUsdt,
 } from "../lib/aboutStats";
-import { BOXES, dropTable, retailReturn } from "../lib/products";
+import { LEGACY_BOXES as BOXES, dropTable, retailReturn } from "../lib/products";
 
 test("잭팟 총액은 각 박스 최고 상품 가치의 합 — 지어낸 값이 아니다", () => {
   const manual = +BOXES.reduce((s, b) => s + dropTable(b)[0].value, 0).toFixed(2);

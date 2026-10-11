@@ -1,8 +1,9 @@
+// 이 파일의 BOXES 는 옛 박스(사다리 방식)만이다. 새 카탈로그의 박스(실물 전용)는 tests/physical.test.ts 가 본다
 // 터짐 게이지(lib/burst)와 그것을 장부에 쓰는 구매 모듈(lib/opening)의 규칙.
 import test from "node:test";
 import assert from "node:assert/strict";
 import { BURST, EMPTY_POT, burstGauge, burstPayout, burstSeed, burstStep, potAfterOpen } from "../lib/burst";
-import { BOXES, cashReturn, sellValueOf, type ProductBox } from "../lib/products";
+import { LEGACY_BOXES as BOXES, cashReturn, sellValueOf, type ProductBox } from "../lib/products";
 import { createOpeningPurchase } from "../lib/opening";
 import { useWalletStore } from "../stores/walletStore";
 import { useInventoryStore } from "../stores/inventoryStore";

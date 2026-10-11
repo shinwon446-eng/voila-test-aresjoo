@@ -1,0 +1,281 @@
+{
+ "slug": "car-bentley",
+ "items": [
+  [
+   "car-bentley-continental-gt-speed",
+   "벤틀리 컨티넨탈 GT 스피드",
+   "Bentley Continental GT Speed",
+   "宾利欧陆 GT Speed",
+   302100
+  ],
+  [
+   "car-bentley-continental-gtc-speed",
+   "벤틀리 컨티넨탈 GTC 스피드",
+   "Bentley Continental GTC Speed",
+   "宾利欧陆 GTC Speed",
+   332200
+  ],
+  [
+   "car-bentley-continental-gt-mulliner",
+   "벤틀리 컨티넨탈 GT 뮬리너",
+   "Bentley Continental GT Mulliner",
+   "宾利欧陆 GT Mulliner",
+   350000
+  ],
+  [
+   "car-bentley-continental-gtc-mulliner",
+   "벤틀리 컨티넨탈 GTC 뮬리너",
+   "Bentley Continental GTC Mulliner",
+   "宾利欧陆 GTC Mulliner",
+   382000
+  ],
+  [
+   "car-bentley-continental-gt-v8-2024",
+   "벤틀리 컨티넨탈 GT V8 (2024)",
+   "Bentley Continental GT V8 (2024)",
+   "宾利欧陆 GT V8 (2024)",
+   245000
+  ],
+  [
+   "car-bentley-continental-gt-s-2024",
+   "벤틀리 컨티넨탈 GT S (2024)",
+   "Bentley Continental GT S (2024)",
+   "宾利欧陆 GT S (2024)",
+   281000
+  ],
+  [
+   "car-bentley-continental-gt-azure-2024",
+   "벤틀리 컨티넨탈 GT 아주르 (2024)",
+   "Bentley Continental GT Azure (2024)",
+   "宾利欧陆 GT Azure (2024)",
+   287000
+  ],
+  [
+   "car-bentley-continental-gt-speed-w12-2024",
+   "벤틀리 컨티넨탈 GT 스피드 W12 (2024)",
+   "Bentley Continental GT Speed W12 (2024)",
+   "宾利欧陆 GT Speed W12 (2024)",
+   305000
+  ],
+  [
+   "car-bentley-continental-gtc-v8-2024",
+   "벤틀리 컨티넨탈 GTC V8 (2024)",
+   "Bentley Continental GTC V8 (2024)",
+   "宾利欧陆 GTC V8 (2024)",
+   270000
+  ],
+  [
+   "car-bentley-flying-spur-speed",
+   "벤틀리 플라잉스퍼 스피드",
+   "Bentley Flying Spur Speed",
+   "宾利飞驰 Speed",
+   276450
+  ],
+  [
+   "car-bentley-flying-spur-mulliner",
+   "벤틀리 플라잉스퍼 뮬리너",
+   "Bentley Flying Spur Mulliner",
+   "宾利飞驰 Mulliner",
+   330000
+  ],
+  [
+   "car-bentley-flying-spur-v8-2024",
+   "벤틀리 플라잉스퍼 V8 (2024)",
+   "Bentley Flying Spur V8 (2024)",
+   "宾利飞驰 V8 (2024)",
+   216000
+  ],
+  [
+   "car-bentley-flying-spur-hybrid-2024",
+   "벤틀리 플라잉스퍼 하이브리드 (2024)",
+   "Bentley Flying Spur Hybrid (2024)",
+   "宾利飞驰 Hybrid (2024)",
+   217000
+  ],
+  [
+   "car-bentley-flying-spur-s-2024",
+   "벤틀리 플라잉스퍼 S (2024)",
+   "Bentley Flying Spur S (2024)",
+   "宾利飞驰 S (2024)",
+   246000
+  ],
+  [
+   "car-bentley-flying-spur-azure-2024",
+   "벤틀리 플라잉스퍼 아주르 (2024)",
+   "Bentley Flying Spur Azure (2024)",
+   "宾利飞驰 Azure (2024)",
+   254000
+  ],
+  [
+   "car-bentley-bentayga-v8",
+   "벤틀리 벤테이가 V8",
+   "Bentley Bentayga V8",
+   "宾利添越 V8",
+   205000
+  ],
+  [
+   "car-bentley-bentayga-hybrid",
+   "벤틀리 벤테이가 하이브리드",
+   "Bentley Bentayga Hybrid",
+   "宾利添越 Hybrid",
+   206000
+  ],
+  [
+   "car-bentley-bentayga-s",
+   "벤틀리 벤테이가 S",
+   "Bentley Bentayga S",
+   "宾利添越 S",
+   238000
+  ],
+  [
+   "car-bentley-bentayga-azure",
+   "벤틀리 벤테이가 아주르",
+   "Bentley Bentayga Azure",
+   "宾利添越 Azure",
+   240000
+  ],
+  [
+   "car-bentley-bentayga-ewb",
+   "벤틀리 벤테이가 EWB",
+   "Bentley Bentayga EWB",
+   "宾利添越 EWB 长轴距版",
+   231000
+  ],
+  [
+   "car-bentley-bentayga-ewb-azure",
+   "벤틀리 벤테이가 EWB 아주르",
+   "Bentley Bentayga EWB Azure",
+   "宾利添越 EWB Azure",
+   266000
+  ],
+  [
+   "car-bentley-bentayga-ewb-mulliner",
+   "벤틀리 벤테이가 EWB 뮬리너",
+   "Bentley Bentayga EWB Mulliner",
+   "宾利添越 EWB Mulliner",
+   310000
+  ],
+  [
+   "car-bentley-mulsanne-2020",
+   "벤틀리 뮬산 (2020)",
+   "Bentley Mulsanne (2020)",
+   "宾利慕尚 (2020)",
+   310800
+  ],
+  [
+   "car-bentley-mulsanne-speed-2020",
+   "벤틀리 뮬산 스피드 (2020)",
+   "Bentley Mulsanne Speed (2020)",
+   "宾利慕尚 Speed (2020)",
+   342300
+  ],
+  [
+   "car-bentley-mulliner-bacalar",
+   "벤틀리 뮬리너 바칼라",
+   "Bentley Mulliner Bacalar",
+   "宾利 Mulliner Bacalar",
+   1900000
+  ],
+  [
+   "car-bentley-mulliner-batur",
+   "벤틀리 뮬리너 바투르",
+   "Bentley Mulliner Batur",
+   "宾利 Mulliner Batur",
+   2100000
+  ],
+  [
+   "car-bentley-blower-jnr",
+   "벤틀리 블로워 주니어",
+   "Bentley Blower Jnr",
+   "宾利 Blower Jnr",
+   115000
+  ],
+  [
+   "car-bentley-naim-mu-so-special-edition",
+   "네임 뮤조 포 벤틀리 스페셜 에디션",
+   "Naim Mu-so for Bentley Special Edition",
+   "Naim Mu-so for Bentley 特别版音响",
+   2299
+  ],
+  [
+   "car-bentley-6-in-1-stroller-trike",
+   "벤틀리 6인1 유모차 트라이크",
+   "Bentley 6-in-1 Stroller Trike",
+   "宾利六合一儿童三轮推车",
+   549
+  ]
+ ],
+ "use": [
+  "car-p-wd-40-smart-straw-12oz",
+  "car-p-meguiars-quik-detailer-a3324",
+  "car-p-meguiars-x2020",
+  "car-p-meguiars-water-magnet-x2000",
+  "car-p-chemical-guys-mr-pink-16oz",
+  "car-p-chemical-guys-vrp-16oz",
+  "car-p-meguiars-g7164",
+  "car-p-griots-speed-shine-22oz",
+  "car-p-meguiars-ultimate-wash-wax-48oz",
+  "car-p-adams-detail-spray-16oz",
+  "car-p-mothers-california-gold-paste-12oz",
+  "car-p-303-aerospace-protectant-16oz",
+  "car-p-turtle-wax-hybrid-ceramic-spray-16oz",
+  "car-p-kn-99-5000",
+  "car-p-rain-x-latitude-22",
+  "car-p-chemical-guys-butter-wet-wax-16oz",
+  "car-p-yakima-highroad",
+  "car-p-bfgoodrich-ko2-265-70r17",
+  "car-p-logitech-g29",
+  "car-p-segway-ninebot-e2-plus",
+  "car-p-uniden-r3",
+  "car-p-jl-audio-12w3v3-4",
+  "car-p-milwaukee-2967-20",
+  "car-p-graco-4ever-dlx",
+  "car-p-innova-5610",
+  "car-p-sony-xav-ax3200",
+  "car-p-enkei-rpf1-17x9",
+  "car-p-viofo-a229-pro-2ch",
+  "car-p-garmin-drivesmart-86",
+  "car-p-grizzl-e-classic-40a",
+  "car-p-traxxas-maxx",
+  "car-p-clek-foonf",
+  "car-p-garmin-zumo-xt2",
+  "car-p-sony-xav-ax6000",
+  "car-p-shoei-rf-1400",
+  "car-p-vossen-hf-5-20x9",
+  "car-p-shoei-x-fifteen",
+  "car-p-lectric-xp-3-0",
+  "car-p-arai-corsair-x",
+  "car-p-fanatec-clubsport-dd-plus",
+  "car-p-garmin-catalyst",
+  "car-p-logitech-g-pro-racing-wheel",
+  "car-p-yamaha-pw50",
+  "car-p-aventon-aventure-2",
+  "car-p-honda-navi",
+  "car-p-rad-radrunner-3-plus",
+  "car-p-thule-vector-alpine",
+  "car-p-kawasaki-klx110r",
+  "car-p-ikamper-skycamp-3-0",
+  "car-p-dualtron-thunder-3",
+  "car-p-honda-monkey",
+  "car-p-vespa-primavera-50",
+  "car-p-gazelle-ultimate-c380-hmb",
+  "car-p-honda-rebel-300",
+  "car-p-can-am-ryker-600",
+  "car-p-ducati-scrambler-icon",
+  "car-p-harley-davidson-nightster",
+  "car-p-kawasaki-z900",
+  "car-p-yamaha-mt-09",
+  "car-p-yamaha-tenere-700",
+  "car-p-nissan-versa-s",
+  "car-p-kawasaki-ninja-zx-10r",
+  "car-p-yamaha-yzf-r1",
+  "car-p-suzuki-hayabusa",
+  "car-p-harley-davidson-pan-america-1250-special",
+  "car-p-chevrolet-trax-ls",
+  "car-p-nissan-z-sport",
+  "car-p-harley-davidson-cvo-road-glide",
+  "car-p-polaris-rzr-pro-r-ultimate",
+  "car-p-ducati-panigale-v4-r",
+  "car-p-ducati-superleggera-v4"
+ ]
+}

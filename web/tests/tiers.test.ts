@@ -1,8 +1,9 @@
+// 이 파일의 BOXES 는 옛 박스(사다리 방식)만이다. 새 카탈로그의 박스(실물 전용)는 tests/physical.test.ts 가 본다
 // 등급 체계 무결성 테스트 — 가치(Value) 축 단일화
 //   npm test
 import test from "node:test";
 import assert from "node:assert/strict";
-import { BOXES, dropTable, isValueGuaranteed } from "../lib/products";
+import { LEGACY_BOXES as BOXES, dropTable, isValueGuaranteed } from "../lib/products";
 import {
   TIERS,
   TIER_BY_KEY,

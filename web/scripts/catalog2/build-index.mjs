@@ -118,7 +118,7 @@ function main() {
     for (const entry of manifest.filter((m) => m.category === c && (!only || m.slug === only))) {
       const result = checkBox(entry, pool);
       if (result.missing) { report.missing++; if (verbose) console.log(`  ${entry.slug}: 아직 없다`); continue; }
-      if (result.ok && poolOk) { report.ok++; boxes.push(result.box); if (verbose) console.log(`  ${entry.slug}: 통과 ${JSON.stringify(result.stats)}`); }
+      if (result.ok && poolOk) { report.ok++; boxes.push({ slug: entry.slug, category: entry.category, brand: entry.brand, title: entry.title, titleEn: entry.titleEn, titleZh: entry.titleZh, price: entry.price, order: manifest.indexOf(entry), items: result.box.items, use: result.box.use }); if (verbose) console.log(`  ${entry.slug}: 통과 ${JSON.stringify(result.stats)}`); }
       else { report.bad++; console.log(`  ${entry.slug}: 문제 ${result.errors.length}${poolOk ? "" : " (공통 상품에 문제가 있다)"}`); for (const e of result.errors.slice(0, verbose ? 40 : 4)) console.log("     " + e); }
     }
   }

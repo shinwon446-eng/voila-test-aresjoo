@@ -1,0 +1,239 @@
+{
+ "slug": "car-rolls-royce",
+ "items": [
+  [
+   "car-rolls-royce-phantom-series-ii",
+   "롤스로이스 팬텀 시리즈 II",
+   "Rolls-Royce Phantom Series II",
+   "劳斯莱斯幻影 Series II",
+   505750
+  ],
+  [
+   "car-rolls-royce-phantom-extended-series-ii",
+   "롤스로이스 팬텀 익스텐디드 시리즈 II",
+   "Rolls-Royce Phantom Extended Series II",
+   "劳斯莱斯幻影长轴距版 Series II",
+   590750
+  ],
+  [
+   "car-rolls-royce-ghost-series-ii",
+   "롤스로이스 고스트 시리즈 II",
+   "Rolls-Royce Ghost Series II",
+   "劳斯莱斯古思特 Series II",
+   357750
+  ],
+  [
+   "car-rolls-royce-ghost-extended-series-ii",
+   "롤스로이스 고스트 익스텐디드 시리즈 II",
+   "Rolls-Royce Ghost Extended Series II",
+   "劳斯莱斯古思特长轴距版 Series II",
+   397750
+  ],
+  [
+   "car-rolls-royce-black-badge-ghost-series-ii",
+   "롤스로이스 블랙 배지 고스트 시리즈 II",
+   "Rolls-Royce Black Badge Ghost Series II",
+   "劳斯莱斯古思特 Black Badge Series II",
+   432750
+  ],
+  [
+   "car-rolls-royce-cullinan-series-ii",
+   "롤스로이스 컬리넌 시리즈 II",
+   "Rolls-Royce Cullinan Series II",
+   "劳斯莱斯库里南 Series II",
+   407750
+  ],
+  [
+   "car-rolls-royce-black-badge-cullinan-series-ii",
+   "롤스로이스 블랙 배지 컬리넌 시리즈 II",
+   "Rolls-Royce Black Badge Cullinan Series II",
+   "劳斯莱斯库里南 Black Badge Series II",
+   472750
+  ],
+  [
+   "car-rolls-royce-spectre",
+   "롤스로이스 스펙터",
+   "Rolls-Royce Spectre",
+   "劳斯莱斯闪灵",
+   422750
+  ],
+  [
+   "car-rolls-royce-black-badge-spectre",
+   "롤스로이스 블랙 배지 스펙터",
+   "Rolls-Royce Black Badge Spectre",
+   "劳斯莱斯闪灵 Black Badge",
+   490000
+  ],
+  [
+   "car-rolls-royce-ghost-2024",
+   "롤스로이스 고스트 (2024)",
+   "Rolls-Royce Ghost (2024)",
+   "劳斯莱斯古思特 (2024)",
+   354750
+  ],
+  [
+   "car-rolls-royce-ghost-extended-2024",
+   "롤스로이스 고스트 익스텐디드 (2024)",
+   "Rolls-Royce Ghost Extended (2024)",
+   "劳斯莱斯古思特长轴距版 (2024)",
+   393750
+  ],
+  [
+   "car-rolls-royce-black-badge-ghost-2024",
+   "롤스로이스 블랙 배지 고스트 (2024)",
+   "Rolls-Royce Black Badge Ghost (2024)",
+   "劳斯莱斯古思特 Black Badge (2024)",
+   409250
+  ],
+  [
+   "car-rolls-royce-cullinan-2024",
+   "롤스로이스 컬리넌 (2024)",
+   "Rolls-Royce Cullinan (2024)",
+   "劳斯莱斯库里南 (2024)",
+   391750
+  ],
+  [
+   "car-rolls-royce-black-badge-cullinan-2024",
+   "롤스로이스 블랙 배지 컬리넌 (2024)",
+   "Rolls-Royce Black Badge Cullinan (2024)",
+   "劳斯莱斯库里南 Black Badge (2024)",
+   444750
+  ],
+  [
+   "car-rolls-royce-wraith-2023",
+   "롤스로이스 레이스 (2023)",
+   "Rolls-Royce Wraith (2023)",
+   "劳斯莱斯魅影 (2023)",
+   343350
+  ],
+  [
+   "car-rolls-royce-black-badge-wraith-2023",
+   "롤스로이스 블랙 배지 레이스 (2023)",
+   "Rolls-Royce Black Badge Wraith (2023)",
+   "劳斯莱斯魅影 Black Badge (2023)",
+   395000
+  ],
+  [
+   "car-rolls-royce-dawn-2023",
+   "롤스로이스 던 (2023)",
+   "Rolls-Royce Dawn (2023)",
+   "劳斯莱斯曜影 (2023)",
+   368850
+  ],
+  [
+   "car-rolls-royce-black-badge-dawn-2023",
+   "롤스로이스 블랙 배지 던 (2023)",
+   "Rolls-Royce Black Badge Dawn (2023)",
+   "劳斯莱斯曜影 Black Badge (2023)",
+   420000
+  ],
+  [
+   "car-rolls-royce-champagne-chest",
+   "롤스로이스 샴페인 체스트",
+   "Rolls-Royce Champagne Chest",
+   "劳斯莱斯香槟箱",
+   47000
+  ],
+  [
+   "car-rolls-royce-wraith-luggage-collection",
+   "롤스로이스 레이스 러기지 컬렉션",
+   "Rolls-Royce Wraith Luggage Collection",
+   "劳斯莱斯魅影行李箱系列",
+   45854
+  ],
+  [
+   "car-rolls-royce-pursuit-seat",
+   "롤스로이스 퍼슈트 시트",
+   "Rolls-Royce Pursuit Seat",
+   "劳斯莱斯 Pursuit Seat 手杖椅",
+   8800
+  ],
+  [
+   "car-rolls-royce-umbrella",
+   "롤스로이스 도어 우산",
+   "Rolls-Royce Door Umbrella",
+   "劳斯莱斯车门雨伞",
+   700
+  ]
+ ],
+ "use": [
+  "car-p-armor-all-original-wipes-30",
+  "car-p-invisible-glass-22oz",
+  "car-p-little-trees-black-ice-6",
+  "car-p-rain-x-original-7oz",
+  "car-p-meguiars-hot-rims-g9524",
+  "car-p-mothers-back-to-black-8oz",
+  "car-p-turtle-wax-super-hard-shell-paste",
+  "car-p-wd-40-smart-straw-12oz",
+  "car-p-meguiars-quik-detailer-a3324",
+  "car-p-meguiars-x2020",
+  "car-p-meguiars-water-magnet-x2000",
+  "car-p-chemical-guys-mr-pink-16oz",
+  "car-p-chemical-guys-vrp-16oz",
+  "car-p-meguiars-g7164",
+  "car-p-griots-speed-shine-22oz",
+  "car-p-meguiars-ultimate-wash-wax-48oz",
+  "car-p-garmin-dash-cam-67w",
+  "car-p-meguiars-mt300",
+  "car-p-vantrue-n4",
+  "car-p-bell-qualifier-dlx-mips",
+  "car-p-rockford-fosgate-p300-12",
+  "car-p-thule-wingbar-evo",
+  "car-p-optima-redtop-34-78",
+  "car-p-yakima-highroad",
+  "car-p-bfgoodrich-ko2-265-70r17",
+  "car-p-logitech-g29",
+  "car-p-segway-ninebot-e2-plus",
+  "car-p-uniden-r3",
+  "car-p-jl-audio-12w3v3-4",
+  "car-p-milwaukee-2967-20",
+  "car-p-chargepoint-home-flex",
+  "car-p-rupes-lhr15-mark-iii",
+  "car-p-agv-k6-s",
+  "car-p-nuna-rava",
+  "car-p-michelin-ps4s-315-30zr21",
+  "car-p-playseat-trophy",
+  "car-p-arai-regent-x",
+  "car-p-alpinestars-tech-air-5",
+  "car-p-escort-redline-360c",
+  "car-p-thule-force-xt-l",
+  "car-p-yakima-skybox-16-carbonite",
+  "car-p-segway-ninebot-zt3-pro",
+  "car-p-thule-t2-pro-xtr-2",
+  "car-p-dometic-cfx3-35",
+  "car-p-shoei-x-fifteen",
+  "car-p-rad-radexpand-5",
+  "car-p-quickjack-5000tl",
+  "car-p-bbs-lm-19x8-5",
+  "car-p-kranzle-k1122tst",
+  "car-p-apollo-city-pro",
+  "car-p-aventon-level-2",
+  "car-p-honda-crf50f",
+  "car-p-yamaha-pw50",
+  "car-p-specialized-turbo-vado-4-0",
+  "car-p-honda-grom",
+  "car-p-kawasaki-z125-pro",
+  "car-p-super73-rx",
+  "car-p-honda-super-cub-c125",
+  "car-p-brompton-electric-c-line-explore",
+  "car-p-segway-superscooter-gt2",
+  "car-p-ikamper-skycamp-3-0",
+  "car-p-honda-rebel-500",
+  "car-p-kawasaki-klr650",
+  "car-p-polaris-sportsman-570",
+  "car-p-vespa-gts-300",
+  "car-p-yamaha-mt-07",
+  "car-p-yamaha-yzf-r7",
+  "car-p-honda-rebel-1100",
+  "car-p-triumph-bonneville-t120",
+  "car-p-ducati-monster",
+  "car-p-indian-scout-bobber",
+  "car-p-honda-africa-twin",
+  "car-p-ducati-panigale-v2",
+  "car-p-harley-davidson-sportster-s",
+  "car-p-honda-cr-v-lx",
+  "car-p-subaru-brz-premium",
+  "car-p-rivian-r1s-dual",
+  "car-p-infiniti-qx80-pure"
+ ]
+}

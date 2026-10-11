@@ -275,9 +275,8 @@ test("컬렉션 이미지는 유효한 로컬 WebP이며 출처와 imageUrl 별�
   }
   // 전면 개편 중 상품을 크게 늘려 사진 수집이 따라오는 중이다. 수집이 끝나면 실물 전체로 올린다.
   assert.ok(have >= 12, `확보 이미지 ${have}장`);
-  // 모든 박스 커버는 이미지가 있어야 한다. 예외: 상품 사진이 아직 없는 박스는 다른 물건 사진을 커버로 쓰지 않는다(DECISION_LOG 사이클 1)
-  const NO_COVER_YET = new Set(["vault-home"]);
-  for (const b of BOXES) if (!NO_COVER_YET.has(b.slug)) assert.ok(b.image.src, `${b.slug}: 커버 이미지 없음`);
+  // 모든 박스 커버는 이미지가 있어야 한다
+  for (const b of BOXES) assert.ok(b.image.src, `${b.slug}: 커버 이미지 없음`);
   // 히어로와 TRENDING 상위는 반드시 이미지가 있어야 한다
   assert.ok(heroBox().image.src, "히어로 이미지 누락");
   for (const b of trending(5)) assert.ok(b.image.src, `${b.slug}: TRENDING 이미지 누락`);

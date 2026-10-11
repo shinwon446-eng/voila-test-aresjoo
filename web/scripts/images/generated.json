@@ -191,6 +191,94 @@
     "file": "bg-ysl-loulou.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-blackvue": {
+    "file": "car-blackvue.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-brompton-t": {
+    "file": "car-brompton-t.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-carplay-adapter": {
+    "file": "car-carplay-adapter.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cover": {
+    "file": "car-cover.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-detail-kit": {
+    "file": "car-detail-kit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-dyson-v12": {
+    "file": "car-dyson-v12.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ev-cable": {
+    "file": "car-ev-cable.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-garmin-dash": {
+    "file": "car-garmin-dash.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-inflator": {
+    "file": "car-inflator.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-karcher": {
+    "file": "car-karcher.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-madone": {
+    "file": "car-madone.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-noco": {
+    "file": "car-noco.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-pioneer": {
+    "file": "car-pioneer.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-rr-cullinan-bb": {
+    "file": "car-rr-cullinan-bb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-rr-phantom": {
+    "file": "car-rr-phantom.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-segway-g3": {
+    "file": "car-segway-g3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-wall": {
+    "file": "car-tesla-wall.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-thule-box": {
+    "file": "car-thule-box.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-thule-rack": {
+    "file": "car-thule-rack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-vanmoof": {
+    "file": "car-vanmoof.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-yeti": {
+    "file": "car-yeti.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-zero-srf": {
+    "file": "car-zero-srf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gd-bar-100g": {
     "file": "gd-bar-100g.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -345,6 +433,166 @@
   },
   "gd-vca-sweet": {
     "file": "gd-vca-sweet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-balmuda-brew": {
+    "file": "hm-balmuda-brew.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-balmuda-kettle": {
+    "file": "hm-balmuda-kettle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-balmuda-lantern": {
+    "file": "hm-balmuda-lantern.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-balmuda-toaster": {
+    "file": "hm-balmuda-toaster.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-bosch-b36": {
+    "file": "hm-bosch-b36.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-coway-airmega400": {
+    "file": "hm-coway-airmega400.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-lg-c6-55": {
+    "file": "hm-lg-c6-55.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-lg-c6-65": {
+    "file": "hm-lg-c6-65.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-lg-g6-65": {
+    "file": "hm-lg-g6-65.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-lg-lrflc2706s": {
+    "file": "hm-lg-lrflc2706s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-lg-washtower": {
+    "file": "hm-lg-washtower.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-lg-wm4000": {
+    "file": "hm-lg-wm4000.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-samsung-combo": {
+    "file": "hm-samsung-combo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-samsung-framepro": {
+    "file": "hm-samsung-framepro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-samsung-rf23": {
+    "file": "hm-samsung-rf23.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-samsung-rf29": {
+    "file": "hm-samsung-rf29.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-samsung-s90f": {
+    "file": "hm-samsung-s90f.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "hm-samsung-s95f": {
+    "file": "hm-samsung-s95f.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-alpinestars-gloves": {
+    "file": "sc-alpinestars-gloves.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-alpinestars-suit": {
+    "file": "sc-alpinestars-suit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-car-care-pro": {
+    "file": "sc-car-care-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-dainese-jacket": {
+    "file": "sc-dainese-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-fanatec-dd": {
+    "file": "sc-fanatec-dd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-garmin-catalyst": {
+    "file": "sc-garmin-catalyst.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-gopro-13": {
+    "file": "sc-gopro-13.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-helmet-arai": {
+    "file": "sc-helmet-arai.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-helmet-shoei": {
+    "file": "sc-helmet-shoei.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-insta360-x5": {
+    "file": "sc-insta360-x5.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-logitech-g-pro": {
+    "file": "sc-logitech-g-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-moza-r9": {
+    "file": "sc-moza-r9.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-playseat": {
+    "file": "sc-playseat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-porsche-911": {
+    "file": "sc-porsche-911.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-porsche-911-gt3": {
+    "file": "sc-porsche-911-gt3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-porsche-911-gts": {
+    "file": "sc-porsche-911-gts.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-porsche-911-turbo-s": {
+    "file": "sc-porsche-911-turbo-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-racing-shoes": {
+    "file": "sc-racing-shoes.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-sim-rig": {
+    "file": "sc-sim-rig.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-tire-pressure": {
+    "file": "sc-tire-pressure.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-toyota-supra": {
+    "file": "sc-toyota-supra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sc-triumph-speed-triple": {
+    "file": "sc-triumph-speed-triple.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   }
 }

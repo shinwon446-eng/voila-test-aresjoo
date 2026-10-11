@@ -119,6 +119,7 @@ const COVER_BY_ITEM: Record<string, string> = {
   "vault-submariner": "wt-gmt-master",
   "vault-gold": "gd-bar-250g",
   "vault-handbag": "bg-birkin-25",
+  "vault-home": "hm-samsung-rf29",
   "dollar-apple": "ap-vision-pro",
   "dollar-galaxy": "gx-fold7-256",
   "dollar-gaming": "gm-ryzen9950x3d",

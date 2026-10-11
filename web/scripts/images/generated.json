@@ -483,6 +483,10 @@
     "file": "audio-yamaha-ns-5000.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-balenciaga-rodeo-medium-handbag": {
+    "file": "bag-balenciaga-rodeo-medium-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-bottega-veneta-sardine-crocodile": {
     "file": "bag-bottega-veneta-sardine-crocodile.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -497,6 +501,10 @@
   },
   "bag-celine-teen-triomphe-bag-niloticus-crocodile": {
     "file": "bag-celine-teen-triomphe-bag-niloticus-crocodile.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-classic-maxi-handbag-grained-calfskin": {
+    "file": "bag-chanel-classic-maxi-handbag-grained-calfskin.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-delvaux-brillant-mini-alligator": {
@@ -559,6 +567,10 @@
     "file": "bag-hermes-kelly-25-himalaya-niloticus-crocodile.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-loewe-large-puzzle-bag": {
+    "file": "bag-loewe-large-puzzle-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-louis-vuitton-capucines-mini-crocodilian": {
     "file": "bag-louis-vuitton-capucines-mini-crocodilian.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -569,6 +581,10 @@
   },
   "bag-louis-vuitton-malle-courrier-lozine-110": {
     "file": "bag-louis-vuitton-malle-courrier-lozine-110.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-miu-miu-pocket-nappa-leather-bag": {
+    "file": "bag-miu-miu-pocket-nappa-leather-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-p-bulgari-serpenti-forever-top-handle-small-crocodile": {
@@ -617,6 +633,10 @@
   },
   "bag-prada-medium-galleria-ostrich-leather-bag": {
     "file": "bag-prada-medium-galleria-ostrich-leather-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-saint-laurent-icare-maxi-shopping-bag": {
+    "file": "bag-saint-laurent-icare-maxi-shopping-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bg-bag-charm": {
@@ -969,6 +989,10 @@
   },
   "camera-p-vision-research-phantom-flex4k": {
     "file": "camera-p-vision-research-phantom-flex4k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-panasonic-lumix-s1h": {
+    "file": "camera-panasonic-lumix-s1h.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "camera-phase-one-xc-23-iq4-150mp": {
@@ -1745,6 +1769,10 @@
   },
   "da-watchse": {
     "file": "da-watchse.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-playstation-playstation-5-pro-2tb": {
+    "file": "gaming-playstation-playstation-5-pro-2tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gd-bar-100g": {
@@ -2531,6 +2559,10 @@
     "file": "hm-zojirushi-ns.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "home-lg-magnit-118": {
+    "file": "home-lg-magnit-118.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-boucheron-pivoine-solitaire-ring-pt-200ct": {
     "file": "jewelry-boucheron-pivoine-solitaire-ring-pt-200ct.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2651,6 +2683,50 @@
     "file": "jewelry-graff-round-dia-line-necklace-pt-2000ct-tw.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-harry-winston-classic-winston-er-tb-pt-200ct": {
+    "file": "jewelry-harry-winston-classic-winston-er-tb-pt-200ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-classic-winston-er-tb-pt-300ct": {
+    "file": "jewelry-harry-winston-classic-winston-er-tb-pt-300ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-rb-dia-line-bracelet-pt-1000ct-tw": {
+    "file": "jewelry-harry-winston-rb-dia-line-bracelet-pt-1000ct-tw.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-winston-cluster-dia-earrings-large-pt": {
+    "file": "jewelry-harry-winston-winston-cluster-dia-earrings-large-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-desert-bloom-multi-row-bangle-wg-dia": {
+    "file": "jewelry-messika-desert-bloom-multi-row-bangle-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-desert-bloom-necklace-wg-dia": {
+    "file": "jewelry-messika-desert-bloom-necklace-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-imperial-move-pave-necklace-rg-dia": {
+    "file": "jewelry-messika-imperial-move-pave-necklace-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-akoya-strand-18in-95x9mm-aaa-18k-wg": {
+    "file": "jewelry-mikimoto-akoya-strand-18in-95x9mm-aaa-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-wss-pearl-strand-18in-15x12mm-a-18k-wg": {
+    "file": "jewelry-mikimoto-wss-pearl-strand-18in-15x12mm-a-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-wss-pearl-strand-18in-16x13mm-aa-18k-wg": {
+    "file": "jewelry-mikimoto-wss-pearl-strand-18in-16x13mm-aa-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-anita-ko-hepburn-choker": {
+    "file": "jewelry-p-anita-ko-hepburn-choker.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-chanel-coco-crush-bracelet": {
     "file": "jewelry-p-chanel-coco-crush-bracelet.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2659,8 +2735,16 @@
     "file": "jewelry-p-chanel-coco-crush-bracelet-full-pave.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-de-beers-arpeggia-five-line-necklace": {
+    "file": "jewelry-p-de-beers-arpeggia-five-line-necklace.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-de-beers-arpeggia-one-line-bracelet": {
     "file": "jewelry-p-de-beers-arpeggia-one-line-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-de-beers-arpeggia-one-line-necklace": {
+    "file": "jewelry-p-de-beers-arpeggia-one-line-necklace.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-de-beers-arpeggia-three-line-bracelet": {
@@ -2689,6 +2773,10 @@
   },
   "jewelry-p-hermes-collier-de-chien-bracelet-diamonds": {
     "file": "jewelry-p-hermes-collier-de-chien-bracelet-diamonds.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-louis-vuitton-empreinte-bangle-pave": {
+    "file": "jewelry-p-louis-vuitton-empreinte-bangle-pave.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-suzanne-kalan-fireworks-tennis-bracelet": {
@@ -2723,6 +2811,18 @@
     "file": "jewelry-repossi-serti-sur-vide-ring-wg-pear-dia-200ct.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-tasaki-akoya-pearl-strand-necklace-90-95mm": {
+    "file": "jewelry-tasaki-akoya-pearl-strand-necklace-90-95mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-black-south-sea-pearl-strand-necklace-10-12mm": {
+    "file": "jewelry-tasaki-black-south-sea-pearl-strand-necklace-10-12mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-south-sea-pearl-strand-necklace-11-14mm": {
+    "file": "jewelry-tasaki-south-sea-pearl-strand-necklace-11-14mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-tiffany-hardwear-graduated-link-necklace-yg-pave-dia": {
     "file": "jewelry-tiffany-hardwear-graduated-link-necklace-yg-pave-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2745,6 +2845,10 @@
   },
   "jewelry-van-cleef-arpels-vintage-alh-long-nk-20-motifs-wg-dia": {
     "file": "jewelry-van-cleef-arpels-vintage-alh-long-nk-20-motifs-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-van-cleef-arpels-vintage-alh-nk-10-motifs-wg-dia": {
+    "file": "jewelry-van-cleef-arpels-vintage-alh-nk-10-motifs-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mb-adapter-70w": {
@@ -2927,6 +3031,10 @@
     "file": "mobile-apple-vision-pro-m5-512gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-google-pixel-10-pro-fold-1tb": {
+    "file": "mobile-google-pixel-10-pro-fold-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-huawei-mate-xt-ultimate-design-16-1tb": {
     "file": "mobile-huawei-mate-xt-ultimate-design-16-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2989,6 +3097,14 @@
   },
   "mobile-p-wacom-mobilestudio-pro-16-gen-2": {
     "file": "mobile-p-wacom-mobilestudio-pro-16-gen-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-samsung-galaxy-z-trifold-512gb": {
+    "file": "mobile-samsung-galaxy-z-trifold-512gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-xiaomi-15-ultra-16-512": {
+    "file": "mobile-xiaomi-15-ultra-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sc-alpinestars-gloves": {
@@ -3099,8 +3215,24 @@
     "file": "sport-p-canyon-aeroad-cfr-di2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-p-cervelo-s5-dura-ace-di2": {
+    "file": "sport-p-cervelo-s5-dura-ace-di2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-p-colnago-c68-road-dura-ace-di2": {
     "file": "sport-p-colnago-c68-road-dura-ace-di2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-p-force-usa-g20-pro": {
+    "file": "sport-p-force-usa-g20-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-p-foresight-gchawk": {
+    "file": "sport-p-foresight-gchawk.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-p-foresight-gcquad": {
+    "file": "sport-p-foresight-gcquad.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-p-foresight-quadmax": {
@@ -3133,6 +3265,10 @@
   },
   "sport-p-scott-addict-rc-ultimate": {
     "file": "sport-p-scott-addict-rc-ultimate.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-p-specialized-tarmac-sl8-expert": {
+    "file": "sport-p-specialized-tarmac-sl8-expert.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-p-specialized-tarmac-sl8-pro": {
@@ -3331,6 +3467,10 @@
     "file": "watch-jaeger-lecoultre-reverso-tribute-gyrotourbillon.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "watch-longines-master-collection-190th-anniversar-gold-l27938732": {
+    "file": "watch-longines-master-collection-190th-anniversar-gold-l27938732.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "watch-omega-de-ville-tourbillon-52953432201001": {
     "file": "watch-omega-de-ville-tourbillon-52953432201001.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -3433,6 +3573,10 @@
   },
   "watch-rolex-day-date-40-platinum-diamond-228396tbr": {
     "file": "watch-rolex-day-date-40-platinum-diamond-228396tbr.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "watch-seiko-prospex-1965-re-creation-sla037": {
+    "file": "watch-seiko-prospex-1965-re-creation-sla037.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "watch-tag-heuer-carrera-chronograph-tourbillo-42mm-cbs5010fc6543": {

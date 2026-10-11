@@ -20,24 +20,31 @@
 - 촬영: `node scripts/capture/opening.mjs <폴더> <이름> --box <slug> --fixture single:<small|near|x2|x5|x15|physicalTop|physicalMid> | seq:<lowLowLowHighHighHigh|tenSmall|smallBigSmall|threeBig|mixed> --cast [--view m360] [--reduced] [--skip] [--balance n]`
 - 녹화 파일(webm)은 못 만든다: Playwright 의 ffmpeg 가 이 PC 에 없고 내려받기는 파운더 허락이 필요하다. 대신 브라우저 화면 전송으로 실제 프레임을 받아 필름 띠와 프레임 폴더를 남긴다.
 
-## 진행 (2026-10-11 낮 기준)
+## 진행 (2026-10-11, 끝)
 - [x] 0 이전 랩 중단
-- [x] 1 기준 진단과 기준 화면 (`opening/BASELINE.md`, `qa/opening/baseline/`)
-- [x] 2 연구 요약 (`opening/RESEARCH.md`. Reddit 넷은 열지 못했다고 적어 둠). Codex 반박은 `opening/DECISIONS.md` 맨 아래에 반영
-- [x] 3 시안 셋 실제 제작과 비교(`qa/opening/proto/`), Codex 라운드 A(`opening/codex/round-a.md`) → 넷째 안 채택
-- [x] 4 채택안 구현(커밋 `9a9292a`, `15cff93`): `components/box/Opening.tsx`, `app/opening.css`, `lib/openingFlow.ts`(톤, 길이, 상태 기계), `lib/openingSettle.ts`, `lib/openingSound.ts`, `stores/openingJournal.ts`(기록장과 복구), `stores/settingsStore.ts`(소리, 짧게 보기, 자동 받기, 지난 방법), `components/box/Reveal.tsx`(여러 개 열기, 같은 상자)
-- [x] 5 확률 모델 셋 계산과 시뮬레이션(`web/scripts/opening/probability.ts` → `opening/PROBABILITY-tables.md`). 남은 것: Codex 검산 결과 반영, 권고를 담은 `opening/PROBABILITY.md` 쓰기
-- [x] 6a 검수 1(구조): `node scripts/capture/opening-qa.mjs ../qa/opening/qa2` 73개 항목 통과. 단위 테스트 302 통과, design-lint 0, tsc 통과
-- [ ] 6b 검수 2(다듬기)와 검수 3(Codex 적대 검수): 라운드 B(구현과 확률, `opening/codex/round-b.md`)와 라운드 C(화면 31장, `opening/codex/round-c.md`)를 돌리는 중. 끝나면 지적마다 결정을 `opening/DECISIONS.md` 반복 2 에 적고 고친 뒤 검수 스크립트를 다시 돌린다
-- [ ] 7 최종 보고 `opening/REPORT.md`(전후 비교, 연구, 흐름, 결과별 화면, 확률 모델, 구현, Codex 비평, 검수 증거, 권고), 보고서용 화면을 `opening/evidence/` 에 골라 올리기(qa 폴더의 PNG 는 .gitignore 로 커밋되지 않는다), main 배포(개발 서버 내리고 build, 끝나면 `rm -rf web/.next` 뒤 preview_start)
+- [x] 1 기준 진단과 기준 화면 (`opening/BASELINE.md`)
+- [x] 2 연구 요약 (`opening/RESEARCH.md`), Codex 반박 반영
+- [x] 3 시안 셋 제작과 비교, Codex 라운드 A → 넷째 안 채택
+- [x] 4 채택안 구현
+- [x] 5 확률 모델 셋 계산과 시뮬레이션, Codex 검산 반영 (`opening/PROBABILITY.md`, `opening/PROBABILITY-tables.md`)
+- [x] 6 검수: 구조(83개 항목), 다듬기, Codex 적대 검수(라운드 B 구현과 확률, 라운드 C 화면 31장) → 반복 2 에서 반영
+- [x] 7 최종 보고 `opening/REPORT.md`, 증거 화면 `opening/evidence/`, main 배포
 
 ## 반복 횟수
-- 반복 1: 시안 셋 → Codex A → 채택안 구현 → 구조 검수. 끝.
-- 반복 2: Codex B, C 반영(진행 중). 한도는 5회.
+- 반복 1: 시안 셋 → Codex A → 채택안 구현 → 구조 검수.
+- 반복 2: Codex B, C 반영(돈과 상태의 결함 수정, 화면 수정) → 재검수. 여기서 멈췄다(한도 5회).
+- 반복 2 의 수정에 대한 Codex 재검수는 받지 않았다. 다시 시작한다면 그것이 첫 일이다.
 
 ## 재는 값(검수 스크립트 s10, 화면 안 시계)
-- 누른 뒤 결과까지 약 0.87초, 다음 행동까지 약 1.2초. 짧게 보기는 0.48초. 프레임 평균 16.7ms, CPU 4배 느리게 18.3ms.
+- 누른 뒤 결과까지 0.89초, 다음 행동까지 1.24초. 짧게 보기는 약 0.5초. 프레임 평균 16.7ms, CPU 4배 느리게 18.0ms.
 
-## 파운더에게 물을 것(막지 않는다)
-- 녹화 파일(webm)을 만들려면 Playwright 의 ffmpeg 를 내려받아야 한다. 허락 전에는 필름 띠로 대신한다.
-- 확률 모델 A, B, C 는 제안이다. 적용하려면 승인이 필요하다.
+## 검수 다시 돌리기
+- 개발 서버(3002)를 띄운 뒤 `cd web && node scripts/capture/opening-qa.mjs ../qa/opening/<폴더>` (83개 항목), `npm test` (306).
+- 필름: `node scripts/capture/opening.mjs ../qa/opening/<폴더> <이름> --fixture single:physicalTop --cast`.
+
+## 파운더가 정할 것 (`opening/REPORT.md` 9)
+- 확률 구조(지금대로 또는 A 출발점), 디지털 기프트카드의 이름, 자금 출처 0.01 반올림, 녹화용 ffmpeg, 상자 그림 자산, 서버 장부.
+
+## 남은 문제
+- 실제 휴대폰과 iOS 사파리, 가로 화면, 큰 글자 확대 미검수. 결과 영역이 넘칠 때 스크롤되지 않는다.
+- 소리와 진동은 오류 없이 도는 것까지만 확인. 상자는 CSS 면 여섯 개(재질 한계).

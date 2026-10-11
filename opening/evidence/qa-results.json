@@ -1,0 +1,497 @@
+{
+ "at": "2026-10-11T04:54:23.837Z",
+ "total": 83,
+ "failed": 0,
+ "results": [
+  {
+   "scenario": "s1",
+   "name": "확인창에서 취소하면 돈이 움직이지 않는다",
+   "pass": true,
+   "detail": "10000 → 10000"
+  },
+  {
+   "scenario": "s1",
+   "name": "50 USDT 박스 작은 결과: 잔액 = 10000 - 50 + 25",
+   "pass": true,
+   "detail": "9975"
+  },
+  {
+   "scenario": "s1",
+   "name": "닫은 뒤 같은 박스 화면에서 실제로 다시 열린다(구매 두 번, 회차 두 번)",
+   "pass": true,
+   "detail": "opens 2 nonce 3"
+  },
+  {
+   "scenario": "s1",
+   "name": "거래 기록과 보관함 기록이 같은 개봉 번호로 이어진다",
+   "pass": true,
+   "detail": "[\"vault-goldx1:op_7f781fce-844a-4793-9eee-a13a21cf4af0\",\"vault-goldx1:op_a0aca14e-d0a3-40f1-9a20-831fb49654c1\"]"
+  },
+  {
+   "scenario": "s1",
+   "name": "콘솔 오류 없음",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "scenario": "s2",
+   "name": "small: 잔액 9999.5",
+   "pass": true,
+   "detail": "9999.5"
+  },
+  {
+   "scenario": "s2",
+   "name": "small: 구매 한 번, 보관함 기록 하나",
+   "pass": true,
+   "detail": "opens 1 items 1"
+  },
+  {
+   "scenario": "s2",
+   "name": "small: 줄었다고 적는다",
+   "pass": true,
+   "detail": "잔액 9,999.5 USDT 받은 금액 0.5 USDT 1 USDT 사용 잔액 0.5 USDT 감소 잔액에 반영했습니다. 나올 확률 50% 한 번 더 열기, 1 "
+  },
+  {
+   "scenario": "s2",
+   "name": "small: 가로 넘침 없음",
+   "pass": true
+  },
+  {
+   "scenario": "s2",
+   "name": "near: 잔액 9999.99",
+   "pass": true,
+   "detail": "9999.99"
+  },
+  {
+   "scenario": "s2",
+   "name": "near: 구매 한 번, 보관함 기록 하나",
+   "pass": true,
+   "detail": "opens 1 items 1"
+  },
+  {
+   "scenario": "s2",
+   "name": "near: 줄었다고 적는다",
+   "pass": true,
+   "detail": "잔액 9,999.99 USDT 받은 금액 0.99 USDT 1 USDT 사용 잔액 0.01 USDT 감소 잔액에 반영했습니다. 나올 확률 17% 한 번 더 열기,"
+  },
+  {
+   "scenario": "s2",
+   "name": "near: 가로 넘침 없음",
+   "pass": true
+  },
+  {
+   "scenario": "s2",
+   "name": "x5: 잔액 10004",
+   "pass": true,
+   "detail": "10004"
+  },
+  {
+   "scenario": "s2",
+   "name": "x5: 구매 한 번, 보관함 기록 하나",
+   "pass": true,
+   "detail": "opens 1 items 1"
+  },
+  {
+   "scenario": "s2",
+   "name": "x5: 늘었다고 적는다",
+   "pass": true,
+   "detail": "잔액 10,004 USDT 받은 금액 5 USDT 1 USDT 사용 잔액 4 USDT 증가 잔액에 반영했습니다. 나올 확률 2.1486% 한 번 더 열기, 1 U"
+  },
+  {
+   "scenario": "s2",
+   "name": "x5: 가로 넘침 없음",
+   "pass": true
+  },
+  {
+   "scenario": "s2",
+   "name": "physicalTop: 잔액 9999",
+   "pass": true,
+   "detail": "9999"
+  },
+  {
+   "scenario": "s2",
+   "name": "physicalTop: 구매 한 번, 보관함 기록 하나",
+   "pass": true,
+   "detail": "opens 1 items 1"
+  },
+  {
+   "scenario": "s2",
+   "name": "physicalTop: 보관 상태와 받는 방법 선택",
+   "pass": true,
+   "detail": "잔액 9,999 USDT VOILA 애플 비전 프로 참고가 3,500 USDT 보관함에 넣었습니다 나올 확률 0.0001%. 1 USDT 사용 받는 방법 선택 한 번 더 열기, 1 USDT 개봉 결"
+  },
+  {
+   "scenario": "s2",
+   "name": "physicalTop: 가로 넘침 없음",
+   "pass": true
+  },
+  {
+   "scenario": "s3",
+   "name": "열기를 연달아 세 번 눌러도 구매는 한 번",
+   "pass": true,
+   "detail": "opens 1 items 1 balance 9999.5"
+  },
+  {
+   "scenario": "s3",
+   "name": "결과가 뜬 직후 0.35초 안의 누름은 다음 구매가 되지 않는다",
+   "pass": true,
+   "detail": "이른 누름 1회, opens 1"
+  },
+  {
+   "scenario": "s3",
+   "name": "잠긴 동안에는 보조 링크(검증, 돌아가기)도 마우스와 키보드로 눌리지 않는다",
+   "pass": true,
+   "detail": "{\"sheets\":0,\"gone\":false,\"still\":true,\"nowSheets\":0}"
+  },
+  {
+   "scenario": "s3",
+   "name": "건너뛰어도 결과와 잔액이 같다(5 USDT, 10004)",
+   "pass": true,
+   "detail": "balance 10004"
+  },
+  {
+   "scenario": "s3",
+   "name": "건너뛰기는 바로 결과로 간다",
+   "pass": true,
+   "detail": "233ms"
+  },
+  {
+   "scenario": "s4",
+   "name": "2 USDT 상품을 1.9 USDT 로 받는다: 잔액 10000 - 1 + 1.9",
+   "pass": true,
+   "detail": "10000.9"
+  },
+  {
+   "scenario": "s4",
+   "name": "받기를 두 번 눌러도 한 번만 더해진다",
+   "pass": true,
+   "detail": "sellbacks 1 status SOLD"
+  },
+  {
+   "scenario": "s4",
+   "name": "받은 뒤 화면이 금액과 차이를 적는다",
+   "pass": true,
+   "detail": "잔액 10,000.9 USDT 받은 금액 1.9 USDT 1 USDT 사용 잔액 0.9 USDT 증가 디지털 기프트카드, 참고가 2 USDT. USDT로 받았습니다. 나올 확률 8.3514% 한 번 더 열기, 1 U"
+  },
+  {
+   "scenario": "s4",
+   "name": "받은 뒤 주 단추는 한 번 더 열기",
+   "pass": true
+  },
+  {
+   "scenario": "s5",
+   "name": "자동 받기 켬: 2 USDT 상품이 자동으로 1.9 USDT",
+   "pass": true,
+   "detail": "balance 10000.9"
+  },
+  {
+   "scenario": "s5",
+   "name": "자동 받기 켬: 낸 값의 20배 이상은 자동으로 받지 않고 보관한다",
+   "pass": true,
+   "detail": "balance 9999 status IN_STORAGE"
+  },
+  {
+   "scenario": "s5",
+   "name": "자동 받기 끔(기본): 상품을 그대로 보관한다",
+   "pass": true,
+   "detail": "balance 9999"
+  },
+  {
+   "scenario": "s5",
+   "name": "자동 받기는 확인을 누르기 전에는 켜지지 않는다",
+   "pass": true,
+   "detail": "false"
+  },
+  {
+   "scenario": "s5",
+   "name": "확인하면 이 계정에만 켜진다",
+   "pass": true,
+   "detail": "[\"capture-account\"]"
+  },
+  {
+   "scenario": "s5",
+   "name": "다른 계정이 켠 자동 받기는 이 계정에 적용되지 않는다",
+   "pass": true,
+   "detail": "balance 9999 status IN_STORAGE"
+  },
+  {
+   "scenario": "s6",
+   "name": "잔액이 모자라면 열기 단추가 충전으로 바뀐다",
+   "pass": true
+  },
+  {
+   "scenario": "s6",
+   "name": "구매 실패: 돈이 움직이지 않고 결과도 없다",
+   "pass": true,
+   "detail": "balance 10000 nonce 1"
+  },
+  {
+   "scenario": "s6",
+   "name": "구매 실패 뒤 다시 누르면 정상으로 열린다",
+   "pass": true,
+   "detail": "balance 9999.5"
+  },
+  {
+   "scenario": "s6",
+   "name": "정산 대기: 받았다고 말하지 않고 잔액도 그대로",
+   "pass": true,
+   "detail": "balance 9999"
+  },
+  {
+   "scenario": "s6",
+   "name": "정산 실패: 상품은 보관함에 그대로, 잔액 그대로",
+   "pass": true,
+   "detail": "balance 9999 status IN_STORAGE"
+  },
+  {
+   "scenario": "s6",
+   "name": "정산 실패 뒤 다시 시도하면 한 번만 더해진다",
+   "pass": true,
+   "detail": "balance 10000.9 sellbacks 1"
+  },
+  {
+   "scenario": "s7",
+   "name": "새로 고친 뒤: 구매는 한 번, 회차도 한 번만 썼다",
+   "pass": true,
+   "detail": "opens 1 nonce 4 balance 10004"
+  },
+  {
+   "scenario": "s7",
+   "name": "못 본 결과: 보관함 기록에 개봉 번호가 있고 아직 본 목록에 없다",
+   "pass": true,
+   "detail": "{\"items\":[{\"id\":\"own_1f575b7e-ca20-48af-9090-5ae50f39e3d0\",\"itemId\":\"wave-drop-500\",\"status\":\"SOLD\",\"openingId\":\"op_ebf65683-5bc1-4e42-ad51-3631c3672833\"}],\"seen\":[]}"
+  },
+  {
+   "scenario": "s7",
+   "name": "다시 보여 준 결과가 처음 정해진 결과와 같다(5 USDT)",
+   "pass": true,
+   "detail": "잔액 10,004 USDT 받은 금액 5 USDT 1 USDT 사용 잔액 4 USDT 증가 잔액에 반영했습니다. 나올 확률 2.1486% 아까 연 박스의 결과입니다. 새로 뽑지 않았습니다. 한 번 더 열기, 1 US"
+  },
+  {
+   "scenario": "s7",
+   "name": "다시 보여 주는 동안 새 구매나 새 회차가 없다",
+   "pass": true,
+   "detail": "opens 1 nonce 4"
+  },
+  {
+   "scenario": "s7",
+   "name": "본 뒤에는 본 목록에 오른다",
+   "pass": true
+  },
+  {
+   "scenario": "s7",
+   "name": "한 번 본 결과는 다시 고쳐도 또 묻지 않는다",
+   "pass": true
+  },
+  {
+   "scenario": "s8",
+   "name": "여섯 번 연속: 구매 여섯 번, 잔액이 매번 맞다",
+   "pass": true,
+   "detail": "balance 9995.5 expect 9995.5"
+  },
+  {
+   "scenario": "s8",
+   "name": "움직임 줄이기: 상자 연출 없이 결과부터",
+   "pass": true,
+   "detail": "127ms box 0"
+  },
+  {
+   "scenario": "s9",
+   "name": "mobile small",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "mobile physicalTop",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "narrow small",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "narrow physicalTop",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "m360 small",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "m360 physicalTop",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "m375 small",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "m375 physicalTop",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "m430 small",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "m430 physicalTop",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "tablet small",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "tablet physicalTop",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "desktop small",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s9",
+   "name": "desktop physicalTop",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"btnVisible\":true,\"btnH\":52,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false}"
+  },
+  {
+   "scenario": "s10",
+   "name": "그대로: 95% 프레임이 34ms 이내",
+   "pass": true,
+   "detail": "프레임 79, 평균 16.7ms, 95% 16.8ms, 최대 16.8ms, 50ms 초과 0회, 결과까지 886ms, 다음 행동까지 1244ms"
+  },
+  {
+   "scenario": "s10",
+   "name": "그대로: 누른 뒤 결과까지 1100ms 이내",
+   "pass": true,
+   "detail": "결과까지 886ms, 다음 행동까지 1244ms"
+  },
+  {
+   "scenario": "s10",
+   "name": "CPU 4배 느리게: 95% 프레임이 34ms 이내",
+   "pass": true,
+   "detail": "프레임 86, 평균 18.2ms, 95% 33.3ms, 최대 66.7ms, 50ms 초과 1회, 결과까지 1047ms, 다음 행동까지 1423ms"
+  },
+  {
+   "scenario": "s10",
+   "name": "CPU 4배 느리게: 누른 뒤 결과까지 1600ms 이내",
+   "pass": true,
+   "detail": "결과까지 1047ms, 다음 행동까지 1423ms"
+  },
+  {
+   "scenario": "s11",
+   "name": "5개 열기: 구매 한 건, 기록 다섯, 잔액이 맞다",
+   "pass": true,
+   "detail": "balance 10002.29 expect 10002.29 items 5"
+  },
+  {
+   "scenario": "s11",
+   "name": "5개 열기: 잔액에 들어온 것과 보관 상품을 나눠 적는다",
+   "pass": true,
+   "detail": "잔액 10,002.29 USDT 5개를 열었습니다 받은 상품은 보관함에 있습니다. 쓴 금액 5 USDT 잔액에 반영 7.29 USDT 보관 상품 1개 참고가 2 USDT 잔액 변화 2.29 USDT 증가 인스턴트 드롭, 잔액 반영 5 USDT 디지털 기프트카드, 보관 중 2 USDT › 즉시 캐시백, 잔"
+  },
+  {
+   "scenario": "s11",
+   "name": "여러 개 결과에서 기프트카드를 1.9 USDT 로 받는다: 잔액과 요약이 함께 바뀐다",
+   "pass": true,
+   "detail": "balance 10004.19 잔액 10,004.19 USDT 5개를 열었습니다 받은 상품은 보관함에 있습니다. 쓴 금액 5 USDT 잔액에 반영 9.19 USDT 잔액 변화 4.19 USDT 증가 인스턴트 드롭, 잔액 반영 5 USDT 디지털 "
+  },
+  {
+   "scenario": "s11",
+   "name": "여러 개 결과에서 한 번 더 열기가 실제로 열린다",
+   "pass": true,
+   "detail": "opens 2 items 10"
+  },
+  {
+   "scenario": "s11",
+   "name": "여러 개 결과를 닫은 뒤 박스 화면에서 다시 열린다",
+   "pass": true,
+   "detail": "opens 3 items 11"
+  },
+  {
+   "scenario": "s11",
+   "name": "여러 개 열기도 새로 고친 뒤 같은 결과를 다시 보여 준다(새 구매 없음)",
+   "pass": true,
+   "detail": "opens 1 items 5"
+  },
+  {
+   "scenario": "s12",
+   "name": "소리 켬: 콘솔 오류 없이 끝까지 열린다",
+   "pass": true,
+   "detail": "AudioContext 사용 가능"
+  },
+  {
+   "scenario": "s12",
+   "name": "짧게 보기 켬: 결과까지 0.7초 이내",
+   "pass": true,
+   "detail": "결과까지 497ms, 다음 행동까지 848ms"
+  },
+  {
+   "scenario": "s13",
+   "name": "en small 320 폭",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false,\"linksOut\":false}"
+  },
+  {
+   "scenario": "s13",
+   "name": "en x2 320 폭",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false,\"linksOut\":false}"
+  },
+  {
+   "scenario": "s13",
+   "name": "en physicalTop 320 폭",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false,\"linksOut\":false}"
+  },
+  {
+   "scenario": "s13",
+   "name": "zh small 320 폭",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false,\"linksOut\":false}"
+  },
+  {
+   "scenario": "s13",
+   "name": "zh x2 320 폭",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false,\"linksOut\":false}"
+  },
+  {
+   "scenario": "s13",
+   "name": "zh physicalTop 320 폭",
+   "pass": true,
+   "detail": "{\"overflow\":false,\"overlapBottom\":false,\"overlapTop\":false,\"clipX\":false,\"linksOut\":false}"
+  },
+  {
+   "scenario": "s14",
+   "name": "두 탭에서 한 번씩: 구매 둘, 기록 둘, 회차 둘, 잔액 9999",
+   "pass": true,
+   "detail": "opens 2 items 2 nonce 2 balance 9999"
+  }
+ ]
+}

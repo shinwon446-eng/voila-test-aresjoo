@@ -50,7 +50,9 @@
 .v-reveal-solo .v-op-scene { flex: 1; min-height: 50dvh; }
 .v-reveal-count { position: absolute; right: 0; bottom: 8%; left: 0; color: var(--v-sub); font-size: var(--v-fs-body); text-align: center; }
 .v-reveal-solo .v-op-skip { padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)); }
-.v-reveal-top { display: flex; height: 56px; align-items: center; padding: 0 var(--v-gutter); }
+/* 여러 개 결과의 잔액: 닫기 단추와 같은 줄, 왼쪽. 흐름에서 빼 두어 결과 묶음의 높이를 늘리지 않는다 */
+.v-reveal-top { position: absolute; top: calc(12px + env(safe-area-inset-top, 0px)); left: var(--v-gutter); z-index: 1; }
+.v-reveal-top ~ .v-reveal-result { padding-top: 72px; }
 
 /* 받는 방법과 설정 시트의 고르는 줄 */
 .v-op-choices { display: flex; flex-direction: column; gap: 8px; }

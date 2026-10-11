@@ -1,7 +1,7 @@
 "use client";
 /**
- * 꼬리말(2026-10-11 파운더: TETH 의 꼬리말과 같은 짜임으로, 브랜드 색 바탕에).
- * 위에서부터: 고객 관계 요약과 팔로우 줄 → 메뉴 네 묶음과 서비스 소개 → 구호 → 화면 폭을 채우는 이름.
+ * 꼬리말(2026-10-11 파운더: TETH 의 꼬리말과 같은 짜임으로. 검은 바탕에 흰 글자, 맨 아래에 우리 로고 voila.gg 를 화면 폭만큼 크게).
+ * 위에서부터: 고객 관계 요약과 팔로우 줄 → 메뉴 네 묶음과 서비스 소개 → 구호 → 화면 폭을 채우는 로고.
  *   - 언어와 표시 통화를 바꾸는 곳은 여기뿐이다("설정" 묶음). 금액 표기만 바뀌고 돈은 어느 쪽이든 USDT 로 움직인다.
  *   - 팔로우 주소는 lib/social.ts 에 있다. 주소가 비어 있는 곳은 누를 수 없는 그림으로만 나온다(없는 주소로 보내지 않는다).
  */
@@ -9,6 +9,7 @@ import { Instagram, Send, Youtube } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { LOCALES, LOCALE_LABEL } from "@/i18n/routing";
+import { BrandLogoShapes } from "@/components/layout/BrandLogo";
 import { SOCIAL, type SocialKey } from "@/lib/social";
 import { useCurrency } from "@/lib/useCurrency";
 
@@ -67,10 +68,8 @@ export function AppFooter() {
         </div>
       </div>
       <p className="v-footer-slogan">OPEN IT, OWN IT</p>
-      {/* 이름: 글자 폭을 화면 폭에 맞춘다 */}
-      <svg className="v-footer-name" viewBox="0 0 1000 232" role="img" aria-label="VOILA">
-        <text x="0" y="232" textLength="1000" lengthAdjust="spacingAndGlyphs">VOILA</text>
-      </svg>
+      {/* 로고: 머리줄의 것과 같은 그림을 화면 폭에 맞춰 키운다 */}
+      <svg className="v-footer-name" viewBox="0 0 226 60.5" role="img" aria-label="voila.gg"><BrandLogoShapes /></svg>
     </footer>
   );
 }

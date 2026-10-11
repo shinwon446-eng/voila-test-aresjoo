@@ -2,14 +2,14 @@
  * 꼬리말 (components/shell/AppFooter.tsx). 색은 tokens.css 의 변수만 쓴다.
  * 굵은 글자와 넓힌 자간은 이 파일에서만 쓴다(파운더 지시: TETH 꼬리말과 같은 짜임. scripts/design-lint/config.json 의 예외).
  */
-/* 꼬리말(2026-10-11 파운더: TETH 의 꼬리말과 같은 짜임). 브랜드 색(로고의 별 색) 바탕에 검은 글자, 화면 폭을 다 쓴다.
-   위에서부터 고객 관계 요약과 팔로우 줄, 메뉴 네 묶음과 소개, 구호, 화면 폭을 채우는 이름 */
-/* 위의 빈 띠는 바깥 여백이 아니라 화면 바탕색 테두리로 둔다(여백으로 두면 뒤의 다른 바탕색이 비친다) */
-.v-footer { --pad: var(--v-gutter); border-top: 56px solid var(--v-bg); background: var(--v-spark); color: var(--v-bg); font-size: var(--v-fs-small); line-height: 1.6; }
+/* 꼬리말(2026-10-11 파운더: TETH 의 꼬리말과 같은 짜임). 검은 바탕에 흰 글자, 화면 폭을 다 쓴다.
+   위에서부터 고객 관계 요약과 팔로우 줄, 메뉴 네 묶음과 소개, 구호, 화면 폭을 채우는 로고(voila.gg) */
+/* 위의 빈 자리는 바깥 여백이 아니라 안쪽 여백이다(바깥 여백으로 두면 뒤의 다른 바탕색이 띠로 비친다). 경계선은 첫 줄 위에 긋는다 */
+.v-footer { --pad: var(--v-gutter); padding-top: 40px; background: var(--v-bg); color: var(--v-sub); font-size: var(--v-fs-small); line-height: 1.6; }
 .v-footer a, .v-footer button { color: inherit; }
 .v-footer button { padding: 0; border: 0; background: none; font: inherit; text-align: left; cursor: pointer; }
 .v-footer a:hover, .v-footer button:hover { text-decoration: underline; text-underline-offset: 3px; }
-.v-footer-top { display: grid; align-items: center; gap: 4px 24px; padding: 14px var(--pad); border-bottom: 1px solid var(--v-bg); }
+.v-footer-top { display: grid; align-items: center; gap: 4px 24px; padding: 14px var(--pad); border-top: 1px solid var(--v-divider); border-bottom: 1px solid var(--v-divider); color: var(--v-text); }
 .v-footer-crs { display: inline-flex; min-height: var(--v-touch); align-items: center; justify-self: start; text-decoration: underline; text-underline-offset: 3px; }
 .v-footer-follow { display: flex; min-height: var(--v-touch); align-items: center; gap: 20px; }
 .v-footer-follow > a, .v-footer-icon { display: inline-flex; align-items: center; }
@@ -17,13 +17,12 @@
 .v-footer-body { display: grid; gap: 32px; padding: 24px var(--pad) 0; }
 .v-footer-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
 .v-footer-cols > div { display: flex; flex-direction: column; align-items: flex-start; }
-.v-footer-cols h2 { margin-bottom: 6px; font-size: inherit; font-weight: 700; }
+.v-footer-cols h2 { margin-bottom: 6px; color: var(--v-title); font-size: inherit; font-weight: 700; }
 .v-footer-cols a, .v-footer-cols button { display: inline-flex; min-height: 38px; align-items: center; }
 .v-footer-about { display: flex; max-width: 620px; flex-direction: column; gap: 12px; }
-.v-footer-about strong { font-weight: 700; }
-.v-footer-slogan { padding: 48px var(--pad) 10px; font-weight: 600; letter-spacing: 0.02em; }
-.v-footer-name { display: block; width: calc(100% - var(--pad) * 2); height: auto; margin: 0 var(--pad); padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px)); overflow: visible; }
-.v-footer-name text { fill: var(--v-bg); font-size: 320px; font-weight: 900; }
+.v-footer-about strong { color: var(--v-title); font-weight: 700; }
+.v-footer-slogan { padding: 48px var(--pad) 18px; color: var(--v-title); font-weight: 600; letter-spacing: 0.02em; }
+.v-footer-name { display: block; width: calc(100% - var(--pad) * 2); height: auto; margin: 0 var(--pad); padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px)); overflow: visible; color: var(--v-title); }
 @media (min-width: 720px) {
   .v-footer { --pad: 32px; }
   .v-footer-top { grid-template-columns: 1fr 1fr; padding-block: 16px; }

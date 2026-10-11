@@ -1,0 +1,327 @@
+{
+  "serverSeed": "opening-fixture-server-seed",
+  "serverSeedHash": "1f07b3d2c12af1ddfd90ef04b7549bfc622e1011d068d12da334c57ca862ad49",
+  "boxes": {
+    "dollar-apple": {
+      "price": 1,
+      "single": {
+        "near": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 0,
+          "itemId": "wave-cashback-99",
+          "value": 0.99
+        },
+        "small": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 1,
+          "itemId": "wave-cashback-50",
+          "value": 0.5
+        },
+        "x5": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 3,
+          "itemId": "wave-drop-500",
+          "value": 5
+        },
+        "x2": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 14,
+          "itemId": "wave-gift-200",
+          "value": 2
+        },
+        "x15": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 265,
+          "itemId": "wave-gift-1500",
+          "value": 15
+        },
+        "physicalMid": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 147771,
+          "itemId": "da-watchse",
+          "value": 250
+        },
+        "physicalTop": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 916133,
+          "itemId": "ap-vision-pro",
+          "value": 3500
+        }
+      },
+      "sequences": {
+        "lowLowLowHighHighHigh": {
+          "clientSeed": "opening-seq-lowLowLowHighHighHigh-1759",
+          "nonce": 0,
+          "multiples": [
+            0.5,
+            0.5,
+            0.5,
+            2,
+            2,
+            2
+          ]
+        },
+        "tenSmall": {
+          "clientSeed": "opening-seq-tenSmall-312",
+          "nonce": 0,
+          "multiples": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "smallBigSmall": {
+          "clientSeed": "opening-seq-smallBigSmall-166",
+          "nonce": 0,
+          "multiples": [
+            0.5,
+            5,
+            0.5
+          ]
+        },
+        "threeBig": {
+          "clientSeed": "opening-seq-threeBig-17444",
+          "nonce": 0,
+          "multiples": [
+            5,
+            2,
+            5
+          ]
+        },
+        "mixed": {
+          "clientSeed": "opening-seq-mixed-25082",
+          "nonce": 0,
+          "multiples": [
+            0.8,
+            2,
+            0.5,
+            0.99,
+            5
+          ]
+        }
+      },
+      "notFound": []
+    },
+    "vault-gold": {
+      "price": 50,
+      "single": {
+        "near": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 0,
+          "itemId": "wave-cashback-4950",
+          "value": 49.5
+        },
+        "small": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 1,
+          "itemId": "wave-cashback-2500",
+          "value": 25
+        },
+        "x5": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 3,
+          "itemId": "wave-drop-25000",
+          "value": 250
+        },
+        "x2": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 14,
+          "itemId": "wave-gift-10000",
+          "value": 100
+        },
+        "x15": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 265,
+          "itemId": "wave-gift-75000",
+          "value": 750
+        },
+        "physicalTop": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 916133,
+          "itemId": "gd-bar-1kg",
+          "value": 100000
+        },
+        "physicalMid": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 1126703,
+          "itemId": "gd-solitaire-ring",
+          "value": 2000
+        }
+      },
+      "sequences": {
+        "lowLowLowHighHighHigh": {
+          "clientSeed": "opening-seq-lowLowLowHighHighHigh-1759",
+          "nonce": 0,
+          "multiples": [
+            0.5,
+            0.5,
+            0.5,
+            2,
+            2,
+            2
+          ]
+        },
+        "tenSmall": {
+          "clientSeed": "opening-seq-tenSmall-312",
+          "nonce": 0,
+          "multiples": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "smallBigSmall": {
+          "clientSeed": "opening-seq-smallBigSmall-166",
+          "nonce": 0,
+          "multiples": [
+            0.5,
+            5,
+            0.5
+          ]
+        },
+        "threeBig": {
+          "clientSeed": "opening-seq-threeBig-8062",
+          "nonce": 0,
+          "multiples": [
+            5,
+            2,
+            5
+          ]
+        },
+        "mixed": {
+          "clientSeed": "opening-seq-mixed-25082",
+          "nonce": 0,
+          "multiples": [
+            0.8,
+            2,
+            0.5,
+            0.99,
+            5
+          ]
+        }
+      },
+      "notFound": []
+    },
+    "vault-handbag": {
+      "price": 30,
+      "single": {
+        "near": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 0,
+          "itemId": "wave-cashback-2970",
+          "value": 29.7
+        },
+        "small": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 1,
+          "itemId": "wave-cashback-1500",
+          "value": 15
+        },
+        "x5": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 3,
+          "itemId": "wave-drop-15000",
+          "value": 150
+        },
+        "x2": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 14,
+          "itemId": "wave-gift-6000",
+          "value": 60
+        },
+        "x15": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 265,
+          "itemId": "wave-gift-45000",
+          "value": 450
+        },
+        "physicalTop": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 916133,
+          "itemId": "bg-birkin-25",
+          "value": 12000
+        },
+        "physicalMid": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 1793376,
+          "itemId": "bg-lv-neverfull",
+          "value": 2100
+        }
+      },
+      "sequences": {
+        "lowLowLowHighHighHigh": {
+          "clientSeed": "opening-seq-lowLowLowHighHighHigh-1759",
+          "nonce": 0,
+          "multiples": [
+            0.5,
+            0.5,
+            0.5,
+            2,
+            2,
+            2
+          ]
+        },
+        "tenSmall": {
+          "clientSeed": "opening-seq-tenSmall-312",
+          "nonce": 0,
+          "multiples": [
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "smallBigSmall": {
+          "clientSeed": "opening-seq-smallBigSmall-166",
+          "nonce": 0,
+          "multiples": [
+            0.5,
+            5,
+            0.5
+          ]
+        },
+        "threeBig": {
+          "clientSeed": "opening-seq-threeBig-8062",
+          "nonce": 0,
+          "multiples": [
+            5,
+            2,
+            5
+          ]
+        },
+        "mixed": {
+          "clientSeed": "opening-seq-mixed-25082",
+          "nonce": 0,
+          "multiples": [
+            0.8,
+            2,
+            0.5,
+            0.99,
+            5
+          ]
+        }
+      },
+      "notFound": []
+    }
+  }
+}

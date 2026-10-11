@@ -22,3 +22,6 @@ web/scripts/images/gen-raw/
 
 # Codex 생성 실행 로그
 qa/codex/gen-log-*.txt
+
+# 개봉 촬영의 프레임 폴더(크다). 필름 띠와 결과 화면만 올린다
+qa/opening/**/*-frames-*/

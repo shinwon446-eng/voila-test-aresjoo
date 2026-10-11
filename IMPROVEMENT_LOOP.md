@@ -121,3 +121,12 @@
 - 다음: 사이클 11 = 홈 카드 비교 정보 묶음(가격, 흔한 결과, 실물 확률을 한 줄로 모든 카드 같은 자리: Codex 세 번째 지적이라 EXPERIMENT 로 A/B 스크린샷 비교), 사진 없는 값 큰 상품 재탐색 2차(Commons 검색어를 모델명으로 다시 search --only), 결과 화면 실물 결과(dollar-apple 로 실물이 나오게 시드 고정 상태)와 다국어 재검수
 
 (옛 메모) 사이클 2 = 남은 8개 박스 사진(Commons 검색 완료 뒤 picks → fetch → 검수 → studio) + 생활가전 커버 교체 + 상품 시트에 정가 기준과 배송비 행. 그다음 EXPERIMENT: 박스 첫 화면 B안(비용과 결과 묶음을 사진 띠 위에)
+
+## 사이클 11 앞 (파운더 지시)
+- 가장 큰 문제: 가방 박스와 골드 박스에 맞는 실제 사진이 없어 이름만 보였다(가방 48, 골드 39)
+- 구현: Codex 이미지 생성 87장. 지시서 `qa/codex/gen-images-prompt.md`, 도구 `gen-list.mjs`, `gen-register.mjs`, `generated.json`, studio.mjs 가 생성 원본도 같은 캔버스로. productImages 는 실제 사진, 생성 이미지, 일반 사진 순. 상품 시트에 생성 이미지 한 줄(세 언어). 가방 박스 커버는 버킨 25
+- Claude 평가: 시트 다섯 장과 확대 두 장으로 전수 검수, 탈락 0. 중량 각인 14종이 이름과 같음. 가방 박스와 골드 박스의 실물 구성품이 전부 사진 타일이 됨
+- Codex 평가: 생성과 자체 검수는 Codex, 재생성 3건(스피디 무늬와 금속 각인, 트리옹프 문자형 잠금장치, 베안 잠금 위치). 감사는 다음 사이클 6차에서
+- 스크린샷: `qa/cycles/c11/` (gen-pilot, gen-bg00, gen-bg01, gen-gd00, gen-gd01, gen-bars-zoom, gen-zoom-logos, bagfull, goldfull, home)
+- 테스트: 296 통과, design-lint 0, tsc 통과, build 128 페이지
+- 채택: 채택. 커밋 `6032a77`, `1b2166b`. main 배포 성공

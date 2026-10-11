@@ -2,7 +2,7 @@
 
 - 시작: 2026-10-11 02:34 (로컬) / 종료 예정: 2026-10-12 02:34
 - 브랜치: `voila-redesign` (커밋은 여기에만). 테스트 사이트 배포는 `main` 푸시(파운더가 허락한 범위: 사진과 화면. 운영 저장소 gacha-sim 은 손대지 않는다)
-- 마지막 정상 지점: `1fc8bdc` (테스트 296 통과, design-lint 0, tsc 통과, build 128 페이지, main 배포 성공 런 38093243788)
+- 마지막 정상 지점: `1b2166b` (테스트 296 통과, design-lint 0, tsc 통과, build 128 페이지, main 배포 성공 런 38102680863)
 - 개발 서버: `.claude/launch.json` 의 `voila-test-aresjoo`(3002). `next build` 뒤에는 `.next` 를 지우고 다시 띄운다(OneDrive 에서 readlink EINVAL)
 - 정본: DESIGN.md(규칙), JOURNEY.md(여정), qa/PROGRESS.md(진행), IMPROVEMENT_LOOP.md(사이클 기록), DECISION_LOG.md(Claude 와 Codex 충돌과 결정)
 
@@ -26,8 +26,8 @@
 - 사이클 8 (~05:55) 끝: 옛 주소 안내 화면, 320 폭, Codex 4차 75점, 사진 불일치 17장 제거(studio.json 162 = sources 162), studio.mjs 끝에 출처 없는 판 삭제 가드. 커밋 `aa1d42f`, `6bfb3d5`. main 미배포(사이클 9 에서)
 - 사이클 9 (06:17~06:50) 끝: 검증 링크, "참고가 기준", 기준일 2026년 10월, 이름과 다른 사진 24건 제거(스튜디오 7 + Unsplash 매핑 16 + 생활가전 커버), Commons 우선. 커밋 `440c242`. main 배포 성공(런 38091284481, 공개 주소 /ko/box/dollar-apple 에서 "참고가 기준"과 검증 링크 확인). 기록 커밋 `fec9510`
 - 사이클 10 끝: Codex 5차 78점(`qa/codex/audit-c10.md`) 반영(보관함 빈 칸과 보조 줄, 검증 행 단서, 사진 3장 제거), 슈퍼카 사진 8장 확보. 커밋 `766c8b7`, `cee76c8`. main 배포는 기록 뒤 바로
-- 파운더 지시(2026-10-11 오전, 사이클 11 의 첫 일): "가방과 골드 사진은 코덱스한테 똑같은 톤으로 만들라 해줘". 결정 대기 항목 해소. 진행: 지시서 `qa/codex/gen-images-prompt.md`, 목록 `web/scripts/images/gen-list.mjs bg-,gd- --skip-done`, 원본은 `web/scripts/images/gen-raw/<id>.png`(gitignore), 등록 `gen-register.mjs`, 변환 `studio.mjs --only <ids>`, 검수 `sheet.mjs`. 시험 6장 채택(커밋 `6032a77`). 나머지 81장은 Codex 네 묶음(출력 `qa/codex/gen-out-{bg00,bg01,gd00,gd01}.md`)이 도는 중. 끝나면: gen-register → studio → 시트로 전수 검수(이름과 다른 것, 읽히는 브랜드 글자, 틀린 중량 각인은 `gen-register.mjs --drop`) → 테스트 → 커밋 → main 배포
-- 사이클 11 (다음 깨어남): (a) main 배포는 성공 확인됨, 건너뛴다 (b) EXPERIMENT 홈 카드 비교 정보 묶음: 현재(A) 대 "가격, 흔한 결과, 실물 확률 한 줄을 이름 바로 아래"(B) 를 390 폭 스크린샷으로 만들어 Codex 에 점수 없이 판정 요청(experiment-prompt.md 재사용) (c) 값 큰 사진 없는 상품(롤스로이스 팬텀, 포르쉐 911 터보 S, GT3, 골드바 1kg, 토요타 수프라)은 `commons.mjs search --only` 를 모델명 검색어로 다시 돌려 후보 갱신 뒤 시트 검수 (d) 결과 화면 실물 결과와 en, zh 재검수 (e) 가방과 골드 손 고르기는 파운더 결정 대기(묻지 않는다)
+- 파운더 지시(2026-10-11 오전, 사이클 11 의 첫 일): "가방과 골드 사진은 코덱스한테 똑같은 톤으로 만들라 해줘". 결정 대기 항목 해소. 진행: 지시서 `qa/codex/gen-images-prompt.md`, 목록 `web/scripts/images/gen-list.mjs bg-,gd- --skip-done`, 원본은 `web/scripts/images/gen-raw/<id>.png`(gitignore), 등록 `gen-register.mjs`, 변환 `studio.mjs --only <ids>`, 검수 `sheet.mjs`. 끝: 87장 전부(가방 48, 골드 39) 생성, 전수 검수 탈락 0(시트 `qa/cycles/c11/gen-*.png`), 커밋 `6032a77`, `1b2166b`, main 배포 성공(런 38102680863, 공개 주소 가방 박스에 사진 50장 확인). 같은 방식을 다른 박스에 넓힐지는 파운더가 정한다(지시는 가방과 골드까지). 떨어뜨릴 때는 `gen-register.mjs --drop <id>`
+- 사이클 11 (다음 깨어남): (a) main 배포는 성공 확인됨, 건너뛴다 (b) EXPERIMENT 홈 카드 비교 정보 묶음: 현재(A) 대 "가격, 흔한 결과, 실물 확률 한 줄을 이름 바로 아래"(B) 를 390 폭 스크린샷으로 만들어 Codex 에 점수 없이 판정 요청(experiment-prompt.md 재사용) (c) 값 큰 사진 없는 상품(롤스로이스 팬텀, 포르쉐 911 터보 S, GT3, 골드바 1kg, 토요타 수프라)은 `commons.mjs search --only` 를 모델명 검색어로 다시 돌려 후보 갱신 뒤 시트 검수 (d) 결과 화면 실물 결과와 en, zh 재검수 (e) 가방과 골드 사진은 해소됨(위 파운더 지시) (f) Codex 6차 감사는 홈, 가방 박스, 골드 박스, 생성 이미지 상품 시트를 넣어 다시(5차의 사진 정확성 P1 이 풀렸는지)
 - (옛 계획) 사이클 10: (a) Codex 5차 감사: 새 스크린샷(home-full, box, item, verify, account, inventory, reveal 390 폭), 이전 프롬프트 `qa/codex/audit-prompt*.md` 재사용, 결과 `qa/codex/audit-c10.md`, 점수표 갱신 (c) 사진 빠진 상품 가운데 값 큰 것부터 `reject.mjs --next` 로 다음 후보 재탐색 후 시트로 검수 (d) 가방과 골드 사진은 파운더 결정 대기(묻지 않는다)
 - (옛 계획) 사이클 8: (a) Codex 감사 4차(새 스크린샷 8장, 점수 추이 54→64→73→?) (b) /community 와 /about 처리: 메뉴에 없고 옛 디자인이라 접근 경로를 끊거나 새 디자인. 먼저 어디서 링크되는지 grep (c) 여럿 결과의 상품 시트 사진 확인 (d) 320 폭 재검수(홈, 박스, 계정, 보관함)
 - (옛 계획) 사이클 7: (a) VR2 사진 다음 후보, 컬리넌 배경 잔여 손질(studio 재변환 또는 다른 후보) (b) 홈 카드 정보 간격(이름과 가격 / 대표 상품 / 확률 요약을 세 덩이로) (c) Codex 시나리오 QA 3차(계정 시트 셋, 배송 나라 보기, 검증 값 전달 포함) (d) 반영 뒤 main 배포

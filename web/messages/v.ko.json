@@ -22,18 +22,13 @@
   },
   "home": {
     "title": "박스",
-    "desc": "USDT로 박스를 열어 실물 또는 USDT를 받습니다. 나온 실물은 배송받거나 참고가의 95%를 USDT로 받습니다.",
+    "desc": "박스를 열어 실물이나 USDT를 받습니다.",
     "filter": "분류",
     "all": "전체 박스",
-    "price": "{price} / 1회",
     "top": "최고 상품가 {amount}",
-    "count": "구성품 {n}종",
-    "search": "상품으로 찾기",
-    "searchHint": "예: 아이폰, 롤렉스, 리자몽",
+    "search": "상품 이름으로 찾기",
     "searchNone": "그 이름의 상품이 없습니다.",
     "searchIn": "{box}, 1회 {price}",
-    "real": "실물 확률 {pct}",
-    "common": "가장 흔한 결과 {amount}, {pct}",
     "refPrice": "{amount}"
   },
   "box": {

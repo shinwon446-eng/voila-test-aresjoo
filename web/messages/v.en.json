@@ -22,18 +22,13 @@
   },
   "home": {
     "title": "Boxes",
-    "desc": "Open a box with USDT and receive an item or USDT. A physical item is shipped to you or taken as 95% of its reference price in USDT.",
+    "desc": "Open a box to get an item or USDT.",
     "filter": "Category",
     "all": "All boxes",
-    "price": "{price} / open",
     "top": "Top item value {amount}",
-    "count": "{n} items",
-    "search": "Find by item",
-    "searchHint": "e.g. iPhone, Rolex, Charizard",
+    "search": "Find by item name",
     "searchNone": "No item with that name.",
     "searchIn": "{box}, {price} per open",
-    "real": "Item odds {pct}",
-    "common": "Most common result {amount}, {pct}",
     "refPrice": "{amount}"
   },
   "box": {

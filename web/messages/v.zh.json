@@ -22,18 +22,13 @@
   },
   "home": {
     "title": "盲盒",
-    "desc": "用 USDT 开盲盒，获得实物或 USDT。实物可配送到家，或按参考价 95% 领取 USDT。",
+    "desc": "开启盲盒，获得实物或 USDT。",
     "filter": "分类",
     "all": "全部盲盒",
-    "price": "{price} / 次",
     "top": "最高商品价值 {amount}",
-    "count": "内容 {n} 种",
-    "search": "按商品查找",
-    "searchHint": "例如：iPhone、劳力士、喷火龙",
+    "search": "按商品名称查找",
     "searchNone": "没有该名称的商品。",
     "searchIn": "{box}，每次 {price}",
-    "real": "实物概率 {pct}",
-    "common": "最常见结果 {amount}，{pct}",
     "refPrice": "{amount}"
   },
   "box": {

@@ -1,0 +1,509 @@
+{
+ "slug": "audio-shure",
+ "items": [
+  [
+   "audio-shure-a25d-microphone-clip",
+   "슈어 A25D 마이크 클립",
+   "Shure A25D Microphone Clip",
+   "舒尔 A25D 麦克风夹",
+   6
+  ],
+  [
+   "audio-shure-a58ws-foam-windscreen",
+   "슈어 A58WS 폼 윈드스크린",
+   "Shure A58WS Foam Windscreen",
+   "舒尔 A58WS 防风海绵罩",
+   8
+  ],
+  [
+   "audio-shure-a2ws-locking-windscreen-for-sm57",
+   "슈어 A2WS SM57용 윈드스크린",
+   "Shure A2WS Locking Windscreen for SM57",
+   "舒尔 A2WS SM57 防风罩",
+   12
+  ],
+  [
+   "audio-shure-eatfl1-6-triple-flange-sleeves",
+   "슈어 EATFL1-6 트리플 플랜지 이어팁",
+   "Shure EATFL1-6 Triple Flange Sleeves",
+   "舒尔 EATFL1-6 三节耳塞套",
+   13
+  ],
+  [
+   "audio-shure-eaylf1-10-yellow-foam-sleeves-5-pairs",
+   "슈어 EAYLF1-10 옐로 폼 이어팁 5쌍",
+   "Shure EAYLF1-10 Yellow Foam Sleeves 5 Pairs",
+   "舒尔 EAYLF1-10 黄色海绵耳塞套 5对",
+   15
+  ],
+  [
+   "audio-shure-hpaec440-replacement-ear-cushions",
+   "슈어 HPAEC440 교체용 이어쿠션",
+   "Shure HPAEC440 Replacement Ear Cushions",
+   "舒尔 HPAEC440 替换耳垫",
+   15
+  ],
+  [
+   "audio-shure-eabkf1-10m-black-foam-sleeves-5-pairs",
+   "슈어 EABKF1-10M 블랙 폼 이어팁 5쌍",
+   "Shure EABKF1-10M Black Foam Sleeves 5 Pairs",
+   "舒尔 EABKF1-10M 黑色海绵耳塞套 5对",
+   17
+  ],
+  [
+   "audio-shure-hpaec840-replacement-ear-cushions",
+   "슈어 HPAEC840 교체용 이어쿠션",
+   "Shure HPAEC840 Replacement Ear Cushions",
+   "舒尔 HPAEC840 替换耳垫",
+   19
+  ],
+  [
+   "audio-shure-a7ws-detachable-windscreen-for-sm7b",
+   "슈어 A7WS SM7B용 윈드스크린",
+   "Shure A7WS Detachable Windscreen for SM7B",
+   "舒尔 A7WS SM7B 防风罩",
+   20
+  ],
+  [
+   "audio-shure-a55m-shock-stopper-mount",
+   "슈어 A55M 쇼크 마운트",
+   "Shure A55M Shock Stopper Mount",
+   "舒尔 A55M 防震架",
+   25
+  ],
+  [
+   "audio-shure-eac64bks-detachable-earphone-cable-64-in",
+   "슈어 EAC64BKS 교체용 이어폰 케이블 162cm",
+   "Shure EAC64BKS Detachable Earphone Cable 64 in",
+   "舒尔 EAC64BKS 可换耳机线 162厘米",
+   39
+  ],
+  [
+   "audio-shure-srh145",
+   "슈어 SRH145 온이어 헤드폰",
+   "Shure SRH145 On-Ear Headphones",
+   "舒尔 SRH145 贴耳式耳机",
+   39
+  ],
+  [
+   "audio-shure-hpaec1840-replacement-velour-ear-pads",
+   "슈어 HPAEC1840 벨루어 이어패드",
+   "Shure HPAEC1840 Replacement Velour Ear Pads",
+   "舒尔 HPAEC1840 丝绒耳垫",
+   39
+  ],
+  [
+   "audio-shure-pga48",
+   "슈어 PGA48 다이내믹 마이크",
+   "Shure PGA48 Dynamic Microphone",
+   "舒尔 PGA48 动圈麦克风",
+   44
+  ],
+  [
+   "audio-shure-hpaec1540-replacement-alcantara-ear-pads",
+   "슈어 HPAEC1540 알칸타라 이어패드",
+   "Shure HPAEC1540 Replacement Alcantara Ear Pads",
+   "舒尔 HPAEC1540 Alcantara 耳垫",
+   49
+  ],
+  [
+   "audio-shure-sm48",
+   "슈어 SM48 다이내믹 마이크",
+   "Shure SM48 Dynamic Microphone",
+   "舒尔 SM48 动圈麦克风",
+   49
+  ],
+  [
+   "audio-shure-srh240a",
+   "슈어 SRH240A 밀폐형 헤드폰",
+   "Shure SRH240A Closed-Back Headphones",
+   "舒尔 SRH240A 封闭式头戴耳机",
+   59
+  ],
+  [
+   "audio-shure-pga58",
+   "슈어 PGA58 다이내믹 마이크",
+   "Shure PGA58 Dynamic Microphone",
+   "舒尔 PGA58 动圈麦克风",
+   64
+  ],
+  [
+   "audio-shure-sm58-cardioid-dynamic-vocal-microphone",
+   "슈어 SM58 보컬용 다이내믹 마이크",
+   "Shure SM58 Cardioid Dynamic Vocal Microphone",
+   "舒尔 SM58 人声动圈麦克风",
+   99
+  ],
+  [
+   "audio-shure-sm57-cardioid-dynamic-instrument-microphone",
+   "슈어 SM57 악기용 다이내믹 마이크",
+   "Shure SM57 Cardioid Dynamic Instrument Microphone",
+   "舒尔 SM57 乐器动圈麦克风",
+   99
+  ],
+  [
+   "audio-shure-se215-pro",
+   "슈어 SE215 Pro 인이어 모니터 이어폰",
+   "Shure SE215 Pro In-Ear Monitors",
+   "舒尔 SE215 Pro 入耳式监听耳机",
+   99
+  ],
+  [
+   "audio-shure-srh440a",
+   "슈어 SRH440A 스튜디오 모니터 헤드폰",
+   "Shure SRH440A Studio Monitor Headphones",
+   "舒尔 SRH440A 监听耳机",
+   99
+  ],
+  [
+   "audio-shure-mvx2u-xlr-to-usb-audio-interface",
+   "슈어 MVX2U XLR USB 오디오 인터페이스",
+   "Shure MVX2U XLR-to-USB Audio Interface",
+   "舒尔 MVX2U XLR 转 USB 音频接口",
+   129
+  ],
+  [
+   "audio-shure-rmce-bt2-bluetooth-earphone-communication-cable",
+   "슈어 RMCE-BT2 블루투스 이어폰 케이블",
+   "Shure RMCE-BT2 Bluetooth Earphone Communication Cable",
+   "舒尔 RMCE-BT2 蓝牙耳机线",
+   149
+  ],
+  [
+   "audio-shure-srh840a",
+   "슈어 SRH840A 스튜디오 모니터 헤드폰",
+   "Shure SRH840A Studio Monitor Headphones",
+   "舒尔 SRH840A 监听耳机",
+   149
+  ],
+  [
+   "audio-shure-mv6-usb-gaming-microphone",
+   "슈어 MV6 게이밍 USB 마이크",
+   "Shure MV6 USB Gaming Microphone",
+   "舒尔 MV6 游戏 USB 麦克风",
+   149
+  ],
+  [
+   "audio-shure-beta-58a",
+   "슈어 Beta 58A 다이내믹 마이크",
+   "Shure Beta 58A Dynamic Microphone",
+   "舒尔 Beta 58A 动圈麦克风",
+   159
+  ],
+  [
+   "audio-shure-beta-57a",
+   "슈어 Beta 57A 다이내믹 마이크",
+   "Shure Beta 57A Dynamic Microphone",
+   "舒尔 Beta 57A 动圈麦克风",
+   159
+  ],
+  [
+   "audio-shure-mv7x-xlr-podcast-microphone",
+   "슈어 MV7X 팟캐스트용 XLR 마이크",
+   "Shure MV7X XLR Podcast Microphone",
+   "舒尔 MV7X 播客 XLR 麦克风",
+   179
+  ],
+  [
+   "audio-shure-aonic-215-gen-2",
+   "슈어 AONIC 215 Gen 2 무선 이어버드",
+   "Shure AONIC 215 Gen 2 True Wireless Earbuds",
+   "舒尔 AONIC 215 Gen 2 真无线耳机",
+   179
+  ],
+  [
+   "audio-shure-beta-52a-kick-drum-microphone",
+   "슈어 Beta 52A 킥 드럼 마이크",
+   "Shure Beta 52A Kick Drum Microphone",
+   "舒尔 Beta 52A 底鼓麦克风",
+   189
+  ],
+  [
+   "audio-shure-sm4",
+   "슈어 SM4 콘덴서 마이크",
+   "Shure SM4 Condenser Microphone",
+   "舒尔 SM4 电容麦克风",
+   199
+  ],
+  [
+   "audio-shure-aonic-3",
+   "슈어 AONIC 3 인이어 모니터 이어폰",
+   "Shure AONIC 3 In-Ear Monitors",
+   "舒尔 AONIC 3 入耳式监听耳机",
+   199
+  ],
+  [
+   "audio-shure-55sh-series-ii-iconic-unidyne-vocal-microphone",
+   "슈어 55SH Series II 빈티지 보컬 마이크",
+   "Shure 55SH Series II Iconic Unidyne Vocal Microphone",
+   "舒尔 55SH Series II 复古人声麦克风",
+   199
+  ],
+  [
+   "audio-shure-super-55-deluxe-vocal-microphone",
+   "슈어 Super 55 디럭스 보컬 마이크",
+   "Shure Super 55 Deluxe Vocal Microphone",
+   "舒尔 Super 55 豪华人声麦克风",
+   249
+  ],
+  [
+   "audio-shure-beta-87a",
+   "슈어 Beta 87A 콘덴서 마이크",
+   "Shure Beta 87A Condenser Microphone",
+   "舒尔 Beta 87A 电容麦克风",
+   249
+  ],
+  [
+   "audio-shure-se425-pro",
+   "슈어 SE425 Pro 인이어 모니터 이어폰",
+   "Shure SE425 Pro In-Ear Monitors",
+   "舒尔 SE425 Pro 入耳式监听耳机",
+   269
+  ],
+  [
+   "audio-shure-mv7-plus-usb-xlr-podcast-microphone",
+   "슈어 MV7+ 팟캐스트용 USB XLR 마이크",
+   "Shure MV7+ USB/XLR Podcast Microphone",
+   "舒尔 MV7+ 播客 USB XLR 麦克风",
+   279
+  ],
+  [
+   "audio-shure-aonic-4",
+   "슈어 AONIC 4 인이어 모니터 이어폰",
+   "Shure AONIC 4 In-Ear Monitors",
+   "舒尔 AONIC 4 入耳式监听耳机",
+   299
+  ],
+  [
+   "audio-shure-ksm137",
+   "슈어 KSM137 콘덴서 마이크",
+   "Shure KSM137 Condenser Microphone",
+   "舒尔 KSM137 电容麦克风",
+   299
+  ],
+  [
+   "audio-shure-nexadyne-8-c",
+   "슈어 Nexadyne 8/C 다이내믹 마이크",
+   "Shure Nexadyne 8/C Dynamic Microphone",
+   "舒尔 Nexadyne 8/C 动圈麦克风",
+   299
+  ],
+  [
+   "audio-shure-aonic-50-gen-2",
+   "슈어 AONIC 50 Gen 2 무선 노이즈 캔슬링 헤드폰",
+   "Shure AONIC 50 Gen 2 Wireless Noise Cancelling Headphones",
+   "舒尔 AONIC 50 Gen 2 无线降噪头戴式耳机",
+   349
+  ],
+  [
+   "audio-shure-sm81",
+   "슈어 SM81 콘덴서 마이크",
+   "Shure SM81 Condenser Microphone",
+   "舒尔 SM81 电容麦克风",
+   349
+  ],
+  [
+   "audio-shure-blx24-sm58",
+   "슈어 BLX24/SM58 무선 마이크 시스템",
+   "Shure BLX24/SM58 Wireless Microphone System",
+   "舒尔 BLX24/SM58 无线麦克风系统",
+   349
+  ],
+  [
+   "audio-shure-movemic-two-wireless-lavalier-microphone-kit",
+   "슈어 MoveMic Two 무선 라발리에 마이크 키트",
+   "Shure MoveMic Two Wireless Lavalier Microphone Kit",
+   "舒尔 MoveMic Two 无线领夹麦克风套装",
+   349
+  ],
+  [
+   "audio-shure-sm7b-cardioid-dynamic-vocal-microphone",
+   "슈어 SM7B 보컬용 다이내믹 마이크",
+   "Shure SM7B Cardioid Dynamic Vocal Microphone",
+   "舒尔 SM7B 人声动圈麦克风",
+   399
+  ],
+  [
+   "audio-shure-ksm8-dualdyne",
+   "슈어 KSM8 Dualdyne 다이내믹 마이크",
+   "Shure KSM8 Dualdyne Dynamic Microphone",
+   "舒尔 KSM8 Dualdyne 动圈麦克风",
+   399
+  ],
+  [
+   "audio-shure-se535-pro",
+   "슈어 SE535 Pro 인이어 모니터 이어폰",
+   "Shure SE535 Pro In-Ear Monitors",
+   "舒尔 SE535 Pro 入耳式监听耳机",
+   449
+  ],
+  [
+   "audio-shure-srh1540",
+   "슈어 SRH1540 밀폐형 헤드폰",
+   "Shure SRH1540 Closed-Back Headphones",
+   "舒尔 SRH1540 封闭式头戴耳机",
+   499
+  ],
+  [
+   "audio-shure-srh1840",
+   "슈어 SRH1840 오픈형 헤드폰",
+   "Shure SRH1840 Open-Back Headphones",
+   "舒尔 SRH1840 开放式头戴耳机",
+   499
+  ],
+  [
+   "audio-shure-sm7db-dynamic-vocal-microphone-with-built-in-preamp",
+   "슈어 SM7dB 프리앰프 내장 다이내믹 마이크",
+   "Shure SM7dB Dynamic Vocal Microphone with Built-In Preamp",
+   "舒尔 SM7dB 内置前级动圈麦克风",
+   499
+  ],
+  [
+   "audio-shure-aonic-5",
+   "슈어 AONIC 5 인이어 모니터 이어폰",
+   "Shure AONIC 5 In-Ear Monitors",
+   "舒尔 AONIC 5 入耳式监听耳机",
+   499
+  ],
+  [
+   "audio-shure-glxd24-plus-sm58",
+   "슈어 GLXD24+/SM58 무선 마이크 시스템",
+   "Shure GLXD24+/SM58 Wireless Microphone System",
+   "舒尔 GLXD24+/SM58 无线麦克风系统",
+   499
+  ],
+  [
+   "audio-shure-ksm32",
+   "슈어 KSM32 콘덴서 마이크",
+   "Shure KSM32 Condenser Microphone",
+   "舒尔 KSM32 电容麦克风",
+   549
+  ],
+  [
+   "audio-shure-ksm9",
+   "슈어 KSM9 콘덴서 마이크",
+   "Shure KSM9 Condenser Microphone",
+   "舒尔 KSM9 电容麦克风",
+   699
+  ],
+  [
+   "audio-shure-slxd24-sm58",
+   "슈어 SLXD24/SM58 무선 마이크 시스템",
+   "Shure SLXD24/SM58 Wireless Microphone System",
+   "舒尔 SLXD24/SM58 无线麦克风系统",
+   699
+  ],
+  [
+   "audio-shure-se846-pro",
+   "슈어 SE846 Pro 인이어 모니터 이어폰",
+   "Shure SE846 Pro In-Ear Monitors",
+   "舒尔 SE846 Pro 入耳式监听耳机",
+   899
+  ],
+  [
+   "audio-shure-psm300-p3tra215cl-wireless-in-ear-monitor-system",
+   "슈어 PSM300 P3TRA215CL 무선 인이어 모니터 시스템",
+   "Shure PSM300 P3TRA215CL Wireless In-Ear Monitor System",
+   "舒尔 PSM300 P3TRA215CL 无线入耳监听系统",
+   899
+  ],
+  [
+   "audio-shure-ksm44a",
+   "슈어 KSM44A 콘덴서 마이크",
+   "Shure KSM44A Condenser Microphone",
+   "舒尔 KSM44A 电容麦克风",
+   999
+  ],
+  [
+   "audio-shure-qlxd24-sm58",
+   "슈어 QLXD24/SM58 무선 마이크 시스템",
+   "Shure QLXD24/SM58 Wireless Microphone System",
+   "舒尔 QLXD24/SM58 无线麦克风系统",
+   1099
+  ],
+  [
+   "audio-shure-ksm313-ne",
+   "슈어 KSM313/NE 리본 마이크",
+   "Shure KSM313/NE Ribbon Microphone",
+   "舒尔 KSM313/NE 铝带麦克风",
+   1295
+  ],
+  [
+   "audio-shure-kse1200",
+   "슈어 KSE1200 정전형 헤드폰 시스템",
+   "Shure KSE1200 Electrostatic Headphone System",
+   "舒尔 KSE1200 静电耳机系统",
+   1999
+  ],
+  [
+   "audio-shure-ksm353-ed",
+   "슈어 KSM353/ED 리본 마이크",
+   "Shure KSM353/ED Ribbon Microphone",
+   "舒尔 KSM353/ED 铝带麦克风",
+   2695
+  ],
+  [
+   "audio-shure-kse1500",
+   "슈어 KSE1500 정전형 헤드폰 시스템",
+   "Shure KSE1500 Electrostatic Headphone System",
+   "舒尔 KSE1500 静电耳机系统",
+   2999
+  ],
+  [
+   "audio-shure-ad4d-two-channel-digital-wireless-receiver",
+   "슈어 AD4D 2채널 디지털 무선 리시버",
+   "Shure AD4D Two-Channel Digital Wireless Receiver",
+   "舒尔 AD4D 双通道数字无线接收机",
+   5700
+  ],
+  [
+   "audio-shure-psm1000-p10tr425cl-wireless-in-ear-personal-monitor",
+   "슈어 PSM1000 P10TR425CL 무선 인이어 모니터 시스템",
+   "Shure PSM1000 P10TR425CL Wireless In-Ear Personal Monitor System",
+   "舒尔 PSM1000 P10TR425CL 无线入耳监听系统",
+   7500
+  ],
+  [
+   "audio-shure-ad4q-four-channel-digital-wireless-receiver",
+   "슈어 AD4Q 4채널 디지털 무선 리시버",
+   "Shure AD4Q Four-Channel Digital Wireless Receiver",
+   "舒尔 AD4Q 四通道数字无线接收机",
+   10500
+  ]
+ ],
+ "use": [
+  "audio-p-azla-sednaearfit-crystal-ear-tips",
+  "audio-p-comply-isolation-t-400-foam-ear-tips-3-pairs",
+  "audio-p-koss-ksc75-ear-clip-headphones",
+  "audio-p-brainwavz-round-memory-foam-earpads",
+  "audio-p-anker-soundcore-p20i",
+  "audio-p-azla-sednaearfit-max-ear-tips",
+  "audio-p-behringer-microphono-pp400",
+  "audio-p-gearit-14awg-speaker-wire-100-ft",
+  "audio-p-audioengine-ds1-desktop-speaker-stands-pair",
+  "audio-p-audioquest-anti-static-record-brush",
+  "audio-p-behringer-microamp-ha400-4-channel-headphone-amplifier",
+  "audio-p-kanto-s2-desktop-speaker-stands-pair",
+  "audio-p-logitech-bluetooth-audio-adapter",
+  "audio-p-victrola-journey-portable-bluetooth-suitcase-record-play",
+  "audio-p-art-djpre-ii",
+  "audio-p-pro-ject-phono-box-e",
+  "audio-p-audioquest-jitterbug-fmj-usb-noise-filter",
+  "audio-p-fosi-audio-q4",
+  "audio-p-fosi-audio-v3-stereo-amplifier",
+  "audio-p-moondrop-aria-2",
+  "audio-p-simgot-ea500lm",
+  "audio-p-apple-homepod-mini",
+  "audio-p-etymotic-er2se",
+  "audio-p-grado-prestige-black3",
+  "audio-p-ibasso-dx260",
+  "audio-p-dan-clark-audio-noire-x",
+  "audio-p-64-audio-u12t",
+  "audio-p-cayin-n7",
+  "audio-p-klipsch-heresy-iv",
+  "audio-p-dan-clark-audio-stealth",
+  "audio-p-meze-audio-elite",
+  "audio-p-dynaudio-confidence-30",
+  "audio-p-audio-research-reference-160s"
+ ]
+}

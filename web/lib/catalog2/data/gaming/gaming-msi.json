@@ -1,0 +1,419 @@
+{
+ "slug": "gaming-msi",
+ "items": [
+  [
+   "gaming-msi-msi-titan-18-hx-ai-a2xw-rtx-5090",
+   "MSI 타이탄 18 HX AI A2XW RTX 5090",
+   "MSI Titan 18 HX AI A2XW RTX 5090",
+   "微星 Titan 18 HX AI A2XW RTX 5090",
+   5799.99
+  ],
+  [
+   "gaming-msi-msi-titan-18-hx-a14v-rtx-4090",
+   "MSI 타이탄 18 HX A14V RTX 4090",
+   "MSI Titan 18 HX A14V RTX 4090",
+   "微星 Titan 18 HX A14V RTX 4090",
+   4999.99
+  ],
+  [
+   "gaming-msi-msi-raider-18-hx-ai-a2xw-rtx-5090",
+   "MSI 레이더 18 HX AI A2XW RTX 5090",
+   "MSI Raider 18 HX AI A2XW RTX 5090",
+   "微星 Raider 18 HX AI A2XW RTX 5090",
+   4499.99
+  ],
+  [
+   "gaming-msi-msi-meg-trident-x2-14th-rtx-4090",
+   "MSI MEG 트라이던트 X2 14세대 RTX 4090",
+   "MSI MEG Trident X2 14th RTX 4090",
+   "微星 MEG Trident X2 14th RTX 4090",
+   4499.99
+  ],
+  [
+   "gaming-msi-msi-vector-16-hx-ai-a2xw-rtx-5080",
+   "MSI 벡터 16 HX AI A2XW RTX 5080",
+   "MSI Vector 16 HX AI A2XW RTX 5080",
+   "微星 Vector 16 HX AI A2XW RTX 5080",
+   2799.99
+  ],
+  [
+   "gaming-msi-msi-geforce-rtx-5090-32g-suprim-liquid-soc",
+   "MSI 지포스 RTX 5090 32G 수프림 리퀴드 SOC",
+   "MSI GeForce RTX 5090 32G SUPRIM LIQUID SOC",
+   "微星 GeForce RTX 5090 32G SUPRIM LIQUID SOC",
+   2499.99
+  ],
+  [
+   "gaming-msi-msi-geforce-rtx-5090-32g-suprim-soc",
+   "MSI 지포스 RTX 5090 32G 수프림 SOC",
+   "MSI GeForce RTX 5090 32G SUPRIM SOC",
+   "微星 GeForce RTX 5090 32G SUPRIM SOC",
+   2399.99
+  ],
+  [
+   "gaming-msi-msi-geforce-rtx-5090-32g-gaming-trio-oc",
+   "MSI 지포스 RTX 5090 32G 게이밍 트리오 OC",
+   "MSI GeForce RTX 5090 32G Gaming Trio OC",
+   "微星 GeForce RTX 5090 32G Gaming Trio OC",
+   2349.99
+  ],
+  [
+   "gaming-msi-msi-stealth-16-ai-studio-a1v-rtx-4070",
+   "MSI 스텔스 16 AI 스튜디오 A1V RTX 4070",
+   "MSI Stealth 16 AI Studio A1V RTX 4070",
+   "微星 Stealth 16 AI Studio A1V RTX 4070",
+   1999.99
+  ],
+  [
+   "gaming-msi-msi-geforce-rtx-4090-24g-suprim-x",
+   "MSI 지포스 RTX 4090 24G 수프림 X",
+   "MSI GeForce RTX 4090 24G SUPRIM X",
+   "微星 GeForce RTX 4090 24G SUPRIM X",
+   1749.99
+  ],
+  [
+   "gaming-msi-msi-geforce-rtx-5080-16g-suprim-soc",
+   "MSI 지포스 RTX 5080 16G 수프림 SOC",
+   "MSI GeForce RTX 5080 16G SUPRIM SOC",
+   "微星 GeForce RTX 5080 16G SUPRIM SOC",
+   1399.99
+  ],
+  [
+   "gaming-msi-msi-meg-x870e-godlike-motherboard",
+   "MSI MEG X870E 갓라이크 메인보드",
+   "MSI MEG X870E GODLIKE Motherboard",
+   "微星 MEG X870E GODLIKE 主板",
+   1299.99
+  ],
+  [
+   "gaming-msi-msi-meg-z890-godlike-motherboard",
+   "MSI MEG Z890 갓라이크 메인보드",
+   "MSI MEG Z890 GODLIKE Motherboard",
+   "微星 MEG Z890 GODLIKE 主板",
+   1199.99
+  ],
+  [
+   "gaming-msi-msi-geforce-rtx-5080-16g-gaming-trio-oc",
+   "MSI 지포스 RTX 5080 16G 게이밍 트리오 OC",
+   "MSI GeForce RTX 5080 16G Gaming Trio OC",
+   "微星 GeForce RTX 5080 16G Gaming Trio OC",
+   1199.99
+  ],
+  [
+   "gaming-msi-msi-mpg-491cqp-qd-oled-49-inch-monitor",
+   "MSI MPG 491CQP QD-OLED 49인치 모니터",
+   "MSI MPG 491CQP QD-OLED 49-inch Monitor",
+   "微星 MPG 491CQP QD-OLED 49英寸 显示器",
+   1099.99
+  ],
+  [
+   "gaming-msi-msi-mpg-272urx-qd-oled-27-inch-4k-240hz-monitor",
+   "MSI MPG 272URX QD-OLED 27인치 4K 240Hz 모니터",
+   "MSI MPG 272URX QD-OLED 27-inch 4K 240Hz Monitor",
+   "微星 MPG 272URX QD-OLED 27英寸 4K 240Hz 显示器",
+   1099.99
+  ],
+  [
+   "gaming-msi-msi-meg-342c-qd-oled-34-inch-monitor",
+   "MSI MEG 342C QD-OLED 34인치 모니터",
+   "MSI MEG 342C QD-OLED 34-inch Monitor",
+   "微星 MEG 342C QD-OLED 34英寸 显示器",
+   1099.99
+  ],
+  [
+   "gaming-msi-msi-katana-15-b13v-rtx-4060",
+   "MSI 카타나 15 B13V RTX 4060",
+   "MSI Katana 15 B13V RTX 4060",
+   "微星 Katana 15 B13V RTX 4060",
+   1099.99
+  ],
+  [
+   "gaming-msi-msi-cyborg-15-a13v-rtx-4050",
+   "MSI 사이보그 15 A13V RTX 4050",
+   "MSI Cyborg 15 A13V RTX 4050",
+   "微星 Cyborg 15 A13V RTX 4050",
+   999.99
+  ],
+  [
+   "gaming-msi-msi-mpg-321urx-qd-oled-32-inch-4k-240hz-monitor",
+   "MSI MPG 321URX QD-OLED 32인치 4K 240Hz 모니터",
+   "MSI MPG 321URX QD-OLED 32-inch 4K 240Hz Monitor",
+   "微星 MPG 321URX QD-OLED 32英寸 4K 240Hz 显示器",
+   949.99
+  ],
+  [
+   "gaming-msi-msi-claw-8-ai-plus-a2vm",
+   "MSI 클로 8 AI+ A2VM",
+   "MSI Claw 8 AI+ A2VM",
+   "微星 Claw 8 AI+ A2VM 掌机",
+   899.99
+  ],
+  [
+   "gaming-msi-msi-mag-321upx-qd-oled-32-inch-4k-monitor",
+   "MSI MAG 321UPX QD-OLED 32인치 4K 모니터",
+   "MSI MAG 321UPX QD-OLED 32-inch 4K Monitor",
+   "微星 MAG 321UPX QD-OLED 32英寸 4K 显示器",
+   899.99
+  ],
+  [
+   "gaming-msi-msi-mag-341cqp-qd-oled-34-inch-monitor",
+   "MSI MAG 341CQP QD-OLED 34인치 모니터",
+   "MSI MAG 341CQP QD-OLED 34-inch Monitor",
+   "微星 MAG 341CQP QD-OLED 34英寸 显示器",
+   899.99
+  ],
+  [
+   "gaming-msi-msi-geforce-rtx-5070-ti-16g-gaming-trio-oc-plus",
+   "MSI 지포스 RTX 5070 Ti 16G 게이밍 트리오 OC 플러스",
+   "MSI GeForce RTX 5070 Ti 16G Gaming Trio OC Plus",
+   "微星 GeForce RTX 5070 Ti 16G Gaming Trio OC Plus",
+   899.99
+  ],
+  [
+   "gaming-msi-msi-claw-7-ai-plus-a2vm",
+   "MSI 클로 7 AI+ A2VM",
+   "MSI Claw 7 AI+ A2VM",
+   "微星 Claw 7 AI+ A2VM 掌机",
+   799.99
+  ],
+  [
+   "gaming-msi-msi-claw-a1m-core-ultra-7-1tb",
+   "MSI 클로 A1M 코어 울트라 7 1TB",
+   "MSI Claw A1M Core Ultra 7 1TB",
+   "微星 Claw A1M Core Ultra 7 1TB 掌机",
+   799.99
+  ],
+  [
+   "gaming-msi-msi-mpg-271qrx-qd-oled-27-inch-360hz-monitor",
+   "MSI MPG 271QRX QD-OLED 27인치 360Hz 모니터",
+   "MSI MPG 271QRX QD-OLED 27-inch 360Hz Monitor",
+   "微星 MPG 271QRX QD-OLED 27英寸 360Hz 显示器",
+   799.99
+  ],
+  [
+   "gaming-msi-msi-claw-a1m-core-ultra-5-512gb",
+   "MSI 클로 A1M 코어 울트라 5 512GB",
+   "MSI Claw A1M Core Ultra 5 512GB",
+   "微星 Claw A1M Core Ultra 5 512GB 掌机",
+   699.99
+  ],
+  [
+   "gaming-msi-msi-mag-271qpx-qd-oled-e2-27-inch-240hz-monitor",
+   "MSI MAG 271QPX QD-OLED E2 27인치 240Hz 모니터",
+   "MSI MAG 271QPX QD-OLED E2 27-inch 240Hz Monitor",
+   "微星 MAG 271QPX QD-OLED E2 27英寸 240Hz 显示器",
+   699.99
+  ],
+  [
+   "gaming-msi-msi-meg-ai1600t-pcie5-power-supply",
+   "MSI MEG Ai1600T PCIE5 파워 서플라이",
+   "MSI MEG Ai1600T PCIE5 Power Supply",
+   "微星 MEG Ai1600T PCIE5 电源",
+   599.99
+  ],
+  [
+   "gaming-msi-msi-geforce-rtx-5070-12g-ventus-2x-oc",
+   "MSI 지포스 RTX 5070 12G 벤투스 2X OC",
+   "MSI GeForce RTX 5070 12G Ventus 2X OC",
+   "微星 GeForce RTX 5070 12G Ventus 2X OC",
+   549.99
+  ],
+  [
+   "gaming-msi-msi-mpg-x870e-carbon-wifi-motherboard",
+   "MSI MPG X870E 카본 WiFi 메인보드",
+   "MSI MPG X870E Carbon WiFi Motherboard",
+   "微星 MPG X870E Carbon WiFi 主板",
+   499.99
+  ],
+  [
+   "gaming-msi-msi-meg-prospect-700r-case",
+   "MSI MEG 프로스펙트 700R 케이스",
+   "MSI MEG Prospect 700R Case",
+   "微星 MEG Prospect 700R 机箱",
+   399.99
+  ],
+  [
+   "gaming-msi-msi-mag-x870-tomahawk-wifi-motherboard",
+   "MSI MAG X870 토마호크 WiFi 메인보드",
+   "MSI MAG X870 Tomahawk WiFi Motherboard",
+   "微星 MAG X870 Tomahawk WiFi 主板",
+   299.99
+  ],
+  [
+   "gaming-msi-msi-g274qpf-e2-27-inch-qhd-180hz-monitor",
+   "MSI G274QPF E2 27인치 QHD 180Hz 모니터",
+   "MSI G274QPF E2 27-inch QHD 180Hz Monitor",
+   "微星 G274QPF E2 27英寸 QHD 180Hz 显示器",
+   279.99
+  ],
+  [
+   "gaming-msi-msi-meg-coreliquid-s360-liquid-cooler",
+   "MSI MEG 코어리퀴드 S360 수랭 쿨러",
+   "MSI MEG CoreLiquid S360 Liquid Cooler",
+   "微星 MEG CoreLiquid S360 水冷",
+   279.99
+  ],
+  [
+   "gaming-msi-msi-mag-b850-tomahawk-max-wifi-motherboard",
+   "MSI MAG B850 토마호크 맥스 WiFi 메인보드",
+   "MSI MAG B850 Tomahawk Max WiFi Motherboard",
+   "微星 MAG B850 Tomahawk Max WiFi 主板",
+   229.99
+  ],
+  [
+   "gaming-msi-msi-mpg-a1000g-pcie5-power-supply",
+   "MSI MPG A1000G PCIE5 파워 서플라이",
+   "MSI MPG A1000G PCIE5 Power Supply",
+   "微星 MPG A1000G PCIE5 电源",
+   199.99
+  ],
+  [
+   "gaming-msi-msi-mpg-gungnir-300r-airflow-case",
+   "MSI MPG 궁니르 300R 에어플로우 케이스",
+   "MSI MPG Gungnir 300R Airflow Case",
+   "微星 MPG Gungnir 300R Airflow 机箱",
+   159.99
+  ],
+  [
+   "gaming-msi-msi-g244f-e2-24-inch-180hz-monitor",
+   "MSI G244F E2 24인치 180Hz 모니터",
+   "MSI G244F E2 24-inch 180Hz Monitor",
+   "微星 G244F E2 24英寸 180Hz 显示器",
+   129.99
+  ],
+  [
+   "gaming-msi-msi-mag-coreliquid-i360-liquid-cooler",
+   "MSI MAG 코어리퀴드 I360 수랭 쿨러",
+   "MSI MAG CoreLiquid I360 Liquid Cooler",
+   "微星 MAG CoreLiquid I360 水冷",
+   129.99
+  ],
+  [
+   "gaming-msi-msi-vigor-gk71-sonic-mechanical-keyboard",
+   "MSI 비거 GK71 소닉 기계식 키보드",
+   "MSI Vigor GK71 Sonic Mechanical Keyboard",
+   "微星 Vigor GK71 Sonic 机械键盘",
+   109.99
+  ],
+  [
+   "gaming-msi-msi-clutch-gm51-lightweight-wireless-mouse",
+   "MSI 클러치 GM51 라이트웨이트 무선 마우스",
+   "MSI Clutch GM51 Lightweight Wireless Mouse",
+   "微星 Clutch GM51 Lightweight 无线鼠标",
+   99.99
+  ],
+  [
+   "gaming-msi-msi-immerse-gh50-gaming-headset",
+   "MSI 이머스 GH50 게이밍 헤드셋",
+   "MSI Immerse GH50 Gaming Headset",
+   "微星 Immerse GH50 游戏耳机",
+   79.99
+  ],
+  [
+   "gaming-msi-msi-vigor-gk50-elite-mechanical-keyboard",
+   "MSI 비거 GK50 엘리트 기계식 키보드",
+   "MSI Vigor GK50 Elite Mechanical Keyboard",
+   "微星 Vigor GK50 Elite 机械键盘",
+   79.99
+  ],
+  [
+   "gaming-msi-msi-mag-forge-320r-airflow-case",
+   "MSI MAG 포지 320R 에어플로우 케이스",
+   "MSI MAG Forge 320R Airflow Case",
+   "微星 MAG Forge 320R Airflow 机箱",
+   69.99
+  ],
+  [
+   "gaming-msi-msi-vigor-gk30-gaming-keyboard",
+   "MSI 비거 GK30 게이밍 키보드",
+   "MSI Vigor GK30 Gaming Keyboard",
+   "微星 Vigor GK30 游戏键盘",
+   49.99
+  ],
+  [
+   "gaming-msi-msi-force-gc30-v2-wireless-controller",
+   "MSI 포스 GC30 V2 무선 컨트롤러",
+   "MSI Force GC30 V2 Wireless Controller",
+   "微星 Force GC30 V2 无线手柄",
+   39.99
+  ],
+  [
+   "gaming-msi-msi-clutch-gm41-lightweight-v2-mouse",
+   "MSI 클러치 GM41 라이트웨이트 V2 마우스",
+   "MSI Clutch GM41 Lightweight V2 Mouse",
+   "微星 Clutch GM41 Lightweight V2 鼠标",
+   39.99
+  ],
+  [
+   "gaming-msi-msi-immerse-gh20-gaming-headset",
+   "MSI 이머스 GH20 게이밍 헤드셋",
+   "MSI Immerse GH20 Gaming Headset",
+   "微星 Immerse GH20 游戏耳机",
+   29.99
+  ],
+  [
+   "gaming-msi-msi-agility-gd70-mouse-pad",
+   "MSI 어질리티 GD70 마우스패드",
+   "MSI Agility GD70 Mouse Pad",
+   "微星 Agility GD70 鼠标垫",
+   29.99
+  ],
+  [
+   "gaming-msi-msi-clutch-gm08-gaming-mouse",
+   "MSI 클러치 GM08 게이밍 마우스",
+   "MSI Clutch GM08 Gaming Mouse",
+   "微星 Clutch GM08 游戏鼠标",
+   19.99
+  ]
+ ],
+ "use": [
+  "gaming-p-powera-wired-controller-for-xbox-series-x-s",
+  "gaming-p-jbl-quantum-100-wired-gaming-headset",
+  "gaming-p-benq-zowie-g-sr-se-mouse-pad",
+  "gaming-p-creative-pebble-v3-usb-c-speakers",
+  "gaming-p-jsaux-docking-station-hb0603-for-steam-deck",
+  "gaming-p-meta-quest-3-silicone-facial-interface",
+  "gaming-p-my-arcade-pac-man-micro-player-pro",
+  "gaming-p-gamesir-g7-se-wired-controller-for-xbox",
+  "gaming-p-sandisk-microsd-express-128gb",
+  "gaming-p-gamesir-cyclone-2-wireless-controller",
+  "gaming-p-my-arcade-atari-gamestation-pro",
+  "gaming-p-nanoleaf-4d-screen-mirror-plus-lightstrip-kit-65-inch",
+  "gaming-p-artisan-ninja-fx-zero-xsoft-mouse-pad-l",
+  "gaming-p-dayton-audio-bst-1-bass-shaker",
+  "gaming-p-genki-covert-dock-2",
+  "gaming-p-hori-fighting-commander-octa-for-playstation-5",
+  "gaming-p-hori-piranha-plant-camera-for-nintendo-switch-2",
+  "gaming-p-hori-wireless-horipad-for-steam",
+  "gaming-p-hypermegatech-super-pocket-capcom-edition",
+  "gaming-p-sandisk-microsd-express-256gb",
+  "gaming-p-meta-quest-3-charging-dock",
+  "gaming-p-meta-quest-3-elite-strap-with-battery",
+  "gaming-p-focusrite-scarlett-solo-4th-gen",
+  "gaming-p-vkb-gladiator-nxt-evo-space-combat-edition",
+  "gaming-p-beacn-mix-audio-controller",
+  "gaming-p-shure-mv6-usb-gaming-microphone",
+  "gaming-p-shure-mv7-plus-podcast-microphone",
+  "gaming-p-aoc-q27g3xmn-27-inch-mini-led-gaming-monitor",
+  "gaming-p-nzxt-kraken-elite-360-liquid-cooler",
+  "gaming-p-audeze-maxwell-wireless-gaming-headset-for-playstation",
+  "gaming-p-next-level-racing-f-gt-lite-cockpit",
+  "gaming-p-beyerdynamic-mmx-300-pro-gaming-headset",
+  "gaming-p-sennheiser-hd-600-open-back-headphones",
+  "gaming-p-meta-quest-3s-256gb",
+  "gaming-p-master-and-dynamic-mg20-wireless-gaming-headphones",
+  "gaming-p-magewell-usb-capture-hdmi-4k-plus",
+  "gaming-p-amd-ryzen-7-9800x3d-processor",
+  "gaming-p-bang-and-olufsen-beoplay-portal-gaming-headphones",
+  "gaming-p-nvidia-geforce-rtx-5090-founders-edition",
+  "gaming-p-stern-pinball-jurassic-park-home-edition",
+  "gaming-p-stern-pinball-jaws-pro",
+  "gaming-p-stern-pinball-king-kong-myth-of-terror-island-pro",
+  "gaming-p-samsung-neo-qled-8k-qn990f-85-inch-tv",
+  "gaming-p-stern-pinball-godzilla-premium",
+  "gaming-p-samsung-neo-qled-8k-qn990f-98-inch-tv",
+  "gaming-p-jersey-jack-pinball-harry-potter-collector-s-edition",
+  "gaming-p-prodrive-racing-simulator",
+  "gaming-p-lg-signature-oled-t-77-inch-transparent-tv"
+ ]
+}

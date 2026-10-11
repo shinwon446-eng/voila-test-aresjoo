@@ -1,0 +1,632 @@
+{
+ "slug": "camera-canon",
+ "items": [
+  [
+   "camera-canon-eos-r1",
+   "캐논 EOS R1",
+   "Canon EOS R1",
+   "佳能 EOS R1",
+   6299
+  ],
+  [
+   "camera-canon-eos-r5-mark-ii",
+   "캐논 EOS R5 Mark II",
+   "Canon EOS R5 Mark II",
+   "佳能 EOS R5 Mark II",
+   4299
+  ],
+  [
+   "camera-canon-eos-r5",
+   "캐논 EOS R5",
+   "Canon EOS R5",
+   "佳能 EOS R5",
+   2999
+  ],
+  [
+   "camera-canon-eos-r6-mark-iii",
+   "캐논 EOS R6 Mark III",
+   "Canon EOS R6 Mark III",
+   "佳能 EOS R6 Mark III",
+   2799
+  ],
+  [
+   "camera-canon-eos-r6-mark-ii",
+   "캐논 EOS R6 Mark II",
+   "Canon EOS R6 Mark II",
+   "佳能 EOS R6 Mark II",
+   2299
+  ],
+  [
+   "camera-canon-eos-r3",
+   "캐논 EOS R3",
+   "Canon EOS R3",
+   "佳能 EOS R3",
+   4999
+  ],
+  [
+   "camera-canon-eos-r8",
+   "캐논 EOS R8",
+   "Canon EOS R8",
+   "佳能 EOS R8",
+   1499
+  ],
+  [
+   "camera-canon-eos-r7",
+   "캐논 EOS R7",
+   "Canon EOS R7",
+   "佳能 EOS R7",
+   1499
+  ],
+  [
+   "camera-canon-eos-r10",
+   "캐논 EOS R10",
+   "Canon EOS R10",
+   "佳能 EOS R10",
+   979
+  ],
+  [
+   "camera-canon-eos-r50",
+   "캐논 EOS R50",
+   "Canon EOS R50",
+   "佳能 EOS R50",
+   679
+  ],
+  [
+   "camera-canon-eos-r50-v",
+   "캐논 EOS R50 V",
+   "Canon EOS R50 V",
+   "佳能 EOS R50 V",
+   649
+  ],
+  [
+   "camera-canon-eos-r100",
+   "캐논 EOS R100",
+   "Canon EOS R100",
+   "佳能 EOS R100",
+   479
+  ],
+  [
+   "camera-canon-eos-rp",
+   "캐논 EOS RP",
+   "Canon EOS RP",
+   "佳能 EOS RP",
+   999
+  ],
+  [
+   "camera-canon-eos-r5-c",
+   "캐논 EOS R5 C",
+   "Canon EOS R5 C",
+   "佳能 EOS R5 C",
+   3899
+  ],
+  [
+   "camera-canon-eos-c50",
+   "캐논 EOS C50",
+   "Canon EOS C50",
+   "佳能 EOS C50",
+   3899
+  ],
+  [
+   "camera-canon-eos-c70",
+   "캐논 EOS C70",
+   "Canon EOS C70",
+   "佳能 EOS C70",
+   4499
+  ],
+  [
+   "camera-canon-eos-c80",
+   "캐논 EOS C80",
+   "Canon EOS C80",
+   "佳能 EOS C80",
+   5499
+  ],
+  [
+   "camera-canon-eos-c400",
+   "캐논 EOS C400",
+   "Canon EOS C400",
+   "佳能 EOS C400",
+   7999
+  ],
+  [
+   "camera-canon-eos-c300-mark-iii",
+   "캐논 EOS C300 Mark III",
+   "Canon EOS C300 Mark III",
+   "佳能 EOS C300 Mark III",
+   8999
+  ],
+  [
+   "camera-canon-eos-c500-mark-ii",
+   "캐논 EOS C500 Mark II",
+   "Canon EOS C500 Mark II",
+   "佳能 EOS C500 Mark II",
+   10999
+  ],
+  [
+   "camera-canon-eos-1d-x-mark-iii",
+   "캐논 EOS-1D X Mark III",
+   "Canon EOS-1D X Mark III",
+   "佳能 EOS-1D X Mark III",
+   6499
+  ],
+  [
+   "camera-canon-eos-5d-mark-iv",
+   "캐논 EOS 5D Mark IV",
+   "Canon EOS 5D Mark IV",
+   "佳能 EOS 5D Mark IV",
+   2499
+  ],
+  [
+   "camera-canon-eos-90d",
+   "캐논 EOS 90D",
+   "Canon EOS 90D",
+   "佳能 EOS 90D",
+   1199
+  ],
+  [
+   "camera-canon-eos-rebel-t7-with-ef-s-18-55mm-is-ii-kit",
+   "캐논 EOS Rebel T7 EF-S 18-55mm IS II 키트",
+   "Canon EOS Rebel T7 with EF-S 18-55mm IS II Kit",
+   "佳能 EOS Rebel T7 含 EF-S 18-55mm IS II 套装",
+   549
+  ],
+  [
+   "camera-canon-powershot-v1",
+   "캐논 PowerShot V1",
+   "Canon PowerShot V1",
+   "佳能 PowerShot V1",
+   899
+  ],
+  [
+   "camera-canon-powershot-v10",
+   "캐논 PowerShot V10",
+   "Canon PowerShot V10",
+   "佳能 PowerShot V10",
+   399
+  ],
+  [
+   "camera-canon-powershot-g7-x-mark-iii",
+   "캐논 PowerShot G7 X Mark III",
+   "Canon PowerShot G7 X Mark III",
+   "佳能 PowerShot G7 X Mark III",
+   879
+  ],
+  [
+   "camera-canon-powershot-sx740-hs",
+   "캐논 PowerShot SX740 HS",
+   "Canon PowerShot SX740 HS",
+   "佳能 PowerShot SX740 HS",
+   549
+  ],
+  [
+   "camera-canon-rf-50mm-f1-8-stm",
+   "캐논 RF 50mm F1.8 STM",
+   "Canon RF 50mm F1.8 STM",
+   "佳能 RF 50mm F1.8 STM",
+   219
+  ],
+  [
+   "camera-canon-rf-16mm-f2-8-stm",
+   "캐논 RF 16mm F2.8 STM",
+   "Canon RF 16mm F2.8 STM",
+   "佳能 RF 16mm F2.8 STM",
+   299
+  ],
+  [
+   "camera-canon-rf-28mm-f2-8-stm",
+   "캐논 RF 28mm F2.8 STM",
+   "Canon RF 28mm F2.8 STM",
+   "佳能 RF 28mm F2.8 STM",
+   299
+  ],
+  [
+   "camera-canon-rf-35mm-f1-8-macro-is-stm",
+   "캐논 RF 35mm F1.8 Macro IS STM",
+   "Canon RF 35mm F1.8 Macro IS STM",
+   "佳能 RF 35mm F1.8 Macro IS STM",
+   499
+  ],
+  [
+   "camera-canon-rf-85mm-f2-macro-is-stm",
+   "캐논 RF 85mm F2 Macro IS STM",
+   "Canon RF 85mm F2 Macro IS STM",
+   "佳能 RF 85mm F2 Macro IS STM",
+   599
+  ],
+  [
+   "camera-canon-rf-50mm-f1-4-l-vcm",
+   "캐논 RF 50mm F1.4 L VCM",
+   "Canon RF 50mm F1.4 L VCM",
+   "佳能 RF 50mm F1.4 L VCM",
+   1399
+  ],
+  [
+   "camera-canon-rf-35mm-f1-4-l-vcm",
+   "캐논 RF 35mm F1.4 L VCM",
+   "Canon RF 35mm F1.4 L VCM",
+   "佳能 RF 35mm F1.4 L VCM",
+   1499
+  ],
+  [
+   "camera-canon-rf-24mm-f1-4-l-vcm",
+   "캐논 RF 24mm F1.4 L VCM",
+   "Canon RF 24mm F1.4 L VCM",
+   "佳能 RF 24mm F1.4 L VCM",
+   1499
+  ],
+  [
+   "camera-canon-rf-85mm-f1-4-l-vcm",
+   "캐논 RF 85mm F1.4 L VCM",
+   "Canon RF 85mm F1.4 L VCM",
+   "佳能 RF 85mm F1.4 L VCM",
+   1649
+  ],
+  [
+   "camera-canon-rf-20mm-f1-4-l-vcm",
+   "캐논 RF 20mm F1.4 L VCM",
+   "Canon RF 20mm F1.4 L VCM",
+   "佳能 RF 20mm F1.4 L VCM",
+   1699
+  ],
+  [
+   "camera-canon-rf-50mm-f1-2-l-usm",
+   "캐논 RF 50mm F1.2 L USM",
+   "Canon RF 50mm F1.2 L USM",
+   "佳能 RF 50mm F1.2 L USM",
+   2299
+  ],
+  [
+   "camera-canon-rf-85mm-f1-2-l-usm",
+   "캐논 RF 85mm F1.2 L USM",
+   "Canon RF 85mm F1.2 L USM",
+   "佳能 RF 85mm F1.2 L USM",
+   2799
+  ],
+  [
+   "camera-canon-rf-85mm-f1-2-l-usm-ds",
+   "캐논 RF 85mm F1.2 L USM DS",
+   "Canon RF 85mm F1.2 L USM DS",
+   "佳能 RF 85mm F1.2 L USM DS",
+   3099
+  ],
+  [
+   "camera-canon-rf-135mm-f1-8-l-is-usm",
+   "캐논 RF 135mm F1.8 L IS USM",
+   "Canon RF 135mm F1.8 L IS USM",
+   "佳能 RF 135mm F1.8 L IS USM",
+   2099
+  ],
+  [
+   "camera-canon-rf-100mm-f2-8-l-macro-is-usm",
+   "캐논 RF 100mm F2.8 L Macro IS USM",
+   "Canon RF 100mm F2.8 L Macro IS USM",
+   "佳能 RF 100mm F2.8 L Macro IS USM",
+   1099
+  ],
+  [
+   "camera-canon-rf-14-35mm-f4-l-is-usm",
+   "캐논 RF 14-35mm F4 L IS USM",
+   "Canon RF 14-35mm F4 L IS USM",
+   "佳能 RF 14-35mm F4 L IS USM",
+   1499
+  ],
+  [
+   "camera-canon-rf-15-35mm-f2-8-l-is-usm",
+   "캐논 RF 15-35mm F2.8 L IS USM",
+   "Canon RF 15-35mm F2.8 L IS USM",
+   "佳能 RF 15-35mm F2.8 L IS USM",
+   2399
+  ],
+  [
+   "camera-canon-rf-10-20mm-f4-l-is-stm",
+   "캐논 RF 10-20mm F4 L IS STM",
+   "Canon RF 10-20mm F4 L IS STM",
+   "佳能 RF 10-20mm F4 L IS STM",
+   2299
+  ],
+  [
+   "camera-canon-rf-24-70mm-f2-8-l-is-usm",
+   "캐논 RF 24-70mm F2.8 L IS USM",
+   "Canon RF 24-70mm F2.8 L IS USM",
+   "佳能 RF 24-70mm F2.8 L IS USM",
+   2399
+  ],
+  [
+   "camera-canon-rf-24-105mm-f4-l-is-usm",
+   "캐논 RF 24-105mm F4 L IS USM",
+   "Canon RF 24-105mm F4 L IS USM",
+   "佳能 RF 24-105mm F4 L IS USM",
+   1299
+  ],
+  [
+   "camera-canon-rf-24-105mm-f2-8-l-is-usm-z",
+   "캐논 RF 24-105mm F2.8 L IS USM Z",
+   "Canon RF 24-105mm F2.8 L IS USM Z",
+   "佳能 RF 24-105mm F2.8 L IS USM Z",
+   2999
+  ],
+  [
+   "camera-canon-rf-28-70mm-f2-l-usm",
+   "캐논 RF 28-70mm F2 L USM",
+   "Canon RF 28-70mm F2 L USM",
+   "佳能 RF 28-70mm F2 L USM",
+   3099
+  ],
+  [
+   "camera-canon-rf-28-70mm-f2-8-is-stm",
+   "캐논 RF 28-70mm F2.8 IS STM",
+   "Canon RF 28-70mm F2.8 IS STM",
+   "佳能 RF 28-70mm F2.8 IS STM",
+   1099
+  ],
+  [
+   "camera-canon-rf-70-200mm-f2-8-l-is-usm-z",
+   "캐논 RF 70-200mm F2.8 L IS USM Z",
+   "Canon RF 70-200mm F2.8 L IS USM Z",
+   "佳能 RF 70-200mm F2.8 L IS USM Z",
+   2999
+  ],
+  [
+   "camera-canon-rf-70-200mm-f4-l-is-usm",
+   "캐논 RF 70-200mm F4 L IS USM",
+   "Canon RF 70-200mm F4 L IS USM",
+   "佳能 RF 70-200mm F4 L IS USM",
+   1599
+  ],
+  [
+   "camera-canon-rf-100-300mm-f2-8-l-is-usm",
+   "캐논 RF 100-300mm F2.8 L IS USM",
+   "Canon RF 100-300mm F2.8 L IS USM",
+   "佳能 RF 100-300mm F2.8 L IS USM",
+   9499
+  ],
+  [
+   "camera-canon-rf-100-500mm-f4-5-7-1-l-is-usm",
+   "캐논 RF 100-500mm F4.5-7.1 L IS USM",
+   "Canon RF 100-500mm F4.5-7.1 L IS USM",
+   "佳能 RF 100-500mm F4.5-7.1 L IS USM",
+   2799
+  ],
+  [
+   "camera-canon-rf-100-400mm-f5-6-8-is-usm",
+   "캐논 RF 100-400mm F5.6-8 IS USM",
+   "Canon RF 100-400mm F5.6-8 IS USM",
+   "佳能 RF 100-400mm F5.6-8 IS USM",
+   649
+  ],
+  [
+   "camera-canon-rf-200-800mm-f6-3-9-is-usm",
+   "캐논 RF 200-800mm F6.3-9 IS USM",
+   "Canon RF 200-800mm F6.3-9 IS USM",
+   "佳能 RF 200-800mm F6.3-9 IS USM",
+   1899
+  ],
+  [
+   "camera-canon-rf-400mm-f2-8-l-is-usm",
+   "캐논 RF 400mm F2.8 L IS USM",
+   "Canon RF 400mm F2.8 L IS USM",
+   "佳能 RF 400mm F2.8 L IS USM",
+   11999
+  ],
+  [
+   "camera-canon-rf-600mm-f4-l-is-usm",
+   "캐논 RF 600mm F4 L IS USM",
+   "Canon RF 600mm F4 L IS USM",
+   "佳能 RF 600mm F4 L IS USM",
+   12999
+  ],
+  [
+   "camera-canon-rf-800mm-f5-6-l-is-usm",
+   "캐논 RF 800mm F5.6 L IS USM",
+   "Canon RF 800mm F5.6 L IS USM",
+   "佳能 RF 800mm F5.6 L IS USM",
+   16999
+  ],
+  [
+   "camera-canon-rf-1200mm-f8-l-is-usm",
+   "캐논 RF 1200mm F8 L IS USM",
+   "Canon RF 1200mm F8 L IS USM",
+   "佳能 RF 1200mm F8 L IS USM",
+   19999
+  ],
+  [
+   "camera-canon-rf-600mm-f11-is-stm",
+   "캐논 RF 600mm F11 IS STM",
+   "Canon RF 600mm F11 IS STM",
+   "佳能 RF 600mm F11 IS STM",
+   799
+  ],
+  [
+   "camera-canon-rf-5-2mm-f2-8-l-dual-fisheye",
+   "캐논 RF 5.2mm F2.8 L Dual Fisheye",
+   "Canon RF 5.2mm F2.8 L Dual Fisheye",
+   "佳能 RF 5.2mm F2.8 L Dual Fisheye",
+   1999
+  ],
+  [
+   "camera-canon-cn-e-50mm-t1-3-l-f",
+   "캐논 CN-E 50mm T1.3 L F",
+   "Canon CN-E 50mm T1.3 L F",
+   "佳能 CN-E 50mm T1.3 L F",
+   4220
+  ],
+  [
+   "camera-canon-cine-servo-25-250mm-t2-95-3-95",
+   "캐논 CINE-SERVO 25-250mm T2.95-3.95",
+   "Canon CINE-SERVO 25-250mm T2.95-3.95",
+   "佳能 CINE-SERVO 25-250mm T2.95-3.95",
+   29999
+  ],
+  [
+   "camera-canon-extender-rf-1-4x",
+   "캐논 Extender RF 1.4x",
+   "Canon Extender RF 1.4x",
+   "佳能 Extender RF 1.4x",
+   499
+  ],
+  [
+   "camera-canon-extender-rf-2x",
+   "캐논 Extender RF 2x",
+   "Canon Extender RF 2x",
+   "佳能 Extender RF 2x",
+   599
+  ],
+  [
+   "camera-canon-mount-adapter-ef-eos-r",
+   "캐논 마운트 어댑터 EF-EOS R",
+   "Canon Mount Adapter EF-EOS R",
+   "佳能 卡口适配器 EF-EOS R",
+   129
+  ],
+  [
+   "camera-canon-speedlite-el-1",
+   "캐논 Speedlite EL-1",
+   "Canon Speedlite EL-1",
+   "佳能 Speedlite EL-1",
+   1099
+  ],
+  [
+   "camera-canon-speedlite-el-5",
+   "캐논 Speedlite EL-5",
+   "Canon Speedlite EL-5",
+   "佳能 Speedlite EL-5",
+   399
+  ],
+  [
+   "camera-canon-speedlite-el-10",
+   "캐논 Speedlite EL-10",
+   "Canon Speedlite EL-10",
+   "佳能 Speedlite EL-10",
+   249
+  ],
+  [
+   "camera-canon-battery-grip-bg-r20",
+   "캐논 배터리 그립 BG-R20",
+   "Canon Battery Grip BG-R20",
+   "佳能 电池手柄 BG-R20",
+   349
+  ],
+  [
+   "camera-canon-battery-pack-lp-e6p",
+   "캐논 배터리 팩 LP-E6P",
+   "Canon Battery Pack LP-E6P",
+   "佳能 电池 LP-E6P",
+   99
+  ],
+  [
+   "camera-canon-battery-pack-lp-e17",
+   "캐논 배터리 팩 LP-E17",
+   "Canon Battery Pack LP-E17",
+   "佳能 电池 LP-E17",
+   69
+  ],
+  [
+   "camera-canon-battery-charger-lc-e6",
+   "캐논 배터리 충전기 LC-E6",
+   "Canon Battery Charger LC-E6",
+   "佳能 电池充电器 LC-E6",
+   69
+  ],
+  [
+   "camera-canon-remote-switch-rs-60e3",
+   "캐논 리모트 스위치 RS-60E3",
+   "Canon Remote Switch RS-60E3",
+   "佳能 快门线 RS-60E3",
+   24.99
+  ],
+  [
+   "camera-canon-wireless-remote-control-br-e1",
+   "캐논 무선 리모컨 BR-E1",
+   "Canon Wireless Remote Control BR-E1",
+   "佳能 无线遥控器 BR-E1",
+   44.99
+  ],
+  [
+   "camera-canon-lens-cap-e-77-ii",
+   "캐논 렌즈 캡 E-77 II",
+   "Canon Lens Cap E-77 II",
+   "佳能 镜头盖 E-77 II",
+   12.99
+  ],
+  [
+   "camera-canon-lens-cap-e-67-ii",
+   "캐논 렌즈 캡 E-67 II",
+   "Canon Lens Cap E-67 II",
+   "佳能 镜头盖 E-67 II",
+   9.99
+  ],
+  [
+   "camera-canon-rear-lens-cap-rf",
+   "캐논 렌즈 더스트 캡 RF",
+   "Canon Rear Lens Cap RF",
+   "佳能 镜头后盖 RF",
+   8.99
+  ],
+  [
+   "camera-canon-camera-cover-r-f-5",
+   "캐논 카메라 커버 R-F-5",
+   "Canon Camera Cover R-F-5",
+   "佳能 机身盖 R-F-5",
+   8.99
+  ],
+  [
+   "camera-canon-lens-hood-es-65b",
+   "캐논 렌즈 후드 ES-65B",
+   "Canon Lens Hood ES-65B",
+   "佳能 遮光罩 ES-65B",
+   29.99
+  ],
+  [
+   "camera-canon-selphy-cp1500",
+   "캐논 SELPHY CP1500",
+   "Canon SELPHY CP1500",
+   "佳能 SELPHY CP1500",
+   139
+  ],
+  [
+   "camera-canon-selphy-color-ink-paper-set-kp-108in",
+   "캐논 SELPHY 컬러 잉크 용지 세트 KP-108IN",
+   "Canon SELPHY Color Ink Paper Set KP-108IN",
+   "佳能 SELPHY 彩色墨水相纸套装 KP-108IN",
+   39.99
+  ],
+  [
+   "camera-canon-pixma-pro-200",
+   "캐논 PIXMA PRO-200",
+   "Canon PIXMA PRO-200",
+   "佳能 PIXMA PRO-200",
+   599
+  ],
+  [
+   "camera-canon-imageprograf-pro-310",
+   "캐논 imagePROGRAF PRO-310",
+   "Canon imagePROGRAF PRO-310",
+   "佳能 imagePROGRAF PRO-310",
+   899
+  ],
+  [
+   "camera-canon-stereo-microphone-dm-e1d",
+   "캐논 스테레오 마이크 DM-E1D",
+   "Canon Stereo Microphone DM-E1D",
+   "佳能 立体声麦克风 DM-E1D",
+   299
+  ]
+ ],
+ "use": [
+  "camera-p-kodak-tri-x-400-35mm-36-exposures-film",
+  "camera-p-peak-design-anchor-4-pack",
+  "camera-p-lenspen-nlp-1-original-lens-cleaning-pen",
+  "camera-p-tiffen-67mm-uv-protector-filter",
+  "camera-p-think-tank-photo-dslr-battery-holder-2",
+  "camera-p-k-and-f-concept-77mm-nano-x-circular-polarizer-filter",
+  "camera-p-peak-design-shell-medium-rain-cover",
+  "camera-p-nanlite-litolite-5c",
+  "camera-p-gary-fong-lightsphere-collapsible-speed-mount",
+  "camera-p-tiffen-82mm-circular-polarizer-filter",
+  "camera-p-joby-gorillapod-3k-kit",
+  "camera-p-k-and-f-concept-77mm-nano-x-variable-nd2-nd32-filter",
+  "camera-p-aputure-lantern-90",
+  "camera-p-smallrig-rc-60b-cob-led-video-light",
+  "camera-p-manfrotto-055-aluminum-3-section-tripod-mt055xpro3",
+  "camera-p-red-v-raptor-xl-x-8k-vv"
+ ]
+}

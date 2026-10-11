@@ -1,0 +1,575 @@
+{
+ "slug": "camera-profoto",
+ "items": [
+  [
+   "camera-profoto-b10x",
+   "프로포토 B10X",
+   "Profoto B10X",
+   "保富图 B10X",
+   2195
+  ],
+  [
+   "camera-profoto-b10x-plus",
+   "프로포토 B10X Plus",
+   "Profoto B10X Plus",
+   "保富图 B10X Plus",
+   2595
+  ],
+  [
+   "camera-profoto-b10x-duo-kit",
+   "프로포토 B10X Duo 키트",
+   "Profoto B10X Duo Kit",
+   "保富图 B10X Duo 套装",
+   4295
+  ],
+  [
+   "camera-profoto-b10x-plus-duo-kit",
+   "프로포토 B10X Plus Duo 키트",
+   "Profoto B10X Plus Duo Kit",
+   "保富图 B10X Plus Duo 套装",
+   4995
+  ],
+  [
+   "camera-profoto-b20",
+   "프로포토 B20",
+   "Profoto B20",
+   "保富图 B20",
+   2295
+  ],
+  [
+   "camera-profoto-b30",
+   "프로포토 B30",
+   "Profoto B30",
+   "保富图 B30",
+   2795
+  ],
+  [
+   "camera-profoto-b30-duo-kit",
+   "프로포토 B30 Duo 키트",
+   "Profoto B30 Duo Kit",
+   "保富图 B30 Duo 套装",
+   5395
+  ],
+  [
+   "camera-profoto-b1x-500-airttl-to-go-kit",
+   "프로포토 B1X 500 AirTTL To-Go 키트",
+   "Profoto B1X 500 AirTTL To-Go Kit",
+   "保富图 B1X 500 AirTTL To-Go 套装",
+   2295
+  ],
+  [
+   "camera-profoto-b2-250-airttl-to-go-kit",
+   "프로포토 B2 250 AirTTL To-Go 키트",
+   "Profoto B2 250 AirTTL To-Go Kit",
+   "保富图 B2 250 AirTTL To-Go 套装",
+   2195
+  ],
+  [
+   "camera-profoto-a2",
+   "프로포토 A2",
+   "Profoto A2",
+   "保富图 A2",
+   995
+  ],
+  [
+   "camera-profoto-a2-duo-kit",
+   "프로포토 A2 Duo 키트",
+   "Profoto A2 Duo Kit",
+   "保富图 A2 Duo 套装",
+   1895
+  ],
+  [
+   "camera-profoto-a10",
+   "프로포토 A10",
+   "Profoto A10",
+   "保富图 A10",
+   1195
+  ],
+  [
+   "camera-profoto-a10-off-camera-kit",
+   "프로포토 A10 오프 카메라 키트",
+   "Profoto A10 Off-Camera Kit",
+   "保富图 A10 离机套装",
+   1495
+  ],
+  [
+   "camera-profoto-d2-500-airttl",
+   "프로포토 D2 500 AirTTL",
+   "Profoto D2 500 AirTTL",
+   "保富图 D2 500 AirTTL",
+   1795
+  ],
+  [
+   "camera-profoto-d2-1000-airttl",
+   "프로포토 D2 1000 AirTTL",
+   "Profoto D2 1000 AirTTL",
+   "保富图 D2 1000 AirTTL",
+   2295
+  ],
+  [
+   "camera-profoto-d2-duo-kit-500-500-airttl",
+   "프로포토 D2 듀오 키트 500/500 AirTTL",
+   "Profoto D2 Duo Kit 500/500 AirTTL",
+   "保富图 D2 双灯套装 500/500 AirTTL",
+   3595
+  ],
+  [
+   "camera-profoto-d30",
+   "프로포토 D30",
+   "Profoto D30",
+   "保富图 D30",
+   1995
+  ],
+  [
+   "camera-profoto-d30-duo-kit",
+   "프로포토 D30 Duo 키트",
+   "Profoto D30 Duo Kit",
+   "保富图 D30 Duo 套装",
+   3795
+  ],
+  [
+   "camera-profoto-pro-11-2400-airttl",
+   "프로포토 Pro-11 2400 AirTTL",
+   "Profoto Pro-11 2400 AirTTL",
+   "保富图 Pro-11 2400 AirTTL",
+   17995
+  ],
+  [
+   "camera-profoto-pro-10-2400-airttl",
+   "프로포토 Pro-10 2400 AirTTL",
+   "Profoto Pro-10 2400 AirTTL",
+   "保富图 Pro-10 2400 AirTTL",
+   14995
+  ],
+  [
+   "camera-profoto-pro-b4-1000-air",
+   "프로포토 Pro-B4 1000 Air",
+   "Profoto Pro-B4 1000 Air",
+   "保富图 Pro-B4 1000 Air",
+   8995
+  ],
+  [
+   "camera-profoto-pro-d3-1250",
+   "프로포토 Pro-D3 1250",
+   "Profoto Pro-D3 1250",
+   "保富图 Pro-D3 1250",
+   3995
+  ],
+  [
+   "camera-profoto-pro-d3-750",
+   "프로포토 Pro-D3 750",
+   "Profoto Pro-D3 750",
+   "保富图 Pro-D3 750",
+   3495
+  ],
+  [
+   "camera-profoto-prohead-plus",
+   "프로포토 ProHead Plus",
+   "Profoto ProHead Plus",
+   "保富图 ProHead Plus",
+   2395
+  ],
+  [
+   "camera-profoto-protwin-head",
+   "프로포토 ProTwin Head",
+   "Profoto ProTwin Head",
+   "保富图 ProTwin Head",
+   4995
+  ],
+  [
+   "camera-profoto-proring-2-plus",
+   "프로포토 ProRing 2 Plus",
+   "Profoto ProRing 2 Plus",
+   "保富图 ProRing 2 Plus",
+   3495
+  ],
+  [
+   "camera-profoto-l1600d",
+   "프로포토 L1600D",
+   "Profoto L1600D",
+   "保富图 L1600D",
+   5995
+  ],
+  [
+   "camera-profoto-l600d",
+   "프로포토 L600D",
+   "Profoto L600D",
+   "保富图 L600D",
+   3495
+  ],
+  [
+   "camera-profoto-l600c",
+   "프로포토 L600C",
+   "Profoto L600C",
+   "保富图 L600C",
+   4495
+  ],
+  [
+   "camera-profoto-c1-plus",
+   "프로포토 C1 Plus",
+   "Profoto C1 Plus",
+   "保富图 C1 Plus",
+   499
+  ],
+  [
+   "camera-profoto-connect-pro",
+   "프로포토 Connect Pro",
+   "Profoto Connect Pro",
+   "保富图 Connect Pro",
+   449
+  ],
+  [
+   "camera-profoto-connect",
+   "프로포토 Connect",
+   "Profoto Connect",
+   "保富图 Connect",
+   299
+  ],
+  [
+   "camera-profoto-air-remote-ttl",
+   "프로포토 Air Remote TTL",
+   "Profoto Air Remote TTL",
+   "保富图 Air Remote TTL",
+   449
+  ],
+  [
+   "camera-profoto-air-remote",
+   "프로포토 Air Remote",
+   "Profoto Air Remote",
+   "保富图 Air Remote",
+   329
+  ],
+  [
+   "camera-profoto-clic-softbox-2-octa",
+   "프로포토 Clic 소프트박스 2 옥타",
+   "Profoto Clic Softbox 2 Octa",
+   "保富图 Clic 柔光箱 2 八角",
+   299
+  ],
+  [
+   "camera-profoto-clic-softbox-2-7-octa",
+   "프로포토 Clic 소프트박스 2.7 옥타",
+   "Profoto Clic Softbox 2.7 Octa",
+   "保富图 Clic 柔光箱 2.7 八角",
+   349
+  ],
+  [
+   "camera-profoto-clic-snoot",
+   "프로포토 Clic 스누트",
+   "Profoto Clic Snoot",
+   "保富图 Clic 束光筒",
+   199
+  ],
+  [
+   "camera-profoto-clic-gel-kit",
+   "프로포토 Clic 젤 키트",
+   "Profoto Clic Gel Kit",
+   "保富图 Clic 色片套装",
+   199
+  ],
+  [
+   "camera-profoto-clic-creative-gel-kit",
+   "프로포토 Clic 크리에이티브 젤 키트",
+   "Profoto Clic Creative Gel Kit",
+   "保富图 Clic 创意色片套装",
+   169
+  ],
+  [
+   "camera-profoto-clic-grid-kit",
+   "프로포토 Clic 그리드 키트",
+   "Profoto Clic Grid Kit",
+   "保富图 Clic 蜂巢套装",
+   199
+  ],
+  [
+   "camera-profoto-clic-dome",
+   "프로포토 Clic 돔",
+   "Profoto Clic Dome",
+   "保富图 Clic 柔光球",
+   89
+  ],
+  [
+   "camera-profoto-clic-magnum",
+   "프로포토 Clic 매그넘",
+   "Profoto Clic Magnum",
+   "保富图 Clic Magnum 反光罩",
+   249
+  ],
+  [
+   "camera-profoto-ocf-softbox-2-octa",
+   "프로포토 OCF 소프트박스 2 옥타",
+   "Profoto OCF Softbox 2 Octa",
+   "保富图 OCF 柔光箱 2 八角",
+   189
+  ],
+  [
+   "camera-profoto-ocf-softbox-3-octa",
+   "프로포토 OCF 소프트박스 3 옥타",
+   "Profoto OCF Softbox 3 Octa",
+   "保富图 OCF 柔光箱 3 八角",
+   249
+  ],
+  [
+   "camera-profoto-ocf-softbox-2x3",
+   "프로포토 OCF 소프트박스 2x3",
+   "Profoto OCF Softbox 2x3",
+   "保富图 OCF 柔光箱 2x3",
+   169
+  ],
+  [
+   "camera-profoto-ocf-softbox-1x3",
+   "프로포토 OCF 소프트박스 1x3",
+   "Profoto OCF Softbox 1x3",
+   "保富图 OCF 柔光箱 1x3",
+   199
+  ],
+  [
+   "camera-profoto-ocf-beauty-dish-white-2",
+   "프로포토 OCF 뷰티 디시 화이트 2",
+   "Profoto OCF Beauty Dish White 2",
+   "保富图 OCF 雷达罩 白色 2",
+   199
+  ],
+  [
+   "camera-profoto-ocf-speedring",
+   "프로포토 OCF 스피드링",
+   "Profoto OCF Speedring",
+   "保富图 OCF 卡口环",
+   119
+  ],
+  [
+   "camera-profoto-ocf-magnum-reflector",
+   "프로포토 OCF 매그넘 리플렉터",
+   "Profoto OCF Magnum Reflector",
+   "保富图 OCF Magnum 反光罩",
+   249
+  ],
+  [
+   "camera-profoto-ocf-zoom-reflector",
+   "프로포토 OCF 줌 리플렉터",
+   "Profoto OCF Zoom Reflector",
+   "保富图 OCF 变焦反光罩",
+   199
+  ],
+  [
+   "camera-profoto-ocf-grid-kit",
+   "프로포토 OCF 그리드 키트",
+   "Profoto OCF Grid Kit",
+   "保富图 OCF 蜂巢套装",
+   199
+  ],
+  [
+   "camera-profoto-ocf-color-gel-starter-kit",
+   "프로포토 OCF 컬러 젤 스타터 키트",
+   "Profoto OCF Color Gel Starter Kit",
+   "保富图 OCF 色片入门套装",
+   129
+  ],
+  [
+   "camera-profoto-ocf-barndoor",
+   "프로포토 OCF 반도어",
+   "Profoto OCF Barndoor",
+   "保富图 OCF 挡光板",
+   189
+  ],
+  [
+   "camera-profoto-ocf-snoot",
+   "프로포토 OCF 스누트",
+   "Profoto OCF Snoot",
+   "保富图 OCF 束光筒",
+   139
+  ],
+  [
+   "camera-profoto-softbox-3-octa",
+   "프로포토 소프트박스 3 옥타",
+   "Profoto Softbox 3 Octa",
+   "保富图 柔光箱 3 八角",
+   339
+  ],
+  [
+   "camera-profoto-softbox-5-octa",
+   "프로포토 소프트박스 5 옥타",
+   "Profoto Softbox 5 Octa",
+   "保富图 柔光箱 5 八角",
+   489
+  ],
+  [
+   "camera-profoto-softbox-1x4",
+   "프로포토 소프트박스 1x4",
+   "Profoto Softbox 1x4",
+   "保富图 柔光箱 1x4",
+   289
+  ],
+  [
+   "camera-profoto-softbox-3x4",
+   "프로포토 소프트박스 3x4",
+   "Profoto Softbox 3x4",
+   "保富图 柔光箱 3x4",
+   339
+  ],
+  [
+   "camera-profoto-softlight-reflector-white",
+   "프로포토 소프트라이트 리플렉터 화이트",
+   "Profoto Softlight Reflector White",
+   "保富图 雷达罩 白色",
+   499
+  ],
+  [
+   "camera-profoto-magnum-reflector",
+   "프로포토 매그넘 리플렉터",
+   "Profoto Magnum Reflector",
+   "保富图 Magnum 反光罩",
+   399
+  ],
+  [
+   "camera-profoto-zoom-reflector-2",
+   "프로포토 줌 리플렉터 2",
+   "Profoto Zoom Reflector 2",
+   "保富图 变焦反光罩 2",
+   249
+  ],
+  [
+   "camera-profoto-giant-reflector-180",
+   "프로포토 자이언트 리플렉터 180",
+   "Profoto Giant Reflector 180",
+   "保富图 巨型反光罩 180",
+   2795
+  ],
+  [
+   "camera-profoto-giant-reflector-240",
+   "프로포토 자이언트 리플렉터 240",
+   "Profoto Giant Reflector 240",
+   "保富图 巨型反光罩 240",
+   3995
+  ],
+  [
+   "camera-profoto-umbrella-deep-white-m",
+   "프로포토 엄브렐러 딥 화이트 M",
+   "Profoto Umbrella Deep White M",
+   "保富图 深口伞 白色 M",
+   159
+  ],
+  [
+   "camera-profoto-umbrella-deep-silver-l",
+   "프로포토 엄브렐러 딥 실버 L",
+   "Profoto Umbrella Deep Silver L",
+   "保富图 深口伞 银色 L",
+   259
+  ],
+  [
+   "camera-profoto-umbrella-shallow-white-m",
+   "프로포토 엄브렐러 섈로 화이트 M",
+   "Profoto Umbrella Shallow White M",
+   "保富图 浅口伞 白色 M",
+   89
+  ],
+  [
+   "camera-profoto-umbrella-shallow-translucent-s",
+   "프로포토 엄브렐러 섈로 반투명 S",
+   "Profoto Umbrella Shallow Translucent S",
+   "保富图 浅口伞 透光 S",
+   59
+  ],
+  [
+   "camera-profoto-collapsible-reflector-silver-white-m",
+   "프로포토 접이식 리플렉터 실버/화이트 M",
+   "Profoto Collapsible Reflector Silver/White M",
+   "保富图 折叠反光板 银白 M",
+   89
+  ],
+  [
+   "camera-profoto-collapsible-reflector-sunsilver-white-l",
+   "프로포토 접이식 리플렉터 선실버/화이트 L",
+   "Profoto Collapsible Reflector Sunsilver/White L",
+   "保富图 折叠反光板 金银白 L",
+   159
+  ],
+  [
+   "camera-profoto-li-ion-battery-for-b10",
+   "프로포토 B10용 리튬이온 배터리",
+   "Profoto Li-Ion Battery for B10",
+   "保富图 B10 锂离子电池",
+   199
+  ],
+  [
+   "camera-profoto-li-ion-battery-for-a-series",
+   "프로포토 A 시리즈용 리튬이온 배터리",
+   "Profoto Li-Ion Battery for A-Series",
+   "保富图 A 系列锂离子电池",
+   99
+  ],
+  [
+   "camera-profoto-li-ion-battery-for-b1",
+   "프로포토 B1용 리튬이온 배터리",
+   "Profoto Li-Ion Battery for B1",
+   "保富图 B1 锂离子电池",
+   279
+  ],
+  [
+   "camera-profoto-battery-charger-3a-for-b10",
+   "프로포토 B10용 배터리 충전기 3A",
+   "Profoto Battery Charger 3A for B10",
+   "保富图 B10 电池充电器 3A",
+   129
+  ],
+  [
+   "camera-profoto-core-backpack-s",
+   "프로포토 코어 백팩 S",
+   "Profoto Core Backpack S",
+   "保富图 Core 双肩包 S",
+   349
+  ],
+  [
+   "camera-profoto-b10-stand-adapter",
+   "프로포토 B10 스탠드 어댑터",
+   "Profoto B10 Stand Adapter",
+   "保富图 B10 灯架适配器",
+   59
+  ],
+  [
+   "camera-profoto-ocf-adapter",
+   "프로포토 OCF 어댑터",
+   "Profoto OCF Adapter",
+   "保富图 OCF 适配器",
+   129
+  ],
+  [
+   "camera-profoto-a1x-bounce-card",
+   "프로포토 A1X 바운스 카드",
+   "Profoto A1X Bounce Card",
+   "保富图 A1X 反光卡",
+   49
+  ],
+  [
+   "camera-profoto-a-series-flash-stand",
+   "프로포토 A 시리즈 플래시 스탠드",
+   "Profoto A-Series Flash Stand",
+   "保富图 A 系列闪光灯底座",
+   19
+  ]
+ ],
+ "use": [
+  "camera-p-kodak-ektar-100-35mm-36-exposures-film",
+  "camera-p-tiffen-77mm-uv-protector-filter",
+  "camera-p-think-tank-photo-pee-wee-pixel-pocket-rocket",
+  "camera-p-cinestill-800t-35mm-36-exposures-film",
+  "camera-p-kodak-portra-400-35mm-36-exposures-film",
+  "camera-p-polaroid-color-i-type-film",
+  "camera-p-sandisk-extreme-microsdxc-uhs-i-128gb-memory-card",
+  "camera-p-vsgo-full-frame-sensor-cleaning-swabs-12-pack",
+  "camera-p-polaroid-color-600-film",
+  "camera-p-lexar-professional-2000x-sdxc-uhs-ii-64gb-memory-card",
+  "camera-p-pelican-1200-protector-case",
+  "camera-p-blackrapid-curve-breathe-strap",
+  "camera-p-rode-videomicro-ii",
+  "camera-p-peak-design-slide-strap",
+  "camera-p-samsung-t7-shield-portable-ssd-1tb",
+  "camera-p-elinchrom-elc-125-ttl",
+  "camera-p-voigtlander-apo-lanthar-50mm-f-2-aspherical",
+  "camera-p-angenieux-ez-2-15-40mm-t2",
+  "camera-p-oconnor-ultimate-2575d-fluid-head",
+  "camera-p-cooke-anamorphic-i-50mm-t2-3",
+  "camera-p-angenieux-optimo-ultra-12x-36-435mm-t4-2",
+  "camera-p-vision-research-phantom-flex4k"
+ ]
+}

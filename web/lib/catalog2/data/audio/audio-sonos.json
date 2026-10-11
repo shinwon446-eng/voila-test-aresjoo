@@ -1,0 +1,311 @@
+{
+ "slug": "audio-sonos",
+ "items": [
+  [
+   "audio-sonos-line-in-adapter",
+   "소노스 라인 입력 어댑터",
+   "Sonos Line-In Adapter",
+   "Sonos 线路输入转换器",
+   19
+  ],
+  [
+   "audio-sonos-optical-audio-adapter",
+   "소노스 광 오디오 어댑터",
+   "Sonos Optical Audio Adapter",
+   "Sonos 光纤音频转换器",
+   25
+  ],
+  [
+   "audio-sonos-combo-adapter",
+   "소노스 콤보 어댑터",
+   "Sonos Combo Adapter",
+   "Sonos 二合一转换器",
+   39
+  ],
+  [
+   "audio-sonos-ray-wall-mount",
+   "소노스 레이 벽걸이 마운트",
+   "Sonos Ray Wall Mount",
+   "Sonos Ray 壁挂支架",
+   39
+  ],
+  [
+   "audio-sonos-roam-wireless-charger",
+   "소노스 롬 무선 충전기",
+   "Sonos Roam Wireless Charger",
+   "Sonos Roam 无线充电器",
+   49
+  ],
+  [
+   "audio-sonos-ace-replacement-ear-cushions",
+   "소노스 에이스 교체용 이어쿠션",
+   "Sonos Ace Replacement Ear Cushions",
+   "Sonos Ace 替换耳垫",
+   49
+  ],
+  [
+   "audio-sonos-beam-wall-mount",
+   "소노스 빔 벽걸이 마운트",
+   "Sonos Beam Wall Mount",
+   "Sonos Beam 壁挂支架",
+   59
+  ],
+  [
+   "audio-sonos-shelf",
+   "소노스 스피커 선반",
+   "Sonos Shelf",
+   "Sonos 音箱置物架",
+   59
+  ],
+  [
+   "audio-sonos-era-100-wall-mount",
+   "소노스 에라 100 벽걸이 마운트",
+   "Sonos Era 100 Wall Mount",
+   "Sonos Era 100 壁挂支架",
+   59
+  ],
+  [
+   "audio-sonos-move-2-charging-base",
+   "소노스 무브 2 충전 베이스",
+   "Sonos Move 2 Charging Base",
+   "Sonos Move 2 充电底座",
+   79
+  ],
+  [
+   "audio-sonos-move-2-replacement-battery-kit",
+   "소노스 무브 2 교체용 배터리 키트",
+   "Sonos Move 2 Replacement Battery Kit",
+   "Sonos Move 2 替换电池套件",
+   79
+  ],
+  [
+   "audio-sonos-era-300-wall-mount",
+   "소노스 에라 300 벽걸이 마운트",
+   "Sonos Era 300 Wall Mount",
+   "Sonos Era 300 壁挂支架",
+   79
+  ],
+  [
+   "audio-sonos-arc-ultra-wall-mount",
+   "소노스 아크 울트라 벽걸이 마운트",
+   "Sonos Arc Ultra Wall Mount",
+   "Sonos Arc Ultra 壁挂支架",
+   99
+  ],
+  [
+   "audio-sonos-era-100-stand-each",
+   "소노스 에라 100 스탠드 (1대)",
+   "Sonos Era 100 Stand (Each)",
+   "Sonos Era 100 脚架 (单只)",
+   129
+  ],
+  [
+   "audio-sonos-era-300-stand-each",
+   "소노스 에라 300 스탠드 (1대)",
+   "Sonos Era 300 Stand (Each)",
+   "Sonos Era 300 脚架 (单只)",
+   169
+  ],
+  [
+   "audio-sonos-roam-2",
+   "소노스 롬 2 휴대용 블루투스 스피커",
+   "Sonos Roam 2 Portable Bluetooth Speaker",
+   "Sonos Roam 2 便携蓝牙音箱",
+   179
+  ],
+  [
+   "audio-sonos-era-100",
+   "소노스 에라 100 스마트 스피커",
+   "Sonos Era 100 Smart Speaker",
+   "Sonos Era 100 智能音箱",
+   199
+  ],
+  [
+   "audio-sonos-ray",
+   "소노스 레이 사운드바",
+   "Sonos Ray Soundbar",
+   "Sonos Ray 回音壁",
+   199
+  ],
+  [
+   "audio-sonos-one-sl",
+   "소노스 원 SL 무선 스피커",
+   "Sonos One SL Wireless Speaker",
+   "Sonos One SL 无线音箱",
+   199
+  ],
+  [
+   "audio-sonos-ace",
+   "소노스 에이스 무선 노이즈 캔슬링 헤드폰",
+   "Sonos Ace Wireless Noise Cancelling Headphones",
+   "Sonos Ace 无线降噪头戴式耳机",
+   399
+  ],
+  [
+   "audio-sonos-sub-mini",
+   "소노스 서브 미니 서브우퍼",
+   "Sonos Sub Mini Subwoofer",
+   "Sonos Sub Mini 低音炮",
+   429
+  ],
+  [
+   "audio-sonos-move-2",
+   "소노스 무브 2 휴대용 블루투스 스피커",
+   "Sonos Move 2 Portable Bluetooth Speaker",
+   "Sonos Move 2 便携蓝牙音箱",
+   449
+  ],
+  [
+   "audio-sonos-era-300",
+   "소노스 에라 300 스마트 스피커",
+   "Sonos Era 300 Smart Speaker",
+   "Sonos Era 300 智能音箱",
+   449
+  ],
+  [
+   "audio-sonos-port",
+   "소노스 포트 네트워크 스트리머",
+   "Sonos Port Network Streamer",
+   "Sonos Port 网络播放器",
+   449
+  ],
+  [
+   "audio-sonos-beam-gen-2",
+   "소노스 빔 2세대 사운드바",
+   "Sonos Beam (Gen 2) Soundbar",
+   "Sonos Beam (第二代) 回音壁",
+   499
+  ],
+  [
+   "audio-sonos-five",
+   "소노스 파이브 무선 스피커",
+   "Sonos Five Wireless Speaker",
+   "Sonos Five 无线音箱",
+   549
+  ],
+  [
+   "audio-sonos-in-ceiling-speakers-by-sonance-pair",
+   "소노스 소난스 인실링 스피커 (1조)",
+   "Sonos In-Ceiling Speakers by Sonance (Pair)",
+   "Sonos Sonance 吸顶音箱 (一对)",
+   699
+  ],
+  [
+   "audio-sonos-in-wall-speakers-by-sonance-pair",
+   "소노스 소난스 인월 스피커 (1조)",
+   "Sonos In-Wall Speakers by Sonance (Pair)",
+   "Sonos Sonance 入墙音箱 (一对)",
+   699
+  ],
+  [
+   "audio-sonos-amp",
+   "소노스 앰프 스트리밍 앰프",
+   "Sonos Amp Streaming Amplifier",
+   "Sonos Amp 流媒体功放",
+   799
+  ],
+  [
+   "audio-sonos-sub-4",
+   "소노스 서브 4 서브우퍼",
+   "Sonos Sub 4 Subwoofer",
+   "Sonos Sub 4 低音炮",
+   799
+  ],
+  [
+   "audio-sonos-outdoor-speakers-by-sonance-pair",
+   "소노스 소난스 아웃도어 스피커 (1조)",
+   "Sonos Outdoor Speakers by Sonance (Pair)",
+   "Sonos Sonance 户外音箱 (一对)",
+   899
+  ],
+  [
+   "audio-sonos-arc",
+   "소노스 아크 사운드바",
+   "Sonos Arc Soundbar",
+   "Sonos Arc 回音壁",
+   899
+  ],
+  [
+   "audio-sonos-arc-ultra",
+   "소노스 아크 울트라 사운드바",
+   "Sonos Arc Ultra Soundbar",
+   "Sonos Arc Ultra 回音壁",
+   999
+  ],
+  [
+   "audio-sonos-ultimate-immersive-set-with-arc-ultra",
+   "소노스 아크 울트라 얼티밋 이머시브 세트",
+   "Sonos Ultimate Immersive Set with Arc Ultra",
+   "Sonos Arc Ultra 终极沉浸套装",
+   2599
+  ]
+ ],
+ "use": [
+  "audio-p-hosa-cmm-105-stereo-interconnect-cable-3-5mm-5-ft",
+  "audio-p-amazon-basics-3-5mm-aux-stereo-audio-cable-4-ft",
+  "audio-p-amazon-basics-2-male-to-2-male-rca-audio-cable-4-ft",
+  "audio-p-ugreen-3-5mm-headphone-splitter",
+  "audio-p-jvc-gumy-ha-fx7",
+  "audio-p-mediabridge-3-5mm-male-to-male-stereo-audio-cable-4-ft",
+  "audio-p-philips-tae1105",
+  "audio-p-ugreen-3-5mm-braided-aux-cable-3-ft",
+  "audio-p-anker-3-5mm-premium-auxiliary-audio-cable-4-ft",
+  "audio-p-kz-edx-pro",
+  "audio-p-apple-lightning-to-3-5-mm-headphone-jack-adapter",
+  "audio-p-apple-usb-c-to-3-5-mm-headphone-jack-adapter",
+  "audio-p-koss-kph7",
+  "audio-p-new-bee-aluminum-headphone-stand",
+  "audio-p-panasonic-ergofit-rp-hje120",
+  "audio-p-twelve-south-airfly-duo-bluetooth-audio-transmitter",
+  "audio-p-google-nest-mini",
+  "audio-p-amazon-echo-dot-5th-gen",
+  "audio-p-koss-porta-pro",
+  "audio-p-logitech-z313-2-1-computer-speaker-system",
+  "audio-p-moondrop-dawn-pro",
+  "audio-p-svs-soundpath-subwoofer-isolation-system",
+  "audio-p-behringer-microphono-pp400",
+  "audio-p-gearit-14awg-speaker-wire-100-ft",
+  "audio-p-art-djpre-ii",
+  "audio-p-pro-ject-phono-box-e",
+  "audio-p-audioquest-jitterbug-fmj-usb-noise-filter",
+  "audio-p-fosi-audio-q4",
+  "audio-p-tin-hifi-t3-plus",
+  "audio-p-auralex-mopad-monitor-isolation-pads",
+  "audio-p-truthear-x-crinacle-zero-red",
+  "audio-p-twelve-south-airfly-pro-bluetooth-audio-transmitter-and",
+  "audio-p-final-e3000",
+  "audio-p-grado-prestige-black3",
+  "audio-p-grado-sr60x",
+  "audio-p-ifi-zen-air-dac",
+  "audio-p-nothing-ear-a",
+  "audio-p-ortofon-2m-red",
+  "audio-p-topping-dx1",
+  "audio-p-1more-sonoflow",
+  "audio-p-anker-soundcore-liberty-4-nc",
+  "audio-p-jabra-elite-4",
+  "audio-p-nothing-headphone-1",
+  "audio-p-topping-dx5-ii",
+  "audio-p-fluance-rt82",
+  "audio-p-final-a4000",
+  "audio-p-sumiko-rainier",
+  "audio-p-effect-audio-ares-s-iem-upgrade-cable",
+  "audio-p-edifier-r1700bt",
+  "audio-p-ifi-xdsd-gryphon",
+  "audio-p-topping-a90-discrete",
+  "audio-p-svs-sb-1000-pro",
+  "audio-p-denon-avr-x1800h",
+  "audio-p-klipsch-the-sevens",
+  "audio-p-audioquest-niagara-1200",
+  "audio-p-cambridge-audio-evo-one-all-in-one-music-system",
+  "audio-p-klipsch-the-nines",
+  "audio-p-astell-and-kern-kann-ultra",
+  "audio-p-harbeth-super-hl5plus-xd",
+  "audio-p-degritter-mark-ii-ultrasonic-record-cleaning-machine",
+  "audio-p-zmf-caldera",
+  "audio-p-rega-planar-8",
+  "audio-p-klipsch-cornwall-iv",
+  "audio-p-hifiman-susvara-unveiled",
+  "audio-p-sonus-faber-amati-g5",
+  "audio-p-wilson-audio-the-watt-puppy"
+ ]
+}

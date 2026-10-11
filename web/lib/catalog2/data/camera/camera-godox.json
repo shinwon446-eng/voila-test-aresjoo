@@ -1,0 +1,611 @@
+{
+ "slug": "camera-godox",
+ "items": [
+  [
+   "camera-godox-ad1200pro",
+   "고독스 AD1200Pro",
+   "Godox AD1200Pro",
+   "神牛 AD1200Pro",
+   1699
+  ],
+  [
+   "camera-godox-ad600pro-ii",
+   "고독스 AD600Pro II",
+   "Godox AD600Pro II",
+   "神牛 AD600Pro II",
+   999
+  ],
+  [
+   "camera-godox-ad600pro",
+   "고독스 AD600Pro",
+   "Godox AD600Pro",
+   "神牛 AD600Pro",
+   749
+  ],
+  [
+   "camera-godox-ad600bm",
+   "고독스 AD600BM",
+   "Godox AD600BM",
+   "神牛 AD600BM",
+   499
+  ],
+  [
+   "camera-godox-ad400pro-ii",
+   "고독스 AD400Pro II",
+   "Godox AD400Pro II",
+   "神牛 AD400Pro II",
+   749
+  ],
+  [
+   "camera-godox-ad400pro",
+   "고독스 AD400Pro",
+   "Godox AD400Pro",
+   "神牛 AD400Pro",
+   549
+  ],
+  [
+   "camera-godox-ad300pro-ii",
+   "고독스 AD300Pro II",
+   "Godox AD300Pro II",
+   "神牛 AD300Pro II",
+   529
+  ],
+  [
+   "camera-godox-ad300pro",
+   "고독스 AD300Pro",
+   "Godox AD300Pro",
+   "神牛 AD300Pro",
+   429
+  ],
+  [
+   "camera-godox-ad200pro-ii",
+   "고독스 AD200Pro II",
+   "Godox AD200Pro II",
+   "神牛 AD200Pro II",
+   349
+  ],
+  [
+   "camera-godox-ad200pro",
+   "고독스 AD200Pro",
+   "Godox AD200Pro",
+   "神牛 AD200Pro",
+   299
+  ],
+  [
+   "camera-godox-ad100pro",
+   "고독스 AD100Pro",
+   "Godox AD100Pro",
+   "神牛 AD100Pro",
+   249
+  ],
+  [
+   "camera-godox-v1pro",
+   "고독스 V1Pro",
+   "Godox V1Pro",
+   "神牛 V1Pro",
+   329
+  ],
+  [
+   "camera-godox-v1",
+   "고독스 V1",
+   "Godox V1",
+   "神牛 V1",
+   229
+  ],
+  [
+   "camera-godox-v100",
+   "고독스 V100",
+   "Godox V100",
+   "神牛 V100",
+   349
+  ],
+  [
+   "camera-godox-v860iii",
+   "고독스 V860III",
+   "Godox V860III",
+   "神牛 V860III",
+   199
+  ],
+  [
+   "camera-godox-v850iii",
+   "고독스 V850III",
+   "Godox V850III",
+   "神牛 V850III",
+   159
+  ],
+  [
+   "camera-godox-v480",
+   "고독스 V480",
+   "Godox V480",
+   "神牛 V480",
+   149
+  ],
+  [
+   "camera-godox-tt685ii",
+   "고독스 TT685II",
+   "Godox TT685II",
+   "神牛 TT685II",
+   129
+  ],
+  [
+   "camera-godox-tt600",
+   "고독스 TT600",
+   "Godox TT600",
+   "神牛 TT600",
+   69
+  ],
+  [
+   "camera-godox-tt350",
+   "고독스 TT350",
+   "Godox TT350",
+   "神牛 TT350",
+   89
+  ],
+  [
+   "camera-godox-it30pro",
+   "고독스 iT30Pro",
+   "Godox iT30Pro",
+   "神牛 iT30Pro",
+   75
+  ],
+  [
+   "camera-godox-lux-senior",
+   "고독스 Lux Senior",
+   "Godox Lux Senior",
+   "神牛 Lux Senior",
+   119
+  ],
+  [
+   "camera-godox-lux-junior",
+   "고독스 Lux Junior",
+   "Godox Lux Junior",
+   "神牛 Lux Junior",
+   69
+  ],
+  [
+   "camera-godox-lux-master",
+   "고독스 Lux Master",
+   "Godox Lux Master",
+   "神牛 Lux Master",
+   219
+  ],
+  [
+   "camera-godox-xpro-ii",
+   "고독스 XPro II",
+   "Godox XPro II",
+   "神牛 XPro II",
+   89
+  ],
+  [
+   "camera-godox-xpro",
+   "고독스 XPro",
+   "Godox XPro",
+   "神牛 XPro",
+   69
+  ],
+  [
+   "camera-godox-x3",
+   "고독스 X3",
+   "Godox X3",
+   "神牛 X3",
+   79
+  ],
+  [
+   "camera-godox-x2t",
+   "고독스 X2T",
+   "Godox X2T",
+   "神牛 X2T",
+   59
+  ],
+  [
+   "camera-godox-x1t",
+   "고독스 X1T",
+   "Godox X1T",
+   "神牛 X1T",
+   49
+  ],
+  [
+   "camera-godox-sl60w",
+   "고독스 SL60W",
+   "Godox SL60W",
+   "神牛 SL60W",
+   129
+  ],
+  [
+   "camera-godox-sl60iid",
+   "고독스 SL60IID",
+   "Godox SL60IID",
+   "神牛 SL60IID",
+   159
+  ],
+  [
+   "camera-godox-sl100d",
+   "고독스 SL100D",
+   "Godox SL100D",
+   "神牛 SL100D",
+   189
+  ],
+  [
+   "camera-godox-sl150iii",
+   "고독스 SL150III",
+   "Godox SL150III",
+   "神牛 SL150III",
+   299
+  ],
+  [
+   "camera-godox-sl200iii",
+   "고독스 SL200III",
+   "Godox SL200III",
+   "神牛 SL200III",
+   369
+  ],
+  [
+   "camera-godox-vl150-ii",
+   "고독스 VL150 II",
+   "Godox VL150 II",
+   "神牛 VL150 II",
+   299
+  ],
+  [
+   "camera-godox-vl300-ii",
+   "고독스 VL300 II",
+   "Godox VL300 II",
+   "神牛 VL300 II",
+   529
+  ],
+  [
+   "camera-godox-ul150-ii",
+   "고독스 UL150 II",
+   "Godox UL150 II",
+   "神牛 UL150 II",
+   349
+  ],
+  [
+   "camera-godox-ml60-ii-bi",
+   "고독스 ML60 II Bi",
+   "Godox ML60 II Bi",
+   "神牛 ML60 II Bi",
+   229
+  ],
+  [
+   "camera-godox-ml100bi",
+   "고독스 ML100Bi",
+   "Godox ML100Bi",
+   "神牛 ML100Bi",
+   269
+  ],
+  [
+   "camera-godox-ml30",
+   "고독스 ML30",
+   "Godox ML30",
+   "神牛 ML30",
+   139
+  ],
+  [
+   "camera-godox-m1-rgb-mini-creative-light",
+   "고독스 M1 RGB 미니 크리에이티브 라이트",
+   "Godox M1 RGB Mini Creative Light",
+   "神牛 M1 RGB 迷你创意灯",
+   149
+  ],
+  [
+   "camera-godox-tl30-rgb-tube-light",
+   "고독스 TL30 RGB 튜브 라이트",
+   "Godox TL30 RGB Tube Light",
+   "神牛 TL30 RGB 棒灯",
+   65
+  ],
+  [
+   "camera-godox-tl60-rgb-tube-light",
+   "고독스 TL60 RGB 튜브 라이트",
+   "Godox TL60 RGB Tube Light",
+   "神牛 TL60 RGB 棒灯",
+   159
+  ],
+  [
+   "camera-godox-tl120-rgb-tube-light",
+   "고독스 TL120 RGB 튜브 라이트",
+   "Godox TL120 RGB Tube Light",
+   "神牛 TL120 RGB 棒灯",
+   259
+  ],
+  [
+   "camera-godox-lc500r-rgb-led-light-stick",
+   "고독스 LC500R RGB LED 라이트 스틱",
+   "Godox LC500R RGB LED Light Stick",
+   "神牛 LC500R RGB LED 光棒",
+   199
+  ],
+  [
+   "camera-godox-knowled-m200d",
+   "고독스 KNOWLED M200D",
+   "Godox KNOWLED M200D",
+   "神牛 KNOWLED M200D",
+   469
+  ],
+  [
+   "camera-godox-knowled-m300d",
+   "고독스 KNOWLED M300D",
+   "Godox KNOWLED M300D",
+   "神牛 KNOWLED M300D",
+   699
+  ],
+  [
+   "camera-godox-knowled-m600d",
+   "고독스 KNOWLED M600D",
+   "Godox KNOWLED M600D",
+   "神牛 KNOWLED M600D",
+   1049
+  ],
+  [
+   "camera-godox-knowled-m600bi",
+   "고독스 KNOWLED M600Bi",
+   "Godox KNOWLED M600Bi",
+   "神牛 KNOWLED M600Bi",
+   1449
+  ],
+  [
+   "camera-godox-knowled-mg1200bi",
+   "고독스 KNOWLED MG1200Bi",
+   "Godox KNOWLED MG1200Bi",
+   "神牛 KNOWLED MG1200Bi",
+   2799
+  ],
+  [
+   "camera-godox-knowled-mg2400bi",
+   "고독스 KNOWLED MG2400Bi",
+   "Godox KNOWLED MG2400Bi",
+   "神牛 KNOWLED MG2400Bi",
+   5490
+  ],
+  [
+   "camera-godox-knowled-ms60r",
+   "고독스 KNOWLED MS60R",
+   "Godox KNOWLED MS60R",
+   "神牛 KNOWLED MS60R",
+   299
+  ],
+  [
+   "camera-godox-knowled-f200bi",
+   "고독스 KNOWLED F200Bi",
+   "Godox KNOWLED F200Bi",
+   "神牛 KNOWLED F200Bi",
+   449
+  ],
+  [
+   "camera-godox-knowled-p1200r-hard",
+   "고독스 KNOWLED P1200R Hard",
+   "Godox KNOWLED P1200R Hard",
+   "神牛 KNOWLED P1200R Hard",
+   3990
+  ],
+  [
+   "camera-godox-fl100-flexible-led-light",
+   "고독스 FL100 플렉시블 LED 라이트",
+   "Godox FL100 Flexible LED Light",
+   "神牛 FL100 柔性 LED 灯",
+   369
+  ],
+  [
+   "camera-godox-fl150s-flexible-led-light",
+   "고독스 FL150S 플렉시블 LED 라이트",
+   "Godox FL150S Flexible LED Light",
+   "神牛 FL150S 柔性 LED 灯",
+   469
+  ],
+  [
+   "camera-godox-litemons-la150d",
+   "고독스 LITEMONS LA150D",
+   "Godox LITEMONS LA150D",
+   "神牛 LITEMONS LA150D",
+   119
+  ],
+  [
+   "camera-godox-litemons-la200d",
+   "고독스 LITEMONS LA200D",
+   "Godox LITEMONS LA200D",
+   "神牛 LITEMONS LA200D",
+   179
+  ],
+  [
+   "camera-godox-litemons-led6r",
+   "고독스 LITEMONS LED6R",
+   "Godox LITEMONS LED6R",
+   "神牛 LITEMONS LED6R",
+   39
+  ],
+  [
+   "camera-godox-led64-video-light",
+   "고독스 LED64 비디오 라이트",
+   "Godox LED64 Video Light",
+   "神牛 LED64 摄像补光灯",
+   29
+  ],
+  [
+   "camera-godox-ledm150-smartphone-led-light",
+   "고독스 LEDM150 스마트폰 LED 라이트",
+   "Godox LEDM150 Smartphone LED Light",
+   "神牛 LEDM150 手机补光灯",
+   19
+  ],
+  [
+   "camera-godox-ring72-macro-led-ring-light",
+   "고독스 RING72 매크로 LED 링 라이트",
+   "Godox RING72 Macro LED Ring Light",
+   "神牛 RING72 微距环形灯",
+   119
+  ],
+  [
+   "camera-godox-ad-s65s-softbox",
+   "고독스 AD-S65S 소프트박스",
+   "Godox AD-S65S Softbox",
+   "神牛 AD-S65S 柔光箱",
+   75
+  ],
+  [
+   "camera-godox-ad-s85s-softbox",
+   "고독스 AD-S85S 소프트박스",
+   "Godox AD-S85S Softbox",
+   "神牛 AD-S85S 柔光箱",
+   99
+  ],
+  [
+   "camera-godox-qr-p70-quick-release-parabolic-softbox",
+   "고독스 QR-P70 퀵 릴리즈 파라볼릭 소프트박스",
+   "Godox QR-P70 Quick Release Parabolic Softbox",
+   "神牛 QR-P70 快装抛物线柔光箱",
+   109
+  ],
+  [
+   "camera-godox-qr-p90-quick-release-parabolic-softbox",
+   "고독스 QR-P90 퀵 릴리즈 파라볼릭 소프트박스",
+   "Godox QR-P90 Quick Release Parabolic Softbox",
+   "神牛 QR-P90 快装抛物线柔光箱",
+   129
+  ],
+  [
+   "camera-godox-qr-p120-quick-release-parabolic-softbox",
+   "고독스 QR-P120 퀵 릴리즈 파라볼릭 소프트박스",
+   "Godox QR-P120 Quick Release Parabolic Softbox",
+   "神牛 QR-P120 快装抛物线柔光箱",
+   159
+  ],
+  [
+   "camera-godox-sb-ue-80cm-umbrella-softbox",
+   "고독스 SB-UE 80cm 엄브렐러 소프트박스",
+   "Godox SB-UE 80cm Umbrella Softbox",
+   "神牛 SB-UE 80cm 伞式柔光箱",
+   39
+  ],
+  [
+   "camera-godox-s2-speedlite-bracket",
+   "고독스 S2 스피드라이트 브래킷",
+   "Godox S2 Speedlite Bracket",
+   "神牛 S2 机顶闪支架",
+   29
+  ],
+  [
+   "camera-godox-ak-r1-accessory-kit",
+   "고독스 AK-R1 액세서리 키트",
+   "Godox AK-R1 Accessory Kit",
+   "神牛 AK-R1 附件套装",
+   65
+  ],
+  [
+   "camera-godox-ad-e2-bracket",
+   "고독스 AD-E2 브래킷",
+   "Godox AD-E2 Bracket",
+   "神牛 AD-E2 支架",
+   30
+  ],
+  [
+   "camera-godox-ad-b2-dual-power-flash-head",
+   "고독스 AD-B2 듀얼 파워 플래시 헤드",
+   "Godox AD-B2 Dual Power Flash Head",
+   "神牛 AD-B2 双灯头",
+   89
+  ],
+  [
+   "camera-godox-ad-r6-standard-reflector",
+   "고독스 AD-R6 Standard 리플렉터",
+   "Godox AD-R6 Standard Reflector",
+   "神牛 AD-R6 Standard 反光板",
+   15
+  ],
+  [
+   "camera-godox-vb26-battery",
+   "고독스 VB26 배터리",
+   "Godox VB26 Battery",
+   "神牛 VB26 电池",
+   59
+  ],
+  [
+   "camera-godox-wb29-battery",
+   "고독스 WB29 배터리",
+   "Godox WB29 Battery",
+   "神牛 WB29 电池",
+   75
+  ],
+  [
+   "camera-godox-wb87-battery",
+   "고독스 WB87 배터리",
+   "Godox WB87 Battery",
+   "神牛 WB87 电池",
+   189
+  ],
+  [
+   "camera-godox-wb26-battery",
+   "고독스 WB26 배터리",
+   "Godox WB26 Battery",
+   "神牛 WB26 电池",
+   219
+  ],
+  [
+   "camera-godox-ub-85s-parabolic-umbrella",
+   "고독스 UB-85S 파라볼릭 엄브렐러",
+   "Godox UB-85S Parabolic Umbrella",
+   "神牛 UB-85S 深口反光伞",
+   39
+  ],
+  [
+   "camera-godox-ub-130s-parabolic-umbrella",
+   "고독스 UB-130S 파라볼릭 엄브렐러",
+   "Godox UB-130S Parabolic Umbrella",
+   "神牛 UB-130S 深口反光伞",
+   69
+  ],
+  [
+   "camera-godox-rft-05-5-in-1-reflector-80cm",
+   "고독스 RFT-05 5-in-1 리플렉터 80cm",
+   "Godox RFT-05 5-in-1 Reflector 80cm",
+   "神牛 RFT-05 五合一反光板 80cm",
+   22
+  ],
+  [
+   "camera-godox-260t-light-stand",
+   "고독스 260T 라이트 스탠드",
+   "Godox 260T Light Stand",
+   "神牛 260T 灯架",
+   35
+  ],
+  [
+   "camera-godox-gm55-5-5-inch-4k-hdmi-monitor",
+   "고독스 GM55 5.5인치 4K HDMI 모니터",
+   "Godox GM55 5.5 inch 4K HDMI Monitor",
+   "神牛 GM55 5.5英寸 4K HDMI 监视器",
+   199
+  ],
+  [
+   "camera-godox-gm6s-5-5-inch-ultra-bright-monitor",
+   "고독스 GM6S 5.5인치 초고휘도 모니터",
+   "Godox GM6S 5.5 inch Ultra Bright Monitor",
+   "神牛 GM6S 5.5英寸高亮监视器",
+   259
+  ],
+  [
+   "camera-godox-movelink-ii-m2-wireless-microphone-system",
+   "고독스 MoveLink II M2 무선 마이크 시스템",
+   "Godox MoveLink II M2 Wireless Microphone System",
+   "神牛 MoveLink II M2 无线麦克风系统",
+   149
+  ]
+ ],
+ "use": [
+  "camera-p-sandisk-extreme-pro-sdxc-uhs-i-64gb-memory-card",
+  "camera-p-giottos-rocket-air-blaster-large-aa1900",
+  "camera-p-kodak-ektar-100-35mm-36-exposures-film",
+  "camera-p-tiffen-77mm-uv-protector-filter",
+  "camera-p-think-tank-photo-pee-wee-pixel-pocket-rocket",
+  "camera-p-cinestill-800t-35mm-36-exposures-film",
+  "camera-p-kodak-portra-400-35mm-36-exposures-film",
+  "camera-p-lexar-professional-1667x-sdxc-uhs-ii-128gb-memory-card",
+  "camera-p-paterson-universal-tank-with-two-reels",
+  "camera-p-westcott-40-inch-5-in-1-reflector",
+  "camera-p-k-and-f-concept-77mm-nano-x-circular-polarizer-filter",
+  "camera-p-sirui-50mm-f1-8-1-33x-anamorphic",
+  "camera-p-sekonic-c-800-u-spectromaster",
+  "camera-p-arri-skypanel-s30-c",
+  "camera-p-oconnor-ultimate-2575d-fluid-head",
+  "camera-p-cooke-sp3-5-lens-set"
+ ]
+}

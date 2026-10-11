@@ -1,0 +1,365 @@
+{
+ "slug": "sport-speedo",
+ "items": [
+  [
+   "sport-speedo-lzr-pure-intent-closedback-kneeskin",
+   "스피도 패스트스킨 LZR 퓨어 인텐트 클로즈드백 니스킨",
+   "Speedo Fastskin LZR Pure Intent Closedback Kneeskin",
+   "速比涛 Fastskin LZR Pure Intent 闭背式竞速泳衣",
+   630
+  ],
+  [
+   "sport-speedo-lzr-pure-intent-openback-kneeskin",
+   "스피도 패스트스킨 LZR 퓨어 인텐트 오픈백 니스킨",
+   "Speedo Fastskin LZR Pure Intent Openback Kneeskin",
+   "速比涛 Fastskin LZR Pure Intent 开背式竞速泳衣",
+   599
+  ],
+  [
+   "sport-speedo-lzr-pure-valor-closedback-kneeskin",
+   "스피도 패스트스킨 LZR 퓨어 밸러 클로즈드백 니스킨",
+   "Speedo Fastskin LZR Pure Valor Closedback Kneeskin",
+   "速比涛 Fastskin LZR Pure Valor 闭背式竞速泳衣",
+   575
+  ],
+  [
+   "sport-speedo-lzr-pure-valor-openback-kneeskin",
+   "스피도 패스트스킨 LZR 퓨어 밸러 오픈백 니스킨",
+   "Speedo Fastskin LZR Pure Valor Openback Kneeskin",
+   "速比涛 Fastskin LZR Pure Valor 开背式竞速泳衣",
+   549
+  ],
+  [
+   "sport-speedo-lzr-pure-intent-high-waist-jammer",
+   "스피도 패스트스킨 LZR 퓨어 인텐트 하이 웨이스트 재머",
+   "Speedo Fastskin LZR Pure Intent High Waist Jammer",
+   "速比涛 Fastskin LZR Pure Intent 高腰竞速泳裤",
+   430
+  ],
+  [
+   "sport-speedo-lzr-pure-intent-jammer",
+   "스피도 패스트스킨 LZR 퓨어 인텐트 재머",
+   "Speedo Fastskin LZR Pure Intent Jammer",
+   "速比涛 Fastskin LZR Pure Intent 竞速泳裤",
+   399
+  ],
+  [
+   "sport-speedo-lzr-elite-2-openback-kneeskin",
+   "스피도 LZR 엘리트 2 오픈백 니스킨",
+   "Speedo LZR Elite 2 Openback Kneeskin",
+   "速比涛 LZR Elite 2 开背式竞速泳衣",
+   389
+  ],
+  [
+   "sport-speedo-lzr-pure-valor-jammer",
+   "스피도 패스트스킨 LZR 퓨어 밸러 재머",
+   "Speedo Fastskin LZR Pure Valor Jammer",
+   "速比涛 Fastskin LZR Pure Valor 竞速泳裤",
+   380
+  ],
+  [
+   "sport-speedo-lzr-elite-2-jammer",
+   "스피도 LZR 엘리트 2 재머",
+   "Speedo LZR Elite 2 Jammer",
+   "速比涛 LZR Elite 2 竞速泳裤",
+   259
+  ],
+  [
+   "sport-speedo-lzr-racer-pro-recordbreaker-kneeskin",
+   "스피도 LZR 레이서 프로 레코드브레이커 니스킨",
+   "Speedo LZR Racer Pro Recordbreaker Kneeskin",
+   "速比涛 LZR Racer Pro Recordbreaker 竞速泳衣",
+   219
+  ],
+  [
+   "sport-speedo-lzr-racer-pro-jammer",
+   "스피도 LZR 레이서 프로 재머",
+   "Speedo LZR Racer Pro Jammer",
+   "速比涛 LZR Racer Pro 竞速泳裤",
+   159
+  ],
+  [
+   "sport-speedo-team-parka",
+   "스피도 팀 파카",
+   "Speedo Team Parka",
+   "速比涛 Team 防寒大衣",
+   145
+  ],
+  [
+   "sport-speedo-fastskin-pure-focus-mirrored",
+   "스피도 패스트스킨 퓨어 포커스 미러 수경",
+   "Speedo Fastskin Pure Focus Mirrored Goggles",
+   "速比涛 Fastskin Pure Focus 镀膜泳镜",
+   80
+  ],
+  [
+   "sport-speedo-teamster-2-0-backpack-35l",
+   "스피도 팀스터 2.0 백팩 35L",
+   "Speedo Teamster 2.0 Backpack 35L",
+   "速比涛 Teamster 2.0 双肩包 35L",
+   70
+  ],
+  [
+   "sport-speedo-endurance-flyback",
+   "스피도 인듀어런스 플러스 플라이백 수영복",
+   "Speedo Endurance+ Solid Flyback Swimsuit",
+   "速比涛 Endurance+ Flyback 训练泳衣",
+   69
+  ],
+  [
+   "sport-speedo-fastskin-hyper-elite-mirrored",
+   "스피도 패스트스킨 하이퍼 엘리트 미러 수경",
+   "Speedo Fastskin Hyper Elite Mirrored Goggles",
+   "速比涛 Fastskin Hyper Elite 镀膜泳镜",
+   65
+  ],
+  [
+   "sport-speedo-solid-super-pro-prolt",
+   "스피도 솔리드 슈퍼 프로 프로LT 수영복",
+   "Speedo Solid Super Pro ProLT Swimsuit",
+   "速比涛 Solid Super Pro ProLT 训练泳衣",
+   49
+  ],
+  [
+   "sport-speedo-switchblade-fins",
+   "스피도 스위치블레이드 핀",
+   "Speedo Switchblade Fins",
+   "速比涛 Switchblade 训练脚蹼",
+   49
+  ],
+  [
+   "sport-speedo-endurance-solid-jammer",
+   "스피도 인듀어런스 플러스 솔리드 재머",
+   "Speedo Endurance+ Solid Jammer",
+   "速比涛 Endurance+ Solid 训练泳裤",
+   46
+  ],
+  [
+   "sport-speedo-hydro-resistant-jog-belt",
+   "스피도 아쿠아 조깅 벨트",
+   "Speedo Aqua Jog Water Aerobic Belt",
+   "速比涛 Aqua Jog 水中慢跑浮力腰带",
+   45
+  ],
+  [
+   "sport-speedo-speed-socket-2-0-mirrored",
+   "스피도 스피드 소켓 2.0 미러 수경",
+   "Speedo Speed Socket 2.0 Mirrored Goggles",
+   "速比涛 Speed Socket 2.0 镀膜泳镜",
+   38
+  ],
+  [
+   "sport-speedo-fastskin-cap",
+   "스피도 패스트스킨 수모",
+   "Speedo Fastskin Cap",
+   "速比涛 Fastskin 竞速泳帽",
+   38
+  ],
+  [
+   "sport-speedo-short-blade-training-fin",
+   "스피도 쇼트 블레이드 트레이닝 핀",
+   "Speedo Short Blade Training Fin",
+   "速比涛 短脚蹼",
+   38
+  ],
+  [
+   "sport-speedo-bullet-head-snorkel",
+   "스피도 불릿 헤드 스노클",
+   "Speedo Bullet Head Snorkel",
+   "速比涛 Bullet Head 训练呼吸管",
+   37
+  ],
+  [
+   "sport-speedo-endurance-solid-brief",
+   "스피도 인듀어런스 플러스 솔리드 브리프",
+   "Speedo Endurance+ Solid Brief",
+   "速比涛 Endurance+ Solid 三角泳裤",
+   36
+  ],
+  [
+   "sport-speedo-surfwalker-pro-3-0",
+   "스피도 서프워커 프로 3.0 아쿠아슈즈",
+   "Speedo Surfwalker Pro 3.0 Water Shoes",
+   "速比涛 Surfwalker Pro 3.0 涉水鞋",
+   32
+  ],
+  [
+   "sport-speedo-speed-socket-2-0",
+   "스피도 스피드 소켓 2.0 수경",
+   "Speedo Speed Socket 2.0 Goggles",
+   "速比涛 Speed Socket 2.0 泳镜",
+   30
+  ],
+  [
+   "sport-speedo-mdr-2-4-mirrored",
+   "스피도 MDR 2.4 미러 수경",
+   "Speedo MDR 2.4 Mirrored Goggles",
+   "速比涛 MDR 2.4 镀膜泳镜",
+   30
+  ],
+  [
+   "sport-speedo-vanquisher-3-0-mirrored",
+   "스피도 뱅퀴셔 3.0 미러 수경",
+   "Speedo Vanquisher 3.0 Mirrored Goggles",
+   "速比涛 Vanquisher 3.0 镀膜泳镜",
+   30
+  ],
+  [
+   "sport-speedo-vanquisher-2-0-mirrored",
+   "스피도 뱅퀴셔 2.0 미러 수경",
+   "Speedo Vanquisher 2.0 Mirrored Goggles",
+   "速比涛 Vanquisher 2.0 镀膜泳镜",
+   27
+  ],
+  [
+   "sport-speedo-vanquisher-3-0",
+   "스피도 뱅퀴셔 3.0 수경",
+   "Speedo Vanquisher 3.0 Goggles",
+   "速比涛 Vanquisher 3.0 泳镜",
+   25
+  ],
+  [
+   "sport-speedo-vanquisher-2-0",
+   "스피도 뱅퀴셔 2.0 수경",
+   "Speedo Vanquisher 2.0 Goggles",
+   "速比涛 Vanquisher 2.0 泳镜",
+   22
+  ],
+  [
+   "sport-speedo-deluxe-ventilator-mesh-bag",
+   "스피도 디럭스 벤틸레이터 메시 백",
+   "Speedo Deluxe Ventilator Mesh Bag",
+   "速比涛 Deluxe Ventilator 网眼装备袋",
+   22
+  ],
+  [
+   "sport-speedo-team-kickboard",
+   "스피도 팀 킥보드",
+   "Speedo Team Kickboard",
+   "速比涛 Team 浮板",
+   19.99
+  ],
+  [
+   "sport-speedo-power-plus-paddles",
+   "스피도 파워 플러스 패들",
+   "Speedo Power Plus Paddles",
+   "速比涛 Power Plus 划水掌",
+   19.99
+  ],
+  [
+   "sport-speedo-sports-towel",
+   "스피도 스포츠 타월",
+   "Speedo Sports Towel",
+   "速比涛 运动吸水巾",
+   17
+  ],
+  [
+   "sport-speedo-team-pull-buoy",
+   "스피도 팀 풀부이",
+   "Speedo Team Pull Buoy",
+   "速比涛 Team 夹腿浮板",
+   15.99
+  ],
+  [
+   "sport-speedo-hydrospex-classic",
+   "스피도 하이드로스펙스 클래식 수경",
+   "Speedo Hydrospex Classic Goggles",
+   "速比涛 Hydrospex Classic 泳镜",
+   15.99
+  ],
+  [
+   "sport-speedo-silicone-long-hair-cap",
+   "스피도 실리콘 롱 헤어 수모",
+   "Speedo Silicone Long Hair Swim Cap",
+   "速比涛 长发硅胶泳帽",
+   14.99
+  ],
+  [
+   "sport-speedo-silicone-solid-cap",
+   "스피도 실리콘 솔리드 수모",
+   "Speedo Silicone Solid Swim Cap",
+   "速比涛 纯色硅胶泳帽",
+   12
+  ],
+  [
+   "sport-speedo-competition-nose-clip",
+   "스피도 컴페티션 노즈 클립",
+   "Speedo Competition Nose Clip",
+   "速比涛 Competition 鼻夹",
+   6.99
+  ],
+  [
+   "sport-speedo-ergo-ear-plugs",
+   "스피도 에르고 귀마개",
+   "Speedo Ergo Ear Plugs",
+   "速比涛 Ergo 耳塞",
+   5.99
+  ],
+  [
+   "sport-speedo-latex-solid-cap",
+   "스피도 라텍스 솔리드 수모",
+   "Speedo Latex Solid Swim Cap",
+   "速比涛 纯色乳胶泳帽",
+   5.99
+  ]
+ ],
+ "use": [
+  "sport-p-golf-pride-tour-velvet",
+  "sport-p-pride-pts-tees-100",
+  "sport-p-nike-swoosh-headband",
+  "sport-p-nike-swoosh-wristbands",
+  "sport-p-topeak-joeblow-sport-iii",
+  "sport-p-shimano-pd-m520",
+  "sport-p-lululemon-double-roller",
+  "sport-p-bontrager-flare-rt",
+  "sport-p-triggerpoint-grid-2-0",
+  "sport-p-spalding-tf-1000-legacy",
+  "sport-p-arena-cobra-ultra-swipe-mirror",
+  "sport-p-bridgestone-tour-b-x-dozen",
+  "sport-p-callaway-chrome-tour-dozen",
+  "sport-p-asics-novablast-5",
+  "sport-p-nike-pegasus-41",
+  "sport-p-specialized-power-comp",
+  "sport-p-hoka-clifton-9",
+  "sport-p-liforme-original-yoga-mat",
+  "sport-p-shokz-openswim",
+  "sport-p-bushnell-phantom-3",
+  "sport-p-coros-heart-rate-monitor",
+  "sport-p-wahoo-tickr-fit",
+  "sport-p-zwift-cog-and-click",
+  "sport-p-continental-gp5000-clincher",
+  "sport-p-on-cloudmonster-2",
+  "sport-p-ping-s159-wedge",
+  "sport-p-arccos-smart-sensors",
+  "sport-p-shimano-pd-r8000",
+  "sport-p-superspeed-golf-training-system",
+  "sport-p-triggerpoint-impact",
+  "sport-p-tecnifibre-carboflex-125-x-top",
+  "sport-p-saucony-endorphin-pro-4",
+  "sport-p-coros-pace-3",
+  "sport-p-lab-golf-df3",
+  "sport-p-suunto-race",
+  "sport-p-odyssey-ai-one-milled-seven-t-ch",
+  "sport-p-taylormade-qi-irons-7pc",
+  "sport-p-waterrower-natural-s4",
+  "sport-p-ice-barrel-400",
+  "sport-p-trek-domane-al-2-gen-4",
+  "sport-p-specialized-allez",
+  "sport-p-ping-g440-max-driver",
+  "sport-p-samsung-galaxy-watch-ultra",
+  "sport-p-brompton-c-line-explore",
+  "sport-p-shimano-105-di2-r7100-groupset",
+  "sport-p-technogym-bench",
+  "sport-p-sole-f80",
+  "sport-p-horizon-7-8-at",
+  "sport-p-zipp-303-firecrest",
+  "sport-p-uneekor-eye-mini",
+  "sport-p-balanced-body-allegro-2",
+  "sport-p-plunge-cold-plunge",
+  "sport-p-full-swing-kit",
+  "sport-p-specialized-tarmac-sl8-pro",
+  "sport-p-trek-madone-slr-7-gen-8",
+  "sport-p-trackman-4",
+  "sport-p-alterg-via-400"
+ ]
+}

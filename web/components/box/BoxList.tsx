@@ -11,7 +11,7 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { CATEGORY_FILTERS, HOME_BOXES, dropTable, isLadderBox, sortBoxes, type BoxCategory, type ProductBox, type ProductItem } from "@/lib/products";
+import { CATEGORY_FILTERS, HOME_BOXES, dropTable, faceItems, isLadderBox, sortBoxes, type BoxCategory, type ProductBox, type ProductItem } from "@/lib/products";
 import { CATEGORIES_V2 } from "@/lib/catalogTypes";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
@@ -100,10 +100,7 @@ export function BoxList() {
 }
 
 /** 카드에 올리는 대표 실물 하나: 사진이 있는 것 가운데 값이 가장 큰 것. 사진이 하나도 없으면 값이 가장 큰 실물(이름만 쓴다) */
-const leadOf = (box: ProductBox): ProductItem | undefined => {
-  const real = [...box.items].filter((i) => i.kind !== "cash").sort((a, b) => b.value - a.value);
-  return real.find((i) => i.image.src) ?? real[0];
-};
+const leadOf = (box: ProductBox): ProductItem | undefined => faceItems(box, true)[0] ?? faceItems(box)[0];
 
 function BoxCard({ box, title, price, noRating, photo, leadName, eager }: { box: ProductBox; title: string; price: string; noRating: string; photo: string | null; leadName: string; eager: boolean }) {
   const rating = ratingSummary(box.slug);

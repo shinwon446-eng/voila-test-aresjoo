@@ -355,6 +355,11 @@ export function scheduledBox(spec: BoxSpec): ProductBox {
 
 export const BOX_BY_SLUG: Record<string, ProductBox> = Object.fromEntries(BOXES.map((b) => [b.slug, b]));
 export const getBoxBySlug = (slug: string): ProductBox | undefined => BOX_BY_SLUG[slug];
+/**
+ * 가입 혜택으로 무료로 여는 박스. 옛 박스를 홈에서 내린 뒤에는 새 카탈로그의 리자몽 박스다(홈 배너의 그림이 리자몽 카드다).
+ * 옛 포켓몬 카드 박스에 남은 무료 횟수는 그 박스의 화면에서 그대로 쓸 수 있다.
+ */
+export const WELCOME_BOX_SLUG: string = LEGACY_RETIRED && BOX_BY_SLUG["pokemon-charizard"] ? "pokemon-charizard" : "vault-pokemon";
 
 // ── 파생 계산 ──────────────────────────────────────────────
 
@@ -372,6 +377,17 @@ export const floorRatio = (box: ProductBox): number => floorCash(box) / box.pric
 export const isValueGuaranteed = (box: ProductBox): boolean => floorRatio(box) >= FLOOR_CASH_MIN - 1e-9; // 0.15 / 3 같은 나눗셈의 부동소수 오차를 봐준다
 
 export const dropTable = (box: ProductBox): ProductItem[] => [...box.items].sort((a, b) => b.value - a.value);
+/** 새 카탈로그에서 그 박스의 자기 상품인가(공통 상품이 아닌가). 번호가 박스 번호로 시작한다. 옛 박스는 전부 자기 상품으로 본다 */
+export const isOwnItem = (box: Pick<ProductBox, "slug" | "scheme">, item: Pick<ProductItem, "id">): boolean => box.scheme !== "physical" || item.id.startsWith(box.slug + "-");
+/**
+ * 박스의 얼굴이 되는 상품들: 값이 큰 순서. 새 카탈로그의 박스는 자기 상품이 먼저 온다(롤렉스 박스의 얼굴은 롤렉스여야 한다).
+ * 사진이 있는 것을 먼저 찾을 때는 withPhoto 를 준다.
+ */
+export const faceItems = (box: ProductBox, withPhoto = false): ProductItem[] => {
+  const real = box.items.filter((i) => i.kind !== "cash" && (!withPhoto || i.image.src));
+  const byValue = (a: ProductItem, b: ProductItem) => b.value - a.value;
+  return [...real.filter((i) => isOwnItem(box, i)).sort(byValue), ...real.filter((i) => !isOwnItem(box, i)).sort(byValue)];
+};
 /** 가장 자주 나오는 결과 하나. 화면이 "가장 흔한 결과"를 말할 때 이것을 쓴다(확률표가 바뀌어도 화면이 따라오게) */
 export const mostCommon = (box: ProductBox): ProductItem => box.items.reduce((best, item) => (item.dropRate > best.dropRate ? item : best));
 export const ceilingValue = (box: ProductBox): number => Math.max(...box.items.map((i) => i.value));

@@ -1,0 +1,509 @@
+{
+ "slug": "audio-jbl",
+ "items": [
+  [
+   "audio-jbl-tune-110",
+   "JBL Tune 110 유선 이어폰",
+   "JBL Tune 110 Wired Earphones",
+   "JBL Tune 110 有线耳机",
+   9.95
+  ],
+  [
+   "audio-jbl-endurance-run-2-wired-sport-earphones",
+   "JBL Endurance Run 2 스포츠 유선 이어폰",
+   "JBL Endurance Run 2 Wired Sport Earphones",
+   "JBL Endurance Run 2 运动有线耳机",
+   19.95
+  ],
+  [
+   "audio-jbl-tune-310c-usb-c-wired-earphones",
+   "JBL Tune 310C USB-C 유선 이어폰",
+   "JBL Tune 310C USB-C Wired Earphones",
+   "JBL Tune 310C USB-C 有线耳机",
+   24.95
+  ],
+  [
+   "audio-jbl-go-3",
+   "JBL Go 3 휴대용 블루투스 스피커",
+   "JBL Go 3 Portable Bluetooth Speaker",
+   "JBL Go 3 便携蓝牙音箱",
+   39.95
+  ],
+  [
+   "audio-jbl-go-4",
+   "JBL Go 4 휴대용 블루투스 스피커",
+   "JBL Go 4 Portable Bluetooth Speaker",
+   "JBL Go 4 便携蓝牙音箱",
+   49.95
+  ],
+  [
+   "audio-jbl-vibe-beam",
+   "JBL Vibe Beam 무선 이어버드",
+   "JBL Vibe Beam True Wireless Earbuds",
+   "JBL Vibe Beam 真无线耳机",
+   49.95
+  ],
+  [
+   "audio-jbl-tune-520bt",
+   "JBL Tune 520BT 무선 헤드폰",
+   "JBL Tune 520BT Wireless Headphones",
+   "JBL Tune 520BT 无线头戴式耳机",
+   49.95
+  ],
+  [
+   "audio-jbl-clip-5",
+   "JBL Clip 5 휴대용 블루투스 스피커",
+   "JBL Clip 5 Portable Bluetooth Speaker",
+   "JBL Clip 5 便携蓝牙音箱",
+   79.95
+  ],
+  [
+   "audio-jbl-tune-720bt",
+   "JBL Tune 720BT 무선 헤드폰",
+   "JBL Tune 720BT Wireless Headphones",
+   "JBL Tune 720BT 无线头戴式耳机",
+   79.95
+  ],
+  [
+   "audio-jbl-tune-buds",
+   "JBL Tune Buds 노이즈 캔슬링 무선 이어버드",
+   "JBL Tune Buds True Wireless Noise Cancelling Earbuds",
+   "JBL Tune Buds 真无线降噪耳机",
+   99.95
+  ],
+  [
+   "audio-jbl-endurance-peak-3-true-wireless-sport-earbuds",
+   "JBL Endurance Peak 3 스포츠 무선 이어버드",
+   "JBL Endurance Peak 3 True Wireless Sport Earbuds",
+   "JBL Endurance Peak 3 真无线运动耳机",
+   99.95
+  ],
+  [
+   "audio-jbl-grip",
+   "JBL Grip 휴대용 블루투스 스피커",
+   "JBL Grip Portable Bluetooth Speaker",
+   "JBL Grip 便携蓝牙音箱",
+   99.95
+  ],
+  [
+   "audio-jbl-flip-6",
+   "JBL Flip 6 휴대용 블루투스 스피커",
+   "JBL Flip 6 Portable Bluetooth Speaker",
+   "JBL Flip 6 便携蓝牙音箱",
+   129.95
+  ],
+  [
+   "audio-jbl-tune-770nc",
+   "JBL Tune 770NC 무선 노이즈 캔슬링 헤드폰",
+   "JBL Tune 770NC Wireless Noise Cancelling Headphones",
+   "JBL Tune 770NC 无线降噪头戴式耳机",
+   129.95
+  ],
+  [
+   "audio-jbl-305p-mkii",
+   "JBL 305P MkII 스튜디오 모니터 스피커 (1대)",
+   "JBL 305P MkII Studio Monitor (Each)",
+   "JBL 305P MkII 监听音箱 (单只)",
+   149
+  ],
+  [
+   "audio-jbl-flip-7",
+   "JBL Flip 7 휴대용 블루투스 스피커",
+   "JBL Flip 7 Portable Bluetooth Speaker",
+   "JBL Flip 7 便携蓝牙音箱",
+   149.95
+  ],
+  [
+   "audio-jbl-soundgear-sense",
+   "JBL Soundgear Sense 오픈형 무선 이어버드",
+   "JBL Soundgear Sense Open-Ear True Wireless Earbuds",
+   "JBL Soundgear Sense 开放式真无线耳机",
+   149.95
+  ],
+  [
+   "audio-jbl-104-bt-bluetooth-desktop-reference-monitors-pair",
+   "JBL 104-BT 블루투스 데스크톱 모니터 스피커 (1조)",
+   "JBL 104-BT Bluetooth Desktop Reference Monitors (Pair)",
+   "JBL 104-BT 蓝牙桌面监听音箱 (一对)",
+   179
+  ],
+  [
+   "audio-jbl-charge-5",
+   "JBL Charge 5 휴대용 블루투스 스피커",
+   "JBL Charge 5 Portable Bluetooth Speaker",
+   "JBL Charge 5 便携蓝牙音箱",
+   179.95
+  ],
+  [
+   "audio-jbl-charge-6",
+   "JBL Charge 6 휴대용 블루투스 스피커",
+   "JBL Charge 6 Portable Bluetooth Speaker",
+   "JBL Charge 6 便携蓝牙音箱",
+   199.95
+  ],
+  [
+   "audio-jbl-live-770nc",
+   "JBL Live 770NC 무선 노이즈 캔슬링 헤드폰",
+   "JBL Live 770NC Wireless Noise Cancelling Headphones",
+   "JBL Live 770NC 无线降噪头戴式耳机",
+   199.95
+  ],
+  [
+   "audio-jbl-live-beam-3",
+   "JBL Live Beam 3 노이즈 캔슬링 무선 이어버드",
+   "JBL Live Beam 3 True Wireless Noise Cancelling Earbuds",
+   "JBL Live Beam 3 真无线降噪耳机",
+   199.95
+  ],
+  [
+   "audio-jbl-bar-2-0-all-in-one-mk2",
+   "JBL Bar 2.0 All-in-One (MK2) 사운드바",
+   "JBL Bar 2.0 All-in-One (MK2) Soundbar",
+   "JBL Bar 2.0 All-in-One (MK2) 回音壁",
+   199.95
+  ],
+  [
+   "audio-jbl-308p-mkii",
+   "JBL 308P MkII 스튜디오 모니터 스피커 (1대)",
+   "JBL 308P MkII Studio Monitor (Each)",
+   "JBL 308P MkII 监听音箱 (单只)",
+   249
+  ],
+  [
+   "audio-jbl-tour-pro-2",
+   "JBL Tour Pro 2 노이즈 캔슬링 무선 이어버드",
+   "JBL Tour Pro 2 True Wireless Noise Cancelling Earbuds",
+   "JBL Tour Pro 2 真无线降噪耳机",
+   249.95
+  ],
+  [
+   "audio-jbl-pulse-5",
+   "JBL Pulse 5 휴대용 블루투스 스피커",
+   "JBL Pulse 5 Portable Bluetooth Speaker",
+   "JBL Pulse 5 便携蓝牙音箱",
+   249.95
+  ],
+  [
+   "audio-jbl-tour-one-m2",
+   "JBL Tour One M2 무선 노이즈 캔슬링 헤드폰",
+   "JBL Tour One M2 Wireless Noise Cancelling Headphones",
+   "JBL Tour One M2 无线降噪头戴式耳机",
+   299.95
+  ],
+  [
+   "audio-jbl-tour-pro-3",
+   "JBL Tour Pro 3 노이즈 캔슬링 무선 이어버드",
+   "JBL Tour Pro 3 True Wireless Noise Cancelling Earbuds",
+   "JBL Tour Pro 3 真无线降噪耳机",
+   299.95
+  ],
+  [
+   "audio-jbl-partybox-encore-essential",
+   "JBL PartyBox Encore Essential 파티 스피커",
+   "JBL PartyBox Encore Essential Party Speaker",
+   "JBL PartyBox Encore Essential 派对音箱",
+   299.95
+  ],
+  [
+   "audio-jbl-authentics-200",
+   "JBL Authentics 200 무선 스피커",
+   "JBL Authentics 200 Wireless Speaker",
+   "JBL Authentics 200 无线音箱",
+   349.95
+  ],
+  [
+   "audio-jbl-xtreme-4",
+   "JBL Xtreme 4 휴대용 블루투스 스피커",
+   "JBL Xtreme 4 Portable Bluetooth Speaker",
+   "JBL Xtreme 4 便携蓝牙音箱",
+   379.95
+  ],
+  [
+   "audio-jbl-tour-one-m3",
+   "JBL Tour One M3 무선 노이즈 캔슬링 헤드폰",
+   "JBL Tour One M3 Wireless Noise Cancelling Headphones",
+   "JBL Tour One M3 无线降噪头戴式耳机",
+   399.95
+  ],
+  [
+   "audio-jbl-bar-300",
+   "JBL Bar 300 사운드바",
+   "JBL Bar 300 Soundbar",
+   "JBL Bar 300 回音壁",
+   399.95
+  ],
+  [
+   "audio-jbl-partybox-club-120",
+   "JBL PartyBox Club 120 파티 스피커",
+   "JBL PartyBox Club 120 Party Speaker",
+   "JBL PartyBox Club 120 派对音箱",
+   399.95
+  ],
+  [
+   "audio-jbl-authentics-300",
+   "JBL Authentics 300 무선 스피커",
+   "JBL Authentics 300 Wireless Speaker",
+   "JBL Authentics 300 无线音箱",
+   449.95
+  ],
+  [
+   "audio-jbl-boombox-3",
+   "JBL Boombox 3 휴대용 블루투스 스피커",
+   "JBL Boombox 3 Portable Bluetooth Speaker",
+   "JBL Boombox 3 便携蓝牙音箱",
+   499.95
+  ],
+  [
+   "audio-jbl-boombox-4",
+   "JBL Boombox 4 휴대용 블루투스 스피커",
+   "JBL Boombox 4 Portable Bluetooth Speaker",
+   "JBL Boombox 4 便携蓝牙音箱",
+   549.95
+  ],
+  [
+   "audio-jbl-eon715",
+   "JBL EON715 PA 스피커",
+   "JBL EON715 PA Loudspeaker",
+   "JBL EON715 专业扩声音箱",
+   549
+  ],
+  [
+   "audio-jbl-bar-500",
+   "JBL Bar 500 사운드바",
+   "JBL Bar 500 Soundbar",
+   "JBL Bar 500 回音壁",
+   599.95
+  ],
+  [
+   "audio-jbl-partybox-stage-320",
+   "JBL PartyBox Stage 320 파티 스피커",
+   "JBL PartyBox Stage 320 Party Speaker",
+   "JBL PartyBox Stage 320 派对音箱",
+   599.95
+  ],
+  [
+   "audio-jbl-authentics-500",
+   "JBL Authentics 500 무선 스피커",
+   "JBL Authentics 500 Wireless Speaker",
+   "JBL Authentics 500 无线音箱",
+   699.95
+  ],
+  [
+   "audio-jbl-cd350-classic",
+   "JBL CD350 Classic CD 플레이어",
+   "JBL CD350 Classic CD Player",
+   "JBL CD350 Classic CD 播放机",
+   700
+  ],
+  [
+   "audio-jbl-partybox-710",
+   "JBL PartyBox 710 파티 스피커",
+   "JBL PartyBox 710 Party Speaker",
+   "JBL PartyBox 710 派对音箱",
+   799.95
+  ],
+  [
+   "audio-jbl-mp350-classic",
+   "JBL MP350 Classic 네트워크 스트리머",
+   "JBL MP350 Classic Network Streamer",
+   "JBL MP350 Classic 网络播放器",
+   800
+  ],
+  [
+   "audio-jbl-bar-700",
+   "JBL Bar 700 사운드바",
+   "JBL Bar 700 Soundbar",
+   "JBL Bar 700 回音壁",
+   899.95
+  ],
+  [
+   "audio-jbl-l52-classic",
+   "JBL L52 Classic 북셸프 스피커 (1조)",
+   "JBL L52 Classic Bookshelf Speakers (Pair)",
+   "JBL L52 Classic 书架音箱 (一对)",
+   1000
+  ],
+  [
+   "audio-jbl-tt350-classic",
+   "JBL TT350 Classic 턴테이블",
+   "JBL TT350 Classic Turntable",
+   "JBL TT350 Classic 黑胶唱机",
+   1000
+  ],
+  [
+   "audio-jbl-partybox-520",
+   "JBL PartyBox 520 파티 스피커",
+   "JBL PartyBox 520 Party Speaker",
+   "JBL PartyBox 520 派对音箱",
+   1099.95
+  ],
+  [
+   "audio-jbl-bar-1000",
+   "JBL Bar 1000 사운드바",
+   "JBL Bar 1000 Soundbar",
+   "JBL Bar 1000 回音壁",
+   1199.95
+  ],
+  [
+   "audio-jbl-l75ms-integrated-music-system",
+   "JBL L75ms 뮤직 시스템",
+   "JBL L75ms Integrated Music System",
+   "JBL L75ms 一体式音乐系统",
+   1599.95
+  ],
+  [
+   "audio-jbl-partybox-ultimate",
+   "JBL PartyBox Ultimate 파티 스피커",
+   "JBL PartyBox Ultimate Party Speaker",
+   "JBL PartyBox Ultimate 派对音箱",
+   1699.95
+  ],
+  [
+   "audio-jbl-bar-1300x",
+   "JBL Bar 1300X 사운드바",
+   "JBL Bar 1300X Soundbar",
+   "JBL Bar 1300X 回音壁",
+   1699.95
+  ],
+  [
+   "audio-jbl-sa550-classic",
+   "JBL SA550 Classic 인티앰프",
+   "JBL SA550 Classic Integrated Amplifier",
+   "JBL SA550 Classic 合并式功放",
+   2000
+  ],
+  [
+   "audio-jbl-4309-studio-monitor-bookshelf-speakers-pair",
+   "JBL 4309 스튜디오 모니터 북셸프 스피커 (1조)",
+   "JBL 4309 Studio Monitor Bookshelf Speakers (Pair)",
+   "JBL 4309 监听书架音箱 (一对)",
+   2000
+  ],
+  [
+   "audio-jbl-4305p-powered-studio-monitor-speakers-pair",
+   "JBL 4305P 파워드 스튜디오 모니터 스피커 (1조)",
+   "JBL 4305P Powered Studio Monitor Speakers (Pair)",
+   "JBL 4305P 有源监听音箱 (一对)",
+   2200
+  ],
+  [
+   "audio-jbl-l82-classic",
+   "JBL L82 Classic 북셸프 스피커 (1조)",
+   "JBL L82 Classic Bookshelf Speakers (Pair)",
+   "JBL L82 Classic 书架音箱 (一对)",
+   2500
+  ],
+  [
+   "audio-jbl-4312g-studio-monitor-loudspeakers-pair",
+   "JBL 4312G 스튜디오 모니터 스피커 (1조)",
+   "JBL 4312G Studio Monitor Loudspeakers (Pair)",
+   "JBL 4312G 监听音箱 (一对)",
+   2500
+  ],
+  [
+   "audio-jbl-sa750",
+   "JBL SA750 인티앰프",
+   "JBL SA750 Integrated Amplifier",
+   "JBL SA750 合并式功放",
+   3000
+  ],
+  [
+   "audio-jbl-l100-classic-mkii",
+   "JBL L100 Classic MkII 북셸프 스피커 (1조)",
+   "JBL L100 Classic MkII Bookshelf Speakers (Pair)",
+   "JBL L100 Classic MkII 书架音箱 (一对)",
+   4800
+  ],
+  [
+   "audio-jbl-4329p-powered-studio-monitor-speakers-pair",
+   "JBL 4329P 파워드 스튜디오 모니터 스피커 (1조)",
+   "JBL 4329P Powered Studio Monitor Speakers (Pair)",
+   "JBL 4329P 有源监听音箱 (一对)",
+   4500
+  ],
+  [
+   "audio-jbl-hdi-3800",
+   "JBL HDI-3800 플로어스탠딩 스피커 (1조)",
+   "JBL HDI-3800 Floorstanding Speakers (Pair)",
+   "JBL HDI-3800 落地音箱 (一对)",
+   5000
+  ],
+  [
+   "audio-jbl-4349-studio-monitor-loudspeakers-pair",
+   "JBL 4349 스튜디오 모니터 스피커 (1조)",
+   "JBL 4349 Studio Monitor Loudspeakers (Pair)",
+   "JBL 4349 监听音箱 (一对)",
+   7500
+  ],
+  [
+   "audio-jbl-4367-studio-monitor-loudspeakers-pair",
+   "JBL 4367 스튜디오 모니터 스피커 (1조)",
+   "JBL 4367 Studio Monitor Loudspeakers (Pair)",
+   "JBL 4367 监听音箱 (一对)",
+   16500
+  ],
+  [
+   "audio-jbl-summit-ama",
+   "JBL Summit Ama 북셸프 스피커 (1조)",
+   "JBL Summit Ama Bookshelf Speakers (Pair)",
+   "JBL Summit Ama 书架音箱 (一对)",
+   20000
+  ],
+  [
+   "audio-jbl-summit-pumori",
+   "JBL Summit Pumori 플로어스탠딩 스피커 (1조)",
+   "JBL Summit Pumori Floorstanding Speakers (Pair)",
+   "JBL Summit Pumori 落地音箱 (一对)",
+   30000
+  ],
+  [
+   "audio-jbl-summit-makalu",
+   "JBL Summit Makalu 플로어스탠딩 스피커 (1조)",
+   "JBL Summit Makalu Floorstanding Speakers (Pair)",
+   "JBL Summit Makalu 落地音箱 (一对)",
+   45000
+  ],
+  [
+   "audio-jbl-project-everest-dd67000",
+   "JBL Project Everest DD67000 플로어스탠딩 스피커 (1조)",
+   "JBL Project Everest DD67000 Floorstanding Speakers (Pair)",
+   "JBL Project Everest DD67000 落地音箱 (一对)",
+   90000
+  ]
+ ],
+ "use": [
+  "audio-p-panasonic-ergofit-rp-hje120",
+  "audio-p-skullcandy-jib",
+  "audio-p-spinfit-cp100-silicone-ear-tips",
+  "audio-p-monoprice-gold-plated-speaker-banana-plugs-5-pairs",
+  "audio-p-elago-silicone-case-for-airpods-pro-2",
+  "audio-p-elevation-lab-the-anchor-under-desk-headphone-stand-moun",
+  "audio-p-monoprice-choice-series-16awg-speaker-wire-50-ft",
+  "audio-p-belkin-rockstar-5-jack-multi-headphone-splitter",
+  "audio-p-dekoni-audio-bulletz-memory-foam-ear-tips-3-pairs",
+  "audio-p-brainwavz-hengja-headphone-desk-hanger",
+  "audio-p-final-type-e-silicone-ear-tips",
+  "audio-p-tripowin-zonie-16-core-earphone-upgrade-cable",
+  "audio-p-amazon-basics-16-gauge-speaker-wire-100-ft",
+  "audio-p-skullcandy-dime-3",
+  "audio-p-kiwi-ears-cadenza",
+  "audio-p-koss-kph30i",
+  "audio-p-tribit-xsound-go",
+  "audio-p-twelve-south-airfly-se-bluetooth-audio-transmitter",
+  "audio-p-groovewasher-record-cleaning-kit",
+  "audio-p-crosley-record-storage-crate",
+  "audio-p-amazon-echo-pop",
+  "audio-p-anker-soundcore-2",
+  "audio-p-creative-pebble-v3",
+  "audio-p-edifier-w820nb-plus",
+  "audio-p-logitech-z207-bluetooth-computer-speakers",
+  "audio-p-tribit-stormbox-micro-2",
+  "audio-p-victrola-journey-portable-bluetooth-suitcase-record-play",
+  "audio-p-art-djpre-ii",
+  "audio-p-pro-ject-phono-box-e",
+  "audio-p-edifier-r1280t",
+  "audio-p-grado-sr80x",
+  "audio-p-apple-airpods-4",
+  "audio-p-shanling-m0-pro"
+ ]
+}

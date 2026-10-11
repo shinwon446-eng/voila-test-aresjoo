@@ -18,11 +18,11 @@ import { Link } from "@/i18n/navigation";
 import { BOXES } from "@/lib/products";
 import { useProductText } from "@/lib/useProductText";
 import { useAuthStore } from "@/stores/authStore";
-import { useWalletStore, WELCOME_FREE_OPENS } from "@/stores/walletStore";
+import { useWalletStore, WELCOME_BOX_SLUG, WELCOME_FREE_OPENS } from "@/stores/walletStore";
 import { OpeningBox } from "@/components/box/Opening";
 import { ballMatrix, createBallPainter, type BallPainter } from "./heroBall";
 
-const GIFT_BOX_SLUG = "vault-pokemon";
+const GIFT_BOX_SLUG = WELCOME_BOX_SLUG;
 const HERO_ASSETS = (process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/assets/hero/";
 const CARD_FILES = ["card-1.webp", "card-2.webp", "card-3.webp"];
 /** 빌드할 때 그 폴더에 실제로 있던 파일 이름들(next.config.mjs) */

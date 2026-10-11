@@ -1,0 +1,383 @@
+{
+ "slug": "audio-focal",
+ "items": [
+  [
+   "audio-focal-headphone-stand",
+   "포칼 헤드폰 스탠드",
+   "Focal Headphone Stand",
+   "劲浪 耳机支架",
+   79
+  ],
+  [
+   "audio-focal-bathys-replacement-ear-cushions",
+   "포칼 Bathys 교체용 이어쿠션",
+   "Focal Bathys Replacement Ear Cushions",
+   "劲浪 Bathys 替换耳垫",
+   129
+  ],
+  [
+   "audio-focal-clear-mg-replacement-ear-cushions",
+   "포칼 Clear Mg 교체용 이어쿠션",
+   "Focal Clear Mg Replacement Ear Cushions",
+   "劲浪 Clear Mg 替换耳垫",
+   169
+  ],
+  [
+   "audio-focal-stellia-replacement-ear-cushions",
+   "포칼 Stellia 교체용 이어쿠션",
+   "Focal Stellia Replacement Ear Cushions",
+   "劲浪 Stellia 替换耳垫",
+   199
+  ],
+  [
+   "audio-focal-utopia-replacement-ear-cushions",
+   "포칼 Utopia 교체용 이어쿠션",
+   "Focal Utopia Replacement Ear Cushions",
+   "劲浪 Utopia 替换耳垫",
+   219
+  ],
+  [
+   "audio-focal-hard-shell-headphone-carrying-case",
+   "포칼 하드셸 헤드폰 캐링 케이스",
+   "Focal Hard-Shell Headphone Carrying Case",
+   "劲浪 硬壳耳机便携盒",
+   249
+  ],
+  [
+   "audio-focal-chora-806",
+   "포칼 Chora 806 스피커 스탠드 (1조)",
+   "Focal Chora 806 Speaker Stands (Pair)",
+   "劲浪 Chora 806 音箱脚架 (一对)",
+   290
+  ],
+  [
+   "audio-focal-listen-professional",
+   "포칼 Listen Professional 스튜디오 모니터 헤드폰",
+   "Focal Listen Professional Studio Monitor Headphones",
+   "劲浪 Listen Professional 监听耳机",
+   299
+  ],
+  [
+   "audio-focal-alpha-50-evo",
+   "포칼 Alpha 50 Evo 스튜디오 모니터 스피커 (1대)",
+   "Focal Alpha 50 Evo Studio Monitor (Each)",
+   "劲浪 Alpha 50 Evo 监听音箱 (单只)",
+   349
+  ],
+  [
+   "audio-focal-alpha-65-evo",
+   "포칼 Alpha 65 Evo 스튜디오 모니터 스피커 (1대)",
+   "Focal Alpha 65 Evo Studio Monitor (Each)",
+   "劲浪 Alpha 65 Evo 监听音箱 (单只)",
+   449
+  ],
+  [
+   "audio-focal-alpha-80-evo",
+   "포칼 Alpha 80 Evo 스튜디오 모니터 스피커 (1대)",
+   "Focal Alpha 80 Evo Studio Monitor (Each)",
+   "劲浪 Alpha 80 Evo 监听音箱 (单只)",
+   549
+  ],
+  [
+   "audio-focal-azurys",
+   "포칼 Azurys 밀폐형 헤드폰",
+   "Focal Azurys Closed-Back Headphones",
+   "劲浪 Azurys 封闭式头戴耳机",
+   549
+  ],
+  [
+   "audio-focal-bathys",
+   "포칼 Bathys 무선 노이즈 캔슬링 헤드폰",
+   "Focal Bathys Wireless Noise Cancelling Headphones",
+   "劲浪 Bathys 无线降噪头戴式耳机",
+   699
+  ],
+  [
+   "audio-focal-hadenys",
+   "포칼 Hadenys 오픈형 헤드폰",
+   "Focal Hadenys Open-Back Headphones",
+   "劲浪 Hadenys 开放式头戴耳机",
+   699
+  ],
+  [
+   "audio-focal-lensys-professional",
+   "포칼 Lensys Professional 스튜디오 모니터 헤드폰",
+   "Focal Lensys Professional Studio Monitor Headphones",
+   "劲浪 Lensys Professional 监听耳机",
+   699
+  ],
+  [
+   "audio-focal-chora-806-spkbook",
+   "포칼 Chora 806 북셸프 스피커 (1조)",
+   "Focal Chora 806 Bookshelf Speakers (Pair)",
+   "劲浪 Chora 806 书架音箱 (一对)",
+   990
+  ],
+  [
+   "audio-focal-theva-n1",
+   "포칼 Theva N°1 북셸프 스피커 (1조)",
+   "Focal Theva N°1 Bookshelf Speakers (Pair)",
+   "劲浪 Theva N°1 书架音箱 (一对)",
+   998
+  ],
+  [
+   "audio-focal-celestee",
+   "포칼 Celestee 밀폐형 헤드폰",
+   "Focal Celestee Closed-Back Headphones",
+   "劲浪 Celestee 封闭式头戴耳机",
+   999
+  ],
+  [
+   "audio-focal-shape-65",
+   "포칼 Shape 65 스튜디오 모니터 스피커 (1대)",
+   "Focal Shape 65 Studio Monitor (Each)",
+   "劲浪 Shape 65 监听音箱 (单只)",
+   999
+  ],
+  [
+   "audio-focal-sub-600p",
+   "포칼 Sub 600P 서브우퍼",
+   "Focal Sub 600P Subwoofer",
+   "劲浪 Sub 600P 低音炮",
+   1190
+  ],
+  [
+   "audio-focal-bathys-mg",
+   "포칼 Bathys MG 무선 노이즈 캔슬링 헤드폰",
+   "Focal Bathys MG Wireless Noise Cancelling Headphones",
+   "劲浪 Bathys MG 无线降噪头戴式耳机",
+   1299
+  ],
+  [
+   "audio-focal-vestia-n1",
+   "포칼 Vestia N°1 북셸프 스피커 (1조)",
+   "Focal Vestia N°1 Bookshelf Speakers (Pair)",
+   "劲浪 Vestia N°1 书架音箱 (一对)",
+   1398
+  ],
+  [
+   "audio-focal-clear-mg",
+   "포칼 Clear Mg 오픈형 헤드폰",
+   "Focal Clear Mg Open-Back Headphones",
+   "劲浪 Clear Mg 开放式头戴耳机",
+   1499
+  ],
+  [
+   "audio-focal-kanta-n1",
+   "포칼 Kanta N°1 스피커 스탠드 (1조)",
+   "Focal Kanta N°1 Speaker Stands (Pair)",
+   "劲浪 Kanta N°1 音箱脚架 (一对)",
+   1499
+  ],
+  [
+   "audio-focal-solo6",
+   "포칼 Solo6 스튜디오 모니터 스피커 (1대)",
+   "Focal Solo6 Studio Monitor (Each)",
+   "劲浪 Solo6 监听音箱 (单只)",
+   1599
+  ],
+  [
+   "audio-focal-aria-evo-x-n1",
+   "포칼 Aria Evo X N°1 북셸프 스피커 (1조)",
+   "Focal Aria Evo X N°1 Bookshelf Speakers (Pair)",
+   "劲浪 Aria Evo X N°1 书架音箱 (一对)",
+   1998
+  ],
+  [
+   "audio-focal-chora-826",
+   "포칼 Chora 826 플로어스탠딩 스피커 (1조)",
+   "Focal Chora 826 Floorstanding Speakers (Pair)",
+   "劲浪 Chora 826 落地音箱 (一对)",
+   2398
+  ],
+  [
+   "audio-focal-arche",
+   "포칼 Arche DAC 겸 헤드폰 앰프",
+   "Focal Arche DAC and Headphone Amplifier",
+   "劲浪 Arche 解码耳放一体机",
+   2499
+  ],
+  [
+   "audio-focal-vestia-n2",
+   "포칼 Vestia N°2 플로어스탠딩 스피커 (1조)",
+   "Focal Vestia N°2 Floorstanding Speakers (Pair)",
+   "劲浪 Vestia N°2 落地音箱 (一对)",
+   2798
+  ],
+  [
+   "audio-focal-stellia",
+   "포칼 Stellia 밀폐형 헤드폰",
+   "Focal Stellia Closed-Back Headphones",
+   "劲浪 Stellia 封闭式头戴耳机",
+   2999
+  ],
+  [
+   "audio-focal-trio11-be",
+   "포칼 Trio11 Be 스튜디오 모니터 스피커 (1대)",
+   "Focal Trio11 Be Studio Monitor (Each)",
+   "劲浪 Trio11 Be 监听音箱 (单只)",
+   3999
+  ],
+  [
+   "audio-focal-utopia",
+   "포칼 Utopia 오픈형 헤드폰",
+   "Focal Utopia Open-Back Headphones",
+   "劲浪 Utopia 开放式头戴耳机",
+   4999
+  ],
+  [
+   "audio-focal-aria-evo-x-n3",
+   "포칼 Aria Evo X N°3 플로어스탠딩 스피커 (1조)",
+   "Focal Aria Evo X N°3 Floorstanding Speakers (Pair)",
+   "劲浪 Aria Evo X N°3 落地音箱 (一对)",
+   5798
+  ],
+  [
+   "audio-focal-kanta-n1-spkbook",
+   "포칼 Kanta N°1 북셸프 스피커 (1조)",
+   "Focal Kanta N°1 Bookshelf Speakers (Pair)",
+   "劲浪 Kanta N°1 书架音箱 (一对)",
+   7998
+  ],
+  [
+   "audio-focal-kanta-n2",
+   "포칼 Kanta N°2 플로어스탠딩 스피커 (1조)",
+   "Focal Kanta N°2 Floorstanding Speakers (Pair)",
+   "劲浪 Kanta N°2 落地音箱 (一对)",
+   11998
+  ],
+  [
+   "audio-focal-sopra-n1",
+   "포칼 Sopra N°1 북셸프 스피커 (1조)",
+   "Focal Sopra N°1 Bookshelf Speakers (Pair)",
+   "劲浪 Sopra N°1 书架音箱 (一对)",
+   11998
+  ],
+  [
+   "audio-focal-kanta-n3",
+   "포칼 Kanta N°3 플로어스탠딩 스피커 (1조)",
+   "Focal Kanta N°3 Floorstanding Speakers (Pair)",
+   "劲浪 Kanta N°3 落地音箱 (一对)",
+   14998
+  ],
+  [
+   "audio-focal-diablo-utopia-colour-evo",
+   "포칼 Diablo Utopia Colour Evo 북셸프 스피커 (1조)",
+   "Focal Diablo Utopia Colour Evo Bookshelf Speakers (Pair)",
+   "劲浪 Diablo Utopia Colour Evo 书架音箱 (一对)",
+   15998
+  ],
+  [
+   "audio-focal-sopra-n2",
+   "포칼 Sopra N°2 플로어스탠딩 스피커 (1조)",
+   "Focal Sopra N°2 Floorstanding Speakers (Pair)",
+   "劲浪 Sopra N°2 落地音箱 (一对)",
+   21998
+  ],
+  [
+   "audio-focal-sopra-n3",
+   "포칼 Sopra N°3 플로어스탠딩 스피커 (1조)",
+   "Focal Sopra N°3 Floorstanding Speakers (Pair)",
+   "劲浪 Sopra N°3 落地音箱 (一对)",
+   27998
+  ],
+  [
+   "audio-focal-diva-utopia",
+   "포칼 Diva Utopia 액티브 스피커 (1조)",
+   "Focal Diva Utopia Active Speakers (Pair)",
+   "劲浪 Diva Utopia 有源音箱 (一对)",
+   39999
+  ],
+  [
+   "audio-focal-scala-utopia-evo",
+   "포칼 Scala Utopia Evo 플로어스탠딩 스피커 (1조)",
+   "Focal Scala Utopia Evo Floorstanding Speakers (Pair)",
+   "劲浪 Scala Utopia Evo 落地音箱 (一对)",
+   49998
+  ],
+  [
+   "audio-focal-diva-mezza-utopia",
+   "포칼 Diva Mezza Utopia 액티브 스피커 (1조)",
+   "Focal Diva Mezza Utopia Active Speakers (Pair)",
+   "劲浪 Diva Mezza Utopia 有源音箱 (一对)",
+   69999
+  ],
+  [
+   "audio-focal-maestro-utopia-evo",
+   "포칼 Maestro Utopia Evo 플로어스탠딩 스피커 (1조)",
+   "Focal Maestro Utopia Evo Floorstanding Speakers (Pair)",
+   "劲浪 Maestro Utopia Evo 落地音箱 (一对)",
+   79998
+  ],
+  [
+   "audio-focal-stella-utopia-em-evo",
+   "포칼 Stella Utopia EM Evo 플로어스탠딩 스피커 (1조)",
+   "Focal Stella Utopia EM Evo Floorstanding Speakers (Pair)",
+   "劲浪 Stella Utopia EM Evo 落地音箱 (一对)",
+   169998
+  ],
+  [
+   "audio-focal-grande-utopia-em-evo",
+   "포칼 Grande Utopia EM Evo 플로어스탠딩 스피커 (1조)",
+   "Focal Grande Utopia EM Evo Floorstanding Speakers (Pair)",
+   "劲浪 Grande Utopia EM Evo 落地音箱 (一对)",
+   279998
+  ]
+ ],
+ "use": [
+  "audio-p-audioquest-anti-static-record-brush",
+  "audio-p-behringer-microamp-ha400-4-channel-headphone-amplifier",
+  "audio-p-kanto-s2-desktop-speaker-stands-pair",
+  "audio-p-logitech-bluetooth-audio-adapter",
+  "audio-p-skullcandy-dime-3",
+  "audio-p-kiwi-ears-cadenza",
+  "audio-p-koss-kph30i",
+  "audio-p-tribit-xsound-go",
+  "audio-p-twelve-south-airfly-se-bluetooth-audio-transmitter",
+  "audio-p-groovewasher-record-cleaning-kit",
+  "audio-p-crosley-record-storage-crate",
+  "audio-p-amazon-echo-pop",
+  "audio-p-anker-soundcore-2",
+  "audio-p-creative-pebble-v3",
+  "audio-p-koss-kph40-utility",
+  "audio-p-kz-zs10-pro",
+  "audio-p-audioquest-jitterbug-fmj-usb-noise-filter",
+  "audio-p-fosi-audio-q4",
+  "audio-p-tin-hifi-t3-plus",
+  "audio-p-crosley-cruiser-plus-portable-turntable",
+  "audio-p-anker-soundcore-life-q30",
+  "audio-p-ultimate-ears-miniroll",
+  "audio-p-wiim-mini",
+  "audio-p-fosi-audio-v3-stereo-amplifier",
+  "audio-p-moondrop-aria-2",
+  "audio-p-simgot-ea500lm",
+  "audio-p-apple-homepod-mini",
+  "audio-p-etymotic-er2se",
+  "audio-p-grado-prestige-black3",
+  "audio-p-polk-audio-psw10",
+  "audio-p-schiit-mani-2",
+  "audio-p-topping-e30-ii",
+  "audio-p-wiim-pro",
+  "audio-p-beats-pill",
+  "audio-p-creative-sound-blasterx-g6",
+  "audio-p-edifier-r1280db",
+  "audio-p-apple-airpods-pro-3",
+  "audio-p-hiby-r4",
+  "audio-p-u-turn-audio-orbit-basic",
+  "audio-p-audioquest-dragonfly-red",
+  "audio-p-samsung-galaxy-buds3-pro",
+  "audio-p-audioengine-a2-plus-wireless",
+  "audio-p-hifiman-sundara",
+  "audio-p-ortofon-2m-bronze",
+  "audio-p-stax-sr-l300",
+  "audio-p-cambridge-audio-mxn10",
+  "audio-p-nad-c-316bee-v2",
+  "audio-p-rel-tzero-mkiii",
+  "audio-p-fluance-rt85",
+  "audio-p-wiim-amp-ultra",
+  "audio-p-apple-airpods-max",
+  "audio-p-zmf-bokeh",
+  "audio-p-grado-gs1000x",
+  "audio-p-meze-audio-empyrean-ii"
+ ]
+}

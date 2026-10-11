@@ -1,0 +1,527 @@
+{
+ "slug": "mobile-samsung",
+ "items": [
+  [
+   "mobile-samsung-galaxy-z-trifold-512gb",
+   "삼성 갤럭시 Z 트라이폴드 512GB",
+   "Samsung Galaxy Z TriFold 512GB",
+   "三星 Galaxy Z TriFold 512GB",
+   2899.99
+  ],
+  [
+   "mobile-samsung-galaxy-z-fold7-1tb",
+   "삼성 갤럭시 Z 폴드7 1TB",
+   "Samsung Galaxy Z Fold7 1TB",
+   "三星 Galaxy Z Fold7 1TB",
+   2419.99
+  ],
+  [
+   "mobile-samsung-galaxy-z-fold7-512gb",
+   "삼성 갤럭시 Z 폴드7 512GB",
+   "Samsung Galaxy Z Fold7 512GB",
+   "三星 Galaxy Z Fold7 512GB",
+   2119.99
+  ],
+  [
+   "mobile-samsung-galaxy-z-fold7-256gb",
+   "삼성 갤럭시 Z 폴드7 256GB",
+   "Samsung Galaxy Z Fold7 256GB",
+   "三星 Galaxy Z Fold7 256GB",
+   1999.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-ultra-1tb",
+   "삼성 갤럭시 S25 울트라 1TB",
+   "Samsung Galaxy S25 Ultra 1TB",
+   "三星 Galaxy S25 Ultra 1TB",
+   1659.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s11-ultra-1tb",
+   "삼성 갤럭시 탭 S11 울트라 Wi-Fi 1TB",
+   "Samsung Galaxy Tab S11 Ultra Wi-Fi 1TB",
+   "三星 Galaxy Tab S11 Ultra Wi-Fi 1TB",
+   1619.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s9-ultra-1tb",
+   "삼성 갤럭시 탭 S9 울트라 Wi-Fi 1TB",
+   "Samsung Galaxy Tab S9 Ultra Wi-Fi 1TB",
+   "三星 Galaxy Tab S9 Ultra Wi-Fi 1TB",
+   1619.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-ultra-512gb",
+   "삼성 갤럭시 S25 울트라 512GB",
+   "Samsung Galaxy S25 Ultra 512GB",
+   "三星 Galaxy S25 Ultra 512GB",
+   1419.99
+  ],
+  [
+   "mobile-samsung-galaxy-s24-ultra-512gb",
+   "삼성 갤럭시 S24 울트라 512GB",
+   "Samsung Galaxy S24 Ultra 512GB",
+   "三星 Galaxy S24 Ultra 512GB",
+   1419.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s11-ultra-512gb",
+   "삼성 갤럭시 탭 S11 울트라 Wi-Fi 512GB",
+   "Samsung Galaxy Tab S11 Ultra Wi-Fi 512GB",
+   "三星 Galaxy Tab S11 Ultra Wi-Fi 512GB",
+   1319.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s10-ultra-512gb",
+   "삼성 갤럭시 탭 S10 울트라 Wi-Fi 512GB",
+   "Samsung Galaxy Tab S10 Ultra Wi-Fi 512GB",
+   "三星 Galaxy Tab S10 Ultra Wi-Fi 512GB",
+   1319.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-ultra-256gb",
+   "삼성 갤럭시 S25 울트라 256GB",
+   "Samsung Galaxy S25 Ultra 256GB",
+   "三星 Galaxy S25 Ultra 256GB",
+   1299.99
+  ],
+  [
+   "mobile-samsung-galaxy-s24-ultra-256gb",
+   "삼성 갤럭시 S24 울트라 256GB",
+   "Samsung Galaxy S24 Ultra 256GB",
+   "三星 Galaxy S24 Ultra 256GB",
+   1299.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-edge-512gb",
+   "삼성 갤럭시 S25 엣지 512GB",
+   "Samsung Galaxy S25 Edge 512GB",
+   "三星 Galaxy S25 Edge 512GB",
+   1219.99
+  ],
+  [
+   "mobile-samsung-galaxy-z-flip7-512gb",
+   "삼성 갤럭시 Z 플립7 512GB",
+   "Samsung Galaxy Z Flip7 512GB",
+   "三星 Galaxy Z Flip7 512GB",
+   1219.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s11-ultra-256gb",
+   "삼성 갤럭시 탭 S11 울트라 Wi-Fi 256GB",
+   "Samsung Galaxy Tab S11 Ultra Wi-Fi 256GB",
+   "三星 Galaxy Tab S11 Ultra Wi-Fi 256GB",
+   1199.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s10-ultra-256gb",
+   "삼성 갤럭시 탭 S10 울트라 Wi-Fi 256GB",
+   "Samsung Galaxy Tab S10 Ultra Wi-Fi 256GB",
+   "三星 Galaxy Tab S10 Ultra Wi-Fi 256GB",
+   1199.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s9-ultra-256gb",
+   "삼성 갤럭시 탭 S9 울트라 Wi-Fi 256GB",
+   "Samsung Galaxy Tab S9 Ultra Wi-Fi 256GB",
+   "三星 Galaxy Tab S9 Ultra Wi-Fi 256GB",
+   1199.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-plus-512gb",
+   "삼성 갤럭시 S25+ 512GB",
+   "Samsung Galaxy S25+ 512GB",
+   "三星 Galaxy S25+ 512GB",
+   1119.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-edge-256gb",
+   "삼성 갤럭시 S25 엣지 256GB",
+   "Samsung Galaxy S25 Edge 256GB",
+   "三星 Galaxy S25 Edge 256GB",
+   1099.99
+  ],
+  [
+   "mobile-samsung-galaxy-z-flip7-256gb",
+   "삼성 갤럭시 Z 플립7 256GB",
+   "Samsung Galaxy Z Flip7 256GB",
+   "三星 Galaxy Z Flip7 256GB",
+   1099.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-plus-256gb",
+   "삼성 갤럭시 S25+ 256GB",
+   "Samsung Galaxy S25+ 256GB",
+   "三星 Galaxy S25+ 256GB",
+   999.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s10-plus-256gb",
+   "삼성 갤럭시 탭 S10+ Wi-Fi 256GB",
+   "Samsung Galaxy Tab S10+ Wi-Fi 256GB",
+   "三星 Galaxy Tab S10+ Wi-Fi 256GB",
+   999.99
+  ],
+  [
+   "mobile-samsung-galaxy-z-flip7-fe-256gb",
+   "삼성 갤럭시 Z 플립7 FE 256GB",
+   "Samsung Galaxy Z Flip7 FE 256GB",
+   "三星 Galaxy Z Flip7 FE 256GB",
+   959.99
+  ],
+  [
+   "mobile-samsung-galaxy-z-flip7-fe-128gb",
+   "삼성 갤럭시 Z 플립7 FE 128GB",
+   "Samsung Galaxy Z Flip7 FE 128GB",
+   "三星 Galaxy Z Flip7 FE 128GB",
+   899.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-256gb",
+   "삼성 갤럭시 S25 256GB",
+   "Samsung Galaxy S25 256GB",
+   "三星 Galaxy S25 256GB",
+   859.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s11-256gb",
+   "삼성 갤럭시 탭 S11 Wi-Fi 256GB",
+   "Samsung Galaxy Tab S11 Wi-Fi 256GB",
+   "三星 Galaxy Tab S11 Wi-Fi 256GB",
+   859.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-128gb",
+   "삼성 갤럭시 S25 128GB",
+   "Samsung Galaxy S25 128GB",
+   "三星 Galaxy S25 128GB",
+   799.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s11-128gb",
+   "삼성 갤럭시 탭 S11 Wi-Fi 128GB",
+   "Samsung Galaxy Tab S11 Wi-Fi 128GB",
+   "三星 Galaxy Tab S11 Wi-Fi 128GB",
+   799.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-fe-256gb",
+   "삼성 갤럭시 S25 FE 256GB",
+   "Samsung Galaxy S25 FE 256GB",
+   "三星 Galaxy S25 FE 256GB",
+   709.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-fe-128gb",
+   "삼성 갤럭시 S25 FE 128GB",
+   "Samsung Galaxy S25 FE 128GB",
+   "三星 Galaxy S25 FE 128GB",
+   649.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s10-fe-plus-128gb",
+   "삼성 갤럭시 탭 S10 FE+ Wi-Fi 128GB",
+   "Samsung Galaxy Tab S10 FE+ Wi-Fi 128GB",
+   "三星 Galaxy Tab S10 FE+ Wi-Fi 128GB",
+   649.99
+  ],
+  [
+   "mobile-samsung-galaxy-watch-ultra-2025-47mm",
+   "삼성 갤럭시 워치 울트라 (2025) 47mm",
+   "Samsung Galaxy Watch Ultra (2025) 47mm",
+   "三星 Galaxy Watch Ultra (2025) 47mm",
+   649.99
+  ],
+  [
+   "mobile-samsung-galaxy-a56-5g-128gb",
+   "삼성 갤럭시 A56 5G 128GB",
+   "Samsung Galaxy A56 5G 128GB",
+   "三星 Galaxy A56 5G 128GB",
+   499.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s10-fe-128gb",
+   "삼성 갤럭시 탭 S10 FE Wi-Fi 128GB",
+   "Samsung Galaxy Tab S10 FE Wi-Fi 128GB",
+   "三星 Galaxy Tab S10 FE Wi-Fi 128GB",
+   499.99
+  ],
+  [
+   "mobile-samsung-galaxy-watch8-classic-46mm",
+   "삼성 갤럭시 워치8 클래식 46mm",
+   "Samsung Galaxy Watch8 Classic 46mm",
+   "三星 Galaxy Watch8 Classic 46mm",
+   499.99
+  ],
+  [
+   "mobile-samsung-galaxy-a36-5g-128gb",
+   "삼성 갤럭시 A36 5G 128GB",
+   "Samsung Galaxy A36 5G 128GB",
+   "三星 Galaxy A36 5G 128GB",
+   399.99
+  ],
+  [
+   "mobile-samsung-galaxy-ring",
+   "삼성 갤럭시 링",
+   "Samsung Galaxy Ring",
+   "三星 Galaxy Ring 智能戒指",
+   399.99
+  ],
+  [
+   "mobile-samsung-galaxy-watch8-44mm",
+   "삼성 갤럭시 워치8 44mm",
+   "Samsung Galaxy Watch8 44mm",
+   "三星 Galaxy Watch8 44mm",
+   379.99
+  ],
+  [
+   "mobile-samsung-galaxy-watch8-40mm",
+   "삼성 갤럭시 워치8 40mm",
+   "Samsung Galaxy Watch8 40mm",
+   "三星 Galaxy Watch8 40mm",
+   349.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s10-lite-128gb",
+   "삼성 갤럭시 탭 S10 라이트 Wi-Fi 128GB",
+   "Samsung Galaxy Tab S10 Lite Wi-Fi 128GB",
+   "三星 Galaxy Tab S10 Lite Wi-Fi 128GB",
+   349.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s10-ultra-book-cover-keyboard",
+   "삼성 갤럭시 탭 S10 울트라 북커버 키보드",
+   "Samsung Galaxy Tab S10 Ultra Book Cover Keyboard",
+   "三星 Galaxy Tab S10 Ultra 键盘保护套",
+   349.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s6-lite-2024-64gb",
+   "삼성 갤럭시 탭 S6 라이트 (2024) 64GB",
+   "Samsung Galaxy Tab S6 Lite (2024) 64GB",
+   "三星 Galaxy Tab S6 Lite (2024) 64GB",
+   329.99
+  ],
+  [
+   "mobile-samsung-galaxy-a26-5g-128gb",
+   "삼성 갤럭시 A26 5G 128GB",
+   "Samsung Galaxy A26 5G 128GB",
+   "三星 Galaxy A26 5G 128GB",
+   299.99
+  ],
+  [
+   "mobile-samsung-galaxy-buds3-pro",
+   "삼성 갤럭시 버즈3 프로",
+   "Samsung Galaxy Buds3 Pro",
+   "三星 Galaxy Buds3 Pro",
+   249.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-a9-plus-64gb",
+   "삼성 갤럭시 탭 A9+ Wi-Fi 64GB",
+   "Samsung Galaxy Tab A9+ Wi-Fi 64GB",
+   "三星 Galaxy Tab A9+ Wi-Fi 64GB",
+   219.99
+  ],
+  [
+   "mobile-samsung-galaxy-a16-5g-128gb",
+   "삼성 갤럭시 A16 5G 128GB",
+   "Samsung Galaxy A16 5G 128GB",
+   "三星 Galaxy A16 5G 128GB",
+   199.99
+  ],
+  [
+   "mobile-samsung-galaxy-watch-fe-40mm",
+   "삼성 갤럭시 워치 FE 40mm",
+   "Samsung Galaxy Watch FE 40mm",
+   "三星 Galaxy Watch FE 40mm",
+   199.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s10-ultra-book-cover-keyboard-slim",
+   "삼성 갤럭시 탭 S10 울트라 북커버 키보드 슬림",
+   "Samsung Galaxy Tab S10 Ultra Book Cover Keyboard Slim",
+   "三星 Galaxy Tab S10 Ultra 轻薄键盘保护套",
+   199.99
+  ],
+  [
+   "mobile-samsung-galaxy-buds3",
+   "삼성 갤럭시 버즈3",
+   "Samsung Galaxy Buds3",
+   "三星 Galaxy Buds3",
+   179.99
+  ],
+  [
+   "mobile-samsung-galaxy-buds3-fe",
+   "삼성 갤럭시 버즈3 FE",
+   "Samsung Galaxy Buds3 FE",
+   "三星 Galaxy Buds3 FE",
+   149.99
+  ],
+  [
+   "mobile-samsung-galaxy-tab-s9-ultra-smart-book-cover",
+   "삼성 갤럭시 탭 S9 울트라 스마트 북커버",
+   "Samsung Galaxy Tab S9 Ultra Smart Book Cover",
+   "三星 Galaxy Tab S9 Ultra 智能保护套",
+   119.99
+  ],
+  [
+   "mobile-samsung-galaxy-buds-fe",
+   "삼성 갤럭시 버즈 FE",
+   "Samsung Galaxy Buds FE",
+   "三星 Galaxy Buds FE",
+   99.99
+  ],
+  [
+   "mobile-samsung-s-pen-creator-edition",
+   "삼성 S펜 크리에이터 에디션",
+   "Samsung S Pen Creator Edition",
+   "三星 S Pen Creator Edition 创作者版",
+   99.99
+  ],
+  [
+   "mobile-samsung-galaxy-smarttag2-4-pack",
+   "삼성 갤럭시 스마트태그2 4개 팩",
+   "Samsung Galaxy SmartTag2 4 Pack",
+   "三星 Galaxy SmartTag2 4 件装",
+   99.99
+  ],
+  [
+   "mobile-samsung-wireless-charger-duo-15w",
+   "삼성 무선 충전기 듀오 15W",
+   "Samsung Wireless Charger Duo 15W",
+   "三星无线充电器 Duo 15W",
+   89.99
+  ],
+  [
+   "mobile-samsung-galaxy-z-fold7-carbon-shield-case",
+   "삼성 갤럭시 Z 폴드7 카본 실드 케이스",
+   "Samsung Galaxy Z Fold7 Carbon Shield Case",
+   "三星 Galaxy Z Fold7 碳纤维保护壳",
+   89.99
+  ],
+  [
+   "mobile-samsung-battery-pack-20000mah-45w",
+   "삼성 배터리 팩 20,000mAh 45W",
+   "Samsung 20,000 mAh Battery Pack 45W",
+   "三星 20000mAh 移动电源 45W",
+   79.99
+  ],
+  [
+   "mobile-samsung-galaxy-fit3",
+   "삼성 갤럭시 핏3",
+   "Samsung Galaxy Fit3",
+   "三星 Galaxy Fit3",
+   59.99
+  ],
+  [
+   "mobile-samsung-wireless-charger-single-15w",
+   "삼성 무선 충전기 싱글 15W",
+   "Samsung Wireless Charger Single 15W",
+   "三星无线充电器 Single 15W",
+   59.99
+  ],
+  [
+   "mobile-samsung-65w-power-adapter-trio",
+   "삼성 65W 파워 어댑터 트리오",
+   "Samsung 65W Power Adapter Trio",
+   "三星 65W 三口电源适配器",
+   59.99
+  ],
+  [
+   "mobile-samsung-45w-power-adapter",
+   "삼성 45W 파워 어댑터",
+   "Samsung 45W Power Adapter",
+   "三星 45W 电源适配器",
+   49.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-ultra-kindsuit-case",
+   "삼성 갤럭시 S25 울트라 카인드슈트 케이스",
+   "Samsung Galaxy S25 Ultra Kindsuit Case",
+   "三星 Galaxy S25 Ultra Kindsuit 保护壳",
+   49.99
+  ],
+  [
+   "mobile-samsung-galaxy-watch8-sport-band",
+   "삼성 갤럭시 워치8 스포츠 밴드",
+   "Samsung Galaxy Watch8 Sport Band",
+   "三星 Galaxy Watch8 运动表带",
+   49.99
+  ],
+  [
+   "mobile-samsung-galaxy-smarttag2",
+   "삼성 갤럭시 스마트태그2",
+   "Samsung Galaxy SmartTag2",
+   "三星 Galaxy SmartTag2",
+   29.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-ultra-silicone-case",
+   "삼성 갤럭시 S25 울트라 실리콘 케이스",
+   "Samsung Galaxy S25 Ultra Silicone Case",
+   "三星 Galaxy S25 Ultra 硅胶保护壳",
+   29.99
+  ],
+  [
+   "mobile-samsung-25w-power-adapter",
+   "삼성 25W 파워 어댑터",
+   "Samsung 25W Power Adapter",
+   "三星 25W 电源适配器",
+   19.99
+  ],
+  [
+   "mobile-samsung-usb-c-cable-5a-1-8m",
+   "삼성 USB-C to USB-C 케이블 5A 1.8m",
+   "Samsung USB-C to USB-C Cable 5A 1.8m",
+   "三星 USB-C 转 USB-C 数据线 5A 1.8米",
+   19.99
+  ],
+  [
+   "mobile-samsung-type-c-earphones-eo-ic100",
+   "삼성 USB-C 이어폰 EO-IC100",
+   "Samsung Type-C Earphones EO-IC100",
+   "三星 Type-C 耳机 EO-IC100",
+   19.99
+  ],
+  [
+   "mobile-samsung-galaxy-s25-ultra-anti-reflecting-film",
+   "삼성 갤럭시 S25 울트라 저반사 보호필름",
+   "Samsung Galaxy S25 Ultra Anti-Reflecting Screen Protector",
+   "三星 Galaxy S25 Ultra 防反射屏幕保护膜",
+   19.99
+  ]
+ ],
+ "use": [
+  "mobile-p-elago-w3-stand-apple-watch",
+  "mobile-p-lamicall-tablet-stand",
+  "mobile-p-spigen-glastr-ez-fit-iphone-16-pro-2pack",
+  "mobile-p-belkin-boostcharge-usb-a-to-lightning-1m",
+  "mobile-p-ikea-sjoss-45w-2-port-charger",
+  "mobile-p-popsockets-popgrip",
+  "mobile-p-belkin-boostcharge-pro-magnetic-power-bank-5k",
+  "mobile-p-zagg-invisibleshield-glass-xtr3-iphone-16-pro",
+  "mobile-p-nomad-sport-band",
+  "mobile-p-casetify-impact-case-iphone-16-pro",
+  "mobile-p-otterbox-defender-pro-galaxy-s25-ultra",
+  "mobile-p-satechi-qi2-trio-wireless-charging-pad",
+  "mobile-p-skullcandy-method-360-anc",
+  "mobile-p-amazon-fire-hd-10-2023-32gb",
+  "mobile-p-kobo-clara-bw",
+  "mobile-p-microsoft-surface-pro-keyboard",
+  "mobile-p-shokz-openrun-pro-2",
+  "mobile-p-belkin-auto-tracking-stand-pro",
+  "mobile-p-amazon-fire-hd-10-kids-pro",
+  "mobile-p-rabbit-r1",
+  "mobile-p-zoleo-satellite-communicator",
+  "mobile-p-montblanc-mtb-03",
+  "mobile-p-bowers-wilkins-pi8",
+  "mobile-p-louis-vuitton-tambour-horizon-light-up-steel",
+  "mobile-p-wacom-mobilestudio-pro-16-gen-2",
+  "mobile-p-vertu-metavertu-carbon-fiber-12-512",
+  "mobile-p-louis-vuitton-tambour-horizon-light-up-black",
+  "mobile-p-vertu-aster-p-baroque",
+  "mobile-p-vertu-aster-p-dazzling-gold",
+  "mobile-p-vertu-metavertu-himalaya-alligator-gold-diamonds"
+ ]
+}

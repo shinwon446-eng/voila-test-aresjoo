@@ -1,0 +1,353 @@
+{
+ "slug": "jewelry-damiani",
+ "items": [
+  [
+   "jewelry-damiani-dicon-ring-ceramic-rg-dia",
+   "다미아니 디 아이콘 링 세라믹 로즈 골드 다이아몬드",
+   "Damiani D.Icon Ring Ceramic Rose Gold Diamond",
+   "德米亚尼 D.Icon 戒指 陶瓷 玫瑰金 钻石",
+   890
+  ],
+  [
+   "jewelry-damiani-dicon-necklace-ceramic-rg-dia",
+   "다미아니 디 아이콘 네크리스 세라믹 로즈 골드 다이아몬드",
+   "Damiani D.Icon Necklace Ceramic Rose Gold Diamond",
+   "德米亚尼 D.Icon 项链 陶瓷 玫瑰金 钻石",
+   1050
+  ],
+  [
+   "jewelry-damiani-dside-wedding-band-yg-dia",
+   "다미아니 디 사이드 웨딩 밴드 옐로 골드 다이아몬드",
+   "Damiani D.Side Wedding Band Yellow Gold Diamond",
+   "德米亚尼 D.Side 结婚对戒 黄金 钻石",
+   1100
+  ],
+  [
+   "jewelry-damiani-dicon-necklace-rg-dia",
+   "다미아니 디 아이콘 네크리스 로즈 골드 다이아몬드",
+   "Damiani D.Icon Necklace Rose Gold Diamond",
+   "德米亚尼 D.Icon 项链 玫瑰金 钻石",
+   1250
+  ],
+  [
+   "jewelry-damiani-dicon-bracelet-ceramic-rg-dia",
+   "다미아니 디 아이콘 브레이슬릿 세라믹 로즈 골드 다이아몬드",
+   "Damiani D.Icon Bracelet Ceramic Rose Gold Diamonds",
+   "德米亚尼 D.Icon 手链 陶瓷 玫瑰金 钻石",
+   1300
+  ],
+  [
+   "jewelry-damiani-luce-necklace-wg-dia",
+   "다미아니 루체 네크리스 화이트 골드 다이아몬드",
+   "Damiani Luce Necklace White Gold Diamonds",
+   "德米亚尼 Luce 项链 白金 钻石",
+   1550
+  ],
+  [
+   "jewelry-damiani-dicon-ring-rg-dia",
+   "다미아니 디 아이콘 링 로즈 골드 다이아몬드",
+   "Damiani D.Icon Ring Rose Gold Diamonds",
+   "德米亚尼 D.Icon 戒指 玫瑰金 钻石",
+   1700
+  ],
+  [
+   "jewelry-damiani-dside-ring-rg-dia",
+   "다미아니 디 사이드 링 로즈 골드 다이아몬드",
+   "Damiani D.Side Ring Rose Gold Diamonds",
+   "德米亚尼 D.Side 戒指 玫瑰金 钻石",
+   1800
+  ],
+  [
+   "jewelry-damiani-luce-stud-earrings-wg-dia",
+   "다미아니 루체 스터드 이어링 화이트 골드 다이아몬드",
+   "Damiani Luce Stud Earrings White Gold Diamonds",
+   "德米亚尼 Luce 耳钉 白金 钻石",
+   1950
+  ],
+  [
+   "jewelry-damiani-dicon-earrings-rg-dia",
+   "다미아니 디 아이콘 이어링 로즈 골드 다이아몬드",
+   "Damiani D.Icon Earrings Rose Gold Diamonds",
+   "德米亚尼 D.Icon 耳环 玫瑰金 钻石",
+   2000
+  ],
+  [
+   "jewelry-damiani-abbraccio-ring-rg-dia",
+   "다미아니 아브라치오 링 로즈 골드 다이아몬드",
+   "Damiani Abbraccio Ring Rose Gold Diamond",
+   "德米亚尼 Abbraccio 戒指 玫瑰金 钻石",
+   2150
+  ],
+  [
+   "jewelry-damiani-minou-necklace-wg-dia",
+   "다미아니 미누 네크리스 화이트 골드 다이아몬드",
+   "Damiani Minou Necklace White Gold Diamonds",
+   "德米亚尼 Minou 项链 白金 钻石",
+   2400
+  ],
+  [
+   "jewelry-damiani-belle-epoque-cross-necklace-xs-wg-dia",
+   "다미아니 벨 에포크 크로스 네크리스 XS 화이트 골드 다이아몬드",
+   "Damiani Belle Époque Cross Necklace XS White Gold Diamonds",
+   "德米亚尼 Belle Époque 十字项链 XS 白金 钻石",
+   2650
+  ],
+  [
+   "jewelry-damiani-fiocco-necklace-wg-dia",
+   "다미아니 피오코 네크리스 화이트 골드 다이아몬드",
+   "Damiani Fiocco Necklace White Gold Diamonds",
+   "德米亚尼 Fiocco 项链 白金 钻石",
+   3100
+  ],
+  [
+   "jewelry-damiani-margherita-bracelet-wg-dia",
+   "다미아니 마르게리타 브레이슬릿 화이트 골드 다이아몬드",
+   "Damiani Margherita Bracelet White Gold Diamonds",
+   "德米亚尼 Margherita 手链 白金 钻石",
+   3300
+  ],
+  [
+   "jewelry-damiani-belle-epoque-ring-wg-dia",
+   "다미아니 벨 에포크 링 화이트 골드 다이아몬드",
+   "Damiani Belle Époque Ring White Gold Diamonds",
+   "德米亚尼 Belle Époque 戒指 白金 钻石",
+   3400
+  ],
+  [
+   "jewelry-damiani-fiocco-ring-wg-dia",
+   "다미아니 피오코 링 화이트 골드 다이아몬드",
+   "Damiani Fiocco Ring White Gold Diamonds",
+   "德米亚尼 Fiocco 戒指 白金 钻石",
+   3450
+  ],
+  [
+   "jewelry-damiani-minou-engagement-ring-wg-030ct",
+   "다미아니 미누 인게이지먼트 링 화이트 골드 0.30ct",
+   "Damiani Minou Engagement Ring White Gold 0.30ct",
+   "德米亚尼 Minou 订婚戒指 白金 0.30ct",
+   3500
+  ],
+  [
+   "jewelry-damiani-fiocco-earrings-wg-dia",
+   "다미아니 피오코 이어링 화이트 골드 다이아몬드",
+   "Damiani Fiocco Earrings White Gold Diamonds",
+   "德米亚尼 Fiocco 耳环 白金 钻石",
+   3700
+  ],
+  [
+   "jewelry-damiani-minou-earrings-wg-dia",
+   "다미아니 미누 이어링 화이트 골드 다이아몬드",
+   "Damiani Minou Earrings White Gold Diamonds",
+   "德米亚尼 Minou 耳环 白金 钻石",
+   3750
+  ],
+  [
+   "jewelry-damiani-minou-ring-wg-dia",
+   "다미아니 미누 링 화이트 골드 다이아몬드",
+   "Damiani Minou Ring White Gold Diamonds",
+   "德米亚尼 Minou 戒指 白金 钻石",
+   3800
+  ],
+  [
+   "jewelry-damiani-notte-di-san-lorenzo-necklace-wg-dia",
+   "다미아니 노떼 디 산 로렌조 네크리스 화이트 골드 다이아몬드",
+   "Damiani Notte di San Lorenzo Necklace White Gold Diamonds",
+   "德米亚尼 Notte di San Lorenzo 项链 白金 钻石",
+   3900
+  ],
+  [
+   "jewelry-damiani-margherita-necklace-wg-dia",
+   "다미아니 마르게리타 네크리스 화이트 골드 다이아몬드",
+   "Damiani Margherita Necklace White Gold Diamonds",
+   "德米亚尼 Margherita 项链 白金 钻石",
+   3950
+  ],
+  [
+   "jewelry-damiani-belle-epoque-cross-necklace-small-wg-dia",
+   "다미아니 벨 에포크 크로스 네크리스 스몰 화이트 골드 다이아몬드",
+   "Damiani Belle Époque Cross Necklace Small White Gold Diamonds",
+   "德米亚尼 Belle Époque 十字项链 小号 白金 钻石",
+   4100
+  ],
+  [
+   "jewelry-damiani-margherita-earrings-wg-dia",
+   "다미아니 마르게리타 이어링 화이트 골드 다이아몬드",
+   "Damiani Margherita Earrings White Gold Diamonds",
+   "德米亚尼 Margherita 耳环 白金 钻石",
+   4500
+  ],
+  [
+   "jewelry-damiani-belle-epoque-earrings-wg-dia",
+   "다미아니 벨 에포크 이어링 화이트 골드 다이아몬드",
+   "Damiani Belle Époque Earrings White Gold Diamonds",
+   "德米亚尼 Belle Époque 耳环 白金 钻石",
+   4700
+  ],
+  [
+   "jewelry-damiani-dside-bracelet-rg-dia",
+   "다미아니 디 사이드 브레이슬릿 로즈 골드 다이아몬드",
+   "Damiani D.Side Bracelet Rose Gold Diamonds",
+   "德米亚尼 D.Side 手链 玫瑰金 钻石",
+   4900
+  ],
+  [
+   "jewelry-damiani-dicon-bangle-rg-dia",
+   "다미아니 디 아이콘 뱅글 로즈 골드 다이아몬드",
+   "Damiani D.Icon Bangle Rose Gold Diamonds",
+   "德米亚尼 D.Icon 手镯 玫瑰金 钻石",
+   5600
+  ],
+  [
+   "jewelry-damiani-mimosa-necklace-wg-dia",
+   "다미아니 미모사 네크리스 화이트 골드 다이아몬드",
+   "Damiani Mimosa Necklace White Gold Diamonds",
+   "德米亚尼 Mimosa 项链 白金 钻石",
+   6600
+  ],
+  [
+   "jewelry-damiani-belle-epoque-cross-necklace-medium-wg-dia",
+   "다미아니 벨 에포크 크로스 네크리스 미디엄 화이트 골드 다이아몬드",
+   "Damiani Belle Époque Cross Necklace Medium White Gold Diamonds",
+   "德米亚尼 Belle Époque 十字项链 中号 白金 钻石",
+   6900
+  ],
+  [
+   "jewelry-damiani-margherita-ring-wg-dia",
+   "다미아니 마르게리타 링 화이트 골드 다이아몬드",
+   "Damiani Margherita Ring White Gold Diamonds",
+   "德米亚尼 Margherita 戒指 白金 钻石",
+   7700
+  ],
+  [
+   "jewelry-damiani-mimosa-earrings-wg-dia",
+   "다미아니 미모사 이어링 화이트 골드 다이아몬드",
+   "Damiani Mimosa Earrings White Gold Diamonds",
+   "德米亚尼 Mimosa 耳环 白金 钻石",
+   8600
+  ],
+  [
+   "jewelry-damiani-mimosa-ring-wg-dia",
+   "다미아니 미모사 링 화이트 골드 다이아몬드",
+   "Damiani Mimosa Ring White Gold Diamonds",
+   "德米亚尼 Mimosa 戒指 白金 钻石",
+   9500
+  ],
+  [
+   "jewelry-damiani-eden-ring-wg-dia",
+   "다미아니 에덴 링 화이트 골드 다이아몬드",
+   "Damiani Eden Ring White Gold Diamonds",
+   "德米亚尼 Eden 戒指 白金 钻石",
+   9900
+  ],
+  [
+   "jewelry-damiani-belle-epoque-bracelet-wg-dia",
+   "다미아니 벨 에포크 브레이슬릿 화이트 골드 다이아몬드",
+   "Damiani Belle Époque Bracelet White Gold Diamonds",
+   "德米亚尼 Belle Époque 手链 白金 钻石",
+   10200
+  ],
+  [
+   "jewelry-damiani-belle-epoque-cross-necklace-large-wg-dia",
+   "다미아니 벨 에포크 크로스 네크리스 라지 화이트 골드 다이아몬드",
+   "Damiani Belle Époque Cross Necklace Large White Gold Diamonds",
+   "德米亚尼 Belle Époque 十字项链 大号 白金 钻石",
+   11900
+  ],
+  [
+   "jewelry-damiani-gomitolo-ring-rg-brown-dia",
+   "다미아니 고미톨로 링 로즈 골드 브라운 다이아몬드",
+   "Damiani Gomitolo Ring Rose Gold Brown Diamonds",
+   "德米亚尼 Gomitolo 戒指 玫瑰金 棕钻",
+   12500
+  ],
+  [
+   "jewelry-damiani-luce-tennis-bracelet-wg-dia-300ct",
+   "다미아니 루체 테니스 브레이슬릿 화이트 골드 다이아몬드 3.00ct",
+   "Damiani Luce Tennis Bracelet White Gold Diamonds 3.00ct",
+   "德米亚尼 Luce 网球手链 白金 钻石 3.00ct",
+   13500
+  ],
+  [
+   "jewelry-damiani-eden-bracelet-wg-dia",
+   "다미아니 에덴 브레이슬릿 화이트 골드 다이아몬드",
+   "Damiani Eden Bracelet White Gold Diamonds",
+   "德米亚尼 Eden 手链 白金 钻石",
+   24500
+  ],
+  [
+   "jewelry-damiani-mimosa-bracelet-wg-dia",
+   "다미아니 미모사 브레이슬릿 화이트 골드 다이아몬드",
+   "Damiani Mimosa Bracelet White Gold Diamonds",
+   "德米亚尼 Mimosa 手链 白金 钻石",
+   29000
+  ],
+  [
+   "jewelry-damiani-belle-epoque-reel-necklace-wg-dia",
+   "다미아니 벨 에포크 릴 네크리스 화이트 골드 다이아몬드",
+   "Damiani Belle Époque Reel Necklace White Gold Diamonds",
+   "德米亚尼 Belle Époque Reel 项链 白金 钻石",
+   42000
+  ]
+ ],
+ "use": [
+  "jewelry-p-belomo-10x-triplet-loupe",
+  "jewelry-p-kate-spade-mini-small-square-studs",
+  "jewelry-p-magnasonic-mguc500-ultrasonic-cleaner",
+  "jewelry-p-bausch-lomb-hastings-triplet-10x",
+  "jewelry-p-baublebar-mini-alidia-ring",
+  "jewelry-p-umbra-stowit-jewelry-box",
+  "jewelry-p-umbra-terrace-jewelry-tray",
+  "jewelry-p-gorjana-power-gemstone-bracelet",
+  "jewelry-p-kate-spade-idiom-bangle-heart-of-gold",
+  "jewelry-p-mark-graham-small-travel-jewelry-case",
+  "jewelry-p-goddards-silver-polish-foam-6oz",
+  "jewelry-p-connoisseurs-dazzle-drops-advanced",
+  "jewelry-p-hagerty-silversmiths-polish-8oz",
+  "jewelry-p-umbra-anigram-ring-holder",
+  "jewelry-p-hagerty-silver-foam-7oz",
+  "jewelry-p-simple-shine-jewelry-cleaner-8oz",
+  "jewelry-p-catbird-threadbare-ring-14k",
+  "jewelry-p-kendra-scott-medium-travel-jewelry-case",
+  "jewelry-p-thomas-sabo-classic-charm-bracelet",
+  "jewelry-p-kendra-scott-elaina-chain-bracelet",
+  "jewelry-p-kendra-scott-lee-drop-earrings",
+  "jewelry-p-pandora-sparkling-wishbone-ring",
+  "jewelry-p-pandora-sparkling-round-halo-stud-earrings",
+  "jewelry-p-kendra-scott-ari-heart-pendant-necklace",
+  "jewelry-p-kendra-scott-elisa-pendant-necklace",
+  "jewelry-p-kendra-scott-elle-drop-earrings",
+  "jewelry-p-kate-spade-one-in-a-million-initial-pendant",
+  "jewelry-p-gorjana-parker-necklace",
+  "jewelry-p-kendra-scott-danielle-drop-earrings",
+  "jewelry-p-pandora-moments-snake-chain-bracelet",
+  "jewelry-p-vivienne-westwood-nano-solitaire-earrings",
+  "jewelry-p-catbird-sweet-nothing-bracelet",
+  "jewelry-p-pottery-barn-mckenna-jewelry-box-medium",
+  "jewelry-p-monica-vinader-siren-stacking-ring",
+  "jewelry-p-stackers-classic-jewelry-box-set-of-3",
+  "jewelry-p-vivienne-westwood-farah-earrings",
+  "jewelry-p-mejuri-jewelry-box",
+  "jewelry-p-georg-jensen-moonlight-grapes-pendant",
+  "jewelry-p-georg-jensen-hearts-pendant",
+  "jewelry-p-wolf-caroline-zip-travel-case",
+  "jewelry-p-lalique-cabochon-ring",
+  "jewelry-p-wolf-palermo-zip-case",
+  "jewelry-p-pandora-era-lab-grown-diamond-pendant-silver",
+  "jewelry-p-ippolita-classico-squiggle-bangle",
+  "jewelry-p-georg-jensen-torun-bangle",
+  "jewelry-p-hermes-pop-h-pendant",
+  "jewelry-p-fendi-f-is-fendi-earrings",
+  "jewelry-p-hermes-pop-h-earrings",
+  "jewelry-p-louis-vuitton-essential-v-necklace",
+  "jewelry-p-hermes-chaine-dancre-enchainee-ring-silver",
+  "jewelry-p-wolf-palermo-medium-jewelry-box",
+  "jewelry-p-blue-nile-diamond-stud-earrings-half-ct",
+  "jewelry-p-ippolita-rock-candy-teeny-teardrop-earrings",
+  "jewelry-p-dinh-van-le-cube-diamant-bracelet",
+  "jewelry-p-gucci-icon-ring-18k",
+  "jewelry-p-john-hardy-classic-chain-bracelet-11mm",
+  "jewelry-p-dinh-van-menottes-r8-ring",
+  "jewelry-p-smythson-panama-3-drawer-jewellery-box",
+  "jewelry-p-de-beers-db-classic-solitaire-3ct"
+ ]
+}

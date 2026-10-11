@@ -1,0 +1,593 @@
+{
+ "slug": "camera-leica",
+ "items": [
+  [
+   "camera-leica-m11",
+   "라이카 M11",
+   "Leica M11",
+   "徕卡 M11",
+   8995
+  ],
+  [
+   "camera-leica-m11-p",
+   "라이카 M11-P",
+   "Leica M11-P",
+   "徕卡 M11-P",
+   9840
+  ],
+  [
+   "camera-leica-m11-d",
+   "라이카 M11-D",
+   "Leica M11-D",
+   "徕卡 M11-D",
+   9840
+  ],
+  [
+   "camera-leica-m11-monochrom",
+   "라이카 M11 Monochrom",
+   "Leica M11 Monochrom",
+   "徕卡 M11 Monochrom",
+   9795
+  ],
+  [
+   "camera-leica-m-ev1",
+   "라이카 M EV1",
+   "Leica M EV1",
+   "徕卡 M EV1",
+   8995
+  ],
+  [
+   "camera-leica-m6",
+   "라이카 M6",
+   "Leica M6",
+   "徕卡 M6",
+   5995
+  ],
+  [
+   "camera-leica-mp",
+   "라이카 MP",
+   "Leica MP",
+   "徕卡 MP",
+   6295
+  ],
+  [
+   "camera-leica-m-a",
+   "라이카 M-A",
+   "Leica M-A",
+   "徕卡 M-A",
+   6195
+  ],
+  [
+   "camera-leica-sl3",
+   "라이카 SL3",
+   "Leica SL3",
+   "徕卡 SL3",
+   7485
+  ],
+  [
+   "camera-leica-sl3-s",
+   "라이카 SL3-S",
+   "Leica SL3-S",
+   "徕卡 SL3-S",
+   5895
+  ],
+  [
+   "camera-leica-sl2-s",
+   "라이카 SL2-S",
+   "Leica SL2-S",
+   "徕卡 SL2-S",
+   4995
+  ],
+  [
+   "camera-leica-q3",
+   "라이카 Q3",
+   "Leica Q3",
+   "徕卡 Q3",
+   6735
+  ],
+  [
+   "camera-leica-q3-43",
+   "라이카 Q3 43",
+   "Leica Q3 43",
+   "徕卡 Q3 43",
+   7380
+  ],
+  [
+   "camera-leica-q3-monochrom",
+   "라이카 Q3 Monochrom",
+   "Leica Q3 Monochrom",
+   "徕卡 Q3 Monochrom",
+   7790
+  ],
+  [
+   "camera-leica-d-lux-8",
+   "라이카 D-Lux 8",
+   "Leica D-Lux 8",
+   "徕卡 D-Lux 8",
+   1915
+  ],
+  [
+   "camera-leica-sofort-2",
+   "라이카 Sofort 2",
+   "Leica Sofort 2",
+   "徕卡 Sofort 2",
+   399
+  ],
+  [
+   "camera-leica-lux-grip",
+   "라이카 Lux Grip",
+   "Leica Lux Grip",
+   "徕卡 Lux Grip",
+   329
+  ],
+  [
+   "camera-leica-s3",
+   "라이카 S3",
+   "Leica S3",
+   "徕卡 S3",
+   19995
+  ],
+  [
+   "camera-leica-noctilux-m-50mm-f-0-95-asph",
+   "라이카 Noctilux-M 50mm f/0.95 ASPH.",
+   "Leica Noctilux-M 50mm f/0.95 ASPH.",
+   "徕卡 Noctilux-M 50mm f/0.95 ASPH.",
+   14295
+  ],
+  [
+   "camera-leica-noctilux-m-50mm-f-1-2-asph",
+   "라이카 Noctilux-M 50mm f/1.2 ASPH.",
+   "Leica Noctilux-M 50mm f/1.2 ASPH.",
+   "徕卡 Noctilux-M 50mm f/1.2 ASPH.",
+   8695
+  ],
+  [
+   "camera-leica-noctilux-m-75mm-f-1-25-asph",
+   "라이카 Noctilux-M 75mm f/1.25 ASPH.",
+   "Leica Noctilux-M 75mm f/1.25 ASPH.",
+   "徕卡 Noctilux-M 75mm f/1.25 ASPH.",
+   14995
+  ],
+  [
+   "camera-leica-summilux-m-50mm-f-1-4-asph",
+   "라이카 Summilux-M 50mm f/1.4 ASPH.",
+   "Leica Summilux-M 50mm f/1.4 ASPH.",
+   "徕卡 Summilux-M 50mm f/1.4 ASPH.",
+   4895
+  ],
+  [
+   "camera-leica-summilux-m-35mm-f-1-4-asph",
+   "라이카 Summilux-M 35mm f/1.4 ASPH.",
+   "Leica Summilux-M 35mm f/1.4 ASPH.",
+   "徕卡 Summilux-M 35mm f/1.4 ASPH.",
+   6095
+  ],
+  [
+   "camera-leica-summilux-m-28mm-f-1-4-asph",
+   "라이카 Summilux-M 28mm f/1.4 ASPH.",
+   "Leica Summilux-M 28mm f/1.4 ASPH.",
+   "徕卡 Summilux-M 28mm f/1.4 ASPH.",
+   8095
+  ],
+  [
+   "camera-leica-summilux-m-21mm-f-1-4-asph",
+   "라이카 Summilux-M 21mm f/1.4 ASPH.",
+   "Leica Summilux-M 21mm f/1.4 ASPH.",
+   "徕卡 Summilux-M 21mm f/1.4 ASPH.",
+   9095
+  ],
+  [
+   "camera-leica-summilux-m-90mm-f-1-5-asph",
+   "라이카 Summilux-M 90mm f/1.5 ASPH.",
+   "Leica Summilux-M 90mm f/1.5 ASPH.",
+   "徕卡 Summilux-M 90mm f/1.5 ASPH.",
+   14795
+  ],
+  [
+   "camera-leica-apo-summicron-m-35mm-f-2-asph",
+   "라이카 APO-Summicron-M 35mm f/2 ASPH.",
+   "Leica APO-Summicron-M 35mm f/2 ASPH.",
+   "徕卡 APO-Summicron-M 35mm f/2 ASPH.",
+   9195
+  ],
+  [
+   "camera-leica-apo-summicron-m-50mm-f-2-asph",
+   "라이카 APO-Summicron-M 50mm f/2 ASPH.",
+   "Leica APO-Summicron-M 50mm f/2 ASPH.",
+   "徕卡 APO-Summicron-M 50mm f/2 ASPH.",
+   9895
+  ],
+  [
+   "camera-leica-apo-summicron-m-75mm-f-2-asph",
+   "라이카 APO-Summicron-M 75mm f/2 ASPH.",
+   "Leica APO-Summicron-M 75mm f/2 ASPH.",
+   "徕卡 APO-Summicron-M 75mm f/2 ASPH.",
+   5395
+  ],
+  [
+   "camera-leica-apo-summicron-m-90mm-f-2-asph",
+   "라이카 APO-Summicron-M 90mm f/2 ASPH.",
+   "Leica APO-Summicron-M 90mm f/2 ASPH.",
+   "徕卡 APO-Summicron-M 90mm f/2 ASPH.",
+   5595
+  ],
+  [
+   "camera-leica-summicron-m-35mm-f-2-asph",
+   "라이카 Summicron-M 35mm f/2 ASPH.",
+   "Leica Summicron-M 35mm f/2 ASPH.",
+   "徕卡 Summicron-M 35mm f/2 ASPH.",
+   3995
+  ],
+  [
+   "camera-leica-summicron-m-50mm-f-2",
+   "라이카 Summicron-M 50mm f/2",
+   "Leica Summicron-M 50mm f/2",
+   "徕卡 Summicron-M 50mm f/2",
+   2995
+  ],
+  [
+   "camera-leica-summicron-m-28mm-f-2-asph",
+   "라이카 Summicron-M 28mm f/2 ASPH.",
+   "Leica Summicron-M 28mm f/2 ASPH.",
+   "徕卡 Summicron-M 28mm f/2 ASPH.",
+   5395
+  ],
+  [
+   "camera-leica-elmarit-m-28mm-f-2-8-asph",
+   "라이카 Elmarit-M 28mm f/2.8 ASPH.",
+   "Leica Elmarit-M 28mm f/2.8 ASPH.",
+   "徕卡 Elmarit-M 28mm f/2.8 ASPH.",
+   2995
+  ],
+  [
+   "camera-leica-summaron-m-28mm-f-5-6",
+   "라이카 Summaron-M 28mm f/5.6",
+   "Leica Summaron-M 28mm f/5.6",
+   "徕卡 Summaron-M 28mm f/5.6",
+   3195
+  ],
+  [
+   "camera-leica-super-elmar-m-21mm-f-3-4-asph",
+   "라이카 Super-Elmar-M 21mm f/3.4 ASPH.",
+   "Leica Super-Elmar-M 21mm f/3.4 ASPH.",
+   "徕卡 Super-Elmar-M 21mm f/3.4 ASPH.",
+   3695
+  ],
+  [
+   "camera-leica-tri-elmar-m-16-18-21mm-f-4-asph",
+   "라이카 Tri-Elmar-M 16-18-21mm f/4 ASPH.",
+   "Leica Tri-Elmar-M 16-18-21mm f/4 ASPH.",
+   "徕卡 Tri-Elmar-M 16-18-21mm f/4 ASPH.",
+   7195
+  ],
+  [
+   "camera-leica-apo-telyt-m-135mm-f-3-4",
+   "라이카 APO-Telyt-M 135mm f/3.4",
+   "Leica APO-Telyt-M 135mm f/3.4",
+   "徕卡 APO-Telyt-M 135mm f/3.4",
+   4795
+  ],
+  [
+   "camera-leica-thambar-m-90mm-f-2-2",
+   "라이카 Thambar-M 90mm f/2.2",
+   "Leica Thambar-M 90mm f/2.2",
+   "徕卡 Thambar-M 90mm f/2.2",
+   7695
+  ],
+  [
+   "camera-leica-summilux-m-50mm-f-1-4-classic",
+   "라이카 Summilux-M 50mm f/1.4 Classic",
+   "Leica Summilux-M 50mm f/1.4 Classic",
+   "徕卡 Summilux-M 50mm f/1.4 Classic",
+   3895
+  ],
+  [
+   "camera-leica-summilux-m-35mm-f-1-4-steel-rim",
+   "라이카 Summilux-M 35mm f/1.4 Steel Rim",
+   "Leica Summilux-M 35mm f/1.4 Steel Rim",
+   "徕卡 Summilux-M 35mm f/1.4 Steel Rim",
+   3895
+  ],
+  [
+   "camera-leica-vario-elmarit-sl-24-70mm-f-2-8-asph",
+   "라이카 Vario-Elmarit-SL 24-70mm f/2.8 ASPH.",
+   "Leica Vario-Elmarit-SL 24-70mm f/2.8 ASPH.",
+   "徕卡 Vario-Elmarit-SL 24-70mm f/2.8 ASPH.",
+   2995
+  ],
+  [
+   "camera-leica-vario-elmarit-sl-70-200mm-f-2-8-asph",
+   "라이카 Vario-Elmarit-SL 70-200mm f/2.8 ASPH.",
+   "Leica Vario-Elmarit-SL 70-200mm f/2.8 ASPH.",
+   "徕卡 Vario-Elmarit-SL 70-200mm f/2.8 ASPH.",
+   3395
+  ],
+  [
+   "camera-leica-vario-elmarit-sl-24-90mm-f-2-8-4-asph",
+   "라이카 Vario-Elmarit-SL 24-90mm f/2.8-4 ASPH.",
+   "Leica Vario-Elmarit-SL 24-90mm f/2.8-4 ASPH.",
+   "徕卡 Vario-Elmarit-SL 24-90mm f/2.8-4 ASPH.",
+   6095
+  ],
+  [
+   "camera-leica-super-vario-elmarit-sl-14-24mm-f-2-8-asph",
+   "라이카 Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH.",
+   "Leica Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH.",
+   "徕卡 Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH.",
+   2795
+  ],
+  [
+   "camera-leica-vario-elmar-sl-100-400mm-f-5-6-3",
+   "라이카 Vario-Elmar-SL 100-400mm f/5-6.3",
+   "Leica Vario-Elmar-SL 100-400mm f/5-6.3",
+   "徕卡 Vario-Elmar-SL 100-400mm f/5-6.3",
+   2395
+  ],
+  [
+   "camera-leica-apo-vario-elmarit-sl-90-280mm-f-2-8-4",
+   "라이카 APO-Vario-Elmarit-SL 90-280mm f/2.8-4",
+   "Leica APO-Vario-Elmarit-SL 90-280mm f/2.8-4",
+   "徕卡 APO-Vario-Elmarit-SL 90-280mm f/2.8-4",
+   7195
+  ],
+  [
+   "camera-leica-apo-summicron-sl-35mm-f-2-asph",
+   "라이카 APO-Summicron-SL 35mm f/2 ASPH.",
+   "Leica APO-Summicron-SL 35mm f/2 ASPH.",
+   "徕卡 APO-Summicron-SL 35mm f/2 ASPH.",
+   5395
+  ],
+  [
+   "camera-leica-apo-summicron-sl-50mm-f-2-asph",
+   "라이카 APO-Summicron-SL 50mm f/2 ASPH.",
+   "Leica APO-Summicron-SL 50mm f/2 ASPH.",
+   "徕卡 APO-Summicron-SL 50mm f/2 ASPH.",
+   5395
+  ],
+  [
+   "camera-leica-apo-summicron-sl-75mm-f-2-asph",
+   "라이카 APO-Summicron-SL 75mm f/2 ASPH.",
+   "Leica APO-Summicron-SL 75mm f/2 ASPH.",
+   "徕卡 APO-Summicron-SL 75mm f/2 ASPH.",
+   5395
+  ],
+  [
+   "camera-leica-summilux-sl-50mm-f-1-4-asph",
+   "라이카 Summilux-SL 50mm f/1.4 ASPH.",
+   "Leica Summilux-SL 50mm f/1.4 ASPH.",
+   "徕卡 Summilux-SL 50mm f/1.4 ASPH.",
+   6995
+  ],
+  [
+   "camera-leica-summicron-sl-35mm-f-2-asph",
+   "라이카 Summicron-SL 35mm f/2 ASPH.",
+   "Leica Summicron-SL 35mm f/2 ASPH.",
+   "徕卡 Summicron-SL 35mm f/2 ASPH.",
+   2295
+  ],
+  [
+   "camera-leica-summicron-sl-50mm-f-2-asph",
+   "라이카 Summicron-SL 50mm f/2 ASPH.",
+   "Leica Summicron-SL 50mm f/2 ASPH.",
+   "徕卡 Summicron-SL 50mm f/2 ASPH.",
+   2195
+  ],
+  [
+   "camera-leica-visoflex-2",
+   "라이카 Visoflex 2",
+   "Leica Visoflex 2",
+   "徕卡 Visoflex 2",
+   795
+  ],
+  [
+   "camera-leica-sf-60-flash",
+   "라이카 SF 60 플래시",
+   "Leica SF 60 Flash",
+   "徕卡 SF 60 闪光灯",
+   695
+  ],
+  [
+   "camera-leica-sf-40-flash",
+   "라이카 SF 40 플래시",
+   "Leica SF 40 Flash",
+   "徕卡 SF 40 闪光灯",
+   495
+  ],
+  [
+   "camera-leica-m-adapter-l",
+   "라이카 M-Adapter L",
+   "Leica M-Adapter L",
+   "徕卡 M-Adapter L",
+   495
+  ],
+  [
+   "camera-leica-handgrip-m11",
+   "라이카 핸드그립 M11",
+   "Leica Handgrip M11",
+   "徕卡 M11 手柄",
+   395
+  ],
+  [
+   "camera-leica-multifunction-handgrip-hg-scl7",
+   "라이카 멀티펑션 핸드그립 HG-SCL7",
+   "Leica Multifunction Handgrip HG-SCL7",
+   "徕卡 多功能手柄 HG-SCL7",
+   1095
+  ],
+  [
+   "camera-leica-thumb-support-m11",
+   "라이카 썸 서포트 M11",
+   "Leica Thumb Support M11",
+   "徕卡 M11 拇指托",
+   275
+  ],
+  [
+   "camera-leica-thumb-support-q3",
+   "라이카 썸 서포트 Q3",
+   "Leica Thumb Support Q3",
+   "徕卡 Q3 拇指托",
+   240
+  ],
+  [
+   "camera-leica-half-case-q3-leather",
+   "라이카 Q3 가죽 하프 케이스",
+   "Leica Half Case Q3 Leather",
+   "徕卡 Q3 皮质半套",
+   250
+  ],
+  [
+   "camera-leica-protector-m11-leather",
+   "라이카 M11 가죽 프로텍터",
+   "Leica Protector M11 Leather",
+   "徕卡 M11 皮质保护套",
+   275
+  ],
+  [
+   "camera-leica-battery-bp-scl7",
+   "라이카 배터리 BP-SCL7",
+   "Leica Battery BP-SCL7",
+   "徕卡 电池 BP-SCL7",
+   210
+  ],
+  [
+   "camera-leica-battery-bp-scl6",
+   "라이카 배터리 BP-SCL6",
+   "Leica Battery BP-SCL6",
+   "徕卡 电池 BP-SCL6",
+   210
+  ],
+  [
+   "camera-leica-battery-bp-scl4",
+   "라이카 배터리 BP-SCL4",
+   "Leica Battery BP-SCL4",
+   "徕卡 电池 BP-SCL4",
+   225
+  ],
+  [
+   "camera-leica-battery-charger-bc-scl4",
+   "라이카 배터리 충전기 BC-SCL4",
+   "Leica Battery Charger BC-SCL4",
+   "徕卡 电池充电器 BC-SCL4",
+   195
+  ],
+  [
+   "camera-leica-soft-release-button-12mm",
+   "라이카 소프트 릴리즈 버튼 12mm",
+   "Leica Soft Release Button 12mm",
+   "徕卡 快门按钮 12mm",
+   70
+  ],
+  [
+   "camera-leica-carrying-strap-leather",
+   "라이카 가죽 캐링 스트랩",
+   "Leica Carrying Strap Leather",
+   "徕卡 皮质背带",
+   135
+  ],
+  [
+   "camera-leica-rope-strap-126cm",
+   "라이카 로프 스트랩 126cm",
+   "Leica Rope Strap 126cm",
+   "徕卡 绳带 126cm",
+   115
+  ],
+  [
+   "camera-leica-wrist-strap-leather",
+   "라이카 가죽 손목 스트랩",
+   "Leica Wrist Strap Leather",
+   "徕卡 皮质腕带",
+   95
+  ],
+  [
+   "camera-leica-lens-hood-q3-round",
+   "라이카 Q3 라운드 렌즈 후드",
+   "Leica Lens Hood Q3 Round",
+   "徕卡 Q3 圆形遮光罩",
+   195
+  ],
+  [
+   "camera-leica-lens-cap-e39",
+   "라이카 렌즈 캡 E39",
+   "Leica Lens Cap E39",
+   "徕卡 镜头盖 E39",
+   40
+  ],
+  [
+   "camera-leica-lens-cap-e46",
+   "라이카 렌즈 캡 E46",
+   "Leica Lens Cap E46",
+   "徕卡 镜头盖 E46",
+   40
+  ],
+  [
+   "camera-leica-body-cap-m",
+   "라이카 바디 캡 M",
+   "Leica Body Cap M",
+   "徕卡 机身盖 M",
+   30
+  ],
+  [
+   "camera-leica-rear-lens-cap-m",
+   "라이카 렌즈 뒷캡 M",
+   "Leica Rear Lens Cap M",
+   "徕卡 镜头后盖 M",
+   25
+  ],
+  [
+   "camera-leica-uva-ii-filter-e39",
+   "라이카 UVa II 필터 E39",
+   "Leica UVa II Filter E39",
+   "徕卡 UVa II 滤镜 E39",
+   150
+  ],
+  [
+   "camera-leica-uva-ii-filter-e46",
+   "라이카 UVa II 필터 E46",
+   "Leica UVa II Filter E46",
+   "徕卡 UVa II 滤镜 E46",
+   165
+  ],
+  [
+   "camera-leica-trinovid-8x40",
+   "라이카 Trinovid 8x40",
+   "Leica Trinovid 8x40",
+   "徕卡 Trinovid 8x40",
+   1475
+  ],
+  [
+   "camera-leica-ultravid-8x20-br",
+   "라이카 Ultravid 8x20 BR",
+   "Leica Ultravid 8x20 BR",
+   "徕卡 Ultravid 8x20 BR",
+   849
+  ],
+  [
+   "camera-leica-sofort-color-film-twin-pack",
+   "라이카 Sofort 컬러 필름 트윈 팩",
+   "Leica Sofort Color Film Twin Pack",
+   "徕卡 Sofort 彩色相纸 双包装",
+   27
+  ]
+ ],
+ "use": [
+  "camera-p-lexar-professional-1667x-sdxc-uhs-ii-128gb-memory-card",
+  "camera-p-paterson-universal-tank-with-two-reels",
+  "camera-p-westcott-40-inch-5-in-1-reflector",
+  "camera-p-hohem-isteady-v3",
+  "camera-p-manfrotto-element-mii-aluminum-tripod",
+  "camera-p-elinchrom-rotalux-octabox-100cm",
+  "camera-p-tilta-nucleus-nano-ii-wireless-lens-control-system",
+  "camera-p-aputure-mc-4-light-travel-kit",
+  "camera-p-elinchrom-elc-125-ttl",
+  "camera-p-litepanels-astra-6x-bi-color",
+  "camera-p-blackmagic-design-atem-mini-extreme-iso",
+  "camera-p-blackmagic-design-pocket-cinema-camera-6k-pro",
+  "camera-p-autel-robotics-evo-ii-pro-6k-v3",
+  "camera-p-red-v-raptor-x-8k-vv",
+  "camera-p-blackmagic-design-davinci-resolve-advanced-panel",
+  "camera-p-red-v-raptor-xl-x-8k-vv",
+  "camera-p-angenieux-optimo-ultra-compact-37-102mm-t2-9",
+  "camera-p-angenieux-optimo-ultra-12x-36-435mm-t4-2",
+  "camera-p-vision-research-phantom-flex4k"
+ ]
+}

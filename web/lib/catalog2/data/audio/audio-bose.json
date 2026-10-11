@@ -1,0 +1,359 @@
+{
+ "slug": "audio-bose",
+ "items": [
+  [
+   "audio-bose-soundlink-revolve-charging-cradle",
+   "보스 사운드링크 리볼브 충전 크래들",
+   "Bose SoundLink Revolve Charging Cradle",
+   "Bose SoundLink Revolve 充电底座",
+   29.95
+  ],
+  [
+   "audio-bose-portable-smart-speaker-charging-cradle",
+   "보스 포터블 스마트 스피커 충전 크래들",
+   "Bose Portable Smart Speaker Charging Cradle",
+   "Bose Portable Smart Speaker 充电底座",
+   29.95
+  ],
+  [
+   "audio-bose-ub-20-series-ii-wall-ceiling-bracket",
+   "보스 UB-20 Series II 벽 천장 브래킷",
+   "Bose UB-20 Series II Wall/Ceiling Bracket",
+   "Bose UB-20 Series II 墙面天花板支架",
+   34.95
+  ],
+  [
+   "audio-bose-quietcomfort-headphones-ear-cushion-kit",
+   "보스 QC 헤드폰 이어쿠션 키트",
+   "Bose QuietComfort Headphones Ear Cushion Kit",
+   "Bose QuietComfort Headphones 耳垫套件",
+   39
+  ],
+  [
+   "audio-bose-soundbar-wall-bracket",
+   "보스 사운드바 벽걸이 브래킷",
+   "Bose Soundbar Wall Bracket",
+   "Bose 回音壁壁挂支架",
+   39.95
+  ],
+  [
+   "audio-bose-quietcomfort-ultra-headphones-ear-cushion-kit",
+   "보스 QC 울트라 헤드폰 이어쿠션 키트",
+   "Bose QuietComfort Ultra Headphones Ear Cushion Kit",
+   "Bose QuietComfort Ultra Headphones 耳垫套件",
+   49
+  ],
+  [
+   "audio-bose-quietcomfort-ultra-earbuds-wireless-charging-case-cov",
+   "보스 QC 울트라 이어버드 무선 충전 케이스 커버",
+   "Bose QuietComfort Ultra Earbuds Wireless Charging Case Cover",
+   "Bose QuietComfort Ultra Earbuds 无线充电盒保护套",
+   49
+  ],
+  [
+   "audio-bose-soundlink-micro-2nd-gen",
+   "보스 사운드링크 마이크로 2세대 휴대용 블루투스 스피커",
+   "Bose SoundLink Micro (2nd Gen) Portable Bluetooth Speaker",
+   "Bose SoundLink Micro (第二代) 便携蓝牙音箱",
+   129
+  ],
+  [
+   "audio-bose-soundlink-flex-2nd-gen",
+   "보스 사운드링크 플렉스 2세대 휴대용 블루투스 스피커",
+   "Bose SoundLink Flex (2nd Gen) Portable Bluetooth Speaker",
+   "Bose SoundLink Flex (第二代) 便携蓝牙音箱",
+   149
+  ],
+  [
+   "audio-bose-companion-2-series-iii-multimedia-speaker-system",
+   "보스 컴패니언 2 시리즈 III 멀티미디어 스피커 시스템",
+   "Bose Companion 2 Series III Multimedia Speaker System",
+   "Bose Companion 2 Series III 多媒体音箱系统",
+   149
+  ],
+  [
+   "audio-bose-ufs-20-series-ii-universal-floor-stands-pair",
+   "보스 UFS-20 Series II 유니버설 플로어 스탠드 (1조)",
+   "Bose UFS-20 Series II Universal Floor Stands (Pair)",
+   "Bose UFS-20 Series II 通用落地支架 (一对)",
+   149
+  ],
+  [
+   "audio-bose-quietcomfort-earbuds",
+   "보스 QC 이어버드 노이즈 캔슬링 무선 이어버드",
+   "Bose QuietComfort Earbuds True Wireless Noise Cancelling Earbuds",
+   "Bose QuietComfort Earbuds 真无线降噪耳机",
+   179
+  ],
+  [
+   "audio-bose-solo-soundbar-series-ii",
+   "보스 솔로 사운드바 시리즈 II",
+   "Bose Solo Soundbar Series II",
+   "Bose Solo Soundbar Series II",
+   199
+  ],
+  [
+   "audio-bose-soundlink-home-bluetooth-speaker",
+   "보스 사운드링크 홈 블루투스 스피커",
+   "Bose SoundLink Home Bluetooth Speaker",
+   "Bose SoundLink Home 蓝牙音箱",
+   219
+  ],
+  [
+   "audio-bose-soundlink-revolve-ii",
+   "보스 사운드링크 리볼브 II 휴대용 블루투스 스피커",
+   "Bose SoundLink Revolve II Portable Bluetooth Speaker",
+   "Bose SoundLink Revolve II 便携蓝牙音箱",
+   219
+  ],
+  [
+   "audio-bose-soundlink-plus",
+   "보스 사운드링크 플러스 휴대용 블루투스 스피커",
+   "Bose SoundLink Plus Portable Bluetooth Speaker",
+   "Bose SoundLink Plus 便携蓝牙音箱",
+   269
+  ],
+  [
+   "audio-bose-tv-speaker",
+   "보스 TV 스피커 사운드바",
+   "Bose TV Speaker Soundbar",
+   "Bose TV Speaker 回音壁",
+   279
+  ],
+  [
+   "audio-bose-quietcomfort-earbuds-ii",
+   "보스 QC 이어버드 II 노이즈 캔슬링 무선 이어버드",
+   "Bose QuietComfort Earbuds II True Wireless Noise Cancelling Earbuds",
+   "Bose QuietComfort Earbuds II 真无线降噪耳机",
+   279
+  ],
+  [
+   "audio-bose-quietcomfort-ultra-earbuds",
+   "보스 QC 울트라 이어버드 노이즈 캔슬링 무선 이어버드",
+   "Bose QuietComfort Ultra Earbuds True Wireless Noise Cancelling Earbuds",
+   "Bose QuietComfort Ultra Earbuds 真无线降噪耳机",
+   299
+  ],
+  [
+   "audio-bose-quietcomfort-ultra-earbuds-2nd-gen",
+   "보스 QC 울트라 이어버드 2세대 노이즈 캔슬링 무선 이어버드",
+   "Bose QuietComfort Ultra Earbuds (2nd Gen) True Wireless Noise Cancelling Earbuds",
+   "Bose QuietComfort Ultra Earbuds (第二代) 真无线降噪耳机",
+   299
+  ],
+  [
+   "audio-bose-ultra-open-earbuds",
+   "보스 울트라 오픈 이어버드 오픈형 무선 이어버드",
+   "Bose Ultra Open Earbuds Open-Ear True Wireless Earbuds",
+   "Bose Ultra Open Earbuds 开放式真无线耳机",
+   299
+  ],
+  [
+   "audio-bose-soundlink-revolve-plus-ii",
+   "보스 사운드링크 리볼브+ II 휴대용 블루투스 스피커",
+   "Bose SoundLink Revolve+ II Portable Bluetooth Speaker",
+   "Bose SoundLink Revolve+ II 便携蓝牙音箱",
+   329
+  ],
+  [
+   "audio-bose-quietcomfort-headphones",
+   "보스 QC 헤드폰",
+   "Bose QuietComfort Headphones",
+   "Bose QuietComfort 消噪耳机",
+   349
+  ],
+  [
+   "audio-bose-noise-cancelling-headphones-700",
+   "보스 노이즈 캔슬링 헤드폰 700",
+   "Bose Noise Cancelling Headphones 700",
+   "Bose 700 无线消噪耳机",
+   379
+  ],
+  [
+   "audio-bose-home-speaker-500",
+   "보스 홈 스피커 500 스마트 스피커",
+   "Bose Home Speaker 500 Smart Speaker",
+   "Bose Home Speaker 500 智能音箱",
+   379
+  ],
+  [
+   "audio-bose-soundlink-max",
+   "보스 사운드링크 맥스 휴대용 블루투스 스피커",
+   "Bose SoundLink Max Portable Bluetooth Speaker",
+   "Bose SoundLink Max 便携蓝牙音箱",
+   399
+  ],
+  [
+   "audio-bose-portable-smart-speaker",
+   "보스 포터블 스마트 스피커",
+   "Bose Portable Smart Speaker",
+   "Bose Portable Smart Speaker",
+   399
+  ],
+  [
+   "audio-bose-surround-speakers",
+   "보스 서라운드 스피커",
+   "Bose Surround Speakers",
+   "Bose 无线环绕音箱",
+   399
+  ],
+  [
+   "audio-bose-quietcomfort-ultra-headphones",
+   "보스 QC 울트라 헤드폰",
+   "Bose QuietComfort Ultra Headphones",
+   "Bose QuietComfort Ultra 消噪耳机",
+   429
+  ],
+  [
+   "audio-bose-quietcomfort-ultra-headphones-2nd-gen",
+   "보스 QC 울트라 헤드폰 2세대",
+   "Bose QuietComfort Ultra Headphones (2nd Gen)",
+   "Bose QuietComfort Ultra 消噪耳机 (第二代)",
+   449
+  ],
+  [
+   "audio-bose-smart-soundbar",
+   "보스 스마트 사운드바",
+   "Bose Smart Soundbar",
+   "Bose 智能回音壁",
+   499
+  ],
+  [
+   "audio-bose-bass-module-500",
+   "보스 베이스 모듈 500 서브우퍼",
+   "Bose Bass Module 500 Subwoofer",
+   "Bose Bass Module 500 低音炮",
+   499
+  ],
+  [
+   "audio-bose-wave-music-system-iv",
+   "보스 웨이브 뮤직 시스템 IV",
+   "Bose Wave Music System IV",
+   "Bose Wave Music System IV",
+   499
+  ],
+  [
+   "audio-bose-surround-speakers-700",
+   "보스 서라운드 스피커 700",
+   "Bose Surround Speakers 700",
+   "Bose 无线环绕音箱 700",
+   599
+  ],
+  [
+   "audio-bose-s1-pro-plus-wireless-pa-system",
+   "보스 S1 Pro+ 무선 PA 시스템",
+   "Bose S1 Pro+ Wireless PA System",
+   "Bose S1 Pro+ 无线扩声系统",
+   699
+  ],
+  [
+   "audio-bose-bass-module-700",
+   "보스 베이스 모듈 700 서브우퍼",
+   "Bose Bass Module 700 Subwoofer",
+   "Bose Bass Module 700 低音炮",
+   849
+  ],
+  [
+   "audio-bose-smart-ultra-soundbar",
+   "보스 스마트 울트라 사운드바",
+   "Bose Smart Ultra Soundbar",
+   "Bose 智能 Ultra 回音壁",
+   899
+  ],
+  [
+   "audio-bose-l1-pro8-portable-line-array-system",
+   "보스 L1 Pro8 포터블 라인 어레이 시스템",
+   "Bose L1 Pro8 Portable Line Array System",
+   "Bose L1 Pro8 便携线阵列系统",
+   1199
+  ],
+  [
+   "audio-bose-a30-aviation-headset",
+   "보스 A30 항공 헤드셋",
+   "Bose A30 Aviation Headset",
+   "Bose A30 航空耳机",
+   1299
+  ],
+  [
+   "audio-bose-l1-pro16-portable-line-array-system",
+   "보스 L1 Pro16 포터블 라인 어레이 시스템",
+   "Bose L1 Pro16 Portable Line Array System",
+   "Bose L1 Pro16 便携线阵列系统",
+   1799
+  ],
+  [
+   "audio-bose-l1-pro32-with-sub2-portable-line-array-system",
+   "보스 L1 Pro32 with Sub2 포터블 라인 어레이 시스템",
+   "Bose L1 Pro32 with Sub2 Portable Line Array System",
+   "Bose L1 Pro32 with Sub2 便携线阵列系统",
+   3499
+  ],
+  [
+   "audio-bose-lifestyle-650-home-entertainment-system",
+   "보스 라이프스타일 650 홈 엔터테인먼트 시스템",
+   "Bose Lifestyle 650 Home Entertainment System",
+   "Bose Lifestyle 650 家庭娱乐系统",
+   3999
+  ]
+ ],
+ "use": [
+  "audio-p-philips-tae1105",
+  "audio-p-ugreen-3-5mm-braided-aux-cable-3-ft",
+  "audio-p-anker-3-5mm-premium-auxiliary-audio-cable-4-ft",
+  "audio-p-kz-edx-pro",
+  "audio-p-apple-lightning-to-3-5-mm-headphone-jack-adapter",
+  "audio-p-apple-usb-c-to-3-5-mm-headphone-jack-adapter",
+  "audio-p-koss-kph7",
+  "audio-p-new-bee-aluminum-headphone-stand",
+  "audio-p-panasonic-ergofit-rp-hje120",
+  "audio-p-skullcandy-jib",
+  "audio-p-spinfit-cp100-silicone-ear-tips",
+  "audio-p-monoprice-gold-plated-speaker-banana-plugs-5-pairs",
+  "audio-p-elago-silicone-case-for-airpods-pro-2",
+  "audio-p-elevation-lab-the-anchor-under-desk-headphone-stand-moun",
+  "audio-p-monoprice-choice-series-16awg-speaker-wire-50-ft",
+  "audio-p-belkin-rockstar-5-jack-multi-headphone-splitter",
+  "audio-p-skullcandy-dime-3",
+  "audio-p-kiwi-ears-cadenza",
+  "audio-p-koss-kph30i",
+  "audio-p-tribit-xsound-go",
+  "audio-p-twelve-south-airfly-se-bluetooth-audio-transmitter",
+  "audio-p-groovewasher-record-cleaning-kit",
+  "audio-p-crosley-record-storage-crate",
+  "audio-p-7hz-sonus",
+  "audio-p-dekoni-audio-elite-velour-ear-pads-for-sennheiser-hd-600",
+  "audio-p-edifier-w820nb-plus",
+  "audio-p-logitech-z207-bluetooth-computer-speakers",
+  "audio-p-tribit-stormbox-micro-2",
+  "audio-p-victrola-journey-portable-bluetooth-suitcase-record-play",
+  "audio-p-art-djpre-ii",
+  "audio-p-pro-ject-phono-box-e",
+  "audio-p-audioquest-jitterbug-fmj-usb-noise-filter",
+  "audio-p-apple-homepod-mini",
+  "audio-p-etymotic-er2se",
+  "audio-p-grado-prestige-black3",
+  "audio-p-grado-sr60x",
+  "audio-p-ifi-zen-air-dac",
+  "audio-p-nothing-ear-a",
+  "audio-p-ortofon-2m-red",
+  "audio-p-topping-dx1",
+  "audio-p-1more-sonoflow",
+  "audio-p-anker-soundcore-liberty-4-nc",
+  "audio-p-topping-dx3-pro-plus",
+  "audio-p-beats-solo-4",
+  "audio-p-meze-audio-109-pro",
+  "audio-p-schiit-bifrost-2-64",
+  "audio-p-edifier-s3000pro",
+  "audio-p-topping-d90-iii-sabre",
+  "audio-p-stax-sr-l700mk2",
+  "audio-p-dynaudio-evoke-10",
+  "audio-p-pro-ject-x2-b",
+  "audio-p-chord-electronics-qutest",
+  "audio-p-final-d8000",
+  "audio-p-naim-uniti-atom",
+  "audio-p-audioquest-niagara-7000",
+  "audio-p-revel-performabe-f228be",
+  "audio-p-sonus-faber-amati-g5",
+  "audio-p-wilson-audio-the-watt-puppy"
+ ]
+}

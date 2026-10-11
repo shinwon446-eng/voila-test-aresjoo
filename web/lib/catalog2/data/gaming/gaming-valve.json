@@ -1,0 +1,215 @@
+{
+ "slug": "gaming-valve",
+ "items": [
+  [
+   "gaming-valve-valve-index-vr-kit",
+   "밸브 인덱스 VR 키트",
+   "Valve Index VR Kit",
+   "Valve Index VR 套装",
+   999
+  ],
+  [
+   "gaming-valve-valve-index-headset-plus-controllers",
+   "밸브 인덱스 헤드셋 + 컨트롤러",
+   "Valve Index Headset + Controllers",
+   "Valve Index 头显 + 控制器",
+   749
+  ],
+  [
+   "gaming-valve-steam-deck-oled-1tb-limited-edition-white",
+   "스팀덱 OLED 1TB 리미티드 에디션 화이트",
+   "Steam Deck OLED 1TB Limited Edition White",
+   "Steam Deck OLED 1TB 白色限量版",
+   679
+  ],
+  [
+   "gaming-valve-steam-deck-oled-1tb",
+   "스팀덱 OLED 1TB",
+   "Steam Deck OLED 1TB",
+   "Steam Deck OLED 1TB",
+   649
+  ],
+  [
+   "gaming-valve-steam-deck-oled-512gb",
+   "스팀덱 OLED 512GB",
+   "Steam Deck OLED 512GB",
+   "Steam Deck OLED 512GB",
+   549
+  ],
+  [
+   "gaming-valve-valve-index-headset",
+   "밸브 인덱스 헤드셋",
+   "Valve Index Headset",
+   "Valve Index 头显",
+   499
+  ],
+  [
+   "gaming-valve-steam-deck-lcd-512gb",
+   "스팀덱 LCD 512GB",
+   "Steam Deck LCD 512GB",
+   "Steam Deck LCD 512GB",
+   449
+  ],
+  [
+   "gaming-valve-steam-deck-lcd-256gb",
+   "스팀덱 LCD 256GB",
+   "Steam Deck LCD 256GB",
+   "Steam Deck LCD 256GB",
+   399
+  ],
+  [
+   "gaming-valve-steam-deck-lcd-64gb",
+   "스팀덱 LCD 64GB",
+   "Steam Deck LCD 64GB",
+   "Steam Deck LCD 64GB",
+   349
+  ],
+  [
+   "gaming-valve-valve-index-controllers",
+   "밸브 인덱스 컨트롤러",
+   "Valve Index Controllers",
+   "Valve Index 控制器",
+   279
+  ],
+  [
+   "gaming-valve-valve-index-base-station",
+   "밸브 인덱스 베이스 스테이션",
+   "Valve Index Base Station",
+   "Valve Index 定位基站",
+   149
+  ],
+  [
+   "gaming-valve-steam-deck-docking-station",
+   "스팀덱 도킹 스테이션",
+   "Steam Deck Docking Station",
+   "Steam Deck 官方底座",
+   79
+  ],
+  [
+   "gaming-valve-steam-controller-2015",
+   "스팀 컨트롤러 2015",
+   "Steam Controller (2015)",
+   "Steam Controller 手柄 (2015)",
+   49.99
+  ],
+  [
+   "gaming-valve-steam-link",
+   "스팀 링크",
+   "Steam Link",
+   "Steam Link 串流盒",
+   49.99
+  ],
+  [
+   "gaming-valve-valve-index-face-gasket-2-pack",
+   "밸브 인덱스 페이스 개스킷 2개입",
+   "Valve Index Face Gasket 2-Pack",
+   "Valve Index 面罩衬垫 2只装",
+   39.99
+  ],
+  [
+   "gaming-valve-the-orange-box-xbox-360",
+   "오렌지 박스 Xbox 360",
+   "The Orange Box (Xbox 360)",
+   "橙盒 (Xbox 360)",
+   19.99
+  ],
+  [
+   "gaming-valve-portal-2-xbox-360",
+   "포탈 2 Xbox 360",
+   "Portal 2 (Xbox 360)",
+   "传送门2 (Xbox 360)",
+   19.99
+  ],
+  [
+   "gaming-valve-left-4-dead-2-xbox-360",
+   "레프트 4 데드 2 Xbox 360",
+   "Left 4 Dead 2 (Xbox 360)",
+   "求生之路2 (Xbox 360)",
+   19.99
+  ]
+ ],
+ "use": [
+  "gaming-p-samsung-evo-select-microsdxc-128gb",
+  "gaming-p-kontrolfreek-performance-grips",
+  "gaming-p-lizard-skins-dsp-controller-grip-for-ps5",
+  "gaming-p-orzly-carry-case-for-nintendo-switch",
+  "gaming-p-powera-joy-con-comfort-grips",
+  "gaming-p-panasonic-eneloop-aa-rechargeable-batteries-4-pack",
+  "gaming-p-hori-tough-pouch-for-nintendo-switch",
+  "gaming-p-kontrolfreek-fps-freek-inferno",
+  "gaming-p-spigen-glas-tr-ez-fit-screen-protector-for-steam-deck",
+  "gaming-p-endgame-gear-mpc450-cordura-mouse-pad",
+  "gaming-p-genki-aegis-shield-for-nintendo-switch-2",
+  "gaming-p-kontrolfreek-fps-freek-galaxy",
+  "gaming-p-powera-play-and-charge-kit-for-xbox-series-x-s",
+  "gaming-p-gamesir-cyclone-2-wireless-controller",
+  "gaming-p-genki-shadowcast-2",
+  "gaming-p-glorious-3xl-extended-mouse-pad-24x48",
+  "gaming-p-glorious-gpbt-keycaps-set",
+  "gaming-p-glorious-model-o-wired-gaming-mouse",
+  "gaming-p-hori-fighting-stick-mini-for-playstation-5",
+  "gaming-p-hori-split-pad-pro-for-nintendo-switch",
+  "gaming-p-hyperkin-xenon-wired-controller-for-xbox",
+  "gaming-p-next-level-racing-floor-mat",
+  "gaming-p-royal-kludge-rk61-wireless-mechanical-keyboard",
+  "gaming-p-sandisk-extreme-microsdxc-512gb",
+  "gaming-p-hori-wireless-horipad-for-steam",
+  "gaming-p-hypermegatech-super-pocket-capcom-edition",
+  "gaming-p-sandisk-microsd-express-256gb",
+  "gaming-p-anbernic-rg35xx-sp",
+  "gaming-p-fifine-ampligame-am8-dynamic-microphone",
+  "gaming-p-miyoo-mini-plus",
+  "gaming-p-benq-zowie-ec2-c-gaming-mouse",
+  "gaming-p-creative-pebble-pro-speakers",
+  "gaming-p-govee-gaming-light-strip-g1-27-34-inch",
+  "gaming-p-meta-quest-3-elite-strap",
+  "gaming-p-endgame-gear-op1-8k-gaming-mouse",
+  "gaming-p-artisan-ninja-fx-zero-xsoft-mouse-pad-l",
+  "gaming-p-hori-mario-kart-racing-wheel-pro-deluxe",
+  "gaming-p-ducky-one-3-mini-mechanical-keyboard",
+  "gaming-p-atari-400-mini",
+  "gaming-p-glorious-gmmk-2-65-mechanical-keyboard",
+  "gaming-p-hori-racing-wheel-apex-for-playstation-5",
+  "gaming-p-lamzu-maya-x-wireless-gaming-mouse",
+  "gaming-p-rode-psa1-plus-studio-boom-arm",
+  "gaming-p-aoc-24g4-24-inch-180hz-gaming-monitor",
+  "gaming-p-atari-2600-plus",
+  "gaming-p-atari-7800-plus",
+  "gaming-p-fiio-k11-desktop-dac-and-amplifier",
+  "gaming-p-glorious-model-o-2-pro-4k-8khz-edition",
+  "gaming-p-keychron-q1-max-wireless-custom-mechanical-keyboard",
+  "gaming-p-retroid-pocket-5",
+  "gaming-p-analogue-pocket",
+  "gaming-p-panic-playdate",
+  "gaming-p-buttkicker-gamer-plus",
+  "gaming-p-next-level-racing-wheel-stand-2-0",
+  "gaming-p-jbl-quantum-910-wireless-gaming-headset",
+  "gaming-p-beyerdynamic-mmx-200-wireless-gaming-headset",
+  "gaming-p-evercade-alpha-street-fighter-bartop-arcade",
+  "gaming-p-playseat-challenge-actifit",
+  "gaming-p-tobii-eye-tracker-5",
+  "gaming-p-nvidia-geforce-rtx-5070-founders-edition",
+  "gaming-p-secretlab-titan-evo-gaming-chair-regular",
+  "gaming-p-lenovo-legion-go-s-steamos-16gb-512gb",
+  "gaming-p-benq-zowie-xl2566k-24-5-inch-360hz-gaming-monitor",
+  "gaming-p-htc-vive-ultimate-tracker-3-plus-1-kit",
+  "gaming-p-lenovo-legion-go-2-ryzen-z2-16gb-1tb",
+  "gaming-p-acer-predator-helios-neo-16-gaming-laptop-rtx-4060",
+  "gaming-p-alienware-aw3225qf-32-inch-4k-qd-oled-gaming-monitor",
+  "gaming-p-wd-black-sn850x-nvme-ssd-8tb",
+  "gaming-p-simucube-activepedal-pro",
+  "gaming-p-lg-oled-evo-c5-65-inch-4k-tv",
+  "gaming-p-next-level-racing-motion-platform-v3",
+  "gaming-p-samsung-odyssey-ark-55-inch-2nd-gen",
+  "gaming-p-samsung-odyssey-oled-g8-g80sd-32-inch-4k-240hz",
+  "gaming-p-lenovo-legion-go-2-ryzen-z2-extreme-32gb-1tb",
+  "gaming-p-samsung-neo-qled-8k-qn900f-65-inch-tv",
+  "gaming-p-samsung-oled-s95f-65-inch-4k-tv",
+  "gaming-p-lenovo-legion-pro-7i-gen-10-16-inch-rtx-5080",
+  "gaming-p-lg-oled-evo-g5-65-inch-4k-tv",
+  "gaming-p-stern-pinball-john-wick-limited-edition",
+  "gaming-p-stern-pinball-king-kong-myth-of-terror-island-limited",
+  "gaming-p-samsung-micro-led-110-inch-tv",
+  "gaming-p-lg-oled-evo-g5-97-inch-4k-tv"
+ ]
+}

@@ -1,0 +1,443 @@
+{
+ "slug": "camera-samyang",
+ "items": [
+  [
+   "camera-samyang-af-35-150mm-f2-2-8-fe",
+   "삼양 AF 35-150mm F2-2.8 FE",
+   "Samyang AF 35-150mm F2-2.8 FE",
+   "三阳 AF 35-150mm F2-2.8 FE",
+   1199
+  ],
+  [
+   "camera-samyang-af-24-70mm-f2-8-fe",
+   "삼양 AF 24-70mm F2.8 FE",
+   "Samyang AF 24-70mm F2.8 FE",
+   "三阳 AF 24-70mm F2.8 FE",
+   999
+  ],
+  [
+   "camera-samyang-af-14-24mm-f2-8-fe",
+   "삼양 AF 14-24mm F2.8 FE",
+   "Samyang AF 14-24mm F2.8 FE",
+   "三阳 AF 14-24mm F2.8 FE",
+   1199
+  ],
+  [
+   "camera-samyang-af-135mm-f1-8-fe",
+   "삼양 AF 135mm F1.8 FE",
+   "Samyang AF 135mm F1.8 FE",
+   "三阳 AF 135mm F1.8 FE",
+   999
+  ],
+  [
+   "camera-samyang-af-85mm-f1-4-fe-ii",
+   "삼양 AF 85mm F1.4 FE II",
+   "Samyang AF 85mm F1.4 FE II",
+   "三阳 AF 85mm F1.4 FE II",
+   799
+  ],
+  [
+   "camera-samyang-af-50mm-f1-4-fe-ii",
+   "삼양 AF 50mm F1.4 FE II",
+   "Samyang AF 50mm F1.4 FE II",
+   "三阳 AF 50mm F1.4 FE II",
+   699
+  ],
+  [
+   "camera-samyang-af-35mm-f1-4-fe-ii",
+   "삼양 AF 35mm F1.4 FE II",
+   "Samyang AF 35mm F1.4 FE II",
+   "三阳 AF 35mm F1.4 FE II",
+   799
+  ],
+  [
+   "camera-samyang-af-24mm-f1-8-fe",
+   "삼양 AF 24mm F1.8 FE",
+   "Samyang AF 24mm F1.8 FE",
+   "三阳 AF 24mm F1.8 FE",
+   549
+  ],
+  [
+   "camera-samyang-af-35mm-f1-8-fe",
+   "삼양 AF 35mm F1.8 FE",
+   "Samyang AF 35mm F1.8 FE",
+   "三阳 AF 35mm F1.8 FE",
+   399
+  ],
+  [
+   "camera-samyang-af-45mm-f1-8-fe",
+   "삼양 AF 45mm F1.8 FE",
+   "Samyang AF 45mm F1.8 FE",
+   "三阳 AF 45mm F1.8 FE",
+   399
+  ],
+  [
+   "camera-samyang-af-75mm-f1-8-fe",
+   "삼양 AF 75mm F1.8 FE",
+   "Samyang AF 75mm F1.8 FE",
+   "三阳 AF 75mm F1.8 FE",
+   399
+  ],
+  [
+   "camera-samyang-af-18mm-f2-8-fe",
+   "삼양 AF 18mm F2.8 FE",
+   "Samyang AF 18mm F2.8 FE",
+   "三阳 AF 18mm F2.8 FE",
+   349
+  ],
+  [
+   "camera-samyang-af-24mm-f2-8-fe",
+   "삼양 AF 24mm F2.8 FE",
+   "Samyang AF 24mm F2.8 FE",
+   "三阳 AF 24mm F2.8 FE",
+   299
+  ],
+  [
+   "camera-samyang-af-35mm-f2-8-fe",
+   "삼양 AF 35mm F2.8 FE",
+   "Samyang AF 35mm F2.8 FE",
+   "三阳 AF 35mm F2.8 FE",
+   279
+  ],
+  [
+   "camera-samyang-af-14mm-f2-8-fe",
+   "삼양 AF 14mm F2.8 FE",
+   "Samyang AF 14mm F2.8 FE",
+   "三阳 AF 14mm F2.8 FE",
+   699
+  ],
+  [
+   "camera-samyang-af-12mm-f2-e",
+   "삼양 AF 12mm F2 E",
+   "Samyang AF 12mm F2 E",
+   "三阳 AF 12mm F2 E",
+   399
+  ],
+  [
+   "camera-samyang-af-12mm-f2-x",
+   "삼양 AF 12mm F2 X",
+   "Samyang AF 12mm F2 X",
+   "三阳 AF 12mm F2 X",
+   479
+  ],
+  [
+   "camera-samyang-af-35mm-f1-4-p-fe",
+   "삼양 AF 35mm F1.4 P FE",
+   "Samyang AF 35mm F1.4 P FE",
+   "三阳 AF 35mm F1.4 P FE",
+   599
+  ],
+  [
+   "camera-samyang-af-85mm-f1-8-p-fe",
+   "삼양 AF 85mm F1.8 P FE",
+   "Samyang AF 85mm F1.8 P FE",
+   "三阳 AF 85mm F1.8 P FE",
+   399
+  ],
+  [
+   "camera-samyang-af-16mm-f2-8-p-fe",
+   "삼양 AF 16mm F2.8 P FE",
+   "Samyang AF 16mm F2.8 P FE",
+   "三阳 AF 16mm F2.8 P FE",
+   399
+  ],
+  [
+   "camera-samyang-af-14mm-f2-8-rf",
+   "삼양 AF 14mm F2.8 RF",
+   "Samyang AF 14mm F2.8 RF",
+   "三阳 AF 14mm F2.8 RF",
+   699
+  ],
+  [
+   "camera-samyang-af-85mm-f1-4-rf",
+   "삼양 AF 85mm F1.4 RF",
+   "Samyang AF 85mm F1.4 RF",
+   "三阳 AF 85mm F1.4 RF",
+   699
+  ],
+  [
+   "camera-samyang-af-85mm-f1-4-ef",
+   "삼양 AF 85mm F1.4 EF",
+   "Samyang AF 85mm F1.4 EF",
+   "三阳 AF 85mm F1.4 EF",
+   599
+  ],
+  [
+   "camera-samyang-af-14mm-f2-8-ef",
+   "삼양 AF 14mm F2.8 EF",
+   "Samyang AF 14mm F2.8 EF",
+   "三阳 AF 14mm F2.8 EF",
+   699
+  ],
+  [
+   "camera-samyang-mf-14mm-f2-8-mk2",
+   "삼양 MF 14mm F2.8 MK2",
+   "Samyang MF 14mm F2.8 MK2",
+   "三阳 MF 14mm F2.8 MK2",
+   399
+  ],
+  [
+   "camera-samyang-mf-85mm-f1-4-mk2",
+   "삼양 MF 85mm F1.4 MK2",
+   "Samyang MF 85mm F1.4 MK2",
+   "三阳 MF 85mm F1.4 MK2",
+   399
+  ],
+  [
+   "camera-samyang-135mm-f2-0-ed-umc",
+   "삼양 135mm F2.0 ED UMC",
+   "Samyang 135mm F2.0 ED UMC",
+   "三阳 135mm F2.0 ED UMC",
+   549
+  ],
+  [
+   "camera-samyang-35mm-f1-4-as-umc",
+   "삼양 35mm F1.4 AS UMC",
+   "Samyang 35mm F1.4 AS UMC",
+   "三阳 35mm F1.4 AS UMC",
+   499
+  ],
+  [
+   "camera-samyang-24mm-f1-4-ed-as-if-umc",
+   "삼양 24mm F1.4 ED AS IF UMC",
+   "Samyang 24mm F1.4 ED AS IF UMC",
+   "三阳 24mm F1.4 ED AS IF UMC",
+   549
+  ],
+  [
+   "camera-samyang-12mm-f2-8-ed-as-ncs-fisheye",
+   "삼양 12mm F2.8 ED AS NCS Fisheye",
+   "Samyang 12mm F2.8 ED AS NCS Fisheye",
+   "三阳 12mm F2.8 ED AS NCS Fisheye",
+   449
+  ],
+  [
+   "camera-samyang-8mm-f3-5-umc-fish-eye-cs-ii",
+   "삼양 8mm F3.5 UMC Fish-Eye CS II",
+   "Samyang 8mm F3.5 UMC Fish-Eye CS II",
+   "三阳 8mm F3.5 UMC Fish-Eye CS II",
+   249
+  ],
+  [
+   "camera-samyang-10mm-f2-8-ed-as-ncs-cs",
+   "삼양 10mm F2.8 ED AS NCS CS",
+   "Samyang 10mm F2.8 ED AS NCS CS",
+   "三阳 10mm F2.8 ED AS NCS CS",
+   399
+  ],
+  [
+   "camera-samyang-12mm-f2-0-ncs-cs",
+   "삼양 12mm F2.0 NCS CS",
+   "Samyang 12mm F2.0 NCS CS",
+   "三阳 12mm F2.0 NCS CS",
+   299
+  ],
+  [
+   "camera-samyang-100mm-f2-8-ed-umc-macro",
+   "삼양 100mm F2.8 ED UMC Macro",
+   "Samyang 100mm F2.8 ED UMC Macro",
+   "三阳 100mm F2.8 ED UMC Macro",
+   549
+  ],
+  [
+   "camera-samyang-xp-14mm-f2-4",
+   "삼양 XP 14mm F2.4",
+   "Samyang XP 14mm F2.4",
+   "三阳 XP 14mm F2.4",
+   899
+  ],
+  [
+   "camera-samyang-xp-35mm-f1-2",
+   "삼양 XP 35mm F1.2",
+   "Samyang XP 35mm F1.2",
+   "三阳 XP 35mm F1.2",
+   899
+  ],
+  [
+   "camera-samyang-xp-50mm-f1-2",
+   "삼양 XP 50mm F1.2",
+   "Samyang XP 50mm F1.2",
+   "三阳 XP 50mm F1.2",
+   799
+  ],
+  [
+   "camera-samyang-xp-85mm-f1-2",
+   "삼양 XP 85mm F1.2",
+   "Samyang XP 85mm F1.2",
+   "三阳 XP 85mm F1.2",
+   899
+  ],
+  [
+   "camera-samyang-xp-10mm-f3-5",
+   "삼양 XP 10mm F3.5",
+   "Samyang XP 10mm F3.5",
+   "三阳 XP 10mm F3.5",
+   1099
+  ],
+  [
+   "camera-samyang-v-af-24mm-t1-9-fe",
+   "삼양 V-AF 24mm T1.9 FE",
+   "Samyang V-AF 24mm T1.9 FE",
+   "三阳 V-AF 24mm T1.9 FE",
+   549
+  ],
+  [
+   "camera-samyang-v-af-35mm-t1-9-fe",
+   "삼양 V-AF 35mm T1.9 FE",
+   "Samyang V-AF 35mm T1.9 FE",
+   "三阳 V-AF 35mm T1.9 FE",
+   549
+  ],
+  [
+   "camera-samyang-v-af-45mm-t1-9-fe",
+   "삼양 V-AF 45mm T1.9 FE",
+   "Samyang V-AF 45mm T1.9 FE",
+   "三阳 V-AF 45mm T1.9 FE",
+   549
+  ],
+  [
+   "camera-samyang-v-af-75mm-t1-9-fe",
+   "삼양 V-AF 75mm T1.9 FE",
+   "Samyang V-AF 75mm T1.9 FE",
+   "三阳 V-AF 75mm T1.9 FE",
+   549
+  ],
+  [
+   "camera-samyang-v-af-100mm-t2-3-fe",
+   "삼양 V-AF 100mm T2.3 FE",
+   "Samyang V-AF 100mm T2.3 FE",
+   "三阳 V-AF 100mm T2.3 FE",
+   649
+  ],
+  [
+   "camera-samyang-vdslr-50mm-t1-5-mk2",
+   "삼양 VDSLR 50mm T1.5 MK2",
+   "Samyang VDSLR 50mm T1.5 MK2",
+   "三阳 VDSLR 50mm T1.5 MK2",
+   599
+  ],
+  [
+   "camera-samyang-vdslr-85mm-t1-5-mk2",
+   "삼양 VDSLR 85mm T1.5 MK2",
+   "Samyang VDSLR 85mm T1.5 MK2",
+   "三阳 VDSLR 85mm T1.5 MK2",
+   499
+  ],
+  [
+   "camera-samyang-xeen-50mm-t1-5",
+   "삼양 XEEN 50mm T1.5",
+   "Samyang XEEN 50mm T1.5",
+   "三阳 XEEN 50mm T1.5",
+   1995
+  ],
+  [
+   "camera-samyang-xeen-85mm-t1-5",
+   "삼양 XEEN 85mm T1.5",
+   "Samyang XEEN 85mm T1.5",
+   "三阳 XEEN 85mm T1.5",
+   1995
+  ],
+  [
+   "camera-samyang-xeen-cf-50mm-t1-5",
+   "삼양 XEEN CF 50mm T1.5",
+   "Samyang XEEN CF 50mm T1.5",
+   "三阳 XEEN CF 50mm T1.5",
+   2495
+  ],
+  [
+   "camera-samyang-xeen-cf-24mm-t1-5",
+   "삼양 XEEN CF 24mm T1.5",
+   "Samyang XEEN CF 24mm T1.5",
+   "三阳 XEEN CF 24mm T1.5",
+   2495
+  ],
+  [
+   "camera-samyang-xeen-meister-50mm-t1-3",
+   "삼양 XEEN Meister 50mm T1.3",
+   "Samyang XEEN Meister 50mm T1.3",
+   "三阳 XEEN Meister 50mm T1.3",
+   5495
+  ],
+  [
+   "camera-samyang-xeen-meister-85mm-t1-3",
+   "삼양 XEEN Meister 85mm T1.3",
+   "Samyang XEEN Meister 85mm T1.3",
+   "三阳 XEEN Meister 85mm T1.3",
+   5495
+  ],
+  [
+   "camera-samyang-xeen-anamorphic-50mm-t2-3",
+   "삼양 XEEN Anamorphic 50mm T2.3",
+   "Samyang XEEN Anamorphic 50mm T2.3",
+   "三阳 XEEN Anamorphic 50mm T2.3",
+   7495
+  ],
+  [
+   "camera-samyang-lens-station-for-sony-e",
+   "삼양 소니 E 마운트용 렌즈 스테이션",
+   "Samyang Lens Station for Sony E",
+   "三阳 索尼 E 卡口 Lens Station 镜头底座",
+   59
+  ],
+  [
+   "camera-samyang-lens-station-for-canon-ef",
+   "삼양 캐논 EF 마운트용 렌즈 스테이션",
+   "Samyang Lens Station for Canon EF",
+   "三阳 佳能 EF 卡口 Lens Station 镜头底座",
+   59
+  ],
+  [
+   "camera-samyang-lens-manager-for-sony-e",
+   "삼양 소니 E 마운트용 렌즈 매니저",
+   "Samyang Lens Manager for Sony E",
+   "三阳 索尼 E 卡口 Lens Manager",
+   69
+  ]
+ ],
+ "use": [
+  "camera-p-peak-design-anchor-4-pack",
+  "camera-p-lenspen-nlp-1-original-lens-cleaning-pen",
+  "camera-p-tiffen-67mm-uv-protector-filter",
+  "camera-p-think-tank-photo-dslr-battery-holder-2",
+  "camera-p-photographic-solutions-eclipse-optic-cleaning-fluid-2oz",
+  "camera-p-altura-photo-professional-camera-cleaning-kit",
+  "camera-p-ilford-delta-3200-35mm-36-exposures-film",
+  "camera-p-sandisk-extreme-pro-sdxc-uhs-i-64gb-memory-card",
+  "camera-p-giottos-rocket-air-blaster-large-aa1900",
+  "camera-p-kodak-ektar-100-35mm-36-exposures-film",
+  "camera-p-tiffen-77mm-uv-protector-filter",
+  "camera-p-think-tank-photo-pee-wee-pixel-pocket-rocket",
+  "camera-p-cinestill-800t-35mm-36-exposures-film",
+  "camera-p-manfrotto-pixi-mini-tripod",
+  "camera-p-smallrig-p96-video-led-light",
+  "camera-p-kodak-ultramax-400-35mm-36-exposures-3-pack-film",
+  "camera-p-peak-design-cuff-wrist-strap",
+  "camera-p-manfrotto-035-super-clamp",
+  "camera-p-savage-widetone-seamless-background-paper-53-inch-x-36f",
+  "camera-p-hoya-77mm-nxt-plus-uv-filter",
+  "camera-p-lexar-professional-1667x-sdxc-uhs-ii-128gb-memory-card",
+  "camera-p-paterson-universal-tank-with-two-reels",
+  "camera-p-westcott-40-inch-5-in-1-reflector",
+  "camera-p-kodak-vision3-50d-super-8-film-cartridge",
+  "camera-p-expoimaging-expodisc-v3-77mm-white-balance-filter",
+  "camera-p-peak-design-leash-strap",
+  "camera-p-nanlite-litolite-5c",
+  "camera-p-gary-fong-lightsphere-collapsible-speed-mount",
+  "camera-p-tiffen-82mm-circular-polarizer-filter",
+  "camera-p-manfrotto-element-mii-aluminum-tripod",
+  "camera-p-blackrapid-curve-breathe-strap",
+  "camera-p-rode-videomicro-ii",
+  "camera-p-peak-design-slide-strap",
+  "camera-p-elgato-facecam-pro",
+  "camera-p-smallrig-rc-60b-cob-led-video-light",
+  "camera-p-sandisk-professional-g-drive-armoratd-4tb",
+  "camera-p-spider-holster-spiderpro-single-camera-system-v2",
+  "camera-p-blackmagic-design-atem-mini-extreme-iso",
+  "camera-p-dzofilm-vespid-prime-ff-50mm-t2-1",
+  "camera-p-aputure-electro-storm-cs15",
+  "camera-p-linhof-technorama-617s-iii",
+  "camera-p-dzofilm-arles-prime-ff-5-lens-kit",
+  "camera-p-arri-alexa-mini-lf",
+  "camera-p-arri-signature-zoom-45-135mm-t2-8"
+ ]
+}

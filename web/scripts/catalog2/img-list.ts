@@ -8,7 +8,7 @@
 //   4 = 전부
 // 여러 박스에 든 상품은 한 번만 나온다. 포켓몬 카드(이름에 세트 번호가 있는 카드)는 뺀다: 그림 도구로 만들지 않는다(qa/codex/gen-rules-pkm.md).
 import { existsSync } from "node:fs";
-import { V2_BOXES } from "../../lib/products";
+import { V2_BOXES, faceItems } from "../../lib/products";
 import { CATEGORIES_V2 } from "../../lib/catalogTypes";
 
 const args = process.argv.slice(2);
@@ -23,7 +23,8 @@ function pick(cat: string, depth: number) {
   const seen = new Set<string>();
   const out: { id: string; nameEn: string; name: string }[] = [];
   for (const box of V2_BOXES.filter((b) => b.category === cat)) {
-    const top = [...box.items].sort((a, b) => b.value - a.value).slice(0, depth);
+    // 박스의 얼굴 순서(자기 상품이 먼저, 값이 큰 것부터)
+    const top = faceItems(box).slice(0, depth);
     for (const item of top) {
       if (seen.has(item.id) || item.image.src || isCard(item.nameEn)) continue;
       seen.add(item.id);

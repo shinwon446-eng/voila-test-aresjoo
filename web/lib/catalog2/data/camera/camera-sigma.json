@@ -1,0 +1,617 @@
+{
+ "slug": "camera-sigma",
+ "items": [
+  [
+   "camera-sigma-bf",
+   "시그마 BF",
+   "Sigma BF",
+   "适马 BF",
+   1999
+  ],
+  [
+   "camera-sigma-fp",
+   "시그마 fp",
+   "Sigma fp",
+   "适马 fp",
+   1899
+  ],
+  [
+   "camera-sigma-fp-l",
+   "시그마 fp L",
+   "Sigma fp L",
+   "适马 fp L",
+   2499
+  ],
+  [
+   "camera-sigma-14mm-f1-4-dg-dn-art",
+   "시그마 14mm F1.4 DG DN Art",
+   "Sigma 14mm F1.4 DG DN Art",
+   "适马 14mm F1.4 DG DN Art",
+   1599
+  ],
+  [
+   "camera-sigma-15mm-f1-4-dg-dn-diagonal-fisheye-art",
+   "시그마 15mm F1.4 DG DN Diagonal Fisheye Art",
+   "Sigma 15mm F1.4 DG DN Diagonal Fisheye Art",
+   "适马 15mm F1.4 DG DN Diagonal Fisheye Art",
+   1999
+  ],
+  [
+   "camera-sigma-20mm-f1-4-dg-dn-art",
+   "시그마 20mm F1.4 DG DN Art",
+   "Sigma 20mm F1.4 DG DN Art",
+   "适马 20mm F1.4 DG DN Art",
+   899
+  ],
+  [
+   "camera-sigma-24mm-f1-4-dg-dn-art",
+   "시그마 24mm F1.4 DG DN Art",
+   "Sigma 24mm F1.4 DG DN Art",
+   "适马 24mm F1.4 DG DN Art",
+   799
+  ],
+  [
+   "camera-sigma-35mm-f1-2-dg-ii-art",
+   "시그마 35mm F1.2 DG II Art",
+   "Sigma 35mm F1.2 DG II Art",
+   "适马 35mm F1.2 DG II Art",
+   1549
+  ],
+  [
+   "camera-sigma-35mm-f1-4-dg-dn-art",
+   "시그마 35mm F1.4 DG DN Art",
+   "Sigma 35mm F1.4 DG DN Art",
+   "适马 35mm F1.4 DG DN Art",
+   899
+  ],
+  [
+   "camera-sigma-50mm-f1-2-dg-dn-art",
+   "시그마 50mm F1.2 DG DN Art",
+   "Sigma 50mm F1.2 DG DN Art",
+   "适马 50mm F1.2 DG DN Art",
+   1399
+  ],
+  [
+   "camera-sigma-50mm-f1-4-dg-dn-art",
+   "시그마 50mm F1.4 DG DN Art",
+   "Sigma 50mm F1.4 DG DN Art",
+   "适马 50mm F1.4 DG DN Art",
+   849
+  ],
+  [
+   "camera-sigma-85mm-f1-4-dg-dn-art",
+   "시그마 85mm F1.4 DG DN Art",
+   "Sigma 85mm F1.4 DG DN Art",
+   "适马 85mm F1.4 DG DN Art",
+   1199
+  ],
+  [
+   "camera-sigma-105mm-f1-4-dg-hsm-art",
+   "시그마 105mm F1.4 DG HSM Art",
+   "Sigma 105mm F1.4 DG HSM Art",
+   "适马 105mm F1.4 DG HSM Art",
+   1599
+  ],
+  [
+   "camera-sigma-135mm-f1-4-dg-art",
+   "시그마 135mm F1.4 DG Art",
+   "Sigma 135mm F1.4 DG Art",
+   "适马 135mm F1.4 DG Art",
+   1899
+  ],
+  [
+   "camera-sigma-135mm-f1-8-dg-hsm-art",
+   "시그마 135mm F1.8 DG HSM Art",
+   "Sigma 135mm F1.8 DG HSM Art",
+   "适马 135mm F1.8 DG HSM Art",
+   1399
+  ],
+  [
+   "camera-sigma-105mm-f2-8-dg-dn-macro-art",
+   "시그마 105mm F2.8 DG DN Macro Art",
+   "Sigma 105mm F2.8 DG DN Macro Art",
+   "适马 105mm F2.8 DG DN Macro Art",
+   799
+  ],
+  [
+   "camera-sigma-70mm-f2-8-dg-macro-art",
+   "시그마 70mm F2.8 DG Macro Art",
+   "Sigma 70mm F2.8 DG Macro Art",
+   "适马 70mm F2.8 DG Macro Art",
+   569
+  ],
+  [
+   "camera-sigma-40mm-f1-4-dg-hsm-art",
+   "시그마 40mm F1.4 DG HSM Art",
+   "Sigma 40mm F1.4 DG HSM Art",
+   "适马 40mm F1.4 DG HSM Art",
+   899
+  ],
+  [
+   "camera-sigma-14-24mm-f2-8-dg-dn-art",
+   "시그마 14-24mm F2.8 DG DN Art",
+   "Sigma 14-24mm F2.8 DG DN Art",
+   "适马 14-24mm F2.8 DG DN Art",
+   1399
+  ],
+  [
+   "camera-sigma-24-70mm-f2-8-dg-dn-ii-art",
+   "시그마 24-70mm F2.8 DG DN II Art",
+   "Sigma 24-70mm F2.8 DG DN II Art",
+   "适马 24-70mm F2.8 DG DN II Art",
+   1199
+  ],
+  [
+   "camera-sigma-28-45mm-f1-8-dg-dn-art",
+   "시그마 28-45mm F1.8 DG DN Art",
+   "Sigma 28-45mm F1.8 DG DN Art",
+   "适马 28-45mm F1.8 DG DN Art",
+   1349
+  ],
+  [
+   "camera-sigma-28-105mm-f2-8-dg-dn-art",
+   "시그마 28-105mm F2.8 DG DN Art",
+   "Sigma 28-105mm F2.8 DG DN Art",
+   "适马 28-105mm F2.8 DG DN Art",
+   1499
+  ],
+  [
+   "camera-sigma-17-40mm-f1-8-dc-art",
+   "시그마 17-40mm F1.8 DC Art",
+   "Sigma 17-40mm F1.8 DC Art",
+   "适马 17-40mm F1.8 DC Art",
+   919
+  ],
+  [
+   "camera-sigma-18-35mm-f1-8-dc-hsm-art",
+   "시그마 18-35mm F1.8 DC HSM Art",
+   "Sigma 18-35mm F1.8 DC HSM Art",
+   "适马 18-35mm F1.8 DC HSM Art",
+   799
+  ],
+  [
+   "camera-sigma-50-100mm-f1-8-dc-hsm-art",
+   "시그마 50-100mm F1.8 DC HSM Art",
+   "Sigma 50-100mm F1.8 DC HSM Art",
+   "适马 50-100mm F1.8 DC HSM Art",
+   1099
+  ],
+  [
+   "camera-sigma-20-200mm-f3-5-6-3-dg-contemporary",
+   "시그마 20-200mm F3.5-6.3 DG Contemporary",
+   "Sigma 20-200mm F3.5-6.3 DG Contemporary",
+   "适马 20-200mm F3.5-6.3 DG Contemporary",
+   999
+  ],
+  [
+   "camera-sigma-16-300mm-f3-5-6-7-dc-os-contemporary",
+   "시그마 16-300mm F3.5-6.7 DC OS Contemporary",
+   "Sigma 16-300mm F3.5-6.7 DC OS Contemporary",
+   "适马 16-300mm F3.5-6.7 DC OS Contemporary",
+   699
+  ],
+  [
+   "camera-sigma-18-50mm-f2-8-dc-dn-contemporary",
+   "시그마 18-50mm F2.8 DC DN Contemporary",
+   "Sigma 18-50mm F2.8 DC DN Contemporary",
+   "适马 18-50mm F2.8 DC DN Contemporary",
+   549
+  ],
+  [
+   "camera-sigma-10-18mm-f2-8-dc-dn-contemporary",
+   "시그마 10-18mm F2.8 DC DN Contemporary",
+   "Sigma 10-18mm F2.8 DC DN Contemporary",
+   "适马 10-18mm F2.8 DC DN Contemporary",
+   599
+  ],
+  [
+   "camera-sigma-16-28mm-f2-8-dg-dn-contemporary",
+   "시그마 16-28mm F2.8 DG DN Contemporary",
+   "Sigma 16-28mm F2.8 DG DN Contemporary",
+   "适马 16-28mm F2.8 DG DN Contemporary",
+   899
+  ],
+  [
+   "camera-sigma-28-70mm-f2-8-dg-dn-contemporary",
+   "시그마 28-70mm F2.8 DG DN Contemporary",
+   "Sigma 28-70mm F2.8 DG DN Contemporary",
+   "适马 28-70mm F2.8 DG DN Contemporary",
+   899
+  ],
+  [
+   "camera-sigma-100-400mm-f5-6-3-dg-dn-os-contemporary",
+   "시그마 100-400mm F5-6.3 DG DN OS Contemporary",
+   "Sigma 100-400mm F5-6.3 DG DN OS Contemporary",
+   "适马 100-400mm F5-6.3 DG DN OS Contemporary",
+   949
+  ],
+  [
+   "camera-sigma-150-600mm-f5-6-3-dg-dn-os-sports",
+   "시그마 150-600mm F5-6.3 DG DN OS Sports",
+   "Sigma 150-600mm F5-6.3 DG DN OS Sports",
+   "适马 150-600mm F5-6.3 DG DN OS Sports",
+   1499
+  ],
+  [
+   "camera-sigma-60-600mm-f4-5-6-3-dg-dn-os-sports",
+   "시그마 60-600mm F4.5-6.3 DG DN OS Sports",
+   "Sigma 60-600mm F4.5-6.3 DG DN OS Sports",
+   "适马 60-600mm F4.5-6.3 DG DN OS Sports",
+   1999
+  ],
+  [
+   "camera-sigma-70-200mm-f2-8-dg-dn-os-sports",
+   "시그마 70-200mm F2.8 DG DN OS Sports",
+   "Sigma 70-200mm F2.8 DG DN OS Sports",
+   "适马 70-200mm F2.8 DG DN OS Sports",
+   1499
+  ],
+  [
+   "camera-sigma-120-300mm-f2-8-dg-os-hsm-sports",
+   "시그마 120-300mm F2.8 DG OS HSM Sports",
+   "Sigma 120-300mm F2.8 DG OS HSM Sports",
+   "适马 120-300mm F2.8 DG OS HSM Sports",
+   3599
+  ],
+  [
+   "camera-sigma-300-600mm-f4-dg-os-sports",
+   "시그마 300-600mm F4 DG OS Sports",
+   "Sigma 300-600mm F4 DG OS Sports",
+   "适马 300-600mm F4 DG OS Sports",
+   5999
+  ],
+  [
+   "camera-sigma-200mm-f2-dg-os-sports",
+   "시그마 200mm F2 DG OS Sports",
+   "Sigma 200mm F2 DG OS Sports",
+   "适马 200mm F2 DG OS Sports",
+   3299
+  ],
+  [
+   "camera-sigma-500mm-f5-6-dg-dn-os-sports",
+   "시그마 500mm F5.6 DG DN OS Sports",
+   "Sigma 500mm F5.6 DG DN OS Sports",
+   "适马 500mm F5.6 DG DN OS Sports",
+   2999
+  ],
+  [
+   "camera-sigma-500mm-f4-dg-os-hsm-sports",
+   "시그마 500mm F4 DG OS HSM Sports",
+   "Sigma 500mm F4 DG OS HSM Sports",
+   "适马 500mm F4 DG OS HSM Sports",
+   5999
+  ],
+  [
+   "camera-sigma-200-500mm-f2-8-apo-ex-dg",
+   "시그마 200-500mm F2.8 APO EX DG",
+   "Sigma 200-500mm F2.8 APO EX DG",
+   "适马 200-500mm F2.8 APO EX DG",
+   25999
+  ],
+  [
+   "camera-sigma-12mm-f1-4-dc-contemporary",
+   "시그마 12mm F1.4 DC Contemporary",
+   "Sigma 12mm F1.4 DC Contemporary",
+   "适马 12mm F1.4 DC Contemporary",
+   629
+  ],
+  [
+   "camera-sigma-16mm-f1-4-dc-dn-contemporary",
+   "시그마 16mm F1.4 DC DN Contemporary",
+   "Sigma 16mm F1.4 DC DN Contemporary",
+   "适马 16mm F1.4 DC DN Contemporary",
+   449
+  ],
+  [
+   "camera-sigma-23mm-f1-4-dc-dn-contemporary",
+   "시그마 23mm F1.4 DC DN Contemporary",
+   "Sigma 23mm F1.4 DC DN Contemporary",
+   "适马 23mm F1.4 DC DN Contemporary",
+   549
+  ],
+  [
+   "camera-sigma-30mm-f1-4-dc-dn-contemporary",
+   "시그마 30mm F1.4 DC DN Contemporary",
+   "Sigma 30mm F1.4 DC DN Contemporary",
+   "适马 30mm F1.4 DC DN Contemporary",
+   369
+  ],
+  [
+   "camera-sigma-56mm-f1-4-dc-dn-contemporary",
+   "시그마 56mm F1.4 DC DN Contemporary",
+   "Sigma 56mm F1.4 DC DN Contemporary",
+   "适马 56mm F1.4 DC DN Contemporary",
+   499
+  ],
+  [
+   "camera-sigma-17mm-f4-dg-dn-contemporary",
+   "시그마 17mm F4 DG DN Contemporary",
+   "Sigma 17mm F4 DG DN Contemporary",
+   "适马 17mm F4 DG DN Contemporary",
+   599
+  ],
+  [
+   "camera-sigma-24mm-f2-dg-dn-contemporary",
+   "시그마 24mm F2 DG DN Contemporary",
+   "Sigma 24mm F2 DG DN Contemporary",
+   "适马 24mm F2 DG DN Contemporary",
+   639
+  ],
+  [
+   "camera-sigma-35mm-f2-dg-dn-contemporary",
+   "시그마 35mm F2 DG DN Contemporary",
+   "Sigma 35mm F2 DG DN Contemporary",
+   "适马 35mm F2 DG DN Contemporary",
+   639
+  ],
+  [
+   "camera-sigma-45mm-f2-8-dg-dn-contemporary",
+   "시그마 45mm F2.8 DG DN Contemporary",
+   "Sigma 45mm F2.8 DG DN Contemporary",
+   "适马 45mm F2.8 DG DN Contemporary",
+   549
+  ],
+  [
+   "camera-sigma-50mm-f2-dg-dn-contemporary",
+   "시그마 50mm F2 DG DN Contemporary",
+   "Sigma 50mm F2 DG DN Contemporary",
+   "适马 50mm F2 DG DN Contemporary",
+   639
+  ],
+  [
+   "camera-sigma-65mm-f2-dg-dn-contemporary",
+   "시그마 65mm F2 DG DN Contemporary",
+   "Sigma 65mm F2 DG DN Contemporary",
+   "适马 65mm F2 DG DN Contemporary",
+   699
+  ],
+  [
+   "camera-sigma-90mm-f2-8-dg-dn-contemporary",
+   "시그마 90mm F2.8 DG DN Contemporary",
+   "Sigma 90mm F2.8 DG DN Contemporary",
+   "适马 90mm F2.8 DG DN Contemporary",
+   639
+  ],
+  [
+   "camera-sigma-cine-18-35mm-t2",
+   "시그마 Cine 18-35mm T2",
+   "Sigma Cine 18-35mm T2",
+   "适马 Cine 18-35mm T2",
+   4499
+  ],
+  [
+   "camera-sigma-cine-50-100mm-t2",
+   "시그마 Cine 50-100mm T2",
+   "Sigma Cine 50-100mm T2",
+   "适马 Cine 50-100mm T2",
+   4499
+  ],
+  [
+   "camera-sigma-cine-28-45mm-t2-ff",
+   "시그마 Cine 28-45mm T2 FF",
+   "Sigma Cine 28-45mm T2 FF",
+   "适马 Cine 28-45mm T2 FF",
+   4999
+  ],
+  [
+   "camera-sigma-cine-ff-high-speed-prime-50mm-t1-5",
+   "시그마 Cine FF High Speed Prime 50mm T1.5",
+   "Sigma Cine FF High Speed Prime 50mm T1.5",
+   "适马 Cine FF High Speed Prime 50mm T1.5",
+   3499
+  ],
+  [
+   "camera-sigma-cine-ff-high-speed-prime-85mm-t1-5",
+   "시그마 Cine FF High Speed Prime 85mm T1.5",
+   "Sigma Cine FF High Speed Prime 85mm T1.5",
+   "适马 Cine FF High Speed Prime 85mm T1.5",
+   3499
+  ],
+  [
+   "camera-sigma-aizu-prime-line-50mm-t1-3-lf",
+   "시그마 Aizu Prime Line 50mm T1.3 LF",
+   "Sigma Aizu Prime Line 50mm T1.3 LF",
+   "适马 Aizu Prime Line 50mm T1.3 LF",
+   8299
+  ],
+  [
+   "camera-sigma-teleconverter-tc-1411",
+   "시그마 텔레컨버터 TC-1411",
+   "Sigma Teleconverter TC-1411",
+   "适马 增距镜 TC-1411",
+   399
+  ],
+  [
+   "camera-sigma-teleconverter-tc-2011",
+   "시그마 텔레컨버터 TC-2011",
+   "Sigma Teleconverter TC-2011",
+   "适马 增距镜 TC-2011",
+   429
+  ],
+  [
+   "camera-sigma-mount-converter-mc-11",
+   "시그마 마운트 컨버터 MC-11",
+   "Sigma Mount Converter MC-11",
+   "适马 卡口转接环 MC-11",
+   249
+  ],
+  [
+   "camera-sigma-mount-converter-mc-21",
+   "시그마 마운트 컨버터 MC-21",
+   "Sigma Mount Converter MC-21",
+   "适马 卡口转接环 MC-21",
+   169
+  ],
+  [
+   "camera-sigma-usb-dock-ud-11",
+   "시그마 USB 독 UD-11",
+   "Sigma USB Dock UD-11",
+   "适马 USB 调焦底座 UD-11",
+   59
+  ],
+  [
+   "camera-sigma-electronic-viewfinder-evf-11",
+   "시그마 전자식 뷰파인더 EVF-11",
+   "Sigma Electronic Viewfinder EVF-11",
+   "适马 电子取景器 EVF-11",
+   639
+  ],
+  [
+   "camera-sigma-electronic-flash-ef-630",
+   "시그마 일렉트로닉 플래시 EF-630",
+   "Sigma Electronic Flash EF-630",
+   "适马 电子闪光灯 EF-630",
+   379
+  ],
+  [
+   "camera-sigma-hand-grip-hg-11",
+   "시그마 핸드 그립 HG-11",
+   "Sigma Hand Grip HG-11",
+   "适马 手柄 HG-11",
+   59
+  ],
+  [
+   "camera-sigma-large-hand-grip-hg-21",
+   "시그마 라지 핸드 그립 HG-21",
+   "Sigma Large Hand Grip HG-21",
+   "适马 大型手柄 HG-21",
+   99
+  ],
+  [
+   "camera-sigma-base-plate-bpl-11",
+   "시그마 베이스 플레이트 BPL-11",
+   "Sigma Base Plate BPL-11",
+   "适马 底板 BPL-11",
+   59
+  ],
+  [
+   "camera-sigma-li-ion-battery-bp-51",
+   "시그마 리튬이온 배터리 BP-51",
+   "Sigma Li-ion Battery BP-51",
+   "适马 锂离子电池 BP-51",
+   49
+  ],
+  [
+   "camera-sigma-li-ion-battery-bp-81",
+   "시그마 리튬이온 배터리 BP-81",
+   "Sigma Li-ion Battery BP-81",
+   "适马 锂离子电池 BP-81",
+   79
+  ],
+  [
+   "camera-sigma-battery-charger-bc-71",
+   "시그마 배터리 충전기 BC-71",
+   "Sigma Battery Charger BC-71",
+   "适马 电池充电器 BC-71",
+   59
+  ],
+  [
+   "camera-sigma-cable-release-cr-41",
+   "시그마 케이블 릴리즈 CR-41",
+   "Sigma Cable Release CR-41",
+   "适马 快门线 CR-41",
+   39
+  ],
+  [
+   "camera-sigma-wr-protector-67mm",
+   "시그마 WR 프로텍터 67mm",
+   "Sigma WR Protector 67mm",
+   "适马 WR 保护镜 67mm",
+   59
+  ],
+  [
+   "camera-sigma-wr-protector-77mm",
+   "시그마 WR 프로텍터 77mm",
+   "Sigma WR Protector 77mm",
+   "适马 WR 保护镜 77mm",
+   69
+  ],
+  [
+   "camera-sigma-wr-protector-82mm",
+   "시그마 WR 프로텍터 82mm",
+   "Sigma WR Protector 82mm",
+   "适马 WR 保护镜 82mm",
+   79
+  ],
+  [
+   "camera-sigma-wr-ceramic-protector-82mm",
+   "시그마 WR 세라믹 프로텍터 82mm",
+   "Sigma WR Ceramic Protector 82mm",
+   "适马 WR 陶瓷保护镜 82mm",
+   169
+  ],
+  [
+   "camera-sigma-wr-circular-pl-filter-77mm",
+   "시그마 WR 원형 편광 필터 77mm",
+   "Sigma WR Circular PL Filter 77mm",
+   "适马 WR 圆偏振镜 77mm",
+   139
+  ],
+  [
+   "camera-sigma-wr-uv-filter-67mm",
+   "시그마 WR UV 필터 67mm",
+   "Sigma WR UV Filter 67mm",
+   "适马 WR UV 滤镜 67mm",
+   49
+  ],
+  [
+   "camera-sigma-front-cap-lcf-67-iii",
+   "시그마 프론트 캡 LCF-67 III",
+   "Sigma Front Cap LCF-67 III",
+   "适马 镜头前盖 LCF-67 III",
+   12
+  ],
+  [
+   "camera-sigma-front-cap-lcf-82-iii",
+   "시그마 프론트 캡 LCF-82 III",
+   "Sigma Front Cap LCF-82 III",
+   "适马 镜头前盖 LCF-82 III",
+   16
+  ],
+  [
+   "camera-sigma-rear-cap-lcr-ii",
+   "시그마 리어 캡 LCR II",
+   "Sigma Rear Cap LCR II",
+   "适马 镜头后盖 LCR II",
+   10
+  ],
+  [
+   "camera-sigma-body-cap-lct-ii",
+   "시그마 바디 캡 LCT II",
+   "Sigma Body Cap LCT II",
+   "适马 机身盖 LCT II",
+   9
+  ],
+  [
+   "camera-sigma-tripod-socket-ts-151",
+   "시그마 삼각대 소켓 TS-151",
+   "Sigma Tripod Socket TS-151",
+   "适马 脚架环 TS-151",
+   139
+  ],
+  [
+   "camera-sigma-lens-hood-lh878-03",
+   "시그마 렌즈 후드 LH878-03",
+   "Sigma Lens Hood LH878-03",
+   "适马 遮光罩 LH878-03",
+   39
+  ]
+ ],
+ "use": [
+  "camera-p-polaroid-color-i-type-film",
+  "camera-p-sandisk-extreme-microsdxc-uhs-i-128gb-memory-card",
+  "camera-p-vsgo-full-frame-sensor-cleaning-swabs-12-pack",
+  "camera-p-polaroid-color-600-film",
+  "camera-p-op-tech-usa-pro-strap",
+  "camera-p-kodak-ektachrome-e100-35mm-36-exposures-film",
+  "camera-p-peak-design-anchor-links",
+  "camera-p-pelican-0915-sd-memory-card-case",
+  "camera-p-manfrotto-pixi-mini-tripod",
+  "camera-p-smallrig-p96-video-led-light",
+  "camera-p-kodak-ultramax-400-35mm-36-exposures-3-pack-film",
+  "camera-p-peak-design-cuff-wrist-strap",
+  "camera-p-spider-holster-spiderpro-single-camera-system-v2",
+  "camera-p-atlas-lens-co-orion-50mm-t2-2x-anamorphic",
+  "camera-p-arri-alexa-mini-lf"
+ ]
+}

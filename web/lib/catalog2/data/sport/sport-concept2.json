@@ -1,0 +1,223 @@
+{
+ "slug": "sport-concept2",
+ "items": [
+  [
+   "sport-concept2-dynamic-rowerg",
+   "컨셉투 다이내믹 로우에르그",
+   "Concept2 Dynamic RowErg",
+   "Concept2 Dynamic RowErg 动态划船机",
+   1430
+  ],
+  [
+   "sport-concept2-rowerg-tall-legs",
+   "컨셉투 로우에르그 톨 레그",
+   "Concept2 RowErg Tall Legs",
+   "Concept2 RowErg 划船机 高脚款",
+   1150
+  ],
+  [
+   "sport-concept2-skierg-floor-stand",
+   "컨셉투 스키에르그 플로어 스탠드 포함",
+   "Concept2 SkiErg with Floor Stand",
+   "Concept2 SkiErg 滑雪机 含落地支架",
+   1110
+  ],
+  [
+   "sport-concept2-bikeerg",
+   "컨셉투 바이크에르그",
+   "Concept2 BikeErg",
+   "Concept2 BikeErg 风阻单车",
+   1100
+  ],
+  [
+   "sport-concept2-rowerg-standard-legs",
+   "컨셉투 로우에르그 스탠다드 레그",
+   "Concept2 RowErg Standard Legs",
+   "Concept2 RowErg 划船机 标准脚款",
+   990
+  ],
+  [
+   "sport-concept2-skierg",
+   "컨셉투 스키에르그",
+   "Concept2 SkiErg",
+   "Concept2 SkiErg 滑雪机",
+   900
+  ],
+  [
+   "sport-concept2-skinny-coastal-sculls-pair",
+   "컨셉투 스키니 코스탈 스컬 한 쌍",
+   "Concept2 Skinny Coastal Sculls Pair",
+   "Concept2 Skinny Coastal 双桨 一对",
+   795
+  ],
+  [
+   "sport-concept2-skinny-sculls-pair",
+   "컨셉투 스키니 스컬 한 쌍",
+   "Concept2 Skinny Sculls Pair",
+   "Concept2 Skinny 双桨 一对",
+   765
+  ],
+  [
+   "sport-concept2-ultralight-sculls-pair",
+   "컨셉투 울트라라이트 스컬 한 쌍",
+   "Concept2 Ultralight Sculls Pair",
+   "Concept2 Ultralight 双桨 一对",
+   735
+  ],
+  [
+   "sport-concept2-bantam-sculls-pair",
+   "컨셉투 밴텀 스컬 한 쌍",
+   "Concept2 Bantam Sculls Pair",
+   "Concept2 Bantam 青少年双桨 一对",
+   495
+  ],
+  [
+   "sport-concept2-skinny-sweep",
+   "컨셉투 스키니 스윕 오어",
+   "Concept2 Skinny Sweep Oar",
+   "Concept2 Skinny 单桨",
+   465
+  ],
+  [
+   "sport-concept2-ultralight-sweep",
+   "컨셉투 울트라라이트 스윕 오어",
+   "Concept2 Ultralight Sweep Oar",
+   "Concept2 Ultralight 单桨",
+   440
+  ],
+  [
+   "sport-concept2-slides-pair",
+   "컨셉투 슬라이드 한 쌍",
+   "Concept2 Slides Pair",
+   "Concept2 Slides 划船机滑轨 一对",
+   345
+  ],
+  [
+   "sport-concept2-bantam-sweep",
+   "컨셉투 밴텀 스윕 오어",
+   "Concept2 Bantam Sweep Oar",
+   "Concept2 Bantam 青少年单桨",
+   330
+  ],
+  [
+   "sport-concept2-pm5-monitor",
+   "컨셉투 PM5 퍼포먼스 모니터",
+   "Concept2 PM5 Performance Monitor",
+   "Concept2 PM5 性能监视器",
+   220
+  ],
+  [
+   "sport-concept2-skierg-floor-stand-only",
+   "컨셉투 스키에르그 플로어 스탠드",
+   "Concept2 SkiErg Floor Stand",
+   "Concept2 SkiErg 落地支架",
+   210
+  ],
+  [
+   "sport-concept2-device-holder",
+   "컨셉투 디바이스 홀더",
+   "Concept2 Device Holder",
+   "Concept2 设备支架",
+   25
+  ],
+  [
+   "sport-concept2-seat-pad",
+   "컨셉투 시트 패드",
+   "Concept2 Seat Pad",
+   "Concept2 坐垫",
+   17
+  ],
+  [
+   "sport-concept2-smartphone-cradle",
+   "컨셉투 스마트폰 크래들",
+   "Concept2 Smartphone Cradle",
+   "Concept2 手机支架",
+   15
+  ]
+ ],
+ "use": [
+  "sport-p-srixon-z-star-dozen",
+  "sport-p-wahoo-tickr",
+  "sport-p-bridgestone-tour-b-x-dozen",
+  "sport-p-callaway-chrome-tour-dozen",
+  "sport-p-finis-tempo-trainer-pro",
+  "sport-p-taylormade-tp5-dozen",
+  "sport-p-venum-challenger-3-0",
+  "sport-p-arena-powerfin-pro",
+  "sport-p-oofos-ooahh-slide",
+  "sport-p-topeak-joeblow-sport-iii",
+  "sport-p-shimano-pd-m520",
+  "sport-p-lululemon-double-roller",
+  "sport-p-bontrager-flare-rt",
+  "sport-p-triggerpoint-grid-2-0",
+  "sport-p-spalding-tf-1000-legacy",
+  "sport-p-asics-novablast-5",
+  "sport-p-nike-pegasus-41",
+  "sport-p-specialized-power-comp",
+  "sport-p-hoka-clifton-9",
+  "sport-p-liforme-original-yoga-mat",
+  "sport-p-shokz-openswim",
+  "sport-p-bushnell-phantom-3",
+  "sport-p-fitbit-charge-6",
+  "sport-p-myzone-mz-switch",
+  "sport-p-asics-gel-kayano-31",
+  "sport-p-shokz-openrun-pro-2",
+  "sport-p-taylormade-mg4-wedge",
+  "sport-p-oura-ring-4",
+  "sport-p-suunto-race-s",
+  "sport-p-taylormade-qi35-fairway",
+  "sport-p-taylormade-spider-tour-x",
+  "sport-p-asics-metaspeed-sky-paris",
+  "sport-p-selkirk-luxx-control-air",
+  "sport-p-park-tool-pcs-10-3",
+  "sport-p-nike-vaporfly-3",
+  "sport-p-dunlop-cx-200",
+  "sport-p-ping-hoofer-stand-bag",
+  "sport-p-lab-golf-df3",
+  "sport-p-suunto-race",
+  "sport-p-odyssey-ai-one-milled-seven-t-ch",
+  "sport-p-shimano-s-phyre-rc903",
+  "sport-p-ping-pld-milled-anser",
+  "sport-p-wahoo-kickr-core",
+  "sport-p-cobra-ds-adapt-x-driver",
+  "sport-p-bushnell-pro-x3-plus",
+  "sport-p-callaway-elyte-driver",
+  "sport-p-taylormade-qi35-driver",
+  "sport-p-slinger-bag-grand-slam-pack",
+  "sport-p-the-net-return-pro-series-v2",
+  "sport-p-horizon-7-0-at",
+  "sport-p-schwinn-ic4",
+  "sport-p-hydrow-pro",
+  "sport-p-flightscope-mevo-plus",
+  "sport-p-force-usa-g3",
+  "sport-p-shimano-ultegra-di2-r8100-groupset",
+  "sport-p-peloton-bike-plus",
+  "sport-p-skytrak-plus",
+  "sport-p-nordictrack-commercial-1750",
+  "sport-p-carol-bike-2-0",
+  "sport-p-uneekor-eye-mini-lite",
+  "sport-p-merrithew-at-home-spx-reformer",
+  "sport-p-inspire-ft2",
+  "sport-p-campagnolo-super-record-wireless",
+  "sport-p-trek-madone-sl-6-gen-8",
+  "sport-p-specialized-s-works-tarmac-sl8-frameset",
+  "sport-p-peloton-tread-plus",
+  "sport-p-force-usa-g20-pro",
+  "sport-p-peloton-row",
+  "sport-p-bushnell-launch-pro",
+  "sport-p-specialized-s-works-epic-8",
+  "sport-p-flightscope-x3c",
+  "sport-p-foresight-falcon",
+  "sport-p-scott-addict-rc-ultimate",
+  "sport-p-specialized-tarmac-sl8-expert",
+  "sport-p-trueform-runner",
+  "sport-p-technogym-kinesis-personal",
+  "sport-p-foresight-gchawk",
+  "sport-p-foresight-quadmax",
+  "sport-p-technogym-run-personal",
+  "sport-p-trackman-4",
+  "sport-p-oxefit-xs1",
+  "sport-p-full-swing-pro-2-0",
+  "sport-p-golfzon-twovision-nx"
+ ]
+}

@@ -1,0 +1,299 @@
+{
+ "slug": "camera-phase-one",
+ "items": [
+  [
+   "camera-phase-one-xf-iq4-150mp-camera-system",
+   "페이즈원 XF IQ4 150MP 카메라 시스템",
+   "Phase One XF IQ4 150MP Camera System",
+   "飞思 XF IQ4 150MP 相机系统",
+   54990
+  ],
+  [
+   "camera-phase-one-xf-iq4-150mp-achromatic-camera-system",
+   "페이즈원 XF IQ4 150MP 아크로매틱 카메라 시스템",
+   "Phase One XF IQ4 150MP Achromatic Camera System",
+   "飞思 XF IQ4 150MP Achromatic 黑白相机系统",
+   58990
+  ],
+  [
+   "camera-phase-one-xf-iq4-100mp-trichromatic-camera-system",
+   "페이즈원 XF IQ4 100MP 트라이크로매틱 카메라 시스템",
+   "Phase One XF IQ4 100MP Trichromatic Camera System",
+   "飞思 XF IQ4 100MP Trichromatic 相机系统",
+   44990
+  ],
+  [
+   "camera-phase-one-iq4-150mp-digital-back",
+   "페이즈원 IQ4 150MP 디지털 백",
+   "Phase One IQ4 150MP Digital Back",
+   "飞思 IQ4 150MP 数码后背",
+   47990
+  ],
+  [
+   "camera-phase-one-iq4-150mp-achromatic-digital-back",
+   "페이즈원 IQ4 150MP 아크로매틱 디지털 백",
+   "Phase One IQ4 150MP Achromatic Digital Back",
+   "飞思 IQ4 150MP Achromatic 黑白数码后背",
+   51990
+  ],
+  [
+   "camera-phase-one-iq4-100mp-trichromatic-digital-back",
+   "페이즈원 IQ4 100MP 트라이크로매틱 디지털 백",
+   "Phase One IQ4 100MP Trichromatic Digital Back",
+   "飞思 IQ4 100MP Trichromatic 数码后背",
+   37990
+  ],
+  [
+   "camera-phase-one-xt-iq4-150mp-camera-system",
+   "페이즈원 XT IQ4 150MP 카메라 시스템",
+   "Phase One XT IQ4 150MP Camera System",
+   "飞思 XT IQ4 150MP 相机系统",
+   56990
+  ],
+  [
+   "camera-phase-one-xc-23-iq4-150mp",
+   "페이즈원 XC 23 IQ4 150MP",
+   "Phase One XC 23 IQ4 150MP",
+   "飞思 XC 23 IQ4 150MP",
+   62490
+  ],
+  [
+   "camera-phase-one-xf-camera-body-with-prism-viewfinder",
+   "페이즈원 XF 카메라 바디 프리즘 뷰파인더 포함",
+   "Phase One XF Camera Body with Prism Viewfinder",
+   "飞思 XF 相机机身 含棱镜取景器",
+   7990
+  ],
+  [
+   "camera-phase-one-xt-camera-body",
+   "페이즈원 XT 카메라 바디",
+   "Phase One XT Camera Body",
+   "飞思 XT 相机 机身",
+   6990
+  ],
+  [
+   "camera-phase-one-schneider-kreuznach-28mm-ls-f-4-5-aspherical",
+   "페이즈원 Schneider Kreuznach 28mm LS f/4.5 Aspherical",
+   "Phase One Schneider Kreuznach 28mm LS f/4.5 Aspherical",
+   "飞思 Schneider Kreuznach 28mm LS f/4.5 Aspherical",
+   6990
+  ],
+  [
+   "camera-phase-one-schneider-kreuznach-35mm-ls-f-3-5-blue-ring",
+   "페이즈원 Schneider Kreuznach 35mm LS f/3.5 Blue Ring",
+   "Phase One Schneider Kreuznach 35mm LS f/3.5 Blue Ring",
+   "飞思 Schneider Kreuznach 35mm LS f/3.5 Blue Ring",
+   6990
+  ],
+  [
+   "camera-phase-one-schneider-kreuznach-45mm-ls-f-3-5-blue-ring",
+   "페이즈원 Schneider Kreuznach 45mm LS f/3.5 Blue Ring",
+   "Phase One Schneider Kreuznach 45mm LS f/3.5 Blue Ring",
+   "飞思 Schneider Kreuznach 45mm LS f/3.5 Blue Ring",
+   5990
+  ],
+  [
+   "camera-phase-one-schneider-kreuznach-55mm-ls-f-2-8-blue-ring",
+   "페이즈원 Schneider Kreuznach 55mm LS f/2.8 Blue Ring",
+   "Phase One Schneider Kreuznach 55mm LS f/2.8 Blue Ring",
+   "飞思 Schneider Kreuznach 55mm LS f/2.8 Blue Ring",
+   4990
+  ],
+  [
+   "camera-phase-one-schneider-kreuznach-80mm-ls-f-2-8-mark-ii-blue",
+   "페이즈원 Schneider Kreuznach 80mm LS f/2.8 Mark II Blue Ring",
+   "Phase One Schneider Kreuznach 80mm LS f/2.8 Mark II Blue Ring",
+   "飞思 Schneider Kreuznach 80mm LS f/2.8 Mark II Blue Ring",
+   3490
+  ],
+  [
+   "camera-phase-one-schneider-kreuznach-110mm-ls-f-2-8-blue-ring",
+   "페이즈원 Schneider Kreuznach 110mm LS f/2.8 Blue Ring",
+   "Phase One Schneider Kreuznach 110mm LS f/2.8 Blue Ring",
+   "飞思 Schneider Kreuznach 110mm LS f/2.8 Blue Ring",
+   5490
+  ],
+  [
+   "camera-phase-one-schneider-kreuznach-120mm-ls-f-4-macro-blue-rin",
+   "페이즈원 Schneider Kreuznach 120mm LS f/4 Macro Blue Ring",
+   "Phase One Schneider Kreuznach 120mm LS f/4 Macro Blue Ring",
+   "飞思 Schneider Kreuznach 120mm LS f/4 Macro Blue Ring",
+   6490
+  ],
+  [
+   "camera-phase-one-schneider-kreuznach-150mm-ls-f-2-8-if-blue-ring",
+   "페이즈원 Schneider Kreuznach 150mm LS f/2.8 IF Blue Ring",
+   "Phase One Schneider Kreuznach 150mm LS f/2.8 IF Blue Ring",
+   "飞思 Schneider Kreuznach 150mm LS f/2.8 IF Blue Ring",
+   6990
+  ],
+  [
+   "camera-phase-one-schneider-kreuznach-150mm-ls-f-3-5-blue-ring",
+   "페이즈원 Schneider Kreuznach 150mm LS f/3.5 Blue Ring",
+   "Phase One Schneider Kreuznach 150mm LS f/3.5 Blue Ring",
+   "飞思 Schneider Kreuznach 150mm LS f/3.5 Blue Ring",
+   4990
+  ],
+  [
+   "camera-phase-one-schneider-kreuznach-240mm-ls-f-4-5-if-blue-ring",
+   "페이즈원 Schneider Kreuznach 240mm LS f/4.5 IF Blue Ring",
+   "Phase One Schneider Kreuznach 240mm LS f/4.5 IF Blue Ring",
+   "飞思 Schneider Kreuznach 240mm LS f/4.5 IF Blue Ring",
+   6990
+  ],
+  [
+   "camera-phase-one-schneider-kreuznach-40-80mm-ls-f-4-0-5-6-blue-r",
+   "페이즈원 Schneider Kreuznach 40-80mm LS f/4.0-5.6 Blue Ring",
+   "Phase One Schneider Kreuznach 40-80mm LS f/4.0-5.6 Blue Ring",
+   "飞思 Schneider Kreuznach 40-80mm LS f/4.0-5.6 Blue Ring",
+   8990
+  ],
+  [
+   "camera-phase-one-schneider-kreuznach-75-150mm-ls-f-4-0-5-6-blue",
+   "페이즈원 Schneider Kreuznach 75-150mm LS f/4.0-5.6 Blue Ring",
+   "Phase One Schneider Kreuznach 75-150mm LS f/4.0-5.6 Blue Ring",
+   "飞思 Schneider Kreuznach 75-150mm LS f/4.0-5.6 Blue Ring",
+   6990
+  ],
+  [
+   "camera-phase-one-xt-rodenstock-hr-digaron-s-23mm-f-5-6",
+   "페이즈원 XT Rodenstock HR Digaron-S 23mm f/5.6",
+   "Phase One XT Rodenstock HR Digaron-S 23mm f/5.6",
+   "飞思 XT Rodenstock HR Digaron-S 23mm f/5.6",
+   10990
+  ],
+  [
+   "camera-phase-one-xt-rodenstock-hr-digaron-w-32mm-f-4",
+   "페이즈원 XT Rodenstock HR Digaron-W 32mm f/4",
+   "Phase One XT Rodenstock HR Digaron-W 32mm f/4",
+   "飞思 XT Rodenstock HR Digaron-W 32mm f/4",
+   11990
+  ],
+  [
+   "camera-phase-one-xt-rodenstock-hr-digaron-w-50mm-f-4",
+   "페이즈원 XT Rodenstock HR Digaron-W 50mm f/4",
+   "Phase One XT Rodenstock HR Digaron-W 50mm f/4",
+   "飞思 XT Rodenstock HR Digaron-W 50mm f/4",
+   8990
+  ],
+  [
+   "camera-phase-one-xt-rodenstock-hr-digaron-w-70mm-f-5-6",
+   "페이즈원 XT Rodenstock HR Digaron-W 70mm f/5.6",
+   "Phase One XT Rodenstock HR Digaron-W 70mm f/5.6",
+   "飞思 XT Rodenstock HR Digaron-W 70mm f/5.6",
+   8990
+  ],
+  [
+   "camera-phase-one-xt-rodenstock-hr-digaron-w-90mm-f-5-6",
+   "페이즈원 XT Rodenstock HR Digaron-W 90mm f/5.6",
+   "Phase One XT Rodenstock HR Digaron-W 90mm f/5.6",
+   "飞思 XT Rodenstock HR Digaron-W 90mm f/5.6",
+   11990
+  ],
+  [
+   "camera-phase-one-xf-waist-level-finder",
+   "페이즈원 XF 웨이스트 레벨 파인더",
+   "Phase One XF Waist Level Finder",
+   "飞思 XF 腰平取景器",
+   1190
+  ],
+  [
+   "camera-phase-one-xf-prism-viewfinder",
+   "페이즈원 XF 프리즘 뷰파인더",
+   "Phase One XF Prism Viewfinder",
+   "飞思 XF 棱镜取景器",
+   2490
+  ],
+  [
+   "camera-phase-one-v-grip-air",
+   "페이즈원 V-Grip Air",
+   "Phase One V-Grip Air",
+   "飞思 V-Grip Air",
+   990
+  ],
+  [
+   "camera-phase-one-rechargeable-battery-3400mah",
+   "페이즈원 충전식 배터리 3400mAh",
+   "Phase One Rechargeable Battery 3400mAh",
+   "飞思 充电电池 3400mAh",
+   229
+  ],
+  [
+   "camera-phase-one-dual-battery-charger",
+   "페이즈원 듀얼 배터리 충전기",
+   "Phase One Dual Battery Charger",
+   "飞思 双电池充电器",
+   329
+  ]
+ ],
+ "use": [
+  "camera-p-zoom-h1essential",
+  "camera-p-aputure-lantern-90",
+  "camera-p-samsung-t7-shield-portable-ssd-1tb",
+  "camera-p-tiffen-77mm-black-pro-mist-1-4-filter",
+  "camera-p-hoya-77mm-hd-nano-mk-ii-cir-pl-filter",
+  "camera-p-calibrite-colorchecker-passport-photo-2",
+  "camera-p-akaso-brave-7-le",
+  "camera-p-manfrotto-1004bac-master-light-stand",
+  "camera-p-prograde-digital-sdxc-uhs-ii-v90-128gb-memory-card",
+  "camera-p-polaroid-now-plus-generation-3",
+  "camera-p-visibledust-arctic-butterfly-724-super-bright-sensor-br",
+  "camera-p-hohem-isteady-v3",
+  "camera-p-manfrotto-element-mii-aluminum-tripod",
+  "camera-p-smallrig-rc-60b-cob-led-video-light",
+  "camera-p-sandisk-professional-g-drive-armoratd-4tb",
+  "camera-p-elinchrom-elc-125-ttl",
+  "camera-p-aputure-amaran-300c",
+  "camera-p-laowa-100mm-f-2-8-2x-ultra-macro-apo",
+  "camera-p-rode-ntg5-shotgun-microphone",
+  "camera-p-3-legged-thing-legends-winston-2-0-carbon-fiber-tripod",
+  "camera-p-prograde-digital-cfexpress-type-b-gold-512gb-memory-car",
+  "camera-p-3-legged-thing-punks-billy-2-0-carbon-fiber-tripod",
+  "camera-p-nisi-v7-100mm-filter-holder-kit",
+  "camera-p-polarpro-peter-mckinnon-vnd-edition-ii-2-5-stop-82mm-fi",
+  "camera-p-elinchrom-rotalux-octabox-100cm",
+  "camera-p-tilta-nucleus-nano-ii-wireless-lens-control-system",
+  "camera-p-elgato-facecam-pro",
+  "camera-p-manfrotto-055-aluminum-3-section-tripod-mt055xpro3",
+  "camera-p-polaroid-i-2",
+  "camera-p-sirui-50mm-f1-8-1-33x-anamorphic",
+  "camera-p-peak-design-travel-tripod-carbon-fiber",
+  "camera-p-sekonic-l-858d-u-speedmaster",
+  "camera-p-autel-robotics-evo-nano-plus",
+  "camera-p-hoverair-x1-promax",
+  "camera-p-tokina-opera-50mm-f1-4-ff",
+  "camera-p-prograde-digital-cfexpress-type-b-cobalt-650gb-memory-c",
+  "camera-p-really-right-stuff-bh-55-ball-head",
+  "camera-p-sennheiser-mkh-416-p48u3-shotgun-microphone",
+  "camera-p-atomos-shogun-ultra",
+  "camera-p-obsbot-tail-2",
+  "camera-p-sound-devices-mixpre-6-ii",
+  "camera-p-sirui-venus-50mm-t2-9-1-6x-full-frame-anamorphic",
+  "camera-p-epson-surecolor-p900",
+  "camera-p-litepanels-astra-6x-bi-color",
+  "camera-p-blackmagic-design-atem-mini-extreme-iso",
+  "camera-p-dzofilm-vespid-prime-ff-50mm-t2-1",
+  "camera-p-laowa-24mm-f-14-2x-macro-probe",
+  "camera-p-sachtler-flowtech-75-ms-carbon-fiber-tripod",
+  "camera-p-nanlite-forza-720",
+  "camera-p-sekonic-c-800-u-spectromaster",
+  "camera-p-eizo-coloredge-cs2740",
+  "camera-p-voigtlander-nokton-50mm-f-1-aspherical",
+  "camera-p-broncolor-siros-800-s-monolight",
+  "camera-p-elinchrom-elb-500-ttl-to-go-kit",
+  "camera-p-atomos-sumo-19se",
+  "camera-p-eizo-coloredge-cg2700x",
+  "camera-p-blackmagic-design-ursa-broadcast-g2",
+  "camera-p-creamsource-vortex4",
+  "camera-p-nanlite-evoke-2400b",
+  "camera-p-arri-skypanel-s30-c",
+  "camera-p-arri-skypanel-s360-c",
+  "camera-p-cooke-sp3-5-lens-set",
+  "camera-p-freefly-alta-x",
+  "camera-p-cooke-s4-i-50mm-t2",
+  "camera-p-atlas-lens-co-orion-2x-anamorphic-a-set-3-lenses",
+  "camera-p-angenieux-optimo-prime-40mm-t1-8",
+  "camera-p-angenieux-optimo-ultra-12x-36-435mm-t4-2",
+  "camera-p-vision-research-phantom-flex4k"
+ ]
+}

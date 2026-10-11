@@ -1,0 +1,323 @@
+{
+ "slug": "mobile-lenovo",
+ "items": [
+  [
+   "mobile-lenovo-thinkpad-x1-fold-16-gen-1",
+   "레노버 씽크패드 X1 폴드 16 Gen 1",
+   "Lenovo ThinkPad X1 Fold 16 Gen 1",
+   "联想 ThinkPad X1 Fold 16 Gen 1 折叠屏电脑",
+   2499
+  ],
+  [
+   "mobile-lenovo-thinkpad-x12-detachable-gen-2",
+   "레노버 씽크패드 X12 디태처블 Gen 2",
+   "Lenovo ThinkPad X12 Detachable Gen 2",
+   "联想 ThinkPad X12 Detachable Gen 2 二合一平板电脑",
+   1549
+  ],
+  [
+   "mobile-lenovo-tab-extreme-12-256",
+   "레노버 탭 익스트림 12GB+256GB",
+   "Lenovo Tab Extreme 12GB+256GB",
+   "联想 Tab Extreme 12GB+256GB",
+   949.99
+  ],
+  [
+   "mobile-lenovo-yoga-tab-plus-16-512",
+   "레노버 요가 탭 플러스 16GB+512GB",
+   "Lenovo Yoga Tab Plus 16GB+512GB",
+   "联想 Yoga Tab Plus 16GB+512GB",
+   779.99
+  ],
+  [
+   "mobile-lenovo-yoga-tab-plus-16-256",
+   "레노버 요가 탭 플러스 16GB+256GB",
+   "Lenovo Yoga Tab Plus 16GB+256GB",
+   "联想 Yoga Tab Plus 16GB+256GB",
+   699.99
+  ],
+  [
+   "mobile-lenovo-tab-p12-pro-8-256",
+   "레노버 탭 P12 프로 8GB+256GB",
+   "Lenovo Tab P12 Pro 8GB+256GB",
+   "联想 Tab P12 Pro 8GB+256GB",
+   699.99
+  ],
+  [
+   "mobile-lenovo-yoga-tab-13-8-128",
+   "레노버 요가 탭 13 8GB+128GB",
+   "Lenovo Yoga Tab 13 8GB+128GB",
+   "联想 Yoga Tab 13 8GB+128GB",
+   679.99
+  ],
+  [
+   "mobile-lenovo-yoga-tab-11-1-12-256",
+   "레노버 요가 탭 (11.1인치) 12GB+256GB",
+   "Lenovo Yoga Tab (11.1-inch) 12GB+256GB",
+   "联想 Yoga Tab (11.1 英寸) 12GB+256GB",
+   549.99
+  ],
+  [
+   "mobile-lenovo-legion-tab-gen-3-12-256",
+   "레노버 리전 탭 Gen 3 12GB+256GB",
+   "Lenovo Legion Tab Gen 3 12GB+256GB",
+   "联想拯救者 Legion Tab Gen 3 12GB+256GB",
+   549.99
+  ],
+  [
+   "mobile-lenovo-ideapad-duet-5-chromebook-8-128",
+   "레노버 아이디어패드 듀엣 5 크롬북 8GB/128GB",
+   "Lenovo IdeaPad Duet 5 Chromebook 8GB/128GB",
+   "联想 IdeaPad Duet 5 Chromebook 8GB/128GB",
+   499.99
+  ],
+  [
+   "mobile-lenovo-smart-paper",
+   "레노버 스마트 페이퍼",
+   "Lenovo Smart Paper",
+   "联想 Smart Paper 电子墨水手写平板",
+   399.99
+  ],
+  [
+   "mobile-lenovo-tab-p11-pro-gen-2-8-256",
+   "레노버 탭 P11 프로 Gen 2 8GB+256GB",
+   "Lenovo Tab P11 Pro Gen 2 8GB+256GB",
+   "联想 Tab P11 Pro Gen 2 8GB+256GB",
+   399.99
+  ],
+  [
+   "mobile-lenovo-legion-glasses-gen-2",
+   "레노버 리전 글래스 Gen 2",
+   "Lenovo Legion Glasses Gen 2",
+   "联想拯救者 Legion Glasses Gen 2 智能眼镜",
+   399.99
+  ],
+  [
+   "mobile-lenovo-chromebook-duet-11-gen-9-4-64",
+   "레노버 크롬북 듀엣 11 (Gen 9) 4GB/64GB",
+   "Lenovo Chromebook Duet 11 (Gen 9) 4GB/64GB",
+   "联想 Chromebook Duet 11 (Gen 9) 4GB/64GB",
+   359.99
+  ],
+  [
+   "mobile-lenovo-tab-p12-8-128",
+   "레노버 탭 P12 8GB+128GB",
+   "Lenovo Tab P12 8GB+128GB",
+   "联想 Tab P12 8GB+128GB",
+   349.99
+  ],
+  [
+   "mobile-lenovo-idea-tab-pro-8-256",
+   "레노버 아이디어 탭 프로 8GB+256GB",
+   "Lenovo Idea Tab Pro 8GB+256GB",
+   "联想 Idea Tab Pro 8GB+256GB",
+   349.99
+  ],
+  [
+   "mobile-lenovo-legion-glasses",
+   "레노버 리전 글래스",
+   "Lenovo Legion Glasses",
+   "联想拯救者 Legion Glasses 智能眼镜",
+   329.99
+  ],
+  [
+   "mobile-lenovo-yoga-tab-11-8-256",
+   "레노버 요가 탭 11 8GB+256GB",
+   "Lenovo Yoga Tab 11 8GB+256GB",
+   "联想 Yoga Tab 11 8GB+256GB",
+   319.99
+  ],
+  [
+   "mobile-lenovo-tab-plus-8-128",
+   "레노버 탭 플러스 8GB+128GB",
+   "Lenovo Tab Plus 8GB+128GB",
+   "联想 Tab Plus 8GB+128GB",
+   289.99
+  ],
+  [
+   "mobile-lenovo-tab-p11-gen-2-4-128",
+   "레노버 탭 P11 Gen 2 4GB+128GB",
+   "Lenovo Tab P11 Gen 2 4GB+128GB",
+   "联想 Tab P11 Gen 2 4GB+128GB",
+   269.99
+  ],
+  [
+   "mobile-lenovo-tab-m10-plus-gen-3-4-64",
+   "레노버 탭 M10 플러스 Gen 3 4GB+64GB",
+   "Lenovo Tab M10 Plus Gen 3 4GB+64GB",
+   "联想 Tab M10 Plus Gen 3 4GB+64GB",
+   189.99
+  ],
+  [
+   "mobile-lenovo-tab-m11-4-128",
+   "레노버 탭 M11 4GB+128GB",
+   "Lenovo Tab M11 4GB+128GB",
+   "联想 Tab M11 4GB+128GB",
+   179.99
+  ],
+  [
+   "mobile-lenovo-tab-m9-3-32",
+   "레노버 탭 M9 3GB+32GB",
+   "Lenovo Tab M9 3GB+32GB",
+   "联想 Tab M9 3GB+32GB",
+   139.99
+  ],
+  [
+   "mobile-lenovo-tab-m8-gen-4-3-32",
+   "레노버 탭 M8 Gen 4 3GB+32GB",
+   "Lenovo Tab M8 Gen 4 3GB+32GB",
+   "联想 Tab M8 Gen 4 3GB+32GB",
+   109.99
+  ],
+  [
+   "mobile-lenovo-tab-p12-keyboard-pack",
+   "레노버 탭 P12 키보드 팩",
+   "Lenovo Keyboard Pack for Tab P12",
+   "联想 Tab P12 键盘套装",
+   99.99
+  ],
+  [
+   "mobile-lenovo-go-usb-c-laptop-power-bank-20000",
+   "레노버 고 USB-C 노트북 보조배터리 20000mAh",
+   "Lenovo Go USB-C Laptop Power Bank 20000mAh",
+   "联想 Go USB-C 笔记本移动电源 20000mAh",
+   89.99
+  ],
+  [
+   "mobile-lenovo-precision-pen-3",
+   "레노버 프리시전 펜 3",
+   "Lenovo Precision Pen 3",
+   "联想 Precision Pen 3 手写笔",
+   69.99
+  ],
+  [
+   "mobile-lenovo-go-wireless-mobile-power-bank-10000",
+   "레노버 고 무선 모바일 보조배터리 10000mAh",
+   "Lenovo Go Wireless Mobile Power Bank 10000mAh",
+   "联想 Go 无线移动电源 10000mAh",
+   64.99
+  ],
+  [
+   "mobile-lenovo-precision-pen-2-2023",
+   "레노버 프리시전 펜 2 (2023)",
+   "Lenovo Precision Pen 2 (2023)",
+   "联想 Precision Pen 2 (2023) 手写笔",
+   59.99
+  ],
+  [
+   "mobile-lenovo-65w-usb-c-gan-adapter",
+   "레노버 65W USB-C GaN 어댑터",
+   "Lenovo 65W USB-C GaN Adapter",
+   "联想 65W USB-C 氮化镓电源适配器",
+   49.99
+  ],
+  [
+   "mobile-lenovo-tab-pen-plus",
+   "레노버 탭 펜 플러스",
+   "Lenovo Tab Pen Plus",
+   "联想 Tab Pen Plus 手写笔",
+   49.99
+  ],
+  [
+   "mobile-lenovo-folio-case-tab-p12",
+   "레노버 탭 P12 폴리오 케이스",
+   "Lenovo Folio Case for Tab P12",
+   "联想 Tab P12 翻盖保护套",
+   34.99
+  ],
+  [
+   "mobile-lenovo-folio-case-tab-m11",
+   "레노버 탭 M11 폴리오 케이스",
+   "Lenovo Folio Case for Tab M11",
+   "联想 Tab M11 翻盖保护套",
+   24.99
+  ],
+  [
+   "mobile-lenovo-folio-case-tab-m9",
+   "레노버 탭 M9 폴리오 케이스",
+   "Lenovo Folio Case for Tab M9",
+   "联想 Tab M9 翻盖保护套",
+   19.99
+  ],
+  [
+   "mobile-lenovo-lp40-pro-tws-earbuds",
+   "레노버 LP40 프로 무선 이어버드",
+   "Lenovo LP40 Pro TWS Earbuds",
+   "联想 thinkplus LP40 Pro 真无线耳机",
+   16.99
+  ],
+  [
+   "mobile-lenovo-usb-c-to-usb-c-cable-1m",
+   "레노버 USB-C to USB-C 케이블 1m",
+   "Lenovo USB-C to USB-C Cable 1m",
+   "联想 USB-C 转 USB-C 数据线 1米",
+   14.99
+  ]
+ ],
+ "use": [
+  "mobile-p-spigen-rugged-armor-airpods-pro-2",
+  "mobile-p-spigen-liquid-air-iphone-16",
+  "mobile-p-spigen-rugged-armor-galaxy-s25",
+  "mobile-p-ugreen-nexode-30w-charger",
+  "mobile-p-tozo-a1-mini",
+  "mobile-p-esr-classic-hybrid-halolock-iphone-16",
+  "mobile-p-iniu-b41-power-bank-10000",
+  "mobile-p-sandisk-extreme-microsd-128gb",
+  "mobile-p-spigen-ultra-hybrid-iphone-16-pro",
+  "mobile-p-kingston-canvas-select-plus-microsd-256gb",
+  "mobile-p-baseus-bipow-10000-20w",
+  "mobile-p-iottie-easy-one-touch-5-dash",
+  "mobile-p-pebblebee-clip-universal",
+  "mobile-p-tile-pro-2024",
+  "mobile-p-twelve-south-airfly-se",
+  "mobile-p-chipolo-card-spot",
+  "mobile-p-belkin-car-vent-mount-pro-magsafe",
+  "mobile-p-belkin-ultraglass-2-iphone-16-pro",
+  "mobile-p-jlab-jbuds-mini",
+  "mobile-p-logitech-pebble-keys-2-k380s",
+  "mobile-p-zagg-invisibleshield-glass-elite-iphone-16",
+  "mobile-p-ugreen-nexode-65w-charger",
+  "mobile-p-otterbox-commuter-magsafe-iphone-16",
+  "mobile-p-zagg-invisibleshield-glass-xtr3-iphone-16-pro",
+  "mobile-p-nomad-sport-band",
+  "mobile-p-casetify-impact-case-iphone-16-pro",
+  "mobile-p-otterbox-defender-pro-galaxy-s25-ultra",
+  "mobile-p-earfun-free-pro-3",
+  "mobile-p-logitech-crayon-usb-c",
+  "mobile-p-shiftcam-snapgrip",
+  "mobile-p-sandisk-ixpand-luxe-256gb",
+  "mobile-p-satechi-108w-usb-c-3-port-gan",
+  "mobile-p-microsoft-surface-pro-keyboard",
+  "mobile-p-dji-osmo-mobile-7p",
+  "mobile-p-rode-wireless-micro",
+  "mobile-p-belkin-boostcharge-pro-3-in-1-magsafe",
+  "mobile-p-bn-nook-glowlight-4",
+  "mobile-p-garmin-vivosmart-5",
+  "mobile-p-razer-kishi-ultra",
+  "mobile-p-coros-heart-rate-monitor",
+  "mobile-p-shokz-openmove",
+  "mobile-p-amazfit-bip-6",
+  "mobile-p-light-phone-ii",
+  "mobile-p-punkt-mp02",
+  "mobile-p-sennheiser-momentum-true-wireless-4",
+  "mobile-p-amazfit-balance-2",
+  "mobile-p-garmin-inreach-messenger",
+  "mobile-p-garmin-vivoactive-6",
+  "mobile-p-technics-eah-az100",
+  "mobile-p-amazon-kindle-paperwhite-2024-16gb",
+  "mobile-p-suunto-vertical-titanium-solar",
+  "mobile-p-iridium-go",
+  "mobile-p-fairphone-gen-6",
+  "mobile-p-garmin-marq-golfer-gen-2",
+  "mobile-p-garmin-marq-aviator-gen-2",
+  "mobile-p-wacom-mobilestudio-pro-13-gen-2",
+  "mobile-p-tag-heuer-connected-calibre-e4-golf-45mm",
+  "mobile-p-vertu-aster-p-baroque",
+  "mobile-p-panasonic-toughbook-33",
+  "mobile-p-vertu-aster-p-gothic",
+  "mobile-p-hublot-big-bang-e-titanium-42mm",
+  "mobile-p-hublot-big-bang-e-gen-3-titanium-44mm",
+  "mobile-p-vertu-aster-p-dazzling-gold",
+  "mobile-p-vertu-metavertu-himalaya-alligator-gold-diamonds"
+ ]
+}

@@ -1,0 +1,281 @@
+{
+ "slug": "audio-technics",
+ "items": [
+  [
+   "audio-technics-eah-dj1200-dj-headphones",
+   "테크닉스 EAH-DJ1200 DJ 헤드폰",
+   "Technics EAH-DJ1200 DJ Headphones",
+   "Technics EAH-DJ1200 DJ 耳机",
+   169
+  ],
+  [
+   "audio-technics-eah-az40m2",
+   "테크닉스 EAH-AZ40M2 노이즈 캔슬링 무선 이어버드",
+   "Technics EAH-AZ40M2 True Wireless Noise Cancelling Earbuds",
+   "Technics EAH-AZ40M2 真无线降噪耳机",
+   169
+  ],
+  [
+   "audio-technics-eah-az60m2",
+   "테크닉스 EAH-AZ60M2 노이즈 캔슬링 무선 이어버드",
+   "Technics EAH-AZ60M2 True Wireless Noise Cancelling Earbuds",
+   "Technics EAH-AZ60M2 真无线降噪耳机",
+   249
+  ],
+  [
+   "audio-technics-eah-az80",
+   "테크닉스 EAH-AZ80 노이즈 캔슬링 무선 이어버드",
+   "Technics EAH-AZ80 True Wireless Noise Cancelling Earbuds",
+   "Technics EAH-AZ80 真无线降噪耳机",
+   299
+  ],
+  [
+   "audio-technics-eah-az100",
+   "테크닉스 EAH-AZ100 노이즈 캔슬링 무선 이어버드",
+   "Technics EAH-AZ100 True Wireless Noise Cancelling Earbuds",
+   "Technics EAH-AZ100 真无线降噪耳机",
+   299.99
+  ],
+  [
+   "audio-technics-eah-a800",
+   "테크닉스 EAH-A800 무선 노이즈 캔슬링 헤드폰",
+   "Technics EAH-A800 Wireless Noise Cancelling Headphones",
+   "Technics EAH-A800 无线降噪头戴式耳机",
+   349
+  ],
+  [
+   "audio-technics-sl-40cbt-bluetooth-turntable",
+   "테크닉스 SL-40CBT 블루투스 턴테이블",
+   "Technics SL-40CBT Bluetooth Turntable",
+   "Technics SL-40CBT 蓝牙黑胶唱机",
+   899
+  ],
+  [
+   "audio-technics-sc-c70mk2-premium-all-in-one-music-system",
+   "테크닉스 SC-C70MK2 올인원 뮤직 시스템",
+   "Technics SC-C70MK2 Premium All-in-One Music System",
+   "Technics SC-C70MK2 一体式音乐系统",
+   999
+  ],
+  [
+   "audio-technics-sl-100c-direct-drive-turntable",
+   "테크닉스 SL-100C 다이렉트 드라이브 턴테이블",
+   "Technics SL-100C Direct Drive Turntable",
+   "Technics SL-100C 直驱黑胶唱机",
+   1099
+  ],
+  [
+   "audio-technics-sl-1200mk7-direct-drive-dj-turntable",
+   "테크닉스 SL-1200MK7 다이렉트 드라이브 DJ 턴테이블",
+   "Technics SL-1200MK7 Direct Drive DJ Turntable",
+   "Technics SL-1200MK7 直驱 DJ 黑胶唱机",
+   1099
+  ],
+  [
+   "audio-technics-sa-c600-network-cd-receiver",
+   "테크닉스 SA-C600 네트워크 CD 리시버",
+   "Technics SA-C600 Network CD Receiver",
+   "Technics SA-C600 网络 CD 接收机",
+   1099
+  ],
+  [
+   "audio-technics-sb-c600",
+   "테크닉스 SB-C600 북셸프 스피커 (1조)",
+   "Technics SB-C600 Bookshelf Speakers (Pair)",
+   "Technics SB-C600 书架音箱 (一对)",
+   1099
+  ],
+  [
+   "audio-technics-eah-t700",
+   "테크닉스 EAH-T700 헤드폰",
+   "Technics EAH-T700 Headphones",
+   "Technics EAH-T700 头戴式耳机",
+   1199
+  ],
+  [
+   "audio-technics-eah-tz700",
+   "테크닉스 EAH-TZ700 인이어 모니터 이어폰",
+   "Technics EAH-TZ700 In-Ear Monitors",
+   "Technics EAH-TZ700 入耳式监听耳机",
+   1199
+  ],
+  [
+   "audio-technics-sl-1500c-direct-drive-turntable",
+   "테크닉스 SL-1500C 다이렉트 드라이브 턴테이블",
+   "Technics SL-1500C Direct Drive Turntable",
+   "Technics SL-1500C 直驱黑胶唱机",
+   1299
+  ],
+  [
+   "audio-technics-su-gx70-network-audio-amplifier",
+   "테크닉스 SU-GX70 네트워크 오디오 앰프",
+   "Technics SU-GX70 Network Audio Amplifier",
+   "Technics SU-GX70 网络音频功放",
+   1999
+  ],
+  [
+   "audio-technics-sl-1200gr2-direct-drive-turntable",
+   "테크닉스 SL-1200GR2 다이렉트 드라이브 턴테이블",
+   "Technics SL-1200GR2 Direct Drive Turntable",
+   "Technics SL-1200GR2 直驱黑胶唱机",
+   2199
+  ],
+  [
+   "audio-technics-su-g700m2",
+   "테크닉스 SU-G700M2 인티앰프",
+   "Technics SU-G700M2 Integrated Amplifier",
+   "Technics SU-G700M2 合并式功放",
+   2999
+  ],
+  [
+   "audio-technics-sc-cx700-wireless-speaker-system",
+   "테크닉스 SC-CX700 무선 스피커 시스템",
+   "Technics SC-CX700 Wireless Speaker System",
+   "Technics SC-CX700 无线音箱系统",
+   2999
+  ],
+  [
+   "audio-technics-sl-1300g-direct-drive-turntable",
+   "테크닉스 SL-1300G 다이렉트 드라이브 턴테이블",
+   "Technics SL-1300G Direct Drive Turntable",
+   "Technics SL-1300G 直驱黑胶唱机",
+   3299
+  ],
+  [
+   "audio-technics-sl-g700m2-network-super-audio-cd-player",
+   "테크닉스 SL-G700M2 네트워크 SACD 플레이어",
+   "Technics SL-G700M2 Network/Super Audio CD Player",
+   "Technics SL-G700M2 网络 SACD 播放机",
+   3499
+  ],
+  [
+   "audio-technics-sl-1200g-direct-drive-turntable",
+   "테크닉스 SL-1200G 다이렉트 드라이브 턴테이블",
+   "Technics SL-1200G Direct Drive Turntable",
+   "Technics SL-1200G 直驱黑胶唱机",
+   4299
+  ],
+  [
+   "audio-technics-sb-g90m2",
+   "테크닉스 SB-G90M2 플로어스탠딩 스피커 (1조)",
+   "Technics SB-G90M2 Floorstanding Speakers (Pair)",
+   "Technics SB-G90M2 落地音箱 (一对)",
+   5999
+  ],
+  [
+   "audio-technics-su-r1-network-audio-control-player",
+   "테크닉스 SU-R1 네트워크 오디오 컨트롤 플레이어",
+   "Technics SU-R1 Network Audio Control Player",
+   "Technics SU-R1 网络音频控制播放机",
+   8999
+  ],
+  [
+   "audio-technics-su-r1000-reference-stereo-integrated-amplifier",
+   "테크닉스 SU-R1000 레퍼런스 인티앰프",
+   "Technics SU-R1000 Reference Stereo Integrated Amplifier",
+   "Technics SU-R1000 参考级合并式功放",
+   9999
+  ],
+  [
+   "audio-technics-sp-10r-direct-drive-turntable-motor-unit",
+   "테크닉스 SP-10R 다이렉트 드라이브 턴테이블 모터 유닛",
+   "Technics SP-10R Direct Drive Turntable Motor Unit",
+   "Technics SP-10R 直驱唱盘主机",
+   9999
+  ],
+  [
+   "audio-technics-se-r1-reference-stereo-power-amplifier",
+   "테크닉스 SE-R1 레퍼런스 파워 앰프",
+   "Technics SE-R1 Reference Stereo Power Amplifier",
+   "Technics SE-R1 参考级后级功放",
+   16999
+  ],
+  [
+   "audio-technics-sl-1000r-reference-direct-drive-turntable-system",
+   "테크닉스 SL-1000R 레퍼런스 다이렉트 드라이브 턴테이블",
+   "Technics SL-1000R Reference Direct Drive Turntable System",
+   "Technics SL-1000R 参考级直驱黑胶唱机",
+   19999
+  ],
+  [
+   "audio-technics-sb-r1-reference-speaker-system-pair",
+   "테크닉스 SB-R1 레퍼런스 스피커 (1조)",
+   "Technics SB-R1 Reference Speaker System (Pair)",
+   "Technics SB-R1 参考级音箱 (一对)",
+   26999
+  ]
+ ],
+ "use": [
+  "audio-p-monoprice-choice-series-16awg-speaker-wire-50-ft",
+  "audio-p-belkin-rockstar-5-jack-multi-headphone-splitter",
+  "audio-p-dekoni-audio-bulletz-memory-foam-ear-tips-3-pairs",
+  "audio-p-brainwavz-hengja-headphone-desk-hanger",
+  "audio-p-final-type-e-silicone-ear-tips",
+  "audio-p-tripowin-zonie-16-core-earphone-upgrade-cable",
+  "audio-p-amazon-basics-16-gauge-speaker-wire-100-ft",
+  "audio-p-big-fudge-vinyl-record-cleaning-kit-4-in-1",
+  "audio-p-spinfit-w1-silicone-ear-tips",
+  "audio-p-moondrop-chu-ii",
+  "audio-p-apple-earpods-usb-c",
+  "audio-p-apple-earpods-with-3-5-mm-headphone-plug",
+  "audio-p-pro-ject-brush-it-carbon-fibre-record-brush",
+  "audio-p-1more-piston-fit",
+  "audio-p-7hz-salnotes-zero",
+  "audio-p-azla-sednaearfit-crystal-ear-tips",
+  "audio-p-nothing-cmf-buds-pro-2",
+  "audio-p-schiit-sys-passive-preamp",
+  "audio-p-7hz-sonus",
+  "audio-p-dekoni-audio-elite-velour-ear-pads-for-sennheiser-hd-600",
+  "audio-p-edifier-w820nb-plus",
+  "audio-p-logitech-z207-bluetooth-computer-speakers",
+  "audio-p-tribit-stormbox-micro-2",
+  "audio-p-victrola-journey-portable-bluetooth-suitcase-record-play",
+  "audio-p-art-djpre-ii",
+  "audio-p-pro-ject-phono-box-e",
+  "audio-p-audioquest-jitterbug-fmj-usb-noise-filter",
+  "audio-p-fosi-audio-q4",
+  "audio-p-tin-hifi-t3-plus",
+  "audio-p-crosley-cruiser-plus-portable-turntable",
+  "audio-p-logitech-z623-2-1-thx-speaker-system",
+  "audio-p-hifiman-he400se",
+  "audio-p-qudelix-5k",
+  "audio-p-ibasso-dc04-pro",
+  "audio-p-edifier-r1280t",
+  "audio-p-grado-sr80x",
+  "audio-p-apple-airpods-4",
+  "audio-p-shanling-m0-pro",
+  "audio-p-u-turn-audio-pluto-2",
+  "audio-p-edifier-mr4",
+  "audio-p-philips-shp9600",
+  "audio-p-u-turn-audio-orbit-basic",
+  "audio-p-audioquest-dragonfly-red",
+  "audio-p-samsung-galaxy-buds3-pro",
+  "audio-p-audioengine-a2-plus-wireless",
+  "audio-p-hifiman-sundara",
+  "audio-p-cayin-ru7",
+  "audio-p-apple-homepod-2nd-generation",
+  "audio-p-bluesound-node-nano",
+  "audio-p-nothing-headphone-1",
+  "audio-p-cambridge-audio-mxn10",
+  "audio-p-nad-c-316bee-v2",
+  "audio-p-rel-tzero-mkiii",
+  "audio-p-fluance-rt85",
+  "audio-p-wiim-amp-ultra",
+  "audio-p-apple-airpods-max",
+  "audio-p-cambridge-audio-dacmagic-200m",
+  "audio-p-rega-planar-1",
+  "audio-p-ifi-xdsd-gryphon",
+  "audio-p-topping-a90-discrete",
+  "audio-p-svs-sb-1000-pro",
+  "audio-p-svs-sb-3000",
+  "audio-p-chord-electronics-mojo-2",
+  "audio-p-marantz-model-40n-integrated-streaming-amplifier",
+  "audio-p-ifi-idsd-diablo-2",
+  "audio-p-klipsch-the-sevens",
+  "audio-p-audioquest-niagara-1200",
+  "audio-p-cambridge-audio-evo-one-all-in-one-music-system",
+  "audio-p-rel-no-32",
+  "audio-p-wilson-audio-chronosonic-xvx",
+  "audio-p-magico-s3"
+ ]
+}

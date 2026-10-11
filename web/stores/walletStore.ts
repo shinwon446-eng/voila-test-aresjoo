@@ -8,13 +8,14 @@ import { create } from "zustand";
 import type { BurstPot } from "../lib/burst";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { CRYPTO_ONLY, planDebit, type FundingRatio, type FundingSplit } from "@/lib/funding";
+import { WELCOME_BOX_SLUG } from "@/lib/products";
 
 /** 시작 잔액, 신규 유저는 0 에서 시작한다(체험용 가상 잔고 없음). 충전해야 개봉할 수 있다. */
 export const START_BALANCE_USDT = 0;
 /** 브라우저 로컬 데모 계정의 테스트용 첫 로그인 보너스. 실서비스 원장 지급이 아니다. */
 export const WELCOME_BONUS_USDT = 10_000;
 /** 가입 혜택(2026-10-11 파운더): 가입하면 이 박스를 무료로 이만큼 연다. 계정마다 한 번 */
-export const WELCOME_BOX_SLUG = "vault-pokemon";
+export { WELCOME_BOX_SLUG };
 export const WELCOME_FREE_OPENS = 2;
 
 export type TxType = "deposit_usdt" | "deposit_card" | "open" | "sellback" | "withdraw" | "bonus" | "shipping_refund" | "order_refund";

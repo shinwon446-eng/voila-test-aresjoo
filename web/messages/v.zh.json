@@ -6,7 +6,9 @@
     "loading": "加载中",
     "checking": "确认中",
     "copied": "已复制地址",
-    "go": "打开"
+    "go": "打开",
+    "prev": "上一个",
+    "next": "下一个"
   },
   "nav": {
     "boxes": "盲盒",
@@ -74,7 +76,6 @@
     "reviews": "评价",
     "noReviews": "暂无评价。只有真实开箱记录才能评价。",
     "reviewProof": "与真实开箱记录绑定的评价。",
-    "stripNote": "按价值从高到低。",
     "compareNote": "同一商品的单次价格与概率。任何盲盒都不是直接购买该商品。",
     "guestNote": "{n} 次，{amount}。登录后用 USDT 余额支付。",
     "takeAmount": "领取 USDT 时（参考价的 {pct}%）",
@@ -101,7 +102,8 @@
     "notes": "须知",
     "topTimes": "最高倍数",
     "openFree": "免费开启 {n} 个",
-    "freeLeft": "本盲盒可免费开启 {n} 次。"
+    "freeLeft": "本盲盒可免费开启 {n} 次。",
+    "reviewsAll": "查看全部评价"
   },
   "reveal": {
     "skip": "跳过",
@@ -523,5 +525,10 @@
     "about1": "VOILA 是一项开启盲盒获得实物商品或 USDT 的服务。每个盲盒都列出内容与概率，获得的商品可以选择配送或领取 USDT。",
     "about2": "所有结果均由开启前锁定的数值计算得出，您可以在开箱结果验证中自行重新计算。资金以 USDT 结算，韩元金额仅为显示换算。",
     "rights": "© 2026 VOILA. 保留所有权利。"
+  },
+  "reviews": {
+    "title": "评价",
+    "all": "全部",
+    "filter": "盲盒"
   }
 }

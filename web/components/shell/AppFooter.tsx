@@ -44,6 +44,7 @@ export function AppFooter() {
             <Link href="/">{t("nav.boxes")}</Link>
             <Link href="/inventory">{t("nav.inventory")}</Link>
             <Link href="/wallet">{t("nav.wallet")}</Link>
+            <Link href="/reviews">{t("reviews.title")}</Link>
           </div>
           <div>
             <h2>{t("footer.colHelp")}</h2>

@@ -44,23 +44,6 @@ export const REVIEW_SAMPLES: ReviewSample[] = [
   { id: "rv-pkm-2", boxSlug: "vault-pokemon", itemId: "pkm-ex-tin-4", author: "ha***", date: "2026-09-06", rating: 4, text: "틴 모서리가 살짝 찍혀 있었지만 안의 팩은 멀쩡했어요." },
 ];
 
-/** 박스별 별점 분포(샘플). [1점, 2점, 3점, 4점, 5점] 의 후기 수. 없는 박스는 아직 후기가 없는 것이다 */
-export const RATING_SAMPLES: Record<string, readonly [number, number, number, number, number]> = {
-  "dollar-apple": [4, 3, 9, 38, 158],
-  "dollar-galaxy": [2, 2, 7, 25, 88],
-  "dollar-gaming": [1, 3, 6, 22, 71],
-  "starter-ps5": [1, 1, 4, 19, 62],
-  "starter-audio": [0, 1, 3, 11, 49],
-  "starter-macbook": [1, 1, 5, 17, 54],
-  "starter-camera": [0, 1, 2, 9, 29],
-  "vault-submariner": [0, 0, 2, 8, 43],
-  "vault-handbag": [0, 1, 2, 10, 33],
-  "vault-home": [0, 0, 3, 9, 24],
-  "vault-gold": [0, 0, 1, 6, 31],
-  "vault-pokemon": [0, 0, 1, 4, 7],
-  "jackpot-car": [0, 0, 1, 5, 13],
-};
-
 export interface RatingSummary {
   count: number;
   /** 평균(소수 첫째 자리). 후기가 없으면 null */
@@ -69,11 +52,19 @@ export interface RatingSummary {
   dist: [number, number, number, number, number];
 }
 
-/** 박스의 별점 요약. extra 는 이 기기에서 실제로 쓴 후기의 점수들이다(샘플 위에 더한다) */
-export function ratingSummary(boxSlug: string, extra: readonly number[] = []): RatingSummary {
-  const dist = [...(RATING_SAMPLES[boxSlug] ?? [0, 0, 0, 0, 0])] as RatingSummary["dist"];
-  for (const r of extra) if (Number.isInteger(r) && r >= 1 && r <= 5) dist[r - 1] += 1;
+/** 점수들의 요약. 1 에서 5 사이의 정수만 센다 */
+export function summarizeRatings(ratings: readonly number[]): RatingSummary {
+  const dist: RatingSummary["dist"] = [0, 0, 0, 0, 0];
+  for (const r of ratings) if (Number.isInteger(r) && r >= 1 && r <= 5) dist[r - 1] += 1;
   const count = dist.reduce((a, b) => a + b, 0);
   const sum = dist.reduce((a, n, i) => a + n * (i + 1), 0);
   return { count, avg: count ? Math.round((sum / count) * 10) / 10 : null, dist };
+}
+
+/**
+ * 박스의 별점 요약. 후기 수와 별점은 실제로 보이는 후기에서만 센다(2026-10-11 파운더: 후기 수와 실제 후기를 맞춘다).
+ * 따로 적어 둔 분포 숫자는 없다. extra 는 이 기기에서 실제로 쓴 후기의 점수들이다(샘플 위에 더한다)
+ */
+export function ratingSummary(boxSlug: string, extra: readonly number[] = []): RatingSummary {
+  return summarizeRatings([...REVIEW_SAMPLES.filter((r) => r.boxSlug === boxSlug).map((r) => r.rating), ...extra]);
 }

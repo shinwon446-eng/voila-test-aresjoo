@@ -6,7 +6,9 @@
     "loading": "Loading",
     "checking": "Checking",
     "copied": "Address copied",
-    "go": "Open"
+    "go": "Open",
+    "prev": "Previous",
+    "next": "Next"
   },
   "nav": {
     "boxes": "Boxes",
@@ -74,7 +76,6 @@
     "reviews": "Reviews",
     "noReviews": "No reviews yet. Only real openings can be reviewed.",
     "reviewProof": "Tied to a real opening record.",
-    "stripNote": "Highest value first.",
     "compareNote": "Price per open and odds for this item. No box sells the item outright.",
     "guestNote": "{n} open, {amount}. After login, your USDT balance pays.",
     "takeAmount": "If taken as USDT ({pct}% of reference price)",
@@ -101,7 +102,8 @@
     "notes": "Good to know",
     "topTimes": "Top multiple",
     "openFree": "Open {n} for free",
-    "freeLeft": "You can open this box {n} times for free."
+    "freeLeft": "You can open this box {n} times for free.",
+    "reviewsAll": "See all reviews"
   },
   "reveal": {
     "skip": "Skip",
@@ -523,5 +525,10 @@
     "about1": "VOILA is a service where you open boxes to receive physical items or USDT. Every box lists its contents and odds, and items you receive can be shipped to you or taken as USDT.",
     "about2": "Every result is computed from values locked before you open, and you can recompute it yourself under Verify a result. Money moves in USDT, and won amounts are a display conversion.",
     "rights": "© 2026 VOILA. All rights reserved."
+  },
+  "reviews": {
+    "title": "Reviews",
+    "all": "All",
+    "filter": "Box"
   }
 }

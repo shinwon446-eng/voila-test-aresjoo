@@ -33,6 +33,7 @@ import { BoxReviews, RatingInline } from "@/components/box/BoxReviews";
 import { ratingSummary } from "@/lib/reviewSamples";
 import { useFlow } from "@/stores/flowStore";
 import { usePublishedReviews } from "@/stores/usePublishedReviews";
+import { ScrollRow } from "@/components/ui/ScrollRow";
 import { useInventoryStore } from "@/stores/inventoryStore";
 import { Button, Chips, Empty, Line, Row, Rows, ScreenHead, TextLink } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
@@ -170,8 +171,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       {rating.avg !== null && <button type="button" className="v-ratinglink" onClick={() => document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth", block: "start" })}><RatingInline summary={rating} long /></button>}
       {strip.length >= 3 ? (
         <div className="v-boxlayout-hero">
-          <p className="v-sub">{t("box.stripNote")}</p>
-          <ul className="v-strip" aria-label={t("box.strip")}>
+          <ScrollRow className="v-strip" label={t("box.strip")}>
             {strip.map((item) => (
               <li key={item.id}>
                 <button type="button" className="v-strip-item" onClick={() => setItemId(item.id)}>
@@ -181,7 +181,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
                 </button>
               </li>
             ))}
-          </ul>
+          </ScrollRow>
         </div>
       ) : box.image.src && (
         <div className="v-boxlayout-hero"><div className="v-boxhero"><img src={box.image.src} alt="" /></div></div>

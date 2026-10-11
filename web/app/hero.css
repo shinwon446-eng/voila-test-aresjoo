@@ -81,12 +81,12 @@
 /* 머무는 동안: 펼친 카드가 아주 조금 떠 있다(개별 속성으로 움직여 위의 transform 과 겹치지 않게) */
 .v-hero[data-phase="sweep"] .v-hero-cards { animation: v-hero-float 3.2s ease-in-out infinite alternate; }
 
-/* 유리구슬(우리 것): 안에 네 꼭지 빛이 든 맑은 구슬. 카드가 펼쳐진 뒤 하나씩 떠오르고, 장면이 사라질 때 먼저 꺼진다 */
+/* 유리구슬(우리 것): 안에 네 꼭지 빛이 든 빨간 유리구슬. 카드가 펼쳐진 뒤 하나씩 떠오르고, 장면이 사라질 때 먼저 꺼진다 */
 .v-hero-orb { position: absolute; z-index: 1; width: calc(var(--d) * var(--o)); height: calc(var(--d) * var(--o)); border-radius: 50%; background:
-  radial-gradient(circle at 31% 26%, color-mix(in srgb, var(--v-title) 96%, transparent) 0 5%, color-mix(in srgb, var(--v-title) 38%, transparent) 6% 15%, transparent 34%),
-  radial-gradient(circle at 64% 76%, color-mix(in srgb, var(--v-spark) 60%, transparent), transparent 58%),
-  radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--v-title) 20%, var(--v-bg)) 0 55%, color-mix(in srgb, var(--v-title) 8%, var(--v-bg)));
-  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--v-spark) 65%, transparent), inset 0 -14px 26px color-mix(in srgb, var(--v-bg) 55%, transparent), 0 18px 40px color-mix(in srgb, var(--v-bg) 70%, transparent);
+  radial-gradient(circle at 31% 26%, color-mix(in srgb, var(--v-title) 96%, transparent) 0 5%, color-mix(in srgb, var(--v-title) 42%, transparent) 6% 15%, transparent 34%),
+  radial-gradient(circle at 66% 78%, color-mix(in srgb, var(--v-title) 30%, transparent), transparent 46%),
+  radial-gradient(circle at 42% 38%, var(--v-hero-orb) 0 46%, color-mix(in srgb, var(--v-hero-orb) 58%, var(--v-bg)) 78%, color-mix(in srgb, var(--v-hero-orb) 30%, var(--v-bg)));
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--v-hero-orb) 55%, var(--v-title)), inset 0 -14px 26px color-mix(in srgb, var(--v-bg) 45%, transparent), 0 18px 40px color-mix(in srgb, var(--v-bg) 70%, transparent);
   opacity: 0; transform: scale(0); transition: transform 0.26s ease-in, opacity 0.2s ease-in; animation: v-hero-drift 4.2s ease-in-out infinite alternate; }
 .v-hero-orb > i { position: absolute; left: 50%; top: 52%; width: 36%; height: 36%; margin: -18% 0 0 -18%; background: color-mix(in srgb, var(--v-title) 88%, transparent); clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); }
 /* 그림 파일을 넣은 구슬: 유리 무늬를 걷고 그 그림만 보인다(떠오르고 사라지는 움직임은 같다) */

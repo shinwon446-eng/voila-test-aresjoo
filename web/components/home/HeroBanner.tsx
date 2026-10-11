@@ -4,8 +4,10 @@
  * 장면: 개봉 화면과 같은 봉인 상자가 열리고, 카드 석 장이 솟아 부채처럼 펼쳐진 뒤 빛이 한 번 훑는다.
  *       그 둘레로 유리구슬들이 떠올랐다가 장면과 함께 사라진다.
  *   - 카드 석 장과 구슬은 전부 우리가 그린 것이다. 남의 캐릭터 그림, 실제 카드 그림, 공 모양은 그리지 않는다.
- *     실제 상품 사진을 쓰려면 CARD_PHOTOS 에 파일 주소를 넣는다(권리를 가진 사진만. 세로 카드 한 장이 꽉 찬 사진).
- *     넣은 자리는 그 사진이 카드 면이 되고, 솟아오르는 움직임과 훑는 빛은 그대로 적용된다.
+ *     권리를 가진 그림 파일이 있으면 web/public/assets/hero/ 에 아래 이름으로 넣기만 하면 된다(코드를 고치지 않는다. 다음 빌드부터 나온다).
+ *       card-1.webp, card-2.webp, card-3.webp: 왼쪽, 가운데, 오른쪽 카드 면(세로 카드 한 장이 꽉 찬 사진)
+ *       orb.webp: 떠다니는 구슬 자리의 그림(배경이 투명한 둥근 그림 한 장)
+ *     파일이 있는 자리는 그 그림이 나오고, 솟아오르는 움직임과 훑는 빛은 그대로 적용된다. 없는 자리는 우리 그림이 나온다.
  *   - 움직임은 transform 과 opacity 만 쓴다. 화면 밖으로 나가면 멈추고, 멈춤 단추가 있다.
  *   - 움직임 줄이기를 켠 사람에게는 펼쳐진 한 장면만 보여 준다.
  * Codex 와 주고받은 비평은 brand/hero 에 있다.
@@ -20,12 +22,11 @@ import { useAuthStore } from "@/stores/authStore";
 import { OpeningBox } from "@/components/box/Opening";
 
 const GIFT_BOX_SLUG = "vault-pokemon";
-/** 카드 면에 쓸 실제 상품 사진(왼쪽, 가운데, 오른쪽). 비워 둔 자리는 우리가 그린 카드가 나온다.
- *  예: ["/voila-test-aresjoo/assets/hero/card-1.webp", null, null] */
-const CARD_PHOTOS: [string | null, string | null, string | null] = [null, null, null];
-/** 떠다니는 구슬 자리에 쓸 그림(배경이 투명한 둥근 그림 한 장, 권리를 가진 것만). 비워 두면 우리가 그린 유리구슬이 나온다.
- *  예: "/voila-test-aresjoo/assets/hero/orb.webp" */
-const ORB_IMAGE: string | null = null;
+const HERO_ASSETS = (process.env.NEXT_PUBLIC_BASE_PATH ?? "") + "/assets/hero/";
+const CARD_FILES = ["card-1.webp", "card-2.webp", "card-3.webp"];
+const ORB_FILE = "orb.webp";
+/** 빌드할 때 그 폴더에 실제로 있던 파일 이름들(next.config.mjs) */
+const HERO_FILES = (process.env.NEXT_PUBLIC_HERO_FILES ?? "").split(",").filter(Boolean);
 type Phase = "closed" | "anticipation" | "open" | "sweep" | "fade";
 /** 한 바퀴의 시간표(ms). 닫힘 → 웅크림 → 열림과 펼침 → 빛이 훑음(머묾) → 장면이 사라짐 → 처음으로 */
 const STEPS: [Phase, number][] = [["closed", 320], ["anticipation", 190], ["open", 820], ["sweep", 3700], ["fade", 460]];
@@ -42,7 +43,6 @@ export function HeroBanner() {
   const [paused, setPaused] = useState(false);
   const [visible, setVisible] = useState(true);
   const [reduced, setReduced] = useState(true);
-
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
     const apply = () => setReduced(mq.matches);
@@ -70,7 +70,8 @@ export function HeroBanner() {
   if (!box) return null;
   const signedIn = ready && !!user;
   const shown = reduced ? "sweep" : phase;
-  const photos = CARD_PHOTOS;
+  const photos = CARD_FILES.map((name) => (HERO_FILES.includes(name) ? HERO_ASSETS + name : null));
+  const orbImage = HERO_FILES.includes(ORB_FILE) ? HERO_ASSETS + ORB_FILE : null;
   return (
     <section ref={root} className="v-hero" aria-labelledby="hero-title" data-phase={shown} data-still={reduced || paused ? "" : undefined}>
       <div className="v-hero-copy">
@@ -80,8 +81,8 @@ export function HeroBanner() {
       <div className="v-hero-stage" aria-hidden>
         <span className="v-hero-slab" />
         <span className="v-hero-light" />
-        {[0, 1, 2, 3, 4].map((i) => ORB_IMAGE
-          ? <span key={i} className="v-hero-orb v-hero-orb--image" data-i={i}><img src={ORB_IMAGE} alt="" decoding="async" /></span>
+        {[0, 1, 2, 3, 4].map((i) => orbImage
+          ? <span key={i} className="v-hero-orb v-hero-orb--image" data-i={i}><img src={orbImage} alt="" decoding="async" /></span>
           : <span key={i} className="v-hero-orb" data-i={i}><i /></span>)}
         <div className="v-hero-scene" data-phase={shown === "open" || shown === "sweep" || shown === "fade" ? "impact" : shown === "anticipation" ? "anticipation" : "closed"}>
           <span className="v-hero-floor" />

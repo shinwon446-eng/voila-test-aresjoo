@@ -179,7 +179,7 @@ export function Opening({ box, result, cost, balanceBefore, recovered, onClose, 
                   <p className="v-op-net" data-direction={change < 0 ? "down" : change > 0 ? "up" : "same"}>{netText}</p>
                 </>
               ) : (
-                <p className="v-op-line">{t(shipped ? "op.shipRequested" : "op.keptLine", { amount: fmt(item.value) })}</p>
+                <p className="v-op-line">{shipped ? t("op.shipRequested") : item.image.src ? t("op.keptLine", { amount: fmt(item.value) }) : t("op.keptTake", { amount: sellAmount })}</p>
               )}
               <p className="v-op-meta">{t("op.odds", { pct: formatRate(item.dropRate) })}{settle !== "settled" && !shipped ? ". " + t("op.paid", { price: fmt(cost) }) : ""}{autoTaken ? ". " + t("op.autoNote") : ""}</p>
             </>
@@ -207,7 +207,7 @@ export function Opening({ box, result, cost, balanceBefore, recovered, onClose, 
                 <>
                   {settle === "failed"
                     ? <Button onClick={() => void take(false)} disabled={!ready}>{t("op.retryTake", { amount: sellAmount })}</Button>
-                    : <Button onClick={() => { setMethod(lastReceive); setChoosing(true); }} disabled={!ready || settle === "settling" || settle === "pending"} busy={settle === "settling"} busyLabel={t("common.checking")}>{t("op.choose")}</Button>}
+                    : <Button onClick={() => { setMethod(item.kind === "physical" ? lastReceive : "usdt"); setChoosing(true); }} disabled={!ready || settle === "settling" || settle === "pending"} busy={settle === "settling"} busyLabel={t("common.checking")}>{t("op.choose")}</Button>}
                   <div className="v-links">{canAgain && <TextLink onClick={() => { if (ready && !againBusy) onAgain(); }}>{t("reveal.again", { amount: fmt(cost) })}</TextLink>}<TextLink onClick={verify}>{t("nav.verify")}</TextLink></div>
                 </>
               )}
@@ -225,7 +225,7 @@ export function Opening({ box, result, cost, balanceBefore, recovered, onClose, 
             </button>
           )}
           <button type="button" role="radio" aria-checked={method === "usdt"} className="v-op-choice" onClick={() => setMethod("usdt")}>
-            <span className="v-card-title">{t("op.takeChoice", { amount: sellAmount })}</span><span className="v-small">{t("op.takeNote", { ref: fmt(item.value), pct: Math.round(REFUND_RATE * 100) })}</span>
+            <span className="v-card-title">{t("op.takeChoice", { amount: sellAmount })}</span><span className="v-small">{t(item.kind === "physical" ? "op.takeNote" : "op.takeNoteDigital", { ref: fmt(item.value), pct: Math.round(REFUND_RATE * 100) })}</span>
           </button>
         </div>
         <Button onClick={confirmMethod} disabled={!method || (method === "ship" && item.kind !== "physical")}>{method === "usdt" ? t("op.takeConfirm", { amount: sellAmount }) : method === "ship" ? t("op.shipConfirm") : t("op.choosePrompt")}</Button>

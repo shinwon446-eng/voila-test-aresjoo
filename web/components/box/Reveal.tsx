@@ -16,19 +16,24 @@ import { takeUsdt } from "@/lib/claim";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useModal } from "@/lib/useModal";
+import { useWalletStore } from "@/stores/walletStore";
 import { Button, ButtonLink, Row, Rows, TextLink } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
 import { VerifySheet, type VerifyRecord } from "@/components/flow/VerifySheet";
 import { ShipSheet } from "@/components/flow/ShipSheet";
 
-const ANIM_MS = 1500;
+/** 여러 개를 열 때의 연출: 한 개 열기와 같은 상자, 같은 길이(lib/openingFlow 의 기본값). 결과의 크기와 무관하다. */
+const STAGE = { anticipation: 520, impact: 150, exit: 170 };
+const STAR = "M8 0 10.15 5.85 16 8l-5.85 2.15L8 16l-2.15-5.85L0 8l5.85-2.15Z";
 
-export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAgain }: { box: ProductBox; results: OpeningResult[]; cost: number; onClose: () => void; onAgain: () => void; againBusy: boolean; canAgain: boolean }) {
+export function Reveal({ box, results, cost, balanceBefore, onClose, onAgain, againBusy, canAgain }: { box: ProductBox; results: OpeningResult[]; cost: number; balanceBefore: number; onClose: () => void; onAgain: () => void; againBusy: boolean; canAgain: boolean }) {
   const t = useTranslations("v");
   const { itemName } = useProductText();
   const { fmt } = useCurrency();
   const panel = useRef<HTMLDivElement>(null);
   const [done, setDone] = useState(false);
+  const [stage, setStage] = useState<"anticipation" | "impact" | "exit">("anticipation");
+  const balance = useWalletStore((s) => s.balance);
   const [verifying, setVerifying] = useState<VerifyRecord | null>(null);
   // 받기 대상: 단일 결과는 그 결과, 여럿이면 목록에서 고른 행
   const [picked, setPicked] = useState<OpeningResult | null>(null);
@@ -40,8 +45,12 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setDone(true); return; }
-    const timer = window.setTimeout(() => setDone(true), ANIM_MS);
-    return () => window.clearTimeout(timer);
+    const timers = [
+      window.setTimeout(() => setStage("impact"), STAGE.anticipation),
+      window.setTimeout(() => setStage("exit"), STAGE.anticipation + STAGE.impact),
+      window.setTimeout(() => setDone(true), STAGE.anticipation + STAGE.impact + STAGE.exit),
+    ];
+    return () => timers.forEach((id) => window.clearTimeout(id));
   }, []);
 
   const table = useMemo(() => dropTable(box), [box]);
@@ -49,6 +58,8 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
   const single = results.length === 1 ? results[0] : null;
   const total = results.reduce((sum, r) => sum + r.item.value, 0);
   const again = t("reveal.again", { amount: fmt(cost) });
+  // 이번 개봉으로 잔액이 실제로 얼마나 달라졌는지(상품을 USDT 로 받으면 그만큼 다시 달라진다)
+  const change = +(balance - balanceBefore).toFixed(2);
   // 방금 연 결과라서 지금의 확률표가 곧 구매 당시의 확률표다
   const verify = (r: OpeningResult) => setVerifying({ itemId: r.item.id, fair: { serverSeed: r.serverSeed, serverSeedHash: r.serverSeedHash, clientSeed: r.clientSeed, nonce: r.nonce, roll: r.roll, dropTable: table.map(({ id, dropRate }) => ({ id, dropRate })) } });
   const take = () => {
@@ -72,9 +83,19 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
   return (
     <div ref={panel} role="dialog" aria-modal="true" aria-label={t("reveal.results")} tabIndex={-1} className="v-reveal">
       {!done ? (
-        <button type="button" className="v-reveal-stage" onClick={() => setDone(true)} aria-label={t("reveal.skip")}>
-          <span className="v-lidbox" aria-hidden><span className="v-lidbox-base" /><span className="v-lidbox-lid" /></span>
-        </button>
+        <div className="v-reveal-solo">
+          <div className="v-op-scene" data-phase={stage}>
+            <span className="v-op-floor" aria-hidden />
+            <span className="v-boxw" aria-hidden>
+              <span className="v-box3">
+                <i className="v-box3-back" /><i className="v-box3-inside" /><i className="v-box3-glow" /><i className="v-box3-right" /><i className="v-box3-front" />
+                <span className="v-box3-lid"><i className="v-box3-lid-right" /><i className="v-box3-lid-top" /><i className="v-box3-lid-front" /></span>
+                <span className="v-seal"><svg viewBox="0 0 16 16" className="v-seal-star" fill="currentColor" aria-hidden><path d={STAR} /></svg></span>
+              </span>
+            </span>
+          </div>
+          <div className="v-op-skip"><TextLink onClick={() => setDone(true)}>{t("op.skip")}</TextLink></div>
+        </div>
       ) : (
         <>
           <button type="button" className="v-sheet-close" onClick={onClose} aria-label={t("common.close")}><X size={20} aria-hidden /></button>
@@ -120,7 +141,7 @@ export function Reveal({ box, results, cost, onClose, onAgain, againBusy, canAga
                     <h2 className="v-title">{allCash ? t("reveal.cashTitle", { amount: fmt(total) }) : t("reveal.multiTitle", { n: results.length })}</h2>
                     <p className="v-desc">{t(allCash ? "reveal.cashDesc" : "reveal.multiDesc")}</p>
                   </div>
-                  <Rows><Row label={t("reveal.spent")}>{fmt(cost)}</Row><Row label={t("reveal.got")}>{fmt(total)}</Row></Rows>
+                  <Rows><Row label={t("reveal.spent")}>{fmt(cost)}</Row><Row label={t("reveal.got")}>{fmt(total)}</Row><Row label={t("op.changeLabel")}>{change < 0 ? t("op.changeDown", { diff: fmt(Math.abs(change)) }) : change > 0 ? t("op.changeUp", { diff: fmt(change) }) : t("op.changeSame")}</Row></Rows>
                   <ul className="v-rows" aria-label={t("reveal.results")}>
                     {sorted.map((r, i) => (
                       <li key={r.ownedId || i} className="v-resultrow" style={{ animationDelay: Math.min(i * 0.1, 1.4) + "s" }}>

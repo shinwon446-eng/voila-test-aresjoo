@@ -466,6 +466,12 @@
     "autoConfirm": "켜면 박스에서 나온 상품을 보관하지 않고 참고가의 {pct}%를 USDT로 바로 받습니다. 수수료는 없고, 받은 뒤에는 배송으로 바꿀 수 없습니다. 낸 값의 20배 이상인 상품은 자동으로 받지 않고 묻습니다. 개봉 설정에서 언제든 끌 수 있습니다.",
     "autoOn": "자동으로 받기 켜기",
     "recoverLine": "보지 못한 개봉 결과가 있습니다.",
-    "recoverCta": "결과 보기"
+    "recoverCta": "결과 보기",
+    "changeLabel": "잔액 변화",
+    "changeDown": "{diff} 감소",
+    "changeUp": "{diff} 증가",
+    "changeSame": "변화 없음",
+    "takeNoteDigital": "참고가 {ref}의 {pct}%. 받으면 되돌릴 수 없습니다",
+    "keptTake": "USDT로 받으면 {amount}. 보관함에 넣었습니다"
   }
 }

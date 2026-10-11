@@ -274,7 +274,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       </Sheet>
       <Confirm open={confirming} onCancel={() => setConfirming(false)} onConfirm={open} busy={busy} busyLabel={t("box.opening")} title={t("box.confirmTitle", { amount: fmt(cost) })} desc={t("box.confirmDesc")} confirmLabel={t("box.open", { n: qty, amount: fmt(cost) })} cancelLabel={t("common.cancel")} />
       {opened && opened.results.length === 1 && <Opening key={opened.round} box={box} result={opened.results[0]} cost={opened.cost} balanceBefore={opened.balanceBefore} recovered={opened.recovered} onClose={closeOpening} onAgain={press} againBusy={busy} canAgain={!short} onRevealed={revealed} />}
-      {opened && opened.results.length > 1 && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} onClose={closeOpening} onAgain={press} againBusy={busy} canAgain={!short} />}
+      {opened && opened.results.length > 1 && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} balanceBefore={opened.balanceBefore} onClose={closeOpening} onAgain={press} againBusy={busy} canAgain={!short} />}
     </div>
   );
 }

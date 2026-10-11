@@ -36,6 +36,11 @@
 .v-op-actions { display: flex; flex-direction: column; gap: 4px; }
 .v-op-actions .v-links { justify-content: center; }
 
+/* 여러 개 열기의 연출 자리(components/box/Reveal.tsx): 같은 상자를 쓴다 */
+.v-reveal-solo { display: flex; flex: 1; flex-direction: column; --ant: 520ms; --imp: 150ms; --exit: 170ms; }
+.v-reveal-solo .v-op-scene { flex: 1; min-height: 50dvh; }
+.v-reveal-solo .v-op-skip { padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)); }
+
 /* 받는 방법과 설정 시트의 고르는 줄 */
 .v-op-choices { display: flex; flex-direction: column; gap: 8px; }
 .v-op-choice, .v-op-toggle { display: flex; width: 100%; min-height: 64px; border: 2px solid transparent; border-radius: var(--v-r-field); background: var(--v-pill); padding: 12px 16px; color: var(--v-text); text-align: left; transition: background var(--v-fast), border-color var(--v-fast); }
@@ -68,13 +73,13 @@
 .v-seal-star { width: 18px; height: 18px; }
 
 /* 상태별 끝 모양(움직임 줄이기에서도 같다) */
-.v-op[data-phase="impact"] .v-box3-lid, .v-op[data-phase="exit"] .v-box3-lid { transform: rotateX(112deg); }
-.v-op[data-phase="impact"] .v-seal, .v-op[data-phase="exit"] .v-seal { opacity: 0; transform: translateZ(190px) translateY(-26px) scale(0.6) rotate(140deg); }
+[data-phase="impact"] .v-box3-lid, [data-phase="exit"] .v-box3-lid { transform: rotateX(112deg); }
+[data-phase="impact"] .v-seal, [data-phase="exit"] .v-seal { opacity: 0; transform: translateZ(190px) translateY(-26px) scale(0.6) rotate(140deg); }
 /* 열린 뒤의 빛: 실제로 늘었을 때만 밝다. 줄었거나 비슷하면 틈이 보일 만큼만 */
-.v-op[data-phase="impact"] .v-box3-glow, .v-op[data-phase="exit"] .v-box3-glow { opacity: 0.22; }
+[data-phase="impact"] .v-box3-glow, [data-phase="exit"] .v-box3-glow { opacity: 0.22; }
 .v-op[data-tone="above"][data-phase="impact"] .v-box3-glow, .v-op[data-tone="above"][data-phase="exit"] .v-box3-glow { opacity: 0.6; }
 .v-op[data-tone="high"][data-phase="impact"] .v-box3-glow, .v-op[data-tone="high"][data-phase="exit"] .v-box3-glow, .v-op[data-tone="top"][data-phase="impact"] .v-box3-glow, .v-op[data-tone="top"][data-phase="exit"] .v-box3-glow { opacity: 0.95; }
-.v-op[data-phase="exit"] .v-boxw { transform: translateY(80vh); }
+[data-phase="exit"] .v-boxw { transform: translateY(80vh); }
 /* 바닥 빛: 받은 것이 나온 뒤 결과의 크기만큼 */
 .v-op[data-tone="above"][data-phase="reveal"] .v-op-floor, .v-op[data-tone="above"][data-phase="ready"] .v-op-floor { opacity: 0.7; }
 .v-op[data-tone="high"][data-phase="reveal"] .v-op-floor, .v-op[data-tone="high"][data-phase="ready"] .v-op-floor { opacity: 0.9; }
@@ -84,13 +89,13 @@
 .v-op-actions:not([data-armed]) .v-btn:disabled { background: var(--v-primary); color: var(--v-on-primary); opacity: 1; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .v-op[data-phase="anticipation"] .v-boxw { animation: v-op-settle var(--ant) cubic-bezier(0.3, 0, 0.4, 1) both; }
-  .v-op[data-phase="anticipation"] .v-seal-star { animation: v-op-wind var(--ant) cubic-bezier(0.6, 0, 0.9, 0.4) both; }
-  .v-op[data-phase="impact"] .v-boxw { animation: v-op-pop var(--imp) cubic-bezier(0.2, 1.7, 0.4, 1) both; }
+  [data-phase="anticipation"] .v-boxw { animation: v-op-settle var(--ant) cubic-bezier(0.3, 0, 0.4, 1) both; }
+  [data-phase="anticipation"] .v-seal-star { animation: v-op-wind var(--ant) cubic-bezier(0.6, 0, 0.9, 0.4) both; }
+  [data-phase="impact"] .v-boxw { animation: v-op-pop var(--imp) cubic-bezier(0.2, 1.7, 0.4, 1) both; }
   .v-box3-lid { transition: transform 0.36s cubic-bezier(0.2, 1.3, 0.35, 1); }
   .v-seal { transition: transform 0.16s cubic-bezier(0.3, 0, 0.6, 1), opacity 0.14s ease-out; }
   .v-box3-glow { transition: opacity 0.1s ease-out; }
-  .v-op[data-phase="exit"] .v-boxw { animation: v-op-drop var(--exit) cubic-bezier(0.6, 0, 1, 0.6) both; }
+  [data-phase="exit"] .v-boxw { animation: v-op-drop var(--exit) cubic-bezier(0.6, 0, 1, 0.6) both; }
   .v-op-floor { transition: opacity 0.6s ease-out, transform 1.8s cubic-bezier(0.05, 0.7, 0.1, 1); }
   /* 받은 것과 차이 문장은 한 묶음으로 같은 프레임에 나온다 */
   .v-op[data-phase="reveal"] .v-op-result > * { animation: v-op-in 0.26s cubic-bezier(0.05, 0.7, 0.1, 1) both; }

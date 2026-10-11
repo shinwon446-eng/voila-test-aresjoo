@@ -466,6 +466,12 @@
     "autoConfirm": "开启后，开出的商品不再保管，而是立即按参考价的 {pct}% 领取 USDT。无手续费，领取后无法改为配送。价值达到盲盒价格 20 倍及以上的商品不会自动领取，会先询问。可随时在开箱设置中关闭。",
     "autoOn": "开启自动领取",
     "recoverLine": "有一个尚未查看的开箱结果。",
-    "recoverCta": "查看结果"
+    "recoverCta": "查看结果",
+    "changeLabel": "余额变化",
+    "changeDown": "减少 {diff}",
+    "changeUp": "增加 {diff}",
+    "changeSame": "无变化",
+    "takeNoteDigital": "参考价 {ref} 的 {pct}%。领取后无法撤销",
+    "keptTake": "领取 USDT 可得 {amount}。已放入保管箱"
   }
 }

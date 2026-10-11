@@ -466,6 +466,12 @@
     "autoConfirm": "When on, items from a box are not kept. You receive {pct}% of the reference price in USDT right away. There is no fee, and an item taken as USDT cannot be shipped later. Items worth 20 times the box price or more are never taken automatically. You can turn this off at any time in opening settings.",
     "autoOn": "Turn on automatic take",
     "recoverLine": "You have an opening result you have not seen.",
-    "recoverCta": "Show the result"
+    "recoverCta": "Show the result",
+    "changeLabel": "Balance change",
+    "changeDown": "Down {diff}",
+    "changeUp": "Up {diff}",
+    "changeSame": "No change",
+    "takeNoteDigital": "{pct}% of the {ref} reference price. This cannot be undone",
+    "keptTake": "{amount} if taken as USDT. Kept in your inventory"
   }
 }

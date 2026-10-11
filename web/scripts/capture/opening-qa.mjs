@@ -52,6 +52,17 @@ async function session({ slug = "dollar-apple", fixture = "single:small", view =
   const text = () => page.evaluate(() => (document.querySelector(".v-op")?.innerText || "").replace(/\s+/g, " "));
   return { context, page, fx, errors, ledger, shot, openBtn, settled, confirmIfAsked, text, w, h };
 }
+/** 누른 순간부터 결과가 보이기까지(revealed)와 다음 행동이 가능해지기까지(settled)를 화면 안에서 잰다. 바깥에서 기다리며 재면 수백 ms 가 더해진다. */
+const armClock = (page) => page.evaluate(() => {
+  window.__clock = { press: 0, revealed: 0, settled: 0 };
+  document.addEventListener("click", (e) => { if (e.target.closest?.("[data-open-primary], [data-open-again]") && !window.__clock.press) window.__clock.press = performance.now(); }, true);
+  new MutationObserver(() => {
+    const st = document.querySelector(".v-op")?.getAttribute("data-opening-state");
+    if ((st === "revealed" || st === "settled") && !window.__clock.revealed) window.__clock.revealed = performance.now();
+    if (st === "settled" && !window.__clock.settled) window.__clock.settled = performance.now();
+  }).observe(document.body, { subtree: true, childList: true, attributes: true });
+});
+const readClock = (page) => page.evaluate(() => ({ toResult: Math.round(window.__clock.revealed - window.__clock.press), toReady: Math.round(window.__clock.settled - window.__clock.press) }));
 const run = async (id, fn) => { if (only.length && !only.includes(id)) return; try { await fn(); } catch (e) { check(id, "시나리오 실행", false, String(e).slice(0, 220)); } };
 
 // s1: 필수 화면 1~3, 15 (박스 고르기, 고른 박스, 구매 확인, 다시 열 준비)
@@ -274,6 +285,68 @@ await run("s9", async () => {
       return { overflow: document.documentElement.scrollWidth > innerWidth, btnVisible: btn && btn.bottom <= innerHeight && btn.top >= 0, btnH: btn?.height, overlapBottom: resBottom > bottom.top + 1, overlapTop: resTop < top.bottom - 1, clipX: resLeft < -0.5 || resRight > innerWidth + 0.5 };
     });
     check("s9", `${view} ${kind}`, !m.overflow && m.btnVisible && !m.overlapBottom && !m.overlapTop && !m.clipX && m.btnH >= 44, JSON.stringify(m));
+    await s.context.close();
+  }
+});
+
+// s10: 움직임 성능. 화면이 실제로 그린 프레임 간격을 잰다. CPU 를 4배 느리게 해 중급 휴대폰에 가깝게 본다.
+await run("s10", async () => {
+  for (const [label, rate] of [["그대로", 1], ["CPU 4배 느리게", 4]]) {
+    const s = await session({ fixture: "single:x5" });
+    const cdp = await s.context.newCDPSession(s.page);
+    await cdp.send("Emulation.setCPUThrottlingRate", { rate });
+    await s.page.evaluate(() => { window.__frames = []; let last = performance.now(); const tick = (now) => { window.__frames.push(now - last); last = now; window.__raf = requestAnimationFrame(tick); }; window.__raf = requestAnimationFrame(tick); });
+    await armClock(s.page); await s.openBtn().click();
+    await s.settled(); const { toResult, toReady } = await readClock(s.page);
+    const fr = await s.page.evaluate(() => { cancelAnimationFrame(window.__raf); const a = window.__frames.slice(2); const sorted = [...a].sort((x, y) => x - y); return { n: a.length, avg: a.reduce((p, c) => p + c, 0) / a.length, p95: sorted[Math.floor(sorted.length * 0.95)], max: sorted[sorted.length - 1], over50: a.filter((x) => x > 50).length }; });
+    const detail = `프레임 ${fr.n}, 평균 ${fr.avg.toFixed(1)}ms, 95% ${fr.p95.toFixed(1)}ms, 최대 ${fr.max.toFixed(1)}ms, 50ms 초과 ${fr.over50}회, 결과까지 ${toResult}ms, 다음 행동까지 ${toReady}ms`;
+    check("s10", `${label}: 95% 프레임이 34ms 이내`, fr.p95 <= 34, detail);
+    check("s10", `${label}: 누른 뒤 결과까지 ${rate === 1 ? 1100 : 1600}ms 이내`, toResult <= (rate === 1 ? 1100 : 1600), `결과까지 ${toResult}ms, 다음 행동까지 ${toReady}ms`);
+    await s.context.close();
+  }
+});
+
+// s11: 여러 개 열기(5개). 같은 상자 연출, 합계와 잔액 변화
+await run("s11", async () => {
+  const s = await session({ fixture: "seq:mixed" });
+  await s.page.locator(".v-openbar .v-chip").nth(1).click();
+  await s.page.locator("[data-open-primary]").click();
+  await s.page.waitForSelector(".v-reveal-solo .v-boxw", { timeout: 5000 }); await s.page.waitForTimeout(260); await s.shot("23-multi-opening");
+  await s.page.waitForSelector(".v-reveal-result", { timeout: 15000 }); await s.page.waitForTimeout(900); await s.shot("24-multi-result");
+  const l = await s.ledger(); const t = await s.page.evaluate(() => (document.querySelector(".v-reveal")?.innerText || "").replace(/\s+/g, " "));
+  // mixed: 0.8, 2(기프트카드, 보관), 0.5, 0.99, 5 → 잔액에 들어오는 것은 0.8 + 0.5 + 0.99 + 5
+  const expect = +(10000 - 5 + 0.8 + 0.5 + 0.99 + 5).toFixed(2);
+  check("s11", "5개 열기: 구매 한 건, 기록 다섯, 잔액이 맞다", l.opens === 1 && l.items.length === 5 && near(l.balance, expect), `balance ${l.balance} expect ${expect} items ${l.items.length}`);
+  check("s11", "5개 열기: 잔액 변화를 적는다", /잔액 변화/.test(t) && /증가/.test(t), t.slice(0, 140));
+  await s.context.close();
+});
+
+// s12: 소리와 진동을 켠 상태로 열어도 오류가 없다(소리 자체는 사람이 들어야 한다)
+await run("s12", async () => {
+  const s = await session({ fixture: "single:x5", settings: { openSound: true } });
+  await s.openBtn().click(); await s.settled(); await s.page.waitForTimeout(600);
+  const audio = await s.page.evaluate(() => typeof (window.AudioContext || window.webkitAudioContext) === "function");
+  check("s12", "소리 켬: 콘솔 오류 없이 끝까지 열린다", s.errors.length === 0 && audio, s.errors.join(" | ") || "AudioContext 사용 가능");
+  await s.context.close();
+  const q = await session({ fixture: "single:small", settings: { openShort: true } });
+  await armClock(q.page); await q.openBtn().click(); await q.settled(); const qc = await readClock(q.page);
+  check("s12", "짧게 보기 켬: 결과까지 0.7초 이내", qc.toResult <= 700, `결과까지 ${qc.toResult}ms, 다음 행동까지 ${qc.toReady}ms`);
+  await q.context.close();
+});
+
+// s13: 영어와 중국어, 가장 좁은 폭에서 글이 넘치지 않는다
+await run("s13", async () => {
+  for (const locale of ["en", "zh"]) for (const kind of ["small", "x2", "physicalTop"]) {
+    const s = await session({ fixture: "single:" + kind, view: "narrow", locale });
+    await s.openBtn().click(); await s.settled(); await s.page.waitForTimeout(kind === "physicalTop" ? 1900 : 500);
+    await s.page.screenshot({ path: `${out}/lang-${locale}-${kind}-narrow.png` });
+    const m = await s.page.evaluate(() => {
+      const res = [...document.querySelectorAll(".v-op-result > *")].map((e) => e.getBoundingClientRect());
+      const bottom = document.querySelector(".v-op-bottom").getBoundingClientRect(); const top = document.querySelector(".v-op-top").getBoundingClientRect();
+      const links = [...document.querySelectorAll(".v-op-actions .v-link")].map((e) => e.getBoundingClientRect());
+      return { overflow: document.documentElement.scrollWidth > innerWidth, overlapBottom: Math.max(...res.map((x) => x.bottom)) > bottom.top + 1, overlapTop: Math.min(...res.map((x) => x.top)) < top.bottom - 1, clipX: Math.min(...res.map((x) => x.left)) < -0.5 || Math.max(...res.map((x) => x.right)) > innerWidth + 0.5, linksOut: links.some((x) => x.left < 0 || x.right > innerWidth || x.bottom > innerHeight) };
+    });
+    check("s13", `${locale} ${kind} 320 폭`, !m.overflow && !m.overlapBottom && !m.overlapTop && !m.clipX && !m.linksOut, JSON.stringify(m));
     await s.context.close();
   }
 });

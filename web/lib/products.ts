@@ -269,6 +269,8 @@ export const dropTable = (box: ProductBox): ProductItem[] => [...box.items].sort
 /** 가장 자주 나오는 결과 하나. 화면이 "가장 흔한 결과"를 말할 때 이것을 쓴다(확률표가 바뀌어도 화면이 따라오게) */
 export const mostCommon = (box: ProductBox): ProductItem => box.items.reduce((best, item) => (item.dropRate > best.dropRate ? item : best));
 export const ceilingValue = (box: ProductBox): number => Math.max(...box.items.map((i) => i.value));
+/** 가장 값진 상품이 박스 가격의 몇 배인지. 정수로 버린다(2,449.99배는 2,449배) */
+export const ceilingTimes = (box: ProductBox): number => Math.floor(ceilingValue(box) / box.price + 1e-9);
 
 // ── 행(Row) 셀렉터 ─────────────────────────────────────────
 

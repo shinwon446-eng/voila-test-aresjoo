@@ -13,7 +13,7 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 import { CreditCard, Coins, Package } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { BOXES, REFUND_RATE, cashReturn, ceilingValue, dropTable, formatRate, mostCommon, type ProductBox, type ProductItem } from "@/lib/products";
+import { BOXES, REFUND_RATE, cashReturn, ceilingTimes, ceilingValue, dropTable, formatRate, mostCommon, type ProductBox, type ProductItem } from "@/lib/products";
 import { TIERS, tierOf, type TierKey } from "@/lib/tiers";
 import { COUNTRIES } from "@/lib/shipping";
 import { OPEN_PRESETS } from "@/lib/autoplay";
@@ -187,6 +187,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         <Row label={t("box.price")}>{fmt(box.price)}</Row>
         <Row label={t("box.burst")}>{fmt(gauge)}</Row>
         <Row label={t("box.top")}>{fmt(ceilingValue(box))}</Row>
+        <Row label={t("box.topTimes")}>{t("op.timesShort", { n: ceilingTimes(box).toLocaleString("en-US") })}</Row>
         <Row label={t("box.commonRow")}>{fmt(common.value)}, {formatRate(common.dropRate)}</Row>
         <Row label={t("box.realRow")}>{formatRate(realOdds)}</Row>
         <Row label={t("box.low")}>{fmt(box.guaranteedMin)}</Row>

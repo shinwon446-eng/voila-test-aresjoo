@@ -1,7 +1,7 @@
 "use client";
 /**
  * 박스 목록(메인). 결정 하나: 어느 박스를 볼지.
- * 카드에는 고르는 데 필요한 것만 둔다: 가장 값진 실물의 사진 한 장, 이름, 별점, 가격, 최고 상품가
+ * 카드에는 고르는 데 필요한 것만 둔다: 가장 값진 실물의 사진 한 장, 이름, 별점, 가격, 최대 배수(최고 상품이 낸 값의 몇 배인지. 금액은 박스 화면에 있다)
  * (2026-10-11 파운더: "정보가 너무 많다"). 대표 상품 이름 셋, 구성품 수, 실물 확률, 가장 흔한 결과는
  * 한 번 눌러 들어가는 박스 화면의 첫 줄과 표에 있다.
  * 상품으로 찾기: 원하는 상품이 어느 박스에 있는지 바로 안다(상품 행 → 그 박스).
@@ -10,7 +10,7 @@
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { BOXES, CATEGORY_FILTERS, byCategory, ceilingValue, dropTable, formatRate, sortBoxes, type BoxCategory, type ProductBox, type ProductItem } from "@/lib/products";
+import { BOXES, CATEGORY_FILTERS, byCategory, ceilingTimes, dropTable, formatRate, sortBoxes, type BoxCategory, type ProductBox, type ProductItem } from "@/lib/products";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useInventoryStore } from "@/stores/inventoryStore";
@@ -76,7 +76,7 @@ export function BoxList() {
         <>
           <Chips scroll label={t("home.filter")} value={category} onChange={setCategory} options={CATEGORY_FILTERS.map((c) => ({ value: c.key as Category, label: c.key === "all" ? t("home.all") : tc(c.key) }))} />
           <ul className="v-boxgrid">
-            {boxes.map((box, i) => { const lead = leadOf(box); return <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={fmt(box.price)} top={t("home.top", { amount: fmt(ceilingValue(box)) })} noRating={t("home.noRating")} photo={lead?.image.src ?? null} leadName={lead ? itemName(lead) : ""} eager={i < 6} /></li>; })}
+            {boxes.map((box, i) => { const lead = leadOf(box); return <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={fmt(box.price)} top={t("home.top", { n: ceilingTimes(box).toLocaleString("en-US") })} noRating={t("home.noRating")} photo={lead?.image.src ?? null} leadName={lead ? itemName(lead) : ""} eager={i < 6} /></li>; })}
           </ul>
         </>
       )}

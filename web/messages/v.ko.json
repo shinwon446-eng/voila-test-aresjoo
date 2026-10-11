@@ -27,7 +27,7 @@
     "desc": "박스를 열어 실물이나 USDT를 받습니다.",
     "filter": "분류",
     "all": "전체 박스",
-    "top": "최고 상품가 {amount}",
+    "top": "최대 {n}배",
     "search": "상품 이름으로 찾기",
     "searchNone": "그 이름의 상품이 없습니다.",
     "searchIn": "{box}, 1회 {price}",
@@ -98,7 +98,8 @@
     "lead": "1회 {price}, 최고 상품가 {top}",
     "commonRow": "가장 흔한 결과",
     "realRow": "실물이 나올 확률",
-    "notes": "알아둘 것"
+    "notes": "알아둘 것",
+    "topTimes": "최대 배수"
   },
   "reveal": {
     "skip": "건너뛰기",

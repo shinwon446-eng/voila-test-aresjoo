@@ -27,7 +27,7 @@
     "desc": "开启盲盒，获得实物或 USDT。",
     "filter": "分类",
     "all": "全部盲盒",
-    "top": "最高商品价值 {amount}",
+    "top": "最高 {n} 倍",
     "search": "按商品名称查找",
     "searchNone": "没有该名称的商品。",
     "searchIn": "{box}，每次 {price}",
@@ -98,7 +98,8 @@
     "lead": "每次 {price}，最高商品价值 {top}",
     "commonRow": "最常见结果",
     "realRow": "获得实物的概率",
-    "notes": "须知"
+    "notes": "须知",
+    "topTimes": "最高倍数"
   },
   "reveal": {
     "skip": "跳过",

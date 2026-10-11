@@ -27,7 +27,7 @@
     "desc": "Open a box to get an item or USDT.",
     "filter": "Category",
     "all": "All boxes",
-    "top": "Top item value {amount}",
+    "top": "Up to {n}x",
     "search": "Find by item name",
     "searchNone": "No item with that name.",
     "searchIn": "{box}, {price} per open",
@@ -98,7 +98,8 @@
     "lead": "{price} per open, top item value {top}",
     "commonRow": "Most common result",
     "realRow": "Chance of a physical item",
-    "notes": "Good to know"
+    "notes": "Good to know",
+    "topTimes": "Top multiple"
   },
   "reveal": {
     "skip": "Skip",

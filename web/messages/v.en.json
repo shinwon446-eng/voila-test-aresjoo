@@ -60,7 +60,7 @@
     "confirmDesc": "Paid from your balance, then opened right away.",
     "openFail": "The box did not open. Your balance is unchanged.",
     "strip": "Top items",
-    "tiers": "Odds by tier",
+    "oddsSummary": "Odds summary",
     "evNote": "Expected value is the odds-weighted average you would receive, with every result taken as USDT, divided by the box price. It is an average over many opens and does not guarantee a single result. An item taken as USDT pays {pct}% of its reference price.",
     "evBasis": "if taken as USDT",
     "genNote": "This is a generated reference image, not a photo. The item you receive is the model named above.",

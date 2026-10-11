@@ -293,6 +293,7 @@ button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 
 .v-boxlayout-reviews { order: 3; }
 .v-boxlayout-contents { order: 4; }
 .v-boxside { order: 5; }
+.v-boxlayout-odds { order: 5; }
 .v-boxlayout-notes { order: 6; }
 /* 알아둘 것: 접어 둔다. 읽고 싶은 사람만 편다 */
 .v-notes > summary { display: inline-flex; min-height: var(--v-touch); align-items: center; color: var(--v-sub); font-size: var(--v-fs-small); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; list-style: none; }
@@ -303,10 +304,10 @@ button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 
 .v-item-glyph { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--v-mute); }
 @media (min-width: 1024px) {
   .v-boxlayout { display: grid; grid-template-columns: minmax(0, 1fr) 380px; align-items: start; gap: 28px 48px; padding-bottom: 0; }
-  .v-boxlayout-main > header, .v-boxlayout-main > .v-ratinglink, .v-boxlayout-hero, .v-boxlayout-reviews, .v-boxlayout-contents, .v-boxlayout-notes { grid-column: 1; }
+  .v-boxlayout-main > header, .v-boxlayout-main > .v-ratinglink, .v-boxlayout-hero, .v-boxlayout-reviews, .v-boxlayout-contents, .v-boxlayout-odds, .v-boxlayout-notes { grid-column: 1; }
   .v-boxlayout-main > .v-ratinglink { justify-self: start; }
   .v-boxlayout-reviews .v-rvrow { margin: 0; padding: 0; }
-  .v-boxside { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; grid-column: 2; grid-row: 1 / span 5; }
+  .v-boxside { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; grid-column: 2; grid-row: 1 / span 6; }
   .v-openbar { position: static; border-top: 0; padding: 0; }
   .v-openbar .v-chips--scroll { flex-wrap: wrap; margin-inline: 0; padding-inline: 0; }
 }

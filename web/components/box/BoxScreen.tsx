@@ -188,19 +188,11 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       )}
       <BoxReviews box={box} member={boxReviews} receivedTag={receivedTag} />
       <aside className="v-boxside">
+      {/* 열기 옆에는 고르는 데 쓰는 세 줄만 둔다(2026-10-11 파운더: 오른쪽이 읽히지 않는다). 나머지 숫자는 화면 아래의 확률 요약에 있다 */}
       <Rows label={t("box.facts")}>
         <Row label={t("box.price")}>{fmt(box.price)}</Row>
-        <Row label={t("box.burst")}>{fmt(gauge)}</Row>
-        <Row label={t("box.top")}>{fmt(ceilingValue(box))}</Row>
         <Row label={t("box.topTimes")}>{t("op.timesShort", { n: ceilingTimes(box).toLocaleString("en-US") })}</Row>
-        <Row label={t("box.commonRow")}>{fmt(common.value)}, {formatRate(common.dropRate)}</Row>
-        <Row label={t("box.realRow")}>{formatRate(realOdds)}</Row>
-        <Row label={t("box.low")}>{fmt(box.guaranteedMin)}</Row>
-        <Row label={t("box.belowOdds")}>{formatRate(belowOdds)}</Row>
-        <Row label={t("box.ev")}>{(cashReturn(box) * 100).toFixed(1)}%, {t("box.evBasis")}</Row>
-      </Rows>
-      <Rows label={t("box.tiers")}>
-        {groups.map((g) => <Row key={g.key} label={t(TIER_LABEL[g.key])}>{formatRate(g.rate)}</Row>)}
+        <Row label={t("box.burst")}>{fmt(gauge)}</Row>
       </Rows>
       <div className="v-openbar">
         <div className="v-openbar-in">
@@ -245,6 +237,18 @@ export function BoxScreen({ box }: { box: ProductBox }) {
           </div>
         ))}
 
+      </section>
+      {/* 확률 요약: 구간별 확률은 위 구성품의 구간 머리에 있으므로 여기서 되풀이하지 않는다 */}
+      <section className="v-boxlayout-odds v-stack" aria-labelledby="box-odds">
+        <h2 id="box-odds" className="v-section">{t("box.oddsSummary")}</h2>
+        <Rows label={t("box.oddsSummary")}>
+          <Row label={t("box.top")}>{fmt(ceilingValue(box))}</Row>
+          <Row label={t("box.commonRow")}>{fmt(common.value)}, {formatRate(common.dropRate)}</Row>
+          <Row label={t("box.realRow")}>{formatRate(realOdds)}</Row>
+          <Row label={t("box.low")}>{fmt(box.guaranteedMin)}</Row>
+          <Row label={t("box.belowOdds")}>{formatRate(belowOdds)}</Row>
+          <Row label={t("box.ev")}>{(cashReturn(box) * 100).toFixed(1)}%, {t("box.evBasis")}</Row>
+        </Rows>
       </section>
       <details className="v-boxlayout-notes v-notes">
         <summary>{t("box.notes")}</summary>

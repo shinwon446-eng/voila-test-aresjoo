@@ -5,14 +5,14 @@ import assert from "node:assert/strict";
 import { formatCurrency, formatCurrencyCompact, convertFromUsdt, formatNative, splitCurrency, splitNative } from "../lib/formatCurrency";
 import { DEFAULT_RATES, CURRENCIES } from "../stores/currencyStore";
 
-test("정수는 소수점 없이: 80 USDT → 80 USDT / $80, 원화는 만원 아래를 버려 ₩11만", () => {
+test("정수는 소수점 없이: 80 USDT → 80 USDT / $80, 원화는 만원 아래를 버려 ₩110,000", () => {
   assert.equal(formatCurrency(80, "USDT"), "80 USDT");
   assert.equal(formatCurrency(80, "USD"), "$80");
   assert.equal(formatCurrency(0.9, "USDT"), "0.9 USDT");
   assert.equal(formatCurrency(26.6, "USDT"), "26.6 USDT");
   assert.equal(formatCurrency(2.65, "USDT"), "2.65 USDT");
   assert.equal(formatCurrency(1000.1, "USDT"), "1,000.1 USDT");
-  assert.equal(formatCurrency(80, "KRW"), "₩11만");
+  assert.equal(formatCurrency(80, "KRW"), "₩110,000");
 });
 
 test("환율: 1 USDT = 1.00 USD = 1,380 KRW", () => {
@@ -26,13 +26,13 @@ test("USDT와 USD는 소수 둘째 자리까지, KRW는 정수로 표시한다",
   assert.equal(formatCurrency(1234567.891, "USDT"), "1,234,567.89 USDT");
   assert.equal(formatCurrency(0.5, "USD"), "$0.5");
   assert.equal(formatCurrency(0.5, "KRW"), "₩690");
-  assert.equal(formatCurrency(95700, "KRW"), "₩1억 3,206만");
-  // 만원 아래는 버리기만 한다(올리지 않는다). 1만원이 안 되면 그대로
-  assert.equal(formatCurrency(14.49, "KRW"), "₩1만");
+  assert.equal(formatCurrency(95700, "KRW"), "₩132,060,000");
+  // 만원 아래는 버리기만 한다(올리지 않는다). 1만원이 안 되면 그대로. "만", "억" 글자는 쓰지 않는다
+  assert.equal(formatCurrency(14.49, "KRW"), "₩10,000");
   assert.equal(formatCurrency(7.2, "KRW"), "₩9,936");
-  assert.equal(formatCurrency(3500, "KRW"), "₩483만");
-  assert.equal(formatCurrency(72464, "KRW"), "₩1억");
-  assert.equal(formatCurrency(610000, "KRW"), "₩8억 4,180만");
+  assert.equal(formatCurrency(3500, "KRW"), "₩4,830,000");
+  assert.equal(formatCurrency(72464, "KRW"), "₩100,000,000");
+  assert.equal(formatCurrency(610000, "KRW"), "₩841,800,000");
 });
 
 test("어떤 통화를 골라도 다른 통화의 기호·단위가 섞이지 않는다", () => {
@@ -83,6 +83,6 @@ test("splitCurrency — 숫자·단위 분리가 formatCurrency 와 같은 문�
   assert.deepEqual(splitCurrency(80, "USD"), { prefix: "$", number: "80", suffix: "" });
   assert.deepEqual(splitCurrency(0.9, "USDT"), { prefix: "", number: "0.9", suffix: "USDT" });
   // 원화로 바꿔 적을 때는 만원 아래를 버린다. 이미 원화인 금액(splitNative)은 그대로 적는다
-  assert.deepEqual(splitCurrency(80, "KRW"), { prefix: "₩", number: "11만", suffix: "" });
+  assert.deepEqual(splitCurrency(80, "KRW"), { prefix: "₩", number: "110,000", suffix: "" });
   assert.deepEqual(splitNative(70000, "KRW"), { prefix: "₩", number: "70,000", suffix: "" });
 });

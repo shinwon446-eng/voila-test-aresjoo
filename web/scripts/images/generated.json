@@ -1991,8 +1991,32 @@
     "file": "camera-zeiss-supreme-zoom-radiance-28-80mm-t2-9.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-aston-martin-db12-volante": {
+    "file": "car-aston-martin-db12-volante.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-aston-martin-dbs-2023": {
+    "file": "car-aston-martin-dbs-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-aston-martin-dbs-770-ultimate": {
+    "file": "car-aston-martin-dbs-770-ultimate.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-aston-martin-dbs-volante-2023": {
+    "file": "car-aston-martin-dbs-volante-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-aston-martin-dbx707": {
+    "file": "car-aston-martin-dbx707.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-aston-martin-v12-speedster": {
     "file": "car-aston-martin-v12-speedster.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-aston-martin-v12-vantage-2023": {
+    "file": "car-aston-martin-v12-vantage-2023.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-aston-martin-valhalla": {
@@ -2007,6 +2031,18 @@
     "file": "car-aston-martin-valkyrie-spider.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-aston-martin-vanquish": {
+    "file": "car-aston-martin-vanquish.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-aston-martin-vanquish-volante": {
+    "file": "car-aston-martin-vanquish-volante.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-audi-a8-l": {
+    "file": "car-audi-a8-l.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-audi-r8-gt-rwd-2023": {
     "file": "car-audi-r8-gt-rwd-2023.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2015,20 +2051,72 @@
     "file": "car-audi-r8-v10-performance-quattro-2023.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-audi-r8-v10-performance-rwd-2023": {
+    "file": "car-audi-r8-v10-performance-rwd-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-audi-rs-6-avant-gt": {
     "file": "car-audi-rs-6-avant-gt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-audi-rs-6-avant-performance": {
+    "file": "car-audi-rs-6-avant-performance.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-audi-rs-7-performance": {
+    "file": "car-audi-rs-7-performance.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-audi-rs-e-tron-gt-performance": {
     "file": "car-audi-rs-e-tron-gt-performance.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-audi-rs-q8-performance": {
+    "file": "car-audi-rs-q8-performance.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-audi-s-e-tron-gt": {
+    "file": "car-audi-s-e-tron-gt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-audi-s8": {
+    "file": "car-audi-s8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-audi-sq8": {
+    "file": "car-audi-sq8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bentley-bentayga-ewb-mulliner": {
+    "file": "car-bentley-bentayga-ewb-mulliner.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bentley-continental-gt-azure-2024": {
+    "file": "car-bentley-continental-gt-azure-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-bentley-continental-gt-mulliner": {
     "file": "car-bentley-continental-gt-mulliner.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-bentley-continental-gt-speed": {
+    "file": "car-bentley-continental-gt-speed.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bentley-continental-gt-speed-w12-2024": {
+    "file": "car-bentley-continental-gt-speed-w12-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-bentley-continental-gtc-mulliner": {
     "file": "car-bentley-continental-gtc-mulliner.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bentley-continental-gtc-speed": {
+    "file": "car-bentley-continental-gtc-speed.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bentley-flying-spur-mulliner": {
+    "file": "car-bentley-flying-spur-mulliner.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-bentley-mulliner-bacalar": {
@@ -2039,16 +2127,56 @@
     "file": "car-bentley-mulliner-batur.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-bentley-mulsanne-2020": {
+    "file": "car-bentley-mulsanne-2020.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bentley-mulsanne-speed-2020": {
+    "file": "car-bentley-mulsanne-speed-2020.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-blackvue": {
     "file": "car-blackvue.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-760i-xdrive-sedan": {
+    "file": "car-bmw-760i-xdrive-sedan.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-bmw-i7-m70": {
     "file": "car-bmw-i7-m70.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-bmw-i7-xdrive60": {
+    "file": "car-bmw-i7-xdrive60.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-m4-cs": {
+    "file": "car-bmw-m4-cs.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-m4-csl-2023": {
+    "file": "car-bmw-m4-csl-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-m5-touring": {
+    "file": "car-bmw-m5-touring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-bmw-m8-competition-convertible": {
     "file": "car-bmw-m8-competition-convertible.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-m8-competition-coupe": {
+    "file": "car-bmw-m8-competition-coupe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-x5-m-competition": {
+    "file": "car-bmw-x5-m-competition.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-x6-m-competition": {
+    "file": "car-bmw-x6-m-competition.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-bmw-xm-2024": {
@@ -2067,6 +2195,18 @@
     "file": "car-cadillac-celestiq.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-cadillac-ct5-v-blackwing": {
+    "file": "car-cadillac-ct5-v-blackwing.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-ct6-v-2020": {
+    "file": "car-cadillac-ct6-v-2020.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-escalade-esv-luxury": {
+    "file": "car-cadillac-escalade-esv-luxury.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-cadillac-escalade-iq-sport-1": {
     "file": "car-cadillac-escalade-iq-sport-1.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2075,8 +2215,28 @@
     "file": "car-cadillac-escalade-iql-luxury-1.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-cadillac-escalade-luxury": {
+    "file": "car-cadillac-escalade-luxury.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-escalade-premium-luxury": {
+    "file": "car-cadillac-escalade-premium-luxury.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-escalade-sport-platinum": {
+    "file": "car-cadillac-escalade-sport-platinum.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-cadillac-escalade-v": {
     "file": "car-cadillac-escalade-v.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-lyriq-v": {
+    "file": "car-cadillac-lyriq-v.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-vistiq": {
+    "file": "car-cadillac-vistiq.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-carplay-adapter": {
@@ -2099,6 +2259,34 @@
     "file": "car-ev-cable.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-ford-bronco-raptor": {
+    "file": "car-ford-bronco-raptor.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-bronco-stroppe-edition": {
+    "file": "car-ford-bronco-stroppe-edition.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-expedition-king-ranch": {
+    "file": "car-ford-expedition-king-ranch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-expedition-tremor": {
+    "file": "car-ford-expedition-tremor.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-f-150-lightning-lariat": {
+    "file": "car-ford-f-150-lightning-lariat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-f-150-lightning-platinum": {
+    "file": "car-ford-f-150-lightning-platinum.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-f-150-raptor": {
+    "file": "car-ford-f-150-raptor.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-ford-f-150-raptor-r": {
     "file": "car-ford-f-150-raptor-r.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2111,12 +2299,32 @@
     "file": "car-ford-mustang-gtd.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-ford-mustang-shelby-gt500-2022": {
+    "file": "car-ford-mustang-shelby-gt500-2022.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-ford-super-duty-f-450-limited": {
     "file": "car-ford-super-duty-f-450-limited.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-garmin-dash": {
     "file": "car-garmin-dash.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-genesis-electrified-g80-2023": {
+    "file": "car-genesis-electrified-g80-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-genesis-electrified-gv70-advanced": {
+    "file": "car-genesis-electrified-gv70-advanced.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-genesis-electrified-gv70-prestige": {
+    "file": "car-genesis-electrified-gv70-prestige.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-genesis-g80-3-5t-sport-prestige": {
+    "file": "car-genesis-g80-3-5t-sport-prestige.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-genesis-g90-3-5t": {
@@ -2127,6 +2335,22 @@
     "file": "car-genesis-g90-3-5t-e-supercharger.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-genesis-gv60-performance-awd": {
+    "file": "car-genesis-gv60-performance-awd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-genesis-gv70-3-5t-sport-prestige": {
+    "file": "car-genesis-gv70-3-5t-sport-prestige.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-genesis-gv80-3-5t-advanced": {
+    "file": "car-genesis-gv80-3-5t-advanced.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-genesis-gv80-3-5t-prestige": {
+    "file": "car-genesis-gv80-3-5t-prestige.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-genesis-gv80-coupe-3-5t": {
     "file": "car-genesis-gv80-coupe-3-5t.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2135,12 +2359,32 @@
     "file": "car-genesis-gv80-coupe-3-5t-e-supercharger.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-hyundai-ioniq-5-limited-awd": {
+    "file": "car-hyundai-ioniq-5-limited-awd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-hyundai-ioniq-5-n": {
     "file": "car-hyundai-ioniq-5-n.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-hyundai-ioniq-5-sel": {
+    "file": "car-hyundai-ioniq-5-sel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-ioniq-5-xrt": {
+    "file": "car-hyundai-ioniq-5-xrt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-ioniq-6-limited-awd": {
+    "file": "car-hyundai-ioniq-6-limited-awd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-hyundai-ioniq-9-performance-calligraphy": {
     "file": "car-hyundai-ioniq-9-performance-calligraphy.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-ioniq-9-s": {
+    "file": "car-hyundai-ioniq-9-s.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-hyundai-nexo-blue": {
@@ -2151,6 +2395,18 @@
     "file": "car-hyundai-nexo-limited.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-hyundai-palisade-calligraphy": {
+    "file": "car-hyundai-palisade-calligraphy.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-palisade-xrt-pro": {
+    "file": "car-hyundai-palisade-xrt-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-santa-fe-calligraphy": {
+    "file": "car-hyundai-santa-fe-calligraphy.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-inflator": {
     "file": "car-inflator.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2159,8 +2415,20 @@
     "file": "car-karcher.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-kia-carnival-sx-prestige": {
+    "file": "car-kia-carnival-sx-prestige.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-kia-ev6-gt": {
     "file": "car-kia-ev6-gt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-ev6-gt-line-awd": {
+    "file": "car-kia-ev6-gt-line-awd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-ev6-wind-awd": {
+    "file": "car-kia-ev6-wind-awd.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-kia-ev9-gt-line": {
@@ -2171,12 +2439,64 @@
     "file": "car-kia-ev9-land-awd.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-kia-ev9-light": {
+    "file": "car-kia-ev9-light.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-kia-ev9-wind-awd": {
     "file": "car-kia-ev9-wind-awd.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-kia-k900-2020": {
+    "file": "car-kia-k900-2020.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-sorento-plug-in-hybrid-ex": {
+    "file": "car-kia-sorento-plug-in-hybrid-ex.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-stinger-gt2-2023": {
+    "file": "car-kia-stinger-gt2-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-telluride-sx-prestige-x-pro": {
+    "file": "car-kia-telluride-sx-prestige-x-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-defender-110-v8": {
+    "file": "car-land-rover-defender-110-v8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-defender-130-v8": {
+    "file": "car-land-rover-defender-130-v8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-defender-90-v8": {
+    "file": "car-land-rover-defender-90-v8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-defender-octa": {
+    "file": "car-land-rover-defender-octa.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-defender-octa-edition-one": {
+    "file": "car-land-rover-defender-octa-edition-one.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-land-rover-range-rover-autobiography-p530": {
     "file": "car-land-rover-range-rover-autobiography-p530.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-range-rover-se-p400": {
+    "file": "car-land-rover-range-rover-se-p400.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-range-rover-se-p550e": {
+    "file": "car-land-rover-range-rover-se-p550e.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-range-rover-sport-autobiography-p550e": {
+    "file": "car-land-rover-range-rover-sport-autobiography-p550e.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-land-rover-range-rover-sport-sv-edition-two": {
@@ -2191,24 +2511,80 @@
     "file": "car-land-rover-range-rover-sv-p615.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-lexus-gx-550-luxury-plus": {
+    "file": "car-lexus-gx-550-luxury-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-lc-500": {
+    "file": "car-lexus-lc-500.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-lc-500-convertible": {
+    "file": "car-lexus-lc-500-convertible.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-lc-500h": {
+    "file": "car-lexus-lc-500h.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-lexus-lfa-2012": {
     "file": "car-lexus-lfa-2012.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-ls-500": {
+    "file": "car-lexus-ls-500.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-lexus-ls-500h": {
     "file": "car-lexus-ls-500h.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-lexus-lx-600-premium": {
+    "file": "car-lexus-lx-600-premium.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-lexus-lx-600-ultra-luxury": {
     "file": "car-lexus-lx-600-ultra-luxury.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-lx-700h-overtrail": {
+    "file": "car-lexus-lx-700h-overtrail.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-lexus-lx-700h-ultra-luxury": {
     "file": "car-lexus-lx-700h-ultra-luxury.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-lexus-rc-f-final-edition": {
+    "file": "car-lexus-rc-f-final-edition.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-aviator-black-label": {
+    "file": "car-lincoln-aviator-black-label.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-aviator-black-label-grand-touring-2023": {
+    "file": "car-lincoln-aviator-black-label-grand-touring-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-aviator-grand-touring-2023": {
+    "file": "car-lincoln-aviator-grand-touring-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-aviator-reserve": {
+    "file": "car-lincoln-aviator-reserve.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-continental-black-label-2020": {
+    "file": "car-lincoln-continental-black-label-2020.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-lincoln-continental-coach-door-edition-2020": {
     "file": "car-lincoln-continental-coach-door-edition-2020.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-nautilus-black-label": {
+    "file": "car-lincoln-nautilus-black-label.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-lincoln-navigator-black-label": {
@@ -2223,12 +2599,52 @@
     "file": "car-lincoln-navigator-l-reserve.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-lincoln-navigator-premiere-2024": {
+    "file": "car-lincoln-navigator-premiere-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-navigator-reserve": {
+    "file": "car-lincoln-navigator-reserve.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-madone": {
     "file": "car-madone.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-maserati-ghibli-334-ultima": {
+    "file": "car-maserati-ghibli-334-ultima.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maserati-grancabrio": {
+    "file": "car-maserati-grancabrio.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maserati-grancabrio-folgore": {
+    "file": "car-maserati-grancabrio-folgore.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maserati-grancabrio-trofeo": {
+    "file": "car-maserati-grancabrio-trofeo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maserati-granturismo-folgore": {
+    "file": "car-maserati-granturismo-folgore.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maserati-granturismo-modena": {
+    "file": "car-maserati-granturismo-modena.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maserati-granturismo-trofeo": {
+    "file": "car-maserati-granturismo-trofeo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-maserati-gt2-stradale": {
     "file": "car-maserati-gt2-stradale.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maserati-levante-trofeo-2024": {
+    "file": "car-maserati-levante-trofeo-2024.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-maserati-mc20": {
@@ -2243,6 +2659,18 @@
     "file": "car-maserati-mcxtrema.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-maybach-57-2012": {
+    "file": "car-maybach-57-2012.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maybach-57-s-2012": {
+    "file": "car-maybach-57-s-2012.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maybach-62-2012": {
+    "file": "car-maybach-62-2012.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-maybach-62-landaulet-2012": {
     "file": "car-maybach-62-landaulet-2012.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2255,8 +2683,28 @@
     "file": "car-maybach-g-650-landaulet-2018.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-maybach-s-580-4matic": {
+    "file": "car-maybach-s-580-4matic.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-maybach-s-600-pullman-2016": {
     "file": "car-maybach-s-600-pullman-2016.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maybach-s-650-2020": {
+    "file": "car-maybach-s-650-2020.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maybach-s-650-cabriolet-2017": {
+    "file": "car-maybach-s-650-cabriolet-2017.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maybach-s-680-4matic": {
+    "file": "car-maybach-s-680-4matic.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maybach-sl-680-monogram-series": {
+    "file": "car-maybach-sl-680-monogram-series.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-noco": {
@@ -2303,6 +2751,22 @@
     "file": "car-pioneer.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-porsche-911-dakar": {
+    "file": "car-porsche-911-dakar.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-porsche-911-gt3": {
+    "file": "car-porsche-911-gt3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-porsche-911-gt3-rs": {
+    "file": "car-porsche-911-gt3-rs.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-porsche-911-gt3-touring": {
+    "file": "car-porsche-911-gt3-touring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-porsche-911-s-t": {
     "file": "car-porsche-911-s-t.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2319,12 +2783,56 @@
     "file": "car-porsche-911-turbo-s-cabriolet.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-porsche-panamera-turbo-s-e-hybrid": {
+    "file": "car-porsche-panamera-turbo-s-e-hybrid.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-porsche-taycan-turbo-gt": {
+    "file": "car-porsche-taycan-turbo-gt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-porsche-taycan-turbo-s": {
+    "file": "car-porsche-taycan-turbo-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-porsche-taycan-turbo-s-cross-turismo": {
+    "file": "car-porsche-taycan-turbo-s-cross-turismo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-rolls-royce-black-badge-cullinan-2024": {
+    "file": "car-rolls-royce-black-badge-cullinan-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-rolls-royce-black-badge-cullinan-series-ii": {
     "file": "car-rolls-royce-black-badge-cullinan-series-ii.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-rolls-royce-black-badge-dawn-2023": {
+    "file": "car-rolls-royce-black-badge-dawn-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-rolls-royce-black-badge-ghost-2024": {
+    "file": "car-rolls-royce-black-badge-ghost-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-rolls-royce-black-badge-ghost-series-ii": {
+    "file": "car-rolls-royce-black-badge-ghost-series-ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-rolls-royce-black-badge-spectre": {
     "file": "car-rolls-royce-black-badge-spectre.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-rolls-royce-black-badge-wraith-2023": {
+    "file": "car-rolls-royce-black-badge-wraith-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-rolls-royce-cullinan-series-ii": {
+    "file": "car-rolls-royce-cullinan-series-ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-rolls-royce-ghost-extended-series-ii": {
+    "file": "car-rolls-royce-ghost-extended-series-ii.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-rolls-royce-phantom-extended-series-ii": {
@@ -2333,6 +2841,10 @@
   },
   "car-rolls-royce-phantom-series-ii": {
     "file": "car-rolls-royce-phantom-series-ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-rolls-royce-spectre": {
+    "file": "car-rolls-royce-spectre.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-rr-cullinan-bb": {
@@ -2351,6 +2863,18 @@
     "file": "car-supercar-bugatti-bolide.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-supercar-bugatti-chiron-2022": {
+    "file": "car-supercar-bugatti-chiron-2022.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-supercar-bugatti-chiron-pur-sport": {
+    "file": "car-supercar-bugatti-chiron-pur-sport.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-supercar-bugatti-chiron-super-sport": {
+    "file": "car-supercar-bugatti-chiron-super-sport.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-supercar-bugatti-divo": {
     "file": "car-supercar-bugatti-divo.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2363,12 +2887,64 @@
     "file": "car-supercar-bugatti-w16-mistral.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-supercar-ferrari-f80": {
+    "file": "car-supercar-ferrari-f80.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-supercar-koenigsegg-jesko": {
+    "file": "car-supercar-koenigsegg-jesko.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-supercar-lamborghini-countach-lpi-800-4": {
+    "file": "car-supercar-lamborghini-countach-lpi-800-4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-supercar-lamborghini-sian-fkp-37": {
+    "file": "car-supercar-lamborghini-sian-fkp-37.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-supercar-pagani-huayra-roadster-bc": {
+    "file": "car-supercar-pagani-huayra-roadster-bc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-cybertruck-awd": {
+    "file": "car-tesla-cybertruck-awd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-cybertruck-awd-foundation-series": {
+    "file": "car-tesla-cybertruck-awd-foundation-series.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-tesla-cybertruck-cyberbeast": {
     "file": "car-tesla-cybertruck-cyberbeast.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-tesla-cybertruck-cyberbeast-foundation-series": {
     "file": "car-tesla-cybertruck-cyberbeast-foundation-series.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-cybertruck-long-range": {
+    "file": "car-tesla-cybertruck-long-range.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-s-awd": {
+    "file": "car-tesla-model-s-awd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-s-plaid": {
+    "file": "car-tesla-model-s-plaid.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-x-awd": {
+    "file": "car-tesla-model-x-awd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-x-plaid": {
+    "file": "car-tesla-model-x-plaid.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-y-launch-series": {
+    "file": "car-tesla-model-y-launch-series.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-tesla-roadster-2010": {
@@ -2391,12 +2967,44 @@
     "file": "car-thule-rack.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-toyota-4runner-trailhunter": {
+    "file": "car-toyota-4runner-trailhunter.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-4runner-trd-pro": {
+    "file": "car-toyota-4runner-trd-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-gr-supra-mkv-final-edition": {
+    "file": "car-toyota-gr-supra-mkv-final-edition.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-land-cruiser": {
+    "file": "car-toyota-land-cruiser.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-toyota-sequoia-capstone": {
     "file": "car-toyota-sequoia-capstone.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-toyota-sequoia-sr5": {
+    "file": "car-toyota-sequoia-sr5.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-toyota-sequoia-trd-pro": {
     "file": "car-toyota-sequoia-trd-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-tacoma-trailhunter": {
+    "file": "car-toyota-tacoma-trailhunter.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-tacoma-trd-pro": {
+    "file": "car-toyota-tacoma-trd-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-tundra-1794-edition": {
+    "file": "car-toyota-tundra-1794-edition.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-toyota-tundra-capstone": {
@@ -2419,8 +3027,40 @@
     "file": "car-volvo-ex90-twin-motor-plus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-volvo-s90-t8-ultra": {
+    "file": "car-volvo-s90-t8-ultra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-volvo-v60-t8-polestar-engineered": {
+    "file": "car-volvo-v60-t8-polestar-engineered.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-volvo-v90-cross-country-b6-plus": {
+    "file": "car-volvo-v90-cross-country-b6-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-volvo-v90-cross-country-b6-ultra": {
+    "file": "car-volvo-v90-cross-country-b6-ultra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-volvo-xc60-t8-polestar-engineered": {
     "file": "car-volvo-xc60-t8-polestar-engineered.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-volvo-xc90-b5-core": {
+    "file": "car-volvo-xc90-b5-core.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-volvo-xc90-b6-plus": {
+    "file": "car-volvo-xc90-b6-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-volvo-xc90-b6-ultra": {
+    "file": "car-volvo-xc90-b6-ultra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-volvo-xc90-t8-core": {
+    "file": "car-volvo-xc90-t8-core.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-volvo-xc90-t8-ultra": {

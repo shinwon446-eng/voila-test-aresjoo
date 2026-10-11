@@ -27,7 +27,6 @@
     "desc": "박스를 열어 실물이나 USDT를 받습니다.",
     "filter": "분류",
     "all": "전체 박스",
-    "top": "최대 {n}배",
     "search": "상품 이름으로 찾기",
     "searchNone": "그 이름의 상품이 없습니다.",
     "searchIn": "{box}, 1회 {price}",

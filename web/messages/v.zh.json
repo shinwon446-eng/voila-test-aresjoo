@@ -27,7 +27,6 @@
     "desc": "开启盲盒，获得实物或 USDT。",
     "filter": "分类",
     "all": "全部盲盒",
-    "top": "最高 {n} 倍",
     "search": "按商品名称查找",
     "searchNone": "没有该名称的商品。",
     "searchIn": "{box}，每次 {price}",

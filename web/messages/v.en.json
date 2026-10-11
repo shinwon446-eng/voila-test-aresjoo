@@ -27,7 +27,6 @@
     "desc": "Open a box to get an item or USDT.",
     "filter": "Category",
     "all": "All boxes",
-    "top": "Up to {n}x",
     "search": "Find by item name",
     "searchNone": "No item with that name.",
     "searchIn": "{box}, {price} per open",

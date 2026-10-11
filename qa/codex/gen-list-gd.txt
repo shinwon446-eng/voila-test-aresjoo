@@ -1,0 +1,36 @@
+- gd-bar-500g | Gold Bar 500g (순금 골드바 500g)
+- gd-bar-100g | Gold Bar 100g (순금 골드바 100g)
+- gd-bar-50g | Gold Bar 50g (순금 골드바 50g)
+- gd-bar-1oz | Gold Bar 1 oz (순금 골드바 1온스)
+- gd-bar-20g | Gold Bar 20g (순금 골드바 20g)
+- gd-bar-10g | Gold Bar 10g (순금 골드바 10g)
+- gd-cartier-juste | Cartier Juste un Clou Bracelet (까르띠에 저스트 앵 클루 브레이슬릿)
+- gd-cartier-trinity | Cartier Trinity Ring (까르띠에 트리니티 링)
+- gd-vca-alhambra | Van Cleef & Arpels Vintage Alhambra Pendant (반클리프 아펠 빈티지 알함브라 펜던트)
+- gd-vca-sweet | Van Cleef & Arpels Sweet Alhambra Bracelet (반클리프 아펠 스위트 알함브라 브레이슬릿)
+- gd-tiffany-t1 | Tiffany T1 Ring (티파니 T1 링)
+- gd-tiffany-hardwear | Tiffany HardWear Link Bracelet (티파니 하드웨어 링크 브레이슬릿)
+- gd-tiffany-knot | Tiffany Knot Double Row Ring (티파니 낫 더블 로우 링)
+- gd-bulgari-bzero | Bulgari B.zero1 Ring (불가리 비제로원 링)
+- gd-bulgari-serpenti | Bulgari Serpenti Viper Bracelet (불가리 세르펜티 바이퍼 브레이슬릿)
+- gd-chaumet-bee | Chaumet Bee My Love Ring (쇼메 비 마이 러브 링)
+- gd-boucheron-quatre | Boucheron Quatre Classique Ring (부쉐론 콰트르 클래식 링)
+- gd-mikimoto-strand | Mikimoto Akoya Pearl Strand (미키모토 아코야 진주 목걸이) | 아코야 진주 한 줄 목걸이, 둥글게 놓음
+- gd-diamond-studs-1ct | Diamond Stud Earrings 1 ct (다이아몬드 스터드 귀걸이 1캐럿)
+- gd-diamond-tennis | Diamond Tennis Bracelet 3 ct (다이아몬드 테니스 브레이슬릿 3캐럿)
+- gd-solitaire-ring | Diamond Solitaire Ring 0.5 ct (다이아몬드 솔리테어 링 0.5캐럿)
+- gd-gold-chain-18k | 18K Gold Chain Necklace (18K 골드 체인 목걸이)
+- gd-gold-bangle-24k | 24K Gold Bangle (24K 골드 뱅글)
+- gd-gold-ring-24k | 24K Gold Ring 3.75g (24K 골드 링 3.75g)
+- gd-silver-100oz | Silver Bar 100 oz (실버바 100온스) | 은괴 하나, 각인은 '100 OZ' 와 '999' 만
+- gd-platinum-1oz | Platinum Bar 1 oz (플래티넘바 1온스) | 플래티넘 바 하나, 각인은 '1 OZ' 와 '999.5' 만
+- gd-bar-5g | Gold Bar 5g (순금 골드바 5g)
+- gd-pandora-set | Pandora Charm Bracelet Set (판도라 참 브레이슬릿 세트) | 참이 몇 개 달린 실버 참 팔찌 하나
+- gd-swarovski-set | Swarovski Necklace and Earrings Set (스와로브스키 목걸이와 귀걸이 세트) | 크리스털 목걸이 하나와 귀걸이 한 쌍
+- gd-silver-10oz | Silver Bar 10 oz (실버바 10온스) | 은괴 하나, 각인은 '10 OZ' 와 '999' 만
+- gd-gold-earrings-14k | 14K Gold Hoop Earrings (14K 골드 후프 귀걸이)
+- gd-tiffany-heart-tag | Return to Tiffany Heart Tag Pendant (티파니 리턴 투 티파니 하트 태그 펜던트)
+- gd-bar-2g | Gold Bar 2g (순금 골드바 2g)
+- gd-silver-chain | Sterling Silver Chain Necklace (스털링 실버 체인 목걸이)
+- gd-jewelry-box | Leather Jewelry Box (가죽 주얼리 보관함) | 닫힌 가죽 주얼리 박스 하나
+- gd-scale | Jewelry Scale (보석용 정밀 저울) | 작은 디지털 주얼리 저울, 화면은 꺼짐

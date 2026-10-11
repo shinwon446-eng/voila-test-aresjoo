@@ -1,26 +1,350 @@
 {
+  "bg-bag-charm": {
+    "file": "bg-bag-charm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-bag-organizer": {
+    "file": "bg-bag-organizer.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-balenciaga-city": {
+    "file": "bg-balenciaga-city.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bg-birkin-25": {
     "file": "bg-birkin-25.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-bottega-cassette": {
+    "file": "bg-bottega-cassette.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-bottega-jodie": {
+    "file": "bg-bottega-jodie.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-burberry-lola": {
+    "file": "bg-burberry-lola.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-celine-triomphe": {
+    "file": "bg-celine-triomphe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-chanel-22": {
+    "file": "bg-chanel-22.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-chanel-boy": {
+    "file": "bg-chanel-boy.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-chanel-cardholder": {
+    "file": "bg-chanel-cardholder.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bg-chanel-classic-m": {
     "file": "bg-chanel-classic-m.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bg-chloe-woody": {
+    "file": "bg-chloe-woody.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-coach-tabby": {
+    "file": "bg-coach-tabby.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-coach-wristlet": {
+    "file": "bg-coach-wristlet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-constance-18": {
+    "file": "bg-constance-18.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-dior-book-tote": {
+    "file": "bg-dior-book-tote.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-dior-lady": {
+    "file": "bg-dior-lady.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-dior-saddle": {
+    "file": "bg-dior-saddle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-dust-bag-set": {
+    "file": "bg-dust-bag-set.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-evelyne": {
+    "file": "bg-evelyne.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-fendi-baguette": {
+    "file": "bg-fendi-baguette.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-goyard-st-louis": {
+    "file": "bg-goyard-st-louis.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-gucci-belt": {
+    "file": "bg-gucci-belt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-gucci-jackie": {
+    "file": "bg-gucci-jackie.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-gucci-marmont": {
+    "file": "bg-gucci-marmont.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-hermes-bearn": {
+    "file": "bg-hermes-bearn.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-kate-spade-wallet": {
+    "file": "bg-kate-spade-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-kelly-25": {
+    "file": "bg-kelly-25.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-loewe-puzzle": {
+    "file": "bg-loewe-puzzle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-longchamp-pliage": {
+    "file": "bg-longchamp-pliage.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-lv-capucines": {
+    "file": "bg-lv-capucines.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-lv-cardholder": {
+    "file": "bg-lv-cardholder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bg-lv-neverfull": {
     "file": "bg-lv-neverfull.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-lv-onthego": {
+    "file": "bg-lv-onthego.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-lv-speedy": {
+    "file": "bg-lv-speedy.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-lv-wallet": {
+    "file": "bg-lv-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-marc-jacobs-tote": {
+    "file": "bg-marc-jacobs-tote.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-miumiu-wander": {
+    "file": "bg-miumiu-wander.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-polene-numero-un": {
+    "file": "bg-polene-numero-un.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-prada-galleria": {
+    "file": "bg-prada-galleria.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-prada-re-edition": {
+    "file": "bg-prada-re-edition.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-rimowa-check-in": {
+    "file": "bg-rimowa-check-in.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-samsonite-cabin": {
+    "file": "bg-samsonite-cabin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-silk-scarf": {
+    "file": "bg-silk-scarf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-tory-burch-kira": {
+    "file": "bg-tory-burch-kira.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-tumi-alpha": {
+    "file": "bg-tumi-alpha.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bg-ysl-loulou": {
+    "file": "bg-ysl-loulou.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-bar-100g": {
+    "file": "gd-bar-100g.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-bar-10g": {
+    "file": "gd-bar-10g.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gd-bar-1kg": {
     "file": "gd-bar-1kg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gd-bar-1oz": {
+    "file": "gd-bar-1oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-bar-20g": {
+    "file": "gd-bar-20g.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-bar-2g": {
+    "file": "gd-bar-2g.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-bar-500g": {
+    "file": "gd-bar-500g.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-bar-50g": {
+    "file": "gd-bar-50g.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-bar-5g": {
+    "file": "gd-bar-5g.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-boucheron-quatre": {
+    "file": "gd-boucheron-quatre.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-bulgari-bzero": {
+    "file": "gd-bulgari-bzero.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-bulgari-serpenti": {
+    "file": "gd-bulgari-serpenti.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-cartier-juste": {
+    "file": "gd-cartier-juste.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gd-cartier-love": {
     "file": "gd-cartier-love.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gd-cartier-trinity": {
+    "file": "gd-cartier-trinity.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-chaumet-bee": {
+    "file": "gd-chaumet-bee.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gd-coin-1oz": {
     "file": "gd-coin-1oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-diamond-studs-1ct": {
+    "file": "gd-diamond-studs-1ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-diamond-tennis": {
+    "file": "gd-diamond-tennis.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-gold-bangle-24k": {
+    "file": "gd-gold-bangle-24k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-gold-chain-18k": {
+    "file": "gd-gold-chain-18k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-gold-earrings-14k": {
+    "file": "gd-gold-earrings-14k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-gold-ring-24k": {
+    "file": "gd-gold-ring-24k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-jewelry-box": {
+    "file": "gd-jewelry-box.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-mikimoto-strand": {
+    "file": "gd-mikimoto-strand.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-pandora-set": {
+    "file": "gd-pandora-set.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-platinum-1oz": {
+    "file": "gd-platinum-1oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-scale": {
+    "file": "gd-scale.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-silver-100oz": {
+    "file": "gd-silver-100oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-silver-10oz": {
+    "file": "gd-silver-10oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-silver-chain": {
+    "file": "gd-silver-chain.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-solitaire-ring": {
+    "file": "gd-solitaire-ring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-swarovski-set": {
+    "file": "gd-swarovski-set.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-tiffany-hardwear": {
+    "file": "gd-tiffany-hardwear.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-tiffany-heart-tag": {
+    "file": "gd-tiffany-heart-tag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-tiffany-knot": {
+    "file": "gd-tiffany-knot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-tiffany-t1": {
+    "file": "gd-tiffany-t1.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-vca-alhambra": {
+    "file": "gd-vca-alhambra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gd-vca-sweet": {
+    "file": "gd-vca-sweet.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   }
 }

@@ -245,7 +245,7 @@ await run("s6", async () => {
   await s.page.waitForFunction(() => /기다리는 중/.test(document.querySelector(".v-op")?.innerText || ""), null, { timeout: 5000 }); await s.shot("17-pending-settlement");
   l = await s.ledger(); const t = await s.text();
   check("s6", "정산 대기: 받았다고 말하지 않고 잔액도 그대로", near(l.balance, START - s.price) && !/USDT로 받았습니다/.test(t), `balance ${l.balance}`);
-  check("s6", "정산 대기: 새 구매 링크를 내리고 다시 확인을 준다", !/한 번 더 열기/.test(t) && /다시 확인/.test(t), t.slice(-80));
+  check("s6", "정산 대기: 새 구매 링크를 내리고 다시 확인을 준다", !/한 번 더 언박싱/.test(t) && /다시 확인/.test(t), t.slice(-80));
   await s.context.close();
 
   s = await session({ fixture: "single:itemLow" });
@@ -290,7 +290,7 @@ await run("s8", async () => {
     const s = await session({ fixture: "seq:" + name });
     let expect = START; let bad = 0;
     for (let i = 0; i < s.fx.steps.length; i++) {
-      await (i === 0 ? s.openBtn() : s.page.locator(".v-op-actions").getByText(/한 번 더 열기/).first()).click();
+      await (i === 0 ? s.openBtn() : s.page.locator(".v-op-actions").getByText(/한 번 더 언박싱/).first()).click();
       for (let k = 0; k < 60 && (await s.ledger()).opens < i + 1; k++) await s.page.waitForTimeout(100);
       await s.settled(); await s.page.waitForTimeout(450);
       expect = after(s.fx.steps[i], s.price, expect);
@@ -455,7 +455,7 @@ await run("s15", async () => {
   s = await session({ fixture: "seq:lowThenBurst" });
   let expect = START;
   for (let i = 0; i < s.fx.steps.length; i++) {
-    await (i === 0 ? s.openBtn() : s.page.locator(".v-op-actions").getByText(/한 번 더 열기/).first()).click();
+    await (i === 0 ? s.openBtn() : s.page.locator(".v-op-actions").getByText(/한 번 더 언박싱/).first()).click();
     for (let k = 0; k < 60 && (await s.ledger()).opens < i + 1; k++) await s.page.waitForTimeout(100);
     await s.settled(); await s.page.waitForTimeout(450);
     const last = i === s.fx.steps.length - 1;

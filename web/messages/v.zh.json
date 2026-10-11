@@ -52,7 +52,7 @@
     "odds": "概率 {pct}",
     "qty": "数量",
     "qtyN": "{n} 个",
-    "open": "开 {n} 个，{amount}",
+    "open": "{n, plural, =1 {{amount} 开箱} other {开 # 个 {amount}}}",
     "loginToOpen": "登录后开箱",
     "short": "余额 {balance}。还需要 {missing}。",
     "charge": "充值 USDT",
@@ -95,7 +95,7 @@
     "realRow": "获得实物的概率",
     "notes": "须知",
     "topTimes": "最高倍数",
-    "openFree": "免费开启 {n} 个",
+    "openFree": "{n, plural, =1 {免费开箱} other {免费开 # 个}}",
     "freeLeft": "本盲盒可免费开启 {n} 次。",
     "reviewsAll": "查看全部评价",
     "oddsTiers": "各区间概率",
@@ -115,7 +115,7 @@
     "ship": "配送到家",
     "code": "领取兑换码",
     "take": "领取 USDT（{amount}）",
-    "again": "再开一次，{amount}",
+    "again": "再开一次 {amount}",
     "toInventory": "到保管箱领取",
     "boxes": "盲盒列表",
     "results": "开箱结果",
@@ -128,7 +128,7 @@
     "shippedTag": "已申请配送",
     "takenTag": "已领取 USDT",
     "rowHintReceive": "点按一行即可领取或验证该商品。",
-    "againFree": "再免费开一次"
+    "againFree": "免费再开一次"
   },
   "login": {
     "title": "登录",
@@ -505,11 +505,11 @@
   },
   "hero": {
     "desc": "注册即可免费开启 {n} 个。",
-    "cta": "注册免费开启",
+    "cta": "注册并免费开箱",
     "descIn": "现在即可开启。",
     "ctaIn": "查看盲盒",
     "descFree": "还可免费开启 {n} 个。",
-    "ctaFree": "免费开启"
+    "ctaFree": "免费开箱"
   },
   "footer": {
     "crs": "客户关系摘要",

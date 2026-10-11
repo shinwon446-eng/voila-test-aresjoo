@@ -52,8 +52,8 @@
     "odds": "Odds {pct}",
     "qty": "Quantity",
     "qtyN": "{n}",
-    "open": "Open {n}, {amount}",
-    "loginToOpen": "Log in to open",
+    "open": "{n, plural, =1 {Unbox for {amount}} other {Unbox # for {amount}}}",
+    "loginToOpen": "Log in to unbox",
     "short": "Balance {balance}. You need {missing} more.",
     "charge": "Add USDT",
     "auto": "Open automatically",
@@ -95,7 +95,7 @@
     "realRow": "Chance of a physical item",
     "notes": "Good to know",
     "topTimes": "Top multiple",
-    "openFree": "Open {n} for free",
+    "openFree": "{n, plural, =1 {Unbox free} other {Unbox # free}}",
     "freeLeft": "You can open this box {n} times for free.",
     "reviewsAll": "See all reviews",
     "oddsTiers": "Odds by tier",
@@ -115,7 +115,7 @@
     "ship": "Ship it",
     "code": "Get the code",
     "take": "Take USDT ({amount})",
-    "again": "Open again, {amount}",
+    "again": "Unbox again for {amount}",
     "toInventory": "Receive from inventory",
     "boxes": "All boxes",
     "results": "Results",
@@ -128,7 +128,7 @@
     "shippedTag": "shipping requested",
     "takenTag": "taken as USDT",
     "rowHintReceive": "Tap a row to receive or verify that item.",
-    "againFree": "Open again for free"
+    "againFree": "Unbox again free"
   },
   "login": {
     "title": "Log in",
@@ -505,11 +505,11 @@
   },
   "hero": {
     "desc": "Sign up and open {n} for free.",
-    "cta": "Sign up and open free",
+    "cta": "Sign up and unbox free",
     "descIn": "Ready to open now.",
     "ctaIn": "View box",
     "descFree": "You have {n} free opens left.",
-    "ctaFree": "Open for free"
+    "ctaFree": "Unbox free"
   },
   "footer": {
     "crs": "Customer relationship summary",

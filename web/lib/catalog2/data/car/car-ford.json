@@ -1,0 +1,491 @@
+{
+ "slug": "car-ford",
+ "items": [
+  [
+   "car-ford-maverick-xl",
+   "포드 매버릭 XL",
+   "Ford Maverick XL",
+   "福特 Maverick XL",
+   28145
+  ],
+  [
+   "car-ford-maverick-xlt",
+   "포드 매버릭 XLT",
+   "Ford Maverick XLT",
+   "福特 Maverick XLT",
+   30645
+  ],
+  [
+   "car-ford-maverick-lobo",
+   "포드 매버릭 로보",
+   "Ford Maverick Lobo",
+   "福特 Maverick Lobo",
+   35255
+  ],
+  [
+   "car-ford-maverick-lariat",
+   "포드 매버릭 래리엇",
+   "Ford Maverick Lariat",
+   "福特 Maverick Lariat",
+   36735
+  ],
+  [
+   "car-ford-maverick-tremor",
+   "포드 매버릭 트레머",
+   "Ford Maverick Tremor",
+   "福特 Maverick Tremor",
+   40995
+  ],
+  [
+   "car-ford-ranger-xl",
+   "포드 레인저 XL",
+   "Ford Ranger XL",
+   "福特 Ranger XL",
+   33080
+  ],
+  [
+   "car-ford-ranger-xlt",
+   "포드 레인저 XLT",
+   "Ford Ranger XLT",
+   "福特 Ranger XLT",
+   36675
+  ],
+  [
+   "car-ford-ranger-lariat",
+   "포드 레인저 래리엇",
+   "Ford Ranger Lariat",
+   "福特 Ranger Lariat",
+   43980
+  ],
+  [
+   "car-ford-ranger-raptor",
+   "포드 레인저 랩터",
+   "Ford Ranger Raptor",
+   "福特 Ranger Raptor",
+   55820
+  ],
+  [
+   "car-ford-f-150-xl",
+   "포드 F-150 XL",
+   "Ford F-150 XL",
+   "福特 F-150 XL",
+   38810
+  ],
+  [
+   "car-ford-f-150-xlt",
+   "포드 F-150 XLT",
+   "Ford F-150 XLT",
+   "福特 F-150 XLT",
+   48000
+  ],
+  [
+   "car-ford-f-150-lariat",
+   "포드 F-150 래리엇",
+   "Ford F-150 Lariat",
+   "福特 F-150 Lariat",
+   65000
+  ],
+  [
+   "car-ford-f-150-tremor",
+   "포드 F-150 트레머",
+   "Ford F-150 Tremor",
+   "福特 F-150 Tremor",
+   64915
+  ],
+  [
+   "car-ford-f-150-king-ranch",
+   "포드 F-150 킹 랜치",
+   "Ford F-150 King Ranch",
+   "福特 F-150 King Ranch",
+   74905
+  ],
+  [
+   "car-ford-f-150-platinum",
+   "포드 F-150 플래티넘",
+   "Ford F-150 Platinum",
+   "福特 F-150 Platinum",
+   74905
+  ],
+  [
+   "car-ford-f-150-raptor",
+   "포드 F-150 랩터",
+   "Ford F-150 Raptor",
+   "福特 F-150 猛禽",
+   79005
+  ],
+  [
+   "car-ford-f-150-raptor-r",
+   "포드 F-150 랩터 R",
+   "Ford F-150 Raptor R",
+   "福特 F-150 猛禽 R",
+   112000
+  ],
+  [
+   "car-ford-f-150-lightning-xlt",
+   "포드 F-150 라이트닝 XLT",
+   "Ford F-150 Lightning XLT",
+   "福特 F-150 Lightning XLT",
+   62995
+  ],
+  [
+   "car-ford-f-150-lightning-flash",
+   "포드 F-150 라이트닝 플래시",
+   "Ford F-150 Lightning Flash",
+   "福特 F-150 Lightning Flash",
+   67995
+  ],
+  [
+   "car-ford-f-150-lightning-lariat",
+   "포드 F-150 라이트닝 래리엇",
+   "Ford F-150 Lightning Lariat",
+   "福特 F-150 Lightning Lariat",
+   76995
+  ],
+  [
+   "car-ford-f-150-lightning-platinum",
+   "포드 F-150 라이트닝 플래티넘",
+   "Ford F-150 Lightning Platinum",
+   "福特 F-150 Lightning Platinum",
+   84995
+  ],
+  [
+   "car-ford-super-duty-f-250-xl",
+   "포드 슈퍼 듀티 F-250 XL",
+   "Ford Super Duty F-250 XL",
+   "福特 Super Duty F-250 XL",
+   45300
+  ],
+  [
+   "car-ford-super-duty-f-250-lariat",
+   "포드 슈퍼 듀티 F-250 래리엇",
+   "Ford Super Duty F-250 Lariat",
+   "福特 Super Duty F-250 Lariat",
+   62000
+  ],
+  [
+   "car-ford-super-duty-f-450-limited",
+   "포드 슈퍼 듀티 F-450 리미티드",
+   "Ford Super Duty F-450 Limited",
+   "福特 Super Duty F-450 Limited",
+   107000
+  ],
+  [
+   "car-ford-mustang-ecoboost-fastback",
+   "포드 머스탱 에코부스트 패스트백",
+   "Ford Mustang EcoBoost Fastback",
+   "福特野马 EcoBoost Fastback",
+   31920
+  ],
+  [
+   "car-ford-mustang-ecoboost-premium",
+   "포드 머스탱 에코부스트 프리미엄",
+   "Ford Mustang EcoBoost Premium",
+   "福特野马 EcoBoost Premium",
+   37545
+  ],
+  [
+   "car-ford-mustang-gt-fastback",
+   "포드 머스탱 GT 패스트백",
+   "Ford Mustang GT Fastback",
+   "福特野马 GT Fastback",
+   46560
+  ],
+  [
+   "car-ford-mustang-gt-premium",
+   "포드 머스탱 GT 프리미엄",
+   "Ford Mustang GT Premium",
+   "福特野马 GT Premium",
+   51080
+  ],
+  [
+   "car-ford-mustang-dark-horse",
+   "포드 머스탱 다크 호스",
+   "Ford Mustang Dark Horse",
+   "福特野马 Dark Horse",
+   64380
+  ],
+  [
+   "car-ford-mustang-gtd",
+   "포드 머스탱 GTD",
+   "Ford Mustang GTD",
+   "福特野马 GTD",
+   327960
+  ],
+  [
+   "car-ford-mustang-shelby-gt500-2022",
+   "포드 머스탱 셸비 GT500 (2022)",
+   "Ford Mustang Shelby GT500 (2022)",
+   "福特野马 Shelby GT500 (2022)",
+   79420
+  ],
+  [
+   "car-ford-mustang-mach-e-select",
+   "포드 머스탱 마하-E 셀렉트",
+   "Ford Mustang Mach-E Select",
+   "福特 Mustang Mach-E Select",
+   37995
+  ],
+  [
+   "car-ford-mustang-mach-e-premium",
+   "포드 머스탱 마하-E 프리미엄",
+   "Ford Mustang Mach-E Premium",
+   "福特 Mustang Mach-E Premium",
+   41995
+  ],
+  [
+   "car-ford-mustang-mach-e-gt",
+   "포드 머스탱 마하-E GT",
+   "Ford Mustang Mach-E GT",
+   "福特 Mustang Mach-E GT",
+   54495
+  ],
+  [
+   "car-ford-mustang-mach-e-rally",
+   "포드 머스탱 마하-E 랠리",
+   "Ford Mustang Mach-E Rally",
+   "福特 Mustang Mach-E Rally",
+   58495
+  ],
+  [
+   "car-ford-bronco-base",
+   "포드 브롱코 베이스",
+   "Ford Bronco Base",
+   "福特烈马 Base",
+   37995
+  ],
+  [
+   "car-ford-bronco-big-bend",
+   "포드 브롱코 빅 벤드",
+   "Ford Bronco Big Bend",
+   "福特烈马 Big Bend",
+   40370
+  ],
+  [
+   "car-ford-bronco-outer-banks",
+   "포드 브롱코 아우터 뱅크스",
+   "Ford Bronco Outer Banks",
+   "福特烈马 Outer Banks",
+   47940
+  ],
+  [
+   "car-ford-bronco-badlands",
+   "포드 브롱코 배드랜즈",
+   "Ford Bronco Badlands",
+   "福特烈马 Badlands",
+   50095
+  ],
+  [
+   "car-ford-bronco-stroppe-edition",
+   "포드 브롱코 스트로페 에디션",
+   "Ford Bronco Stroppe Edition",
+   "福特烈马 Stroppe Edition",
+   75635
+  ],
+  [
+   "car-ford-bronco-raptor",
+   "포드 브롱코 랩터",
+   "Ford Bronco Raptor",
+   "福特烈马 Raptor",
+   79995
+  ],
+  [
+   "car-ford-bronco-sport-big-bend",
+   "포드 브롱코 스포츠 빅 벤드",
+   "Ford Bronco Sport Big Bend",
+   "福特 Bronco Sport Big Bend",
+   29995
+  ],
+  [
+   "car-ford-bronco-sport-badlands",
+   "포드 브롱코 스포츠 배드랜즈",
+   "Ford Bronco Sport Badlands",
+   "福特 Bronco Sport Badlands",
+   39995
+  ],
+  [
+   "car-ford-escape-active",
+   "포드 이스케이프 액티브",
+   "Ford Escape Active",
+   "福特 Escape Active",
+   29150
+  ],
+  [
+   "car-ford-escape-plug-in-hybrid",
+   "포드 이스케이프 플러그인 하이브리드",
+   "Ford Escape Plug-in Hybrid",
+   "福特 Escape Plug-in Hybrid",
+   38400
+  ],
+  [
+   "car-ford-explorer-active",
+   "포드 익스플로러 액티브",
+   "Ford Explorer Active",
+   "福特探险者 Active",
+   39755
+  ],
+  [
+   "car-ford-explorer-platinum",
+   "포드 익스플로러 플래티넘",
+   "Ford Explorer Platinum",
+   "福特探险者 Platinum",
+   51525
+  ],
+  [
+   "car-ford-explorer-st",
+   "포드 익스플로러 ST",
+   "Ford Explorer ST",
+   "福特探险者 ST",
+   54260
+  ],
+  [
+   "car-ford-expedition-active",
+   "포드 익스페디션 액티브",
+   "Ford Expedition Active",
+   "福特征服者 Active",
+   61700
+  ],
+  [
+   "car-ford-expedition-platinum",
+   "포드 익스페디션 플래티넘",
+   "Ford Expedition Platinum",
+   "福特征服者 Platinum",
+   74400
+  ],
+  [
+   "car-ford-expedition-tremor",
+   "포드 익스페디션 트레머",
+   "Ford Expedition Tremor",
+   "福特征服者 Tremor",
+   81000
+  ],
+  [
+   "car-ford-expedition-king-ranch",
+   "포드 익스페디션 킹 랜치",
+   "Ford Expedition King Ranch",
+   "福特征服者 King Ranch",
+   84000
+  ],
+  [
+   "car-ford-gt-2022",
+   "포드 GT (2022)",
+   "Ford GT (2022)",
+   "福特 GT (2022)",
+   500000
+  ],
+  [
+   "car-ford-performance-megazilla-crate-engine",
+   "포드 퍼포먼스 메가질라 7.3L 크레이트 엔진 M-6007-MZ73",
+   "Ford Performance Megazilla 7.3L Crate Engine M-6007-MZ73",
+   "福特 Performance Megazilla 7.3L 整装发动机 M-6007-MZ73",
+   22995
+  ],
+  [
+   "car-ford-performance-godzilla-crate-engine",
+   "포드 퍼포먼스 7.3L 고질라 크레이트 엔진 M-6007-73",
+   "Ford Performance 7.3L Godzilla Crate Engine M-6007-73",
+   "福特 Performance 7.3L Godzilla 整装发动机 M-6007-73",
+   9175
+  ],
+  [
+   "car-ford-performance-eluminator-crate-motor",
+   "포드 퍼포먼스 일루미네이터 전기 크레이트 모터 M-9000-MACHE",
+   "Ford Performance Eluminator Electric Crate Motor M-9000-MACHE",
+   "福特 Performance Eluminator 电动整装电机 M-9000-MACHE",
+   4095
+  ],
+  [
+   "car-ford-charge-station-pro",
+   "포드 차지 스테이션 프로",
+   "Ford Charge Station Pro",
+   "福特 Charge Station Pro 充电桩",
+   1310
+  ],
+  [
+   "car-ford-connected-charge-station",
+   "포드 커넥티드 차지 스테이션",
+   "Ford Connected Charge Station",
+   "福特 Connected Charge Station 充电桩",
+   799
+  ],
+  [
+   "car-ford-mobile-power-cord",
+   "포드 모바일 파워 코드",
+   "Ford Mobile Power Cord",
+   "福特 Mobile Power Cord 便携充电线",
+   500
+  ],
+  [
+   "car-ford-lego-technic-2022-ford-gt-42154",
+   "레고 테크닉 2022 포드 GT 42154",
+   "LEGO Technic 2022 Ford GT 42154",
+   "乐高机械组 2022 福特 GT 42154",
+   119.99
+  ],
+  [
+   "car-ford-lego-technic-f-150-raptor-42126",
+   "레고 테크닉 포드 F-150 랩터 42126",
+   "LEGO Technic Ford F-150 Raptor 42126",
+   "乐高机械组福特 F-150 猛禽 42126",
+   99.99
+  ],
+  [
+   "car-ford-lego-technic-bronco-suv-42213",
+   "레고 테크닉 포드 브롱코 SUV 42213",
+   "LEGO Technic Ford Bronco SUV 42213",
+   "乐高机械组福特烈马 SUV 42213",
+   64.99
+  ],
+  [
+   "car-ford-lego-technic-mustang-shelby-gt500-42138",
+   "레고 테크닉 포드 머스탱 셸비 GT500 42138",
+   "LEGO Technic Ford Mustang Shelby GT500 42138",
+   "乐高机械组福特野马 Shelby GT500 42138",
+   54.99
+  ],
+  [
+   "car-ford-lego-speed-champions-mustang-dark-horse-76920",
+   "레고 스피드 챔피언 포드 머스탱 다크 호스 76920",
+   "LEGO Speed Champions Ford Mustang Dark Horse Sports Car 76920",
+   "乐高超级赛车福特野马 Dark Horse 76920",
+   26.99
+  ]
+ ],
+ "use": [
+  "car-p-bell-qualifier",
+  "car-p-bluedriver-pro",
+  "car-p-chicco-kidfit-cleartex-plus",
+  "car-p-collinite-845",
+  "car-p-bosch-icon-22oe",
+  "car-p-noco-genius1",
+  "car-p-chemical-guys-hydroslick-16oz",
+  "car-p-cobra-rad-480i",
+  "car-p-noco-boost-x-gbx45",
+  "car-p-clek-olli",
+  "car-p-garmin-drive-53",
+  "car-p-nextbase-322gw",
+  "car-p-hjc-i10",
+  "car-p-sun-joe-spx3000",
+  "car-p-chemical-guys-torqx-kit",
+  "car-p-karcher-k1700",
+  "car-p-viofo-a129-plus-duo",
+  "car-p-griots-g9-polisher",
+  "car-p-dewalt-dwmt81535",
+  "car-p-meguiars-mt300",
+  "car-p-vantrue-n4",
+  "car-p-niu-kqi3-pro",
+  "car-p-garmin-overlander",
+  "car-p-uniden-r8",
+  "car-p-segway-ninebot-max-g2",
+  "car-p-thule-motion-3-xl",
+  "car-p-alpine-ilx-f509",
+  "car-p-aventon-level-2",
+  "car-p-honda-crf50f",
+  "car-p-yamaha-pw50",
+  "car-p-ikamper-skycamp-3-0",
+  "car-p-dualtron-thunder-3",
+  "car-p-honda-monkey",
+  "car-p-can-am-ryker-600",
+  "car-p-ducati-scrambler-icon",
+  "car-p-harley-davidson-nightster"
+ ]
+}

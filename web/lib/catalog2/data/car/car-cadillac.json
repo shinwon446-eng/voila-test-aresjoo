@@ -1,0 +1,275 @@
+{
+ "slug": "car-cadillac",
+ "items": [
+  [
+   "car-cadillac-ct4-luxury",
+   "캐딜락 CT4 럭셔리",
+   "Cadillac CT4 Luxury",
+   "凯迪拉克 CT4 Luxury",
+   34595
+  ],
+  [
+   "car-cadillac-ct4-premium-luxury",
+   "캐딜락 CT4 프리미엄 럭셔리",
+   "Cadillac CT4 Premium Luxury",
+   "凯迪拉克 CT4 Premium Luxury",
+   39795
+  ],
+  [
+   "car-cadillac-ct4-v",
+   "캐딜락 CT4-V",
+   "Cadillac CT4-V",
+   "凯迪拉克 CT4-V",
+   47795
+  ],
+  [
+   "car-cadillac-ct4-v-blackwing",
+   "캐딜락 CT4-V 블랙윙",
+   "Cadillac CT4-V Blackwing",
+   "凯迪拉克 CT4-V Blackwing",
+   61495
+  ],
+  [
+   "car-cadillac-ct5-luxury",
+   "캐딜락 CT5 럭셔리",
+   "Cadillac CT5 Luxury",
+   "凯迪拉克 CT5 Luxury",
+   47595
+  ],
+  [
+   "car-cadillac-ct5-premium-luxury",
+   "캐딜락 CT5 프리미엄 럭셔리",
+   "Cadillac CT5 Premium Luxury",
+   "凯迪拉克 CT5 Premium Luxury",
+   51895
+  ],
+  [
+   "car-cadillac-ct5-v",
+   "캐딜락 CT5-V",
+   "Cadillac CT5-V",
+   "凯迪拉克 CT5-V",
+   57595
+  ],
+  [
+   "car-cadillac-ct5-v-blackwing",
+   "캐딜락 CT5-V 블랙윙",
+   "Cadillac CT5-V Blackwing",
+   "凯迪拉克 CT5-V Blackwing",
+   95595
+  ],
+  [
+   "car-cadillac-xt4-luxury",
+   "캐딜락 XT4 럭셔리",
+   "Cadillac XT4 Luxury",
+   "凯迪拉克 XT4 Luxury",
+   41790
+  ],
+  [
+   "car-cadillac-xt5-luxury",
+   "캐딜락 XT5 럭셔리",
+   "Cadillac XT5 Luxury",
+   "凯迪拉克 XT5 Luxury",
+   44295
+  ],
+  [
+   "car-cadillac-xt5-sport",
+   "캐딜락 XT5 스포츠",
+   "Cadillac XT5 Sport",
+   "凯迪拉克 XT5 Sport",
+   57095
+  ],
+  [
+   "car-cadillac-xt6-luxury",
+   "캐딜락 XT6 럭셔리",
+   "Cadillac XT6 Luxury",
+   "凯迪拉克 XT6 Luxury",
+   48995
+  ],
+  [
+   "car-cadillac-xt6-sport",
+   "캐딜락 XT6 스포츠",
+   "Cadillac XT6 Sport",
+   "凯迪拉克 XT6 Sport",
+   60495
+  ],
+  [
+   "car-cadillac-optiq",
+   "캐딜락 옵틱",
+   "Cadillac OPTIQ",
+   "凯迪拉克 OPTIQ 傲歌",
+   54390
+  ],
+  [
+   "car-cadillac-lyriq-luxury-1",
+   "캐딜락 리릭 럭셔리 1",
+   "Cadillac LYRIQ Luxury 1",
+   "凯迪拉克 LYRIQ 锐歌 Luxury 1",
+   58595
+  ],
+  [
+   "car-cadillac-lyriq-sport-3",
+   "캐딜락 리릭 스포츠 3",
+   "Cadillac LYRIQ Sport 3",
+   "凯迪拉克 LYRIQ 锐歌 Sport 3",
+   70090
+  ],
+  [
+   "car-cadillac-lyriq-v",
+   "캐딜락 리릭-V",
+   "Cadillac LYRIQ-V",
+   "凯迪拉克 LYRIQ-V",
+   79990
+  ],
+  [
+   "car-cadillac-vistiq",
+   "캐딜락 비스틱",
+   "Cadillac VISTIQ",
+   "凯迪拉克 VISTIQ",
+   77395
+  ],
+  [
+   "car-cadillac-escalade-luxury",
+   "캐딜락 에스컬레이드 럭셔리",
+   "Cadillac Escalade Luxury",
+   "凯迪拉克凯雷德 Luxury",
+   87595
+  ],
+  [
+   "car-cadillac-escalade-premium-luxury",
+   "캐딜락 에스컬레이드 프리미엄 럭셔리",
+   "Cadillac Escalade Premium Luxury",
+   "凯迪拉克凯雷德 Premium Luxury",
+   99695
+  ],
+  [
+   "car-cadillac-escalade-sport-platinum",
+   "캐딜락 에스컬레이드 스포츠 플래티넘",
+   "Cadillac Escalade Sport Platinum",
+   "凯迪拉克凯雷德 Sport Platinum",
+   118395
+  ],
+  [
+   "car-cadillac-escalade-esv-luxury",
+   "캐딜락 에스컬레이드 ESV 럭셔리",
+   "Cadillac Escalade ESV Luxury",
+   "凯迪拉克凯雷德 ESV Luxury",
+   90595
+  ],
+  [
+   "car-cadillac-escalade-v",
+   "캐딜락 에스컬레이드-V",
+   "Cadillac Escalade-V",
+   "凯迪拉克凯雷德-V",
+   159990
+  ],
+  [
+   "car-cadillac-escalade-iq-sport-1",
+   "캐딜락 에스컬레이드 IQ 스포츠 1",
+   "Cadillac ESCALADE IQ Sport 1",
+   "凯迪拉克凯雷德 IQ Sport 1",
+   129990
+  ],
+  [
+   "car-cadillac-escalade-iql-luxury-1",
+   "캐딜락 에스컬레이드 IQL 럭셔리 1",
+   "Cadillac ESCALADE IQL Luxury 1",
+   "凯迪拉克凯雷德 IQL Luxury 1",
+   132695
+  ],
+  [
+   "car-cadillac-celestiq",
+   "캐딜락 셀레스틱",
+   "Cadillac CELESTIQ",
+   "凯迪拉克 CELESTIQ",
+   340000
+  ],
+  [
+   "car-cadillac-ct6-luxury-2020",
+   "캐딜락 CT6 럭셔리 (2020)",
+   "Cadillac CT6 Luxury (2020)",
+   "凯迪拉克 CT6 Luxury (2020)",
+   58995
+  ],
+  [
+   "car-cadillac-ct6-v-2020",
+   "캐딜락 CT6-V (2020)",
+   "Cadillac CT6-V (2020)",
+   "凯迪拉克 CT6-V (2020)",
+   96495
+  ]
+ ],
+ "use": [
+  "car-p-noco-boost-plus-gb40",
+  "car-p-chemical-guys-hol169",
+  "car-p-fanttik-x8-apex",
+  "car-p-pioneer-mvh-s322bt",
+  "car-p-viofo-a119-mini-2",
+  "car-p-knipex-cobra-set-00-20-09-us1",
+  "car-p-ctek-mxs-5-0",
+  "car-p-dewalt-dcc020ib",
+  "car-p-bell-qualifier",
+  "car-p-bluedriver-pro",
+  "car-p-chicco-kidfit-cleartex-plus",
+  "car-p-collinite-845",
+  "car-p-bosch-icon-22oe",
+  "car-p-noco-genius1",
+  "car-p-chemical-guys-hydroslick-16oz",
+  "car-p-battery-tender-junior",
+  "car-p-griots-g9-polisher",
+  "car-p-dewalt-dwmt81535",
+  "car-p-milwaukee-2557-20",
+  "car-p-noco-boost-hd-gb70",
+  "car-p-graco-extend2fit",
+  "car-p-dewalt-dcf891b",
+  "car-p-chicco-keyfit-30",
+  "car-p-diono-radian-3r",
+  "car-p-garmin-dash-cam-57",
+  "car-p-jl-audio-jd400-4",
+  "car-p-michelin-crossclimate2-225-65r17",
+  "car-p-continental-dws06-plus-245-40zr18",
+  "car-p-traxxas-slash-2wd",
+  "car-p-garmin-dash-cam-mini-2",
+  "car-p-bell-qualifier-dlx-mips",
+  "car-p-rockford-fosgate-p300-12",
+  "car-p-thule-wingbar-evo",
+  "car-p-optima-redtop-34-78",
+  "car-p-yakima-highroad",
+  "car-p-bfgoodrich-ko2-265-70r17",
+  "car-p-clek-foonf",
+  "car-p-garmin-zumo-xt2",
+  "car-p-sony-xav-ax6000",
+  "car-p-shoei-rf-1400",
+  "car-p-vossen-hf-5-20x9",
+  "car-p-wallbox-pulsar-plus-40a",
+  "car-p-garmin-catalyst",
+  "car-p-logitech-g-pro-racing-wheel",
+  "car-p-segway-ninebot-max-g2",
+  "car-p-thule-motion-3-xl",
+  "car-p-alpine-ilx-f509",
+  "car-p-thule-epos-2",
+  "car-p-traxxas-x-maxx-8s",
+  "car-p-thule-vector-alpine",
+  "car-p-kawasaki-klx110r",
+  "car-p-super73-s2",
+  "car-p-thule-approach-m",
+  "car-p-segway-superscooter-gt1",
+  "car-p-rad-radexpand-5",
+  "car-p-quickjack-5000tl",
+  "car-p-honda-grom",
+  "car-p-kawasaki-z125-pro",
+  "car-p-super73-rx",
+  "car-p-honda-super-cub-c125",
+  "car-p-brompton-electric-c-line-explore",
+  "car-p-segway-superscooter-gt2",
+  "car-p-ikamper-skycamp-3-0",
+  "car-p-kawasaki-klr650",
+  "car-p-polaris-sportsman-570",
+  "car-p-vespa-gts-300",
+  "car-p-yamaha-mt-07",
+  "car-p-yamaha-yzf-r7",
+  "car-p-honda-rebel-1100",
+  "car-p-ktm-1390-super-duke-r-evo",
+  "car-p-volkswagen-jetta-s",
+  "car-p-harley-davidson-fat-boy"
+ ]
+}

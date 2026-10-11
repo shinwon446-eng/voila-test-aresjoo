@@ -1,0 +1,323 @@
+{
+ "slug": "car-lexus",
+ "items": [
+  [
+   "car-lexus-ux-300h",
+   "렉서스 UX 300h",
+   "Lexus UX 300h",
+   "雷克萨斯 UX 300h",
+   36490
+  ],
+  [
+   "car-lexus-nx-250",
+   "렉서스 NX 250",
+   "Lexus NX 250",
+   "雷克萨斯 NX 250",
+   40830
+  ],
+  [
+   "car-lexus-nx-350",
+   "렉서스 NX 350",
+   "Lexus NX 350",
+   "雷克萨斯 NX 350",
+   44615
+  ],
+  [
+   "car-lexus-nx-350h",
+   "렉서스 NX 350h",
+   "Lexus NX 350h",
+   "雷克萨斯 NX 350h",
+   46000
+  ],
+  [
+   "car-lexus-nx-450h-plus",
+   "렉서스 NX 450h+",
+   "Lexus NX 450h+",
+   "雷克萨斯 NX 450h+",
+   60405
+  ],
+  [
+   "car-lexus-rx-350",
+   "렉서스 RX 350",
+   "Lexus RX 350",
+   "雷克萨斯 RX 350",
+   49950
+  ],
+  [
+   "car-lexus-rx-350h",
+   "렉서스 RX 350h",
+   "Lexus RX 350h",
+   "雷克萨斯 RX 350h",
+   52100
+  ],
+  [
+   "car-lexus-rx-500h-f-sport-performance",
+   "렉서스 RX 500h F 스포츠 퍼포먼스",
+   "Lexus RX 500h F SPORT Performance",
+   "雷克萨斯 RX 500h F SPORT Performance",
+   64100
+  ],
+  [
+   "car-lexus-rx-450h-plus",
+   "렉서스 RX 450h+",
+   "Lexus RX 450h+",
+   "雷克萨斯 RX 450h+",
+   70580
+  ],
+  [
+   "car-lexus-rz-300e",
+   "렉서스 RZ 300e",
+   "Lexus RZ 300e",
+   "雷克萨斯 RZ 300e",
+   55175
+  ],
+  [
+   "car-lexus-rz-450e",
+   "렉서스 RZ 450e",
+   "Lexus RZ 450e",
+   "雷克萨斯 RZ 450e",
+   59375
+  ],
+  [
+   "car-lexus-tx-350",
+   "렉서스 TX 350",
+   "Lexus TX 350",
+   "雷克萨斯 TX 350",
+   55050
+  ],
+  [
+   "car-lexus-tx-500h-f-sport-performance",
+   "렉서스 TX 500h F 스포츠 퍼포먼스",
+   "Lexus TX 500h F SPORT Performance",
+   "雷克萨斯 TX 500h F SPORT Performance",
+   69350
+  ],
+  [
+   "car-lexus-tx-550h-plus",
+   "렉서스 TX 550h+",
+   "Lexus TX 550h+",
+   "雷克萨斯 TX 550h+",
+   78050
+  ],
+  [
+   "car-lexus-gx-550-premium",
+   "렉서스 GX 550 프리미엄",
+   "Lexus GX 550 Premium",
+   "雷克萨斯 GX 550 Premium",
+   64250
+  ],
+  [
+   "car-lexus-gx-550-overtrail",
+   "렉서스 GX 550 오버트레일",
+   "Lexus GX 550 Overtrail",
+   "雷克萨斯 GX 550 Overtrail",
+   69250
+  ],
+  [
+   "car-lexus-gx-550-luxury-plus",
+   "렉서스 GX 550 럭셔리+",
+   "Lexus GX 550 Luxury+",
+   "雷克萨斯 GX 550 Luxury+",
+   81250
+  ],
+  [
+   "car-lexus-lx-600-premium",
+   "렉서스 LX 600 프리미엄",
+   "Lexus LX 600 Premium",
+   "雷克萨斯 LX 600 Premium",
+   106850
+  ],
+  [
+   "car-lexus-lx-600-ultra-luxury",
+   "렉서스 LX 600 울트라 럭셔리",
+   "Lexus LX 600 Ultra Luxury",
+   "雷克萨斯 LX 600 Ultra Luxury",
+   133490
+  ],
+  [
+   "car-lexus-lx-700h-overtrail",
+   "렉서스 LX 700h 오버트레일",
+   "Lexus LX 700h Overtrail",
+   "雷克萨斯 LX 700h Overtrail",
+   115350
+  ],
+  [
+   "car-lexus-lx-700h-ultra-luxury",
+   "렉서스 LX 700h 울트라 럭셔리",
+   "Lexus LX 700h Ultra Luxury",
+   "雷克萨斯 LX 700h Ultra Luxury",
+   141350
+  ],
+  [
+   "car-lexus-is-300",
+   "렉서스 IS 300",
+   "Lexus IS 300",
+   "雷克萨斯 IS 300",
+   41235
+  ],
+  [
+   "car-lexus-is-350-f-sport",
+   "렉서스 IS 350 F 스포츠",
+   "Lexus IS 350 F SPORT",
+   "雷克萨斯 IS 350 F SPORT",
+   45660
+  ],
+  [
+   "car-lexus-is-500-f-sport-performance",
+   "렉서스 IS 500 F 스포츠 퍼포먼스",
+   "Lexus IS 500 F SPORT Performance",
+   "雷克萨斯 IS 500 F SPORT Performance",
+   60595
+  ],
+  [
+   "car-lexus-es-350",
+   "렉서스 ES 350",
+   "Lexus ES 350",
+   "雷克萨斯 ES 350",
+   43190
+  ],
+  [
+   "car-lexus-es-300h",
+   "렉서스 ES 300h",
+   "Lexus ES 300h",
+   "雷克萨斯 ES 300h",
+   44590
+  ],
+  [
+   "car-lexus-ls-500",
+   "렉서스 LS 500",
+   "Lexus LS 500",
+   "雷克萨斯 LS 500",
+   80685
+  ],
+  [
+   "car-lexus-ls-500h",
+   "렉서스 LS 500h",
+   "Lexus LS 500h",
+   "雷克萨斯 LS 500h",
+   115560
+  ],
+  [
+   "car-lexus-rc-300",
+   "렉서스 RC 300",
+   "Lexus RC 300",
+   "雷克萨斯 RC 300",
+   46045
+  ],
+  [
+   "car-lexus-rc-350-f-sport",
+   "렉서스 RC 350 F 스포츠",
+   "Lexus RC 350 F SPORT",
+   "雷克萨斯 RC 350 F SPORT",
+   52445
+  ],
+  [
+   "car-lexus-rc-f",
+   "렉서스 RC F",
+   "Lexus RC F",
+   "雷克萨斯 RC F",
+   68295
+  ],
+  [
+   "car-lexus-rc-f-final-edition",
+   "렉서스 RC F 파이널 에디션",
+   "Lexus RC F Final Edition",
+   "雷克萨斯 RC F Final Edition",
+   94000
+  ],
+  [
+   "car-lexus-lc-500",
+   "렉서스 LC 500",
+   "Lexus LC 500",
+   "雷克萨斯 LC 500",
+   99800
+  ],
+  [
+   "car-lexus-lc-500-convertible",
+   "렉서스 LC 500 컨버터블",
+   "Lexus LC 500 Convertible",
+   "雷克萨斯 LC 500 敞篷版",
+   106800
+  ],
+  [
+   "car-lexus-lc-500h",
+   "렉서스 LC 500h",
+   "Lexus LC 500h",
+   "雷克萨斯 LC 500h",
+   103050
+  ],
+  [
+   "car-lexus-lfa-2012",
+   "렉서스 LFA (2012)",
+   "Lexus LFA (2012)",
+   "雷克萨斯 LFA (2012)",
+   375000
+  ]
+ ],
+ "use": [
+  "car-p-ctek-mxs-5-0",
+  "car-p-dewalt-dcc020ib",
+  "car-p-bell-qualifier",
+  "car-p-bluedriver-pro",
+  "car-p-chicco-kidfit-cleartex-plus",
+  "car-p-collinite-845",
+  "car-p-bosch-icon-22oe",
+  "car-p-noco-genius1",
+  "car-p-chemical-guys-hydroslick-16oz",
+  "car-p-battery-tender-junior",
+  "car-p-weathertech-cupfone",
+  "car-p-mobil-1-ep-5w30-5qt",
+  "car-p-adams-graphene-ceramic-spray-12oz",
+  "car-p-griots-pfm-drying-towel",
+  "car-p-tekton-24335",
+  "car-p-karcher-k1700",
+  "car-p-viofo-a129-plus-duo",
+  "car-p-griots-g9-polisher",
+  "car-p-dewalt-dwmt81535",
+  "car-p-milwaukee-2557-20",
+  "car-p-noco-boost-hd-gb70",
+  "car-p-graco-extend2fit",
+  "car-p-dewalt-dcf891b",
+  "car-p-chicco-keyfit-30",
+  "car-p-diono-radian-3r",
+  "car-p-garmin-dash-cam-57",
+  "car-p-jl-audio-jd400-4",
+  "car-p-michelin-crossclimate2-225-65r17",
+  "car-p-continental-dws06-plus-245-40zr18",
+  "car-p-garmin-drivesmart-86",
+  "car-p-grizzl-e-classic-40a",
+  "car-p-michelin-ps4s-255-35zr19",
+  "car-p-garmin-dash-cam-67w",
+  "car-p-meguiars-mt300",
+  "car-p-kuat-sherpa-2-0",
+  "car-p-aim-solo-2-dl",
+  "car-p-niu-kqi3-pro",
+  "car-p-garmin-overlander",
+  "car-p-uniden-r8",
+  "car-p-yakima-skybox-16-carbonite",
+  "car-p-segway-ninebot-zt3-pro",
+  "car-p-thule-t2-pro-xtr-2",
+  "car-p-dometic-cfx3-35",
+  "car-p-shoei-x-fifteen",
+  "car-p-segway-superscooter-gt1",
+  "car-p-rad-radexpand-5",
+  "car-p-quickjack-5000tl",
+  "car-p-bbs-lm-19x8-5",
+  "car-p-kranzle-k1122tst",
+  "car-p-honda-monkey",
+  "car-p-vespa-primavera-50",
+  "car-p-gazelle-ultimate-c380-hmb",
+  "car-p-honda-rebel-300",
+  "car-p-kawasaki-ninja-500",
+  "car-p-tern-gsd-s10",
+  "car-p-harley-davidson-nightster",
+  "car-p-kawasaki-z900",
+  "car-p-yamaha-mt-09",
+  "car-p-yamaha-tenere-700",
+  "car-p-kawasaki-ninja-zx-6r",
+  "car-p-triumph-bonneville-t120",
+  "car-p-polaris-rzr-xp-1000-sport",
+  "car-p-ktm-1390-super-duke-r-evo",
+  "car-p-volkswagen-jetta-s"
+ ]
+}

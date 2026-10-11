@@ -1,0 +1,317 @@
+{
+ "slug": "car-land-rover",
+ "items": [
+  [
+   "car-land-rover-range-rover-se-p400",
+   "랜드로버 레인지로버 SE P400",
+   "Land Rover Range Rover SE P400",
+   "路虎揽胜 SE P400",
+   107900
+  ],
+  [
+   "car-land-rover-range-rover-se-p550e",
+   "랜드로버 레인지로버 SE P550e",
+   "Land Rover Range Rover SE P550e",
+   "路虎揽胜 SE P550e",
+   118900
+  ],
+  [
+   "car-land-rover-range-rover-autobiography-p530",
+   "랜드로버 레인지로버 오토바이오그래피 P530",
+   "Land Rover Range Rover Autobiography P530",
+   "路虎揽胜 Autobiography P530",
+   168000
+  ],
+  [
+   "car-land-rover-range-rover-sv-p615",
+   "랜드로버 레인지로버 SV P615",
+   "Land Rover Range Rover SV P615",
+   "路虎揽胜 SV P615",
+   209000
+  ],
+  [
+   "car-land-rover-range-rover-sv-lwb-p615",
+   "랜드로버 레인지로버 SV LWB P615",
+   "Land Rover Range Rover SV LWB P615",
+   "路虎揽胜 SV 长轴距版 P615",
+   234000
+  ],
+  [
+   "car-land-rover-range-rover-sport-se-p360",
+   "랜드로버 레인지로버 스포츠 SE P360",
+   "Land Rover Range Rover Sport SE P360",
+   "路虎揽胜运动版 SE P360",
+   83700
+  ],
+  [
+   "car-land-rover-range-rover-sport-dynamic-se-p400",
+   "랜드로버 레인지로버 스포츠 다이내믹 SE P400",
+   "Land Rover Range Rover Sport Dynamic SE P400",
+   "路虎揽胜运动版 Dynamic SE P400",
+   91000
+  ],
+  [
+   "car-land-rover-range-rover-sport-autobiography-p550e",
+   "랜드로버 레인지로버 스포츠 오토바이오그래피 P550e",
+   "Land Rover Range Rover Sport Autobiography P550e",
+   "路虎揽胜运动版 Autobiography P550e",
+   118700
+  ],
+  [
+   "car-land-rover-range-rover-sport-sv-edition-two",
+   "랜드로버 레인지로버 스포츠 SV 에디션 투",
+   "Land Rover Range Rover Sport SV Edition Two",
+   "路虎揽胜运动版 SV Edition Two",
+   180700
+  ],
+  [
+   "car-land-rover-range-rover-velar-s-p250",
+   "랜드로버 레인지로버 벨라 S P250",
+   "Land Rover Range Rover Velar S P250",
+   "路虎揽胜星脉 S P250",
+   61500
+  ],
+  [
+   "car-land-rover-range-rover-velar-dynamic-se-p400",
+   "랜드로버 레인지로버 벨라 다이내믹 SE P400",
+   "Land Rover Range Rover Velar Dynamic SE P400",
+   "路虎揽胜星脉 Dynamic SE P400",
+   71000
+  ],
+  [
+   "car-land-rover-range-rover-evoque-s",
+   "랜드로버 레인지로버 이보크 S",
+   "Land Rover Range Rover Evoque S",
+   "路虎揽胜极光 S",
+   49900
+  ],
+  [
+   "car-land-rover-range-rover-evoque-dynamic-se",
+   "랜드로버 레인지로버 이보크 다이내믹 SE",
+   "Land Rover Range Rover Evoque Dynamic SE",
+   "路虎揽胜极光 Dynamic SE",
+   54900
+  ],
+  [
+   "car-land-rover-defender-90-s-p300",
+   "랜드로버 디펜더 90 S P300",
+   "Land Rover Defender 90 S P300",
+   "路虎卫士 90 S P300",
+   56400
+  ],
+  [
+   "car-land-rover-defender-90-v8",
+   "랜드로버 디펜더 90 V8",
+   "Land Rover Defender 90 V8",
+   "路虎卫士 90 V8",
+   109000
+  ],
+  [
+   "car-land-rover-defender-110-s-p300",
+   "랜드로버 디펜더 110 S P300",
+   "Land Rover Defender 110 S P300",
+   "路虎卫士 110 S P300",
+   60600
+  ],
+  [
+   "car-land-rover-defender-110-x-dynamic-se-p400",
+   "랜드로버 디펜더 110 X-다이내믹 SE P400",
+   "Land Rover Defender 110 X-Dynamic SE P400",
+   "路虎卫士 110 X-Dynamic SE P400",
+   72600
+  ],
+  [
+   "car-land-rover-defender-110-v8",
+   "랜드로버 디펜더 110 V8",
+   "Land Rover Defender 110 V8",
+   "路虎卫士 110 V8",
+   112300
+  ],
+  [
+   "car-land-rover-defender-130-s-p300",
+   "랜드로버 디펜더 130 S P300",
+   "Land Rover Defender 130 S P300",
+   "路虎卫士 130 S P300",
+   69700
+  ],
+  [
+   "car-land-rover-defender-130-outbound",
+   "랜드로버 디펜더 130 아웃바운드",
+   "Land Rover Defender 130 Outbound",
+   "路虎卫士 130 Outbound",
+   85000
+  ],
+  [
+   "car-land-rover-defender-130-v8",
+   "랜드로버 디펜더 130 V8",
+   "Land Rover Defender 130 V8",
+   "路虎卫士 130 V8",
+   118000
+  ],
+  [
+   "car-land-rover-defender-octa",
+   "랜드로버 디펜더 OCTA",
+   "Land Rover Defender OCTA",
+   "路虎卫士 OCTA",
+   152000
+  ],
+  [
+   "car-land-rover-defender-octa-edition-one",
+   "랜드로버 디펜더 OCTA 에디션 원",
+   "Land Rover Defender OCTA Edition One",
+   "路虎卫士 OCTA Edition One",
+   167800
+  ],
+  [
+   "car-land-rover-discovery-s-p300",
+   "랜드로버 디스커버리 S P300",
+   "Land Rover Discovery S P300",
+   "路虎发现 S P300",
+   60200
+  ],
+  [
+   "car-land-rover-discovery-dynamic-se-p360",
+   "랜드로버 디스커버리 다이내믹 SE P360",
+   "Land Rover Discovery Dynamic SE P360",
+   "路虎发现 Dynamic SE P360",
+   68000
+  ],
+  [
+   "car-land-rover-discovery-metropolitan-edition",
+   "랜드로버 디스커버리 메트로폴리탄 에디션",
+   "Land Rover Discovery Metropolitan Edition",
+   "路虎发现 Metropolitan Edition",
+   79000
+  ],
+  [
+   "car-land-rover-discovery-sport-s",
+   "랜드로버 디스커버리 스포츠 S",
+   "Land Rover Discovery Sport S",
+   "路虎发现运动版 S",
+   48900
+  ],
+  [
+   "car-land-rover-discovery-sport-dynamic-se",
+   "랜드로버 디스커버리 스포츠 다이내믹 SE",
+   "Land Rover Discovery Sport Dynamic SE",
+   "路虎发现运动版 Dynamic SE",
+   52900
+  ],
+  [
+   "car-land-rover-defender-expedition-roof-rack",
+   "랜드로버 디펜더 익스페디션 루프 랙",
+   "Land Rover Defender Expedition Roof Rack",
+   "路虎卫士探险车顶行李架",
+   1750
+  ],
+  [
+   "car-land-rover-defender-side-mounted-gear-carrier",
+   "랜드로버 디펜더 외장 사이드 기어 캐리어",
+   "Land Rover Defender Exterior Side-Mounted Gear Carrier",
+   "路虎卫士外置侧挂储物箱",
+   1140
+  ],
+  [
+   "car-land-rover-defender-raised-air-intake",
+   "랜드로버 디펜더 레이즈드 에어 인테이크",
+   "Land Rover Defender Raised Air Intake",
+   "路虎卫士高位进气管",
+   900
+  ],
+  [
+   "car-land-rover-defender-deployable-roof-ladder",
+   "랜드로버 디펜더 전개식 루프 래더",
+   "Land Rover Defender Deployable Roof Ladder",
+   "路虎卫士可展开式车顶梯",
+   1100
+  ],
+  [
+   "car-land-rover-portable-rinse-system",
+   "랜드로버 포터블 린스 시스템",
+   "Land Rover Portable Rinse System",
+   "路虎便携式冲洗系统",
+   570
+  ],
+  [
+   "car-land-rover-lego-icons-classic-defender-90-10317",
+   "레고 아이콘 랜드로버 클래식 디펜더 90 10317",
+   "LEGO Icons Land Rover Classic Defender 90 10317",
+   "乐高 Icons 路虎经典卫士 90 10317",
+   239.99
+  ],
+  [
+   "car-land-rover-lego-technic-defender-42110",
+   "레고 테크닉 랜드로버 디펜더 42110",
+   "LEGO Technic Land Rover Defender 42110",
+   "乐高机械组路虎卫士 42110",
+   199.99
+  ]
+ ],
+ "use": [
+  "car-p-garmin-dash-cam-mini-2",
+  "car-p-milwaukee-2848-20",
+  "car-p-milwaukee-packout-48-22-8426",
+  "car-p-cobra-rad-480i",
+  "car-p-noco-boost-x-gbx45",
+  "car-p-clek-olli",
+  "car-p-garmin-drive-53",
+  "car-p-nextbase-322gw",
+  "car-p-hjc-i10",
+  "car-p-sun-joe-spx3000",
+  "car-p-chemical-guys-torqx-kit",
+  "car-p-karcher-k1700",
+  "car-p-viofo-a129-plus-duo",
+  "car-p-griots-g9-polisher",
+  "car-p-shoei-rf-sr",
+  "car-p-thrustmaster-t300-rs-gt",
+  "car-p-autel-mk808s",
+  "car-p-blackvue-dr970x-2ch-plus",
+  "car-p-garmin-dash-cam-67w",
+  "car-p-meguiars-mt300",
+  "car-p-vantrue-n4",
+  "car-p-bell-qualifier-dlx-mips",
+  "car-p-rockford-fosgate-p300-12",
+  "car-p-thule-wingbar-evo",
+  "car-p-optima-redtop-34-78",
+  "car-p-yakima-highroad",
+  "car-p-bfgoodrich-ko2-265-70r17",
+  "car-p-logitech-g29",
+  "car-p-wallbox-pulsar-plus-40a",
+  "car-p-kuat-sherpa-2-0",
+  "car-p-aim-solo-2-dl",
+  "car-p-niu-kqi3-pro",
+  "car-p-garmin-overlander",
+  "car-p-uniden-r8",
+  "car-p-fanatec-clubsport-dd-plus",
+  "car-p-garmin-catalyst",
+  "car-p-logitech-g-pro-racing-wheel",
+  "car-p-segway-ninebot-max-g2",
+  "car-p-thule-motion-3-xl",
+  "car-p-alpine-ilx-f509",
+  "car-p-honda-crf50f",
+  "car-p-yamaha-pw50",
+  "car-p-aventon-aventure-2",
+  "car-p-honda-navi",
+  "car-p-rad-radrunner-3-plus",
+  "car-p-thule-vector-alpine",
+  "car-p-vespa-primavera-150",
+  "car-p-ktm-390-duke",
+  "car-p-specialized-turbo-vado-4-0",
+  "car-p-honda-grom",
+  "car-p-kawasaki-z125-pro",
+  "car-p-super73-rx",
+  "car-p-honda-rebel-500",
+  "car-p-kawasaki-klr650",
+  "car-p-polaris-sportsman-570",
+  "car-p-vespa-gts-300",
+  "car-p-yamaha-mt-07",
+  "car-p-yamaha-yzf-r7",
+  "car-p-honda-rebel-1100",
+  "car-p-mini-cooper-c-2-door",
+  "car-p-mazda-mx-5-miata-sport",
+  "car-p-triumph-bonneville-t120",
+  "car-p-ducati-monster",
+  "car-p-indian-scout-bobber",
+  "car-p-honda-africa-twin"
+ ]
+}

@@ -1,0 +1,401 @@
+{
+ "slug": "car-tesla",
+ "items": [
+  [
+   "car-tesla-model-3-standard",
+   "테슬라 모델 3 스탠다드",
+   "Tesla Model 3 Standard",
+   "特斯拉 Model 3 Standard",
+   36990
+  ],
+  [
+   "car-tesla-model-3-long-range-rwd",
+   "테슬라 모델 3 롱레인지 후륜구동",
+   "Tesla Model 3 Long Range Rear-Wheel Drive",
+   "特斯拉 Model 3 长续航后轮驱动版",
+   42490
+  ],
+  [
+   "car-tesla-model-3-long-range-awd",
+   "테슬라 모델 3 롱레인지 사륜구동",
+   "Tesla Model 3 Long Range All-Wheel Drive",
+   "特斯拉 Model 3 长续航全轮驱动版",
+   47490
+  ],
+  [
+   "car-tesla-model-3-performance",
+   "테슬라 모델 3 퍼포먼스",
+   "Tesla Model 3 Performance",
+   "特斯拉 Model 3 Performance 高性能版",
+   54990
+  ],
+  [
+   "car-tesla-model-y-standard",
+   "테슬라 모델 Y 스탠다드",
+   "Tesla Model Y Standard",
+   "特斯拉 Model Y Standard",
+   39990
+  ],
+  [
+   "car-tesla-model-y-long-range-rwd",
+   "테슬라 모델 Y 롱레인지 후륜구동",
+   "Tesla Model Y Long Range Rear-Wheel Drive",
+   "特斯拉 Model Y 长续航后轮驱动版",
+   44990
+  ],
+  [
+   "car-tesla-model-y-long-range-awd",
+   "테슬라 모델 Y 롱레인지 사륜구동",
+   "Tesla Model Y Long Range All-Wheel Drive",
+   "特斯拉 Model Y 长续航全轮驱动版",
+   48990
+  ],
+  [
+   "car-tesla-model-y-performance",
+   "테슬라 모델 Y 퍼포먼스",
+   "Tesla Model Y Performance",
+   "特斯拉 Model Y Performance 高性能版",
+   57490
+  ],
+  [
+   "car-tesla-model-y-launch-series",
+   "테슬라 모델 Y 론치 시리즈",
+   "Tesla Model Y Launch Series",
+   "特斯拉 Model Y Launch Series",
+   59990
+  ],
+  [
+   "car-tesla-model-s-awd",
+   "테슬라 모델 S 사륜구동",
+   "Tesla Model S All-Wheel Drive",
+   "特斯拉 Model S 全轮驱动版",
+   84990
+  ],
+  [
+   "car-tesla-model-s-plaid",
+   "테슬라 모델 S 플래드",
+   "Tesla Model S Plaid",
+   "特斯拉 Model S Plaid",
+   99990
+  ],
+  [
+   "car-tesla-model-x-awd",
+   "테슬라 모델 X 사륜구동",
+   "Tesla Model X All-Wheel Drive",
+   "特斯拉 Model X 全轮驱动版",
+   89990
+  ],
+  [
+   "car-tesla-model-x-plaid",
+   "테슬라 모델 X 플래드",
+   "Tesla Model X Plaid",
+   "特斯拉 Model X Plaid",
+   104990
+  ],
+  [
+   "car-tesla-cybertruck-long-range",
+   "테슬라 사이버트럭 롱레인지",
+   "Tesla Cybertruck Long Range",
+   "特斯拉 Cybertruck 长续航版",
+   69990
+  ],
+  [
+   "car-tesla-cybertruck-awd",
+   "테슬라 사이버트럭 사륜구동",
+   "Tesla Cybertruck All-Wheel Drive",
+   "特斯拉 Cybertruck 全轮驱动版",
+   79990
+  ],
+  [
+   "car-tesla-cybertruck-cyberbeast",
+   "테슬라 사이버트럭 사이버비스트",
+   "Tesla Cybertruck Cyberbeast",
+   "特斯拉 Cybertruck Cyberbeast",
+   114990
+  ],
+  [
+   "car-tesla-cybertruck-awd-foundation-series",
+   "테슬라 사이버트럭 사륜구동 파운데이션 시리즈",
+   "Tesla Cybertruck All-Wheel Drive Foundation Series",
+   "特斯拉 Cybertruck 全轮驱动 Foundation Series",
+   99990
+  ],
+  [
+   "car-tesla-cybertruck-cyberbeast-foundation-series",
+   "테슬라 사이버트럭 사이버비스트 파운데이션 시리즈",
+   "Tesla Cybertruck Cyberbeast Foundation Series",
+   "特斯拉 Cybertruck Cyberbeast Foundation Series",
+   119990
+  ],
+  [
+   "car-tesla-roadster-2010",
+   "테슬라 로드스터 (2010)",
+   "Tesla Roadster (2010)",
+   "特斯拉 Roadster (2010)",
+   109000
+  ],
+  [
+   "car-tesla-roadster-sport-2010",
+   "테슬라 로드스터 스포츠 (2010)",
+   "Tesla Roadster Sport (2010)",
+   "特斯拉 Roadster Sport (2010)",
+   128500
+  ],
+  [
+   "car-tesla-cybertruck-basecamp-tent",
+   "테슬라 사이버트럭 베이스캠프 텐트",
+   "Tesla Cybertruck Basecamp Tent",
+   "特斯拉 Cybertruck Basecamp 帐篷",
+   2975
+  ],
+  [
+   "car-tesla-cyberquad-for-kids",
+   "테슬라 사이버쿼드 포 키즈",
+   "Tesla Cyberquad for Kids",
+   "特斯拉 Cyberquad 儿童电动四轮车",
+   1900
+  ],
+  [
+   "car-tesla-cybertruck-for-kids",
+   "테슬라 사이버트럭 포 키즈",
+   "Tesla Cybertruck for Kids",
+   "特斯拉 Cybertruck 儿童电动车",
+   1500
+  ],
+  [
+   "car-tesla-model-y-tow-package",
+   "테슬라 모델 Y 견인 패키지",
+   "Tesla Model Y Tow Package",
+   "特斯拉 Model Y 拖车套件",
+   1300
+  ],
+  [
+   "car-tesla-universal-wall-connector",
+   "테슬라 유니버설 월 커넥터",
+   "Tesla Universal Wall Connector",
+   "特斯拉通用壁挂式充电连接器",
+   580
+  ],
+  [
+   "car-tesla-model-y-roof-rack",
+   "테슬라 모델 Y 루프 랙",
+   "Tesla Model Y Roof Rack",
+   "特斯拉 Model Y 车顶行李架",
+   500
+  ],
+  [
+   "car-tesla-model-s-for-kids",
+   "테슬라 모델 S 포 키즈",
+   "Tesla Model S for Kids",
+   "特斯拉 Model S 儿童电动车",
+   499
+  ],
+  [
+   "car-tesla-wall-connector",
+   "테슬라 월 커넥터",
+   "Tesla Wall Connector",
+   "特斯拉壁挂式充电连接器",
+   450
+  ],
+  [
+   "car-tesla-hot-wheels-rc-1-10-cybertruck",
+   "핫휠 R/C 1:10 테슬라 사이버트럭",
+   "Hot Wheels R/C 1:10 Tesla Cybertruck",
+   "风火轮遥控 1:10 特斯拉 Cybertruck",
+   400
+  ],
+  [
+   "car-tesla-mobile-connector",
+   "테슬라 모바일 커넥터",
+   "Tesla Mobile Connector",
+   "特斯拉移动充电连接器",
+   300
+  ],
+  [
+   "car-tesla-wireless-charging-platform",
+   "테슬라 무선 충전 플랫폼",
+   "Tesla Wireless Charging Platform",
+   "特斯拉无线充电平台",
+   300
+  ],
+  [
+   "car-tesla-ccs-combo-1-adapter",
+   "테슬라 CCS 콤보 1 어댑터",
+   "Tesla CCS Combo 1 Adapter",
+   "特斯拉 CCS Combo 1 转接头",
+   250
+  ],
+  [
+   "car-tesla-diecast-1-18-cybertruck",
+   "테슬라 다이캐스트 1:18 사이버트럭",
+   "Tesla Diecast 1:18 Scale Cybertruck",
+   "特斯拉 1:18 合金车模 Cybertruck",
+   250
+  ],
+  [
+   "car-tesla-gen-2-nema-adapter-bundle",
+   "테슬라 2세대 NEMA 어댑터 번들",
+   "Tesla Gen 2 NEMA Adapter Bundle",
+   "特斯拉第二代 NEMA 转接头套装",
+   245
+  ],
+  [
+   "car-tesla-model-y-all-weather-interior-liners",
+   "테슬라 모델 Y 올웨더 인테리어 라이너",
+   "Tesla Model Y All-Weather Interior Liners",
+   "特斯拉 Model Y 全天候脚垫",
+   225
+  ],
+  [
+   "car-tesla-model-3-all-weather-interior-liners",
+   "테슬라 모델 3 올웨더 인테리어 라이너",
+   "Tesla Model 3 All-Weather Interior Liners",
+   "特斯拉 Model 3 全天候脚垫",
+   225
+  ],
+  [
+   "car-tesla-diecast-1-18-model-s",
+   "테슬라 다이캐스트 1:18 모델 S",
+   "Tesla Diecast 1:18 Scale Model S",
+   "特斯拉 1:18 合金车模 Model S",
+   175
+  ],
+  [
+   "car-tesla-diecast-1-18-model-3",
+   "테슬라 다이캐스트 1:18 모델 3",
+   "Tesla Diecast 1:18 Scale Model 3",
+   "特斯拉 1:18 合金车模 Model 3",
+   175
+  ],
+  [
+   "car-tesla-diecast-1-18-model-y",
+   "테슬라 다이캐스트 1:18 모델 Y",
+   "Tesla Diecast 1:18 Scale Model Y",
+   "特斯拉 1:18 合金车模 Model Y",
+   175
+  ],
+  [
+   "car-tesla-model-3-y-key-fob",
+   "테슬라 모델 3/Y 키 포브",
+   "Tesla Model 3/Y Key Fob",
+   "特斯拉 Model 3/Y 遥控钥匙",
+   175
+  ],
+  [
+   "car-tesla-decanter",
+   "테슬라 디캔터",
+   "Tesla Decanter",
+   "特斯拉闪电造型酒瓶",
+   150
+  ],
+  [
+   "car-tesla-my-first-model-y",
+   "테슬라 마이 퍼스트 모델 Y",
+   "Tesla My First Model Y",
+   "特斯拉 My First Model Y 儿童滑行车",
+   99.99
+  ],
+  [
+   "car-tesla-model-y-glass-roof-sunshade",
+   "테슬라 모델 Y 글라스 루프 선셰이드",
+   "Tesla Model Y Glass Roof Sunshade",
+   "特斯拉 Model Y 玻璃车顶遮阳帘",
+   80
+  ],
+  [
+   "car-tesla-tire-repair-kit",
+   "테슬라 타이어 수리 키트",
+   "Tesla Tire Repair Kit",
+   "特斯拉补胎套件",
+   80
+  ],
+  [
+   "car-tesla-sae-j1772-adapter",
+   "테슬라 SAE J1772 충전 어댑터",
+   "Tesla SAE J1772 Charging Adapter",
+   "特斯拉 SAE J1772 充电转接头",
+   50
+  ],
+  [
+   "car-tesla-cyberwhistle",
+   "테슬라 사이버휘슬",
+   "Tesla Cyberwhistle",
+   "特斯拉 Cyberwhistle 口哨",
+   50
+  ],
+  [
+   "car-tesla-gen-2-nema-14-50-adapter",
+   "테슬라 2세대 NEMA 14-50 어댑터",
+   "Tesla Gen 2 NEMA 14-50 Adapter",
+   "特斯拉第二代 NEMA 14-50 转接头",
+   45
+  ],
+  [
+   "car-tesla-key-card",
+   "테슬라 키 카드",
+   "Tesla Key Card",
+   "特斯拉钥匙卡",
+   40
+  ],
+  [
+   "car-tesla-bot-action-figure",
+   "테슬라 봇 액션 피규어",
+   "Tesla Bot Action Figure",
+   "特斯拉 Tesla Bot 可动人偶",
+   40
+  ]
+ ],
+ "use": [
+  "car-p-armor-all-aa255",
+  "car-p-chemical-guys-torq-foam-blaster-6",
+  "car-p-cosco-scenera-next",
+  "car-p-graco-turbobooster-2-highback",
+  "car-p-viair-85p",
+  "car-p-meguiars-complete-car-care-kit",
+  "car-p-noco-genius5",
+  "car-p-hjc-i10",
+  "car-p-sun-joe-spx3000",
+  "car-p-chemical-guys-torqx-kit",
+  "car-p-karcher-k1700",
+  "car-p-viofo-a129-plus-duo",
+  "car-p-griots-g9-polisher",
+  "car-p-vantrue-n4",
+  "car-p-bell-qualifier-dlx-mips",
+  "car-p-rockford-fosgate-p300-12",
+  "car-p-thule-wingbar-evo",
+  "car-p-optima-redtop-34-78",
+  "car-p-traxxas-rustler-4x4-vxl",
+  "car-p-shoei-rf-sr",
+  "car-p-thrustmaster-t300-rs-gt",
+  "car-p-autel-mk808s",
+  "car-p-blackvue-dr970x-2ch-plus",
+  "car-p-chargepoint-home-flex",
+  "car-p-logitech-g-pro-racing-wheel",
+  "car-p-segway-ninebot-max-g2",
+  "car-p-thule-motion-3-xl",
+  "car-p-alpine-ilx-f509",
+  "car-p-thule-epos-2",
+  "car-p-traxxas-x-maxx-8s",
+  "car-p-rad-radexpand-5",
+  "car-p-quickjack-5000tl",
+  "car-p-bbs-lm-19x8-5",
+  "car-p-kranzle-k1122tst",
+  "car-p-apollo-city-pro",
+  "car-p-aventon-level-2",
+  "car-p-honda-super-cub-c125",
+  "car-p-brompton-electric-c-line-explore",
+  "car-p-segway-superscooter-gt2",
+  "car-p-ikamper-skycamp-3-0",
+  "car-p-dualtron-thunder-3",
+  "car-p-honda-monkey",
+  "car-p-yamaha-mt-07",
+  "car-p-yamaha-yzf-r7",
+  "car-p-honda-rebel-1100",
+  "car-p-can-am-ryker-600",
+  "car-p-ducati-scrambler-icon",
+  "car-p-harley-davidson-nightster",
+  "car-p-kawasaki-ninja-zx-10r",
+  "car-p-yamaha-yzf-r1",
+  "car-p-suzuki-hayabusa"
+ ]
+}

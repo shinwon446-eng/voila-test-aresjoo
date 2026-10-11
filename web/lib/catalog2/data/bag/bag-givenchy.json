@@ -1,0 +1,329 @@
+{
+ "slug": "bag-givenchy",
+ "items": [
+  [
+   "bag-givenchy-4g-silk-bandeau",
+   "지방시 4G 실크 밴도",
+   "Givenchy 4G Silk Bandeau",
+   "纪梵希 4G 真丝束发带",
+   230
+  ],
+  [
+   "bag-givenchy-antigona-card-holder",
+   "지방시 안티고나 카드 홀더",
+   "Givenchy Antigona Card Holder",
+   "纪梵希 Antigona 卡包",
+   295
+  ],
+  [
+   "bag-givenchy-4g-card-holder",
+   "지방시 4G 카드 홀더",
+   "Givenchy 4G Card Holder",
+   "纪梵希 4G 卡包",
+   320
+  ],
+  [
+   "bag-givenchy-voyou-card-holder",
+   "지방시 보유 카드 홀더",
+   "Givenchy Voyou Card Holder",
+   "纪梵希 Voyou 卡包",
+   340
+  ],
+  [
+   "bag-givenchy-4g-stud-earrings",
+   "지방시 4G 스터드 이어링",
+   "Givenchy 4G Stud Earrings",
+   "纪梵希 4G 耳钉",
+   390
+  ],
+  [
+   "bag-givenchy-4g-silk-square-scarf-90",
+   "지방시 4G 실크 스퀘어 스카프 90",
+   "Givenchy 4G Silk Square Scarf 90",
+   "纪梵希 4G 真丝方巾 90",
+   450
+  ],
+  [
+   "bag-givenchy-4g-baseball-cap",
+   "지방시 4G 베이스볼 캡",
+   "Givenchy 4G Baseball Cap",
+   "纪梵希 4G 棒球帽",
+   450
+  ],
+  [
+   "bag-givenchy-4g-trifold-wallet",
+   "지방시 4G 트라이폴드 월렛",
+   "Givenchy 4G Trifold Wallet",
+   "纪梵希 4G 三折钱包",
+   490
+  ],
+  [
+   "bag-givenchy-voyou-belt",
+   "지방시 보유 벨트",
+   "Givenchy Voyou Belt",
+   "纪梵希 Voyou 腰带",
+   520
+  ],
+  [
+   "bag-givenchy-4g-reversible-belt",
+   "지방시 4G 리버서블 벨트",
+   "Givenchy 4G Reversible Belt",
+   "纪梵希 4G 双面腰带",
+   550
+  ],
+  [
+   "bag-givenchy-4g-wool-and-silk-shawl",
+   "지방시 4G 울 실크 숄",
+   "Givenchy 4G Wool and Silk Shawl",
+   "纪梵希 4G 羊毛真丝披肩",
+   550
+  ],
+  [
+   "bag-givenchy-4g-zipped-wallet",
+   "지방시 4G 지퍼 월렛",
+   "Givenchy 4G Zipped Wallet",
+   "纪梵希 4G 拉链钱包",
+   590
+  ],
+  [
+   "bag-givenchy-mini-g-tote-shopping-bag",
+   "지방시 미니 G 토트 쇼핑백",
+   "Givenchy Mini G-Tote Shopping Bag",
+   "纪梵希 迷你 G-Tote 购物袋",
+   1390
+  ],
+  [
+   "bag-givenchy-small-g-tote-shopping-bag",
+   "지방시 스몰 G 토트 쇼핑백",
+   "Givenchy Small G-Tote Shopping Bag",
+   "纪梵希 小号 G-Tote 购物袋",
+   1490
+  ],
+  [
+   "bag-givenchy-medium-g-tote-shopping-bag",
+   "지방시 미디엄 G 토트 쇼핑백",
+   "Givenchy Medium G-Tote Shopping Bag",
+   "纪梵希 中号 G-Tote 购物袋",
+   1590
+  ],
+  [
+   "bag-givenchy-mini-g-hobo-bag",
+   "지방시 미니 G 호보백",
+   "Givenchy Mini G-Hobo Bag",
+   "纪梵希 迷你 G-Hobo 包",
+   1690
+  ],
+  [
+   "bag-givenchy-micro-shark-lock-bucket-bag",
+   "지방시 마이크로 샤크 락 버킷백",
+   "Givenchy Micro Shark Lock Bucket Bag",
+   "纪梵希 微型 Shark Lock 水桶包",
+   1690
+  ],
+  [
+   "bag-givenchy-antigona-toy-bag",
+   "지방시 안티고나 토이 백",
+   "Givenchy Antigona Toy Bag",
+   "纪梵希 Antigona Toy 包",
+   1750
+  ],
+  [
+   "bag-givenchy-mini-cut-out-bag",
+   "지방시 미니 컷 아웃 백",
+   "Givenchy Mini Cut-Out Bag",
+   "纪梵希 迷你 Cut-Out 包",
+   1790
+  ],
+  [
+   "bag-givenchy-small-kenny-bag",
+   "지방시 스몰 케니 백",
+   "Givenchy Small Kenny Bag",
+   "纪梵希 小号 Kenny 包",
+   1790
+  ],
+  [
+   "bag-givenchy-mini-pandora-bag",
+   "지방시 미니 판도라 백",
+   "Givenchy Mini Pandora Bag",
+   "纪梵希 迷你 Pandora 包",
+   1850
+  ],
+  [
+   "bag-givenchy-small-4g-bag-with-chain",
+   "지방시 스몰 4G 체인백",
+   "Givenchy Small 4G Bag with Chain",
+   "纪梵希 小号 4G 链条包",
+   1890
+  ],
+  [
+   "bag-givenchy-small-moon-cut-out-bag",
+   "지방시 스몰 문 컷 아웃 백",
+   "Givenchy Small Moon Cut-Out Bag",
+   "纪梵希 小号 Moon Cut-Out 包",
+   1950
+  ],
+  [
+   "bag-givenchy-mini-voyou-bag",
+   "지방시 미니 보유 백",
+   "Givenchy Mini Voyou Bag",
+   "纪梵希 迷你 Voyou 包",
+   1990
+  ],
+  [
+   "bag-givenchy-medium-g-hobo-bag",
+   "지방시 미디엄 G 호보백",
+   "Givenchy Medium G-Hobo Bag",
+   "纪梵希 中号 G-Hobo 包",
+   2090
+  ],
+  [
+   "bag-givenchy-small-cut-out-bag",
+   "지방시 스몰 컷 아웃 백",
+   "Givenchy Small Cut-Out Bag",
+   "纪梵希 小号 Cut-Out 包",
+   2150
+  ],
+  [
+   "bag-givenchy-small-pandora-bag",
+   "지방시 스몰 판도라 백",
+   "Givenchy Small Pandora Bag",
+   "纪梵希 小号 Pandora 包",
+   2190
+  ],
+  [
+   "bag-givenchy-mini-antigona-bag",
+   "지방시 미니 안티고나 백",
+   "Givenchy Mini Antigona Bag",
+   "纪梵希 迷你 Antigona 包",
+   2250
+  ],
+  [
+   "bag-givenchy-medium-4g-bag-with-chain",
+   "지방시 미디엄 4G 체인백",
+   "Givenchy Medium 4G Bag with Chain",
+   "纪梵希 中号 4G 链条包",
+   2290
+  ],
+  [
+   "bag-givenchy-small-antigona-soft-bag",
+   "지방시 스몰 안티고나 소프트 백",
+   "Givenchy Small Antigona Soft Bag",
+   "纪梵希 小号 Antigona Soft 包",
+   2350
+  ],
+  [
+   "bag-givenchy-small-voyou-bag",
+   "지방시 스몰 보유 백",
+   "Givenchy Small Voyou Bag",
+   "纪梵希 小号 Voyou 包",
+   2390
+  ],
+  [
+   "bag-givenchy-small-antigona-lock-bag",
+   "지방시 스몰 안티고나 락 백",
+   "Givenchy Small Antigona Lock Bag",
+   "纪梵希 小号 Antigona Lock 包",
+   2490
+  ],
+  [
+   "bag-givenchy-medium-voyou-chain-bag",
+   "지방시 미디엄 보유 체인백",
+   "Givenchy Medium Voyou Chain Bag",
+   "纪梵希 中号 Voyou 链条包",
+   2650
+  ],
+  [
+   "bag-givenchy-medium-antigona-soft-bag",
+   "지방시 미디엄 안티고나 소프트 백",
+   "Givenchy Medium Antigona Soft Bag",
+   "纪梵希 中号 Antigona Soft 包",
+   2690
+  ],
+  [
+   "bag-givenchy-small-antigona-bag",
+   "지방시 스몰 안티고나 백",
+   "Givenchy Small Antigona Bag",
+   "纪梵希 小号 Antigona 包",
+   2750
+  ],
+  [
+   "bag-givenchy-medium-voyou-bag",
+   "지방시 미디엄 보유 백",
+   "Givenchy Medium Voyou Bag",
+   "纪梵希 中号 Voyou 包",
+   2950
+  ],
+  [
+   "bag-givenchy-medium-antigona-bag",
+   "지방시 미디엄 안티고나 백",
+   "Givenchy Medium Antigona Bag",
+   "纪梵希 中号 Antigona 包",
+   2990
+  ]
+ ],
+ "use": [
+  "bag-p-lululemon-everywhere-belt-bag-large-2l",
+  "bag-p-stoney-clover-lane-classic-mini-pouch",
+  "bag-p-l-l-bean-boat-and-tote-extra-large",
+  "bag-p-bickmore-bick-4-leather-conditioner-8-oz",
+  "bag-p-scotchgard-fabric-water-shield-10-oz",
+  "bag-p-apple-brand-leather-care-conditioner-8-oz",
+  "bag-p-apple-brand-leather-cleaner-8-oz",
+  "bag-p-fiebings-saddle-soap-paste-12-oz",
+  "bag-p-samsonite-luggage-strap",
+  "bag-p-baggu-baby-baggu",
+  "bag-p-cadillac-select-leather-lotion-8-oz",
+  "bag-p-saphir-creme-universelle-150ml",
+  "bag-p-baggu-standard-baggu",
+  "bag-p-apple-brand-garde-rain-and-stain-repellent",
+  "bag-p-coach-leather-cleaner",
+  "bag-p-coach-leather-moisturizer",
+  "bag-p-stoney-clover-lane-classic-small-pouch",
+  "bag-p-rimowa-leather-luggage-tag",
+  "bag-p-comme-des-garcons-wallet-sa6400-card-holder",
+  "bag-p-fjallraven-kanken-mini",
+  "bag-p-coach-essential-card-case",
+  "bag-p-fjallraven-kanken",
+  "bag-p-coach-cherry-bag-charm",
+  "bag-p-coach-small-wristlet",
+  "bag-p-dagne-dover-ace-fanny-pack",
+  "bag-p-beis-the-mini-weekender",
+  "bag-p-stoney-clover-lane-classic-large-pouch",
+  "bag-p-baggu-fanny-pack",
+  "bag-p-baggu-medium-nylon-crescent-bag",
+  "bag-p-eastpak-padded-pakr-backpack",
+  "bag-p-longchamp-le-pliage-original-handbag-s",
+  "bag-p-vera-bradley-large-travel-duffel-bag",
+  "bag-p-calpak-luka-duffel",
+  "bag-p-tory-burch-kira-chevron-card-case",
+  "bag-p-fjallraven-kanken-laptop-15-inch",
+  "bag-p-longchamp-le-foulonne-coin-purse",
+  "bag-p-herschel-supply-co-novel-duffle",
+  "bag-p-longchamp-le-pliage-original-pouch-with-handle",
+  "bag-p-dolce-and-gabbana-dauphine-calfskin-card-holder",
+  "bag-p-marc-jacobs-the-canvas-medium-tote-bag",
+  "bag-p-away-the-bigger-carry-on",
+  "bag-p-coach-brooklyn-shoulder-bag-28",
+  "bag-p-maison-margiela-four-stitches-card-holder",
+  "bag-p-marc-jacobs-the-canvas-large-tote-bag",
+  "bag-p-staud-tommy-beaded-bag",
+  "bag-p-cuyana-classic-easy-tote",
+  "bag-p-ralph-lauren-polo-id-calfskin-medium-saddle-bag",
+  "bag-p-tory-burch-fleming-small-convertible-shoulder-bag",
+  "bag-p-mansur-gavriel-bucket-bag",
+  "bag-p-strathberry-east-west-mini",
+  "bag-p-demellier-the-new-york",
+  "bag-p-a-p-c-grace-small-bag",
+  "bag-p-jacquemus-le-bambino",
+  "bag-p-coach-rogue-25",
+  "bag-p-tory-burch-lee-radziwill-petite-double-bag",
+  "bag-p-rimowa-essential-cabin",
+  "bag-p-giorgio-armani-la-prima-small",
+  "bag-p-loro-piana-extra-pocket-l19-ostrich",
+  "bag-p-moynat-gabrielle-pm",
+  "bag-p-the-row-margaux-15",
+  "bag-p-the-row-margaux-17",
+  "bag-p-bulgari-serpenti-forever-top-handle-small-crocodile",
+  "bag-p-giorgio-armani-la-prima-medium-crocodile"
+ ]
+}

@@ -1,0 +1,329 @@
+{
+ "slug": "car-kia",
+ "items": [
+  [
+   "car-kia-k4-lx",
+   "기아 K4 LX",
+   "Kia K4 LX",
+   "起亚 K4 LX",
+   21990
+  ],
+  [
+   "car-kia-k4-gt-line-turbo",
+   "기아 K4 GT-라인 터보",
+   "Kia K4 GT-Line Turbo",
+   "起亚 K4 GT-Line Turbo",
+   28090
+  ],
+  [
+   "car-kia-k5-lxs",
+   "기아 K5 LXS",
+   "Kia K5 LXS",
+   "起亚 K5 LXS",
+   27190
+  ],
+  [
+   "car-kia-k5-gt",
+   "기아 K5 GT",
+   "Kia K5 GT",
+   "起亚 K5 GT",
+   33490
+  ],
+  [
+   "car-kia-soul-lx",
+   "기아 쏘울 LX",
+   "Kia Soul LX",
+   "起亚 Soul LX",
+   20490
+  ],
+  [
+   "car-kia-soul-gt-line",
+   "기아 쏘울 GT-라인",
+   "Kia Soul GT-Line",
+   "起亚 Soul GT-Line",
+   23990
+  ],
+  [
+   "car-kia-seltos-lx",
+   "기아 셀토스 LX",
+   "Kia Seltos LX",
+   "起亚赛图斯 LX",
+   24690
+  ],
+  [
+   "car-kia-seltos-sx-turbo",
+   "기아 셀토스 SX 터보",
+   "Kia Seltos SX Turbo",
+   "起亚赛图斯 SX Turbo",
+   30390
+  ],
+  [
+   "car-kia-niro-hybrid-lx",
+   "기아 니로 하이브리드 LX",
+   "Kia Niro Hybrid LX",
+   "起亚 Niro Hybrid LX",
+   26990
+  ],
+  [
+   "car-kia-niro-plug-in-hybrid-ex",
+   "기아 니로 플러그인 하이브리드 EX",
+   "Kia Niro Plug-in Hybrid EX",
+   "起亚 Niro Plug-in Hybrid EX",
+   34490
+  ],
+  [
+   "car-kia-niro-ev-wind",
+   "기아 니로 EV 윈드",
+   "Kia Niro EV Wind",
+   "起亚 Niro EV Wind",
+   39600
+  ],
+  [
+   "car-kia-sportage-lx",
+   "기아 스포티지 LX",
+   "Kia Sportage LX",
+   "起亚狮铂拓界 LX",
+   28690
+  ],
+  [
+   "car-kia-sportage-hybrid-lx",
+   "기아 스포티지 하이브리드 LX",
+   "Kia Sportage Hybrid LX",
+   "起亚狮铂拓界 Hybrid LX",
+   30290
+  ],
+  [
+   "car-kia-sportage-plug-in-hybrid-x-line",
+   "기아 스포티지 플러그인 하이브리드 X-라인",
+   "Kia Sportage Plug-in Hybrid X-Line",
+   "起亚狮铂拓界 Plug-in Hybrid X-Line",
+   39890
+  ],
+  [
+   "car-kia-sportage-x-pro-prestige",
+   "기아 스포티지 X-프로 프레스티지",
+   "Kia Sportage X-Pro Prestige",
+   "起亚狮铂拓界 X-Pro Prestige",
+   38790
+  ],
+  [
+   "car-kia-sorento-lx",
+   "기아 쏘렌토 LX",
+   "Kia Sorento LX",
+   "起亚索兰托 LX",
+   31990
+  ],
+  [
+   "car-kia-sorento-hybrid-ex",
+   "기아 쏘렌토 하이브리드 EX",
+   "Kia Sorento Hybrid EX",
+   "起亚索兰托 Hybrid EX",
+   38690
+  ],
+  [
+   "car-kia-sorento-plug-in-hybrid-ex",
+   "기아 쏘렌토 플러그인 하이브리드 EX",
+   "Kia Sorento Plug-in Hybrid EX",
+   "起亚索兰托 Plug-in Hybrid EX",
+   47990
+  ],
+  [
+   "car-kia-sorento-x-pro-sx-prestige",
+   "기아 쏘렌토 X-프로 SX 프레스티지",
+   "Kia Sorento X-Pro SX Prestige",
+   "起亚索兰托 X-Pro SX Prestige",
+   47390
+  ],
+  [
+   "car-kia-telluride-lx",
+   "기아 텔루라이드 LX",
+   "Kia Telluride LX",
+   "起亚 Telluride LX",
+   36390
+  ],
+  [
+   "car-kia-telluride-ex",
+   "기아 텔루라이드 EX",
+   "Kia Telluride EX",
+   "起亚 Telluride EX",
+   42090
+  ],
+  [
+   "car-kia-telluride-sx-prestige-x-pro",
+   "기아 텔루라이드 SX 프레스티지 X-프로",
+   "Kia Telluride SX Prestige X-Pro",
+   "起亚 Telluride SX Prestige X-Pro",
+   53685
+  ],
+  [
+   "car-kia-carnival-lx",
+   "기아 카니발 LX",
+   "Kia Carnival LX",
+   "起亚嘉华 LX",
+   36800
+  ],
+  [
+   "car-kia-carnival-hybrid-lxs",
+   "기아 카니발 하이브리드 LXS",
+   "Kia Carnival Hybrid LXS",
+   "起亚嘉华 Hybrid LXS",
+   40800
+  ],
+  [
+   "car-kia-carnival-sx-prestige",
+   "기아 카니발 SX 프레스티지",
+   "Kia Carnival SX Prestige",
+   "起亚嘉华 SX Prestige",
+   50900
+  ],
+  [
+   "car-kia-ev6-light",
+   "기아 EV6 라이트",
+   "Kia EV6 Light",
+   "起亚 EV6 Light",
+   42900
+  ],
+  [
+   "car-kia-ev6-wind-awd",
+   "기아 EV6 윈드 AWD",
+   "Kia EV6 Wind AWD",
+   "起亚 EV6 Wind AWD",
+   54300
+  ],
+  [
+   "car-kia-ev6-gt-line-awd",
+   "기아 EV6 GT-라인 AWD",
+   "Kia EV6 GT-Line AWD",
+   "起亚 EV6 GT-Line AWD",
+   58900
+  ],
+  [
+   "car-kia-ev6-gt",
+   "기아 EV6 GT",
+   "Kia EV6 GT",
+   "起亚 EV6 GT",
+   63800
+  ],
+  [
+   "car-kia-ev9-light",
+   "기아 EV9 라이트",
+   "Kia EV9 Light",
+   "起亚 EV9 Light",
+   54900
+  ],
+  [
+   "car-kia-ev9-wind-awd",
+   "기아 EV9 윈드 AWD",
+   "Kia EV9 Wind AWD",
+   "起亚 EV9 Wind AWD",
+   63900
+  ],
+  [
+   "car-kia-ev9-land-awd",
+   "기아 EV9 랜드 AWD",
+   "Kia EV9 Land AWD",
+   "起亚 EV9 Land AWD",
+   69900
+  ],
+  [
+   "car-kia-ev9-gt-line",
+   "기아 EV9 GT-라인",
+   "Kia EV9 GT-Line",
+   "起亚 EV9 GT-Line",
+   73900
+  ],
+  [
+   "car-kia-stinger-gt2-2023",
+   "기아 스팅어 GT2 (2023)",
+   "Kia Stinger GT2 (2023)",
+   "起亚斯汀格 GT2 (2023)",
+   51890
+  ],
+  [
+   "car-kia-k900-2020",
+   "기아 K900 (2020)",
+   "Kia K900 (2020)",
+   "起亚 K900 (2020)",
+   59900
+  ],
+  [
+   "car-kia-rio-lx-2023",
+   "기아 리오 LX (2023)",
+   "Kia Rio LX (2023)",
+   "起亚 Rio LX (2023)",
+   16750
+  ],
+  [
+   "car-kia-forte-lx-2024",
+   "기아 포르테 LX (2024)",
+   "Kia Forte LX (2024)",
+   "起亚 Forte LX (2024)",
+   19990
+  ]
+ ],
+ "use": [
+  "car-p-chemical-guys-hol169",
+  "car-p-fanttik-x8-apex",
+  "car-p-pioneer-mvh-s322bt",
+  "car-p-viofo-a119-mini-2",
+  "car-p-knipex-cobra-set-00-20-09-us1",
+  "car-p-ctek-mxs-5-0",
+  "car-p-dewalt-dcc020ib",
+  "car-p-bell-qualifier",
+  "car-p-bluedriver-pro",
+  "car-p-chicco-kidfit-cleartex-plus",
+  "car-p-collinite-845",
+  "car-p-bosch-icon-22oe",
+  "car-p-noco-genius1",
+  "car-p-chemical-guys-hydroslick-16oz",
+  "car-p-battery-tender-junior",
+  "car-p-jl-audio-jd400-4",
+  "car-p-michelin-crossclimate2-225-65r17",
+  "car-p-continental-dws06-plus-245-40zr18",
+  "car-p-traxxas-slash-2wd",
+  "car-p-garmin-dash-cam-mini-2",
+  "car-p-milwaukee-2848-20",
+  "car-p-milwaukee-packout-48-22-8426",
+  "car-p-cobra-rad-480i",
+  "car-p-noco-boost-x-gbx45",
+  "car-p-clek-olli",
+  "car-p-garmin-drive-53",
+  "car-p-nextbase-322gw",
+  "car-p-hjc-i10",
+  "car-p-sun-joe-spx3000",
+  "car-p-sony-xav-ax3200",
+  "car-p-enkei-rpf1-17x9",
+  "car-p-viofo-a229-pro-2ch",
+  "car-p-garmin-drivesmart-86",
+  "car-p-grizzl-e-classic-40a",
+  "car-p-garmin-zumo-xt2",
+  "car-p-sony-xav-ax6000",
+  "car-p-shoei-rf-1400",
+  "car-p-vossen-hf-5-20x9",
+  "car-p-wallbox-pulsar-plus-40a",
+  "car-p-dometic-cfx3-35",
+  "car-p-shoei-x-fifteen",
+  "car-p-lectric-xp-3-0",
+  "car-p-arai-corsair-x",
+  "car-p-fanatec-clubsport-dd-plus",
+  "car-p-thule-approach-m",
+  "car-p-segway-superscooter-gt1",
+  "car-p-rad-radexpand-5",
+  "car-p-quickjack-5000tl",
+  "car-p-bbs-lm-19x8-5",
+  "car-p-specialized-turbo-vado-4-0",
+  "car-p-honda-grom",
+  "car-p-kawasaki-z125-pro",
+  "car-p-super73-rx",
+  "car-p-honda-super-cub-c125",
+  "car-p-brompton-electric-c-line-explore",
+  "car-p-honda-rebel-500",
+  "car-p-kawasaki-klr650",
+  "car-p-polaris-sportsman-570",
+  "car-p-vespa-gts-300",
+  "car-p-yamaha-mt-07",
+  "car-p-yamaha-yzf-r7",
+  "car-p-mercedes-benz-s-500-4matic",
+  "car-p-nissan-gt-r-premium"
+ ]
+}

@@ -1,0 +1,245 @@
+{
+ "slug": "car-maserati",
+ "items": [
+  [
+   "car-maserati-grecale-gt",
+   "마세라티 그레칼레 GT",
+   "Maserati Grecale GT",
+   "玛莎拉蒂 Grecale GT",
+   68500
+  ],
+  [
+   "car-maserati-grecale-modena",
+   "마세라티 그레칼레 모데나",
+   "Maserati Grecale Modena",
+   "玛莎拉蒂 Grecale Modena",
+   77900
+  ],
+  [
+   "car-maserati-grecale-trofeo",
+   "마세라티 그레칼레 트로페오",
+   "Maserati Grecale Trofeo",
+   "玛莎拉蒂 Grecale Trofeo",
+   105500
+  ],
+  [
+   "car-maserati-grecale-folgore",
+   "마세라티 그레칼레 폴고레",
+   "Maserati Grecale Folgore",
+   "玛莎拉蒂 Grecale Folgore",
+   109000
+  ],
+  [
+   "car-maserati-levante-gt-2024",
+   "마세라티 르반떼 GT (2024)",
+   "Maserati Levante GT (2024)",
+   "玛莎拉蒂 Levante GT (2024)",
+   90700
+  ],
+  [
+   "car-maserati-levante-modena-2024",
+   "마세라티 르반떼 모데나 (2024)",
+   "Maserati Levante Modena (2024)",
+   "玛莎拉蒂 Levante Modena (2024)",
+   107000
+  ],
+  [
+   "car-maserati-levante-trofeo-2024",
+   "마세라티 르반떼 트로페오 (2024)",
+   "Maserati Levante Trofeo (2024)",
+   "玛莎拉蒂 Levante Trofeo (2024)",
+   165000
+  ],
+  [
+   "car-maserati-ghibli-gt-2024",
+   "마세라티 기블리 GT (2024)",
+   "Maserati Ghibli GT (2024)",
+   "玛莎拉蒂 Ghibli GT (2024)",
+   87000
+  ],
+  [
+   "car-maserati-ghibli-modena-q4-2024",
+   "마세라티 기블리 모데나 Q4 (2024)",
+   "Maserati Ghibli Modena Q4 (2024)",
+   "玛莎拉蒂 Ghibli Modena Q4 (2024)",
+   101000
+  ],
+  [
+   "car-maserati-ghibli-trofeo-2023",
+   "마세라티 기블리 트로페오 (2023)",
+   "Maserati Ghibli Trofeo (2023)",
+   "玛莎拉蒂 Ghibli Trofeo (2023)",
+   124000
+  ],
+  [
+   "car-maserati-ghibli-334-ultima",
+   "마세라티 기블리 334 울티마",
+   "Maserati Ghibli 334 Ultima",
+   "玛莎拉蒂 Ghibli 334 Ultima",
+   163000
+  ],
+  [
+   "car-maserati-quattroporte-modena-2024",
+   "마세라티 콰트로포르테 모데나 (2024)",
+   "Maserati Quattroporte Modena (2024)",
+   "玛莎拉蒂总裁 Modena (2024)",
+   130000
+  ],
+  [
+   "car-maserati-quattroporte-trofeo-2023",
+   "마세라티 콰트로포르테 트로페오 (2023)",
+   "Maserati Quattroporte Trofeo (2023)",
+   "玛莎拉蒂总裁 Trofeo (2023)",
+   154000
+  ],
+  [
+   "car-maserati-granturismo-modena",
+   "마세라티 그란투리스모 모데나",
+   "Maserati GranTurismo Modena",
+   "玛莎拉蒂 GranTurismo Modena",
+   158000
+  ],
+  [
+   "car-maserati-granturismo-trofeo",
+   "마세라티 그란투리스모 트로페오",
+   "Maserati GranTurismo Trofeo",
+   "玛莎拉蒂 GranTurismo Trofeo",
+   190000
+  ],
+  [
+   "car-maserati-granturismo-folgore",
+   "마세라티 그란투리스모 폴고레",
+   "Maserati GranTurismo Folgore",
+   "玛莎拉蒂 GranTurismo Folgore",
+   205000
+  ],
+  [
+   "car-maserati-grancabrio",
+   "마세라티 그란카브리오",
+   "Maserati GranCabrio",
+   "玛莎拉蒂 GranCabrio",
+   182000
+  ],
+  [
+   "car-maserati-grancabrio-trofeo",
+   "마세라티 그란카브리오 트로페오",
+   "Maserati GranCabrio Trofeo",
+   "玛莎拉蒂 GranCabrio Trofeo",
+   206000
+  ],
+  [
+   "car-maserati-grancabrio-folgore",
+   "마세라티 그란카브리오 폴고레",
+   "Maserati GranCabrio Folgore",
+   "玛莎拉蒂 GranCabrio Folgore",
+   207000
+  ],
+  [
+   "car-maserati-mc20",
+   "마세라티 MC20",
+   "Maserati MC20",
+   "玛莎拉蒂 MC20",
+   239000
+  ],
+  [
+   "car-maserati-mc20-cielo",
+   "마세라티 MC20 첼로",
+   "Maserati MC20 Cielo",
+   "玛莎拉蒂 MC20 Cielo",
+   262000
+  ],
+  [
+   "car-maserati-gt2-stradale",
+   "마세라티 GT2 스트라달레",
+   "Maserati GT2 Stradale",
+   "玛莎拉蒂 GT2 Stradale",
+   313995
+  ],
+  [
+   "car-maserati-mcxtrema",
+   "마세라티 MCXtrema",
+   "Maserati MCXtrema",
+   "玛莎拉蒂 MCXtrema",
+   1100000
+  ]
+ ],
+ "use": [
+  "car-p-dewalt-dwmt81535",
+  "car-p-milwaukee-2557-20",
+  "car-p-noco-boost-hd-gb70",
+  "car-p-graco-extend2fit",
+  "car-p-dewalt-dcf891b",
+  "car-p-chicco-keyfit-30",
+  "car-p-diono-radian-3r",
+  "car-p-garmin-dash-cam-57",
+  "car-p-jl-audio-jd400-4",
+  "car-p-michelin-crossclimate2-225-65r17",
+  "car-p-continental-dws06-plus-245-40zr18",
+  "car-p-traxxas-slash-2wd",
+  "car-p-cosco-scenera-next",
+  "car-p-graco-turbobooster-2-highback",
+  "car-p-viair-85p",
+  "car-p-meguiars-complete-car-care-kit",
+  "car-p-segway-ninebot-e2-plus",
+  "car-p-uniden-r3",
+  "car-p-jl-audio-12w3v3-4",
+  "car-p-milwaukee-2967-20",
+  "car-p-graco-4ever-dlx",
+  "car-p-innova-5610",
+  "car-p-sony-xav-ax3200",
+  "car-p-enkei-rpf1-17x9",
+  "car-p-viofo-a229-pro-2ch",
+  "car-p-garmin-drivesmart-86",
+  "car-p-grizzl-e-classic-40a",
+  "car-p-michelin-ps4s-255-35zr19",
+  "car-p-vantrue-n4-pro",
+  "car-p-emporia-level-2-48a",
+  "car-p-clek-foonf",
+  "car-p-garmin-zumo-xt2",
+  "car-p-sony-xav-ax6000",
+  "car-p-shoei-rf-1400",
+  "car-p-vossen-hf-5-20x9",
+  "car-p-wallbox-pulsar-plus-40a",
+  "car-p-kuat-sherpa-2-0",
+  "car-p-segway-ninebot-zt3-pro",
+  "car-p-thule-t2-pro-xtr-2",
+  "car-p-dometic-cfx3-35",
+  "car-p-shoei-x-fifteen",
+  "car-p-lectric-xp-3-0",
+  "car-p-arai-corsair-x",
+  "car-p-fanatec-clubsport-dd-plus",
+  "car-p-apollo-city-pro",
+  "car-p-aventon-level-2",
+  "car-p-honda-crf50f",
+  "car-p-yamaha-pw50",
+  "car-p-aventon-aventure-2",
+  "car-p-honda-navi",
+  "car-p-rad-radrunner-3-plus",
+  "car-p-thule-vector-alpine",
+  "car-p-honda-rebel-300",
+  "car-p-kawasaki-ninja-500",
+  "car-p-tern-gsd-s10",
+  "car-p-yamaha-yzf-r3",
+  "car-p-vespa-primavera-150",
+  "car-p-ktm-390-duke",
+  "car-p-specialized-turbo-vado-4-0",
+  "car-p-honda-grom",
+  "car-p-honda-rebel-500",
+  "car-p-kawasaki-klr650",
+  "car-p-polaris-sportsman-570",
+  "car-p-vespa-gts-300",
+  "car-p-yamaha-mt-07",
+  "car-p-yamaha-yzf-r7",
+  "car-p-honda-rebel-1100",
+  "car-p-can-am-ryker-600",
+  "car-p-chevrolet-trax-ls",
+  "car-p-polaris-rzr-xp-1000-sport",
+  "car-p-ktm-1390-super-duke-r-evo",
+  "car-p-volkswagen-jetta-s",
+  "car-p-harley-davidson-fat-boy",
+  "car-p-subaru-impreza-base",
+  "car-p-jeep-wrangler-sport-2-door",
+  "car-p-acura-integra",
+  "car-p-ducati-panigale-v4-s"
+ ]
+}

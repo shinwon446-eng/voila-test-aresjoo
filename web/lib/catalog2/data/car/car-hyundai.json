@@ -1,0 +1,323 @@
+{
+ "slug": "car-hyundai",
+ "items": [
+  [
+   "car-hyundai-venue-se",
+   "현대 베뉴 SE",
+   "Hyundai Venue SE",
+   "现代 Venue SE",
+   20200
+  ],
+  [
+   "car-hyundai-venue-limited",
+   "현대 베뉴 리미티드",
+   "Hyundai Venue Limited",
+   "现代 Venue Limited",
+   23450
+  ],
+  [
+   "car-hyundai-elantra-se",
+   "현대 엘란트라 SE",
+   "Hyundai Elantra SE",
+   "现代伊兰特 SE",
+   22125
+  ],
+  [
+   "car-hyundai-elantra-hybrid-blue",
+   "현대 엘란트라 하이브리드 블루",
+   "Hyundai Elantra Hybrid Blue",
+   "现代伊兰特 Hybrid Blue",
+   25450
+  ],
+  [
+   "car-hyundai-elantra-n-line",
+   "현대 엘란트라 N 라인",
+   "Hyundai Elantra N Line",
+   "现代伊兰特 N Line",
+   28975
+  ],
+  [
+   "car-hyundai-elantra-n",
+   "현대 엘란트라 N",
+   "Hyundai Elantra N",
+   "现代伊兰特 N",
+   34350
+  ],
+  [
+   "car-hyundai-sonata-se",
+   "현대 쏘나타 SE",
+   "Hyundai Sonata SE",
+   "现代索纳塔 SE",
+   26900
+  ],
+  [
+   "car-hyundai-sonata-hybrid-sel",
+   "현대 쏘나타 하이브리드 SEL",
+   "Hyundai Sonata Hybrid SEL",
+   "现代索纳塔 Hybrid SEL",
+   31250
+  ],
+  [
+   "car-hyundai-sonata-n-line",
+   "현대 쏘나타 N 라인",
+   "Hyundai Sonata N Line",
+   "现代索纳塔 N Line",
+   35500
+  ],
+  [
+   "car-hyundai-kona-se",
+   "현대 코나 SE",
+   "Hyundai Kona SE",
+   "现代 Kona SE",
+   24550
+  ],
+  [
+   "car-hyundai-kona-n-line",
+   "현대 코나 N 라인",
+   "Hyundai Kona N Line",
+   "现代 Kona N Line",
+   31100
+  ],
+  [
+   "car-hyundai-kona-electric-se",
+   "현대 코나 일렉트릭 SE",
+   "Hyundai Kona Electric SE",
+   "现代 Kona Electric SE",
+   32975
+  ],
+  [
+   "car-hyundai-kona-electric-limited",
+   "현대 코나 일렉트릭 리미티드",
+   "Hyundai Kona Electric Limited",
+   "现代 Kona Electric Limited",
+   41150
+  ],
+  [
+   "car-hyundai-tucson-se",
+   "현대 투싼 SE",
+   "Hyundai Tucson SE",
+   "现代途胜 SE",
+   28705
+  ],
+  [
+   "car-hyundai-tucson-hybrid-blue",
+   "현대 투싼 하이브리드 블루",
+   "Hyundai Tucson Hybrid Blue",
+   "现代途胜 Hybrid Blue",
+   33465
+  ],
+  [
+   "car-hyundai-tucson-plug-in-hybrid-sel",
+   "현대 투싼 플러그인 하이브리드 SEL",
+   "Hyundai Tucson Plug-in Hybrid SEL",
+   "现代途胜 Plug-in Hybrid SEL",
+   39730
+  ],
+  [
+   "car-hyundai-tucson-limited",
+   "현대 투싼 리미티드",
+   "Hyundai Tucson Limited",
+   "现代途胜 Limited",
+   38745
+  ],
+  [
+   "car-hyundai-santa-cruz-se",
+   "현대 싼타크루즈 SE",
+   "Hyundai Santa Cruz SE",
+   "现代 Santa Cruz SE",
+   28750
+  ],
+  [
+   "car-hyundai-santa-cruz-xrt",
+   "현대 싼타크루즈 XRT",
+   "Hyundai Santa Cruz XRT",
+   "现代 Santa Cruz XRT",
+   40250
+  ],
+  [
+   "car-hyundai-santa-fe-se",
+   "현대 싼타페 SE",
+   "Hyundai Santa Fe SE",
+   "现代胜达 SE",
+   34300
+  ],
+  [
+   "car-hyundai-santa-fe-hybrid-sel",
+   "현대 싼타페 하이브리드 SEL",
+   "Hyundai Santa Fe Hybrid SEL",
+   "现代胜达 Hybrid SEL",
+   37800
+  ],
+  [
+   "car-hyundai-santa-fe-calligraphy",
+   "현대 싼타페 캘리그래피",
+   "Hyundai Santa Fe Calligraphy",
+   "现代胜达 Calligraphy",
+   46750
+  ],
+  [
+   "car-hyundai-palisade-se",
+   "현대 팰리세이드 SE",
+   "Hyundai Palisade SE",
+   "现代帕里斯帝 SE",
+   38935
+  ],
+  [
+   "car-hyundai-palisade-xrt-pro",
+   "현대 팰리세이드 XRT 프로",
+   "Hyundai Palisade XRT Pro",
+   "现代帕里斯帝 XRT Pro",
+   49370
+  ],
+  [
+   "car-hyundai-palisade-calligraphy",
+   "현대 팰리세이드 캘리그래피",
+   "Hyundai Palisade Calligraphy",
+   "现代帕里斯帝 Calligraphy",
+   54060
+  ],
+  [
+   "car-hyundai-ioniq-5-se-standard-range",
+   "현대 아이오닉 5 SE 스탠다드 레인지",
+   "Hyundai IONIQ 5 SE Standard Range",
+   "现代 IONIQ 5 SE 标准续航版",
+   42600
+  ],
+  [
+   "car-hyundai-ioniq-5-sel",
+   "현대 아이오닉 5 SEL",
+   "Hyundai IONIQ 5 SEL",
+   "现代 IONIQ 5 SEL",
+   49600
+  ],
+  [
+   "car-hyundai-ioniq-5-xrt",
+   "현대 아이오닉 5 XRT",
+   "Hyundai IONIQ 5 XRT",
+   "现代 IONIQ 5 XRT",
+   55500
+  ],
+  [
+   "car-hyundai-ioniq-5-limited-awd",
+   "현대 아이오닉 5 리미티드 AWD",
+   "Hyundai IONIQ 5 Limited AWD",
+   "现代 IONIQ 5 Limited AWD",
+   58200
+  ],
+  [
+   "car-hyundai-ioniq-5-n",
+   "현대 아이오닉 5 N",
+   "Hyundai IONIQ 5 N",
+   "现代 IONIQ 5 N",
+   66200
+  ],
+  [
+   "car-hyundai-ioniq-6-se-standard-range",
+   "현대 아이오닉 6 SE 스탠다드 레인지",
+   "Hyundai IONIQ 6 SE Standard Range",
+   "现代 IONIQ 6 SE 标准续航版",
+   37850
+  ],
+  [
+   "car-hyundai-ioniq-6-limited-awd",
+   "현대 아이오닉 6 리미티드 AWD",
+   "Hyundai IONIQ 6 Limited AWD",
+   "现代 IONIQ 6 Limited AWD",
+   54600
+  ],
+  [
+   "car-hyundai-ioniq-9-s",
+   "현대 아이오닉 9 S",
+   "Hyundai IONIQ 9 S",
+   "现代 IONIQ 9 S",
+   58955
+  ],
+  [
+   "car-hyundai-ioniq-9-performance-calligraphy",
+   "현대 아이오닉 9 퍼포먼스 캘리그래피",
+   "Hyundai IONIQ 9 Performance Calligraphy",
+   "现代 IONIQ 9 Performance Calligraphy",
+   74990
+  ],
+  [
+   "car-hyundai-nexo-blue",
+   "현대 넥쏘 블루",
+   "Hyundai NEXO Blue",
+   "现代 NEXO Blue",
+   60135
+  ],
+  [
+   "car-hyundai-nexo-limited",
+   "현대 넥쏘 리미티드",
+   "Hyundai NEXO Limited",
+   "现代 NEXO Limited",
+   63585
+  ]
+ ],
+ "use": [
+  "car-p-pioneer-ts-a1680f",
+  "car-p-kicker-46csc654",
+  "car-p-noco-boost-sport-gb20",
+  "car-p-carpro-cquartz-uk-3-50ml",
+  "car-p-milwaukee-2475-20",
+  "car-p-gyeon-mohs-evo-50ml",
+  "car-p-noco-boost-plus-gb40",
+  "car-p-chemical-guys-hol169",
+  "car-p-fanttik-x8-apex",
+  "car-p-pioneer-mvh-s322bt",
+  "car-p-viofo-a119-mini-2",
+  "car-p-knipex-cobra-set-00-20-09-us1",
+  "car-p-ctek-mxs-5-0",
+  "car-p-dewalt-dcc020ib",
+  "car-p-bell-qualifier",
+  "car-p-milwaukee-2557-20",
+  "car-p-noco-boost-hd-gb70",
+  "car-p-graco-extend2fit",
+  "car-p-dewalt-dcf891b",
+  "car-p-chicco-keyfit-30",
+  "car-p-diono-radian-3r",
+  "car-p-garmin-dash-cam-57",
+  "car-p-jl-audio-jd400-4",
+  "car-p-michelin-crossclimate2-225-65r17",
+  "car-p-continental-dws06-plus-245-40zr18",
+  "car-p-traxxas-slash-2wd",
+  "car-p-garmin-dash-cam-mini-2",
+  "car-p-milwaukee-2848-20",
+  "car-p-milwaukee-packout-48-22-8426",
+  "car-p-logitech-g29",
+  "car-p-segway-ninebot-e2-plus",
+  "car-p-uniden-r3",
+  "car-p-jl-audio-12w3v3-4",
+  "car-p-milwaukee-2967-20",
+  "car-p-agv-k6-s",
+  "car-p-nuna-rava",
+  "car-p-michelin-ps4s-315-30zr21",
+  "car-p-playseat-trophy",
+  "car-p-arai-regent-x",
+  "car-p-dometic-cfx3-75dz",
+  "car-p-alpinestars-tech-air-5",
+  "car-p-escort-redline-360c",
+  "car-p-thule-force-xt-l",
+  "car-p-yakima-skybox-16-carbonite",
+  "car-p-yamaha-pw50",
+  "car-p-aventon-aventure-2",
+  "car-p-honda-navi",
+  "car-p-rad-radrunner-3-plus",
+  "car-p-thule-vector-alpine",
+  "car-p-kawasaki-klx110r",
+  "car-p-gazelle-ultimate-c380-hmb",
+  "car-p-honda-rebel-300",
+  "car-p-kawasaki-ninja-500",
+  "car-p-tern-gsd-s10",
+  "car-p-yamaha-yzf-r3",
+  "car-p-vespa-primavera-150",
+  "car-p-yamaha-mt-09",
+  "car-p-yamaha-tenere-700",
+  "car-p-kawasaki-ninja-zx-6r",
+  "car-p-triumph-bonneville-t120",
+  "car-p-ducati-monster",
+  "car-p-indian-scout-bobber",
+  "car-p-mercedes-amg-gt-black-series",
+  "car-p-ducati-superleggera-v4"
+ ]
+}

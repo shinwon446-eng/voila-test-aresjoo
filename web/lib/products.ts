@@ -252,6 +252,7 @@ function withWaveSchedule(box: ProductBox): ProductBox {
 //   - 당첨 구간은 같은 사다리(1, 2, 4, 8, 15, 40, 100, 250, 500배)와 같은 목표 칸 수를 쓴다. 그 구간에 드는 상품이 없으면 그 구간은 없다(USDT 로 메우지 않는다).
 //     구간 안에서는 상품마다 기대 가치를 같게 나눈다(싼 상품이 조금 더 자주 나온다). 상품은 최소 한 칸.
 //   - 낮은 구간은 박스 가격보다 싼 실물 둘로 나눈다: 절반 미만(A)과 절반 이상(B). 남은 칸을 A 와 B 에 나눠 참고가 기준 기대 비율을 정확히 99%로 맞춘다.
+//     낮은 구간 안에서는 상품마다 같은 확률이다(가장 싼 것이 가장 자주 나오게 하지 않는다). 박스 가격의 10분의 1보다 싼 상품은 넣지 않는다.
 //     맞출 수 없으면(낮은 상품의 값대가 한쪽으로 쏠렸을 때) 당첨 구간의 칸 수를 한꺼번에 같은 비율로 늘리거나 줄인다.
 //   - 99%는 참고가 기준이다. 받은 상품을 전부 95%로 USDT 로 바꾸면 약 94%다. 화면에는 두 숫자를 따로 적는다.
 // 결과는 매번 이 표에서 독립으로 뽑는다(쓴 금액, 이전 결과, 잔액과 무관하다).
@@ -259,6 +260,8 @@ export const PHYSICAL_ODDS_VERSION = "2026-10-12-physical-99-v1";
 export const TARGET_RETAIL_RTP = 0.99;
 /** 낮은 구간을 둘로 가르는 선: 박스 가격 대비 */
 export const LOW_SPLIT = 0.5;
+/** 가장 싼 상품의 바닥: 박스 가격 대비. 500달러 박스에서 6달러짜리가 나오지 않게 한다 */
+export const LOW_FLOOR = 0.1;
 /** 실물 전용 박스 하나의 상품 수 범위 */
 export const MIN_PHYSICAL_ITEMS = 60;
 export const MAX_PHYSICAL_ITEMS = 140;
@@ -270,6 +273,7 @@ function withPhysicalSchedule(box: ProductBox): ProductBox {
   const lowA = box.items.filter((i) => i.value < price * LOW_SPLIT);
   const lowB = box.items.filter((i) => i.value >= price * LOW_SPLIT && i.value < price);
   if (lowA.length === 0 || lowB.length === 0) return fail("physical box needs items both below half the price and between half and the full price");
+  if (box.items.some((i) => i.value < price * LOW_FLOOR - 1e-9)) return fail(`physical box has an item cheaper than ${LOW_FLOOR} of the price`);
   const bands: ProductItem[][] = LADDER.map(() => []);
   for (const item of box.items) if (item.value >= price) bands[bandIndexOf(item.value, price)].push(item);
   /** 묶음 안에서 기대 가치를 같게 나눈 칸 수(값의 역수에 비례). 상품마다 최소 한 칸 */
@@ -277,8 +281,10 @@ function withPhysicalSchedule(box: ProductBox): ProductBox {
     const inverse = group.reduce((sum, i) => sum + 1 / i.value, 0);
     return group.map((i) => Math.max(1, Math.round((total / i.value) / inverse)));
   };
-  const harmonic = (group: ProductItem[]) => group.length / group.reduce((sum, i) => sum + 1 / i.value, 0);
-  const a = harmonic(lowA), b = harmonic(lowB);
+  /** 낮은 구간: 묶음 안의 상품마다 같은 칸 수 */
+  const even = (group: ProductItem[], total: number): number[] => group.map((_, i) => Math.max(1, Math.floor(total / group.length) + (i < Math.round(total) % group.length ? 1 : 0)));
+  const mean = (group: ProductItem[]) => group.reduce((sum, i) => sum + i.value, 0) / group.length;
+  const a = mean(lowA), b = mean(lowB);
   /** 당첨 구간을 scale 배로 잡았을 때의 칸 수와, 낮은 구간 B 에 줘야 하는 칸 수 */
   const plan = (scale: number) => {
     const win = bands.map((group, k) => (group.length ? spread(group, LADDER[k].slots * scale) : []));
@@ -295,8 +301,8 @@ function withPhysicalSchedule(box: ProductBox): ProductBox {
     found = plan(scale);
   }
   if (!(found.rest > 0 && found.toB >= lowB.length && found.rest - found.toB >= lowA.length)) return fail(`physical schedule cannot reach ${TARGET_RETAIL_RTP} (scale ${scale.toFixed(3)})`);
-  const slotsB = spread(lowB, Math.round(found.toB));
-  const slotsA = spread(lowA, found.rest - slotsB.reduce((x, y) => x + y, 0));
+  const slotsB = even(lowB, Math.round(found.toB));
+  const slotsA = even(lowA, found.rest - slotsB.reduce((x, y) => x + y, 0));
   const assigned = new Map<string, number>();
   bands.forEach((group, k) => group.forEach((item, i) => assigned.set(item.id, found.win[k][i])));
   lowB.forEach((item, i) => assigned.set(item.id, slotsB[i]));

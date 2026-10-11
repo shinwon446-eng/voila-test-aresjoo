@@ -22,6 +22,7 @@ export const RULES = {
   size: 100,          // 박스 하나의 상품 수(자기 상품 + 공통 상품)
   minOwn: 15,         // 그 브랜드의 상품(본품과 브랜드 소품)은 적어도 이만큼
   minValue: 5,        // 가장 싼 실물(달러). 이보다 싸면 보내는 값이 상품보다 비싸다
+  floorRatio: 0.1,    // 박스 가격의 이 비율보다 싼 상품은 그 박스에 넣지 않는다(500달러 박스에서 6달러 물티슈가 나오지 않게). 자기 상품이라도 뺀다
   minLowA: 10,        // 박스 가격의 절반 미만
   minLowB: 10,        // 절반 이상, 박스 가격 미만
   minWin: 45,         // 박스 가격 이상
@@ -64,7 +65,10 @@ export function checkBox(entry, pool) {
   let box;
   try { box = readJson(file); } catch (e) { return { ok: false, errors: ["읽을 수 없다: " + e.message] }; }
   if (box.slug !== entry.slug) errors.push(`slug 가 ${entry.slug} 이 아니다`);
-  const own = Array.isArray(box.items) ? box.items : [];
+  const listed = Array.isArray(box.items) ? box.items : [];
+  // 박스 가격의 10분의 1보다 싼 자기 상품은 이 박스에서 뺀다(자료 파일에는 그대로 둔다)
+  const floor = Math.max(RULES.minValue, entry.price * RULES.floorRatio);
+  const own = listed.filter((t) => !(Array.isArray(t) && typeof t[4] === "number" && t[4] < floor - 1e-9));
   const use = Array.isArray(box.use) ? box.use : [];
   const byId = new Map(pool.items.map((t) => [t[0], t]));
   const resolved = [];
@@ -81,6 +85,7 @@ export function checkBox(entry, pool) {
     const t = byId.get(id);
     if (!t) { errors.push(`use ${id}: 공통 상품에 없다`); continue; }
     if (seen.has(id)) errors.push(`use ${id}: 겹친다`);
+    if (t[4] < floor - 1e-9) errors.push(`use ${id}: 박스 가격의 10분의 1보다 싸다 (${t[4]})`);
     seen.add(id); resolved.push(t);
   }
   const P = entry.price;

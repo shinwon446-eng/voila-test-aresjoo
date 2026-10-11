@@ -1,0 +1,467 @@
+{
+ "slug": "pokemon-gengar",
+ "items": [
+  [
+   "pokemon-gengar-gengar-sk-h9-h32-psa10",
+   "팬텀 스카이리지 H9/H32 PSA 10",
+   "Gengar Skyridge H9/H32 PSA 10",
+   "耿鬼 Skyridge H9/H32 PSA 10",
+   8000
+  ],
+  [
+   "pokemon-gengar-sabrina-s-gengar-gh1-14-132-psa10",
+   "초련의 팬텀 짐 히어로즈 1st 에디션 14/132 PSA 10",
+   "Sabrina's Gengar Gym Heroes 1st Edition 14/132 PSA 10",
+   "娜姿的耿鬼 Gym Heroes 1st Edition 14/132 PSA 10",
+   7500
+  ],
+  [
+   "pokemon-gengar-dark-gengar-nds1-6-105-psa10",
+   "다크 팬텀 네오 데스티니 1st 에디션 6/105 PSA 10",
+   "Dark Gengar Neo Destiny 1st Edition 6/105 PSA 10",
+   "黑暗耿鬼 Neo Destiny 1st Edition 6/105 PSA 10",
+   6500
+  ],
+  [
+   "pokemon-gengar-gengar-fossil1-5-62-psa10",
+   "팬텀 화석 1st 에디션 5/62 PSA 10",
+   "Gengar Fossil 1st Edition 5/62 PSA 10",
+   "耿鬼 Fossil 1st Edition 5/62 PSA 10",
+   6000
+  ],
+  [
+   "pokemon-gengar-gengar-ex-exfrlg-108-112-psa10",
+   "팬텀 ex EX 파이어레드 & 리프그린 108/112 PSA 10",
+   "Gengar ex EX FireRed & LeafGreen 108/112 PSA 10",
+   "耿鬼 ex EX FireRed & LeafGreen 108/112 PSA 10",
+   5000
+  ],
+  [
+   "pokemon-gengar-sabrina-s-gengar-gh-14-132-psa10",
+   "초련의 팬텀 짐 히어로즈 14/132 PSA 10",
+   "Sabrina's Gengar Gym Heroes 14/132 PSA 10",
+   "娜姿的耿鬼 Gym Heroes 14/132 PSA 10",
+   3500
+  ],
+  [
+   "pokemon-gengar-dark-gengar-nds-6-105-psa10",
+   "다크 팬텀 네오 데스티니 6/105 PSA 10",
+   "Dark Gengar Neo Destiny 6/105 PSA 10",
+   "黑暗耿鬼 Neo Destiny 6/105 PSA 10",
+   3000
+  ],
+  [
+   "pokemon-gengar-gengar-exp-13-165-psa10",
+   "팬텀 익스페디션 13/165 PSA 10",
+   "Gengar Expedition 13/165 PSA 10",
+   "耿鬼 Expedition 13/165 PSA 10",
+   3000
+  ],
+  [
+   "pokemon-gengar-gengar-mimikyu-gx-tu-165-181-psa10",
+   "팬텀 & 따라큐 GX 팀 업 165/181 PSA 10",
+   "Gengar & Mimikyu-GX Team Up 165/181 PSA 10",
+   "耿鬼 & 谜拟Q-GX Team Up 165/181 PSA 10",
+   3000
+  ],
+  [
+   "pokemon-gengar-gengar-fossil-5-62-psa10",
+   "팬텀 화석 5/62 PSA 10",
+   "Gengar Fossil 5/62 PSA 10",
+   "耿鬼 Fossil 5/62 PSA 10",
+   2200
+  ],
+  [
+   "pokemon-gengar-gengar-lc-11-110-psa10",
+   "팬텀 레전더리 컬렉션 11/110 PSA 10",
+   "Gengar Legendary Collection 11/110 PSA 10",
+   "耿鬼 Legendary Collection 11/110 PSA 10",
+   2000
+  ],
+  [
+   "pokemon-gengar-gengar-lv-x-ar-97-99-psa10",
+   "팬텀 LV.X 아르세우스 97/99 PSA 10",
+   "Gengar LV.X Arceus 97/99 PSA 10",
+   "耿鬼 LV.X Arceus 97/99 PSA 10",
+   2000
+  ],
+  [
+   "pokemon-gengar-gengar-prime-tm-94-102-psa10",
+   "팬텀 프라임 트라이엄펀트 94/102 PSA 10",
+   "Gengar Prime Triumphant 94/102 PSA 10",
+   "耿鬼 Prime Triumphant 94/102 PSA 10",
+   1700
+  ],
+  [
+   "pokemon-gengar-gengar-sk-h9-h32-psa9",
+   "팬텀 스카이리지 H9/H32 PSA 9",
+   "Gengar Skyridge H9/H32 PSA 9",
+   "耿鬼 Skyridge H9/H32 PSA 9",
+   1300
+  ],
+  [
+   "pokemon-gengar-gengar-vmax-fst-271-264-psa10",
+   "팬텀 VMAX 퓨전 스트라이크 271/264 PSA 10",
+   "Gengar VMAX Fusion Strike 271/264 PSA 10",
+   "耿鬼 VMAX Fusion Strike 271/264 PSA 10",
+   1000
+  ],
+  [
+   "pokemon-gengar-gengar-mimikyu-gx-tu-186-181-psa10",
+   "팬텀 & 따라큐 GX 팀 업 186/181 PSA 10",
+   "Gengar & Mimikyu-GX Team Up 186/181 PSA 10",
+   "耿鬼 & 谜拟Q-GX Team Up 186/181 PSA 10",
+   900
+  ],
+  [
+   "pokemon-gengar-gengar-mimikyu-gx-tu-165-181-psa9",
+   "팬텀 & 따라큐 GX 팀 업 165/181 PSA 9",
+   "Gengar & Mimikyu-GX Team Up 165/181 PSA 9",
+   "耿鬼 & 谜拟Q-GX Team Up 165/181 PSA 9",
+   750
+  ],
+  [
+   "pokemon-gengar-gengar-ex-exfrlg-108-112-psa9",
+   "팬텀 ex EX 파이어레드 & 리프그린 108/112 PSA 9",
+   "Gengar ex EX FireRed & LeafGreen 108/112 PSA 9",
+   "耿鬼 ex EX FireRed & LeafGreen 108/112 PSA 9",
+   700
+  ],
+  [
+   "pokemon-gengar-m-gengar-ex-phf-121-119-psa10",
+   "M 팬텀 EX 팬텀 포스 121/119 PSA 10",
+   "M Gengar-EX Phantom Forces 121/119 PSA 10",
+   "M 耿鬼-EX Phantom Forces 121/119 PSA 10",
+   700
+  ],
+  [
+   "pokemon-gengar-gengar-fossil1-5-62-psa9",
+   "팬텀 화석 1st 에디션 5/62 PSA 9",
+   "Gengar Fossil 1st Edition 5/62 PSA 9",
+   "耿鬼 Fossil 1st Edition 5/62 PSA 9",
+   600
+  ],
+  [
+   "pokemon-gengar-gengar-mimikyu-gx-tu-164-181-psa10",
+   "팬텀 & 따라큐 GX 팀 업 164/181 PSA 10",
+   "Gengar & Mimikyu-GX Team Up 164/181 PSA 10",
+   "耿鬼 & 谜拟Q-GX Team Up 164/181 PSA 10",
+   600
+  ],
+  [
+   "pokemon-gengar-gengar-mimikyu-gx-tu-165-181",
+   "팬텀 & 따라큐 GX 팀 업 165/181",
+   "Gengar & Mimikyu-GX Team Up 165/181",
+   "耿鬼 & 谜拟Q-GX Team Up 165/181",
+   600
+  ],
+  [
+   "pokemon-gengar-gengar-sk-h9-h32",
+   "팬텀 스카이리지 H9/H32",
+   "Gengar Skyridge H9/H32",
+   "耿鬼 Skyridge H9/H32",
+   450
+  ],
+  [
+   "pokemon-gengar-gengar-ex-phf-114-119-psa10",
+   "팬텀 EX 팬텀 포스 114/119 PSA 10",
+   "Gengar-EX Phantom Forces 114/119 PSA 10",
+   "耿鬼-EX Phantom Forces 114/119 PSA 10",
+   450
+  ],
+  [
+   "pokemon-gengar-dark-gengar-nds-6-105-psa9",
+   "다크 팬텀 네오 데스티니 6/105 PSA 9",
+   "Dark Gengar Neo Destiny 6/105 PSA 9",
+   "黑暗耿鬼 Neo Destiny 6/105 PSA 9",
+   350
+  ],
+  [
+   "pokemon-gengar-sabrina-s-gengar-gh-14-132-psa9",
+   "초련의 팬텀 짐 히어로즈 14/132 PSA 9",
+   "Sabrina's Gengar Gym Heroes 14/132 PSA 9",
+   "娜姿的耿鬼 Gym Heroes 14/132 PSA 9",
+   350
+  ],
+  [
+   "pokemon-gengar-gengar-lv-x-ar-97-99-psa9",
+   "팬텀 LV.X 아르세우스 97/99 PSA 9",
+   "Gengar LV.X Arceus 97/99 PSA 9",
+   "耿鬼 LV.X Arceus 97/99 PSA 9",
+   350
+  ],
+  [
+   "pokemon-gengar-gengar-vmax-fst-271-264-psa9",
+   "팬텀 VMAX 퓨전 스트라이크 271/264 PSA 9",
+   "Gengar VMAX Fusion Strike 271/264 PSA 9",
+   "耿鬼 VMAX Fusion Strike 271/264 PSA 9",
+   320
+  ],
+  [
+   "pokemon-gengar-gengar-prime-tm-94-102-psa9",
+   "팬텀 프라임 트라이엄펀트 94/102 PSA 9",
+   "Gengar Prime Triumphant 94/102 PSA 9",
+   "耿鬼 Prime Triumphant 94/102 PSA 9",
+   300
+  ],
+  [
+   "pokemon-gengar-gengar-ex-exfrlg-108-112",
+   "팬텀 ex EX 파이어레드 & 리프그린 108/112",
+   "Gengar ex EX FireRed & LeafGreen 108/112",
+   "耿鬼 ex EX FireRed & LeafGreen 108/112",
+   280
+  ],
+  [
+   "pokemon-gengar-gengar-vmax-fst-271-264",
+   "팬텀 VMAX 퓨전 스트라이크 271/264",
+   "Gengar VMAX Fusion Strike 271/264",
+   "耿鬼 VMAX Fusion Strike 271/264",
+   280
+  ],
+  [
+   "pokemon-gengar-gengar-fossil-5-62-psa9",
+   "팬텀 화석 5/62 PSA 9",
+   "Gengar Fossil 5/62 PSA 9",
+   "耿鬼 Fossil 5/62 PSA 9",
+   250
+  ],
+  [
+   "pokemon-gengar-m-gengar-ex-phf-121-119-psa9",
+   "M 팬텀 EX 팬텀 포스 121/119 PSA 9",
+   "M Gengar-EX Phantom Forces 121/119 PSA 9",
+   "M 耿鬼-EX Phantom Forces 121/119 PSA 9",
+   200
+  ],
+  [
+   "pokemon-gengar-gengar-mimikyu-gx-tu-186-181",
+   "팬텀 & 따라큐 GX 팀 업 186/181",
+   "Gengar & Mimikyu-GX Team Up 186/181",
+   "耿鬼 & 谜拟Q-GX Team Up 186/181",
+   180
+  ],
+  [
+   "pokemon-gengar-gengar-lv-x-ar-97-99",
+   "팬텀 LV.X 아르세우스 97/99",
+   "Gengar LV.X Arceus 97/99",
+   "耿鬼 LV.X Arceus 97/99",
+   150
+  ],
+  [
+   "pokemon-gengar-gengar-lor-tg06-tg30-psa10",
+   "팬텀 로스트 오리진 TG06/TG30 PSA 10",
+   "Gengar Lost Origin TG06/TG30 PSA 10",
+   "耿鬼 Lost Origin TG06/TG30 PSA 10",
+   150
+  ],
+  [
+   "pokemon-gengar-gengar-exp-13-165",
+   "팬텀 익스페디션 13/165",
+   "Gengar Expedition 13/165",
+   "耿鬼 Expedition 13/165",
+   140
+  ],
+  [
+   "pokemon-gengar-gengar-prime-tm-94-102",
+   "팬텀 프라임 트라이엄펀트 94/102",
+   "Gengar Prime Triumphant 94/102",
+   "耿鬼 Prime Triumphant 94/102",
+   130
+  ],
+  [
+   "pokemon-gengar-dark-gengar-nds-6-105",
+   "다크 팬텀 네오 데스티니 6/105",
+   "Dark Gengar Neo Destiny 6/105",
+   "黑暗耿鬼 Neo Destiny 6/105",
+   110
+  ],
+  [
+   "pokemon-gengar-sabrina-s-gengar-gh-14-132",
+   "초련의 팬텀 짐 히어로즈 14/132",
+   "Sabrina's Gengar Gym Heroes 14/132",
+   "娜姿的耿鬼 Gym Heroes 14/132",
+   110
+  ],
+  [
+   "pokemon-gengar-m-gengar-ex-phf-121-119",
+   "M 팬텀 EX 팬텀 포스 121/119",
+   "M Gengar-EX Phantom Forces 121/119",
+   "M 耿鬼-EX Phantom Forces 121/119",
+   110
+  ],
+  [
+   "pokemon-gengar-gengar-mimikyu-gx-tu-164-181",
+   "팬텀 & 따라큐 GX 팀 업 164/181",
+   "Gengar & Mimikyu-GX Team Up 164/181",
+   "耿鬼 & 谜拟Q-GX Team Up 164/181",
+   110
+  ],
+  [
+   "pokemon-gengar-gengar-lc-11-110",
+   "팬텀 레전더리 컬렉션 11/110",
+   "Gengar Legendary Collection 11/110",
+   "耿鬼 Legendary Collection 11/110",
+   100
+  ],
+  [
+   "pokemon-gengar-gengar-fossil-5-62",
+   "팬텀 화석 5/62",
+   "Gengar Fossil 5/62",
+   "耿鬼 Fossil 5/62",
+   70
+  ],
+  [
+   "pokemon-gengar-gengar-ex-phf-114-119",
+   "팬텀 EX 팬텀 포스 114/119",
+   "Gengar-EX Phantom Forces 114/119",
+   "耿鬼-EX Phantom Forces 114/119",
+   60
+  ],
+  [
+   "pokemon-gengar-squishmallows-20",
+   "스퀴시멜로우 포켓몬 팬텀 20인치",
+   "Squishmallows Pokémon Gengar 20-Inch",
+   "Squishmallows 宝可梦 耿鬼 20英寸",
+   45
+  ],
+  [
+   "pokemon-gengar-gengar-exp-48-165",
+   "팬텀 익스페디션 48/165",
+   "Gengar Expedition 48/165",
+   "耿鬼 Expedition 48/165",
+   40
+  ],
+  [
+   "pokemon-gengar-ex-league-battle-deck",
+   "포켓몬 카드 게임 팬텀 ex 리그 배틀 덱",
+   "Pokémon TCG: Gengar ex League Battle Deck",
+   "宝可梦集换式卡牌 耿鬼ex League Battle Deck",
+   35
+  ],
+  [
+   "pokemon-gengar-gengar-lor-tg06-tg30",
+   "팬텀 로스트 오리진 TG06/TG30",
+   "Gengar Lost Origin TG06/TG30",
+   "耿鬼 Lost Origin TG06/TG30",
+   30
+  ],
+  [
+   "pokemon-gengar-squishmallows-14",
+   "스퀴시멜로우 포켓몬 팬텀 14인치",
+   "Squishmallows Pokémon Gengar 14-Inch",
+   "Squishmallows 宝可梦 耿鬼 14英寸",
+   27
+  ],
+  [
+   "pokemon-gengar-gengar-mimikyu-gx-tu-53-181",
+   "팬텀 & 따라큐 GX 팀 업 53/181",
+   "Gengar & Mimikyu-GX Team Up 53/181",
+   "耿鬼 & 谜拟Q-GX Team Up 53/181",
+   25
+  ],
+  [
+   "pokemon-gengar-gengar-fossil-20-62",
+   "팬텀 화석 20/62",
+   "Gengar Fossil 20/62",
+   "耿鬼 Fossil 20/62",
+   20
+  ],
+  [
+   "pokemon-gengar-m-gengar-ex-phf-35-119",
+   "M 팬텀 EX 팬텀 포스 35/119",
+   "M Gengar-EX Phantom Forces 35/119",
+   "M 耿鬼-EX Phantom Forces 35/119",
+   20
+  ],
+  [
+   "pokemon-gengar-squishmallows-10",
+   "스퀴시멜로우 포켓몬 팬텀 10인치",
+   "Squishmallows Pokémon Gengar 10-Inch",
+   "Squishmallows 宝可梦 耿鬼 10英寸",
+   15
+  ],
+  [
+   "pokemon-gengar-sitting-cuties-plush",
+   "포켓몬 센터 팬텀 시팅 큐티즈 봉제 인형",
+   "Pokémon Center Gengar Sitting Cuties Plush",
+   "Pokémon Center 耿鬼 Sitting Cuties 毛绒玩偶",
+   12.99
+  ],
+  [
+   "pokemon-gengar-gengar-ex-phf-34-119",
+   "팬텀 EX 팬텀 포스 34/119",
+   "Gengar-EX Phantom Forces 34/119",
+   "耿鬼-EX Phantom Forces 34/119",
+   12
+  ],
+  [
+   "pokemon-gengar-gengar-vmax-fst-157-264",
+   "팬텀 VMAX 퓨전 스트라이크 157/264",
+   "Gengar VMAX Fusion Strike 157/264",
+   "耿鬼 VMAX Fusion Strike 157/264",
+   12
+  ],
+  [
+   "pokemon-gengar-gengar-ex-tef-104-162",
+   "팬텀 ex 템포럴 포스 104/162",
+   "Gengar ex Temporal Forces 104/162",
+   "耿鬼 ex Temporal Forces 104/162",
+   6
+  ],
+  [
+   "pokemon-gengar-gengar-v-fst-156-264",
+   "팬텀 V 퓨전 스트라이크 156/264",
+   "Gengar V Fusion Strike 156/264",
+   "耿鬼 V Fusion Strike 156/264",
+   5
+  ],
+  [
+   "pokemon-gengar-gengar-mew-094-165",
+   "팬텀 151 094/165",
+   "Gengar 151 094/165",
+   "耿鬼 151 094/165",
+   5
+  ]
+ ],
+ "use": [
+  "pokemon-p-up-4-pocket-pro-binder",
+  "pokemon-p-up-satin-tower-deck-box",
+  "pokemon-p-nidoking-mew-174-165",
+  "pokemon-p-poliwhirl-mew-176-165",
+  "pokemon-p-vx-4-pocket-exo-tec-zip-binder",
+  "pokemon-p-up-one-touch-35pt-5-pack",
+  "pokemon-p-psyduck-mew-175-165",
+  "pokemon-p-ug-arkhive-400",
+  "pokemon-p-bulbasaur-mew-166-165",
+  "pokemon-p-bun-pal",
+  "pokemon-p-bun-par",
+  "pokemon-p-gyarados-base-6-102",
+  "pokemon-p-squirtle-mew-170-165",
+  "pokemon-p-ug-quadrow-zipfolio-480",
+  "pokemon-p-bp-evs",
+  "pokemon-p-gg-dungeon-1100",
+  "pokemon-p-lego-eevee-72151",
+  "pokemon-p-bp-cec",
+  "pokemon-p-etb-par",
+  "pokemon-p-machamp-v-asr-172-189",
+  "pokemon-p-bp-unb",
+  "pokemon-p-bun-pre",
+  "pokemon-p-bun-mew",
+  "pokemon-p-etb-daa",
+  "pokemon-p-blaziken-v-cre-161-198",
+  "pokemon-p-bp-tu",
+  "pokemon-p-etb-brs",
+  "pokemon-p-etb-lor",
+  "pokemon-p-etb-viv",
+  "pokemon-p-chansey-base-3-102-psa9",
+  "pokemon-p-bb-obf",
+  "pokemon-p-bb-svi",
+  "pokemon-p-etb-cel",
+  "pokemon-p-etb-mew",
+  "pokemon-p-bb-ssh",
+  "pokemon-p-bb-viv",
+  "pokemon-p-etb-evo",
+  "pokemon-p-nidoking-aq-150-147",
+  "pokemon-p-bb-extrr",
+  "pokemon-p-bb-gc1"
+ ]
+}

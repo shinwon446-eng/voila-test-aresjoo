@@ -1,0 +1,539 @@
+{
+ "slug": "pokemon-charizard",
+ "items": [
+  [
+   "pokemon-charizard-charizard-base1-4-102-psa10",
+   "리자몽 베이스 세트 1st 에디션 섀도리스 4/102 PSA 10",
+   "Charizard Base Set 1st Edition Shadowless 4/102 PSA 10",
+   "喷火龙 Base Set 1st Edition Shadowless 4/102 PSA 10",
+   250000
+  ],
+  [
+   "pokemon-charizard-charizard-sk-146-144-psa10",
+   "리자몽 스카이리지 146/144 PSA 10",
+   "Charizard Skyridge 146/144 PSA 10",
+   "喷火龙 Skyridge 146/144 PSA 10",
+   60000
+  ],
+  [
+   "pokemon-charizard-charizard-basesl-4-102-psa10",
+   "리자몽 베이스 세트 섀도리스 4/102 PSA 10",
+   "Charizard Base Set Shadowless 4/102 PSA 10",
+   "喷火龙 Base Set Shadowless 4/102 PSA 10",
+   40000
+  ],
+  [
+   "pokemon-charizard-charizard-gold-star-exdf-100-101-psa10",
+   "리자몽 골드 스타 EX 드래곤 프런티어 100/101 PSA 10",
+   "Charizard Gold Star EX Dragon Frontiers 100/101 PSA 10",
+   "喷火龙 金星 EX Dragon Frontiers 100/101 PSA 10",
+   38000
+  ],
+  [
+   "pokemon-charizard-charizard-base1-4-102-psa9",
+   "리자몽 베이스 세트 1st 에디션 섀도리스 4/102 PSA 9",
+   "Charizard Base Set 1st Edition Shadowless 4/102 PSA 9",
+   "喷火龙 Base Set 1st Edition Shadowless 4/102 PSA 9",
+   32000
+  ],
+  [
+   "pokemon-charizard-shining-charizard-nds1-107-105-psa10",
+   "빛나는 리자몽 네오 데스티니 1st 에디션 107/105 PSA 10",
+   "Shining Charizard Neo Destiny 1st Edition 107/105 PSA 10",
+   "闪光喷火龙 Neo Destiny 1st Edition 107/105 PSA 10",
+   30000
+  ],
+  [
+   "pokemon-charizard-charizard-lcr-3-110-psa10",
+   "리자몽 레전더리 컬렉션 리버스 홀로 3/110 PSA 10",
+   "Charizard Legendary Collection Reverse Holo 3/110 PSA 10",
+   "喷火龙 Legendary Collection Reverse Holo 3/110 PSA 10",
+   28000
+  ],
+  [
+   "pokemon-charizard-charizard-base1-4-102-psa8",
+   "리자몽 베이스 세트 1st 에디션 섀도리스 4/102 PSA 8",
+   "Charizard Base Set 1st Edition Shadowless 4/102 PSA 8",
+   "喷火龙 Base Set 1st Edition Shadowless 4/102 PSA 8",
+   17000
+  ],
+  [
+   "pokemon-charizard-charizard-base-4-102-psa10",
+   "리자몽 베이스 세트 언리미티드 4/102 PSA 10",
+   "Charizard Base Set Unlimited 4/102 PSA 10",
+   "喷火龙 Base Set Unlimited 4/102 PSA 10",
+   15000
+  ],
+  [
+   "pokemon-charizard-charizard-ex-exfrlg-105-112-psa10",
+   "리자몽 ex EX 파이어레드 & 리프그린 105/112 PSA 10",
+   "Charizard ex EX FireRed & LeafGreen 105/112 PSA 10",
+   "喷火龙 ex EX FireRed & LeafGreen 105/112 PSA 10",
+   15000
+  ],
+  [
+   "pokemon-charizard-blaine-s-charizard-gc1-2-132-psa10",
+   "강연의 리자몽 짐 챌린지 1st 에디션 2/132 PSA 10",
+   "Blaine's Charizard Gym Challenge 1st Edition 2/132 PSA 10",
+   "夏伯的喷火龙 Gym Challenge 1st Edition 2/132 PSA 10",
+   14000
+  ],
+  [
+   "pokemon-charizard-shining-charizard-nds-107-105-psa10",
+   "빛나는 리자몽 네오 데스티니 107/105 PSA 10",
+   "Shining Charizard Neo Destiny 107/105 PSA 10",
+   "闪光喷火龙 Neo Destiny 107/105 PSA 10",
+   13000
+  ],
+  [
+   "pokemon-charizard-charizard-sk-146-144-psa9",
+   "리자몽 스카이리지 146/144 PSA 9",
+   "Charizard Skyridge 146/144 PSA 9",
+   "喷火龙 Skyridge 146/144 PSA 9",
+   13000
+  ],
+  [
+   "pokemon-charizard-charizard-gold-star-exdf-100-101-psa9",
+   "리자몽 골드 스타 EX 드래곤 프런티어 100/101 PSA 9",
+   "Charizard Gold Star EX Dragon Frontiers 100/101 PSA 9",
+   "喷火龙 金星 EX Dragon Frontiers 100/101 PSA 9",
+   9500
+  ],
+  [
+   "pokemon-charizard-charizard-exdr-100-97-psa10",
+   "리자몽 EX 드래곤 100/97 PSA 10",
+   "Charizard EX Dragon 100/97 PSA 10",
+   "喷火龙 EX Dragon 100/97 PSA 10",
+   9000
+  ],
+  [
+   "pokemon-charizard-dark-charizard-tr1-4-82-psa10",
+   "다크 리자몽 팀 로켓 1st 에디션 4/82 PSA 10",
+   "Dark Charizard Team Rocket 1st Edition 4/82 PSA 10",
+   "黑暗喷火龙 Team Rocket 1st Edition 4/82 PSA 10",
+   8500
+  ],
+  [
+   "pokemon-charizard-charizard-basesl-4-102-psa9",
+   "리자몽 베이스 세트 섀도리스 4/102 PSA 9",
+   "Charizard Base Set Shadowless 4/102 PSA 9",
+   "喷火龙 Base Set Shadowless 4/102 PSA 9",
+   7000
+  ],
+  [
+   "pokemon-charizard-charizard-base2-4-130-psa10",
+   "리자몽 베이스 세트 2 4/130 PSA 10",
+   "Charizard Base Set 2 4/130 PSA 10",
+   "喷火龙 Base Set 2 4/130 PSA 10",
+   6500
+  ],
+  [
+   "pokemon-charizard-shining-charizard-nds1-107-105-psa9",
+   "빛나는 리자몽 네오 데스티니 1st 에디션 107/105 PSA 9",
+   "Shining Charizard Neo Destiny 1st Edition 107/105 PSA 9",
+   "闪光喷火龙 Neo Destiny 1st Edition 107/105 PSA 9",
+   6500
+  ],
+  [
+   "pokemon-charizard-blaine-s-charizard-gc-2-132-psa10",
+   "강연의 리자몽 짐 챌린지 2/132 PSA 10",
+   "Blaine's Charizard Gym Challenge 2/132 PSA 10",
+   "夏伯的喷火龙 Gym Challenge 2/132 PSA 10",
+   5500
+  ],
+  [
+   "pokemon-charizard-charizard-gold-star-exdf-100-101",
+   "리자몽 골드 스타 EX 드래곤 프런티어 100/101",
+   "Charizard Gold Star EX Dragon Frontiers 100/101",
+   "喷火龙 金星 EX Dragon Frontiers 100/101",
+   4200
+  ],
+  [
+   "pokemon-charizard-charizard-sk-146-144",
+   "리자몽 스카이리지 146/144",
+   "Charizard Skyridge 146/144",
+   "喷火龙 Skyridge 146/144",
+   3800
+  ],
+  [
+   "pokemon-charizard-charizard-basesl-4-102-psa8",
+   "리자몽 베이스 세트 섀도리스 4/102 PSA 8",
+   "Charizard Base Set Shadowless 4/102 PSA 8",
+   "喷火龙 Base Set Shadowless 4/102 PSA 8",
+   3300
+  ],
+  [
+   "pokemon-charizard-dark-charizard-tr-4-82-psa10",
+   "다크 리자몽 팀 로켓 4/82 PSA 10",
+   "Dark Charizard Team Rocket 4/82 PSA 10",
+   "黑暗喷火龙 Team Rocket 4/82 PSA 10",
+   3000
+  ],
+  [
+   "pokemon-charizard-charizard-base-4-102-psa9",
+   "리자몽 베이스 세트 언리미티드 4/102 PSA 9",
+   "Charizard Base Set Unlimited 4/102 PSA 9",
+   "喷火龙 Base Set Unlimited 4/102 PSA 9",
+   2600
+  ],
+  [
+   "pokemon-charizard-charizard-gx-bus-150-147-psa10",
+   "리자몽 GX 버닝 섀도 150/147 PSA 10",
+   "Charizard-GX Burning Shadows 150/147 PSA 10",
+   "喷火龙-GX Burning Shadows 150/147 PSA 10",
+   2000
+  ],
+  [
+   "pokemon-charizard-charizard-gx-hif-sv49-sv94-psa10",
+   "리자몽 GX 히든 페이츠 SV49/SV94 PSA 10",
+   "Charizard-GX Hidden Fates SV49/SV94 PSA 10",
+   "喷火龙-GX Hidden Fates SV49/SV94 PSA 10",
+   1700
+  ],
+  [
+   "pokemon-charizard-charizard-lc-3-110-psa9",
+   "리자몽 레전더리 컬렉션 3/110 PSA 9",
+   "Charizard Legendary Collection 3/110 PSA 9",
+   "喷火龙 Legendary Collection 3/110 PSA 9",
+   1200
+  ],
+  [
+   "pokemon-charizard-charizard-ex-mew-199-165-psa10",
+   "리자몽 ex 151 199/165 PSA 10",
+   "Charizard ex 151 199/165 PSA 10",
+   "喷火龙 ex 151 199/165 PSA 10",
+   1150
+  ],
+  [
+   "pokemon-charizard-charizard-v-brs-154-172-psa10",
+   "리자몽 V 브릴리언트 스타 154/172 PSA 10",
+   "Charizard V Brilliant Stars 154/172 PSA 10",
+   "喷火龙 V Brilliant Stars 154/172 PSA 10",
+   1100
+  ],
+  [
+   "pokemon-charizard-charizard-base-4-102-psa8",
+   "리자몽 베이스 세트 언리미티드 4/102 PSA 8",
+   "Charizard Base Set Unlimited 4/102 PSA 8",
+   "喷火龙 Base Set Unlimited 4/102 PSA 8",
+   1000
+  ],
+  [
+   "pokemon-charizard-charizard-vmax-cpa-074-073-psa10",
+   "리자몽 VMAX 챔피언스 패스 074/073 PSA 10",
+   "Charizard VMAX Champion's Path 074/073 PSA 10",
+   "喷火龙 VMAX Champion's Path 074/073 PSA 10",
+   1000
+  ],
+  [
+   "pokemon-charizard-charizard-ex-exfrlg-105-112",
+   "리자몽 ex EX 파이어레드 & 리프그린 105/112",
+   "Charizard ex EX FireRed & LeafGreen 105/112",
+   "喷火龙 ex EX FireRed & LeafGreen 105/112",
+   900
+  ],
+  [
+   "pokemon-charizard-reshiram-charizard-gx-unb-217-214-psa10",
+   "레시라무 & 리자몽 GX 언브로큰 본즈 217/214 PSA 10",
+   "Reshiram & Charizard-GX Unbroken Bonds 217/214 PSA 10",
+   "莱希拉姆 & 喷火龙-GX Unbroken Bonds 217/214 PSA 10",
+   900
+  ],
+  [
+   "pokemon-charizard-shining-charizard-nds-107-105",
+   "빛나는 리자몽 네오 데스티니 107/105",
+   "Shining Charizard Neo Destiny 107/105",
+   "闪光喷火龙 Neo Destiny 107/105",
+   850
+  ],
+  [
+   "pokemon-charizard-charizard-ex-paf-234-091-psa10",
+   "리자몽 ex 팔데아 페이츠 234/091 PSA 10",
+   "Charizard ex Paldean Fates 234/091 PSA 10",
+   "喷火龙 ex Paldean Fates 234/091 PSA 10",
+   650
+  ],
+  [
+   "pokemon-charizard-lego-72153",
+   "레고 포켓몬 이상해꽃, 리자몽, 거북왕 72153",
+   "LEGO Pokémon Venusaur, Charizard and Blastoise 72153",
+   "乐高 宝可梦 妙蛙花、喷火龙和水箭龟 72153",
+   649.99
+  ],
+  [
+   "pokemon-charizard-dark-charizard-tr-4-82-psa9",
+   "다크 리자몽 팀 로켓 4/82 PSA 9",
+   "Dark Charizard Team Rocket 4/82 PSA 9",
+   "黑暗喷火龙 Team Rocket 4/82 PSA 9",
+   550
+  ],
+  [
+   "pokemon-charizard-charizard-exdr-100-97",
+   "리자몽 EX 드래곤 100/97",
+   "Charizard EX Dragon 100/97",
+   "喷火龙 EX Dragon 100/97",
+   550
+  ],
+  [
+   "pokemon-charizard-charizard-celc-4-102-psa10",
+   "리자몽 셀러브레이션 클래식 컬렉션 4/102 PSA 10",
+   "Charizard Celebrations Classic Collection 4/102 PSA 10",
+   "喷火龙 Celebrations Classic Collection 4/102 PSA 10",
+   480
+  ],
+  [
+   "pokemon-charizard-charizard-exp-6-165",
+   "리자몽 익스페디션 6/165",
+   "Charizard Expedition 6/165",
+   "喷火龙 Expedition 6/165",
+   450
+  ],
+  [
+   "pokemon-charizard-charizard-gx-bus-150-147",
+   "리자몽 GX 버닝 섀도 150/147",
+   "Charizard-GX Burning Shadows 150/147",
+   "喷火龙-GX Burning Shadows 150/147",
+   430
+  ],
+  [
+   "pokemon-charizard-charizard-base-4-102",
+   "리자몽 베이스 세트 언리미티드 4/102",
+   "Charizard Base Set Unlimited 4/102",
+   "喷火龙 Base Set Unlimited 4/102",
+   380
+  ],
+  [
+   "pokemon-charizard-charizard-evo-11-108-psa10",
+   "리자몽 XY 에볼루션즈 11/108 PSA 10",
+   "Charizard XY Evolutions 11/108 PSA 10",
+   "喷火龙 XY Evolutions 11/108 PSA 10",
+   380
+  ],
+  [
+   "pokemon-charizard-charizard-gx-hif-sv49-sv94",
+   "리자몽 GX 히든 페이츠 SV49/SV94",
+   "Charizard-GX Hidden Fates SV49/SV94",
+   "喷火龙-GX Hidden Fates SV49/SV94",
+   380
+  ],
+  [
+   "pokemon-charizard-charizard-ex-obf-223-197-psa10",
+   "리자몽 ex 옵시디언 플레임 223/197 PSA 10",
+   "Charizard ex Obsidian Flames 223/197 PSA 10",
+   "喷火龙 ex Obsidian Flames 223/197 PSA 10",
+   380
+  ],
+  [
+   "pokemon-charizard-charizard-lc-3-110",
+   "리자몽 레전더리 컬렉션 3/110",
+   "Charizard Legendary Collection 3/110",
+   "喷火龙 Legendary Collection 3/110",
+   330
+  ],
+  [
+   "pokemon-charizard-charizard-pls-136-135",
+   "리자몽 플라스마 스톰 136/135",
+   "Charizard Plasma Storm 136/135",
+   "喷火龙 Plasma Storm 136/135",
+   330
+  ],
+  [
+   "pokemon-charizard-charizard-vmax-cpa-074-073",
+   "리자몽 VMAX 챔피언스 패스 074/073",
+   "Charizard VMAX Champion's Path 074/073",
+   "喷火龙 VMAX Champion's Path 074/073",
+   330
+  ],
+  [
+   "pokemon-charizard-charizard-v-cpa-079-073",
+   "리자몽 V 챔피언스 패스 079/073",
+   "Charizard V Champion's Path 079/073",
+   "喷火龙 V Champion's Path 079/073",
+   270
+  ],
+  [
+   "pokemon-charizard-charizard-base2-4-130",
+   "리자몽 베이스 세트 2 4/130",
+   "Charizard Base Set 2 4/130",
+   "喷火龙 Base Set 2 4/130",
+   260
+  ],
+  [
+   "pokemon-charizard-charizard-v-brs-154-172",
+   "리자몽 V 브릴리언트 스타 154/172",
+   "Charizard V Brilliant Stars 154/172",
+   "喷火龙 V Brilliant Stars 154/172",
+   260
+  ],
+  [
+   "pokemon-charizard-charizard-ex-mew-199-165",
+   "리자몽 ex 151 199/165",
+   "Charizard ex 151 199/165",
+   "喷火龙 ex 151 199/165",
+   260
+  ],
+  [
+   "pokemon-charizard-blaine-s-charizard-gc-2-132",
+   "강연의 리자몽 짐 챌린지 2/132",
+   "Blaine's Charizard Gym Challenge 2/132",
+   "夏伯的喷火龙 Gym Challenge 2/132",
+   240
+  ],
+  [
+   "pokemon-charizard-m-charizard-ex-flf-108-106",
+   "M 리자몽 EX 플래시파이어 108/106",
+   "M Charizard-EX Flashfire 108/106",
+   "M 喷火龙-EX Flashfire 108/106",
+   240
+  ],
+  [
+   "pokemon-charizard-charizard-sf-103-100",
+   "리자몽 스톰프런트 103/100",
+   "Charizard Stormfront 103/100",
+   "喷火龙 Stormfront 103/100",
+   230
+  ],
+  [
+   "pokemon-charizard-reshiram-charizard-gx-unb-217-214",
+   "레시라무 & 리자몽 GX 언브로큰 본즈 217/214",
+   "Reshiram & Charizard-GX Unbroken Bonds 217/214",
+   "莱希拉姆 & 喷火龙-GX Unbroken Bonds 217/214",
+   230
+  ],
+  [
+   "pokemon-charizard-ultra-premium-collection",
+   "포켓몬 카드 게임 리자몽 울트라 프리미엄 컬렉션",
+   "Pokémon TCG: Charizard Ultra-Premium Collection",
+   "宝可梦集换式卡牌 喷火龙 Ultra-Premium Collection",
+   220
+  ],
+  [
+   "pokemon-charizard-charizard-excg-4-100",
+   "리자몽 EX 크리스탈 가디언즈 4/100",
+   "Charizard EX Crystal Guardians 4/100",
+   "喷火龙 EX Crystal Guardians 4/100",
+   190
+  ],
+  [
+   "pokemon-charizard-charizard-ex-paf-234-091",
+   "리자몽 ex 팔데아 페이츠 234/091",
+   "Charizard ex Paldean Fates 234/091",
+   "喷火龙 ex Paldean Fates 234/091",
+   190
+  ],
+  [
+   "pokemon-charizard-dark-charizard-tr-4-82",
+   "다크 리자몽 팀 로켓 4/82",
+   "Dark Charizard Team Rocket 4/82",
+   "黑暗喷火龙 Team Rocket 4/82",
+   180
+  ],
+  [
+   "pokemon-charizard-charizard-vmax-shf-sv107-sv122",
+   "리자몽 VMAX 샤이닝 페이츠 SV107/SV122",
+   "Charizard VMAX Shining Fates SV107/SV122",
+   "喷火龙 VMAX Shining Fates SV107/SV122",
+   120
+  ],
+  [
+   "pokemon-charizard-charizard-g-lv-x-suv-143-147",
+   "리자몽 G LV.X 수프림 빅터즈 143/147",
+   "Charizard G LV.X Supreme Victors 143/147",
+   "喷火龙 G LV.X Supreme Victors 143/147",
+   110
+  ],
+  [
+   "pokemon-charizard-charizard-celc-4-102",
+   "리자몽 셀러브레이션 클래식 컬렉션 4/102",
+   "Charizard Celebrations Classic Collection 4/102",
+   "喷火龙 Celebrations Classic Collection 4/102",
+   110
+  ],
+  [
+   "pokemon-charizard-ex-super-premium-collection",
+   "포켓몬 카드 게임 리자몽 ex 슈퍼 프리미엄 컬렉션",
+   "Pokémon TCG: Charizard ex Super-Premium Collection",
+   "宝可梦集换式卡牌 喷火龙ex Super-Premium Collection",
+   100
+  ],
+  [
+   "pokemon-charizard-charizard-ex-obf-223-197",
+   "리자몽 ex 옵시디언 플레임 223/197",
+   "Charizard ex Obsidian Flames 223/197",
+   "喷火龙 ex Obsidian Flames 223/197",
+   95
+  ],
+  [
+   "pokemon-charizard-charizard-ex-mew-183-165",
+   "리자몽 ex 151 183/165",
+   "Charizard ex 151 183/165",
+   "喷火龙 ex 151 183/165",
+   55
+  ],
+  [
+   "pokemon-charizard-charizard-vmax-daa-020-189",
+   "리자몽 VMAX 다크니스 어블레이즈 020/189",
+   "Charizard VMAX Darkness Ablaze 020/189",
+   "喷火龙 VMAX Darkness Ablaze 020/189",
+   45
+  ],
+  [
+   "pokemon-charizard-ex-premium-collection",
+   "포켓몬 카드 게임 리자몽 ex 프리미엄 컬렉션",
+   "Pokémon TCG: Charizard ex Premium Collection",
+   "宝可梦集换式卡牌 喷火龙ex Premium Collection",
+   45
+  ],
+  [
+   "pokemon-charizard-charizard-evo-11-108",
+   "리자몽 XY 에볼루션즈 11/108",
+   "Charizard XY Evolutions 11/108",
+   "喷火龙 XY Evolutions 11/108",
+   28
+  ],
+  [
+   "pokemon-charizard-funko-pop-843",
+   "펀코 팝 게임즈 포켓몬 리자몽 843",
+   "Funko Pop! Games Pokémon Charizard 843",
+   "Funko Pop! Games 宝可梦 喷火龙 843",
+   15
+  ],
+  [
+   "pokemon-charizard-sitting-cuties-plush",
+   "포켓몬 센터 리자몽 시팅 큐티즈 봉제 인형",
+   "Pokémon Center Charizard Sitting Cuties Plush",
+   "Pokémon Center 喷火龙 Sitting Cuties 毛绒玩偶",
+   14.99
+  ]
+ ],
+ "use": [
+  "pokemon-p-kmc-perfect-fit-100",
+  "pokemon-p-up-regular-toploaders-25",
+  "pokemon-p-ds-perfect-fit-clear-100",
+  "pokemon-p-ug-precise-fit-100",
+  "pokemon-p-up-graded-card-sleeves-100",
+  "pokemon-p-bp-scr",
+  "pokemon-p-bp-tef",
+  "pokemon-p-bp-obf",
+  "pokemon-p-ds-perfect-fit-sealable-100",
+  "pokemon-p-bp-jtg",
+  "pokemon-p-dragonair-mew-181-165",
+  "pokemon-p-vx-9-pocket-exo-tec-zip-binder",
+  "pokemon-p-bp-evo",
+  "pokemon-p-bp-hif",
+  "pokemon-p-charmeleon-mew-169-165",
+  "pokemon-p-ivysaur-mew-167-165",
+  "pokemon-p-wartortle-mew-171-165",
+  "pokemon-p-collector-chest-2024",
+  "pokemon-p-gg-prime-album-18-pocket",
+  "pokemon-p-etb-obf",
+  "pokemon-p-etb-scr",
+  "pokemon-p-etb-tef",
+  "pokemon-p-etb-ssp",
+  "pokemon-p-etb-fst",
+  "pokemon-p-origin-forme-palkia-v-asr-167-189",
+  "pokemon-p-bb-evo",
+  "pokemon-p-bb-gri",
+  "pokemon-p-crobat-sk-147-144"
+ ]
+}

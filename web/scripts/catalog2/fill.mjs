@@ -12,14 +12,17 @@ import { RULES, loadPool } from "./build-index.mjs";
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "lib", "catalog2");
 const readJson = (file) => JSON.parse(fs.readFileSync(file, "utf8").replace(/^﻿/, ""));
 // 구간: 낮은 A(절반 미만), 낮은 B(절반 이상 가격 미만), 그리고 사다리 아홉 구간. 뒤의 숫자는 100개 가운데 목표 수
-const BUCKETS = [[0, 0.5, 16], [0.5, 1, 14], [1, 1.5, 12], [1.5, 3, 14], [3, 6, 12], [6, 12, 10], [12, 25, 8], [25, 60, 6], [60, 150, 4], [150, 400, 2], [400, Infinity, 2]];
+const BUCKETS = [[RULES.floorRatio, 0.5, 16], [0.5, 1, 14], [1, 1.5, 12], [1.5, 3, 14], [3, 6, 12], [6, 12, 10], [12, 25, 8], [25, 60, 6], [60, 150, 4], [150, 400, 2], [400, Infinity, 2]];
 const bucketOf = (value, price) => BUCKETS.findIndex(([from, to]) => value / price >= from && value / price < to);
 
 function fill(entry, order, pool) {
   const file = path.join(root, "data", entry.category, entry.slug + ".json");
   if (!fs.existsSync(file)) return null;
   const box = readJson(file);
-  const own = Array.isArray(box.items) ? box.items : [];
+  const listed = Array.isArray(box.items) ? box.items : [];
+  // 박스 가격의 10분의 1보다 싼 자기 상품은 세지 않는다(검사와 같은 기준). 파일에는 그대로 둔다
+  const floor = Math.max(RULES.minValue, entry.price * RULES.floorRatio);
+  const own = listed.filter((t) => t[4] >= floor - 1e-9);
   if (own.length > RULES.size) return `${entry.slug}: 자기 상품이 ${RULES.size}개를 넘는다 (${own.length})`;
   const P = entry.price;
   const ownNames = new Set(own.map((t) => String(t[2]).toLowerCase()));
@@ -27,7 +30,7 @@ function fill(entry, order, pool) {
   for (const t of own) { const k = bucketOf(t[4], P); if (k >= 0) have[k]++; }
   // 구간마다 고를 수 있는 공통 상품(값 순서). 박스마다 시작 자리를 달리한다
   const shelf = BUCKETS.map((_, k) => {
-    const list = pool.filter((t) => bucketOf(t[4], P) === k && !ownNames.has(String(t[2]).toLowerCase())).sort((a, b) => a[4] - b[4] || a[0].localeCompare(b[0]));
+    const list = pool.filter((t) => t[4] >= floor - 1e-9 && bucketOf(t[4], P) === k && !ownNames.has(String(t[2]).toLowerCase())).sort((a, b) => a[4] - b[4] || a[0].localeCompare(b[0]));
     const start = list.length ? (order * 7) % list.length : 0;
     return [...list.slice(start), ...list.slice(0, start)];
   });
@@ -43,14 +46,14 @@ function fill(entry, order, pool) {
     take[open.find((i) => have[i] + take[i] === least)]++;
   }
   // 넘치면 많이 가져온 구간부터 덜어 낸다(낮은 구간의 최소 수는 지킨다)
-  const floor = (k) => (k === 0 ? Math.max(0, RULES.minLowA - have[0]) : k === 1 ? Math.max(0, RULES.minLowB - have[1]) : 0);
+  const keep = (k) => (k === 0 ? Math.max(0, RULES.minLowA - have[0]) : k === 1 ? Math.max(0, RULES.minLowB - have[1]) : 0);
   for (let guard = 0; total() > RULES.size && guard < 2000; guard++) {
-    const candidates = take.map((n, k) => [n - floor(k), k]).filter(([spare]) => spare > 0).sort((a, b) => b[0] - a[0]);
+    const candidates = take.map((n, k) => [n - keep(k), k]).filter(([spare]) => spare > 0).sort((a, b) => b[0] - a[0]);
     if (!candidates.length) break;
     take[candidates[0][1]]--;
   }
   const use = take.flatMap((n, k) => shelf[k].slice(0, n).map((t) => t[0]));
-  fs.writeFileSync(file, JSON.stringify({ slug: entry.slug, items: own, use }, null, 1) + "\n");
+  fs.writeFileSync(file, JSON.stringify({ slug: entry.slug, items: listed, use }, null, 1) + "\n");
   return total() === RULES.size ? null : `${entry.slug}: 100개를 못 채웠다 (${total()}). 공통 상품이 모자라다`;
 }
 

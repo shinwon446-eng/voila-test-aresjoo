@@ -1,0 +1,233 @@
+{
+ "slug": "car-genesis",
+ "items": [
+  [
+   "car-genesis-g70-2-5t",
+   "제네시스 G70 2.5T",
+   "Genesis G70 2.5T",
+   "捷尼赛思 G70 2.5T",
+   42500
+  ],
+  [
+   "car-genesis-g70-3-3t-sport-advanced",
+   "제네시스 G70 3.3T 스포츠 어드밴스드",
+   "Genesis G70 3.3T Sport Advanced",
+   "捷尼赛思 G70 3.3T Sport Advanced",
+   51200
+  ],
+  [
+   "car-genesis-g70-3-3t-sport-prestige",
+   "제네시스 G70 3.3T 스포츠 프레스티지",
+   "Genesis G70 3.3T Sport Prestige",
+   "捷尼赛思 G70 3.3T Sport Prestige",
+   56000
+  ],
+  [
+   "car-genesis-g80-2-5t",
+   "제네시스 G80 2.5T",
+   "Genesis G80 2.5T",
+   "捷尼赛思 G80 2.5T",
+   57100
+  ],
+  [
+   "car-genesis-g80-3-5t-sport-prestige",
+   "제네시스 G80 3.5T 스포츠 프레스티지",
+   "Genesis G80 3.5T Sport Prestige",
+   "捷尼赛思 G80 3.5T Sport Prestige",
+   77000
+  ],
+  [
+   "car-genesis-electrified-g80-2023",
+   "제네시스 일렉트리파이드 G80 (2023)",
+   "Genesis Electrified G80 (2023)",
+   "捷尼赛思 Electrified G80 (2023)",
+   79825
+  ],
+  [
+   "car-genesis-g90-3-5t",
+   "제네시스 G90 3.5T",
+   "Genesis G90 3.5T",
+   "捷尼赛思 G90 3.5T",
+   89700
+  ],
+  [
+   "car-genesis-g90-3-5t-e-supercharger",
+   "제네시스 G90 3.5T e-슈퍼차저",
+   "Genesis G90 3.5T E-Supercharger",
+   "捷尼赛思 G90 3.5T E-Supercharger",
+   100700
+  ],
+  [
+   "car-genesis-gv60-standard-rwd",
+   "제네시스 GV60 스탠다드 RWD",
+   "Genesis GV60 Standard RWD",
+   "捷尼赛思 GV60 Standard RWD",
+   52350
+  ],
+  [
+   "car-genesis-gv60-advanced-awd",
+   "제네시스 GV60 어드밴스드 AWD",
+   "Genesis GV60 Advanced AWD",
+   "捷尼赛思 GV60 Advanced AWD",
+   60900
+  ],
+  [
+   "car-genesis-gv60-performance-awd",
+   "제네시스 GV60 퍼포먼스 AWD",
+   "Genesis GV60 Performance AWD",
+   "捷尼赛思 GV60 Performance AWD",
+   69900
+  ],
+  [
+   "car-genesis-gv70-2-5t",
+   "제네시스 GV70 2.5T",
+   "Genesis GV70 2.5T",
+   "捷尼赛思 GV70 2.5T",
+   47985
+  ],
+  [
+   "car-genesis-gv70-3-5t-sport",
+   "제네시스 GV70 3.5T 스포츠",
+   "Genesis GV70 3.5T Sport",
+   "捷尼赛思 GV70 3.5T Sport",
+   58700
+  ],
+  [
+   "car-genesis-gv70-3-5t-sport-prestige",
+   "제네시스 GV70 3.5T 스포츠 프레스티지",
+   "Genesis GV70 3.5T Sport Prestige",
+   "捷尼赛思 GV70 3.5T Sport Prestige",
+   70000
+  ],
+  [
+   "car-genesis-electrified-gv70-advanced",
+   "제네시스 일렉트리파이드 GV70 어드밴스드",
+   "Genesis Electrified GV70 Advanced",
+   "捷尼赛思 Electrified GV70 Advanced",
+   66950
+  ],
+  [
+   "car-genesis-electrified-gv70-prestige",
+   "제네시스 일렉트리파이드 GV70 프레스티지",
+   "Genesis Electrified GV70 Prestige",
+   "捷尼赛思 Electrified GV70 Prestige",
+   73750
+  ],
+  [
+   "car-genesis-gv80-2-5t",
+   "제네시스 GV80 2.5T",
+   "Genesis GV80 2.5T",
+   "捷尼赛思 GV80 2.5T",
+   58200
+  ],
+  [
+   "car-genesis-gv80-3-5t-advanced",
+   "제네시스 GV80 3.5T 어드밴스드",
+   "Genesis GV80 3.5T Advanced",
+   "捷尼赛思 GV80 3.5T Advanced",
+   74300
+  ],
+  [
+   "car-genesis-gv80-3-5t-prestige",
+   "제네시스 GV80 3.5T 프레스티지",
+   "Genesis GV80 3.5T Prestige",
+   "捷尼赛思 GV80 3.5T Prestige",
+   80650
+  ],
+  [
+   "car-genesis-gv80-coupe-3-5t",
+   "제네시스 GV80 쿠페 3.5T",
+   "Genesis GV80 Coupe 3.5T",
+   "捷尼赛思 GV80 Coupe 3.5T",
+   81300
+  ],
+  [
+   "car-genesis-gv80-coupe-3-5t-e-supercharger",
+   "제네시스 GV80 쿠페 3.5T e-슈퍼차저",
+   "Genesis GV80 Coupe 3.5T E-Supercharger",
+   "捷尼赛思 GV80 Coupe 3.5T E-Supercharger",
+   87100
+  ]
+ ],
+ "use": [
+  "car-p-bosch-icon-22oe",
+  "car-p-noco-genius1",
+  "car-p-chemical-guys-hydroslick-16oz",
+  "car-p-battery-tender-junior",
+  "car-p-weathertech-cupfone",
+  "car-p-mobil-1-ep-5w30-5qt",
+  "car-p-adams-graphene-ceramic-spray-12oz",
+  "car-p-griots-pfm-drying-towel",
+  "car-p-tekton-24335",
+  "car-p-armor-all-aa255",
+  "car-p-chemical-guys-torq-foam-blaster-6",
+  "car-p-cosco-scenera-next",
+  "car-p-graco-turbobooster-2-highback",
+  "car-p-viair-85p",
+  "car-p-meguiars-complete-car-care-kit",
+  "car-p-noco-genius5",
+  "car-p-sun-joe-spx3000",
+  "car-p-chemical-guys-torqx-kit",
+  "car-p-karcher-k1700",
+  "car-p-viofo-a129-plus-duo",
+  "car-p-griots-g9-polisher",
+  "car-p-dewalt-dwmt81535",
+  "car-p-milwaukee-2557-20",
+  "car-p-noco-boost-hd-gb70",
+  "car-p-graco-extend2fit",
+  "car-p-dewalt-dcf891b",
+  "car-p-chicco-keyfit-30",
+  "car-p-diono-radian-3r",
+  "car-p-garmin-dash-cam-57",
+  "car-p-jl-audio-jd400-4",
+  "car-p-milwaukee-2967-20",
+  "car-p-graco-4ever-dlx",
+  "car-p-innova-5610",
+  "car-p-sony-xav-ax3200",
+  "car-p-enkei-rpf1-17x9",
+  "car-p-viofo-a229-pro-2ch",
+  "car-p-garmin-drivesmart-86",
+  "car-p-emporia-level-2-48a",
+  "car-p-alpine-ilx-w670",
+  "car-p-escort-max-3",
+  "car-p-britax-one4life",
+  "car-p-chicco-fit360-cleartex",
+  "car-p-garmin-dash-cam-live",
+  "car-p-logitech-g923",
+  "car-p-alpine-ilx-f509",
+  "car-p-thule-epos-2",
+  "car-p-traxxas-x-maxx-8s",
+  "car-p-kuat-piston-pro-x",
+  "car-p-dometic-cfx3-75dz",
+  "car-p-alpinestars-tech-air-5",
+  "car-p-escort-redline-360c",
+  "car-p-thule-force-xt-l",
+  "car-p-kranzle-k1122tst",
+  "car-p-apollo-city-pro",
+  "car-p-aventon-level-2",
+  "car-p-honda-crf50f",
+  "car-p-yamaha-pw50",
+  "car-p-aventon-aventure-2",
+  "car-p-honda-navi",
+  "car-p-rad-radrunner-3-plus",
+  "car-p-ktm-390-duke",
+  "car-p-specialized-turbo-vado-4-0",
+  "car-p-honda-grom",
+  "car-p-kawasaki-z125-pro",
+  "car-p-super73-rx",
+  "car-p-honda-super-cub-c125",
+  "car-p-brompton-electric-c-line-explore",
+  "car-p-segway-superscooter-gt2",
+  "car-p-honda-africa-twin",
+  "car-p-honda-rebel-500",
+  "car-p-kawasaki-klr650",
+  "car-p-polaris-sportsman-570",
+  "car-p-vespa-gts-300",
+  "car-p-yamaha-mt-07",
+  "car-p-chevrolet-trax-ls",
+  "car-p-polaris-rzr-xp-1000-sport",
+  "car-p-ktm-1390-super-duke-r-evo",
+  "car-p-volkswagen-jetta-s",
+  "car-p-mercedes-amg-sl-63-s-e-performance"
+ ]
+}

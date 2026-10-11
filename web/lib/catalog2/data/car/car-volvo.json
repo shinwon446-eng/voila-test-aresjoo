@@ -1,0 +1,263 @@
+{
+ "slug": "car-volvo",
+ "items": [
+  [
+   "car-volvo-ex30-single-motor-extended-range-plus",
+   "볼보 EX30 싱글 모터 익스텐디드 레인지 플러스",
+   "Volvo EX30 Single Motor Extended Range Plus",
+   "沃尔沃 EX30 单电机长续航 Plus",
+   40245
+  ],
+  [
+   "car-volvo-ex30-twin-motor-performance-plus",
+   "볼보 EX30 트윈 모터 퍼포먼스 플러스",
+   "Volvo EX30 Twin Motor Performance Plus",
+   "沃尔沃 EX30 双电机高性能 Plus",
+   46195
+  ],
+  [
+   "car-volvo-ex30-cross-country",
+   "볼보 EX30 크로스컨트리",
+   "Volvo EX30 Cross Country",
+   "沃尔沃 EX30 Cross Country",
+   48150
+  ],
+  [
+   "car-volvo-ex40-single-motor-core",
+   "볼보 EX40 싱글 모터 코어",
+   "Volvo EX40 Single Motor Core",
+   "沃尔沃 EX40 单电机 Core",
+   52500
+  ],
+  [
+   "car-volvo-ec40-single-motor-core",
+   "볼보 EC40 싱글 모터 코어",
+   "Volvo EC40 Single Motor Core",
+   "沃尔沃 EC40 单电机 Core",
+   53800
+  ],
+  [
+   "car-volvo-xc40-b5-core",
+   "볼보 XC40 B5 코어",
+   "Volvo XC40 B5 Core",
+   "沃尔沃 XC40 B5 Core",
+   40650
+  ],
+  [
+   "car-volvo-xc40-b5-ultra",
+   "볼보 XC40 B5 울트라",
+   "Volvo XC40 B5 Ultra",
+   "沃尔沃 XC40 B5 Ultra",
+   47300
+  ],
+  [
+   "car-volvo-xc60-b5-core",
+   "볼보 XC60 B5 코어",
+   "Volvo XC60 B5 Core",
+   "沃尔沃 XC60 B5 Core",
+   46900
+  ],
+  [
+   "car-volvo-xc60-b5-ultra",
+   "볼보 XC60 B5 울트라",
+   "Volvo XC60 B5 Ultra",
+   "沃尔沃 XC60 B5 Ultra",
+   57700
+  ],
+  [
+   "car-volvo-xc60-t8-core",
+   "볼보 XC60 T8 플러그인 하이브리드 코어",
+   "Volvo XC60 T8 Plug-in Hybrid Core",
+   "沃尔沃 XC60 T8 插电混动 Core",
+   57900
+  ],
+  [
+   "car-volvo-xc60-t8-polestar-engineered",
+   "볼보 XC60 T8 폴스타 엔지니어드",
+   "Volvo XC60 T8 Polestar Engineered",
+   "沃尔沃 XC60 T8 Polestar Engineered",
+   74950
+  ],
+  [
+   "car-volvo-xc90-b5-core",
+   "볼보 XC90 B5 코어",
+   "Volvo XC90 B5 Core",
+   "沃尔沃 XC90 B5 Core",
+   58450
+  ],
+  [
+   "car-volvo-xc90-b6-plus",
+   "볼보 XC90 B6 플러스",
+   "Volvo XC90 B6 Plus",
+   "沃尔沃 XC90 B6 Plus",
+   63500
+  ],
+  [
+   "car-volvo-xc90-b6-ultra",
+   "볼보 XC90 B6 울트라",
+   "Volvo XC90 B6 Ultra",
+   "沃尔沃 XC90 B6 Ultra",
+   70500
+  ],
+  [
+   "car-volvo-xc90-t8-core",
+   "볼보 XC90 T8 플러그인 하이브리드 코어",
+   "Volvo XC90 T8 Plug-in Hybrid Core",
+   "沃尔沃 XC90 T8 插电混动 Core",
+   73000
+  ],
+  [
+   "car-volvo-xc90-t8-ultra",
+   "볼보 XC90 T8 플러그인 하이브리드 울트라",
+   "Volvo XC90 T8 Plug-in Hybrid Ultra",
+   "沃尔沃 XC90 T8 插电混动 Ultra",
+   81000
+  ],
+  [
+   "car-volvo-ex90-twin-motor-plus",
+   "볼보 EX90 트윈 모터 플러스",
+   "Volvo EX90 Twin Motor Plus",
+   "沃尔沃 EX90 双电机 Plus",
+   79995
+  ],
+  [
+   "car-volvo-ex90-twin-motor-performance-ultra",
+   "볼보 EX90 트윈 모터 퍼포먼스 울트라",
+   "Volvo EX90 Twin Motor Performance Ultra",
+   "沃尔沃 EX90 双电机高性能 Ultra",
+   89840
+  ],
+  [
+   "car-volvo-s60-b5-core-2024",
+   "볼보 S60 B5 코어 (2024)",
+   "Volvo S60 B5 Core (2024)",
+   "沃尔沃 S60 B5 Core (2024)",
+   42300
+  ],
+  [
+   "car-volvo-s60-t8-core-2024",
+   "볼보 S60 T8 플러그인 하이브리드 코어 (2024)",
+   "Volvo S60 T8 Plug-in Hybrid Core (2024)",
+   "沃尔沃 S60 T8 插电混动 Core (2024)",
+   51950
+  ],
+  [
+   "car-volvo-s90-b6-plus",
+   "볼보 S90 B6 플러스",
+   "Volvo S90 B6 Plus",
+   "沃尔沃 S90 B6 Plus",
+   58300
+  ],
+  [
+   "car-volvo-s90-t8-ultra",
+   "볼보 S90 T8 플러그인 하이브리드 울트라",
+   "Volvo S90 T8 Plug-in Hybrid Ultra",
+   "沃尔沃 S90 T8 插电混动 Ultra",
+   71100
+  ],
+  [
+   "car-volvo-v60-cross-country-b5-plus",
+   "볼보 V60 크로스컨트리 B5 플러스",
+   "Volvo V60 Cross Country B5 Plus",
+   "沃尔沃 V60 Cross Country B5 Plus",
+   50300
+  ],
+  [
+   "car-volvo-v60-t8-polestar-engineered",
+   "볼보 V60 T8 폴스타 엔지니어드",
+   "Volvo V60 T8 Polestar Engineered",
+   "沃尔沃 V60 T8 Polestar Engineered",
+   71250
+  ],
+  [
+   "car-volvo-v90-cross-country-b6-plus",
+   "볼보 V90 크로스컨트리 B6 플러스",
+   "Volvo V90 Cross Country B6 Plus",
+   "沃尔沃 V90 Cross Country B6 Plus",
+   59800
+  ],
+  [
+   "car-volvo-v90-cross-country-b6-ultra",
+   "볼보 V90 크로스컨트리 B6 울트라",
+   "Volvo V90 Cross Country B6 Ultra",
+   "沃尔沃 V90 Cross Country B6 Ultra",
+   64800
+  ]
+ ],
+ "use": [
+  "car-p-chemical-guys-hydroslick-16oz",
+  "car-p-battery-tender-junior",
+  "car-p-weathertech-cupfone",
+  "car-p-mobil-1-ep-5w30-5qt",
+  "car-p-adams-graphene-ceramic-spray-12oz",
+  "car-p-griots-pfm-drying-towel",
+  "car-p-tekton-24335",
+  "car-p-armor-all-aa255",
+  "car-p-chemical-guys-torq-foam-blaster-6",
+  "car-p-cosco-scenera-next",
+  "car-p-graco-turbobooster-2-highback",
+  "car-p-viair-85p",
+  "car-p-meguiars-complete-car-care-kit",
+  "car-p-noco-genius5",
+  "car-p-pioneer-ts-a1680f",
+  "car-p-kicker-46csc654",
+  "car-p-milwaukee-2848-20",
+  "car-p-milwaukee-packout-48-22-8426",
+  "car-p-cobra-rad-480i",
+  "car-p-noco-boost-x-gbx45",
+  "car-p-clek-olli",
+  "car-p-garmin-drive-53",
+  "car-p-nextbase-322gw",
+  "car-p-hjc-i10",
+  "car-p-sun-joe-spx3000",
+  "car-p-chemical-guys-torqx-kit",
+  "car-p-karcher-k1700",
+  "car-p-viofo-a129-plus-duo",
+  "car-p-griots-g9-polisher",
+  "car-p-dewalt-dwmt81535",
+  "car-p-enkei-rpf1-17x9",
+  "car-p-viofo-a229-pro-2ch",
+  "car-p-garmin-drivesmart-86",
+  "car-p-grizzl-e-classic-40a",
+  "car-p-michelin-ps4s-255-35zr19",
+  "car-p-garmin-dash-cam-67w",
+  "car-p-escort-max-3",
+  "car-p-britax-one4life",
+  "car-p-chicco-fit360-cleartex",
+  "car-p-garmin-dash-cam-live",
+  "car-p-logitech-g923",
+  "car-p-nextbase-622gw",
+  "car-p-thule-t2-pro-xtr-2",
+  "car-p-dometic-cfx3-35",
+  "car-p-shoei-x-fifteen",
+  "car-p-lectric-xp-3-0",
+  "car-p-arai-corsair-x",
+  "car-p-fanatec-clubsport-dd-plus",
+  "car-p-honda-navi",
+  "car-p-rad-radrunner-3-plus",
+  "car-p-thule-vector-alpine",
+  "car-p-kawasaki-klx110r",
+  "car-p-super73-s2",
+  "car-p-thule-approach-m",
+  "car-p-segway-superscooter-gt1",
+  "car-p-yamaha-yzf-r3",
+  "car-p-vespa-primavera-150",
+  "car-p-ktm-390-duke",
+  "car-p-specialized-turbo-vado-4-0",
+  "car-p-honda-grom",
+  "car-p-kawasaki-z125-pro",
+  "car-p-super73-rx",
+  "car-p-ducati-monster",
+  "car-p-indian-scout-bobber",
+  "car-p-honda-africa-twin",
+  "car-p-honda-rebel-500",
+  "car-p-kawasaki-klr650",
+  "car-p-polaris-sportsman-570",
+  "car-p-acura-integra",
+  "car-p-ducati-panigale-v4-s",
+  "car-p-subaru-wrx-premium",
+  "car-p-ducati-panigale-v2",
+  "car-p-airstream-flying-cloud-25fb",
+  "car-p-mercedes-benz-s-500-4matic"
+ ]
+}

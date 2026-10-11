@@ -1,46 +1,372 @@
-{ "slug": "car-audi", "items": [
-["car-audi-a3", "아우디 A3", "Audi A3", "奥迪 A3", 38200],
-["car-audi-s3", "아우디 S3", "Audi S3", "奥迪 S3", 48700],
-["car-audi-rs-3", "아우디 RS 3", "Audi RS 3", "奥迪 RS 3", 63400],
-["car-audi-a4-45-tfsi-quattro-2025", "아우디 A4 45 TFSI 콰트로 (2025)", "Audi A4 45 TFSI quattro (2025)", "奥迪 A4 45 TFSI quattro (2025)", 44100],
-["car-audi-s4-2025", "아우디 S4 (2025)", "Audi S4 (2025)", "奥迪 S4 (2025)", 55300],
-["car-audi-a5-sportback", "아우디 A5 스포트백", "Audi A5 Sportback", "奥迪 A5 Sportback", 49700],
-["car-audi-s5-sportback", "아우디 S5 스포트백", "Audi S5 Sportback", "奥迪 S5 Sportback", 62700],
-["car-audi-rs-5-sportback-2025", "아우디 RS 5 스포트백 (2025)", "Audi RS 5 Sportback (2025)", "奥迪 RS 5 Sportback (2025)", 79900],
-["car-audi-a6-sedan", "아우디 A6 세단", "Audi A6 Sedan", "奥迪 A6 轿车", 58100],
-["car-audi-a6-sportback-e-tron", "아우디 A6 스포트백 e-트론", "Audi A6 Sportback e-tron", "奥迪 A6 Sportback e-tron", 65900],
-["car-audi-s6-sportback-e-tron", "아우디 S6 스포트백 e-트론", "Audi S6 Sportback e-tron", "奥迪 S6 Sportback e-tron", 78700],
-["car-audi-a6-allroad-2025", "아우디 A6 올로드 (2025)", "Audi A6 allroad (2025)", "奥迪 A6 allroad (2025)", 69900],
-["car-audi-rs-6-avant-performance", "아우디 RS 6 아반트 퍼포먼스", "Audi RS 6 Avant performance", "奥迪 RS 6 Avant performance", 125800],
-["car-audi-rs-6-avant-gt", "아우디 RS 6 아반트 GT", "Audi RS 6 Avant GT", "奥迪 RS 6 Avant GT", 198900],
-["car-audi-a7", "아우디 A7", "Audi A7", "奥迪 A7", 72000],
-["car-audi-s7", "아우디 S7", "Audi S7", "奥迪 S7", 85500],
-["car-audi-rs-7-performance", "아우디 RS 7 퍼포먼스", "Audi RS 7 performance", "奥迪 RS 7 performance", 128600],
-["car-audi-a8-l", "아우디 A8 L", "Audi A8 L", "奥迪 A8 L", 91500],
-["car-audi-s8", "아우디 S8", "Audi S8", "奥迪 S8", 125000],
-["car-audi-s-e-tron-gt", "아우디 S e-트론 GT", "Audi S e-tron GT", "奥迪 S e-tron GT", 125500],
-["car-audi-rs-e-tron-gt-performance", "아우디 RS e-트론 GT 퍼포먼스", "Audi RS e-tron GT performance", "奥迪 RS e-tron GT performance", 167000],
-["car-audi-q3", "아우디 Q3", "Audi Q3", "奥迪 Q3", 39800],
-["car-audi-q4-45-e-tron", "아우디 Q4 45 e-트론", "Audi Q4 45 e-tron", "奥迪 Q4 45 e-tron", 49800],
-["car-audi-q4-55-e-tron-quattro", "아우디 Q4 55 e-트론 콰트로", "Audi Q4 55 e-tron quattro", "奥迪 Q4 55 e-tron quattro", 55200],
-["car-audi-q5", "아우디 Q5", "Audi Q5", "奥迪 Q5", 52200],
-["car-audi-sq5", "아우디 SQ5", "Audi SQ5", "奥迪 SQ5", 64800],
-["car-audi-q6-e-tron", "아우디 Q6 e-트론", "Audi Q6 e-tron", "奥迪 Q6 e-tron", 63800],
-["car-audi-q6-e-tron-quattro", "아우디 Q6 e-트론 콰트로", "Audi Q6 e-tron quattro", "奥迪 Q6 e-tron quattro", 65800],
-["car-audi-sq6-e-tron", "아우디 SQ6 e-트론", "Audi SQ6 e-tron", "奥迪 SQ6 e-tron", 72900],
-["car-audi-q7-45-tfsi", "아우디 Q7 45 TFSI", "Audi Q7 45 TFSI", "奥迪 Q7 45 TFSI", 60500],
-["car-audi-q7-55-tfsi", "아우디 Q7 55 TFSI", "Audi Q7 55 TFSI", "奥迪 Q7 55 TFSI", 66000],
-["car-audi-sq7", "아우디 SQ7", "Audi SQ7", "奥迪 SQ7", 90800],
-["car-audi-q8", "아우디 Q8", "Audi Q8", "奥迪 Q8", 74400],
-["car-audi-sq8", "아우디 SQ8", "Audi SQ8", "奥迪 SQ8", 97800],
-["car-audi-rs-q8-performance", "아우디 RS Q8 퍼포먼스", "Audi RS Q8 performance", "奥迪 RS Q8 performance", 136200],
-["car-audi-q8-e-tron-2024", "아우디 Q8 e-트론 (2024)", "Audi Q8 e-tron (2024)", "奥迪 Q8 e-tron (2024)", 74400],
-["car-audi-sq8-e-tron-2024", "아우디 SQ8 e-트론 (2024)", "Audi SQ8 e-tron (2024)", "奥迪 SQ8 e-tron (2024)", 89800],
-["car-audi-tt-coupe-2023", "아우디 TT 쿠페 (2023)", "Audi TT Coupe (2023)", "奥迪 TT Coupe (2023)", 52200],
-["car-audi-tt-rs-2022", "아우디 TT RS (2022)", "Audi TT RS (2022)", "奥迪 TT RS (2022)", 73200],
-["car-audi-r8-v10-performance-rwd-2023", "아우디 R8 V10 퍼포먼스 RWD (2023)", "Audi R8 V10 performance RWD (2023)", "奥迪 R8 V10 performance RWD (2023)", 158600],
-["car-audi-r8-v10-performance-quattro-2023", "아우디 R8 V10 퍼포먼스 콰트로 (2023)", "Audi R8 V10 performance quattro (2023)", "奥迪 R8 V10 performance quattro (2023)", 209700],
-["car-audi-r8-gt-rwd-2023", "아우디 R8 GT RWD (2023)", "Audi R8 GT RWD (2023)", "奥迪 R8 GT RWD (2023)", 251395],
-["car-audi-lego-technic-rs-q-e-tron-42160", "레고 테크닉 아우디 RS Q e-트론 42160", "LEGO Technic Audi RS Q e-tron 42160", "乐高机械组奥迪 RS Q e-tron 42160", 169.99],
-["car-audi-lego-speed-champions-s1-e-tron-quattro-76921", "레고 스피드 챔피언 아우디 S1 e-트론 콰트로 76921", "LEGO Speed Champions Audi S1 e-tron quattro Race Car 76921", "乐高超级赛车奥迪 S1 e-tron quattro 76921", 26.99]
-], "use": [] }
+{
+ "slug": "car-audi",
+ "items": [
+  [
+   "car-audi-a3",
+   "아우디 A3",
+   "Audi A3",
+   "奥迪 A3",
+   38200
+  ],
+  [
+   "car-audi-s3",
+   "아우디 S3",
+   "Audi S3",
+   "奥迪 S3",
+   48700
+  ],
+  [
+   "car-audi-rs-3",
+   "아우디 RS 3",
+   "Audi RS 3",
+   "奥迪 RS 3",
+   63400
+  ],
+  [
+   "car-audi-a4-45-tfsi-quattro-2025",
+   "아우디 A4 45 TFSI 콰트로 (2025)",
+   "Audi A4 45 TFSI quattro (2025)",
+   "奥迪 A4 45 TFSI quattro (2025)",
+   44100
+  ],
+  [
+   "car-audi-s4-2025",
+   "아우디 S4 (2025)",
+   "Audi S4 (2025)",
+   "奥迪 S4 (2025)",
+   55300
+  ],
+  [
+   "car-audi-a5-sportback",
+   "아우디 A5 스포트백",
+   "Audi A5 Sportback",
+   "奥迪 A5 Sportback",
+   49700
+  ],
+  [
+   "car-audi-s5-sportback",
+   "아우디 S5 스포트백",
+   "Audi S5 Sportback",
+   "奥迪 S5 Sportback",
+   62700
+  ],
+  [
+   "car-audi-rs-5-sportback-2025",
+   "아우디 RS 5 스포트백 (2025)",
+   "Audi RS 5 Sportback (2025)",
+   "奥迪 RS 5 Sportback (2025)",
+   79900
+  ],
+  [
+   "car-audi-a6-sedan",
+   "아우디 A6 세단",
+   "Audi A6 Sedan",
+   "奥迪 A6 轿车",
+   58100
+  ],
+  [
+   "car-audi-a6-sportback-e-tron",
+   "아우디 A6 스포트백 e-트론",
+   "Audi A6 Sportback e-tron",
+   "奥迪 A6 Sportback e-tron",
+   65900
+  ],
+  [
+   "car-audi-s6-sportback-e-tron",
+   "아우디 S6 스포트백 e-트론",
+   "Audi S6 Sportback e-tron",
+   "奥迪 S6 Sportback e-tron",
+   78700
+  ],
+  [
+   "car-audi-a6-allroad-2025",
+   "아우디 A6 올로드 (2025)",
+   "Audi A6 allroad (2025)",
+   "奥迪 A6 allroad (2025)",
+   69900
+  ],
+  [
+   "car-audi-rs-6-avant-performance",
+   "아우디 RS 6 아반트 퍼포먼스",
+   "Audi RS 6 Avant performance",
+   "奥迪 RS 6 Avant performance",
+   125800
+  ],
+  [
+   "car-audi-rs-6-avant-gt",
+   "아우디 RS 6 아반트 GT",
+   "Audi RS 6 Avant GT",
+   "奥迪 RS 6 Avant GT",
+   198900
+  ],
+  [
+   "car-audi-a7",
+   "아우디 A7",
+   "Audi A7",
+   "奥迪 A7",
+   72000
+  ],
+  [
+   "car-audi-s7",
+   "아우디 S7",
+   "Audi S7",
+   "奥迪 S7",
+   85500
+  ],
+  [
+   "car-audi-rs-7-performance",
+   "아우디 RS 7 퍼포먼스",
+   "Audi RS 7 performance",
+   "奥迪 RS 7 performance",
+   128600
+  ],
+  [
+   "car-audi-a8-l",
+   "아우디 A8 L",
+   "Audi A8 L",
+   "奥迪 A8 L",
+   91500
+  ],
+  [
+   "car-audi-s8",
+   "아우디 S8",
+   "Audi S8",
+   "奥迪 S8",
+   125000
+  ],
+  [
+   "car-audi-s-e-tron-gt",
+   "아우디 S e-트론 GT",
+   "Audi S e-tron GT",
+   "奥迪 S e-tron GT",
+   125500
+  ],
+  [
+   "car-audi-rs-e-tron-gt-performance",
+   "아우디 RS e-트론 GT 퍼포먼스",
+   "Audi RS e-tron GT performance",
+   "奥迪 RS e-tron GT performance",
+   167000
+  ],
+  [
+   "car-audi-q3",
+   "아우디 Q3",
+   "Audi Q3",
+   "奥迪 Q3",
+   39800
+  ],
+  [
+   "car-audi-q4-45-e-tron",
+   "아우디 Q4 45 e-트론",
+   "Audi Q4 45 e-tron",
+   "奥迪 Q4 45 e-tron",
+   49800
+  ],
+  [
+   "car-audi-q4-55-e-tron-quattro",
+   "아우디 Q4 55 e-트론 콰트로",
+   "Audi Q4 55 e-tron quattro",
+   "奥迪 Q4 55 e-tron quattro",
+   55200
+  ],
+  [
+   "car-audi-q5",
+   "아우디 Q5",
+   "Audi Q5",
+   "奥迪 Q5",
+   52200
+  ],
+  [
+   "car-audi-sq5",
+   "아우디 SQ5",
+   "Audi SQ5",
+   "奥迪 SQ5",
+   64800
+  ],
+  [
+   "car-audi-q6-e-tron",
+   "아우디 Q6 e-트론",
+   "Audi Q6 e-tron",
+   "奥迪 Q6 e-tron",
+   63800
+  ],
+  [
+   "car-audi-q6-e-tron-quattro",
+   "아우디 Q6 e-트론 콰트로",
+   "Audi Q6 e-tron quattro",
+   "奥迪 Q6 e-tron quattro",
+   65800
+  ],
+  [
+   "car-audi-sq6-e-tron",
+   "아우디 SQ6 e-트론",
+   "Audi SQ6 e-tron",
+   "奥迪 SQ6 e-tron",
+   72900
+  ],
+  [
+   "car-audi-q7-45-tfsi",
+   "아우디 Q7 45 TFSI",
+   "Audi Q7 45 TFSI",
+   "奥迪 Q7 45 TFSI",
+   60500
+  ],
+  [
+   "car-audi-q7-55-tfsi",
+   "아우디 Q7 55 TFSI",
+   "Audi Q7 55 TFSI",
+   "奥迪 Q7 55 TFSI",
+   66000
+  ],
+  [
+   "car-audi-sq7",
+   "아우디 SQ7",
+   "Audi SQ7",
+   "奥迪 SQ7",
+   90800
+  ],
+  [
+   "car-audi-q8",
+   "아우디 Q8",
+   "Audi Q8",
+   "奥迪 Q8",
+   74400
+  ],
+  [
+   "car-audi-sq8",
+   "아우디 SQ8",
+   "Audi SQ8",
+   "奥迪 SQ8",
+   97800
+  ],
+  [
+   "car-audi-rs-q8-performance",
+   "아우디 RS Q8 퍼포먼스",
+   "Audi RS Q8 performance",
+   "奥迪 RS Q8 performance",
+   136200
+  ],
+  [
+   "car-audi-q8-e-tron-2024",
+   "아우디 Q8 e-트론 (2024)",
+   "Audi Q8 e-tron (2024)",
+   "奥迪 Q8 e-tron (2024)",
+   74400
+  ],
+  [
+   "car-audi-sq8-e-tron-2024",
+   "아우디 SQ8 e-트론 (2024)",
+   "Audi SQ8 e-tron (2024)",
+   "奥迪 SQ8 e-tron (2024)",
+   89800
+  ],
+  [
+   "car-audi-tt-coupe-2023",
+   "아우디 TT 쿠페 (2023)",
+   "Audi TT Coupe (2023)",
+   "奥迪 TT Coupe (2023)",
+   52200
+  ],
+  [
+   "car-audi-tt-rs-2022",
+   "아우디 TT RS (2022)",
+   "Audi TT RS (2022)",
+   "奥迪 TT RS (2022)",
+   73200
+  ],
+  [
+   "car-audi-r8-v10-performance-rwd-2023",
+   "아우디 R8 V10 퍼포먼스 RWD (2023)",
+   "Audi R8 V10 performance RWD (2023)",
+   "奥迪 R8 V10 performance RWD (2023)",
+   158600
+  ],
+  [
+   "car-audi-r8-v10-performance-quattro-2023",
+   "아우디 R8 V10 퍼포먼스 콰트로 (2023)",
+   "Audi R8 V10 performance quattro (2023)",
+   "奥迪 R8 V10 performance quattro (2023)",
+   209700
+  ],
+  [
+   "car-audi-r8-gt-rwd-2023",
+   "아우디 R8 GT RWD (2023)",
+   "Audi R8 GT RWD (2023)",
+   "奥迪 R8 GT RWD (2023)",
+   251395
+  ],
+  [
+   "car-audi-lego-technic-rs-q-e-tron-42160",
+   "레고 테크닉 아우디 RS Q e-트론 42160",
+   "LEGO Technic Audi RS Q e-tron 42160",
+   "乐高机械组奥迪 RS Q e-tron 42160",
+   169.99
+  ],
+  [
+   "car-audi-lego-speed-champions-s1-e-tron-quattro-76921",
+   "레고 스피드 챔피언 아우디 S1 e-트론 콰트로 76921",
+   "LEGO Speed Champions Audi S1 e-tron quattro Race Car 76921",
+   "乐高超级赛车奥迪 S1 e-tron quattro 76921",
+   26.99
+  ]
+ ],
+ "use": [
+  "car-p-carpro-cquartz-uk-3-50ml",
+  "car-p-milwaukee-2475-20",
+  "car-p-gyeon-mohs-evo-50ml",
+  "car-p-noco-boost-plus-gb40",
+  "car-p-chemical-guys-hol169",
+  "car-p-fanttik-x8-apex",
+  "car-p-pioneer-mvh-s322bt",
+  "car-p-viofo-a119-mini-2",
+  "car-p-knipex-cobra-set-00-20-09-us1",
+  "car-p-ctek-mxs-5-0",
+  "car-p-dewalt-dcc020ib",
+  "car-p-bell-qualifier",
+  "car-p-bluedriver-pro",
+  "car-p-garmin-drivesmart-86",
+  "car-p-grizzl-e-classic-40a",
+  "car-p-michelin-ps4s-255-35zr19",
+  "car-p-vantrue-n4-pro",
+  "car-p-emporia-level-2-48a",
+  "car-p-alpine-ilx-w670",
+  "car-p-escort-max-3",
+  "car-p-britax-one4life",
+  "car-p-chicco-fit360-cleartex",
+  "car-p-garmin-dash-cam-live",
+  "car-p-logitech-g923",
+  "car-p-nextbase-622gw",
+  "car-p-uppababy-mesa-max",
+  "car-p-traxxas-rustler-4x4-vxl",
+  "car-p-uniden-r8",
+  "car-p-chargepoint-home-flex",
+  "car-p-rupes-lhr15-mark-iii",
+  "car-p-agv-k6-s",
+  "car-p-nuna-rava",
+  "car-p-thule-epos-2",
+  "car-p-traxxas-x-maxx-8s",
+  "car-p-kuat-piston-pro-x",
+  "car-p-dometic-cfx3-75dz",
+  "car-p-alpinestars-tech-air-5",
+  "car-p-aventon-aventure-2",
+  "car-p-honda-navi",
+  "car-p-rad-radrunner-3-plus",
+  "car-p-thule-vector-alpine",
+  "car-p-kawasaki-klx110r",
+  "car-p-kawasaki-z125-pro",
+  "car-p-super73-rx",
+  "car-p-honda-super-cub-c125",
+  "car-p-brompton-electric-c-line-explore",
+  "car-p-segway-superscooter-gt2",
+  "car-p-honda-rebel-500",
+  "car-p-kawasaki-klr650",
+  "car-p-polaris-sportsman-570",
+  "car-p-vespa-gts-300",
+  "car-p-yamaha-mt-07",
+  "car-p-kawasaki-ninja-zx-10r",
+  "car-p-yamaha-yzf-r1",
+  "car-p-suzuki-hayabusa",
+  "car-p-harley-davidson-pan-america-1250-special",
+  "car-p-chevrolet-trax-ls"
+ ]
+}

@@ -1,0 +1,239 @@
+{
+ "slug": "car-lincoln",
+ "items": [
+  [
+   "car-lincoln-corsair-premiere",
+   "링컨 코세어 프리미어",
+   "Lincoln Corsair Premiere",
+   "林肯冒险家 Premiere",
+   39985
+  ],
+  [
+   "car-lincoln-corsair-reserve",
+   "링컨 코세어 리저브",
+   "Lincoln Corsair Reserve",
+   "林肯冒险家 Reserve",
+   44900
+  ],
+  [
+   "car-lincoln-corsair-grand-touring",
+   "링컨 코세어 그랜드 투어링",
+   "Lincoln Corsair Grand Touring",
+   "林肯冒险家 Grand Touring",
+   54365
+  ],
+  [
+   "car-lincoln-nautilus-premiere",
+   "링컨 노틸러스 프리미어",
+   "Lincoln Nautilus Premiere",
+   "林肯航海家 Premiere",
+   52010
+  ],
+  [
+   "car-lincoln-nautilus-reserve",
+   "링컨 노틸러스 리저브",
+   "Lincoln Nautilus Reserve",
+   "林肯航海家 Reserve",
+   60500
+  ],
+  [
+   "car-lincoln-nautilus-black-label",
+   "링컨 노틸러스 블랙 레이블",
+   "Lincoln Nautilus Black Label",
+   "林肯航海家 Black Label",
+   76000
+  ],
+  [
+   "car-lincoln-aviator-premiere",
+   "링컨 에비에이터 프리미어",
+   "Lincoln Aviator Premiere",
+   "林肯飞行家 Premiere",
+   59000
+  ],
+  [
+   "car-lincoln-aviator-reserve",
+   "링컨 에비에이터 리저브",
+   "Lincoln Aviator Reserve",
+   "林肯飞行家 Reserve",
+   66500
+  ],
+  [
+   "car-lincoln-aviator-black-label",
+   "링컨 에비에이터 블랙 레이블",
+   "Lincoln Aviator Black Label",
+   "林肯飞行家 Black Label",
+   88000
+  ],
+  [
+   "car-lincoln-aviator-grand-touring-2023",
+   "링컨 에비에이터 그랜드 투어링 (2023)",
+   "Lincoln Aviator Grand Touring (2023)",
+   "林肯飞行家 Grand Touring (2023)",
+   69000
+  ],
+  [
+   "car-lincoln-aviator-black-label-grand-touring-2023",
+   "링컨 에비에이터 블랙 레이블 그랜드 투어링 (2023)",
+   "Lincoln Aviator Black Label Grand Touring (2023)",
+   "林肯飞行家 Black Label Grand Touring (2023)",
+   90000
+  ],
+  [
+   "car-lincoln-navigator-reserve",
+   "링컨 내비게이터 리저브",
+   "Lincoln Navigator Reserve",
+   "林肯领航员 Reserve",
+   99995
+  ],
+  [
+   "car-lincoln-navigator-black-label",
+   "링컨 내비게이터 블랙 레이블",
+   "Lincoln Navigator Black Label",
+   "林肯领航员 Black Label",
+   116995
+  ],
+  [
+   "car-lincoln-navigator-l-reserve",
+   "링컨 내비게이터 L 리저브",
+   "Lincoln Navigator L Reserve",
+   "林肯领航员 L Reserve",
+   102995
+  ],
+  [
+   "car-lincoln-navigator-l-black-label",
+   "링컨 내비게이터 L 블랙 레이블",
+   "Lincoln Navigator L Black Label",
+   "林肯领航员 L Black Label",
+   119995
+  ],
+  [
+   "car-lincoln-navigator-premiere-2024",
+   "링컨 내비게이터 프리미어 (2024)",
+   "Lincoln Navigator Premiere (2024)",
+   "林肯领航员 Premiere (2024)",
+   82765
+  ],
+  [
+   "car-lincoln-continental-standard-2020",
+   "링컨 컨티넨탈 스탠다드 (2020)",
+   "Lincoln Continental Standard (2020)",
+   "林肯大陆 Standard (2020)",
+   46305
+  ],
+  [
+   "car-lincoln-continental-reserve-2020",
+   "링컨 컨티넨탈 리저브 (2020)",
+   "Lincoln Continental Reserve (2020)",
+   "林肯大陆 Reserve (2020)",
+   60000
+  ],
+  [
+   "car-lincoln-continental-black-label-2020",
+   "링컨 컨티넨탈 블랙 레이블 (2020)",
+   "Lincoln Continental Black Label (2020)",
+   "林肯大陆 Black Label (2020)",
+   70205
+  ],
+  [
+   "car-lincoln-continental-coach-door-edition-2020",
+   "링컨 컨티넨탈 코치 도어 에디션 (2020)",
+   "Lincoln Continental Coach Door Edition (2020)",
+   "林肯大陆 Coach Door Edition (2020)",
+   115000
+  ],
+  [
+   "car-lincoln-mkz-standard-2020",
+   "링컨 MKZ 스탠다드 (2020)",
+   "Lincoln MKZ Standard (2020)",
+   "林肯 MKZ Standard (2020)",
+   36750
+  ],
+  [
+   "car-lincoln-mkz-reserve-2020",
+   "링컨 MKZ 리저브 (2020)",
+   "Lincoln MKZ Reserve (2020)",
+   "林肯 MKZ Reserve (2020)",
+   42500
+  ]
+ ],
+ "use": [
+  "car-p-dewalt-dcc020ib",
+  "car-p-bell-qualifier",
+  "car-p-bluedriver-pro",
+  "car-p-chicco-kidfit-cleartex-plus",
+  "car-p-collinite-845",
+  "car-p-bosch-icon-22oe",
+  "car-p-noco-genius1",
+  "car-p-chemical-guys-hydroslick-16oz",
+  "car-p-battery-tender-junior",
+  "car-p-weathertech-cupfone",
+  "car-p-mobil-1-ep-5w30-5qt",
+  "car-p-adams-graphene-ceramic-spray-12oz",
+  "car-p-griots-pfm-drying-towel",
+  "car-p-tekton-24335",
+  "car-p-armor-all-aa255",
+  "car-p-chemical-guys-torq-foam-blaster-6",
+  "car-p-diono-radian-3r",
+  "car-p-garmin-dash-cam-57",
+  "car-p-jl-audio-jd400-4",
+  "car-p-michelin-crossclimate2-225-65r17",
+  "car-p-continental-dws06-plus-245-40zr18",
+  "car-p-traxxas-slash-2wd",
+  "car-p-garmin-dash-cam-mini-2",
+  "car-p-milwaukee-2848-20",
+  "car-p-milwaukee-packout-48-22-8426",
+  "car-p-cobra-rad-480i",
+  "car-p-noco-boost-x-gbx45",
+  "car-p-clek-olli",
+  "car-p-garmin-drive-53",
+  "car-p-nextbase-322gw",
+  "car-p-segway-ninebot-e2-plus",
+  "car-p-uniden-r3",
+  "car-p-jl-audio-12w3v3-4",
+  "car-p-milwaukee-2967-20",
+  "car-p-graco-4ever-dlx",
+  "car-p-innova-5610",
+  "car-p-sony-xav-ax3200",
+  "car-p-aim-solo-2-dl",
+  "car-p-niu-kqi3-pro",
+  "car-p-garmin-overlander",
+  "car-p-uniden-r8",
+  "car-p-vantrue-n4-pro",
+  "car-p-emporia-level-2-48a",
+  "car-p-alpine-ilx-w670",
+  "car-p-escort-max-3",
+  "car-p-kuat-piston-pro-x",
+  "car-p-dometic-cfx3-75dz",
+  "car-p-alpinestars-tech-air-5",
+  "car-p-escort-redline-360c",
+  "car-p-thule-force-xt-l",
+  "car-p-yakima-skybox-16-carbonite",
+  "car-p-segway-ninebot-zt3-pro",
+  "car-p-thule-t2-pro-xtr-2",
+  "car-p-bbs-lm-19x8-5",
+  "car-p-kranzle-k1122tst",
+  "car-p-apollo-city-pro",
+  "car-p-aventon-level-2",
+  "car-p-honda-crf50f",
+  "car-p-yamaha-pw50",
+  "car-p-aventon-aventure-2",
+  "car-p-honda-navi",
+  "car-p-dualtron-thunder-3",
+  "car-p-honda-monkey",
+  "car-p-vespa-primavera-50",
+  "car-p-gazelle-ultimate-c380-hmb",
+  "car-p-honda-rebel-300",
+  "car-p-kawasaki-ninja-500",
+  "car-p-tern-gsd-s10",
+  "car-p-yamaha-yzf-r3",
+  "car-p-ducati-scrambler-icon",
+  "car-p-harley-davidson-nightster",
+  "car-p-kawasaki-z900",
+  "car-p-yamaha-mt-09",
+  "car-p-yamaha-tenere-700",
+  "car-p-kawasaki-ninja-zx-6r",
+  "car-p-honda-gold-wing-tour",
+  "car-p-mini-cooper-c-2-door",
+  "car-p-mazda-mx-5-miata-sport"
+ ]
+}

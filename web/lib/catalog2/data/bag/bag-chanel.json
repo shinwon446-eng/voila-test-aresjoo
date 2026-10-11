@@ -1,0 +1,383 @@
+{
+ "slug": "bag-chanel",
+ "items": [
+  [
+   "bag-chanel-le-vernis-nail-colour",
+   "샤넬 르 베르니 네일 컬러",
+   "Chanel Le Vernis Nail Colour",
+   "香奈儿 Le Vernis 指甲油",
+   34
+  ],
+  [
+   "bag-chanel-rouge-coco-lipstick",
+   "샤넬 루쥬 코코 립스틱",
+   "Chanel Rouge Coco Lipstick",
+   "香奈儿 Rouge Coco 可可小姐唇膏",
+   50
+  ],
+  [
+   "bag-chanel-la-creme-main-hand-cream",
+   "샤넬 라 크렘 망 핸드크림",
+   "Chanel La Crème Main Hand Cream",
+   "香奈儿 La Crème Main 护手霜",
+   70
+  ],
+  [
+   "bag-chanel-n-5-eau-de-parfum-35ml",
+   "샤넬 N°5 오 드 빠르펭 35ml",
+   "Chanel N°5 Eau de Parfum 35ml",
+   "香奈儿 五号香水 35ml",
+   105
+  ],
+  [
+   "bag-chanel-n-5-eau-de-parfum-100ml",
+   "샤넬 N°5 오 드 빠르펭 100ml",
+   "Chanel N°5 Eau de Parfum 100ml",
+   "香奈儿 五号香水 100ml",
+   176
+  ],
+  [
+   "bag-chanel-coco-mademoiselle-eau-de-parfum-100ml",
+   "샤넬 코코 마드모아젤 오 드 빠르펭 100ml",
+   "Chanel Coco Mademoiselle Eau de Parfum 100ml",
+   "香奈儿 可可小姐香水 100ml",
+   176
+  ],
+  [
+   "bag-chanel-silk-twill-bandeau",
+   "샤넬 실크 트윌 밴도",
+   "Chanel Silk Twill Bandeau",
+   "香奈儿 真丝斜纹束发带",
+   275
+  ],
+  [
+   "bag-chanel-silk-twill-square-scarf-90",
+   "샤넬 실크 트윌 스퀘어 스카프 90",
+   "Chanel Silk Twill Square Scarf 90",
+   "香奈儿 真丝斜纹方巾 90",
+   550
+  ],
+  [
+   "bag-chanel-classic-card-holder",
+   "샤넬 클래식 카드 홀더",
+   "Chanel Classic Card Holder",
+   "香奈儿 经典卡包",
+   650
+  ],
+  [
+   "bag-chanel-19-card-holder",
+   "샤넬 19 카드 홀더",
+   "Chanel 19 Card Holder",
+   "香奈儿 19 卡包",
+   650
+  ],
+  [
+   "bag-chanel-classic-passport-holder",
+   "샤넬 클래식 여권 지갑",
+   "Chanel Classic Passport Holder",
+   "香奈儿 经典护照夹",
+   750
+  ],
+  [
+   "bag-chanel-classic-flap-card-holder",
+   "샤넬 클래식 플랩 카드 홀더",
+   "Chanel Classic Flap Card Holder",
+   "香奈儿 经典翻盖卡包",
+   875
+  ],
+  [
+   "bag-chanel-classic-zipped-coin-purse",
+   "샤넬 클래식 지퍼 코인 퍼스",
+   "Chanel Classic Zipped Coin Purse",
+   "香奈儿 经典拉链零钱包",
+   875
+  ],
+  [
+   "bag-chanel-classic-small-flap-wallet",
+   "샤넬 클래식 스몰 플랩 월렛",
+   "Chanel Classic Small Flap Wallet",
+   "香奈儿 经典小号翻盖钱包",
+   1225
+  ],
+  [
+   "bag-chanel-19-small-flap-wallet",
+   "샤넬 19 스몰 플랩 월렛",
+   "Chanel 19 Small Flap Wallet",
+   "香奈儿 19 小号翻盖钱包",
+   1225
+  ],
+  [
+   "bag-chanel-classic-long-flap-wallet",
+   "샤넬 클래식 롱 플랩 월렛",
+   "Chanel Classic Long Flap Wallet",
+   "香奈儿 经典长款翻盖钱包",
+   1625
+  ],
+  [
+   "bag-chanel-classic-long-zipped-wallet",
+   "샤넬 클래식 롱 지퍼 월렛",
+   "Chanel Classic Long Zipped Wallet",
+   "香奈儿 经典长款拉链钱包",
+   1725
+  ],
+  [
+   "bag-chanel-classic-phone-holder-with-chain",
+   "샤넬 클래식 폰 홀더 위드 체인",
+   "Chanel Classic Phone Holder with Chain",
+   "香奈儿 经典链条手机包",
+   2450
+  ],
+  [
+   "bag-chanel-classic-wallet-on-chain-grained-calfskin",
+   "샤넬 클래식 월렛 온 체인 그레인드 카프스킨",
+   "Chanel Classic Wallet on Chain Grained Calfskin",
+   "香奈儿 经典链条钱包粒面小牛皮",
+   3975
+  ],
+  [
+   "bag-chanel-19-wallet-on-chain",
+   "샤넬 19 월렛 온 체인",
+   "Chanel 19 Wallet on Chain",
+   "香奈儿 19 链条钱包",
+   4050
+  ],
+  [
+   "bag-chanel-boy-chanel-wallet-on-chain",
+   "샤넬 보이 샤넬 월렛 온 체인",
+   "Chanel Boy Chanel Wallet on Chain",
+   "香奈儿 Boy Chanel 链条钱包",
+   4100
+  ],
+  [
+   "bag-chanel-classic-clutch-with-chain",
+   "샤넬 클래식 클러치 위드 체인",
+   "Chanel Classic Clutch with Chain",
+   "香奈儿 经典链条手拿包",
+   4100
+  ],
+  [
+   "bag-chanel-mini-flap-bag-square-lambskin",
+   "샤넬 미니 플랩백 스퀘어 램스킨",
+   "Chanel Mini Flap Bag Square Lambskin",
+   "香奈儿 迷你方形翻盖包羊皮",
+   5200
+  ],
+  [
+   "bag-chanel-22-mini-handbag",
+   "샤넬 22 미니 핸드백",
+   "Chanel 22 Mini Handbag",
+   "香奈儿 22 迷你手袋",
+   5300
+  ],
+  [
+   "bag-chanel-2-55-mini-handbag-aged-calfskin",
+   "샤넬 2.55 미니 핸드백 에이지드 카프스킨",
+   "Chanel 2.55 Mini Handbag Aged Calfskin",
+   "香奈儿 2.55 迷你手袋做旧小牛皮",
+   5400
+  ],
+  [
+   "bag-chanel-mini-flap-bag-rectangular-lambskin",
+   "샤넬 미니 플랩백 렉탱귤러 램스킨",
+   "Chanel Mini Flap Bag Rectangular Lambskin",
+   "香奈儿 迷你长方形翻盖包羊皮",
+   5500
+  ],
+  [
+   "bag-chanel-31-mini-shopping-bag",
+   "샤넬 31 미니 쇼핑백",
+   "Chanel 31 Mini Shopping Bag",
+   "香奈儿 31 迷你购物袋",
+   5700
+  ],
+  [
+   "bag-chanel-22-small-handbag",
+   "샤넬 22 스몰 핸드백",
+   "Chanel 22 Small Handbag",
+   "香奈儿 22 小号手袋",
+   6100
+  ],
+  [
+   "bag-chanel-25-small-handbag",
+   "샤넬 25 스몰 핸드백",
+   "Chanel 25 Small Handbag",
+   "香奈儿 25 小号手袋",
+   6200
+  ],
+  [
+   "bag-chanel-mini-flap-bag-with-top-handle",
+   "샤넬 미니 플랩백 위드 탑 핸들",
+   "Chanel Mini Flap Bag with Top Handle",
+   "香奈儿 迷你手柄翻盖包",
+   6300
+  ],
+  [
+   "bag-chanel-22-handbag",
+   "샤넬 22 핸드백",
+   "Chanel 22 Handbag",
+   "香奈儿 22 手袋",
+   6400
+  ],
+  [
+   "bag-chanel-25-medium-handbag",
+   "샤넬 25 미디엄 핸드백",
+   "Chanel 25 Medium Handbag",
+   "香奈儿 25 中号手袋",
+   6700
+  ],
+  [
+   "bag-chanel-22-large-handbag",
+   "샤넬 22 라지 핸드백",
+   "Chanel 22 Large Handbag",
+   "香奈儿 22 大号手袋",
+   6800
+  ],
+  [
+   "bag-chanel-boy-chanel-small-handbag",
+   "샤넬 보이 샤넬 스몰 핸드백",
+   "Chanel Boy Chanel Small Handbag",
+   "香奈儿 Boy Chanel 小号手袋",
+   6800
+  ],
+  [
+   "bag-chanel-19-handbag",
+   "샤넬 19 핸드백",
+   "Chanel 19 Handbag",
+   "香奈儿 19 手袋",
+   7000
+  ],
+  [
+   "bag-chanel-25-large-handbag",
+   "샤넬 25 라지 핸드백",
+   "Chanel 25 Large Handbag",
+   "香奈儿 25 大号手袋",
+   7300
+  ],
+  [
+   "bag-chanel-boy-chanel-handbag",
+   "샤넬 보이 샤넬 핸드백",
+   "Chanel Boy Chanel Handbag",
+   "香奈儿 Boy Chanel 手袋",
+   7300
+  ],
+  [
+   "bag-chanel-19-large-handbag",
+   "샤넬 19 라지 핸드백",
+   "Chanel 19 Large Handbag",
+   "香奈儿 19 大号手袋",
+   7600
+  ],
+  [
+   "bag-chanel-boy-chanel-large-handbag",
+   "샤넬 보이 샤넬 라지 핸드백",
+   "Chanel Boy Chanel Large Handbag",
+   "香奈儿 Boy Chanel 大号手袋",
+   7800
+  ],
+  [
+   "bag-chanel-19-maxi-handbag",
+   "샤넬 19 맥시 핸드백",
+   "Chanel 19 Maxi Handbag",
+   "香奈儿 19 Maxi 手袋",
+   8100
+  ],
+  [
+   "bag-chanel-classic-small-handbag-lambskin",
+   "샤넬 클래식 스몰 핸드백 램스킨",
+   "Chanel Classic Small Handbag Lambskin",
+   "香奈儿 经典小号手袋羊皮",
+   10800
+  ],
+  [
+   "bag-chanel-classic-11-12-handbag-grained-calfskin",
+   "샤넬 클래식 11.12 핸드백 그레인드 카프스킨",
+   "Chanel Classic 11.12 Handbag Grained Calfskin",
+   "香奈儿 经典 11.12 手袋粒面小牛皮",
+   11300
+  ],
+  [
+   "bag-chanel-2-55-handbag-aged-calfskin",
+   "샤넬 2.55 핸드백 에이지드 카프스킨",
+   "Chanel 2.55 Handbag Aged Calfskin",
+   "香奈儿 2.55 手袋做旧小牛皮",
+   11300
+  ],
+  [
+   "bag-chanel-2-55-large-handbag-aged-calfskin",
+   "샤넬 2.55 라지 핸드백 에이지드 카프스킨",
+   "Chanel 2.55 Large Handbag Aged Calfskin",
+   "香奈儿 2.55 大号手袋做旧小牛皮",
+   12200
+  ],
+  [
+   "bag-chanel-classic-large-handbag-grained-calfskin",
+   "샤넬 클래식 라지 핸드백 그레인드 카프스킨",
+   "Chanel Classic Large Handbag Grained Calfskin",
+   "香奈儿 经典大号手袋粒面小牛皮",
+   12200
+  ],
+  [
+   "bag-chanel-classic-maxi-handbag-grained-calfskin",
+   "샤넬 클래식 맥시 핸드백 그레인드 카프스킨",
+   "Chanel Classic Maxi Handbag Grained Calfskin",
+   "香奈儿 经典 Maxi 手袋粒面小牛皮",
+   12900
+  ]
+ ],
+ "use": [
+  "bag-p-baggu-flat-pouch-set",
+  "bag-p-l-l-bean-boat-and-tote-small",
+  "bag-p-herschel-supply-co-chapter-travel-kit",
+  "bag-p-baggu-puffy-laptop-sleeve-16-inch",
+  "bag-p-baggu-duck-bag",
+  "bag-p-jansport-superbreak-backpack",
+  "bag-p-lululemon-everywhere-belt-bag-1l",
+  "bag-p-l-l-bean-boat-and-tote-medium",
+  "bag-p-eagle-creek-pack-it-reveal-cube-set-xs-s-m",
+  "bag-p-baggu-small-nylon-crescent-bag",
+  "bag-p-l-l-bean-boat-and-tote-large",
+  "bag-p-dagne-dover-hunter-toiletry-bag-small",
+  "bag-p-longchamp-le-pliage-original-tote-bag-m",
+  "bag-p-comme-des-garcons-wallet-sa2100-classic-leather-zip-wallet",
+  "bag-p-longchamp-le-pliage-original-tote-bag-l",
+  "bag-p-madewell-the-transport-tote",
+  "bag-p-away-the-everywhere-bag",
+  "bag-p-longchamp-le-pliage-original-travel-bag-s",
+  "bag-p-telfar-medium-shopping-bag",
+  "bag-p-dagne-dover-landon-carryall-medium",
+  "bag-p-smythson-panama-passport-cover",
+  "bag-p-marc-jacobs-the-canvas-small-tote-bag",
+  "bag-p-calpak-hue-carry-on-luggage",
+  "bag-p-beis-the-carry-on-roller",
+  "bag-p-marc-jacobs-the-canvas-large-tote-bag",
+  "bag-p-staud-tommy-beaded-bag",
+  "bag-p-cuyana-classic-easy-tote",
+  "bag-p-tory-burch-ella-tote",
+  "bag-p-burberry-check-card-case",
+  "bag-p-cartier-must-de-cartier-card-holder",
+  "bag-p-bulgari-serpenti-forever-card-holder",
+  "bag-p-ralph-lauren-polo-id-calfskin-small-saddle-bag",
+  "bag-p-marc-jacobs-the-leather-small-tote-bag",
+  "bag-p-polene-numero-dix",
+  "bag-p-demellier-the-nano-montreal",
+  "bag-p-polene-numero-un-nano",
+  "bag-p-3-1-phillip-lim-pashli-medium-satchel",
+  "bag-p-mcm-stark-backpack-small-visetos",
+  "bag-p-jil-sander-cannolo-mini",
+  "bag-p-aspinal-of-london-midi-mayfair-bag",
+  "bag-p-tory-burch-lee-radziwill-double-bag",
+  "bag-p-jacquemus-le-bambino-long",
+  "bag-p-toteme-t-lock-clutch",
+  "bag-p-tods-di-bag-mini",
+  "bag-p-rimowa-original-check-in-l",
+  "bag-p-alaia-le-teckel-small",
+  "bag-p-maison-margiela-5ac-classique-micro",
+  "bag-p-the-row-park-tote-three",
+  "bag-p-proenza-schouler-ps1-medium",
+  "bag-p-khaite-lotus-mini",
+  "bag-p-cartier-panthere-de-cartier-chain-bag-small-niloticus-croc",
+  "bag-p-loro-piana-extra-pocket-l19-crocodile",
+  "bag-p-ralph-lauren-ricky-27-alligator",
+  "bag-p-ralph-lauren-ricky-33-alligator"
+ ]
+}

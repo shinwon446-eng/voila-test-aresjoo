@@ -3,7 +3,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import type { BoxSpec, ItemSpec } from "../lib/catalogTypes";
-import { BOXES, LADDER, LOW_SPLIT, PHYSICAL_ODDS_VERSION, TARGET_RETAIL_RTP, cashReturn, isLadderBox, oddsVersionOf, retailReturn, scheduledBox } from "../lib/products";
+import { BOXES, LADDER, LOW_FLOOR, LOW_SPLIT, PHYSICAL_ODDS_VERSION, TARGET_RETAIL_RTP, cashReturn, isLadderBox, oddsVersionOf, retailReturn, scheduledBox } from "../lib/products";
 import { REFUND_RATE } from "../lib/types";
 import { BURST } from "../lib/burst";
 
@@ -41,8 +41,12 @@ test("실물 전용: 낸 값 이상이 나올 확률은 사다리의 목표와 �
   const win = box.items.filter((i) => i.value >= box.price).reduce((sum, i) => sum + i.dropRate, 0);
   const target = LADDER.reduce((sum, band) => sum + band.slots, 0) / 10_000;
   assert.ok(win > target * 0.5 && win < target * 1.6, `당첨 ${win}%, 목표 ${target}%`);
-  const lowA = box.items.filter((i) => i.value < box.price * LOW_SPLIT).sort((a, b) => a.value - b.value);
-  assert.ok(lowA[0].dropRate >= lowA[lowA.length - 1].dropRate, "가장 싼 상품이 가장 비싼 낮은 상품보다 드물다");
+  // 낮은 구간 안에서는 상품마다 확률이 같다(가장 싼 것이 가장 자주 나오게 하지 않는다)
+  const lowA = box.items.filter((i) => i.value < box.price * LOW_SPLIT);
+  const rates = lowA.map((i) => Math.round(i.dropRate * 10_000));
+  assert.ok(Math.max(...rates) - Math.min(...rates) <= 2, `낮은 구간의 칸 수가 고르지 않다: ${Math.min(...rates)} ~ ${Math.max(...rates)}`);
+  const band = box.items.filter((i) => i.value >= box.price * 1.5 && i.value < box.price * 3).sort((x, y) => x.value - y.value);
+  assert.ok(band[0].dropRate >= band[band.length - 1].dropRate, "당첨 구간 안에서 싼 상품이 더 드물다");
 });
 
 test("실물 전용: 높은 구간이 빈 박스도 99%를 맞춘다(빈 구간을 USDT 로 메우지 않는다)", () => {
@@ -60,10 +64,17 @@ test("실물 전용: 낮은 구간이 한쪽뿐이거나 USDT 상품이 섞이�
   assert.throws(() => scheduledBox(withCash));
 });
 
+test("실물 전용: 박스 가격의 10분의 1보다 싼 상품은 거부한다", () => {
+  const cheap = sample(100, FULL);
+  cheap.items[0] = [cheap.items[0][0], "싼 것", "Cheap", "便宜", +(100 * LOW_FLOOR - 1).toFixed(2), "physical"];
+  assert.throws(() => scheduledBox(cheap));
+});
+
 test("새 카탈로그의 박스는 전부 실물 전용이고 상품이 100개다", () => {
   for (const box of BOXES.filter((b) => !isLadderBox(b))) {
     assert.equal(box.items.length, 100, box.slug);
     assert.ok(Math.abs(retailReturn(box) - TARGET_RETAIL_RTP) < 0.0005, `${box.slug}: ${retailReturn(box)}`);
     assert.ok(box.price >= 20, `${box.slug}: 가격 ${box.price}`);
+    assert.ok(box.guaranteedMin >= box.price * LOW_FLOOR - 1e-9, `${box.slug}: 가장 싼 상품 ${box.guaranteedMin}`);
   }
 });

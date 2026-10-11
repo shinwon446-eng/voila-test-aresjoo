@@ -1,0 +1,365 @@
+{
+ "slug": "bag-prada",
+ "items": [
+  [
+   "bag-prada-re-nylon-scrunchie",
+   "프라다 리나일론 스크런치",
+   "Prada Re-Nylon Scrunchie",
+   "普拉达 Re-Nylon 发圈",
+   290
+  ],
+  [
+   "bag-prada-saffiano-leather-card-holder",
+   "프라다 사피아노 레더 카드 홀더",
+   "Prada Saffiano Leather Card Holder",
+   "普拉达 Saffiano 皮革卡包",
+   390
+  ],
+  [
+   "bag-prada-re-nylon-headband",
+   "프라다 리나일론 헤드밴드",
+   "Prada Re-Nylon Headband",
+   "普拉达 Re-Nylon 发箍",
+   475
+  ],
+  [
+   "bag-prada-metal-hair-clip",
+   "프라다 메탈 헤어 클립",
+   "Prada Metal Hair Clip",
+   "普拉达 金属发夹",
+   495
+  ],
+  [
+   "bag-prada-saffiano-leather-belt",
+   "프라다 사피아노 레더 벨트",
+   "Prada Saffiano Leather Belt",
+   "普拉达 Saffiano 皮革腰带",
+   595
+  ],
+  [
+   "bag-prada-re-nylon-bucket-hat",
+   "프라다 리나일론 버킷햇",
+   "Prada Re-Nylon Bucket Hat",
+   "普拉达 Re-Nylon 渔夫帽",
+   695
+  ],
+  [
+   "bag-prada-small-saffiano-leather-wallet",
+   "프라다 스몰 사피아노 레더 월렛",
+   "Prada Small Saffiano Leather Wallet",
+   "普拉达 小号 Saffiano 皮革钱包",
+   725
+  ],
+  [
+   "bag-prada-re-nylon-pouch",
+   "프라다 리나일론 파우치",
+   "Prada Re-Nylon Pouch",
+   "普拉达 Re-Nylon 手包",
+   795
+  ],
+  [
+   "bag-prada-large-saffiano-leather-wallet",
+   "프라다 라지 사피아노 레더 월렛",
+   "Prada Large Saffiano Leather Wallet",
+   "普拉达 大号 Saffiano 皮革钱包",
+   950
+  ],
+  [
+   "bag-prada-saffiano-leather-card-holder-with-shoulder-strap",
+   "프라다 사피아노 레더 카드 홀더 위드 숄더 스트랩",
+   "Prada Saffiano Leather Card Holder with Shoulder Strap",
+   "普拉达 Saffiano 皮革卡包配肩带",
+   1320
+  ],
+  [
+   "bag-prada-re-edition-2000-re-nylon-mini-bag",
+   "프라다 리에디션 2000 리나일론 미니백",
+   "Prada Re-Edition 2000 Re-Nylon Mini Bag",
+   "普拉达 Re-Edition 2000 Re-Nylon 迷你包",
+   1450
+  ],
+  [
+   "bag-prada-re-nylon-belt-bag",
+   "프라다 리나일론 벨트백",
+   "Prada Re-Nylon Belt Bag",
+   "普拉达 Re-Nylon 腰包",
+   1550
+  ],
+  [
+   "bag-prada-re-edition-1995-chaine-re-nylon-mini-bag",
+   "프라다 리에디션 1995 셴 리나일론 미니백",
+   "Prada Re-Edition 1995 Chaîne Re-Nylon Mini Bag",
+   "普拉达 Re-Edition 1995 Chaîne Re-Nylon 迷你包",
+   1790
+  ],
+  [
+   "bag-prada-small-crochet-tote-bag",
+   "프라다 스몰 크로셰 토트백",
+   "Prada Small Crochet Tote Bag",
+   "普拉达 小号钩编托特包",
+   1950
+  ],
+  [
+   "bag-prada-small-padded-re-nylon-shoulder-bag",
+   "프라다 스몰 패디드 리나일론 숄더백",
+   "Prada Small Padded Re-Nylon Shoulder Bag",
+   "普拉达 小号 Re-Nylon 软垫单肩包",
+   1990
+  ],
+  [
+   "bag-prada-small-re-nylon-backpack",
+   "프라다 스몰 리나일론 백팩",
+   "Prada Small Re-Nylon Backpack",
+   "普拉达 小号 Re-Nylon 双肩包",
+   2050
+  ],
+  [
+   "bag-prada-crochet-tote-bag",
+   "프라다 크로셰 토트백",
+   "Prada Crochet Tote Bag",
+   "普拉达 钩编托特包",
+   2100
+  ],
+  [
+   "bag-prada-re-edition-2005-re-nylon-bag",
+   "프라다 리에디션 2005 리나일론 백",
+   "Prada Re-Edition 2005 Re-Nylon Bag",
+   "普拉达 Re-Edition 2005 Re-Nylon 包",
+   2150
+  ],
+  [
+   "bag-prada-triangle-leather-mini-bag",
+   "프라다 트라이앵글 레더 미니백",
+   "Prada Triangle Leather Mini Bag",
+   "普拉达 Triangle 皮革迷你包",
+   2250
+  ],
+  [
+   "bag-prada-soft-padded-nappa-leather-mini-bag",
+   "프라다 소프트 패디드 나파 레더 미니백",
+   "Prada Soft Padded Nappa Leather Mini Bag",
+   "普拉达 Nappa 软垫皮革迷你包",
+   2300
+  ],
+  [
+   "bag-prada-medium-re-nylon-backpack",
+   "프라다 미디엄 리나일론 백팩",
+   "Prada Medium Re-Nylon Backpack",
+   "普拉达 中号 Re-Nylon 双肩包",
+   2400
+  ],
+  [
+   "bag-prada-satin-mini-bag-with-crystals",
+   "프라다 크리스털 새틴 미니백",
+   "Prada Satin Mini Bag with Crystals",
+   "普拉达 缎面迷你包配水晶",
+   2400
+  ],
+  [
+   "bag-prada-re-edition-2005-saffiano-leather-bag",
+   "프라다 리에디션 2005 사피아노 레더 백",
+   "Prada Re-Edition 2005 Saffiano Leather Bag",
+   "普拉达 Re-Edition 2005 Saffiano 皮革包",
+   2550
+  ],
+  [
+   "bag-prada-re-edition-1978-small-re-nylon-two-handle-bag",
+   "프라다 리에디션 1978 스몰 리나일론 투 핸들 백",
+   "Prada Re-Edition 1978 Small Re-Nylon Two-Handle Bag",
+   "普拉达 Re-Edition 1978 小号 Re-Nylon 双手柄包",
+   2650
+  ],
+  [
+   "bag-prada-cleo-brushed-leather-mini-bag",
+   "프라다 클레오 브러시드 레더 미니백",
+   "Prada Cleo Brushed Leather Mini Bag",
+   "普拉达 Cleo 亮面皮革迷你包",
+   2900
+  ],
+  [
+   "bag-prada-moon-padded-nappa-leather-bag",
+   "프라다 문 패디드 나파 레더 백",
+   "Prada Moon Padded Nappa Leather Bag",
+   "普拉达 Moon Nappa 软垫皮革包",
+   2950
+  ],
+  [
+   "bag-prada-aimee-small-leather-shoulder-bag",
+   "프라다 에메 스몰 레더 숄더백",
+   "Prada Aimée Small Leather Shoulder Bag",
+   "普拉达 Aimée 小号皮革单肩包",
+   3000
+  ],
+  [
+   "bag-prada-small-brushed-leather-tote",
+   "프라다 스몰 브러시드 레더 토트",
+   "Prada Small Brushed Leather Tote",
+   "普拉达 小号亮面皮革托特包",
+   3300
+  ],
+  [
+   "bag-prada-panier-small-saffiano-leather-bag",
+   "프라다 파니에 스몰 사피아노 레더 백",
+   "Prada Panier Small Saffiano Leather Bag",
+   "普拉达 Panier 小号 Saffiano 皮革包",
+   3300
+  ],
+  [
+   "bag-prada-cleo-brushed-leather-shoulder-bag",
+   "프라다 클레오 브러시드 레더 숄더백",
+   "Prada Cleo Brushed Leather Shoulder Bag",
+   "普拉达 Cleo 亮面皮革单肩包",
+   3400
+  ],
+  [
+   "bag-prada-aimee-medium-leather-shoulder-bag",
+   "프라다 에메 미디엄 레더 숄더백",
+   "Prada Aimée Medium Leather Shoulder Bag",
+   "普拉达 Aimée 中号皮革单肩包",
+   3400
+  ],
+  [
+   "bag-prada-cleo-brushed-leather-shoulder-bag-with-flap",
+   "프라다 클레오 브러시드 레더 숄더백 위드 플랩",
+   "Prada Cleo Brushed Leather Shoulder Bag with Flap",
+   "普拉达 Cleo 亮面皮革翻盖单肩包",
+   3650
+  ],
+  [
+   "bag-prada-arque-leather-shoulder-bag",
+   "프라다 아르케 레더 숄더백",
+   "Prada Arqué Leather Shoulder Bag",
+   "普拉达 Arqué 皮革单肩包",
+   3650
+  ],
+  [
+   "bag-prada-galleria-saffiano-leather-mini-bag",
+   "프라다 갤러리아 사피아노 레더 미니백",
+   "Prada Galleria Saffiano Leather Mini Bag",
+   "普拉达 Galleria Saffiano 皮革迷你包",
+   3650
+  ],
+  [
+   "bag-prada-panier-medium-saffiano-leather-bag",
+   "프라다 파니에 미디엄 사피아노 레더 백",
+   "Prada Panier Medium Saffiano Leather Bag",
+   "普拉达 Panier 中号 Saffiano 皮革包",
+   3900
+  ],
+  [
+   "bag-prada-small-galleria-saffiano-leather-bag",
+   "프라다 스몰 갤러리아 사피아노 레더 백",
+   "Prada Small Galleria Saffiano Leather Bag",
+   "普拉达 小号 Galleria Saffiano 皮革包",
+   4300
+  ],
+  [
+   "bag-prada-medium-supernova-handbag",
+   "프라다 미디엄 수퍼노바 핸드백",
+   "Prada Medium Supernova Handbag",
+   "普拉达 中号 Supernova 手袋",
+   4700
+  ],
+  [
+   "bag-prada-small-buckle-leather-handbag-with-belt",
+   "프라다 스몰 버클 레더 핸드백 위드 벨트",
+   "Prada Small Buckle Leather Handbag with Belt",
+   "普拉达 小号 Buckle 皮革手袋配腰带",
+   4900
+  ],
+  [
+   "bag-prada-medium-galleria-saffiano-leather-bag",
+   "프라다 미디엄 갤러리아 사피아노 레더 백",
+   "Prada Medium Galleria Saffiano Leather Bag",
+   "普拉达 中号 Galleria Saffiano 皮革包",
+   4900
+  ],
+  [
+   "bag-prada-large-galleria-saffiano-leather-bag",
+   "프라다 라지 갤러리아 사피아노 레더 백",
+   "Prada Large Galleria Saffiano Leather Bag",
+   "普拉达 大号 Galleria Saffiano 皮革包",
+   5400
+  ],
+  [
+   "bag-prada-medium-buckle-leather-handbag-with-belt",
+   "프라다 미디엄 버클 레더 핸드백 위드 벨트",
+   "Prada Medium Buckle Leather Handbag with Belt",
+   "普拉达 中号 Buckle 皮革手袋配腰带",
+   5700
+  ],
+  [
+   "bag-prada-medium-galleria-ostrich-leather-bag",
+   "프라다 미디엄 갤러리아 오스트리치 레더 백",
+   "Prada Medium Galleria Ostrich Leather Bag",
+   "普拉达 中号 Galleria 鸵鸟皮皮革包",
+   12500
+  ],
+  [
+   "bag-prada-medium-galleria-crocodile-leather-bag",
+   "프라다 미디엄 갤러리아 크로커다일 레더 백",
+   "Prada Medium Galleria Crocodile Leather Bag",
+   "普拉达 中号 Galleria 鳄鱼皮皮革包",
+   42000
+  ]
+ ],
+ "use": [
+  "bag-p-baggu-puffy-laptop-sleeve-16-inch",
+  "bag-p-baggu-duck-bag",
+  "bag-p-jansport-superbreak-backpack",
+  "bag-p-lululemon-everywhere-belt-bag-1l",
+  "bag-p-l-l-bean-boat-and-tote-medium",
+  "bag-p-eagle-creek-pack-it-reveal-cube-set-xs-s-m",
+  "bag-p-baggu-small-nylon-crescent-bag",
+  "bag-p-l-l-bean-boat-and-tote-large",
+  "bag-p-dagne-dover-hunter-toiletry-bag-small",
+  "bag-p-lululemon-everywhere-belt-bag-large-2l",
+  "bag-p-stoney-clover-lane-classic-mini-pouch",
+  "bag-p-l-l-bean-boat-and-tote-extra-large",
+  "bag-p-bickmore-bick-4-leather-conditioner-8-oz",
+  "bag-p-scotchgard-fabric-water-shield-10-oz",
+  "bag-p-apple-brand-leather-care-conditioner-8-oz",
+  "bag-p-baggu-medium-nylon-crescent-bag",
+  "bag-p-eastpak-padded-pakr-backpack",
+  "bag-p-baggu-cloud-bag",
+  "bag-p-beis-the-cosmetic-case",
+  "bag-p-calpak-packing-cubes-5-piece-set",
+  "bag-p-stoney-clover-lane-classic-small-pouch",
+  "bag-p-rimowa-leather-luggage-tag",
+  "bag-p-comme-des-garcons-wallet-sa6400-card-holder",
+  "bag-p-fjallraven-kanken-mini",
+  "bag-p-coach-essential-card-case",
+  "bag-p-fjallraven-kanken",
+  "bag-p-coach-cherry-bag-charm",
+  "bag-p-coach-small-wristlet",
+  "bag-p-dagne-dover-ace-fanny-pack",
+  "bag-p-fjallraven-kanken-laptop-15-inch",
+  "bag-p-longchamp-le-foulonne-coin-purse",
+  "bag-p-herschel-supply-co-novel-duffle",
+  "bag-p-longchamp-le-pliage-original-pouch-with-handle",
+  "bag-p-comme-des-garcons-wallet-sa3100-classic-leather-zip-wallet",
+  "bag-p-smythson-panama-passport-cover",
+  "bag-p-marc-jacobs-the-canvas-small-tote-bag",
+  "bag-p-calpak-hue-carry-on-luggage",
+  "bag-p-beis-the-carry-on-roller",
+  "bag-p-telfar-large-shopping-bag",
+  "bag-p-away-the-carry-on",
+  "bag-p-away-the-large",
+  "bag-p-lemaire-croissant-coin-purse",
+  "bag-p-longchamp-le-pliage-xtra-handbag-xs",
+  "bag-p-coach-tabby-shoulder-bag-20",
+  "bag-p-kate-spade-new-york-knott-medium-satchel",
+  "bag-p-michael-kors-marilyn-medium-saffiano-leather-satchel",
+  "bag-p-mansur-gavriel-bucket-bag",
+  "bag-p-strathberry-east-west-mini",
+  "bag-p-demellier-the-new-york",
+  "bag-p-a-p-c-grace-small-bag",
+  "bag-p-jacquemus-le-bambino",
+  "bag-p-coach-rogue-25",
+  "bag-p-loro-piana-extra-pocket-l19-ostrich",
+  "bag-p-moynat-gabrielle-pm",
+  "bag-p-the-row-margaux-15",
+  "bag-p-bulgari-serpenti-forever-top-handle-small-crocodile",
+  "bag-p-giorgio-armani-la-prima-medium-crocodile"
+ ]
+}

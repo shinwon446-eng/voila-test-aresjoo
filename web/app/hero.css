@@ -7,7 +7,7 @@
  * 휴대폰: 글, 장면, 단추 순서로 한 열. 넓은 화면: 왼쪽에 글과 단추, 오른쪽에 장면.
  */
 .v-hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "stage" "cta"; border: 1px solid var(--v-outline); border-radius: var(--v-r-card); background: var(--v-bg); isolation: isolate; }
-.v-hero-copy { grid-area: copy; position: relative; z-index: 2; display: flex; min-width: 0; flex-direction: column; gap: 4px; padding: 20px 52px 0 20px; }
+.v-hero-copy { grid-area: copy; position: relative; z-index: 2; display: flex; min-width: 0; flex-direction: column; gap: 4px; padding: 20px 20px 0 20px; }
 .v-hero-title { color: var(--v-title); font-size: 28px; font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; word-break: keep-all; }
 .v-hero-desc { color: var(--v-sub); font-size: 16px; line-height: 1.5; word-break: keep-all; }
 .v-hero-cta { grid-area: cta; position: relative; z-index: 4; padding: 0 16px 16px; }
@@ -113,13 +113,7 @@
 .v-hero-spark[data-i="4"] { margin: 70px 0 0 -170px; width: 7px; height: 7px; animation-delay: 1.7s; }
 .v-hero-spark[data-i="5"] { margin: 76px 0 0 164px; animation-delay: 0.3s; }
 
-/* 멈춤 단추 */
-.v-hero-pause { position: absolute; right: 10px; top: 10px; z-index: 4; display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center; border: 0; border-radius: var(--v-r-pill); background: color-mix(in srgb, var(--v-pill) 80%, transparent); color: var(--v-sub); cursor: pointer; }
-.v-hero-pause:hover { color: var(--v-title); }
-/* 손가락으로 누를 자리는 44px 를 채운다 */
-.v-hero-pause::before { content: ""; position: absolute; inset: -6px; }
-
-/* 멈췄거나 움직임 줄이기: 돌던 것만 세운다(지금 장면은 그대로 보인다) */
+/* 화면 밖이거나 움직임 줄이기: 돌던 것만 세운다(지금 장면은 그대로 보인다) */
 .v-hero[data-still] .v-hero-cards, .v-hero[data-still] .v-hero-spark, .v-hero[data-still] .v-hero-orb, .v-hero[data-still] .v-hcard-art::after { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) {
   .v-hero *, .v-hero *::after { animation: none !important; transition: none !important; }
@@ -137,7 +131,6 @@
   .v-hero-slab { inset: -20% -20% -20% 45%; }
   .v-hero-light { left: 71%; top: 42%; }
   .v-hero-scene { margin-left: -230px; }
-  .v-hero-pause { top: auto; bottom: 10px; }
   /* 위로는 머리줄(붙어 있는 메뉴) 밑으로 들어가 잘리지 않을 만큼만 나간다: 배너 위 틈 24px 에서 흔들림 8px 를 뺀 만큼 */
   .v-hero-orb[data-i="1"] { left: 6%; top: -4%; }
   .v-hero-orb[data-i="0"] { right: -4%; bottom: -22%; }

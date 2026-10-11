@@ -101,7 +101,8 @@ export function createBallPainter(): BallPainter | null {
   return {
     paint(target, size, m) {
       if (lost) return;
-      if (canvas.width < size) { canvas.width = size; canvas.height = size; }
+      // 그리는 판은 가장 큰 공에 맞춘다. 새 캔버스의 기본 크기는 300x150 이라 너비만 보면 큰 공의 위가 잘린다
+      if (canvas.width < size || canvas.height < size) { canvas.width = size; canvas.height = size; }
       gl.viewport(0, 0, size, size);
       gl.clear(gl.COLOR_BUFFER_BIT);
       gl.uniform1f(uRes, size); gl.uniformMatrix3fv(uRot, false, m);

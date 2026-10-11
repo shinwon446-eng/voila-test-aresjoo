@@ -27,7 +27,8 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-stack--sm { gap: 8px; }
 
 /* ── 머리줄 */
-.v-header { position: sticky; top: 0; z-index: 30; background: var(--v-bg); }
+/* 아래 구분선: 화면을 내리면 내용이 머리줄 밑으로 들어가는데, 경계가 없으면 내용이 허공에서 잘려 보인다(2026-10-11 파운더) */
+.v-header { position: sticky; top: 0; z-index: 30; border-bottom: 1px solid var(--v-divider); background: var(--v-bg); }
 .v-header-in { display: flex; height: 56px; max-width: calc(var(--v-wide) + var(--v-gutter) * 2); align-items: center; gap: 8px; margin: 0 auto; padding: 0 var(--v-gutter); }
 .v-logo { display: inline-flex; min-height: var(--v-touch); align-items: center; margin-right: auto; color: var(--v-title); }
 .v-nav { display: none; align-items: center; gap: 4px; margin-right: 8px; }

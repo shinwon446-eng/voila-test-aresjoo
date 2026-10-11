@@ -8,12 +8,11 @@
  *   - 카드 면: web/public/assets/hero/ 에 card-1.webp, card-2.webp, card-3.webp(왼쪽, 가운데, 오른쪽. 세로 카드 한 장이 꽉 찬 사진)를
  *     넣으면 다음 빌드부터 그 그림이 나온다(코드를 고치지 않는다). 지금은 파운더가 스캔한 카드가 들어 있다(출처는 그 폴더의 README.txt).
  *     없는 자리는 우리가 그린 카드가 나온다. 솟아오르는 움직임과 훑는 빛은 같다.
- *   - 움직임은 transform 과 opacity 만 쓴다. 화면 밖으로 나가면 멈추고, 멈춤 단추가 있다.
+ *   - 움직임은 transform 과 opacity 만 쓴다. 화면 밖으로 나가면 멈춘다. 멈춤 단추는 뺐다(2026-10-11 파운더).
  *   - 움직임 줄이기를 켠 사람에게는 펼쳐진 한 장면만 보여 준다.
  * Codex 와 주고받은 비평은 brand/hero 에 있다.
  */
 import { useEffect, useRef, useState } from "react";
-import { Pause, Play } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { BOXES } from "@/lib/products";
@@ -30,7 +29,7 @@ const CARD_FILES = ["card-1.webp", "card-2.webp", "card-3.webp"];
 const HERO_FILES = (process.env.NEXT_PUBLIC_HERO_FILES ?? "").split(",").filter(Boolean);
 /** 공 다섯 개의 방향(도)과 흔들림. 방향은 파운더가 준 배너의 공들을 따랐다(위아래가 뒤집힌 것, 비스듬한 것). delay 는 hero.css 의 나타나는 순서와 같다 */
 const BALLS = [
-  { yaw: 38, pitch: 4, roll: 172, delay: 200, seed: 0.0 }, // 단추가 왼쪽: 오른쪽 아래의 멈춤 단추와 겹치지 않게
+  { yaw: -46, pitch: 4, roll: 172, delay: 200, seed: 0.0 },
   { yaw: -44, pitch: -14, roll: -34, delay: 40, seed: 1.7 },
   { yaw: -34, pitch: 24, roll: 24, delay: 120, seed: 3.1 },
   { yaw: -48, pitch: 2, roll: -14, delay: 160, seed: 4.4 },
@@ -38,8 +37,8 @@ const BALLS = [
 ];
 type Phase = "closed" | "anticipation" | "open" | "sweep" | "fade";
 /** 한 바퀴의 시간표(ms). 닫힘 → 웅크림 → 열림과 펼침 → 빛이 훑음(머묾) → 장면이 사라짐 → 처음으로
- *  카드와 공이 다 떠 있는 시간(머묾)은 10초다(2026-10-11 파운더) */
-const STEPS: [Phase, number][] = [["closed", 320], ["anticipation", 190], ["open", 820], ["sweep", 10000], ["fade", 460]];
+ *  카드와 공이 다 떠 있는 시간(머묾)은 30초다(2026-10-11 파운더) */
+const STEPS: [Phase, number][] = [["closed", 320], ["anticipation", 190], ["open", 820], ["sweep", 30000], ["fade", 460]];
 
 export function HeroBanner() {
   const t = useTranslations("v");
@@ -50,7 +49,6 @@ export function HeroBanner() {
   const box = BOXES.find((b) => b.slug === GIFT_BOX_SLUG);
   const root = useRef<HTMLElement>(null);
   const [phase, setPhase] = useState<Phase>("sweep"); // 서버가 그리는 첫 장면과 움직임 줄이기: 펼쳐진 한 장면
-  const [paused, setPaused] = useState(false);
   const [visible, setVisible] = useState(true);
   const [reduced, setReduced] = useState(true);
   const stage = useRef<HTMLDivElement>(null);
@@ -70,7 +68,7 @@ export function HeroBanner() {
     io.observe(el);
     return () => io.disconnect();
   }, []);
-  const running = !reduced && !paused && visible;
+  const running = !reduced && visible;
   useEffect(() => {
     if (!running) return;
     let step = STEPS.findIndex(([p]) => p === phase); let timer = 0;
@@ -135,7 +133,7 @@ export function HeroBanner() {
   const shown = reduced ? "sweep" : phase;
   const photos = CARD_FILES.map((name) => (HERO_FILES.includes(name) ? HERO_ASSETS + name : null));
   return (
-    <section ref={root} className="v-hero" aria-labelledby="hero-title" data-phase={shown} data-still={reduced || paused ? "" : undefined}>
+    <section ref={root} className="v-hero" aria-labelledby="hero-title" data-phase={shown} data-still={reduced ? "" : undefined}>
       <span className="v-hero-bg" aria-hidden><span className="v-hero-slab" /><span className="v-hero-light" /></span>
       <div className="v-hero-copy">
         <h2 id="hero-title" className="v-hero-title">{boxTitle(box)}</h2>
@@ -186,11 +184,6 @@ export function HeroBanner() {
           ? <Link href={"/box/" + box.slug} className="v-btn">{t(hasFree ? "hero.ctaFree" : "hero.ctaIn")}</Link>
           : <button type="button" className="v-btn" onClick={() => openAuth("signup")}>{t("hero.cta")}</button>}
       </div>
-      {!reduced && (
-        <button type="button" className="v-hero-pause" onClick={() => setPaused((p) => !p)} aria-label={t(paused ? "hero.play" : "hero.pause")}>
-          {paused ? <Play size={14} aria-hidden /> : <Pause size={14} aria-hidden />}
-        </button>
-      )}
     </section>
   );
 }

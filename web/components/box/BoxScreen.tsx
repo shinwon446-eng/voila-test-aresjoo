@@ -23,17 +23,14 @@ import { soundPress } from "@/lib/openingSound";
 import { useSettingsStore } from "@/stores/settingsStore";
 import { devOpeningFault } from "@/lib/openingSettle";
 import { newOpeningId, unseenOpenings, useOpeningJournal } from "@/stores/openingJournal";
-import { isExampleReview } from "@/lib/community";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useAuthStore } from "@/stores/authStore";
 import { useWalletStore } from "@/stores/walletStore";
 import { BURST, burstGauge, burstSeed } from "@/lib/burst";
-import { BoxReviews, RatingInline } from "@/components/box/BoxReviews";
-import { ratingSummary } from "@/lib/reviewSamples";
+import { BoxReviews, RatingInline, useReviewCards } from "@/components/box/BoxReviews";
+import { summarizeRatings } from "@/lib/reviewSamples";
 import { useFlow } from "@/stores/flowStore";
-import { usePublishedReviews } from "@/stores/usePublishedReviews";
-import { ScrollRow } from "@/components/ui/ScrollRow";
 import { useInventoryStore } from "@/stores/inventoryStore";
 import { Button, Chips, Empty, Line, Row, Rows, ScreenHead, TextLink } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
@@ -61,10 +58,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const balance = useWalletStore((s) => s.balance);
   const gauge = burstGauge(box.price, useWalletStore((s) => s.burst?.[box.slug]));
   const openCharge = useFlow((s) => s.openCharge);
-  const reviews = usePublishedReviews();
   const owned = useInventoryStore((s) => s.items);
-  // 후기 두 종류: 개봉 후기(연 직후)와 수령 후기(배송 완료나 USDT 받기 뒤). 내 기록으로 아는 것만 수령으로 표시한다
-  const receivedTag = (ownedId: string) => { const o = owned.find((i) => i.id === ownedId); return o && (o.status === "DELIVERED" || o.status === "SOLD") ? t("box.reviewReceived") : t("box.reviewOpened"); };
   const [qty, setQty] = useState<number>(1);
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -102,8 +96,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const current = itemId ? table.find((i) => i.id === itemId) ?? null : null;
   const elsewhere = useMemo(() => (current ? BOXES.filter((b) => b.slug !== box.slug && b.items.some((i) => i.id === current.id)) : []), [current, box.slug]);
   // 이 박스의 후기: 실제 개봉 기록에 묶인 것만. 예시 후기는 보여 주지 않는다
-  const boxReviews = useMemo(() => reviews.filter((r) => r.boxSlug === box.slug && !isExampleReview(r)).slice(0, 5), [reviews, box.slug]);
-  const rating = useMemo(() => ratingSummary(box.slug, boxReviews.map((r) => r.rating)), [box.slug, boxReviews]);
+  const reviewCards = useReviewCards(box.slug);
+  const rating = useMemo(() => summarizeRatings(reviewCards.map((c) => c.rating)), [reviewCards]);
   // 커버가 대표 실물의 사진이면 "연출 이미지" 안내가 필요 없다
 
   useEffect(() => { void useOpeningJournal.persist.rehydrate(); }, []);
@@ -169,24 +163,18 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       <div className="v-boxlayout-main">
       <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.lead", { price: fmt(box.price), top: fmt(ceilingValue(box)) })} />
       {rating.avg !== null && <button type="button" className="v-ratinglink" onClick={() => document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth", block: "start" })}><RatingInline summary={rating} long /></button>}
-      {strip.length >= 3 ? (
+      {/* 맨 위에는 가장 값진 실물 하나만 크게(2026-10-12 파운더). 누르면 아래의 구성품으로 내려간다 */}
+      {strip.length > 0 ? (
         <div className="v-boxlayout-hero">
-          <ScrollRow className="v-strip" label={t("box.strip")}>
-            {strip.map((item) => (
-              <li key={item.id}>
-                <button type="button" className="v-strip-item" onClick={() => setItemId(item.id)}>
-                  <span className="v-strip-photo"><img src={item.image.src!} alt="" loading="eager" decoding="async" /></span>
-                  <span className="v-strip-name">{itemName(item)}</span>
-                  <span className="v-strip-value v-num">{fmt(item.value)}, {formatRate(item.dropRate)}</span>
-                </button>
-              </li>
-            ))}
-          </ScrollRow>
+          <button type="button" className="v-mainitem" onClick={() => document.getElementById("box-contents")?.scrollIntoView({ behavior: "smooth", block: "start" })}>
+            <span className="v-mainitem-photo"><img src={strip[0].image.src!} alt="" loading="eager" decoding="async" /></span>
+            <span className="v-mainitem-body"><span className="v-mainitem-name">{itemName(strip[0])}</span><span className="v-num">{fmt(strip[0].value)}</span></span>
+          </button>
         </div>
       ) : box.image.src && (
         <div className="v-boxlayout-hero"><div className="v-boxhero"><img src={box.image.src} alt="" /></div></div>
       )}
-      <BoxReviews box={box} member={boxReviews} receivedTag={receivedTag} />
+      <BoxReviews box={box} cards={reviewCards} />
       <aside className="v-boxside">
       {/* 열기 옆에는 고르는 데 쓰는 세 줄만 둔다(2026-10-11 파운더: 오른쪽이 읽히지 않는다). 나머지 숫자는 화면 아래의 확률 요약에 있다 */}
       <Rows label={t("box.facts")}>
@@ -215,11 +203,11 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         <h2 id="box-contents" className="v-section">{t("box.contents")}</h2>
         {groups.map((g) => (
           <div key={g.key}>
-            <div className="v-tierhead"><h3 className="v-sub">{t(TIER_LABEL[g.key])}</h3><span className="v-small v-num">{t("box.tierOdds", { pct: formatRate(g.rate) })}</span></div>
+            <div className="v-tierhead"><h3 className="v-sub">{t(TIER_LABEL[g.key])}</h3></div>
             {/* 사진이 있는 상품은 타일, 없는 상품은 행. 빈 사진 칸을 늘어놓지 않는다 */}
             {g.items.some((i) => i.image.src) && (
               <ul className={"v-items v-items--" + TIER_SIZE[g.key]}>
-                {g.items.filter((i) => i.image.src).map((item) => <li key={item.id}><ItemCard item={item} name={itemName(item)} value={fmt(item.value)} odds={formatRate(item.dropRate)} onOpen={() => setItemId(item.id)} /></li>)}
+                {g.items.filter((i) => i.image.src).map((item) => <li key={item.id}><ItemCard item={item} name={itemName(item)} value={fmt(item.value)} onOpen={() => setItemId(item.id)} /></li>)}
               </ul>
             )}
             {g.items.some((i) => !i.image.src) && (
@@ -228,7 +216,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
                   <li key={item.id}>
                     <button type="button" className="v-itemrow" onClick={() => setItemId(item.id)}>
                       <span className="v-itemrow-name">{itemName(item)}</span>
-                      <span className="v-itemrow-meta"><span className="v-num">{fmt(item.value)}</span><span className="v-num v-small">{formatRate(item.dropRate)}</span></span>
+                      <span className="v-itemrow-meta"><span className="v-num">{fmt(item.value)}</span></span>
                     </button>
                   </li>
                 ))}
@@ -238,7 +226,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         ))}
 
       </section>
-      {/* 확률 요약: 구간별 확률은 위 구성품의 구간 머리에 있으므로 여기서 되풀이하지 않는다 */}
+      {/* 확률은 여기 한곳에 모은다(2026-10-12 파운더: 구성품의 사진과 이름 옆에는 확률을 적지 않는다).
+          요약, 구간별 확률, 접어 둔 상품별 확률표. 상품을 누르면 뜨는 창에도 그 상품의 확률이 있다 */}
       <section className="v-boxlayout-odds v-stack" aria-labelledby="box-odds">
         <h2 id="box-odds" className="v-section">{t("box.oddsSummary")}</h2>
         <Rows label={t("box.oddsSummary")}>
@@ -249,6 +238,22 @@ export function BoxScreen({ box }: { box: ProductBox }) {
           <Row label={t("box.belowOdds")}>{formatRate(belowOdds)}</Row>
           <Row label={t("box.ev")}>{(cashReturn(box) * 100).toFixed(1)}%, {t("box.evBasis")}</Row>
         </Rows>
+        <Rows label={t("box.oddsTiers")}>
+          {groups.map((g) => <Row key={g.key} label={t(TIER_LABEL[g.key])}>{formatRate(g.rate)}</Row>)}
+        </Rows>
+        <details className="v-notes">
+          <summary>{t("box.oddsTable")}</summary>
+          <ul className="v-itemrows">
+            {table.map((item) => (
+              <li key={item.id}>
+                <button type="button" className="v-itemrow" onClick={() => setItemId(item.id)}>
+                  <span className="v-itemrow-name">{itemName(item)}</span>
+                  <span className="v-itemrow-meta"><span className="v-num">{fmt(item.value)}</span><span className="v-num v-small">{formatRate(item.dropRate)}</span></span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </details>
       </section>
       <details className="v-boxlayout-notes v-notes">
         <summary>{t("box.notes")}</summary>
@@ -300,13 +305,13 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   );
 }
 
-function ItemCard({ item, name, value, odds, onOpen }: { item: ProductItem; name: string; value: string; odds: string; onOpen: () => void }) {
+function ItemCard({ item, name, value, onOpen }: { item: ProductItem; name: string; value: string; onOpen: () => void }) {
   return (
     <button type="button" className="v-item" onClick={onOpen}>
       <span className="v-item-photo">{item.image.src ? <img src={item.image.src} alt="" loading="lazy" decoding="async" /> : <span className="v-item-glyph" aria-hidden>{item.kind === "cash" ? <Coins size={28} strokeWidth={1.4} /> : item.kind === "digital" ? <CreditCard size={28} strokeWidth={1.4} /> : <Package size={28} strokeWidth={1.4} />}</span>}</span>
       <span className="v-item-body">
         <span className="v-item-name">{name}</span>
-        <span className="v-item-meta"><span className="v-num">{value}</span><span className="v-num">{odds}</span></span>
+        <span className="v-item-meta"><span className="v-num">{value}</span></span>
       </span>
     </button>
   );

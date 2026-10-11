@@ -43,12 +43,11 @@
     "top": "Top item value",
     "low": "Smallest result",
     "ev": "Expected value ratio (average)",
-    "contents": "Contents and odds",
+    "contents": "Contents",
     "tierRoyal": "20× the box price or more",
     "tierPrestige": "6x to 20x the box price",
     "tierExecutive": "2x to 6x the box price",
     "tierCurated": "Under 2× the box price",
-    "tierOdds": "Odds for this tier {pct}",
     "value": "Reference price {amount}",
     "odds": "Odds {pct}",
     "qty": "Quantity",
@@ -62,7 +61,6 @@
     "confirmTitle": "{amount} payment",
     "confirmDesc": "Paid from your balance, then opened right away.",
     "openFail": "The box did not open. Your balance is unchanged.",
-    "strip": "Top items",
     "oddsSummary": "Odds summary",
     "evNote": "Expected value is the odds-weighted average you would receive, with every result taken as USDT, divided by the box price. It is an average over many opens and does not guarantee a single result. An item taken as USDT pays {pct}% of its reference price.",
     "evBasis": "if taken as USDT",
@@ -75,12 +73,9 @@
     "alsoIn": "Compare with {n} other boxes",
     "reviews": "Reviews",
     "noReviews": "No reviews yet. Only real openings can be reviewed.",
-    "reviewProof": "Tied to a real opening record.",
     "compareNote": "Price per open and odds for this item. No box sells the item outright.",
     "guestNote": "{n} open, {amount}. After login, your USDT balance pays.",
     "takeAmount": "If taken as USDT ({pct}% of reference price)",
-    "reviewReceived": "Receipt confirmed",
-    "reviewOpened": "Opening review",
     "priceBasis": "Price basis",
     "priceBasisV": "Approximate US market price as of October 2026, before tax",
     "shipFee": "Shipping fee",
@@ -95,7 +90,6 @@
     "ratingCount": "{n} reviews",
     "ratingBasis": "Ratings come from people who received an item, for the item and its delivery.",
     "starsOf": "{n} stars",
-    "reviewShipped": "Delivered",
     "lead": "{price} per open, top item value {top}",
     "commonRow": "Most common result",
     "realRow": "Chance of a physical item",
@@ -103,7 +97,9 @@
     "topTimes": "Top multiple",
     "openFree": "Open {n} for free",
     "freeLeft": "You can open this box {n} times for free.",
-    "reviewsAll": "See all reviews"
+    "reviewsAll": "See all reviews",
+    "oddsTiers": "Odds by tier",
+    "oddsTable": "See odds by item"
   },
   "reveal": {
     "skip": "Skip",
@@ -529,6 +525,24 @@
   "reviews": {
     "title": "Reviews",
     "all": "All",
-    "filter": "Box"
+    "filter": "Box",
+    "me": "My review",
+    "more": "Read more",
+    "detail": "Review",
+    "photo": "Attached photo",
+    "item": "Item",
+    "itemPrice": "Current item value",
+    "box": "Box",
+    "verifyNote": "Checks the pre-locked hash against the opening record.",
+    "noRecord": "No opening record is linked.",
+    "toBox": "See {box}"
+  },
+  "wins": {
+    "title": "Recent results",
+    "desc": "Openings that returned {n}x or more of the price, newest first.",
+    "none": "No opening has returned {n}x or more yet.",
+    "scope": "These are openings from this account.",
+    "line": "{amount}, {n}x the price",
+    "verify": "Verify"
   }
 }

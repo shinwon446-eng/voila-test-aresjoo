@@ -43,12 +43,11 @@
     "top": "最高商品价值",
     "low": "最小结果",
     "ev": "期望价值比（平均）",
-    "contents": "内容与概率",
+    "contents": "内容",
     "tierRoyal": "盲盒价格的 20 倍以上",
     "tierPrestige": "盲盒价格的 6 倍以上 20 倍以下",
     "tierExecutive": "盲盒价格的 2 倍以上 6 倍以下",
     "tierCurated": "盲盒价格的 2 倍以下",
-    "tierOdds": "此区间出现概率 {pct}",
     "value": "参考价 {amount}",
     "odds": "概率 {pct}",
     "qty": "数量",
@@ -62,7 +61,6 @@
     "confirmTitle": "支付 {amount}",
     "confirmDesc": "从余额支付后立即开箱。",
     "openFail": "未能开箱。余额没有变化。",
-    "strip": "代表实物",
     "oddsSummary": "概率摘要",
     "evNote": "期望价值比例是把所有结果都按领取 USDT 计算后，按概率加权的平均到账额除以盲盒价格。它是多次开箱的平均值，不保证单次结果。商品领取 USDT 时为参考价的 {pct}%。",
     "evBasis": "按领取 USDT 计",
@@ -75,12 +73,9 @@
     "alsoIn": "与其他 {n} 个盲盒比较",
     "reviews": "评价",
     "noReviews": "暂无评价。只有真实开箱记录才能评价。",
-    "reviewProof": "与真实开箱记录绑定的评价。",
     "compareNote": "同一商品的单次价格与概率。任何盲盒都不是直接购买该商品。",
     "guestNote": "{n} 次，{amount}。登录后用 USDT 余额支付。",
     "takeAmount": "领取 USDT 时（参考价的 {pct}%）",
-    "reviewReceived": "已确认领取",
-    "reviewOpened": "开箱评价",
     "priceBasis": "参考价依据",
     "priceBasisV": "2026 年 10 月美国市场估价，不含税",
     "shipFee": "运费",
@@ -95,7 +90,6 @@
     "ratingCount": "{n} 条评价",
     "ratingBasis": "评分由收到商品的用户针对商品与配送给出。",
     "starsOf": "{n} 星",
-    "reviewShipped": "已送达",
     "lead": "每次 {price}，最高商品价值 {top}",
     "commonRow": "最常见结果",
     "realRow": "获得实物的概率",
@@ -103,7 +97,9 @@
     "topTimes": "最高倍数",
     "openFree": "免费开启 {n} 个",
     "freeLeft": "本盲盒可免费开启 {n} 次。",
-    "reviewsAll": "查看全部评价"
+    "reviewsAll": "查看全部评价",
+    "oddsTiers": "各区间概率",
+    "oddsTable": "查看各商品概率"
   },
   "reveal": {
     "skip": "跳过",
@@ -529,6 +525,24 @@
   "reviews": {
     "title": "评价",
     "all": "全部",
-    "filter": "盲盒"
+    "filter": "盲盒",
+    "me": "我的评价",
+    "more": "查看更多",
+    "detail": "评价详情",
+    "photo": "附图",
+    "item": "商品",
+    "itemPrice": "当前商品价值",
+    "box": "盲盒",
+    "verifyNote": "将预先锁定的哈希与开箱记录进行比对。",
+    "noRecord": "没有关联的开箱记录。",
+    "toBox": "查看{box}"
+  },
+  "wins": {
+    "title": "开出的商品",
+    "desc": "按时间从新到旧累积开出价格 {n} 倍以上的开箱。",
+    "none": "还没有开出价格 {n} 倍以上的记录。",
+    "scope": "这是本账户的开箱记录。",
+    "line": "{amount}，价格的 {n} 倍",
+    "verify": "验证"
   }
 }

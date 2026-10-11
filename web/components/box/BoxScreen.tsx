@@ -29,6 +29,7 @@ import { useCurrency } from "@/lib/useCurrency";
 import { useAuthStore } from "@/stores/authStore";
 import { useWalletStore } from "@/stores/walletStore";
 import { BURST, burstGauge, burstSeed } from "@/lib/burst";
+import { ReviewStrip, useReviewSpot } from "@/components/box/ReviewStrip";
 import { useFlow } from "@/stores/flowStore";
 import { usePublishedReviews } from "@/stores/usePublishedReviews";
 import { useInventoryStore } from "@/stores/inventoryStore";
@@ -56,6 +57,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const ready = useAuthStore((s) => s.hydrated);
   const openLogin = useAuthStore((s) => s.openAuthModal);
   const balance = useWalletStore((s) => s.balance);
+  // 후기 자리 비교용(주소에 ?rv=box). 붙이지 않으면 나오지 않는다
+  const reviewSpot = useReviewSpot();
   const gauge = burstGauge(box.price, useWalletStore((s) => s.burst?.[box.slug]));
   const openCharge = useFlow((s) => s.openCharge);
   const reviews = usePublishedReviews();
@@ -179,6 +182,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         <div className="v-boxlayout-hero"><div className="v-boxhero"><img src={box.image.src} alt="" /></div>{stockCover && <p className="v-small">{t("box.photoNote")}</p>}</div>
       )}
       <aside className="v-boxside">
+      {reviewSpot === "box" && <ReviewStrip boxSlug={box.slug} title="이 박스를 연 분들의 후기" />}
       <Rows label={t("box.facts")}>
         <Row label={t("box.price")}>{fmt(box.price)}</Row>
         <Row label={t("box.burst")}>{fmt(gauge)}</Row>

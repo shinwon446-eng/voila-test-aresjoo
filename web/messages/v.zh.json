@@ -18,7 +18,9 @@
     "legal": "条款与政策",
     "menu": "菜单",
     "balance": "余额 {amount}",
-    "login": "登录"
+    "login": "登录",
+    "showKrw": "以韩元显示",
+    "showUsd": "以美元显示"
   },
   "home": {
     "title": "盲盒",
@@ -82,12 +84,18 @@
     "priceBasis": "参考价依据",
     "priceBasisV": "2026 年 10 月美国市场估价，不含税",
     "shipFee": "运费",
-    "shipFeeV": "0 USDT，可配送 {n} 个国家（在配送表中选择）",
+    "shipFeeV": "免费，可配送 {n} 个国家（在配送表中选择）",
     "countriesLink": "查看可配送国家",
     "countriesHide": "收起可配送国家",
     "belowOdds": "获得低于支付金额的概率",
     "burst": "爆发槽",
-    "burstNote": "每次开箱会把盲盒价格的 {pct}% 累积到爆发槽。出现爆发（概率 {odds}）时，以 USDT 领取爆发槽的全部金额，并从 {seed} 重新累积。无论爆发槽累积了多少，爆发的概率始终不变。爆发槽属于本盲盒和本账户，只有爆发时才能领取。"
+    "burstNote": "每次开箱会把盲盒价格的 {pct}% 累积到爆发槽。出现爆发（概率 {odds}）时，以 USDT 领取爆发槽的全部金额，并从 {seed} 重新累积。无论爆发槽累积了多少，爆发的概率始终不变。爆发槽属于本盲盒和本账户，只有爆发时才能领取。",
+    "ratingLine": "{avg}，{n} 条评价",
+    "ratingAria": "评分 {avg}，{n} 条评价",
+    "ratingCount": "{n} 条评价",
+    "ratingBasis": "评分由收到商品的用户针对商品与配送给出。",
+    "starsOf": "{n} 星",
+    "reviewShipped": "已送达"
   },
   "reveal": {
     "skip": "跳过",

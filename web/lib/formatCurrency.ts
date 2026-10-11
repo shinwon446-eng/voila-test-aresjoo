@@ -2,7 +2,9 @@
  * 단일 통화 표시 엔진 (CLAUDE.md §4 Zero Clutter)
  *
  * 입력은 항상 USDT 기준 금액이고, 출력은 선택 통화 "하나"의 표기다.
- *   USDT → "80 USDT"   USD → "$80"   KRW → "₩110,400"
+ *   USDT → "80 USDT"   USD → "$80"   KRW → "₩11만"
+ * 원화로 바꿔 적을 때는 만원 아래를 버린다(2026-10-11 파운더). ₩132,066,000 → "₩1억 3,206만", ₩110,400 → "₩11만".
+ *   1만원이 안 되는 금액은 그대로 적는다(₩690). 버리기만 하고 올리지 않는다. 원화는 보기용 환산이고 돈은 USDT 로 움직인다.
  * USDT 와 USD 는 필요한 자리만 소수 둘째 자리까지(0.5, 2.65), KRW 는 정수로 표시한다.
  * 0.5 USDT 를 "1 USDT"로 보이게 하던 정수 반올림은 사실과 다른 표기라 없앴다(DESIGN.md 정한 것 A.5).
  * 다른 통화 기호, 단위가 섞여 나오는 경로는 존재하지 않는다, 이 함수 말고는 금액을 문자열로 만들지 않는다.
@@ -26,6 +28,18 @@ export function convertFromUsdt(usdt: number, currency: Currency, rates: Record<
   return usdt * rates[currency];
 }
 
+/** 원화: 만원 아래를 버리고 억과 만으로 적는다. 1만원 미만은 원 단위 그대로 */
+export function formatWonTruncated(won: number): string {
+  if (!Number.isFinite(won)) return "₩0";
+  const sign = won < 0 ? "-" : "";
+  const abs = Math.abs(won);
+  if (abs < 10_000) return `${sign}₩${digitsOf(abs, 0)}`;
+  const man = Math.floor(abs / 10_000 + 1e-9);
+  const eok = Math.floor(man / 10_000);
+  const rest = man % 10_000;
+  return `${sign}₩${eok ? eok.toLocaleString("en-US") + "억" : ""}${eok && rest ? NBSP : ""}${rest ? rest.toLocaleString("en-US") + "만" : ""}`;
+}
+
 export function formatCurrency(
   baseUsdtAmount: number,
   selectedCurrency: Currency,
@@ -33,6 +47,7 @@ export function formatCurrency(
 ): string {
   const { decimals, render } = SPEC[selectedCurrency];
   const amount = convertFromUsdt(baseUsdtAmount, selectedCurrency, rates);
+  if (selectedCurrency === "KRW") return formatWonTruncated(amount);
   return render(digitsOf(amount, decimals));
 }
 
@@ -88,5 +103,8 @@ export function splitNative(amountInCurrency: number, currency: Currency): Money
 }
 
 export function splitCurrency(baseUsdtAmount: number, selectedCurrency: Currency, rates: Record<Currency, number> = DEFAULT_RATES): MoneyParts {
-  return splitNative(convertFromUsdt(baseUsdtAmount, selectedCurrency, rates), selectedCurrency);
+  const amount = convertFromUsdt(baseUsdtAmount, selectedCurrency, rates);
+  // 원화는 formatCurrency 와 같은 글자가 나와야 한다(만원 아래 버림)
+  if (selectedCurrency === "KRW") return { ...PARTS.KRW, number: formatWonTruncated(amount).replace("₩", "") };
+  return splitNative(amount, selectedCurrency);
 }

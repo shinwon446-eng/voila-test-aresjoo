@@ -23,13 +23,14 @@ import { soundPress } from "@/lib/openingSound";
 import { useSettingsStore } from "@/stores/settingsStore";
 import { devOpeningFault } from "@/lib/openingSettle";
 import { newOpeningId, unseenOpenings, useOpeningJournal } from "@/stores/openingJournal";
-import { isExampleReview, relativeReviewTime } from "@/lib/community";
+import { isExampleReview } from "@/lib/community";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useAuthStore } from "@/stores/authStore";
 import { useWalletStore } from "@/stores/walletStore";
 import { BURST, burstGauge, burstSeed } from "@/lib/burst";
-import { ReviewStrip, useReviewSpot } from "@/components/box/ReviewStrip";
+import { BoxReviews, RatingInline } from "@/components/box/BoxReviews";
+import { ratingSummary } from "@/lib/reviewSamples";
 import { useFlow } from "@/stores/flowStore";
 import { usePublishedReviews } from "@/stores/usePublishedReviews";
 import { useInventoryStore } from "@/stores/inventoryStore";
@@ -57,8 +58,6 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const ready = useAuthStore((s) => s.hydrated);
   const openLogin = useAuthStore((s) => s.openAuthModal);
   const balance = useWalletStore((s) => s.balance);
-  // 후기 자리 비교용(주소에 ?rv=box). 붙이지 않으면 나오지 않는다
-  const reviewSpot = useReviewSpot();
   const gauge = burstGauge(box.price, useWalletStore((s) => s.burst?.[box.slug]));
   const openCharge = useFlow((s) => s.openCharge);
   const reviews = usePublishedReviews();
@@ -100,6 +99,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const elsewhere = useMemo(() => (current ? BOXES.filter((b) => b.slug !== box.slug && b.items.some((i) => i.id === current.id)) : []), [current, box.slug]);
   // 이 박스의 후기: 실제 개봉 기록에 묶인 것만. 예시 후기는 보여 주지 않는다
   const boxReviews = useMemo(() => reviews.filter((r) => r.boxSlug === box.slug && !isExampleReview(r)).slice(0, 5), [reviews, box.slug]);
+  const rating = useMemo(() => ratingSummary(box.slug, boxReviews.map((r) => r.rating)), [box.slug, boxReviews]);
   // 커버가 대표 실물의 사진이면 "연출 이미지" 안내가 필요 없다
   const stockCover = !!box.image.src && !table.some((i) => i.image.src === box.image.src);
 
@@ -163,6 +163,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
     <div className="v-boxlayout">
       <div className="v-boxlayout-main">
       <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.mostLikely", { price: fmt(box.price), amount: fmt(common.value), pct: formatRate(common.dropRate), real: formatRate(realOdds) })} />
+      {rating.avg !== null && <button type="button" className="v-ratinglink" onClick={() => document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth", block: "start" })}><RatingInline summary={rating} long /></button>}
       {strip.length >= 3 ? (
         <div className="v-boxlayout-hero">
           <p className="v-sub">{t("box.stripNote")}</p>
@@ -181,8 +182,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       ) : box.image.src && (
         <div className="v-boxlayout-hero"><div className="v-boxhero"><img src={box.image.src} alt="" /></div>{stockCover && <p className="v-small">{t("box.photoNote")}</p>}</div>
       )}
+      <BoxReviews box={box} member={boxReviews} receivedTag={receivedTag} />
       <aside className="v-boxside">
-      {reviewSpot === "box" && <ReviewStrip boxSlug={box.slug} title="이 박스를 연 분들의 후기" />}
       <Rows label={t("box.facts")}>
         <Row label={t("box.price")}>{fmt(box.price)}</Row>
         <Row label={t("box.burst")}>{fmt(gauge)}</Row>
@@ -239,24 +240,6 @@ export function BoxScreen({ box }: { box: ProductBox }) {
           </div>
         ))}
 
-        <h2 className="v-section">{t("box.reviews")}</h2>
-        {boxReviews.length === 0 ? (
-          <Empty>{t("box.noReviews")}</Empty>
-        ) : (
-          <ul className="v-rows" aria-label={t("box.reviews")}>
-            {boxReviews.map((r) => {
-              const item = table.find((i) => i.id === r.itemId);
-              return (
-                <li key={r.id} className="v-review">
-                  <div className="v-review-head"><span className="v-card-title">{item ? itemName(item) : r.itemId}</span><span className="v-small">{relativeReviewTime(r.at, Date.now(), locale)}</span></div>
-                  <p className="v-body">{r.text}</p>
-                  {r.photo && <span className="v-review-photo"><img src={r.photo} alt="" loading="lazy" /></span>}
-                  <p className="v-small">{receivedTag(r.ownedId)}. {t("box.reviewProof")}</p>
-                </li>
-              );
-            })}
-          </ul>
-        )}
         <div className="v-links"><TextLink href="/verify">{t("nav.verify")}</TextLink></div>
       </section>
       </div>

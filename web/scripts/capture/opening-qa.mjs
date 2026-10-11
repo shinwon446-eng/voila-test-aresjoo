@@ -23,7 +23,8 @@ const near = (a, b) => Math.abs(a - b) < 0.005;
 const r2 = (n) => +n.toFixed(2);
 const START = 10000;
 /** 화면이 금액을 적는 방식과 같게 */
-const usdt = (n) => r2(n).toLocaleString("en-US", { maximumFractionDigits: 2 }) + " USDT";
+// 2026-10-11 부터 화면은 금액을 $ 로 적는다(1 USDT = $1). 이름은 그대로 두고 글자만 맞춘다
+const usdt = (n) => "$" + r2(n).toLocaleString("en-US", { maximumFractionDigits: 2 });
 /** 그 결과 하나를 연 뒤의 잔액: 낸 값이 빠지고, USDT 결과면 그 금액이 더해진다(상품은 보관만) */
 const after = (fx, price, from = START) => r2(from - price + (fx.kind === "cash" ? fx.value : 0));
 
@@ -440,7 +441,7 @@ await run("s14", async () => {
 // s15: 터짐 게이지. 열 때마다 박스 가격의 10%가 쌓이고, 터짐이 나오면 시작 금액(10배)과 쌓인 금액 전부를 받는다
 await run("s15", async () => {
   const SEEDX = 10, SHARE = 0.1;
-  const gaugeText = (page) => page.evaluate(() => { const rows = [...document.querySelectorAll(".v-rows > *, .v-row")].map((e) => (e.textContent || "").replace(/\s+/g," ")); return rows.filter((t) => /터짐 게이지/.test(t)).sort((a, b) => a.length - b.length).find((t) => /USDT/.test(t)) || rows.find((t) => /터짐 게이지/.test(t)) || ""; });
+  const gaugeText = (page) => page.evaluate(() => { const rows = [...document.querySelectorAll(".v-rows > *, .v-row")].map((e) => (e.textContent || "").replace(/\s+/g," ")); return rows.filter((t) => /터짐 게이지/.test(t)).sort((a, b) => a.length - b.length).find((t) => /[$]/.test(t)) || rows.find((t) => /터짐 게이지/.test(t)) || ""; });
   // 처음 연 것이 터짐: 시작 금액 + 이번 한 번의 몫
   let s = await session({ fixture: "single:burst" });
   check("s15", "박스 화면: 한 번도 안 연 계정의 게이지는 시작 금액이다", (await gaugeText(s.page)).replace(/\s+/g,"").includes(usdt(s.price * SEEDX).replace(/\s+/g,"")), await gaugeText(s.page));

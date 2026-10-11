@@ -18,7 +18,9 @@
     "legal": "Terms and policies",
     "menu": "Menu",
     "balance": "Balance {amount}",
-    "login": "Log in"
+    "login": "Log in",
+    "showKrw": "Show in KRW",
+    "showUsd": "Show in USD"
   },
   "home": {
     "title": "Boxes",
@@ -82,12 +84,18 @@
     "priceBasis": "Price basis",
     "priceBasisV": "Approximate US market price as of October 2026, before tax",
     "shipFee": "Shipping fee",
-    "shipFeeV": "0 USDT to {n} countries (chosen on the shipping sheet)",
+    "shipFeeV": "Free to {n} countries (chosen on the shipping sheet)",
     "countriesLink": "Show shipping countries",
     "countriesHide": "Hide shipping countries",
     "belowOdds": "Odds of getting less than you paid",
     "burst": "Burst gauge",
-    "burstNote": "Every open adds {pct}% of the box price to the burst gauge. When Burst comes up (odds {odds}) you receive the whole gauge in USDT, and it restarts from {seed}. The odds of Burst are always the same, however full the gauge is. The gauge belongs to this box and this account, and is paid only when it bursts."
+    "burstNote": "Every open adds {pct}% of the box price to the burst gauge. When Burst comes up (odds {odds}) you receive the whole gauge in USDT, and it restarts from {seed}. The odds of Burst are always the same, however full the gauge is. The gauge belongs to this box and this account, and is paid only when it bursts.",
+    "ratingLine": "{avg}, {n} reviews",
+    "ratingAria": "Rated {avg} from {n} reviews",
+    "ratingCount": "{n} reviews",
+    "ratingBasis": "Ratings come from people who received an item, for the item and its delivery.",
+    "starsOf": "{n} stars",
+    "reviewShipped": "Delivered"
   },
   "reveal": {
     "skip": "Skip",

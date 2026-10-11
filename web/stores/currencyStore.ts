@@ -32,7 +32,8 @@ export interface CurrencyState {
 export const useCurrencyStore = create<CurrencyState>()(
   persist(
     (set) => ({
-      currency: "USDT",
+      // 2026-10-11 파운더: 금액은 USDT 대신 $ 로 적는다(1 USDT 를 $1 로 본다). 돈은 그대로 USDT 로 움직인다
+      currency: "USD",
       rates: DEFAULT_RATES,
       hydrated: false,
       setCurrency: (currency) => set({ currency }),
@@ -45,6 +46,8 @@ export const useCurrencyStore = create<CurrencyState>()(
       partialize: (s) => ({ currency: s.currency }),
       skipHydration: true,
       onRehydrateStorage: () => (state) => {
+        // 새 화면에는 USDT 표기를 고르는 곳이 없다. 예전에 저장된 선택은 달러로 옮긴다
+        if (state?.currency === "USDT") state.setCurrency("USD");
         state?.setRates({});
         useCurrencyStore.setState({ hydrated: true });
       },

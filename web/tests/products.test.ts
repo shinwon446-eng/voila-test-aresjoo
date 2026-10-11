@@ -256,7 +256,8 @@ test("박스 가격은 세 통화 어느 쪽으로도 혼용 없이 렌더된다
   for (const b of BOXES) {
     assert.match(formatCurrency(b.price, "USDT"), /^[\d,]+\u00A0USDT$/, b.slug);
     assert.match(formatCurrency(b.price, "USD"), /^\$[\d,]+$/, b.slug);
-    assert.match(formatCurrency(b.price, "KRW"), /^₩[\d,]+$/, b.slug);
+    // 원화는 만원 아래를 버려 "₩2만", "₩13만" 처럼 적는다(1만원 미만은 숫자 그대로)
+    assert.match(formatCurrency(b.price, "KRW"), /^₩[\d,]+만?$/, b.slug);
   }
 });
 

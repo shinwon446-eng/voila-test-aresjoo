@@ -39,25 +39,29 @@ export function BoxList() {
     return [...list].sort((a, b) => (lastOpened.get(b.slug) ?? 0) - (lastOpened.get(a.slug) ?? 0));
   }, [category, owned]);
 
-  // 상품 검색: 세 언어 이름 어디든 들어 있으면. 같은 상품이 여러 박스에 있으면 박스마다 한 행
+  // 상품 검색: 세 언어의 상품 이름이나 박스 이름 어디든 들어 있으면("포켓몬 카드", "자동차"처럼 박스 이름으로 찾으면 그 박스의 상품이 나온다).
+  // 같은 상품이 여러 박스에 있으면 박스마다 한 행
   const q = query.trim().toLowerCase();
   const hits = useMemo(() => {
     if (q.length < 1) return [];
     const out: { box: ProductBox; item: ProductItem }[] = [];
-    for (const box of BOXES) for (const item of dropTable(box)) {
+    for (const box of BOXES) {
+      const boxHit = [box.title, box.titleEn, boxTitle(box)].some((n) => n && n.toLowerCase().includes(q));
+      for (const item of dropTable(box)) {
       if (item.kind === "cash") continue;
-      if ([item.name, item.nameEn, item.nameZh].some((n) => n && n.toLowerCase().includes(q))) out.push({ box, item });
+      if (boxHit || [item.name, item.nameEn, item.nameZh].some((n) => n && n.toLowerCase().includes(q))) out.push({ box, item });
       if (out.length >= SEARCH_MAX) return out;
+      }
     }
     return out.sort((a, b) => b.item.value - a.item.value);
-  }, [q]);
+  }, [q, boxTitle]);
 
   return (
     <div className="v-stack v-stack--lg">
       {!q && <HeroBanner />}
       <ScreenHead title={t("home.title")} desc={t("home.desc")} />
       {/* 이름표를 따로 두지 않는다. 칸 안의 글이 곧 이름표다(화면 읽기 도구에는 aria-label 로 읽힌다) */}
-      <input type="search" className="v-input" aria-label={t("home.search")} placeholder={t("home.search")} value={query} onChange={(e) => setQuery(e.target.value)} autoComplete="off" />
+      <input type="search" className="v-input" aria-label={t("home.search")} placeholder={t("home.searchHint")} value={query} onChange={(e) => setQuery(e.target.value)} autoComplete="off" />
       {q ? (
         hits.length === 0 ? <Empty>{t("home.searchNone")}</Empty> : (
           <ul className="v-itemrows">

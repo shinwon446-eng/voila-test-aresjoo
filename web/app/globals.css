@@ -38,6 +38,14 @@ html {
   overflow-x: hidden;
 }
 
+/* 스크롤 막대는 어느 화면에서도 그리지 않는다(2026-10-11 파운더). 스크롤 자체는 그대로 된다(휠, 손가락, 키보드) */
+* {
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
 }

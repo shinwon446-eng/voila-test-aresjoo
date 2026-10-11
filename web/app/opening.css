@@ -8,7 +8,9 @@
 .v-op { position: fixed; inset: 0; z-index: 150; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; overflow: hidden; background: var(--v-bg); outline: none; --ant: 520ms; --imp: 150ms; --exit: 170ms; }
 
 /* 위: 잔액 하나, 설정, (결과가 다 보인 뒤) 닫기 */
-.v-op-top { display: flex; height: 56px; align-items: center; justify-content: space-between; gap: 8px; margin-top: env(safe-area-inset-top, 0px); padding: 0 var(--v-gutter); }
+/* 잔액과 단추가 화면 모서리에 붙어 보이지 않게 위와 옆을 띄운다(2026-10-11 파운더) */
+.v-op-top { display: flex; height: 68px; align-items: center; justify-content: space-between; gap: 8px; margin-top: env(safe-area-inset-top, 0px); padding: 0 var(--v-gutter); }
+@media (min-width: 720px) { .v-op-top { height: 84px; padding: 0 32px; } }
 .v-op-balance { display: inline-flex; height: var(--v-touch); align-items: center; border: 1px solid transparent; border-radius: var(--v-r-pill); background: var(--v-pill); padding: 0 14px; color: var(--v-text); font-size: var(--v-fs-small); white-space: nowrap; }
 .v-op-tools { display: inline-flex; gap: 8px; }
 .v-op-tool { display: inline-flex; width: var(--v-touch); height: var(--v-touch); align-items: center; justify-content: center; border-radius: var(--v-r-pill); background: var(--v-pill); color: var(--v-text); }

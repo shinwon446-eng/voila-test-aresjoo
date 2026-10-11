@@ -11,17 +11,24 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { BOXES, CATEGORY_FILTERS, byCategory, dropTable, formatRate, sortBoxes, type BoxCategory, type ProductBox, type ProductItem } from "@/lib/products";
+import { CATEGORY_FILTERS, HOME_BOXES, dropTable, isLadderBox, sortBoxes, type BoxCategory, type ProductBox, type ProductItem } from "@/lib/products";
+import { CATEGORIES_V2 } from "@/lib/catalogTypes";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useInventoryStore } from "@/stores/inventoryStore";
-import { Chips, Empty, ScreenHead } from "@/components/ui/kit";
+import { Button, Chips, Empty, ScreenHead } from "@/components/ui/kit";
 import { RatingInline } from "@/components/box/BoxReviews";
 import { HeroBanner } from "@/components/home/HeroBanner";
 import { ratingSummary } from "@/lib/reviewSamples";
 
 type Category = BoxCategory | "all";
 const SEARCH_MAX = 30;
+/** 한 번에 보여 주는 박스 수. 박스가 수백 개라 나눠 보여 준다 */
+const PAGE = 24;
+/** 분류 단추의 순서: 옛 분류, 그다음 새 카탈로그의 카테고리. 박스가 있는 것만 나온다 */
+const CATEGORY_ORDER: BoxCategory[] = [...CATEGORY_FILTERS.flatMap((c) => (c.key === "all" ? [] : [c.key as BoxCategory])), ...CATEGORIES_V2];
+const HOME_CATEGORIES: BoxCategory[] = CATEGORY_ORDER.filter((key) => HOME_BOXES.some((b) => b.category === key));
+const isV2 = (key: string): boolean => (CATEGORIES_V2 as readonly string[]).includes(key);
 
 export function BoxList() {
   const t = useTranslations("v");
@@ -30,13 +37,14 @@ export function BoxList() {
   const { fmt } = useCurrency();
   const [category, setCategory] = useState<Category>("all");
   const [query, setQuery] = useState("");
+  const [shown, setShown] = useState(PAGE);
   const owned = useInventoryStore((s) => s.items);
 
   // 최근에 연 박스를 앞으로. 기록이 없으면 추천 순서 그대로다.
   const boxes = useMemo(() => {
     const lastOpened = new Map<string, number>();
     for (const item of owned) lastOpened.set(item.boxSlug, Math.max(lastOpened.get(item.boxSlug) ?? 0, Date.parse(item.acquiredAt) || 0));
-    const list = sortBoxes(byCategory(category), "featured");
+    const list = sortBoxes(category === "all" ? HOME_BOXES : HOME_BOXES.filter((b) => b.category === category), "featured");
     return [...list].sort((a, b) => (lastOpened.get(b.slug) ?? 0) - (lastOpened.get(a.slug) ?? 0));
   }, [category, owned]);
 
@@ -46,8 +54,8 @@ export function BoxList() {
   const hits = useMemo(() => {
     if (q.length < 1) return [];
     const out: { box: ProductBox; item: ProductItem }[] = [];
-    for (const box of BOXES) {
-      const boxHit = [box.title, box.titleEn, boxTitle(box)].some((n) => n && n.toLowerCase().includes(q));
+    for (const box of HOME_BOXES) {
+      const boxHit = [box.title, box.titleEn, box.brand, boxTitle(box)].some((n) => n && n.toLowerCase().includes(q));
       for (const item of dropTable(box)) {
       if (item.kind === "cash") continue;
       if (boxHit || [item.name, item.nameEn, item.nameZh].some((n) => n && n.toLowerCase().includes(q))) out.push({ box, item });
@@ -72,7 +80,7 @@ export function BoxList() {
                 <Link href={"/box/" + box.slug} className="v-itemrow">
                   {item.image.src && <span className="v-itemrow-photo"><img src={item.image.src} alt="" loading="lazy" decoding="async" /></span>}
                   <span className="v-itemrow-body"><span className="v-card-title">{itemName(item)}</span><span className="v-small">{t("home.searchIn", { box: boxTitle(box), price: fmt(box.price) })}</span></span>
-                  <span className="v-itemrow-meta"><span className="v-num v-small">{t("home.refPrice", { amount: fmt(item.value) })}</span><span className="v-num v-small">{formatRate(item.dropRate)}</span></span>
+                  <span className="v-itemrow-meta"><span className="v-num v-small">{t("home.refPrice", { amount: fmt(item.value) })}</span></span>
                 </Link>
               </li>
             ))}
@@ -80,10 +88,11 @@ export function BoxList() {
         )
       ) : (
         <>
-          <Chips scroll label={t("home.filter")} value={category} onChange={setCategory} options={CATEGORY_FILTERS.map((c) => ({ value: c.key as Category, label: c.key === "all" ? t("home.all") : tc(c.key) }))} />
+          <Chips scroll label={t("home.filter")} value={category} onChange={(key) => { setCategory(key); setShown(PAGE); }} options={[{ value: "all" as Category, label: t("home.all") }, ...HOME_CATEGORIES.map((key) => ({ value: key as Category, label: isV2(key) ? t("cat." + key) : tc(key) }))]} />
           <ul className="v-boxgrid">
-            {boxes.map((box, i) => { const lead = leadOf(box); return <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={fmt(box.price)} noRating={t("home.noRating")} photo={lead?.image.src ?? null} leadName={lead ? itemName(lead) : ""} eager={i < 6} /></li>; })}
+            {boxes.slice(0, shown).map((box, i) => { const lead = leadOf(box); return <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={fmt(box.price)} noRating={t("home.noRating")} photo={lead?.image.src ?? null} leadName={lead ? itemName(lead) : ""} eager={i < 6} /></li>; })}
           </ul>
+          {boxes.length > shown && <Button quiet onClick={() => setShown((n) => n + PAGE)}>{t("home.more", { n: boxes.length - shown })}</Button>}
         </>
       )}
     </div>
@@ -105,7 +114,8 @@ function BoxCard({ box, title, price, noRating, photo, leadName, eager }: { box:
       <span className="v-boxcard-body">
         <span className="v-card-title">{title}</span>
         {/* 별점은 이름 바로 아래 왼쪽에 둔다(가격 옆에 띄우면 가격과 다툰다). 후기가 없는 박스도 같은 줄을 써서 카드 높이를 맞춘다 */}
-        <span className="v-boxcard-rating">{rating.avg === null ? <span className="v-small">{noRating}</span> : <RatingInline summary={rating} />}</span>
+        {/* 새 카탈로그의 박스는 후기가 생길 때까지 이 줄을 두지 않는다(수백 장에 "후기 없음"을 되풀이하지 않는다) */}
+        {(rating.avg !== null || isLadderBox(box)) && <span className="v-boxcard-rating">{rating.avg === null ? <span className="v-small">{noRating}</span> : <RatingInline summary={rating} />}</span>}
         <span className="v-num v-sub">{price}</span>
       </span>
     </Link>

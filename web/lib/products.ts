@@ -326,6 +326,18 @@ if (violations.length > 0) {
   throw new Error(["상품 데이터셋 불변식 위반", ...violations].join("\n  - "));
 }
 
+/** 새 카탈로그의 박스(실물 전용)와 옛 박스 */
+export const V2_BOXES: ProductBox[] = BOXES.filter((box) => box.scheme === "physical");
+export const LEGACY_BOXES: ProductBox[] = BOXES.filter((box) => box.scheme !== "physical");
+/**
+ * 새 카탈로그의 박스가 이만큼 차면 홈과 검색에서 옛 박스를 내린다(2026-10-12 파운더: 1달러 박스는 없앤다. 새 카탈로그로 바꿀 때 함께 내린다).
+ * 옛 박스의 주소, 보관함 기록, 검증은 그대로 열린다. 목록에서만 빠진다.
+ */
+export const LEGACY_RETIRE_AT = 100;
+export const LEGACY_RETIRED = V2_BOXES.length >= LEGACY_RETIRE_AT;
+/** 홈과 검색에 나오는 박스. 새 카탈로그가 차기 전에는 옛 박스가 앞, 새 박스가 뒤 */
+export const HOME_BOXES: ProductBox[] = LEGACY_RETIRED ? V2_BOXES : BOXES;
+
 /** 박스 하나의 구성에 확률을 배정한다(시험과 자료 검사용). 규칙을 어기면 던진다 */
 export function scheduledBox(spec: BoxSpec): ProductBox {
   const before = violations.length;

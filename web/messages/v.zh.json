@@ -34,7 +34,8 @@
     "searchNone": "没有该名称的商品。",
     "searchIn": "{box}，每次 {price}",
     "refPrice": "{amount}",
-    "noRating": "暂无评价"
+    "noRating": "暂无评价",
+    "more": "更多盲盒（剩余 {n} 个）"
   },
   "box": {
     "desc": "内含 {n} 种商品，每个区间都标有出现概率。",
@@ -546,5 +547,23 @@
     "scope": "这是本账户的开箱记录。",
     "line": "{amount}，价格的 {n} 倍",
     "verify": "验证"
+  },
+  "cat": {
+    "car": "汽车",
+    "watch": "腕表",
+    "bag": "女包",
+    "jewelry": "珠宝",
+    "fashion": "服饰与鞋",
+    "mobile": "手机平板",
+    "computer": "电脑",
+    "gaming": "游戏",
+    "audio": "音频",
+    "camera": "相机",
+    "home": "家电",
+    "pokemon": "宝可梦",
+    "toy": "玩具",
+    "outdoor": "露营",
+    "sport": "运动",
+    "beauty": "美妆"
   }
 }

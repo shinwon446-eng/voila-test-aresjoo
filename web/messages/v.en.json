@@ -34,7 +34,8 @@
     "searchNone": "No item with that name.",
     "searchIn": "{box}, {price} per open",
     "refPrice": "{amount}",
-    "noRating": "No reviews yet"
+    "noRating": "No reviews yet",
+    "more": "More boxes ({n} left)"
   },
   "box": {
     "desc": "This box holds {n} items, and each tier shows its odds.",
@@ -546,5 +547,23 @@
     "scope": "These are openings from this account.",
     "line": "{amount}, {n}x the price",
     "verify": "Verify"
+  },
+  "cat": {
+    "car": "Cars",
+    "watch": "Watches",
+    "bag": "Handbags",
+    "jewelry": "Jewelry",
+    "fashion": "Fashion and shoes",
+    "mobile": "Mobile",
+    "computer": "Computers",
+    "gaming": "Gaming",
+    "audio": "Audio",
+    "camera": "Cameras",
+    "home": "Home appliances",
+    "pokemon": "Pokemon",
+    "toy": "Toys",
+    "outdoor": "Camping",
+    "sport": "Sports",
+    "beauty": "Beauty"
   }
 }

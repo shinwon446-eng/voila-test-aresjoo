@@ -34,7 +34,8 @@
     "searchNone": "그 이름의 상품이 없습니다.",
     "searchIn": "{box}, 1회 {price}",
     "refPrice": "{amount}",
-    "noRating": "후기 없음"
+    "noRating": "후기 없음",
+    "more": "박스 더 보기 ({n}개 남음)"
   },
   "box": {
     "desc": "구성품 {n}종이 들어 있고, 구간마다 나올 확률이 적혀 있습니다.",
@@ -546,5 +547,23 @@
     "scope": "이 계정에서 연 기록입니다.",
     "line": "{amount}, 낸 값의 {n}배",
     "verify": "검증"
+  },
+  "cat": {
+    "car": "자동차",
+    "watch": "시계",
+    "bag": "여성 가방",
+    "jewelry": "주얼리",
+    "fashion": "패션과 신발",
+    "mobile": "모바일",
+    "computer": "컴퓨터",
+    "gaming": "게임",
+    "audio": "오디오",
+    "camera": "카메라",
+    "home": "생활가전",
+    "pokemon": "포켓몬",
+    "toy": "토이",
+    "outdoor": "캠핑",
+    "sport": "스포츠",
+    "beauty": "뷰티"
   }
 }

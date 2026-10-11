@@ -130,3 +130,12 @@
 - 스크린샷: `qa/cycles/c11/` (gen-pilot, gen-bg00, gen-bg01, gen-gd00, gen-gd01, gen-bars-zoom, gen-zoom-logos, bagfull, goldfull, home)
 - 테스트: 296 통과, design-lint 0, tsc 통과, build 128 페이지
 - 채택: 채택. 커밋 `6032a77`, `1b2166b`. main 배포 성공
+
+## 사이클 11 앞 2 (파운더 지시, 범위 확대)
+- 가장 큰 문제: 생활가전 박스는 사진이 하나도 없었고, 자동차와 슈퍼카 박스는 값 큰 상품(팬텀, 컬리넌 블랙 배지, 911 네 종, 수프라)과 용품에 사진이 없었다
+- 구현: Codex 생성 62장(자동차 22, 슈퍼카 22, 생활가전 18). 범주 규칙 `qa/codex/gen-rules-{car,hm,pkm}.md`, 입력 조립 `web/scripts/images/gen-input.sh`. 생활가전 박스 커버 추가, 테스트의 커버 예외 제거
+- Claude 평가: 시트 세 장으로 전수 검수, 탈락 0. 홈에서 포켓몬 카드 박스를 뺀 모든 박스 카드에 사진. 생성 이미지는 모두 149장
+- Codex 평가: 재생성 9건(배지 글자, 부품 글자, 커넥터, 집게 색, 타이어 글자, 좌석 프레임, 유리 원통). 포켓몬 카드는 도구 거절 3, 폐기 1
+- 스크린샷: `qa/cycles/c11/` (gen-car, gen-sc, gen-hm, home2, homebox, carbox)
+- 테스트: 296 통과, design-lint 0, tsc 통과, build 128 페이지
+- 채택: 채택. 커밋 `dd9a760`. main 배포 성공

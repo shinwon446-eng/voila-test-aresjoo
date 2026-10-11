@@ -139,7 +139,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-star { flex: none; color: var(--v-spark); }
 .v-star--off { color: var(--v-pill-hover); }
 .v-stars { display: inline-flex; gap: 1px; }
-.v-boxcard-price { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.v-boxcard-rating { display: flex; min-height: calc(var(--v-fs-small) * 1.5); align-items: center; margin-bottom: 2px; }
 .v-ratinglink { display: inline-flex; min-height: var(--v-touch); align-items: center; padding: 0; border: 0; background: none; cursor: pointer; }
 .v-ratinglink .v-rating { font-size: var(--v-fs-body); text-decoration: underline; text-underline-offset: 3px; }
 .v-rvsum { display: flex; align-items: center; gap: 24px; border-radius: var(--v-r-card); background: var(--v-card); padding: 20px; }

@@ -6,6 +6,7 @@
 @import "./shop-skin.css";
 @import "./ui.css";
 @import "./opening.css";
+@import "./hero.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

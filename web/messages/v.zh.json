@@ -31,7 +31,8 @@
     "search": "按商品名称查找",
     "searchNone": "没有该名称的商品。",
     "searchIn": "{box}，每次 {price}",
-    "refPrice": "{amount}"
+    "refPrice": "{amount}",
+    "noRating": "暂无评价"
   },
   "box": {
     "desc": "内含 {n} 种商品，每个区间都标有出现概率。",
@@ -496,5 +497,13 @@
     "burstLabel": "爆发，领取全部累积",
     "gaugeNow": "爆发槽 {amount}",
     "gaugeReset": "爆发槽从 {amount} 重新累积"
+  },
+  "hero": {
+    "desc": "注册即送一个。",
+    "cta": "注册领取",
+    "descIn": "现在即可开启。",
+    "ctaIn": "查看盲盒",
+    "pause": "暂停动画",
+    "play": "继续动画"
   }
 }

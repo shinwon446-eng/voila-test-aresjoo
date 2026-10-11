@@ -31,7 +31,8 @@
     "search": "Find by item name",
     "searchNone": "No item with that name.",
     "searchIn": "{box}, {price} per open",
-    "refPrice": "{amount}"
+    "refPrice": "{amount}",
+    "noRating": "No reviews yet"
   },
   "box": {
     "desc": "This box holds {n} items, and each tier shows its odds.",
@@ -496,5 +497,13 @@
     "burstLabel": "Burst, the whole gauge",
     "gaugeNow": "Burst gauge {amount}",
     "gaugeReset": "The gauge restarts from {amount}"
+  },
+  "hero": {
+    "desc": "Sign up and get one.",
+    "cta": "Sign up and get it",
+    "descIn": "Ready to open now.",
+    "ctaIn": "View box",
+    "pause": "Pause animation",
+    "play": "Play animation"
   }
 }

@@ -1,7 +1,7 @@
 "use client";
 /**
  * 박스 목록(메인). 결정 하나: 어느 박스를 볼지.
- * 카드에는 고르는 데 필요한 것만 둔다: 가장 값진 실물의 사진 한 장, 이름, 가격과 별점(같은 줄), 최고 상품가
+ * 카드에는 고르는 데 필요한 것만 둔다: 가장 값진 실물의 사진 한 장, 이름, 별점, 가격, 최고 상품가
  * (2026-10-11 파운더: "정보가 너무 많다"). 대표 상품 이름 셋, 구성품 수, 실물 확률, 가장 흔한 결과는
  * 한 번 눌러 들어가는 박스 화면의 첫 줄과 표에 있다.
  * 상품으로 찾기: 원하는 상품이 어느 박스에 있는지 바로 안다(상품 행 → 그 박스).
@@ -16,6 +16,7 @@ import { useCurrency } from "@/lib/useCurrency";
 import { useInventoryStore } from "@/stores/inventoryStore";
 import { Chips, Empty, ScreenHead } from "@/components/ui/kit";
 import { RatingInline } from "@/components/box/BoxReviews";
+import { HeroBanner } from "@/components/home/HeroBanner";
 import { ratingSummary } from "@/lib/reviewSamples";
 
 type Category = BoxCategory | "all";
@@ -53,6 +54,7 @@ export function BoxList() {
 
   return (
     <div className="v-stack v-stack--lg">
+      {!q && <HeroBanner />}
       <ScreenHead title={t("home.title")} desc={t("home.desc")} />
       {/* 이름표를 따로 두지 않는다. 칸 안의 글이 곧 이름표다(화면 읽기 도구에는 aria-label 로 읽힌다) */}
       <input type="search" className="v-input" aria-label={t("home.search")} placeholder={t("home.search")} value={query} onChange={(e) => setQuery(e.target.value)} autoComplete="off" />
@@ -74,7 +76,7 @@ export function BoxList() {
         <>
           <Chips scroll label={t("home.filter")} value={category} onChange={setCategory} options={CATEGORY_FILTERS.map((c) => ({ value: c.key as Category, label: c.key === "all" ? t("home.all") : tc(c.key) }))} />
           <ul className="v-boxgrid">
-            {boxes.map((box, i) => { const lead = leadOf(box); return <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={fmt(box.price)} top={t("home.top", { amount: fmt(ceilingValue(box)) })} photo={lead?.image.src ?? null} leadName={lead ? itemName(lead) : ""} eager={i < 6} /></li>; })}
+            {boxes.map((box, i) => { const lead = leadOf(box); return <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={fmt(box.price)} top={t("home.top", { amount: fmt(ceilingValue(box)) })} noRating={t("home.noRating")} photo={lead?.image.src ?? null} leadName={lead ? itemName(lead) : ""} eager={i < 6} /></li>; })}
           </ul>
         </>
       )}
@@ -88,14 +90,17 @@ const leadOf = (box: ProductBox): ProductItem | undefined => {
   return real.find((i) => i.image.src) ?? real[0];
 };
 
-function BoxCard({ box, title, price, top, photo, leadName, eager }: { box: ProductBox; title: string; price: string; top: string; photo: string | null; leadName: string; eager: boolean }) {
+function BoxCard({ box, title, price, top, noRating, photo, leadName, eager }: { box: ProductBox; title: string; price: string; top: string; noRating: string; photo: string | null; leadName: string; eager: boolean }) {
+  const rating = ratingSummary(box.slug);
   return (
     <Link href={"/box/" + box.slug} className="v-boxcard">
       {/* 사진이 없는 박스도 같은 자리에 같은 크기의 칸을 둔다(카드 높이가 들쭉날쭉하지 않게). 그 칸에는 대표 상품의 이름을 적는다 */}
       <span className="v-boxcard-photo">{photo ? <img src={photo} alt={leadName} loading={eager ? "eager" : "lazy"} decoding="async" /> : <span className="v-boxcard-nophoto"><span>{leadName}</span></span>}</span>
       <span className="v-boxcard-body">
         <span className="v-card-title">{title}</span>
-        <span className="v-boxcard-price"><span className="v-num v-sub">{price}</span><RatingInline summary={ratingSummary(box.slug)} /></span>
+        {/* 별점은 이름 바로 아래 왼쪽에 둔다(가격 옆에 띄우면 가격과 다툰다). 후기가 없는 박스도 같은 줄을 써서 카드 높이를 맞춘다 */}
+        <span className="v-boxcard-rating">{rating.avg === null ? <span className="v-small">{noRating}</span> : <RatingInline summary={rating} />}</span>
+        <span className="v-num v-sub">{price}</span>
         <span className="v-num v-small">{top}</span>
       </span>
     </Link>

@@ -31,7 +31,8 @@
     "search": "상품 이름으로 찾기",
     "searchNone": "그 이름의 상품이 없습니다.",
     "searchIn": "{box}, 1회 {price}",
-    "refPrice": "{amount}"
+    "refPrice": "{amount}",
+    "noRating": "후기 없음"
   },
   "box": {
     "desc": "구성품 {n}종이 들어 있고, 구간마다 나올 확률이 적혀 있습니다.",
@@ -496,5 +497,13 @@
     "burstLabel": "터졌습니다, 게이지 전부",
     "gaugeNow": "터짐 게이지 {amount}",
     "gaugeReset": "게이지는 {amount}부터 다시 쌓입니다"
+  },
+  "hero": {
+    "desc": "가입하면 하나를 받습니다.",
+    "cta": "가입하고 받기",
+    "descIn": "지금 바로 열 수 있습니다.",
+    "ctaIn": "박스 보기",
+    "pause": "움직임 멈추기",
+    "play": "움직임 다시 켜기"
   }
 }

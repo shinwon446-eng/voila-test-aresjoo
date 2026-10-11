@@ -1,0 +1,5 @@
+<!-- 시안 A 아이콘: 뚜껑이 들린 O -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="VOILA">
+  <path fill="none" stroke="currentColor" stroke-width="11" d="M46.55 22.79A19 19 0 1 1 17.45 22.79"/>
+  <path fill="none" stroke="#d9c39a" stroke-width="11" d="M17.45 22.79A19 19 0 0 1 46.55 22.79" transform="rotate(-18 17.45 22.79) translate(0 -3)"/>
+</svg>

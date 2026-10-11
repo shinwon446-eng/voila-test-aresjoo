@@ -1,0 +1,9 @@
+<!-- F: Beyond the Letter -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" role="img" aria-label="VOILA">
+  <path fill="currentColor" d="M8 8H18L30 40L42 8H52L34 56H26Z" />
+  <path fill="currentColor" fill-rule="evenodd" d="M84 7C69 7 62 16 62 32C62 48 69 57 84 57C99 57 106 48 106 32C106 16 99 7 84 7ZM84 15C94 15 98 21 98 32C98 43 94 49 84 49C74 49 70 43 70 32C70 21 74 15 84 15Z" />
+  <rect fill="currentColor" x="118" y="8" width="9" height="48" />
+  <path fill="currentColor" d="M139 8H148V48H172V56H139Z" />
+  <path fill="currentColor" d="M180 56L198 8H206L224 56H214L202 24L190 56Z" />
+  <path fill="#d9c39a" d="M191 38H232V46H191Z" />
+</svg>

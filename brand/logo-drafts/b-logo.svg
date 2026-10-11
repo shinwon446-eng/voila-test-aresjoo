@@ -1,0 +1,10 @@
+<!-- 시안 B "억음 부호": 가는 대문자 VOILÀ. À 의 부호만 강조색 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3 0 174 64" role="img" aria-label="VOILA" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="8">
+  <polyline points="0,16 14,52 28,16"/>
+  <circle cx="61" cy="34" r="17"/>
+  <line x1="94" y1="16" x2="94" y2="52"/>
+  <polyline points="110,16 110,52 128,52" stroke-linejoin="miter"/>
+  <polyline points="140,52 154,16 168,52"/>
+  <line x1="145.4" y1="40" x2="162.6" y2="40"/>
+  <line x1="146" y1="2.5" x2="153" y2="10" stroke="#d9c39a" stroke-linecap="round"/>
+</svg>

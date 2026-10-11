@@ -1,0 +1,12 @@
+<!-- D: Parted Planes -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 304 64" role="img" aria-label="VOILA">
+  <path fill="currentColor" d="M8 16H30V24H16V48H30V56H8Z" />
+  <path fill="currentColor" d="M46 8H56V48H38V40H48V16H46Z" />
+  <rect fill="#d9c39a" x="38" y="8" width="8" height="8" />
+  <path fill="currentColor" d="M80 8H90L102 40L114 8H124L106 56H98Z" />
+  <path fill="currentColor" fill-rule="evenodd" d="M154 7C139 7 132 16 132 32C132 48 139 57 154 57C169 57 176 48 176 32C176 16 169 7 154 7ZM154 15C164 15 168 21 168 32C168 43 164 49 154 49C144 49 140 43 140 32C140 21 144 15 154 15Z" />
+  <rect fill="currentColor" x="188" y="8" width="9" height="48" />
+  <path fill="currentColor" d="M209 8H218V48H242V56H209Z" />
+  <path fill="currentColor" d="M252 56L270 8H278L296 56H286L274 24L262 56Z" />
+  <path fill="currentColor" d="M262 38H286V46H262Z" />
+</svg>

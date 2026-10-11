@@ -1,0 +1,10 @@
+<!-- 시안 A "뚜껑": 굵은 기하 대문자. O 의 윗부분이 뚜껑처럼 들려 있다 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 64" role="img" aria-label="VOILA">
+  <polygon fill="currentColor" points="0,12 10,12 20,39 30,12 40,12 25,52 15,52"/>
+  <path fill="none" stroke="currentColor" stroke-width="9" d="M77.87 22.04A15.5 15.5 0 1 1 54.13 22.04"/>
+  <path fill="none" stroke="#d9c39a" stroke-width="9" d="M54.13 22.04A15.5 15.5 0 0 1 77.87 22.04" transform="rotate(-18 54.13 22.04) translate(0 -3)"/>
+  <rect fill="currentColor" x="93" y="12" width="9" height="40"/>
+  <polygon fill="currentColor" points="110,12 119,12 119,43 136,43 136,52 110,52"/>
+  <polygon fill="currentColor" points="154,12 164,12 179,52 169,52 159,24.5 149,52 139,52"/>
+  <rect fill="currentColor" x="149" y="37" width="20" height="7"/>
+</svg>

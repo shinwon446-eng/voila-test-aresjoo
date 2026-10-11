@@ -1,0 +1,17 @@
+<!-- 시안 C "주소": 소문자 voila.gg. 점만 강조색, gg 는 한 단 낮게 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 64" role="img" aria-label="voila.gg" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+  <polyline points="3.5,18 14.5,46 25.5,18"/>
+  <circle cx="45.5" cy="32" r="14"/>
+  <line x1="72.5" y1="18" x2="72.5" y2="46"/>
+  <circle cx="72.5" cy="5.5" r="4.2" fill="currentColor" stroke="none"/>
+  <line x1="87.5" y1="4" x2="87.5" y2="46"/>
+  <circle cx="115.5" cy="32" r="14"/>
+  <line x1="129.5" y1="18" x2="129.5" y2="46"/>
+  <circle cx="142.5" cy="42.5" r="4.6" fill="#d9c39a" stroke="none"/>
+  <g opacity="0.55">
+    <circle cx="167.5" cy="32" r="14"/>
+    <path d="M181.5 18V46A13 10.5 0 0 1 168.5 56.5H161"/>
+    <circle cx="208.5" cy="32" r="14"/>
+    <path d="M222.5 18V46A13 10.5 0 0 1 209.5 56.5H202"/>
+  </g>
+</svg>

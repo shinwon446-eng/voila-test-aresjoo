@@ -1,0 +1,6 @@
+<!-- 시안 B 아이콘: À 한 글자 -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="VOILA" fill="none" stroke="currentColor" stroke-width="6" stroke-miterlimit="8">
+  <polyline points="13,58 32,18 51,58"/>
+  <line x1="20" y1="44" x2="44" y2="44"/>
+  <line x1="21" y1="3.5" x2="29" y2="11" stroke="#d9c39a" stroke-linecap="round"/>
+</svg>

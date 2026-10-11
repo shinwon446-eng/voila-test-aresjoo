@@ -60,7 +60,6 @@
     "confirmTitle": "{amount} payment",
     "confirmDesc": "Paid from your balance, then opened right away.",
     "openFail": "The box did not open. Your balance is unchanged.",
-    "photoNote": "Photos are staged images.",
     "strip": "Top items",
     "tiers": "Odds by tier",
     "evNote": "Expected value is the odds-weighted average you would receive, with every result taken as USDT, divided by the box price. It is an average over many opens and does not guarantee a single result. An item taken as USDT pays {pct}% of its reference price.",
@@ -76,7 +75,6 @@
     "noReviews": "No reviews yet. Only real openings can be reviewed.",
     "reviewProof": "Tied to a real opening record.",
     "stripNote": "Highest value first.",
-    "mostLikely": "{price} per open. The most common result is {amount} cashback ({pct} chance); the odds of any physical item are {real}.",
     "compareNote": "Price per open and odds for this item. No box sells the item outright.",
     "guestNote": "{n} open, {amount}. After login, your USDT balance pays.",
     "takeAmount": "If taken as USDT ({pct}% of reference price)",
@@ -96,7 +94,11 @@
     "ratingCount": "{n} reviews",
     "ratingBasis": "Ratings come from people who received an item, for the item and its delivery.",
     "starsOf": "{n} stars",
-    "reviewShipped": "Delivered"
+    "reviewShipped": "Delivered",
+    "lead": "{price} per open, top item value {top}",
+    "commonRow": "Most common result",
+    "realRow": "Chance of a physical item",
+    "notes": "Good to know"
   },
   "reveal": {
     "skip": "Skip",

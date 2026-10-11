@@ -60,7 +60,6 @@
     "confirmTitle": "支付 {amount}",
     "confirmDesc": "从余额支付后立即开箱。",
     "openFail": "未能开箱。余额没有变化。",
-    "photoNote": "图片为演示图。",
     "strip": "代表实物",
     "tiers": "各区间概率",
     "evNote": "期望价值比例是把所有结果都按领取 USDT 计算后，按概率加权的平均到账额除以盲盒价格。它是多次开箱的平均值，不保证单次结果。商品领取 USDT 时为参考价的 {pct}%。",
@@ -76,7 +75,6 @@
     "noReviews": "暂无评价。只有真实开箱记录才能评价。",
     "reviewProof": "与真实开箱记录绑定的评价。",
     "stripNote": "按价值从高到低。",
-    "mostLikely": "每次 {price}。最常见的结果是 {amount} 返现（出现概率 {pct}），任意实物出现的概率为 {real}。",
     "compareNote": "同一商品的单次价格与概率。任何盲盒都不是直接购买该商品。",
     "guestNote": "{n} 次，{amount}。登录后用 USDT 余额支付。",
     "takeAmount": "领取 USDT 时（参考价的 {pct}%）",
@@ -96,7 +94,11 @@
     "ratingCount": "{n} 条评价",
     "ratingBasis": "评分由收到商品的用户针对商品与配送给出。",
     "starsOf": "{n} 星",
-    "reviewShipped": "已送达"
+    "reviewShipped": "已送达",
+    "lead": "每次 {price}，最高商品价值 {top}",
+    "commonRow": "最常见结果",
+    "realRow": "获得实物的概率",
+    "notes": "须知"
   },
   "reveal": {
     "skip": "跳过",

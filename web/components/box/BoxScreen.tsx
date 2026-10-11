@@ -101,7 +101,6 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const boxReviews = useMemo(() => reviews.filter((r) => r.boxSlug === box.slug && !isExampleReview(r)).slice(0, 5), [reviews, box.slug]);
   const rating = useMemo(() => ratingSummary(box.slug, boxReviews.map((r) => r.rating)), [box.slug, boxReviews]);
   // 커버가 대표 실물의 사진이면 "연출 이미지" 안내가 필요 없다
-  const stockCover = !!box.image.src && !table.some((i) => i.image.src === box.image.src);
 
   useEffect(() => { void useOpeningJournal.persist.rehydrate(); }, []);
   // 이 계정의 보관함에는 있는데 아직 못 본 개봉(연출 중에 새로 고쳤거나 떠난 경우). 이 박스의 것과 다른 박스의 것을 나눠 안내한다.
@@ -162,7 +161,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   return (
     <div className="v-boxlayout">
       <div className="v-boxlayout-main">
-      <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.mostLikely", { price: fmt(box.price), amount: fmt(common.value), pct: formatRate(common.dropRate), real: formatRate(realOdds) })} />
+      <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.lead", { price: fmt(box.price), top: fmt(ceilingValue(box)) })} />
       {rating.avg !== null && <button type="button" className="v-ratinglink" onClick={() => document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth", block: "start" })}><RatingInline summary={rating} long /></button>}
       {strip.length >= 3 ? (
         <div className="v-boxlayout-hero">
@@ -180,7 +179,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
           </ul>
         </div>
       ) : box.image.src && (
-        <div className="v-boxlayout-hero"><div className="v-boxhero"><img src={box.image.src} alt="" /></div>{stockCover && <p className="v-small">{t("box.photoNote")}</p>}</div>
+        <div className="v-boxlayout-hero"><div className="v-boxhero"><img src={box.image.src} alt="" /></div></div>
       )}
       <BoxReviews box={box} member={boxReviews} receivedTag={receivedTag} />
       <aside className="v-boxside">
@@ -188,13 +187,12 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         <Row label={t("box.price")}>{fmt(box.price)}</Row>
         <Row label={t("box.burst")}>{fmt(gauge)}</Row>
         <Row label={t("box.top")}>{fmt(ceilingValue(box))}</Row>
+        <Row label={t("box.commonRow")}>{fmt(common.value)}, {formatRate(common.dropRate)}</Row>
+        <Row label={t("box.realRow")}>{formatRate(realOdds)}</Row>
         <Row label={t("box.low")}>{fmt(box.guaranteedMin)}</Row>
         <Row label={t("box.belowOdds")}>{formatRate(belowOdds)}</Row>
         <Row label={t("box.ev")}>{(cashReturn(box) * 100).toFixed(1)}%, {t("box.evBasis")}</Row>
       </Rows>
-      <p className="v-small">{t("box.burstNote", { pct: Math.round(BURST.share * 100), odds: formatRate(BURST.slots / 10_000), seed: fmt(burstSeed(box.price)) })}</p>
-      <p className="v-small">{t("box.evNote", { pct: Math.round(REFUND_RATE * 100) })}</p>
-      <div className="v-links"><TextLink href="/verify">{t("box.verifyLink")}</TextLink></div>
       <Rows label={t("box.tiers")}>
         {groups.map((g) => <Row key={g.key} label={t(TIER_LABEL[g.key])}>{formatRate(g.rate)}</Row>)}
       </Rows>
@@ -240,8 +238,13 @@ export function BoxScreen({ box }: { box: ProductBox }) {
           </div>
         ))}
 
-        <div className="v-links"><TextLink href="/verify">{t("nav.verify")}</TextLink></div>
       </section>
+      <details className="v-boxlayout-notes v-notes">
+        <summary>{t("box.notes")}</summary>
+        <p className="v-small">{t("box.burstNote", { pct: Math.round(BURST.share * 100), odds: formatRate(BURST.slots / 10_000), seed: fmt(burstSeed(box.price)) })}</p>
+        <p className="v-small">{t("box.evNote", { pct: Math.round(REFUND_RATE * 100) })}</p>
+        <div className="v-links"><TextLink href="/verify">{t("box.verifyLink")}</TextLink></div>
+      </details>
       </div>
 
       <Sheet open={!!current && !opened} onClose={() => { setItemId(null); setComparing(false); setCountries(false); }} title={current ? itemName(current) : ""} closeLabel={t("common.close")}>

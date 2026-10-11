@@ -2,10 +2,10 @@
 // 넣었을 때 원하는 결과가 나오는 시드와 회차를 찾아 적어 둘 뿐이다. 운영 결과와는 아무 관계가 없다.
 //   npx tsx scripts/capture/opening-fixtures.ts            → scripts/capture/opening-fixtures.json
 // 하나짜리: 박스마다 결과 종류별 회차 하나. 연속: 0번부터 차례로 열었을 때 정해진 흐름이 나오는 clientSeed.
-// 확률표(lib/products.ts)가 바뀌면 다시 돌려야 한다. 2026-10-11 확률표(환수율 99%, USDT 구간 0.02배에서 20배, 상품 몫 22%) 기준.
+// 확률표(lib/products.ts)가 바뀌면 다시 돌려야 한다. 2026-10-11 사다리 확률표(받는 값 기준 99%, 당첨 구간 1배에서 500배, 낮은 결과 0.05배와 0.25배) 기준.
 import { createHash, createHmac } from "node:crypto";
 import { writeFileSync } from "node:fs";
-import { BOXES, dropTable, sellValueOf, type ProductItem } from "../../lib/products";
+import { BOXES, LOW_TIERS, dropTable, sellValueOf, type ProductItem } from "../../lib/products";
 import { rollRanges, ROLL_RANGE } from "../../lib/fairness";
 
 const SERVER_SEED = "opening-fixture-server-seed";
@@ -25,7 +25,7 @@ for (const slug of ["dollar-apple", "vault-gold", "vault-handbag"]) {
   // 사진이 있는 실물만(결과 화면의 상품 구도를 보려는 것이다)
   const physical = table.filter((i) => i.kind === "physical" && i.image.src).sort((a, b) => b.value - a.value);
   const wants: Record<string, string | undefined> = {
-    low: wave(0.02), low2: wave(0.1), x1: wave(1), x2: wave(2), x5: wave(5), x10: wave(10), x20: wave(20),
+    low: wave(LOW_TIERS[0]), low2: wave(LOW_TIERS[1]), x1: wave(1), x2: wave(2), x4: wave(4), x8: wave(8), x15: wave(15),
     itemTop: physical[0]?.id, itemMid: physical[Math.floor(physical.length / 2)]?.id, itemLow: physical[physical.length - 1]?.id,
   };
   const clientSeed = "opening-fixture-client";
@@ -38,14 +38,15 @@ for (const slug of ["dollar-apple", "vault-gold", "vault-handbag"]) {
   }
   // 연속: 0번부터 차례로. 숫자는 USDT 구간의 배수, "item" 은 USDT 가 아닌 상품 아무거나
   const matches = (item: ProductItem, step: Step) => (step === "item" ? !item.id.startsWith("wave-") && item.kind !== "cash" : item.id.startsWith("wave-") && item.value === +(box.price * step).toFixed(2));
+  const L = LOW_TIERS[0];
   const sequences: Record<string, Step[]> = {
-    lowLowLowHighHighHigh: [0.02, 0.02, 0.02, 2, 2, 2],
-    fiveLowThenBig: [0.02, 0.02, 0.02, 0.02, 0.02, 10],
-    tenSmall: Array(10).fill(0.02),
-    smallBigSmall: [0.02, 10, 0.02],
-    threeBig: [5, 2, 5],
-    mixed: [0.1, 2, 0.02, 1, 5],
-    withItem: [0.02, "item", 0.02, 2, 0.02],
+    lowLowLowHighHighHigh: [L, L, L, 2, 2, 2],
+    fiveLowThenBig: [L, L, L, L, L, 8],
+    tenSmall: Array(10).fill(L),
+    smallBigSmall: [L, 8, L],
+    threeBig: [4, 2, 4],
+    mixed: [LOW_TIERS[1], 2, L, 1, 4],
+    withItem: [L, "item", L, 2, L],
   };
   const seq: Record<string, { clientSeed: string; nonce: number; steps: ReturnType<typeof describe>[] }> = {};
   for (const [name, pattern] of Object.entries(sequences)) {

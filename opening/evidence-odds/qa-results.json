@@ -1,5 +1,5 @@
 {
- "at": "2026-10-11T05:13:58.987Z",
+ "at": "2026-10-11T05:49:27.355Z",
  "total": 89,
  "failed": 0,
  "results": [
@@ -11,9 +11,9 @@
   },
   {
    "scenario": "s1",
-   "name": "50 USDT 박스 가장 작은 결과: 잔액 = 10000 - 50 + 1",
+   "name": "50 USDT 박스 가장 작은 결과: 잔액 = 10000 - 50 + 2.5",
    "pass": true,
-   "detail": "9951"
+   "detail": "9952.5"
   },
   {
    "scenario": "s1",
@@ -25,7 +25,7 @@
    "scenario": "s1",
    "name": "거래 기록과 보관함 기록이 같은 개봉 번호로 이어진다",
    "pass": true,
-   "detail": "[\"vault-goldx1:op_37bf28c5-8df7-42f6-b930-9e34a80431c3\",\"vault-goldx1:op_c743d999-afb0-46f6-8d20-40d0810cfc1c\"]"
+   "detail": "[\"vault-goldx1:op_0fe151d0-a4bf-4858-968d-178e6f8a4d39\",\"vault-goldx1:op_c2d80439-6fe6-43a3-9cee-d131f5e2422f\"]"
   },
   {
    "scenario": "s1",
@@ -35,9 +35,9 @@
   },
   {
    "scenario": "s2",
-   "name": "low: 잔액 9999.02",
+   "name": "low: 잔액 9999.05",
    "pass": true,
-   "detail": "9999.02"
+   "detail": "9999.05"
   },
   {
    "scenario": "s2",
@@ -49,7 +49,7 @@
    "scenario": "s2",
    "name": "low: 줄었다고 적는다",
    "pass": true,
-   "detail": "잔액 9,999.02 USDT 받은 금액 0.02 USDT 1 USDT 사용 잔액 0.98 USDT 감소 잔액에 반영했습니다. 나올 확률 61.1559% 한 번 "
+   "detail": "잔액 9,999.05 USDT 받은 금액 0.05 USDT 1 USDT 사용 잔액 0.95 USDT 감소 잔액에 반영했습니다. 나올 확률 48.6999% 한 번 "
   },
   {
    "scenario": "s2",
@@ -95,7 +95,7 @@
    "scenario": "s2",
    "name": "x2: 늘었다고 적는다",
    "pass": true,
-   "detail": "잔액 10,001 USDT 받은 금액 2 USDT 1 USDT 사용 잔액 1 USDT 증가 잔액에 반영했습니다. 나올 확률 18% 한 번 더 열기, 1 USDT "
+   "detail": "잔액 10,001 USDT 받은 금액, 낸 값의 2배 2 USDT 1 USDT 사용 잔액 1 USDT 증가 잔액에 반영했습니다. 나올 확률 12% 한 번 더 열기"
   },
   {
    "scenario": "s2",
@@ -104,25 +104,25 @@
   },
   {
    "scenario": "s2",
-   "name": "x10: 잔액 10009",
+   "name": "x8: 잔액 10007",
    "pass": true,
-   "detail": "10009"
+   "detail": "10007"
   },
   {
    "scenario": "s2",
-   "name": "x10: 구매 한 번, 보관함 기록 하나",
+   "name": "x8: 구매 한 번, 보관함 기록 하나",
    "pass": true,
    "detail": "opens 1 items 1"
   },
   {
    "scenario": "s2",
-   "name": "x10: 늘었다고 적는다",
+   "name": "x8: 늘었다고 적는다",
    "pass": true,
-   "detail": "잔액 10,009 USDT 받은 금액 10 USDT 1 USDT 사용 잔액 9 USDT 증가 잔액에 반영했습니다. 나올 확률 1% 한 번 더 열기, 1 USDT "
+   "detail": "잔액 10,007 USDT 받은 금액, 낸 값의 8배 8 USDT 1 USDT 사용 잔액 7 USDT 증가 잔액에 반영했습니다. 나올 확률 0.32% 한 번 더 "
   },
   {
    "scenario": "s2",
-   "name": "x10: 가로 넘침 없음",
+   "name": "x8: 가로 넘침 없음",
    "pass": true
   },
   {
@@ -141,7 +141,7 @@
    "scenario": "s2",
    "name": "itemTop: 보관 상태와 받는 방법 선택",
    "pass": true,
-   "detail": "잔액 9,999 USDT VOILA 애플 비전 프로 참고가 3,500 USDT 보관함에 넣었습니다 나올 확률 0.0001%. 1 USDT 사용 받는 방법 선택 한 번 더 열기, 1 USDT 개봉 결"
+   "detail": "잔액 9,999 USDT VOILA 애플 비전 프로 참고가 3,500 USDT 낸 값의 3500배 보관함에 넣었습니다 나올 확률 0.0001%. 1 USDT 사용 받는 방법 선택 한 번 더 열기, "
   },
   {
    "scenario": "s2",
@@ -152,7 +152,7 @@
    "scenario": "s3",
    "name": "열기를 연달아 세 번 눌러도 구매는 한 번",
    "pass": true,
-   "detail": "opens 1 items 1 balance 9999.02"
+   "detail": "opens 1 items 1 balance 9999.05"
   },
   {
    "scenario": "s3",
@@ -170,13 +170,13 @@
    "scenario": "s3",
    "name": "건너뛰어도 결과와 잔액이 같다",
    "pass": true,
-   "detail": "balance 10004"
+   "detail": "balance 10003"
   },
   {
    "scenario": "s3",
    "name": "건너뛰기는 바로 결과로 간다",
    "pass": true,
-   "detail": "221ms"
+   "detail": "227ms"
   },
   {
    "scenario": "s4",
@@ -194,7 +194,7 @@
    "scenario": "s4",
    "name": "받은 뒤 가장 큰 글자는 실제로 받은 금액이고 잔액 변화를 적는다",
    "pass": true,
-   "detail": "잔액 10,018 USDT 받은 금액 19 USDT 1 USDT 사용 잔액 18 USDT 증가 USB-C 충전 케이블 2m, 참고가 20 USDT. USDT로 받았습니다. 나올 확률 0.0632% 한 번 더 열기, "
+   "detail": "잔액 10,018 USDT 받은 금액, 낸 값의 19배 19 USDT 1 USDT 사용 잔액 18 USDT 증가 USB-C 충전 케이블 2m, 참고가 20 USDT. USDT로 받았습니다. 나올 확률 0.2211% "
   },
   {
    "scenario": "s4",
@@ -252,7 +252,7 @@
    "scenario": "s6",
    "name": "구매 실패 뒤 다시 누르면 정상으로 열린다",
    "pass": true,
-   "detail": "balance 9999.02"
+   "detail": "balance 9999.05"
   },
   {
    "scenario": "s6",
@@ -282,25 +282,25 @@
    "scenario": "s7",
    "name": "새로 고친 뒤: 구매는 한 번, 회차도 한 번만 썼다",
    "pass": true,
-   "detail": "opens 1 nonce 28 balance 10004"
+   "detail": "opens 1 nonce 15 balance 10003"
   },
   {
    "scenario": "s7",
    "name": "못 본 결과: 보관함 기록에 개봉 번호가 있고 아직 본 목록에 없다",
    "pass": true,
-   "detail": "{\"items\":[{\"id\":\"own_d74db56e-ea99-4a0a-a3b3-20957f83ba94\",\"itemId\":\"wave-drop-500\",\"status\":\"SOLD\",\"openingId\":\"op_a1af2895-93d7-45e6-8df0-7a51175ea124\"}],\"seen\":[]}"
+   "detail": "{\"items\":[{\"id\":\"own_3131fbda-733f-4d03-884e-7778900e7aef\",\"itemId\":\"wave-drop-400\",\"status\":\"SOLD\",\"openingId\":\"op_37887d77-3b57-4a89-bd14-e4c5ec0c6808\"}],\"seen\":[]}"
   },
   {
    "scenario": "s7",
    "name": "다시 보여 준 결과가 처음 정해진 결과와 같다",
    "pass": true,
-   "detail": "잔액 10,004 USDT 받은 금액 5 USDT 1 USDT 사용 잔액 4 USDT 증가 잔액에 반영했습니다. 나올 확률 4% 아까 연 박스의 결과입니다. 새로 뽑지 않았습니다. 한 번 더 열기, 1 USDT 개봉"
+   "detail": "잔액 10,003 USDT 받은 금액, 낸 값의 4배 4 USDT 1 USDT 사용 잔액 3 USDT 증가 잔액에 반영했습니다. 나올 확률 4.5% 아까 연 박스의 결과입니다. 새로 뽑지 않았습니다. 한 번 더 열기"
   },
   {
    "scenario": "s7",
    "name": "다시 보여 주는 동안 새 구매나 새 회차가 없다",
    "pass": true,
-   "detail": "opens 1 nonce 28"
+   "detail": "opens 1 nonce 15"
   },
   {
    "scenario": "s7",
@@ -314,21 +314,21 @@
   },
   {
    "scenario": "s8",
-   "name": "lowLowLowHighHighHigh: 0.02, 0.02, 0.02, 2, 2, 2 이 차례로 나오고 잔액이 매번 맞다",
+   "name": "lowLowLowHighHighHigh: 0.05, 0.05, 0.05, 2, 2, 2 이 차례로 나오고 잔액이 매번 맞다",
    "pass": true,
-   "detail": "balance 10000.06 expect 10000.06"
+   "detail": "balance 10000.15 expect 10000.15"
   },
   {
    "scenario": "s8",
-   "name": "fiveLowThenBig: 0.02, 0.02, 0.02, 0.02, 0.02, 10 이 차례로 나오고 잔액이 매번 맞다",
+   "name": "fiveLowThenBig: 0.05, 0.05, 0.05, 0.05, 0.05, 8 이 차례로 나오고 잔액이 매번 맞다",
    "pass": true,
-   "detail": "balance 10004.1 expect 10004.1"
+   "detail": "balance 10002.25 expect 10002.25"
   },
   {
    "scenario": "s8",
    "name": "움직임 줄이기: 상자 연출 없이 결과부터",
    "pass": true,
-   "detail": "74ms box 0"
+   "detail": "144ms box 0"
   },
   {
    "scenario": "s9",
@@ -418,43 +418,43 @@
    "scenario": "s10",
    "name": "그대로: 95% 프레임이 34ms 이내",
    "pass": true,
-   "detail": "프레임 79, 평균 16.7ms, 95% 16.8ms, 최대 16.8ms, 50ms 초과 0회, 결과까지 880ms, 다음 행동까지 1228ms"
+   "detail": "프레임 80, 평균 16.7ms, 95% 16.8ms, 최대 16.8ms, 50ms 초과 0회, 결과까지 887ms, 다음 행동까지 1248ms"
   },
   {
    "scenario": "s10",
    "name": "그대로: 누른 뒤 결과까지 1100ms 이내",
    "pass": true,
-   "detail": "결과까지 880ms, 다음 행동까지 1228ms"
+   "detail": "결과까지 887ms, 다음 행동까지 1248ms"
   },
   {
    "scenario": "s10",
    "name": "CPU 4배 느리게: 95% 프레임이 34ms 이내",
    "pass": true,
-   "detail": "프레임 90, 평균 18.3ms, 95% 33.2ms, 최대 66.7ms, 50ms 초과 2회, 결과까지 1040ms, 다음 행동까지 1425ms"
+   "detail": "프레임 90, 평균 18.1ms, 95% 33.3ms, 최대 66.6ms, 50ms 초과 1회, 결과까지 1030ms, 다음 행동까지 1411ms"
   },
   {
    "scenario": "s10",
    "name": "CPU 4배 느리게: 누른 뒤 결과까지 1600ms 이내",
    "pass": true,
-   "detail": "결과까지 1040ms, 다음 행동까지 1425ms"
+   "detail": "결과까지 1030ms, 다음 행동까지 1411ms"
   },
   {
    "scenario": "s11",
    "name": "5개 열기: 구매 한 건, 기록 다섯, 잔액이 맞다",
    "pass": true,
-   "detail": "balance 9997.06 expect 9997.06 items 5"
+   "detail": "balance 9997.15 expect 9997.15 items 5"
   },
   {
    "scenario": "s11",
    "name": "5개 열기: 잔액에 들어온 것과 보관 상품을 나눠 적는다",
    "pass": true,
-   "detail": "잔액 9,997.06 USDT 5개를 열었습니다 받은 상품은 보관함에 있습니다. 쓴 금액 5 USDT 잔액에 반영 2.06 USDT 보관 상품 1개 참고가 25 USDT 잔액 변화 2.94 USDT 감소 애플 기프트카드 $25, 보관 중 25 USDT › 인스턴트 드롭, 잔액 반영 2 USDT 즉시 캐시"
+   "detail": "잔액 9,997.15 USDT 5개를 열었습니다 받은 상품은 보관함에 있습니다. 가장 큰 결과 애플 기프트카드 $10 참고가 10 USDT, 10배 쓴 금액 5 USDT 잔액에 반영 2.15 USDT 보관 상품 1개 참고가 10 USDT 잔액 변화 2.85 USDT 감소 애플 기프트카드 $10, 보관 중"
   },
   {
    "scenario": "s11",
    "name": "여러 개 결과에서 상품을 USDT 로 받는다: 잔액과 요약이 함께 바뀐다",
    "pass": true,
-   "detail": "balance 10020.81 잔액 10,020.81 USDT 5개를 열었습니다 받은 상품은 보관함에 있습니다. 쓴 금액 5 USDT 잔액에 반영 25.81 USDT 잔액 변화 20.81 USDT 증가 애플 기프트카드 $25, USDT로 받음 2"
+   "detail": "balance 10006.65 잔액 10,006.65 USDT 5개를 열었습니다 받은 상품은 보관함에 있습니다. 가장 큰 결과 애플 기프트카드 $10 참고가 10 USDT, 10배 쓴 금액 5 USDT 잔액에 반영 11.65 USDT 잔액 변화 "
   },
   {
    "scenario": "s11",
@@ -484,7 +484,7 @@
    "scenario": "s12",
    "name": "짧게 보기 켬: 결과까지 0.7초 이내",
    "pass": true,
-   "detail": "결과까지 503ms, 다음 행동까지 854ms"
+   "detail": "결과까지 499ms, 다음 행동까지 848ms"
   },
   {
    "scenario": "s13",
@@ -524,9 +524,9 @@
   },
   {
    "scenario": "s14",
-   "name": "두 탭에서 한 번씩: 구매 둘, 기록 둘, 회차 둘, 잔액 9998.04",
+   "name": "두 탭에서 한 번씩: 구매 둘, 기록 둘, 회차 둘, 잔액 9998.1",
    "pass": true,
-   "detail": "opens 2 items 2 nonce 2 balance 9998.04"
+   "detail": "opens 2 items 2 nonce 2 balance 9998.1"
   }
  ]
 }

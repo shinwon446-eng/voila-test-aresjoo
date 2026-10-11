@@ -13,7 +13,7 @@ import { useTranslations } from "next-intl";
 import { dropTable, formatRate, sellValueOf, type ProductBox } from "@/lib/products";
 import type { OpeningResult } from "@/lib/opening";
 import { settleTake } from "@/lib/openingSettle";
-import { OPENING_ARM_DELAY_MS, openingChange } from "@/lib/openingFlow";
+import { OPENING_ARM_DELAY_MS, openingChange, timesOf } from "@/lib/openingFlow";
 import { OpeningBox } from "@/components/box/Opening";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
@@ -78,6 +78,18 @@ export function Reveal({ box, results, cost, recovered, initialTaken, initialShi
 
   const table = useMemo(() => dropTable(box), [box]);
   const sorted = useMemo(() => [...results].sort((a, b) => b.item.value - a.item.value), [results]);
+  // 목록: 상품은 하나씩, 같은 금액의 USDT 결과는 한 줄로 묶는다(100개를 열면 같은 줄이 수십 번 나온다)
+  const lines = useMemo(() => {
+    const out: { r: OpeningResult; count: number }[] = [];
+    for (const r of sorted) {
+      const last = out[out.length - 1];
+      if (r.item.kind === "cash" && last && last.r.item.id === r.item.id) last.count += 1;
+      else out.push({ r, count: 1 });
+    }
+    return out;
+  }, [sorted]);
+  // 가장 큰 결과 하나. 한 번 여는 값의 두 배가 안 되면 내세우지 않는다
+  const best = sorted.length > 1 && timesOf(sorted[0].item.value, box.price) !== null ? sorted[0] : null;
   const single = results.length === 1 ? results[0] : null;
   const total = results.reduce((sum, r) => sum + r.item.value, 0);
   const again = t("reveal.again", { amount: fmt(cost) });
@@ -169,6 +181,16 @@ export function Reveal({ box, results, cost, recovered, initialTaken, initialShi
                     <h2 className="v-title">{allCash ? t("reveal.cashTitle", { amount: fmt(total) }) : t("reveal.multiTitle", { n: results.length })}</h2>
                     <p className="v-desc">{t(allCash ? "reveal.cashDesc" : "reveal.multiDesc")}</p>
                   </div>
+                  {best && (
+                    <div className="v-best">
+                      {best.item.image.src && <span className="v-best-photo"><img src={best.item.image.src} alt="" /></span>}
+                      <span className="v-best-body">
+                        <span className="v-small">{t("op.best")}</span>
+                        <span className="v-best-name">{best.item.kind === "cash" ? fmt(best.item.value) : itemName(best.item)}</span>
+                        <span className="v-small v-num">{best.item.kind === "cash" ? "" : t("op.refLine", { amount: fmt(best.item.value) }) + ", "}{t("op.timesShort", { n: timesOf(best.item.value, box.price) })}</span>
+                      </span>
+                    </div>
+                  )}
                   {/* 쓴 것, 잔액에 들어온 것, 아직 상품으로 있는 것, 그래서 잔액이 달라진 만큼을 따로 적는다 */}
                   <Rows>
                     <Row label={t("reveal.spent")}>{fmt(cost)}</Row>
@@ -178,15 +200,21 @@ export function Reveal({ box, results, cost, recovered, initialTaken, initialShi
                   </Rows>
                   {takeFailed && <Line fail>{t("op.failed")}</Line>}
                   <ul className="v-rows" aria-label={t("reveal.results")}>
-                    {sorted.map((r, i) => {
+                    {lines.map(({ r, count }, i) => {
                       const state = r.item.kind === "cash" ? t("op.tagCash") : shipped[r.ownedId] ? t("reveal.shippedTag") : taken[r.ownedId] !== undefined ? t("reveal.takenTag") : t("op.tagKept");
                       const open = r.item.kind !== "cash" && !shipped[r.ownedId] && taken[r.ownedId] === undefined;
+                      const times = timesOf(r.item.value, box.price);
+                      const label = <span>{itemName(r.item)}<span className="v-small">, {state}{times !== null ? ", " + t("op.timesShort", { n: times }) : ""}{count > 1 ? ", " + t("op.countTimes", { n: count }) : ""}</span></span>;
                       return (
                         <li key={r.ownedId || i} className="v-resultrow" style={{ animationDelay: Math.min(i * 0.06, 0.6) + "s" }}>
-                          <button type="button" className="v-row v-row--link v-row--button" onClick={() => { if (!armed) return; if (open) setPicked(r); else verify(r); }} aria-label={itemName(r.item) + ", " + state}>
-                            <span>{itemName(r.item)}<span className="v-small">, {state}</span></span>
-                            <span className="v-num">{fmt(taken[r.ownedId] ?? r.item.value)}{open ? " ›" : ""}</span>
-                          </button>
+                          {count > 1 ? (
+                            <div className="v-row">{label}<span className="v-num">{fmt(r.item.value)}</span></div>
+                          ) : (
+                            <button type="button" className="v-row v-row--link v-row--button" onClick={() => { if (!armed) return; if (open) setPicked(r); else verify(r); }} aria-label={itemName(r.item) + ", " + state}>
+                              {label}
+                              <span className="v-num">{fmt(taken[r.ownedId] ?? r.item.value)}{open ? " ›" : ""}</span>
+                            </button>
+                          )}
                         </li>
                       );
                     })}

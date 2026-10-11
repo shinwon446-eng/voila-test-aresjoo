@@ -482,6 +482,11 @@
     "receiveNext": "받을 상품 받기 (남은 {n}개)",
     "tagCash": "잔액 반영",
     "tagKept": "보관 중",
-    "recoverElsewhere": "다른 박스에 보지 못한 개봉 결과가 있습니다"
+    "recoverElsewhere": "다른 박스에 보지 못한 개봉 결과가 있습니다",
+    "times": ", 낸 값의 {n}배",
+    "timesShort": "{n}배",
+    "best": "가장 큰 결과",
+    "countTimes": "{n}번",
+    "timesLine": "낸 값의 {n}배"
   }
 }

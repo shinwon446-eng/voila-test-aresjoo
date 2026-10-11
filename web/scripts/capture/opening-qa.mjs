@@ -104,9 +104,9 @@ await run("s1", async () => {
   await s.context.close();
 });
 
-// s2: 결과 다섯(가장 작은 결과, 낸 값과 같음, 두 배, 열 배, 가장 큰 상품)과 돈 계산
+// s2: 결과 다섯(가장 작은 결과, 낸 값과 같음, 두 배, 여덟 배, 가장 큰 상품)과 돈 계산
 await run("s2", async () => {
-  for (const [label, kind] of [["09-small", "low"], ["10-break-even", "x1"], ["11a-double", "x2"], ["11-positive", "x10"], ["12-exceptional", "itemTop"]]) {
+  for (const [label, kind] of [["09-small", "low"], ["10-break-even", "x1"], ["11a-double", "x2"], ["11-positive", "x8"], ["12-exceptional", "itemTop"]]) {
     const s = await session({ fixture: "single:" + kind });
     await s.openBtn().click(); await s.settled(); await s.page.waitForTimeout(kind === "itemTop" ? 2300 : 700); await s.shot(label);
     const l = await s.ledger(); const t = await s.text(); const expect = after(s.fx, s.price);
@@ -114,7 +114,7 @@ await run("s2", async () => {
     check("s2", `${kind}: 구매 한 번, 보관함 기록 하나`, l.opens === 1 && l.items.length === 1, `opens ${l.opens} items ${l.items.length}`);
     if (kind === "low") check("s2", "low: 줄었다고 적는다", t.includes("잔액 " + usdt(s.price - s.fx.value) + " 감소") && !/증가/.test(t), t.slice(0, 90));
     if (kind === "x1") check("s2", "x1: 낸 값과 같으면 변화 없음이라고 적는다", /잔액 변화 없음/.test(t) && !/증가|감소/.test(t), t.slice(0, 90));
-    if (kind === "x2" || kind === "x10") check("s2", `${kind}: 늘었다고 적는다`, t.includes("잔액 " + usdt(s.fx.value - s.price) + " 증가") && !/감소/.test(t), t.slice(0, 90));
+    if (kind === "x2" || kind === "x8") check("s2", `${kind}: 늘었다고 적는다`, t.includes("잔액 " + usdt(s.fx.value - s.price) + " 증가") && !/감소/.test(t), t.slice(0, 90));
     if (kind === "itemTop") check("s2", "itemTop: 보관 상태와 받는 방법 선택", /보관함에 넣었습니다/.test(t) && /받는 방법 선택/.test(t), t.slice(0, 110));
     check("s2", `${kind}: 가로 넘침 없음`, await s.page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     await s.context.close();
@@ -158,7 +158,7 @@ await run("s3", async () => {
   check("s3", "잠긴 동안에는 보조 링크(검증, 돌아가기)도 마우스와 키보드로 눌리지 않는다", side.sheets === 0 && !side.gone && side.still && side.nowSheets === 0, JSON.stringify(side));
   await s.context.close();
 
-  s = await session({ fixture: "single:x5" });
+  s = await session({ fixture: "single:x4" });
   const t0 = Date.now();
   await s.openBtn().click();
   await s.page.waitForSelector(".v-op-skip .v-link", { timeout: 5000 }); await s.shot("04-opening-skip-visible");
@@ -185,7 +185,7 @@ await run("s4", async () => {
   const l = await s.ledger(); const t = await s.text(); const expect = r2(START - s.price + s.fx.sell);
   check("s4", `참고가 ${s.fx.value} 상품을 ${s.fx.sell} USDT 로 받는다: 잔액 ${expect}`, near(l.balance, expect), String(l.balance));
   check("s4", "받기를 두 번 눌러도 한 번만 더해진다", l.sellbacks === 1 && l.items[0].status === "SOLD", `sellbacks ${l.sellbacks} status ${l.items[0]?.status}`);
-  check("s4", "받은 뒤 가장 큰 글자는 실제로 받은 금액이고 잔액 변화를 적는다", t.includes("받은 금액 " + usdt(s.fx.sell)) && t.includes("잔액 " + usdt(Math.abs(s.fx.sell - s.price)) + (s.fx.sell > s.price ? " 증가" : " 감소")), t.slice(0, 120));
+  check("s4", "받은 뒤 가장 큰 글자는 실제로 받은 금액이고 잔액 변화를 적는다", /받은 금액/.test(t) && t.includes(usdt(s.fx.sell) + " " + usdt(s.price) + " 사용") && t.includes("잔액 " + usdt(Math.abs(s.fx.sell - s.price)) + (s.fx.sell > s.price ? " 증가" : " 감소")), t.slice(0, 120));
   check("s4", "받은 뒤 주 단추는 한 번 더 열기", await s.page.locator("[data-open-again]").count() === 1);
   await s.shot("14-updated-balance");
   await s.context.close();
@@ -264,7 +264,7 @@ await run("s6", async () => {
 
 // s7: 연출 중 새로 고침 → 같은 결과를 다시 보여 준다(필수 18)
 await run("s7", async () => {
-  const s = await session({ fixture: "single:x5" });
+  const s = await session({ fixture: "single:x4" });
   await s.openBtn().click();
   await s.page.waitForSelector(".v-op[data-phase='anticipation']", { timeout: 5000 });
   const mid = await s.ledger();
@@ -331,7 +331,7 @@ await run("s9", async () => {
 // s10: 움직임 성능. 화면이 실제로 그린 프레임 간격을 잰다. CPU 를 4배 느리게 해 중급 휴대폰에 가깝게 본다.
 await run("s10", async () => {
   for (const [label, rate] of [["그대로", 1], ["CPU 4배 느리게", 4]]) {
-    const s = await session({ fixture: "single:x5" });
+    const s = await session({ fixture: "single:x4" });
     const cdp = await s.context.newCDPSession(s.page);
     await cdp.send("Emulation.setCPUThrottlingRate", { rate });
     await s.page.evaluate(() => { window.__frames = []; let last = performance.now(); const tick = (now) => { window.__frames.push(now - last); last = now; window.__raf = requestAnimationFrame(tick); }; window.__raf = requestAnimationFrame(tick); });
@@ -394,7 +394,7 @@ await run("s11", async () => {
 
 // s12: 소리와 진동을 켠 상태로 열어도 오류가 없다(소리 자체는 사람이 들어야 한다)
 await run("s12", async () => {
-  const s = await session({ fixture: "single:x5", settings: { openSound: true } });
+  const s = await session({ fixture: "single:x4", settings: { openSound: true } });
   await s.openBtn().click(); await s.settled(); await s.page.waitForTimeout(600);
   const audio = await s.page.evaluate(() => typeof (window.AudioContext || window.webkitAudioContext) === "function");
   check("s12", "소리 켬: 콘솔 오류 없이 끝까지 열린다", s.errors.length === 0 && audio, s.errors.join(" | ") || "AudioContext 사용 가능");

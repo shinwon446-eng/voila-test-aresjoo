@@ -157,3 +157,16 @@ test("구매 모듈은 보관함 기록마다 개봉의 거래 번호를 붙인�
   const legacy: OwnedItem[] = items.map((i) => ({ ...i, openingId: undefined }));
   assert.equal(unseenOpenings(legacy, {}, now).length, 0, "거래 번호가 없는 옛 기록은 대상이 아니다");
 });
+
+test("배수 표기: 두 배 미만에는 붙이지 않고, 올려 적지 않는다", async () => {
+  const { timesOf } = await import("../lib/openingFlow");
+  assert.equal(timesOf(0.05, 1), null);
+  assert.equal(timesOf(1, 1), null);
+  assert.equal(timesOf(1.99, 1), null);
+  assert.equal(timesOf(2, 1), 2);
+  assert.equal(timesOf(9.99, 1), 9.9);
+  assert.equal(timesOf(47.5, 20), 2.3);
+  assert.equal(timesOf(129, 1), 129);
+  assert.equal(timesOf(1999.9, 100), 19);
+  assert.equal(timesOf(10, 0), null);
+});

@@ -42,9 +42,9 @@ test("실질 도전 배수 = 1 / (1 − 환급률)", () => {
 
 test("도전 배수 범위는 실제 라인업의 최소 보장 환급률에서 나온다", () => {
   const r = attemptsRange();
-  // 2026-10-11 부터 가장 작은 결과는 낸 값의 0.02배다
-  assert.equal(r.minRate, 2);
-  assert.equal(r.maxRate, 2);
+  // 2026-10-11 사다리 표부터 가장 작은 결과는 낸 값의 0.05배다
+  assert.equal(r.minRate, 5);
+  assert.equal(r.maxRate, 5);
   assert.ok(r.min >= 1 && r.max >= r.min);
   assert.equal(r.max, effectiveAttempts(r.maxRate / 100));
 });

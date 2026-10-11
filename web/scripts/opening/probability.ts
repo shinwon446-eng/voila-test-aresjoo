@@ -46,7 +46,7 @@ function current(): Model {
     value: +sellValueOf(i).toFixed(2), units: Math.round((i.dropRate / 100) * UNIT), tail: !i.id.startsWith("wave-"),
   }));
   const tail = outcomes.filter((o) => o.tail).length;
-  return { key: "now", name: "지금 구조", idea: "운영 중인 골드 박스(50 USDT). 2026-10-11 파운더 지시로 바꾼 표다(받는 값 기준 99%, USDT 구간 0.02배에서 20배, 상품 몫 22%).", outcomes: outcomes.sort((a, b) => a.value - b.value),
+  return { key: "now", name: "지금 구조", idea: "운영 중인 골드 박스(50 USDT). 2026-10-11 파운더 지시로 바꾼 사다리 표다(받는 값 기준 99%, 당첨 구간 1배에서 500배, 구간마다 상품이 먼저).", outcomes: outcomes.sort((a, b) => a.value - b.value),
     rule: `계산과 시뮬레이션은 결과 ${outcomes.length}종을 하나하나 넣어 했다. 아래 표는 상품 ${tail}종(참고가의 95% 로 계산)을 한 줄로 줄여 보여 줄 뿐이다. 상품마다의 확률은 박스 화면의 확률표에 있다.` };
 }
 

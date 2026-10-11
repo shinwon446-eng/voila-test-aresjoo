@@ -16,7 +16,7 @@ import { SlidersHorizontal, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { REFUND_RATE, dropTable, formatRate, sellValueOf, type ProductBox } from "@/lib/products";
 import type { OpeningResult } from "@/lib/opening";
-import { OPENING_ARM_DELAY_MS, autoTakeApplies, openingChange, openingTimeline, toneOf, type OpeningEvent } from "@/lib/openingFlow";
+import { OPENING_ARM_DELAY_MS, autoTakeApplies, openingChange, openingTimeline, timesOf, toneOf, type OpeningEvent } from "@/lib/openingFlow";
 import { settleTake } from "@/lib/openingSettle";
 import { hapticImpact, soundOpen, soundResult, soundStop } from "@/lib/openingSound";
 import { useProductText } from "@/lib/useProductText";
@@ -194,7 +194,7 @@ export function Opening({ box, result, cost, accountId, recovered, initialTaken,
         <div className="v-op-result" aria-live="polite" aria-atomic="true" aria-hidden={!revealed}>
           {revealed && (received !== null ? (
             <>
-              <p className="v-op-label">{t("op.cashLabel")}</p>
+              <p className="v-op-label">{t("op.cashLabel")}{timesOf(received, cost) !== null ? t("op.times", { n: timesOf(received, cost) }) : ""}</p>
               <h2 className="v-op-amount v-num">{fmt(received)}</h2>
               {net}
               <p className="v-op-meta">{isCash ? t("op.inBalance") : t(autoTaken ? "op.autoTookFrom" : "op.tookFrom", { name: itemName(item), ref: fmt(item.value) })}. {odds}{autoTaken ? ". " + t("op.autoNote") : ""}</p>
@@ -208,6 +208,7 @@ export function Opening({ box, result, cost, accountId, recovered, initialTaken,
                 : <><p className="v-op-label">{t("reveal.value")}</p><p className="v-op-amount v-num">{fmt(item.value)}</p></>}
               <h2 className="v-op-name">{itemName(item)}</h2>
               {item.image.src && <p className="v-op-ref v-num">{t("op.refLine", { amount: fmt(item.value) })}</p>}
+              {item.image.src && timesOf(item.value, cost) !== null && <p className="v-op-label">{t("op.timesLine", { n: timesOf(item.value, cost) })}</p>}
               <p className="v-op-line">{shipped ? t("op.shipRequested") : t("op.keptStatus")}{!shipped && !item.image.src ? ". " + t("op.takeWorth", { amount: sellAmount }) : ""}</p>
               <p className="v-op-meta">{odds}. {t("op.paid", { price: fmt(cost) })}</p>
             </>

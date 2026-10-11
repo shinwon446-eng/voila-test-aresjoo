@@ -128,3 +128,12 @@ export const nextOpeningState = (state: OpeningState, event: OpeningEvent): Open
 
 /** 이 상태에서 새 구매를 시작해도 되는가. 구매는 READY 와 SETTLED 에서만 시작한다. */
 export const canStartPurchase = (state: OpeningState): boolean => state === "READY" || state === "SETTLED";
+
+/** 낸 값(한 번 여는 값)의 몇 배인지. 두 배 미만이면 null 이다: 낸 값 근처이거나 그보다 작은 결과에는 배수를 붙이지 않는다.
+ *  10배 미만은 소수 첫째 자리까지(버림), 그 위는 정수(버림). 올려 적지 않는다. */
+export function timesOf(value: number, unitPrice: number): number | null {
+  if (!(unitPrice > 0) || !(value > 0)) return null;
+  const k = value / unitPrice + 1e-9;
+  if (k < 2) return null;
+  return k < 10 ? Math.floor(k * 10) / 10 : Math.floor(k);
+}

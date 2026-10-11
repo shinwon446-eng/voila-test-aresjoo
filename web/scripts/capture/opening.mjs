@@ -1,7 +1,7 @@
 // 개봉 경험 전용 촬영. 실제 화면에서 열기를 눌러 연출의 프레임과 결과를 찍는다.
 //   node scripts/capture/opening.mjs <출력 폴더> <이름> [옵션]
 //   --box <slug>              기본 dollar-apple
-//   --fixture single:<종류>   low | low2 | x1 | x2 | x5 | x10 | x20 | itemLow | itemMid | itemTop (opening-fixtures.json)
+//   --fixture single:<종류>   low | low2 | x1 | x2 | x4 | x8 | x15 | itemLow | itemMid | itemTop (opening-fixtures.json)
 //   --fixture seq:<이름>      lowLowLowHighHighHigh | fiveLowThenBig | tenSmall | smallBigSmall | threeBig | mixed | withItem (0번부터 차례로 연다)
 //   --opens <n>               연속으로 여는 횟수(seq 는 흐름 길이가 기본)
 //   --view <mobile|narrow|m360|m375|m430|tablet|desktop>

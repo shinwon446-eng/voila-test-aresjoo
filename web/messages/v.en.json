@@ -482,6 +482,11 @@
     "receiveNext": "Receive items ({n} left)",
     "tagCash": "in balance",
     "tagKept": "kept",
-    "recoverElsewhere": "Another box has an opening result you have not seen"
+    "recoverElsewhere": "Another box has an opening result you have not seen",
+    "times": ", {n}x the price",
+    "timesShort": "{n}x",
+    "best": "Biggest result",
+    "countTimes": "{n} times",
+    "timesLine": "{n}x the price"
   }
 }

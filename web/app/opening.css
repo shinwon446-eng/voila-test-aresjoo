@@ -137,3 +137,10 @@
 @keyframes v-op-push { 0% { transform: scale(1.18); } 100% { transform: none; } }
 @keyframes v-op-halo { 0% { opacity: 0; transform: scale(0.7); } 30% { opacity: 1; } 100% { opacity: 0.35; transform: scale(1.12); } }
 @keyframes v-op-sheet { from { transform: translateY(24px); } }
+
+/* 여러 개 결과의 "가장 큰 결과" 한 줄. 한 번 여는 값의 두 배 이상일 때만 나온다 */
+.v-best { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: var(--v-r-card); background: var(--v-card); }
+.v-best-photo { position: relative; flex: none; overflow: hidden; width: 72px; height: 72px; border-radius: 12px; background: var(--v-photo); }
+.v-best-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.v-best-body { display: flex; min-width: 0; flex-direction: column; gap: 2px; }
+.v-best-name { color: var(--v-title); font-size: var(--v-fs-title); line-height: 1.25; word-break: keep-all; }

@@ -94,11 +94,11 @@ test("boxTopTier / boxFloorTier 가 실제 최고·최저 항목과 일치한다
   }
 });
 
-test("모든 박스의 최저 등급은 CURATED 이고 가장 작은 결과는 0.02배", () => {
+test("모든 박스의 최저 등급은 CURATED 이고 가장 작은 결과는 0.05배", () => {
   for (const b of BOXES) {
     assert.equal(boxFloorTier(b).key, "curated", `${b.slug}: 최저 등급 ${boxFloorTier(b).label}`);
     const m = b.guaranteedMin / b.price;
-    assert.ok(Math.abs(m - 0.02) < 1e-9, `${b.slug}: 바닥 배수 ${m}`);
+    assert.ok(Math.abs(m - 0.05) < 1e-9, `${b.slug}: 바닥 배수 ${m}`);
     assert.ok(isValueGuaranteed(b), b.slug);
   }
 });

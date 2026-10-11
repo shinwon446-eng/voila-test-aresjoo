@@ -482,6 +482,11 @@
     "receiveNext": "领取商品（剩余 {n} 件）",
     "tagCash": "已入余额",
     "tagKept": "保管中",
-    "recoverElsewhere": "其他盲盒有尚未查看的开箱结果"
+    "recoverElsewhere": "其他盲盒有尚未查看的开箱结果",
+    "times": "，为支付额的 {n} 倍",
+    "timesShort": "{n} 倍",
+    "best": "最大结果",
+    "countTimes": "{n} 次",
+    "timesLine": "支付额的 {n} 倍"
   }
 }

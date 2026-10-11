@@ -49,9 +49,11 @@
 - 실제 휴대폰과 iOS 사파리, 가로 화면, 큰 글자 확대 미검수. 결과 영역이 넘칠 때 스크롤되지 않는다.
 - 소리와 진동은 오류 없이 도는 것까지만 확인. 상자는 CSS 면 여섯 개(재질 한계).
 
-## 확률표 (2026-10-11 파운더 지시로 변경)
-- 표 버전 `2026-10-11-wide-99-v1` (`web/lib/products.ts` 의 `withWaveSchedule`). 받는 값 기준 99%, USDT 결과 0.02, 0.1, 1, 2, 5, 10, 20배, 상품 몫 22%(값이 쌀수록 자주), 기프트카드 구간 삭제.
-- 숫자와 위험: `opening/ODDS.md` (`npx tsx scripts/opening/odds-report.ts` 가 만든다). 결정 기록: `opening/DECISIONS.md` 맨 아래.
+## 확률표 (2026-10-11 파운더 지시로 두 번 변경, 지금은 사다리)
+- 표 버전 `2026-10-11-ladder-99-v2` (`web/lib/products.ts` 의 `LADDER`, `withWaveSchedule`). 받는 값 기준 99%. 당첨 구간 1, 2, 4, 8, 15, 40, 100, 250, 500배. 구간마다 그 값대의 상품이 먼저 나오고 없으면 USDT. 당첨이 아닌 결과는 0.05배와 0.25배.
+- 첫째 표(wide-99-v1)는 상품 몫 22% 가 거의 안 나와 USDT 만 보면 77% 였다. 그래서 같은 날 사다리로 바꿨다.
+- 숫자와 위험: `opening/ODDS.md` (`npx tsx scripts/opening/odds-report.ts`). 몫 분해: `npx tsx scripts/opening/odds-split.ts [개봉 수]`. 결정 기록: `opening/DECISIONS.md` 맨 아래 두 절.
 - 결과는 독립 추첨이다. 연속 흐름을 짜 넣는 코드는 없고 넣지 않는다.
-- 새 표로 찍은 화면: `opening/evidence-odds/`. `opening/evidence/` 는 옛 표의 화면이다.
-- 파운더가 볼 것: 운영 몫 1% 의 묶음 손실 위험, 이용 기준을 채우는 비용이 1% 로 준 점, 1 USDT 애플 박스의 상품 확률 0.52%.
+- 결과 화면: 낸 값의 두 배 이상이면 배수를 적는다(`timesOf`). 여러 개 결과는 "가장 큰 결과"를 맨 위에 올리고 같은 금액의 USDT 결과를 한 줄로 묶는다.
+- 새 표로 찍은 화면: `opening/evidence-odds/`. 실제 추첨으로 100개와 10개를 여는 화면은 `node scripts/capture/opening-live.mjs <폴더>`.
+- 파운더가 볼 것: 운영 몫 1% 의 묶음 손실 위험, 상품 배송 비용, 1 USDT 애플 박스의 상품 확률 1.74%(박스 가격을 올릴지), 이용 기준을 채우는 비용이 1% 로 준 점.

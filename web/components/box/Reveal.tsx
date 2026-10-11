@@ -10,7 +10,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { dropTable, formatRate, sellValueOf, type ProductBox } from "@/lib/products";
+import { dropTable, formatRate, sellValueOf, type ProductBox, isLadderBox } from "@/lib/products";
 import type { OpeningResult } from "@/lib/opening";
 import { settleTake } from "@/lib/openingSettle";
 import { OPENING_ARM_DELAY_MS, openingChange, timesOf } from "@/lib/openingFlow";
@@ -200,7 +200,7 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
                     <Row label={t("reveal.spent")}>{fmt(cost)}</Row>
                     <Row label={t("op.creditedSum")}>{fmt(creditedSum)}</Row>
                     {kept.length > 0 && <Row label={t("op.keptSum", { n: kept.length })}>{fmt(keptRef)}</Row>}
-                    <Row label={t("box.burst")}>{fmt(gauge)}</Row>
+                    {isLadderBox(box) && <Row label={t("box.burst")}>{fmt(gauge)}</Row>}
                     <Row label={t("op.changeLabel")}>{change < 0 ? t("op.changeDown", { diff: fmt(Math.abs(change)) }) : change > 0 ? t("op.changeUp", { diff: fmt(change) }) : t("op.changeSame")}</Row>
                   </Rows>
                   {takeFailed && <Line fail>{t("op.failed")}</Line>}

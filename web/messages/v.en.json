@@ -99,7 +99,9 @@
     "freeLeft": "You can open this box {n} times for free.",
     "reviewsAll": "See all reviews",
     "oddsTiers": "Odds by tier",
-    "oddsTable": "See odds by item"
+    "oddsTable": "See odds by item",
+    "evRetail": "Expected value ratio (by reference value, average)",
+    "evCash": "If everything is taken as USDT"
   },
   "reveal": {
     "skip": "Skip",

@@ -1,5 +1,6 @@
 // 실물 상품 데이터셋 무결성 테스트
 //   npm test
+import { CATEGORIES_V2 } from "../lib/catalogTypes";
 import test from "node:test";
 import { formatRate } from "../lib/products";
 import assert from "node:assert/strict";
@@ -217,7 +218,8 @@ test("히어로 박스는 1 USDT 박스다", () => {
 
 test("카테고리는 필터 목록 안의 값만 쓰고, 필터마다 결과가 있다", () => {
   const keys = CATEGORY_FILTERS.filter((f) => f.key !== "all").map((f) => f.key);
-  const allowed = new Set(keys);
+  // 옛 박스는 필터 목록의 값, 새 카탈로그의 박스는 새 카테고리 열여섯 가운데 하나
+  const allowed = new Set<string>([...keys, ...CATEGORIES_V2]);
   for (const b of BOXES) assert.ok(allowed.has(b.category), `${b.slug}: ${b.category}`);
   for (const k of keys) assert.ok(byCategory(k).length > 0, `빈 카테고리: ${k}`);
   assert.equal(byCategory("all").length, BOXES.length);

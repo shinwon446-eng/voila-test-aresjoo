@@ -99,7 +99,9 @@
     "freeLeft": "本盲盒可免费开启 {n} 次。",
     "reviewsAll": "查看全部评价",
     "oddsTiers": "各区间概率",
-    "oddsTable": "查看各商品概率"
+    "oddsTable": "查看各商品概率",
+    "evRetail": "期望价值比（按参考价，平均）",
+    "evCash": "全部领取 USDT 时"
   },
   "reveal": {
     "skip": "跳过",

@@ -5,14 +5,14 @@
  */
 
 import { imageFor, type ProductImage } from "./productImages";
-import type { BoxSpec } from "./catalogTypes";
+import type { BoxCategory, BoxSpec, LegacyCategory, OddsScheme } from "./catalogTypes";
 import { SPECS } from "./catalogSpecs";
 import { REFUND_RATE } from "./types";
 
-export type BoxCategory = "dollar" | "tech" | "luxury" | "jackpot" | "collect";
+export type { BoxCategory, OddsScheme } from "./catalogTypes";
 
 export interface CategoryFilter {
-  key: BoxCategory | "all";
+  key: LegacyCategory | "all";
   label: string;
 }
 
@@ -83,6 +83,10 @@ export interface ProductBox {
   releasedAt: string;
   popularity: number;
   items: ProductItem[];
+  /** 확률을 배정한 방식. physical 은 결과가 전부 실물이다(USDT 결과와 터짐 게이지가 없다) */
+  scheme: OddsScheme;
+  /** 새 카탈로그의 박스에만 있다 */
+  brand?: string;
 }
 
 const T = {
@@ -115,7 +119,8 @@ function buildBox(spec: BoxSpec): ProductBox {
     .map(([id, name, nameEn, nameZh, value, kind = "physical"]) => {
       if (!cents(value)) throw new Error(`${id}: value must use cents`);
       // 박스 가격보다 싼 실물은 꽝이다. 실물과 기프트카드는 박스 가격 이상만 넣는다(USDT 상품은 확률 배정이 따로 넣는다).
-      if (kind !== "cash" && value < spec.price) throw new Error(`${id}: value ${value} is below the box price ${spec.price}`);
+      // 실물 전용 박스(physical)는 박스 가격보다 싼 실물이 낮은 구간을 채운다. 그 대신 USDT 상품을 넣을 수 없다.
+      if (spec.scheme === "physical" ? kind === "cash" : kind !== "cash" && value < spec.price) throw new Error(`${id}: value ${value} does not fit the ${spec.scheme ?? "ladder"} box priced ${spec.price}`);
       const image = imageFor(id);
       return { id, name, nameEn, nameZh, kind, value, dropRate: 0, code: id.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 6), tone: T.graphite, image, imageUrl: image.src };
     });
@@ -141,6 +146,8 @@ function buildBox(spec: BoxSpec): ProductBox {
     releasedAt: spec.releasedAt,
     popularity: spec.popularity,
     items,
+    scheme: spec.scheme ?? "ladder",
+    brand: spec.brand,
   };
 }
 
@@ -240,11 +247,92 @@ function withWaveSchedule(box: ProductBox): ProductBox {
   return { ...box, guaranteedMin: lowValue[0], items };
 }
 
-export const BOXES: ProductBox[] = SPECS.map(buildBox).map(withWaveSchedule);
+// ── 확률표 "실물 전용" (2026-10-12 파운더 결정: 결과는 전부 실물, USDT 가 나오는 결과와 터짐 게이지는 없다) ────────────────
+// 새 카탈로그의 박스(scheme: physical)에만 쓴다. 옛 박스는 위의 사다리 그대로다.
+//   - 당첨 구간은 같은 사다리(1, 2, 4, 8, 15, 40, 100, 250, 500배)와 같은 목표 칸 수를 쓴다. 그 구간에 드는 상품이 없으면 그 구간은 없다(USDT 로 메우지 않는다).
+//     구간 안에서는 상품마다 기대 가치를 같게 나눈다(싼 상품이 조금 더 자주 나온다). 상품은 최소 한 칸.
+//   - 낮은 구간은 박스 가격보다 싼 실물 둘로 나눈다: 절반 미만(A)과 절반 이상(B). 남은 칸을 A 와 B 에 나눠 참고가 기준 기대 비율을 정확히 99%로 맞춘다.
+//     맞출 수 없으면(낮은 상품의 값대가 한쪽으로 쏠렸을 때) 당첨 구간의 칸 수를 한꺼번에 같은 비율로 늘리거나 줄인다.
+//   - 99%는 참고가 기준이다. 받은 상품을 전부 95%로 USDT 로 바꾸면 약 94%다. 화면에는 두 숫자를 따로 적는다.
+// 결과는 매번 이 표에서 독립으로 뽑는다(쓴 금액, 이전 결과, 잔액과 무관하다).
+export const PHYSICAL_ODDS_VERSION = "2026-10-12-physical-99-v1";
+export const TARGET_RETAIL_RTP = 0.99;
+/** 낮은 구간을 둘로 가르는 선: 박스 가격 대비 */
+export const LOW_SPLIT = 0.5;
+/** 실물 전용 박스 하나의 상품 수 범위 */
+export const MIN_PHYSICAL_ITEMS = 60;
+export const MAX_PHYSICAL_ITEMS = 140;
+
+function withPhysicalSchedule(box: ProductBox): ProductBox {
+  const price = box.price;
+  const fail = (why: string): ProductBox => { violations.push(`${box.slug}: ${why}`); return box; };
+  if (box.items.length < MIN_PHYSICAL_ITEMS || box.items.length > MAX_PHYSICAL_ITEMS) return fail(`physical box needs ${MIN_PHYSICAL_ITEMS} to ${MAX_PHYSICAL_ITEMS} items, got ${box.items.length}`);
+  const lowA = box.items.filter((i) => i.value < price * LOW_SPLIT);
+  const lowB = box.items.filter((i) => i.value >= price * LOW_SPLIT && i.value < price);
+  if (lowA.length === 0 || lowB.length === 0) return fail("physical box needs items both below half the price and between half and the full price");
+  const bands: ProductItem[][] = LADDER.map(() => []);
+  for (const item of box.items) if (item.value >= price) bands[bandIndexOf(item.value, price)].push(item);
+  /** 묶음 안에서 기대 가치를 같게 나눈 칸 수(값의 역수에 비례). 상품마다 최소 한 칸 */
+  const spread = (group: ProductItem[], total: number): number[] => {
+    const inverse = group.reduce((sum, i) => sum + 1 / i.value, 0);
+    return group.map((i) => Math.max(1, Math.round((total / i.value) / inverse)));
+  };
+  const harmonic = (group: ProductItem[]) => group.length / group.reduce((sum, i) => sum + 1 / i.value, 0);
+  const a = harmonic(lowA), b = harmonic(lowB);
+  /** 당첨 구간을 scale 배로 잡았을 때의 칸 수와, 낮은 구간 B 에 줘야 하는 칸 수 */
+  const plan = (scale: number) => {
+    const win = bands.map((group, k) => (group.length ? spread(group, LADDER[k].slots * scale) : []));
+    const winSlots = win.reduce((sum, list) => sum + list.reduce((x, y) => x + y, 0), 0);
+    const winValue = win.reduce((sum, list, k) => sum + list.reduce((x, n, i) => x + n * bands[k][i].value, 0), 0);
+    const rest = SLOTS - winSlots;
+    const toB = (TARGET_RETAIL_RTP * price * SLOTS - winValue - rest * a) / (b - a);
+    return { win, rest, toB };
+  };
+  // 낮은 구간의 두 묶음이 모두 남은 칸의 8% 이상을 갖는 scale 을 찾는다(1 에서 시작해 조금씩 옮긴다)
+  let scale = 1, found = plan(scale);
+  for (let step = 0; step < 400 && !(found.rest > 0 && found.toB >= found.rest * 0.08 && found.toB <= found.rest * 0.92); step++) {
+    scale *= found.rest <= 0 || found.toB < found.rest * 0.08 ? 0.97 : 1.03;
+    found = plan(scale);
+  }
+  if (!(found.rest > 0 && found.toB >= lowB.length && found.rest - found.toB >= lowA.length)) return fail(`physical schedule cannot reach ${TARGET_RETAIL_RTP} (scale ${scale.toFixed(3)})`);
+  const slotsB = spread(lowB, Math.round(found.toB));
+  const slotsA = spread(lowA, found.rest - slotsB.reduce((x, y) => x + y, 0));
+  const assigned = new Map<string, number>();
+  bands.forEach((group, k) => group.forEach((item, i) => assigned.set(item.id, found.win[k][i])));
+  lowB.forEach((item, i) => assigned.set(item.id, slotsB[i]));
+  lowA.forEach((item, i) => assigned.set(item.id, slotsA[i]));
+  // 반올림으로 남거나 모자란 칸은 가장 싼 상품에 붙인다(기대 비율에 거의 영향이 없다)
+  const cheapest = lowA.reduce((best, i) => (i.value < best.value ? i : best));
+  const total = Array.from(assigned.values()).reduce((x, y) => x + y, 0);
+  assigned.set(cheapest.id, assigned.get(cheapest.id)! + SLOTS - total);
+  const items = box.items.map((item) => ({ ...item, dropRate: assigned.get(item.id)! / 10_000 })).sort((x, y) => x.dropRate - y.dropRate || y.value - x.value);
+  const ids = new Set(items.map((i) => i.id));
+  const slots = items.reduce((sum, i) => sum + Math.round(i.dropRate * 10_000), 0);
+  const retailRtp = items.reduce((sum, i) => sum + i.value * i.dropRate / 100, 0) / price;
+  if (slots !== SLOTS || ids.size !== items.length) return fail("invalid slot total or duplicate item id");
+  if (items.some((i) => Math.round(i.dropRate * 10_000) < 1)) return fail("an item has no slot");
+  if (Math.abs(retailRtp - TARGET_RETAIL_RTP) > CASH_RTP_TOLERANCE) return fail(`retail RTP ${retailRtp}`);
+  return { ...box, guaranteedMin: cheapest.value, items };
+}
+
+export const BOXES: ProductBox[] = SPECS.map(buildBox).map((box) => (box.scheme === "physical" ? withPhysicalSchedule(box) : withWaveSchedule(box)));
+/** 옛 방식의 박스(USDT 결과와 터짐 게이지가 있다) */
+export const isLadderBox = (box: Pick<ProductBox, "scheme">): boolean => box.scheme !== "physical";
+/** 이 박스의 확률표 판 */
+export const oddsVersionOf = (box: Pick<ProductBox, "scheme">): string => (box.scheme === "physical" ? PHYSICAL_ODDS_VERSION : CATALOG_ODDS_VERSION);
 export { SPECS };
 
 if (violations.length > 0) {
   throw new Error(["상품 데이터셋 불변식 위반", ...violations].join("\n  - "));
+}
+
+/** 박스 하나의 구성에 확률을 배정한다(시험과 자료 검사용). 규칙을 어기면 던진다 */
+export function scheduledBox(spec: BoxSpec): ProductBox {
+  const before = violations.length;
+  const built = buildBox(spec);
+  const box = built.scheme === "physical" ? withPhysicalSchedule(built) : withWaveSchedule(built);
+  if (violations.length > before) throw new Error(violations.splice(before).join("; "));
+  return box;
 }
 
 export const BOX_BY_SLUG: Record<string, ProductBox> = Object.fromEntries(BOXES.map((b) => [b.slug, b]));

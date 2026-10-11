@@ -14,7 +14,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { SlidersHorizontal, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { REFUND_RATE, dropTable, formatRate, sellValueOf, type ProductBox } from "@/lib/products";
+import { REFUND_RATE, dropTable, formatRate, sellValueOf, type ProductBox, isLadderBox } from "@/lib/products";
 import type { OpeningResult } from "@/lib/opening";
 import { OPENING_ARM_DELAY_MS, autoTakeApplies, openingChange, openingTimeline, timesOf, toneOf, type OpeningEvent } from "@/lib/openingFlow";
 import { settleTake } from "@/lib/openingSettle";
@@ -220,7 +220,7 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
               <p className="v-op-meta">{odds}. {cost > 0 ? t("op.paid", { price: fmt(cost) }) : t("op.free")}</p>
             </>
           ))}
-          {revealed && <p className="v-op-label v-op-gauge v-num">{t(burst ? "op.gaugeReset" : "op.gaugeNow", { amount: fmt(gauge) })}</p>}
+          {revealed && isLadderBox(box) && <p className="v-op-label v-op-gauge v-num">{t(burst ? "op.gaugeReset" : "op.gaugeNow", { amount: fmt(gauge) })}</p>}
         </div>
       </div>
 

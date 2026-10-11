@@ -5,6 +5,7 @@
  */
 import type { BoxSpec } from "@/lib/catalogTypes";
 import { LEGACY_SPECS } from "@/lib/catalog/legacy";
+import { V2_SPECS } from "@/lib/catalog2/build";
 import { JACKPOT_CAR_ITEMS } from "@/lib/catalog/jackpot-car";
 import { DOLLAR_APPLE_ITEMS } from "@/lib/catalog/dollar-apple";
 import { VAULT_WATCH_ITEMS } from "@/lib/catalog/vault-watch";
@@ -98,4 +99,6 @@ const REPLACED = new Set(["jackpot-cybertruck", "vault-omega", "starter-phone"])
 export const SPECS: BoxSpec[] = [
   ...NEW,
   ...LEGACY_SPECS.filter((box) => !REPLACED.has(box.slug) && !NEW.some((n) => n.slug === box.slug)),
+  // 새 카탈로그(브랜드마다 박스 하나, 결과는 전부 실물). 자료가 다 채워진 박스만 들어온다
+  ...V2_SPECS,
 ];

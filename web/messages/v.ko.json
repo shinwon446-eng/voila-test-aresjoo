@@ -99,7 +99,9 @@
     "freeLeft": "이 박스를 무료로 {n}번 열 수 있습니다.",
     "reviewsAll": "후기 모두 보기",
     "oddsTiers": "구간별 확률",
-    "oddsTable": "상품별 확률 보기"
+    "oddsTable": "상품별 확률 보기",
+    "evRetail": "기대 가치 비율 (참고가 기준, 평균)",
+    "evCash": "전부 USDT로 받을 때"
   },
   "reveal": {
     "skip": "건너뛰기",

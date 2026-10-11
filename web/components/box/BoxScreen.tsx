@@ -13,7 +13,7 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 import { CreditCard, Coins, Package } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { BOXES, REFUND_RATE, cashReturn, ceilingTimes, ceilingValue, dropTable, formatRate, mostCommon, type ProductBox, type ProductItem } from "@/lib/products";
+import { BOXES, REFUND_RATE, cashReturn, ceilingTimes, ceilingValue, dropTable, formatRate, isLadderBox, mostCommon, retailReturn, type ProductBox, type ProductItem } from "@/lib/products";
 import { TIERS, tierOf, type TierKey } from "@/lib/tiers";
 import { COUNTRIES } from "@/lib/shipping";
 import { OPEN_PRESETS } from "@/lib/autoplay";
@@ -180,7 +180,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       <Rows label={t("box.facts")}>
         <Row label={t("box.price")}>{fmt(box.price)}</Row>
         <Row label={t("box.topTimes")}>{t("op.timesShort", { n: ceilingTimes(box).toLocaleString("en-US") })}</Row>
-        <Row label={t("box.burst")}>{fmt(gauge)}</Row>
+        {isLadderBox(box) && <Row label={t("box.burst")}>{fmt(gauge)}</Row>}
       </Rows>
       <div className="v-openbar">
         <div className="v-openbar-in">
@@ -236,7 +236,9 @@ export function BoxScreen({ box }: { box: ProductBox }) {
           <Row label={t("box.realRow")}>{formatRate(realOdds)}</Row>
           <Row label={t("box.low")}>{fmt(box.guaranteedMin)}</Row>
           <Row label={t("box.belowOdds")}>{formatRate(belowOdds)}</Row>
-          <Row label={t("box.ev")}>{(cashReturn(box) * 100).toFixed(1)}%, {t("box.evBasis")}</Row>
+          {isLadderBox(box)
+            ? <Row label={t("box.ev")}>{(cashReturn(box) * 100).toFixed(1)}%, {t("box.evBasis")}</Row>
+            : <><Row label={t("box.evRetail")}>{(retailReturn(box) * 100).toFixed(1)}%</Row><Row label={t("box.evCash")}>{(cashReturn(box) * 100).toFixed(1)}%</Row></>}
         </Rows>
         <Rows label={t("box.oddsTiers")}>
           {groups.map((g) => <Row key={g.key} label={t(TIER_LABEL[g.key])}>{formatRate(g.rate)}</Row>)}
@@ -257,7 +259,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       </section>
       <details className="v-boxlayout-notes v-notes">
         <summary>{t("box.notes")}</summary>
-        <p className="v-small">{t("box.burstNote", { pct: Math.round(BURST.share * 100), odds: formatRate(BURST.slots / 10_000), seed: fmt(burstSeed(box.price)) })}</p>
+        {isLadderBox(box) && <p className="v-small">{t("box.burstNote", { pct: Math.round(BURST.share * 100), odds: formatRate(BURST.slots / 10_000), seed: fmt(burstSeed(box.price)) })}</p>}
         <p className="v-small">{t("box.evNote", { pct: Math.round(REFUND_RATE * 100) })}</p>
         <div className="v-links"><TextLink href="/verify">{t("box.verifyLink")}</TextLink></div>
       </details>

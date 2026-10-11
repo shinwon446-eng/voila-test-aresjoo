@@ -1,4 +1,4 @@
-import { CATALOG_ODDS_VERSION, dropTable, floorRatio, type ProductBox, type ProductItem } from "./products";
+import { dropTable, floorRatio, isLadderBox, oddsVersionOf, type ProductBox, type ProductItem } from "./products";
 import { calculateRollResult, determineItem } from "./fairness";
 import { tierOf, type Tier } from "./tiers";
 import { rolloverContribution } from "./rollover";
@@ -76,10 +76,12 @@ async function executeOpening(box: ProductBox, count: number, openingId?: string
     const inventory = useInventoryStore.getState();
     // 터짐 게이지: 뽑힌 차례대로 한 번에 한 칸씩 쌓고, 터짐이 나온 자리에서 그때의 게이지를 지급하고 비운다.
     // 결과(무엇이 뽑혔는지)는 위에서 이미 정해졌다. 여기서는 터짐의 금액만 정한다.
+    const ladder = isLadderBox(box);
     let pot = walletBefore.burst?.[box.slug] ?? EMPTY_POT;
     const drawn = picked.map((r, i) => {
       // 앞의 free 개는 무료다. 값을 내지 않았으므로 게이지에 쌓지 않는다(터짐이 나오면 그때의 게이지는 받는다)
-      if (i >= free) pot = potAfterOpen(pot, box.price, funding.ratio);
+      // 실물 전용 박스에는 터짐이 없다. 게이지도 쌓지 않는다
+      if (ladder && i >= free) pot = potAfterOpen(pot, box.price, funding.ratio);
       if (r.item.id !== BURST.id) return { r, ratio: funding.ratio };
       const pay = burstPayout(pot, box.price, funding.ratio);
       pot = EMPTY_POT;
@@ -87,7 +89,7 @@ async function executeOpening(box: ProductBox, count: number, openingId?: string
     });
     const owned = inventory.add(drawn.map(({ r, ratio }) => ({
       itemId: r.item.id, boxSlug: box.slug, valueUsdt: r.item.value, tier: r.tier.key,
-      fair: { serverSeed, serverSeedHash, clientSeed, nonce: r.nonce, roll: r.roll, oddsVersion: CATALOG_ODDS_VERSION, dropTable: table.map(({ id, dropRate }) => ({ id, dropRate })) },
+      fair: { serverSeed, serverSeedHash, clientSeed, nonce: r.nonce, roll: r.roll, oddsVersion: oddsVersionOf(box), dropTable: table.map(({ id, dropRate }) => ({ id, dropRate })) },
       fundingRatio: ratio,
       ...(openingId ? { openingId } : {}),
     })));
@@ -100,7 +102,7 @@ async function executeOpening(box: ProductBox, count: number, openingId?: string
       wallet.creditSplit(settlement.toCrypto, settlement.toCard);
       wallet.addTransaction({ type: "sellback", amountUsdt: settlement.totalUsdt, ref: `${box.slug}:cashback x${cash.length}` });
     }
-    wallet.setBurst(box.slug, pot);
+    if (ladder) wallet.setBurst(box.slug, pot);
     if (free > 0) wallet.spendFreeOpens(box.slug, free);
     wallet.addTransaction({ type: "open", amountUsdt: -cost, ref: `${box.slug}x${count}${free > 0 ? "+free" + free : ""}${openingId ? ":" + openingId : ""}`, rolloverUsdt: rolloverContribution(cost, floorRatio(box)) });
     return results;

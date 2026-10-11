@@ -7,12 +7,13 @@ import { createHash, createHmac } from "node:crypto";
 import { writeFileSync } from "node:fs";
 import { BOXES, LOW_TIERS, dropTable, sellValueOf, type ProductItem } from "../../lib/products";
 import { rollRanges, ROLL_RANGE } from "../../lib/fairness";
+import { BURST } from "../../lib/burst";
 
 const SERVER_SEED = "opening-fixture-server-seed";
 const serverSeedHash = createHash("sha256").update(SERVER_SEED).digest("hex");
 const rollOf = (clientSeed: string, nonce: number) => parseInt(createHmac("sha256", SERVER_SEED).update(`${clientSeed}:${nonce}`).digest("hex").slice(0, 8), 16) % ROLL_RANGE;
 
-type Step = number | "item";
+type Step = number | "item" | "burst";
 const out: Record<string, unknown> = { serverSeed: SERVER_SEED, serverSeedHash, boxes: {} };
 const describe = (i: ProductItem) => ({ itemId: i.id, value: i.value, kind: i.kind, sell: sellValueOf(i), odds: i.dropRate });
 
@@ -21,11 +22,11 @@ for (const slug of ["dollar-apple", "vault-gold", "vault-handbag"]) {
   const table = dropTable(box);
   const ranges = rollRanges(table);
   const itemAt = (roll: number) => ranges.find((r) => roll <= r.to)!.item;
-  const wave = (multiple: number) => table.find((i) => i.id.startsWith("wave-") && i.value === +(box.price * multiple).toFixed(2))?.id;
+  const wave = (multiple: number) => table.find((i) => i.id.startsWith("wave-") && i.id !== BURST.id && i.value === +(box.price * multiple).toFixed(2))?.id;
   // 사진이 있는 실물만(결과 화면의 상품 구도를 보려는 것이다)
   const physical = table.filter((i) => i.kind === "physical" && i.image.src).sort((a, b) => b.value - a.value);
   const wants: Record<string, string | undefined> = {
-    low: wave(LOW_TIERS[0]), low2: wave(LOW_TIERS[1]), x1: wave(1), x2: wave(2), x4: wave(4), x8: wave(8), x15: wave(15),
+    burst: BURST.id, low: wave(LOW_TIERS[0]), low2: wave(LOW_TIERS[1]), x1: wave(1), x2: wave(2), x4: wave(4), x8: wave(8), x15: wave(15),
     itemTop: physical[0]?.id, itemMid: physical[Math.floor(physical.length / 2)]?.id, itemLow: physical[physical.length - 1]?.id,
   };
   const clientSeed = "opening-fixture-client";
@@ -37,7 +38,7 @@ for (const slug of ["dollar-apple", "vault-gold", "vault-handbag"]) {
     if (kind) { single[kind] = { clientSeed, nonce, ...describe(item) }; pending.delete(item.id); }
   }
   // 연속: 0번부터 차례로. 숫자는 USDT 구간의 배수, "item" 은 USDT 가 아닌 상품 아무거나
-  const matches = (item: ProductItem, step: Step) => (step === "item" ? !item.id.startsWith("wave-") && item.kind !== "cash" : item.id.startsWith("wave-") && item.value === +(box.price * step).toFixed(2));
+  const matches = (item: ProductItem, step: Step) => (step === "burst" ? item.id === BURST.id : step === "item" ? !item.id.startsWith("wave-") && item.kind !== "cash" : item.id.startsWith("wave-") && item.id !== BURST.id && item.value === +(box.price * step).toFixed(2));
   const L = LOW_TIERS[0];
   const sequences: Record<string, Step[]> = {
     lowLowLowHighHighHigh: [L, L, L, 2, 2, 2],
@@ -47,6 +48,8 @@ for (const slug of ["dollar-apple", "vault-gold", "vault-handbag"]) {
     threeBig: [4, 2, 4],
     mixed: [LOW_TIERS[1], 2, L, 1, 4],
     withItem: [L, "item", L, 2, L],
+    lowThenBurst: [L, L, L, "burst"],
+    burstInBatch: [L, L, "burst", L, L],
   };
   const seq: Record<string, { clientSeed: string; nonce: number; steps: ReturnType<typeof describe>[] }> = {};
   for (const [name, pattern] of Object.entries(sequences)) {

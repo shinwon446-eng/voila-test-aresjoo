@@ -28,6 +28,7 @@ import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useAuthStore } from "@/stores/authStore";
 import { useWalletStore } from "@/stores/walletStore";
+import { BURST, burstGauge, burstSeed } from "@/lib/burst";
 import { useFlow } from "@/stores/flowStore";
 import { usePublishedReviews } from "@/stores/usePublishedReviews";
 import { useInventoryStore } from "@/stores/inventoryStore";
@@ -55,6 +56,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const ready = useAuthStore((s) => s.hydrated);
   const openLogin = useAuthStore((s) => s.openAuthModal);
   const balance = useWalletStore((s) => s.balance);
+  const gauge = burstGauge(box.price, useWalletStore((s) => s.burst?.[box.slug]));
   const openCharge = useFlow((s) => s.openCharge);
   const reviews = usePublishedReviews();
   const owned = useInventoryStore((s) => s.items);
@@ -179,11 +181,13 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       <aside className="v-boxside">
       <Rows label={t("box.facts")}>
         <Row label={t("box.price")}>{fmt(box.price)}</Row>
+        <Row label={t("box.burst")}>{fmt(gauge)}</Row>
         <Row label={t("box.top")}>{fmt(ceilingValue(box))}</Row>
         <Row label={t("box.low")}>{fmt(box.guaranteedMin)}</Row>
         <Row label={t("box.belowOdds")}>{formatRate(belowOdds)}</Row>
         <Row label={t("box.ev")}>{(cashReturn(box) * 100).toFixed(1)}%, {t("box.evBasis")}</Row>
       </Rows>
+      <p className="v-small">{t("box.burstNote", { pct: Math.round(BURST.share * 100), odds: formatRate(BURST.slots / 10_000), seed: fmt(burstSeed(box.price)) })}</p>
       <p className="v-small">{t("box.evNote", { pct: Math.round(REFUND_RATE * 100) })}</p>
       <div className="v-links"><TextLink href="/verify">{t("box.verifyLink")}</TextLink></div>
       <Rows label={t("box.tiers")}>

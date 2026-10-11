@@ -39,7 +39,7 @@
 - 누른 뒤 결과까지 0.89초, 다음 행동까지 1.24초. 짧게 보기는 약 0.5초. 프레임 평균 16.7ms, CPU 4배 느리게 18.0ms.
 
 ## 검수 다시 돌리기
-- 개발 서버(3002)를 띄운 뒤 `cd web && node scripts/capture/opening-qa.mjs ../qa/opening/<폴더>` (89개 항목), `npm test` (306). 확률표를 바꾸면 먼저 `npx tsx scripts/capture/opening-fixtures.ts` 로 고정값을 다시 찾는다(검수의 기대 금액은 고정값에서 계산한다).
+- 개발 서버(3002)를 띄운 뒤 `cd web && node scripts/capture/opening-qa.mjs ../qa/opening/<폴더>` (101개 항목, s15 가 터짐 게이지), `npm test` (306). 확률표를 바꾸면 먼저 `npx tsx scripts/capture/opening-fixtures.ts` 로 고정값을 다시 찾는다(검수의 기대 금액은 고정값에서 계산한다).
 - 필름: `node scripts/capture/opening.mjs ../qa/opening/<폴더> <이름> --fixture single:itemTop --cast`.
 
 ## 파운더가 정할 것 (`opening/REPORT.md` 9)
@@ -49,8 +49,9 @@
 - 실제 휴대폰과 iOS 사파리, 가로 화면, 큰 글자 확대 미검수. 결과 영역이 넘칠 때 스크롤되지 않는다.
 - 소리와 진동은 오류 없이 도는 것까지만 확인. 상자는 CSS 면 여섯 개(재질 한계).
 
-## 확률표 (2026-10-11 파운더 지시로 두 번 변경, 지금은 사다리)
-- 표 버전 `2026-10-11-ladder-99-v2` (`web/lib/products.ts` 의 `LADDER`, `withWaveSchedule`). 받는 값 기준 99%. 당첨 구간 1, 2, 4, 8, 15, 40, 100, 250, 500배. 구간마다 그 값대의 상품이 먼저 나오고 없으면 USDT. 당첨이 아닌 결과는 0.05배와 0.25배.
+## 확률표 (2026-10-11 파운더 지시로 세 번 변경, 지금은 사다리 + 터짐 게이지)
+- 터짐 게이지(`web/lib/burst.ts`, `BURST`): 열 때마다 박스 가격의 10% 가 쌓이고, 터짐(0.625%, 고정 확률)이 나오면 시작 금액(10배)과 쌓인 금액 전부를 받는다. 게이지는 지갑 저장소의 `burst` 에 있다(계정마다, 박스마다). 확률을 앞 결과에 맞춰 바꾸는 방식은 넣지 않았다.
+- 표 버전 `2026-10-11-burst-99-v3` (`web/lib/products.ts` 의 `LADDER`, `withWaveSchedule`). 받는 값 기준 99%. 당첨 구간 1, 2, 4, 8, 15, 40, 100, 250, 500배. 구간마다 그 값대의 상품이 먼저 나오고 없으면 USDT. 당첨이 아닌 결과는 0.05배와 0.25배.
 - 첫째 표(wide-99-v1)는 상품 몫 22% 가 거의 안 나와 USDT 만 보면 77% 였다. 그래서 같은 날 사다리로 바꿨다.
 - 숫자와 위험: `opening/ODDS.md` (`npx tsx scripts/opening/odds-report.ts`). 몫 분해: `npx tsx scripts/opening/odds-split.ts [개봉 수]`. 결정 기록: `opening/DECISIONS.md` 맨 아래 두 절.
 - 결과는 독립 추첨이다. 연속 흐름을 짜 넣는 코드는 없고 넣지 않는다.

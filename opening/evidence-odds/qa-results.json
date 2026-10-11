@@ -1,6 +1,6 @@
 {
- "at": "2026-10-11T05:49:27.355Z",
- "total": 89,
+ "at": "2026-10-11T06:31:03.128Z",
+ "total": 101,
  "failed": 0,
  "results": [
   {
@@ -25,7 +25,7 @@
    "scenario": "s1",
    "name": "거래 기록과 보관함 기록이 같은 개봉 번호로 이어진다",
    "pass": true,
-   "detail": "[\"vault-goldx1:op_0fe151d0-a4bf-4858-968d-178e6f8a4d39\",\"vault-goldx1:op_c2d80439-6fe6-43a3-9cee-d131f5e2422f\"]"
+   "detail": "[\"vault-goldx1:op_6189d063-bf49-4a9d-9019-c3d9ea4ef367\",\"vault-goldx1:op_fb2febfb-3c47-4443-8f09-686bd93f0835\"]"
   },
   {
    "scenario": "s1",
@@ -49,7 +49,7 @@
    "scenario": "s2",
    "name": "low: 줄었다고 적는다",
    "pass": true,
-   "detail": "잔액 9,999.05 USDT 받은 금액 0.05 USDT 1 USDT 사용 잔액 0.95 USDT 감소 잔액에 반영했습니다. 나올 확률 48.6999% 한 번 "
+   "detail": "잔액 9,999.05 USDT 받은 금액 0.05 USDT 1 USDT 사용 잔액 0.95 USDT 감소 잔액에 반영했습니다. 나올 확률 48.2083% 터짐 게"
   },
   {
    "scenario": "s2",
@@ -72,7 +72,7 @@
    "scenario": "s2",
    "name": "x1: 낸 값과 같으면 변화 없음이라고 적는다",
    "pass": true,
-   "detail": "잔액 10,000 USDT 받은 금액 1 USDT 1 USDT 사용 잔액 변화 없음 잔액에 반영했습니다. 나올 확률 5% 한 번 더 열기, 1 USDT 개봉 결과"
+   "detail": "잔액 10,000 USDT 받은 금액 1 USDT 1 USDT 사용 잔액 변화 없음 잔액에 반영했습니다. 나올 확률 5% 터짐 게이지 10.1 USDT 한 번 더"
   },
   {
    "scenario": "s2",
@@ -95,7 +95,7 @@
    "scenario": "s2",
    "name": "x2: 늘었다고 적는다",
    "pass": true,
-   "detail": "잔액 10,001 USDT 받은 금액, 낸 값의 2배 2 USDT 1 USDT 사용 잔액 1 USDT 증가 잔액에 반영했습니다. 나올 확률 12% 한 번 더 열기"
+   "detail": "잔액 10,001 USDT 받은 금액, 낸 값의 2배 2 USDT 1 USDT 사용 잔액 1 USDT 증가 잔액에 반영했습니다. 나올 확률 11.5% 터짐 게이지"
   },
   {
    "scenario": "s2",
@@ -118,7 +118,7 @@
    "scenario": "s2",
    "name": "x8: 늘었다고 적는다",
    "pass": true,
-   "detail": "잔액 10,007 USDT 받은 금액, 낸 값의 8배 8 USDT 1 USDT 사용 잔액 7 USDT 증가 잔액에 반영했습니다. 나올 확률 0.32% 한 번 더 "
+   "detail": "잔액 10,007 USDT 받은 금액, 낸 값의 8배 8 USDT 1 USDT 사용 잔액 7 USDT 증가 잔액에 반영했습니다. 나올 확률 0.24% 터짐 게이지"
   },
   {
    "scenario": "s2",
@@ -141,7 +141,7 @@
    "scenario": "s2",
    "name": "itemTop: 보관 상태와 받는 방법 선택",
    "pass": true,
-   "detail": "잔액 9,999 USDT VOILA 애플 비전 프로 참고가 3,500 USDT 낸 값의 3500배 보관함에 넣었습니다 나올 확률 0.0001%. 1 USDT 사용 받는 방법 선택 한 번 더 열기, "
+   "detail": "잔액 9,999 USDT VOILA 애플 비전 프로 참고가 3,500 USDT 낸 값의 3500배 보관함에 넣었습니다 나올 확률 0.0001%. 1 USDT 사용 터짐 게이지 10.1 USDT 받는"
   },
   {
    "scenario": "s2",
@@ -176,7 +176,7 @@
    "scenario": "s3",
    "name": "건너뛰기는 바로 결과로 간다",
    "pass": true,
-   "detail": "227ms"
+   "detail": "229ms"
   },
   {
    "scenario": "s4",
@@ -194,7 +194,7 @@
    "scenario": "s4",
    "name": "받은 뒤 가장 큰 글자는 실제로 받은 금액이고 잔액 변화를 적는다",
    "pass": true,
-   "detail": "잔액 10,018 USDT 받은 금액, 낸 값의 19배 19 USDT 1 USDT 사용 잔액 18 USDT 증가 USB-C 충전 케이블 2m, 참고가 20 USDT. USDT로 받았습니다. 나올 확률 0.2211% "
+   "detail": "잔액 10,018 USDT 받은 금액, 낸 값의 19배 19 USDT 1 USDT 사용 잔액 18 USDT 증가 USB-C 충전 케이블 2m, 참고가 20 USDT. USDT로 받았습니다. 나올 확률 0.1105% "
   },
   {
    "scenario": "s4",
@@ -288,13 +288,13 @@
    "scenario": "s7",
    "name": "못 본 결과: 보관함 기록에 개봉 번호가 있고 아직 본 목록에 없다",
    "pass": true,
-   "detail": "{\"items\":[{\"id\":\"own_3131fbda-733f-4d03-884e-7778900e7aef\",\"itemId\":\"wave-drop-400\",\"status\":\"SOLD\",\"openingId\":\"op_37887d77-3b57-4a89-bd14-e4c5ec0c6808\"}],\"seen\":[]}"
+   "detail": "{\"items\":[{\"id\":\"own_5bc848a6-8681-4d47-abf8-3bcbf5ffdb12\",\"itemId\":\"wave-drop-400\",\"status\":\"SOLD\",\"openingId\":\"op_907892ca-499f-4aec-ba5b-eaf9ef598d6f\"}],\"seen\":[]}"
   },
   {
    "scenario": "s7",
    "name": "다시 보여 준 결과가 처음 정해진 결과와 같다",
    "pass": true,
-   "detail": "잔액 10,003 USDT 받은 금액, 낸 값의 4배 4 USDT 1 USDT 사용 잔액 3 USDT 증가 잔액에 반영했습니다. 나올 확률 4.5% 아까 연 박스의 결과입니다. 새로 뽑지 않았습니다. 한 번 더 열기"
+   "detail": "잔액 10,003 USDT 받은 금액, 낸 값의 4배 4 USDT 1 USDT 사용 잔액 3 USDT 증가 잔액에 반영했습니다. 나올 확률 4% 터짐 게이지 10.1 USDT 아까 연 박스의 결과입니다. 새로 뽑지 "
   },
   {
    "scenario": "s7",
@@ -328,7 +328,7 @@
    "scenario": "s8",
    "name": "움직임 줄이기: 상자 연출 없이 결과부터",
    "pass": true,
-   "detail": "144ms box 0"
+   "detail": "77ms box 0"
   },
   {
    "scenario": "s9",
@@ -418,25 +418,25 @@
    "scenario": "s10",
    "name": "그대로: 95% 프레임이 34ms 이내",
    "pass": true,
-   "detail": "프레임 80, 평균 16.7ms, 95% 16.8ms, 최대 16.8ms, 50ms 초과 0회, 결과까지 887ms, 다음 행동까지 1248ms"
+   "detail": "프레임 80, 평균 16.7ms, 95% 16.8ms, 최대 16.8ms, 50ms 초과 0회, 결과까지 885ms, 다음 행동까지 1232ms"
   },
   {
    "scenario": "s10",
    "name": "그대로: 누른 뒤 결과까지 1100ms 이내",
    "pass": true,
-   "detail": "결과까지 887ms, 다음 행동까지 1248ms"
+   "detail": "결과까지 885ms, 다음 행동까지 1232ms"
   },
   {
    "scenario": "s10",
    "name": "CPU 4배 느리게: 95% 프레임이 34ms 이내",
    "pass": true,
-   "detail": "프레임 90, 평균 18.1ms, 95% 33.3ms, 최대 66.6ms, 50ms 초과 1회, 결과까지 1030ms, 다음 행동까지 1411ms"
+   "detail": "프레임 90, 평균 18.1ms, 95% 16.8ms, 최대 66.6ms, 50ms 초과 1회, 결과까지 1041ms, 다음 행동까지 1429ms"
   },
   {
    "scenario": "s10",
    "name": "CPU 4배 느리게: 누른 뒤 결과까지 1600ms 이내",
    "pass": true,
-   "detail": "결과까지 1030ms, 다음 행동까지 1411ms"
+   "detail": "결과까지 1041ms, 다음 행동까지 1429ms"
   },
   {
    "scenario": "s11",
@@ -448,13 +448,13 @@
    "scenario": "s11",
    "name": "5개 열기: 잔액에 들어온 것과 보관 상품을 나눠 적는다",
    "pass": true,
-   "detail": "잔액 9,997.15 USDT 5개를 열었습니다 받은 상품은 보관함에 있습니다. 가장 큰 결과 애플 기프트카드 $10 참고가 10 USDT, 10배 쓴 금액 5 USDT 잔액에 반영 2.15 USDT 보관 상품 1개 참고가 10 USDT 잔액 변화 2.85 USDT 감소 애플 기프트카드 $10, 보관 중"
+   "detail": "잔액 9,997.15 USDT 5개를 열었습니다 받은 상품은 보관함에 있습니다. 가장 큰 결과 애플 기프트카드 $10 참고가 10 USDT, 10배 쓴 금액 5 USDT 잔액에 반영 2.15 USDT 보관 상품 1개 참고가 10 USDT 터짐 게이지 10.5 USDT 잔액 변화 2.85 USDT 감소 애"
   },
   {
    "scenario": "s11",
    "name": "여러 개 결과에서 상품을 USDT 로 받는다: 잔액과 요약이 함께 바뀐다",
    "pass": true,
-   "detail": "balance 10006.65 잔액 10,006.65 USDT 5개를 열었습니다 받은 상품은 보관함에 있습니다. 가장 큰 결과 애플 기프트카드 $10 참고가 10 USDT, 10배 쓴 금액 5 USDT 잔액에 반영 11.65 USDT 잔액 변화 "
+   "detail": "balance 10006.65 잔액 10,006.65 USDT 5개를 열었습니다 받은 상품은 보관함에 있습니다. 가장 큰 결과 애플 기프트카드 $10 참고가 10 USDT, 10배 쓴 금액 5 USDT 잔액에 반영 11.65 USDT 터짐 게이지"
   },
   {
    "scenario": "s11",
@@ -484,7 +484,7 @@
    "scenario": "s12",
    "name": "짧게 보기 켬: 결과까지 0.7초 이내",
    "pass": true,
-   "detail": "결과까지 499ms, 다음 행동까지 848ms"
+   "detail": "결과까지 498ms, 다음 행동까지 846ms"
   },
   {
    "scenario": "s13",
@@ -527,6 +527,78 @@
    "name": "두 탭에서 한 번씩: 구매 둘, 기록 둘, 회차 둘, 잔액 9998.1",
    "pass": true,
    "detail": "opens 2 items 2 nonce 2 balance 9998.1"
+  },
+  {
+   "scenario": "s15",
+   "name": "박스 화면: 한 번도 안 연 계정의 게이지는 시작 금액이다",
+   "pass": true,
+   "detail": "터짐 게이지10 USDT"
+  },
+  {
+   "scenario": "s15",
+   "name": "터짐: 잔액 = 10000 - 1 + 10.1",
+   "pass": true,
+   "detail": "10009.1"
+  },
+  {
+   "scenario": "s15",
+   "name": "터짐: 받은 금액이 게이지 전부이고, 게이지가 시작 금액으로 돌아갔다고 적는다",
+   "pass": true,
+   "detail": "잔액 10,009.1 USDT 터졌습니다, 게이지 전부, 낸 값의 10배 10.1 USDT 1 USDT 사용 잔액 9.1 USDT 증가 잔액에 반영했습니다. 나올 확률 0.625% 게이지는 10 USDT부터 다시 쌓입니다 한 번 더 열기, 1 USDT 개봉 결과 검증 박스로 돌아가기"
+  },
+  {
+   "scenario": "s15",
+   "name": "1번째: 게이지가 10.1 USDT 로 올랐다",
+   "pass": true,
+   "detail": "받은 금액 0.05 USDT 1 USDT 사용 잔액 0.95 USDT 감소 잔액에 반영했습니다. 나올 확률 48.2083% 터짐 게이지 10.1 USDT 한 번 더 열기, 1 USDT 개봉 결과 검증 박스로 돌아가기"
+  },
+  {
+   "scenario": "s15",
+   "name": "2번째: 게이지가 10.2 USDT 로 올랐다",
+   "pass": true,
+   "detail": "받은 금액 0.05 USDT 1 USDT 사용 잔액 0.95 USDT 감소 잔액에 반영했습니다. 나올 확률 48.2083% 터짐 게이지 10.2 USDT 한 번 더 열기, 1 USDT 개봉 결과 검증 박스로 돌아가기"
+  },
+  {
+   "scenario": "s15",
+   "name": "3번째: 게이지가 10.3 USDT 로 올랐다",
+   "pass": true,
+   "detail": "받은 금액 0.05 USDT 1 USDT 사용 잔액 0.95 USDT 감소 잔액에 반영했습니다. 나올 확률 48.2083% 터짐 게이지 10.3 USDT 한 번 더 열기, 1 USDT 개봉 결과 검증 박스로 돌아가기"
+  },
+  {
+   "scenario": "s15",
+   "name": "네 번째에 터짐: 시작 금액 + 네 번의 몫을 받는다",
+   "pass": true,
+   "detail": "balance 10006.55 expect 10006.55"
+  },
+  {
+   "scenario": "s15",
+   "name": "터진 뒤 박스 화면의 게이지는 시작 금액이다",
+   "pass": true,
+   "detail": "터짐 게이지10 USDT"
+  },
+  {
+   "scenario": "s15",
+   "name": "여러 개 열기 안의 터짐: 잔액과 요약이 맞다",
+   "pass": true,
+   "detail": "balance 10005.5 잔액 10,005.5 USDT 10.5 USDT, 잔액에 들어왔습니다 다음 열기에 바로 쓸 수 있습니다. 가장 큰 결과 10.3 USDT 10배 쓴 금액 5 USDT 잔액에 반영 10.5 USDT 터짐 게이지 10.2 USDT 잔액 변화 5.5 USDT 증가 터짐, 게이지 전부, 잔액 반영, 10배 10.3 USDT 즉시 캐시백, 잔액 반영, 4번 0.05"
+  },
+  {
+   "scenario": "s15",
+   "name": "여러 개 열기 뒤 게이지는 터진 뒤 두 번의 몫만 남는다",
+   "pass": true,
+   "detail": "잔액 10,005.5 USDT 10.5 USDT, 잔액에 들어왔습니다 다음 열기에 바로 쓸 수 있습니다. 가장 큰 결과 10.3 USDT 10배 쓴 금액 5 USDT 잔액에 반영 10.5 USDT 터짐 게이지 10.2 USDT 잔액 변화 5.5 USDT 증가 터짐, 게이지 전부, 잔액 반영, 10배 10.3 USDT 즉시 캐시백, 잔액 반영, 4번 0.05 USDT 한 번 더 열기, 5 USDT 박스로 돌아가기"
+  },
+  {
+   "scenario": "s15",
+   "name": "가장 큰 결과로 터짐을 올린다",
+   "pass": true,
+   "detail": "잔액 10,005.5 USDT 10.5 USDT, 잔액에 들어왔습니다 다음 열기에 바로 쓸 수 있습니다. 가장 큰 결과 10.3 USDT 10배 쓴 금액 5 USDT 잔액에 반영 10.5 USDT 터짐 게이지 10."
+  },
+  {
+   "scenario": "s15",
+   "name": "새로 고친 뒤에도 터짐의 금액이 같고 다시 지급되지 않는다",
+   "pass": true,
+   "detail": "balance 10009.1"
   }
  ]
 }

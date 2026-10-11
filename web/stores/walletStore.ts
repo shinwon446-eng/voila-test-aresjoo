@@ -5,6 +5,7 @@
  * 표시는 항상 useCurrency().fmt 를 거친다, 여기서는 숫자만 다룬다.
  */
 import { create } from "zustand";
+import type { BurstPot } from "../lib/burst";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { CRYPTO_ONLY, planDebit, type FundingRatio, type FundingSplit } from "@/lib/funding";
 
@@ -100,6 +101,9 @@ interface WalletState {
   credit: (usdt: number, to?: "crypto" | "card") => void;
   /** 환급 귀속, 암호화폐/카드 잔액에 각각 더한다 */
   creditSplit: (toCrypto: number, toCard: number) => void;
+  /** 터짐 게이지에 쌓인 금액(박스마다). lib/burst, lib/opening */
+  burst: Record<string, BurstPot>;
+  setBurst: (boxSlug: string, pot: BurstPot) => void;
   topUp: () => void;
   /** 현재 로그인한 로컬 계정을 지정해 웰컴 보너스 상태를 갱신한다. */
   setWelcomeAccount: (accountId: string | null) => void;
@@ -125,6 +129,8 @@ export const useWalletStore = create<WalletState>()(
       totalDepositedCard: 0,
       totalWagered: 0,
       welcomeClaimed: false,
+      burst: {},
+      setBurst: (boxSlug, pot) => set((s) => ({ burst: { ...(s.burst ?? {}), [boxSlug]: pot } })),
       hydrated: false,
       addTransaction: (tx) => {
         const rec: Transaction = { ...tx, id: transactionId(), at: new Date().toISOString() };
@@ -229,7 +235,7 @@ export const useWalletStore = create<WalletState>()(
     {
       name: "gachaflix.wallet",
       storage: createJSONStorage(() => localStorage),
-      partialize: (s) => ({ balance: s.balance, cryptoBalance: s.cryptoBalance, cardBalance: s.cardBalance, transactions: s.transactions, settledDepositRefs: s.settledDepositRefs, welcomeClaimed: s.welcomeClaimed, totalDeposited: s.totalDeposited, totalDepositedCrypto: s.totalDepositedCrypto, totalDepositedCard: s.totalDepositedCard, totalWagered: s.totalWagered }),
+      partialize: (s) => ({ balance: s.balance, cryptoBalance: s.cryptoBalance, cardBalance: s.cardBalance, transactions: s.transactions, settledDepositRefs: s.settledDepositRefs, welcomeClaimed: s.welcomeClaimed, totalDeposited: s.totalDeposited, totalDepositedCrypto: s.totalDepositedCrypto, totalDepositedCard: s.totalDepositedCard, totalWagered: s.totalWagered, burst: s.burst ?? {} }),
       version: 4,
       // v0 → v1: 출금 상태명 PROCESSING → BROADCASTING
       // v1 → v2: 롤오버 누계 신설, 남아 있는 거래 기록에서 되살린다

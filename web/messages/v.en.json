@@ -90,7 +90,9 @@
     "shipFeeV": "0 USDT to {n} countries (chosen on the shipping sheet)",
     "countriesLink": "Show shipping countries",
     "countriesHide": "Hide shipping countries",
-    "belowOdds": "Odds of getting less than you paid"
+    "belowOdds": "Odds of getting less than you paid",
+    "burst": "Burst gauge",
+    "burstNote": "Every open adds {pct}% of the box price to the burst gauge. When Burst comes up (odds {odds}) you receive the whole gauge in USDT, and it restarts from {seed}. The odds of Burst are always the same, however full the gauge is. The gauge belongs to this box and this account, and is paid only when it bursts."
   },
   "reveal": {
     "skip": "Skip",
@@ -487,6 +489,9 @@
     "timesShort": "{n}x",
     "best": "Biggest result",
     "countTimes": "{n} times",
-    "timesLine": "{n}x the price"
+    "timesLine": "{n}x the price",
+    "burstLabel": "Burst, the whole gauge",
+    "gaugeNow": "Burst gauge {amount}",
+    "gaugeReset": "The gauge restarts from {amount}"
   }
 }

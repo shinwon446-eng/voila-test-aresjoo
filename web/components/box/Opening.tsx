@@ -23,6 +23,7 @@ import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useModal } from "@/lib/useModal";
 import { useWalletStore } from "@/stores/walletStore";
+import { BURST, burstGauge } from "@/lib/burst";
 import { useSettingsStore, type ReceiveMethod } from "@/stores/settingsStore";
 import { BrandLogo } from "@/components/layout/BrandLogo";
 import { Button, Line, TextLink } from "@/components/ui/kit";
@@ -70,6 +71,9 @@ export function Opening({ box, result, cost, accountId, recovered, initialTaken,
   const { fmt } = useCurrency();
   const panel = useRef<HTMLDivElement>(null);
   const balance = useWalletStore((s) => s.balance);
+  // 결과가 드러난 뒤에만 보여 준다(구매가 끝난 순간 게이지는 이미 바뀌어 있어서, 먼저 보이면 결과를 미리 알려 주게 된다)
+  const gauge = burstGauge(box.price, useWalletStore((s) => s.burst?.[box.slug]));
+  const burst = result.item.id === BURST.id;
   const sound = useSettingsStore((s) => s.openSound);
   const short = useSettingsStore((s) => s.openShort);
   const autoTake = useSettingsStore((s) => !!s.autoTakeBy[accountId]);
@@ -194,7 +198,7 @@ export function Opening({ box, result, cost, accountId, recovered, initialTaken,
         <div className="v-op-result" aria-live="polite" aria-atomic="true" aria-hidden={!revealed}>
           {revealed && (received !== null ? (
             <>
-              <p className="v-op-label">{t("op.cashLabel")}{timesOf(received, cost) !== null ? t("op.times", { n: timesOf(received, cost) }) : ""}</p>
+              <p className="v-op-label">{t(burst ? "op.burstLabel" : "op.cashLabel")}{timesOf(received, cost) !== null ? t("op.times", { n: timesOf(received, cost) }) : ""}</p>
               <h2 className="v-op-amount v-num">{fmt(received)}</h2>
               {net}
               <p className="v-op-meta">{isCash ? t("op.inBalance") : t(autoTaken ? "op.autoTookFrom" : "op.tookFrom", { name: itemName(item), ref: fmt(item.value) })}. {odds}{autoTaken ? ". " + t("op.autoNote") : ""}</p>
@@ -213,6 +217,7 @@ export function Opening({ box, result, cost, accountId, recovered, initialTaken,
               <p className="v-op-meta">{odds}. {t("op.paid", { price: fmt(cost) })}</p>
             </>
           ))}
+          {revealed && <p className="v-op-label v-op-gauge v-num">{t(burst ? "op.gaugeReset" : "op.gaugeNow", { amount: fmt(gauge) })}</p>}
         </div>
       </div>
 

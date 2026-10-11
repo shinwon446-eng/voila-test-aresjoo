@@ -90,7 +90,9 @@
     "shipFeeV": "0 USDT，可配送 {n} 个国家（在配送表中选择）",
     "countriesLink": "查看可配送国家",
     "countriesHide": "收起可配送国家",
-    "belowOdds": "获得低于支付金额的概率"
+    "belowOdds": "获得低于支付金额的概率",
+    "burst": "爆发槽",
+    "burstNote": "每次开箱会把盲盒价格的 {pct}% 累积到爆发槽。出现爆发（概率 {odds}）时，以 USDT 领取爆发槽的全部金额，并从 {seed} 重新累积。无论爆发槽累积了多少，爆发的概率始终不变。爆发槽属于本盲盒和本账户，只有爆发时才能领取。"
   },
   "reveal": {
     "skip": "跳过",
@@ -487,6 +489,9 @@
     "timesShort": "{n} 倍",
     "best": "最大结果",
     "countTimes": "{n} 次",
-    "timesLine": "支付额的 {n} 倍"
+    "timesLine": "支付额的 {n} 倍",
+    "burstLabel": "爆发，领取全部累积",
+    "gaugeNow": "爆发槽 {amount}",
+    "gaugeReset": "爆发槽从 {amount} 重新累积"
   }
 }

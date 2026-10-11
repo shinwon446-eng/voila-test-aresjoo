@@ -19,6 +19,7 @@ import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useModal } from "@/lib/useModal";
 import { useWalletStore } from "@/stores/walletStore";
+import { burstGauge } from "@/lib/burst";
 import { Button, ButtonLink, Line, Row, Rows, TextLink } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
 import { VerifySheet, type VerifyRecord } from "@/components/flow/VerifySheet";
@@ -46,6 +47,7 @@ export function Reveal({ box, results, cost, recovered, initialTaken, initialShi
   const [armed, setArmed] = useState(false);
   const [stage, setStage] = useState<"anticipation" | "impact" | "exit">("anticipation");
   const balance = useWalletStore((s) => s.balance);
+  const gauge = burstGauge(box.price, useWalletStore((s) => s.burst?.[box.slug]));
   const [verifying, setVerifying] = useState<VerifyRecord | null>(null);
   // 받기 대상: 단일 결과는 그 결과, 여럿이면 목록에서 고른 행
   const [picked, setPicked] = useState<OpeningResult | null>(null);
@@ -83,7 +85,7 @@ export function Reveal({ box, results, cost, recovered, initialTaken, initialShi
     const out: { r: OpeningResult; count: number }[] = [];
     for (const r of sorted) {
       const last = out[out.length - 1];
-      if (r.item.kind === "cash" && last && last.r.item.id === r.item.id) last.count += 1;
+      if (r.item.kind === "cash" && last && last.r.item.id === r.item.id && last.r.item.value === r.item.value) last.count += 1;
       else out.push({ r, count: 1 });
     }
     return out;
@@ -196,6 +198,7 @@ export function Reveal({ box, results, cost, recovered, initialTaken, initialShi
                     <Row label={t("reveal.spent")}>{fmt(cost)}</Row>
                     <Row label={t("op.creditedSum")}>{fmt(creditedSum)}</Row>
                     {kept.length > 0 && <Row label={t("op.keptSum", { n: kept.length })}>{fmt(keptRef)}</Row>}
+                    <Row label={t("box.burst")}>{fmt(gauge)}</Row>
                     <Row label={t("op.changeLabel")}>{change < 0 ? t("op.changeDown", { diff: fmt(Math.abs(change)) }) : change > 0 ? t("op.changeUp", { diff: fmt(change) }) : t("op.changeSame")}</Row>
                   </Rows>
                   {takeFailed && <Line fail>{t("op.failed")}</Line>}

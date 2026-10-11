@@ -138,6 +138,9 @@
 @keyframes v-op-halo { 0% { opacity: 0; transform: scale(0.7); } 30% { opacity: 1; } 100% { opacity: 0.35; transform: scale(1.12); } }
 @keyframes v-op-sheet { from { transform: translateY(24px); } }
 
+/* 결과 아래의 터짐 게이지 한 줄. 화면이 낮으면(가장 작은 휴대폰) 결과 묶음이 위쪽 단추와 겹치므로 내린다. 게이지는 박스 화면에 늘 있다 */
+@media (max-height: 700px) { .v-op-gauge { display: none; } }
+
 /* 여러 개 결과의 "가장 큰 결과" 한 줄. 한 번 여는 값의 두 배 이상일 때만 나온다 */
 .v-best { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: var(--v-r-card); background: var(--v-card); }
 .v-best-photo { position: relative; flex: none; overflow: hidden; width: 72px; height: 72px; border-radius: 12px; background: var(--v-photo); }

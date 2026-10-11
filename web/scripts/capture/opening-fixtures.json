@@ -12,7 +12,7 @@
           "value": 0.25,
           "kind": "cash",
           "sell": 0.25,
-          "odds": 27.5476
+          "odds": 29.1279
         },
         "low": {
           "clientSeed": "opening-fixture-client",
@@ -21,7 +21,16 @@
           "value": 0.05,
           "kind": "cash",
           "sell": 0.05,
-          "odds": 48.6999
+          "odds": 48.2083
+        },
+        "burst": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 3,
+          "itemId": "wave-burst",
+          "value": 10,
+          "kind": "cash",
+          "sell": 10,
+          "odds": 0.625
         },
         "x2": {
           "clientSeed": "opening-fixture-client",
@@ -30,7 +39,7 @@
           "value": 2,
           "kind": "cash",
           "sell": 2,
-          "odds": 12
+          "odds": 11.5
         },
         "x4": {
           "clientSeed": "opening-fixture-client",
@@ -39,7 +48,7 @@
           "value": 4,
           "kind": "cash",
           "sell": 4,
-          "odds": 4.5
+          "odds": 4
         },
         "x1": {
           "clientSeed": "opening-fixture-client",
@@ -50,15 +59,6 @@
           "sell": 1,
           "odds": 5
         },
-        "itemLow": {
-          "clientSeed": "opening-fixture-client",
-          "nonce": 59,
-          "itemId": "ap-cable-2m",
-          "value": 20,
-          "kind": "physical",
-          "sell": 19,
-          "odds": 0.2211
-        },
         "x8": {
           "clientSeed": "opening-fixture-client",
           "nonce": 128,
@@ -66,25 +66,34 @@
           "value": 8,
           "kind": "cash",
           "sell": 8,
-          "odds": 0.32
+          "odds": 0.24
+        },
+        "itemLow": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 1662,
+          "itemId": "ap-cable-2m",
+          "value": 20,
+          "kind": "physical",
+          "sell": 19,
+          "odds": 0.1105
         },
         "x15": {
           "clientSeed": "opening-fixture-client",
-          "nonce": 175,
+          "nonce": 3498,
           "itemId": "wave-drop-1500",
           "value": 15,
           "kind": "cash",
           "sell": 15,
-          "odds": 0.14
+          "odds": 0.07
         },
         "itemMid": {
           "clientSeed": "opening-fixture-client",
-          "nonce": 203594,
+          "nonce": 355255,
           "itemId": "da-watchse",
           "value": 250,
           "kind": "physical",
           "sell": 237.5,
-          "odds": 0.0011
+          "odds": 0.0008
         },
         "itemTop": {
           "clientSeed": "opening-fixture-client",
@@ -106,47 +115,47 @@
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-drop-200",
               "value": 2,
               "kind": "cash",
               "sell": 2,
-              "odds": 12
+              "odds": 11.5
             },
             {
               "itemId": "wave-drop-200",
               "value": 2,
               "kind": "cash",
               "sell": 2,
-              "odds": 12
+              "odds": 11.5
             },
             {
               "itemId": "wave-drop-200",
               "value": 2,
               "kind": "cash",
               "sell": 2,
-              "odds": 12
+              "odds": 11.5
             }
           ]
         },
         "fiveLowThenBig": {
-          "clientSeed": "opening-seq-fiveLowThenBig-6076",
+          "clientSeed": "opening-seq-fiveLowThenBig-14716",
           "nonce": 0,
           "steps": [
             {
@@ -154,42 +163,42 @@
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-drop-800",
               "value": 8,
               "kind": "cash",
               "sell": 8,
-              "odds": 0.32
+              "odds": 0.24
             }
           ]
         },
@@ -202,70 +211,70 @@
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             }
           ]
         },
@@ -278,26 +287,26 @@
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-drop-800",
               "value": 8,
               "kind": "cash",
               "sell": 8,
-              "odds": 0.32
+              "odds": 0.24
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             }
           ]
         },
         "threeBig": {
-          "clientSeed": "opening-seq-threeBig-2687",
+          "clientSeed": "opening-seq-threeBig-4396",
           "nonce": 0,
           "steps": [
             {
@@ -305,26 +314,26 @@
               "value": 4,
               "kind": "cash",
               "sell": 4,
-              "odds": 4.5
+              "odds": 4
             },
             {
               "itemId": "wave-drop-200",
               "value": 2,
               "kind": "cash",
               "sell": 2,
-              "odds": 12
+              "odds": 11.5
             },
             {
               "itemId": "wave-drop-400",
               "value": 4,
               "kind": "cash",
               "sell": 4,
-              "odds": 4.5
+              "odds": 4
             }
           ]
         },
         "mixed": {
-          "clientSeed": "opening-seq-mixed-13243",
+          "clientSeed": "opening-seq-mixed-23696",
           "nonce": 0,
           "steps": [
             {
@@ -332,21 +341,21 @@
               "value": 0.25,
               "kind": "cash",
               "sell": 0.25,
-              "odds": 27.5476
+              "odds": 29.1279
             },
             {
               "itemId": "wave-drop-200",
               "value": 2,
               "kind": "cash",
               "sell": 2,
-              "odds": 12
+              "odds": 11.5
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-drop-100",
@@ -360,7 +369,7 @@
               "value": 4,
               "kind": "cash",
               "sell": 4,
-              "odds": 4.5
+              "odds": 4
             }
           ]
         },
@@ -373,35 +382,110 @@
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "gc-apple10",
               "value": 10,
               "kind": "digital",
               "sell": 9.5,
-              "odds": 1.0779
+              "odds": 0.8084
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
             },
             {
               "itemId": "wave-drop-200",
               "value": 2,
               "kind": "cash",
               "sell": 2,
-              "odds": 12
+              "odds": 11.5
             },
             {
               "itemId": "wave-cashback-5",
               "value": 0.05,
               "kind": "cash",
               "sell": 0.05,
-              "odds": 48.6999
+              "odds": 48.2083
+            }
+          ]
+        },
+        "lowThenBurst": {
+          "clientSeed": "opening-seq-lowThenBurst-2067",
+          "nonce": 0,
+          "steps": [
+            {
+              "itemId": "wave-cashback-5",
+              "value": 0.05,
+              "kind": "cash",
+              "sell": 0.05,
+              "odds": 48.2083
+            },
+            {
+              "itemId": "wave-cashback-5",
+              "value": 0.05,
+              "kind": "cash",
+              "sell": 0.05,
+              "odds": 48.2083
+            },
+            {
+              "itemId": "wave-cashback-5",
+              "value": 0.05,
+              "kind": "cash",
+              "sell": 0.05,
+              "odds": 48.2083
+            },
+            {
+              "itemId": "wave-burst",
+              "value": 10,
+              "kind": "cash",
+              "sell": 10,
+              "odds": 0.625
+            }
+          ]
+        },
+        "burstInBatch": {
+          "clientSeed": "opening-seq-burstInBatch-920",
+          "nonce": 0,
+          "steps": [
+            {
+              "itemId": "wave-cashback-5",
+              "value": 0.05,
+              "kind": "cash",
+              "sell": 0.05,
+              "odds": 48.2083
+            },
+            {
+              "itemId": "wave-cashback-5",
+              "value": 0.05,
+              "kind": "cash",
+              "sell": 0.05,
+              "odds": 48.2083
+            },
+            {
+              "itemId": "wave-burst",
+              "value": 10,
+              "kind": "cash",
+              "sell": 10,
+              "odds": 0.625
+            },
+            {
+              "itemId": "wave-cashback-5",
+              "value": 0.05,
+              "kind": "cash",
+              "sell": 0.05,
+              "odds": 48.2083
+            },
+            {
+              "itemId": "wave-cashback-5",
+              "value": 0.05,
+              "kind": "cash",
+              "sell": 0.05,
+              "odds": 48.2083
             }
           ]
         }
@@ -418,7 +502,7 @@
           "value": 12.5,
           "kind": "cash",
           "sell": 12.5,
-          "odds": 28.6044
+          "odds": 29.4223
         },
         "low": {
           "clientSeed": "opening-fixture-client",
@@ -427,20 +511,29 @@
           "value": 2.5,
           "kind": "cash",
           "sell": 2.5,
-          "odds": 47.6071
+          "odds": 47.9806
         },
-        "x15": {
+        "burst": {
           "clientSeed": "opening-fixture-client",
           "nonce": 3,
-          "itemId": "wave-drop-75000",
-          "value": 750,
+          "itemId": "wave-burst",
+          "value": 500,
           "kind": "cash",
-          "sell": 750,
-          "odds": 0.14
+          "sell": 500,
+          "odds": 0.625
+        },
+        "x1": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 19,
+          "itemId": "wave-drop-5000",
+          "value": 50,
+          "kind": "cash",
+          "sell": 50,
+          "odds": 2.5
         },
         "itemLow": {
           "clientSeed": "opening-fixture-client",
-          "nonce": 19,
+          "nonce": 23,
           "itemId": "gd-scale",
           "value": 50,
           "kind": "physical",
@@ -454,7 +547,7 @@
           "value": 200,
           "kind": "cash",
           "sell": 200,
-          "odds": 0.9
+          "odds": 0.8
         },
         "x2": {
           "clientSeed": "opening-fixture-client",
@@ -463,48 +556,48 @@
           "value": 100,
           "kind": "cash",
           "sell": 100,
-          "odds": 2.4
+          "odds": 2.3
         },
-        "x1": {
+        "x15": {
           "clientSeed": "opening-fixture-client",
-          "nonce": 46,
-          "itemId": "wave-drop-5000",
-          "value": 50,
+          "nonce": 265,
+          "itemId": "wave-drop-75000",
+          "value": 750,
           "kind": "cash",
-          "sell": 50,
-          "odds": 2.5
+          "sell": 750,
+          "odds": 0.07
         },
         "x8": {
           "clientSeed": "opening-fixture-client",
-          "nonce": 130,
+          "nonce": 730,
           "itemId": "wave-drop-40000",
           "value": 400,
           "kind": "cash",
           "sell": 400,
-          "odds": 0.32
+          "odds": 0.24
         },
         "itemMid": {
           "clientSeed": "opening-fixture-client",
-          "nonce": 3702,
+          "nonce": 24134,
           "itemId": "gd-solitaire-ring",
           "value": 2000,
           "kind": "physical",
           "sell": 1900,
-          "odds": 0.0189
+          "odds": 0.0137
         },
         "itemTop": {
           "clientSeed": "opening-fixture-client",
-          "nonce": 525011,
+          "nonce": 916133,
           "itemId": "gd-bar-1kg",
           "value": 100000,
           "kind": "physical",
           "sell": 95000,
-          "odds": 0.0005
+          "odds": 0.0004
         }
       },
       "sequences": {
         "lowLowLowHighHighHigh": {
-          "clientSeed": "opening-seq-lowLowLowHighHighHigh-66959",
+          "clientSeed": "opening-seq-lowLowLowHighHighHigh-1814282",
           "nonce": 0,
           "steps": [
             {
@@ -512,47 +605,47 @@
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-drop-10000",
               "value": 100,
               "kind": "cash",
               "sell": 100,
-              "odds": 2.4
+              "odds": 2.3
             },
             {
               "itemId": "wave-drop-10000",
               "value": 100,
               "kind": "cash",
               "sell": 100,
-              "odds": 2.4
+              "odds": 2.3
             },
             {
               "itemId": "wave-drop-10000",
               "value": 100,
               "kind": "cash",
               "sell": 100,
-              "odds": 2.4
+              "odds": 2.3
             }
           ]
         },
         "fiveLowThenBig": {
-          "clientSeed": "opening-seq-fiveLowThenBig-3018",
+          "clientSeed": "opening-seq-fiveLowThenBig-4004",
           "nonce": 0,
           "steps": [
             {
@@ -560,42 +653,42 @@
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-drop-40000",
               "value": 400,
               "kind": "cash",
               "sell": 400,
-              "odds": 0.32
+              "odds": 0.24
             }
           ]
         },
@@ -608,75 +701,75 @@
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             }
           ]
         },
         "smallBigSmall": {
-          "clientSeed": "opening-seq-smallBigSmall-930",
+          "clientSeed": "opening-seq-smallBigSmall-2558",
           "nonce": 0,
           "steps": [
             {
@@ -684,26 +777,26 @@
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-drop-40000",
               "value": 400,
               "kind": "cash",
               "sell": 400,
-              "odds": 0.32
+              "odds": 0.24
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             }
           ]
         },
         "threeBig": {
-          "clientSeed": "opening-seq-threeBig-735944",
+          "clientSeed": "opening-seq-threeBig-1346069",
           "nonce": 0,
           "steps": [
             {
@@ -711,26 +804,26 @@
               "value": 200,
               "kind": "cash",
               "sell": 200,
-              "odds": 0.9
+              "odds": 0.8
             },
             {
               "itemId": "wave-drop-10000",
               "value": 100,
               "kind": "cash",
               "sell": 100,
-              "odds": 2.4
+              "odds": 2.3
             },
             {
               "itemId": "wave-drop-20000",
               "value": 200,
               "kind": "cash",
               "sell": 200,
-              "odds": 0.9
+              "odds": 0.8
             }
           ]
         },
         "mixed": {
-          "clientSeed": "opening-seq-mixed-181531",
+          "clientSeed": "opening-seq-mixed-1275015",
           "nonce": 0,
           "steps": [
             {
@@ -738,21 +831,21 @@
               "value": 12.5,
               "kind": "cash",
               "sell": 12.5,
-              "odds": 28.6044
+              "odds": 29.4223
             },
             {
               "itemId": "wave-drop-10000",
               "value": 100,
               "kind": "cash",
               "sell": 100,
-              "odds": 2.4
+              "odds": 2.3
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-drop-5000",
@@ -766,12 +859,12 @@
               "value": 200,
               "kind": "cash",
               "sell": 200,
-              "odds": 0.9
+              "odds": 0.8
             }
           ]
         },
         "withItem": {
-          "clientSeed": "opening-seq-withItem-2853",
+          "clientSeed": "opening-seq-withItem-2153",
           "nonce": 0,
           "steps": [
             {
@@ -779,35 +872,110 @@
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
-              "itemId": "gd-silver-chain",
-              "value": 120,
+              "itemId": "gd-scale",
+              "value": 50,
               "kind": "physical",
-              "sell": 114,
-              "odds": 2.1053
+              "sell": 47.5,
+              "odds": 0.8772
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
             },
             {
               "itemId": "wave-drop-10000",
               "value": 100,
               "kind": "cash",
               "sell": 100,
-              "odds": 2.4
+              "odds": 2.3
             },
             {
               "itemId": "wave-cashback-250",
               "value": 2.5,
               "kind": "cash",
               "sell": 2.5,
-              "odds": 47.6071
+              "odds": 47.9806
+            }
+          ]
+        },
+        "lowThenBurst": {
+          "clientSeed": "opening-seq-lowThenBurst-2067",
+          "nonce": 0,
+          "steps": [
+            {
+              "itemId": "wave-cashback-250",
+              "value": 2.5,
+              "kind": "cash",
+              "sell": 2.5,
+              "odds": 47.9806
+            },
+            {
+              "itemId": "wave-cashback-250",
+              "value": 2.5,
+              "kind": "cash",
+              "sell": 2.5,
+              "odds": 47.9806
+            },
+            {
+              "itemId": "wave-cashback-250",
+              "value": 2.5,
+              "kind": "cash",
+              "sell": 2.5,
+              "odds": 47.9806
+            },
+            {
+              "itemId": "wave-burst",
+              "value": 500,
+              "kind": "cash",
+              "sell": 500,
+              "odds": 0.625
+            }
+          ]
+        },
+        "burstInBatch": {
+          "clientSeed": "opening-seq-burstInBatch-920",
+          "nonce": 0,
+          "steps": [
+            {
+              "itemId": "wave-cashback-250",
+              "value": 2.5,
+              "kind": "cash",
+              "sell": 2.5,
+              "odds": 47.9806
+            },
+            {
+              "itemId": "wave-cashback-250",
+              "value": 2.5,
+              "kind": "cash",
+              "sell": 2.5,
+              "odds": 47.9806
+            },
+            {
+              "itemId": "wave-burst",
+              "value": 500,
+              "kind": "cash",
+              "sell": 500,
+              "odds": 0.625
+            },
+            {
+              "itemId": "wave-cashback-250",
+              "value": 2.5,
+              "kind": "cash",
+              "sell": 2.5,
+              "odds": 47.9806
+            },
+            {
+              "itemId": "wave-cashback-250",
+              "value": 2.5,
+              "kind": "cash",
+              "sell": 2.5,
+              "odds": 47.9806
             }
           ]
         }
@@ -817,14 +985,14 @@
     "vault-handbag": {
       "price": 30,
       "single": {
-        "x1": {
+        "low2": {
           "clientSeed": "opening-fixture-client",
           "nonce": 0,
-          "itemId": "wave-drop-3000",
-          "value": 30,
+          "itemId": "wave-cashback-750",
+          "value": 7.5,
           "kind": "cash",
-          "sell": 30,
-          "odds": 2.5
+          "sell": 7.5,
+          "odds": 29.8519
         },
         "low": {
           "clientSeed": "opening-fixture-client",
@@ -833,34 +1001,34 @@
           "value": 1.5,
           "kind": "cash",
           "sell": 1.5,
-          "odds": 46.5125
-        },
-        "low2": {
-          "clientSeed": "opening-fixture-client",
-          "nonce": 2,
-          "itemId": "wave-cashback-750",
-          "value": 7.5,
-          "kind": "cash",
-          "sell": 7.5,
-          "odds": 28.6465
-        },
-        "x15": {
-          "clientSeed": "opening-fixture-client",
-          "nonce": 3,
-          "itemId": "wave-drop-45000",
-          "value": 450,
-          "kind": "cash",
-          "sell": 450,
-          "odds": 0.14
+          "odds": 46.5596
         },
         "itemLow": {
           "clientSeed": "opening-fixture-client",
-          "nonce": 46,
+          "nonce": 19,
           "itemId": "bg-dust-bag-set",
           "value": 30,
           "kind": "physical",
           "sell": 28.5,
           "odds": 1.3158
+        },
+        "x1": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 46,
+          "itemId": "wave-drop-3000",
+          "value": 30,
+          "kind": "cash",
+          "sell": 30,
+          "odds": 2.5
+        },
+        "x4": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 48,
+          "itemId": "wave-drop-12000",
+          "value": 120,
+          "kind": "cash",
+          "sell": 120,
+          "odds": 0.8
         },
         "x2": {
           "clientSeed": "opening-fixture-client",
@@ -869,25 +1037,34 @@
           "value": 60,
           "kind": "cash",
           "sell": 60,
-          "odds": 2.4
+          "odds": 2.3
         },
-        "x4": {
+        "x15": {
           "clientSeed": "opening-fixture-client",
-          "nonce": 229,
-          "itemId": "wave-drop-12000",
-          "value": 120,
+          "nonce": 59,
+          "itemId": "wave-drop-45000",
+          "value": 450,
           "kind": "cash",
-          "sell": 120,
-          "odds": 0.9
+          "sell": 450,
+          "odds": 0.07
+        },
+        "burst": {
+          "clientSeed": "opening-fixture-client",
+          "nonce": 130,
+          "itemId": "wave-burst",
+          "value": 300,
+          "kind": "cash",
+          "sell": 300,
+          "odds": 0.625
         },
         "x8": {
           "clientSeed": "opening-fixture-client",
-          "nonce": 730,
+          "nonce": 868,
           "itemId": "wave-drop-24000",
           "value": 240,
           "kind": "cash",
           "sell": 240,
-          "odds": 0.32
+          "odds": 0.24
         },
         "itemTop": {
           "clientSeed": "opening-fixture-client",
@@ -896,21 +1073,21 @@
           "value": 12000,
           "kind": "physical",
           "sell": 11400,
-          "odds": 0.0079
+          "odds": 0.0058
         },
         "itemMid": {
           "clientSeed": "opening-fixture-client",
-          "nonce": 9652,
+          "nonce": 6296,
           "itemId": "bg-lv-neverfull",
           "value": 2100,
           "kind": "physical",
           "sell": 1995,
-          "odds": 0.0033
+          "odds": 0.0025
         }
       },
       "sequences": {
         "lowLowLowHighHighHigh": {
-          "clientSeed": "opening-seq-lowLowLowHighHighHigh-305371",
+          "clientSeed": "opening-seq-lowLowLowHighHighHigh-398526",
           "nonce": 0,
           "steps": [
             {
@@ -918,47 +1095,47 @@
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-drop-6000",
               "value": 60,
               "kind": "cash",
               "sell": 60,
-              "odds": 2.4
+              "odds": 2.3
             },
             {
               "itemId": "wave-drop-6000",
               "value": 60,
               "kind": "cash",
               "sell": 60,
-              "odds": 2.4
+              "odds": 2.3
             },
             {
               "itemId": "wave-drop-6000",
               "value": 60,
               "kind": "cash",
               "sell": 60,
-              "odds": 2.4
+              "odds": 2.3
             }
           ]
         },
         "fiveLowThenBig": {
-          "clientSeed": "opening-seq-fiveLowThenBig-4004",
+          "clientSeed": "opening-seq-fiveLowThenBig-17542",
           "nonce": 0,
           "steps": [
             {
@@ -966,47 +1143,47 @@
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-drop-24000",
               "value": 240,
               "kind": "cash",
               "sell": 240,
-              "odds": 0.32
+              "odds": 0.24
             }
           ]
         },
         "tenSmall": {
-          "clientSeed": "opening-seq-tenSmall-3045",
+          "clientSeed": "opening-seq-tenSmall-312",
           "nonce": 0,
           "steps": [
             {
@@ -1014,70 +1191,70 @@
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             }
           ]
         },
@@ -1090,26 +1267,26 @@
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-drop-24000",
               "value": 240,
               "kind": "cash",
               "sell": 240,
-              "odds": 0.32
+              "odds": 0.24
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             }
           ]
         },
         "threeBig": {
-          "clientSeed": "opening-seq-threeBig-34624",
+          "clientSeed": "opening-seq-threeBig-1033730",
           "nonce": 0,
           "steps": [
             {
@@ -1117,26 +1294,26 @@
               "value": 120,
               "kind": "cash",
               "sell": 120,
-              "odds": 0.9
+              "odds": 0.8
             },
             {
               "itemId": "wave-drop-6000",
               "value": 60,
               "kind": "cash",
               "sell": 60,
-              "odds": 2.4
+              "odds": 2.3
             },
             {
               "itemId": "wave-drop-12000",
               "value": 120,
               "kind": "cash",
               "sell": 120,
-              "odds": 0.9
+              "odds": 0.8
             }
           ]
         },
         "mixed": {
-          "clientSeed": "opening-seq-mixed-1273526",
+          "clientSeed": "opening-seq-mixed-379131",
           "nonce": 0,
           "steps": [
             {
@@ -1144,21 +1321,21 @@
               "value": 7.5,
               "kind": "cash",
               "sell": 7.5,
-              "odds": 28.6465
+              "odds": 29.8519
             },
             {
               "itemId": "wave-drop-6000",
               "value": 60,
               "kind": "cash",
               "sell": 60,
-              "odds": 2.4
+              "odds": 2.3
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-drop-3000",
@@ -1172,7 +1349,7 @@
               "value": 120,
               "kind": "cash",
               "sell": 120,
-              "odds": 0.9
+              "odds": 0.8
             }
           ]
         },
@@ -1185,35 +1362,110 @@
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "bg-bag-organizer",
               "value": 60,
               "kind": "physical",
               "sell": 57,
-              "odds": 10.1053
+              "odds": 9.6842
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
             },
             {
               "itemId": "wave-drop-6000",
               "value": 60,
               "kind": "cash",
               "sell": 60,
-              "odds": 2.4
+              "odds": 2.3
             },
             {
               "itemId": "wave-cashback-150",
               "value": 1.5,
               "kind": "cash",
               "sell": 1.5,
-              "odds": 46.5125
+              "odds": 46.5596
+            }
+          ]
+        },
+        "lowThenBurst": {
+          "clientSeed": "opening-seq-lowThenBurst-386",
+          "nonce": 0,
+          "steps": [
+            {
+              "itemId": "wave-cashback-150",
+              "value": 1.5,
+              "kind": "cash",
+              "sell": 1.5,
+              "odds": 46.5596
+            },
+            {
+              "itemId": "wave-cashback-150",
+              "value": 1.5,
+              "kind": "cash",
+              "sell": 1.5,
+              "odds": 46.5596
+            },
+            {
+              "itemId": "wave-cashback-150",
+              "value": 1.5,
+              "kind": "cash",
+              "sell": 1.5,
+              "odds": 46.5596
+            },
+            {
+              "itemId": "wave-burst",
+              "value": 300,
+              "kind": "cash",
+              "sell": 300,
+              "odds": 0.625
+            }
+          ]
+        },
+        "burstInBatch": {
+          "clientSeed": "opening-seq-burstInBatch-1709",
+          "nonce": 0,
+          "steps": [
+            {
+              "itemId": "wave-cashback-150",
+              "value": 1.5,
+              "kind": "cash",
+              "sell": 1.5,
+              "odds": 46.5596
+            },
+            {
+              "itemId": "wave-cashback-150",
+              "value": 1.5,
+              "kind": "cash",
+              "sell": 1.5,
+              "odds": 46.5596
+            },
+            {
+              "itemId": "wave-burst",
+              "value": 300,
+              "kind": "cash",
+              "sell": 300,
+              "odds": 0.625
+            },
+            {
+              "itemId": "wave-cashback-150",
+              "value": 1.5,
+              "kind": "cash",
+              "sell": 1.5,
+              "odds": 46.5596
+            },
+            {
+              "itemId": "wave-cashback-150",
+              "value": 1.5,
+              "kind": "cash",
+              "sell": 1.5,
+              "odds": 46.5596
             }
           ]
         }

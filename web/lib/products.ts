@@ -42,6 +42,7 @@ export const SORTS: { key: SortKey; label: string }[] = [
  */
 export type { ItemKind } from "./catalogTypes";
 import type { ItemKind } from "./catalogTypes";
+import { BURST, burstSeed } from "./burst";
 
 export interface ProductItem {
   id: string;
@@ -143,7 +144,7 @@ function buildBox(spec: BoxSpec): ProductBox {
   };
 }
 
-export const CATALOG_ODDS_VERSION = "2026-10-11-ladder-99-v2";
+export const CATALOG_ODDS_VERSION = "2026-10-11-burst-99-v3";
 
 // ── 확률표 v2 "사다리" (2026-10-11 파운더 결정 둘째: 당첨을 상품으로, 큰 배수가 실제로 보이게) ────────────────
 // 백만 칸이 한 단위(0.0001%)다. 결과는 매번 이 표에서 독립으로 뽑는다(쓴 금액, 이전 결과, 잔액과 무관하다).
@@ -155,6 +156,9 @@ export const CATALOG_ODDS_VERSION = "2026-10-11-ladder-99-v2";
 //   그래서 "두 배 근처 상품"이 열 번에 한 번꼴로, 40배 이상이 400번에 한 번꼴로 나온다. 값이 싼 상품이 없는 박스(1 USDT 박스)는 낮은 구간이 USDT 다.
 //   당첨이 아닌 결과는 0.05배와 0.25배 둘이고, 그 칸 수는 받는 값 기준 기대 비율이 정확히 99%가 되도록 박스마다 푼다.
 // 큰 배수에 기대 가치를 많이 실은 표다. 열 번에 여덟 번 가까이는 낸 값보다 적게 받는다. 그 사실은 박스 화면에 그대로 적는다.
+// v3(같은 날 셋째): 터짐 게이지(lib/burst)를 더했다. 열 때마다 박스 가격의 10%가 게이지에 쌓이고, "터짐"(160번에 한 번, 고정 확률)이 나오면
+//   시작 금액(박스 가격의 10배)과 쌓인 금액 전부를 받는다. 기대 가치 99% 가운데 약 16%가 이 게이지로 간다(160분의 1 × 10배 + 10%).
+//   그만큼 사다리의 8배에서 500배 구간을 줄였다. 터짐의 확률은 게이지나 앞의 결과에 따라 바뀌지 않는다.
 const SLOTS = 1_000_000;
 /** 박스마다 실제 상품 수의 범위. 옛 구성(6종)은 새로 채울 때까지 예외로 둔다. */
 export const MIN_PRIZES = 6;
@@ -166,14 +170,14 @@ const CASH_RTP_TOLERANCE = 0.0005;
 export interface LadderBand { multiple: number; from: number; to: number; slots: number; prizeShare: number }
 export const LADDER: readonly LadderBand[] = [
   { multiple: 1, from: 1, to: 1.5, slots: 50_000, prizeShare: 0.5 },
-  { multiple: 2, from: 1.5, to: 3, slots: 120_000, prizeShare: 0.8 },
-  { multiple: 4, from: 3, to: 6, slots: 45_000, prizeShare: 0.8 },
-  { multiple: 8, from: 6, to: 12, slots: 16_000, prizeShare: 0.8 },
-  { multiple: 15, from: 12, to: 25, slots: 7_000, prizeShare: 0.8 },
-  { multiple: 40, from: 25, to: 60, slots: 1_800, prizeShare: 0.8 },
-  { multiple: 100, from: 60, to: 150, slots: 550, prizeShare: 0.8 },
-  { multiple: 250, from: 150, to: 400, slots: 140, prizeShare: 0.8 },
-  { multiple: 500, from: 400, to: Infinity, slots: 60, prizeShare: 1 },
+  { multiple: 2, from: 1.5, to: 3, slots: 115_000, prizeShare: 0.8 },
+  { multiple: 4, from: 3, to: 6, slots: 40_000, prizeShare: 0.8 },
+  { multiple: 8, from: 6, to: 12, slots: 12_000, prizeShare: 0.8 },
+  { multiple: 15, from: 12, to: 25, slots: 3_500, prizeShare: 0.8 },
+  { multiple: 40, from: 25, to: 60, slots: 1_300, prizeShare: 0.8 },
+  { multiple: 100, from: 60, to: 150, slots: 420, prizeShare: 0.8 },
+  { multiple: 250, from: 150, to: 400, slots: 100, prizeShare: 0.8 },
+  { multiple: 500, from: 400, to: Infinity, slots: 44, prizeShare: 1 },
 ];
 /** 당첨이 아닌 두 결과(낸 값 대비 배수). 환수율을 맞추려고 칸 수를 푼다 */
 export const LOW_TIERS = [0.05, 0.25] as const;
@@ -211,18 +215,23 @@ function withWaveSchedule(box: ProductBox): ProductBox {
     const cashSlots = Math.round(band.slots * (1 - share));
     if (cashSlots > 0) drops.push(waveOf(+(price * band.multiple).toFixed(2), cashSlots, "drop"));
   });
+  // 터짐: 표에 적는 값은 시작 금액(가장 적게 받는 경우)이다. 실제로 받는 금액은 그때의 게이지다(lib/opening)
+  const burstImage = imageFor(BURST.id);
+  drops.push({ id: BURST.id, name: "터짐, 게이지 전부", nameEn: "Burst, the whole gauge", nameZh: "爆发，领取全部累积", kind: "cash", value: burstSeed(price),
+    dropRate: BURST.slots / 10_000, code: "WBURST", tone: T.coal, image: burstImage, imageUrl: burstImage.src });
   const slotsOf = (list: ProductItem[]) => list.reduce((sum, item) => sum + Math.round(item.dropRate * 10_000), 0);
   const returnOf = (list: ProductItem[]) => list.reduce((sum, item) => sum + sellValueOf(item) * item.dropRate / 100, 0) / price;
   // 남은 칸을 0.05배와 0.25배에 나눠 환수율을 맞춘다
   const lowValue = LOW_TIERS.map((multiple) => +(price * multiple).toFixed(2));
   const rest = SLOTS - slotsOf(premium) - slotsOf(drops);
-  const need = (TARGET_CASH_RTP - returnOf(premium) - returnOf(drops)) * price * SLOTS;
+  // 게이지에 쌓이는 몫(BURST.share)은 언젠가 전부 돌아가므로 기대 비율에 그대로 들어간다
+  const need = (TARGET_CASH_RTP - BURST.share - returnOf(premium) - returnOf(drops)) * price * SLOTS;
   const upper = Math.max(1, Math.min(rest - 1, Math.round((need - rest * lowValue[0]) / (lowValue[1] - lowValue[0]))));
   const low = [waveOf(lowValue[0], rest - upper, "cashback"), waveOf(lowValue[1], upper, "cashback")];
   const items = [...low, ...drops, ...premium].sort((x, y) => x.dropRate - y.dropRate || y.value - x.value);
   const slots = slotsOf(items);
-  const cashRtp = returnOf(items);
-  const retailRtp = items.reduce((sum, item) => sum + item.value * item.dropRate / 100, 0) / price;
+  const cashRtp = returnOf(items) + BURST.share;
+  const retailRtp = items.reduce((sum, item) => sum + item.value * item.dropRate / 100, 0) / price + BURST.share;
   const ids = new Set(items.map((item) => item.id));
   if (slots !== SLOTS || ids.size !== items.length) violations.push(`${box.slug}: invalid slot total or duplicate item id`);
   if (rest < 2 || items.some((item) => Math.round(item.dropRate * 10_000) < 1)) violations.push(`${box.slug}: a tier has no slot`);
@@ -244,11 +253,11 @@ export const getBoxBySlug = (slug: string): ProductBox | undefined => BOX_BY_SLU
 // ── 파생 계산 ──────────────────────────────────────────────
 
 /** 정가 기준 기대값(USDT). 바닥이 가격에 붙은 박스는 price 를 넘을 수 있다, 현금 환산은 항상 미만. */
-export const expectedValue = (box: ProductBox): number => box.items.reduce((s, i) => s + (i.value * i.dropRate) / 100, 0);
+export const expectedValue = (box: ProductBox): number => box.items.reduce((s, i) => s + (i.value * i.dropRate) / 100, 0) + (box.items.some((i) => i.id === BURST.id) ? box.price * BURST.share : 0);
 /** 정가 기준 환원율 */
 export const retailReturn = (box: ProductBox): number => expectedValue(box) / box.price;
 /** Cash-equivalent expected return from the published probability table. */
-export const cashReturn = (box: ProductBox): number => box.items.reduce((s, i) => s + (sellValueOf(i) * i.dropRate) / 100, 0) / box.price;
+export const cashReturn = (box: ProductBox): number => box.items.reduce((s, i) => s + (sellValueOf(i) * i.dropRate) / 100, 0) / box.price + (box.items.some((i) => i.id === BURST.id) ? BURST.share : 0);
 /** 바닥 즉시 환전액(USDT), 바닥 등급은 USDT 캐시백이라 100% 적립. "꽝이어도 이만큼은 돌아온다" */
 export const floorCash = (box: ProductBox): number => +box.guaranteedMin.toFixed(2);
 /** 바닥 환전액 / 가격 */

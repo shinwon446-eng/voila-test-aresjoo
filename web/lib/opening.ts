@@ -6,6 +6,7 @@ import { useFairStore } from "../stores/fairStore";
 import { useInventoryStore } from "../stores/inventoryStore";
 import { useWalletStore } from "../stores/walletStore";
 import { assertSameLedger, ledgerKey, withLedgerLock } from "./ledgerLock";
+import { BURST, EMPTY_POT, burstPayout, potAfterOpen } from "./burst";
 
 export interface OpeningResult {
   ownedId: string;
@@ -68,14 +69,24 @@ async function executeOpening(box: ProductBox, count: number, openingId?: string
     if (!funding) throw new InsufficientOpeningBalance();
     const wallet = useWalletStore.getState();
     const inventory = useInventoryStore.getState();
-    const owned = inventory.add(picked.map((r) => ({
+    // 터짐 게이지: 뽑힌 차례대로 한 번에 한 칸씩 쌓고, 터짐이 나온 자리에서 그때의 게이지를 지급하고 비운다.
+    // 결과(무엇이 뽑혔는지)는 위에서 이미 정해졌다. 여기서는 터짐의 금액만 정한다.
+    let pot = walletBefore.burst?.[box.slug] ?? EMPTY_POT;
+    const drawn = picked.map((r) => {
+      pot = potAfterOpen(pot, box.price, funding.ratio);
+      if (r.item.id !== BURST.id) return { r, ratio: funding.ratio };
+      const pay = burstPayout(pot, box.price, funding.ratio);
+      pot = EMPTY_POT;
+      return { r: { ...r, item: { ...r.item, value: pay.amount }, tier: tierOf(pay.amount, box.price) }, ratio: pay.ratio };
+    });
+    const owned = inventory.add(drawn.map(({ r, ratio }) => ({
       itemId: r.item.id, boxSlug: box.slug, valueUsdt: r.item.value, tier: r.tier.key,
       fair: { serverSeed, serverSeedHash, clientSeed, nonce: r.nonce, roll: r.roll, oddsVersion: CATALOG_ODDS_VERSION, dropTable: table.map(({ id, dropRate }) => ({ id, dropRate })) },
-      fundingRatio: funding.ratio,
+      fundingRatio: ratio,
       ...(openingId ? { openingId } : {}),
     })));
     if (owned.length !== picked.length) throw new Error("Opening inventory allocation failed");
-    const results = picked.map((r, i) => ({ ...r, ownedId: owned[i].id, settled: r.item.kind === "cash" }));
+    const results = drawn.map(({ r }, i) => ({ ...r, ownedId: owned[i].id, settled: r.item.kind === "cash" }));
     const cash = results.filter((r) => r.settled).map((r) => r.ownedId);
     if (cash.length) {
       const settlement = inventory.sell(cash, 1);
@@ -83,6 +94,7 @@ async function executeOpening(box: ProductBox, count: number, openingId?: string
       wallet.creditSplit(settlement.toCrypto, settlement.toCard);
       wallet.addTransaction({ type: "sellback", amountUsdt: settlement.totalUsdt, ref: `${box.slug}:cashback x${cash.length}` });
     }
+    wallet.setBurst(box.slug, pot);
     wallet.addTransaction({ type: "open", amountUsdt: -cost, ref: `${box.slug}x${count}${openingId ? ":" + openingId : ""}`, rolloverUsdt: rolloverContribution(cost, floorRatio(box)) });
     return results;
   } catch (error) {

@@ -136,17 +136,20 @@ test("확률표 사다리: 받는 값 기준 99%, 당첨 구간 아홉, 구간�
     const [lowest, low] = LOW_TIERS.map(m => wave(m)!);
     assert.ok(lowest && low && lowest.kind === "cash" && low.kind === "cash", `${box.slug}: 낮은 결과 누락`);
     assert.ok(box.items.every(i => i === lowest || i.dropRate < lowest.dropRate), `${box.slug}: 0.05배가 가장 흔해야 한다`);
-    assert.ok(lowest.dropRate >= 40 && lowest.dropRate <= 66, `${box.slug}: 0.05배 ${lowest.dropRate}%`);
+    // 가장 비싼 구간에 상품이 많은 박스(포켓몬 카드)는 그 상품들이 한 칸씩만 받아도 몫을 넘겨서 0.05배가 더 많다
+    assert.ok(lowest.dropRate >= 40 && lowest.dropRate <= 68, `${box.slug}: 0.05배 ${lowest.dropRate}%`);
     assert.ok(!box.items.some(i => i.id.startsWith("wave-gift-")), `${box.slug}: 기프트카드 구간이 남아 있다`);
     assert.ok(box.items.filter(i => i.id.startsWith("wave-")).every(i => i.kind === "cash"), `${box.slug}: 파동 구간은 전부 USDT`);
     // 체감: 받는 값이 낸 값 이상인 결과가 다섯 번에 한 번은 넘고, 상품이 60번에 한 번은 넘게 나온다
     const hit = box.items.filter(i => sellValueOf(i) >= box.price).reduce((sum, i) => sum + i.dropRate, 0);
     assert.ok(hit >= 20 && hit <= 30, `${box.slug}: 낸 값 이상 ${hit}%`);
     const prizeOdds = premium.reduce((sum, i) => sum + i.dropRate, 0);
-    assert.ok(prizeOdds >= 1.6, `${box.slug}: 상품 확률 ${prizeOdds}%`);
+    // 1 USDT 애플 박스는 가장 싼 상품이 10 USDT 라서 8배 구간부터만 상품이 있다. 그 박스가 하한을 정한다
+    assert.ok(prizeOdds >= 1.1, `${box.slug}: 상품 확률 ${prizeOdds}%`);
     // 큰 배수가 실제로 보인다: 40배 이상이 0.1% 를 넘는다
     const big = box.items.filter(i => i.value >= box.price * 40).reduce((sum, i) => sum + i.dropRate, 0);
-    assert.ok(big >= 0.1, `${box.slug}: 40배 이상 ${big}%`);
+    // 터짐 게이지가 큰 결과의 몫을 나눠 가져갔다(터짐은 표에 10배로 적혀 여기에 안 들어간다)
+    assert.ok(big >= 0.08, `${box.slug}: 40배 이상 ${big}%`);
     // 환수율
     assert.ok(Math.abs(cashReturn(box) - TARGET_CASH_RTP) <= 0.0005, `${box.slug}: 받는 값 기준 환수율 ${cashReturn(box)}`);
     assert.ok(cashReturn(box) < 1, `${box.slug}: 받는 값 기준 환수율은 1 미만이어야 한다`);

@@ -318,7 +318,7 @@ await run("s9", async () => {
     await s.page.screenshot({ path: `${out}/bp-${kind === "low" ? "small" : "top"}-${view}.png` });
     const m = await s.page.evaluate(() => {
       const r = (sel) => document.querySelector(sel)?.getBoundingClientRect();
-      const btn = r(".v-op-actions .v-btn"); const res = [...document.querySelectorAll(".v-op-result > *")].map((e) => e.getBoundingClientRect());
+      const btn = r(".v-op-actions .v-btn"); const res = [...document.querySelectorAll(".v-op-result > *")].map((e) => e.getBoundingClientRect()).filter((x) => x.width > 0 && x.height > 0);
       const bottom = r(".v-op-bottom"); const top = r(".v-op-top");
       const resTop = Math.min(...res.map((x) => x.top)); const resBottom = Math.max(...res.map((x) => x.bottom)); const resRight = Math.max(...res.map((x) => x.right)); const resLeft = Math.min(...res.map((x) => x.left));
       return { overflow: document.documentElement.scrollWidth > innerWidth, btnVisible: btn && btn.bottom <= innerHeight && btn.top >= 0, btnH: btn?.height, overlapBottom: resBottom > bottom.top + 1, overlapTop: resTop < top.bottom - 1, clipX: resLeft < -0.5 || resRight > innerWidth + 0.5 };
@@ -412,7 +412,7 @@ await run("s13", async () => {
     await s.openBtn().click(); await s.settled(); await s.page.waitForTimeout(kind === "itemTop" ? 2300 : 500);
     await s.page.screenshot({ path: `${out}/lang-${locale}-${kind}-narrow.png` });
     const m = await s.page.evaluate(() => {
-      const res = [...document.querySelectorAll(".v-op-result > *")].map((e) => e.getBoundingClientRect());
+      const res = [...document.querySelectorAll(".v-op-result > *")].map((e) => e.getBoundingClientRect()).filter((x) => x.width > 0 && x.height > 0);
       const bottom = document.querySelector(".v-op-bottom").getBoundingClientRect(); const top = document.querySelector(".v-op-top").getBoundingClientRect();
       const links = [...document.querySelectorAll(".v-op-actions .v-link")].map((e) => e.getBoundingClientRect());
       return { overflow: document.documentElement.scrollWidth > innerWidth, overlapBottom: Math.max(...res.map((x) => x.bottom)) > bottom.top + 1, overlapTop: Math.min(...res.map((x) => x.top)) < top.bottom - 1, clipX: Math.min(...res.map((x) => x.left)) < -0.5 || Math.max(...res.map((x) => x.right)) > innerWidth + 0.5, linksOut: links.some((x) => x.left < 0 || x.right > innerWidth || x.bottom > innerHeight) };
@@ -434,6 +434,59 @@ await run("s14", async () => {
   await other.waitForSelector(".v-op[data-opening-state='settled']", { timeout: 15000 });
   const l = await s.ledger(); const expect = after(s.fx.steps[1], s.price, after(s.fx.steps[0], s.price));
   check("s14", `두 탭에서 한 번씩: 구매 둘, 기록 둘, 회차 둘, 잔액 ${expect}`, l.opens === 2 && l.items.length === 2 && l.nonce === s.fx.nonce + 2 && near(l.balance, expect), `opens ${l.opens} items ${l.items.length} nonce ${l.nonce} balance ${l.balance}`);
+  await s.context.close();
+});
+
+// s15: 터짐 게이지. 열 때마다 박스 가격의 10%가 쌓이고, 터짐이 나오면 시작 금액(10배)과 쌓인 금액 전부를 받는다
+await run("s15", async () => {
+  const SEEDX = 10, SHARE = 0.1;
+  const gaugeText = (page) => page.evaluate(() => { const rows = [...document.querySelectorAll(".v-rows > *, .v-row")].map((e) => (e.textContent || "").replace(/\s+/g," ")); return rows.filter((t) => /터짐 게이지/.test(t)).sort((a, b) => a.length - b.length).find((t) => /USDT/.test(t)) || rows.find((t) => /터짐 게이지/.test(t)) || ""; });
+  // 처음 연 것이 터짐: 시작 금액 + 이번 한 번의 몫
+  let s = await session({ fixture: "single:burst" });
+  check("s15", "박스 화면: 한 번도 안 연 계정의 게이지는 시작 금액이다", (await gaugeText(s.page)).replace(/\s+/g,"").includes(usdt(s.price * SEEDX).replace(/\s+/g,"")), await gaugeText(s.page));
+  await s.openBtn().click(); await s.settled(); await s.page.waitForTimeout(900); await s.shot("27-burst");
+  let pay = r2(s.price * (SEEDX + SHARE)); let l = await s.ledger(); let t = await s.text();
+  check("s15", `터짐: 잔액 = ${START} - ${s.price} + ${pay}`, near(l.balance, r2(START - s.price + pay)), String(l.balance));
+  check("s15", "터짐: 받은 금액이 게이지 전부이고, 게이지가 시작 금액으로 돌아갔다고 적는다", /터졌습니다/.test(t) && t.includes(usdt(pay)) && t.includes("게이지는 " + usdt(s.price * SEEDX) + "부터"), t.slice(0, 160));
+  await s.context.close();
+
+  // 세 번 쌓고 네 번째에 터짐. 한 번에 하나씩 연다
+  s = await session({ fixture: "seq:lowThenBurst" });
+  let expect = START;
+  for (let i = 0; i < s.fx.steps.length; i++) {
+    await (i === 0 ? s.openBtn() : s.page.locator(".v-op-actions").getByText(/한 번 더 열기/).first()).click();
+    for (let k = 0; k < 60 && (await s.ledger()).opens < i + 1; k++) await s.page.waitForTimeout(100);
+    await s.settled(); await s.page.waitForTimeout(450);
+    const last = i === s.fx.steps.length - 1;
+    expect = r2(expect - s.price + (last ? s.price * (SEEDX + SHARE * (i + 1)) : s.fx.steps[i].value));
+    t = await s.text(); l = await s.ledger();
+    if (!last) check("s15", `${i + 1}번째: 게이지가 ${usdt(s.price * (SEEDX + SHARE * (i + 1)))} 로 올랐다`, t.includes("터짐 게이지 " + usdt(s.price * (SEEDX + SHARE * (i + 1)))) && near(l.balance, expect), t.slice(-120));
+    if (i === 2) await s.shot("28-gauge-growing");
+  }
+  check("s15", "네 번째에 터짐: 시작 금액 + 네 번의 몫을 받는다", near(l.balance, expect) && t.includes(usdt(s.price * (SEEDX + SHARE * 4))), `balance ${l.balance} expect ${expect}`);
+  await s.closeResult();
+  check("s15", "터진 뒤 박스 화면의 게이지는 시작 금액이다", (await gaugeText(s.page)).replace(/\s+/g,"").includes(usdt(s.price * SEEDX).replace(/\s+/g,"")), await gaugeText(s.page));
+  await s.context.close();
+
+  // 다섯 개를 한꺼번에: 셋째가 터짐. 앞의 셋이 쌓은 만큼 받고, 뒤의 둘은 새 게이지에 쌓인다
+  s = await session({ fixture: "seq:burstInBatch" });
+  await s.page.locator(".v-openbar .v-chip").nth(1).click(); await s.page.locator("[data-open-primary]").click();
+  await s.page.waitForSelector(".v-reveal-result", { timeout: 15000 }); await s.page.waitForTimeout(900); await s.shot("29-burst-in-batch");
+  pay = r2(s.price * (SEEDX + SHARE * 3)); const lows = r2(s.fx.steps.filter((x) => x.itemId !== "wave-burst").reduce((a, x) => a + x.value, 0));
+  l = await s.ledger(); t = await s.text();
+  check("s15", "여러 개 열기 안의 터짐: 잔액과 요약이 맞다", near(l.balance, r2(START - s.price * 5 + lows + pay)) && t.includes("잔액에 반영 " + usdt(lows + pay)), `balance ${l.balance} ${t.slice(0, 200)}`);
+  check("s15", "여러 개 열기 뒤 게이지는 터진 뒤 두 번의 몫만 남는다", t.includes("터짐 게이지 " + usdt(s.price * (SEEDX + SHARE * 2))), t.slice(0, 260));
+  check("s15", "가장 큰 결과로 터짐을 올린다", /가장 큰 결과/.test(t) && t.includes(usdt(pay)), t.slice(0, 120));
+  await s.context.close();
+
+  // 연출 중 새로 고침: 터짐의 금액은 기록에 남은 그대로다
+  s = await session({ fixture: "single:burst" });
+  await s.openBtn().click(); await s.page.waitForSelector(".v-op[data-phase='anticipation']", { timeout: 5000 });
+  await s.page.reload({ waitUntil: "networkidle" }); await s.page.waitForSelector("[data-open-recover]", { timeout: 15000 });
+  const before = await s.ledger();
+  await s.page.locator("[data-open-recover]").click(); await s.settled(); await s.page.waitForTimeout(400);
+  t = await s.text(); l = await s.ledger();
+  check("s15", "새로 고친 뒤에도 터짐의 금액이 같고 다시 지급되지 않는다", t.includes(usdt(s.price * (SEEDX + SHARE))) && near(l.balance, before.balance) && near(l.balance, r2(START - s.price + s.price * (SEEDX + SHARE))), `balance ${l.balance}`);
   await s.context.close();
 });
 

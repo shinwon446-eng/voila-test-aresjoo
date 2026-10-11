@@ -77,7 +77,10 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   // 상태(busy)는 다음 그리기에야 바뀐다. 같은 순간에 두 번 불려도 구매가 한 번만 나가게 동기 잠금을 둔다(옛 purchasePending 과 같다).
   const opening = useRef(false);
 
-  const cost = +(box.price * qty).toFixed(2);
+  // 무료로 열 수 있는 횟수(가입 혜택). 열 때 먼저 쓰이고, 남는 개수만 값을 낸다
+  const freeLeft = useWalletStore((s) => s.freeOpens?.[box.slug] ?? 0);
+  const free = user ? Math.min(qty, freeLeft) : 0;
+  const cost = +(box.price * (qty - free)).toFixed(2);
   const short = balance < cost;
   const table = useMemo(() => dropTable(box), [box]);
   const groups = useMemo(() => TIERS.map((tier) => {
@@ -123,7 +126,9 @@ export function BoxScreen({ box }: { box: ProductBox }) {
     });
     if (!results.length) { useOpeningJournal.getState().markSeen(unseen.id); return; }
     send("RECOVER");
-    setOpened((prev) => ({ id: unseen.id, results, cost: +(box.price * results.length).toFixed(2), round: (prev?.round ?? 0) + 1, recovered: true, taken, shipped }));
+    // 그때 실제로 낸 값: 거래 기록에서 찾는다(무료로 연 것은 0 이다). 기록이 없으면 박스 가격으로 본다
+    const paid = useWalletStore.getState().transactions.find((tx) => tx.type === "open" && typeof tx.ref === "string" && tx.ref.endsWith(":" + unseen.id));
+    setOpened((prev) => ({ id: unseen.id, results, cost: paid ? Math.abs(paid.amountUsdt) : +(box.price * results.length).toFixed(2), round: (prev?.round ?? 0) + 1, recovered: true, taken, shipped }));
   };
 
   const open = async (confirmed = false) => {
@@ -202,13 +207,14 @@ export function BoxScreen({ box }: { box: ProductBox }) {
           {failed && <Line fail>{t("box.openFail")}</Line>}
           {unseen && <Line>{t("op.recoverLine")}</Line>}
           {unseenElsewhere && <p className="v-line"><Link href={"/box/" + unseenElsewhere.boxSlug} className="v-link">{t("op.recoverElsewhere")}</Link></p>}
+          {ready && user && freeLeft > 0 && <Line>{t("box.freeLeft", { n: freeLeft })}</Line>}
           {ready && user && short && <Line>{t("box.short", { balance: fmt(balance), missing: fmt(cost - balance) })}</Line>}
           <Chips scroll label={t("box.qty")} value={qty} onChange={(n) => { setQty(n); setFailed(false); }} disabled={busy} options={OPEN_PRESETS.map((n) => ({ value: n as number, label: t("box.qtyN", { n }) }))} />
           {!ready ? <Button disabled>{t("common.loading")}</Button>
             : !user ? <><Button onClick={() => openLogin("login")}>{t("box.loginToOpen")}</Button><p className="v-small">{t("box.guestNote", { n: qty, amount: fmt(cost) })}</p></>
             : unseen ? <Button data-open-recover onClick={recover}>{t("op.recoverCta")}</Button>
             : short ? <Button onClick={openCharge}>{t("box.charge")}</Button>
-            : <Button data-open-primary onClick={press} busy={busy} busyLabel={t("box.opening")}>{t("box.open", { n: qty, amount: fmt(cost) })}</Button>}
+            : <Button data-open-primary onClick={press} busy={busy} busyLabel={t("box.opening")}>{cost === 0 ? t("box.openFree", { n: qty }) : t("box.open", { n: qty, amount: fmt(cost) })}</Button>}
         </div>
       </div>
       </aside>
@@ -284,8 +290,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         )}
       </Sheet>
       <Confirm open={confirming} onCancel={cancelConfirm} onConfirm={() => void open(true)} busy={busy} busyLabel={t("box.opening")} title={t("box.confirmTitle", { amount: fmt(cost) })} desc={t("box.confirmDesc")} confirmLabel={t("box.open", { n: qty, amount: fmt(cost) })} cancelLabel={t("common.cancel")} />
-      {opened && user && opened.results.length === 1 && <Opening key={opened.round} box={box} result={opened.results[0]} cost={opened.cost} accountId={user.id} recovered={opened.recovered} initialTaken={opened.taken?.[opened.results[0].ownedId]} initialShipped={!!opened.shipped?.[opened.results[0].ownedId]} onClose={closeOpening} onAgain={press} againBusy={busy} canAgain={!short} onRevealed={revealed} onFlow={send} />}
-      {opened && opened.results.length > 1 && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} recovered={opened.recovered} initialTaken={opened.taken} initialShipped={opened.shipped} onClose={closeOpening} onAgain={press} againBusy={busy} canAgain={!short} onRevealed={revealed} onSkip={() => send("SKIP")} />}
+      {opened && user && opened.results.length === 1 && <Opening key={opened.round} box={box} result={opened.results[0]} cost={opened.cost} nextCost={cost} accountId={user.id} recovered={opened.recovered} initialTaken={opened.taken?.[opened.results[0].ownedId]} initialShipped={!!opened.shipped?.[opened.results[0].ownedId]} onClose={closeOpening} onAgain={press} againBusy={busy} canAgain={!short} onRevealed={revealed} onFlow={send} />}
+      {opened && opened.results.length > 1 && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} nextCost={cost} recovered={opened.recovered} initialTaken={opened.taken} initialShipped={opened.shipped} onClose={closeOpening} onAgain={press} againBusy={busy} canAgain={!short} onRevealed={revealed} onSkip={() => send("SKIP")} />}
     </div>
   );
 }

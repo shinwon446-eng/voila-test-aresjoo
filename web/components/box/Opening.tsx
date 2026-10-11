@@ -51,8 +51,10 @@ export function OpeningBox() {
   );
 }
 
-export function Opening({ box, result, cost, accountId, recovered, initialTaken, initialShipped, onClose, onAgain, againBusy, canAgain, onRevealed, onFlow }: {
+export function Opening({ box, result, cost, nextCost, accountId, recovered, initialTaken, initialShipped, onClose, onAgain, againBusy, canAgain, onRevealed, onFlow }: {
   box: ProductBox; result: OpeningResult; cost: number;
+  /** 한 번 더 열 때 낼 값(무료 횟수가 남았으면 0). 주지 않으면 방금 낸 값과 같다고 본다 */
+  nextCost?: number;
   /** 설정(자동 받기, 지난번에 고른 방법)은 계정마다 따로다 */
   accountId: string;
   /** 연출을 못 보고 떠났다가 돌아와 다시 보는 결과. 새로 뽑지 않았으므로 연출 없이 바로 보여 준다 */
@@ -163,7 +165,7 @@ export function Opening({ box, result, cost, accountId, recovered, initialTaken,
   const direction = change < 0 ? "down" : change > 0 ? "up" : "same";
   const net = (
     <p className="v-op-net" data-direction={direction}>
-      <span className="v-op-net-paid">{t("op.paid", { price: fmt(cost) })}</span>
+      <span className="v-op-net-paid">{cost > 0 ? t("op.paid", { price: fmt(cost) }) : t("op.free")}</span>
       <span className="v-op-net-change">{t(change < 0 ? "op.balDown" : change > 0 ? "op.balUp" : "op.balSame", { diff: fmt(Math.abs(change)) })}</span>
     </p>
   );
@@ -171,7 +173,8 @@ export function Opening({ box, result, cost, accountId, recovered, initialTaken,
   const odds = t("op.odds", { pct: formatRate(item.dropRate) });
   const done = isCash || settle === "settled" || shipped;
   const ready = phase === "ready";
-  const again = <Button data-open-again onClick={onAgain} busy={againBusy} busyLabel={t("box.opening")} disabled={!ready}>{t("reveal.again", { amount: fmt(cost) })}</Button>;
+  const againLabel = (nextCost ?? cost) > 0 ? t("reveal.again", { amount: fmt(nextCost ?? cost) }) : t("reveal.againFree");
+  const again = <Button data-open-again onClick={onAgain} busy={againBusy} busyLabel={t("box.opening")} disabled={!ready}>{againLabel}</Button>;
   const confirmMethod = () => {
     if (!method || settle === "settling" || settle === "settled") return;
     useSettingsStore.getState().setLastReceive(accountId, method);
@@ -214,7 +217,7 @@ export function Opening({ box, result, cost, accountId, recovered, initialTaken,
               {item.image.src && <p className="v-op-ref v-num">{t("op.refLine", { amount: fmt(item.value) })}</p>}
               {item.image.src && timesOf(item.value, cost) !== null && <p className="v-op-label">{t("op.timesLine", { n: timesOf(item.value, cost) })}</p>}
               <p className="v-op-line">{shipped ? t("op.shipRequested") : t("op.keptStatus")}{!shipped && !item.image.src ? ". " + t("op.takeWorth", { amount: sellAmount }) : ""}</p>
-              <p className="v-op-meta">{odds}. {t("op.paid", { price: fmt(cost) })}</p>
+              <p className="v-op-meta">{odds}. {cost > 0 ? t("op.paid", { price: fmt(cost) }) : t("op.free")}</p>
             </>
           ))}
           {revealed && <p className="v-op-label v-op-gauge v-num">{t(burst ? "op.gaugeReset" : "op.gaugeNow", { amount: fmt(gauge) })}</p>}
@@ -242,7 +245,7 @@ export function Opening({ box, result, cost, accountId, recovered, initialTaken,
                   {settle === "failed" || settle === "pending"
                     ? <Button onClick={() => void take(false, true)} disabled={!ready}>{t(settle === "failed" ? "op.retryTake" : "op.recheck", { amount: sellAmount })}</Button>
                     : <Button onClick={() => { setMethod(item.kind === "physical" ? lastReceive : "usdt"); setChoosing(true); }} disabled={!ready || settle === "settling"} busy={settle === "settling"} busyLabel={t("common.checking")}>{t("op.choose")}</Button>}
-                  <div className="v-links">{canAgain && settle === "idle" && <TextLink onClick={() => { if (ready && !againBusy) onAgain(); }}>{t("reveal.again", { amount: fmt(cost) })}</TextLink>}<TextLink onClick={() => { if (ready) verify(); }}>{t("nav.verify")}</TextLink>{settle !== "idle" && <TextLink onClick={() => { if (ready) close(); }}>{t("op.backToBox")}</TextLink>}</div>
+                  <div className="v-links">{canAgain && settle === "idle" && <TextLink onClick={() => { if (ready && !againBusy) onAgain(); }}>{againLabel}</TextLink>}<TextLink onClick={() => { if (ready) verify(); }}>{t("nav.verify")}</TextLink>{settle !== "idle" && <TextLink onClick={() => { if (ready) close(); }}>{t("op.backToBox")}</TextLink>}</div>
                 </>
               )}
             </div>

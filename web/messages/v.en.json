@@ -98,7 +98,9 @@
     "commonRow": "Most common result",
     "realRow": "Chance of a physical item",
     "notes": "Good to know",
-    "topTimes": "Top multiple"
+    "topTimes": "Top multiple",
+    "openFree": "Open {n} for free",
+    "freeLeft": "You can open this box {n} times for free."
   },
   "reveal": {
     "skip": "Skip",
@@ -126,7 +128,8 @@
     "receive": "Receive",
     "shippedTag": "shipping requested",
     "takenTag": "taken as USDT",
-    "rowHintReceive": "Tap a row to receive or verify that item."
+    "rowHintReceive": "Tap a row to receive or verify that item.",
+    "againFree": "Open again for free"
   },
   "login": {
     "title": "Log in",
@@ -498,14 +501,17 @@
     "timesLine": "{n}x the price",
     "burstLabel": "Burst, the whole gauge",
     "gaugeNow": "Burst gauge {amount}",
-    "gaugeReset": "The gauge restarts from {amount}"
+    "gaugeReset": "The gauge restarts from {amount}",
+    "free": "Free open"
   },
   "hero": {
-    "desc": "Sign up and get one.",
-    "cta": "Sign up and get it",
+    "desc": "Sign up and open {n} for free.",
+    "cta": "Sign up and open free",
     "descIn": "Ready to open now.",
     "ctaIn": "View box",
     "pause": "Pause animation",
-    "play": "Play animation"
+    "play": "Play animation",
+    "descFree": "You have {n} free opens left.",
+    "ctaFree": "Open for free"
   }
 }

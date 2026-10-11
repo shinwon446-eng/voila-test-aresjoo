@@ -30,6 +30,8 @@ export function AuthHost() {
         const wallet = useWalletStore.getState();
         wallet.setWelcomeAccount(userId);
         wallet.claimWelcome(userId);
+        // 가입 혜택: 포켓몬 카드 박스 무료 개봉(계정마다 한 번)
+        wallet.claimWelcomeBoxes();
       };
       const wallet = useWalletStore.getState();
       if (wallet.hydrated) grant();

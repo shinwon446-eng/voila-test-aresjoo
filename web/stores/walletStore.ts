@@ -13,6 +13,9 @@ import { CRYPTO_ONLY, planDebit, type FundingRatio, type FundingSplit } from "@/
 export const START_BALANCE_USDT = 0;
 /** 브라우저 로컬 데모 계정의 테스트용 첫 로그인 보너스. 실서비스 원장 지급이 아니다. */
 export const WELCOME_BONUS_USDT = 10_000;
+/** 가입 혜택(2026-10-11 파운더): 가입하면 이 박스를 무료로 이만큼 연다. 계정마다 한 번 */
+export const WELCOME_BOX_SLUG = "vault-pokemon";
+export const WELCOME_FREE_OPENS = 2;
 
 export type TxType = "deposit_usdt" | "deposit_card" | "open" | "sellback" | "withdraw" | "bonus" | "shipping_refund" | "order_refund";
 
@@ -104,6 +107,13 @@ interface WalletState {
   /** 터짐 게이지에 쌓인 금액(박스마다). lib/burst, lib/opening */
   burst: Record<string, BurstPot>;
   setBurst: (boxSlug: string, pot: BurstPot) => void;
+  /** 무료로 열 수 있는 횟수(박스마다). lib/opening 이 열 때 먼저 쓴다 */
+  freeOpens: Record<string, number>;
+  /** 가입 혜택의 무료 개봉을 이미 받았는지(이 장부의 계정) */
+  freeOpensGranted: boolean;
+  /** 가입 혜택의 무료 개봉을 준다. 이미 받았으면 false */
+  claimWelcomeBoxes: () => boolean;
+  spendFreeOpens: (boxSlug: string, n: number) => void;
   topUp: () => void;
   /** 현재 로그인한 로컬 계정을 지정해 웰컴 보너스 상태를 갱신한다. */
   setWelcomeAccount: (accountId: string | null) => void;
@@ -131,6 +141,14 @@ export const useWalletStore = create<WalletState>()(
       welcomeClaimed: false,
       burst: {},
       setBurst: (boxSlug, pot) => set((s) => ({ burst: { ...(s.burst ?? {}), [boxSlug]: pot } })),
+      freeOpens: {},
+      freeOpensGranted: false,
+      claimWelcomeBoxes: () => {
+        if (get().freeOpensGranted) return false;
+        set((s) => ({ freeOpensGranted: true, freeOpens: { ...(s.freeOpens ?? {}), [WELCOME_BOX_SLUG]: (s.freeOpens?.[WELCOME_BOX_SLUG] ?? 0) + WELCOME_FREE_OPENS } }));
+        return true;
+      },
+      spendFreeOpens: (boxSlug, n) => set((s) => ({ freeOpens: { ...(s.freeOpens ?? {}), [boxSlug]: Math.max(0, (s.freeOpens?.[boxSlug] ?? 0) - Math.max(0, Math.floor(n))) } })),
       hydrated: false,
       addTransaction: (tx) => {
         const rec: Transaction = { ...tx, id: transactionId(), at: new Date().toISOString() };
@@ -235,7 +253,7 @@ export const useWalletStore = create<WalletState>()(
     {
       name: "gachaflix.wallet",
       storage: createJSONStorage(() => localStorage),
-      partialize: (s) => ({ balance: s.balance, cryptoBalance: s.cryptoBalance, cardBalance: s.cardBalance, transactions: s.transactions, settledDepositRefs: s.settledDepositRefs, welcomeClaimed: s.welcomeClaimed, totalDeposited: s.totalDeposited, totalDepositedCrypto: s.totalDepositedCrypto, totalDepositedCard: s.totalDepositedCard, totalWagered: s.totalWagered, burst: s.burst ?? {} }),
+      partialize: (s) => ({ balance: s.balance, cryptoBalance: s.cryptoBalance, cardBalance: s.cardBalance, transactions: s.transactions, settledDepositRefs: s.settledDepositRefs, welcomeClaimed: s.welcomeClaimed, totalDeposited: s.totalDeposited, totalDepositedCrypto: s.totalDepositedCrypto, totalDepositedCard: s.totalDepositedCard, totalWagered: s.totalWagered, burst: s.burst ?? {}, freeOpens: s.freeOpens ?? {}, freeOpensGranted: !!s.freeOpensGranted }),
       version: 4,
       // v0 → v1: 출금 상태명 PROCESSING → BROADCASTING
       // v1 → v2: 롤오버 누계 신설, 남아 있는 거래 기록에서 되살린다

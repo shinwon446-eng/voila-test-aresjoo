@@ -28,8 +28,10 @@ import { ShipSheet } from "@/components/flow/ShipSheet";
 /** 여러 개를 열 때의 연출: 한 개 열기와 같은 상자, 같은 길이(lib/openingFlow 의 기본값). 결과의 크기와 무관하다. */
 const STAGE = { anticipation: 520, impact: 150, exit: 170 };
 
-export function Reveal({ box, results, cost, recovered, initialTaken, initialShipped, onClose, onAgain, againBusy, canAgain, onRevealed, onSkip }: {
+export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, initialShipped, onClose, onAgain, againBusy, canAgain, onRevealed, onSkip }: {
   box: ProductBox; results: OpeningResult[]; cost: number;
+  /** 한 번 더 열 때 낼 값(무료 횟수가 남았으면 그만큼 적다) */
+  nextCost?: number;
   /** 못 보고 떠났다가 다시 보는 결과. 새로 뽑지 않았으므로 연출 없이 바로 보여 준다 */
   recovered?: boolean;
   /** 다시 보는 결과 가운데 이미 USDT 로 받았거나 배송을 신청한 상품(보관함 기록 그대로) */
@@ -94,7 +96,7 @@ export function Reveal({ box, results, cost, recovered, initialTaken, initialShi
   const best = sorted.length > 1 && timesOf(sorted[0].item.value, box.price) !== null ? sorted[0] : null;
   const single = results.length === 1 ? results[0] : null;
   const total = results.reduce((sum, r) => sum + r.item.value, 0);
-  const again = t("reveal.again", { amount: fmt(cost) });
+  const again = (nextCost ?? cost) > 0 ? t("reveal.again", { amount: fmt(nextCost ?? cost) }) : t("reveal.againFree");
   // 이번 개봉의 영수증: 잔액에 들어온 것(USDT 결과 + USDT 로 받은 상품의 실제 수령액)과 아직 상품으로 있는 것을 나눈다.
   // 지갑 잔액의 앞뒤를 빼지 않는다(다른 거래가 섞이지 않게).
   const credited = results.map((r) => (r.item.kind === "cash" ? r.item.value : taken[r.ownedId] ?? 0));

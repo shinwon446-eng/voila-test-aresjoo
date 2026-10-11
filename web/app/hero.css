@@ -3,23 +3,25 @@
  * 색은 tokens.css 의 변수만 쓴다(카드의 박 색 다섯은 --v-holo-*). 움직임은 transform 과 opacity 만 쓴다.
  * 단계(data-phase): closed → anticipation → open → sweep(머묾) → fade → closed
  * 구도: 상자는 아래에 작게, 카드 석 장이 그 위로 크게 펼쳐진다(카드가 주인공이다). 카드는 상자와 뚜껑보다 앞에 있다.
- *       유리구슬은 크기가 다르고 몇은 배너 밖으로 잘려서 깊이를 만든다.
+ *       유리구슬은 크기가 다르고, 몇은 배너의 테두리를 뚫고 밖으로 나간다(2026-10-11 파운더). 뒤판과 빛만 배너 모양대로 잘린다.
  * 휴대폰: 글, 장면, 단추 순서로 한 열. 넓은 화면: 왼쪽에 글과 단추, 오른쪽에 장면.
  */
-.v-hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "stage" "cta"; overflow: hidden; border: 1px solid var(--v-outline); border-radius: var(--v-r-card); background: var(--v-bg); isolation: isolate; }
+.v-hero { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "stage" "cta"; border: 1px solid var(--v-outline); border-radius: var(--v-r-card); background: var(--v-bg); isolation: isolate; }
 .v-hero-copy { grid-area: copy; position: relative; z-index: 2; display: flex; min-width: 0; flex-direction: column; gap: 4px; padding: 20px 52px 0 20px; }
 .v-hero-title { color: var(--v-title); font-size: 28px; font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; word-break: keep-all; }
 .v-hero-desc { color: var(--v-sub); font-size: 16px; line-height: 1.5; word-break: keep-all; }
-.v-hero-cta { grid-area: cta; position: relative; z-index: 2; padding: 0 16px 16px; }
+.v-hero-cta { grid-area: cta; position: relative; z-index: 4; padding: 0 16px 16px; }
 
-/* 장면이 들어가는 자리 */
-.v-hero-stage { grid-area: stage; position: relative; height: 196px; --s: 0.72; --o: 0.62; }
+/* 바탕 층: 배너 모양대로 잘린다(뒤판과 빛) */
+.v-hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; border-radius: inherit; pointer-events: none; }
+/* 장면이 들어가는 자리. 꾸밈이므로 누르는 것을 가로채지 않는다 */
+.v-hero-stage { grid-area: stage; position: relative; z-index: 1; height: 196px; pointer-events: none; --s: 0.72; --o: 0.62; }
 /* 비스듬한 판과 점 무늬: 검은 바탕에서 장면의 뒤를 받친다 */
-.v-hero-slab { position: absolute; inset: -30% -10% -40% 8%; transform: skewX(-14deg); background:
+.v-hero-slab { position: absolute; inset: -10% -10% -10% 8%; transform: skewX(-14deg); background:
   radial-gradient(circle, color-mix(in srgb, var(--v-title) 16%, transparent) 1px, transparent 1.5px) 0 0 / 14px 14px,
   linear-gradient(180deg, color-mix(in srgb, var(--v-title) 14%, var(--v-bg)), color-mix(in srgb, var(--v-title) 5%, var(--v-bg)));
   box-shadow: inset 1px 0 0 color-mix(in srgb, var(--v-spark) 55%, transparent); }
-.v-hero-light { position: absolute; left: 50%; top: 42%; width: 460px; height: 320px; margin: -160px 0 0 -230px; background: radial-gradient(closest-side, color-mix(in srgb, var(--v-spark) 36%, transparent), transparent); opacity: 0.3; transition: opacity 0.4s ease-out; }
+.v-hero-light { position: absolute; left: 50%; top: 52%; width: 460px; height: 320px; margin: -160px 0 0 -230px; background: radial-gradient(closest-side, color-mix(in srgb, var(--v-spark) 36%, transparent), transparent); opacity: 0.3; transition: opacity 0.4s ease-out; }
 .v-hero:is([data-phase="open"], [data-phase="sweep"], [data-phase="fade"]) .v-hero-light { opacity: 1; }
 
 .v-hero-scene { position: absolute; left: 50%; top: 0; width: 420px; height: 262px; margin-left: -210px; transform: scale(var(--s)); transform-origin: 50% 0; perspective: 900px; --ant: 190ms; --imp: 150ms; transition: opacity 0.4s ease-in; }
@@ -93,11 +95,11 @@
 .v-hero-orb--image { background: none; box-shadow: none; }
 .v-hero-orb--image > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
 .v-hero:is([data-phase="open"], [data-phase="sweep"]) .v-hero-orb { opacity: 1; transform: scale(1); transition: transform 0.62s cubic-bezier(0.2, 1.6, 0.3, 1), opacity 0.18s ease-out; }
-.v-hero-orb[data-i="0"] { --d: 190px; right: -6%; bottom: -34%; transition-delay: 0.34s; }
+.v-hero-orb[data-i="0"] { --d: 190px; right: -3.5%; bottom: -30%; z-index: 3; transition-delay: 0.34s; }
 .v-hero-orb[data-i="1"] { --d: 112px; left: 3%; top: 4%; transition-delay: 0.42s; animation-delay: -1.4s; }
 .v-hero-orb[data-i="2"] { --d: 54px; left: 13%; bottom: 10%; transition-delay: 0.5s; animation-delay: -2.6s; }
 .v-hero-orb[data-i="3"] { --d: 40px; right: 12%; top: 9%; transition-delay: 0.58s; animation-delay: -0.8s; }
-.v-hero-orb[data-i="4"] { --d: 76px; left: -3%; top: 40%; z-index: 3; transition-delay: 0.66s; animation-delay: -3.3s; }
+.v-hero-orb[data-i="4"] { --d: 76px; left: -3.5%; top: 40%; z-index: 3; transition-delay: 0.66s; animation-delay: -3.3s; }
 .v-hero[data-phase="fade"] .v-hero-orb, .v-hero[data-phase="closed"] .v-hero-orb, .v-hero[data-phase="anticipation"] .v-hero-orb { transition-delay: 0s; }
 
 /* 빛 조각 */
@@ -131,10 +133,13 @@
   .v-hero-desc { font-size: 18px; }
   .v-hero-cta { align-self: start; width: 280px; margin-top: 18px; padding: 0 0 0 40px; }
   .v-hero-stage { height: 300px; --s: 1.12; --o: 1; }
-  .v-hero-slab { inset: -20% -20% -20% -2%; }
+  .v-hero-slab { inset: -20% -20% -20% 45%; }
+  .v-hero-light { left: 71%; top: 42%; }
   .v-hero-scene { margin-left: -230px; }
   .v-hero-pause { top: auto; bottom: 10px; }
-  .v-hero-orb[data-i="1"] { left: 6%; top: -22%; }
+  .v-hero-orb[data-i="1"] { left: 6%; top: -13%; }
+  .v-hero-orb[data-i="0"] { right: -4%; bottom: -22%; }
+  .v-hero-orb[data-i="3"] { right: -2%; top: 22%; }
 }
 
 @keyframes v-hero-crouch { from { transform: none; } to { transform: translateY(4px) scale(1.03, 0.92); } }

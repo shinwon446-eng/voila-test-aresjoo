@@ -19,6 +19,7 @@ import { Link } from "@/i18n/navigation";
 import { BOXES } from "@/lib/products";
 import { useProductText } from "@/lib/useProductText";
 import { useAuthStore } from "@/stores/authStore";
+import { useWalletStore, WELCOME_FREE_OPENS } from "@/stores/walletStore";
 import { OpeningBox } from "@/components/box/Opening";
 
 const GIFT_BOX_SLUG = "vault-pokemon";
@@ -69,18 +70,19 @@ export function HeroBanner() {
 
   if (!box) return null;
   const signedIn = ready && !!user;
+  const freeLeft = useWalletStore((s) => s.freeOpens?.[GIFT_BOX_SLUG] ?? 0);
+  const hasFree = signedIn && freeLeft > 0;
   const shown = reduced ? "sweep" : phase;
   const photos = CARD_FILES.map((name) => (HERO_FILES.includes(name) ? HERO_ASSETS + name : null));
   const orbImage = HERO_FILES.includes(ORB_FILE) ? HERO_ASSETS + ORB_FILE : null;
   return (
     <section ref={root} className="v-hero" aria-labelledby="hero-title" data-phase={shown} data-still={reduced || paused ? "" : undefined}>
+      <span className="v-hero-bg" aria-hidden><span className="v-hero-slab" /><span className="v-hero-light" /></span>
       <div className="v-hero-copy">
         <h2 id="hero-title" className="v-hero-title">{boxTitle(box)}</h2>
-        <p className="v-hero-desc">{t(signedIn ? "hero.descIn" : "hero.desc")}</p>
+        <p className="v-hero-desc">{hasFree ? t("hero.descFree", { n: freeLeft }) : signedIn ? t("hero.descIn") : t("hero.desc", { n: WELCOME_FREE_OPENS })}</p>
       </div>
       <div className="v-hero-stage" aria-hidden>
-        <span className="v-hero-slab" />
-        <span className="v-hero-light" />
         {[0, 1, 2, 3, 4].map((i) => orbImage
           ? <span key={i} className="v-hero-orb v-hero-orb--image" data-i={i}><img src={orbImage} alt="" decoding="async" /></span>
           : <span key={i} className="v-hero-orb" data-i={i}><i /></span>)}
@@ -122,7 +124,7 @@ export function HeroBanner() {
       </div>
       <div className="v-hero-cta">
         {signedIn
-          ? <Link href={"/box/" + box.slug} className="v-btn">{t("hero.ctaIn")}</Link>
+          ? <Link href={"/box/" + box.slug} className="v-btn">{t(hasFree ? "hero.ctaFree" : "hero.ctaIn")}</Link>
           : <button type="button" className="v-btn" onClick={() => openAuth("signup")}>{t("hero.cta")}</button>}
       </div>
       {!reduced && (

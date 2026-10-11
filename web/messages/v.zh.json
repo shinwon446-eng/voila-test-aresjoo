@@ -98,7 +98,9 @@
     "commonRow": "最常见结果",
     "realRow": "获得实物的概率",
     "notes": "须知",
-    "topTimes": "最高倍数"
+    "topTimes": "最高倍数",
+    "openFree": "免费开启 {n} 个",
+    "freeLeft": "本盲盒可免费开启 {n} 次。"
   },
   "reveal": {
     "skip": "跳过",
@@ -126,7 +128,8 @@
     "receive": "领取",
     "shippedTag": "已申请配送",
     "takenTag": "已领取 USDT",
-    "rowHintReceive": "点按一行即可领取或验证该商品。"
+    "rowHintReceive": "点按一行即可领取或验证该商品。",
+    "againFree": "再免费开一次"
   },
   "login": {
     "title": "登录",
@@ -498,14 +501,17 @@
     "timesLine": "支付额的 {n} 倍",
     "burstLabel": "爆发，领取全部累积",
     "gaugeNow": "爆发槽 {amount}",
-    "gaugeReset": "爆发槽从 {amount} 重新累积"
+    "gaugeReset": "爆发槽从 {amount} 重新累积",
+    "free": "免费开箱"
   },
   "hero": {
-    "desc": "注册即送一个。",
-    "cta": "注册领取",
+    "desc": "注册即可免费开启 {n} 个。",
+    "cta": "注册免费开启",
     "descIn": "现在即可开启。",
     "ctaIn": "查看盲盒",
     "pause": "暂停动画",
-    "play": "继续动画"
+    "play": "继续动画",
+    "descFree": "还可免费开启 {n} 个。",
+    "ctaFree": "免费开启"
   }
 }

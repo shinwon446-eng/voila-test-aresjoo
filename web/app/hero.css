@@ -92,8 +92,14 @@
   opacity: 0; transform: scale(0); transition: transform 0.26s ease-in, opacity 0.2s ease-in; animation: v-hero-drift 4.2s ease-in-out infinite alternate; }
 .v-hero-orb > i { position: absolute; left: 50%; top: 52%; width: 36%; height: 36%; margin: -18% 0 0 -18%; background: color-mix(in srgb, var(--v-title) 88%, transparent); clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); }
 /* 그림 파일을 넣은 구슬: 유리 무늬를 걷고 그 그림만 보인다(떠오르고 사라지는 움직임은 같다) */
-.v-hero-orb--image { background: none; box-shadow: none; }
-.v-hero-orb--image > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.v-hero-orb--image { background: none; box-shadow: 0 18px 40px color-mix(in srgb, var(--v-bg) 70%, transparent); }
+.v-hero-orb--image > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; rotate: var(--turn, 0deg); }
+/* 같은 그림 한 장을 구슬마다 다르게 돌려 놓는다 */
+.v-hero-orb--image[data-i="0"] { --turn: 152deg; }
+.v-hero-orb--image[data-i="1"] { --turn: -8deg; }
+.v-hero-orb--image[data-i="2"] { --turn: -64deg; }
+.v-hero-orb--image[data-i="3"] { --turn: 38deg; }
+.v-hero-orb--image[data-i="4"] { --turn: 96deg; }
 .v-hero:is([data-phase="open"], [data-phase="sweep"]) .v-hero-orb { opacity: 1; transform: scale(1); transition: transform 0.62s cubic-bezier(0.2, 1.6, 0.3, 1), opacity 0.18s ease-out; }
 .v-hero-orb[data-i="0"] { --d: 190px; right: -3.5%; bottom: -30%; z-index: 3; transition-delay: 0.34s; }
 .v-hero-orb[data-i="1"] { --d: 112px; left: 3%; top: 4%; transition-delay: 0.42s; animation-delay: -1.4s; }

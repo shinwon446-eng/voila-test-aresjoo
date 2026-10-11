@@ -425,5 +425,19 @@
     "saveFail": "无法保存。该商品已有评价或存储空间已满。",
     "send": "发布评价",
     "proofNote": "与真实开箱记录一起显示在盲盒页面。"
+  },
+  "op": {
+    "balance": "余额 {amount}",
+    "cashGot": "获得 {amount}",
+    "netDown": "支付 {price}，获得 {got}。减少 {diff}。",
+    "netUp": "支付 {price}，获得 {got}。增加 {diff}。",
+    "netSame": "支付 {price}，获得 {got}。与支付金额相同。",
+    "inBalance": "已计入余额",
+    "kept": "已放入保管箱",
+    "refValue": "参考价 {amount}",
+    "takenGot": "获得 {amount}",
+    "odds": "出现概率 {pct}",
+    "backToBox": "返回盲盒",
+    "keepAgain": "保留并再开一次，{amount}"
   }
 }

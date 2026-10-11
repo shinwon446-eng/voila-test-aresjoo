@@ -5,6 +5,7 @@
 @import "./nfx-skin.css";
 @import "./shop-skin.css";
 @import "./ui.css";
+@import "./opening.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

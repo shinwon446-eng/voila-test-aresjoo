@@ -425,5 +425,19 @@
     "saveFail": "Could not save. This item already has a review or storage is full.",
     "send": "Post review",
     "proofNote": "Shown on the box screen with the real opening record."
+  },
+  "op": {
+    "balance": "Balance {amount}",
+    "cashGot": "You got {amount}",
+    "netDown": "Paid {price}, got {got}. Down {diff}.",
+    "netUp": "Paid {price}, got {got}. Up {diff}.",
+    "netSame": "Paid {price}, got {got}. Same as paid.",
+    "inBalance": "Added to your balance",
+    "kept": "Kept in your inventory",
+    "refValue": "Reference price {amount}",
+    "takenGot": "You got {amount}",
+    "odds": "odds {pct}",
+    "backToBox": "Back to the box",
+    "keepAgain": "Keep it and open again, {amount}"
   }
 }

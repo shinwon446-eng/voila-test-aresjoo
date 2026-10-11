@@ -27,6 +27,10 @@ import { useInventoryStore } from "@/stores/inventoryStore";
 import { Button, Chips, Empty, Line, Row, Rows, ScreenHead, TextLink } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
 import { Reveal } from "@/components/box/Reveal";
+import { Opening, type StageConcept } from "@/components/box/Opening";
+
+/** 시안 비교용 임시 스위치(?stage=a|b|c). 채택안이 정해지면 지운다 */
+const stageConcept = (): StageConcept => { const s = typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("stage"); return s === "b" || s === "c" ? s : "a"; };
 import { Link } from "@/i18n/navigation";
 
 /** 큰 금액은 되돌릴 수 없는 행동으로 보고 확인창을 띄운다 */
@@ -229,7 +233,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         )}
       </Sheet>
       <Confirm open={confirming} onCancel={() => setConfirming(false)} onConfirm={open} busy={busy} busyLabel={t("box.opening")} title={t("box.confirmTitle", { amount: fmt(cost) })} desc={t("box.confirmDesc")} confirmLabel={t("box.open", { n: qty, amount: fmt(cost) })} cancelLabel={t("common.cancel")} />
-      {opened && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} onClose={() => setOpened(null)} onAgain={press} againBusy={busy} canAgain={!short} />}
+      {opened && opened.results.length === 1 && <Opening key={opened.round} box={box} result={opened.results[0]} cost={opened.cost} repeat={opened.round > 1} concept={stageConcept()} onClose={() => setOpened(null)} onAgain={press} againBusy={busy} canAgain={!short} />}
+      {opened && opened.results.length > 1 && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} onClose={() => setOpened(null)} onAgain={press} againBusy={busy} canAgain={!short} />}
     </div>
   );
 }

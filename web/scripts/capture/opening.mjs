@@ -13,6 +13,7 @@
 //   --balance <usdt>          시작 잔액(기본 10000)
 //   --skip                    연출 중 화면을 눌러 건너뛴다
 //   --locale <ko|en|zh>
+//   --stage <a|b|c>           시안 비교용(채택 뒤에는 쓰지 않는다)
 // 결과는 고정값의 시드와 회차를 실제 계산식에 넣어 나온 것이다. 화면 코드는 건드리지 않는다.
 import { chromium } from "playwright";
 import fs from "node:fs";
@@ -57,7 +58,7 @@ const page = await context.newPage();
 const errors = [];
 page.on("console", (m) => { if (m.type() === "error") errors.push(m.text().slice(0, 200)); });
 page.on("pageerror", (e) => errors.push("pageerror " + String(e).slice(0, 200)));
-await page.goto(`${base}/${locale}/box/${slug}`, { waitUntil: "networkidle" });
+await page.goto(`${base}/${locale}/box/${slug}${opt("stage", "") ? "?stage=" + opt("stage", "") : ""}`, { waitUntil: "networkidle" });
 await page.waitForSelector(".v-openbar .v-btn:not([disabled])", { timeout: 15000 }).catch(() => {});
 await page.screenshot({ path: `${out}/${name}-00-ready-${view}.png` });
 
@@ -88,7 +89,7 @@ const film = async (id, frames, startWall) => {
 };
 const shot = async (label) => { const p = `${out}/${name}-${label}-${view}.png`; await page.screenshot({ path: p }); return p; };
 const readResult = () => page.evaluate(() => {
-  const r = document.querySelector(".v-reveal, [data-opening]");
+  const r = document.querySelector(".v-op, .v-reveal");
   return { text: r ? (r.innerText || "").replace(/\s+/g, " ").slice(0, 220) : null, balance: (document.querySelector(".v-headbtn")?.textContent || "").trim(), docW: document.documentElement.scrollWidth, winW: innerWidth };
 });
 

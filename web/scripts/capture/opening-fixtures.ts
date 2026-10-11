@@ -54,7 +54,7 @@ for (const slug of ["dollar-apple", "vault-gold", "vault-handbag"]) {
       if (pattern.every((m, i) => mult(rollOf(cs, i)) === m)) { seq[name] = { clientSeed: cs, nonce: 0, multiples: pattern }; break; }
     }
   }
-  (out.boxes as Record<string, unknown>)[slug] = { price: box.price, single, sequences: seq, notFound: [...pending.values()] };
-  console.log(slug, "single", Object.keys(single).join(","), "seq", Object.keys(seq).join(","), "missing", [...pending.values()].join(",") || "none");
+  (out.boxes as Record<string, unknown>)[slug] = { price: box.price, single, sequences: seq, notFound: Array.from(pending.values()) };
+  console.log(slug, "single", Object.keys(single).join(","), "seq", Object.keys(seq).join(","), "missing", Array.from(pending.values()).join(",") || "none");
 }
 writeFileSync(new URL("opening-fixtures.json", import.meta.url), JSON.stringify(out, null, 2) + "\n");

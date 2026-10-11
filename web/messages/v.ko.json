@@ -425,5 +425,19 @@
     "saveFail": "저장하지 못했습니다. 이미 후기를 쓴 상품이거나 저장 공간이 찼습니다.",
     "send": "후기 올리기",
     "proofNote": "실제 개봉 기록과 함께 박스 화면에 보입니다."
+  },
+  "op": {
+    "balance": "잔액 {amount}",
+    "cashGot": "{amount} 받았습니다",
+    "netDown": "{price} 내고 {got} 받았습니다. {diff} 줄었습니다.",
+    "netUp": "{price} 내고 {got} 받았습니다. {diff} 늘었습니다.",
+    "netSame": "{price} 내고 {got} 받았습니다. 낸 값과 같습니다.",
+    "inBalance": "잔액에 들어왔습니다",
+    "kept": "보관함에 넣었습니다",
+    "refValue": "참고가 {amount}",
+    "takenGot": "{amount} 받았습니다",
+    "odds": "나올 확률 {pct}",
+    "backToBox": "박스로 돌아가기",
+    "keepAgain": "보관하고 한 번 더 열기, {amount}"
   }
 }

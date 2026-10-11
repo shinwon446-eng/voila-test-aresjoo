@@ -259,7 +259,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       <details className="v-boxlayout-notes v-notes">
         <summary>{t("box.notes")}</summary>
         {isLadderBox(box) && <p className="v-small">{t("box.burstNote", { pct: Math.round(BURST.share * 100), odds: formatRate(BURST.slots / 10_000), seed: fmt(burstSeed(box.price)) })}</p>}
-        <p className="v-small">{t("box.evNote", { pct: Math.round(REFUND_RATE * 100) })}</p>
+        <p className="v-small">{t(isLadderBox(box) ? "box.evNote" : "box.evNotePhysical", { pct: Math.round(REFUND_RATE * 100) })}</p>
         <div className="v-links"><TextLink href="/verify">{t("box.verifyLink")}</TextLink></div>
       </details>
       </div>

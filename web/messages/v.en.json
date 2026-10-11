@@ -102,7 +102,8 @@
     "oddsTiers": "Odds by tier",
     "oddsTable": "See odds by item",
     "evRetail": "Expected value ratio (by reference value, average)",
-    "evCash": "If everything is taken as USDT"
+    "evCash": "If everything is taken as USDT",
+    "evNotePhysical": "The expected value ratio is the probability-weighted average reference value of the items divided by the box price. It is an average over many openings and does not guarantee any single result. Taking an item as USDT gives {pct}% of its reference value, so the ratio is lower by that much if everything is taken as USDT."
   },
   "reveal": {
     "skip": "Skip",

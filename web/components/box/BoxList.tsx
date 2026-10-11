@@ -11,7 +11,7 @@ import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { CATEGORY_FILTERS, HOME_BOXES, dropTable, faceItems, isLadderBox, sortBoxes, type BoxCategory, type ProductBox, type ProductItem } from "@/lib/products";
+import { CATEGORY_FILTERS, HOME_BOXES, dropTable, faceOf, isLadderBox, sortBoxes, type BoxCategory, type ProductBox, type ProductItem } from "@/lib/products";
 import { CATEGORIES_V2 } from "@/lib/catalogTypes";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
@@ -29,6 +29,15 @@ const PAGE = 24;
 const CATEGORY_ORDER: BoxCategory[] = [...CATEGORY_FILTERS.flatMap((c) => (c.key === "all" ? [] : [c.key as BoxCategory])), ...CATEGORIES_V2];
 const HOME_CATEGORIES: BoxCategory[] = CATEGORY_ORDER.filter((key) => HOME_BOXES.some((b) => b.category === key));
 const isV2 = (key: string): boolean => (CATEGORIES_V2 as readonly string[]).includes(key);
+/** 카테고리를 돌아가며 한 박스씩: 1번 카테고리의 첫 박스, 2번의 첫 박스, ... 그다음 둘째 박스들 */
+function interleave(boxes: ProductBox[]): ProductBox[] {
+  const groups = new Map<string, ProductBox[]>();
+  for (const box of boxes) groups.set(box.category, [...(groups.get(box.category) ?? []), box]);
+  const rows = Array.from(groups.values());
+  const out: ProductBox[] = [];
+  for (let i = 0; out.length < boxes.length; i++) for (const row of rows) if (row[i]) out.push(row[i]);
+  return out;
+}
 
 export function BoxList() {
   const t = useTranslations("v");
@@ -44,7 +53,9 @@ export function BoxList() {
   const boxes = useMemo(() => {
     const lastOpened = new Map<string, number>();
     for (const item of owned) lastOpened.set(item.boxSlug, Math.max(lastOpened.get(item.boxSlug) ?? 0, Date.parse(item.acquiredAt) || 0));
-    const list = sortBoxes(category === "all" ? HOME_BOXES : HOME_BOXES.filter((b) => b.category === category), "featured");
+    const sorted = sortBoxes(category === "all" ? HOME_BOXES : HOME_BOXES.filter((b) => b.category === category), "featured");
+    // "전체"는 카테고리를 돌아가며 한 박스씩 놓는다(첫 화면이 한 카테고리로만 차지 않게). 카테고리 안의 순서는 그대로다
+    const list = category === "all" ? interleave(sorted) : sorted;
     return [...list].sort((a, b) => (lastOpened.get(b.slug) ?? 0) - (lastOpened.get(a.slug) ?? 0));
   }, [category, owned]);
 
@@ -100,7 +111,7 @@ export function BoxList() {
 }
 
 /** 카드에 올리는 대표 실물 하나: 사진이 있는 것 가운데 값이 가장 큰 것. 사진이 하나도 없으면 값이 가장 큰 실물(이름만 쓴다) */
-const leadOf = (box: ProductBox): ProductItem | undefined => faceItems(box, true)[0] ?? faceItems(box)[0];
+const leadOf = (box: ProductBox): ProductItem | undefined => faceOf(box);
 
 function BoxCard({ box, title, price, noRating, photo, leadName, eager }: { box: ProductBox; title: string; price: string; noRating: string; photo: string | null; leadName: string; eager: boolean }) {
   const rating = ratingSummary(box.slug);

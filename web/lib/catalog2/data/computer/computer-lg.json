@@ -1,42 +1,347 @@
-{ "slug": "computer-lg", "items": [
-["computer-lg-31hn713d","LG 31HN713D 31인치 12MP 진단용 모니터","LG 31HN713D 31-inch 12MP Diagnostic Monitor","LG 31HN713D 31英寸 12MP 医用诊断显示器",8999.00],
-["computer-lg-ultrafine-oled-pro-32ep950","LG 울트라파인 OLED 프로 32EP950 32인치 4K","LG UltraFine OLED Pro 32EP950 32-inch 4K","LG UltraFine OLED Pro 32EP950 32英寸 4K",3999.99],
-["computer-lg-ultrafine-oled-pro-27ep950","LG 울트라파인 OLED 프로 27EP950 27인치 4K","LG UltraFine OLED Pro 27EP950 27-inch 4K","LG UltraFine OLED Pro 27EP950 27英寸 4K",2999.99],
-["computer-lg-gram-pro-17-17z90tp","LG 그램 프로 17 17Z90TP Core Ultra 7 RTX 5050 32GB 2TB","LG gram Pro 17 17Z90TP Core Ultra 7 RTX 5050 32GB 2TB","LG gram Pro 17 17Z90TP Core Ultra 7 RTX 5050 32GB 2TB",2599.99],
-["computer-lg-gram-pro-16-16z90sp","LG 그램 프로 16 16Z90SP Core Ultra 7 RTX 3050 32GB 2TB","LG gram Pro 16 16Z90SP Core Ultra 7 RTX 3050 32GB 2TB","LG gram Pro 16 16Z90SP Core Ultra 7 RTX 3050 32GB 2TB",2499.99],
-["computer-lg-gram-pro-2-in-1-16t90tp","LG 그램 프로 2-in-1 16T90TP Core Ultra 7 32GB 1TB","LG gram Pro 2-in-1 16T90TP Core Ultra 7 32GB 1TB","LG gram Pro 2-in-1 16T90TP Core Ultra 7 32GB 1TB",2099.99],
-["computer-lg-ultragear-45gx950a","LG 울트라기어 45GX950A 45인치 5K2K OLED","LG UltraGear 45GX950A 45-inch 5K2K OLED","LG UltraGear 45GX950A 45英寸 5K2K OLED",1999.99],
-["computer-lg-ultrafine-6k-32u990a","LG 울트라파인 6K 32U990A 32인치 썬더볼트 5","LG UltraFine 6K 32U990A 32-inch Thunderbolt 5","LG UltraFine 6K 32U990A 32英寸 雷电5",1999.99],
-["computer-lg-gram-pro-16-16z90tp","LG 그램 프로 16 16Z90TP Core Ultra 7 32GB 1TB","LG gram Pro 16 16Z90TP Core Ultra 7 32GB 1TB","LG gram Pro 16 16Z90TP Core Ultra 7 32GB 1TB",1999.99],
-["computer-lg-ultrawide-40wp95c","LG 울트라와이드 40WP95C 40인치 5K2K 나노 IPS","LG UltraWide 40WP95C 40-inch 5K2K Nano IPS","LG UltraWide 40WP95C 40英寸 5K2K Nano IPS",1799.99],
-["computer-lg-gram-17-17z90s","LG 그램 17 17Z90S Core Ultra 7 16GB 1TB","LG gram 17 17Z90S Core Ultra 7 16GB 1TB","LG gram 17 17Z90S Core Ultra 7 16GB 1TB",1799.99],
-["computer-lg-ultragear-45gs95qe","LG 울트라기어 45GS95QE 45인치 OLED 240Hz","LG UltraGear 45GS95QE 45-inch OLED 240Hz","LG UltraGear 45GS95QE 45英寸 OLED 240Hz",1699.99],
-["computer-lg-gram-superslim-15z90rt","LG 그램 슈퍼슬림 15Z90RT OLED","LG gram SuperSlim 15Z90RT OLED","LG gram SuperSlim 15Z90RT OLED",1699.99],
-["computer-lg-ultragear-39gx90sa","LG 울트라기어 39GX90SA 39인치 OLED 스마트 모니터","LG UltraGear 39GX90SA 39-inch OLED Smart Monitor","LG UltraGear 39GX90SA 39英寸 OLED 智能显示器",1599.99],
-["computer-lg-gram-16-16z90s","LG 그램 16 16Z90S Core Ultra 7 16GB 1TB","LG gram 16 16Z90S Core Ultra 7 16GB 1TB","LG gram 16 16Z90S Core Ultra 7 16GB 1TB",1599.99],
-["computer-lg-ultragear-32gs95ue","LG 울트라기어 32GS95UE 32인치 4K OLED 듀얼 모드","LG UltraGear 32GS95UE 32-inch 4K OLED Dual-Mode","LG UltraGear 32GS95UE 32英寸 4K OLED 双模",1399.99],
-["computer-lg-gram-14-14z90s","LG 그램 14 14Z90S Core Ultra 7 16GB 512GB","LG gram 14 14Z90S Core Ultra 7 16GB 512GB","LG gram 14 14Z90S Core Ultra 7 16GB 512GB",1399.99],
-["computer-lg-ultragear-34gs95qe","LG 울트라기어 34GS95QE 34인치 OLED 240Hz","LG UltraGear 34GS95QE 34-inch OLED 240Hz","LG UltraGear 34GS95QE 34英寸 OLED 240Hz",1299.99],
-["computer-lg-ultrafine-5k-27md5kl","LG 울트라파인 5K 27MD5KL 27인치","LG UltraFine 5K 27MD5KL 27-inch","LG UltraFine 5K 27MD5KL 27英寸",1299.99],
-["computer-lg-ultragear-49gr85dc","LG 울트라기어 49GR85DC 49인치 DQHD 240Hz","LG UltraGear 49GR85DC 49-inch DQHD 240Hz","LG UltraGear 49GR85DC 49英寸 DQHD 240Hz",1299.99],
-["computer-lg-ultragear-27gx790a","LG 울트라기어 27GX790A 27인치 OLED 480Hz","LG UltraGear 27GX790A 27-inch OLED 480Hz","LG UltraGear 27GX790A 27英寸 OLED 480Hz",999.99],
-["computer-lg-ultragear-27gs95qe","LG 울트라기어 27GS95QE 27인치 OLED 240Hz","LG UltraGear 27GS95QE 27-inch OLED 240Hz","LG UltraGear 27GS95QE 27英寸 OLED 240Hz",899.99],
-["computer-lg-gram-book-15u50t","LG 그램 북 15U50T Core i5 16GB 512GB","LG gram Book 15U50T Core i5 16GB 512GB","LG gram Book 15U50T Core i5 16GB 512GB",699.99],
-["computer-lg-dualup-28mq780","LG 듀얼업 28MQ780 28인치 SDQHD","LG DualUp 28MQ780 28-inch SDQHD","LG DualUp 28MQ780 28英寸 SDQHD",699.99],
-["computer-lg-ergo-32un880","LG 에르고 32UN880 32인치 4K","LG Ergo 32UN880 32-inch 4K","LG Ergo 32UN880 32英寸 4K",599.99],
-["computer-lg-smart-monitor-32sr85u","LG 마이뷰 스마트 모니터 32SR85U 32인치 4K","LG MyView Smart Monitor 32SR85U 32-inch 4K","LG MyView 智能显示器 32SR85U 32英寸 4K",599.99],
-["computer-lg-ultragear-27gr83q","LG 울트라기어 27GR83Q 27인치 QHD 240Hz","LG UltraGear 27GR83Q 27-inch QHD 240Hz","LG UltraGear 27GR83Q 27英寸 QHD 240Hz",399.99],
-["computer-lg-gram-view-16mr70","LG 그램 +view 16MR70 16인치 포터블 모니터","LG gram +view 16MR70 16-inch Portable Monitor","LG gram +view 16MR70 16英寸 便携显示器",349.99],
-["computer-lg-ultrawide-34wr50qk","LG 울트라와이드 34WR50QK 34인치 커브드 QHD","LG UltraWide 34WR50QK 34-inch Curved QHD","LG UltraWide 34WR50QK 34英寸 曲面 QHD",329.99],
-["computer-lg-smart-monitor-32sr50f","LG 마이뷰 스마트 모니터 32SR50F 32인치 FHD","LG MyView Smart Monitor 32SR50F 32-inch FHD","LG MyView 智能显示器 32SR50F 32英寸 FHD",299.99],
-["computer-lg-27us500","LG 27US500 27인치 4K 모니터","LG 27US500 27-inch 4K Monitor","LG 27US500 27英寸 4K 显示器",249.99],
-["computer-lg-ultragear-27gs60qc","LG 울트라기어 27GS60QC 27인치 커브드 QHD 180Hz","LG UltraGear 27GS60QC 27-inch Curved QHD 180Hz","LG UltraGear 27GS60QC 27英寸 曲面 QHD 180Hz",199.99],
-["computer-lg-ultragear-24gs60f","LG 울트라기어 24GS60F 24인치 FHD 180Hz","LG UltraGear 24GS60F 24-inch FHD 180Hz","LG UltraGear 24GS60F 24英寸 FHD 180Hz",179.99],
-["computer-lg-27mr400","LG 27MR400 27인치 FHD 100Hz 모니터","LG 27MR400 27-inch FHD 100Hz Monitor","LG 27MR400 27英寸 FHD 100Hz 显示器",129.99],
-["computer-lg-bp60nb10","LG BP60NB10 외장 울트라 HD 블루레이 라이터","LG BP60NB10 External Ultra HD Blu-ray Writer","LG BP60NB10 外置 Ultra HD 蓝光刻录机",129.99],
-["computer-lg-wh16ns60","LG WH16NS60 내장 울트라 HD 블루레이 라이터","LG WH16NS60 Internal Ultra HD Blu-ray Writer","LG WH16NS60 内置 Ultra HD 蓝光刻录机",109.99],
-["computer-lg-24mr400","LG 24MR400 24인치 FHD 100Hz 모니터","LG 24MR400 24-inch FHD 100Hz Monitor","LG 24MR400 24英寸 FHD 100Hz 显示器",99.99],
-["computer-lg-wh16ns40","LG WH16NS40 내장 블루레이 라이터","LG WH16NS40 Internal Blu-ray Writer","LG WH16NS40 内置蓝光刻录机",64.99],
-["computer-lg-gp65nb60","LG GP65NB60 울트라 슬림 외장 DVD 라이터","LG GP65NB60 Ultra Slim Portable DVD Writer","LG GP65NB60 超薄外置 DVD 刻录机",26.99],
-["computer-lg-gh24nsc0","LG GH24NSC0 내장 슈퍼 멀티 DVD 라이터","LG GH24NSC0 Internal Super Multi DVD Writer","LG GH24NSC0 内置 DVD 刻录机",19.99]
-], "use": [] }
+{
+ "slug": "computer-lg",
+ "items": [
+  [
+   "computer-lg-31hn713d",
+   "LG 31HN713D 31인치 12MP 진단용 모니터",
+   "LG 31HN713D 31-inch 12MP Diagnostic Monitor",
+   "LG 31HN713D 31英寸 12MP 医用诊断显示器",
+   8999
+  ],
+  [
+   "computer-lg-ultrafine-oled-pro-32ep950",
+   "LG 울트라파인 OLED 프로 32EP950 32인치 4K",
+   "LG UltraFine OLED Pro 32EP950 32-inch 4K",
+   "LG UltraFine OLED Pro 32EP950 32英寸 4K",
+   3999.99
+  ],
+  [
+   "computer-lg-ultrafine-oled-pro-27ep950",
+   "LG 울트라파인 OLED 프로 27EP950 27인치 4K",
+   "LG UltraFine OLED Pro 27EP950 27-inch 4K",
+   "LG UltraFine OLED Pro 27EP950 27英寸 4K",
+   2999.99
+  ],
+  [
+   "computer-lg-gram-pro-17-17z90tp",
+   "LG 그램 프로 17 17Z90TP Core Ultra 7 RTX 5050 32GB 2TB",
+   "LG gram Pro 17 17Z90TP Core Ultra 7 RTX 5050 32GB 2TB",
+   "LG gram Pro 17 17Z90TP Core Ultra 7 RTX 5050 32GB 2TB",
+   2599.99
+  ],
+  [
+   "computer-lg-gram-pro-16-16z90sp",
+   "LG 그램 프로 16 16Z90SP Core Ultra 7 RTX 3050 32GB 2TB",
+   "LG gram Pro 16 16Z90SP Core Ultra 7 RTX 3050 32GB 2TB",
+   "LG gram Pro 16 16Z90SP Core Ultra 7 RTX 3050 32GB 2TB",
+   2499.99
+  ],
+  [
+   "computer-lg-gram-pro-2-in-1-16t90tp",
+   "LG 그램 프로 2-in-1 16T90TP Core Ultra 7 32GB 1TB",
+   "LG gram Pro 2-in-1 16T90TP Core Ultra 7 32GB 1TB",
+   "LG gram Pro 2-in-1 16T90TP Core Ultra 7 32GB 1TB",
+   2099.99
+  ],
+  [
+   "computer-lg-ultragear-45gx950a",
+   "LG 울트라기어 45GX950A 45인치 5K2K OLED",
+   "LG UltraGear 45GX950A 45-inch 5K2K OLED",
+   "LG UltraGear 45GX950A 45英寸 5K2K OLED",
+   1999.99
+  ],
+  [
+   "computer-lg-ultrafine-6k-32u990a",
+   "LG 울트라파인 6K 32U990A 32인치 썬더볼트 5",
+   "LG UltraFine 6K 32U990A 32-inch Thunderbolt 5",
+   "LG UltraFine 6K 32U990A 32英寸 雷电5",
+   1999.99
+  ],
+  [
+   "computer-lg-gram-pro-16-16z90tp",
+   "LG 그램 프로 16 16Z90TP Core Ultra 7 32GB 1TB",
+   "LG gram Pro 16 16Z90TP Core Ultra 7 32GB 1TB",
+   "LG gram Pro 16 16Z90TP Core Ultra 7 32GB 1TB",
+   1999.99
+  ],
+  [
+   "computer-lg-ultrawide-40wp95c",
+   "LG 울트라와이드 40WP95C 40인치 5K2K 나노 IPS",
+   "LG UltraWide 40WP95C 40-inch 5K2K Nano IPS",
+   "LG UltraWide 40WP95C 40英寸 5K2K Nano IPS",
+   1799.99
+  ],
+  [
+   "computer-lg-gram-17-17z90s",
+   "LG 그램 17 17Z90S Core Ultra 7 16GB 1TB",
+   "LG gram 17 17Z90S Core Ultra 7 16GB 1TB",
+   "LG gram 17 17Z90S Core Ultra 7 16GB 1TB",
+   1799.99
+  ],
+  [
+   "computer-lg-ultragear-45gs95qe",
+   "LG 울트라기어 45GS95QE 45인치 OLED 240Hz",
+   "LG UltraGear 45GS95QE 45-inch OLED 240Hz",
+   "LG UltraGear 45GS95QE 45英寸 OLED 240Hz",
+   1699.99
+  ],
+  [
+   "computer-lg-gram-superslim-15z90rt",
+   "LG 그램 슈퍼슬림 15Z90RT OLED",
+   "LG gram SuperSlim 15Z90RT OLED",
+   "LG gram SuperSlim 15Z90RT OLED",
+   1699.99
+  ],
+  [
+   "computer-lg-ultragear-39gx90sa",
+   "LG 울트라기어 39GX90SA 39인치 OLED 스마트 모니터",
+   "LG UltraGear 39GX90SA 39-inch OLED Smart Monitor",
+   "LG UltraGear 39GX90SA 39英寸 OLED 智能显示器",
+   1599.99
+  ],
+  [
+   "computer-lg-gram-16-16z90s",
+   "LG 그램 16 16Z90S Core Ultra 7 16GB 1TB",
+   "LG gram 16 16Z90S Core Ultra 7 16GB 1TB",
+   "LG gram 16 16Z90S Core Ultra 7 16GB 1TB",
+   1599.99
+  ],
+  [
+   "computer-lg-ultragear-32gs95ue",
+   "LG 울트라기어 32GS95UE 32인치 4K OLED 듀얼 모드",
+   "LG UltraGear 32GS95UE 32-inch 4K OLED Dual-Mode",
+   "LG UltraGear 32GS95UE 32英寸 4K OLED 双模",
+   1399.99
+  ],
+  [
+   "computer-lg-gram-14-14z90s",
+   "LG 그램 14 14Z90S Core Ultra 7 16GB 512GB",
+   "LG gram 14 14Z90S Core Ultra 7 16GB 512GB",
+   "LG gram 14 14Z90S Core Ultra 7 16GB 512GB",
+   1399.99
+  ],
+  [
+   "computer-lg-ultragear-34gs95qe",
+   "LG 울트라기어 34GS95QE 34인치 OLED 240Hz",
+   "LG UltraGear 34GS95QE 34-inch OLED 240Hz",
+   "LG UltraGear 34GS95QE 34英寸 OLED 240Hz",
+   1299.99
+  ],
+  [
+   "computer-lg-ultrafine-5k-27md5kl",
+   "LG 울트라파인 5K 27MD5KL 27인치",
+   "LG UltraFine 5K 27MD5KL 27-inch",
+   "LG UltraFine 5K 27MD5KL 27英寸",
+   1299.99
+  ],
+  [
+   "computer-lg-ultragear-49gr85dc",
+   "LG 울트라기어 49GR85DC 49인치 DQHD 240Hz",
+   "LG UltraGear 49GR85DC 49-inch DQHD 240Hz",
+   "LG UltraGear 49GR85DC 49英寸 DQHD 240Hz",
+   1299.99
+  ],
+  [
+   "computer-lg-ultragear-27gx790a",
+   "LG 울트라기어 27GX790A 27인치 OLED 480Hz",
+   "LG UltraGear 27GX790A 27-inch OLED 480Hz",
+   "LG UltraGear 27GX790A 27英寸 OLED 480Hz",
+   999.99
+  ],
+  [
+   "computer-lg-ultragear-27gs95qe",
+   "LG 울트라기어 27GS95QE 27인치 OLED 240Hz",
+   "LG UltraGear 27GS95QE 27-inch OLED 240Hz",
+   "LG UltraGear 27GS95QE 27英寸 OLED 240Hz",
+   899.99
+  ],
+  [
+   "computer-lg-gram-book-15u50t",
+   "LG 그램 북 15U50T Core i5 16GB 512GB",
+   "LG gram Book 15U50T Core i5 16GB 512GB",
+   "LG gram Book 15U50T Core i5 16GB 512GB",
+   699.99
+  ],
+  [
+   "computer-lg-dualup-28mq780",
+   "LG 듀얼업 28MQ780 28인치 SDQHD",
+   "LG DualUp 28MQ780 28-inch SDQHD",
+   "LG DualUp 28MQ780 28英寸 SDQHD",
+   699.99
+  ],
+  [
+   "computer-lg-ergo-32un880",
+   "LG 에르고 32UN880 32인치 4K",
+   "LG Ergo 32UN880 32-inch 4K",
+   "LG Ergo 32UN880 32英寸 4K",
+   599.99
+  ],
+  [
+   "computer-lg-smart-monitor-32sr85u",
+   "LG 마이뷰 스마트 모니터 32SR85U 32인치 4K",
+   "LG MyView Smart Monitor 32SR85U 32-inch 4K",
+   "LG MyView 智能显示器 32SR85U 32英寸 4K",
+   599.99
+  ],
+  [
+   "computer-lg-ultragear-27gr83q",
+   "LG 울트라기어 27GR83Q 27인치 QHD 240Hz",
+   "LG UltraGear 27GR83Q 27-inch QHD 240Hz",
+   "LG UltraGear 27GR83Q 27英寸 QHD 240Hz",
+   399.99
+  ],
+  [
+   "computer-lg-gram-view-16mr70",
+   "LG 그램 +view 16MR70 16인치 포터블 모니터",
+   "LG gram +view 16MR70 16-inch Portable Monitor",
+   "LG gram +view 16MR70 16英寸 便携显示器",
+   349.99
+  ],
+  [
+   "computer-lg-ultrawide-34wr50qk",
+   "LG 울트라와이드 34WR50QK 34인치 커브드 QHD",
+   "LG UltraWide 34WR50QK 34-inch Curved QHD",
+   "LG UltraWide 34WR50QK 34英寸 曲面 QHD",
+   329.99
+  ],
+  [
+   "computer-lg-smart-monitor-32sr50f",
+   "LG 마이뷰 스마트 모니터 32SR50F 32인치 FHD",
+   "LG MyView Smart Monitor 32SR50F 32-inch FHD",
+   "LG MyView 智能显示器 32SR50F 32英寸 FHD",
+   299.99
+  ],
+  [
+   "computer-lg-27us500",
+   "LG 27US500 27인치 4K 모니터",
+   "LG 27US500 27-inch 4K Monitor",
+   "LG 27US500 27英寸 4K 显示器",
+   249.99
+  ],
+  [
+   "computer-lg-ultragear-27gs60qc",
+   "LG 울트라기어 27GS60QC 27인치 커브드 QHD 180Hz",
+   "LG UltraGear 27GS60QC 27-inch Curved QHD 180Hz",
+   "LG UltraGear 27GS60QC 27英寸 曲面 QHD 180Hz",
+   199.99
+  ],
+  [
+   "computer-lg-ultragear-24gs60f",
+   "LG 울트라기어 24GS60F 24인치 FHD 180Hz",
+   "LG UltraGear 24GS60F 24-inch FHD 180Hz",
+   "LG UltraGear 24GS60F 24英寸 FHD 180Hz",
+   179.99
+  ],
+  [
+   "computer-lg-27mr400",
+   "LG 27MR400 27인치 FHD 100Hz 모니터",
+   "LG 27MR400 27-inch FHD 100Hz Monitor",
+   "LG 27MR400 27英寸 FHD 100Hz 显示器",
+   129.99
+  ],
+  [
+   "computer-lg-bp60nb10",
+   "LG BP60NB10 외장 울트라 HD 블루레이 라이터",
+   "LG BP60NB10 External Ultra HD Blu-ray Writer",
+   "LG BP60NB10 外置 Ultra HD 蓝光刻录机",
+   129.99
+  ],
+  [
+   "computer-lg-wh16ns60",
+   "LG WH16NS60 내장 울트라 HD 블루레이 라이터",
+   "LG WH16NS60 Internal Ultra HD Blu-ray Writer",
+   "LG WH16NS60 内置 Ultra HD 蓝光刻录机",
+   109.99
+  ],
+  [
+   "computer-lg-24mr400",
+   "LG 24MR400 24인치 FHD 100Hz 모니터",
+   "LG 24MR400 24-inch FHD 100Hz Monitor",
+   "LG 24MR400 24英寸 FHD 100Hz 显示器",
+   99.99
+  ],
+  [
+   "computer-lg-wh16ns40",
+   "LG WH16NS40 내장 블루레이 라이터",
+   "LG WH16NS40 Internal Blu-ray Writer",
+   "LG WH16NS40 内置蓝光刻录机",
+   64.99
+  ],
+  [
+   "computer-lg-gp65nb60",
+   "LG GP65NB60 울트라 슬림 외장 DVD 라이터",
+   "LG GP65NB60 Ultra Slim Portable DVD Writer",
+   "LG GP65NB60 超薄外置 DVD 刻录机",
+   26.99
+  ],
+  [
+   "computer-lg-gh24nsc0",
+   "LG GH24NSC0 내장 슈퍼 멀티 DVD 라이터",
+   "LG GH24NSC0 Internal Super Multi DVD Writer",
+   "LG GH24NSC0 内置 DVD 刻录机",
+   19.99
+  ]
+ ],
+ "use": [
+  "computer-p-raspberry-pi-zero-2-w",
+  "computer-p-tp-link-tl-sg105",
+  "computer-p-ugreen-revodok-105",
+  "computer-p-noctua-nf-p12-redux-1700",
+  "computer-p-netgear-gs305",
+  "computer-p-ifixit-moray",
+  "computer-p-anker-511-nano-3-30w",
+  "computer-p-redragon-m711-cobra",
+  "computer-p-tp-link-tl-sg108",
+  "computer-p-netgear-gs308",
+  "computer-p-tomtoc-360-sleeve-14",
+  "computer-p-moft-invisible-laptop-stand",
+  "computer-p-sabrent-ec-snve",
+  "computer-p-raspberry-pi-camera-module-3",
+  "computer-p-ifixit-pro-tech-toolkit",
+  "computer-p-wd-my-passport-2tb",
+  "computer-p-apc-be600m1",
+  "computer-p-endgame-gear-xm2we",
+  "computer-p-tp-link-archer-ax55",
+  "computer-p-raspberry-pi-5-8gb",
+  "computer-p-roost-v3",
+  "computer-p-crucial-t500-1tb",
+  "computer-p-fractal-pop-air",
+  "computer-p-wd-black-sn850x-1tb",
+  "computer-p-raspberry-pi-500",
+  "computer-p-pulsar-x2-v2",
+  "computer-p-nuphy-air75-v2",
+  "computer-p-mikrotik-hap-ax3",
+  "computer-p-fractal-north",
+  "computer-p-seagate-barracuda-8tb",
+  "computer-p-ubiquiti-unifi-express",
+  "computer-p-noctua-nh-d15-g2",
+  "computer-p-wooting-80he",
+  "computer-p-ergotron-lx",
+  "computer-p-cyberpower-cp1500pfclcd",
+  "computer-p-steelseries-apex-pro-tkl-gen-3",
+  "computer-p-fractal-torrent",
+  "computer-p-sandisk-extreme-pro-2tb",
+  "computer-p-asrock-x870e-taichi",
+  "computer-p-wd-red-pro-22tb",
+  "computer-p-seagate-exos-x24-24tb",
+  "computer-p-beelink-ser8",
+  "computer-p-kinesis-advantage360-pro",
+  "computer-p-ubiquiti-udm-se",
+  "computer-p-wacom-intuos-pro-l-2025",
+  "computer-p-sony-inzone-m9-ii",
+  "computer-p-minisforum-ms-01",
+  "computer-p-zotac-rtx-5070-ti-solid-sff",
+  "computer-p-xiaomi-redmi-book-pro-16-2025",
+  "computer-p-synology-ds1621-plus",
+  "computer-p-beelink-ser9",
+  "computer-p-wacom-cintiq-pro-27",
+  "computer-p-norbauer-seneca",
+  "computer-p-panasonic-toughbook-33",
+  "computer-p-apc-smart-ups-srt5krmxlt",
+  "computer-p-sandisk-pro-g-raid-shuttle-8-96tb",
+  "computer-p-solidigm-d5-p5336-61tb",
+  "computer-p-tinybox-red",
+  "computer-p-flanders-scientific-xmp550",
+  "computer-p-tinybox-pro"
+ ]
+}

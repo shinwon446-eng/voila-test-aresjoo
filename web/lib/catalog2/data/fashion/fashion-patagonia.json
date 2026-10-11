@@ -1,0 +1,455 @@
+{
+ "slug": "fashion-patagonia",
+ "items": [
+  [
+   "fashion-patagonia-stormshadow-parka",
+   "파타고니아 스톰섀도 파카",
+   "Patagonia Stormshadow Parka",
+   "巴塔哥尼亚 Stormshadow Parka",
+   899
+  ],
+  [
+   "fashion-patagonia-grade-vii-down-parka",
+   "파타고니아 그레이드 VII 다운 파카",
+   "Patagonia Grade VII Down Parka",
+   "巴塔哥尼亚 Grade VII Down Parka",
+   899
+  ],
+  [
+   "fashion-patagonia-frozen-range-parka",
+   "파타고니아 프로즌 레인지 파카",
+   "Patagonia Frozen Range Parka",
+   "巴塔哥尼亚 Frozen Range Parka",
+   799
+  ],
+  [
+   "fashion-patagonia-swiftcurrent-expedition-zip-front-waders",
+   "파타고니아 스위프트커런트 익스페디션 집 프론트 웨이더",
+   "Patagonia Swiftcurrent Expedition Zip-Front Waders",
+   "巴塔哥尼亚 Swiftcurrent Expedition Zip-Front Waders",
+   799
+  ],
+  [
+   "fashion-patagonia-powslayer-jacket",
+   "파타고니아 파우슬레이어 재킷",
+   "Patagonia PowSlayer Jacket",
+   "巴塔哥尼亚 PowSlayer Jacket",
+   799
+  ],
+  [
+   "fashion-patagonia-super-free-alpine-jacket",
+   "파타고니아 수퍼 프리 알파인 재킷",
+   "Patagonia Super Free Alpine Jacket",
+   "巴塔哥尼亚 Super Free Alpine Jacket",
+   749
+  ],
+  [
+   "fashion-patagonia-tres-3-in-1-parka",
+   "파타고니아 트레스 3 in 1 파카",
+   "Patagonia Tres 3-in-1 Parka",
+   "巴塔哥尼亚 Tres 3-in-1 Parka",
+   699
+  ],
+  [
+   "fashion-patagonia-untracked-jacket",
+   "파타고니아 언트랙트 재킷",
+   "Patagonia Untracked Jacket",
+   "巴塔哥尼亚 Untracked Jacket",
+   699
+  ],
+  [
+   "fashion-patagonia-r4-yulex-regulator-front-zip-hooded-full-suit",
+   "파타고니아 R4 율렉스 레귤레이터 프론트 집 후드 풀 슈트",
+   "Patagonia R4 Yulex Regulator Front-Zip Hooded Full Suit",
+   "巴塔哥尼亚 R4 Yulex Regulator Front-Zip Hooded Full Suit",
+   679
+  ],
+  [
+   "fashion-patagonia-powslayer-bibs",
+   "파타고니아 파우슬레이어 빕",
+   "Patagonia PowSlayer Bibs",
+   "巴塔哥尼亚 PowSlayer Bibs",
+   649
+  ],
+  [
+   "fashion-patagonia-jackson-glacier-parka",
+   "파타고니아 잭슨 글레이셔 파카",
+   "Patagonia Jackson Glacier Parka",
+   "巴塔哥尼亚 Jackson Glacier Parka",
+   649
+  ],
+  [
+   "fashion-patagonia-untracked-bibs",
+   "파타고니아 언트랙트 빕",
+   "Patagonia Untracked Bibs",
+   "巴塔哥尼亚 Untracked Bibs",
+   649
+  ],
+  [
+   "fashion-patagonia-stormstride-jacket",
+   "파타고니아 스톰스트라이드 재킷",
+   "Patagonia Stormstride Jacket",
+   "巴塔哥尼亚 Stormstride Jacket",
+   499
+  ],
+  [
+   "fashion-patagonia-storm-shift-jacket",
+   "파타고니아 스톰 시프트 재킷",
+   "Patagonia Storm Shift Jacket",
+   "巴塔哥尼亚 Storm Shift Jacket",
+   499
+  ],
+  [
+   "fashion-patagonia-das-parka",
+   "파타고니아 DAS 파카",
+   "Patagonia DAS Parka",
+   "巴塔哥尼亚 DAS Parka",
+   449
+  ],
+  [
+   "fashion-patagonia-fitz-roy-down-hoody",
+   "파타고니아 피츠로이 다운 후디",
+   "Patagonia Fitz Roy Down Hoody",
+   "巴塔哥尼亚 Fitz Roy Down Hoody",
+   449
+  ],
+  [
+   "fashion-patagonia-triolet-jacket",
+   "파타고니아 트리올렛 재킷",
+   "Patagonia Triolet Jacket",
+   "巴塔哥尼亚 Triolet Jacket",
+   449
+  ],
+  [
+   "fashion-patagonia-snowdrifter-jacket",
+   "파타고니아 스노드리프터 재킷",
+   "Patagonia SnowDrifter Jacket",
+   "巴塔哥尼亚 SnowDrifter Jacket",
+   449
+  ],
+  [
+   "fashion-patagonia-insulated-powder-town-jacket",
+   "파타고니아 인슐레이티드 파우더 타운 재킷",
+   "Patagonia Insulated Powder Town Jacket",
+   "巴塔哥尼亚 Insulated Powder Town Jacket",
+   399
+  ],
+  [
+   "fashion-patagonia-das-light-hoody",
+   "파타고니아 DAS 라이트 후디",
+   "Patagonia DAS Light Hoody",
+   "巴塔哥尼亚 DAS Light Hoody",
+   349
+  ],
+  [
+   "fashion-patagonia-powder-town-jacket",
+   "파타고니아 파우더 타운 재킷",
+   "Patagonia Powder Town Jacket",
+   "巴塔哥尼亚 Powder Town Jacket",
+   349
+  ],
+  [
+   "fashion-patagonia-forra-wading-boots",
+   "파타고니아 포라 웨이딩 부츠",
+   "Patagonia Forra Wading Boots",
+   "巴塔哥尼亚 Forra Wading Boots",
+   299
+  ],
+  [
+   "fashion-patagonia-down-sweater-hoody",
+   "파타고니아 다운 스웨터 후디",
+   "Patagonia Down Sweater Hoody",
+   "巴塔哥尼亚 Down Sweater Hoody",
+   329
+  ],
+  [
+   "fashion-patagonia-micro-puff-hoody",
+   "파타고니아 마이크로 퍼프 후디",
+   "Patagonia Micro Puff Hoody",
+   "巴塔哥尼亚 Micro Puff Hoody",
+   329
+  ],
+  [
+   "fashion-patagonia-nano-air-hoody",
+   "파타고니아 나노 에어 후디",
+   "Patagonia Nano-Air Hoody",
+   "巴塔哥尼亚 Nano-Air Hoody",
+   329
+  ],
+  [
+   "fashion-patagonia-downdrift-jacket",
+   "파타고니아 다운드리프트 재킷",
+   "Patagonia Downdrift Jacket",
+   "巴塔哥尼亚 Downdrift Jacket",
+   329
+  ],
+  [
+   "fashion-patagonia-nano-puff-hoody",
+   "파타고니아 나노 퍼프 후디",
+   "Patagonia Nano Puff Hoody",
+   "巴塔哥尼亚 Nano Puff Hoody",
+   289
+  ],
+  [
+   "fashion-patagonia-down-sweater",
+   "파타고니아 다운 스웨터",
+   "Patagonia Down Sweater",
+   "巴塔哥尼亚 Down Sweater",
+   279
+  ],
+  [
+   "fashion-patagonia-granite-crest-rain-jacket",
+   "파타고니아 그래닛 크레스트 레인 재킷",
+   "Patagonia Granite Crest Rain Jacket",
+   "巴塔哥尼亚 Granite Crest Rain Jacket",
+   279
+  ],
+  [
+   "fashion-patagonia-isthmus-parka",
+   "파타고니아 이스머스 파카",
+   "Patagonia Isthmus Parka",
+   "巴塔哥尼亚 Isthmus Parka",
+   249
+  ],
+  [
+   "fashion-patagonia-nano-puff-jacket",
+   "파타고니아 나노 퍼프 재킷",
+   "Patagonia Nano Puff Jacket",
+   "巴塔哥尼亚 Nano Puff Jacket",
+   239
+  ],
+  [
+   "fashion-patagonia-classic-retro-x-fleece-jacket",
+   "파타고니아 클래식 레트로 X 플리스 재킷",
+   "Patagonia Classic Retro-X Fleece Jacket",
+   "巴塔哥尼亚 Classic Retro-X Fleece Jacket",
+   229
+  ],
+  [
+   "fashion-patagonia-down-sweater-vest",
+   "파타고니아 다운 스웨터 베스트",
+   "Patagonia Down Sweater Vest",
+   "巴塔哥尼亚 Down Sweater Vest",
+   229
+  ],
+  [
+   "fashion-patagonia-r1-techface-hoody",
+   "파타고니아 R1 테크페이스 후디",
+   "Patagonia R1 TechFace Hoody",
+   "巴塔哥尼亚 R1 TechFace Hoody",
+   199
+  ],
+  [
+   "fashion-patagonia-nano-puff-vest",
+   "파타고니아 나노 퍼프 베스트",
+   "Patagonia Nano Puff Vest",
+   "巴塔哥尼亚 Nano Puff Vest",
+   189
+  ],
+  [
+   "fashion-patagonia-r1-air-full-zip-hoody",
+   "파타고니아 R1 에어 풀집 후디",
+   "Patagonia R1 Air Full-Zip Hoody",
+   "巴塔哥尼亚 R1 Air Full-Zip Hoody",
+   179
+  ],
+  [
+   "fashion-patagonia-torrentshell-3l-rain-jacket",
+   "파타고니아 토렌트쉘 3L 레인 재킷",
+   "Patagonia Torrentshell 3L Rain Jacket",
+   "巴塔哥尼亚 Torrentshell 3L Rain Jacket",
+   179
+  ],
+  [
+   "fashion-patagonia-iron-forge-hemp-canvas-chore-coat",
+   "파타고니아 아이언 포지 헴프 캔버스 초어 코트",
+   "Patagonia Iron Forge Hemp Canvas Chore Coat",
+   "巴塔哥尼亚 Iron Forge Hemp Canvas Chore Coat",
+   179
+  ],
+  [
+   "fashion-patagonia-better-sweater-jacket",
+   "파타고니아 베터 스웨터 재킷",
+   "Patagonia Better Sweater Jacket",
+   "巴塔哥尼亚 Better Sweater Jacket",
+   159
+  ],
+  [
+   "fashion-patagonia-classic-synchilla-snap-t-fleece-pullover",
+   "파타고니아 클래식 신칠라 스냅 티 플리스 풀오버",
+   "Patagonia Classic Synchilla Snap-T Fleece Pullover",
+   "巴塔哥尼亚 Classic Synchilla Snap-T Fleece Pullover",
+   139
+  ],
+  [
+   "fashion-patagonia-better-sweater-1-4-zip",
+   "파타고니아 베터 스웨터 쿼터 집",
+   "Patagonia Better Sweater 1/4-Zip",
+   "巴塔哥尼亚 Better Sweater 1/4-Zip",
+   139
+  ],
+  [
+   "fashion-patagonia-houdini-jacket",
+   "파타고니아 후디니 재킷",
+   "Patagonia Houdini Jacket",
+   "巴塔哥尼亚 Houdini Jacket",
+   109
+  ],
+  [
+   "fashion-patagonia-iron-forge-hemp-canvas-double-knee-pants",
+   "파타고니아 아이언 포지 헴프 캔버스 더블 니 팬츠",
+   "Patagonia Iron Forge Hemp Canvas Double Knee Pants",
+   "巴塔哥尼亚 Iron Forge Hemp Canvas Double Knee Pants",
+   109
+  ],
+  [
+   "fashion-patagonia-fjord-flannel-shirt",
+   "파타고니아 피오르드 플란넬 셔츠",
+   "Patagonia Fjord Flannel Shirt",
+   "巴塔哥尼亚 Fjord Flannel Shirt",
+   99
+  ],
+  [
+   "fashion-patagonia-quandary-pants",
+   "파타고니아 콴더리 팬츠",
+   "Patagonia Quandary Pants",
+   "巴塔哥尼亚 Quandary Pants",
+   99
+  ],
+  [
+   "fashion-patagonia-capilene-midweight-crew",
+   "파타고니아 캐필린 미드웨이트 크루",
+   "Patagonia Capilene Midweight Crew",
+   "巴塔哥尼亚 Capilene Midweight Crew",
+   89
+  ],
+  [
+   "fashion-patagonia-wavefarer-boardshorts",
+   "파타고니아 웨이브페어러 보드쇼츠",
+   "Patagonia Wavefarer Boardshorts",
+   "巴塔哥尼亚 Wavefarer Boardshorts",
+   79
+  ],
+  [
+   "fashion-patagonia-baggies-longs-7",
+   "파타고니아 배기스 롱 7인치",
+   "Patagonia Baggies Longs 7\"",
+   "巴塔哥尼亚 Baggies Longs 7\"",
+   75
+  ],
+  [
+   "fashion-patagonia-micro-d-fleece-pullover",
+   "파타고니아 마이크로 D 플리스 풀오버",
+   "Patagonia Micro D Fleece Pullover",
+   "巴塔哥尼亚 Micro D Fleece Pullover",
+   69
+  ],
+  [
+   "fashion-patagonia-baggies-shorts-5",
+   "파타고니아 배기스 쇼츠 5인치",
+   "Patagonia Baggies Shorts 5\"",
+   "巴塔哥尼亚 Baggies Shorts 5\"",
+   65
+  ],
+  [
+   "fashion-patagonia-capilene-cool-daily-shirt",
+   "파타고니아 캐필린 쿨 데일리 셔츠",
+   "Patagonia Capilene Cool Daily Shirt",
+   "巴塔哥尼亚 Capilene Cool Daily Shirt",
+   49
+  ],
+  [
+   "fashion-patagonia-p-6-logo-responsibili-tee",
+   "파타고니아 P-6 로고 리스판서빌리티",
+   "Patagonia P-6 Logo Responsibili-Tee",
+   "巴塔哥尼亚 P-6 Logo Responsibili-Tee",
+   45
+  ],
+  [
+   "fashion-patagonia-brodeo-beanie",
+   "파타고니아 브로데오 비니",
+   "Patagonia Brodeo Beanie",
+   "巴塔哥尼亚 Brodeo Beanie",
+   45
+  ],
+  [
+   "fashion-patagonia-fishermans-rolled-beanie",
+   "파타고니아 피셔맨스 롤드 비니",
+   "Patagonia Fisherman's Rolled Beanie",
+   "巴塔哥尼亚 Fisherman's Rolled Beanie",
+   45
+  ],
+  [
+   "fashion-patagonia-better-sweater-gloves",
+   "파타고니아 베터 스웨터 글러브",
+   "Patagonia Better Sweater Gloves",
+   "巴塔哥尼亚 Better Sweater Gloves",
+   45
+  ],
+  [
+   "fashion-patagonia-p-6-logo-trucker-hat",
+   "파타고니아 P-6 로고 트러커 햇",
+   "Patagonia P-6 Logo Trucker Hat",
+   "巴塔哥尼亚 P-6 Logo Trucker Hat",
+   39
+  ],
+  [
+   "fashion-patagonia-duckbill-cap",
+   "파타고니아 덕빌 캡",
+   "Patagonia Duckbill Cap",
+   "巴塔哥尼亚 Duckbill Cap",
+   39
+  ],
+  [
+   "fashion-patagonia-wool-crew-socks",
+   "파타고니아 울 크루 양말",
+   "Patagonia Wool Crew Socks",
+   "巴塔哥尼亚 Wool Crew Socks",
+   25
+  ]
+ ],
+ "use": [
+  "fashion-p-crep-protect-cure-cleaning-kit",
+  "fashion-p-darn-tough-run-no-show-tab-ultra-lightweight-socks",
+  "fashion-p-saphir-medaille-dor-creme-1925-75ml",
+  "fashion-p-carhartt-loose-fit-heavyweight-pocket-t-shirt-k87",
+  "fashion-p-sof-sole-athlete-insole",
+  "fashion-p-under-armour-essential-lite-crew-socks-6-pack",
+  "fashion-p-buff-coolnet-uv-neckwear",
+  "fashion-p-smartwool-hike-classic-edition-full-cushion-crew-socks",
+  "fashion-p-lululemon-pace-breaker-short-7",
+  "fashion-p-lululemon-swiftly-tech-short-sleeve-shirt-2-0",
+  "fashion-p-vuori-kore-short",
+  "fashion-p-melin-hydro-a-game-cap",
+  "fashion-p-crocs-echo-clog",
+  "fashion-p-champion-reverse-weave-hoodie",
+  "fashion-p-fila-disruptor-ii-premium",
+  "fashion-p-chaco-z-1-classic-sandal",
+  "fashion-p-comme-des-garcons-play-heart-logo-t-shirt",
+  "fashion-p-polo-ralph-lauren-custom-slim-fit-mesh-polo-shirt",
+  "fashion-p-sperry-authentic-original-2-eye-boat-shoe",
+  "fashion-p-smartwool-classic-thermal-merino-base-layer-crew",
+  "fashion-p-lululemon-define-jacket-luon",
+  "fashion-p-parajumpers-kodiak-parka",
+  "fashion-p-edward-green-chelsea-oxford",
+  "fashion-p-rick-owens-kiss-boots",
+  "fashion-p-balenciaga-paris-high-top-full-destroyed-sneaker",
+  "fashion-p-belstaff-trialmaster-panther-leather-jacket",
+  "fashion-p-loro-piana-baby-cashmere-crewneck-sweater",
+  "fashion-p-john-lobb-city-ii-oxford",
+  "fashion-p-zegna-oasi-cashmere-overshirt",
+  "fashion-p-louis-vuitton-x-supreme-jacquard-denim-trucker-jacket",
+  "fashion-p-max-mara-manuela-icon-coat",
+  "fashion-p-max-mara-101801-icon-coat",
+  "fashion-p-max-mara-teddy-bear-icon-coat",
+  "fashion-p-loro-piana-vicuna-scarf",
+  "fashion-p-max-mara-ludmilla-icon-coat",
+  "fashion-p-louis-vuitton-x-supreme-box-logo-hooded-sweatshirt",
+  "fashion-p-loro-piana-vicuna-crewneck-sweater",
+  "fashion-p-chrome-hearts-cross-patch-levis-jeans",
+  "fashion-p-kiton-vicuna-sport-coat",
+  "fashion-p-loro-piana-vicuna-overcoat",
+  "fashion-p-kiton-k-50-suit",
+  "fashion-p-brioni-vanquish-ii-suit"
+ ]
+}

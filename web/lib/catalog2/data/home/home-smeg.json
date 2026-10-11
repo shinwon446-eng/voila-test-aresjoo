@@ -1,0 +1,413 @@
+{
+ "slug": "home-smeg",
+ "items": [
+  [
+   "home-smeg-dolce-gabbana-frigorifero-d-arte-fab28",
+   "스메그 돌체앤가바나 프리고리페로 다르테 FAB28 냉장고",
+   "Smeg Dolce&Gabbana Frigorifero d'Arte FAB28 Hand-Painted Refrigerator",
+   "Smeg Dolce&Gabbana Frigorifero d'Arte FAB28 手绘冰箱",
+   50000
+  ],
+  [
+   "home-smeg-portofino-48-cpf48ugmx",
+   "스메그 포르토피노 48인치 듀얼 퓨얼 레인지 CPF48UGMX",
+   "Smeg Portofino 48-Inch Dual Fuel Range CPF48UGMX",
+   "Smeg Portofino 48英寸双燃料炉灶 CPF48UGMX",
+   9499
+  ],
+  [
+   "home-smeg-portofino-36-cpf36ugmx",
+   "스메그 포르토피노 36인치 듀얼 퓨얼 레인지 CPF36UGMX",
+   "Smeg Portofino 36-Inch Dual Fuel Range CPF36UGMX",
+   "Smeg Portofino 36英寸双燃料炉灶 CPF36UGMX",
+   6299
+  ],
+  [
+   "home-smeg-portofino-30-cpf30ugmx",
+   "스메그 포르토피노 30인치 듀얼 퓨얼 레인지 CPF30UGMX",
+   "Smeg Portofino 30-Inch Dual Fuel Range CPF30UGMX",
+   "Smeg Portofino 30英寸双燃料炉灶 CPF30UGMX",
+   4999
+  ],
+  [
+   "home-smeg-victoria-36-tru36ggrd",
+   "스메그 빅토리아 36인치 가스 레인지 TRU36GGRD",
+   "Smeg Victoria 36-Inch Gas Range TRU36GGRD",
+   "Smeg Victoria 36英寸燃气炉灶 TRU36GGRD",
+   4599
+  ],
+  [
+   "home-smeg-fab50",
+   "스메그 FAB50 레트로 냉장고",
+   "Smeg FAB50 50's Style Refrigerator",
+   "Smeg FAB50 复古冰箱",
+   4499
+  ],
+  [
+   "home-smeg-fab32",
+   "스메그 FAB32 레트로 하냉동 냉장고",
+   "Smeg FAB32 50's Style Bottom Freezer Refrigerator",
+   "Smeg FAB32 复古下冷冻冰箱",
+   3499
+  ],
+  [
+   "home-smeg-fab28",
+   "스메그 FAB28 레트로 냉장고",
+   "Smeg FAB28 50's Style Refrigerator",
+   "Smeg FAB28 复古冰箱",
+   2999
+  ],
+  [
+   "home-smeg-retro-dishwasher-stfabu",
+   "스메그 레트로 식기세척기 STFABU",
+   "Smeg 50's Style Retro Dishwasher STFABU",
+   "Smeg 复古洗碗机 STFABU",
+   2299
+  ],
+  [
+   "home-smeg-fab10",
+   "스메그 FAB10 레트로 냉장고",
+   "Smeg FAB10 50's Style Refrigerator",
+   "Smeg FAB10 复古冰箱",
+   1799
+  ],
+  [
+   "home-smeg-dolce-gabbana-stand-mixer-smf03dgus",
+   "스메그 돌체앤가바나 스탠드 믹서 SMF03DGUS",
+   "Smeg Dolce&Gabbana Sicily Is My Love Stand Mixer SMF03DGUS",
+   "Smeg Dolce&Gabbana 厨师机 SMF03DGUS",
+   1499.95
+  ],
+  [
+   "home-smeg-bcc13",
+   "스메그 전자동 커피머신 밀크 시스템 BCC13",
+   "Smeg Bean to Cup Coffee Machine with Milk System BCC13",
+   "Smeg 全自动咖啡机 奶泡系统 BCC13",
+   1499.95
+  ],
+  [
+   "home-smeg-fab5",
+   "스메그 FAB5 미니 냉장고",
+   "Smeg FAB5 50's Style Mini Refrigerator",
+   "Smeg FAB5 复古迷你冰箱",
+   1150
+  ],
+  [
+   "home-smeg-egf03",
+   "스메그 그라인더 일체형 에스프레소 머신 EGF03",
+   "Smeg Espresso Coffee Machine with Grinder EGF03",
+   "Smeg 研磨一体意式咖啡机 EGF03",
+   999.95
+  ],
+  [
+   "home-smeg-bcc02",
+   "스메그 전자동 커피머신 스팀 완드 BCC02",
+   "Smeg Bean to Cup Coffee Machine with Steam Wand BCC02",
+   "Smeg 全自动咖啡机 蒸汽棒 BCC02",
+   999.95
+  ],
+  [
+   "home-smeg-cof01",
+   "스메그 카운터탑 콤비 스팀 오븐 COF01",
+   "Smeg Countertop Combi Steam Oven COF01",
+   "Smeg 台式蒸烤箱 COF01",
+   999.95
+  ],
+  [
+   "home-smeg-dolce-gabbana-blender-blf01dgus",
+   "스메그 돌체앤가바나 블렌더 BLF01DGUS",
+   "Smeg Dolce&Gabbana Sicily Is My Love Blender BLF01DGUS",
+   "Smeg Dolce&Gabbana 搅拌机 BLF01DGUS",
+   849.95
+  ],
+  [
+   "home-smeg-bcc01",
+   "스메그 전자동 커피머신 BCC01",
+   "Smeg Bean to Cup Coffee Machine BCC01",
+   "Smeg 全自动咖啡机 BCC01",
+   849.95
+  ],
+  [
+   "home-smeg-dolce-gabbana-4-slice-toaster-tsf02dgus",
+   "스메그 돌체앤가바나 4슬라이스 토스터 TSF02DGUS",
+   "Smeg Dolce&Gabbana Sicily Is My Love 4-Slice Toaster TSF02DGUS",
+   "Smeg Dolce&Gabbana 四片烤面包机 TSF02DGUS",
+   799.95
+  ],
+  [
+   "home-smeg-smf13",
+   "스메그 풀컬러 스탠드 믹서 SMF13",
+   "Smeg Full-Color Stand Mixer SMF13",
+   "Smeg 全彩厨师机 SMF13",
+   699.95
+  ],
+  [
+   "home-smeg-dolce-gabbana-toaster-tsf01dgus",
+   "스메그 돌체앤가바나 2슬라이스 토스터 TSF01DGUS",
+   "Smeg Dolce&Gabbana Sicily Is My Love 2-Slice Toaster TSF01DGUS",
+   "Smeg Dolce&Gabbana 双片烤面包机 TSF01DGUS",
+   649.95
+  ],
+  [
+   "home-smeg-dolce-gabbana-kettle-klf03dgus",
+   "스메그 돌체앤가바나 전기 케틀 KLF03DGUS",
+   "Smeg Dolce&Gabbana Sicily Is My Love Electric Kettle KLF03DGUS",
+   "Smeg Dolce&Gabbana 电热水壶 KLF03DGUS",
+   649.95
+  ],
+  [
+   "home-smeg-dolce-gabbana-citrus-juicer-cjf01dgus",
+   "스메그 돌체앤가바나 시트러스 주서 CJF01DGUS",
+   "Smeg Dolce&Gabbana Sicily Is My Love Citrus Juicer CJF01DGUS",
+   "Smeg Dolce&Gabbana 柑橘榨汁机 CJF01DGUS",
+   649.95
+  ],
+  [
+   "home-smeg-smf03",
+   "스메그 스탠드 믹서 SMF03",
+   "Smeg Stand Mixer SMF03",
+   "Smeg 厨师机 SMF03",
+   599.95
+  ],
+  [
+   "home-smeg-sjf01",
+   "스메그 저속 주서 SJF01",
+   "Smeg Slow Juicer SJF01",
+   "Smeg 原汁机 SJF01",
+   599.95
+  ],
+  [
+   "home-smeg-smf02",
+   "스메그 스탠드 믹서 SMF02",
+   "Smeg Stand Mixer SMF02",
+   "Smeg 厨师机 SMF02",
+   549.95
+  ],
+  [
+   "home-smeg-ecf02",
+   "스메그 에스프레소 커피 머신 ECF02",
+   "Smeg Espresso Coffee Machine ECF02",
+   "Smeg 意式咖啡机 ECF02",
+   529.95
+  ],
+  [
+   "home-smeg-cgf11",
+   "스메그 커피 그라인더 CGF11",
+   "Smeg Coffee Grinder CGF11",
+   "Smeg 磨豆机 CGF11",
+   329.95
+  ],
+  [
+   "home-smeg-tsf03",
+   "스메그 4x4 슬롯 토스터 TSF03",
+   "Smeg 4x4 Slot Toaster TSF03",
+   "Smeg 四槽烤面包机 TSF03",
+   299.95
+  ],
+  [
+   "home-smeg-blf03",
+   "스메그 블렌더 BLF03",
+   "Smeg Blender BLF03",
+   "Smeg 搅拌机 BLF03",
+   299.95
+  ],
+  [
+   "home-smeg-dcf02",
+   "스메그 드립 커피 머신 DCF02",
+   "Smeg Drip Filter Coffee Machine DCF02",
+   "Smeg 滴滤咖啡机 DCF02",
+   269.95
+  ],
+  [
+   "home-smeg-klf04",
+   "스메그 온도 조절 전기 케틀 KLF04",
+   "Smeg Variable Temperature Kettle KLF04",
+   "Smeg 温控电热水壶 KLF04",
+   249.95
+  ],
+  [
+   "home-smeg-tsf02",
+   "스메그 4슬라이스 토스터 TSF02",
+   "Smeg 4-Slice Toaster TSF02",
+   "Smeg 四片烤面包机 TSF02",
+   249.95
+  ],
+  [
+   "home-smeg-mff11",
+   "스메그 우유거품기 MFF11",
+   "Smeg Milk Frother MFF11",
+   "Smeg 奶泡机 MFF11",
+   249.95
+  ],
+  [
+   "home-smeg-pasta-roller-cutter-set-smpc01",
+   "스메그 파스타 롤러 커터 세트 SMPC01",
+   "Smeg Pasta Roller and Cutter Set SMPC01",
+   "Smeg 压面切面套装 SMPC01",
+   229.95
+  ],
+  [
+   "home-smeg-hmf01",
+   "스메그 핸드 믹서 HMF01",
+   "Smeg Hand Mixer HMF01",
+   "Smeg 手持搅拌器 HMF01",
+   199.95
+  ],
+  [
+   "home-smeg-hbf22",
+   "스메그 핸드 블렌더 HBF22",
+   "Smeg Hand Blender with Accessories HBF22",
+   "Smeg 手持料理棒 HBF22",
+   199.95
+  ],
+  [
+   "home-smeg-tsf01",
+   "스메그 2슬라이스 토스터 TSF01",
+   "Smeg 2-Slice Toaster TSF01",
+   "Smeg 双片烤面包机 TSF01",
+   199.95
+  ],
+  [
+   "home-smeg-klf03",
+   "스메그 전기 케틀 KLF03",
+   "Smeg Electric Kettle KLF03",
+   "Smeg 电热水壶 KLF03",
+   199.95
+  ],
+  [
+   "home-smeg-cjf11",
+   "스메그 시트러스 주서 CJF11",
+   "Smeg Citrus Juicer CJF11",
+   "Smeg 柑橘榨汁机 CJF11",
+   199.95
+  ],
+  [
+   "home-smeg-pbf01",
+   "스메그 퍼스널 블렌더 PBF01",
+   "Smeg Personal Blender PBF01",
+   "Smeg 便携搅拌机 PBF01",
+   199.95
+  ],
+  [
+   "home-smeg-fry-pan-12",
+   "스메그 50's 스타일 프라이팬 12인치",
+   "Smeg 50's Style 12-Inch Frying Pan",
+   "Smeg 复古煎锅 12英寸",
+   180
+  ],
+  [
+   "home-smeg-klf05",
+   "스메그 미니 전기 케틀 KLF05",
+   "Smeg Mini Electric Kettle KLF05",
+   "Smeg 迷你电热水壶 KLF05",
+   179.95
+  ],
+  [
+   "home-smeg-fry-pan-10",
+   "스메그 50's 스타일 프라이팬 10인치",
+   "Smeg 50's Style 10-Inch Frying Pan",
+   "Smeg 复古煎锅 10英寸",
+   150
+  ],
+  [
+   "home-smeg-pasta-roller-smpr01",
+   "스메그 파스타 롤러 SMPR01",
+   "Smeg Pasta Roller Attachment SMPR01",
+   "Smeg 压面配件 SMPR01",
+   119.95
+  ],
+  [
+   "home-smeg-slicer-grater-smsg01",
+   "스메그 슬라이서 그레이터 SMSG01",
+   "Smeg Slicer and Grater Attachment SMSG01",
+   "Smeg 切片刨丝配件 SMSG01",
+   119.95
+  ],
+  [
+   "home-smeg-meat-grinder-smmg01",
+   "스메그 미트 그라인더 SMMG01",
+   "Smeg Meat Grinder Attachment SMMG01",
+   "Smeg 绞肉配件 SMMG01",
+   119.95
+  ],
+  [
+   "home-smeg-ice-cream-maker-smic01",
+   "스메그 아이스크림 메이커 액세서리 SMIC01",
+   "Smeg Ice Cream Maker Accessory SMIC01",
+   "Smeg 冰淇淋配件 SMIC01",
+   99.95
+  ],
+  [
+   "home-smeg-blender-bottle-to-go-bgf01",
+   "스메그 블렌더 보틀 투 고 BGF01",
+   "Smeg Blender Bottle To Go BGF01",
+   "Smeg 搅拌机随行杯 BGF01",
+   49.95
+  ],
+  [
+   "home-smeg-sandwich-racks-tssr01",
+   "스메그 토스터 샌드위치 랙 2개입 TSSR01",
+   "Smeg Toaster Sandwich Racks 2-Pack TSSR01",
+   "Smeg 烤面包机三明治夹 2只装 TSSR01",
+   29.95
+  ],
+  [
+   "home-smeg-bun-warmer-tsbw01",
+   "스메그 토스터 번 워머 TSBW01",
+   "Smeg Toaster Bun Warmer TSBW01",
+   "Smeg 烤面包机暖包架 TSBW01",
+   29.95
+  ]
+ ],
+ "use": [
+  "home-p-durgol-swiss-espresso-2",
+  "home-p-oxo-12in-tongs",
+  "home-p-oxo-can-opener",
+  "home-p-brita-standard-filter-3",
+  "home-p-urnex-rinza-33oz",
+  "home-p-honeywell-ht900-fan",
+  "home-p-microplane-premium-zester",
+  "home-p-cascade-platinum-plus-52",
+  "home-p-sodastream-1l-bottles-2",
+  "home-p-bodum-brazil-french-press-34oz",
+  "home-p-urnex-grindz-15oz",
+  "home-p-lodge-skillet-10",
+  "home-p-oral-b-crossaction-heads-3",
+  "home-p-wahl-color-pro-clipper",
+  "home-p-ikea-produkt-milk-frother",
+  "home-p-affresh-disposal-cleaner-3",
+  "home-p-lasko-20in-box-fan",
+  "home-p-levoit-core-300-filter",
+  "home-p-oral-b-io-ultimate-clean-heads-2",
+  "home-p-sodastream-co2-60l",
+  "home-p-lodge-skillet-12",
+  "home-p-amazon-fire-tv-stick-hd",
+  "home-p-bialetti-moka-express-3cup",
+  "home-p-oxo-salad-spinner",
+  "home-p-thermoworks-thermopop-2",
+  "home-p-bissell-featherweight",
+  "home-p-aeropress-original",
+  "home-p-amazon-fire-tv-stick-4k-max",
+  "home-p-black-decker-dustbuster-chv1410l",
+  "home-p-kitchenaid-khm512-hand-mixer",
+  "home-p-vornado-460",
+  "home-p-wahl-elite-pro-clipper",
+  "home-p-cuisinart-ice-21",
+  "home-p-victorinox-fibrox-chef-8",
+  "home-p-keurig-k-mini",
+  "home-p-levoit-core-300",
+  "home-p-oral-b-io-series-3",
+  "home-p-roku-ultra",
+  "home-p-sodastream-terra",
+  "home-p-waterpik-aquarius-wp660",
+  "home-p-waterpik-cordless-advanced-wp580",
+  "home-p-moccamaster-kbgv-select",
+  "home-p-fellow-aiden",
+  "home-p-midea-u-8000btu",
+  "home-p-ooni-koda-12",
+  "home-p-baratza-sette-270",
+  "home-p-speed-queen-dc5003we",
+  "home-p-sub-zero-bi-48s",
+  "home-p-toto-neorest-nx2"
+ ]
+}

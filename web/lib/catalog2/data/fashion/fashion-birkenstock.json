@@ -1,0 +1,461 @@
+{
+ "slug": "fashion-birkenstock",
+ "items": [
+  [
+   "fashion-birkenstock-dior-by-birkenstock-tokio-mule",
+   "디올 바이 버켄스탁 토키오 뮬",
+   "Dior by Birkenstock Tokio Mule",
+   "迪奥 by 勃肯 Tokio Mule",
+   1100
+  ],
+  [
+   "fashion-birkenstock-dior-by-birkenstock-milano-sandal",
+   "디올 바이 버켄스탁 밀라노 샌들",
+   "Dior by Birkenstock Milano Sandal",
+   "迪奥 by 勃肯 Milano Sandal",
+   990
+  ],
+  [
+   "fashion-birkenstock-manolo-blahnik-x-birkenstock-boston",
+   "마놀로 블라닉 x 버켄스탁 보스턴",
+   "Manolo Blahnik x Birkenstock Boston",
+   "莫罗伯拉尼克 x 勃肯 Boston",
+   800
+  ],
+  [
+   "fashion-birkenstock-manolo-blahnik-x-birkenstock-arizona",
+   "마놀로 블라닉 x 버켄스탁 아리조나",
+   "Manolo Blahnik x Birkenstock Arizona",
+   "莫罗伯拉尼克 x 勃肯 Arizona",
+   780
+  ],
+  [
+   "fashion-birkenstock-rick-owens-x-birkenstock-boston",
+   "릭 오웬스 x 버켄스탁 보스턴",
+   "Rick Owens x Birkenstock Boston",
+   "瑞克欧文斯 x 勃肯 Boston",
+   500
+  ],
+  [
+   "fashion-birkenstock-valentino-garavani-x-birkenstock-arizona",
+   "발렌티노 가라바니 x 버켄스탁 아리조나",
+   "Valentino Garavani x Birkenstock Arizona",
+   "华伦天奴 x 勃肯 Arizona",
+   495
+  ],
+  [
+   "fashion-birkenstock-rick-owens-x-birkenstock-rotterdam",
+   "릭 오웬스 x 버켄스탁 로테르담",
+   "Rick Owens x Birkenstock Rotterdam",
+   "瑞克欧文斯 x 勃肯 Rotterdam",
+   475
+  ],
+  [
+   "fashion-birkenstock-jil-sander-x-birkenstock-arizona",
+   "질 샌더 x 버켄스탁 아리조나",
+   "Jil Sander x Birkenstock Arizona",
+   "Jil Sander x 勃肯 Arizona",
+   475
+  ],
+  [
+   "fashion-birkenstock-rick-owens-x-birkenstock-arizona",
+   "릭 오웬스 x 버켄스탁 아리조나",
+   "Rick Owens x Birkenstock Arizona",
+   "瑞克欧文斯 x 勃肯 Arizona",
+   450
+  ],
+  [
+   "fashion-birkenstock-proenza-schouler-x-birkenstock-arizona",
+   "프로엔자 스쿨러 x 버켄스탁 아리조나",
+   "Proenza Schouler x Birkenstock Arizona",
+   "Proenza Schouler x 勃肯 Arizona",
+   430
+  ],
+  [
+   "fashion-birkenstock-fear-of-god-x-birkenstock-los-feliz",
+   "피어 오브 갓 x 버켄스탁 로스 펠리스",
+   "Fear of God x Birkenstock Los Feliz",
+   "Fear of God x 勃肯 Los Feliz",
+   420
+  ],
+  [
+   "fashion-birkenstock-stussy-x-birkenstock-boston",
+   "스투시 x 버켄스탁 보스턴",
+   "Stüssy x Birkenstock Boston",
+   "Stüssy x 勃肯 Boston",
+   320
+  ],
+  [
+   "fashion-birkenstock-uppsala-shearling-boot",
+   "버켄스탁 웁살라 시어링 부츠",
+   "Birkenstock Uppsala Shearling Boot",
+   "勃肯 Uppsala Shearling Boot",
+   230
+  ],
+  [
+   "fashion-birkenstock-highwood-lace-mid",
+   "버켄스탁 하이우드 레이스 미드",
+   "Birkenstock Highwood Lace Mid",
+   "勃肯 Highwood Lace Mid",
+   220
+  ],
+  [
+   "fashion-birkenstock-reykjavik",
+   "버켄스탁 레이캬비크",
+   "Birkenstock Reykjavik",
+   "勃肯 Reykjavik",
+   200
+  ],
+  [
+   "fashion-birkenstock-lutry-premium-suede",
+   "버켄스탁 루트리 프리미엄 스웨이드",
+   "Birkenstock Lutry Premium Suede",
+   "勃肯 Lutry Premium Suede",
+   200
+  ],
+  [
+   "fashion-birkenstock-boston-chunky",
+   "버켄스탁 보스턴 청키",
+   "Birkenstock Boston Chunky",
+   "勃肯 Boston Chunky",
+   200
+  ],
+  [
+   "fashion-birkenstock-boston-big-buckle",
+   "버켄스탁 보스턴 빅 버클",
+   "Birkenstock Boston Big Buckle",
+   "勃肯 Boston Big Buckle",
+   190
+  ],
+  [
+   "fashion-birkenstock-stalon-boot",
+   "버켄스탁 스탈론 부츠",
+   "Birkenstock Stalon Boot",
+   "勃肯 Stalon Boot",
+   190
+  ],
+  [
+   "fashion-birkenstock-boston-shearling",
+   "버켄스탁 보스턴 시어링",
+   "Birkenstock Boston Shearling",
+   "勃肯 Boston Shearling",
+   185
+  ],
+  [
+   "fashion-birkenstock-naples",
+   "버켄스탁 나폴리",
+   "Birkenstock Naples",
+   "勃肯 Naples",
+   180
+  ],
+  [
+   "fashion-birkenstock-arizona-chunky",
+   "버켄스탁 아리조나 청키",
+   "Birkenstock Arizona Chunky",
+   "勃肯 Arizona Chunky",
+   180
+  ],
+  [
+   "fashion-birkenstock-arizona-shearling",
+   "버켄스탁 아리조나 시어링",
+   "Birkenstock Arizona Shearling",
+   "勃肯 Arizona Shearling",
+   175
+  ],
+  [
+   "fashion-birkenstock-arizona-big-buckle",
+   "버켄스탁 아리조나 빅 버클",
+   "Birkenstock Arizona Big Buckle",
+   "勃肯 Arizona Big Buckle",
+   170
+  ],
+  [
+   "fashion-birkenstock-boston-soft-footbed-suede-leather",
+   "버켄스탁 보스턴 소프트 풋베드 스웨이드 레더",
+   "Birkenstock Boston Soft Footbed Suede Leather",
+   "勃肯 Boston Soft Footbed Suede Leather",
+   165
+  ],
+  [
+   "fashion-birkenstock-london-suede-leather",
+   "버켄스탁 런던 스웨이드 레더",
+   "Birkenstock London Suede Leather",
+   "勃肯 London Suede Leather",
+   165
+  ],
+  [
+   "fashion-birkenstock-nagoya",
+   "버켄스탁 나고야",
+   "Birkenstock Nagoya",
+   "勃肯 Nagoya",
+   165
+  ],
+  [
+   "fashion-birkenstock-shinjuku",
+   "버켄스탁 신주쿠",
+   "Birkenstock Shinjuku",
+   "勃肯 Shinjuku",
+   165
+  ],
+  [
+   "fashion-birkenstock-buckley-moccasin",
+   "버켄스탁 버클리 모카신",
+   "Birkenstock Buckley Moccasin",
+   "勃肯 Buckley Moccasin",
+   160
+  ],
+  [
+   "fashion-birkenstock-tokio-super-grip",
+   "버켄스탁 토키오 수퍼 그립",
+   "Birkenstock Tokio Super Grip",
+   "勃肯 Tokio Super Grip",
+   160
+  ],
+  [
+   "fashion-birkenstock-siena-big-buckle",
+   "버켄스탁 시에나 빅 버클",
+   "Birkenstock Siena Big Buckle",
+   "勃肯 Siena Big Buckle",
+   160
+  ],
+  [
+   "fashion-birkenstock-bend-low",
+   "버켄스탁 벤드 로우",
+   "Birkenstock Bend Low",
+   "勃肯 Bend Low",
+   155
+  ],
+  [
+   "fashion-birkenstock-kyoto-suede-leather",
+   "버켄스탁 교토 스웨이드 레더",
+   "Birkenstock Kyoto Suede Leather",
+   "勃肯 Kyoto Suede Leather",
+   150
+  ],
+  [
+   "fashion-birkenstock-zurich-suede-leather",
+   "버켄스탁 취리히 스웨이드 레더",
+   "Birkenstock Zürich Suede Leather",
+   "勃肯 Zürich Suede Leather",
+   150
+  ],
+  [
+   "fashion-birkenstock-arizona-oiled-leather",
+   "버켄스탁 아리조나 오일드 레더",
+   "Birkenstock Arizona Oiled Leather",
+   "勃肯 Arizona Oiled Leather",
+   150
+  ],
+  [
+   "fashion-birkenstock-gizeh-big-buckle",
+   "버켄스탁 기제 빅 버클",
+   "Birkenstock Gizeh Big Buckle",
+   "勃肯 Gizeh Big Buckle",
+   150
+  ],
+  [
+   "fashion-birkenstock-arizona-soft-footbed-suede-leather",
+   "버켄스탁 아리조나 소프트 풋베드 스웨이드 레더",
+   "Birkenstock Arizona Soft Footbed Suede Leather",
+   "勃肯 Arizona Soft Footbed Suede Leather",
+   145
+  ],
+  [
+   "fashion-birkenstock-uji",
+   "버켄스탁 우지",
+   "Birkenstock Uji",
+   "勃肯 Uji",
+   145
+  ],
+  [
+   "fashion-birkenstock-madrid-big-buckle",
+   "버켄스탁 마드리드 빅 버클",
+   "Birkenstock Madrid Big Buckle",
+   "勃肯 Madrid Big Buckle",
+   135
+  ],
+  [
+   "fashion-birkenstock-franca",
+   "버켄스탁 프란카",
+   "Birkenstock Franca",
+   "勃肯 Franca",
+   130
+  ],
+  [
+   "fashion-birkenstock-milano-birko-flor",
+   "버켄스탁 밀라노 비르코 플로어",
+   "Birkenstock Milano Birko-Flor",
+   "勃肯 Milano Birko-Flor",
+   120
+  ],
+  [
+   "fashion-birkenstock-arizona-birko-flor",
+   "버켄스탁 아리조나 비르코 플로어",
+   "Birkenstock Arizona Birko-Flor",
+   "勃肯 Arizona Birko-Flor",
+   110
+  ],
+  [
+   "fashion-birkenstock-gizeh-birko-flor",
+   "버켄스탁 기제 비르코 플로어",
+   "Birkenstock Gizeh Birko-Flor",
+   "勃肯 Gizeh Birko-Flor",
+   110
+  ],
+  [
+   "fashion-birkenstock-mayari",
+   "버켄스탁 마야리",
+   "Birkenstock Mayari",
+   "勃肯 Mayari",
+   110
+  ],
+  [
+   "fashion-birkenstock-zermatt-shearling-slipper",
+   "버켄스탁 체르마트 시어링 슬리퍼",
+   "Birkenstock Zermatt Shearling Slipper",
+   "勃肯 Zermatt Shearling Slipper",
+   110
+  ],
+  [
+   "fashion-birkenstock-super-birki-clog",
+   "버켄스탁 수퍼 비르키 클로그",
+   "Birkenstock Super-Birki Clog",
+   "勃肯 Super-Birki Clog",
+   95
+  ],
+  [
+   "fashion-birkenstock-madrid-birko-flor",
+   "버켄스탁 마드리드 비르코 플로어",
+   "Birkenstock Madrid Birko-Flor",
+   "勃肯 Madrid Birko-Flor",
+   90
+  ],
+  [
+   "fashion-birkenstock-mogami-terra",
+   "버켄스탁 모가미 테라",
+   "Birkenstock Mogami Terra",
+   "勃肯 Mogami Terra",
+   90
+  ],
+  [
+   "fashion-birkenstock-boston-eva",
+   "버켄스탁 보스턴 EVA",
+   "Birkenstock Boston EVA",
+   "勃肯 Boston EVA",
+   60
+  ],
+  [
+   "fashion-birkenstock-birko-sport-arch-support-insole",
+   "버켄스탁 비르코 스포츠 아치 서포트 인솔",
+   "Birkenstock Birko Sport Arch Support Insole",
+   "勃肯 Birko Sport Arch Support Insole",
+   55
+  ],
+  [
+   "fashion-birkenstock-arizona-eva",
+   "버켄스탁 아리조나 EVA",
+   "Birkenstock Arizona EVA",
+   "勃肯 Arizona EVA",
+   50
+  ],
+  [
+   "fashion-birkenstock-gizeh-eva",
+   "버켄스탁 기제 EVA",
+   "Birkenstock Gizeh EVA",
+   "勃肯 Gizeh EVA",
+   50
+  ],
+  [
+   "fashion-birkenstock-barbados-eva",
+   "버켄스탁 바베이도스 EVA",
+   "Birkenstock Barbados EVA",
+   "勃肯 Barbados EVA",
+   45
+  ],
+  [
+   "fashion-birkenstock-madrid-eva",
+   "버켄스탁 마드리드 EVA",
+   "Birkenstock Madrid EVA",
+   "勃肯 Madrid EVA",
+   45
+  ],
+  [
+   "fashion-birkenstock-deluxe-shoe-care-kit",
+   "버켄스탁 디럭스 슈 케어 키트",
+   "Birkenstock Deluxe Shoe Care Kit",
+   "勃肯 Deluxe Shoe Care Kit",
+   30
+  ],
+  [
+   "fashion-birkenstock-cotton-slub-socks",
+   "버켄스탁 코튼 슬럽 양말",
+   "Birkenstock Cotton Slub Socks",
+   "勃肯 Cotton Slub Socks",
+   18
+  ],
+  [
+   "fashion-birkenstock-water-and-stain-repellent",
+   "버켄스탁 워터 앤 스테인 리펠런트",
+   "Birkenstock Water and Stain Repellent",
+   "勃肯 Water and Stain Repellent",
+   10.95
+  ],
+  [
+   "fashion-birkenstock-cork-sealer",
+   "버켄스탁 코르크 실러",
+   "Birkenstock Cork Sealer",
+   "勃肯 Cork Sealer",
+   9.95
+  ],
+  [
+   "fashion-birkenstock-cleaner-and-refresher",
+   "버켄스탁 클리너 앤 리프레셔",
+   "Birkenstock Cleaner and Refresher",
+   "勃肯 Cleaner and Refresher",
+   9.95
+  ]
+ ],
+ "use": [
+  "fashion-p-under-armour-essential-lite-crew-socks-6-pack",
+  "fashion-p-buff-coolnet-uv-neckwear",
+  "fashion-p-kiwi-shoe-polish-paste-black-1-125oz",
+  "fashion-p-gear-aid-tenacious-tape-repair-tape",
+  "fashion-p-sof-sole-sneaker-balls-2-pack",
+  "fashion-p-jason-markk-quick-wipes-3-pack",
+  "fashion-p-gildan-heavy-cotton-t-shirt-5000",
+  "fashion-p-kiwi-horsehair-shine-brush",
+  "fashion-p-angelus-easy-cleaner-8oz",
+  "fashion-p-smartwool-hike-classic-edition-full-cushion-crew-socks",
+  "fashion-p-under-armour-tech-2-0-short-sleeve-t-shirt",
+  "fashion-p-darn-tough-hiker-micro-crew-midweight-socks",
+  "fashion-p-falke-ru4-running-socks",
+  "fashion-p-saphir-medaille-dor-renovateur-75ml",
+  "fashion-p-reshoevn8r-essential-shoe-cleaning-kit",
+  "fashion-p-havaianas-top-flip-flops",
+  "fashion-p-levis-batwing-logo-t-shirt",
+  "fashion-p-woodlore-cedar-shoe-trees",
+  "fashion-p-crocs-classic-slide",
+  "fashion-p-vuori-kore-short",
+  "fashion-p-melin-hydro-a-game-cap",
+  "fashion-p-crocs-echo-clog",
+  "fashion-p-polo-ralph-lauren-cable-knit-cotton-sweater",
+  "fashion-p-l-l-bean-bean-boots-8",
+  "fashion-p-ferragamo-gancini-reversible-belt",
+  "fashion-p-filson-mackinaw-wool-cruiser-jacket",
+  "fashion-p-stuart-weitzman-5050-boot",
+  "fashion-p-loewe-flow-runner",
+  "fashion-p-balenciaga-speed-2-0-sneaker",
+  "fashion-p-rick-owens-kiss-boots",
+  "fashion-p-balenciaga-paris-high-top-full-destroyed-sneaker",
+  "fashion-p-belstaff-trialmaster-panther-leather-jacket",
+  "fashion-p-loro-piana-baby-cashmere-crewneck-sweater",
+  "fashion-p-saint-laurent-teddy-jacket",
+  "fashion-p-rick-owens-stooges-leather-jacket",
+  "fashion-p-acne-studios-velocite-shearling-jacket",
+  "fashion-p-prada-re-nylon-hooded-down-jacket",
+  "fashion-p-brunello-cucinelli-shearling-bomber-jacket",
+  "fashion-p-loro-piana-cashmere-overcoat",
+  "fashion-p-kiton-vicuna-sport-coat",
+  "fashion-p-loro-piana-vicuna-overcoat"
+ ]
+}

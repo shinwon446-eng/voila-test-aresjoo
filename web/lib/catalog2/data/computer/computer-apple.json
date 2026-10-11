@@ -1,52 +1,410 @@
-{ "slug": "computer-apple", "items": [
-["computer-apple-mac-studio-m3-ultra-512gb-16tb","애플 맥 스튜디오 M3 Ultra 512GB 메모리 16TB","Apple Mac Studio M3 Ultra 512GB Memory 16TB","苹果 Mac Studio M3 Ultra 512GB 内存 16TB",14099.00],
-["computer-apple-mac-pro-m2-ultra-192gb-8tb","애플 맥 프로 타워 M2 Ultra 76코어 GPU 192GB 8TB","Apple Mac Pro Tower M2 Ultra 76-Core GPU 192GB 8TB","苹果 Mac Pro 塔式 M2 Ultra 76核GPU 192GB 8TB",11799.00],
-["computer-apple-mac-pro-rack-m2-ultra","애플 맥 프로 랙 M2 Ultra 64GB 1TB","Apple Mac Pro Rack M2 Ultra 64GB 1TB","苹果 Mac Pro 机架式 M2 Ultra 64GB 1TB",7499.00],
-["computer-apple-macbook-pro-16-m4-max-128gb-8tb","애플 맥북 프로 16 M4 Max 128GB 8TB","Apple MacBook Pro 16-inch M4 Max 128GB 8TB","苹果 MacBook Pro 16英寸 M4 Max 128GB 8TB",7199.00],
-["computer-apple-mac-pro-tower-m2-ultra","애플 맥 프로 타워 M2 Ultra 64GB 1TB","Apple Mac Pro Tower M2 Ultra 64GB 1TB","苹果 Mac Pro 塔式 M2 Ultra 64GB 1TB",6999.00],
-["computer-apple-pro-display-xdr-nano-texture","애플 프로 디스플레이 XDR 나노 텍스처 글래스","Apple Pro Display XDR Nano-texture Glass","苹果 Pro Display XDR Nano-texture 纳米纹理玻璃",5999.00],
-["computer-apple-pro-display-xdr","애플 프로 디스플레이 XDR 스탠다드 글래스","Apple Pro Display XDR Standard Glass","苹果 Pro Display XDR 标准玻璃",4999.00],
-["computer-apple-mac-studio-m3-ultra-96gb-1tb","애플 맥 스튜디오 M3 Ultra 96GB 1TB","Apple Mac Studio M3 Ultra 96GB 1TB","苹果 Mac Studio M3 Ultra 96GB 1TB",3999.00],
-["computer-apple-macbook-pro-16-m4-max-48gb-1tb","애플 맥북 프로 16 M4 Max 16코어 48GB 1TB","Apple MacBook Pro 16-inch M4 Max 16-Core 48GB 1TB","苹果 MacBook Pro 16英寸 M4 Max 16核 48GB 1TB",3999.00],
-["computer-apple-macbook-pro-16-m4-max-36gb-1tb","애플 맥북 프로 16 M4 Max 14코어 36GB 1TB","Apple MacBook Pro 16-inch M4 Max 14-Core 36GB 1TB","苹果 MacBook Pro 16英寸 M4 Max 14核 36GB 1TB",3499.00],
-["computer-apple-macbook-pro-14-m4-max-36gb-1tb","애플 맥북 프로 14 M4 Max 36GB 1TB","Apple MacBook Pro 14-inch M4 Max 36GB 1TB","苹果 MacBook Pro 14英寸 M4 Max 36GB 1TB",3199.00],
-["computer-apple-macbook-pro-16-m4-pro-24gb-512gb","애플 맥북 프로 16 M4 Pro 24GB 512GB","Apple MacBook Pro 16-inch M4 Pro 24GB 512GB","苹果 MacBook Pro 16英寸 M4 Pro 24GB 512GB",2499.00],
-["computer-apple-macbook-pro-14-m4-pro-24gb-512gb","애플 맥북 프로 14 M4 Pro 24GB 512GB","Apple MacBook Pro 14-inch M4 Pro 24GB 512GB","苹果 MacBook Pro 14英寸 M4 Pro 24GB 512GB",1999.00],
-["computer-apple-mac-studio-m4-max-36gb-512gb","애플 맥 스튜디오 M4 Max 36GB 512GB","Apple Mac Studio M4 Max 36GB 512GB","苹果 Mac Studio M4 Max 36GB 512GB",1999.00],
-["computer-apple-studio-display-nano-texture","애플 스튜디오 디스플레이 나노 텍스처 글래스","Apple Studio Display Nano-texture Glass","苹果 Studio Display Nano-texture 纳米纹理玻璃",1899.00],
-["computer-apple-imac-24-m4-24gb-512gb","애플 아이맥 24 M4 10코어 GPU 24GB 512GB","Apple iMac 24-inch M4 10-Core GPU 24GB 512GB","苹果 iMac 24英寸 M4 10核GPU 24GB 512GB",1899.00],
-["computer-apple-macbook-pro-14-m5-16gb-512gb","애플 맥북 프로 14 M5 16GB 512GB","Apple MacBook Pro 14-inch M5 16GB 512GB","苹果 MacBook Pro 14英寸 M5 16GB 512GB",1599.00],
-["computer-apple-studio-display","애플 스튜디오 디스플레이 스탠다드 글래스","Apple Studio Display Standard Glass","苹果 Studio Display 标准玻璃",1599.00],
-["computer-apple-imac-24-m4-10-core-gpu-16gb-256gb","애플 아이맥 24 M4 10코어 GPU 16GB 256GB","Apple iMac 24-inch M4 10-Core GPU 16GB 256GB","苹果 iMac 24英寸 M4 10核GPU 16GB 256GB",1499.00],
-["computer-apple-mac-mini-m4-pro-24gb-512gb","애플 맥 미니 M4 Pro 24GB 512GB","Apple Mac mini M4 Pro 24GB 512GB","苹果 Mac mini M4 Pro 24GB 512GB",1399.00],
-["computer-apple-imac-24-m4-8-core-gpu-16gb-256gb","애플 아이맥 24 M4 8코어 GPU 16GB 256GB","Apple iMac 24-inch M4 8-Core GPU 16GB 256GB","苹果 iMac 24英寸 M4 8核GPU 16GB 256GB",1299.00],
-["computer-apple-macbook-air-15-m4-16gb-256gb","애플 맥북 에어 15 M4 16GB 256GB","Apple MacBook Air 15-inch M4 16GB 256GB","苹果 MacBook Air 15英寸 M4 16GB 256GB",1199.00],
-["computer-apple-macbook-air-13-m4-16gb-256gb","애플 맥북 에어 13 M4 16GB 256GB","Apple MacBook Air 13-inch M4 16GB 256GB","苹果 MacBook Air 13英寸 M4 16GB 256GB",999.00],
-["computer-apple-pro-stand","애플 프로 스탠드","Apple Pro Stand","苹果 Pro Stand 支架",999.00],
-["computer-apple-mac-mini-m4-16gb-512gb","애플 맥 미니 M4 16GB 512GB","Apple Mac mini M4 16GB 512GB","苹果 Mac mini M4 16GB 512GB",799.00],
-["computer-apple-mac-pro-wheels-kit","애플 맥 프로 휠 키트","Apple Mac Pro Wheels Kit","苹果 Mac Pro 滚轮套件",699.00],
-["computer-apple-mac-mini-m4-16gb-256gb","애플 맥 미니 M4 16GB 256GB","Apple Mac mini M4 16GB 256GB","苹果 Mac mini M4 16GB 256GB",599.00],
-["computer-apple-mac-pro-feet-kit","애플 맥 프로 받침 키트","Apple Mac Pro Feet Kit","苹果 Mac Pro 支脚套件",299.00],
-["computer-apple-vesa-mount-adapter","애플 VESA 마운트 어댑터","Apple VESA Mount Adapter","苹果 VESA 支架转换器",199.00],
-["computer-apple-magic-keyboard-touch-id-numeric","애플 매직 키보드 Touch ID 숫자 키패드 포함","Apple Magic Keyboard with Touch ID and Numeric Keypad","苹果 妙控键盘 带触控ID和数字小键盘",199.00],
-["computer-apple-thunderbolt-4-pro-cable-3m","애플 썬더볼트 4 프로 케이블 3m","Apple Thunderbolt 4 (USB-C) Pro Cable 3m","苹果 雷雳4 Pro 连接线 3米",159.00],
-["computer-apple-magic-keyboard-touch-id","애플 매직 키보드 Touch ID 포함","Apple Magic Keyboard with Touch ID","苹果 妙控键盘 带触控ID",149.00],
-["computer-apple-magic-trackpad","애플 매직 트랙패드 USB-C","Apple Magic Trackpad USB-C","苹果 妙控板 USB-C",129.00],
-["computer-apple-thunderbolt-4-pro-cable-1-8m","애플 썬더볼트 4 프로 케이블 1.8m","Apple Thunderbolt 4 (USB-C) Pro Cable 1.8m","苹果 雷雳4 Pro 连接线 1.8米",129.00],
-["computer-apple-magic-keyboard","애플 매직 키보드 USB-C","Apple Magic Keyboard USB-C","苹果 妙控键盘 USB-C",99.00],
-["computer-apple-140w-usb-c-power-adapter","애플 140W USB-C 전원 어댑터","Apple 140W USB-C Power Adapter","苹果 140W USB-C 电源适配器",99.00],
-["computer-apple-magic-mouse","애플 매직 마우스 USB-C","Apple Magic Mouse USB-C","苹果 妙控鼠标 USB-C",79.00],
-["computer-apple-96w-usb-c-power-adapter","애플 96W USB-C 전원 어댑터","Apple 96W USB-C Power Adapter","苹果 96W USB-C 电源适配器",79.00],
-["computer-apple-usb-c-digital-av-multiport-adapter","애플 USB-C 디지털 AV 멀티포트 어댑터","Apple USB-C Digital AV Multiport Adapter","苹果 USB-C 数字影音多端口转换器",69.00],
-["computer-apple-thunderbolt-5-pro-cable-1m","애플 썬더볼트 5 프로 케이블 1m","Apple Thunderbolt 5 (USB-C) Pro Cable 1m","苹果 雷雳5 Pro 连接线 1米",69.00],
-["computer-apple-70w-usb-c-power-adapter","애플 70W USB-C 전원 어댑터","Apple 70W USB-C Power Adapter","苹果 70W USB-C 电源适配器",59.00],
-["computer-apple-35w-dual-usb-c-compact-adapter","애플 35W 듀얼 USB-C 포트 컴팩트 전원 어댑터","Apple 35W Dual USB-C Port Compact Power Adapter","苹果 35W 双USB-C端口小型电源适配器",59.00],
-["computer-apple-usb-c-to-magsafe-3-cable-2m","애플 USB-C to MagSafe 3 케이블 2m","Apple USB-C to MagSafe 3 Cable 2m","苹果 USB-C 转 MagSafe 3 连接线 2米",49.00],
-["computer-apple-thunderbolt-3-to-thunderbolt-2-adapter","애플 썬더볼트 3 to 썬더볼트 2 어댑터","Apple Thunderbolt 3 (USB-C) to Thunderbolt 2 Adapter","苹果 雷雳3 转 雷雳2 转换器",49.00],
-["computer-apple-30w-usb-c-power-adapter","애플 30W USB-C 전원 어댑터","Apple 30W USB-C Power Adapter","苹果 30W USB-C 电源适配器",39.00],
-["computer-apple-usb-c-to-sd-card-reader","애플 USB-C to SD 카드 리더","Apple USB-C to SD Card Reader","苹果 USB-C 转 SD 卡读卡器",39.00],
-["computer-apple-240w-usb-c-charge-cable-2m","애플 240W USB-C 충전 케이블 2m","Apple 240W USB-C Charge Cable 2m","苹果 240W USB-C 充电线 2米",29.00],
-["computer-apple-polishing-cloth","애플 광택용 천","Apple Polishing Cloth","苹果 抛光布",19.00],
-["computer-apple-usb-c-to-usb-adapter","애플 USB-C to USB 어댑터","Apple USB-C to USB Adapter","苹果 USB-C 转 USB 转换器",19.00],
-["computer-apple-60w-usb-c-charge-cable-1m","애플 60W USB-C 충전 케이블 1m","Apple 60W USB-C Charge Cable 1m","苹果 60W USB-C 充电线 1米",19.00]
-], "use": [] }
+{
+ "slug": "computer-apple",
+ "items": [
+  [
+   "computer-apple-mac-studio-m3-ultra-512gb-16tb",
+   "애플 맥 스튜디오 M3 Ultra 512GB 메모리 16TB",
+   "Apple Mac Studio M3 Ultra 512GB Memory 16TB",
+   "苹果 Mac Studio M3 Ultra 512GB 内存 16TB",
+   14099
+  ],
+  [
+   "computer-apple-mac-pro-m2-ultra-192gb-8tb",
+   "애플 맥 프로 타워 M2 Ultra 76코어 GPU 192GB 8TB",
+   "Apple Mac Pro Tower M2 Ultra 76-Core GPU 192GB 8TB",
+   "苹果 Mac Pro 塔式 M2 Ultra 76核GPU 192GB 8TB",
+   11799
+  ],
+  [
+   "computer-apple-mac-pro-rack-m2-ultra",
+   "애플 맥 프로 랙 M2 Ultra 64GB 1TB",
+   "Apple Mac Pro Rack M2 Ultra 64GB 1TB",
+   "苹果 Mac Pro 机架式 M2 Ultra 64GB 1TB",
+   7499
+  ],
+  [
+   "computer-apple-macbook-pro-16-m4-max-128gb-8tb",
+   "애플 맥북 프로 16 M4 Max 128GB 8TB",
+   "Apple MacBook Pro 16-inch M4 Max 128GB 8TB",
+   "苹果 MacBook Pro 16英寸 M4 Max 128GB 8TB",
+   7199
+  ],
+  [
+   "computer-apple-mac-pro-tower-m2-ultra",
+   "애플 맥 프로 타워 M2 Ultra 64GB 1TB",
+   "Apple Mac Pro Tower M2 Ultra 64GB 1TB",
+   "苹果 Mac Pro 塔式 M2 Ultra 64GB 1TB",
+   6999
+  ],
+  [
+   "computer-apple-pro-display-xdr-nano-texture",
+   "애플 프로 디스플레이 XDR 나노 텍스처 글래스",
+   "Apple Pro Display XDR Nano-texture Glass",
+   "苹果 Pro Display XDR Nano-texture 纳米纹理玻璃",
+   5999
+  ],
+  [
+   "computer-apple-pro-display-xdr",
+   "애플 프로 디스플레이 XDR 스탠다드 글래스",
+   "Apple Pro Display XDR Standard Glass",
+   "苹果 Pro Display XDR 标准玻璃",
+   4999
+  ],
+  [
+   "computer-apple-mac-studio-m3-ultra-96gb-1tb",
+   "애플 맥 스튜디오 M3 Ultra 96GB 1TB",
+   "Apple Mac Studio M3 Ultra 96GB 1TB",
+   "苹果 Mac Studio M3 Ultra 96GB 1TB",
+   3999
+  ],
+  [
+   "computer-apple-macbook-pro-16-m4-max-48gb-1tb",
+   "애플 맥북 프로 16 M4 Max 16코어 48GB 1TB",
+   "Apple MacBook Pro 16-inch M4 Max 16-Core 48GB 1TB",
+   "苹果 MacBook Pro 16英寸 M4 Max 16核 48GB 1TB",
+   3999
+  ],
+  [
+   "computer-apple-macbook-pro-16-m4-max-36gb-1tb",
+   "애플 맥북 프로 16 M4 Max 14코어 36GB 1TB",
+   "Apple MacBook Pro 16-inch M4 Max 14-Core 36GB 1TB",
+   "苹果 MacBook Pro 16英寸 M4 Max 14核 36GB 1TB",
+   3499
+  ],
+  [
+   "computer-apple-macbook-pro-14-m4-max-36gb-1tb",
+   "애플 맥북 프로 14 M4 Max 36GB 1TB",
+   "Apple MacBook Pro 14-inch M4 Max 36GB 1TB",
+   "苹果 MacBook Pro 14英寸 M4 Max 36GB 1TB",
+   3199
+  ],
+  [
+   "computer-apple-macbook-pro-16-m4-pro-24gb-512gb",
+   "애플 맥북 프로 16 M4 Pro 24GB 512GB",
+   "Apple MacBook Pro 16-inch M4 Pro 24GB 512GB",
+   "苹果 MacBook Pro 16英寸 M4 Pro 24GB 512GB",
+   2499
+  ],
+  [
+   "computer-apple-macbook-pro-14-m4-pro-24gb-512gb",
+   "애플 맥북 프로 14 M4 Pro 24GB 512GB",
+   "Apple MacBook Pro 14-inch M4 Pro 24GB 512GB",
+   "苹果 MacBook Pro 14英寸 M4 Pro 24GB 512GB",
+   1999
+  ],
+  [
+   "computer-apple-mac-studio-m4-max-36gb-512gb",
+   "애플 맥 스튜디오 M4 Max 36GB 512GB",
+   "Apple Mac Studio M4 Max 36GB 512GB",
+   "苹果 Mac Studio M4 Max 36GB 512GB",
+   1999
+  ],
+  [
+   "computer-apple-studio-display-nano-texture",
+   "애플 스튜디오 디스플레이 나노 텍스처 글래스",
+   "Apple Studio Display Nano-texture Glass",
+   "苹果 Studio Display Nano-texture 纳米纹理玻璃",
+   1899
+  ],
+  [
+   "computer-apple-imac-24-m4-24gb-512gb",
+   "애플 아이맥 24 M4 10코어 GPU 24GB 512GB",
+   "Apple iMac 24-inch M4 10-Core GPU 24GB 512GB",
+   "苹果 iMac 24英寸 M4 10核GPU 24GB 512GB",
+   1899
+  ],
+  [
+   "computer-apple-macbook-pro-14-m5-16gb-512gb",
+   "애플 맥북 프로 14 M5 16GB 512GB",
+   "Apple MacBook Pro 14-inch M5 16GB 512GB",
+   "苹果 MacBook Pro 14英寸 M5 16GB 512GB",
+   1599
+  ],
+  [
+   "computer-apple-studio-display",
+   "애플 스튜디오 디스플레이 스탠다드 글래스",
+   "Apple Studio Display Standard Glass",
+   "苹果 Studio Display 标准玻璃",
+   1599
+  ],
+  [
+   "computer-apple-imac-24-m4-10-core-gpu-16gb-256gb",
+   "애플 아이맥 24 M4 10코어 GPU 16GB 256GB",
+   "Apple iMac 24-inch M4 10-Core GPU 16GB 256GB",
+   "苹果 iMac 24英寸 M4 10核GPU 16GB 256GB",
+   1499
+  ],
+  [
+   "computer-apple-mac-mini-m4-pro-24gb-512gb",
+   "애플 맥 미니 M4 Pro 24GB 512GB",
+   "Apple Mac mini M4 Pro 24GB 512GB",
+   "苹果 Mac mini M4 Pro 24GB 512GB",
+   1399
+  ],
+  [
+   "computer-apple-imac-24-m4-8-core-gpu-16gb-256gb",
+   "애플 아이맥 24 M4 8코어 GPU 16GB 256GB",
+   "Apple iMac 24-inch M4 8-Core GPU 16GB 256GB",
+   "苹果 iMac 24英寸 M4 8核GPU 16GB 256GB",
+   1299
+  ],
+  [
+   "computer-apple-macbook-air-15-m4-16gb-256gb",
+   "애플 맥북 에어 15 M4 16GB 256GB",
+   "Apple MacBook Air 15-inch M4 16GB 256GB",
+   "苹果 MacBook Air 15英寸 M4 16GB 256GB",
+   1199
+  ],
+  [
+   "computer-apple-macbook-air-13-m4-16gb-256gb",
+   "애플 맥북 에어 13 M4 16GB 256GB",
+   "Apple MacBook Air 13-inch M4 16GB 256GB",
+   "苹果 MacBook Air 13英寸 M4 16GB 256GB",
+   999
+  ],
+  [
+   "computer-apple-pro-stand",
+   "애플 프로 스탠드",
+   "Apple Pro Stand",
+   "苹果 Pro Stand 支架",
+   999
+  ],
+  [
+   "computer-apple-mac-mini-m4-16gb-512gb",
+   "애플 맥 미니 M4 16GB 512GB",
+   "Apple Mac mini M4 16GB 512GB",
+   "苹果 Mac mini M4 16GB 512GB",
+   799
+  ],
+  [
+   "computer-apple-mac-pro-wheels-kit",
+   "애플 맥 프로 휠 키트",
+   "Apple Mac Pro Wheels Kit",
+   "苹果 Mac Pro 滚轮套件",
+   699
+  ],
+  [
+   "computer-apple-mac-mini-m4-16gb-256gb",
+   "애플 맥 미니 M4 16GB 256GB",
+   "Apple Mac mini M4 16GB 256GB",
+   "苹果 Mac mini M4 16GB 256GB",
+   599
+  ],
+  [
+   "computer-apple-mac-pro-feet-kit",
+   "애플 맥 프로 받침 키트",
+   "Apple Mac Pro Feet Kit",
+   "苹果 Mac Pro 支脚套件",
+   299
+  ],
+  [
+   "computer-apple-vesa-mount-adapter",
+   "애플 VESA 마운트 어댑터",
+   "Apple VESA Mount Adapter",
+   "苹果 VESA 支架转换器",
+   199
+  ],
+  [
+   "computer-apple-magic-keyboard-touch-id-numeric",
+   "애플 매직 키보드 Touch ID 숫자 키패드 포함",
+   "Apple Magic Keyboard with Touch ID and Numeric Keypad",
+   "苹果 妙控键盘 带触控ID和数字小键盘",
+   199
+  ],
+  [
+   "computer-apple-thunderbolt-4-pro-cable-3m",
+   "애플 썬더볼트 4 프로 케이블 3m",
+   "Apple Thunderbolt 4 (USB-C) Pro Cable 3m",
+   "苹果 雷雳4 Pro 连接线 3米",
+   159
+  ],
+  [
+   "computer-apple-magic-keyboard-touch-id",
+   "애플 매직 키보드 Touch ID 포함",
+   "Apple Magic Keyboard with Touch ID",
+   "苹果 妙控键盘 带触控ID",
+   149
+  ],
+  [
+   "computer-apple-magic-trackpad",
+   "애플 매직 트랙패드 USB-C",
+   "Apple Magic Trackpad USB-C",
+   "苹果 妙控板 USB-C",
+   129
+  ],
+  [
+   "computer-apple-thunderbolt-4-pro-cable-1-8m",
+   "애플 썬더볼트 4 프로 케이블 1.8m",
+   "Apple Thunderbolt 4 (USB-C) Pro Cable 1.8m",
+   "苹果 雷雳4 Pro 连接线 1.8米",
+   129
+  ],
+  [
+   "computer-apple-magic-keyboard",
+   "애플 매직 키보드 USB-C",
+   "Apple Magic Keyboard USB-C",
+   "苹果 妙控键盘 USB-C",
+   99
+  ],
+  [
+   "computer-apple-140w-usb-c-power-adapter",
+   "애플 140W USB-C 전원 어댑터",
+   "Apple 140W USB-C Power Adapter",
+   "苹果 140W USB-C 电源适配器",
+   99
+  ],
+  [
+   "computer-apple-magic-mouse",
+   "애플 매직 마우스 USB-C",
+   "Apple Magic Mouse USB-C",
+   "苹果 妙控鼠标 USB-C",
+   79
+  ],
+  [
+   "computer-apple-96w-usb-c-power-adapter",
+   "애플 96W USB-C 전원 어댑터",
+   "Apple 96W USB-C Power Adapter",
+   "苹果 96W USB-C 电源适配器",
+   79
+  ],
+  [
+   "computer-apple-usb-c-digital-av-multiport-adapter",
+   "애플 USB-C 디지털 AV 멀티포트 어댑터",
+   "Apple USB-C Digital AV Multiport Adapter",
+   "苹果 USB-C 数字影音多端口转换器",
+   69
+  ],
+  [
+   "computer-apple-thunderbolt-5-pro-cable-1m",
+   "애플 썬더볼트 5 프로 케이블 1m",
+   "Apple Thunderbolt 5 (USB-C) Pro Cable 1m",
+   "苹果 雷雳5 Pro 连接线 1米",
+   69
+  ],
+  [
+   "computer-apple-70w-usb-c-power-adapter",
+   "애플 70W USB-C 전원 어댑터",
+   "Apple 70W USB-C Power Adapter",
+   "苹果 70W USB-C 电源适配器",
+   59
+  ],
+  [
+   "computer-apple-35w-dual-usb-c-compact-adapter",
+   "애플 35W 듀얼 USB-C 포트 컴팩트 전원 어댑터",
+   "Apple 35W Dual USB-C Port Compact Power Adapter",
+   "苹果 35W 双USB-C端口小型电源适配器",
+   59
+  ],
+  [
+   "computer-apple-usb-c-to-magsafe-3-cable-2m",
+   "애플 USB-C to MagSafe 3 케이블 2m",
+   "Apple USB-C to MagSafe 3 Cable 2m",
+   "苹果 USB-C 转 MagSafe 3 连接线 2米",
+   49
+  ],
+  [
+   "computer-apple-thunderbolt-3-to-thunderbolt-2-adapter",
+   "애플 썬더볼트 3 to 썬더볼트 2 어댑터",
+   "Apple Thunderbolt 3 (USB-C) to Thunderbolt 2 Adapter",
+   "苹果 雷雳3 转 雷雳2 转换器",
+   49
+  ],
+  [
+   "computer-apple-30w-usb-c-power-adapter",
+   "애플 30W USB-C 전원 어댑터",
+   "Apple 30W USB-C Power Adapter",
+   "苹果 30W USB-C 电源适配器",
+   39
+  ],
+  [
+   "computer-apple-usb-c-to-sd-card-reader",
+   "애플 USB-C to SD 카드 리더",
+   "Apple USB-C to SD Card Reader",
+   "苹果 USB-C 转 SD 卡读卡器",
+   39
+  ],
+  [
+   "computer-apple-240w-usb-c-charge-cable-2m",
+   "애플 240W USB-C 충전 케이블 2m",
+   "Apple 240W USB-C Charge Cable 2m",
+   "苹果 240W USB-C 充电线 2米",
+   29
+  ],
+  [
+   "computer-apple-polishing-cloth",
+   "애플 광택용 천",
+   "Apple Polishing Cloth",
+   "苹果 抛光布",
+   19
+  ],
+  [
+   "computer-apple-usb-c-to-usb-adapter",
+   "애플 USB-C to USB 어댑터",
+   "Apple USB-C to USB Adapter",
+   "苹果 USB-C 转 USB 转换器",
+   19
+  ],
+  [
+   "computer-apple-60w-usb-c-charge-cable-1m",
+   "애플 60W USB-C 충전 케이블 1m",
+   "Apple 60W USB-C Charge Cable 1m",
+   "苹果 60W USB-C 充电线 1米",
+   19
+  ]
+ ],
+ "use": [
+  "computer-p-raspberry-pi-camera-module-3",
+  "computer-p-ugreen-m2-nvme-enclosure",
+  "computer-p-noctua-nf-a14-pwm",
+  "computer-p-ducky-one-3-tkl",
+  "computer-p-leopold-fc750r-pd",
+  "computer-p-obsbot-meet-2",
+  "computer-p-ubiquiti-u6-plus",
+  "computer-p-nuphy-air75-v2",
+  "computer-p-mikrotik-hap-ax3",
+  "computer-p-fractal-north",
+  "computer-p-seagate-barracuda-8tb",
+  "computer-p-realforce-rc1",
+  "computer-p-apc-br1500ms2",
+  "computer-p-asrock-arc-b580-challenger",
+  "computer-p-crucial-t705-2tb",
+  "computer-p-tourbox-elite",
+  "computer-p-calibrite-display-pro-hl",
+  "computer-p-ubiquiti-u7-pro-max",
+  "computer-p-aoc-q27g3xmn",
+  "computer-p-plugable-tbt4-udz",
+  "computer-p-nzxt-kraken-elite-360",
+  "computer-p-satechi-thunderbolt-4-dock",
+  "computer-p-ubiquiti-udm-pro",
+  "computer-p-wacom-intuos-pro-m-2025",
+  "computer-p-wacom-one-12",
+  "computer-p-caldigit-ts4",
+  "computer-p-seagate-ironwolf-pro-20tb",
+  "computer-p-ugreen-nasync-dxp2800",
+  "computer-p-viewsonic-vp16-oled",
+  "computer-p-hyte-y70-touch-infinite",
+  "computer-p-asrock-x870e-taichi",
+  "computer-p-wd-red-pro-22tb",
+  "computer-p-seagate-exos-x24-24tb",
+  "computer-p-beelink-ser8",
+  "computer-p-apc-smart-ups-smt1500c",
+  "computer-p-sapphire-nitro-plus-rx-9070-xt",
+  "computer-p-framework-laptop-12",
+  "computer-p-mikrotik-crs504-4xq-in",
+  "computer-p-ubiquiti-usw-pro-max-24-poe",
+  "computer-p-wacom-cintiq-pro-16",
+  "computer-p-angry-miao-am-hatsu",
+  "computer-p-honor-magicbook-art-14",
+  "computer-p-apc-smart-ups-srt3000xla",
+  "computer-p-huawei-matebook-fold",
+  "computer-p-apc-smart-ups-srt5krmxlt",
+  "computer-p-tinybox-red",
+  "computer-p-flanders-scientific-xmp550",
+  "computer-p-flanders-scientific-xm312u",
+  "computer-p-flanders-scientific-xmp650",
+  "computer-p-sony-bvm-hx3110",
+  "computer-p-tinybox-green-v2",
+  "computer-p-canon-dp-v3120",
+  "computer-p-tinybox-pro"
+ ]
+}

@@ -1,0 +1,485 @@
+{
+ "slug": "gaming-corsair",
+ "items": [
+  [
+   "gaming-corsair-corsair-one-i500-rtx-4090",
+   "커세어 원 i500 RTX 4090",
+   "Corsair ONE i500 RTX 4090",
+   "海盗船 ONE i500 RTX 4090 主机",
+   4699.99
+  ],
+  [
+   "gaming-corsair-corsair-one-i500-rtx-4080-super",
+   "커세어 원 i500 RTX 4080 SUPER",
+   "Corsair ONE i500 RTX 4080 SUPER",
+   "海盗船 ONE i500 RTX 4080 SUPER 主机",
+   3599.99
+  ],
+  [
+   "gaming-corsair-corsair-xeneon-flex-45wqhd240-oled-monitor",
+   "커세어 제니온 플렉스 45WQHD240 OLED 모니터",
+   "Corsair XENEON FLEX 45WQHD240 OLED Monitor",
+   "海盗船 XENEON FLEX 45WQHD240 OLED 显示器",
+   1999.99
+  ],
+  [
+   "gaming-corsair-corsair-platform-6-elevate-desk",
+   "커세어 플랫폼:6 엘리베이트 데스크",
+   "Corsair Platform:6 Elevate Desk",
+   "海盗船 Platform:6 Elevate 电动升降桌",
+   1399.99
+  ],
+  [
+   "gaming-corsair-corsair-platform-6-desk",
+   "커세어 플랫폼:6 데스크",
+   "Corsair Platform:6 Desk",
+   "海盗船 Platform:6 电竞桌",
+   999.99
+  ],
+  [
+   "gaming-corsair-corsair-xeneon-27qhd240-oled-monitor",
+   "커세어 제니온 27QHD240 OLED 모니터",
+   "Corsair XENEON 27QHD240 OLED Monitor",
+   "海盗船 XENEON 27QHD240 OLED 显示器",
+   999.99
+  ],
+  [
+   "gaming-corsair-corsair-platform-4-desk",
+   "커세어 플랫폼:4 데스크",
+   "Corsair Platform:4 Desk",
+   "海盗船 Platform:4 电竞桌",
+   699.99
+  ],
+  [
+   "gaming-corsair-corsair-ax1600i-power-supply",
+   "커세어 AX1600i 파워 서플라이",
+   "Corsair AX1600i Power Supply",
+   "海盗船 AX1600i 电源",
+   609.99
+  ],
+  [
+   "gaming-corsair-corsair-tc500-luxe-gaming-chair",
+   "커세어 TC500 럭스 게이밍 체어",
+   "Corsair TC500 LUXE Gaming Chair",
+   "海盗船 TC500 LUXE 电竞椅",
+   499.99
+  ],
+  [
+   "gaming-corsair-corsair-9000d-rgb-airflow-case",
+   "커세어 9000D RGB 에어플로우 케이스",
+   "Corsair 9000D RGB Airflow Case",
+   "海盗船 9000D RGB Airflow 机箱",
+   499.99
+  ],
+  [
+   "gaming-corsair-corsair-hx1500i-power-supply",
+   "커세어 HX1500i 파워 서플라이",
+   "Corsair HX1500i Power Supply",
+   "海盗船 HX1500i 电源",
+   369.99
+  ],
+  [
+   "gaming-corsair-corsair-virtuoso-max-wireless-headset",
+   "커세어 버추오소 MAX 무선 헤드셋",
+   "Corsair VIRTUOSO MAX Wireless Headset",
+   "海盗船 VIRTUOSO MAX 无线耳机",
+   329.99
+  ],
+  [
+   "gaming-corsair-corsair-icue-h150i-elite-lcd-xt-liquid-cooler",
+   "커세어 iCUE H150i 엘리트 LCD XT 수랭 쿨러",
+   "Corsair iCUE H150i ELITE LCD XT Liquid Cooler",
+   "海盗船 iCUE H150i ELITE LCD XT 水冷",
+   289.99
+  ],
+  [
+   "gaming-corsair-corsair-k100-air-wireless-keyboard",
+   "커세어 K100 AIR 무선 키보드",
+   "Corsair K100 AIR Wireless Keyboard",
+   "海盗船 K100 AIR 无线键盘",
+   279.99
+  ],
+  [
+   "gaming-corsair-corsair-virtuoso-rgb-wireless-xt-headset",
+   "커세어 버추오소 RGB 와이어리스 XT 헤드셋",
+   "Corsair VIRTUOSO RGB Wireless XT Headset",
+   "海盗船 VIRTUOSO RGB Wireless XT 耳机",
+   269.99
+  ],
+  [
+   "gaming-corsair-corsair-k100-rgb-keyboard",
+   "커세어 K100 RGB 키보드",
+   "Corsair K100 RGB Keyboard",
+   "海盗船 K100 RGB 键盘",
+   249.99
+  ],
+  [
+   "gaming-corsair-corsair-xeneon-edge-14-5-inch-touchscreen",
+   "커세어 제니온 엣지 14.5인치 터치스크린",
+   "Corsair XENEON EDGE 14.5-inch Touchscreen",
+   "海盗船 XENEON EDGE 14.5英寸 触控屏",
+   249.99
+  ],
+  [
+   "gaming-corsair-corsair-tc100-relaxed-gaming-chair",
+   "커세어 TC100 릴렉스드 게이밍 체어",
+   "Corsair TC100 RELAXED Gaming Chair",
+   "海盗船 TC100 RELAXED 电竞椅",
+   249.99
+  ],
+  [
+   "gaming-corsair-corsair-k70-max-keyboard",
+   "커세어 K70 MAX 키보드",
+   "Corsair K70 MAX Keyboard",
+   "海盗船 K70 MAX 磁轴键盘",
+   229.99
+  ],
+  [
+   "gaming-corsair-corsair-vanguard-pro-96-keyboard",
+   "커세어 뱅가드 프로 96 키보드",
+   "Corsair VANGUARD PRO 96 Keyboard",
+   "海盗船 VANGUARD PRO 96 键盘",
+   229.99
+  ],
+  [
+   "gaming-corsair-corsair-virtuoso-pro-headset",
+   "커세어 버추오소 PRO 헤드셋",
+   "Corsair VIRTUOSO PRO Headset",
+   "海盗船 VIRTUOSO PRO 耳机",
+   199.99
+  ],
+  [
+   "gaming-corsair-corsair-icue-link-titan-360-rx-rgb-liquid-cooler",
+   "커세어 iCUE LINK 타이탄 360 RX RGB 수랭 쿨러",
+   "Corsair iCUE LINK TITAN 360 RX RGB Liquid Cooler",
+   "海盗船 iCUE LINK TITAN 360 RX RGB 水冷",
+   199.99
+  ],
+  [
+   "gaming-corsair-corsair-6500x-case",
+   "커세어 6500X 케이스",
+   "Corsair 6500X Case",
+   "海盗船 6500X 机箱",
+   199.99
+  ],
+  [
+   "gaming-corsair-corsair-rm1000x-power-supply",
+   "커세어 RM1000x 파워 서플라이",
+   "Corsair RM1000x Power Supply",
+   "海盗船 RM1000x 电源",
+   189.99
+  ],
+  [
+   "gaming-corsair-corsair-hs80-max-wireless-headset",
+   "커세어 HS80 MAX 무선 헤드셋",
+   "Corsair HS80 MAX Wireless Headset",
+   "海盗船 HS80 MAX 无线耳机",
+   179.99
+  ],
+  [
+   "gaming-corsair-corsair-k70-pro-mini-wireless-keyboard",
+   "커세어 K70 PRO 미니 와이어리스 키보드",
+   "Corsair K70 PRO MINI Wireless Keyboard",
+   "海盗船 K70 PRO MINI 无线键盘",
+   179.99
+  ],
+  [
+   "gaming-corsair-corsair-k70-rgb-pro-keyboard",
+   "커세어 K70 RGB PRO 키보드",
+   "Corsair K70 RGB PRO Keyboard",
+   "海盗船 K70 RGB PRO 键盘",
+   169.99
+  ],
+  [
+   "gaming-corsair-corsair-darkstar-wireless-mouse",
+   "커세어 다크스타 와이어리스 마우스",
+   "Corsair DARKSTAR Wireless Mouse",
+   "海盗船 DARKSTAR 无线鼠标",
+   169.99
+  ],
+  [
+   "gaming-corsair-corsair-5000d-airflow-case",
+   "커세어 5000D 에어플로우 케이스",
+   "Corsair 5000D Airflow Case",
+   "海盗船 5000D Airflow 机箱",
+   164.99
+  ],
+  [
+   "gaming-corsair-corsair-k65-plus-wireless-keyboard",
+   "커세어 K65 PLUS 와이어리스 키보드",
+   "Corsair K65 PLUS Wireless Keyboard",
+   "海盗船 K65 PLUS 无线键盘",
+   159.99
+  ],
+  [
+   "gaming-corsair-corsair-m75-air-wireless-mouse",
+   "커세어 M75 AIR 와이어리스 마우스",
+   "Corsair M75 AIR Wireless Mouse",
+   "海盗船 M75 AIR 无线鼠标",
+   149.99
+  ],
+  [
+   "gaming-corsair-corsair-hs80-rgb-wireless-headset",
+   "커세어 HS80 RGB 와이어리스 헤드셋",
+   "Corsair HS80 RGB Wireless Headset",
+   "海盗船 HS80 RGB 无线耳机",
+   149.99
+  ],
+  [
+   "gaming-corsair-corsair-rm850x-power-supply",
+   "커세어 RM850x 파워 서플라이",
+   "Corsair RM850x Power Supply",
+   "海盗船 RM850x 电源",
+   149.99
+  ],
+  [
+   "gaming-corsair-corsair-icue-link-qx120-rgb-starter-kit",
+   "커세어 iCUE LINK QX120 RGB 스타터 키트",
+   "Corsair iCUE LINK QX120 RGB Starter Kit",
+   "海盗船 iCUE LINK QX120 RGB 风扇入门套装",
+   149.99
+  ],
+  [
+   "gaming-corsair-corsair-m75-wireless-mouse",
+   "커세어 M75 와이어리스 마우스",
+   "Corsair M75 Wireless Mouse",
+   "海盗船 M75 无线鼠标",
+   129.99
+  ],
+  [
+   "gaming-corsair-corsair-m65-rgb-ultra-wireless-mouse",
+   "커세어 M65 RGB 울트라 와이어리스 마우스",
+   "Corsair M65 RGB ULTRA Wireless Mouse",
+   "海盗船 M65 RGB ULTRA 无线鼠标",
+   129.99
+  ],
+  [
+   "gaming-corsair-corsair-scimitar-elite-wireless-mouse",
+   "커세어 시미터 엘리트 와이어리스 마우스",
+   "Corsair SCIMITAR ELITE Wireless Mouse",
+   "海盗船 SCIMITAR ELITE 无线鼠标",
+   129.99
+  ],
+  [
+   "gaming-corsair-corsair-icue-lt100-smart-lighting-towers-starter",
+   "커세어 iCUE LT100 스마트 라이팅 타워 스타터 키트",
+   "Corsair iCUE LT100 Smart Lighting Towers Starter Kit",
+   "海盗船 iCUE LT100 智能灯塔入门套装",
+   129.99
+  ],
+  [
+   "gaming-corsair-corsair-void-v2-wireless-headset",
+   "커세어 보이드 v2 와이어리스 헤드셋",
+   "Corsair VOID v2 Wireless Headset",
+   "海盗船 VOID v2 无线耳机",
+   119.99
+  ],
+  [
+   "gaming-corsair-corsair-k65-rgb-mini-keyboard",
+   "커세어 K65 RGB 미니 키보드",
+   "Corsair K65 RGB MINI Keyboard",
+   "海盗船 K65 RGB MINI 键盘",
+   109.99
+  ],
+  [
+   "gaming-corsair-corsair-3500x-case",
+   "커세어 3500X 케이스",
+   "Corsair 3500X Case",
+   "海盗船 3500X 机箱",
+   109.99
+  ],
+  [
+   "gaming-corsair-corsair-4000d-airflow-case",
+   "커세어 4000D 에어플로우 케이스",
+   "Corsair 4000D Airflow Case",
+   "海盗船 4000D Airflow 机箱",
+   104.99
+  ],
+  [
+   "gaming-corsair-corsair-k70-core-keyboard",
+   "커세어 K70 CORE 키보드",
+   "Corsair K70 CORE Keyboard",
+   "海盗船 K70 CORE 键盘",
+   99.99
+  ],
+  [
+   "gaming-corsair-corsair-sabre-v2-pro-wireless-mouse",
+   "커세어 세이버 v2 PRO 와이어리스 마우스",
+   "Corsair SABRE v2 PRO Wireless Mouse",
+   "海盗船 SABRE v2 PRO 无线鼠标",
+   99.99
+  ],
+  [
+   "gaming-corsair-corsair-hs55-wireless-core-headset",
+   "커세어 HS55 와이어리스 코어 헤드셋",
+   "Corsair HS55 Wireless Core Headset",
+   "海盗船 HS55 Wireless Core 耳机",
+   99.99
+  ],
+  [
+   "gaming-corsair-corsair-icue-nexus-companion-touch-screen",
+   "커세어 iCUE 넥서스 터치스크린",
+   "Corsair iCUE NEXUS Companion Touch Screen",
+   "海盗船 iCUE NEXUS 触控屏",
+   99.99
+  ],
+  [
+   "gaming-corsair-corsair-dark-core-rgb-pro-wireless-mouse",
+   "커세어 다크 코어 RGB PRO 와이어리스 마우스",
+   "Corsair DARK CORE RGB PRO Wireless Mouse",
+   "海盗船 DARK CORE RGB PRO 无线鼠标",
+   89.99
+  ],
+  [
+   "gaming-corsair-corsair-hs65-surround-headset",
+   "커세어 HS65 서라운드 헤드셋",
+   "Corsair HS65 SURROUND Headset",
+   "海盗船 HS65 SURROUND 耳机",
+   79.99
+  ],
+  [
+   "gaming-corsair-corsair-scimitar-rgb-elite-mouse",
+   "커세어 시미터 RGB 엘리트 마우스",
+   "Corsair SCIMITAR RGB ELITE Mouse",
+   "海盗船 SCIMITAR RGB ELITE 鼠标",
+   79.99
+  ],
+  [
+   "gaming-corsair-corsair-m65-rgb-ultra-mouse",
+   "커세어 M65 RGB 울트라 마우스",
+   "Corsair M65 RGB ULTRA Mouse",
+   "海盗船 M65 RGB ULTRA 鼠标",
+   69.99
+  ],
+  [
+   "gaming-corsair-corsair-mm700-rgb-extended-mouse-pad",
+   "커세어 MM700 RGB 익스텐디드 마우스패드",
+   "Corsair MM700 RGB Extended Mouse Pad",
+   "海盗船 MM700 RGB 加长鼠标垫",
+   59.99
+  ],
+  [
+   "gaming-corsair-corsair-hs55-stereo-headset",
+   "커세어 HS55 스테레오 헤드셋",
+   "Corsair HS55 STEREO Headset",
+   "海盗船 HS55 STEREO 耳机",
+   59.99
+  ],
+  [
+   "gaming-corsair-corsair-ironclaw-rgb-mouse",
+   "커세어 아이언클로 RGB 마우스",
+   "Corsair IRONCLAW RGB Mouse",
+   "海盗船 IRONCLAW RGB 鼠标",
+   59.99
+  ],
+  [
+   "gaming-corsair-corsair-st100-rgb-headset-stand",
+   "커세어 ST100 RGB 헤드셋 스탠드",
+   "Corsair ST100 RGB Headset Stand",
+   "海盗船 ST100 RGB 耳机支架",
+   59.99
+  ],
+  [
+   "gaming-corsair-corsair-k55-rgb-pro-keyboard",
+   "커세어 K55 RGB PRO 키보드",
+   "Corsair K55 RGB PRO Keyboard",
+   "海盗船 K55 RGB PRO 键盘",
+   49.99
+  ],
+  [
+   "gaming-corsair-corsair-k55-core-rgb-keyboard",
+   "커세어 K55 CORE RGB 키보드",
+   "Corsair K55 CORE RGB Keyboard",
+   "海盗船 K55 CORE RGB 键盘",
+   39.99
+  ],
+  [
+   "gaming-corsair-corsair-katar-pro-wireless-mouse",
+   "커세어 카타르 PRO 와이어리스 마우스",
+   "Corsair KATAR PRO Wireless Mouse",
+   "海盗船 KATAR PRO 无线鼠标",
+   39.99
+  ],
+  [
+   "gaming-corsair-corsair-mm350-pro-extended-xl-mouse-pad",
+   "커세어 MM350 PRO 익스텐디드 XL 마우스패드",
+   "Corsair MM350 PRO Extended XL Mouse Pad",
+   "海盗船 MM350 PRO 加长 XL 鼠标垫",
+   39.99
+  ],
+  [
+   "gaming-corsair-corsair-harpoon-rgb-pro-mouse",
+   "커세어 하푼 RGB PRO 마우스",
+   "Corsair HARPOON RGB PRO Mouse",
+   "海盗船 HARPOON RGB PRO 鼠标",
+   29.99
+  ],
+  [
+   "gaming-corsair-corsair-mm300-extended-mouse-pad",
+   "커세어 MM300 익스텐디드 마우스패드",
+   "Corsair MM300 Extended Mouse Pad",
+   "海盗船 MM300 加长鼠标垫",
+   29.99
+  ],
+  [
+   "gaming-corsair-corsair-katar-pro-mouse",
+   "커세어 카타르 PRO 마우스",
+   "Corsair KATAR PRO Mouse",
+   "海盗船 KATAR PRO 鼠标",
+   19.99
+  ],
+  [
+   "gaming-corsair-corsair-mm300-pro-medium-mouse-pad",
+   "커세어 MM300 PRO 미디엄 마우스패드",
+   "Corsair MM300 PRO Medium Mouse Pad",
+   "海盗船 MM300 PRO M 鼠标垫",
+   19.99
+  ],
+  [
+   "gaming-corsair-corsair-mm100-mouse-pad",
+   "커세어 MM100 마우스패드",
+   "Corsair MM100 Mouse Pad",
+   "海盗船 MM100 鼠标垫",
+   9.99
+  ]
+ ],
+ "use": [
+  "gaming-p-kontrolfreek-performance-grips",
+  "gaming-p-lizard-skins-dsp-controller-grip-for-ps5",
+  "gaming-p-orzly-carry-case-for-nintendo-switch",
+  "gaming-p-powera-joy-con-comfort-grips",
+  "gaming-p-panasonic-eneloop-aa-rechargeable-batteries-4-pack",
+  "gaming-p-hori-tough-pouch-for-nintendo-switch",
+  "gaming-p-kontrolfreek-fps-freek-inferno",
+  "gaming-p-spigen-glas-tr-ez-fit-screen-protector-for-steam-deck",
+  "gaming-p-endgame-gear-mpc450-cordura-mouse-pad",
+  "gaming-p-genki-aegis-shield-for-nintendo-switch-2",
+  "gaming-p-sandisk-extreme-microsdxc-512gb",
+  "gaming-p-powera-enhanced-wired-controller-for-nintendo-switch",
+  "gaming-p-skull-and-co-neogrip-for-nintendo-switch-oled",
+  "gaming-p-glorious-elements-ice-mouse-pad",
+  "gaming-p-glorious-panda-switches-36-pack",
+  "gaming-p-glorious-xxl-extended-mouse-pad-18x36",
+  "gaming-p-jsaux-modcase-for-steam-deck",
+  "gaming-p-endgame-gear-op1-8k-gaming-mouse",
+  "gaming-p-artisan-ninja-fx-zero-xsoft-mouse-pad-l",
+  "gaming-p-dayton-audio-bst-1-bass-shaker",
+  "gaming-p-meta-quest-3s-256gb",
+  "gaming-p-master-and-dynamic-mg20-wireless-gaming-headphones",
+  "gaming-p-magewell-usb-capture-hdmi-4k-plus",
+  "gaming-p-samsung-odyssey-oled-g6-g60sd-27-inch-360hz",
+  "gaming-p-sim-lab-p1x-pro-cockpit",
+  "gaming-p-htc-vive-focus-vision",
+  "gaming-p-nvidia-geforce-rtx-5080-founders-edition",
+  "gaming-p-herman-miller-aeron-gaming-chair",
+  "gaming-p-nvidia-geforce-rtx-5090-founders-edition",
+  "gaming-p-lg-oled-evo-c5-55-inch-4k-tv",
+  "gaming-p-lg-ultragear-oled-45gx950a-45-inch-5k2k",
+  "gaming-p-samsung-neo-qled-8k-qn900f-65-inch-tv",
+  "gaming-p-samsung-oled-s95f-65-inch-4k-tv",
+  "gaming-p-stern-pinball-john-wick-limited-edition",
+  "gaming-p-stern-pinball-king-kong-myth-of-terror-island-limited",
+  "gaming-p-curv-racing-simulators-aston-martin-amr-c01",
+  "gaming-p-cxc-simulations-motion-pro-ii"
+ ]
+}

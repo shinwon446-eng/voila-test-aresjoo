@@ -1,0 +1,419 @@
+{
+ "slug": "beauty-aesop",
+ "items": [
+  [
+   "beauty-aesop-miraceti-eau-de-parfum-50ml",
+   "이솝 미라세티 오 드 퍼퓸 50ml",
+   "Aesop Miraceti Eau de Parfum 50ml",
+   "伊索 Miraceti 香水 50ml",
+   215
+  ],
+  [
+   "beauty-aesop-karst-eau-de-parfum-50ml",
+   "이솝 카르스트 오 드 퍼퓸 50ml",
+   "Aesop Karst Eau de Parfum 50ml",
+   "伊索 Karst 香水 50ml",
+   215
+  ],
+  [
+   "beauty-aesop-eremia-eau-de-parfum-50ml",
+   "이솝 에레미아 오 드 퍼퓸 50ml",
+   "Aesop Erémia Eau de Parfum 50ml",
+   "伊索 Erémia 香水 50ml",
+   215
+  ],
+  [
+   "beauty-aesop-eidesis-eau-de-parfum-50ml",
+   "이솝 이더시스 오 드 퍼퓸 50ml",
+   "Aesop Eidesis Eau de Parfum 50ml",
+   "伊索 Eidesis 香水 50ml",
+   215
+  ],
+  [
+   "beauty-aesop-gloam-eau-de-parfum-50ml",
+   "이솝 글롬 오 드 퍼퓸 50ml",
+   "Aesop Gloam Eau de Parfum 50ml",
+   "伊索 Gloam 香水 50ml",
+   215
+  ],
+  [
+   "beauty-aesop-ouranon-eau-de-parfum-50ml",
+   "이솝 오라논 오 드 퍼퓸 50ml",
+   "Aesop Ouranon Eau de Parfum 50ml",
+   "伊索 Ouranon 香水 50ml",
+   215
+  ],
+  [
+   "beauty-aesop-hwyl-eau-de-parfum-50ml",
+   "이솝 휠 오 드 퍼퓸 50ml",
+   "Aesop Hwyl Eau de Parfum 50ml",
+   "伊索 Hwyl 香水 50ml",
+   205
+  ],
+  [
+   "beauty-aesop-rozu-eau-de-parfum-50ml",
+   "이솝 로즈 오 드 퍼퓸 50ml",
+   "Aesop Rōzu Eau de Parfum 50ml",
+   "伊索 Rōzu 香水 50ml",
+   205
+  ],
+  [
+   "beauty-aesop-brass-oil-burner",
+   "이솝 브라스 오일 버너",
+   "Aesop Brass Oil Burner",
+   "伊索 黄铜香薰炉",
+   200
+  ],
+  [
+   "beauty-aesop-tacit-eau-de-parfum-50ml",
+   "이솝 테싯 오 드 퍼퓸 50ml",
+   "Aesop Tacit Eau de Parfum 50ml",
+   "伊索 Tacit 香水 50ml",
+   140
+  ],
+  [
+   "beauty-aesop-marrakech-intense-eau-de-parfum-50ml",
+   "이솝 마라케시 인텐스 오 드 퍼퓸 50ml",
+   "Aesop Marrakech Intense Eau de Parfum 50ml",
+   "伊索 Marrakech Intense 香水 50ml",
+   140
+  ],
+  [
+   "beauty-aesop-sublime-replenishing-night-masque-60ml",
+   "이솝 서블라임 리플레니싱 나이트 마스크 60ml",
+   "Aesop Sublime Replenishing Night Masque 60ml",
+   "伊索 焕颜修护晚间面膜 60ml",
+   140
+  ],
+  [
+   "beauty-aesop-lucent-facial-concentrate-60ml",
+   "이솝 루센트 페이셜 컨센트레이트 60ml",
+   "Aesop Lucent Facial Concentrate 60ml",
+   "伊索 透亮面部精华 60ml",
+   130
+  ],
+  [
+   "beauty-aesop-ptolemy-aromatique-candle-300g",
+   "이솝 프톨레미 아로마틱 캔들 300g",
+   "Aesop Ptolemy Aromatique Candle 300g",
+   "伊索 Ptolemy 香氛蜡烛 300g",
+   125
+  ],
+  [
+   "beauty-aesop-aganice-aromatique-candle-300g",
+   "이솝 아가니스 아로마틱 캔들 300g",
+   "Aesop Aganice Aromatique Candle 300g",
+   "伊索 Aganice 香氛蜡烛 300g",
+   125
+  ],
+  [
+   "beauty-aesop-callippus-aromatique-candle-300g",
+   "이솝 칼리푸스 아로마틱 캔들 300g",
+   "Aesop Callippus Aromatique Candle 300g",
+   "伊索 Callippus 香氛蜡烛 300g",
+   125
+  ],
+  [
+   "beauty-aesop-resurrection-aromatique-hand-balm-500ml",
+   "이솝 레저렉션 아로마틱 핸드 밤 500ml",
+   "Aesop Resurrection Aromatique Hand Balm 500ml",
+   "伊索 赋活芳香护手霜 500ml",
+   105
+  ],
+  [
+   "beauty-aesop-geranium-leaf-body-balm-500ml",
+   "이솝 제라늄 리프 바디 밤 500ml",
+   "Aesop Geranium Leaf Body Balm 500ml",
+   "伊索 天竺葵身体乳霜 500ml",
+   105
+  ],
+  [
+   "beauty-aesop-rind-concentrate-body-balm-500ml",
+   "이솝 린드 컨센트레이트 바디 밤 500ml",
+   "Aesop Rind Concentrate Body Balm 500ml",
+   "伊索 苦橙香柠身体乳霜 500ml",
+   105
+  ],
+  [
+   "beauty-aesop-exalted-eye-serum-15ml",
+   "이솝 엑설티드 아이 세럼 15ml",
+   "Aesop Exalted Eye Serum 15ml",
+   "伊索 焕采眼部精华 15ml",
+   95
+  ],
+  [
+   "beauty-aesop-damascan-rose-facial-treatment-25ml",
+   "이솝 다마스칸 로즈 페이셜 트리트먼트 25ml",
+   "Aesop Damascan Rose Facial Treatment 25ml",
+   "伊索 大马士革玫瑰面部精华油 25ml",
+   95
+  ],
+  [
+   "beauty-aesop-parsley-seed-anti-oxidant-intense-serum-60ml",
+   "이솝 파슬리 씨드 안티 옥시던트 인텐스 세럼 60ml",
+   "Aesop Parsley Seed Anti-Oxidant Intense Serum 60ml",
+   "伊索 香芹籽抗氧化高效精华 60ml",
+   83
+  ],
+  [
+   "beauty-aesop-parsley-seed-facial-cleanser-200ml",
+   "이솝 파슬리 씨드 페이셜 클렌저 200ml",
+   "Aesop Parsley Seed Facial Cleanser 200ml",
+   "伊索 香芹籽洁面露 200ml",
+   67
+  ],
+  [
+   "beauty-aesop-fabulous-face-oil-25ml",
+   "이솝 패뷸러스 페이스 오일 25ml",
+   "Aesop Fabulous Face Oil 25ml",
+   "伊索 菁萃面部精华油 25ml",
+   65
+  ],
+  [
+   "beauty-aesop-istros-aromatique-room-spray-100ml",
+   "이솝 이스트로스 아로마틱 룸 스프레이 100ml",
+   "Aesop Istros Aromatique Room Spray 100ml",
+   "伊索 Istros 室内香氛喷雾 100ml",
+   62
+  ],
+  [
+   "beauty-aesop-camellia-nut-facial-hydrating-cream-60ml",
+   "이솝 카멜리아 넛 페이셜 하이드레이팅 크림 60ml",
+   "Aesop Camellia Nut Facial Hydrating Cream 60ml",
+   "伊索 山茶花保湿面霜 60ml",
+   60
+  ],
+  [
+   "beauty-aesop-conditioner-500ml",
+   "이솝 클래식 컨디셔너 500ml",
+   "Aesop Conditioner 500ml",
+   "伊索 护发素 500ml",
+   57
+  ],
+  [
+   "beauty-aesop-shampoo-500ml",
+   "이솝 클래식 샴푸 500ml",
+   "Aesop Shampoo 500ml",
+   "伊索 洗发水 500ml",
+   55
+  ],
+  [
+   "beauty-aesop-fabulous-face-cleanser-200ml",
+   "이솝 패뷸러스 페이스 클렌저 200ml",
+   "Aesop Fabulous Face Cleanser 200ml",
+   "伊索 菁萃洁面露 200ml",
+   55
+  ],
+  [
+   "beauty-aesop-geranium-leaf-body-cleanser-500ml",
+   "이솝 제라늄 리프 바디 클렌저 500ml",
+   "Aesop Geranium Leaf Body Cleanser 500ml",
+   "伊索 天竺葵身体洁肤露 500ml",
+   51
+  ],
+  [
+   "beauty-aesop-a-rose-by-any-other-name-body-cleanser-500ml",
+   "이솝 어 로즈 바이 애니 아더 네임 바디 클렌저 500ml",
+   "Aesop A Rose By Any Other Name Body Cleanser 500ml",
+   "伊索 玫瑰身体洁肤露 500ml",
+   51
+  ],
+  [
+   "beauty-aesop-coriander-seed-body-cleanser-500ml",
+   "이솝 코리앤더 씨드 바디 클렌저 500ml",
+   "Aesop Coriander Seed Body Cleanser 500ml",
+   "伊索 芫荽籽身体洁肤露 500ml",
+   51
+  ],
+  [
+   "beauty-aesop-parsley-seed-cleansing-masque-60ml",
+   "이솝 파슬리 씨드 클렌징 마스크 60ml",
+   "Aesop Parsley Seed Cleansing Masque 60ml",
+   "伊索 香芹籽净化面膜 60ml",
+   49
+  ],
+  [
+   "beauty-aesop-parsley-seed-anti-oxidant-facial-toner-100ml",
+   "이솝 파슬리 씨드 안티 옥시던트 페이셜 토너 100ml",
+   "Aesop Parsley Seed Anti-Oxidant Facial Toner 100ml",
+   "伊索 香芹籽抗氧化爽肤水 100ml",
+   47
+  ],
+  [
+   "beauty-aesop-parsley-seed-facial-cleanser-100ml",
+   "이솝 파슬리 씨드 페이셜 클렌저 100ml",
+   "Aesop Parsley Seed Facial Cleanser 100ml",
+   "伊索 香芹籽洁面露 100ml",
+   45
+  ],
+  [
+   "beauty-aesop-resurrection-aromatique-hand-wash-500ml",
+   "이솝 레저렉션 아로마틱 핸드 워시 500ml",
+   "Aesop Resurrection Aromatique Hand Wash 500ml",
+   "伊索 赋活芳香洗手液 500ml",
+   43
+  ],
+  [
+   "beauty-aesop-reverence-aromatique-hand-wash-500ml",
+   "이솝 레버런스 아로마틱 핸드 워시 500ml",
+   "Aesop Reverence Aromatique Hand Wash 500ml",
+   "伊索 尊尚芳香洗手液 500ml",
+   43
+  ],
+  [
+   "beauty-aesop-geranium-leaf-body-scrub-180ml",
+   "이솝 제라늄 리프 바디 스크럽 180ml",
+   "Aesop Geranium Leaf Body Scrub 180ml",
+   "伊索 天竺葵身体磨砂膏 180ml",
+   40
+  ],
+  [
+   "beauty-aesop-rind-concentrate-body-balm-120ml",
+   "이솝 린드 컨센트레이트 바디 밤 120ml",
+   "Aesop Rind Concentrate Body Balm 120ml",
+   "伊索 苦橙香柠身体乳霜 120ml",
+   39
+  ],
+  [
+   "beauty-aesop-geranium-leaf-body-balm-100ml",
+   "이솝 제라늄 리프 바디 밤 100ml",
+   "Aesop Geranium Leaf Body Balm 100ml",
+   "伊索 天竺葵身体乳霜 100ml",
+   37
+  ],
+  [
+   "beauty-aesop-fabulous-face-cleanser-100ml",
+   "이솝 패뷸러스 페이스 클렌저 100ml",
+   "Aesop Fabulous Face Cleanser 100ml",
+   "伊索 菁萃洁面露 100ml",
+   35
+  ],
+  [
+   "beauty-aesop-deodorant-50ml",
+   "이솝 데오도란트 50ml",
+   "Aesop Déodorant 50ml",
+   "伊索 止汗喷雾 50ml",
+   35
+  ],
+  [
+   "beauty-aesop-post-poo-drops-100ml",
+   "이솝 포스트 푸 드롭스 100ml",
+   "Aesop Post-Poo Drops 100ml",
+   "伊索 卫浴香氛滴露 100ml",
+   35
+  ],
+  [
+   "beauty-aesop-resurrection-aromatique-hand-balm-75ml",
+   "이솝 레저렉션 아로마틱 핸드 밤 75ml",
+   "Aesop Resurrection Aromatique Hand Balm 75ml",
+   "伊索 赋活芳香护手霜 75ml",
+   33
+  ],
+  [
+   "beauty-aesop-reverence-aromatique-hand-balm-75ml",
+   "이솝 레버런스 아로마틱 핸드 밤 75ml",
+   "Aesop Reverence Aromatique Hand Balm 75ml",
+   "伊索 尊尚芳香护手霜 75ml",
+   33
+  ],
+  [
+   "beauty-aesop-mouthwash-500ml",
+   "이솝 마우스워시 500ml",
+   "Aesop Mouthwash 500ml",
+   "伊索 漱口水 500ml",
+   27
+  ],
+  [
+   "beauty-aesop-geranium-leaf-body-cleanser-100ml",
+   "이솝 제라늄 리프 바디 클렌저 100ml",
+   "Aesop Geranium Leaf Body Cleanser 100ml",
+   "伊索 天竺葵身体洁肤露 100ml",
+   19
+  ],
+  [
+   "beauty-aesop-shampoo-100ml",
+   "이솝 클래식 샴푸 100ml",
+   "Aesop Shampoo 100ml",
+   "伊索 洗发水 100ml",
+   19
+  ],
+  [
+   "beauty-aesop-protective-lip-balm-spf30-55g",
+   "이솝 프로텍티브 립 밤 SPF30 5.5g",
+   "Aesop Protective Lip Balm SPF30 5.5g",
+   "伊索 防护润唇膏 SPF30 5.5g",
+   19
+  ],
+  [
+   "beauty-aesop-rosehip-seed-lip-cream-6ml",
+   "이솝 로즈힙 씨드 립 크림 6ml",
+   "Aesop Rosehip Seed Lip Cream 6ml",
+   "伊索 玫瑰果籽润唇霜 6ml",
+   17
+  ],
+  [
+   "beauty-aesop-toothpaste-60ml",
+   "이솝 치약 60ml",
+   "Aesop Toothpaste 60ml",
+   "伊索 牙膏 60ml",
+   17
+  ],
+  [
+   "beauty-aesop-cedar-and-citrus-lip-salve-9ml",
+   "이솝 시더 앤 시트러스 립 살브 9ml",
+   "Aesop Cedar & Citrus Lip Salve 9ml",
+   "伊索 雪松柑橘润唇膏 9ml",
+   15
+  ]
+ ],
+ "use": [
+  "beauty-p-nivea-creme-400ml",
+  "beauty-p-okeeffes-working-hands-hand-cream-34oz",
+  "beauty-p-senka-perfect-whip-120g",
+  "beauty-p-peripera-ink-the-velvet",
+  "beauty-p-the-ordinary-caffeine-solution-5-plus-egcg-30ml",
+  "beauty-p-the-ordinary-squalane-cleanser-50ml",
+  "beauty-p-cetaphil-gentle-skin-cleanser-8oz",
+  "beauty-p-real-techniques-expert-face-brush",
+  "beauty-p-aquaphor-lip-repair-10ml",
+  "beauty-p-neutrogena-norwegian-formula-hand-cream-2oz",
+  "beauty-p-cosrx-acne-pimple-master-patch-24-patches",
+  "beauty-p-nyx-butter-gloss",
+  "beauty-p-the-ordinary-niacinamide-10-plus-zinc-1-30ml",
+  "beauty-p-the-ordinary-natural-moisturizing-factors-plus-ha-30ml",
+  "beauty-p-real-techniques-miracle-complexion-sponge",
+  "beauty-p-elf-halo-glow-liquid-filter",
+  "beauty-p-mediheal-teatree-essential-mask-10-sheets",
+  "beauty-p-tangle-teezer-the-original-detangling-hairbrush",
+  "beauty-p-bioderma-sensibio-h2o-250ml",
+  "beauty-p-cetaphil-gentle-skin-cleanser-16oz",
+  "beauty-p-biore-uv-aqua-rich-watery-essence-70g",
+  "beauty-p-cerave-hydrating-facial-cleanser-12oz",
+  "beauty-p-glossier-balm-dotcom",
+  "beauty-p-sol-de-janeiro-brazilian-bum-bum-cream-75ml",
+  "beauty-p-torriden-dive-low-molecular-hyaluronic-acid-serum-50ml",
+  "beauty-p-laneige-lip-sleeping-mask-20g",
+  "beauty-p-summer-fridays-lip-butter-balm",
+  "beauty-p-la-roche-posay-toleriane-double-repair-moisturizer-75ml",
+  "beauty-p-pmd-clean",
+  "beauty-p-chi-original-ceramic-hairstyling-iron-1-inch",
+  "beauty-p-omnilux-contour-face",
+  "beauty-p-foreo-bear-2",
+  "beauty-p-ghd-duet-style-2-in-1-hot-air-styler",
+  "beauty-p-ulike-air-10-ipl-hair-removal-device",
+  "beauty-p-ziip-halo",
+  "beauty-p-guerlain-orchidee-imperiale-the-cream-50ml",
+  "beauty-p-nuface-trinity-plus-complete-set",
+  "beauty-p-la-prairie-skin-caviar-eye-lift-20ml",
+  "beauty-p-guerlain-lart-and-la-matiere-angelique-noire-edp-200ml",
+  "beauty-p-sisley-sisleya-lintegral-anti-age-50ml",
+  "beauty-p-cle-de-peau-beaute-la-creme-30ml",
+  "beauty-p-celluma-elite-led-light-therapy-panel",
+  "beauty-p-guerlain-orchidee-imperiale-black-the-cream-50ml",
+  "beauty-p-joovv-solo-30",
+  "beauty-p-celluma-pro-led-light-therapy-panel",
+  "beauty-p-roja-parfums-haute-luxe-parfum-100ml",
+  "beauty-p-lyma-laser-pro-starter-kit",
+  "beauty-p-joovv-elite-30"
+ ]
+}

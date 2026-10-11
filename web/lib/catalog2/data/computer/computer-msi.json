@@ -1,0 +1,498 @@
+{
+ "slug": "computer-msi",
+ "items": [
+  [
+   "computer-msi-titan-18-hx-ai-rtx-5090",
+   "MSI 타이탄 18 HX AI Core Ultra 9 285HX RTX 5090",
+   "MSI Titan 18 HX AI Core Ultra 9 285HX RTX 5090",
+   "微星 泰坦 Titan 18 HX AI Core Ultra 9 285HX RTX 5090",
+   5999.99
+  ],
+  [
+   "computer-msi-meg-vision-x-ai-2nd-rtx-5090",
+   "MSI MEG 비전 X AI 2NVZ9 Core Ultra 9 285K RTX 5090",
+   "MSI MEG Vision X AI 2NVZ9 Core Ultra 9 285K RTX 5090",
+   "微星 MEG Vision X AI 2NVZ9 Core Ultra 9 285K RTX 5090",
+   5499.99
+  ],
+  [
+   "computer-msi-raider-18-hx-ai-rtx-5090",
+   "MSI 레이더 18 HX AI Core Ultra 9 285HX RTX 5090",
+   "MSI Raider 18 HX AI Core Ultra 9 285HX RTX 5090",
+   "微星 Raider 18 HX AI Core Ultra 9 285HX RTX 5090",
+   4499.99
+  ],
+  [
+   "computer-msi-creator-16-ai-studio-a1v",
+   "MSI 크리에이터 16 AI 스튜디오 A1V Core Ultra 9 RTX 4090",
+   "MSI Creator 16 AI Studio A1V Core Ultra 9 RTX 4090",
+   "微星 Creator 16 AI Studio A1V Core Ultra 9 RTX 4090",
+   3999.99
+  ],
+  [
+   "computer-msi-raider-18-hx-ai-rtx-5080",
+   "MSI 레이더 18 HX AI Core Ultra 9 285HX RTX 5080",
+   "MSI Raider 18 HX AI Core Ultra 9 285HX RTX 5080",
+   "微星 Raider 18 HX AI Core Ultra 9 285HX RTX 5080",
+   3599.99
+  ],
+  [
+   "computer-msi-mpg-infinite-x3-ai-rtx-5080",
+   "MSI MPG 인피니트 X3 AI Core Ultra 9 285K RTX 5080",
+   "MSI MPG Infinite X3 AI Core Ultra 9 285K RTX 5080",
+   "微星 MPG Infinite X3 AI Core Ultra 9 285K RTX 5080",
+   3199.99
+  ],
+  [
+   "computer-msi-creator-z17-hx-studio-a13v",
+   "MSI 크리에이터 Z17 HX 스튜디오 A13V Core i9-13950HX RTX 4070",
+   "MSI Creator Z17 HX Studio A13V Core i9-13950HX RTX 4070",
+   "微星 Creator Z17 HX Studio A13V Core i9-13950HX RTX 4070",
+   2999.99
+  ],
+  [
+   "computer-msi-vector-16-hx-ai-rtx-5080",
+   "MSI 벡터 16 HX AI Core Ultra 9 275HX RTX 5080",
+   "MSI Vector 16 HX AI Core Ultra 9 275HX RTX 5080",
+   "微星 Vector 16 HX AI Core Ultra 9 275HX RTX 5080",
+   2899.99
+  ],
+  [
+   "computer-msi-rtx-5090-suprim-liquid-soc",
+   "MSI 지포스 RTX 5090 32G 슈프림 리퀴드 SOC",
+   "MSI GeForce RTX 5090 32G SUPRIM LIQUID SOC",
+   "微星 GeForce RTX 5090 32G SUPRIM LIQUID SOC",
+   2799.99
+  ],
+  [
+   "computer-msi-rtx-5090-gaming-trio-oc",
+   "MSI 지포스 RTX 5090 32G 게이밍 트리오 OC",
+   "MSI GeForce RTX 5090 32G GAMING TRIO OC",
+   "微星 GeForce RTX 5090 32G GAMING TRIO OC",
+   2599.99
+  ],
+  [
+   "computer-msi-crosshair-16-hx-ai",
+   "MSI 크로스헤어 16 HX AI Core Ultra 7 255HX RTX 5070",
+   "MSI Crosshair 16 HX AI Core Ultra 7 255HX RTX 5070",
+   "微星 Crosshair 16 HX AI Core Ultra 7 255HX RTX 5070",
+   1999.99
+  ],
+  [
+   "computer-msi-prestige-16-ai-studio-b1v",
+   "MSI 프레스티지 16 AI 스튜디오 B1V Core Ultra 7 RTX 4060",
+   "MSI Prestige 16 AI Studio B1V Core Ultra 7 RTX 4060",
+   "微星 Prestige 16 AI Studio B1V Core Ultra 7 RTX 4060",
+   1899.99
+  ],
+  [
+   "computer-msi-aegis-r2-rtx-5070",
+   "MSI 이지스 R2 게이밍 데스크톱 Core Ultra 7 RTX 5070",
+   "MSI Aegis R2 Gaming Desktop Core Ultra 7 RTX 5070",
+   "微星 Aegis R2 游戏台式机 Core Ultra 7 RTX 5070",
+   1699.99
+  ],
+  [
+   "computer-msi-summit-13-ai-plus-evo",
+   "MSI 서밋 13 AI+ Evo Core Ultra 7 258V 32GB 1TB",
+   "MSI Summit 13 AI+ Evo Core Ultra 7 258V 32GB 1TB",
+   "微星 Summit 13 AI+ Evo Core Ultra 7 258V 32GB 1TB",
+   1599.99
+  ],
+  [
+   "computer-msi-rtx-5080-suprim-soc",
+   "MSI 지포스 RTX 5080 16G 슈프림 SOC",
+   "MSI GeForce RTX 5080 16G SUPRIM SOC",
+   "微星 GeForce RTX 5080 16G SUPRIM SOC",
+   1499.99
+  ],
+  [
+   "computer-msi-prestige-16-ai-evo-b1m",
+   "MSI 프레스티지 16 AI Evo B1M Core Ultra 7 32GB 1TB",
+   "MSI Prestige 16 AI Evo B1M Core Ultra 7 32GB 1TB",
+   "微星 Prestige 16 AI Evo B1M Core Ultra 7 32GB 1TB",
+   1399.99
+  ],
+  [
+   "computer-msi-prestige-13-ai-plus-evo",
+   "MSI 프레스티지 13 AI+ Evo A2VM Core Ultra 7 258V 32GB 1TB",
+   "MSI Prestige 13 AI+ Evo A2VM Core Ultra 7 258V 32GB 1TB",
+   "微星 Prestige 13 AI+ Evo A2VM Core Ultra 7 258V 32GB 1TB",
+   1399.99
+  ],
+  [
+   "computer-msi-rtx-5080-gaming-trio-oc",
+   "MSI 지포스 RTX 5080 16G 게이밍 트리오 OC",
+   "MSI GeForce RTX 5080 16G GAMING TRIO OC",
+   "微星 GeForce RTX 5080 16G GAMING TRIO OC",
+   1349.99
+  ],
+  [
+   "computer-msi-katana-15-hx-rtx-5060",
+   "MSI 카타나 15 HX Core i7-14650HX RTX 5060",
+   "MSI Katana 15 HX Core i7-14650HX RTX 5060",
+   "微星 Katana 15 HX Core i7-14650HX RTX 5060",
+   1299.99
+  ],
+  [
+   "computer-msi-meg-z890-godlike",
+   "MSI MEG Z890 GODLIKE 메인보드",
+   "MSI MEG Z890 GODLIKE Motherboard",
+   "微星 MEG Z890 GODLIKE 主板",
+   1199.99
+  ],
+  [
+   "computer-msi-meg-x870e-godlike",
+   "MSI MEG X870E GODLIKE 메인보드",
+   "MSI MEG X870E GODLIKE Motherboard",
+   "微星 MEG X870E GODLIKE 主板",
+   1099.99
+  ],
+  [
+   "computer-msi-mpg-272urx-qd-oled",
+   "MSI MPG 272URX QD-OLED 27인치 4K 240Hz",
+   "MSI MPG 272URX QD-OLED 27-inch 4K 240Hz",
+   "微星 MPG 272URX QD-OLED 27英寸 4K 240Hz",
+   1099.99
+  ],
+  [
+   "computer-msi-mpg-321urx-qd-oled",
+   "MSI MPG 321URX QD-OLED 32인치 4K 240Hz",
+   "MSI MPG 321URX QD-OLED 32-inch 4K 240Hz",
+   "微星 MPG 321URX QD-OLED 32英寸 4K 240Hz",
+   949.99
+  ],
+  [
+   "computer-msi-mpg-341cqpx-qd-oled",
+   "MSI MPG 341CQPX QD-OLED 34인치 UWQHD 240Hz",
+   "MSI MPG 341CQPX QD-OLED 34-inch UWQHD 240Hz",
+   "微星 MPG 341CQPX QD-OLED 34英寸 UWQHD 240Hz",
+   899.99
+  ],
+  [
+   "computer-msi-cyborg-15-rtx-4050",
+   "MSI 사이보그 15 Core i7 RTX 4050 16GB 512GB",
+   "MSI Cyborg 15 Core i7 RTX 4050 16GB 512GB",
+   "微星 Cyborg 15 Core i7 RTX 4050 16GB 512GB",
+   899.99
+  ],
+  [
+   "computer-msi-rtx-5070-ti-ventus-3x-oc",
+   "MSI 지포스 RTX 5070 Ti 16G 벤투스 3X OC",
+   "MSI GeForce RTX 5070 Ti 16G VENTUS 3X OC",
+   "微星 GeForce RTX 5070 Ti 16G VENTUS 3X OC",
+   879.99
+  ],
+  [
+   "computer-msi-mag-271qpx-qd-oled-e2",
+   "MSI MAG 271QPX QD-OLED E2 27인치 QHD 240Hz",
+   "MSI MAG 271QPX QD-OLED E2 27-inch QHD 240Hz",
+   "微星 MAG 271QPX QD-OLED E2 27英寸 QHD 240Hz",
+   699.99
+  ],
+  [
+   "computer-msi-meg-z890-ace",
+   "MSI MEG Z890 ACE 메인보드",
+   "MSI MEG Z890 ACE Motherboard",
+   "微星 MEG Z890 ACE 主板",
+   649.99
+  ],
+  [
+   "computer-msi-meg-ai1600t-pcie5",
+   "MSI MEG Ai1600T PCIE5 파워서플라이",
+   "MSI MEG Ai1600T PCIE5 Power Supply",
+   "微星 MEG Ai1600T PCIE5 电源",
+   599.99
+  ],
+  [
+   "computer-msi-modern-15",
+   "MSI 모던 15 Core i5 16GB 512GB",
+   "MSI Modern 15 Core i5 16GB 512GB",
+   "微星 Modern 15 Core i5 16GB 512GB",
+   599.99
+  ],
+  [
+   "computer-msi-rtx-5070-ventus-2x-oc",
+   "MSI 지포스 RTX 5070 12G 벤투스 2X OC",
+   "MSI GeForce RTX 5070 12G VENTUS 2X OC",
+   "微星 GeForce RTX 5070 12G VENTUS 2X OC",
+   549.99
+  ],
+  [
+   "computer-msi-mpg-x870e-carbon-wifi",
+   "MSI MPG X870E CARBON WIFI 메인보드",
+   "MSI MPG X870E CARBON WIFI Motherboard",
+   "微星 MPG X870E CARBON WIFI 主板",
+   499.99
+  ],
+  [
+   "computer-msi-meg-prospect-700r",
+   "MSI MEG 프로스펙트 700R 풀타워 케이스",
+   "MSI MEG Prospect 700R Full-Tower Case",
+   "微星 MEG Prospect 700R 全塔机箱",
+   399.99
+  ],
+  [
+   "computer-msi-meg-ai1300p-pcie5",
+   "MSI MEG Ai1300P PCIE5 파워서플라이",
+   "MSI MEG Ai1300P PCIE5 Power Supply",
+   "微星 MEG Ai1300P PCIE5 电源",
+   339.99
+  ],
+  [
+   "computer-msi-mag-274qrf-qd-e2",
+   "MSI MAG 274QRF QD E2 27인치 QHD 180Hz",
+   "MSI MAG 274QRF QD E2 27-inch QHD 180Hz",
+   "微星 MAG 274QRF QD E2 27英寸 QHD 180Hz",
+   329.99
+  ],
+  [
+   "computer-msi-rtx-5060-ventus-2x-oc",
+   "MSI 지포스 RTX 5060 8G 벤투스 2X OC",
+   "MSI GeForce RTX 5060 8G VENTUS 2X OC",
+   "微星 GeForce RTX 5060 8G VENTUS 2X OC",
+   299.99
+  ],
+  [
+   "computer-msi-mag-x870-tomahawk-wifi",
+   "MSI MAG X870 TOMAHAWK WIFI 메인보드",
+   "MSI MAG X870 TOMAHAWK WIFI Motherboard",
+   "微星 MAG X870 TOMAHAWK WIFI 主板",
+   299.99
+  ],
+  [
+   "computer-msi-meg-coreliquid-s360",
+   "MSI MEG 코어리퀴드 S360 수랭 쿨러",
+   "MSI MEG CORELIQUID S360 AIO Cooler",
+   "微星 MEG CORELIQUID S360 一体式水冷",
+   279.99
+  ],
+  [
+   "computer-msi-g274qpf-e2",
+   "MSI G274QPF E2 27인치 QHD 180Hz",
+   "MSI G274QPF E2 27-inch QHD 180Hz",
+   "微星 G274QPF E2 27英寸 QHD 180Hz",
+   249.99
+  ],
+  [
+   "computer-msi-mag-b850-tomahawk-max-wifi",
+   "MSI MAG B850 TOMAHAWK MAX WIFI 메인보드",
+   "MSI MAG B850 TOMAHAWK MAX WIFI Motherboard",
+   "微星 MAG B850 TOMAHAWK MAX WIFI 主板",
+   229.99
+  ],
+  [
+   "computer-msi-mpg-a1000g-pcie5",
+   "MSI MPG A1000G PCIE5 파워서플라이",
+   "MSI MPG A1000G PCIE5 Power Supply",
+   "微星 MPG A1000G PCIE5 电源",
+   179.99
+  ],
+  [
+   "computer-msi-spatium-m480-pro-2tb",
+   "MSI 스파티움 M480 PRO 2TB NVMe SSD",
+   "MSI SPATIUM M480 PRO 2TB NVMe SSD",
+   "微星 SPATIUM M480 PRO 2TB 固态硬盘",
+   169.99
+  ],
+  [
+   "computer-msi-usb-c-docking-station-gen-2",
+   "MSI USB-C 도킹 스테이션 Gen 2",
+   "MSI USB-C Docking Station Gen 2",
+   "微星 USB-C 扩展坞 Gen 2",
+   169.99
+  ],
+  [
+   "computer-msi-mpg-gungnir-300r-airflow",
+   "MSI MPG 궁니르 300R 에어플로우 케이스",
+   "MSI MPG GUNGNIR 300R AIRFLOW Case",
+   "微星 MPG GUNGNIR 300R AIRFLOW 机箱",
+   149.99
+  ],
+  [
+   "computer-msi-g244f-e2",
+   "MSI G244F E2 24인치 FHD 180Hz",
+   "MSI G244F E2 24-inch FHD 180Hz",
+   "微星 G244F E2 24英寸 FHD 180Hz",
+   149.99
+  ],
+  [
+   "computer-msi-immerse-gv60",
+   "MSI 이머스 GV60 스트리밍 마이크",
+   "MSI Immerse GV60 Streaming Mic",
+   "微星 Immerse GV60 直播麦克风",
+   129.99
+  ],
+  [
+   "computer-msi-mag-a850gl-pcie5",
+   "MSI MAG A850GL PCIE5 파워서플라이",
+   "MSI MAG A850GL PCIE5 Power Supply",
+   "微星 MAG A850GL PCIE5 电源",
+   119.99
+  ],
+  [
+   "computer-msi-vigor-gk71-sonic",
+   "MSI 비거 GK71 소닉 기계식 키보드",
+   "MSI Vigor GK71 Sonic Mechanical Keyboard",
+   "微星 Vigor GK71 Sonic 机械键盘",
+   109.99
+  ],
+  [
+   "computer-msi-mag-coreliquid-a13-360",
+   "MSI MAG 코어리퀴드 A13 360 수랭 쿨러",
+   "MSI MAG CORELIQUID A13 360 AIO Cooler",
+   "微星 MAG CORELIQUID A13 360 一体式水冷",
+   109.99
+  ],
+  [
+   "computer-msi-clutch-gm51-lightweight-wireless",
+   "MSI 클러치 GM51 라이트웨이트 와이어리스",
+   "MSI Clutch GM51 Lightweight Wireless",
+   "微星 Clutch GM51 Lightweight Wireless 无线鼠标",
+   99.99
+  ],
+  [
+   "computer-msi-pro-mp243x",
+   "MSI PRO MP243X 23.8인치 FHD 100Hz 모니터",
+   "MSI PRO MP243X 23.8-inch FHD 100Hz Monitor",
+   "微星 PRO MP243X 23.8英寸 FHD 100Hz 显示器",
+   99.99
+  ],
+  [
+   "computer-msi-mag-pano-m100r-pz",
+   "MSI MAG PANO M100R PZ 케이스",
+   "MSI MAG PANO M100R PZ Case",
+   "微星 MAG PANO M100R PZ 机箱",
+   99.99
+  ],
+  [
+   "computer-msi-vigor-gk50-elite",
+   "MSI 비거 GK50 엘리트 기계식 키보드",
+   "MSI Vigor GK50 Elite Mechanical Keyboard",
+   "微星 Vigor GK50 Elite 机械键盘",
+   79.99
+  ],
+  [
+   "computer-msi-mag-forge-321r-airflow",
+   "MSI MAG 포지 321R 에어플로우 케이스",
+   "MSI MAG FORGE 321R AIRFLOW Case",
+   "微星 MAG FORGE 321R AIRFLOW 机箱",
+   79.99
+  ],
+  [
+   "computer-msi-pen-2",
+   "MSI 펜 2",
+   "MSI Pen 2",
+   "微星 MSI Pen 2 手写笔",
+   79.99
+  ],
+  [
+   "computer-msi-mag-a650bn",
+   "MSI MAG A650BN 파워서플라이",
+   "MSI MAG A650BN Power Supply",
+   "微星 MAG A650BN 电源",
+   59.99
+  ],
+  [
+   "computer-msi-clutch-gm41-lightweight-v2",
+   "MSI 클러치 GM41 라이트웨이트 V2",
+   "MSI Clutch GM41 Lightweight V2",
+   "微星 Clutch GM41 Lightweight V2 鼠标",
+   54.99
+  ],
+  [
+   "computer-msi-vigor-gk30",
+   "MSI 비거 GK30 게이밍 키보드",
+   "MSI Vigor GK30 Gaming Keyboard",
+   "微星 Vigor GK30 游戏键盘",
+   44.99
+  ],
+  [
+   "computer-msi-clutch-gm31-lightweight",
+   "MSI 클러치 GM31 라이트웨이트",
+   "MSI Clutch GM31 Lightweight",
+   "微星 Clutch GM31 Lightweight 鼠标",
+   39.99
+  ],
+  [
+   "computer-msi-guax18",
+   "MSI AX1800 와이파이 USB 어댑터 GUAX18",
+   "MSI AX1800 WiFi USB Adapter GUAX18",
+   "微星 AX1800 WiFi USB 网卡 GUAX18",
+   34.99
+  ],
+  [
+   "computer-msi-immerse-gh20",
+   "MSI 이머스 GH20 게이밍 헤드셋",
+   "MSI Immerse GH20 Gaming Headset",
+   "微星 Immerse GH20 游戏耳机",
+   29.99
+  ],
+  [
+   "computer-msi-agility-gd70",
+   "MSI 어질리티 GD70 마우스패드",
+   "MSI Agility GD70 Mouse Pad",
+   "微星 Agility GD70 鼠标垫",
+   29.99
+  ],
+  [
+   "computer-msi-clutch-gm08",
+   "MSI 클러치 GM08 게이밍 마우스",
+   "MSI Clutch GM08 Gaming Mouse",
+   "微星 Clutch GM08 游戏鼠标",
+   19.99
+  ],
+  [
+   "computer-msi-agility-gd30",
+   "MSI 어질리티 GD30 마우스패드",
+   "MSI Agility GD30 Mouse Pad",
+   "微星 Agility GD30 鼠标垫",
+   17.99
+  ],
+  [
+   "computer-msi-agility-gd20",
+   "MSI 어질리티 GD20 마우스패드",
+   "MSI Agility GD20 Mouse Pad",
+   "微星 Agility GD20 鼠标垫",
+   9.99
+  ]
+ ],
+ "use": [
+  "computer-p-anker-735-nano-ii-65w",
+  "computer-p-royal-kludge-rk61",
+  "computer-p-steelseries-apex-3",
+  "computer-p-xp-pen-deco-01-v2",
+  "computer-p-kingston-dt-exodia-onyx-128gb",
+  "computer-p-ugreen-hdmi-2-1-cable-2m",
+  "computer-p-raspberry-pi-27w-psu",
+  "computer-p-wd-black-sn850x-1tb",
+  "computer-p-raspberry-pi-500",
+  "computer-p-pulsar-x2-v2",
+  "computer-p-nzxt-h5-flow",
+  "computer-p-8bitdo-retro-mechanical-keyboard",
+  "computer-p-arctic-liquid-freezer-iii-360",
+  "computer-p-obsbot-meet-2",
+  "computer-p-ubiquiti-u6-plus",
+  "computer-p-nuphy-air75-v2",
+  "computer-p-mikrotik-hap-ax3",
+  "computer-p-fractal-north",
+  "computer-p-nzxt-h9-elite",
+  "computer-p-realforce-rc1",
+  "computer-p-apc-br1500ms2",
+  "computer-p-asrock-arc-b580-challenger",
+  "computer-p-crucial-t705-2tb",
+  "computer-p-synology-ds423-plus",
+  "computer-p-xppen-magic-drawing-pad",
+  "computer-p-zotac-rtx-5070-twin-edge",
+  "computer-p-seasonic-prime-tx-1600",
+  "computer-p-qnap-ts-464",
+  "computer-p-huion-kamvas-pro-19",
+  "computer-p-apc-smart-ups-srt5krmxlt",
+  "computer-p-sandisk-pro-g-raid-shuttle-8-96tb",
+  "computer-p-solidigm-d5-p5336-61tb",
+  "computer-p-synology-fs3410",
+  "computer-p-tinybox-red",
+  "computer-p-flanders-scientific-xmp550",
+  "computer-p-tinybox-pro"
+ ]
+}

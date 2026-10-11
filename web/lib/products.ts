@@ -383,6 +383,14 @@ export const isOwnItem = (box: Pick<ProductBox, "slug" | "scheme">, item: Pick<P
  * 박스의 얼굴이 되는 상품들: 값이 큰 순서. 새 카탈로그의 박스는 자기 상품이 먼저 온다(롤렉스 박스의 얼굴은 롤렉스여야 한다).
  * 사진이 있는 것을 먼저 찾을 때는 withPhoto 를 준다.
  */
+/**
+ * 박스의 얼굴 하나(홈 카드와 박스 화면 맨 위). 자기 상품 가운데 사진이 있는 가장 값진 것.
+ * 자기 상품에 사진이 하나도 없으면 가장 값진 자기 상품을 사진 없이 돌려준다(다른 브랜드의 사진을 그 박스의 얼굴로 쓰지 않는다).
+ */
+export const faceOf = (box: ProductBox): ProductItem | undefined => {
+  const own = box.items.filter((i) => i.kind !== "cash" && isOwnItem(box, i)).sort((a, b) => b.value - a.value);
+  return own.find((i) => i.image.src) ?? own[0];
+};
 export const faceItems = (box: ProductBox, withPhoto = false): ProductItem[] => {
   const real = box.items.filter((i) => i.kind !== "cash" && (!withPhoto || i.image.src));
   const byValue = (a: ProductItem, b: ProductItem) => b.value - a.value;

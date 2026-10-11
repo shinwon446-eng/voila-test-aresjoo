@@ -13,7 +13,7 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 import { CreditCard, Coins, Package } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { BOXES, REFUND_RATE, cashReturn, ceilingTimes, ceilingValue, dropTable, formatRate, faceItems, isLadderBox, mostCommon, retailReturn, type ProductBox, type ProductItem } from "@/lib/products";
+import { BOXES, REFUND_RATE, cashReturn, ceilingTimes, ceilingValue, dropTable, formatRate, faceOf, isLadderBox, mostCommon, retailReturn, type ProductBox, type ProductItem } from "@/lib/products";
 import { TIERS, tierOf, type TierKey } from "@/lib/tiers";
 import { COUNTRIES } from "@/lib/shipping";
 import { OPEN_PRESETS } from "@/lib/autoplay";
@@ -45,7 +45,6 @@ const TIER_LABEL: Record<TierKey, string> = { royal: "box.tierRoyal", prestige: 
 /** 위 구간은 큰 카드, 아래로 갈수록 작은 카드. 등급은 색이 아니라 크기와 글로 구분한다 */
 const TIER_SIZE: Record<TierKey, "l" | "m" | "s"> = { royal: "l", prestige: "m", executive: "m", curated: "s" };
 /** 첫 화면 사진 띠에 올리는 실물 수 */
-const STRIP_MAX = 12;
 
 export function BoxScreen({ box }: { box: ProductBox }) {
   const t = useTranslations("v");
@@ -83,7 +82,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
     return { key: tier.key, items, rate: +items.reduce((sum, i) => sum + i.dropRate, 0).toFixed(4) };
   }).filter((g) => g.items.length > 0), [table, box.price]);
   // 첫 화면 사진 띠: 사진 있는 실물을 값이 큰 순서로
-  const strip = useMemo(() => faceItems(box, true).slice(0, STRIP_MAX), [box]);
+  const strip = useMemo(() => { const face = faceOf(box); return face?.image.src ? [face] : []; }, [box]);
   // 실물(현금 아닌 것)이 하나라도 나올 확률의 합. 카드와 띠 머리에 그대로 적는다
   const realOdds = useMemo(() => +table.filter((i) => i.kind !== "cash" && !i.id.startsWith("wave-")).reduce((s, i) => s + i.dropRate, 0).toFixed(4), [table]);
   // 낸 값보다 적게 받는 결과의 확률 합(상품은 USDT 로 받을 때의 금액으로 본다). 가장 흔한 결과 하나의 확률과는 다른 숫자다

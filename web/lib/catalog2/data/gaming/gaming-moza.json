@@ -1,0 +1,305 @@
+{
+ "slug": "gaming-moza",
+ "items": [
+  [
+   "gaming-moza-moza-r25-ultra-wheel-base",
+   "MOZA R25 울트라 휠 베이스",
+   "MOZA R25 Ultra Wheel Base",
+   "MOZA R25 Ultra 直驱基座",
+   1499
+  ],
+  [
+   "gaming-moza-moza-r21-ultra-wheel-base",
+   "MOZA R21 울트라 휠 베이스",
+   "MOZA R21 Ultra Wheel Base",
+   "MOZA R21 Ultra 直驱基座",
+   1199
+  ],
+  [
+   "gaming-moza-moza-r21-v2-wheel-base",
+   "MOZA R21 V2 휠 베이스",
+   "MOZA R21 V2 Wheel Base",
+   "MOZA R21 V2 直驱基座",
+   1099
+  ],
+  [
+   "gaming-moza-moza-r16-v2-wheel-base",
+   "MOZA R16 V2 휠 베이스",
+   "MOZA R16 V2 Wheel Base",
+   "MOZA R16 V2 直驱基座",
+   899
+  ],
+  [
+   "gaming-moza-moza-vision-gs-steering-wheel",
+   "MOZA 비전 GS 스티어링 휠",
+   "MOZA Vision GS Steering Wheel",
+   "MOZA Vision GS 方向盘",
+   849
+  ],
+  [
+   "gaming-moza-moza-fsr2-formula-wheel",
+   "MOZA FSR2 포뮬러 휠",
+   "MOZA FSR2 Formula Wheel",
+   "MOZA FSR2 方程式方向盘",
+   699
+  ],
+  [
+   "gaming-moza-moza-fsr-formula-wheel",
+   "MOZA FSR 포뮬러 휠",
+   "MOZA FSR Formula Wheel",
+   "MOZA FSR 方程式方向盘",
+   649
+  ],
+  [
+   "gaming-moza-moza-ab9-ffb-base",
+   "MOZA AB9 FFB 플라이트 베이스",
+   "MOZA AB9 FFB Base",
+   "MOZA AB9 FFB 力反馈飞行基座",
+   599
+  ],
+  [
+   "gaming-moza-moza-r12-wheel-base",
+   "MOZA R12 휠 베이스",
+   "MOZA R12 Wheel Base",
+   "MOZA R12 直驱基座",
+   589
+  ],
+  [
+   "gaming-moza-moza-crp-pedals",
+   "MOZA CRP 페달",
+   "MOZA CRP Pedals",
+   "MOZA CRP 踏板",
+   559
+  ],
+  [
+   "gaming-moza-moza-r5-bundle",
+   "MOZA R5 번들",
+   "MOZA R5 Bundle",
+   "MOZA R5 直驱套装",
+   499
+  ],
+  [
+   "gaming-moza-moza-gs-v2p-gt-wheel",
+   "MOZA GS V2P GT 휠",
+   "MOZA GS V2P GT Wheel",
+   "MOZA GS V2P GT 方向盘",
+   499
+  ],
+  [
+   "gaming-moza-moza-rs-v2-steering-wheel",
+   "MOZA RS V2 스티어링 휠",
+   "MOZA RS V2 Steering Wheel",
+   "MOZA RS V2 方向盘",
+   459
+  ],
+  [
+   "gaming-moza-moza-r9-v2-wheel-base",
+   "MOZA R9 V2 휠 베이스",
+   "MOZA R9 V2 Wheel Base",
+   "MOZA R9 V2 直驱基座",
+   439
+  ],
+  [
+   "gaming-moza-moza-crp2-pedals",
+   "MOZA CRP2 페달",
+   "MOZA CRP2 Pedals",
+   "MOZA CRP2 踏板",
+   439
+  ],
+  [
+   "gaming-moza-moza-r3-bundle-for-xbox-and-pc",
+   "MOZA R3 번들 Xbox PC용",
+   "MOZA R3 Bundle for Xbox and PC",
+   "MOZA R3 Xbox PC 直驱套装",
+   399
+  ],
+  [
+   "gaming-moza-moza-tsw-truck-wheel",
+   "MOZA TSW 트럭 휠",
+   "MOZA TSW Truck Wheel",
+   "MOZA TSW 卡车方向盘",
+   349
+  ],
+  [
+   "gaming-moza-moza-r5-wheel-base",
+   "MOZA R5 휠 베이스",
+   "MOZA R5 Wheel Base",
+   "MOZA R5 直驱基座",
+   319
+  ],
+  [
+   "gaming-moza-moza-cs-v2p-steering-wheel",
+   "MOZA CS V2P 스티어링 휠",
+   "MOZA CS V2P Steering Wheel",
+   "MOZA CS V2P 方向盘",
+   279
+  ],
+  [
+   "gaming-moza-moza-ks-steering-wheel",
+   "MOZA KS 스티어링 휠",
+   "MOZA KS Steering Wheel",
+   "MOZA KS 方向盘",
+   279
+  ],
+  [
+   "gaming-moza-moza-sr-p-pedals-3-pedal-set",
+   "MOZA SR-P 페달 3페달",
+   "MOZA SR-P Pedals 3-Pedal Set",
+   "MOZA SR-P 三踏板套装",
+   269
+  ],
+  [
+   "gaming-moza-moza-cm2-hd-racing-dash",
+   "MOZA CM2 HD 레이싱 대시",
+   "MOZA CM2 HD Racing Dash",
+   "MOZA CM2 HD 赛车仪表",
+   229
+  ],
+  [
+   "gaming-moza-moza-rm-hd-racing-meter",
+   "MOZA RM HD 레이싱 미터",
+   "MOZA RM HD Racing Meter",
+   "MOZA RM HD 赛车仪表",
+   199
+  ],
+  [
+   "gaming-moza-moza-sgp-sequential-shifter",
+   "MOZA SGP 시퀀셜 시프터",
+   "MOZA SGP Sequential Shifter",
+   "MOZA SGP 序列式排挡",
+   169
+  ],
+  [
+   "gaming-moza-moza-hgp-shifter",
+   "MOZA HGP 시프터",
+   "MOZA HGP Shifter",
+   "MOZA HGP H 档排挡",
+   149
+  ],
+  [
+   "gaming-moza-moza-mh16-flightstick",
+   "MOZA MH16 플라이트스틱",
+   "MOZA MH16 Flightstick",
+   "MOZA MH16 飞行摇杆握把",
+   149
+  ],
+  [
+   "gaming-moza-moza-es-steering-wheel",
+   "MOZA ES 스티어링 휠",
+   "MOZA ES Steering Wheel",
+   "MOZA ES 方向盘",
+   129
+  ],
+  [
+   "gaming-moza-moza-hbp-handbrake",
+   "MOZA HBP 핸드브레이크",
+   "MOZA HBP Handbrake",
+   "MOZA HBP 手刹",
+   119
+  ],
+  [
+   "gaming-moza-moza-multi-function-stalks",
+   "MOZA 멀티펑션 스토크",
+   "MOZA Multi-function Stalks",
+   "MOZA 多功能拨杆",
+   119
+  ],
+  [
+   "gaming-moza-moza-sr-p-lite-pedals-2-pedal-set",
+   "MOZA SR-P 라이트 페달 2페달",
+   "MOZA SR-P Lite Pedals 2-Pedal Set",
+   "MOZA SR-P Lite 双踏板套装",
+   89
+  ],
+  [
+   "gaming-moza-moza-quick-release-adapter",
+   "MOZA 퀵 릴리스 어댑터",
+   "MOZA Quick Release Adapter",
+   "MOZA 快拆适配器",
+   59
+  ],
+  [
+   "gaming-moza-moza-table-clamp",
+   "MOZA 테이블 클램프",
+   "MOZA Table Clamp",
+   "MOZA 桌面夹具",
+   49
+  ],
+  [
+   "gaming-moza-moza-sr-p-lite-clutch-pedal",
+   "MOZA SR-P 라이트 클러치 페달",
+   "MOZA SR-P Lite Clutch Pedal",
+   "MOZA SR-P Lite 离合踏板",
+   39
+  ]
+ ],
+ "use": [
+  "gaming-p-endgame-gear-mpc450-cordura-mouse-pad",
+  "gaming-p-genki-aegis-shield-for-nintendo-switch-2",
+  "gaming-p-kontrolfreek-fps-freek-galaxy",
+  "gaming-p-powera-play-and-charge-kit-for-xbox-series-x-s",
+  "gaming-p-glorious-padded-keyboard-wrist-rest-full-size",
+  "gaming-p-tomtoc-slim-carrying-case-for-nintendo-switch-oled",
+  "gaming-p-benq-zowie-camade-ii-mouse-bungee",
+  "gaming-p-gamesir-nova-lite-wireless-controller",
+  "gaming-p-glorious-xl-extended-mouse-pad-16x36",
+  "gaming-p-horipad-wired-controller-for-nintendo-switch",
+  "gaming-p-powera-twin-charging-station-for-dualsense-wireless",
+  "gaming-p-arctic-mx-4-thermal-compound-4g",
+  "gaming-p-playvital-thumb-grip-caps-for-ps5-controller",
+  "gaming-p-sandisk-ultra-microsdhc-32gb",
+  "gaming-p-amazon-basics-high-speed-hdmi-cable-6ft",
+  "gaming-p-anker-310-usb-a-to-usb-c-cable-6ft",
+  "gaming-p-jsaux-docking-station-hb0603-for-steam-deck",
+  "gaming-p-meta-quest-3-silicone-facial-interface",
+  "gaming-p-my-arcade-pac-man-micro-player-pro",
+  "gaming-p-gamesir-g7-se-wired-controller-for-xbox",
+  "gaming-p-sandisk-microsd-express-128gb",
+  "gaming-p-gamesir-cyclone-2-wireless-controller",
+  "gaming-p-genki-shadowcast-2",
+  "gaming-p-glorious-3xl-extended-mouse-pad-24x48",
+  "gaming-p-glorious-gpbt-keycaps-set",
+  "gaming-p-glorious-model-o-wired-gaming-mouse",
+  "gaming-p-hori-fighting-stick-mini-for-playstation-5",
+  "gaming-p-hori-split-pad-pro-for-nintendo-switch",
+  "gaming-p-artisan-ninja-fx-zero-xsoft-mouse-pad-l",
+  "gaming-p-dayton-audio-bst-1-bass-shaker",
+  "gaming-p-genki-covert-dock-2",
+  "gaming-p-hori-fighting-commander-octa-for-playstation-5",
+  "gaming-p-hori-piranha-plant-camera-for-nintendo-switch-2",
+  "gaming-p-hori-wireless-horipad-for-steam",
+  "gaming-p-hypermegatech-super-pocket-capcom-edition",
+  "gaming-p-sandisk-microsd-express-256gb",
+  "gaming-p-anbernic-rg35xx-sp",
+  "gaming-p-fifine-ampligame-am8-dynamic-microphone",
+  "gaming-p-glorious-gmmk-2-65-mechanical-keyboard",
+  "gaming-p-hori-racing-wheel-apex-for-playstation-5",
+  "gaming-p-lamzu-maya-x-wireless-gaming-mouse",
+  "gaming-p-rode-psa1-plus-studio-boom-arm",
+  "gaming-p-aoc-24g4-24-inch-180hz-gaming-monitor",
+  "gaming-p-atari-2600-plus",
+  "gaming-p-atari-7800-plus",
+  "gaming-p-fiio-k11-desktop-dac-and-amplifier",
+  "gaming-p-retroid-pocket-5",
+  "gaming-p-analogue-pocket",
+  "gaming-p-panic-playdate",
+  "gaming-p-buttkicker-gamer-plus",
+  "gaming-p-next-level-racing-wheel-stand-2-0",
+  "gaming-p-jbl-quantum-910-wireless-gaming-headset",
+  "gaming-p-sim-lab-p1x-pro-cockpit",
+  "gaming-p-htc-vive-focus-vision",
+  "gaming-p-samsung-odyssey-oled-g9-g95sc-49-inch",
+  "gaming-p-herman-miller-aeron-gaming-chair",
+  "gaming-p-nvidia-geforce-rtx-5090-founders-edition",
+  "gaming-p-lg-oled-evo-c5-55-inch-4k-tv",
+  "gaming-p-lg-ultragear-oled-45gx950a-45-inch-5k2k",
+  "gaming-p-samsung-neo-qled-8k-qn900f-75-inch-tv",
+  "gaming-p-alienware-area-51-gaming-desktop-rtx-5080",
+  "gaming-p-lg-oled-evo-g5-77-inch-4k-tv",
+  "gaming-p-samsung-oled-s95f-77-inch-4k-tv",
+  "gaming-p-samsung-neo-qled-8k-qn990f-85-inch-tv",
+  "gaming-p-stern-pinball-godzilla-premium",
+  "gaming-p-samsung-neo-qled-qn90f-115-inch-4k-tv",
+  "gaming-p-hisense-116ux-116-inch-trichroma-led-tv"
+ ]
+}

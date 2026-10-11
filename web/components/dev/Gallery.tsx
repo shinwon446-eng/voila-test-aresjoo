@@ -115,7 +115,7 @@ export function Gallery() {
       <Confirm open={confirm === "cancel"} onCancel={() => setConfirm(null)} onConfirm={() => setConfirm(null)} title={t("inv.cancelTitle")} desc={t("inv.cancelDesc")} confirmLabel={t("inv.cancelShip")} cancelLabel={t("common.cancel")} />
       <VerifySheet record={verify ? { itemId: sample.item[0].item.id, fair: { serverSeed: "a".repeat(64), serverSeedHash: "b".repeat(64), clientSeed: "c".repeat(32), nonce: 0, roll: 0, dropTable: dropTable(box).map(({ id, dropRate }) => ({ id, dropRate })) } } : null} onClose={() => setVerify(false)} />
       <ShipSheet ownedIds={ship ? ["gallery-0"] : null} onClose={() => setShip(false)} onDone={() => setShip(false)} />
-      {reveal && <Reveal box={box} results={sample[reveal]} cost={reveal === "multi" ? box.price * 5 : box.price} balanceBefore={0} onClose={() => setReveal(null)} onAgain={() => setReveal(null)} againBusy={false} canAgain />}
+      {reveal && <Reveal box={box} results={sample[reveal]} cost={reveal === "multi" ? box.price * 5 : box.price} onClose={() => setReveal(null)} onAgain={() => setReveal(null)} againBusy={false} canAgain />}
     </div>
   );
 }

@@ -12,26 +12,38 @@ import { X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { dropTable, formatRate, sellValueOf, type ProductBox } from "@/lib/products";
 import type { OpeningResult } from "@/lib/opening";
-import { takeUsdt } from "@/lib/claim";
+import { settleTake } from "@/lib/openingSettle";
+import { OPENING_ARM_DELAY_MS, openingChange } from "@/lib/openingFlow";
+import { OpeningBox } from "@/components/box/Opening";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useModal } from "@/lib/useModal";
 import { useWalletStore } from "@/stores/walletStore";
-import { Button, ButtonLink, Row, Rows, TextLink } from "@/components/ui/kit";
+import { Button, ButtonLink, Line, Row, Rows, TextLink } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
 import { VerifySheet, type VerifyRecord } from "@/components/flow/VerifySheet";
 import { ShipSheet } from "@/components/flow/ShipSheet";
 
 /** 여러 개를 열 때의 연출: 한 개 열기와 같은 상자, 같은 길이(lib/openingFlow 의 기본값). 결과의 크기와 무관하다. */
 const STAGE = { anticipation: 520, impact: 150, exit: 170 };
-const STAR = "M8 0 10.15 5.85 16 8l-5.85 2.15L8 16l-2.15-5.85L0 8l5.85-2.15Z";
 
-export function Reveal({ box, results, cost, balanceBefore, onClose, onAgain, againBusy, canAgain }: { box: ProductBox; results: OpeningResult[]; cost: number; balanceBefore: number; onClose: () => void; onAgain: () => void; againBusy: boolean; canAgain: boolean }) {
+export function Reveal({ box, results, cost, recovered, initialTaken, initialShipped, onClose, onAgain, againBusy, canAgain, onRevealed, onSkip }: {
+  box: ProductBox; results: OpeningResult[]; cost: number;
+  /** 못 보고 떠났다가 다시 보는 결과. 새로 뽑지 않았으므로 연출 없이 바로 보여 준다 */
+  recovered?: boolean;
+  /** 다시 보는 결과 가운데 이미 USDT 로 받았거나 배송을 신청한 상품(보관함 기록 그대로) */
+  initialTaken?: Record<string, number>; initialShipped?: Record<string, true>;
+  onClose: () => void; onAgain: () => void; againBusy: boolean; canAgain: boolean;
+  /** 결과가 화면에 보인 순간 한 번(기록장에 "봤음"을 남기고 다음 구매를 받을 수 있게 한다) */
+  onRevealed?: () => void; onSkip?: () => void;
+}) {
   const t = useTranslations("v");
   const { itemName } = useProductText();
   const { fmt } = useCurrency();
   const panel = useRef<HTMLDivElement>(null);
-  const [done, setDone] = useState(false);
+  const [done, setDone] = useState(!!recovered);
+  // 결과가 뜬 직후에는 아래 단추가 눌리지 않는다(건너뛰려던 입력이 다음 구매가 되지 않게)
+  const [armed, setArmed] = useState(false);
   const [stage, setStage] = useState<"anticipation" | "impact" | "exit">("anticipation");
   const balance = useWalletStore((s) => s.balance);
   const [verifying, setVerifying] = useState<VerifyRecord | null>(null);
@@ -39,11 +51,22 @@ export function Reveal({ box, results, cost, balanceBefore, onClose, onAgain, ag
   const [picked, setPicked] = useState<OpeningResult | null>(null);
   const [taking, setTaking] = useState<OpeningResult | null>(null);
   const [shipIds, setShipIds] = useState<string[] | null>(null);
-  const [taken, setTaken] = useState<Record<string, number>>({});
-  const [shipped, setShipped] = useState<Record<string, true>>({});
-  useModal(true, onClose, panel);
+  const [taken, setTaken] = useState<Record<string, number>>(initialTaken ?? {});
+  const [shipped, setShipped] = useState<Record<string, true>>(initialShipped ?? {});
+  const skip = () => { onSkip?.(); setDone(true); };
+  // 다음 구매를 처리하는 동안에는 닫히지 않는다. 연출 중 Esc 는 닫기가 아니라 결과 바로 보기다
+  const close = () => { if (!againBusy) onClose(); };
+  useModal(true, () => { if (!done) skip(); else if (armed) close(); }, panel);
+  useEffect(() => {
+    if (!done) return;
+    onRevealed?.();
+    panel.current?.focus({ preventScroll: true });
+    const arm = window.setTimeout(() => setArmed(true), OPENING_ARM_DELAY_MS);
+    return () => window.clearTimeout(arm);
+  }, [done]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
+    if (recovered) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { setDone(true); return; }
     const timers = [
       window.setTimeout(() => setStage("impact"), STAGE.anticipation),
@@ -58,17 +81,26 @@ export function Reveal({ box, results, cost, balanceBefore, onClose, onAgain, ag
   const single = results.length === 1 ? results[0] : null;
   const total = results.reduce((sum, r) => sum + r.item.value, 0);
   const again = t("reveal.again", { amount: fmt(cost) });
-  // 이번 개봉으로 잔액이 실제로 얼마나 달라졌는지(상품을 USDT 로 받으면 그만큼 다시 달라진다)
-  const change = +(balance - balanceBefore).toFixed(2);
+  // 이번 개봉의 영수증: 잔액에 들어온 것(USDT 결과 + USDT 로 받은 상품의 실제 수령액)과 아직 상품으로 있는 것을 나눈다.
+  // 지갑 잔액의 앞뒤를 빼지 않는다(다른 거래가 섞이지 않게).
+  const credited = results.map((r) => (r.item.kind === "cash" ? r.item.value : taken[r.ownedId] ?? 0));
+  const creditedSum = +credited.reduce((sum, v) => sum + v, 0).toFixed(2);
+  const kept = results.filter((r) => r.item.kind !== "cash" && taken[r.ownedId] === undefined);
+  const keptRef = +kept.reduce((sum, r) => sum + r.item.value, 0).toFixed(2);
+  const waiting = kept.filter((r) => !shipped[r.ownedId]);
+  const change = openingChange(cost, credited).diff;
   // 방금 연 결과라서 지금의 확률표가 곧 구매 당시의 확률표다
   const verify = (r: OpeningResult) => setVerifying({ itemId: r.item.id, fair: { serverSeed: r.serverSeed, serverSeedHash: r.serverSeedHash, clientSeed: r.clientSeed, nonce: r.nonce, roll: r.roll, dropTable: table.map(({ id, dropRate }) => ({ id, dropRate })) } });
-  const take = () => {
+  const [takeFailed, setTakeFailed] = useState(false);
+  const take = async () => {
     if (!taking) return;
-    const out = takeUsdt([taking.ownedId]);
-    if (out.ids.length) setTaken((m) => ({ ...m, [taking.ownedId]: out.totalUsdt }));
-    setTaking(null);
+    const target = taking; setTaking(null); setTakeFailed(false);
+    const out = await settleTake(target.ownedId);
+    // 받았으면 시트를 닫고 결과 목록으로 돌아간다(요약과 그 행이 바뀐 것이 곧 확인이다)
+    if (out.status === "settled") { setTaken((m) => ({ ...m, [target.ownedId]: out.amountUsdt })); setPicked(null); }
+    else setTakeFailed(true);
   };
-  const againButton = canAgain ? <Button onClick={onAgain} busy={againBusy} busyLabel={t("box.opening")}>{again}</Button> : <Button onClick={onClose}>{t("common.close")}</Button>;
+  const againButton = canAgain ? <Button data-open-again onClick={onAgain} busy={againBusy} busyLabel={t("box.opening")} disabled={!armed}>{again}</Button> : <Button onClick={close} disabled={!armed}>{t("common.close")}</Button>;
   const settledOf = (r: OpeningResult) => r.item.kind === "cash" || taken[r.ownedId] !== undefined;
   const cashLike = single && settledOf(single);
   const allCash = results.length > 1 && results.every((r) => r.item.kind === "cash");
@@ -86,19 +118,15 @@ export function Reveal({ box, results, cost, balanceBefore, onClose, onAgain, ag
         <div className="v-reveal-solo">
           <div className="v-op-scene" data-phase={stage}>
             <span className="v-op-floor" aria-hidden />
-            <span className="v-boxw" aria-hidden>
-              <span className="v-box3">
-                <i className="v-box3-back" /><i className="v-box3-inside" /><i className="v-box3-glow" /><i className="v-box3-right" /><i className="v-box3-front" />
-                <span className="v-box3-lid"><i className="v-box3-lid-right" /><i className="v-box3-lid-top" /><i className="v-box3-lid-front" /></span>
-                <span className="v-seal"><svg viewBox="0 0 16 16" className="v-seal-star" fill="currentColor" aria-hidden><path d={STAR} /></svg></span>
-              </span>
-            </span>
+            <OpeningBox />
+            <p className="v-reveal-count">{t("op.multiOpening", { n: results.length })}</p>
           </div>
-          <div className="v-op-skip"><TextLink onClick={() => setDone(true)}>{t("op.skip")}</TextLink></div>
+          <div className="v-op-skip"><TextLink onClick={skip}>{t("op.skip")}</TextLink></div>
         </div>
       ) : (
         <>
-          <button type="button" className="v-sheet-close" onClick={onClose} aria-label={t("common.close")}><X size={20} aria-hidden /></button>
+          <button type="button" className="v-sheet-close" onClick={() => { if (armed) close(); }} disabled={againBusy} aria-label={t("common.close")}><X size={20} aria-hidden /></button>
+          {!single && <div className="v-reveal-top"><span className="v-op-balance v-num">{t("op.balance", { amount: fmt(balance) })}</span></div>}
           <div className="v-reveal-result">
             {single && cashLike && (
               <>
@@ -141,22 +169,33 @@ export function Reveal({ box, results, cost, balanceBefore, onClose, onAgain, ag
                     <h2 className="v-title">{allCash ? t("reveal.cashTitle", { amount: fmt(total) }) : t("reveal.multiTitle", { n: results.length })}</h2>
                     <p className="v-desc">{t(allCash ? "reveal.cashDesc" : "reveal.multiDesc")}</p>
                   </div>
-                  <Rows><Row label={t("reveal.spent")}>{fmt(cost)}</Row><Row label={t("reveal.got")}>{fmt(total)}</Row><Row label={t("op.changeLabel")}>{change < 0 ? t("op.changeDown", { diff: fmt(Math.abs(change)) }) : change > 0 ? t("op.changeUp", { diff: fmt(change) }) : t("op.changeSame")}</Row></Rows>
+                  {/* 쓴 것, 잔액에 들어온 것, 아직 상품으로 있는 것, 그래서 잔액이 달라진 만큼을 따로 적는다 */}
+                  <Rows>
+                    <Row label={t("reveal.spent")}>{fmt(cost)}</Row>
+                    <Row label={t("op.creditedSum")}>{fmt(creditedSum)}</Row>
+                    {kept.length > 0 && <Row label={t("op.keptSum", { n: kept.length })}>{fmt(keptRef)}</Row>}
+                    <Row label={t("op.changeLabel")}>{change < 0 ? t("op.changeDown", { diff: fmt(Math.abs(change)) }) : change > 0 ? t("op.changeUp", { diff: fmt(change) }) : t("op.changeSame")}</Row>
+                  </Rows>
+                  {takeFailed && <Line fail>{t("op.failed")}</Line>}
                   <ul className="v-rows" aria-label={t("reveal.results")}>
-                    {sorted.map((r, i) => (
-                      <li key={r.ownedId || i} className="v-resultrow" style={{ animationDelay: Math.min(i * 0.1, 1.4) + "s" }}>
-                        <button type="button" className="v-row v-row--link v-row--button" onClick={() => (settledOf(r) ? verify(r) : setPicked(r))} aria-label={itemName(r.item) + ", " + (settledOf(r) ? t("nav.verify") : t("reveal.receive"))}>
-                          <span>{itemName(r.item)}{shipped[r.ownedId] ? ", " + t("reveal.shippedTag") : taken[r.ownedId] !== undefined ? ", " + t("reveal.takenTag") : ""}</span>
-                          <span className="v-num">{fmt(r.item.value)}</span>
-                        </button>
-                      </li>
-                    ))}
+                    {sorted.map((r, i) => {
+                      const state = r.item.kind === "cash" ? t("op.tagCash") : shipped[r.ownedId] ? t("reveal.shippedTag") : taken[r.ownedId] !== undefined ? t("reveal.takenTag") : t("op.tagKept");
+                      const open = r.item.kind !== "cash" && !shipped[r.ownedId] && taken[r.ownedId] === undefined;
+                      return (
+                        <li key={r.ownedId || i} className="v-resultrow" style={{ animationDelay: Math.min(i * 0.06, 0.6) + "s" }}>
+                          <button type="button" className="v-row v-row--link v-row--button" onClick={() => { if (!armed) return; if (open) setPicked(r); else verify(r); }} aria-label={itemName(r.item) + ", " + state}>
+                            <span>{itemName(r.item)}<span className="v-small">, {state}</span></span>
+                            <span className="v-num">{fmt(taken[r.ownedId] ?? r.item.value)}{open ? " ›" : ""}</span>
+                          </button>
+                        </li>
+                      );
+                    })}
                   </ul>
-                  <p className="v-small">{t(allCash ? "reveal.rowHint" : "reveal.rowHintReceive")}</p>
                 </div>
                 <div className="v-reveal-actions">
-                  {allCash ? againButton : <ButtonLink href="/inventory">{t("reveal.toInventory")}</ButtonLink>}
-                  <div className="v-links">{!allCash && canAgain && <TextLink onClick={() => { if (!againBusy) onAgain(); }}>{again}</TextLink>}<TextLink href="/">{t("reveal.boxes")}</TextLink></div>
+                  {/* 받을 상품이 남아 있으면 그것부터 이 자리에서 받는다. 다 받았으면 한 번 더 열기 */}
+                  {waiting.length > 0 ? <Button onClick={() => setPicked(waiting[0])} disabled={!armed}>{t("op.receiveNext", { n: waiting.length })}</Button> : againButton}
+                  <div className="v-links">{waiting.length > 0 && canAgain && <TextLink onClick={() => { if (armed && !againBusy) onAgain(); }}>{again}</TextLink>}<TextLink onClick={() => { if (armed) close(); }}>{t("op.backToBox")}</TextLink></div>
                 </div>
               </>
             )}

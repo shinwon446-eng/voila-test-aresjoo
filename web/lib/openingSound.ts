@@ -18,7 +18,15 @@ function audio(): Ctx | null {
   if (typeof window === "undefined") return null;
   const AC = window.AudioContext ?? (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
   if (!AC) return null;
-  try { ctx ??= new AC(); if (ctx.state === "suspended") void ctx.resume(); return ctx; } catch { return null; }
+  try { ctx ??= new AC(); if (ctx.state === "suspended") ctx.resume().catch(() => {}); return ctx; } catch { return null; }
+}
+
+/** 예약해 둔 소리. 화면이 닫히면 soundStop 이 전부 멈춘다 */
+const live = new Set<AudioScheduledSourceNode>();
+const track = (node: AudioScheduledSourceNode) => { live.add(node); node.onended = () => live.delete(node); };
+export function soundStop() {
+  for (const node of Array.from(live)) { try { node.stop(); } catch { /* 이미 끝난 소리 */ } }
+  live.clear();
 }
 
 const MASTER = 0.16;
@@ -27,7 +35,7 @@ function tone(c: Ctx, freq: number, at: number, dur: number, gain: number, type:
   const osc = c.createOscillator(); const g = c.createGain();
   osc.type = type; osc.frequency.setValueAtTime(freq, at);
   g.gain.setValueAtTime(0.0001, at); g.gain.exponentialRampToValueAtTime(gain * MASTER, at + 0.012); g.gain.exponentialRampToValueAtTime(0.0001, at + dur);
-  osc.connect(g).connect(c.destination); osc.start(at); osc.stop(at + dur + 0.02);
+  osc.connect(g).connect(c.destination); osc.start(at); osc.stop(at + dur + 0.02); track(osc);
 }
 
 function noise(c: Ctx, at: number, dur: number, gain: number, cutoff: number) {
@@ -36,7 +44,7 @@ function noise(c: Ctx, at: number, dur: number, gain: number, cutoff: number) {
   const src = c.createBufferSource(); src.buffer = buf;
   const filter = c.createBiquadFilter(); filter.type = "lowpass"; filter.frequency.setValueAtTime(cutoff, at);
   const g = c.createGain(); g.gain.setValueAtTime(gain * MASTER, at);
-  src.connect(filter).connect(g).connect(c.destination); src.start(at);
+  src.connect(filter).connect(g).connect(c.destination); src.start(at); track(src);
 }
 
 /** 열기를 누른 순간: 아주 짧은 눌림 소리. 이 호출이 소리 장치를 깨운다(사용자 손짓 안에서 불러야 한다). */

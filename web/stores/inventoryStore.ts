@@ -28,6 +28,8 @@ export interface OwnedItem {
   /** 결제 원천 족보, 이 아이템을 뽑은 개봉에 쓰인 잔액의 출처 (CLAUDE.md §7-B). 구버전 기록은 crypto 로 본다. */
   fundingSource?: FundingSource;
   fundingRatio?: FundingRatio;
+  /** 이 기록을 만든 개봉의 거래 번호(lib/opening). 못 본 결과를 새로 뽑지 않고 다시 보여 주는 데 쓴다. 옛 기록에는 없다. */
+  openingId?: string;
   /** SOLD 시 실제 환급액 */
   soldForUsdt?: number;
   soldAt?: string;

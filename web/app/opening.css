@@ -1,45 +1,56 @@
 /*
  * 개봉 장면 (opening/STATE.md, opening/DECISIONS.md).
- *   기대(상자가 내려앉고 봉인이 감긴다) → 충격(봉인이 떨어지고 뚜껑이 넘어간다) → 상자가 빠진다 → 받은 것과 차이가 함께 나온다
- * 색은 tokens.css 의 변수만 쓴다(회색과 흰 빛, 로고 별 색은 낸 값의 20배 이상일 때 이름 앞 별 하나에만).
- * 움직임은 transform 과 opacity 만 쓴다. 기대 구간에는 빛이 없고, 빛은 열린 뒤 실제로 늘었을 때만 밝다.
+ *   기대(상자가 내려앉고 봉인이 버틴다) → 충격(봉인이 떨어지고 뚜껑이 넘어간다) → 상자가 물러난다 → 받은 것과 차이가 함께 나온다
+ * 색은 tokens.css 의 변수만 쓴다(회색과 흰 빛).
+ * 움직임은 transform 과 opacity 만 쓴다.
+ * 빛은 둘로 나눈다. 바닥의 옅은 빛은 어느 결과에나 있는 기본 조명이다. 열린 틈의 밝은 빛과 넓어지는 바닥 빛은 실제로 늘었을 때만 쓴다.
  */
 .v-op { position: fixed; inset: 0; z-index: 150; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; overflow: hidden; background: var(--v-bg); outline: none; --ant: 520ms; --imp: 150ms; --exit: 170ms; }
 
 /* 위: 잔액 하나, 설정, (결과가 다 보인 뒤) 닫기 */
 .v-op-top { display: flex; height: 56px; align-items: center; justify-content: space-between; gap: 8px; margin-top: env(safe-area-inset-top, 0px); padding: 0 var(--v-gutter); }
-.v-op-balance { display: inline-flex; height: var(--v-touch); align-items: center; border-radius: var(--v-r-pill); background: var(--v-pill); padding: 0 14px; color: var(--v-text); font-size: var(--v-fs-small); white-space: nowrap; }
+.v-op-balance { display: inline-flex; height: var(--v-touch); align-items: center; border: 1px solid transparent; border-radius: var(--v-r-pill); background: var(--v-pill); padding: 0 14px; color: var(--v-text); font-size: var(--v-fs-small); white-space: nowrap; }
 .v-op-tools { display: inline-flex; gap: 8px; }
 .v-op-tool { display: inline-flex; width: var(--v-touch); height: var(--v-touch); align-items: center; justify-content: center; border-radius: var(--v-r-pill); background: var(--v-pill); color: var(--v-text); }
 .v-op-tool:hover { background: var(--v-pill-hover); }
 
 /* 가운데: 상자, 그리고 그 자리에 받은 것 */
 .v-op-scene { position: relative; min-height: 0; overflow: hidden; }
-.v-op-floor { position: absolute; left: 50%; top: 62%; width: 130%; aspect-ratio: 5 / 2; transform: translate(-50%, -50%); background: radial-gradient(closest-side, color-mix(in srgb, var(--v-title) 12%, transparent), transparent 72%); opacity: 0.4; }
+.v-op-floor { position: absolute; left: 50%; top: 62%; width: min(130%, 620px); aspect-ratio: 5 / 2; transform: translate(-50%, -50%); background: radial-gradient(closest-side, color-mix(in srgb, var(--v-title) 12%, transparent), transparent 72%); opacity: 0.35; }
 .v-op-result { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 0 var(--v-gutter) 4%; text-align: center; }
 .v-op-label { color: var(--v-mute); font-size: var(--v-fs-small); line-height: 1.4; }
 .v-op-amount { color: var(--v-title); font-size: clamp(44px, 14vw, 64px); font-weight: 400; line-height: 1.1; white-space: nowrap; }
-.v-op[data-tone="high"] .v-op-amount, .v-op[data-tone="top"] .v-op-amount { font-size: clamp(50px, 16vw, 76px); }
-.v-op-net { max-width: 22em; margin-top: 6px; color: var(--v-text); font-size: 18px; line-height: 1.45; text-wrap: balance; word-break: keep-all; }
-.v-op-net[data-direction="up"] { color: var(--v-title); }
-.v-op-photo { position: relative; width: min(94%, 460px); aspect-ratio: 4 / 3; margin-bottom: 4px; -webkit-mask-image: radial-gradient(closest-side, var(--v-bg) 64%, transparent 100%); mask-image: radial-gradient(closest-side, var(--v-bg) 64%, transparent 100%); }
-.v-op-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.v-op-name { display: inline-flex; max-width: 100%; align-items: baseline; justify-content: center; gap: 8px; color: var(--v-title); font-size: var(--v-fs-title); font-weight: 400; line-height: 1.25; text-wrap: balance; word-break: keep-all; }
-.v-op-mark { width: 16px; height: 16px; flex: none; align-self: center; color: var(--v-spark); }
-.v-op-meta { margin-top: 10px; color: var(--v-mute); font-size: var(--v-fs-small); line-height: 1.5; text-wrap: balance; word-break: keep-all; }
-.v-op-line { max-width: 24em; color: var(--v-sub); font-size: var(--v-fs-desc); line-height: 1.45; text-wrap: balance; word-break: keep-all; }
+/* 쓴 금액과 잔액 변화: 언제나 같은 두 줄 */
+.v-op-net { display: flex; flex-direction: column; gap: 2px; margin-top: 8px; }
+.v-op-net-paid { color: var(--v-sub); font-size: var(--v-fs-body); line-height: 1.4; }
+.v-op-net-change { color: var(--v-title); font-size: 20px; line-height: 1.4; }
+.v-op-brand { min-height: 0; margin-bottom: 2px; }
+.v-op-photo { position: relative; width: min(94%, 460px); aspect-ratio: 4 / 3; margin-bottom: 4px; }
+.v-op-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; -webkit-mask-image: radial-gradient(closest-side, var(--v-bg) 64%, transparent 100%); mask-image: radial-gradient(closest-side, var(--v-bg) 64%, transparent 100%); }
+/* 상품 뒤의 테 빛: 낸 값의 20배 이상일 때 한 번 번지고 멈춘다. 상품 뒤에 있어 상품을 가리지 않는다 */
+.v-op-halo { position: absolute; inset: 6%; border-radius: 50%; background: radial-gradient(closest-side, transparent 58%, color-mix(in srgb, var(--v-title) 30%, transparent) 72%, transparent 92%); opacity: 0; }
+.v-op-name { max-width: 100%; color: var(--v-title); font-size: var(--v-fs-title); font-weight: 400; line-height: 1.25; text-wrap: balance; word-break: keep-all; }
+.v-op-ref { color: var(--v-title); font-size: 20px; line-height: 1.4; }
+.v-op-line { max-width: 24em; color: var(--v-sub); font-size: var(--v-fs-body); line-height: 1.45; text-wrap: balance; word-break: keep-all; }
+.v-op-meta { max-width: 26em; margin-top: 10px; color: var(--v-sub); font-size: var(--v-fs-small); line-height: 1.5; text-wrap: balance; word-break: keep-all; }
 
 /* 아래: 상태 한 줄과 단추. 연출 중에는 "결과 바로 보기" 하나 */
 .v-op-bottom { display: flex; width: 100%; max-width: calc(var(--v-col) + var(--v-gutter) * 2); min-height: 132px; flex-direction: column; justify-content: flex-end; gap: 12px; margin: 0 auto; padding: 8px var(--v-gutter) calc(12px + env(safe-area-inset-bottom, 0px)); }
 .v-op-skip { display: flex; min-height: var(--v-btn-h); align-items: center; justify-content: center; }
-.v-op-status { display: flex; flex-direction: column; gap: 4px; color: var(--v-mute); font-size: var(--v-fs-small); line-height: 1.5; text-align: center; text-wrap: balance; word-break: keep-all; }
+.v-op-status { display: flex; flex-direction: column; gap: 4px; color: var(--v-sub); font-size: var(--v-fs-small); line-height: 1.5; text-align: center; text-wrap: balance; word-break: keep-all; }
 .v-op-actions { display: flex; flex-direction: column; gap: 4px; }
 .v-op-actions .v-links { justify-content: center; }
+
+/* 이 장면 위에 뜨는 시트: 뒤 화면을 바로 가린다(서서히 가리면 뒤의 단추와 시트의 글자가 겹쳐 보인다) */
+.v-op .v-scrim, .v-reveal .v-scrim { animation: none; }
+.v-op .v-sheet, .v-reveal .v-sheet { animation: none; }
 
 /* 여러 개 열기의 연출 자리(components/box/Reveal.tsx): 같은 상자를 쓴다 */
 .v-reveal-solo { display: flex; flex: 1; flex-direction: column; --ant: 520ms; --imp: 150ms; --exit: 170ms; }
 .v-reveal-solo .v-op-scene { flex: 1; min-height: 50dvh; }
+.v-reveal-count { position: absolute; right: 0; bottom: 8%; left: 0; color: var(--v-sub); font-size: var(--v-fs-body); text-align: center; }
 .v-reveal-solo .v-op-skip { padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)); }
+.v-reveal-top { display: flex; height: 56px; align-items: center; padding: 0 var(--v-gutter); }
 
 /* 받는 방법과 설정 시트의 고르는 줄 */
 .v-op-choices { display: flex; flex-direction: column; gap: 8px; }
@@ -53,61 +64,74 @@
 .v-op-toggle[aria-checked="true"] { border-color: var(--v-selected); }
 .v-op-toggle[aria-checked="true"] .v-op-toggle-state { color: var(--v-title); }
 
-/* ── 상자: 진짜 입체. 움직임(자리, 크기)은 바깥 포장이 맡는다. 입체 요소에 투명도를 걸면 브라우저가 평면으로 눌러 버린다 */
+/* ── 상자: 진짜 입체. 움직임(자리, 크기, 투명도)은 바깥 포장이 맡는다. 입체 요소에 투명도를 걸면 브라우저가 평면으로 눌러 버린다 */
 .v-boxw { position: absolute; left: 50%; top: 56%; width: 150px; height: 100px; margin: -50px 0 0 -75px; }
 .v-box3 { position: absolute; inset: 0; transform-style: preserve-3d; transform: perspective(900px) rotateX(-24deg) rotateY(-34deg); }
 .v-box3 > i, .v-box3-lid > i { position: absolute; top: 0; left: 0; display: block; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--v-title) 10%, transparent); }
 .v-box3-front, .v-box3-back, .v-box3-right { width: 150px; height: 100px; }
-.v-box3-front { transform: translateZ(75px); background: linear-gradient(90deg, transparent calc(50% - 11px), var(--v-op-band) calc(50% - 11px), var(--v-op-band) calc(50% + 11px), transparent calc(50% + 11px)), linear-gradient(var(--v-op-front), var(--v-op-side)); }
+/* 리본은 가운데가 밝고 가장자리가 어두운 띠(접힌 천). 뚜껑 턱 아래에는 그림자가 진다 */
+.v-box3-front { transform: translateZ(75px); background: linear-gradient(var(--v-op-inside), transparent 16px), linear-gradient(90deg, transparent calc(50% - 12px), var(--v-op-side) calc(50% - 12px), var(--v-op-band) calc(50% - 9px), var(--v-op-band) calc(50% + 9px), var(--v-op-side) calc(50% + 12px), transparent calc(50% + 12px)), linear-gradient(var(--v-op-front), var(--v-op-side)); }
 .v-box3-back { transform: rotateY(180deg) translateZ(75px); background: var(--v-op-side); }
-.v-box3-right { transform: rotateY(90deg) translateZ(75px); background: linear-gradient(var(--v-op-side), var(--v-op-inside)); }
+.v-box3-right { transform: rotateY(90deg) translateZ(75px); background: linear-gradient(var(--v-op-inside), transparent 16px), linear-gradient(var(--v-op-side), var(--v-op-inside)); }
 .v-box3 > .v-box3-inside { top: -25px; width: 150px; height: 150px; transform: rotateX(90deg) translateZ(49px); background: var(--v-op-inside); }
 .v-box3 > .v-box3-glow { top: -25px; width: 150px; height: 150px; transform: rotateX(90deg) translateZ(50px); background: radial-gradient(closest-side, var(--v-title), transparent 78%); box-shadow: none; opacity: 0; }
 .v-box3-lid { position: absolute; top: -20px; left: -4px; width: 158px; height: 28px; transform-style: preserve-3d; transform-origin: 50% 100% -79px; }
 .v-box3-lid-front, .v-box3-lid-right { width: 158px; height: 28px; }
-.v-box3-lid-front { transform: translateZ(79px); background: linear-gradient(90deg, transparent calc(50% - 11px), var(--v-op-band) calc(50% - 11px), var(--v-op-band) calc(50% + 11px), transparent calc(50% + 11px)), var(--v-op-front); }
-.v-box3-lid-right { transform: rotateY(90deg) translateZ(79px); background: var(--v-op-side); }
-.v-box3-lid > .v-box3-lid-top { top: -65px; width: 158px; height: 158px; transform: rotateX(90deg) translateZ(14px); background: linear-gradient(90deg, transparent calc(50% - 11px), var(--v-op-band) calc(50% - 11px), var(--v-op-band) calc(50% + 11px), transparent calc(50% + 11px)), var(--v-op-lid); }
-/* 봉인: 뚜껑과 몸체의 이음매 위. 뚜껑의 자식이 아니다(열릴 때 따라 올라가지 않고 떨어져 나간다) */
-.v-seal { position: absolute; top: 8px; left: 50%; display: grid; width: 38px; height: 38px; margin: -19px 0 0 -19px; place-items: center; border-radius: 50%; background: var(--v-bg); box-shadow: 0 0 0 1px var(--v-outline); color: var(--v-title); transform: translateZ(80px); }
+.v-box3-lid-front { transform: translateZ(79px); background: linear-gradient(90deg, transparent calc(50% - 12px), var(--v-op-side) calc(50% - 12px), var(--v-op-band) calc(50% - 9px), var(--v-op-band) calc(50% + 9px), var(--v-op-side) calc(50% + 12px), transparent calc(50% + 12px)), linear-gradient(var(--v-op-lid), var(--v-op-front)); }
+.v-box3-lid-right { transform: rotateY(90deg) translateZ(79px); background: linear-gradient(var(--v-op-front), var(--v-op-side)); }
+.v-box3-lid > .v-box3-lid-top { top: -65px; width: 158px; height: 158px; transform: rotateX(90deg) translateZ(14px); background: linear-gradient(90deg, transparent calc(50% - 12px), var(--v-op-side) calc(50% - 12px), var(--v-op-band) calc(50% - 9px), var(--v-op-band) calc(50% + 9px), var(--v-op-side) calc(50% + 12px), transparent calc(50% + 12px)), linear-gradient(var(--v-op-lid), var(--v-op-front)); }
+/* 봉인: 뚜껑과 몸체의 이음매를 물고 있다. 뚜껑의 자식이 아니다(열릴 때 따라 올라가지 않고 떨어져 나간다) */
+.v-seal { position: absolute; top: 8px; left: 50%; display: grid; width: 40px; height: 40px; margin: -20px 0 0 -20px; place-items: center; border-radius: 50%; background: var(--v-bg); box-shadow: 0 0 0 1px var(--v-outline), 0 3px 0 0 var(--v-op-inside); color: var(--v-title); transform: translateZ(80px); }
 .v-seal-star { width: 18px; height: 18px; }
 
 /* 상태별 끝 모양(움직임 줄이기에서도 같다) */
 [data-phase="impact"] .v-box3-lid, [data-phase="exit"] .v-box3-lid { transform: rotateX(112deg); }
-[data-phase="impact"] .v-seal, [data-phase="exit"] .v-seal { opacity: 0; transform: translateZ(190px) translateY(-26px) scale(0.6) rotate(140deg); }
-/* 열린 뒤의 빛: 실제로 늘었을 때만 밝다. 줄었거나 비슷하면 틈이 보일 만큼만 */
-[data-phase="impact"] .v-box3-glow, [data-phase="exit"] .v-box3-glow { opacity: 0.22; }
+/* 봉인은 앞으로 튀어 아래로 떨어진다 */
+[data-phase="impact"] .v-seal, [data-phase="exit"] .v-seal { opacity: 0; transform: translateZ(150px) translate(-46px, 150px) rotate(-220deg); }
+/* 열린 틈의 빛: 실제로 늘었을 때만 밝다. 그 밖에는 틈이 보일 만큼만 */
+[data-phase="impact"] .v-box3-glow, [data-phase="exit"] .v-box3-glow { opacity: 0.2; }
 .v-op[data-tone="above"][data-phase="impact"] .v-box3-glow, .v-op[data-tone="above"][data-phase="exit"] .v-box3-glow { opacity: 0.6; }
 .v-op[data-tone="high"][data-phase="impact"] .v-box3-glow, .v-op[data-tone="high"][data-phase="exit"] .v-box3-glow, .v-op[data-tone="top"][data-phase="impact"] .v-box3-glow, .v-op[data-tone="top"][data-phase="exit"] .v-box3-glow { opacity: 0.95; }
-[data-phase="exit"] .v-boxw { transform: translateY(80vh); }
-/* 바닥 빛: 받은 것이 나온 뒤 결과의 크기만큼 */
-.v-op[data-tone="above"][data-phase="reveal"] .v-op-floor, .v-op[data-tone="above"][data-phase="ready"] .v-op-floor { opacity: 0.7; }
-.v-op[data-tone="high"][data-phase="reveal"] .v-op-floor, .v-op[data-tone="high"][data-phase="ready"] .v-op-floor { opacity: 0.9; }
-.v-op[data-tone="top"][data-phase="reveal"] .v-op-floor, .v-op[data-tone="top"][data-phase="ready"] .v-op-floor { opacity: 1; transform: translate(-50%, -50%) scale(1.35); }
+/* 상자는 뚜껑과 함께 통째로 물러난다 */
+[data-phase="exit"] .v-boxw { opacity: 0; transform: translateY(34px) scale(0.8); }
+/* 바닥 빛: 받은 것이 나온 뒤 실제로 늘어난 만큼 */
+.v-op[data-tone="above"][data-phase="reveal"] .v-op-floor, .v-op[data-tone="above"][data-phase="ready"] .v-op-floor { opacity: 0.6; }
+.v-op[data-tone="high"][data-phase="reveal"] .v-op-floor, .v-op[data-tone="high"][data-phase="ready"] .v-op-floor { opacity: 0.8; }
+.v-op[data-tone="top"][data-phase="reveal"] .v-op-floor, .v-op[data-tone="top"][data-phase="ready"] .v-op-floor { opacity: 0.9; transform: translate(-50%, -50%) scale(1.2); }
 /* 결과가 뜬 직후에는 아래 단추가 눌리지 않는다(건너뛰려던 손가락이 다음 구매를 누르지 않게). 모양은 처음부터 같다 */
 .v-op-actions:not([data-armed]) { pointer-events: none; }
 .v-op-actions:not([data-armed]) .v-btn:disabled { background: var(--v-primary); color: var(--v-on-primary); opacity: 1; }
 
 @media (prefers-reduced-motion: no-preference) {
   [data-phase="anticipation"] .v-boxw { animation: v-op-settle var(--ant) cubic-bezier(0.3, 0, 0.4, 1) both; }
+  /* 봉인이 버틴다: 별이 감기고, 뚜껑이 두 번 들썩이다 눌린다 */
   [data-phase="anticipation"] .v-seal-star { animation: v-op-wind var(--ant) cubic-bezier(0.6, 0, 0.9, 0.4) both; }
+  [data-phase="anticipation"] .v-box3-lid { animation: v-op-strain var(--ant) linear both; }
   [data-phase="impact"] .v-boxw { animation: v-op-pop var(--imp) cubic-bezier(0.2, 1.7, 0.4, 1) both; }
-  .v-box3-lid { transition: transform 0.36s cubic-bezier(0.2, 1.3, 0.35, 1); }
-  .v-seal { transition: transform 0.16s cubic-bezier(0.3, 0, 0.6, 1), opacity 0.14s ease-out; }
+  .v-box3-lid { transition: transform 0.34s cubic-bezier(0.2, 1.3, 0.35, 1); }
+  .v-seal { transition: transform 0.3s cubic-bezier(0.4, 0, 0.9, 0.5), opacity 0.1s 0.22s linear; }
   .v-box3-glow { transition: opacity 0.1s ease-out; }
-  [data-phase="exit"] .v-boxw { animation: v-op-drop var(--exit) cubic-bezier(0.6, 0, 1, 0.6) both; }
-  .v-op-floor { transition: opacity 0.6s ease-out, transform 1.8s cubic-bezier(0.05, 0.7, 0.1, 1); }
-  /* 받은 것과 차이 문장은 한 묶음으로 같은 프레임에 나온다 */
-  .v-op[data-phase="reveal"] .v-op-result > * { animation: v-op-in 0.26s cubic-bezier(0.05, 0.7, 0.1, 1) both; }
+  [data-phase="exit"] .v-boxw { animation: v-op-leave var(--exit) cubic-bezier(0.4, 0, 0.9, 0.6) both; }
+  .v-op-floor { transition: opacity 0.6s ease-out, transform 2s cubic-bezier(0.05, 0.7, 0.1, 1); }
+  /* 받은 것과 차이는 한 묶음으로 같은 프레임에 나온다 */
+  .v-op[data-phase="reveal"] .v-op-result > * { animation: v-op-in 0.24s cubic-bezier(0.05, 0.7, 0.1, 1) both; }
   .v-op[data-phase="reveal"] .v-op-status, .v-op[data-phase="reveal"] .v-op-actions { animation: v-fade 0.2s ease-out both; }
-  /* 낸 값의 20배 이상: 상품 위로 지나가는 것 없이, 어두운 정지 뒤 받은 것이 천천히 다가온다 */
-  .v-op[data-tone="top"][data-phase="reveal"] .v-op-result, .v-op[data-tone="top"][data-phase="ready"] .v-op-result { animation: v-op-push 1.8s cubic-bezier(0.05, 0.7, 0.1, 1) both; }
-  .v-op[data-tone="top"][data-phase="reveal"] .v-op-result > * { animation-duration: 0.5s; }
+  /* 잔액이 바뀐 순간 테두리가 한 번 밝았다 돌아온다(늘든 줄든 같다. 숫자는 세어 올리지 않는다) */
+  .v-op-balance[data-changed="true"] { animation: v-op-ping 0.7s ease-out both; }
+  /* 낸 값의 20배 이상: 이름과 상태는 처음부터 제자리에 있고, 상품만 천천히 다가오며 뒤의 테 빛이 한 번 번진다 */
+  .v-op[data-tone="top"] .v-op-photo img { animation: v-op-push 2.2s cubic-bezier(0.05, 0.7, 0.1, 1) both; }
+  .v-op[data-tone="top"] .v-op-halo { animation: v-op-halo 1.5s 0.1s cubic-bezier(0.1, 0.6, 0.2, 1) both; }
+  /* 시트는 아래에서 올라오되 처음부터 불투명하다 */
+  .v-op .v-sheet, .v-reveal .v-sheet { animation: v-op-sheet 0.22s var(--v-ease); }
 }
 
 @keyframes v-op-settle { 0% { opacity: 0; transform: translateY(-28px); } 24% { opacity: 1; transform: translateY(2px); } 100% { opacity: 1; transform: translateY(8px) scale(0.93); } }
-@keyframes v-op-wind { 0% { transform: rotate(0) scale(1); } 100% { transform: rotate(90deg) scale(1.14); } }
+@keyframes v-op-wind { 0% { transform: rotate(0) scale(1); } 100% { transform: rotate(90deg) scale(1.16); } }
+@keyframes v-op-strain { 0%, 42% { transform: rotateX(0); } 56% { transform: rotateX(5deg); } 66% { transform: rotateX(1deg); } 82% { transform: rotateX(8deg); } 100% { transform: rotateX(0); } }
 @keyframes v-op-pop { 0% { transform: translateY(8px) scale(0.93); } 100% { transform: translateY(-6px) scale(1.05); } }
-@keyframes v-op-drop { 0% { transform: translateY(-6px) scale(1.05); } 100% { transform: translateY(80vh) scale(1.05); } }
+@keyframes v-op-leave { 0% { opacity: 1; transform: translateY(-6px) scale(1.05); } 100% { opacity: 0; transform: translateY(34px) scale(0.8); } }
 @keyframes v-op-in { 0% { opacity: 0; transform: translateY(10px) scale(0.97); } 100% { opacity: 1; transform: none; } }
-@keyframes v-op-push { 0% { transform: scale(1.07); } 100% { transform: none; } }
+@keyframes v-op-ping { 0% { border-color: var(--v-title); } 100% { border-color: transparent; } }
+@keyframes v-op-push { 0% { transform: scale(1.18); } 100% { transform: none; } }
+@keyframes v-op-halo { 0% { opacity: 0; transform: scale(0.7); } 30% { opacity: 1; } 100% { opacity: 0.35; transform: scale(1.12); } }
+@keyframes v-op-sheet { from { transform: translateY(24px); } }

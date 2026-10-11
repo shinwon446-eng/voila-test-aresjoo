@@ -27,7 +27,7 @@ async function session({ slug = "dollar-apple", fixture = "single:small", view =
   const fx = fixtures.boxes[slug][fk === "seq" ? "sequences" : "single"][fn];
   const state = await makeState("funded", locale);
   state.values["gachaflix.fair"] = wrap({ serverSeed: fixtures.serverSeed, serverSeedHash: fixtures.serverSeedHash, clientSeed: fx.clientSeed, nonce: fx.nonce });
-  if (settings) state.values["gachaflix.settings"] = wrap({ muted: true, openSound: false, openShort: false, autoTake: false, lastReceive: null, ...settings });
+  if (settings) { const { autoTake, autoTakeFor, ...rest } = settings; state.values["gachaflix.settings"] = wrap({ muted: true, openSound: false, openShort: false, autoTakeBy: autoTake ? { [autoTakeFor ?? state.user.id]: true } : {}, lastReceiveBy: {}, ...rest }); }
   if (balance !== null) for (const key of Object.keys(state.values).filter((k) => k === "gachaflix.wallet" || (k.startsWith("voila.browser-wallet.") && !k.endsWith(".guest")))) {
     const v = JSON.parse(state.values[key]); v.state.balance = balance; v.state.cryptoBalance = balance; state.values[key] = JSON.stringify(v);
   }
@@ -43,14 +43,15 @@ async function session({ slug = "dollar-apple", fixture = "single:small", view =
     const keys = []; for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i));
     const pick = (p) => keys.find((k) => k && k.startsWith(p) && !k.endsWith(".guest"));
     const w = read(pick("voila.browser-wallet.") ?? "gachaflix.wallet"); const inv = read(pick("voila.browser-inventory.") ?? "gachaflix.inventory"); const fair = read("gachaflix.fair"); const j = read("voila.opening-journal");
-    return { balance: w?.balance ?? null, opens: (w?.transactions ?? []).filter((t) => t.type === "open").length, sellbacks: (w?.transactions ?? []).filter((t) => t.type === "sellback").length, items: (inv?.items ?? []).map((i) => ({ id: i.id, itemId: i.itemId, status: i.status })), nonce: fair?.nonce ?? null, journal: (j?.entries ?? []).map((e) => ({ id: e.id, revealed: !!e.revealedAt })) };
+    return { balance: w?.balance ?? null, opens: (w?.transactions ?? []).filter((t) => t.type === "open").length, sellbacks: (w?.transactions ?? []).filter((t) => t.type === "sellback").length, items: (inv?.items ?? []).map((i) => ({ id: i.id, itemId: i.itemId, status: i.status, openingId: i.openingId ?? null })), nonce: fair?.nonce ?? null, seen: Object.keys(j?.seen ?? {}), openTx: (w?.transactions ?? []).filter((t) => t.type === "open").map((t) => t.ref) };
   });
   const shot = (name) => page.screenshot({ path: `${out}/${name}-${view}.png` });
   const openBtn = () => page.locator("[data-open-primary]").first();
   const settled = () => page.waitForSelector(".v-op[data-opening-state='settled']", { timeout: 15000 });
   const confirmIfAsked = async () => { const c = page.locator('[role="alertdialog"] .v-btn'); if (await c.count()) await c.first().click(); };
   const text = () => page.evaluate(() => (document.querySelector(".v-op")?.innerText || "").replace(/\s+/g, " "));
-  return { context, page, fx, errors, ledger, shot, openBtn, settled, confirmIfAsked, text, w, h };
+  const closeResult = async () => { await page.locator(".v-op-tool, .v-reveal .v-sheet-close").last().click(); await page.waitForSelector(".v-op, .v-reveal", { state: "detached" }); };
+  return { context, page, fx, errors, ledger, shot, openBtn, settled, confirmIfAsked, text, closeResult, state, w, h };
 }
 /** 누른 순간부터 결과가 보이기까지(revealed)와 다음 행동이 가능해지기까지(settled)를 화면 안에서 잰다. 바깥에서 기다리며 재면 수백 ms 가 더해진다. */
 const armClock = (page) => page.evaluate(() => {
@@ -80,7 +81,10 @@ await run("s1", async () => {
   check("s1", "50 USDT 박스 작은 결과: 잔액 = 10000 - 50 + 25", near(done.balance, 9975), String(done.balance));
   await s.page.locator(".v-op-tool[aria-label]").last().click(); await s.page.waitForSelector(".v-op", { state: "detached" });
   await s.shot("15-ready-again");
-  check("s1", "닫으면 같은 박스 화면에서 다시 열 수 있다", await s.openBtn().isEnabled());
+  await s.openBtn().click(); await s.confirmIfAsked(); await s.settled();
+  const second = await s.ledger();
+  check("s1", "닫은 뒤 같은 박스 화면에서 실제로 다시 열린다(구매 두 번, 회차 두 번)", second.opens === 2 && second.nonce === s.fx.nonce + 2 && second.items.length === 2, `opens ${second.opens} nonce ${second.nonce}`);
+  check("s1", "거래 기록과 보관함 기록이 같은 개봉 번호로 이어진다", second.items.every((i) => i.openingId && second.openTx.some((ref) => ref.endsWith(":" + i.openingId))), JSON.stringify(second.openTx));
   check("s1", "콘솔 오류 없음", s.errors.length === 0, s.errors.join(" | "));
   await s.context.close();
 });
@@ -116,7 +120,13 @@ await run("s3", async () => {
     window.__earlyClicks = 0;
     const obs = new MutationObserver(() => {
       const b = document.querySelector("[data-open-again]");
-      if (b && document.querySelector(".v-op[data-opening-state='revealed']")) { window.__earlyClicks += 1; b.click(); b.dispatchEvent(new PointerEvent("pointerdown", { bubbles: true })); b.dispatchEvent(new MouseEvent("click", { bubbles: true })); }
+      if (b && document.querySelector(".v-op[data-opening-state='revealed']")) {
+        window.__earlyClicks += 1; b.click(); b.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+        // 보조 링크는 마우스와 키보드(Enter) 양쪽으로 눌러 본다
+        for (const link of document.querySelectorAll(".v-op-actions .v-link")) { link.click(); link.focus(); link.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true })); link.dispatchEvent(new KeyboardEvent("keyup", { key: "Enter", bubbles: true })); }
+        window.__earlyOpenSheets = Math.max(window.__earlyOpenSheets || 0, document.querySelectorAll(".v-scrim").length);
+        window.__earlyGone = window.__earlyGone || !document.querySelector(".v-op");
+      }
     });
     obs.observe(document.body, { subtree: true, childList: true, attributes: true });
     window.__stopEarly = () => obs.disconnect();
@@ -127,6 +137,8 @@ await run("s3", async () => {
   await s.page.waitForTimeout(900);
   l = await s.ledger();
   check("s3", "결과가 뜬 직후 0.35초 안의 누름은 다음 구매가 되지 않는다", early > 0 && l.opens === 1, `이른 누름 ${early}회, opens ${l.opens}`);
+  const side = await s.page.evaluate(() => ({ sheets: window.__earlyOpenSheets || 0, gone: !!window.__earlyGone, still: !!document.querySelector(".v-op"), nowSheets: document.querySelectorAll(".v-scrim").length }));
+  check("s3", "잠긴 동안에는 보조 링크(검증, 돌아가기)도 마우스와 키보드로 눌리지 않는다", side.sheets === 0 && !side.gone && side.still && side.nowSheets === 0, JSON.stringify(side));
   await s.context.close();
 
   s = await session({ fixture: "single:x5" });
@@ -147,7 +159,7 @@ await run("s4", async () => {
   const s = await session({ fixture: "single:x2" });
   await s.openBtn().click(); await s.settled();
   await s.page.getByRole("button", { name: /받는 방법 선택/ }).click();
-  await s.page.waitForSelector(".v-op-choice"); await s.shot("13a-receive-method");
+  await s.page.waitForSelector(".v-op-choice"); await s.page.waitForTimeout(350); await s.shot("13a-receive-method");
   await s.page.locator(".v-op-choice").last().click();
   await s.shot("13b-receive-usdt-selected");
   await s.page.evaluate(() => { const b = document.querySelector(".v-sheet .v-btn"); b.click(); b.click(); });
@@ -177,10 +189,17 @@ await run("s5", async () => {
   s = await session({ fixture: "single:x2" });
   await s.openBtn().click(); await s.settled(); l = await s.ledger();
   check("s5", "자동 받기 끔(기본): 상품을 그대로 보관한다", near(l.balance, 9999) && l.items[0].status === "IN_STORAGE", `balance ${l.balance}`);
-  await s.page.locator(".v-op-tool").first().click(); await s.page.waitForSelector(".v-op-toggle"); await s.shot("19-opening-settings");
-  await s.page.locator(".v-op-toggle").nth(2).click(); await s.page.waitForSelector('[role="alertdialog"]'); await s.shot("20-auto-take-confirm");
-  const on = await s.page.evaluate(() => JSON.parse(localStorage.getItem("gachaflix.settings") || "{}")?.state?.autoTake);
+  await s.page.locator(".v-op-tool").first().click(); await s.page.waitForSelector(".v-op-toggle"); await s.page.waitForTimeout(350); await s.shot("19-opening-settings");
+  await s.page.locator(".v-op-toggle").nth(2).click(); await s.page.waitForSelector('[role="alertdialog"]'); await s.page.waitForTimeout(350); await s.shot("20-auto-take-confirm");
+  const on = await s.page.evaluate(() => Object.values(JSON.parse(localStorage.getItem("gachaflix.settings") || "{}")?.state?.autoTakeBy ?? {}).some(Boolean));
   check("s5", "자동 받기는 확인을 누르기 전에는 켜지지 않는다", on !== true, String(on));
+  await s.page.locator('[role="alertdialog"] .v-btn').click(); await s.page.waitForTimeout(300);
+  const by = await s.page.evaluate(() => JSON.parse(localStorage.getItem("gachaflix.settings") || "{}")?.state?.autoTakeBy ?? {});
+  check("s5", "확인하면 이 계정에만 켜진다", by[s.state.user.id] === true && Object.keys(by).length === 1, JSON.stringify(Object.keys(by)));
+  await s.context.close();
+  s = await session({ fixture: "single:x2", settings: { autoTake: true, autoTakeFor: "someone-else" } });
+  await s.openBtn().click(); await s.settled(); await s.page.waitForTimeout(400); l = await s.ledger();
+  check("s5", "다른 계정이 켠 자동 받기는 이 계정에 적용되지 않는다", near(l.balance, 9999) && l.items[0].status === "IN_STORAGE", `balance ${l.balance} status ${l.items[0]?.status}`);
   await s.context.close();
 });
 
@@ -235,12 +254,14 @@ await run("s7", async () => {
   await s.page.waitForSelector("[data-open-recover]", { timeout: 15000 }); await s.shot("18a-interrupted");
   const back = await s.ledger();
   check("s7", "새로 고친 뒤: 구매는 한 번, 회차도 한 번만 썼다", back.opens === 1 && back.nonce === s.fx.nonce + 1 && near(back.balance, 10004), `opens ${back.opens} nonce ${back.nonce} balance ${back.balance}`);
-  check("s7", "못 본 결과가 기록장에 남아 있다", back.journal.length === 1 && back.journal[0].revealed === false, JSON.stringify(back.journal));
+  check("s7", "못 본 결과: 보관함 기록에 개봉 번호가 있고 아직 본 목록에 없다", back.items.length === 1 && !!back.items[0].openingId && !back.seen.includes(back.items[0].openingId), JSON.stringify({ items: back.items, seen: back.seen }));
   await s.page.locator("[data-open-recover]").click(); await s.settled(); await s.page.waitForTimeout(500); await s.shot("18-recovered");
   const t = await s.text(); const after = await s.ledger();
   check("s7", "다시 보여 준 결과가 처음 정해진 결과와 같다(5 USDT)", /5 USDT/.test(t) && /새로 뽑지 않았습니다/.test(t), t.slice(0, 120));
   check("s7", "다시 보여 주는 동안 새 구매나 새 회차가 없다", after.opens === 1 && after.nonce === back.nonce && near(after.balance, back.balance) && after.items.length === mid.items.length, `opens ${after.opens} nonce ${after.nonce}`);
-  check("s7", "본 뒤에는 기록장이 봤음으로 바뀐다", after.journal[0].revealed === true);
+  check("s7", "본 뒤에는 본 목록에 오른다", after.seen.includes(after.items[0].openingId));
+  await s.closeResult(); await s.page.reload({ waitUntil: "networkidle" }); await s.page.waitForSelector(".v-openbar .v-btn:not([disabled])");
+  check("s7", "한 번 본 결과는 다시 고쳐도 또 묻지 않는다", (await s.page.locator("[data-open-recover]").count()) === 0 && (await s.page.locator("[data-open-primary]").count()) === 1);
   await s.context.close();
 });
 
@@ -250,7 +271,7 @@ await run("s8", async () => {
   let expect = 10000;
   for (let i = 0; i < 6; i++) {
     await (i === 0 ? s.openBtn() : s.page.locator(".v-op-actions").getByText(/한 번 더 열기/).first()).click();
-    await s.page.waitForFunction((n) => { const j = JSON.parse(localStorage.getItem("voila.opening-journal") || "null"); return (j?.state?.entries ?? []).length === n; }, i + 1, { timeout: 15000 });
+    await s.page.waitForFunction((n) => { const j = JSON.parse(localStorage.getItem("voila.opening-journal") || "null"); return Object.keys(j?.state?.seen ?? {}).length === n; }, i + 1, { timeout: 15000 });
     await s.settled();
     const mult = s.fx.multiples[i]; const l = await s.ledger();
     // 2배는 디지털 기프트카드라 잔액에 더해지지 않고 보관된다
@@ -317,8 +338,36 @@ await run("s11", async () => {
   // mixed: 0.8, 2(기프트카드, 보관), 0.5, 0.99, 5 → 잔액에 들어오는 것은 0.8 + 0.5 + 0.99 + 5
   const expect = +(10000 - 5 + 0.8 + 0.5 + 0.99 + 5).toFixed(2);
   check("s11", "5개 열기: 구매 한 건, 기록 다섯, 잔액이 맞다", l.opens === 1 && l.items.length === 5 && near(l.balance, expect), `balance ${l.balance} expect ${expect} items ${l.items.length}`);
-  check("s11", "5개 열기: 잔액 변화를 적는다", /잔액 변화/.test(t) && /증가/.test(t), t.slice(0, 140));
+  check("s11", "5개 열기: 잔액에 들어온 것과 보관 상품을 나눠 적는다", /잔액에 반영 7\.29 USDT/.test(t) && /보관 상품 1개 참고가 2 USDT/.test(t) && /잔액 변화 2\.29 USDT 증가/.test(t), t.slice(0, 170));
+  // 받을 상품을 이 자리에서 받는다(보관함으로 가지 않는다)
+  await s.page.getByRole("button", { name: /받을 상품 받기/ }).click(); await s.page.waitForSelector(".v-sheet"); await s.page.waitForTimeout(300); await s.shot("25-multi-receive");
+  await s.page.locator(".v-sheet .v-btn").first().click(); await s.page.locator('[role="alertdialog"] .v-btn').click();
+  await s.page.waitForFunction(() => /USDT로 받음/.test(document.querySelector(".v-reveal")?.innerText || ""), null, { timeout: 5000 });
+  let m = await s.ledger(); const t2 = await s.page.evaluate(() => (document.querySelector(".v-reveal")?.innerText || "").replace(/\s+/g, " "));
+  check("s11", "여러 개 결과에서 기프트카드를 1.9 USDT 로 받는다: 잔액과 요약이 함께 바뀐다", near(m.balance, +(expect + 1.9).toFixed(2)) && /잔액에 반영 9\.19 USDT/.test(t2) && /잔액 변화 4\.19 USDT 증가/.test(t2), `balance ${m.balance} ${t2.slice(0, 120)}`);
+  await s.shot("26-multi-after-receive");
+  // 다 받았으니 주 단추가 한 번 더 열기다. 눌러서 실제로 다시 열린다(여러 개 열기 뒤에 갇히지 않는다)
+  await s.page.locator("[data-open-again]").click();
+  for (let i = 0; i < 60 && (await s.ledger()).opens < 2; i++) await s.page.waitForTimeout(250);
+  await s.page.waitForSelector(".v-reveal-result", { timeout: 15000 }); await s.page.waitForTimeout(600);
+  m = await s.ledger();
+  check("s11", "여러 개 결과에서 한 번 더 열기가 실제로 열린다", m.opens === 2 && m.items.length === 10, `opens ${m.opens} items ${m.items.length}`);
+  await s.closeResult();
+  await s.page.locator(".v-openbar .v-chip").first().click(); await s.openBtn().click(); await s.settled();
+  m = await s.ledger();
+  check("s11", "여러 개 결과를 닫은 뒤 박스 화면에서 다시 열린다", m.opens === 3 && m.items.length === 11, `opens ${m.opens} items ${m.items.length}`);
   await s.context.close();
+
+  // 여러 개 열기의 연출 중에 닫아도(Esc) 닫히지 않고 결과로 간다. 못 본 채 새로 고치면 다시 보여 준다
+  const r = await session({ fixture: "seq:mixed" });
+  await r.page.locator(".v-openbar .v-chip").nth(1).click(); await r.page.locator("[data-open-primary]").click();
+  await r.page.waitForSelector(".v-reveal-solo .v-boxw", { timeout: 5000 });
+  await r.page.reload({ waitUntil: "networkidle" }); await r.page.waitForSelector("[data-open-recover]", { timeout: 15000 });
+  const before = await r.ledger();
+  await r.page.locator("[data-open-recover]").click(); await r.page.waitForSelector(".v-reveal-result", { timeout: 15000 }); await r.page.waitForTimeout(500);
+  const after = await r.ledger();
+  check("s11", "여러 개 열기도 새로 고친 뒤 같은 결과를 다시 보여 준다(새 구매 없음)", before.opens === 1 && after.opens === 1 && after.items.length === 5 && near(after.balance, before.balance) && after.nonce === before.nonce, `opens ${after.opens} items ${after.items.length}`);
+  await r.context.close();
 });
 
 // s12: 소리와 진동을 켠 상태로 열어도 오류가 없다(소리 자체는 사람이 들어야 한다)
@@ -349,6 +398,21 @@ await run("s13", async () => {
     check("s13", `${locale} ${kind} 320 폭`, !m.overflow && !m.overlapBottom && !m.overlapTop && !m.clipX && !m.linksOut, JSON.stringify(m));
     await s.context.close();
   }
+});
+
+// s14: 두 탭. 한 탭에서 연 뒤 다른 탭(이미 떠 있던, 옛 장부를 들고 있는)에서 열어도 앞의 구매가 지워지지 않는다
+await run("s14", async () => {
+  const s = await session({ fixture: "seq:tenSmall" });
+  const other = await s.context.newPage();
+  await other.goto(s.page.url(), { waitUntil: "networkidle" });
+  await other.waitForSelector("[data-open-primary]:not([disabled])", { timeout: 15000 });
+  await s.openBtn().click(); await s.settled();
+  // 다른 탭은 새로 고치지 않았다. 그 탭의 기억 속 장부는 열기 전 상태다
+  await other.locator("[data-open-primary]").click();
+  await other.waitForSelector(".v-op[data-opening-state='settled']", { timeout: 15000 });
+  const l = await s.ledger();
+  check("s14", "두 탭에서 한 번씩: 구매 둘, 기록 둘, 회차 둘, 잔액 9999", l.opens === 2 && l.items.length === 2 && l.nonce === s.fx.nonce + 2 && near(l.balance, 9999), `opens ${l.opens} items ${l.items.length} nonce ${l.nonce} balance ${l.balance}`);
+  await s.context.close();
 });
 
 const failed = results.filter((r) => !r.pass);

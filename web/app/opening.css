@@ -1,167 +1,108 @@
 /*
- * 개봉 장면 (opening/STATE.md). 기대 → 충격 → 드러남 → 받음.
- * 색은 tokens.css 의 변수만 쓴다(회색과 흰 빛). 움직임은 transform 과 opacity 만 쓴다.
- * 기대 구간은 결과와 무관하게 똑같고, 결과의 크기는 봉인이 풀린 뒤에만 드러난다.
+ * 개봉 장면 (opening/STATE.md, opening/DECISIONS.md).
+ *   기대(상자가 내려앉고 봉인이 감긴다) → 충격(봉인이 떨어지고 뚜껑이 넘어간다) → 상자가 빠진다 → 받은 것과 차이가 함께 나온다
+ * 색은 tokens.css 의 변수만 쓴다(회색과 흰 빛, 로고 별 색은 낸 값의 20배 이상일 때 이름 앞 별 하나에만).
+ * 움직임은 transform 과 opacity 만 쓴다. 기대 구간에는 빛이 없고, 빛은 열린 뒤 실제로 늘었을 때만 밝다.
  */
-.v-op { position: fixed; inset: 0; z-index: 150; display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; overflow: hidden; background: var(--v-bg); outline: none; --ant: 760ms; --rev: 460ms; }
+.v-op { position: fixed; inset: 0; z-index: 150; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; overflow: hidden; background: var(--v-bg); outline: none; --ant: 520ms; --imp: 150ms; --exit: 170ms; }
+
+/* 위: 잔액 하나, 설정, (결과가 다 보인 뒤) 닫기 */
 .v-op-top { display: flex; height: 56px; align-items: center; justify-content: space-between; gap: 8px; margin-top: env(safe-area-inset-top, 0px); padding: 0 var(--v-gutter); }
-.v-op-balance { display: inline-flex; height: var(--v-touch); align-items: center; border-radius: var(--v-r-pill); background: var(--v-pill); padding: 0 14px; color: var(--v-text); font-size: var(--v-fs-small); white-space: nowrap; transition: background 0.5s ease-out, color 0.5s ease-out; }
-.v-op-balance[data-credited="true"] { background: var(--v-pill-hover); color: var(--v-title); }
-.v-op-close { display: inline-flex; width: var(--v-touch); height: var(--v-touch); align-items: center; justify-content: center; border-radius: var(--v-r-pill); background: var(--v-pill); color: var(--v-text); }
-.v-op-close:hover { background: var(--v-pill-hover); }
-.v-op-scene { position: relative; display: block; width: 100%; min-height: 0; overflow: hidden; perspective: 900px; cursor: pointer; }
-.v-op-scene:disabled { cursor: default; }
-.v-op-floor { position: absolute; left: 50%; top: 66%; width: 130%; aspect-ratio: 5 / 2; transform: translate(-50%, -50%); background: radial-gradient(closest-side, color-mix(in srgb, var(--v-title) 13%, transparent), transparent 72%); opacity: 0.55; transition: opacity 0.5s ease-out; }
-.v-op-prize { position: absolute; inset: 0; display: grid; place-items: center; }
-.v-op-photo { position: relative; width: min(84%, 440px); aspect-ratio: 4 / 3; -webkit-mask-image: radial-gradient(closest-side, var(--v-bg) 62%, transparent 100%); mask-image: radial-gradient(closest-side, var(--v-bg) 62%, transparent 100%); }
+.v-op-balance { display: inline-flex; height: var(--v-touch); align-items: center; border-radius: var(--v-r-pill); background: var(--v-pill); padding: 0 14px; color: var(--v-text); font-size: var(--v-fs-small); white-space: nowrap; }
+.v-op-tools { display: inline-flex; gap: 8px; }
+.v-op-tool { display: inline-flex; width: var(--v-touch); height: var(--v-touch); align-items: center; justify-content: center; border-radius: var(--v-r-pill); background: var(--v-pill); color: var(--v-text); }
+.v-op-tool:hover { background: var(--v-pill-hover); }
+
+/* 가운데: 상자, 그리고 그 자리에 받은 것 */
+.v-op-scene { position: relative; min-height: 0; overflow: hidden; }
+.v-op-floor { position: absolute; left: 50%; top: 62%; width: 130%; aspect-ratio: 5 / 2; transform: translate(-50%, -50%); background: radial-gradient(closest-side, color-mix(in srgb, var(--v-title) 12%, transparent), transparent 72%); opacity: 0.4; }
+.v-op-result { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 0 var(--v-gutter) 4%; text-align: center; }
+.v-op-label { color: var(--v-mute); font-size: var(--v-fs-small); line-height: 1.4; }
+.v-op-amount { color: var(--v-title); font-size: clamp(44px, 14vw, 64px); font-weight: 400; line-height: 1.1; white-space: nowrap; }
+.v-op[data-tone="high"] .v-op-amount, .v-op[data-tone="top"] .v-op-amount { font-size: clamp(50px, 16vw, 76px); }
+.v-op-net { max-width: 22em; margin-top: 6px; color: var(--v-text); font-size: 18px; line-height: 1.45; text-wrap: balance; word-break: keep-all; }
+.v-op-net[data-direction="up"] { color: var(--v-title); }
+.v-op-photo { position: relative; width: min(94%, 460px); aspect-ratio: 4 / 3; margin-bottom: 4px; -webkit-mask-image: radial-gradient(closest-side, var(--v-bg) 64%, transparent 100%); mask-image: radial-gradient(closest-side, var(--v-bg) 64%, transparent 100%); }
 .v-op-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.v-op-amount { color: var(--v-title); font-size: clamp(40px, 13vw, 60px); line-height: 1.1; white-space: nowrap; }
-.v-op-flash { position: absolute; left: 50%; top: 58%; width: 140vmax; height: 140vmax; margin: -70vmax 0 0 -70vmax; border-radius: 50%; background: radial-gradient(closest-side, var(--v-title), transparent 62%); opacity: 0; pointer-events: none; }
-.v-op-spark { position: absolute; left: 50%; top: 50%; width: 28px; height: 28px; margin: -14px 0 0 -14px; color: var(--v-title); opacity: 0; pointer-events: none; }
-.v-op-spark svg { display: block; width: 100%; height: 100%; }
+.v-op-name { display: inline-flex; max-width: 100%; align-items: baseline; justify-content: center; gap: 8px; color: var(--v-title); font-size: var(--v-fs-title); font-weight: 400; line-height: 1.25; text-wrap: balance; word-break: keep-all; }
+.v-op-mark { width: 16px; height: 16px; flex: none; align-self: center; color: var(--v-spark); }
+.v-op-meta { margin-top: 10px; color: var(--v-mute); font-size: var(--v-fs-small); line-height: 1.5; text-wrap: balance; word-break: keep-all; }
+.v-op-line { max-width: 24em; color: var(--v-sub); font-size: var(--v-fs-desc); line-height: 1.45; text-wrap: balance; word-break: keep-all; }
 
-.v-op-info { width: 100%; max-width: calc(var(--v-col) + var(--v-gutter) * 2); margin: 0 auto; padding: 4px var(--v-gutter) 0; }
-.v-op-name { color: var(--v-title); font-size: var(--v-fs-title); font-weight: 400; line-height: 1.25; text-wrap: balance; word-break: keep-all; }
-.v-op-value { margin-top: 4px; color: var(--v-title); font-size: 20px; line-height: 1.4; }
-.v-op-net { color: var(--v-title); font-size: 20px; line-height: 1.45; text-wrap: pretty; word-break: keep-all; }
-.v-op-net[data-direction="down"] { color: var(--v-text); }
-.v-op-status { margin-top: 8px; color: var(--v-mute); font-size: var(--v-fs-small); line-height: 1.5; }
-.v-op-actions { display: flex; width: 100%; max-width: calc(var(--v-col) + var(--v-gutter) * 2); flex-direction: column; gap: 4px; margin: 0 auto; padding: 20px var(--v-gutter) calc(12px + env(safe-area-inset-bottom, 0px)); }
+/* 아래: 상태 한 줄과 단추. 연출 중에는 "결과 바로 보기" 하나 */
+.v-op-bottom { display: flex; width: 100%; max-width: calc(var(--v-col) + var(--v-gutter) * 2); min-height: 132px; flex-direction: column; justify-content: flex-end; gap: 12px; margin: 0 auto; padding: 8px var(--v-gutter) calc(12px + env(safe-area-inset-bottom, 0px)); }
+.v-op-skip { display: flex; min-height: var(--v-btn-h); align-items: center; justify-content: center; }
+.v-op-status { display: flex; flex-direction: column; gap: 4px; color: var(--v-mute); font-size: var(--v-fs-small); line-height: 1.5; text-align: center; text-wrap: balance; word-break: keep-all; }
+.v-op-actions { display: flex; flex-direction: column; gap: 4px; }
+.v-op-actions .v-links { justify-content: center; }
 
-/* 받은 것은 봉인이 풀린 뒤에 보인다. 글과 단추는 다 드러난 뒤에 */
-.v-op-prize { opacity: 0; transform: translateY(16%) scale(0.4); }
-.v-op[data-phase="reveal"] .v-op-prize, .v-op[data-phase="settled"] .v-op-prize { opacity: 1; transform: none; }
-.v-op-info, .v-op-actions { opacity: 0; transform: translateY(12px); pointer-events: none; }
-.v-op[data-phase="settled"] .v-op-info, .v-op[data-phase="settled"] .v-op-actions { opacity: 1; transform: none; pointer-events: auto; }
+/* 받는 방법과 설정 시트의 고르는 줄 */
+.v-op-choices { display: flex; flex-direction: column; gap: 8px; }
+.v-op-choice, .v-op-toggle { display: flex; width: 100%; min-height: 64px; border: 2px solid transparent; border-radius: var(--v-r-field); background: var(--v-pill); padding: 12px 16px; color: var(--v-text); text-align: left; transition: background var(--v-fast), border-color var(--v-fast); }
+.v-op-choice { flex-direction: column; justify-content: center; gap: 2px; }
+.v-op-choice:hover, .v-op-toggle:hover { background: var(--v-pill-hover); }
+.v-op-choice[aria-checked="true"] { border-color: var(--v-selected); }
+.v-op-toggle { align-items: center; justify-content: space-between; gap: 16px; }
+.v-op-toggle-text { display: flex; flex-direction: column; gap: 2px; }
+.v-op-toggle-state { flex: none; color: var(--v-mute); font-size: var(--v-fs-small); }
+.v-op-toggle[aria-checked="true"] { border-color: var(--v-selected); }
+.v-op-toggle[aria-checked="true"] .v-op-toggle-state { color: var(--v-title); }
 
-/* 결과의 크기: 실제로 받는 값이 정한다(lib/openingFlow.ts). 낸 값보다 적으면 조용하고 작게 */
-.v-op[data-tone="below"] .v-op-amount { color: var(--v-sub); font-size: clamp(32px, 10vw, 44px); }
-.v-op[data-tone="below"] .v-op-photo { width: min(62%, 320px); }
-.v-op[data-tone="below"] .v-op-floor { opacity: 0.3; }
-.v-op[data-tone="even"] .v-op-amount { font-size: clamp(36px, 11vw, 50px); }
-.v-op[data-tone="even"] .v-op-photo { width: min(70%, 360px); }
-.v-op[data-tone="even"] .v-op-floor { opacity: 0.42; }
-.v-op[data-tone="above"][data-phase="settled"] .v-op-floor, .v-op[data-tone="above"][data-phase="reveal"] .v-op-floor { opacity: 0.8; }
-.v-op[data-tone="high"] .v-op-amount { font-size: clamp(48px, 15vw, 72px); }
-.v-op[data-tone="high"][data-phase="settled"] .v-op-floor, .v-op[data-tone="high"][data-phase="reveal"] .v-op-floor { opacity: 1; }
-.v-op[data-tone="rare"] .v-op-amount { font-size: clamp(52px, 16vw, 80px); }
-.v-op[data-tone="rare"] .v-op-photo { width: min(100%, 560px); }
-.v-op[data-tone="rare"][data-phase="settled"] .v-op-floor, .v-op[data-tone="rare"][data-phase="reveal"] .v-op-floor { opacity: 1; width: 170%; }
-.v-op[data-tone="rare"] .v-op-spark { color: var(--v-spark); }
-
-/* ── 시안 A: 봉인 상자. 진짜 입체(면 여섯), 뚜껑은 뒤쪽 모서리를 축으로 넘어간다 */
-/* 움직임(자리, 크기, 투명도)은 바깥 포장이 맡는다. 입체 요소에 투명도를 걸면 브라우저가 평면으로 눌러 버린다 */
-.v-boxw { position: absolute; left: 50%; top: 58%; width: 150px; height: 100px; margin: -50px 0 0 -75px; }
+/* ── 상자: 진짜 입체. 움직임(자리, 크기)은 바깥 포장이 맡는다. 입체 요소에 투명도를 걸면 브라우저가 평면으로 눌러 버린다 */
+.v-boxw { position: absolute; left: 50%; top: 56%; width: 150px; height: 100px; margin: -50px 0 0 -75px; }
 .v-box3 { position: absolute; inset: 0; transform-style: preserve-3d; transform: perspective(900px) rotateX(-24deg) rotateY(-34deg); }
 .v-box3 > i, .v-box3-lid > i { position: absolute; top: 0; left: 0; display: block; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--v-title) 10%, transparent); }
-.v-box3-front, .v-box3-back, .v-box3-right, .v-box3-left { width: 150px; height: 100px; }
+.v-box3-front, .v-box3-back, .v-box3-right { width: 150px; height: 100px; }
 .v-box3-front { transform: translateZ(75px); background: linear-gradient(90deg, transparent calc(50% - 11px), var(--v-op-band) calc(50% - 11px), var(--v-op-band) calc(50% + 11px), transparent calc(50% + 11px)), linear-gradient(var(--v-op-front), var(--v-op-side)); }
 .v-box3-back { transform: rotateY(180deg) translateZ(75px); background: var(--v-op-side); }
 .v-box3-right { transform: rotateY(90deg) translateZ(75px); background: linear-gradient(var(--v-op-side), var(--v-op-inside)); }
-.v-box3-left { transform: rotateY(-90deg) translateZ(75px); background: var(--v-op-side); }
 .v-box3 > .v-box3-inside { top: -25px; width: 150px; height: 150px; transform: rotateX(90deg) translateZ(49px); background: var(--v-op-inside); }
 .v-box3 > .v-box3-glow { top: -25px; width: 150px; height: 150px; transform: rotateX(90deg) translateZ(50px); background: radial-gradient(closest-side, var(--v-title), transparent 78%); box-shadow: none; opacity: 0; }
 .v-box3-lid { position: absolute; top: -20px; left: -4px; width: 158px; height: 28px; transform-style: preserve-3d; transform-origin: 50% 100% -79px; }
-.v-box3-lid-front, .v-box3-lid-back, .v-box3-lid-right, .v-box3-lid-left { width: 158px; height: 28px; }
+.v-box3-lid-front, .v-box3-lid-right { width: 158px; height: 28px; }
 .v-box3-lid-front { transform: translateZ(79px); background: linear-gradient(90deg, transparent calc(50% - 11px), var(--v-op-band) calc(50% - 11px), var(--v-op-band) calc(50% + 11px), transparent calc(50% + 11px)), var(--v-op-front); }
-.v-box3-lid-back { transform: rotateY(180deg) translateZ(79px); background: var(--v-op-side); }
 .v-box3-lid-right { transform: rotateY(90deg) translateZ(79px); background: var(--v-op-side); }
-.v-box3-lid-left { transform: rotateY(-90deg) translateZ(79px); background: var(--v-op-side); }
 .v-box3-lid > .v-box3-lid-top { top: -65px; width: 158px; height: 158px; transform: rotateX(90deg) translateZ(14px); background: linear-gradient(90deg, transparent calc(50% - 11px), var(--v-op-band) calc(50% - 11px), var(--v-op-band) calc(50% + 11px), transparent calc(50% + 11px)), var(--v-op-lid); }
-.v-seal { position: absolute; top: 100%; left: 50%; display: grid; width: 38px; height: 38px; margin: -19px 0 0 -19px; place-items: center; border-radius: 50%; background: var(--v-bg); box-shadow: 0 0 0 1px var(--v-outline); color: var(--v-title); }
+/* 봉인: 뚜껑과 몸체의 이음매 위. 뚜껑의 자식이 아니다(열릴 때 따라 올라가지 않고 떨어져 나간다) */
+.v-seal { position: absolute; top: 8px; left: 50%; display: grid; width: 38px; height: 38px; margin: -19px 0 0 -19px; place-items: center; border-radius: 50%; background: var(--v-bg); box-shadow: 0 0 0 1px var(--v-outline); color: var(--v-title); transform: translateZ(80px); }
 .v-seal-star { width: 18px; height: 18px; }
 
-/* ── 시안 B: 빛의 틈. 평면 상자의 이음매에서 빛이 차오른다 */
-.v-boxb { position: absolute; left: 50%; top: 56%; width: 156px; height: 156px; margin: -78px 0 0 -78px; }
-.v-boxb > i { position: absolute; display: block; }
-.v-boxb-top { top: 0; right: -4px; left: -4px; height: 34%; border-radius: 18px 18px 6px 6px; background: var(--v-op-lid); }
-.v-boxb-bottom { top: 34%; right: 0; bottom: 0; left: 0; border-radius: 6px 6px 22px 22px; background: linear-gradient(var(--v-op-front), var(--v-op-side)); }
-.v-boxb-seam { top: 34%; right: 4%; left: 4%; height: 2px; margin-top: -1px; border-radius: 2px; background: var(--v-title); opacity: 0.2; }
-.v-boxb .v-seal { top: 34%; }
-.v-boxb-bloom { top: 34%; left: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: radial-gradient(closest-side, var(--v-title), transparent); opacity: 0; }
-
-/* ── 시안 C: 막. 상자를 그리지 않는다. 검은 화면에 선 하나, 그 선이 갈라지며 받은 것이 뒤에 있다 */
-.v-shut { position: absolute; inset: 0; }
-.v-shut > i { position: absolute; right: 0; left: 0; display: block; background: var(--v-bg); }
-.v-shut-top { top: 0; height: 60%; }
-.v-shut-bottom { top: 60%; bottom: 0; }
-.v-shut > .v-shut-seam { top: 60%; right: auto; left: 50%; width: min(64%, 300px); height: 2px; margin: -1px 0 0 calc(min(64%, 300px) / -2); border-radius: 2px; background: var(--v-title); transform: scaleX(0); }
-.v-op[data-concept="c"] .v-op-prize { opacity: 1; transform: scale(1.08); }
-.v-op[data-concept="c"][data-phase="reveal"] .v-op-prize, .v-op[data-concept="c"][data-phase="settled"] .v-op-prize { transform: none; }
+/* 상태별 끝 모양(움직임 줄이기에서도 같다) */
+.v-op[data-phase="impact"] .v-box3-lid, .v-op[data-phase="exit"] .v-box3-lid { transform: rotateX(112deg); }
+.v-op[data-phase="impact"] .v-seal, .v-op[data-phase="exit"] .v-seal { opacity: 0; transform: translateZ(190px) translateY(-26px) scale(0.6) rotate(140deg); }
+/* 열린 뒤의 빛: 실제로 늘었을 때만 밝다. 줄었거나 비슷하면 틈이 보일 만큼만 */
+.v-op[data-phase="impact"] .v-box3-glow, .v-op[data-phase="exit"] .v-box3-glow { opacity: 0.22; }
+.v-op[data-tone="above"][data-phase="impact"] .v-box3-glow, .v-op[data-tone="above"][data-phase="exit"] .v-box3-glow { opacity: 0.6; }
+.v-op[data-tone="high"][data-phase="impact"] .v-box3-glow, .v-op[data-tone="high"][data-phase="exit"] .v-box3-glow, .v-op[data-tone="top"][data-phase="impact"] .v-box3-glow, .v-op[data-tone="top"][data-phase="exit"] .v-box3-glow { opacity: 0.95; }
+.v-op[data-phase="exit"] .v-boxw { transform: translateY(80vh); }
+/* 바닥 빛: 받은 것이 나온 뒤 결과의 크기만큼 */
+.v-op[data-tone="above"][data-phase="reveal"] .v-op-floor, .v-op[data-tone="above"][data-phase="ready"] .v-op-floor { opacity: 0.7; }
+.v-op[data-tone="high"][data-phase="reveal"] .v-op-floor, .v-op[data-tone="high"][data-phase="ready"] .v-op-floor { opacity: 0.9; }
+.v-op[data-tone="top"][data-phase="reveal"] .v-op-floor, .v-op[data-tone="top"][data-phase="ready"] .v-op-floor { opacity: 1; transform: translate(-50%, -50%) scale(1.35); }
+/* 결과가 뜬 직후에는 아래 단추가 눌리지 않는다(건너뛰려던 손가락이 다음 구매를 누르지 않게). 모양은 처음부터 같다 */
+.v-op-actions:not([data-armed]) { pointer-events: none; }
+.v-op-actions:not([data-armed]) .v-btn:disabled { background: var(--v-primary); color: var(--v-on-primary); opacity: 1; }
 
 @media (prefers-reduced-motion: no-preference) {
-  .v-op { animation: v-fade 0.18s ease-out; }
-  .v-op-info, .v-op-actions { transition: opacity 0.28s ease-out, transform 0.36s var(--v-ease); }
-  .v-op-actions { transition-delay: 0.08s; }
-  .v-op-prize { transition: opacity calc(var(--rev) * 0.5) ease-out, transform var(--rev) cubic-bezier(0.05, 0.7, 0.1, 1); }
-  .v-op[data-phase="settled"] .v-op-prize { transition-duration: 0.2s; }
-
-  /* A */
-  .v-op[data-phase="anticipation"] .v-boxw { animation: v-a-ready var(--ant) cubic-bezier(0.3, 0, 0.3, 1) both; }
-  .v-op[data-phase="anticipation"] .v-seal-star { animation: v-seal-turn var(--ant) cubic-bezier(0.5, 0, 0.8, 0.4) both; }
-  .v-op[data-phase="impact"] .v-boxw { animation: v-a-pop 0.17s cubic-bezier(0.2, 1.6, 0.4, 1) both; }
-  .v-box3-lid { transition: transform 0.52s cubic-bezier(0.2, 1.35, 0.35, 1); }
-  .v-box3-glow { transition: opacity 0.12s ease-out; }
-  .v-seal { transition: transform 0.22s cubic-bezier(0.2, 1.6, 0.4, 1), opacity 0.2s 0.06s ease-out; }
-  .v-op[data-phase="reveal"] .v-boxw { animation: v-a-leave calc(var(--rev) * 0.9) cubic-bezier(0.5, 0, 0.9, 0.5) both; }
-
-  /* B */
-  .v-op[data-phase="anticipation"] .v-boxb { animation: v-b-ready var(--ant) cubic-bezier(0.3, 0, 0.3, 1) both; }
-  .v-op[data-phase="anticipation"] .v-boxb-seam { animation: v-b-seam var(--ant) cubic-bezier(0.6, 0, 0.9, 0.5) both; }
-  .v-boxb-top, .v-boxb-bottom, .v-boxb .v-seal, .v-boxb-seam { transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.22s ease-out; }
-  .v-boxb-bloom { transition: transform 0.34s cubic-bezier(0.1, 0.8, 0.2, 1), opacity 0.5s ease-out; }
-
-  /* C */
-  .v-op[data-phase="anticipation"] .v-shut-seam { animation: v-c-seam var(--ant) cubic-bezier(0.6, 0, 0.2, 1) both; }
-  .v-shut-top, .v-shut-bottom { transition: transform calc(var(--rev) * 0.9 + 0.1s) cubic-bezier(0.76, 0, 0.24, 1); }
-  .v-shut-seam { transition: opacity 0.2s ease-out, transform 0.12s ease-out; }
-  .v-op[data-concept="c"] .v-op-prize { transition: transform calc(var(--rev) + 0.3s) cubic-bezier(0.05, 0.7, 0.1, 1); }
-
-  /* 충격의 빛: 늘었을 때만. 줄었거나 비슷하면 빛이 터지지 않는다 */
-  .v-op[data-tone="above"][data-phase="impact"] .v-op-flash, .v-op[data-tone="above"][data-phase="reveal"] .v-op-flash { animation: v-flash-s 0.5s ease-out both; }
-  .v-op[data-tone="high"][data-phase="impact"] .v-op-flash, .v-op[data-tone="high"][data-phase="reveal"] .v-op-flash { animation: v-flash-m 0.7s ease-out both; }
-  .v-op[data-tone="high"][data-phase="reveal"] .v-op-spark { animation: v-spark-twinkle 0.7s 0.1s ease-out both; }
-  /* 드문 결과: 빛이 터지는 대신 한 박자 어두워지고, 별 하나가 열리며 받은 것이 크게 나온다 */
-  .v-op[data-tone="rare"][data-phase="reveal"] .v-op-spark { animation: v-spark-open var(--rev) cubic-bezier(0.3, 0, 0.2, 1) both; }
-  .v-op[data-tone="rare"][data-phase="reveal"] .v-op-prize { animation: v-rare-in var(--rev) cubic-bezier(0.05, 0.7, 0.1, 1) both; transition: none; }
-  .v-op[data-tone="rare"][data-phase="reveal"] .v-op-floor { transition: opacity 0.9s 0.5s ease-out; }
+  .v-op[data-phase="anticipation"] .v-boxw { animation: v-op-settle var(--ant) cubic-bezier(0.3, 0, 0.4, 1) both; }
+  .v-op[data-phase="anticipation"] .v-seal-star { animation: v-op-wind var(--ant) cubic-bezier(0.6, 0, 0.9, 0.4) both; }
+  .v-op[data-phase="impact"] .v-boxw { animation: v-op-pop var(--imp) cubic-bezier(0.2, 1.7, 0.4, 1) both; }
+  .v-box3-lid { transition: transform 0.36s cubic-bezier(0.2, 1.3, 0.35, 1); }
+  .v-seal { transition: transform 0.16s cubic-bezier(0.3, 0, 0.6, 1), opacity 0.14s ease-out; }
+  .v-box3-glow { transition: opacity 0.1s ease-out; }
+  .v-op[data-phase="exit"] .v-boxw { animation: v-op-drop var(--exit) cubic-bezier(0.6, 0, 1, 0.6) both; }
+  .v-op-floor { transition: opacity 0.6s ease-out, transform 1.8s cubic-bezier(0.05, 0.7, 0.1, 1); }
+  /* 받은 것과 차이 문장은 한 묶음으로 같은 프레임에 나온다 */
+  .v-op[data-phase="reveal"] .v-op-result > * { animation: v-op-in 0.26s cubic-bezier(0.05, 0.7, 0.1, 1) both; }
+  .v-op[data-phase="reveal"] .v-op-status, .v-op[data-phase="reveal"] .v-op-actions { animation: v-fade 0.2s ease-out both; }
+  /* 낸 값의 20배 이상: 상품 위로 지나가는 것 없이, 어두운 정지 뒤 받은 것이 천천히 다가온다 */
+  .v-op[data-tone="top"][data-phase="reveal"] .v-op-result, .v-op[data-tone="top"][data-phase="ready"] .v-op-result { animation: v-op-push 1.8s cubic-bezier(0.05, 0.7, 0.1, 1) both; }
+  .v-op[data-tone="top"][data-phase="reveal"] .v-op-result > * { animation-duration: 0.5s; }
 }
 
-/* 상태별 끝 모양(움직임 줄이기에서도 같다) */
-.v-op[data-phase="impact"] .v-box3-lid, .v-op[data-phase="reveal"] .v-box3-lid, .v-op[data-phase="settled"] .v-box3-lid { transform: rotateX(112deg); }
-.v-op[data-phase="impact"] .v-box3-glow, .v-op[data-phase="reveal"] .v-box3-glow { opacity: 0.9; }
-.v-op[data-tone="below"][data-phase="impact"] .v-box3-glow, .v-op[data-tone="below"][data-phase="reveal"] .v-box3-glow, .v-op[data-tone="even"][data-phase="impact"] .v-box3-glow, .v-op[data-tone="even"][data-phase="reveal"] .v-box3-glow { opacity: 0.28; }
-.v-op[data-phase="impact"] .v-seal, .v-op[data-phase="reveal"] .v-seal, .v-op[data-phase="settled"] .v-seal { opacity: 0; transform: scale(1.5) rotate(90deg); }
-.v-op[data-phase="settled"] .v-boxw, .v-op[data-phase="settled"] .v-boxb, .v-op[data-phase="settled"] .v-shut { display: none; }
-.v-op[data-phase="impact"] .v-boxb-top, .v-op[data-phase="reveal"] .v-boxb-top { opacity: 0; transform: translateY(-34px) rotate(-5deg); }
-.v-op[data-phase="impact"] .v-boxb-bottom, .v-op[data-phase="reveal"] .v-boxb-bottom { opacity: 0; transform: translateY(18px) scale(0.96); }
-.v-op[data-phase="impact"] .v-boxb-seam, .v-op[data-phase="reveal"] .v-boxb-seam { opacity: 0; }
-.v-op[data-phase="impact"] .v-boxb-bloom { opacity: 0.9; transform: scale(28); }
-.v-op[data-phase="reveal"] .v-boxb-bloom { opacity: 0; transform: scale(48); }
-.v-op[data-tone="below"][data-phase="impact"] .v-boxb-bloom, .v-op[data-tone="even"][data-phase="impact"] .v-boxb-bloom { opacity: 0.3; transform: scale(14); }
-.v-op[data-phase="impact"] .v-shut-seam { transform: scaleX(1) scaleY(3); }
-.v-op[data-phase="reveal"] .v-shut-seam { opacity: 0; transform: scaleX(1.4); }
-.v-op[data-phase="reveal"] .v-shut-top { transform: translateY(-101%); }
-.v-op[data-phase="reveal"] .v-shut-bottom { transform: translateY(101%); }
-
-@keyframes v-a-ready {
-  0% { transform: translateY(-34px); opacity: 0; }
-  20% { transform: translateY(3px); opacity: 1; }
-  30% { transform: translateY(0); }
-  68% { transform: translateY(5px) scale(0.955); }
-  76% { transform: translate(-1.5px, 6px) scale(0.95); }
-  84% { transform: translate(1.5px, 6px) scale(0.946); }
-  92% { transform: translate(-1px, 7px) scale(0.942); }
-  100% { transform: translateY(7px) scale(0.94); }
-}
-@keyframes v-a-pop { 0% { transform: translateY(7px) scale(0.94); } 100% { transform: translateY(-4px) scale(1.04); } }
-@keyframes v-a-leave { 0% { transform: translateY(-4px) scale(1.04); opacity: 1; } 100% { transform: translateY(120px) scale(0.8); opacity: 0; } }
-@keyframes v-seal-turn { 0%, 35% { transform: rotate(0) scale(1); } 100% { transform: rotate(45deg) scale(1.18); } }
-@keyframes v-b-ready { 0% { transform: translateY(-20px); opacity: 0; } 20% { transform: none; opacity: 1; } 100% { transform: scale(0.96); } }
-@keyframes v-b-seam { 0%, 25% { opacity: 0.2; transform: scaleY(1); box-shadow: 0 0 0 0 transparent; } 100% { opacity: 1; transform: scaleY(2.5); box-shadow: 0 0 26px 5px color-mix(in srgb, var(--v-title) 70%, transparent); } }
-@keyframes v-c-seam { 0% { transform: scaleX(0); opacity: 0; } 15% { opacity: 1; } 70% { transform: scaleX(1); } 82% { transform: scaleX(0.96) scaleY(1.5); } 100% { transform: scaleX(1) scaleY(2); } }
-@keyframes v-flash-s { 0% { opacity: 0; transform: scale(0.2); } 30% { opacity: 0.2; } 100% { opacity: 0; transform: scale(1); } }
-@keyframes v-flash-m { 0% { opacity: 0; transform: scale(0.2); } 25% { opacity: 0.34; } 100% { opacity: 0; transform: scale(1.1); } }
-@keyframes v-spark-twinkle { 0% { opacity: 0; transform: translate(74px, -62px) scale(0) rotate(0); } 40% { opacity: 1; transform: translate(74px, -62px) scale(1.1) rotate(90deg); } 100% { opacity: 0; transform: translate(74px, -62px) scale(0.6) rotate(180deg); } }
-@keyframes v-spark-open { 0% { opacity: 0; transform: scale(0) rotate(0); } 22% { opacity: 1; transform: scale(1.6) rotate(90deg); } 34% { opacity: 1; transform: scale(1.3) rotate(135deg); } 58% { opacity: 0; transform: scale(26) rotate(180deg); } 100% { opacity: 0; transform: scale(26) rotate(180deg); } }
-@keyframes v-rare-in { 0%, 36% { opacity: 0; transform: scale(1.16); } 62% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+@keyframes v-op-settle { 0% { opacity: 0; transform: translateY(-28px); } 24% { opacity: 1; transform: translateY(2px); } 100% { opacity: 1; transform: translateY(8px) scale(0.93); } }
+@keyframes v-op-wind { 0% { transform: rotate(0) scale(1); } 100% { transform: rotate(90deg) scale(1.14); } }
+@keyframes v-op-pop { 0% { transform: translateY(8px) scale(0.93); } 100% { transform: translateY(-6px) scale(1.05); } }
+@keyframes v-op-drop { 0% { transform: translateY(-6px) scale(1.05); } 100% { transform: translateY(80vh) scale(1.05); } }
+@keyframes v-op-in { 0% { opacity: 0; transform: translateY(10px) scale(0.97); } 100% { opacity: 1; transform: none; } }
+@keyframes v-op-push { 0% { transform: scale(1.07); } 100% { transform: none; } }

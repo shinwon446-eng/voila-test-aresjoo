@@ -78,7 +78,7 @@ function theory(m: Model) {
   const max = m.key === "now" ? CURRENT_MAX : Math.max(...m.outcomes.map((o) => o.value));
   const maxP = m.key === "now" ? 1 / UNIT : m.outcomes.find((o) => o.value === max)!.units / UNIT;
   const tones = { below: 0, even: 0, above: 0, high: 0, rare: 0 };
-  for (const [i, o] of m.outcomes.entries()) { const k = o.value / PRICE; tones[k >= 20 ? "rare" : k >= 6 ? "high" : k >= 1.05 ? "above" : k > 0.95 ? "even" : "below"] += p[i]; }
+  for (const [i, o] of Array.from(m.outcomes.entries())) { const k = o.value / PRICE; tones[k >= 20 ? "rare" : k >= 6 ? "high" : k >= 1.05 ? "above" : k > 0.95 ? "even" : "below"] += p[i]; }
   return { sum, ev, ratio: ev / PRICE, margin: 1 - ev / PRICE, variance, sd: Math.sqrt(variance), cv: Math.sqrt(variance) / ev, below, equal, above, max, maxP, tones };
 }
 
@@ -128,12 +128,12 @@ L.push(`- 시뮬레이션은 모델마다 ${DRAWS.toLocaleString("en-US")}회, �
 const T = models.map(theory);
 const S = models.map((m, i) => simulate(m, SEED + i));
 
-for (const [i, m] of models.entries()) {
+for (const [i, m] of Array.from(models.entries())) {
   const t = T[i]; const s = S[i];
   L.push(`## ${m.name}`, "", m.idea, "");
   if (m.rule) L.push(m.rule, "");
   L.push("| 결과 | 받는 값 (USDT) | 낸 값 대비 | 확률 | 10만 회 기대 도수 | 10만 회 관측 도수 |", "|---|---:|---:|---:|---:|---:|");
-  m.outcomes.forEach((o, k) => L.push(`| ${o.label} | ${money(o.value)} | ${(o.value / PRICE).toFixed(2)}배 | ${fmtPct(o.units)} | ${money((o.units / UNIT) * DRAWS)} | ${money(s.counts[k])} |`));
+  m.outcomes.forEach((o: Outcome, k: number) => L.push(`| ${o.label} | ${money(o.value)} | ${(o.value / PRICE).toFixed(2)}배 | ${fmtPct(o.units)} | ${money((o.units / UNIT) * DRAWS)} | ${money(s.counts[k])} |`));
   L.push(`| 합계 | | | ${(t.sum / UNIT * 100).toFixed(4)}% | ${money(DRAWS)} | ${money(s.counts.reduce((a, b) => a + b, 0))} |`, "");
   L.push("| 항목 | 이론값 | 시뮬레이션 |", "|---|---:|---:|");
   L.push(`| 기대 지급액 (USDT) | ${t.ev.toFixed(4)} | ${s.mean.toFixed(4)} |`);
@@ -174,7 +174,7 @@ L.push("");
 
 L.push("## 개봉 수에 따른 지급 부담", "", "기대 지급액은 개봉 수에 비례한다. 실제 지급은 그 주변에서 흔들리고, 흔들리는 폭(표준편차)은 개봉 수의 제곱근에 비례한다. 큰 상품 한 건이 나오면 그 한 건이 통째로 더해진다.", "");
 L.push("| 모델 | 개봉 수 | 받는 돈 (USDT) | 기대 지급 (USDT) | 지급 표준편차 (USDT) | 기대 운영 몫 (USDT) | 가장 큰 상품이 한 번 이상 나올 확률 |", "|---|---:|---:|---:|---:|---:|---:|");
-for (const [i, m] of models.entries()) for (const n of [1_000, 10_000, 100_000, 1_000_000]) {
+for (const [i, m] of Array.from(models.entries())) for (const n of [1_000, 10_000, 100_000, 1_000_000]) {
   const t = T[i];
   L.push(`| ${m.name} | ${money(n)} | ${money(n * PRICE)} | ${money(Math.round(n * t.ev))} | ${money(Math.round(Math.sqrt(n) * t.sd))} | ${money(Math.round(n * (PRICE - t.ev)))} | ${((1 - Math.pow(1 - t.maxP, n)) * 100).toFixed(2)}% |`);
 }

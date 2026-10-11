@@ -7,8 +7,10 @@
  * 아래에 붙은 막대에 수량과 주 단추 하나가 있다. 막히면 그 단추가 다음 행동으로 바뀐다:
  *   로그인 전 → "로그인하고 열기" / 잔액 부족 → 한 줄 안내와 "USDT 충전하기" / 충분 → "N개 열기, 금액"
  * 구매 확정 단계는 없다. 큰 금액(50 USDT 이상이거나 10개 이상)만 확인창을 띄운다.
+ * 열기부터 결과까지의 상태는 lib/openingFlow 의 상태 기계를 따른다. 새 구매는 READY 와 SETTLED 에서만 시작한다.
+ * 결과가 정해지면 기록장(stores/openingJournal)에 한 줄을 남긴다. 연출을 못 보고 떠났다 돌아오면 새로 뽑지 않고 그 결과를 다시 보여 준다.
  */
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 import { CreditCard, Coins, Package } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { BOXES, REFUND_RATE, ceilingValue, dropTable, formatRate, retailReturn, type ProductBox, type ProductItem } from "@/lib/products";
@@ -16,6 +18,9 @@ import { TIERS, tierOf, type TierKey } from "@/lib/tiers";
 import { COUNTRIES } from "@/lib/shipping";
 import { OPEN_PRESETS } from "@/lib/autoplay";
 import { InsufficientOpeningBalance, createOpeningPurchase, type OpeningResult } from "@/lib/opening";
+import { canStartPurchase, nextOpeningState } from "@/lib/openingFlow";
+import { devOpeningFault } from "@/lib/openingSettle";
+import { newOpeningId, useOpeningJournal, type OpeningEntry } from "@/stores/openingJournal";
 import { isExampleReview, relativeReviewTime } from "@/lib/community";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
@@ -27,10 +32,7 @@ import { useInventoryStore } from "@/stores/inventoryStore";
 import { Button, Chips, Empty, Line, Row, Rows, ScreenHead, TextLink } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
 import { Reveal } from "@/components/box/Reveal";
-import { Opening, type StageConcept } from "@/components/box/Opening";
-
-/** 시안 비교용 임시 스위치(?stage=a|b|c). 채택안이 정해지면 지운다 */
-const stageConcept = (): StageConcept => { const s = typeof window === "undefined" ? null : new URLSearchParams(window.location.search).get("stage"); return s === "b" || s === "c" ? s : "a"; };
+import { Opening } from "@/components/box/Opening";
 import { Link } from "@/i18n/navigation";
 
 /** 큰 금액은 되돌릴 수 없는 행동으로 보고 확인창을 띄운다 */
@@ -60,7 +62,11 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
   const [confirming, setConfirming] = useState(false);
-  const [opened, setOpened] = useState<{ results: OpeningResult[]; cost: number; round: number } | null>(null);
+  const [opened, setOpened] = useState<{ id: string; results: OpeningResult[]; cost: number; round: number; balanceBefore: number; recovered?: boolean } | null>(null);
+  const [flow, send] = useReducer(nextOpeningState, "READY");
+  const journalReady = useOpeningJournal((s) => s.hydrated);
+  const journal = useOpeningJournal((s) => s.entries);
+  const inventoryReady = useInventoryStore((s) => s.hydrated);
   const [itemId, setItemId] = useState<string | null>(null);
   // 상태(busy)는 다음 그리기에야 바뀐다. 같은 순간에 두 번 불려도 구매가 한 번만 나가게 동기 잠금을 둔다(옛 purchasePending 과 같다).
   const opening = useRef(false);
@@ -87,20 +93,52 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   // 커버가 대표 실물의 사진이면 "연출 이미지" 안내가 필요 없다
   const stockCover = !!box.image.src && !table.some((i) => i.image.src === box.image.src);
 
+  useEffect(() => { void useOpeningJournal.persist.rehydrate(); }, []);
+  // 이 계정이 이 박스에서 아직 못 본 결과(연출 중에 새로 고쳤거나 떠난 경우). 보관함에 그 기록이 남아 있을 때만 다시 보여 준다.
+  const unseen: OpeningEntry | null = useMemo(() => {
+    if (!journalReady || !inventoryReady || !user || opened) return null;
+    const entry = journal.find((x) => x.accountId === user.id && !x.revealedAt && x.boxSlug === box.slug);
+    return entry && entry.ownedIds.every((id) => owned.some((o) => o.id === id)) ? entry : null;
+  }, [journalReady, inventoryReady, journal, user, opened, owned, box.slug]);
+  useEffect(() => { if (unseen) send("FOUND_COMMITTED"); }, [unseen]);
+  /** 새로 뽑지 않는다. 기록장이 가리키는 보관함 기록에서 결과를 그대로 다시 만든다. */
+  const recover = () => {
+    if (!unseen) return;
+    const results = unseen.ownedIds.flatMap((id): OpeningResult[] => {
+      const o = owned.find((x) => x.id === id); const item = o && table.find((i) => i.id === o.itemId);
+      return o && item ? [{ ownedId: o.id, settled: item.kind === "cash", item, tier: tierOf(item.value, box.price), roll: o.fair.roll, hmac: "", nonce: o.fair.nonce, serverSeed: o.fair.serverSeed, serverSeedHash: o.fair.serverSeedHash, clientSeed: o.fair.clientSeed }] : [];
+    });
+    if (!results.length) { useOpeningJournal.getState().markRevealed(unseen.id); send("RESET"); return; }
+    send("RECOVER");
+    setOpened((prev) => ({ id: unseen.id, results, cost: unseen.costUsdt, round: (prev?.round ?? 0) + 1, balanceBefore: unseen.balanceBefore, recovered: true }));
+  };
+
   const open = async () => {
-    if (opening.current) return;
+    // 상태 기계가 허락할 때만 구매를 시작한다(연출 중이거나 처리 중이면 아무 일도 일어나지 않는다). 동기 잠금은 같은 순간의 두 번 누름을 막는다.
+    if (opening.current || !canStartPurchase(flow) || !user) return;
     opening.current = true;
     setBusy(true); setFailed(false); setConfirming(false);
+    send("PRESS");
+    const balanceBefore = useWalletStore.getState().balance;
     try {
+      if (devOpeningFault() === "purchase-failed") throw new Error("dev fault: purchase-failed");
       const results = await createOpeningPurchase(box, qty)();
-      setOpened((prev) => ({ results, cost, round: (prev?.round ?? 0) + 1 }));
+      // 결과가 정해졌다. 연출보다 먼저 기록장에 남긴다(여기서부터는 새로 고쳐도 같은 결과를 다시 볼 수 있다).
+      const id = newOpeningId();
+      useOpeningJournal.getState().commit({ id, accountId: user.id, boxSlug: box.slug, count: qty, costUsdt: cost, ownedIds: results.map((r) => r.ownedId), balanceBefore });
+      send("PURCHASE_OK"); send("ANIMATION_START");
+      setOpened((prev) => ({ id, results, cost, round: (prev?.round ?? 0) + 1, balanceBefore }));
     } catch (error) {
-      // 잔액이 모자라면 막대의 안내 한 줄이 이미 그 사실을 말한다. 그 밖의 실패만 따로 적는다.
-      if (!(error instanceof InsufficientOpeningBalance)) setFailed(true);
+      // 잔액이 모자라면 막대의 안내 한 줄이 이미 그 사실을 말한다. 그 밖의 실패만 따로 적는다. 실패하면 차감도 배정도 없다(lib/opening 이 되돌린다).
+      if (error instanceof InsufficientOpeningBalance) { send("SHORT"); send("RESET"); }
+      else { send("PURCHASE_ERROR"); send("RETRY"); setFailed(true); }
     } finally { opening.current = false; setBusy(false); }
   };
   // 열기 단추와 결과 화면의 "한 번 더 열기"가 모두 이 함수를 거친다. 큰 금액은 어디서 눌러도 확인창이 뜬다.
-  const press = () => { if (opening.current) return; if (cost >= CONFIRM_COST_USDT || qty >= CONFIRM_COUNT) setConfirming(true); else void open(); };
+  const press = () => { if (opening.current || !canStartPurchase(flow)) return; if (cost >= CONFIRM_COST_USDT || qty >= CONFIRM_COUNT) setConfirming(true); else void open(); };
+  /** 결과가 화면에 보였다: 기록장에 "봤음"을 남기고 다음 구매를 받을 수 있는 상태로 간다. USDT 결과와 보관은 구매와 함께 이미 끝나 있다. */
+  const revealed = () => { if (!opened) return; useOpeningJournal.getState().markRevealed(opened.id); send("ANIMATION_END"); send("SETTLE_START"); send("SETTLE_OK"); };
+  const closeOpening = () => { if (opened) useOpeningJournal.getState().markRevealed(opened.id); setOpened(null); send("RESET"); };
 
   return (
     <div className="v-boxlayout">
@@ -139,12 +177,14 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       <div className="v-openbar">
         <div className="v-openbar-in">
           {failed && <Line fail>{t("box.openFail")}</Line>}
+          {unseen && <Line>{t("op.recoverLine")}</Line>}
           {ready && user && short && <Line>{t("box.short", { balance: fmt(balance), missing: fmt(cost - balance) })}</Line>}
           <Chips scroll label={t("box.qty")} value={qty} onChange={(n) => { setQty(n); setFailed(false); }} disabled={busy} options={OPEN_PRESETS.map((n) => ({ value: n as number, label: t("box.qtyN", { n }) }))} />
           {!ready ? <Button disabled>{t("common.loading")}</Button>
             : !user ? <><Button onClick={() => openLogin("login")}>{t("box.loginToOpen")}</Button><p className="v-small">{t("box.guestNote", { n: qty, amount: fmt(cost) })}</p></>
+            : unseen ? <Button data-open-recover onClick={recover}>{t("op.recoverCta")}</Button>
             : short ? <Button onClick={openCharge}>{t("box.charge")}</Button>
-            : <Button onClick={press} busy={busy} busyLabel={t("box.opening")}>{t("box.open", { n: qty, amount: fmt(cost) })}</Button>}
+            : <Button data-open-primary onClick={press} busy={busy} busyLabel={t("box.opening")}>{t("box.open", { n: qty, amount: fmt(cost) })}</Button>}
         </div>
       </div>
       </aside>
@@ -233,8 +273,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         )}
       </Sheet>
       <Confirm open={confirming} onCancel={() => setConfirming(false)} onConfirm={open} busy={busy} busyLabel={t("box.opening")} title={t("box.confirmTitle", { amount: fmt(cost) })} desc={t("box.confirmDesc")} confirmLabel={t("box.open", { n: qty, amount: fmt(cost) })} cancelLabel={t("common.cancel")} />
-      {opened && opened.results.length === 1 && <Opening key={opened.round} box={box} result={opened.results[0]} cost={opened.cost} repeat={opened.round > 1} concept={stageConcept()} onClose={() => setOpened(null)} onAgain={press} againBusy={busy} canAgain={!short} />}
-      {opened && opened.results.length > 1 && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} onClose={() => setOpened(null)} onAgain={press} againBusy={busy} canAgain={!short} />}
+      {opened && opened.results.length === 1 && <Opening key={opened.round} box={box} result={opened.results[0]} cost={opened.cost} balanceBefore={opened.balanceBefore} recovered={opened.recovered} onClose={closeOpening} onAgain={press} againBusy={busy} canAgain={!short} onRevealed={revealed} />}
+      {opened && opened.results.length > 1 && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} onClose={closeOpening} onAgain={press} againBusy={busy} canAgain={!short} />}
     </div>
   );
 }

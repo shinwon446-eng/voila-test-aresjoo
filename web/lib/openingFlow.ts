@@ -8,15 +8,16 @@
  *   even   낸 값과 거의 같다(±5%)   → 담담하게
  *   above  낸 값의 1.05배 이상 6배 미만
  *   high   6배 이상 20배 미만
- *   rare   20배 이상(박스 화면의 가장 높은 구간과 같은 기준)
+ *   top    20배 이상(박스 화면의 가장 높은 구간과 같은 기준)
+ * 톤은 값만 뜻한다. 드문지 아닌지는 화면이 실제 확률 숫자로만 말한다(opening/DECISIONS.md 1-8).
  */
 import { sellValueOf, type ProductItem } from "./products";
 
-export type OutcomeTone = "below" | "even" | "above" | "high" | "rare";
+export type OutcomeTone = "below" | "even" | "above" | "high" | "top";
 
 export const TONE_EVEN_BAND = 0.05;
 export const TONE_HIGH_MULTIPLE = 6;
-export const TONE_RARE_MULTIPLE = 20;
+export const TONE_TOP_MULTIPLE = 20;
 
 const round2 = (n: number) => +n.toFixed(2);
 
@@ -26,7 +27,7 @@ export const receivedValue = (item: Pick<ProductItem, "kind" | "value">): number
 export function toneOf(item: Pick<ProductItem, "kind" | "value">, price: number): OutcomeTone {
   if (!(price > 0)) throw new RangeError("price must be positive");
   const multiple = receivedValue(item) / price;
-  if (multiple >= TONE_RARE_MULTIPLE) return "rare";
+  if (multiple >= TONE_TOP_MULTIPLE) return "top";
   if (multiple >= TONE_HIGH_MULTIPLE) return "high";
   if (multiple >= 1 + TONE_EVEN_BAND) return "above";
   if (multiple > 1 - TONE_EVEN_BAND) return "even";
@@ -48,14 +49,30 @@ export function netOfMany(items: Pick<ProductItem, "kind" | "value">[], cost: nu
 }
 
 /**
- * 연출 길이(ms). 가설이지 정답이 아니다(opening/RESEARCH.md). 결과는 이미 정해져 있고 이 시간은 보여 주는 시간일 뿐이다.
- * 같은 자리에서 다시 열면 기대 구간을 줄인다. 드문 결과만 드러나는 구간이 길다(실제로 드문 결과일 때만).
+ * 연출 길이(ms). 가설이지 검증된 값이 아니다(opening/RESEARCH.md, DECISIONS.md 1-8). 결과는 이미 정해져 있고 이 시간은 보여 주는 시간일 뿐이다.
+ *   기대(상자가 내려앉고 봉인이 감긴다) → 충격(봉인이 떨어지고 뚜껑이 넘어간다) → 퇴장(상자가 빠진다) → [top 만: 어두운 정지] → 드러남
+ * 기대 구간은 결과와 무관하게 같다. 반복 횟수로 자동으로 줄이지 않는다. short 는 사용자가 켠 "짧게 보기" 다.
+ * revealAt 은 받은 것과 차이 문장이 함께 보이기 시작하는 시각, armAt 은 아래 단추가 눌리기 시작하는 시각이다.
  */
-export function openingTimeline(tone: OutcomeTone, repeat: boolean): { anticipation: number; impact: number; reveal: number; total: number } {
-  const anticipation = repeat ? 380 : 760;
-  const impact = 170;
-  const reveal = tone === "rare" ? 1500 : tone === "high" ? 760 : tone === "above" ? 620 : 460;
-  return { anticipation, impact, reveal, total: anticipation + impact + reveal };
+export function openingTimeline(tone: OutcomeTone, short: boolean): { anticipation: number; impact: number; exit: number; hold: number; revealAt: number; armAt: number } {
+  const anticipation = short ? 220 : 520;
+  const impact = short ? 110 : 150;
+  const exit = short ? 120 : 170;
+  const hold = tone === "top" && !short ? 260 : 0;
+  const revealAt = anticipation + impact + exit + hold;
+  return { anticipation, impact, exit, hold, revealAt, armAt: revealAt + OPENING_ARM_DELAY_MS };
+}
+
+/** 결과가 뜬 뒤 아래 단추가 눌리기까지의 시간. 건너뛰려던 손가락이 새로 뜬 단추(다음 구매)를 누르지 않게 한다. */
+export const OPENING_ARM_DELAY_MS = 350;
+
+/**
+ * 자동으로 USDT 로 받기(사용자가 직접 켠 설정)가 이 결과에 적용되는가.
+ * USDT 결과는 원래 잔액으로 들어오므로 대상이 아니다. 낸 값의 20배 이상인 상품은 자동으로 넘기지 않고 묻는다.
+ */
+export function autoTakeApplies(item: Pick<ProductItem, "kind" | "value">, price: number, enabled: boolean): boolean {
+  if (!enabled || item.kind === "cash") return false;
+  return toneOf(item, price) !== "top";
 }
 
 // ── 화면 상태 기계 ────────────────────────────────────────────────────────────

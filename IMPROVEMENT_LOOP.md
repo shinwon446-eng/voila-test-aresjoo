@@ -139,3 +139,13 @@
 - 스크린샷: `qa/cycles/c11/` (gen-car, gen-sc, gen-hm, home2, homebox, carbox)
 - 테스트: 296 통과, design-lint 0, tsc 통과, build 128 페이지
 - 채택: 채택. 커밋 `dd9a760`. main 배포 성공
+
+## 사이클 11 앞 3 (파운더 지시, 남은 박스 전부)
+- 가장 큰 문제: 아홉 박스에 사진 없는 실물 상품이 350개 남아 있었다
+- 구현: Codex 생성 349장. 규칙 `qa/codex/gen-rules-{gear,watch}.md`, 목록 `gen-missing.ts`(박스 데이터 기준), 동시 실행 `gen-run.sh`(16묶음, 8개씩, 약 35분), 검수 `gen-review.sh`. studio.mjs 가 지워진 밝은 면을 되살림, `--generated` 추가
+- Claude 평가: 시트 16장으로 전수 검수, 이름과 다른 것과 읽히는 브랜드 글자와 본체가 딸려 나온 부속품 0. 흰 제품 35장은 재변환 뒤 다시 확인. 포켓몬 카드 박스를 빼면 모든 박스의 실물 구성품이 사진 타일
+- Codex 평가: 생성과 자체 검수. 감사는 다음 사이클 6차에서
+- 스크린샷: `qa/cycles/c12/` (gen-*.png 16장, re-console, zoom-1, home, galaxy, audio)
+- 테스트: 296 통과, design-lint 0, tsc 통과, build 128 페이지
+- 채택: 채택. 커밋 `a3c5b7e`. main 배포 성공
+- 눈에 띈 것(다음 사이클 후보): 박스 사진 띠에서 이름이 두 줄인 타일과 한 줄인 타일의 사진 높이가 어긋난다(음악 박스 첫 화면)

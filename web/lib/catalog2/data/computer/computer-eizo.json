@@ -1,0 +1,365 @@
+{
+ "slug": "computer-eizo",
+ "items": [
+  [
+   "computer-eizo-coloredge-prominence-cg3146",
+   "에이조 컬러엣지 프로미넌스 CG3146 31.1인치 HDR 레퍼런스 모니터",
+   "EIZO ColorEdge PROMINENCE CG3146 31.1-inch HDR Reference Monitor",
+   "艺卓 ColorEdge PROMINENCE CG3146 31.1英寸 HDR 参考级显示器",
+   30999
+  ],
+  [
+   "computer-eizo-radiforce-rx1270",
+   "에이조 라디포스 RX1270 30.9인치 12MP 의료용 모니터",
+   "EIZO RadiForce RX1270 30.9-inch 12MP Medical Monitor",
+   "艺卓 RadiForce RX1270 30.9英寸 12MP 医用显示器",
+   24999
+  ],
+  [
+   "computer-eizo-raptor-sq2826",
+   "에이조 랩터 SQ2826 28.1인치 2K x 2K 항공 관제 모니터",
+   "EIZO Raptor SQ2826 28.1-inch 2K x 2K Air Traffic Control Monitor",
+   "艺卓 Raptor SQ2826 28.1英寸 2K x 2K 空管显示器",
+   15999
+  ],
+  [
+   "computer-eizo-radiforce-rx670",
+   "에이조 라디포스 RX670 30인치 6MP 의료용 모니터",
+   "EIZO RadiForce RX670 30-inch 6MP Medical Monitor",
+   "艺卓 RadiForce RX670 30英寸 6MP 医用显示器",
+   11999
+  ],
+  [
+   "computer-eizo-radiforce-gx560",
+   "에이조 라디포스 GX560 21.3인치 5MP 흑백 맘모그래피 모니터",
+   "EIZO RadiForce GX560 21.3-inch 5MP Monochrome Mammography Monitor",
+   "艺卓 RadiForce GX560 21.3英寸 5MP 黑白乳腺显示器",
+   10999
+  ],
+  [
+   "computer-eizo-curator-ex3242",
+   "에이조 큐레이터 EX3242 31.5인치 4K 수술용 모니터",
+   "EIZO CuratOR EX3242 31.5-inch 4K Surgical Monitor",
+   "艺卓 CuratOR EX3242 31.5英寸 4K 手术显示器",
+   8499
+  ],
+  [
+   "computer-eizo-coloredge-cg319x",
+   "에이조 컬러엣지 CG319X 31.1인치 DCI 4K",
+   "EIZO ColorEdge CG319X 31.1-inch DCI 4K",
+   "艺卓 ColorEdge CG319X 31.1英寸 DCI 4K",
+   5999
+  ],
+  [
+   "computer-eizo-radiforce-rx370",
+   "에이조 라디포스 RX370 21.3인치 3MP 의료용 모니터",
+   "EIZO RadiForce RX370 21.3-inch 3MP Medical Monitor",
+   "艺卓 RadiForce RX370 21.3英寸 3MP 医用显示器",
+   5499
+  ],
+  [
+   "computer-eizo-coloredge-cg2700x",
+   "에이조 컬러엣지 CG2700X 27인치 4K",
+   "EIZO ColorEdge CG2700X 27-inch 4K",
+   "艺卓 ColorEdge CG2700X 27英寸 4K",
+   3499
+  ],
+  [
+   "computer-eizo-foris-nova",
+   "에이조 포리스 노바 21.6인치 4K OLED",
+   "EIZO FORIS NOVA 21.6-inch 4K OLED",
+   "艺卓 FORIS NOVA 21.6英寸 4K OLED",
+   3200
+  ],
+  [
+   "computer-eizo-coloredge-cg2700s",
+   "에이조 컬러엣지 CG2700S 27인치 WQHD",
+   "EIZO ColorEdge CG2700S 27-inch WQHD",
+   "艺卓 ColorEdge CG2700S 27英寸 WQHD",
+   2299
+  ],
+  [
+   "computer-eizo-coloredge-cg279x",
+   "에이조 컬러엣지 CG279X 27인치 WQHD",
+   "EIZO ColorEdge CG279X 27-inch WQHD",
+   "艺卓 ColorEdge CG279X 27英寸 WQHD",
+   2199
+  ],
+  [
+   "computer-eizo-duravision-fdf2711w-ip",
+   "에이조 듀라비전 FDF2711W-IP 27인치 IP 디코딩 모니터",
+   "EIZO DuraVision FDF2711W-IP 27-inch IP Decoding Monitor",
+   "艺卓 DuraVision FDF2711W-IP 27英寸 IP 解码显示器",
+   1999
+  ],
+  [
+   "computer-eizo-flexscan-ev3895",
+   "에이조 플렉스스캔 EV3895 37.5인치 울트라와이드 커브드",
+   "EIZO FlexScan EV3895 37.5-inch Ultrawide Curved",
+   "艺卓 FlexScan EV3895 37.5英寸 曲面带鱼屏",
+   1939
+  ],
+  [
+   "computer-eizo-flexscan-ev4340x",
+   "에이조 플렉스스캔 EV4340X 42.5인치 4K",
+   "EIZO FlexScan EV4340X 42.5-inch 4K",
+   "艺卓 FlexScan EV4340X 42.5英寸 4K",
+   1899
+  ],
+  [
+   "computer-eizo-coloredge-cs2740",
+   "에이조 컬러엣지 CS2740 27인치 4K",
+   "EIZO ColorEdge CS2740 27-inch 4K",
+   "艺卓 ColorEdge CS2740 27英寸 4K",
+   1779
+  ],
+  [
+   "computer-eizo-flexscan-ev3240x",
+   "에이조 플렉스스캔 EV3240X 31.5인치 4K USB-C",
+   "EIZO FlexScan EV3240X 31.5-inch 4K USB-C",
+   "艺卓 FlexScan EV3240X 31.5英寸 4K USB-C",
+   1689
+  ],
+  [
+   "computer-eizo-coloredge-cg2420",
+   "에이조 컬러엣지 CG2420 24.1인치",
+   "EIZO ColorEdge CG2420 24.1-inch",
+   "艺卓 ColorEdge CG2420 24.1英寸",
+   1549
+  ],
+  [
+   "computer-eizo-duravision-fdf2382wt-a",
+   "에이조 듀라비전 FDF2382WT-A 23인치 터치 패널 모니터",
+   "EIZO DuraVision FDF2382WT-A 23-inch Touch Panel Monitor",
+   "艺卓 DuraVision FDF2382WT-A 23英寸 触摸显示器",
+   1499
+  ],
+  [
+   "computer-eizo-coloredge-cs2731",
+   "에이조 컬러엣지 CS2731 27인치 WQHD",
+   "EIZO ColorEdge CS2731 27-inch WQHD",
+   "艺卓 ColorEdge CS2731 27英寸 WQHD",
+   1269
+  ],
+  [
+   "computer-eizo-flexscan-ev2740x",
+   "에이조 플렉스스캔 EV2740X 27인치 4K USB-C",
+   "EIZO FlexScan EV2740X 27-inch 4K USB-C",
+   "艺卓 FlexScan EV2740X 27英寸 4K USB-C",
+   1199
+  ],
+  [
+   "computer-eizo-radiforce-mx243w",
+   "에이조 라디포스 MX243W 24.1인치 2.3MP 임상 검토용 모니터",
+   "EIZO RadiForce MX243W 24.1-inch 2.3MP Clinical Review Monitor",
+   "艺卓 RadiForce MX243W 24.1英寸 2.3MP 临床审阅显示器",
+   999
+  ],
+  [
+   "computer-eizo-flexscan-s2134",
+   "에이조 플렉스스캔 S2134 21.3인치 UXGA",
+   "EIZO FlexScan S2134 21.3-inch UXGA",
+   "艺卓 FlexScan S2134 21.3英寸 UXGA",
+   899
+  ],
+  [
+   "computer-eizo-coloredge-cs2400s",
+   "에이조 컬러엣지 CS2400S 24.1인치",
+   "EIZO ColorEdge CS2400S 24.1-inch",
+   "艺卓 ColorEdge CS2400S 24.1英寸",
+   869
+  ],
+  [
+   "computer-eizo-flexscan-ev2795",
+   "에이조 플렉스스캔 EV2795 27인치 WQHD USB-C",
+   "EIZO FlexScan EV2795 27-inch WQHD USB-C",
+   "艺卓 FlexScan EV2795 27英寸 WQHD USB-C",
+   829
+  ],
+  [
+   "computer-eizo-flexscan-ev2495",
+   "에이조 플렉스스캔 EV2495 24.1인치 WUXGA USB-C",
+   "EIZO FlexScan EV2495 24.1-inch WUXGA USB-C",
+   "艺卓 FlexScan EV2495 24.1英寸 WUXGA USB-C",
+   659
+  ],
+  [
+   "computer-eizo-flexscan-ev2760",
+   "에이조 플렉스스캔 EV2760 27인치 WQHD",
+   "EIZO FlexScan EV2760 27-inch WQHD",
+   "艺卓 FlexScan EV2760 27英寸 WQHD",
+   639
+  ],
+  [
+   "computer-eizo-coloredge-cs2400r",
+   "에이조 컬러엣지 CS2400R 24.1인치",
+   "EIZO ColorEdge CS2400R 24.1-inch",
+   "艺卓 ColorEdge CS2400R 24.1英寸",
+   589
+  ],
+  [
+   "computer-eizo-flexscan-ev2490",
+   "에이조 플렉스스캔 EV2490 23.8인치 FHD USB-C",
+   "EIZO FlexScan EV2490 23.8-inch FHD USB-C",
+   "艺卓 FlexScan EV2490 23.8英寸 FHD USB-C",
+   499
+  ],
+  [
+   "computer-eizo-flexscan-s1934",
+   "에이조 플렉스스캔 S1934 19인치 SXGA",
+   "EIZO FlexScan S1934 19-inch SXGA",
+   "艺卓 FlexScan S1934 19英寸 SXGA",
+   499
+  ],
+  [
+   "computer-eizo-flexscan-ev2480",
+   "에이조 플렉스스캔 EV2480 23.8인치 FHD USB-C",
+   "EIZO FlexScan EV2480 23.8-inch FHD USB-C",
+   "艺卓 FlexScan EV2480 23.8英寸 FHD USB-C",
+   449
+  ],
+  [
+   "computer-eizo-flexscan-ev2460",
+   "에이조 플렉스스캔 EV2460 23.8인치 FHD",
+   "EIZO FlexScan EV2460 23.8-inch FHD",
+   "艺卓 FlexScan EV2460 23.8英寸 FHD",
+   379
+  ],
+  [
+   "computer-eizo-flexscan-ev2360",
+   "에이조 플렉스스캔 EV2360 22.5인치 WUXGA",
+   "EIZO FlexScan EV2360 22.5-inch WUXGA",
+   "艺卓 FlexScan EV2360 22.5英寸 WUXGA",
+   339
+  ],
+  [
+   "computer-eizo-ex4-sensor",
+   "에이조 EX4 캘리브레이션 센서",
+   "EIZO EX4 Calibration Sensor",
+   "艺卓 EX4 校色仪",
+   299
+  ],
+  [
+   "computer-eizo-ch8-hood",
+   "에이조 CH8 모니터 후드",
+   "EIZO CH8 Monitor Hood",
+   "艺卓 CH8 显示器遮光罩",
+   179
+  ],
+  [
+   "computer-eizo-ch2700-hood",
+   "에이조 CH2700 모니터 후드",
+   "EIZO CH2700 Monitor Hood",
+   "艺卓 CH2700 显示器遮光罩",
+   169
+  ],
+  [
+   "computer-eizo-ch2400-hood",
+   "에이조 CH2400 모니터 후드",
+   "EIZO CH2400 Monitor Hood",
+   "艺卓 CH2400 显示器遮光罩",
+   119
+  ],
+  [
+   "computer-eizo-pcsk-03",
+   "에이조 PCSK-03 씬 클라이언트 VESA 마운트",
+   "EIZO PCSK-03 Thin Client VESA Mount",
+   "艺卓 PCSK-03 瘦客户机 VESA 支架",
+   55
+  ],
+  [
+   "computer-eizo-cc200ss-5a",
+   "에이조 CC200SS-5A USB-C 케이블 2m",
+   "EIZO CC200SS-5A USB-C Cable 2m",
+   "艺卓 CC200SS-5A USB-C 线 2米",
+   49
+  ],
+  [
+   "computer-eizo-cc100",
+   "에이조 CC100 USB-C 케이블 1m",
+   "EIZO CC100 USB-C Cable 1m",
+   "艺卓 CC100 USB-C 线 1米",
+   35
+  ],
+  [
+   "computer-eizo-pp200",
+   "에이조 PP200 디스플레이포트 케이블 2m",
+   "EIZO PP200 DisplayPort Cable 2m",
+   "艺卓 PP200 DisplayPort 线 2米",
+   29
+  ],
+  [
+   "computer-eizo-hh200hs",
+   "에이조 HH200HS HDMI 케이블 2m",
+   "EIZO HH200HS HDMI Cable 2m",
+   "艺卓 HH200HS HDMI 线 2米",
+   25
+  ],
+  [
+   "computer-eizo-screencleaner",
+   "에이조 스크린클리너 클리닝 키트",
+   "EIZO ScreenCleaner Cleaning Kit",
+   "艺卓 ScreenCleaner 屏幕清洁套装",
+   24
+  ]
+ ],
+ "use": [
+  "computer-p-whoosh-screen-cleaner-3-4oz",
+  "computer-p-raspberry-pi-zero-2-w",
+  "computer-p-tp-link-tl-sg105",
+  "computer-p-ugreen-revodok-105",
+  "computer-p-noctua-nf-p12-redux-1700",
+  "computer-p-netgear-gs305",
+  "computer-p-ifixit-moray",
+  "computer-p-anker-511-nano-3-30w",
+  "computer-p-redragon-m711-cobra",
+  "computer-p-tp-link-tl-sg108",
+  "computer-p-netgear-gs308",
+  "computer-p-xiaomi-monitor-light-bar",
+  "computer-p-raspberry-pi-4-model-b-4gb",
+  "computer-p-anker-powerconf-c200",
+  "computer-p-kingston-nv3-1tb",
+  "computer-p-twelve-south-curve",
+  "computer-p-raspberry-pi-5-4gb",
+  "computer-p-crucial-p3-plus-1tb",
+  "computer-p-deepcool-ak620",
+  "computer-p-elecom-huge-m-ht1drbk",
+  "computer-p-glorious-model-o-2",
+  "computer-p-seagate-barracuda-2tb",
+  "computer-p-montech-air-903-max",
+  "computer-p-wd-blue-sn580-1tb",
+  "computer-p-kingston-fury-beast-32gb-ddr5-5600",
+  "computer-p-evoluent-verticalmouse-4",
+  "computer-p-noctua-nh-d15",
+  "computer-p-kensington-expert-mouse-wireless",
+  "computer-p-viewsonic-vx2418-p-mhd",
+  "computer-p-g-skill-trident-z5-rgb-32gb",
+  "computer-p-calibrite-display-123",
+  "computer-p-kensington-slimblade-pro",
+  "computer-p-raspberry-pi-5-16gb",
+  "computer-p-ducky-one-3-tkl",
+  "computer-p-ubiquiti-u7-pro-max",
+  "computer-p-aoc-q27g3xmn",
+  "computer-p-plugable-tbt4-udz",
+  "computer-p-nzxt-kraken-elite-360",
+  "computer-p-satechi-thunderbolt-4-dock",
+  "computer-p-synology-ds224-plus",
+  "computer-p-wd-black-sn850x-4tb",
+  "computer-p-3dconnexion-spacemouse-compact",
+  "computer-p-glorious-gmmk-pro",
+  "computer-p-lian-li-o11-dynamic-evo",
+  "computer-p-seagate-ironwolf-pro-16tb",
+  "computer-p-hhkb-professional-hybrid-type-s",
+  "computer-p-zsa-moonlander",
+  "computer-p-ergotron-hx",
+  "computer-p-sapphire-pulse-rx-9060-xt-16gb",
+  "computer-p-ubiquiti-udm-pro",
+  "computer-p-powercolor-red-devil-rx-9070-xt",
+  "computer-p-sony-inzone-m9-ii",
+  "computer-p-minisforum-ms-01",
+  "computer-p-solidigm-d5-p5336-30tb",
+  "computer-p-wacom-cintiq-pro-27",
+  "computer-p-apc-smart-ups-srt5krmxlt",
+  "computer-p-tinybox-pro"
+ ]
+}

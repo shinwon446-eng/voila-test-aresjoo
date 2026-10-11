@@ -1,54 +1,419 @@
-{ "slug": "computer-nvidia", "items": [
-["computer-nvidia-dgx-a100-320gb","엔비디아 DGX A100 320GB","NVIDIA DGX A100 320GB","英伟达 DGX A100 320GB",199000.00],
-["computer-nvidia-dgx-station-a100-320gb","엔비디아 DGX 스테이션 A100 320GB","NVIDIA DGX Station A100 320GB","英伟达 DGX Station A100 320GB",149000.00],
-["computer-nvidia-dgx-station-a100-160gb","엔비디아 DGX 스테이션 A100 160GB","NVIDIA DGX Station A100 160GB","英伟达 DGX Station A100 160GB",99000.00],
-["computer-nvidia-h100-80gb","엔비디아 H100 80GB PCIe","NVIDIA H100 80GB PCIe","英伟达 H100 80GB PCIe",30000.00],
-["computer-nvidia-a100-80gb","엔비디아 A100 80GB PCIe","NVIDIA A100 80GB PCIe","英伟达 A100 80GB PCIe",17000.00],
-["computer-nvidia-l40s","엔비디아 L40S 48GB","NVIDIA L40S 48GB","英伟达 L40S 48GB",8999.00],
-["computer-nvidia-rtx-pro-6000-blackwell","엔비디아 RTX PRO 6000 블랙웰 96GB","NVIDIA RTX PRO 6000 Blackwell 96GB","英伟达 RTX PRO 6000 Blackwell 96GB",8565.00],
-["computer-nvidia-rtx-6000-ada","엔비디아 RTX 6000 Ada 제너레이션 48GB","NVIDIA RTX 6000 Ada Generation 48GB","英伟达 RTX 6000 Ada Generation 48GB",6799.00],
-["computer-nvidia-rtx-a6000","엔비디아 RTX A6000 48GB","NVIDIA RTX A6000 48GB","英伟达 RTX A6000 48GB",4650.00],
-["computer-nvidia-rtx-pro-5000-blackwell","엔비디아 RTX PRO 5000 블랙웰 48GB","NVIDIA RTX PRO 5000 Blackwell 48GB","英伟达 RTX PRO 5000 Blackwell 48GB",4569.00],
-["computer-nvidia-rtx-5000-ada","엔비디아 RTX 5000 Ada 제너레이션 32GB","NVIDIA RTX 5000 Ada Generation 32GB","英伟达 RTX 5000 Ada Generation 32GB",4000.00],
-["computer-nvidia-dgx-spark","엔비디아 DGX 스파크 파운더스 에디션 4TB","NVIDIA DGX Spark Founders Edition 4TB","英伟达 DGX Spark Founders Edition 4TB",3999.00],
-["computer-nvidia-jetson-agx-thor-dev-kit","엔비디아 젯슨 AGX 토르 개발자 키트","NVIDIA Jetson AGX Thor Developer Kit","英伟达 Jetson AGX Thor 开发者套件",3499.00],
-["computer-nvidia-bluefield-3-b3220","엔비디아 블루필드-3 B3220 DPU","NVIDIA BlueField-3 B3220 DPU","英伟达 BlueField-3 B3220 DPU",3299.00],
-["computer-nvidia-rtx-pro-4500-blackwell","엔비디아 RTX PRO 4500 블랙웰 32GB","NVIDIA RTX PRO 4500 Blackwell 32GB","英伟达 RTX PRO 4500 Blackwell 32GB",2623.00],
-["computer-nvidia-titan-rtx","엔비디아 타이탄 RTX 24GB","NVIDIA TITAN RTX 24GB","英伟达 TITAN RTX 24GB",2499.00],
-["computer-nvidia-rtx-a5000","엔비디아 RTX A5000 24GB","NVIDIA RTX A5000 24GB","英伟达 RTX A5000 24GB",2299.00],
-["computer-nvidia-rtx-4500-ada","엔비디아 RTX 4500 Ada 제너레이션 24GB","NVIDIA RTX 4500 Ada Generation 24GB","英伟达 RTX 4500 Ada Generation 24GB",2250.00],
-["computer-nvidia-rtx-5090-fe","엔비디아 지포스 RTX 5090 파운더스 에디션","NVIDIA GeForce RTX 5090 Founders Edition","英伟达 GeForce RTX 5090 Founders Edition",1999.00],
-["computer-nvidia-jetson-agx-orin-64gb-dev-kit","엔비디아 젯슨 AGX 오린 64GB 개발자 키트","NVIDIA Jetson AGX Orin 64GB Developer Kit","英伟达 Jetson AGX Orin 64GB 开发者套件",1999.00],
-["computer-nvidia-connectx-7-mcx75310aas-neat","엔비디아 커넥트X-7 MCX75310AAS-NEAT 400GbE 어댑터","NVIDIA ConnectX-7 MCX75310AAS-NEAT 400GbE Adapter","英伟达 ConnectX-7 MCX75310AAS-NEAT 400GbE 网卡",1699.00],
-["computer-nvidia-rtx-4090-fe","엔비디아 지포스 RTX 4090 파운더스 에디션","NVIDIA GeForce RTX 4090 Founders Edition","英伟达 GeForce RTX 4090 Founders Edition",1599.00],
-["computer-nvidia-rtx-pro-4000-blackwell","엔비디아 RTX PRO 4000 블랙웰 24GB","NVIDIA RTX PRO 4000 Blackwell 24GB","英伟达 RTX PRO 4000 Blackwell 24GB",1546.00],
-["computer-nvidia-rtx-4000-ada","엔비디아 RTX 4000 Ada 제너레이션 20GB","NVIDIA RTX 4000 Ada Generation 20GB","英伟达 RTX 4000 Ada Generation 20GB",1250.00],
-["computer-nvidia-rtx-4000-sff-ada","엔비디아 RTX 4000 SFF Ada 제너레이션 20GB","NVIDIA RTX 4000 SFF Ada Generation 20GB","英伟达 RTX 4000 SFF Ada Generation 20GB",1250.00],
-["computer-nvidia-connectx-6-dx-mcx623106an-cdat","엔비디아 커넥트X-6 Dx MCX623106AN-CDAT 100GbE 듀얼 포트","NVIDIA ConnectX-6 Dx MCX623106AN-CDAT 100GbE Dual-Port","英伟达 ConnectX-6 Dx MCX623106AN-CDAT 100GbE 双口网卡",1199.00],
-["computer-nvidia-rtx-a4000","엔비디아 RTX A4000 16GB","NVIDIA RTX A4000 16GB","英伟达 RTX A4000 16GB",1000.00],
-["computer-nvidia-rtx-5080-fe","엔비디아 지포스 RTX 5080 파운더스 에디션","NVIDIA GeForce RTX 5080 Founders Edition","英伟达 GeForce RTX 5080 Founders Edition",999.00],
-["computer-nvidia-rtx-4080-super-fe","엔비디아 지포스 RTX 4080 SUPER 파운더스 에디션","NVIDIA GeForce RTX 4080 SUPER Founders Edition","英伟达 GeForce RTX 4080 SUPER Founders Edition",999.00],
-["computer-nvidia-jetson-agx-orin-32gb-module","엔비디아 젯슨 AGX 오린 32GB 모듈","NVIDIA Jetson AGX Orin 32GB Module","英伟达 Jetson AGX Orin 32GB 模组",999.00],
-["computer-nvidia-connectx-5-mcx516a-ccat","엔비디아 커넥트X-5 MCX516A-CCAT 100GbE 듀얼 포트","NVIDIA ConnectX-5 MCX516A-CCAT 100GbE Dual-Port","英伟达 ConnectX-5 MCX516A-CCAT 100GbE 双口网卡",899.00],
-["computer-nvidia-rtx-pro-2000-blackwell","엔비디아 RTX PRO 2000 블랙웰 16GB","NVIDIA RTX PRO 2000 Blackwell 16GB","英伟达 RTX PRO 2000 Blackwell 16GB",699.00],
-["computer-nvidia-jetson-orin-nx-16gb-module","엔비디아 젯슨 오린 NX 16GB 모듈","NVIDIA Jetson Orin NX 16GB Module","英伟达 Jetson Orin NX 16GB 模组",699.00],
-["computer-nvidia-rtx-3080-fe","엔비디아 지포스 RTX 3080 파운더스 에디션","NVIDIA GeForce RTX 3080 Founders Edition","英伟达 GeForce RTX 3080 Founders Edition",699.00],
-["computer-nvidia-rtx-2000-ada","엔비디아 RTX 2000 Ada 제너레이션 16GB","NVIDIA RTX 2000 Ada Generation 16GB","英伟达 RTX 2000 Ada Generation 16GB",649.00],
-["computer-nvidia-rtx-a2000-12gb","엔비디아 RTX A2000 12GB","NVIDIA RTX A2000 12GB","英伟达 RTX A2000 12GB",599.00],
-["computer-nvidia-rtx-4070-super-fe","엔비디아 지포스 RTX 4070 SUPER 파운더스 에디션","NVIDIA GeForce RTX 4070 SUPER Founders Edition","英伟达 GeForce RTX 4070 SUPER Founders Edition",599.00],
-["computer-nvidia-rtx-5070-fe","엔비디아 지포스 RTX 5070 파운더스 에디션","NVIDIA GeForce RTX 5070 Founders Edition","英伟达 GeForce RTX 5070 Founders Edition",549.00],
-["computer-nvidia-rtx-4070-fe","엔비디아 지포스 RTX 4070 파운더스 에디션","NVIDIA GeForce RTX 4070 Founders Edition","英伟达 GeForce RTX 4070 Founders Edition",549.00],
-["computer-nvidia-rtx-4060-ti-fe","엔비디아 지포스 RTX 4060 Ti 8GB 파운더스 에디션","NVIDIA GeForce RTX 4060 Ti 8GB Founders Edition","英伟达 GeForce RTX 4060 Ti 8GB Founders Edition",399.00],
-["computer-nvidia-t1000-8gb","엔비디아 T1000 8GB","NVIDIA T1000 8GB","英伟达 T1000 8GB",399.00],
-["computer-nvidia-rtx-a1000","엔비디아 RTX A1000 8GB","NVIDIA RTX A1000 8GB","英伟达 RTX A1000 8GB",365.00],
-["computer-nvidia-connectx-4-lx-mcx4121a-acat","엔비디아 커넥트X-4 Lx MCX4121A-ACAT 25GbE 듀얼 포트","NVIDIA ConnectX-4 Lx MCX4121A-ACAT 25GbE Dual-Port","英伟达 ConnectX-4 Lx MCX4121A-ACAT 25GbE 双口网卡",299.00],
-["computer-nvidia-jetson-orin-nano-super-dev-kit","엔비디아 젯슨 오린 나노 슈퍼 개발자 키트","NVIDIA Jetson Orin Nano Super Developer Kit","英伟达 Jetson Orin Nano Super 开发者套件",249.00],
-["computer-nvidia-jetson-orin-nano-8gb-module","엔비디아 젯슨 오린 나노 8GB 모듈","NVIDIA Jetson Orin Nano 8GB Module","英伟达 Jetson Orin Nano 8GB 模组",229.00],
-["computer-nvidia-shield-tv-pro","엔비디아 쉴드 TV 프로","NVIDIA SHIELD TV Pro","英伟达 SHIELD TV Pro",199.99],
-["computer-nvidia-t400-4gb","엔비디아 T400 4GB","NVIDIA T400 4GB","英伟达 T400 4GB",169.00],
-["computer-nvidia-shield-tv","엔비디아 쉴드 TV","NVIDIA SHIELD TV","英伟达 SHIELD TV",149.99],
-["computer-nvidia-jetson-nano-dev-kit","엔비디아 젯슨 나노 개발자 키트","NVIDIA Jetson Nano Developer Kit","英伟达 Jetson Nano 开发者套件",149.00],
-["computer-nvidia-rtx-a400","엔비디아 RTX A400 4GB","NVIDIA RTX A400 4GB","英伟达 RTX A400 4GB",135.00],
-["computer-nvidia-rtx-nvlink-bridge","엔비디아 지포스 RTX NVLink 브리지 RTX 30 시리즈용","NVIDIA GeForce RTX NVLink Bridge for RTX 30 Series","英伟达 GeForce RTX NVLink 桥接器 RTX 30 系列",79.99],
-["computer-nvidia-shield-remote","엔비디아 쉴드 리모컨","NVIDIA SHIELD Remote","英伟达 SHIELD 遥控器",29.99]
-], "use": [] }
+{
+ "slug": "computer-nvidia",
+ "items": [
+  [
+   "computer-nvidia-dgx-a100-320gb",
+   "엔비디아 DGX A100 320GB",
+   "NVIDIA DGX A100 320GB",
+   "英伟达 DGX A100 320GB",
+   199000
+  ],
+  [
+   "computer-nvidia-dgx-station-a100-320gb",
+   "엔비디아 DGX 스테이션 A100 320GB",
+   "NVIDIA DGX Station A100 320GB",
+   "英伟达 DGX Station A100 320GB",
+   149000
+  ],
+  [
+   "computer-nvidia-dgx-station-a100-160gb",
+   "엔비디아 DGX 스테이션 A100 160GB",
+   "NVIDIA DGX Station A100 160GB",
+   "英伟达 DGX Station A100 160GB",
+   99000
+  ],
+  [
+   "computer-nvidia-h100-80gb",
+   "엔비디아 H100 80GB PCIe",
+   "NVIDIA H100 80GB PCIe",
+   "英伟达 H100 80GB PCIe",
+   30000
+  ],
+  [
+   "computer-nvidia-a100-80gb",
+   "엔비디아 A100 80GB PCIe",
+   "NVIDIA A100 80GB PCIe",
+   "英伟达 A100 80GB PCIe",
+   17000
+  ],
+  [
+   "computer-nvidia-l40s",
+   "엔비디아 L40S 48GB",
+   "NVIDIA L40S 48GB",
+   "英伟达 L40S 48GB",
+   8999
+  ],
+  [
+   "computer-nvidia-rtx-pro-6000-blackwell",
+   "엔비디아 RTX PRO 6000 블랙웰 96GB",
+   "NVIDIA RTX PRO 6000 Blackwell 96GB",
+   "英伟达 RTX PRO 6000 Blackwell 96GB",
+   8565
+  ],
+  [
+   "computer-nvidia-rtx-6000-ada",
+   "엔비디아 RTX 6000 Ada 제너레이션 48GB",
+   "NVIDIA RTX 6000 Ada Generation 48GB",
+   "英伟达 RTX 6000 Ada Generation 48GB",
+   6799
+  ],
+  [
+   "computer-nvidia-rtx-a6000",
+   "엔비디아 RTX A6000 48GB",
+   "NVIDIA RTX A6000 48GB",
+   "英伟达 RTX A6000 48GB",
+   4650
+  ],
+  [
+   "computer-nvidia-rtx-pro-5000-blackwell",
+   "엔비디아 RTX PRO 5000 블랙웰 48GB",
+   "NVIDIA RTX PRO 5000 Blackwell 48GB",
+   "英伟达 RTX PRO 5000 Blackwell 48GB",
+   4569
+  ],
+  [
+   "computer-nvidia-rtx-5000-ada",
+   "엔비디아 RTX 5000 Ada 제너레이션 32GB",
+   "NVIDIA RTX 5000 Ada Generation 32GB",
+   "英伟达 RTX 5000 Ada Generation 32GB",
+   4000
+  ],
+  [
+   "computer-nvidia-dgx-spark",
+   "엔비디아 DGX 스파크 파운더스 에디션 4TB",
+   "NVIDIA DGX Spark Founders Edition 4TB",
+   "英伟达 DGX Spark Founders Edition 4TB",
+   3999
+  ],
+  [
+   "computer-nvidia-jetson-agx-thor-dev-kit",
+   "엔비디아 젯슨 AGX 토르 개발자 키트",
+   "NVIDIA Jetson AGX Thor Developer Kit",
+   "英伟达 Jetson AGX Thor 开发者套件",
+   3499
+  ],
+  [
+   "computer-nvidia-bluefield-3-b3220",
+   "엔비디아 블루필드-3 B3220 DPU",
+   "NVIDIA BlueField-3 B3220 DPU",
+   "英伟达 BlueField-3 B3220 DPU",
+   3299
+  ],
+  [
+   "computer-nvidia-rtx-pro-4500-blackwell",
+   "엔비디아 RTX PRO 4500 블랙웰 32GB",
+   "NVIDIA RTX PRO 4500 Blackwell 32GB",
+   "英伟达 RTX PRO 4500 Blackwell 32GB",
+   2623
+  ],
+  [
+   "computer-nvidia-titan-rtx",
+   "엔비디아 타이탄 RTX 24GB",
+   "NVIDIA TITAN RTX 24GB",
+   "英伟达 TITAN RTX 24GB",
+   2499
+  ],
+  [
+   "computer-nvidia-rtx-a5000",
+   "엔비디아 RTX A5000 24GB",
+   "NVIDIA RTX A5000 24GB",
+   "英伟达 RTX A5000 24GB",
+   2299
+  ],
+  [
+   "computer-nvidia-rtx-4500-ada",
+   "엔비디아 RTX 4500 Ada 제너레이션 24GB",
+   "NVIDIA RTX 4500 Ada Generation 24GB",
+   "英伟达 RTX 4500 Ada Generation 24GB",
+   2250
+  ],
+  [
+   "computer-nvidia-rtx-5090-fe",
+   "엔비디아 지포스 RTX 5090 파운더스 에디션",
+   "NVIDIA GeForce RTX 5090 Founders Edition",
+   "英伟达 GeForce RTX 5090 Founders Edition",
+   1999
+  ],
+  [
+   "computer-nvidia-jetson-agx-orin-64gb-dev-kit",
+   "엔비디아 젯슨 AGX 오린 64GB 개발자 키트",
+   "NVIDIA Jetson AGX Orin 64GB Developer Kit",
+   "英伟达 Jetson AGX Orin 64GB 开发者套件",
+   1999
+  ],
+  [
+   "computer-nvidia-connectx-7-mcx75310aas-neat",
+   "엔비디아 커넥트X-7 MCX75310AAS-NEAT 400GbE 어댑터",
+   "NVIDIA ConnectX-7 MCX75310AAS-NEAT 400GbE Adapter",
+   "英伟达 ConnectX-7 MCX75310AAS-NEAT 400GbE 网卡",
+   1699
+  ],
+  [
+   "computer-nvidia-rtx-4090-fe",
+   "엔비디아 지포스 RTX 4090 파운더스 에디션",
+   "NVIDIA GeForce RTX 4090 Founders Edition",
+   "英伟达 GeForce RTX 4090 Founders Edition",
+   1599
+  ],
+  [
+   "computer-nvidia-rtx-pro-4000-blackwell",
+   "엔비디아 RTX PRO 4000 블랙웰 24GB",
+   "NVIDIA RTX PRO 4000 Blackwell 24GB",
+   "英伟达 RTX PRO 4000 Blackwell 24GB",
+   1546
+  ],
+  [
+   "computer-nvidia-rtx-4000-ada",
+   "엔비디아 RTX 4000 Ada 제너레이션 20GB",
+   "NVIDIA RTX 4000 Ada Generation 20GB",
+   "英伟达 RTX 4000 Ada Generation 20GB",
+   1250
+  ],
+  [
+   "computer-nvidia-rtx-4000-sff-ada",
+   "엔비디아 RTX 4000 SFF Ada 제너레이션 20GB",
+   "NVIDIA RTX 4000 SFF Ada Generation 20GB",
+   "英伟达 RTX 4000 SFF Ada Generation 20GB",
+   1250
+  ],
+  [
+   "computer-nvidia-connectx-6-dx-mcx623106an-cdat",
+   "엔비디아 커넥트X-6 Dx MCX623106AN-CDAT 100GbE 듀얼 포트",
+   "NVIDIA ConnectX-6 Dx MCX623106AN-CDAT 100GbE Dual-Port",
+   "英伟达 ConnectX-6 Dx MCX623106AN-CDAT 100GbE 双口网卡",
+   1199
+  ],
+  [
+   "computer-nvidia-rtx-a4000",
+   "엔비디아 RTX A4000 16GB",
+   "NVIDIA RTX A4000 16GB",
+   "英伟达 RTX A4000 16GB",
+   1000
+  ],
+  [
+   "computer-nvidia-rtx-5080-fe",
+   "엔비디아 지포스 RTX 5080 파운더스 에디션",
+   "NVIDIA GeForce RTX 5080 Founders Edition",
+   "英伟达 GeForce RTX 5080 Founders Edition",
+   999
+  ],
+  [
+   "computer-nvidia-rtx-4080-super-fe",
+   "엔비디아 지포스 RTX 4080 SUPER 파운더스 에디션",
+   "NVIDIA GeForce RTX 4080 SUPER Founders Edition",
+   "英伟达 GeForce RTX 4080 SUPER Founders Edition",
+   999
+  ],
+  [
+   "computer-nvidia-jetson-agx-orin-32gb-module",
+   "엔비디아 젯슨 AGX 오린 32GB 모듈",
+   "NVIDIA Jetson AGX Orin 32GB Module",
+   "英伟达 Jetson AGX Orin 32GB 模组",
+   999
+  ],
+  [
+   "computer-nvidia-connectx-5-mcx516a-ccat",
+   "엔비디아 커넥트X-5 MCX516A-CCAT 100GbE 듀얼 포트",
+   "NVIDIA ConnectX-5 MCX516A-CCAT 100GbE Dual-Port",
+   "英伟达 ConnectX-5 MCX516A-CCAT 100GbE 双口网卡",
+   899
+  ],
+  [
+   "computer-nvidia-rtx-pro-2000-blackwell",
+   "엔비디아 RTX PRO 2000 블랙웰 16GB",
+   "NVIDIA RTX PRO 2000 Blackwell 16GB",
+   "英伟达 RTX PRO 2000 Blackwell 16GB",
+   699
+  ],
+  [
+   "computer-nvidia-jetson-orin-nx-16gb-module",
+   "엔비디아 젯슨 오린 NX 16GB 모듈",
+   "NVIDIA Jetson Orin NX 16GB Module",
+   "英伟达 Jetson Orin NX 16GB 模组",
+   699
+  ],
+  [
+   "computer-nvidia-rtx-3080-fe",
+   "엔비디아 지포스 RTX 3080 파운더스 에디션",
+   "NVIDIA GeForce RTX 3080 Founders Edition",
+   "英伟达 GeForce RTX 3080 Founders Edition",
+   699
+  ],
+  [
+   "computer-nvidia-rtx-2000-ada",
+   "엔비디아 RTX 2000 Ada 제너레이션 16GB",
+   "NVIDIA RTX 2000 Ada Generation 16GB",
+   "英伟达 RTX 2000 Ada Generation 16GB",
+   649
+  ],
+  [
+   "computer-nvidia-rtx-a2000-12gb",
+   "엔비디아 RTX A2000 12GB",
+   "NVIDIA RTX A2000 12GB",
+   "英伟达 RTX A2000 12GB",
+   599
+  ],
+  [
+   "computer-nvidia-rtx-4070-super-fe",
+   "엔비디아 지포스 RTX 4070 SUPER 파운더스 에디션",
+   "NVIDIA GeForce RTX 4070 SUPER Founders Edition",
+   "英伟达 GeForce RTX 4070 SUPER Founders Edition",
+   599
+  ],
+  [
+   "computer-nvidia-rtx-5070-fe",
+   "엔비디아 지포스 RTX 5070 파운더스 에디션",
+   "NVIDIA GeForce RTX 5070 Founders Edition",
+   "英伟达 GeForce RTX 5070 Founders Edition",
+   549
+  ],
+  [
+   "computer-nvidia-rtx-4070-fe",
+   "엔비디아 지포스 RTX 4070 파운더스 에디션",
+   "NVIDIA GeForce RTX 4070 Founders Edition",
+   "英伟达 GeForce RTX 4070 Founders Edition",
+   549
+  ],
+  [
+   "computer-nvidia-rtx-4060-ti-fe",
+   "엔비디아 지포스 RTX 4060 Ti 8GB 파운더스 에디션",
+   "NVIDIA GeForce RTX 4060 Ti 8GB Founders Edition",
+   "英伟达 GeForce RTX 4060 Ti 8GB Founders Edition",
+   399
+  ],
+  [
+   "computer-nvidia-t1000-8gb",
+   "엔비디아 T1000 8GB",
+   "NVIDIA T1000 8GB",
+   "英伟达 T1000 8GB",
+   399
+  ],
+  [
+   "computer-nvidia-rtx-a1000",
+   "엔비디아 RTX A1000 8GB",
+   "NVIDIA RTX A1000 8GB",
+   "英伟达 RTX A1000 8GB",
+   365
+  ],
+  [
+   "computer-nvidia-connectx-4-lx-mcx4121a-acat",
+   "엔비디아 커넥트X-4 Lx MCX4121A-ACAT 25GbE 듀얼 포트",
+   "NVIDIA ConnectX-4 Lx MCX4121A-ACAT 25GbE Dual-Port",
+   "英伟达 ConnectX-4 Lx MCX4121A-ACAT 25GbE 双口网卡",
+   299
+  ],
+  [
+   "computer-nvidia-jetson-orin-nano-super-dev-kit",
+   "엔비디아 젯슨 오린 나노 슈퍼 개발자 키트",
+   "NVIDIA Jetson Orin Nano Super Developer Kit",
+   "英伟达 Jetson Orin Nano Super 开发者套件",
+   249
+  ],
+  [
+   "computer-nvidia-jetson-orin-nano-8gb-module",
+   "엔비디아 젯슨 오린 나노 8GB 모듈",
+   "NVIDIA Jetson Orin Nano 8GB Module",
+   "英伟达 Jetson Orin Nano 8GB 模组",
+   229
+  ],
+  [
+   "computer-nvidia-shield-tv-pro",
+   "엔비디아 쉴드 TV 프로",
+   "NVIDIA SHIELD TV Pro",
+   "英伟达 SHIELD TV Pro",
+   199.99
+  ],
+  [
+   "computer-nvidia-t400-4gb",
+   "엔비디아 T400 4GB",
+   "NVIDIA T400 4GB",
+   "英伟达 T400 4GB",
+   169
+  ],
+  [
+   "computer-nvidia-shield-tv",
+   "엔비디아 쉴드 TV",
+   "NVIDIA SHIELD TV",
+   "英伟达 SHIELD TV",
+   149.99
+  ],
+  [
+   "computer-nvidia-jetson-nano-dev-kit",
+   "엔비디아 젯슨 나노 개발자 키트",
+   "NVIDIA Jetson Nano Developer Kit",
+   "英伟达 Jetson Nano 开发者套件",
+   149
+  ],
+  [
+   "computer-nvidia-rtx-a400",
+   "엔비디아 RTX A400 4GB",
+   "NVIDIA RTX A400 4GB",
+   "英伟达 RTX A400 4GB",
+   135
+  ],
+  [
+   "computer-nvidia-rtx-nvlink-bridge",
+   "엔비디아 지포스 RTX NVLink 브리지 RTX 30 시리즈용",
+   "NVIDIA GeForce RTX NVLink Bridge for RTX 30 Series",
+   "英伟达 GeForce RTX NVLink 桥接器 RTX 30 系列",
+   79.99
+  ],
+  [
+   "computer-nvidia-shield-remote",
+   "엔비디아 쉴드 리모컨",
+   "NVIDIA SHIELD Remote",
+   "英伟达 SHIELD 遥控器",
+   29.99
+  ]
+ ],
+ "use": [
+  "computer-p-steelseries-rival-3",
+  "computer-p-noctua-nf-a12x25-pwm",
+  "computer-p-anker-341-usb-c-hub",
+  "computer-p-cherry-stream-keyboard",
+  "computer-p-cooler-master-hyper-212-black",
+  "computer-p-kingston-dt-max-256gb",
+  "computer-p-vivo-stand-v002",
+  "computer-p-thermalright-peerless-assassin-120-se",
+  "computer-p-redragon-k552-kumara",
+  "computer-p-thermalright-phantom-spirit-120-se",
+  "computer-p-ifixit-mako",
+  "computer-p-belkin-12-outlet-pivot-plug",
+  "computer-p-huion-inspiroy-h640p",
+  "computer-p-kensington-orbit-scroll-ring",
+  "computer-p-8bitdo-retro-18-numpad",
+  "computer-p-wd-red-plus-4tb",
+  "computer-p-noctua-nh-l9i",
+  "computer-p-xiaomi-monitor-light-bar",
+  "computer-p-raspberry-pi-4-model-b-4gb",
+  "computer-p-anker-powerconf-c200",
+  "computer-p-kingston-nv3-1tb",
+  "computer-p-twelve-south-curve",
+  "computer-p-raspberry-pi-5-4gb",
+  "computer-p-crucial-p3-plus-1tb",
+  "computer-p-deepcool-ak620",
+  "computer-p-elecom-huge-m-ht1drbk",
+  "computer-p-glorious-model-o-2",
+  "computer-p-seagate-barracuda-2tb",
+  "computer-p-ducky-one-3-tkl",
+  "computer-p-leopold-fc750r-pd",
+  "computer-p-obsbot-meet-2",
+  "computer-p-ubiquiti-u6-plus",
+  "computer-p-nuphy-air75-v2",
+  "computer-p-mikrotik-hap-ax3",
+  "computer-p-fractal-north",
+  "computer-p-ubiquiti-u7-pro-max",
+  "computer-p-aoc-q27g3xmn",
+  "computer-p-plugable-tbt4-udz",
+  "computer-p-nzxt-kraken-elite-360",
+  "computer-p-satechi-thunderbolt-4-dock",
+  "computer-p-synology-ds224-plus",
+  "computer-p-wd-black-sn850x-4tb",
+  "computer-p-xfx-swift-rx-9070",
+  "computer-p-hhkb-studio",
+  "computer-p-seagate-ironwolf-pro-16tb",
+  "computer-p-hhkb-professional-hybrid-type-s",
+  "computer-p-zsa-moonlander",
+  "computer-p-apc-smart-ups-srt5krmxlt"
+ ]
+}

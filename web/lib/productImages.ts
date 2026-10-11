@@ -52,6 +52,10 @@ const SOURCES: Record<string, ProductImage> = {
   "starter-audio": { src: `${ASSET_BASE}/assets/photography/photo-1618366712010-f4ae9c647dcb.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "starter-camera": { src: `${ASSET_BASE}/assets/photography/photo-1473968512647-3e447244af8f.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "vault-pokemon": { src: `${ASSET_BASE}/assets/photography/unsplash-pokemon-cover.webp`, credit: "Giorgio Trovato, Unsplash License", cutout: false },
+  // 새 카탈로그의 리자몽 박스: 파운더가 스캔한 스카이리지 146/144 한 장(등급 케이스 없는 카드의 스캔이다. 등급별 상품이 같은 스캔을 쓴다)
+  "pokemon-charizard-charizard-sk-146-144": { src: `${ASSET_BASE}/assets/hero/card-1.webp`, credit: "파운더가 가진 카드를 직접 스캔한 것", cutout: true },
+  "pokemon-charizard-charizard-sk-146-144-psa10": { src: `${ASSET_BASE}/assets/hero/card-1.webp`, credit: "파운더가 가진 카드를 직접 스캔한 것", cutout: true },
+  "pokemon-charizard-charizard-sk-146-144-psa9": { src: `${ASSET_BASE}/assets/hero/card-1.webp`, credit: "파운더가 가진 카드를 직접 스캔한 것", cutout: true },
   "jackpot-car": { src: `${ASSET_BASE}/assets/photography/photo-1617788138017-80ad40651399.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "jackpot-cybertruck": { src: `${ASSET_BASE}/assets/photography/photo-1617788138017-80ad40651399.webp`, credit: "Unsplash , Unsplash License", cutout: false },
   "jackpot-supercar": { src: `${ASSET_BASE}/assets/photography/photo-1503376780353-7e6692767b70.webp`, credit: "Unsplash , Unsplash License", cutout: false },

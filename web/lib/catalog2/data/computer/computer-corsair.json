@@ -1,0 +1,647 @@
+{
+ "slug": "computer-corsair",
+ "items": [
+  [
+   "computer-corsair-one-i500-rtx-4090",
+   "커세어 ONE i500 Core i9-14900K RTX 4090",
+   "CORSAIR ONE i500 Core i9-14900K RTX 4090",
+   "美商海盗船 CORSAIR ONE i500 Core i9-14900K RTX 4090",
+   4699.99
+  ],
+  [
+   "computer-corsair-one-i500-rtx-4080-super",
+   "커세어 ONE i500 Core i9-14900K RTX 4080 SUPER",
+   "CORSAIR ONE i500 Core i9-14900K RTX 4080 SUPER",
+   "美商海盗船 CORSAIR ONE i500 Core i9-14900K RTX 4080 SUPER",
+   3599.99
+  ],
+  [
+   "computer-corsair-ai-workstation-300-128gb",
+   "커세어 AI 워크스테이션 300 Ryzen AI Max+ 395 128GB 4TB",
+   "CORSAIR AI Workstation 300 Ryzen AI Max+ 395 128GB 4TB",
+   "美商海盗船 AI Workstation 300 Ryzen AI Max+ 395 128GB 4TB",
+   2299.99
+  ],
+  [
+   "computer-corsair-xeneon-flex-45wqhd240",
+   "커세어 제네온 플렉스 45WQHD240 OLED 벤더블 모니터",
+   "CORSAIR XENEON FLEX 45WQHD240 OLED Bendable Monitor",
+   "美商海盗船 XENEON FLEX 45WQHD240 OLED 可弯曲显示器",
+   1999.99
+  ],
+  [
+   "computer-corsair-ai-workstation-300-64gb",
+   "커세어 AI 워크스테이션 300 Ryzen AI Max 385 64GB 1TB",
+   "CORSAIR AI Workstation 300 Ryzen AI Max 385 64GB 1TB",
+   "美商海盗船 AI Workstation 300 Ryzen AI Max 385 64GB 1TB",
+   1599.99
+  ],
+  [
+   "computer-corsair-platform-6-elevate",
+   "커세어 플랫폼:6 엘리베이트 모듈러 데스크",
+   "CORSAIR Platform:6 Elevate Modular Desk",
+   "美商海盗船 Platform:6 Elevate 模块化升降桌",
+   1399.99
+  ],
+  [
+   "computer-corsair-xeneon-34wqhd240-c",
+   "커세어 제네온 34WQHD240-C QD-OLED 모니터",
+   "CORSAIR XENEON 34WQHD240-C QD-OLED Monitor",
+   "美商海盗船 XENEON 34WQHD240-C QD-OLED 显示器",
+   1199.99
+  ],
+  [
+   "computer-corsair-mp600-pro-xt-8tb",
+   "커세어 MP600 PRO XT 8TB NVMe SSD",
+   "CORSAIR MP600 PRO XT 8TB NVMe SSD",
+   "美商海盗船 MP600 PRO XT 8TB 固态硬盘",
+   1149.99
+  ],
+  [
+   "computer-corsair-elgato-stream-deck-studio",
+   "커세어 엘가토 스트림 덱 스튜디오",
+   "Elgato Stream Deck Studio",
+   "Elgato Stream Deck Studio 机架式控制台",
+   899.99
+  ],
+  [
+   "computer-corsair-xeneon-27qhd240-oled",
+   "커세어 제네온 27QHD240 OLED 모니터",
+   "CORSAIR XENEON 27QHD240 OLED Monitor",
+   "美商海盗船 XENEON 27QHD240 OLED 显示器",
+   799.99
+  ],
+  [
+   "computer-corsair-ws-ddr5-rdimm-128gb",
+   "커세어 WS DDR5 RDIMM 128GB (4x32GB) 5600MHz",
+   "CORSAIR WS DDR5 RDIMM 128GB (4x32GB) 5600MHz",
+   "美商海盗船 WS DDR5 RDIMM 128GB (4x32GB) 5600MHz",
+   799.99
+  ],
+  [
+   "computer-corsair-dominator-titanium-192gb",
+   "커세어 도미네이터 티타늄 RGB DDR5 192GB (4x48GB) 5200MHz",
+   "CORSAIR Dominator Titanium RGB DDR5 192GB (4x48GB) 5200MHz",
+   "美商海盗船 Dominator Titanium RGB DDR5 192GB (4x48GB) 5200MHz",
+   749.99
+  ],
+  [
+   "computer-corsair-mp700-pro-4tb",
+   "커세어 MP700 PRO 4TB PCIe 5.0 NVMe SSD",
+   "CORSAIR MP700 PRO 4TB PCIe 5.0 NVMe SSD",
+   "美商海盗船 MP700 PRO 4TB PCIe 5.0 固态硬盘",
+   599.99
+  ],
+  [
+   "computer-corsair-ax1600i",
+   "커세어 AX1600i 디지털 파워서플라이",
+   "CORSAIR AX1600i Digital Power Supply",
+   "美商海盗船 AX1600i 数字电源",
+   549.99
+  ],
+  [
+   "computer-corsair-obsidian-1000d",
+   "커세어 옵시디언 1000D 슈퍼타워 케이스",
+   "CORSAIR Obsidian 1000D Super-Tower Case",
+   "美商海盗船 Obsidian 1000D 超塔机箱",
+   549.99
+  ],
+  [
+   "computer-corsair-9000d-rgb-airflow",
+   "커세어 9000D RGB 에어플로우 슈퍼타워 케이스",
+   "CORSAIR 9000D RGB AIRFLOW Super-Tower Case",
+   "美商海盗船 9000D RGB AIRFLOW 超塔机箱",
+   499.99
+  ],
+  [
+   "computer-corsair-hx1500i",
+   "커세어 HX1500i 파워서플라이",
+   "CORSAIR HX1500i Power Supply",
+   "美商海盗船 HX1500i 电源",
+   369.99
+  ],
+  [
+   "computer-corsair-virtuoso-max-wireless",
+   "커세어 버추오소 MAX 와이어리스 게이밍 헤드셋",
+   "CORSAIR VIRTUOSO MAX WIRELESS Gaming Headset",
+   "美商海盗船 VIRTUOSO MAX WIRELESS 游戏耳机",
+   329.99
+  ],
+  [
+   "computer-corsair-elgato-facecam-pro",
+   "커세어 엘가토 페이스캠 프로 4K60 웹캠",
+   "Elgato Facecam Pro 4K60 Webcam",
+   "Elgato Facecam Pro 4K60 摄像头",
+   299.99
+  ],
+  [
+   "computer-corsair-icue-h150i-elite-lcd-xt",
+   "커세어 iCUE H150i 엘리트 LCD XT 수랭 쿨러",
+   "CORSAIR iCUE H150i ELITE LCD XT Liquid CPU Cooler",
+   "美商海盗船 iCUE H150i ELITE LCD XT 一体式水冷",
+   289.99
+  ],
+  [
+   "computer-corsair-k100-air-wireless",
+   "커세어 K100 AIR 와이어리스 초슬림 기계식 키보드",
+   "CORSAIR K100 AIR WIRELESS Ultra-Thin Mechanical Keyboard",
+   "美商海盗船 K100 AIR WIRELESS 超薄机械键盘",
+   279.99
+  ],
+  [
+   "computer-corsair-mp700-pro-2tb",
+   "커세어 MP700 PRO 2TB PCIe 5.0 NVMe SSD",
+   "CORSAIR MP700 PRO 2TB PCIe 5.0 NVMe SSD",
+   "美商海盗船 MP700 PRO 2TB PCIe 5.0 固态硬盘",
+   279.99
+  ],
+  [
+   "computer-corsair-dominator-titanium-64gb",
+   "커세어 도미네이터 티타늄 RGB DDR5 64GB (2x32GB) 6600MHz",
+   "CORSAIR Dominator Titanium RGB DDR5 64GB (2x32GB) 6600MHz",
+   "美商海盗船 Dominator Titanium RGB DDR5 64GB (2x32GB) 6600MHz",
+   279.99
+  ],
+  [
+   "computer-corsair-elgato-prompter",
+   "커세어 엘가토 프롬프터",
+   "Elgato Prompter",
+   "Elgato Prompter 提词器",
+   279.99
+  ],
+  [
+   "computer-corsair-xeneon-edge",
+   "커세어 제네온 엣지 14.5인치 터치스크린",
+   "CORSAIR XENEON EDGE 14.5-inch Touchscreen",
+   "美商海盗船 XENEON EDGE 14.5英寸 触控副屏",
+   249.99
+  ],
+  [
+   "computer-corsair-elgato-stream-deck-xl",
+   "커세어 엘가토 스트림 덱 XL",
+   "Elgato Stream Deck XL",
+   "Elgato Stream Deck XL",
+   249.99
+  ],
+  [
+   "computer-corsair-7000d-airflow",
+   "커세어 7000D 에어플로우 풀타워 케이스",
+   "CORSAIR 7000D AIRFLOW Full-Tower Case",
+   "美商海盗船 7000D AIRFLOW 全塔机箱",
+   239.99
+  ],
+  [
+   "computer-corsair-elgato-4k-x",
+   "커세어 엘가토 4K X 캡처 카드",
+   "Elgato 4K X Capture Card",
+   "Elgato 4K X 采集卡",
+   229.99
+  ],
+  [
+   "computer-corsair-icue-link-titan-360-rx-rgb",
+   "커세어 iCUE LINK 타이탄 360 RX RGB 수랭 쿨러",
+   "CORSAIR iCUE LINK TITAN 360 RX RGB Liquid CPU Cooler",
+   "美商海盗船 iCUE LINK TITAN 360 RX RGB 一体式水冷",
+   199.99
+  ],
+  [
+   "computer-corsair-elgato-stream-deck-plus",
+   "커세어 엘가토 스트림 덱 +",
+   "Elgato Stream Deck +",
+   "Elgato Stream Deck +",
+   199.99
+  ],
+  [
+   "computer-corsair-elgato-facecam-4k",
+   "커세어 엘가토 페이스캠 4K 웹캠",
+   "Elgato Facecam 4K Webcam",
+   "Elgato Facecam 4K 摄像头",
+   199.99
+  ],
+  [
+   "computer-corsair-6500x",
+   "커세어 6500X 듀얼 챔버 미들타워 케이스",
+   "CORSAIR 6500X Dual Chamber Mid-Tower Case",
+   "美商海盗船 6500X 双仓中塔机箱",
+   199.99
+  ],
+  [
+   "computer-corsair-k70-max",
+   "커세어 K70 MAX 마그네틱 기계식 키보드",
+   "CORSAIR K70 MAX Magnetic-Mechanical Keyboard",
+   "美商海盗船 K70 MAX 磁轴机械键盘",
+   199.99
+  ],
+  [
+   "computer-corsair-rm1000x",
+   "커세어 RM1000x 파워서플라이",
+   "CORSAIR RM1000x Power Supply",
+   "美商海盗船 RM1000x 电源",
+   189.99
+  ],
+  [
+   "computer-corsair-sf750-platinum",
+   "커세어 SF750 플래티넘 SFX 파워서플라이",
+   "CORSAIR SF750 Platinum SFX Power Supply",
+   "美商海盗船 SF750 Platinum SFX 电源",
+   184.99
+  ],
+  [
+   "computer-corsair-k70-pro-tkl",
+   "커세어 K70 PRO TKL 게이밍 키보드",
+   "CORSAIR K70 PRO TKL Gaming Keyboard",
+   "美商海盗船 K70 PRO TKL 游戏键盘",
+   179.99
+  ],
+  [
+   "computer-corsair-elgato-green-screen",
+   "커세어 엘가토 그린 스크린",
+   "Elgato Green Screen",
+   "Elgato Green Screen 绿幕",
+   159.99
+  ],
+  [
+   "computer-corsair-5000d-airflow",
+   "커세어 5000D 에어플로우 미들타워 케이스",
+   "CORSAIR 5000D AIRFLOW Mid-Tower Case",
+   "美商海盗船 5000D AIRFLOW 中塔机箱",
+   154.99
+  ],
+  [
+   "computer-corsair-k65-plus-wireless",
+   "커세어 K65 PLUS 와이어리스 75% 키보드",
+   "CORSAIR K65 PLUS WIRELESS 75% Keyboard",
+   "美商海盗船 K65 PLUS WIRELESS 75% 键盘",
+   149.99
+  ],
+  [
+   "computer-corsair-darkstar-wireless",
+   "커세어 다크스타 와이어리스 MMO 마우스",
+   "CORSAIR DARKSTAR WIRELESS MMO Mouse",
+   "美商海盗船 DARKSTAR WIRELESS MMO 鼠标",
+   149.99
+  ],
+  [
+   "computer-corsair-elgato-stream-deck-mk2",
+   "커세어 엘가토 스트림 덱 MK.2",
+   "Elgato Stream Deck MK.2",
+   "Elgato Stream Deck MK.2",
+   149.99
+  ],
+  [
+   "computer-corsair-elgato-wave-3",
+   "커세어 엘가토 웨이브:3 USB 마이크",
+   "Elgato Wave:3 USB Microphone",
+   "Elgato Wave:3 USB 麦克风",
+   149.99
+  ],
+  [
+   "computer-corsair-hs80-max-wireless",
+   "커세어 HS80 MAX 와이어리스 게이밍 헤드셋",
+   "CORSAIR HS80 MAX WIRELESS Gaming Headset",
+   "美商海盗船 HS80 MAX WIRELESS 游戏耳机",
+   149.99
+  ],
+  [
+   "computer-corsair-rm850x",
+   "커세어 RM850x 파워서플라이",
+   "CORSAIR RM850x Power Supply",
+   "美商海盗船 RM850x 电源",
+   139.99
+  ],
+  [
+   "computer-corsair-2000d-airflow",
+   "커세어 2000D 에어플로우 미니 ITX 케이스",
+   "CORSAIR 2000D AIRFLOW Mini-ITX Case",
+   "美商海盗船 2000D AIRFLOW Mini-ITX 机箱",
+   139.99
+  ],
+  [
+   "computer-corsair-elgato-key-light-air",
+   "커세어 엘가토 키 라이트 에어",
+   "Elgato Key Light Air",
+   "Elgato Key Light Air 补光灯",
+   129.99
+  ],
+  [
+   "computer-corsair-void-wireless-v2",
+   "커세어 VOID 와이어리스 v2 게이밍 헤드셋",
+   "CORSAIR VOID WIRELESS v2 Gaming Headset",
+   "美商海盗船 VOID WIRELESS v2 游戏耳机",
+   119.99
+  ],
+  [
+   "computer-corsair-vengeance-rgb-ddr5-32gb",
+   "커세어 벤전스 RGB DDR5 32GB (2x16GB) 6000MHz",
+   "CORSAIR Vengeance RGB DDR5 32GB (2x16GB) 6000MHz",
+   "美商海盗船 Vengeance RGB DDR5 32GB (2x16GB) 6000MHz",
+   114.99
+  ],
+  [
+   "computer-corsair-k70-core",
+   "커세어 K70 CORE RGB 기계식 키보드",
+   "CORSAIR K70 CORE RGB Mechanical Keyboard",
+   "美商海盗船 K70 CORE RGB 机械键盘",
+   99.99
+  ],
+  [
+   "computer-corsair-sabre-v2-pro",
+   "커세어 세이버 v2 프로 초경량 무선 마우스",
+   "CORSAIR SABRE v2 PRO Ultralight Wireless Mouse",
+   "美商海盗船 SABRE v2 PRO 超轻无线鼠标",
+   99.99
+  ],
+  [
+   "computer-corsair-rm750e",
+   "커세어 RM750e 파워서플라이",
+   "CORSAIR RM750e Power Supply",
+   "美商海盗船 RM750e 电源",
+   99.99
+  ],
+  [
+   "computer-corsair-a115",
+   "커세어 A115 타워형 CPU 공랭 쿨러",
+   "CORSAIR A115 Tower CPU Air Cooler",
+   "美商海盗船 A115 塔式风冷散热器",
+   99.99
+  ],
+  [
+   "computer-corsair-elgato-stream-deck-neo",
+   "커세어 엘가토 스트림 덱 네오",
+   "Elgato Stream Deck Neo",
+   "Elgato Stream Deck Neo",
+   99.99
+  ],
+  [
+   "computer-corsair-elgato-facecam-neo",
+   "커세어 엘가토 페이스캠 네오 웹캠",
+   "Elgato Facecam Neo Webcam",
+   "Elgato Facecam Neo 摄像头",
+   99.99
+  ],
+  [
+   "computer-corsair-4000d-airflow",
+   "커세어 4000D 에어플로우 미들타워 케이스",
+   "CORSAIR 4000D AIRFLOW Mid-Tower Case",
+   "美商海盗船 4000D AIRFLOW 中塔机箱",
+   94.99
+  ],
+  [
+   "computer-corsair-ex100u-1tb",
+   "커세어 EX100U 포터블 SSD 1TB",
+   "CORSAIR EX100U Portable SSD 1TB",
+   "美商海盗船 EX100U 移动固态硬盘 1TB",
+   89.99
+  ],
+  [
+   "computer-corsair-elgato-stream-deck-pedal",
+   "커세어 엘가토 스트림 덱 페달",
+   "Elgato Stream Deck Pedal",
+   "Elgato Stream Deck Pedal 脚踏控制器",
+   89.99
+  ],
+  [
+   "computer-corsair-elgato-wave-neo",
+   "커세어 엘가토 웨이브 네오 USB 마이크",
+   "Elgato Wave Neo USB Microphone",
+   "Elgato Wave Neo USB 麦克风",
+   89.99
+  ],
+  [
+   "computer-corsair-scimitar-rgb-elite",
+   "커세어 시미터 RGB 엘리트 MMO 마우스",
+   "CORSAIR SCIMITAR RGB ELITE MMO Mouse",
+   "美商海盗船 SCIMITAR RGB ELITE MMO 鼠标",
+   79.99
+  ],
+  [
+   "computer-corsair-drop-dcx-keycap-set",
+   "커세어 드롭 DCX 키캡 세트",
+   "Drop DCX Keycap Set",
+   "Drop DCX 键帽套装",
+   79
+  ],
+  [
+   "computer-corsair-3000d-airflow",
+   "커세어 3000D 에어플로우 미들타워 케이스",
+   "CORSAIR 3000D AIRFLOW Mid-Tower Case",
+   "美商海盗船 3000D AIRFLOW 中塔机箱",
+   69.99
+  ],
+  [
+   "computer-corsair-cx650",
+   "커세어 CX650 파워서플라이",
+   "CORSAIR CX650 Power Supply",
+   "美商海盗船 CX650 电源",
+   69.99
+  ],
+  [
+   "computer-corsair-st100-rgb",
+   "커세어 ST100 RGB 헤드셋 스탠드",
+   "CORSAIR ST100 RGB Headset Stand",
+   "美商海盗船 ST100 RGB 耳机支架",
+   69.99
+  ],
+  [
+   "computer-corsair-mm700-rgb-extended",
+   "커세어 MM700 RGB 익스텐디드 마우스패드",
+   "CORSAIR MM700 RGB Extended Mouse Pad",
+   "美商海盗船 MM700 RGB 加长鼠标垫",
+   69.99
+  ],
+  [
+   "computer-corsair-vengeance-lpx-32gb",
+   "커세어 벤전스 LPX DDR4 32GB (2x16GB) 3200MHz",
+   "CORSAIR Vengeance LPX DDR4 32GB (2x16GB) 3200MHz",
+   "美商海盗船 Vengeance LPX DDR4 32GB (2x16GB) 3200MHz",
+   64.99
+  ],
+  [
+   "computer-corsair-mp600-core-xt-1tb",
+   "커세어 MP600 CORE XT 1TB NVMe SSD",
+   "CORSAIR MP600 CORE XT 1TB NVMe SSD",
+   "美商海盗船 MP600 CORE XT 1TB 固态硬盘",
+   64.99
+  ],
+  [
+   "computer-corsair-icue-link-system-hub",
+   "커세어 iCUE LINK 시스템 허브",
+   "CORSAIR iCUE LINK System Hub",
+   "美商海盗船 iCUE LINK System Hub 控制器",
+   59.99
+  ],
+  [
+   "computer-corsair-icue-commander-core-xt",
+   "커세어 iCUE 커맨더 코어 XT",
+   "CORSAIR iCUE COMMANDER CORE XT",
+   "美商海盗船 iCUE COMMANDER CORE XT 控制器",
+   59.99
+  ],
+  [
+   "computer-corsair-m65-rgb-ultra",
+   "커세어 M65 RGB 울트라 게이밍 마우스",
+   "CORSAIR M65 RGB ULTRA Gaming Mouse",
+   "美商海盗船 M65 RGB ULTRA 游戏鼠标",
+   59.99
+  ],
+  [
+   "computer-corsair-hs65-surround",
+   "커세어 HS65 서라운드 게이밍 헤드셋",
+   "CORSAIR HS65 SURROUND Gaming Headset",
+   "美商海盗船 HS65 SURROUND 游戏耳机",
+   59.99
+  ],
+  [
+   "computer-corsair-elgato-multi-mount",
+   "커세어 엘가토 멀티 마운트",
+   "Elgato Multi Mount",
+   "Elgato Multi Mount 支架",
+   59.99
+  ],
+  [
+   "computer-corsair-k55-rgb-pro",
+   "커세어 K55 RGB PRO 게이밍 키보드",
+   "CORSAIR K55 RGB PRO Gaming Keyboard",
+   "美商海盗船 K55 RGB PRO 游戏键盘",
+   49.99
+  ],
+  [
+   "computer-corsair-hs55-stereo",
+   "커세어 HS55 스테레오 게이밍 헤드셋",
+   "CORSAIR HS55 STEREO Gaming Headset",
+   "美商海盗船 HS55 STEREO 游戏耳机",
+   49.99
+  ],
+  [
+   "computer-corsair-ironclaw-rgb",
+   "커세어 아이언클로 RGB 게이밍 마우스",
+   "CORSAIR IRONCLAW RGB Gaming Mouse",
+   "美商海盗船 IRONCLAW RGB 游戏鼠标",
+   49.99
+  ],
+  [
+   "computer-corsair-rs120-argb-triple",
+   "커세어 RS120 ARGB 120mm 팬 3개입",
+   "CORSAIR RS120 ARGB 120mm Fan Triple Pack",
+   "美商海盗船 RS120 ARGB 120mm 风扇 三只装",
+   44.99
+  ],
+  [
+   "computer-corsair-k55-core-rgb",
+   "커세어 K55 CORE RGB 게이밍 키보드",
+   "CORSAIR K55 CORE RGB Gaming Keyboard",
+   "美商海盗船 K55 CORE RGB 游戏键盘",
+   39.99
+  ],
+  [
+   "computer-corsair-hs35-v2",
+   "커세어 HS35 v2 게이밍 헤드셋",
+   "CORSAIR HS35 v2 Gaming Headset",
+   "美商海盗船 HS35 v2 游戏耳机",
+   39.99
+  ],
+  [
+   "computer-corsair-mm350-pro-extended-xl",
+   "커세어 MM350 PRO 익스텐디드 XL 마우스패드",
+   "CORSAIR MM350 PRO Extended XL Mouse Pad",
+   "美商海盗船 MM350 PRO 加长 XL 鼠标垫",
+   39.99
+  ],
+  [
+   "computer-corsair-vengeance-lpx-16gb",
+   "커세어 벤전스 LPX DDR4 16GB (2x8GB) 3200MHz",
+   "CORSAIR Vengeance LPX DDR4 16GB (2x8GB) 3200MHz",
+   "美商海盗船 Vengeance LPX DDR4 16GB (2x8GB) 3200MHz",
+   39.99
+  ],
+  [
+   "computer-corsair-drop-holy-panda-x-35",
+   "커세어 드롭 홀리 판다 X 스위치 35개입",
+   "Drop Holy Panda X Mechanical Switches 35-Pack",
+   "Drop Holy Panda X 机械轴 35颗装",
+   35
+  ],
+  [
+   "computer-corsair-katar-pro-wireless",
+   "커세어 카타르 프로 와이어리스 게이밍 마우스",
+   "CORSAIR KATAR PRO WIRELESS Gaming Mouse",
+   "美商海盗船 KATAR PRO WIRELESS 游戏鼠标",
+   34.99
+  ],
+  [
+   "computer-corsair-mm300-pro-extended",
+   "커세어 MM300 PRO 익스텐디드 마우스패드",
+   "CORSAIR MM300 PRO Extended Mouse Pad",
+   "美商海盗船 MM300 PRO 加长鼠标垫",
+   29.99
+  ],
+  [
+   "computer-corsair-harpoon-rgb-pro",
+   "커세어 하푼 RGB 프로 게이밍 마우스",
+   "CORSAIR HARPOON RGB PRO Gaming Mouse",
+   "美商海盗船 HARPOON RGB PRO 游戏鼠标",
+   24.99
+  ],
+  [
+   "computer-corsair-katar-pro-xt",
+   "커세어 카타르 프로 XT 게이밍 마우스",
+   "CORSAIR KATAR PRO XT Gaming Mouse",
+   "美商海盗船 KATAR PRO XT 游戏鼠标",
+   24.99
+  ],
+  [
+   "computer-corsair-af120-elite",
+   "커세어 AF120 엘리트 120mm PWM 팬",
+   "CORSAIR AF120 ELITE 120mm PWM Fan",
+   "美商海盗船 AF120 ELITE 120mm PWM 风扇",
+   24.99
+  ],
+  [
+   "computer-corsair-xtm70-3g",
+   "커세어 XTM70 서멀 페이스트 3g",
+   "CORSAIR XTM70 Extreme Performance Thermal Paste 3g",
+   "美商海盗船 XTM70 导热硅脂 3g",
+   17.99
+  ],
+  [
+   "computer-corsair-xtm50-5g",
+   "커세어 XTM50 서멀 페이스트 5g",
+   "CORSAIR XTM50 High Performance Thermal Paste 5g",
+   "美商海盗船 XTM50 导热硅脂 5g",
+   14.99
+  ],
+  [
+   "computer-corsair-mm200-medium",
+   "커세어 MM200 미디엄 천 마우스패드",
+   "CORSAIR MM200 Cloth Mouse Pad Medium",
+   "美商海盗船 MM200 布面鼠标垫 中号",
+   12.99
+  ],
+  [
+   "computer-corsair-mm100",
+   "커세어 MM100 천 마우스패드",
+   "CORSAIR MM100 Cloth Mouse Pad",
+   "美商海盗船 MM100 布面鼠标垫",
+   9.99
+  ],
+  [
+   "computer-corsair-tm30-3g",
+   "커세어 TM30 서멀 페이스트 3g",
+   "CORSAIR TM30 Performance Thermal Paste 3g",
+   "美商海盗船 TM30 导热硅脂 3g",
+   7.99
+  ]
+ ],
+ "use": [
+  "computer-p-raspberry-pi-pico-2-w",
+  "computer-p-arctic-mx-6-4g",
+  "computer-p-arctic-freezer-36",
+  "computer-p-elecom-huge-m-ht1drbk",
+  "computer-p-ubiquiti-udm-pro",
+  "computer-p-minisforum-ms-01",
+  "computer-p-synology-rs1221-plus",
+  "computer-p-panasonic-toughbook-40",
+  "computer-p-sandisk-pro-g-raid-shuttle-8-192tb",
+  "computer-p-tinybox-green-v2"
+ ]
+}

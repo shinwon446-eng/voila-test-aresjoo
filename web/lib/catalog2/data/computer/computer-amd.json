@@ -1,64 +1,479 @@
-{ "slug": "computer-amd", "items": [
-["computer-amd-epyc-9965","AMD 에픽 9965 192코어","AMD EPYC 9965 192-Core","AMD 霄龙 EPYC 9965 192核",14813.00],
-["computer-amd-epyc-9684x","AMD 에픽 9684X 96코어 3D V-Cache","AMD EPYC 9684X 96-Core 3D V-Cache","AMD 霄龙 EPYC 9684X 96核 3D V-Cache",14756.00],
-["computer-amd-epyc-9755","AMD 에픽 9755 128코어","AMD EPYC 9755 128-Core","AMD 霄龙 EPYC 9755 128核",12984.00],
-["computer-amd-epyc-9654","AMD 에픽 9654 96코어","AMD EPYC 9654 96-Core","AMD 霄龙 EPYC 9654 96核",11805.00],
-["computer-amd-threadripper-pro-9995wx","AMD 라이젠 스레드리퍼 PRO 9995WX 96코어","AMD Ryzen Threadripper PRO 9995WX 96-Core","AMD 锐龙 线程撕裂者 PRO 9995WX 96核",11699.00],
-["computer-amd-threadripper-pro-7995wx","AMD 라이젠 스레드리퍼 PRO 7995WX 96코어","AMD Ryzen Threadripper PRO 7995WX 96-Core","AMD 锐龙 线程撕裂者 PRO 7995WX 96核",9999.00],
-["computer-amd-alveo-v80","AMD 알베오 V80 컴퓨트 가속기 카드","AMD Alveo V80 Compute Accelerator Card","AMD Alveo V80 计算加速卡",9495.00],
-["computer-amd-epyc-9554","AMD 에픽 9554 64코어","AMD EPYC 9554 64-Core","AMD 霄龙 EPYC 9554 64核",9087.00],
-["computer-amd-threadripper-pro-9985wx","AMD 라이젠 스레드리퍼 PRO 9985WX 64코어","AMD Ryzen Threadripper PRO 9985WX 64-Core","AMD 锐龙 线程撕裂者 PRO 9985WX 64核",7999.00],
-["computer-amd-threadripper-pro-7985wx","AMD 라이젠 스레드리퍼 PRO 7985WX 64코어","AMD Ryzen Threadripper PRO 7985WX 64-Core","AMD 锐龙 线程撕裂者 PRO 7985WX 64核",7349.00],
-["computer-amd-threadripper-9980x","AMD 라이젠 스레드리퍼 9980X 64코어","AMD Ryzen Threadripper 9980X 64-Core","AMD 锐龙 线程撕裂者 9980X 64核",4999.00],
-["computer-amd-threadripper-7980x","AMD 라이젠 스레드리퍼 7980X 64코어","AMD Ryzen Threadripper 7980X 64-Core","AMD 锐龙 线程撕裂者 7980X 64核",4999.00],
-["computer-amd-epyc-9374f","AMD 에픽 9374F 32코어","AMD EPYC 9374F 32-Core","AMD 霄龙 EPYC 9374F 32核",4850.00],
-["computer-amd-alveo-u55c","AMD 알베오 U55C 고성능 컴퓨팅 카드","AMD Alveo U55C High Performance Compute Card","AMD Alveo U55C 高性能计算卡",4395.00],
-["computer-amd-threadripper-pro-9975wx","AMD 라이젠 스레드리퍼 PRO 9975WX 32코어","AMD Ryzen Threadripper PRO 9975WX 32-Core","AMD 锐龙 线程撕裂者 PRO 9975WX 32核",4099.00],
-["computer-amd-threadripper-pro-7975wx","AMD 라이젠 스레드리퍼 PRO 7975WX 32코어","AMD Ryzen Threadripper PRO 7975WX 32-Core","AMD 锐龙 线程撕裂者 PRO 7975WX 32核",3899.00],
-["computer-amd-radeon-pro-w7900","AMD 라데온 PRO W7900 48GB","AMD Radeon PRO W7900 48GB","AMD Radeon PRO W7900 48GB",3499.00],
-["computer-amd-epyc-9354","AMD 에픽 9354 32코어","AMD EPYC 9354 32-Core","AMD 霄龙 EPYC 9354 32核",3420.00],
-["computer-amd-threadripper-pro-9965wx","AMD 라이젠 스레드리퍼 PRO 9965WX 24코어","AMD Ryzen Threadripper PRO 9965WX 24-Core","AMD 锐龙 线程撕裂者 PRO 9965WX 24核",2899.00],
-["computer-amd-threadripper-9970x","AMD 라이젠 스레드리퍼 9970X 32코어","AMD Ryzen Threadripper 9970X 32-Core","AMD 锐龙 线程撕裂者 9970X 32核",2499.00],
-["computer-amd-threadripper-7970x","AMD 라이젠 스레드리퍼 7970X 32코어","AMD Ryzen Threadripper 7970X 32-Core","AMD 锐龙 线程撕裂者 7970X 32核",2499.00],
-["computer-amd-radeon-pro-w7800","AMD 라데온 PRO W7800 32GB","AMD Radeon PRO W7800 32GB","AMD Radeon PRO W7800 32GB",2499.00],
-["computer-amd-threadripper-pro-9955wx","AMD 라이젠 스레드리퍼 PRO 9955WX 16코어","AMD Ryzen Threadripper PRO 9955WX 16-Core","AMD 锐龙 线程撕裂者 PRO 9955WX 16核",1649.00],
-["computer-amd-alveo-ma35d","AMD 알베오 MA35D 미디어 가속기 카드","AMD Alveo MA35D Media Accelerator Card","AMD Alveo MA35D 媒体加速卡",1595.00],
-["computer-amd-threadripper-9960x","AMD 라이젠 스레드리퍼 9960X 24코어","AMD Ryzen Threadripper 9960X 24-Core","AMD 锐龙 线程撕裂者 9960X 24核",1499.00],
-["computer-amd-threadripper-7960x","AMD 라이젠 스레드리퍼 7960X 24코어","AMD Ryzen Threadripper 7960X 24-Core","AMD 锐龙 线程撕裂者 7960X 24核",1499.00],
-["computer-amd-radeon-ai-pro-r9700","AMD 라데온 AI PRO R9700 32GB","AMD Radeon AI PRO R9700 32GB","AMD Radeon AI PRO R9700 32GB",1299.00],
-["computer-amd-epyc-9124","AMD 에픽 9124 16코어","AMD EPYC 9124 16-Core","AMD 霄龙 EPYC 9124 16核",1083.00],
-["computer-amd-radeon-pro-w7700","AMD 라데온 PRO W7700 16GB","AMD Radeon PRO W7700 16GB","AMD Radeon PRO W7700 16GB",999.00],
-["computer-amd-radeon-rx-7900-xtx","AMD 라데온 RX 7900 XTX 24GB 레퍼런스","AMD Radeon RX 7900 XTX 24GB Reference","AMD Radeon RX 7900 XTX 24GB 公版",999.00],
-["computer-amd-ryzen-9-9950x3d","AMD 라이젠 9 9950X3D","AMD Ryzen 9 9950X3D","AMD 锐龙 9 9950X3D",699.00],
-["computer-amd-epyc-4564p","AMD 에픽 4564P 16코어","AMD EPYC 4564P 16-Core","AMD 霄龙 EPYC 4564P 16核",699.00],
-["computer-amd-ryzen-9-7950x3d","AMD 라이젠 9 7950X3D","AMD Ryzen 9 7950X3D","AMD 锐龙 9 7950X3D",599.00],
-["computer-amd-ryzen-9-9900x3d","AMD 라이젠 9 9900X3D","AMD Ryzen 9 9900X3D","AMD 锐龙 9 9900X3D",599.00],
-["computer-amd-radeon-pro-w7600","AMD 라데온 PRO W7600 8GB","AMD Radeon PRO W7600 8GB","AMD Radeon PRO W7600 8GB",599.00],
-["computer-amd-ryzen-9-9950x","AMD 라이젠 9 9950X","AMD Ryzen 9 9950X","AMD 锐龙 9 9950X",549.00],
-["computer-amd-radeon-rx-7800-xt","AMD 라데온 RX 7800 XT 16GB 레퍼런스","AMD Radeon RX 7800 XT 16GB Reference","AMD Radeon RX 7800 XT 16GB 公版",499.00],
-["computer-amd-ryzen-7-9800x3d","AMD 라이젠 7 9800X3D","AMD Ryzen 7 9800X3D","AMD 锐龙 7 9800X3D",479.00],
-["computer-amd-radeon-pro-w7500","AMD 라데온 PRO W7500 8GB","AMD Radeon PRO W7500 8GB","AMD Radeon PRO W7500 8GB",429.00],
-["computer-amd-ryzen-9-9900x","AMD 라이젠 9 9900X","AMD Ryzen 9 9900X","AMD 锐龙 9 9900X",399.00],
-["computer-amd-kria-kd240","AMD 크리아 KD240 드라이브 스타터 키트","AMD Kria KD240 Drives Starter Kit","AMD Kria KD240 驱动入门套件",399.00],
-["computer-amd-epyc-4364p","AMD 에픽 4364P 8코어","AMD EPYC 4364P 8-Core","AMD 霄龙 EPYC 4364P 8核",399.00],
-["computer-amd-ryzen-7-7800x3d","AMD 라이젠 7 7800X3D","AMD Ryzen 7 7800X3D","AMD 锐龙 7 7800X3D",379.00],
-["computer-amd-kria-kr260","AMD 크리아 KR260 로보틱스 스타터 키트","AMD Kria KR260 Robotics Starter Kit","AMD Kria KR260 机器人入门套件",349.00],
-["computer-amd-ryzen-7-9700x","AMD 라이젠 7 9700X","AMD Ryzen 7 9700X","AMD 锐龙 7 9700X",299.00],
-["computer-amd-ryzen-5-7600x3d","AMD 라이젠 5 7600X3D","AMD Ryzen 5 7600X3D","AMD 锐龙 5 7600X3D",299.00],
-["computer-amd-kria-kv260","AMD 크리아 KV260 비전 AI 스타터 키트","AMD Kria KV260 Vision AI Starter Kit","AMD Kria KV260 视觉 AI 入门套件",283.00],
-["computer-amd-ryzen-7-8700g","AMD 라이젠 7 8700G","AMD Ryzen 7 8700G","AMD 锐龙 7 8700G",279.00],
-["computer-amd-radeon-rx-7600","AMD 라데온 RX 7600 8GB 레퍼런스","AMD Radeon RX 7600 8GB Reference","AMD Radeon RX 7600 8GB 公版",269.00],
-["computer-amd-ryzen-7-5700x3d","AMD 라이젠 7 5700X3D","AMD Ryzen 7 5700X3D","AMD 锐龙 7 5700X3D",229.00],
-["computer-amd-ryzen-5-9600x","AMD 라이젠 5 9600X","AMD Ryzen 5 9600X","AMD 锐龙 5 9600X",199.00],
-["computer-amd-ryzen-5-7600","AMD 라이젠 5 7600","AMD Ryzen 5 7600","AMD 锐龙 5 7600",189.00],
-["computer-amd-ryzen-5-8600g","AMD 라이젠 5 8600G","AMD Ryzen 5 8600G","AMD 锐龙 5 8600G",179.00],
-["computer-amd-ryzen-7-5700x","AMD 라이젠 7 5700X","AMD Ryzen 7 5700X","AMD 锐龙 7 5700X",159.00],
-["computer-amd-epyc-4124p","AMD 에픽 4124P 4코어","AMD EPYC 4124P 4-Core","AMD 霄龙 EPYC 4124P 4核",149.00],
-["computer-amd-ryzen-5-7500f","AMD 라이젠 5 7500F","AMD Ryzen 5 7500F","AMD 锐龙 5 7500F",149.00],
-["computer-amd-ryzen-5-5600x","AMD 라이젠 5 5600X","AMD Ryzen 5 5600X","AMD 锐龙 5 5600X",139.00],
-["computer-amd-ryzen-5-5600gt","AMD 라이젠 5 5600GT","AMD Ryzen 5 5600GT","AMD 锐龙 5 5600GT",129.00],
-["computer-amd-ryzen-5-5600","AMD 라이젠 5 5600","AMD Ryzen 5 5600","AMD 锐龙 5 5600",119.00],
-["computer-amd-ryzen-5-5500","AMD 라이젠 5 5500","AMD Ryzen 5 5500","AMD 锐龙 5 5500",89.00],
-["computer-amd-ryzen-5-4500","AMD 라이젠 5 4500","AMD Ryzen 5 4500","AMD 锐龙 5 4500",69.00],
-["computer-amd-athlon-3000g","AMD 애슬론 3000G","AMD Athlon 3000G","AMD 速龙 3000G",55.00]
-], "use": [] }
+{
+ "slug": "computer-amd",
+ "items": [
+  [
+   "computer-amd-epyc-9965",
+   "AMD 에픽 9965 192코어",
+   "AMD EPYC 9965 192-Core",
+   "AMD 霄龙 EPYC 9965 192核",
+   14813
+  ],
+  [
+   "computer-amd-epyc-9684x",
+   "AMD 에픽 9684X 96코어 3D V-Cache",
+   "AMD EPYC 9684X 96-Core 3D V-Cache",
+   "AMD 霄龙 EPYC 9684X 96核 3D V-Cache",
+   14756
+  ],
+  [
+   "computer-amd-epyc-9755",
+   "AMD 에픽 9755 128코어",
+   "AMD EPYC 9755 128-Core",
+   "AMD 霄龙 EPYC 9755 128核",
+   12984
+  ],
+  [
+   "computer-amd-epyc-9654",
+   "AMD 에픽 9654 96코어",
+   "AMD EPYC 9654 96-Core",
+   "AMD 霄龙 EPYC 9654 96核",
+   11805
+  ],
+  [
+   "computer-amd-threadripper-pro-9995wx",
+   "AMD 라이젠 스레드리퍼 PRO 9995WX 96코어",
+   "AMD Ryzen Threadripper PRO 9995WX 96-Core",
+   "AMD 锐龙 线程撕裂者 PRO 9995WX 96核",
+   11699
+  ],
+  [
+   "computer-amd-threadripper-pro-7995wx",
+   "AMD 라이젠 스레드리퍼 PRO 7995WX 96코어",
+   "AMD Ryzen Threadripper PRO 7995WX 96-Core",
+   "AMD 锐龙 线程撕裂者 PRO 7995WX 96核",
+   9999
+  ],
+  [
+   "computer-amd-alveo-v80",
+   "AMD 알베오 V80 컴퓨트 가속기 카드",
+   "AMD Alveo V80 Compute Accelerator Card",
+   "AMD Alveo V80 计算加速卡",
+   9495
+  ],
+  [
+   "computer-amd-epyc-9554",
+   "AMD 에픽 9554 64코어",
+   "AMD EPYC 9554 64-Core",
+   "AMD 霄龙 EPYC 9554 64核",
+   9087
+  ],
+  [
+   "computer-amd-threadripper-pro-9985wx",
+   "AMD 라이젠 스레드리퍼 PRO 9985WX 64코어",
+   "AMD Ryzen Threadripper PRO 9985WX 64-Core",
+   "AMD 锐龙 线程撕裂者 PRO 9985WX 64核",
+   7999
+  ],
+  [
+   "computer-amd-threadripper-pro-7985wx",
+   "AMD 라이젠 스레드리퍼 PRO 7985WX 64코어",
+   "AMD Ryzen Threadripper PRO 7985WX 64-Core",
+   "AMD 锐龙 线程撕裂者 PRO 7985WX 64核",
+   7349
+  ],
+  [
+   "computer-amd-threadripper-9980x",
+   "AMD 라이젠 스레드리퍼 9980X 64코어",
+   "AMD Ryzen Threadripper 9980X 64-Core",
+   "AMD 锐龙 线程撕裂者 9980X 64核",
+   4999
+  ],
+  [
+   "computer-amd-threadripper-7980x",
+   "AMD 라이젠 스레드리퍼 7980X 64코어",
+   "AMD Ryzen Threadripper 7980X 64-Core",
+   "AMD 锐龙 线程撕裂者 7980X 64核",
+   4999
+  ],
+  [
+   "computer-amd-epyc-9374f",
+   "AMD 에픽 9374F 32코어",
+   "AMD EPYC 9374F 32-Core",
+   "AMD 霄龙 EPYC 9374F 32核",
+   4850
+  ],
+  [
+   "computer-amd-alveo-u55c",
+   "AMD 알베오 U55C 고성능 컴퓨팅 카드",
+   "AMD Alveo U55C High Performance Compute Card",
+   "AMD Alveo U55C 高性能计算卡",
+   4395
+  ],
+  [
+   "computer-amd-threadripper-pro-9975wx",
+   "AMD 라이젠 스레드리퍼 PRO 9975WX 32코어",
+   "AMD Ryzen Threadripper PRO 9975WX 32-Core",
+   "AMD 锐龙 线程撕裂者 PRO 9975WX 32核",
+   4099
+  ],
+  [
+   "computer-amd-threadripper-pro-7975wx",
+   "AMD 라이젠 스레드리퍼 PRO 7975WX 32코어",
+   "AMD Ryzen Threadripper PRO 7975WX 32-Core",
+   "AMD 锐龙 线程撕裂者 PRO 7975WX 32核",
+   3899
+  ],
+  [
+   "computer-amd-radeon-pro-w7900",
+   "AMD 라데온 PRO W7900 48GB",
+   "AMD Radeon PRO W7900 48GB",
+   "AMD Radeon PRO W7900 48GB",
+   3499
+  ],
+  [
+   "computer-amd-epyc-9354",
+   "AMD 에픽 9354 32코어",
+   "AMD EPYC 9354 32-Core",
+   "AMD 霄龙 EPYC 9354 32核",
+   3420
+  ],
+  [
+   "computer-amd-threadripper-pro-9965wx",
+   "AMD 라이젠 스레드리퍼 PRO 9965WX 24코어",
+   "AMD Ryzen Threadripper PRO 9965WX 24-Core",
+   "AMD 锐龙 线程撕裂者 PRO 9965WX 24核",
+   2899
+  ],
+  [
+   "computer-amd-threadripper-9970x",
+   "AMD 라이젠 스레드리퍼 9970X 32코어",
+   "AMD Ryzen Threadripper 9970X 32-Core",
+   "AMD 锐龙 线程撕裂者 9970X 32核",
+   2499
+  ],
+  [
+   "computer-amd-threadripper-7970x",
+   "AMD 라이젠 스레드리퍼 7970X 32코어",
+   "AMD Ryzen Threadripper 7970X 32-Core",
+   "AMD 锐龙 线程撕裂者 7970X 32核",
+   2499
+  ],
+  [
+   "computer-amd-radeon-pro-w7800",
+   "AMD 라데온 PRO W7800 32GB",
+   "AMD Radeon PRO W7800 32GB",
+   "AMD Radeon PRO W7800 32GB",
+   2499
+  ],
+  [
+   "computer-amd-threadripper-pro-9955wx",
+   "AMD 라이젠 스레드리퍼 PRO 9955WX 16코어",
+   "AMD Ryzen Threadripper PRO 9955WX 16-Core",
+   "AMD 锐龙 线程撕裂者 PRO 9955WX 16核",
+   1649
+  ],
+  [
+   "computer-amd-alveo-ma35d",
+   "AMD 알베오 MA35D 미디어 가속기 카드",
+   "AMD Alveo MA35D Media Accelerator Card",
+   "AMD Alveo MA35D 媒体加速卡",
+   1595
+  ],
+  [
+   "computer-amd-threadripper-9960x",
+   "AMD 라이젠 스레드리퍼 9960X 24코어",
+   "AMD Ryzen Threadripper 9960X 24-Core",
+   "AMD 锐龙 线程撕裂者 9960X 24核",
+   1499
+  ],
+  [
+   "computer-amd-threadripper-7960x",
+   "AMD 라이젠 스레드리퍼 7960X 24코어",
+   "AMD Ryzen Threadripper 7960X 24-Core",
+   "AMD 锐龙 线程撕裂者 7960X 24核",
+   1499
+  ],
+  [
+   "computer-amd-radeon-ai-pro-r9700",
+   "AMD 라데온 AI PRO R9700 32GB",
+   "AMD Radeon AI PRO R9700 32GB",
+   "AMD Radeon AI PRO R9700 32GB",
+   1299
+  ],
+  [
+   "computer-amd-epyc-9124",
+   "AMD 에픽 9124 16코어",
+   "AMD EPYC 9124 16-Core",
+   "AMD 霄龙 EPYC 9124 16核",
+   1083
+  ],
+  [
+   "computer-amd-radeon-pro-w7700",
+   "AMD 라데온 PRO W7700 16GB",
+   "AMD Radeon PRO W7700 16GB",
+   "AMD Radeon PRO W7700 16GB",
+   999
+  ],
+  [
+   "computer-amd-radeon-rx-7900-xtx",
+   "AMD 라데온 RX 7900 XTX 24GB 레퍼런스",
+   "AMD Radeon RX 7900 XTX 24GB Reference",
+   "AMD Radeon RX 7900 XTX 24GB 公版",
+   999
+  ],
+  [
+   "computer-amd-ryzen-9-9950x3d",
+   "AMD 라이젠 9 9950X3D",
+   "AMD Ryzen 9 9950X3D",
+   "AMD 锐龙 9 9950X3D",
+   699
+  ],
+  [
+   "computer-amd-epyc-4564p",
+   "AMD 에픽 4564P 16코어",
+   "AMD EPYC 4564P 16-Core",
+   "AMD 霄龙 EPYC 4564P 16核",
+   699
+  ],
+  [
+   "computer-amd-ryzen-9-7950x3d",
+   "AMD 라이젠 9 7950X3D",
+   "AMD Ryzen 9 7950X3D",
+   "AMD 锐龙 9 7950X3D",
+   599
+  ],
+  [
+   "computer-amd-ryzen-9-9900x3d",
+   "AMD 라이젠 9 9900X3D",
+   "AMD Ryzen 9 9900X3D",
+   "AMD 锐龙 9 9900X3D",
+   599
+  ],
+  [
+   "computer-amd-radeon-pro-w7600",
+   "AMD 라데온 PRO W7600 8GB",
+   "AMD Radeon PRO W7600 8GB",
+   "AMD Radeon PRO W7600 8GB",
+   599
+  ],
+  [
+   "computer-amd-ryzen-9-9950x",
+   "AMD 라이젠 9 9950X",
+   "AMD Ryzen 9 9950X",
+   "AMD 锐龙 9 9950X",
+   549
+  ],
+  [
+   "computer-amd-radeon-rx-7800-xt",
+   "AMD 라데온 RX 7800 XT 16GB 레퍼런스",
+   "AMD Radeon RX 7800 XT 16GB Reference",
+   "AMD Radeon RX 7800 XT 16GB 公版",
+   499
+  ],
+  [
+   "computer-amd-ryzen-7-9800x3d",
+   "AMD 라이젠 7 9800X3D",
+   "AMD Ryzen 7 9800X3D",
+   "AMD 锐龙 7 9800X3D",
+   479
+  ],
+  [
+   "computer-amd-radeon-pro-w7500",
+   "AMD 라데온 PRO W7500 8GB",
+   "AMD Radeon PRO W7500 8GB",
+   "AMD Radeon PRO W7500 8GB",
+   429
+  ],
+  [
+   "computer-amd-ryzen-9-9900x",
+   "AMD 라이젠 9 9900X",
+   "AMD Ryzen 9 9900X",
+   "AMD 锐龙 9 9900X",
+   399
+  ],
+  [
+   "computer-amd-kria-kd240",
+   "AMD 크리아 KD240 드라이브 스타터 키트",
+   "AMD Kria KD240 Drives Starter Kit",
+   "AMD Kria KD240 驱动入门套件",
+   399
+  ],
+  [
+   "computer-amd-epyc-4364p",
+   "AMD 에픽 4364P 8코어",
+   "AMD EPYC 4364P 8-Core",
+   "AMD 霄龙 EPYC 4364P 8核",
+   399
+  ],
+  [
+   "computer-amd-ryzen-7-7800x3d",
+   "AMD 라이젠 7 7800X3D",
+   "AMD Ryzen 7 7800X3D",
+   "AMD 锐龙 7 7800X3D",
+   379
+  ],
+  [
+   "computer-amd-kria-kr260",
+   "AMD 크리아 KR260 로보틱스 스타터 키트",
+   "AMD Kria KR260 Robotics Starter Kit",
+   "AMD Kria KR260 机器人入门套件",
+   349
+  ],
+  [
+   "computer-amd-ryzen-7-9700x",
+   "AMD 라이젠 7 9700X",
+   "AMD Ryzen 7 9700X",
+   "AMD 锐龙 7 9700X",
+   299
+  ],
+  [
+   "computer-amd-ryzen-5-7600x3d",
+   "AMD 라이젠 5 7600X3D",
+   "AMD Ryzen 5 7600X3D",
+   "AMD 锐龙 5 7600X3D",
+   299
+  ],
+  [
+   "computer-amd-kria-kv260",
+   "AMD 크리아 KV260 비전 AI 스타터 키트",
+   "AMD Kria KV260 Vision AI Starter Kit",
+   "AMD Kria KV260 视觉 AI 入门套件",
+   283
+  ],
+  [
+   "computer-amd-ryzen-7-8700g",
+   "AMD 라이젠 7 8700G",
+   "AMD Ryzen 7 8700G",
+   "AMD 锐龙 7 8700G",
+   279
+  ],
+  [
+   "computer-amd-radeon-rx-7600",
+   "AMD 라데온 RX 7600 8GB 레퍼런스",
+   "AMD Radeon RX 7600 8GB Reference",
+   "AMD Radeon RX 7600 8GB 公版",
+   269
+  ],
+  [
+   "computer-amd-ryzen-7-5700x3d",
+   "AMD 라이젠 7 5700X3D",
+   "AMD Ryzen 7 5700X3D",
+   "AMD 锐龙 7 5700X3D",
+   229
+  ],
+  [
+   "computer-amd-ryzen-5-9600x",
+   "AMD 라이젠 5 9600X",
+   "AMD Ryzen 5 9600X",
+   "AMD 锐龙 5 9600X",
+   199
+  ],
+  [
+   "computer-amd-ryzen-5-7600",
+   "AMD 라이젠 5 7600",
+   "AMD Ryzen 5 7600",
+   "AMD 锐龙 5 7600",
+   189
+  ],
+  [
+   "computer-amd-ryzen-5-8600g",
+   "AMD 라이젠 5 8600G",
+   "AMD Ryzen 5 8600G",
+   "AMD 锐龙 5 8600G",
+   179
+  ],
+  [
+   "computer-amd-ryzen-7-5700x",
+   "AMD 라이젠 7 5700X",
+   "AMD Ryzen 7 5700X",
+   "AMD 锐龙 7 5700X",
+   159
+  ],
+  [
+   "computer-amd-epyc-4124p",
+   "AMD 에픽 4124P 4코어",
+   "AMD EPYC 4124P 4-Core",
+   "AMD 霄龙 EPYC 4124P 4核",
+   149
+  ],
+  [
+   "computer-amd-ryzen-5-7500f",
+   "AMD 라이젠 5 7500F",
+   "AMD Ryzen 5 7500F",
+   "AMD 锐龙 5 7500F",
+   149
+  ],
+  [
+   "computer-amd-ryzen-5-5600x",
+   "AMD 라이젠 5 5600X",
+   "AMD Ryzen 5 5600X",
+   "AMD 锐龙 5 5600X",
+   139
+  ],
+  [
+   "computer-amd-ryzen-5-5600gt",
+   "AMD 라이젠 5 5600GT",
+   "AMD Ryzen 5 5600GT",
+   "AMD 锐龙 5 5600GT",
+   129
+  ],
+  [
+   "computer-amd-ryzen-5-5600",
+   "AMD 라이젠 5 5600",
+   "AMD Ryzen 5 5600",
+   "AMD 锐龙 5 5600",
+   119
+  ],
+  [
+   "computer-amd-ryzen-5-5500",
+   "AMD 라이젠 5 5500",
+   "AMD Ryzen 5 5500",
+   "AMD 锐龙 5 5500",
+   89
+  ],
+  [
+   "computer-amd-ryzen-5-4500",
+   "AMD 라이젠 5 4500",
+   "AMD Ryzen 5 4500",
+   "AMD 锐龙 5 4500",
+   69
+  ],
+  [
+   "computer-amd-athlon-3000g",
+   "AMD 애슬론 3000G",
+   "AMD Athlon 3000G",
+   "AMD 速龙 3000G",
+   55
+  ]
+ ],
+ "use": [
+  "computer-p-anker-511-nano-3-30w",
+  "computer-p-redragon-m711-cobra",
+  "computer-p-tp-link-tl-sg108",
+  "computer-p-netgear-gs308",
+  "computer-p-tomtoc-360-sleeve-14",
+  "computer-p-moft-invisible-laptop-stand",
+  "computer-p-sabrent-ec-snve",
+  "computer-p-raspberry-pi-pico-2",
+  "computer-p-amazon-basics-mouse-pad",
+  "computer-p-kingston-dt-exodia-64gb",
+  "computer-p-amazon-basics-hdmi-6ft",
+  "computer-p-arctic-mx-4-4g",
+  "computer-p-8bitdo-retro-18-numpad",
+  "computer-p-rain-design-mstand",
+  "computer-p-wacom-intuos-s",
+  "computer-p-anker-555-usb-c-hub",
+  "computer-p-anker-735-nano-ii-65w",
+  "computer-p-royal-kludge-rk61",
+  "computer-p-steelseries-apex-3",
+  "computer-p-xp-pen-deco-01-v2",
+  "computer-p-raspberry-pi-camera-module-3",
+  "computer-p-ugreen-m2-nvme-enclosure",
+  "computer-p-noctua-nf-a14-pwm",
+  "computer-p-cable-matters-tb4-cable",
+  "computer-p-ifixit-essential-electronics-toolkit",
+  "computer-p-seagate-barracuda-2tb",
+  "computer-p-montech-air-903-max",
+  "computer-p-wd-blue-sn580-1tb",
+  "computer-p-lian-li-lancool-216",
+  "computer-p-sandisk-extreme-portable-1tb",
+  "computer-p-steelseries-aerox-3-wireless",
+  "computer-p-nzxt-h9-elite",
+  "computer-p-realforce-rc1",
+  "computer-p-wacom-cintiq-16-2025",
+  "computer-p-netgear-nighthawk-rs700s",
+  "computer-p-synology-ds1522-plus",
+  "computer-p-flanders-scientific-xmp650",
+  "computer-p-sony-bvm-hx3110"
+ ]
+}

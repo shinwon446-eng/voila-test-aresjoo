@@ -1,5 +1,6 @@
 // 로고 시안 비교판. brand/logo-drafts 의 <글자>-logo.svg, <글자>-icon.svg 를 읽어 한 장으로 찍는다.
 //   node scripts/capture/logo-sheet.mjs            → brand/logo-drafts/sheet.png (전체), sheet-header.png (실제 머리글 크기만)
+// 2026-10-11 시안 C 로 확정했다. 이 도구는 다음에 로고를 다시 볼 때를 위해 남긴다("지금 로고" 칸은 그 전의 로고다).
 // 시안마다: 크게, 실제 머리글 크기(휴대폰 390 폭, 로고 높이 26), 아이콘 64/32/16, 흰 바탕, 한 색(강조색 없이).
 import { chromium } from "playwright";
 import fs from "node:fs";

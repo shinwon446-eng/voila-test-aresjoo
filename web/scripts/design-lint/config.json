@@ -48,7 +48,7 @@
         "weight-over-400",
         "color-outside-tokens"
       ],
-      "reason": "기존 로고 워드마크의 굵기와 색을 보존한다."
+      "reason": "로고 그림(선으로 그린 voila.gg)의 선 굵기와 색을 보존한다."
     },
     {
       "file": "components/flow/ProviderMark.tsx",

@@ -13,7 +13,7 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from "react";
 import { CreditCard, Coins, Package } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { BOXES, REFUND_RATE, ceilingValue, dropTable, formatRate, retailReturn, type ProductBox, type ProductItem } from "@/lib/products";
+import { BOXES, REFUND_RATE, cashReturn, ceilingValue, dropTable, formatRate, mostCommon, type ProductBox, type ProductItem } from "@/lib/products";
 import { TIERS, tierOf, type TierKey } from "@/lib/tiers";
 import { COUNTRIES } from "@/lib/shipping";
 import { OPEN_PRESETS } from "@/lib/autoplay";
@@ -86,6 +86,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const realOdds = useMemo(() => +table.filter((i) => i.kind !== "cash" && !i.id.startsWith("wave-")).reduce((s, i) => s + i.dropRate, 0).toFixed(4), [table]);
   // 낸 값보다 적게 받는 결과의 확률 합(상품은 USDT 로 받을 때의 금액으로 본다). 가장 흔한 결과 하나의 확률과는 다른 숫자다
   const belowOdds = useMemo(() => +table.filter((i) => receivedValue(i) < box.price).reduce((sum, i) => sum + i.dropRate, 0).toFixed(4), [table, box.price]);
+  const common = useMemo(() => mostCommon(box), [box]);
   const [comparing, setComparing] = useState(false);
   const [countries, setCountries] = useState(false);
   // 나라 이름은 브라우저의 지역 이름(배송 시트와 같은 방식)
@@ -156,7 +157,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   return (
     <div className="v-boxlayout">
       <div className="v-boxlayout-main">
-      <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.mostLikely", { price: fmt(box.price), amount: fmt(box.price * 0.5), pct: formatRate(table.find((i) => i.id.startsWith("wave-cashback-") && i.value === +(box.price * 0.5).toFixed(2))?.dropRate ?? 50), real: formatRate(realOdds) })} />
+      <ScreenHead back="/" backLabel={t("common.back")} title={boxTitle(box)} desc={t("box.mostLikely", { price: fmt(box.price), amount: fmt(common.value), pct: formatRate(common.dropRate), real: formatRate(realOdds) })} />
       {strip.length >= 3 ? (
         <div className="v-boxlayout-hero">
           <p className="v-sub">{t("box.stripNote")}</p>
@@ -181,7 +182,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         <Row label={t("box.top")}>{fmt(ceilingValue(box))}</Row>
         <Row label={t("box.low")}>{fmt(box.guaranteedMin)}</Row>
         <Row label={t("box.belowOdds")}>{formatRate(belowOdds)}</Row>
-        <Row label={t("box.ev")}>{(retailReturn(box) * 100).toFixed(1)}%, {t("box.evBasis")}</Row>
+        <Row label={t("box.ev")}>{(cashReturn(box) * 100).toFixed(1)}%, {t("box.evBasis")}</Row>
       </Rows>
       <p className="v-small">{t("box.evNote", { pct: Math.round(REFUND_RATE * 100) })}</p>
       <div className="v-links"><TextLink href="/verify">{t("box.verifyLink")}</TextLink></div>

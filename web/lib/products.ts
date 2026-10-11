@@ -97,8 +97,8 @@ const T = {
 /** 정가 기준 환원율 밴드, 상한은 1/REFUND_RATE(현금 차익 방지) */
 export const RETAIL_RTP_MIN = 0.93;
 export const RETAIL_RTP_MAX = 1 / REFUND_RATE;
-/** 바닥 즉시 환전액 / 가격 밴드 */
-export const FLOOR_CASH_MIN = 0.5;
+/** 가장 작은 결과 / 가격 밴드. 2026-10-11 부터 가장 작은 결과는 낸 값의 0.02배다 */
+export const FLOOR_CASH_MIN = 0.02;
 export const FLOOR_CASH_MAX = 0.96;
 
 /** 즉시 회수액(USDT), 실물, 디지털은 실판매가의 95%, USDT 캐시백은 100% */
@@ -143,73 +143,73 @@ function buildBox(spec: BoxSpec): ProductBox {
   };
 }
 
-export const CATALOG_ODDS_VERSION = "2026-10-10-deep-95-v3";
+export const CATALOG_ODDS_VERSION = "2026-10-11-wide-99-v1";
 
-// 백만 슬롯이 한 단위(0.0001%)다. 고정 구간: 바닥 캐시백 0.5배 50%, 0.8배 22%, 0.99배 17%, 회복 구간(2배 기프트카드와 5배 드롭) 10.5%,
-// 15배 이상 구간 0.5%. 실제 상품은 몇 개든 각각 백만분의 1이고, 15배 기프트카드가 0.5% 구간의 나머지를 가진다.
-// 실제 상품의 가치 합이 커지면 5배 드롭의 슬롯이 줄어 현금 환급률이 95%에 맞는다(fiveSlots 를 푼다).
+// ── 확률표 (2026-10-11 파운더 결정: 환수율 99%, 결과의 폭을 넓게, 상품이 실제로 나오게) ─────────────────────
+// 백만 칸이 한 단위(0.0001%)다. 결과는 매번 이 표에서 독립으로 뽑는다(쓴 금액, 이전 결과, 잔액과 무관하다).
+//   USDT 구간(낸 값 대비 배수): 0.02배와 0.1배가 가장 흔하고, 1배 5%, 2배 18%, 5배 4%, 10배 1%, 20배 0.2%.
+//     전부 USDT 로 바로 잔액에 들어온다(옛 "디지털 기프트카드" 2배, 15배 구간은 없앴다. 코드를 받을 길이 없어 이름이 사실과 달랐다).
+//   상품: 박스 가격의 22%(받는 값 기준)를 상품에 돌린다. 상품마다 최소 한 칸, 나머지는 값이 쌀수록 자주 나오게 나눈다(값의 1.5제곱에 반비례).
+//     그래서 박스 가격에 가까운 상품은 백 번에 한두 번꼴로 나오고, 가장 비싼 상품은 여전히 백만 번에 한 번 근처다.
+//   0.02배와 0.1배의 칸 수는 받는 값 기준 환수율이 정확히 99%가 되도록 박스마다 푼다.
+// 이 구조에서는 열 번에 여섯 번꼴로 0.02배가 나온다. 0.02배가 다섯 번 이어질 확률이 약 7%이고, 그 뒤에 10배나 상품이 나오는 것은 운이지 장치가 아니다.
 const SLOTS = 1_000_000;
-const FLOOR_SLOTS = [500_000, 220_000, 170_000] as const;
-const RECOVERY_SLOTS = 105_000;
-const SURGE_SLOTS = 5_000;
 /** 박스마다 실제 상품 수의 범위. 옛 구성(6종)은 새로 채울 때까지 예외로 둔다. */
 export const MIN_PRIZES = 6;
 export const MAX_PRIZES = 120;
-const TARGET_CASH_RTP = 0.95;
+export const TARGET_CASH_RTP = 0.99;
 const CASH_RTP_TOLERANCE = 0.0005;
+/** 고정 USDT 구간: [낸 값 대비 배수, 칸 수] */
+export const FIXED_TIERS: readonly (readonly [number, number])[] = [[1, 50_000], [2, 180_000], [5, 40_000], [10, 10_000], [20, 2_000]];
+/** 환수율을 맞추려고 칸 수를 푸는 두 구간(낸 값 대비 배수) */
+export const LOW_TIERS = [0.02, 0.1] as const;
+/** 상품에 돌리는 몫(받는 값 기준, 박스 가격 대비)과 값에 따른 기울기 */
+export const PRIZE_SHARE = 0.22;
+const PRIZE_WEIGHT_POWER = 1.5;
 
-function waveItem(value: number, kind: "cash" | "digital", role: "cashback" | "drop" | "gift", slots: number): ProductItem {
-  const amount = +value.toFixed(2);
+function waveOf(amount: number, slots: number, role: "cashback" | "drop"): ProductItem {
   const id = `wave-${role}-${Math.round(amount * 100)}`;
   const image = imageFor(id);
-  // 이름에 금액을 넣지 않는다. 금액은 value 가 들고 화면이 따로 찍는다(같은 말 두 번 금지).
-  const label = role === "cashback" ? "즉시 캐시백" : role === "drop" ? "인스턴트 드롭" : "디지털 기프트카드";
-  const labelEn = role === "cashback" ? "Instant Cashback" : role === "drop" ? "Instant Drop" : "Digital Gift Card";
-  const labelZh = role === "cashback" ? "即时返现" : role === "drop" ? "即时到账" : "数字礼品卡";
-  return { id, name: label, nameEn: labelEn, nameZh: labelZh, kind, value: amount,
+  const label = role === "cashback" ? "즉시 캐시백" : "인스턴트 드롭";
+  const labelEn = role === "cashback" ? "Instant Cashback" : "Instant Drop";
+  const labelZh = role === "cashback" ? "即时返现" : "即时到账";
+  return { id, name: label, nameEn: labelEn, nameZh: labelZh, kind: "cash", value: amount,
     dropRate: slots / 10_000, code: `W${role[0].toUpperCase()}${Math.round(amount * 100)}`, tone: T.coal, image, imageUrl: image.src };
 }
 
 function withWaveSchedule(box: ProductBox): ProductBox {
   const price = box.price;
-  const premium = box.items.map((item) => ({ ...item, dropRate: 1 / 10_000 }));
-  if (premium.length < MIN_PRIZES) throw new Error(`${box.slug}: at least ${MIN_PRIZES} catalogue prizes, got ${premium.length}`);
-  if (premium.length > MAX_PRIZES) throw new Error(`${box.slug}: at most ${MAX_PRIZES} catalogue prizes, got ${premium.length}`);
-  const floor = [
-    waveItem(price * 0.5, "cash", "cashback", FLOOR_SLOTS[0]),
-    waveItem(price * 0.8, "cash", "cashback", FLOOR_SLOTS[1]),
-    waveItem(price * 0.99, "cash", "cashback", FLOOR_SLOTS[2]),
-  ];
-  const mid = waveItem(price * 15, "digital", "gift", SURGE_SLOTS - premium.length);
-  const fixed = [...floor, mid, ...premium];
-  const fixedReturn = fixed.reduce((sum, item) => sum + sellValueOf(item) * item.dropRate / 100, 0) / price;
-  // A 2x gift card pays 1.9x cash equivalent; a 5x instant drop pays 5x.
-  // Solve the remaining 10% recovery budget against the actual prize values.
-  const recoveryTwoValue = sellValueOf({ kind: "digital", value: price * 2 }) / price;
-  const recoveryFiveValue = 5;
-  const fiveSlots = Math.max(1, Math.min(RECOVERY_SLOTS - 1,
-    Math.round((TARGET_CASH_RTP - fixedReturn - (RECOVERY_SLOTS / SLOTS) * recoveryTwoValue)
-      * SLOTS / (recoveryFiveValue - recoveryTwoValue))));
-  const two = waveItem(price * 2, "digital", "gift", RECOVERY_SLOTS - fiveSlots);
-  const five = waveItem(price * 5, "cash", "drop", fiveSlots);
-  const items = [
-    ...fixed,
-    two,
-    five,
-  ].sort((a, b) => a.dropRate - b.dropRate || b.value - a.value);
+  if (box.items.length < MIN_PRIZES) throw new Error(`${box.slug}: at least ${MIN_PRIZES} catalogue prizes, got ${box.items.length}`);
+  if (box.items.length > MAX_PRIZES) throw new Error(`${box.slug}: at most ${MAX_PRIZES} catalogue prizes, got ${box.items.length}`);
+  // 상품: 한 칸씩 먼저 주고, 남은 몫을 값이 쌀수록 많이 나눈다
+  const sell = box.items.map((item) => sellValueOf(item));
+  const base = sell.reduce((sum, v) => sum + v, 0) / SLOTS;
+  const extraBudget = Math.max(0, PRIZE_SHARE * price - base);
+  const weight = box.items.map((item) => Math.pow(item.value, -PRIZE_WEIGHT_POWER));
+  const denom = weight.reduce((sum, w, i) => sum + w * sell[i], 0);
+  const premium = box.items.map((item, i) => ({ ...item, dropRate: (1 + Math.round((extraBudget * weight[i] / denom) * SLOTS)) / 10_000 }));
+  const premiumSlots = premium.reduce((sum, item) => sum + Math.round(item.dropRate * 10_000), 0);
+  const premiumReturn = premium.reduce((sum, item) => sum + sellValueOf(item) * item.dropRate / 100, 0) / price;
+  // 고정 USDT 구간
+  const fixed = FIXED_TIERS.map(([multiple, slots]) => waveOf(+(price * multiple).toFixed(2), slots, "drop"));
+  const fixedSlots = FIXED_TIERS.reduce((sum, [, slots]) => sum + slots, 0);
+  const fixedReturn = fixed.reduce((sum, item) => sum + item.value * item.dropRate / 100, 0) / price;
+  // 남은 칸을 0.02배와 0.1배에 나눠 환수율을 맞춘다
+  const lowValue = LOW_TIERS.map((multiple) => +(price * multiple).toFixed(2));
+  const rest = SLOTS - fixedSlots - premiumSlots;
+  const need = (TARGET_CASH_RTP - premiumReturn - fixedReturn) * price * SLOTS;
+  const upper = Math.max(1, Math.min(rest - 1, Math.round((need - rest * lowValue[0]) / (lowValue[1] - lowValue[0]))));
+  const low = [waveOf(lowValue[0], rest - upper, "cashback"), waveOf(lowValue[1], upper, "cashback")];
+  const items = [...low, ...fixed, ...premium].sort((x, y) => x.dropRate - y.dropRate || y.value - x.value);
   const slots = items.reduce((sum, item) => sum + Math.round(item.dropRate * 10_000), 0);
   const cashRtp = items.reduce((sum, item) => sum + sellValueOf(item) * item.dropRate / 100, 0) / price;
   const retailRtp = items.reduce((sum, item) => sum + item.value * item.dropRate / 100, 0) / price;
   const ids = new Set(items.map((item) => item.id));
   if (slots !== SLOTS || ids.size !== items.length) violations.push(`${box.slug}: invalid slot total or duplicate item id`);
-  const tierRates = [...floor.map((item) => item.dropRate), two.dropRate, five.dropRate, mid.dropRate];
-  if (!tierRates.every((rate, index) => index === 0 || tierRates[index - 1] > rate) ||
-    !premium.every((item) => mid.dropRate > item.dropRate && item.dropRate === 0.0001)) {
-    violations.push(`${box.slug}: wave probabilities are not monotonic`);
-  }
+  if (rest < 2 || items.some((item) => Math.round(item.dropRate * 10_000) < 1)) violations.push(`${box.slug}: a tier has no slot`);
   if (Math.abs(cashRtp - TARGET_CASH_RTP) > CASH_RTP_TOLERANCE) violations.push(`${box.slug}: cash RTP ${cashRtp}`);
   if (retailRtp < RETAIL_RTP_MIN || retailRtp >= RETAIL_RTP_MAX) violations.push(`${box.slug}: retail RTP ${retailRtp}`);
-  return { ...box, guaranteedMin: price * 0.5, items };
+  return { ...box, guaranteedMin: lowValue[0], items };
 }
 
 export const BOXES: ProductBox[] = SPECS.map(buildBox).map(withWaveSchedule);
@@ -238,6 +238,8 @@ export const floorRatio = (box: ProductBox): number => floorCash(box) / box.pric
 export const isValueGuaranteed = (box: ProductBox): boolean => floorRatio(box) >= FLOOR_CASH_MIN;
 
 export const dropTable = (box: ProductBox): ProductItem[] => [...box.items].sort((a, b) => b.value - a.value);
+/** 가장 자주 나오는 결과 하나. 화면이 "가장 흔한 결과"를 말할 때 이것을 쓴다(확률표가 바뀌어도 화면이 따라오게) */
+export const mostCommon = (box: ProductBox): ProductItem => box.items.reduce((best, item) => (item.dropRate > best.dropRate ? item : best));
 export const ceilingValue = (box: ProductBox): number => Math.max(...box.items.map((i) => i.value));
 
 // ── 행(Row) 셀렉터 ─────────────────────────────────────────

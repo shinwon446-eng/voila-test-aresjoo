@@ -8,7 +8,7 @@
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { BOXES, CATEGORY_FILTERS, byCategory, ceilingValue, dropTable, formatRate, sortBoxes, type BoxCategory, type ProductBox, type ProductItem } from "@/lib/products";
+import { BOXES, CATEGORY_FILTERS, byCategory, ceilingValue, dropTable, formatRate, sortBoxes, type BoxCategory, type ProductBox, type ProductItem, mostCommon } from "@/lib/products";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useInventoryStore } from "@/stores/inventoryStore";
@@ -69,7 +69,7 @@ export function BoxList() {
         <>
           <Chips scroll label={t("home.filter")} value={category} onChange={setCategory} options={CATEGORY_FILTERS.map((c) => ({ value: c.key as Category, label: c.key === "all" ? t("home.all") : tc(c.key) }))} />
           <ul className="v-boxgrid">
-            {boxes.map((box, i) => <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={t("home.price", { price: fmt(box.price) })} top={t("home.top", { amount: fmt(ceilingValue(box)) })} real={t("home.real", { pct: formatRate(realOdds(box)) })} common={t("home.common", { amount: fmt(box.price * 0.5), pct: formatRate(dropTable(box).find((i) => i.id.startsWith("wave-cashback-") && i.value === +(box.price * 0.5).toFixed(2))?.dropRate ?? 50) })} count={t("home.count", { n: box.items.length })} leads={topItems(box)} leadName={itemName} eager={i < 4} /></li>)}
+            {boxes.map((box, i) => <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={t("home.price", { price: fmt(box.price) })} top={t("home.top", { amount: fmt(ceilingValue(box)) })} real={t("home.real", { pct: formatRate(realOdds(box)) })} common={t("home.common", { amount: fmt(mostCommon(box).value), pct: formatRate(mostCommon(box).dropRate) })} count={t("home.count", { n: box.items.length })} leads={topItems(box)} leadName={itemName} eager={i < 4} /></li>)}
           </ul>
         </>
       )}

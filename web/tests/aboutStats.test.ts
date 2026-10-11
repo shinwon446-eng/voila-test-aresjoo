@@ -42,8 +42,9 @@ test("실질 도전 배수 = 1 / (1 − 환급률)", () => {
 
 test("도전 배수 범위는 실제 라인업의 최소 보장 환급률에서 나온다", () => {
   const r = attemptsRange();
-  assert.equal(r.minRate, 50);
-  assert.equal(r.maxRate, 50);
+  // 2026-10-11 부터 가장 작은 결과는 낸 값의 0.02배다
+  assert.equal(r.minRate, 2);
+  assert.equal(r.maxRate, 2);
   assert.ok(r.min >= 1 && r.max >= r.min);
   assert.equal(r.max, effectiveAttempts(r.maxRate / 100));
 });
@@ -53,7 +54,8 @@ test("RTP range reflects the current catalogue's retail expected values", () => 
   const actual = BOXES.map(box => retailReturn(box) * 100);
   assert.equal(min, +Math.min(...actual).toFixed(1));
   assert.equal(max, +Math.max(...actual).toFixed(1));
-  assert.ok(min >= 93 && max < 100);
+  // 참고가 기준 값이다. 받는 값 기준 환수율은 99%이고 상품은 참고가의 95%로 받으므로 참고가 기준은 100%를 조금 넘는다(1/0.95 미만)
+  assert.ok(min >= 93 && max < 100 / 0.95);
 });
 
 test("정책 상수 — 95% 즉시 회수 · 3배 보상 · 24시간 출고 기준 · 사후 변조 가능 결과 0", () => {

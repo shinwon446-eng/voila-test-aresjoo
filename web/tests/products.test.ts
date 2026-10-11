@@ -33,7 +33,7 @@ import {
   RETAIL_RTP_MIN,
   RETAIL_RTP_MAX,
   FLOOR_CASH_MIN,
-  FLOOR_CASH_MAX, sellValueOf } from "../lib/products";
+  FLOOR_CASH_MAX, sellValueOf, FIXED_TIERS, LOW_TIERS, PRIZE_SHARE, TARGET_CASH_RTP } from "../lib/products";
 import { formatCurrency } from "../lib/formatCurrency";
 
 test("박스 12종 이상, slug 고유", () => {
@@ -96,44 +96,41 @@ test("잭팟 배수: 1달러 박스 1,000배 이상, 럭셔리·잭팟 1,300배 
   assert.ok(luxuryRow().some((b) => top(b) >= 300), "럭셔리 300배 없음");
 });
 
-test("12개 박스의 슬롯 파동과 현금 하우스 엣지는 백만 슬롯 기준으로 검증된다", () => {
+test("확률표: 받는 값 기준 환수율 99%, USDT 구간 일곱, 상품 몫 22% (2026-10-11 파운더 결정)", () => {
   for (const box of BOXES) {
-    const at = (multiple: number) => box.items.filter(i => i.value === +(box.price * multiple).toFixed(2));
-    for (const multiple of [0.5, 0.8, 0.99, 2, 5, 15]) {
-      assert.ok(at(multiple).length > 0, `${box.slug}: ${multiple}x 티어 누락`);
+    const wave = (multiple: number) => box.items.find(i => i.id.startsWith("wave-") && i.value === +(box.price * multiple).toFixed(2));
+    // 고정 USDT 구간: 배수와 확률이 모든 박스에서 같다
+    for (const [multiple, slots] of FIXED_TIERS) {
+      const tier = wave(multiple);
+      assert.ok(tier, `${box.slug}: ${multiple}배 구간 누락`);
+      assert.equal(tier.kind, "cash", `${box.slug}: ${multiple}배는 USDT 로 바로 들어온다`);
+      assert.equal(Math.round(tier.dropRate * 10_000), slots, `${box.slug}: ${multiple}배 칸 수`);
     }
-    const waveAt = (multiple: number, role: "cashback" | "gift" | "drop") =>
-      at(multiple).find(i => i.id.startsWith(`wave-${role}-`))!;
-    const half = waveAt(0.5, "cashback");
-    const buffer = waveAt(0.8, "cashback");
-    const near = waveAt(0.99, "cashback");
-    const two = waveAt(2, "gift");
-    const five = waveAt(5, "drop");
-    const mid = waveAt(15, "gift");
-    assert.equal(half.dropRate, 50, box.slug);
-    assert.equal(buffer.dropRate, 22, box.slug);
-    assert.equal(near.dropRate, 17, box.slug);
-    assert.ok(half.dropRate > buffer.dropRate && buffer.dropRate > near.dropRate &&
-      near.dropRate > two.dropRate && two.dropRate > five.dropRate &&
-      five.dropRate > mid.dropRate, `${box.slug}: 파동 확률 단조 감소`);
-    assert.ok(box.items.filter(i => !i.id.startsWith("wave-")).every(i => mid.dropRate > i.dropRate), `${box.slug}: 프리미엄 확률`);
-    const recovery = box.items.filter(i => i.value >= box.price * 2 && i.value <= box.price * 5);
-    assert.ok(recovery.reduce((sum, i) => sum + i.dropRate, 0) >= 10, `${box.slug}: 복구 구간`);
-    assert.equal(Math.round((two.dropRate + five.dropRate) * 10_000), 105_000, `${box.slug}: 복구 슬롯`);
+    // 가장 작은 두 구간은 환수율을 맞추려고 박스마다 칸 수가 다르다. 0.02배가 가장 흔한 결과다
+    const [lowest, low] = LOW_TIERS.map(m => wave(m)!);
+    assert.ok(lowest && low, `${box.slug}: 낮은 구간 누락`);
+    assert.ok(lowest.kind === "cash" && low.kind === "cash");
+    assert.ok(box.items.every(i => i === lowest || i.dropRate < lowest.dropRate), `${box.slug}: 0.02배가 가장 흔해야 한다`);
+    assert.ok(lowest.dropRate >= 45 && lowest.dropRate <= 65, `${box.slug}: 0.02배 ${lowest.dropRate}%`);
+    // 옛 기프트카드 구간은 없다(코드를 받을 길이 없었다)
+    assert.ok(!box.items.some(i => i.id.startsWith("wave-gift-")), `${box.slug}: 기프트카드 구간이 남아 있다`);
+    assert.ok(box.items.filter(i => i.id.startsWith("wave-")).every(i => i.kind === "cash"), `${box.slug}: 파동 구간은 전부 USDT`);
+    // 상품: 전부 한 칸 이상, 값이 쌀수록 자주. 몫은 박스 가격의 22% 근처(칸은 정수라 박스마다 1%포인트 안에서 어긋난다. 그 차이는 낮은 USDT 구간이 메워 환수율은 정확히 맞는다)
     const premium = box.items.filter(i => !i.id.startsWith("wave-"));
-    assert.ok(premium.length >= 6 && premium.length <= 120, `${box.slug}: 프리미엄 상품 수 ${premium.length}`);
-    for (const i of premium) assert.ok(i.kind === "cash" || i.value >= box.price, `${box.slug}: 박스 가격보다 싼 실물 ${i.id}`);
-    assert.equal(Math.round(mid.dropRate * 10_000) + premium.length, 5_000, `${box.slug}: 중박·프리미엄 슬롯`);
-    const atLeast15 = box.items.filter(i => i.value >= box.price * 15)
-      .reduce((sum, i) => sum + Math.round(i.dropRate * 10_000), 0);
-    const below15 = premium.filter(i => i.value < box.price * 15).length;
-    assert.equal(atLeast15, 5_000 - below15, `${box.slug}: 정가 15배 이상 슬롯 ${atLeast15}`);
-    const hitSlots = box.items.filter(i => i.value >= box.price * 0.99)
-      .reduce((sum, i) => sum + Math.round(i.dropRate * 10_000), 0);
-    assert.equal(hitSlots, 280_000, `${box.slug}: 적중 슬롯 ${hitSlots}`);
-    assert.ok(Math.abs(cashReturn(box) - 0.95) <= 0.0005, `${box.slug}: cash RTP ${cashReturn(box)}`);
-    assert.ok(retailReturn(box) >= RETAIL_RTP_MIN && retailReturn(box) < RETAIL_RTP_MAX, `${box.slug}: retail RTP ${retailReturn(box)}`);
+    assert.ok(premium.length >= 6 && premium.length <= 120, `${box.slug}: 상품 수 ${premium.length}`);
+    for (const i of premium) assert.ok(i.kind === "cash" || i.value >= box.price, `${box.slug}: 박스 가격보다 싼 상품 ${i.id}`);
+    const sorted = [...premium].sort((x, y) => x.value - y.value);
+    for (let k = 1; k < sorted.length; k++) assert.ok(sorted[k].dropRate <= sorted[k - 1].dropRate, `${box.slug}: ${sorted[k].id} 가 더 싼 상품보다 자주 나온다`);
+    const share = premium.reduce((sum, i) => sum + sellValueOf(i) * i.dropRate / 100, 0) / box.price;
+    assert.ok(share >= PRIZE_SHARE - 0.01 && share <= PRIZE_SHARE + 0.01, `${box.slug}: 상품 몫 ${share}`);
+    const prizeOdds = premium.reduce((sum, i) => sum + i.dropRate, 0);
+    assert.ok(prizeOdds >= 0.5, `${box.slug}: 상품이 200번에 한 번도 안 나온다(${prizeOdds}%)`);
+    // 환수율
+    assert.ok(Math.abs(cashReturn(box) - TARGET_CASH_RTP) <= 0.0005, `${box.slug}: 받는 값 기준 환수율 ${cashReturn(box)}`);
+    assert.ok(cashReturn(box) < 1, `${box.slug}: 받는 값 기준 환수율은 1 미만이어야 한다`);
+    assert.ok(retailReturn(box) >= RETAIL_RTP_MIN && retailReturn(box) < RETAIL_RTP_MAX, `${box.slug}: 참고가 기준 ${retailReturn(box)}`);
   }
+  assert.equal(TARGET_CASH_RTP, 0.99);
 });
 
 test("최저 구성을 즉시 환급해도 원금을 넘지 못한다", () => {
@@ -154,15 +151,16 @@ test("probabilities remain representable as one-million exact outcome slots", ()
   }
 });
 
-test("바닥 보장: 최저 구성 즉시 캐시백은 가격의 50%", () => {
+test("가장 작은 결과는 낸 값의 0.02배이고 USDT 로 바로 들어온다", () => {
   for (const b of BOXES) {
     const r = floorRatio(b);
-    assert.ok(r >= FLOOR_CASH_MIN && r <= FLOOR_CASH_MAX, `${b.slug}: 바닥 ${(r * 100).toFixed(1)}%`);
-    assert.equal(floorCash(b), +b.guaranteedMin.toFixed(2)); // 바닥은 USDT 캐시백 — 100% 적립
+    assert.ok(r >= FLOOR_CASH_MIN && r <= FLOOR_CASH_MAX, `${b.slug}: 가장 작은 결과 ${(r * 100).toFixed(1)}%`);
+    assert.equal(floorCash(b), +(b.price * 0.02).toFixed(2), b.slug);
+    assert.equal(floorCash(b), Math.min(...b.items.map(i => sellValueOf(i))), `${b.slug}: 그보다 작은 결과가 있다`);
     assert.ok(isValueGuaranteed(b), b.slug);
   }
-  for (const b of BOXES.filter((x) => x.price === 1)) assert.equal(floorCash(b), 0.5, b.slug);
-  for (const b of BOXES.filter((x) => x.price === 100)) assert.equal(floorCash(b), 50, b.slug);
+  for (const b of BOXES.filter((x) => x.price === 1)) assert.equal(floorCash(b), 0.02, b.slug);
+  for (const b of BOXES.filter((x) => x.price === 100)) assert.equal(floorCash(b), 2, b.slug);
 });
 
 test("guaranteedMin 은 항목 최저가에서 파생된다", () => {

@@ -3,7 +3,7 @@
 - 시작: 2026-10-11 오전. 파운더 지시 "VOILA — THE ULTIMATE BOX-OPENING EXPERIENCE".
 - 이전의 24시간 전체 개선 랩은 **중단**했다(예약 깨어남 취소). 다시 시작하지 않는다. 루트의 STATE.md, IMPROVEMENT_LOOP.md, DECISION_LOG.md 는 그 랩의 기록이다.
 - 범위: 박스에서 열기까지의 상호작용, 구매 확인, 개봉 연출(움직임, 소리, 진동), 결과 공개, 그 자리에서 USDT 로 받기와 정산, 같은 화면에서 다시 열 준비, 확률 구조 제안(제안만), 모바일 화면 검수. 그 밖의 화면, 브랜드, 글꼴, 메뉴는 건드리지 않는다.
-- 하지 않는 것: 운영 확률 변경(제안과 계산만, 파운더 승인 필요), 지어낸 시험 결과, 가짜 근접 실패, 낮은 결과에 높은 등급 신호, 다음 열기 자동 결제.
+- 하지 않는 것: 파운더 지시 없는 운영 확률 변경(2026-10-11 에 지시를 받아 한 번 바꿨다, 아래 "확률표" 참고), 지어낸 시험 결과, 가짜 근접 실패, 낮은 결과에 높은 등급 신호, 다음 열기 자동 결제.
 - 브랜치 `voila-redesign`, 커밋 끝줄 `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. 테스트 사이트 배포는 main 푸시(파운더 허락 범위). 개발 서버가 떠 있는 동안 build 금지, build 뒤 `rm -rf web/.next`.
 - 반복 한도: 설계와 검수 5회.
 
@@ -39,12 +39,19 @@
 - 누른 뒤 결과까지 0.89초, 다음 행동까지 1.24초. 짧게 보기는 약 0.5초. 프레임 평균 16.7ms, CPU 4배 느리게 18.0ms.
 
 ## 검수 다시 돌리기
-- 개발 서버(3002)를 띄운 뒤 `cd web && node scripts/capture/opening-qa.mjs ../qa/opening/<폴더>` (83개 항목), `npm test` (306).
-- 필름: `node scripts/capture/opening.mjs ../qa/opening/<폴더> <이름> --fixture single:physicalTop --cast`.
+- 개발 서버(3002)를 띄운 뒤 `cd web && node scripts/capture/opening-qa.mjs ../qa/opening/<폴더>` (89개 항목), `npm test` (306). 확률표를 바꾸면 먼저 `npx tsx scripts/capture/opening-fixtures.ts` 로 고정값을 다시 찾는다(검수의 기대 금액은 고정값에서 계산한다).
+- 필름: `node scripts/capture/opening.mjs ../qa/opening/<폴더> <이름> --fixture single:itemTop --cast`.
 
 ## 파운더가 정할 것 (`opening/REPORT.md` 9)
-- 확률 구조(지금대로 또는 A 출발점), 디지털 기프트카드의 이름, 자금 출처 0.01 반올림, 녹화용 ffmpeg, 상자 그림 자산, 서버 장부.
+- 자금 출처 0.01 반올림, 녹화용 ffmpeg, 상자 그림 자산, 서버 장부.
 
 ## 남은 문제
 - 실제 휴대폰과 iOS 사파리, 가로 화면, 큰 글자 확대 미검수. 결과 영역이 넘칠 때 스크롤되지 않는다.
 - 소리와 진동은 오류 없이 도는 것까지만 확인. 상자는 CSS 면 여섯 개(재질 한계).
+
+## 확률표 (2026-10-11 파운더 지시로 변경)
+- 표 버전 `2026-10-11-wide-99-v1` (`web/lib/products.ts` 의 `withWaveSchedule`). 받는 값 기준 99%, USDT 결과 0.02, 0.1, 1, 2, 5, 10, 20배, 상품 몫 22%(값이 쌀수록 자주), 기프트카드 구간 삭제.
+- 숫자와 위험: `opening/ODDS.md` (`npx tsx scripts/opening/odds-report.ts` 가 만든다). 결정 기록: `opening/DECISIONS.md` 맨 아래.
+- 결과는 독립 추첨이다. 연속 흐름을 짜 넣는 코드는 없고 넣지 않는다.
+- 새 표로 찍은 화면: `opening/evidence-odds/`. `opening/evidence/` 는 옛 표의 화면이다.
+- 파운더가 볼 것: 운영 몫 1% 의 묶음 손실 위험, 이용 기준을 채우는 비용이 1% 로 준 점, 1 USDT 애플 박스의 상품 확률 0.52%.

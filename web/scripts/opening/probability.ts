@@ -1,4 +1,6 @@
 // 개봉 경험 임무의 확률 구조 제안. 계산과 시뮬레이션만 한다. 운영 확률(lib/products.ts)은 건드리지 않는다.
+// 2026-10-11 파운더 지시로 운영 확률표가 바뀌었다(받는 값 기준 99%). "지금 구조"는 그 새 표를 읽는다. 모델 A, B, C 는 그 전에 낸 제안(95%)으로 남겨 둔다.
+// 박스 열넷 전체의 숫자는 scripts/opening/odds-report.ts 가 만든다(opening/ODDS.md).
 //   npx tsx scripts/opening/probability.ts            → ../opening/PROBABILITY-tables.md 를 쓴다
 // 모델 셋(A 고른 분포, B 큰 변동, C 최저 보장)과 지금 구조를 같은 표로 비교한다. 박스 가격은 50 USDT 로 놓는다(배수는 다른 가격에도 그대로 적용된다).
 // 금액은 전부 "실제로 받는 USDT 기준 값"이다(USDT 결과는 그 금액, 상품은 참고가의 95%).
@@ -40,12 +42,12 @@ function build(key: string, name: string, idea: string, fixed: [string, number, 
 function current(): Model {
   const box = BOXES.find((b) => b.slug === "vault-gold")!;
   const outcomes: Outcome[] = dropTable(box).map((i) => ({
-    label: i.id.startsWith("wave-") ? (i.kind === "cash" ? "USDT" : "디지털 기프트카드") : "드문 결과",
+    label: i.id.startsWith("wave-") ? "USDT" : "상품",
     value: +sellValueOf(i).toFixed(2), units: Math.round((i.dropRate / 100) * UNIT), tail: !i.id.startsWith("wave-"),
   }));
   const tail = outcomes.filter((o) => o.tail).length;
-  return { key: "now", name: "지금 구조", idea: "운영 중인 골드 박스(50 USDT). 비교 기준이며 바꾸지 않는다.", outcomes: outcomes.sort((a, b) => a.value - b.value),
-    rule: `계산과 시뮬레이션은 결과 ${outcomes.length}종을 하나하나 넣어 했다. 아래 표는 확률이 0.0001% 인 드문 결과 ${tail}종(실물, 기프트카드, USDT)을 한 줄로 줄여 보여 줄 뿐이다.` };
+  return { key: "now", name: "지금 구조", idea: "운영 중인 골드 박스(50 USDT). 2026-10-11 파운더 지시로 바꾼 표다(받는 값 기준 99%, USDT 구간 0.02배에서 20배, 상품 몫 22%).", outcomes: outcomes.sort((a, b) => a.value - b.value),
+    rule: `계산과 시뮬레이션은 결과 ${outcomes.length}종을 하나하나 넣어 했다. 아래 표는 상품 ${tail}종(참고가의 95% 로 계산)을 한 줄로 줄여 보여 줄 뿐이다. 상품마다의 확률은 박스 화면의 확률표에 있다.` };
 }
 
 const TARGET = 0.95;
@@ -133,12 +135,12 @@ function batches(m: Model, seed: number, n: number, trials: number) {
 // ── 문서 ─────────────────────────────────────────────────────────────────────
 const L: string[] = [];
 L.push("# 확률 구조 제안: 표와 시뮬레이션 (2026-10-11)", "");
-L.push("**이 문서는 제안이다. 운영 확률은 하나도 바꾸지 않았다.** 어느 모델이든 적용하려면 파운더의 승인이 따로 필요하다. 권고와 읽는 법은 `opening/PROBABILITY.md` 에 있다.");
+L.push("**모델 A, B, C 는 제안이고, \"지금 구조\"는 2026-10-11 파운더 지시로 바꾼 운영 표다.** 박스 열넷 전체의 숫자는 `opening/ODDS.md`, 결정의 배경은 `opening/PROBABILITY.md` 에 있다.");
 L.push("이 표는 `web/scripts/opening/probability.ts` 가 만든다(`npx tsx scripts/opening/probability.ts`). 손으로 고치지 않는다.", "");
 L.push("## 놓은 조건");
 L.push(`- 박스 가격 ${PRICE} USDT. 배수로 읽으면 다른 가격에도 옮길 수 있다(센트 반올림은 그 가격에서 다시 확인해야 한다).`);
 L.push("- 금액은 전부 실제로 받는 USDT 기준 값이다. USDT 결과는 그 금액, 상품은 참고가의 95%(지금의 USDT 로 받기 비율).");
-L.push(`- 세 모델 모두 기대 지급률을 ${TARGET * 100}% 로 맞췄다(지금 구조와 같은 수준). 맨 아래 두 결과의 확률을 풀어 맞췄고, 확률 해상도는 지금 시스템과 같은 0.0001%(100만 칸)다. 칸 단위로 끊기 때문에 기대 지급액은 정확히 47.5 가 아니라 아래 표의 값이다.`);
+L.push(`- 모델 A, B, C 는 기대 지급률을 ${TARGET * 100}% 로 맞췄다(제안할 때의 운영 표 수준이다. 지금 구조는 99% 다). 맨 아래 두 결과의 확률을 풀어 맞췄고, 확률 해상도는 지금 시스템과 같은 0.0001%(100만 칸)다. 칸 단위로 끊기 때문에 기대 지급액은 정확히 47.5 가 아니라 아래 표의 값이다.`);
 L.push("- **운영 몫은 \"모든 결과를 USDT 로 받는다\"고 볼 때의 값이다.** 상품을 실제로 배송하면 운영자의 비용은 참고가의 95% 가 아니라 조달가와 배송비다. 배송을 고르는 비율과 조달가를 넣은 계산은 이 문서에 없다.");
 L.push("- 결과는 매번 같은 표에서 독립으로 뽑는다. 쓴 금액, 이전 결과, 잔액, 이용 시간, 계정 특성에 따라 확률이 바뀌는 규칙은 어느 모델에도 없다.");
 L.push(`- 시뮬레이션은 모델마다 ${DRAWS.toLocaleString("en-US")}회. 난수는 sfc32, 씨앗은 지금 구조 ${SEEDS.now}, A ${SEEDS.A}, B ${SEEDS.B}, C ${SEEDS.C}(다시 돌리면 같은 숫자가 나온다). 0 이상 100만 미만 정수는 버림 추출로 뽑아 칸마다 정확히 같은 가능성을 준다.`);
@@ -156,7 +158,7 @@ Array.from(models.entries()).forEach(([i, m]) => {
   m.outcomes.forEach((o: Outcome, k: number) => { if (!o.tail) L.push(`| ${o.label} | ${money(o.value)} | ${(o.value / PRICE).toFixed(2)}배 | ${fmtPct(o.units)} | ${money((o.units / UNIT) * DRAWS)} | ${money(s.counts[k])} |`); });
   if (tail.length) {
     const units = tail.reduce((a, x) => a + x.o.units, 0); const obs = tail.reduce((a, x) => a + s.counts[x.k], 0); const vals = tail.map((x) => x.o.value);
-    L.push(`| 드문 결과 ${tail.length}종(각 0.0001%) | ${money(Math.min(...vals))} ~ ${money(Math.max(...vals))} | ${(Math.min(...vals) / PRICE).toFixed(2)}배 ~ ${(Math.max(...vals) / PRICE).toFixed(0)}배 | ${fmtPct(units)} | ${money((units / UNIT) * DRAWS)} | ${money(obs)} |`);
+    L.push(`| 상품 ${tail.length}종(확률 합) | ${money(Math.min(...vals))} ~ ${money(Math.max(...vals))} | ${(Math.min(...vals) / PRICE).toFixed(2)}배 ~ ${(Math.max(...vals) / PRICE).toFixed(0)}배 | ${fmtPct(units)} | ${money((units / UNIT) * DRAWS)} | ${money(obs)} |`);
   }
   L.push(`| 합계 | | | ${((t.sum / UNIT) * 100).toFixed(4)}% | ${money(DRAWS)} | ${money(s.counts.reduce((a, b) => a + b, 0))} |`, "");
   L.push("| 항목 | 이론값 | 시뮬레이션 |", "|---|---:|---:|");

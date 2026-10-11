@@ -1,8 +1,8 @@
 // 개봉 경험 전용 촬영. 실제 화면에서 열기를 눌러 연출의 프레임과 결과를 찍는다.
 //   node scripts/capture/opening.mjs <출력 폴더> <이름> [옵션]
 //   --box <slug>              기본 dollar-apple
-//   --fixture single:<종류>   small | near | x2 | x5 | x15 | physicalTop | physicalMid (opening-fixtures.json)
-//   --fixture seq:<이름>      lowLowLowHighHighHigh | tenSmall | smallBigSmall | threeBig | mixed (0번부터 차례로 연다)
+//   --fixture single:<종류>   low | low2 | x1 | x2 | x5 | x10 | x20 | itemLow | itemMid | itemTop (opening-fixtures.json)
+//   --fixture seq:<이름>      lowLowLowHighHighHigh | fiveLowThenBig | tenSmall | smallBigSmall | threeBig | mixed | withItem (0번부터 차례로 연다)
 //   --opens <n>               연속으로 여는 횟수(seq 는 흐름 길이가 기본)
 //   --view <mobile|narrow|m360|m375|m430|tablet|desktop>
 //   --frames <ms,ms,...>      열기를 누른 뒤 그 시각마다 한 장(기본 0,120,300,500,700,900,1200,1500,1900,2400)
@@ -27,10 +27,10 @@ const base = process.env.CAPTURE_BASE || "http://localhost:3002";
 const slug = opt("box", "dollar-apple");
 const locale = opt("locale", "ko");
 const fixtures = JSON.parse(fs.readFileSync(new URL("opening-fixtures.json", import.meta.url), "utf8"));
-const [fkind, fname] = opt("fixture", "single:small").split(":");
+const [fkind, fname] = opt("fixture", "single:low").split(":");
 const fx = fixtures.boxes[slug]?.[fkind === "seq" ? "sequences" : "single"]?.[fname];
 if (!fx) throw new Error(`고정값 없음: ${slug} ${fkind}:${fname}`);
-const opens = +opt("opens", fkind === "seq" ? fx.multiples.length : 1);
+const opens = +opt("opens", fkind === "seq" ? fx.steps.length : 1);
 const frames = opt("frames", "0,120,300,500,700,900,1200,1500,1900,2400").split(",").map(Number);
 const VIEWS = { mobile: [390, 844], narrow: [320, 640], m360: [360, 800], m375: [375, 812], m430: [430, 932], tablet: [768, 1024], desktop: [1440, 900] };
 const view = opt("view", "mobile");
@@ -121,6 +121,6 @@ for (let n = 1; n <= opens; n++) {
   await shot(`${id}-result`);
   log.push({ open: n, clickToFramesMs: start - t0, film: filmInfo, ...(await readResult()) });
 }
-console.log(JSON.stringify({ name, slug, view, fixture: `${fkind}:${fname}`, expected: fx.multiples ?? fx.value, log, errors }, null, 1));
+console.log(JSON.stringify({ name, slug, view, fixture: `${fkind}:${fname}`, expected: fx.steps ? fx.steps.map((x) => x.value) : fx.value, log, errors }, null, 1));
 await context.close();
 await browser.close();

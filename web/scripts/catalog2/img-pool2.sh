@@ -4,7 +4,7 @@
 # plan 의 줄마다(카테고리와 깊이 하나) 묶음이 CHUNK(기본 20)개 끝날 때마다 변환, 커밋, 배포(voila-redesign:main)한다.
 # WAIT_LOG 에 다른 풀의 로그를 주면 거기에 "전부 끝"이 적힐 때까지 변환을 시작하지 않는다(두 풀이 사진 목록 파일을 같이 쓰지 않게).
 # 못 만든 것은 qa/codex/pool-<이름표>-missing.log, 생성 풀의 진행은 qa/codex/pool-<이름표>-run.log.
-# Codex 한도에 걸리면(로그에 usage limit) 남은 묶음을 버리고, 이미 나온 원본만 변환한 뒤 끝낸다.
+# Codex 한도에 걸리면(로그에 usage limit 이나 그림 도구의 usage_limit_reached) 남은 묶음을 버리고, 이미 나온 원본만 변환한 뒤 끝낸다.
 label="$1"; max="${2:-24}"
 chunk="${CHUNK:-20}"
 plan="qa/codex/pool-$label-plan.txt"; runlog="qa/codex/pool-$label-run.log"; misslog="qa/codex/pool-$label-missing.log"
@@ -27,7 +27,7 @@ limited=0
 check_limit() {
   [ "$limited" -eq 1 ] && return
   local t hit=0
-  for t in $(tail -6 "$runlog" | awk '/ done /{print $3}'); do grep -q "hit your usage limit" "qa/codex/gen-log-$t.txt" 2>/dev/null && hit=$((hit + 1)); done
+  for t in $(tail -6 "$runlog" | awk '/ done /{print $3}'); do grep -q -E "hit your usage limit|usage_limit_reached" "qa/codex/gen-log-$t.txt" 2>/dev/null && hit=$((hit + 1)); done
   if [ "$hit" -ge 4 ]; then
     limited=1
     MSYS_NO_PATHCONV=1 taskkill /PID "$(cat /proc/$runner/winpid 2>/dev/null)" /T /F > /dev/null 2>&1; kill "$runner" 2>/dev/null

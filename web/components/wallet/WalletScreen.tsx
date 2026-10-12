@@ -6,10 +6,10 @@
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { isOpenUndebitedWithdrawal, useWalletStore, type Transaction } from "@/stores/walletStore";
+import { isUndebitedWithdrawal, useWalletStore, type Transaction } from "@/stores/walletStore";
 import { useAuthStore } from "@/stores/authStore";
 import { useFlow } from "@/stores/flowStore";
-import { api } from "@/lib/api";
+import { api, WithdrawalUnknown } from "@/lib/api";
 import { accountTransactions } from "@/lib/browserWallet";
 import { EXPLORERS, explorerTxUrl } from "@/lib/withdrawal";
 import { holdCountdown } from "@/lib/withdrawHold";
@@ -54,7 +54,11 @@ export function WalletScreen() {
           const result = await api.withdrawStatus(tx.serverId!);
           if (!active || useAuthStore.getState().user?.id !== user.id || result.id !== tx.serverId) return;
           useWalletStore.getState().syncWithdrawal(tx.id, result.status, { txHash: result.txHash, unlockAt: result.unlockAt });
-        } catch { /* 연결이 끊긴 동안에는 마지막으로 확인된 상태를 그대로 둔다 */ }
+        } catch (cause) {
+          // 연결이 끊긴 동안에는 마지막으로 확인된 상태를 그대로 둔다. 서비스가 그 번호를 모른다고 답한 경우만 다르다:
+          // 차감하지 않은 요청의 줄은 환불 없이 닫는다(서비스에 없는 요청이 열린 채 남지 않게). 차감한 출금은 건드리지 않는다
+          if (cause instanceof WithdrawalUnknown && active && useAuthStore.getState().user?.id === user.id) useWalletStore.getState().closeUnknownWithdrawal(tx.id);
+        }
       }
       if (active) timer = setTimeout(poll, 10000);
     };
@@ -85,7 +89,11 @@ export function WalletScreen() {
       if (result.id !== current.serverId || useAuthStore.getState().user?.id !== user.id) return;
       useWalletStore.getState().syncWithdrawal(current.id, result.status, { txHash: result.txHash, unlockAt: result.unlockAt });
       setCancelling(false);
-    } catch { setCancelling(false); setCancelFailed(true); }
+    } catch (cause) {
+      // 서비스가 그 번호를 모른다: 차감하지 않은 요청이면 취소할 것이 없으므로 환불 없이 닫는다. 그 밖에는 취소하지 못했다고 알린다
+      const closed = cause instanceof WithdrawalUnknown && useAuthStore.getState().user?.id === user.id && useWalletStore.getState().closeUnknownWithdrawal(current.id);
+      setCancelling(false); setCancelFailed(!closed);
+    }
     finally { cancelLock.current = false; setBusy(false); }
   };
 
@@ -111,7 +119,7 @@ export function WalletScreen() {
                   {rows.slice(0, shown).map((tx) => (
                     <li key={tx.id}>
                       <button type="button" className="v-itemrow" onClick={() => { setOpenId(tx.id); setCancelFailed(false); }}>
-                        <span className="v-itemrow-body"><span className="v-card-title">{kind(tx)}</span><span className="v-small">{date(tx.at)}{statusOf(tx) ? ", " + statusOf(tx) : ""}</span></span>
+                        <span className="v-itemrow-body"><span className="v-card-title">{kind(tx)}</span><span className="v-small">{date(tx.at)}{statusOf(tx) ? ", " + statusOf(tx) : ""}{isUndebitedWithdrawal(tx) ? ", " + t("wallet.notDebitedTag") : ""}</span></span>
                         <span className="v-num">{signed(tx)}</span>
                       </button>
                     </li>
@@ -128,7 +136,9 @@ export function WalletScreen() {
           <>
             <Rows>
               <Row label={t("wallet.amount")}>{signed(current)}</Row>
-              {current.status && <Row label={t("inv.status")}>{t("wallet.status." + current.status)}</Row>}
+              {/* 차감하지 않은 출금 요청: 장부 금액은 0 이고, 신청했던 금액은 따로 적는다 */}
+              {isUndebitedWithdrawal(current) && <Row label={t("wallet.requested")}>{fmt(current.requestedUsdt ?? 0)}</Row>}
+              {current.status &&<Row label={t("inv.status")}>{t("wallet.status." + current.status)}</Row>}
               {current.network && <Row label={t("charge.network")}>{current.network}</Row>}
               {typeof current.feeUsdt === "number" && <Row label={t("wallet.fee")}>{fmt(current.feeUsdt)}</Row>}
               {typeof current.netUsdt === "number" && <Row label={t("wallet.net")}>{fmt(current.netUsdt)}</Row>}
@@ -136,17 +146,17 @@ export function WalletScreen() {
             {current.address && <div className="v-card"><p className="v-small">{t("wallet.toAddress")}</p><code className="v-address">{current.address}</code></div>}
             {holdText(current) && <Line>{holdText(current)}</Line>}
             {current.status === "PENDING_ADMIN_REVIEW" && <Line>{t("wallet.reviewLine")}</Line>}
-            {/* 차감하지 못했는데 서비스에 열려 있는 출금 요청: 어떤 건인지 알리고, 대기 상태가 무엇이든 여기서 취소할 수 있게 한다(환불은 없다) */}
-            {isOpenUndebitedWithdrawal(current) && <Line>{t("wallet.cancelDescOpen")}</Line>}
+            {/* 차감하지 않은 출금 요청: 열려 있을 때도 끝난 뒤에도 그렇다고 적는다. 열려 있으면 대기 상태가 무엇이든 여기서 취소할 수 있다(환불은 없다) */}
+            {isUndebitedWithdrawal(current) && <Line>{t("wallet.notDebited")}</Line>}
             {cancelFailed && <Line fail>{t("wallet.cancelFailed")}</Line>}
-            {(current.status === "PENDING_72H_HOLD" || isOpenUndebitedWithdrawal(current)) && current.serverId && <Button onClick={() => setCancelling(true)}>{t("wallet.cancel")}</Button>}
+            {(current.status === "PENDING_72H_HOLD" || (isUndebitedWithdrawal(current) && OPEN_STATUSES.includes(current.status ?? ""))) && current.serverId && <Button onClick={() => setCancelling(true)}>{t("wallet.cancel")}</Button>}
             {current.txHash && current.network && (current.network === "TRC20" || current.network === "BEP20") && (
               <div className="v-links"><TextLink href={explorerTxUrl(current.network as Network, current.txHash)} external>{t("wallet.explorer", { name: EXPLORERS[current.network as Network].name })}</TextLink></div>
             )}
           </>
         )}
       </Sheet>
-      <Confirm open={!!current && cancelling} onCancel={() => setCancelling(false)} onConfirm={cancel} busy={busy} busyLabel={t("common.checking")} title={t("wallet.cancelTitle")} desc={t(current?.debited === false ? "wallet.cancelDescOpen" : "wallet.cancelDesc")} confirmLabel={t("wallet.cancel")} cancelLabel={t("common.cancel")} />
+      <Confirm open={!!current && cancelling} onCancel={() => setCancelling(false)} onConfirm={cancel} busy={busy} busyLabel={t("common.checking")} title={t("wallet.cancelTitle")} desc={t(current && isUndebitedWithdrawal(current) ? "wallet.cancelDescOpen" : "wallet.cancelDesc")} confirmLabel={t("wallet.cancel")} cancelLabel={t("common.cancel")} />
     </div>
   );
 }

@@ -17,10 +17,24 @@ import type { LiveDrop } from "@/lib/liveDrops";
 import type { PayoutProof, ShipmentProof } from "@/lib/proofFeed";
 import type { CarrierKey } from "@/lib/carriers";
 import type { TxStatus } from "@/stores/walletStore";
-import { accountRequest, AccountError } from "@/lib/account";
+import { accountRequest, AccountError, browserAccountsEnabled } from "@/lib/account";
 import type { WithdrawalDraft, WithdrawalProof } from "@/lib/security";
 
 export interface WithdrawalResult { id: string; status: TxStatus; txHash?: string; unlockAt?: number }
+/**
+ * 서비스가 그 출금 접수 번호를 모른다고 답했다. 연결이 끊긴 것 같은 일시적인 실패와 구별하려고 따로 둔다
+ * (오류의 종류는 전과 같은 invalid 라서 화면의 글은 달라지지 않는다).
+ * 이 브라우저 안의 시험 서비스(lib/browserAccount)는 없는 번호에 invalid 로 답한다. 그 답만 이것으로 바꾼다.
+ * 서버 전송은 없는 번호(404)와 일시적인 실패를 같은 network 로 돌려주므로 여기서는 가르지 못한다(그때는 이 오류가 나오지 않는다).
+ */
+export class WithdrawalUnknown extends AccountError { constructor() { super("invalid"); } }
+/** 접수 번호 하나를 조회하거나 취소한다. 서비스가 그 번호를 모른다고 답하면 WithdrawalUnknown, 그 밖의 실패는 그대로 던진다 */
+async function withdrawalRequest(path: string, body?: unknown): Promise<WithdrawalResult> {
+  let data: Record<string, unknown>;
+  try { data = await accountRequest(path, body, API_BASE); }
+  catch (cause) { throw browserAccountsEnabled() && cause instanceof AccountError && cause.code === "invalid" ? new WithdrawalUnknown() : cause; }
+  return withdrawalResult(data);
+}
 function withdrawalResult(data: Record<string, unknown>): WithdrawalResult {
   if (typeof data.id !== "string" || !data.id || !["PENDING", "PENDING_ADMIN_REVIEW", "PENDING_72H_HOLD", "BROADCASTING", "COMPLETED", "CANCELLED", "FAILED"].includes(data.status as string)) throw new AccountError("invalid");
   if (data.status === "PENDING_72H_HOLD" && (typeof data.unlockAt !== "number" || !Number.isFinite(data.unlockAt))) throw new AccountError("invalid");
@@ -51,8 +65,8 @@ export const api = {
     if (input.authMethod === "EMAIL_72H_HOLD" && result.status !== "PENDING_72H_HOLD" && !["CANCELLED", "FAILED"].includes(result.status)) throw new AccountError("invalid");
     return result;
   },
-  withdrawStatus: async (id: string) => withdrawalResult(await accountRequest(`/withdraw/${encodeURIComponent(id)}`, undefined, API_BASE)),
-  cancelWithdrawal: async (id: string) => withdrawalResult(await accountRequest(`/withdraw/${encodeURIComponent(id)}/cancel`, {}, API_BASE)),
+  withdrawStatus: (id: string) => withdrawalRequest(`/withdraw/${encodeURIComponent(id)}`),
+  cancelWithdrawal: (id: string) => withdrawalRequest(`/withdraw/${encodeURIComponent(id)}/cancel`, {}),
   shipping: (ownedId: string) => call<{ carrier: CarrierKey; trackingNumber: string }>(`/shipping/${encodeURIComponent(ownedId)}`),
   cancelShipping: async (ownedId: string, requestId: string) => await accountRequest(`/shipping/${encodeURIComponent(ownedId)}/cancel`, { requestId, idempotencyKey: `cancel-shipping:${ownedId}:${requestId}` }, API_BASE) as unknown as { status: "CANCELLED"; item: OwnedItem; wallet: { balance: number; cryptoBalance: number; cardBalance: number } },
 };

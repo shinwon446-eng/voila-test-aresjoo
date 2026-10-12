@@ -60,10 +60,10 @@ export interface Transaction {
   /** 인증에 쓴 이메일(마스킹), 원문은 저장하지 않는다 */
   emailMasked?: string;
   /**
-   * 출금 내역을 만들 때 잔액에서 실제로 차감했는지. false 인 건은 취소되거나 실패해도 환불하지 않는다(차감한 적 없는 금액이 잔액에 생기지 않게).
-   * 없으면(이 칸이 생기기 전의 기록) 전처럼 차감한 것으로 본다.
+   * 서비스는 접수했는데 잔액에서 차감하지 못한 출금 요청이 신청했던 금액. 표시에만 쓴다(돈은 움직이지 않는다).
+   * 이런 줄의 장부 금액(amountUsdt)은 0 이다. 환불은 장부 금액만큼이라, 취소되거나 실패해도 돌아올 것이 없다.
    */
-  debited?: boolean;
+  requestedUsdt?: number;
   /** 카드 결제 영수증 번호, PG 가 준 값만 들어간다 */
   receipt?: string;
   /**
@@ -106,11 +106,18 @@ interface WalletState {
    */
   cancelHeldWithdrawal: (id: string) => boolean;
   /**
-   * 접수된 출금을 장부에 적는다. 아직 끝나지 않은 건은 암호화폐 잔액에서 실제로 차감한 경우에만 내역을 만든다.
-   * 차감하지 못하면 아무것도 바꾸지 않고 null 을 돌려준다. 서비스가 이미 취소나 실패로 돌려준 건은 차감 없이 내역만 남긴다.
-   * 같은 접수 번호(serverId)의 내역이 이미 있으면 그것을 돌려주고 아무것도 바꾸지 않는다.
+   * 서비스가 접수한 출금을 장부에 적는다. 접수 번호(serverId)는 언제나 한 줄로 남는다.
+   *   끝나지 않은 접수: 암호화폐 잔액에서 차감하고 그 금액의 줄을 적는다. 차감하지 못하면 잔액을 건드리지 않고
+   *     장부 금액 0 인 줄을 적는다(신청한 금액은 requestedUsdt 에만). 환불은 장부 금액만큼이라 이 줄은 환불될 것이 없다.
+   *   이미 취소나 실패로 온 접수: 차감 없이 줄만 남긴다(끝난 줄은 환불하지 않는다).
+   * 같은 계정의 같은 접수 번호가 이미 있으면 그 줄을 돌려주고 아무것도 바꾸지 않는다.
    */
-  recordWithdrawal: (tx: Omit<Transaction, "id" | "at" | "debited">) => Transaction | null;
+  recordWithdrawal: (tx: Omit<Transaction, "id" | "at" | "requestedUsdt">) => Transaction;
+  /**
+   * 서비스가 그 접수 번호를 모른다고 답했을 때: 차감하지 않은 요청(장부 금액 0)이 아직 열려 있으면 실패로 닫는다. 환불은 없다.
+   * 차감한 출금은 건드리지 않는다(false). 일시적인 조회 실패에는 부르지 않는다.
+   */
+  closeUnknownWithdrawal: (id: string) => boolean;
   /** 차감(암호화폐 우선 → 모자라면 카드 결합). 부족하면 false 를 돌려주고 아무것도 바꾸지 않는다. */
   debit: (usdt: number) => boolean;
   /** 차감 + 이번 지출의 족보(비율)를 돌려준다, 개봉이 쓴다. 부족하면 null. */
@@ -139,11 +146,10 @@ interface WalletState {
 }
 
 /**
- * 차감하지 못했는데 서비스에는 아직 열려 있는 출금 요청인가(접수는 됐고, 취소는 아직 확인되지 않았다).
- * 출금 화면은 이런 건을 접수 번호와 함께 내역으로 남기고, 풀릴 때까지 새 출금을 받지 않는다. 지갑 내역에서 취소할 수 있고 환불은 없다(debited 가 false).
+ * 잔액에서 차감하지 않은 출금 요청의 줄인가(recordWithdrawal 이 장부 금액 0 으로 적은 것). 열려 있을 때도 끝난 뒤에도 같다.
+ * 화면이 이 줄을 차감한 출금처럼 적지 않게 하는 표시용 판정이다. 돈의 판정은 여기에 기대지 않는다(환불은 장부 금액만큼이다).
  */
-export const isOpenUndebitedWithdrawal = (tx: Transaction): boolean =>
-  tx.type === "withdraw" && tx.debited === false && !!tx.serverId && !["COMPLETED", "CANCELLED", "FAILED"].includes(tx.status ?? "");
+export const isUndebitedWithdrawal = (tx: Transaction): boolean => tx.type === "withdraw" && typeof tx.requestedUsdt === "number";
 
 /** 두 버킷 → 표시용 총 잔액. balance 는 항상 여기서만 계산된다(어긋날 수 없다). */
 const sync = (cryptoBalance: number, cardBalance: number) => ({ cryptoBalance, cardBalance, balance: +(cryptoBalance + cardBalance).toFixed(2) });
@@ -215,8 +221,7 @@ export const useWalletStore = create<WalletState>()(
       syncWithdrawal: (id, status, patch) => set(s => {
         const tx = s.transactions.find(x => x.id === id);
         if (!tx || tx.type !== "withdraw" || ["COMPLETED", "CANCELLED", "FAILED"].includes(tx.status ?? "")) return {};
-        // 환불은 실제로 차감한 기록에만 한다
-        const refund = tx.debited !== false && ["CANCELLED", "FAILED"].includes(status) ? Math.abs(tx.amountUsdt) : 0;
+        const refund = ["CANCELLED", "FAILED"].includes(status) ? Math.abs(tx.amountUsdt) : 0;
         return { ...sync(+(s.cryptoBalance + refund).toFixed(2), s.cardBalance), transactions: s.transactions.map(x => x.id === id ? { ...x, ...patch, status } : x) };
       }),
       setTransactionStatus: (id, status, patch) =>
@@ -240,7 +245,7 @@ export const useWalletStore = create<WalletState>()(
         const tx = get().transactions.find((x) => x.id === id);
         // 대기 중인 출금만 되돌린다, 이미 CANCELLED 거나 송금이 시작된 건은 손대지 않는다
         if (!tx || tx.type !== "withdraw" || tx.status !== "PENDING_72H_HOLD") return false;
-        const refund = tx.debited === false ? 0 : Math.abs(tx.amountUsdt);
+        const refund = Math.abs(tx.amountUsdt);
         set((s) => ({
           ...sync(+(s.cryptoBalance + refund).toFixed(2), s.cardBalance),
           transactions: s.transactions.map((x) => (x.id === id ? { ...x, status: "CANCELLED" as TxStatus } : x)),
@@ -248,12 +253,21 @@ export const useWalletStore = create<WalletState>()(
         return true;
       },
       recordWithdrawal: (tx) => {
-        // 같은 접수 번호는 한 번만 적는다: 이미 있는 내역을 돌려주고 아무것도 바꾸지 않는다(두 번 차감하지 않는다)
-        const existing = tx.serverId ? get().transactions.find((x) => x.type === "withdraw" && x.serverId === tx.serverId) : undefined;
+        // 같은 계정의 같은 접수 번호는 한 번만 적는다: 이미 있는 줄을 돌려주고 아무것도 바꾸지 않는다(두 번 차감하지 않는다)
+        const existing = tx.serverId ? get().transactions.find((x) => x.type === "withdraw" && x.serverId === tx.serverId && x.accountId === tx.accountId) : undefined;
         if (existing) return existing;
-        const open =!["CANCELLED", "FAILED"].includes(tx.status ?? "");
-        if (open && !get().debitCrypto(Math.abs(tx.amountUsdt))) return null;
-        return get().addTransaction({ ...tx, debited: open });
+        const amount = Math.abs(tx.amountUsdt);
+        const open = !["CANCELLED", "FAILED"].includes(tx.status ?? "");
+        if (!open || get().debitCrypto(amount)) return get().addTransaction(tx);
+        // 차감하지 못했다: 장부 금액 0 인 줄. 받는 금액처럼 읽힐 칸(수수료, 받는 금액)은 적지 않고, 신청한 금액은 표시 칸에만 둔다
+        const { feeUsdt: _fee, netUsdt: _net, ...rest } = tx;
+        return get().addTransaction({ ...rest, amountUsdt: 0, requestedUsdt: amount });
+      },
+      closeUnknownWithdrawal: (id) => {
+        const tx = get().transactions.find((x) => x.id === id);
+        if (!tx || !isUndebitedWithdrawal(tx) || tx.amountUsdt !== 0 || ["COMPLETED", "CANCELLED", "FAILED"].includes(tx.status ?? "")) return false;
+        get().syncWithdrawal(id, "FAILED");
+        return true;
       },
       debit: (usdt) => get().debitSplit(usdt) !== null,
       debitCrypto: (usdt) => {

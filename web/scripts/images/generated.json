@@ -2647,8 +2647,16 @@
     "file": "beauty-dyson-supersonic-hair-dryer.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-dyson-supersonic-nural-hair-dryer": {
+    "file": "beauty-dyson-supersonic-nural-hair-dryer.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-dyson-supersonic-origin-hair-dryer": {
     "file": "beauty-dyson-supersonic-origin-hair-dryer.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-dyson-supersonic-r-hair-dryer": {
+    "file": "beauty-dyson-supersonic-r-hair-dryer.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-estee-lauder-advanced-night-repair-synchron-complex-115ml": {
@@ -2807,8 +2815,16 @@
     "file": "beauty-la-mer-creme-de-la-mer-500ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-la-mer-creme-de-la-mer-60ml": {
+    "file": "beauty-la-mer-creme-de-la-mer-60ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-la-mer-genaissance-de-la-mer-concentrated-night-balm-50ml": {
     "file": "beauty-la-mer-genaissance-de-la-mer-concentrated-night-balm-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-la-mer-genaissance-de-la-mer-eye-expression-cream-15ml": {
+    "file": "beauty-la-mer-genaissance-de-la-mer-eye-expression-cream-15ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-la-mer-genaissance-de-la-mer-the-serum-essence-30ml": {
@@ -2819,8 +2835,16 @@
     "file": "beauty-la-mer-the-concentrate-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-la-mer-the-lifting-firming-serum-30ml": {
+    "file": "beauty-la-mer-the-lifting-firming-serum-30ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-la-mer-the-moisturizing-soft-cream-100ml": {
     "file": "beauty-la-mer-the-moisturizing-soft-cream-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-la-mer-the-moisturizing-soft-cream-60ml": {
+    "file": "beauty-la-mer-the-moisturizing-soft-cream-60ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-la-mer-the-rejuvenating-night-cream-60ml": {
@@ -2849,6 +2873,18 @@
   },
   "beauty-lancome-advanced-genifique-serum-50ml": {
     "file": "beauty-lancome-advanced-genifique-serum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-lancome-advanced-genifique-serum-75ml": {
+    "file": "beauty-lancome-advanced-genifique-serum-75ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-lancome-idole-eau-de-parfum-100ml": {
+    "file": "beauty-lancome-idole-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-lancome-la-vie-est-belle-eau-de-parfum-100ml": {
+    "file": "beauty-lancome-la-vie-est-belle-eau-de-parfum-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-lancome-renergie-hcf-triple-serum-50ml": {
@@ -2911,6 +2947,10 @@
     "file": "beauty-le-labo-vanille-44-eau-de-parfum-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-loccitane-cherry-blossom-eau-de-toilette-75ml": {
+    "file": "beauty-loccitane-cherry-blossom-eau-de-toilette-75ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-loccitane-immortelle-divine-cream-50ml": {
     "file": "beauty-loccitane-immortelle-divine-cream-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2933,6 +2973,10 @@
   },
   "beauty-loccitane-immortelle-overnight-reset-oil-in-serum-50ml": {
     "file": "beauty-loccitane-immortelle-overnight-reset-oil-in-serum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-loccitane-immortelle-precious-cream-50ml": {
+    "file": "beauty-loccitane-immortelle-precious-cream-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-loccitane-loccitan-eau-de-toilette-100ml": {
@@ -3067,6 +3111,10 @@
     "file": "beauty-prada-les-infusions-de-prada-iris-eau-de-parfum-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-prada-les-infusions-de-prada-santal-chai-edp-100ml": {
+    "file": "beauty-prada-les-infusions-de-prada-santal-chai-edp-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-prada-les-infusions-de-prada-vanille-eau-de-parfum-100ml": {
     "file": "beauty-prada-les-infusions-de-prada-vanille-eau-de-parfum-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -3075,8 +3123,20 @@
     "file": "beauty-prada-les-infusions-de-prada-vetiver-eau-de-parfum-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-prada-lhomme-eau-de-toilette-150ml": {
+    "file": "beauty-prada-lhomme-eau-de-toilette-150ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-prada-paradoxe-eau-de-parfum-90ml": {
+    "file": "beauty-prada-paradoxe-eau-de-parfum-90ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-prada-paradoxe-eau-de-parfum-intense-90ml": {
     "file": "beauty-prada-paradoxe-eau-de-parfum-intense-90ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-prada-paradoxe-virtual-flower-eau-de-parfum-90ml": {
+    "file": "beauty-prada-paradoxe-virtual-flower-eau-de-parfum-90ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-sk-ii-facial-treatment-essence-160ml": {
@@ -13847,6 +13907,10 @@
     "file": "sport-bala-mom-and-me-kit.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-bala-neon-strength-kit": {
+    "file": "sport-bala-neon-strength-kit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-bala-pilates-method-heavy": {
     "file": "sport-bala-pilates-method-heavy.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13989,6 +14053,14 @@
   },
   "sport-garmin-marq-athlete-gen-2": {
     "file": "sport-garmin-marq-athlete-gen-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-garmin-marq-athlete-gen-2-carbon": {
+    "file": "sport-garmin-marq-athlete-gen-2-carbon.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-garmin-marq-aviator-gen-2": {
+    "file": "sport-garmin-marq-aviator-gen-2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-garmin-marq-captain-gen-2": {
@@ -14157,6 +14229,10 @@
   },
   "sport-hyperice-x-2-shoulder": {
     "file": "sport-hyperice-x-2-shoulder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-manduka-eko-5mm": {
+    "file": "sport-manduka-eko-5mm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-manduka-grp-adapt-5mm": {
@@ -14523,6 +14599,10 @@
     "file": "sport-speedo-lzr-pure-intent-high-waist-jammer.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-speedo-lzr-pure-intent-jammer": {
+    "file": "sport-speedo-lzr-pure-intent-jammer.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-speedo-lzr-pure-intent-openback-kneeskin": {
     "file": "sport-speedo-lzr-pure-intent-openback-kneeskin.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -14575,12 +14655,20 @@
     "file": "sport-therabody-theraface-mask-glo.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-therabody-theraface-pro": {
+    "file": "sport-therabody-theraface-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-therabody-theragun-elite": {
     "file": "sport-therabody-theragun-elite.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-therabody-theragun-prime": {
     "file": "sport-therabody-theragun-prime.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-therabody-theragun-prime-plus": {
+    "file": "sport-therabody-theragun-prime-plus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-therabody-theragun-pro": {

@@ -353,7 +353,11 @@ export function scheduledBox(spec: BoxSpec): ProductBox {
   return box;
 }
 
-export const BOX_BY_SLUG: Record<string, ProductBox> = Object.fromEntries(BOXES.map((b) => [b.slug, b]));
+/**
+ * slug 로 박스를 찾는 표. 주소(?box=)나 브라우저의 저장소에서 온 글자를 그대로 넣어 찾으므로 Object.prototype 을 잇지 않는다:
+ * "constructor", "__proto__", "toString", "hasOwnProperty" 같은 이름이 박스로 잡히지 않고 없는 박스와 같이 undefined 다.
+ */
+export const BOX_BY_SLUG: Record<string, ProductBox> = Object.assign(Object.create(null), Object.fromEntries(BOXES.map((b) => [b.slug, b])));
 export const getBoxBySlug = (slug: string): ProductBox | undefined => BOX_BY_SLUG[slug];
 /**
  * 가입 혜택으로 무료로 여는 박스. 옛 박스를 홈에서 내린 뒤에는 새 카탈로그의 리자몽 박스다(홈 배너의 그림이 리자몽 카드다).

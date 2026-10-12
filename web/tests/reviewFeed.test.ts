@@ -3,7 +3,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import { HOME_BOXES } from "../lib/products";
+import { BOX_BY_SLUG, HOME_BOXES, getBoxBySlug } from "../lib/products";
 import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, stamp } from "../lib/reviewFeed";
 import { allRatingSummary, newestSamples, ratingSummary, sampleCount, sampleReviews } from "../lib/reviewSamples";
 
@@ -154,6 +154,25 @@ test("후기 목록: 처음 건수는 화면마다 따로이고, 남은 건수�
   assert.match(screen, /useShownRows\("reviews:" \+ picked, ALL_REVIEWS_FIRST\)/);
   assert.equal(MORE_COUNT_MAX, 999);
   assert.match(reviews, /left > MORE_COUNT_MAX \? t\("reviews\.moreListPlain"\) : t\("reviews\.moreList"/);
+});
+
+test("박스 찾기(F-07): 객체에 원래 있는 이름(constructor, __proto__, toString, hasOwnProperty)은 박스가 아니다. 없는 박스와 같이 다룬다", () => {
+  const real = realRatings(REVIEWS);
+  for (const slug of ["constructor", "__proto__", "toString", "hasOwnProperty", "valueOf", "no-such-box"]) {
+    assert.equal(BOX_BY_SLUG[slug], undefined, slug);
+    assert.equal(getBoxBySlug(slug), undefined, slug);
+    // 모아 보기의 ?box= 는 이 표에서 찾은 박스가 있을 때만 알약을 둔다
+    assert.equal(isRealReview({ id: "r9", boxSlug: slug }), false, slug);
+    assert.equal(sampleCount(slug), 0, slug);
+    assert.deepEqual(sampleReviews(slug, 5), [], slug);
+    assert.equal(boxRating(slug, real).count, 0, slug);
+    assert.equal(realRatings([{ id: "r9", boxSlug: slug, rating: 5 }]).size, 0, slug);
+  }
+  // 있는 박스는 그대로 찾는다
+  assert.equal(BOX_BY_SLUG[SLUG]?.slug, SLUG);
+  assert.equal(Object.keys(BOX_BY_SLUG).length > 300, true);
+  // 모아 보기는 주소의 글자를 이 표에서 찾는다
+  assert.match(read("../components/box/ReviewsScreen.tsx"), /const askedBox = asked \? BOX_BY_SLUG\[asked\] \?\? null : null;/);
 });
 
 test("더 보기 뒤(F-05): 초점은 새로 생긴 첫 글로 가고, 늘어난 건수는 알림 영역에 적는다(브라우저에서의 확인은 scripts/capture/flow-reviews-nav.mjs)", () => {

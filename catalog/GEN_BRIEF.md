@@ -3,7 +3,7 @@
 VOILA 는 박스를 열어 실물 상품을 받는 서비스다. 박스 320개(브랜드마다 하나)에 상품을 100개씩 채운다.
 너는 카테고리 하나를 맡아 그 카테고리의 공통 상품과 박스 20개의 상품 목록을 만든다. 글 자료(JSON)만 만든다. 사진은 만들지 않는다.
 
-저장소: `C:\Users\hyun1\OneDrive\바탕 화면\VOILA-test-aresjoo`, 앱은 `web/` 아래다. 명령은 `web/` 에서 돌린다.
+저장소: `C:\Users\hyun1\dev\VOILA-test-aresjoo`, 앱은 `web/` 아래다. 명령은 `web/` 에서 돌린다.
 
 ## 읽을 것
 - `web/lib/catalog2/manifest.json`: 박스 320개. 네 카테고리의 20개를 본다(`category`, `slug`, `brand`, `title`, `price`, 참고용 `top`, `low`). 이 파일은 고치지 않는다.

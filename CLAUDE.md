@@ -27,7 +27,7 @@
 > |---|---|---|---|
 > | GitHub | `shinwon446-eng/gacha-sim` (feat/netflix-gacha-web) | `shinwon446-eng/voila-test-shinwon` (main) | `shinwon446-eng/voila-test-aresjoo` (main) |
 > | 주소 | https://shinwon446-eng.github.io/gacha-sim/ | https://shinwon446-eng.github.io/voila-test-shinwon/ | https://shinwon446-eng.github.io/voila-test-aresjoo/ |
-> | 로컬 폴더 | `Desktop\\가챠서비` | `Desktop\\VOILA-test-shinwon` | `Desktop\\VOILA-test-aresjoo` |
+> | 로컬 폴더 | `Desktop\\가챠서비` | `Desktop\\VOILA-test-shinwon` | `C:\\Users\\hyun1\\dev\\VOILA-test-aresjoo` (2026-10-12 OneDrive 밖으로 옮김) |
 > | 로컬 dev 포트 | 3000 | 3001 | 3002 |
 > | 화면 표시 | 없음 | 시안 라인 + `TEST · shinwon` | 마젠타 라인 + `TEST · aresjoo` |
 > | 저장소 접두사 | 없음(`gachaflix.*` 원본 키) | `voila-test-shinwon:` | `voila-test-aresjoo:` |

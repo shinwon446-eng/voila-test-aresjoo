@@ -19,7 +19,7 @@ import { AccountError } from "@/lib/account";
 import { api } from "@/lib/api";
 import { useCurrency } from "@/lib/useCurrency";
 import { useCurrencyStore } from "@/stores/currencyStore";
-import { useWalletStore, type TxStatus } from "@/stores/walletStore";
+import { isOpenUndebitedWithdrawal, useWalletStore, type TxStatus } from "@/stores/walletStore";
 import { useSecurityStore } from "@/stores/securityStore";
 import { useAuthStore } from "@/stores/authStore";
 import { Button, ButtonLink, Chips, Field, Line, Row, Rows, ScreenHead, Skeleton, TextLink } from "@/components/ui/kit";
@@ -100,9 +100,13 @@ export function WithdrawScreen() {
     if (prefillUsdt > 0) setAmountText((prefillUsdt * rates[currency]).toFixed(decimals));
   };
 
+  // 차감하지 못했는데 서비스에는 아직 열려 있는 출금 요청(취소가 확인되지 않은 것). 이것이 풀릴 때까지 새 출금 요청을 만들지 않는다:
+  // 같은 금액과 주소를 다시 내면 새 요청 번호로 둘째 요청이 생기기 때문이다. 입력 화면이 그 사실과 할 일을 한 줄로 알린다
+  const stuck = useWalletStore((s) => !!user && s.transactions.some((x) => x.accountId === user.id && isOpenUndebitedWithdrawal(x)));
+
   const beginConfirm = () => {
     setTouched(true);
-    if (!user || !securityReady || submission.current || errors.length) return;
+    if (!user || !securityReady || submission.current || errors.length || stuck) return;
     const fingerprint = JSON.stringify([user.id, amountUsdt, network, address.trim()]);
     if (requestDraft.current !== fingerprint) { requestDraft.current = fingerprint; requestId.current = globalThis.crypto.randomUUID(); }
     setError("");
@@ -112,23 +116,33 @@ export function WithdrawScreen() {
   /** 인증을 통과한 뒤에만 불린다. 여기서 잔액이 차감되고 출금 내역이 생긴다(옛 화면의 commit 과 같은 순서). */
   const commit = useCallback(async (draft: Draft, proof: WithdrawalProof, rid: string) => {
     if (submission.current || !user || useAuthStore.getState().user?.id !== user.id) return;
-    if (validateWithdrawal({ ...draft, balanceUsdt: useWalletStore.getState().cryptoBalance }).length) { setStage({ kind: "form" }); setTouched(true); return; }
+    const walletNow = useWalletStore.getState();
+    if (validateWithdrawal({ ...draft, balanceUsdt: walletNow.cryptoBalance }).length || walletNow.transactions.some((x) => x.accountId === user.id && isOpenUndebitedWithdrawal(x))) { setStage({ kind: "form" }); setTouched(true); return; }
     submission.current = true; setBusy(true); setError("");
     try {
       const result = await api.withdraw({ ...draft, requestId: rid, authorization: proof.authorization, authMethod: proof.method });
       if (useAuthStore.getState().user?.id !== user.id) return;
       const wallet = useWalletStore.getState();
       if (wallet.transactions.some((x) => x.serverId === result.id)) { setStage({ kind: "form" }); return; }
-      // 서비스가 금액을 먼저 묶어 둔 뒤에 접수를 알려 준다. 잔액에서 실제로 차감한 경우에만 출금 내역이 생긴다
-      const recorded = wallet.recordWithdrawal({ type: "withdraw", accountId: user.id, serverId: result.id,
+      // 서비스가 금액을 먼저 묶어 둔 뒤에 접수를 알려 준다. 잔액에서 실제로 차감한 경우에만 차감한 출금 내역이 생긴다
+      const record = { type: "withdraw" as const, accountId: user.id, serverId: result.id,
         amountUsdt: -draft.amountUsdt, ref: `${draft.network}:${draft.address}`, network: draft.network,
         address: draft.address, feeUsdt: WITHDRAW_NETWORK_BY_KEY[draft.network].feeUsdt,
         netUsdt: netReceive(draft.amountUsdt, draft.network), authMethod: proof.method,
-        unlockAt: result.unlockAt, emailMasked: proof.emailMasked, status: result.status, txHash: result.txHash });
+        unlockAt: result.unlockAt, emailMasked: proof.emailMasked, status: result.status, txHash: result.txHash };
+      const recorded = wallet.recordWithdrawal(record);
       requestDraft.current = "";
-      // 접수를 기다리는 사이에 잔액이 줄어 차감하지 못했다: 내역을 만들지 않고 서비스의 접수를 거둔 뒤,
-      // 위의 사전 검사와 같은 자리(입력 화면의 "잔액보다 많이 넣었습니다" 한 줄)에서 알린다
-      if (!recorded) { void api.cancelWithdrawal(result.id).catch(() => {}); setStage({ kind: "form" }); setTouched(true); return; }
+      if (!recorded) {
+        // 접수를 기다리는 사이에 잔액이 줄어 차감하지 못했다. 서비스에는 접수가 남아 있으므로 그 번호를 잃지 않게
+        // 차감하지 않은 내역(debited: false, 환불되지 않는다)으로 먼저 적어 두고, 취소를 요청해 확인되면 그 내역을 취소로 맞춘다.
+        // 취소가 확인되지 않으면 내역이 열린 채 남는다: 지갑 내역에서 취소할 수 있고, 입력 화면이 그 사실을 알리며 새 요청을 받지 않는다
+        const open = wallet.addTransaction({ ...record, debited: false });
+        try {
+          const cancelled = await api.cancelWithdrawal(result.id);
+          if (cancelled.id === result.id && useAuthStore.getState().user?.id === user.id) useWalletStore.getState().syncWithdrawal(open.id, cancelled.status, { txHash: cancelled.txHash, unlockAt: cancelled.unlockAt });
+        } catch { /* 열린 내역이 남아 있다. 아래에서 돌아가는 입력 화면이 알린다 */ }
+        setStage({ kind: "form" }); setTouched(true); return;
+      }
       setStage({ kind: "done", status: result.status, net: netReceive(draft.amountUsdt, draft.network), network: draft.network });
     } catch (cause) {
       setError(te(cause instanceof AccountError ? cause.code : "network"));
@@ -260,6 +274,7 @@ export function WithdrawScreen() {
         <Row label={t("wallet.net")}>{amountOk ? fmt(netReceive(amountUsdt, network)) : fmt(0)}</Row>
       </Rows>
       {error && <Line fail>{error}</Line>}
+      {stuck && <><Line fail>{t("withdraw.openRequest")}</Line><div className="v-links v-links--tight"><TextLink href="/wallet">{t("balanceSheet.history")}</TextLink></div></>}
       <Button type="submit">{t("withdraw.next")}</Button>
       <TakeSheet open={taking} onClose={() => setTaking(false)} onTaken={onTaken} doneLabel={t("take.withdrawBack")} />
     </form>

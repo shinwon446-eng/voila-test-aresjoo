@@ -393,6 +393,7 @@
     "cancel": "Cancel withdrawal",
     "cancelTitle": "Cancel withdrawal",
     "cancelDesc": "The withdrawal is cancelled and the amount returns to your balance.",
+    "cancelDescOpen": "This withdrawal request was never taken from your balance. Cancelling it does not change your balance.",
     "cancelFailed": "The withdrawal could not be cancelled. Sending may have started.",
     "explorer": "View on {name}",
     "type": {
@@ -444,6 +445,7 @@
     "emailTitle": "Email verification",
     "emailDesc": "Verify with the emailed code, and the withdrawal is sent after {hours} hours.",
     "emailExpired": "The code has expired. Request a new code.",
+    "openRequest": "Your balance changed, so the withdrawal was not completed. The request is still open. Cancel it in wallet history, then request again.",
     "sendCode": "Send code",
     "doneTitle": "Withdrawal requested",
     "doneDesc": "You can follow the status in your wallet history.",

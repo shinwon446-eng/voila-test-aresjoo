@@ -138,6 +138,13 @@ interface WalletState {
   claimWelcome: (accountId: string) => boolean;
 }
 
+/**
+ * 차감하지 못했는데 서비스에는 아직 열려 있는 출금 요청인가(접수는 됐고, 취소는 아직 확인되지 않았다).
+ * 출금 화면은 이런 건을 접수 번호와 함께 내역으로 남기고, 풀릴 때까지 새 출금을 받지 않는다. 지갑 내역에서 취소할 수 있고 환불은 없다(debited 가 false).
+ */
+export const isOpenUndebitedWithdrawal = (tx: Transaction): boolean =>
+  tx.type === "withdraw" && tx.debited === false && !!tx.serverId && !["COMPLETED", "CANCELLED", "FAILED"].includes(tx.status ?? "");
+
 /** 두 버킷 → 표시용 총 잔액. balance 는 항상 여기서만 계산된다(어긋날 수 없다). */
 const sync = (cryptoBalance: number, cardBalance: number) => ({ cryptoBalance, cardBalance, balance: +(cryptoBalance + cardBalance).toFixed(2) });
 let transactionSequence = 0;

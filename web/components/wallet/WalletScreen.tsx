@@ -6,7 +6,7 @@
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { useWalletStore, type Transaction } from "@/stores/walletStore";
+import { isOpenUndebitedWithdrawal, useWalletStore, type Transaction } from "@/stores/walletStore";
 import { useAuthStore } from "@/stores/authStore";
 import { useFlow } from "@/stores/flowStore";
 import { api } from "@/lib/api";
@@ -136,15 +136,17 @@ export function WalletScreen() {
             {current.address && <div className="v-card"><p className="v-small">{t("wallet.toAddress")}</p><code className="v-address">{current.address}</code></div>}
             {holdText(current) && <Line>{holdText(current)}</Line>}
             {current.status === "PENDING_ADMIN_REVIEW" && <Line>{t("wallet.reviewLine")}</Line>}
+            {/* 차감하지 못했는데 서비스에 열려 있는 출금 요청: 어떤 건인지 알리고, 대기 상태가 무엇이든 여기서 취소할 수 있게 한다(환불은 없다) */}
+            {isOpenUndebitedWithdrawal(current) && <Line>{t("wallet.cancelDescOpen")}</Line>}
             {cancelFailed && <Line fail>{t("wallet.cancelFailed")}</Line>}
-            {current.status === "PENDING_72H_HOLD" && current.serverId && <Button onClick={() => setCancelling(true)}>{t("wallet.cancel")}</Button>}
+            {(current.status === "PENDING_72H_HOLD" || isOpenUndebitedWithdrawal(current)) && current.serverId && <Button onClick={() => setCancelling(true)}>{t("wallet.cancel")}</Button>}
             {current.txHash && current.network && (current.network === "TRC20" || current.network === "BEP20") && (
               <div className="v-links"><TextLink href={explorerTxUrl(current.network as Network, current.txHash)} external>{t("wallet.explorer", { name: EXPLORERS[current.network as Network].name })}</TextLink></div>
             )}
           </>
         )}
       </Sheet>
-      <Confirm open={!!current && cancelling} onCancel={() => setCancelling(false)} onConfirm={cancel} busy={busy} busyLabel={t("common.checking")} title={t("wallet.cancelTitle")} desc={t("wallet.cancelDesc")} confirmLabel={t("wallet.cancel")} cancelLabel={t("common.cancel")} />
+      <Confirm open={!!current && cancelling} onCancel={() => setCancelling(false)} onConfirm={cancel} busy={busy} busyLabel={t("common.checking")} title={t("wallet.cancelTitle")} desc={t(current?.debited === false ? "wallet.cancelDescOpen" : "wallet.cancelDesc")} confirmLabel={t("wallet.cancel")} cancelLabel={t("common.cancel")} />
     </div>
   );
 }

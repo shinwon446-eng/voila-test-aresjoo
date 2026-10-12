@@ -7,7 +7,7 @@
  * 통계 칸, 검색, 정렬 셀렉트, 여러 탭은 없다. 상태 셋(보관 중, 배송, 받은 것)만 알약으로 고른다.
  * 실패와 막힘은 팝업이나 토스트가 아니라 그 자리의 한 줄로 쓴다.
  */
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { BOX_BY_SLUG } from "@/lib/products";
 import { productOf, processedAt, vaultTab, type VaultTab } from "@/lib/vault";
@@ -68,6 +68,9 @@ export function InventoryScreen() {
     return () => clearInterval(timer);
   }, []);
   useEffect(() => { setShown(PAGE); }, [tab]);
+  // 이 화면이 사라진 뒤에 온 받기 응답은 버린다(돈과 기록은 lib/takeBatch 가 따로 지킨다)
+  const alive = useRef(true);
+  useEffect(() => { alive.current = true; return () => { alive.current = false; }; }, []);
 
   const date = (value?: string) => (value && Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat(locale, { year: "numeric", month: "short", day: "numeric" }).format(new Date(value)) : "");
   const counts = useMemo(() => items.reduce((acc, item) => { acc[vaultTab(item)]++; return acc; }, { held: 0, shipping: 0, done: 0 }), [items]);
@@ -90,6 +93,7 @@ export function InventoryScreen() {
     if (!current || busy) return;
     setBusy(true); setTakeNote(null);
     const out = await settleTake(current.id);
+    if (!alive.current) return;
     setBusy(false); setTaking(false);
     if (out.status === "settled") { closeItem(); setTab("done"); } else setTakeNote(out.status === "failed" ? "failed" : "unknown");
   };

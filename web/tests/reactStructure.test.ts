@@ -28,3 +28,16 @@ test("E-25 AuthHost: 지갑을 기다리는 구독을 effect 의 정리 함수�
   const declared = src.indexOf("let unsubscribe = () => {};");
   assert.ok(declared > 0 && declared < src.indexOf("if (userId) {"), "unsubscribe 가 계정 분기 안에 갇혀 있다");
 });
+
+for (const path of ["components/box/Reveal.tsx", "components/inventory/InventoryScreen.tsx"]) {
+  test(`E-39 ${path}: 화면이 사라진 뒤에 온 받기 응답으로 상태를 바꾸지 않는다`, () => {
+    const src = read(path);
+    // 화면이 붙어 있는지를 적어 두는 ref 와, 떼어질 때 그것을 내리는 effect
+    assert.match(src, /const alive = useRef\(true\);/, "화면이 붙어 있는지 적어 두는 ref 가 없다");
+    assert.match(src, /useEffect\(\(\) => \{ alive\.current = true; return \(\) => \{ alive\.current = false; \}; \}, \[\]\);/, "떼어질 때 ref 를 내리는 effect 가 없다");
+    // 받기를 기다린 바로 다음 줄에서 확인하고, 사라졌으면 아무 상태도 바꾸지 않는다
+    const awaits = Array.from(src.matchAll(/const out = await settleTake\([^)]*\);\r?\n\s*(.*)/g));
+    assert.equal(awaits.length, 1, "받기를 기다리는 곳은 한 곳이어야 한다");
+    assert.ok(awaits[0][1].startsWith("if (!alive.current) return;"), "받기 응답 바로 뒤에 화면이 남아 있는지 보지 않는다: " + awaits[0][1]);
+  });
+}

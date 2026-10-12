@@ -89,6 +89,9 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
     ];
     return () => timers.forEach((id) => window.clearTimeout(id));
   }, []);
+  // 이 화면이 사라진 뒤에 온 받기 응답은 버린다(돈과 기록은 lib/takeBatch 가 따로 지킨다)
+  const alive = useRef(true);
+  useEffect(() => { alive.current = true; return () => { alive.current = false; }; }, []);
 
   const table = useMemo(() => dropTable(box), [box]);
   const sorted = useMemo(() => [...results].sort((a, b) => b.item.value - a.item.value), [results]);
@@ -128,6 +131,7 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
     if (!taking) return;
     const target = taking; setTaking(null); setTakeNote(null);
     const out = await settleTake(target.ownedId);
+    if (!alive.current) return;
     // 받았으면 시트를 닫고 결과 목록으로 돌아간다(요약과 그 행이 바뀐 것이 곧 확인이다)
     if (out.status === "settled") { setTaken((m) => ({ ...m, [target.ownedId]: out.amountUsdt })); setPicked(null); }
     else setTakeNote(out.status === "failed" ? "failed" : "unknown");

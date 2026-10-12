@@ -61,6 +61,8 @@ export function PasswordSheet({ open, onClose }: { open: boolean; onClose: () =>
   useEffect(() => { if (open) { setDone(false); setError(""); } }, [open]);
   const save = async () => {
     if (!validPassword(next)) { setError(t("account.passwordRule")); return; }
+    // 이 요청을 시작한 계정. 끝났을 때 이 탭의 계정이 그대로일 때만 세션을 끝난 것으로 맞춘다
+    const accountId = user?.id;
     setBusy(true); setError("");
     try {
       // 계정 서비스는 현재 비밀번호를 먼저 확인한 계정의 변경만 받는다(lib/account 의 verifyCurrentPassword).
@@ -72,8 +74,9 @@ export function PasswordSheet({ open, onClose }: { open: boolean; onClose: () =>
       if (!/^\d{6}$/.test(code)) { setError(t("account.codeRule")); return; }
       await changeAccountPasswordWithOtp(current, next, code, user?.id);
       setCurrent(""); setNext(""); setCode(""); setDone(true);
-      // 이 탭도 로그인이 끝난 상태로 맞춘다(새 비밀번호로 다시 로그인한다)
-      markSessionLost();
+      // 이 탭도 로그인이 끝난 상태로 맞춘다(새 비밀번호로 다시 로그인한다).
+      // 기다리는 사이에 다른 계정으로 바뀌었으면 그 계정의 로그인은 건드리지 않는다(끝난 것은 비밀번호를 바꾼 계정의 세션이다)
+      if (useAuthStore.getState().user?.id === accountId) markSessionLost();
     }
     catch (cause) { setError(errorText(ta, cause)); }
     finally { setBusy(false); }

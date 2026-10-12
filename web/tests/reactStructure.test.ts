@@ -65,4 +65,8 @@ test("E-03 계정 화면의 비밀번호 바꾸기: 현재 비밀번호 확인�
   assert.ok(change > verify, "바꾸기 요청이 확인보다 먼저다");
   // 바꾼 뒤에는 이 탭의 세션도 끝난 것으로 맞춘다(서비스가 모든 세션을 끝낸다)
   assert.ok(sheet.indexOf("markSessionLost();") > change, "바꾼 뒤에 세션을 정리하지 않는다");
+  // C1 guard B: 기다리는 사이에 계정이 바뀌었으면 그 계정의 세션은 건드리지 않는다. 요청을 시작한 계정을 기다림 앞에서 적어 두고, 끝난 뒤에 지금 계정과 견준다
+  const captured = sheet.indexOf("const accountId = user?.id;");
+  assert.ok(captured > 0 && captured < verify, "요청을 시작한 계정을 기다림 앞에서 적어 두지 않는다");
+  assert.ok(sheet.indexOf("if (useAuthStore.getState().user?.id === accountId) markSessionLost();") > change, "세션을 정리하기 전에 계정이 그대로인지 보지 않는다");
 });

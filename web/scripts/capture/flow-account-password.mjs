@@ -121,6 +121,40 @@ await run("d", async () => {
   await s.context.close();
 });
 
+// e: 바꾸기 요청을 기다리는 사이에 이 탭의 계정이 다른 계정으로 바뀐 경우(migration-audit/CYCLE1_codex.md, E-03 의 짐작).
+//    비밀번호를 바꾼 계정의 세션만 끝난 것이므로, 그 사이에 들어온 다른 계정의 로그인은 건드리지 않는다.
+//    화면만으로는 그 순간에 계정을 바꿀 수 없어서, 개발 서버의 모듈 캐시에서 로그인 스토어를 찾아 바꾸기 요청이 끝난 바로 뒤에 다른 계정을 넣는다(개발 서버에서만 된다).
+await run("e", async () => {
+  const s = await session("security");
+  await s.openSheet();
+  await s.fill({ current: credentials.password, next: NEW_PASSWORD, code: totp(s.state.account.secret) });
+  const hooked = await s.page.evaluate(() => {
+    let req = null;
+    try { window.webpackChunk_N_E.push([[Symbol("probe")], {}, (r) => { req = r; }]); } catch { return "모듈 캐시에 닿지 못했다"; }
+    const mod = req && Object.values(req.c).find((m) => { try { return m?.exports?.useAuthStore?.getState; } catch { return false; } });
+    if (!mod) return "로그인 스토어를 찾지 못했다";
+    const store = mod.exports.useAuthStore; window.__authStore = store;
+    const request = navigator.locks.request.bind(navigator.locks);
+    // 단추가 일으키는 계정 서비스 요청은 차례로 현재 비밀번호 확인, 바꾸기다. 둘째가 끝난 바로 뒤에 다른 계정으로 바꾼다
+    let calls = 0;
+    navigator.locks.request = async (...args) => {
+      const result = await request(...args);
+      if (++calls === 2) { store.getState().acceptSession({ id: "other-account", email: "other@example.invalid", createdAt: new Date().toISOString(), emailVerified: true, local: true, nickname: "다른계정" }); window.__switched = true; }
+      return result;
+    };
+    return "ok";
+  });
+  check("e", "시험 장치: 바꾸기 요청이 끝난 바로 뒤에 계정을 바꿀 준비가 됐다", hooked === "ok", hooked);
+  if (hooked !== "ok") { await s.context.close(); return; }
+  await s.page.locator(".v-sheet .v-btn").click();
+  await s.page.waitForFunction(() => window.__switched === true, null, { timeout: 20000 }); await s.page.waitForTimeout(800); await s.shot("e1-account-switched");
+  const after = await s.saved();
+  const auth = await s.page.evaluate(() => { const st = window.__authStore.getState(); return { user: st.user?.id ?? null, sessionLost: st.sessionLost }; });
+  check("e", "비밀번호는 바뀌었다(요청한 계정의 것)", after.passwordHash === hashOf(NEW_PASSWORD, after.salt));
+  check("e", "그 사이에 들어온 다른 계정의 로그인은 그대로다(세션 끝남으로 바뀌지 않는다)", auth.user === "other-account" && auth.sessionLost === false, JSON.stringify(auth));
+  await s.context.close();
+});
+
 await browser.close();
 const failed = results.filter((r) => !r.pass);
 if (out) fs.writeFileSync(`${out}/account-password-results.json`, JSON.stringify(results, null, 2));

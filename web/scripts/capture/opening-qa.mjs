@@ -182,7 +182,7 @@ await run("s4", async () => {
   await s.page.waitForFunction(() => /USDT로 받았습니다/.test(document.querySelector(".v-op")?.innerText || ""), null, { timeout: 5000 });
   await s.page.waitForTimeout(700); await s.shot("13-instant-usdt-conversion");
   const l = await s.ledger(); const t = await s.text(); const expect = r2(START - s.price + s.fx.sell);
-  check("s4", `참고가 ${s.fx.value} 상품을 ${s.fx.sell} USDT 로 받는다: 잔액 ${expect}`, near(l.balance, expect), String(l.balance));
+  check("s4", `상품가 ${s.fx.value} 상품을 ${s.fx.sell} USDT 로 받는다: 잔액 ${expect}`, near(l.balance, expect), String(l.balance));
   check("s4", "받기를 두 번 눌러도 한 번만 더해진다", l.sellbacks === 1 && l.items[0].status === "SOLD", `sellbacks ${l.sellbacks} status ${l.items[0]?.status}`);
   check("s4", "받은 뒤 제목은 실제로 받은 금액의 결과 문장이고 쓴 금액과 잔액 변화를 적는다", t.includes("잔액에 " + usdt(s.fx.sell) + " 넣었습니다") && t.includes(usdt(s.price) + " 사용") && t.includes("잔액 " + usdt(Math.abs(s.fx.sell - s.price)) + (s.fx.sell > s.price ? " 증가" : " 감소")), t.slice(0, 120));
   check("s4", "받은 뒤 주 단추는 한 번 더 열기", await s.page.locator("[data-open-again]").count() === 1);
@@ -358,7 +358,7 @@ await run("s11", async () => {
   const l = await s.ledger(); const t = await s.text();
   const expect = r2(START - cost + credited);
   check("s11", "5개 열기: 구매 한 건, 기록 다섯, 잔액이 맞다", l.opens === 1 && l.items.length === 5 && near(l.balance, expect), `balance ${l.balance} expect ${expect} items ${l.items.length}`);
-  check("s11", "5개 열기: 잔액에 들어온 것과 보관 상품을 나눠 적는다", t.includes("잔액에 반영 " + usdt(credited)) && t.includes(`보관 상품 ${kept.length}개 참고가 ${usdt(keptRef)}`) && t.includes("잔액 변화 " + usdt(Math.abs(change)) + (change < 0 ? " 감소" : " 증가")), t.slice(0, 170));
+  check("s11", "5개 열기: 잔액에 들어온 것과 보관 상품을 나눠 적는다", t.includes("잔액에 반영 " + usdt(credited)) && t.includes(`보관 상품 ${kept.length}개 상품가 ${usdt(keptRef)}`) && t.includes("잔액 변화 " + usdt(Math.abs(change)) + (change < 0 ? " 감소" : " 증가")), t.slice(0, 170));
   // 받을 상품을 이 자리에서 받는다(보관함으로 가지 않는다): 주 단추는 미리 고른 것의 개수와 금액을 적고, 방금 나온 것을 미리 고른 선택 시트를 연다(R4).
   // 박스 가격의 20배 이상인 상품은 미리 고르지 않는다(이 고정값의 상품은 10배라 미리 골라진다). 받기, 확인 한 번
   const keptSell = r2(kept.reduce((a, x) => a + x.sell, 0));

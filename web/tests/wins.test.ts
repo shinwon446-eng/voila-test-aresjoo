@@ -163,7 +163,7 @@ test("문구: 나온 상품의 세 언어 키가 같고, 한국어는 명세의 
   assert.equal(plain(ko.wins.desc).replace("{n}", "2"), "박스 가격의 2배 이상인 상품이 나오면 새것부터 쌓입니다. 후기를 쓰지 않아도 쌓입니다.");
   assert.equal(plain(ko.wins.none).replace("{n}", "2"), "아직 박스 가격의 2배 이상인 상품이 나온 기록이 없습니다.");
   assert.equal(ko.wins.scope, "이 기기에서 이 계정으로 연 기록입니다.");
-  assert.equal(plain(ko.wins.value).replace("{amount}", "$1,000"), "참고가 $1,000");
+  assert.equal(plain(ko.wins.value).replace("{amount}", "$1,000"), "$1,000");
   // 배수는 숫자와 단위를 한 덩어리로 묶는다(중국어에서 "2" 와 "倍" 가 줄 끝에서 갈라지지 않게)
   for (const text of [zh.wins.desc, zh.wins.none]) assert.ok(text.includes("<num>{n} 倍</num>"), text);
   for (const text of [ko.wins.desc, ko.wins.none]) assert.ok(text.includes("<num>{n}배</num>"), text);

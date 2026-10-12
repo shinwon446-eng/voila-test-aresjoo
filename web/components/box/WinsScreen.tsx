@@ -11,6 +11,7 @@
  */
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
+import { Package } from "lucide-react";
 import { BOX_BY_SLUG } from "@/lib/products";
 import { timesOf } from "@/lib/openingFlow";
 import { WINS_PAGE, WIN_TIMES, maskedName, winRows } from "@/lib/wins";
@@ -71,7 +72,7 @@ export function WinsScreen() {
                     return (
                       <li key={r.id}>
                         <button type="button" className="v-itemrow" onClick={() => setDetailId(r.id)} aria-haspopup="dialog">
-                          {item?.image.src && <span className="v-itemrow-photo"><img src={item.image.src} alt="" loading="lazy" decoding="async" /></span>}
+                          <span className="v-itemrow-photo">{item?.image.src ? <img src={item.image.src} alt="" loading="lazy" decoding="async" /> : <span className="v-item-glyph" aria-hidden><Package size={22} strokeWidth={1.4} /></span>}</span>
                           <span className="v-itemrow-body">
                             <span className="v-card-title">{item ? itemName(item) : r.itemId}</span>
                             <span className="v-small">{t.rich("wins.value", { amount: fmt(r.value), num })}</span>

@@ -53,9 +53,9 @@ test("USDT로 받기 문구: 한국어는 명세에 적힌 글 그대로다", ()
   assert.equal(fill("take.cardNote", { amount: "$47.5" }), "카드로 충전한 몫 $47.5. 이 금액은 출금할 수 없는 잔액으로 들어갑니다.");
   // 저장이 중간에 실패했을 때(R8): 받았다고도, 보관함에 있다고도 말하지 않는 한 줄
   assert.equal(K["take.unknown"], "처리 상태를 확인하지 못했습니다. 보관함과 지갑 내역에서 확인할 수 있습니다.");
-  assert.equal(fill("take.ref", { amount: "$100" }), "참고가 $100");
+  assert.equal(fill("take.ref", { amount: "$100" }), "상품가 $100");
   // S2 한 개 결과
-  assert.equal(fill("take.rateLine", { ref: "$100", pct: 95 }), "참고가 $100의 95%");
+  assert.equal(fill("take.rateLine", { ref: "$100", pct: 95 }), "상품가 $100의 95%");
   assert.equal(K["take.keep"], "보관함에 두기");
   assert.equal(fill("take.doneTitle", { amount: "$95" }), "잔액에 $95 넣었습니다");
   // 상태 줄은 보관했다는 말만 한다(R2)

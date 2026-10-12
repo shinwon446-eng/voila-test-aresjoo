@@ -149,7 +149,7 @@ test("문구: 검증의 세 언어 키가 같고, 한국어는 명세의 문장 
   assert.equal(ko.verify.localNote, "이 테스트 사이트는 값을 이 브라우저에서 만들고 저장합니다.");
   assert.equal(ko.verify.methodLink, "블록체인 검증 방식");
   assert.equal(ko.verify.chain.none, "블록체인 기록 없음");
-  for (const word of ["배송", "정품", "참고가"]) assert.ok(ko.verify.method.notCovered.includes(word), word);
+  for (const word of ["배송", "정품", "상품가"]) assert.ok(ko.verify.method.notCovered.includes(word), word);
   // 서버가 값을 정한다는 말은 지금 동작과 맞지 않는다. 세 언어 어디에도 남기지 않는다
   for (const text of flat(ko.verify)) { assert.ok(!text.includes("서버"), text); assert.doesNotMatch(text, /[!?—–·・]/); }
   for (const text of flat(en.verify)) assert.doesNotMatch(text, /server/i);

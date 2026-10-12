@@ -17,10 +17,12 @@
  * 시각: 샘플은 "몇 분 전"을 씨앗에서 받아 그대로 적는다(시계를 읽지 않으므로 미리 그린 HTML 과 브라우저가 같다).
  *   내 후기는 목록의 행에는 쓴 시각과 지금의 차이로("3일 전"), 상세에는 쓴 날짜와 시각 그대로("2026.09.02 12:00") 적는다. 내 후기는 브라우저의 저장소에서 화면이 뜬 뒤에야 들어오므로 미리 그린 HTML 에는 없다.
  *   화면을 오래 열어 두어도 내 후기의 "방금 전" 이 멈추지 않게, 내 후기가 있을 때만 1분마다와 탭으로 돌아올 때 지금을 다시 읽는다.
+ * 편 건수: 더 보기로 편 건수와 읽던 자리는 방문 기록의 그 자리(history.state)에 적어 둔다(useShownRows).
+ *   다른 화면에 갔다가 뒤로 오면 같은 건수를 그리기 전에 되살리고 읽던 자리로 돌아간다. 새로 들어온 방문은 처음 건수부터다.
  * 사진: 샘플 후기에 붙은 사진은 카탈로그의 그 상품 사진이라, 사진이 붙은 샘플의 상품 카드에는 같은 사진을 작게 또 두지 않는다(이름과 상품가만).
  *   사진이 없는 후기와 내 후기(내가 올린 사진)의 상품 카드에는 카탈로그 사진이나 그 자리의 그림을 둔다.
  */
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Package, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { BOX_BY_SLUG, type ProductBox, type ProductItem } from "@/lib/products";
@@ -41,6 +43,54 @@ import { Sheet } from "@/components/ui/Sheet";
 export const BOX_REVIEWS_FIRST = 5;
 export const ALL_REVIEWS_FIRST = 20;
 export const REVIEWS_STEP = 20;
+
+/** 방문 기록의 한 자리에 적어 두는 것: 어느 목록을 몇 건까지 폈고 어디까지 내려 읽었는지 */
+const SHOWN_STATE = "voilaReviews";
+interface ShownState { key: string; shown: number; y: number }
+/** 화면이 뜬 직후 그리기 전에 돌린다(서버에서 미리 그릴 때는 돌지 않는다) */
+const useBrowserLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
+
+/**
+ * 목록에 보이는 건수. 처음에는 first 건이고 more 를 부르면 REVIEWS_STEP 건씩 는다.
+ * 편 건수는 화면의 상태에만 두면 다른 화면에 갔다가 뒤로 왔을 때 처음 건수로 돌아가고, 문서가 짧아져 읽던 자리도 잃는다.
+ * 그래서 폈을 때 방문 기록의 그 자리(history.state)에 목록의 이름, 건수, 읽던 자리를 적어 둔다:
+ *   뒤로 오거나 앞으로 가면 그 자리에 적힌 것이 돌아오므로 그리기 전에 같은 건수로 되살리고 읽던 자리로 옮긴다.
+ *   링크를 눌러 새로 들어온 방문에는 적힌 것이 없으므로 처음 건수부터다. 미리 그린 HTML 과는 언제나 처음 건수로 맞는다(되살리는 일은 그 뒤다).
+ * listKey 는 목록의 이름이다(박스 화면은 박스, 모아 보기는 고른 박스나 전체). 이름이 바뀌면 처음 건수로 돌아간다.
+ */
+export function useShownRows(listKey: string, first: number): [number, () => void] {
+  const [shown, setShown] = useState(first);
+  const restoreY = useRef<number | null>(null);
+  useBrowserLayoutEffect(() => {
+    const saved = (window.history.state as { [SHOWN_STATE]?: ShownState } | null)?.[SHOWN_STATE];
+    if (saved && saved.key === listKey && Number.isInteger(saved.shown) && saved.shown > first) { restoreY.current = saved.y; setShown(saved.shown); }
+    else setShown(first);
+  }, [listKey, first]);
+  // 되살린 건수를 그린 뒤(문서가 다시 길어진 뒤) 읽던 자리로 옮긴다. 브라우저가 먼저 옮겼다면 짧은 문서의 끝에서 멈춰 있다
+  useBrowserLayoutEffect(() => {
+    if (restoreY.current === null || shown <= first) return;
+    const y = restoreY.current;
+    restoreY.current = null;
+    window.scrollTo(0, y);
+  }, [shown, first]);
+  const save = useCallback((n: number) => {
+    const state = (window.history.state ?? {}) as Record<string, unknown>;
+    window.history.replaceState({ ...state, [SHOWN_STATE]: { key: listKey, shown: n, y: Math.round(window.scrollY) } satisfies ShownState }, "");
+  }, [listKey]);
+  // 폈을 때만 적는다(펴지 않은 목록은 브라우저가 알아서 자리를 되살린다): 건수가 늘 때, 스크롤이 멈출 때, 무엇이든 누를 때(떠나기 직전)
+  useEffect(() => {
+    if (shown <= first) return;
+    save(shown);
+    let timer = 0;
+    const now = () => save(shown);
+    const later = () => { window.clearTimeout(timer); timer = window.setTimeout(now, 150); };
+    window.addEventListener("scroll", later, { passive: true });
+    document.addEventListener("click", now, true);
+    return () => { window.clearTimeout(timer); window.removeEventListener("scroll", later); document.removeEventListener("click", now, true); };
+  }, [shown, first, save]);
+  const more = useCallback(() => setShown((n) => n + REVIEWS_STEP), []);
+  return [shown, more];
+}
 
 /** 별 하나, 평균, 후기 수. 후기가 없으면 아무것도 그리지 않는다 */
 export function RatingInline({ summary, long }: { summary: RatingSummary; long?: boolean }) {
@@ -276,7 +326,7 @@ export function useBoxRating(boxSlug: string): RatingSummary {
 
 export function BoxReviews({ box }: { box: ProductBox }) {
   const t = useTranslations("v");
-  const [shown, setShown] = useState(BOX_REVIEWS_FIRST);
+  const [shown, more] = useShownRows("box:" + box.slug, BOX_REVIEWS_FIRST);
   const feed = useReviewFeed(box.slug, shown);
   const [open, setOpen] = useState<ReviewCardData | null>(null);
   return (
@@ -286,7 +336,7 @@ export function BoxReviews({ box }: { box: ProductBox }) {
         <>
           <RatingBlock summary={feed.summary} />
           <p className="v-small">{t("box.ratingBasis")}</p>
-          <ReviewList feed={feed} onMore={() => setShown((n) => n + REVIEWS_STEP)} onOpen={setOpen} />
+          <ReviewList feed={feed} onMore={more} onOpen={setOpen} />
         </>
       )}
       {/* 후기가 없어도 나온 상품으로 가는 길은 있다(flow/MELT_SPEC.md S8). 후기와 섞지 않고 링크로만 잇는다 */}

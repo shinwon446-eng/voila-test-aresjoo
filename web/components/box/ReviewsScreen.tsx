@@ -13,7 +13,7 @@ import { useTranslations } from "next-intl";
 import { BOX_BY_SLUG } from "@/lib/products";
 import { useProductText } from "@/lib/useProductText";
 import { Chips, Empty, ScreenHead, TextLink } from "@/components/ui/kit";
-import { ALL_REVIEWS_FIRST, RatingBlock, ReviewList, ReviewSheet, REVIEWS_STEP, useReviewFeed, type ReviewCardData } from "./BoxReviews";
+import { ALL_REVIEWS_FIRST, RatingBlock, ReviewList, ReviewSheet, useReviewFeed, useShownRows, type ReviewCardData } from "./BoxReviews";
 
 const ALL = "all";
 
@@ -23,7 +23,8 @@ export function ReviewsScreen() {
   const asked = useSearchParams().get("box");
   const askedBox = asked ? BOX_BY_SLUG[asked] ?? null : null;
   const [picked, setPicked] = useState<string>(askedBox ? askedBox.slug : ALL);
-  const [shown, setShown] = useState(ALL_REVIEWS_FIRST);
+  // 편 건수는 고른 목록마다 방문 기록의 그 자리에 적어 둔다: 뒤로 오면 같은 건수와 읽던 자리로 돌아오고, 알약을 바꾸면 처음 건수부터다
+  const [shown, more] = useShownRows("reviews:" + picked, ALL_REVIEWS_FIRST);
   const feed = useReviewFeed(picked === ALL ? null : picked, shown);
   const [open, setOpen] = useState<ReviewCardData | null>(null);
   const pickedBox = picked === ALL ? null : BOX_BY_SLUG[picked] ?? null;
@@ -31,11 +32,11 @@ export function ReviewsScreen() {
   return (
     <div className="v-stack v-stack--lg">
       <ScreenHead back={pickedBox ? "/box/" + pickedBox.slug : "/"} backLabel={t("common.back")} title={t("reviews.title")} desc={t("box.ratingBasis")} />
-      {askedBox && <Chips scroll label={t("reviews.filter")} value={picked} onChange={(value) => { setPicked(value); setShown(ALL_REVIEWS_FIRST); }} options={[{ value: ALL, label: t("reviews.all") }, { value: askedBox.slug, label: boxTitle(askedBox) }]} />}
+      {askedBox && <Chips scroll label={t("reviews.filter")} value={picked} onChange={setPicked} options={[{ value: ALL, label: t("reviews.all") }, { value: askedBox.slug, label: boxTitle(askedBox) }]} />}
       {feed.total === 0 ? <Empty>{t("box.noReviews")}</Empty> : (
         <>
           <RatingBlock summary={feed.summary} />
-          <ReviewList grid heading={t("reviews.listTitle")} feed={feed} onMore={() => setShown((n) => n + REVIEWS_STEP)} onOpen={setOpen} />
+          <ReviewList grid heading={t("reviews.listTitle")} feed={feed} onMore={more} onOpen={setOpen} />
         </>
       )}
       <div className="v-links"><TextLink href="/wins">{t("wins.title")}</TextLink></div>

@@ -113,6 +113,21 @@ test("내 후기의 시각(F-03): 상세에는 쓴 날짜와 시각을 그대로
   assert.match(read("../components/box/WinsScreen.tsx"), /import \{ stamp \} from "\.\/BoxReviews";/);
 });
 
+test("편 건수(F-01): 박스 화면과 모아 보기가 편 건수와 읽던 자리를 방문 기록의 그 자리에 적고, 그리기 전에 되살린다(브라우저에서의 확인은 scripts/capture/flow-reviews-nav.mjs)", () => {
+  const reviews = read("../components/box/BoxReviews.tsx"), screen = read("../components/box/ReviewsScreen.tsx");
+  // 적는 곳은 방문 기록의 그 자리다: 뒤로 오면 돌아오고 새 방문에는 없다
+  assert.match(reviews, /window\.history\.replaceState\(\{ \.\.\.state, \[SHOWN_STATE\]: \{ key: listKey, shown: n, y: Math\.round\(window\.scrollY\) \}/);
+  assert.match(reviews, /saved\.key === listKey && Number\.isInteger\(saved\.shown\) && saved\.shown > first/);
+  // 되살린 뒤에 읽던 자리로 옮긴다
+  assert.match(reviews, /window\.scrollTo\(0, y\)/);
+  // 두 화면이 같은 것을 쓰고, 목록의 이름이 서로 다르다
+  assert.match(reviews, /useShownRows\("box:" \+ box\.slug, BOX_REVIEWS_FIRST\)/);
+  assert.match(screen, /useShownRows\("reviews:" \+ picked, ALL_REVIEWS_FIRST\)/);
+  // 처음 그릴 때는 언제나 처음 건수다(미리 그린 HTML 과 같다)
+  assert.match(reviews, /const \[shown, setShown\] = useState\(first\);/);
+  assert.doesNotMatch(screen, /useState\(ALL_REVIEWS_FIRST\)/);
+});
+
 test("후기 시각: 몇 분 전, 몇 시간 전, 며칠 전의 경계", () => {
   const cases: [number, string, number][] = [
     [0, "agoNow", 0], [0.99, "agoNow", 0], [-5, "agoNow", 0],
@@ -135,8 +150,8 @@ test("후기 목록: 처음 건수는 화면마다 따로이고, 남은 건수�
   assert.match(reviews, /export const BOX_REVIEWS_FIRST = 5;/);
   assert.match(reviews, /export const ALL_REVIEWS_FIRST = 20;/);
   assert.match(reviews, /export const REVIEWS_STEP = 20;/);
-  assert.match(reviews, /useState\(BOX_REVIEWS_FIRST\)/);
-  assert.match(screen, /useState\(ALL_REVIEWS_FIRST\)/);
+  assert.match(reviews, /useShownRows\("box:" \+ box\.slug, BOX_REVIEWS_FIRST\)/);
+  assert.match(screen, /useShownRows\("reviews:" \+ picked, ALL_REVIEWS_FIRST\)/);
   assert.equal(MORE_COUNT_MAX, 999);
   assert.match(reviews, /left > MORE_COUNT_MAX \? t\("reviews\.moreListPlain"\) : t\("reviews\.moreList"/);
 });

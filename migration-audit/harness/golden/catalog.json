@@ -1,0 +1,2744 @@
+{
+ "meta": {
+  "baselineCommit": "63445c7fa094125bfb1c60d7fccd17dd4005c07d",
+  "note": "기준 커밋에서 한 번 만든 값이다. 검사가 실패해도 다시 만들어 통과시키지 않는다."
+ },
+ "counts": {
+  "boxes": 334,
+  "homeBoxes": 320,
+  "itemRows": 32916,
+  "uniqueItemIds": 21007,
+  "itemRowsWithPhoto": 13094,
+  "byCategory": {
+   "audio": 20,
+   "bag": 20,
+   "beauty": 20,
+   "camera": 20,
+   "car": 20,
+   "collect": 1,
+   "computer": 20,
+   "dollar": 3,
+   "fashion": 20,
+   "gaming": 20,
+   "home": 20,
+   "jackpot": 3,
+   "jewelry": 20,
+   "luxury": 3,
+   "mobile": 20,
+   "outdoor": 20,
+   "pokemon": 20,
+   "sport": 20,
+   "tech": 4,
+   "toy": 20,
+   "watch": 20
+  },
+  "byScheme": {
+   "ladder": 14,
+   "physical": 320
+  },
+  "byKind": {
+   "cash": 167,
+   "digital": 23,
+   "physical": 32726
+  },
+  "byPrice": {
+   "1": 3,
+   "3": 2,
+   "5": 2,
+   "20": 38,
+   "30": 1,
+   "50": 117,
+   "100": 101,
+   "250": 51,
+   "500": 19
+  }
+ },
+ "constants": {
+  "refundRate": 0.95,
+  "catalogOddsVersion": "2026-10-11-burst-99-v3",
+  "physicalOddsVersion": "2026-10-12-physical-99-v1",
+  "rollRange": 1000000
+ },
+ "sha256": {
+  "tableOrder": "67fdb233f46f139d7357f53e2337a5386d27368bc13efec4e136ac9c7b425ed6",
+  "drawOrder": "3cb5c4cb79815b3f9674c19b1858d031028e609c146e4276fdbbb9685ba785d1",
+  "withKindAndValue": "5d6af693c4f89e6d5455014207b8518f0d558d7e5a029779e0106c6ae0b9e4d8",
+  "namesAndPhotos": "1be190bcb6e3a0230778d6ec15250a2a446bb2de6c71e535d75d034527b3c62e",
+  "boxOrder": "81bb2c22deda3d392f256c0f70e2d04c1c32b6c596c4ce6134e431c6a47d2749",
+  "homeBoxOrder": "0f3ed123b383daf4d1d0660e0a9de37d30cbf565a1cbd8909e8fdb8ff46249d0"
+ },
+ "perBox": {
+  "vault-pokemon": {
+   "price": 20,
+   "items": 80,
+   "rateSum": 1000000,
+   "table": "397b9fb5d1e1499806c3481989323f35fe2635d4a12dee564613603aa175bb13",
+   "draw": "16798427bab502e9304a05a3203606c1d6ee7ac1fb21f7ad58e886f0f3521996",
+   "values": "be2f380e42c3f22a2bd4873cf14393e871f88d9547401d16e592a883b246d916"
+  },
+  "dollar-apple": {
+   "price": 1,
+   "items": 54,
+   "rateSum": 1000000,
+   "table": "b8eff59d08dc945d252b9fed04a7a59b56a5cf07de77ce32cd4ed5dfae0bbf48",
+   "draw": "7f05aec3dca729e02b7c2f306110bd02c0e540490e07f4acb1001d95c4eb22dc",
+   "values": "427bbce008244cea80f755a1172008893adf63f48c536e29f1e0661d83351f56"
+  },
+  "jackpot-car": {
+   "price": 100,
+   "items": 65,
+   "rateSum": 1000000,
+   "table": "9464452c1cb330da1cb45913246228fac0b7315c92897d065fc3b3ee074e573d",
+   "draw": "97059064ee0e8f93ec70671196d443cd9e51a3d23e179dd52e2617f4b64ec69d",
+   "values": "c03088bc1533c41dceead44b7878c51e4b7ebf29ef7dc467abdbcbc53adca2f9"
+  },
+  "vault-submariner": {
+   "price": 20,
+   "items": 61,
+   "rateSum": 1000000,
+   "table": "3b81e752300c85b2f9c7a15c16486010620a503d368950ce9d1833bb6b8fb688",
+   "draw": "3290d30924c1ccdadcdcf225586bf556b23f6fb7a84e579b1b6c679a871b6363",
+   "values": "68e0eb6294343bfa1ecec25e9fedf6e9e48cccdded6da3ac8b7606dfd13dcba0"
+  },
+  "vault-handbag": {
+   "price": 30,
+   "items": 63,
+   "rateSum": 1000000,
+   "table": "a23aca509e743b42876cb11b5aca79f122b0fc672efbe78af6ad1bc6fd4b282f",
+   "draw": "7e7004d3d16b018182711fb8f4e5251839048ae1003eaa35bc5cec277c508974",
+   "values": "a31637c5fca3dc6798f6d278d0df199ed46e5eef12fee4304bce18d846b7f357"
+  },
+  "vault-gold": {
+   "price": 50,
+   "items": 58,
+   "rateSum": 1000000,
+   "table": "407be69839f98d3480665695ce06cc7ffd2cee178ae4d5e0945e3253bd970542",
+   "draw": "d4cb28160ffc4fed15f68d1a93ac6a33c68e2c553c229686b018f52656d9d4d1",
+   "values": "2119674d62f9b6691b8ccd39bc3402934bd7165fec05e37cfa66245eda0d141a"
+  },
+  "dollar-galaxy": {
+   "price": 1,
+   "items": 66,
+   "rateSum": 1000000,
+   "table": "3add5389d6f41b0dde3fd906f635c43e10360ecccc05423868c325b33a622179",
+   "draw": "1e3716278bc42f094f491729864b56435293e9d5cf506181233eb8cbabb0b43f",
+   "values": "17d6288cac13a63789d0a74857565c90d96af8fe3a49f576270fb69b8136b71a"
+  },
+  "dollar-gaming": {
+   "price": 1,
+   "items": 67,
+   "rateSum": 1000000,
+   "table": "b755130846b9ad3504c24589f2f127d309eb1e3992bcf35547b6ec165ad7fd71",
+   "draw": "5b2a35d70e2cdd9c926e7150fe55fd3671016407bfef024b1d8c9a29ca0e6f02",
+   "values": "c864608d0c159437d5921961f2293287491f7731be91c8aa7ebf921bdadfe196"
+  },
+  "starter-ps5": {
+   "price": 3,
+   "items": 69,
+   "rateSum": 1000000,
+   "table": "fe65408ab83316f3be8038dd0f78b5d614d95be07e246f1ef0b5f1fb5260d2a1",
+   "draw": "ddd78f1af73d4f6af9567e5ed18fe640d2923494527b0f8ee1a90bdf8c0d481c",
+   "values": "36040fe3a443291b8693c8fa06ed12e2ddf815bb24d2fce10228ca6c1da5190c"
+  },
+  "starter-audio": {
+   "price": 3,
+   "items": 65,
+   "rateSum": 1000000,
+   "table": "9403e8bf75c3e9b278ad2bb5a176ebc72499dfeb9234e0f01bedfa27f1ac080b",
+   "draw": "8dc235897e2bf731865838034948058e9b44aed6d86b9d3f990ee05257c2f854",
+   "values": "3c09cd41bf633348dcaf4ab022d37d16c8e37fdca88977aa6446ec7772eb55f1"
+  },
+  "starter-macbook": {
+   "price": 5,
+   "items": 70,
+   "rateSum": 1000000,
+   "table": "14da52ae37f11802b085be24321a549b885fbdc45e1a4fa6658ffda4f5fe25d8",
+   "draw": "66ff4fa05cf9a12c7ac7728ca5abedde6be99dc04ae36803a1708b851503a3d8",
+   "values": "4c13abf5b6d7ce10cec8a9f276382bb71b5353888efa2913aec2edda42460ea5"
+  },
+  "starter-camera": {
+   "price": 5,
+   "items": 65,
+   "rateSum": 1000000,
+   "table": "7690aaefbef772a9767f8c79d4f2216f512918af2642de1d7ec991dd80f29cf0",
+   "draw": "d46a648ae064d412b596f8484da721b80327c6c8d5686ff270d68c72fb18e4a0",
+   "values": "22f74f3e4452c4235cf1c6033c45cab780d2262393f9d0fe75073bd300daf289"
+  },
+  "vault-home": {
+   "price": 20,
+   "items": 67,
+   "rateSum": 1000000,
+   "table": "a513aff417a462c4bcbe72b6b343ef6206028a7a6d1b1c8b96931fde8c4028e5",
+   "draw": "65880008a78b2a5af6965346e3bc6e2aa044b2cd70790b160e5d6736d403a3ca",
+   "values": "42159ab4102eee564cce14d6fa0ba4bc71d168d0f2df454740114b601ba64572"
+  },
+  "jackpot-supercar": {
+   "price": 100,
+   "items": 66,
+   "rateSum": 1000000,
+   "table": "c5e47e27d21f73fa78de55224fb8e4c43599f0189c6bc83e33106403253887fe",
+   "draw": "491252a0085163c61cccf551214d545be4c2328a499935ccd96b12de6abff18b",
+   "values": "4ed897d4012062040043c6eadeb8de40253aeae23b888b37d4fbb2c76b8f82e3"
+  },
+  "car-rolls-royce": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f6e2855647beada98151dfb5a19ce2b1424e7c39b0a278d6462005eaa5af2ea9",
+   "draw": "0f2e0e6988a3f6b657c29dbfa956ad0ee76e2db88aeb7c731159af0891f3a0e8",
+   "values": "c8fd428724556e7a7cc16a2fa1e2b89974e9bbd39a88183dddc6eda3563d175d"
+  },
+  "car-bentley": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "714932cfc8f42df352ad87dacbf1eee2401939875d55f8d3bdffde7cb6a0f2bb",
+   "draw": "9be2d8d055e4f41473c4a2619321b1cee17a0c6d58611f7c814a65fa2f3f8072",
+   "values": "fe3a8a1fea707c9d60a67f07fd161d4275023e08de7bf602c7d6f19a05bd1101"
+  },
+  "car-porsche": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0d5df7476de0a8c7fbc710a1f7245f4d0df01e828cd9bcffa2533456c977c2d7",
+   "draw": "d5e1c6ae2371b63b8745aa9da88a92b3c34dbe6077562c59288cff8e95f1c05e",
+   "values": "d5af74f74612d216a6037df446876991bb0bb643bf563fcbcb172fd0ceabbd1d"
+  },
+  "car-supercar": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "585b32f787df6b69c33045c20ec944e7edc72146e8922f7da65c85487e5d91fc",
+   "draw": "66213c0186c8677080aeee70f4624bd6af757cb47e4877f5ccee980a41d65065",
+   "values": "9c7766db7d6a8f12102094af0261fd0dbaf4865085787e774a42da9245941c55"
+  },
+  "car-maybach": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "fef9596fbc21f3f5b3965b8dcea8ceaa0c78552231b7572f9e958b714c2b2743",
+   "draw": "6323fda139f4880186fbbe7723ca17ac8a7239541bb7674c37d59d26dbc75a28",
+   "values": "4af8fc946ddc6ed86182518744766860739074b911db7fdb78741b3c5ea56cf7"
+  },
+  "car-genesis": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "279133a533356c45c0609991ee80be1baa61d3d10926b7a6bf7dc48e9707aa31",
+   "draw": "2368b177206b91df0e9641d4b8bd96d5dc75ec5a139314d87b5a8c0cff41e4f0",
+   "values": "f1ddee0f4d37ad69538d5026732b75deb9246f4565ec20c3cbbf678e4f93ac2f"
+  },
+  "car-toyota": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "83d7aea1caa6e1006ab53bf07aca530b7e7fe30b65b0c5c165b1fbd235529ca9",
+   "draw": "c7bdcda54ce3030ef46cad86c884dff2d7805bb946b4d1d67e33b3326ea392b3",
+   "values": "c1bf7467fae9b6420c253b2a10a00ef2987fa7b028ca997490733927fbf02f7e"
+  },
+  "car-bmw": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "5e73b92867cd30fd4c95ef18cd820c8b0c124e46e851667281dde30e5c0f7c44",
+   "draw": "1b9c96695f1729727af3e3976565330dbf616c4a57fa7b8aa1c53fd730fe19cd",
+   "values": "9a2820d41f82fd1262a629873a70a3572c6a8c0f451ed67928a82e67b63369a2"
+  },
+  "car-audi": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "96e51e9dc103aff7f3583bb69206e988b870673c0cc8621fce80e64eb3f145a1",
+   "draw": "98ace6204321f1d76bd7d2e1e43ec5701edb6f7991067cae75d10e6bc65d5f4f",
+   "values": "c5d582bc8a017dd3bbfa590a258e57f0ff3c4abd3435d326f625dd7fce0d61d6"
+  },
+  "car-lexus": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "7a8110043e5fb26e1f4352f7ec2280337beb146ffd2a481be5b7c77f07c718ef",
+   "draw": "fea6b04ea1c1760f43475fea9cde32edffa6930e6c41ddfaf43f332efbfeca7c",
+   "values": "c11cebbe55d3b55e0496ab893abcdf38522709c5b8e1c520e42e7310415fcc81"
+  },
+  "car-land-rover": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "39f60abdb474b08e0dba37f97968591e66e7f547481750d08bc627d13cb9a38b",
+   "draw": "0968f9c9211254816480ac4233cdfd8f7e15226df610fa6fbd288f3e758db355",
+   "values": "6efe207feb48acf30952003ca61839b42313d0781835db337dda1574a093e4f5"
+  },
+  "car-aston-martin": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0f725e1325a7d59028b23922b639cebd3ba5479309781e3856f35ea106285c94",
+   "draw": "537cd7f420328f3537a6da443dd0b2b2435b54ef30b2a25c12716e113322520c",
+   "values": "85639218fa059f550996f35c09b6eb8518287870111fe6fa4c5be42c6037af1c"
+  },
+  "car-maserati": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "bea3694dc2278921dc697bab388a0d6e261fa117af418caed842e0c81d417424",
+   "draw": "6c18f403155879962afaf44eca3ea1dbaf6584eb32c66ecc82c433b6bf9cd378",
+   "values": "97609aebf4f67b79626ebe40990bf2e5cc78f68bf5f23e478147ea75a089dbbc"
+  },
+  "car-cadillac": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "7f243ed4dd1045836d8c552703f55c59fdb963d2f72cab156d2f8b2dc2e9d0be",
+   "draw": "8a98b68b1e125f6e94b5e1848017383839c7961cc773b1dbd88a7ef65559392c",
+   "values": "2fe293d9a1ca3dda72d70c6d153ee630bc5f909db0dd0bb8500522db2452c5fc"
+  },
+  "car-lincoln": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "1496b3bd7fb787ea64a7964deb2ec32e76bed15b75ba63ae6a727fe6a8e40297",
+   "draw": "461eebddfbb1b3560d668f80861f18ee5bb5e9c7d7a52e89009123e47611a284",
+   "values": "fd0195f43fd5d977fa9aa3d2468978798e8ebeb0451d30e7b3f1447767a72b84"
+  },
+  "car-volvo": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "758f66c1352e5181e1dcb36f82192025bd869b07dbab07fa9a9ef6e019db7428",
+   "draw": "e1f136819f4017a63dee096eb5d139633081ff647d27fdfeacede74651ae8ba6",
+   "values": "586f1bc281b02f1c73735be0eb3e4ca502fdf1b9a6929545d1b4bcb48ddcee6e"
+  },
+  "car-tesla": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "c5dd1e447d6be19475ade2866fc723e731da094420062c99c6266d191f211e84",
+   "draw": "e5bf69f482ad8627348ff05cae94f67fe27fbf1cee6af9c936e5bca1800cddc2",
+   "values": "c79138d7a0d923a62e2a227a798aec32e85c5844e40080d9d21681afcce47c42"
+  },
+  "car-hyundai": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "3220d6408b1e9d61a8130fddcf3a9f79082c728f764167ed30cab01bbcafb295",
+   "draw": "ea0efac84cff3fb8bf5cb36f952e77ed5c0d1d8d4b15097ff84bb8646c0880e9",
+   "values": "165fc71939d0b58b30bbe94be4c18561c9bd5fc2e6ecd3e58c58d4ad3d21a821"
+  },
+  "car-kia": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "20f52028623ac3d4e63efa79363420b4994f73a7a9a46347d9b48b37c1578c3b",
+   "draw": "49b25aad3c062064cb8369a264c616a226dff77008d4d666487da49691af6250",
+   "values": "103f8b38e95d0437f5a1a60867b16a8e4ee83da2631e4740218e750c788131ab"
+  },
+  "car-ford": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "435e390eb1c642025d6a4a82253f8b3aa45ebc75ee6cbf99391419dbc5a0009a",
+   "draw": "1372d7b4cccb2c2f04880e5f0ef6084251900d0e9ec6da36bfd695be47b2ee2f",
+   "values": "6016363385996c70dcc40f597a4e8f91348f02a122f52a38ff8ebcd524238e53"
+  },
+  "watch-rolex": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "605cd28a95466164ca1d9ac49849ae094a202a831c268a79a4aa27e3673513ed",
+   "draw": "210d444af3fd1aaf57a896ae8ffc8429771057a8619c7a7eb41ee3d458118d17",
+   "values": "6c32aa15d3e63e16526b15347e1b47127f9145bf6fb84a563974f4aa76ba6048"
+  },
+  "watch-patek-philippe": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "08e9aaaef50c9f1134978c7482da8d8d5bfa9905c795a3ed86a313cd5180e2c3",
+   "draw": "fc00b2cc3607a512ae1b1ce9b591888075845087d1562c59d1683492d9a1475d",
+   "values": "33f18f87441d6490aeee543ba7f80eb25b15930f31098e9d79a748bcb74a4871"
+  },
+  "watch-audemars-piguet": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "42c87a20bca6a2c294c0d806cf571fa61f688cc6fe8e97451d36ae9a848c908d",
+   "draw": "cbe1e45193ded27ba3ee7f327bcbddf6b72f4eca6904703646baa41010fe26ae",
+   "values": "9d7fbab78e73848de751811fd41fee36ecdd9411c5bc59819123aef4d7baee16"
+  },
+  "watch-vacheron-constantin": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "da01314571f34f661de1ae7747618257ef0a971e12a039a08e13ee4e88c8c345",
+   "draw": "9ced4bf6aad89c8082e0f1934972baf18af1bdc6bce96ae124ba0903c3e2aa1c",
+   "values": "7ccefd96038b9239a48a6c583277e8ecec677dda7ae8691c669f51446cbb8a88"
+  },
+  "watch-a-lange-sohne": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "772871de71dbf1565e04c31a1bc3723d717b97a06a26b85a10d09ad614601e02",
+   "draw": "bc6aaffcb8db5457074e20a103ed0d6b4857e44339c413a84f303932d3572809",
+   "values": "f0e1bcf43b841b265f9002eb2ea9aa34c7de10ab408ad422c1f45f3ac610a912"
+  },
+  "watch-omega": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "03eee96e3a932974ec3fb06dc7270e956ce5fbc7c9d68553b77cf75db18727c3",
+   "draw": "20dbffac028d28247a08d787ae1141ff2c00890ca2fd12b55657f5897a09171d",
+   "values": "23df334db80379a62730118c9b53c466f0b047e919cfc1921b34147de0336a4c"
+  },
+  "watch-cartier": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "85ecd442e6b32eaeac1fe27350b22006f5d030b790d686da40ed36a593281d89",
+   "draw": "6bf608bdbce9d004010ca276b08f91a7409795182ef8f38d0aecd929ef90b59f",
+   "values": "7a339228c331017fa82165493f14e9e869d74639540817b57318ec6d043db67c"
+  },
+  "watch-iwc": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "d8919dd3331af95fd2f98fac79f1e50e3f5bf679d141b934693f2f0da4aa9217",
+   "draw": "967791de39982009179705506496b0173cf89ef0fef4c991d7f3c94e4da46c5f",
+   "values": "21250ac9fa02b346fec7d8926a0e892784ef990627e47614ef1850d46c43e64d"
+  },
+  "watch-jaeger-lecoultre": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "52131faf93d9642b2db8564bd75a85512ebb21b1de6195997c2136ccaa67413a",
+   "draw": "3959f58f7eebd141206c067d49e4645dd2e5a6529a2f1e8b78fc036137456bca",
+   "values": "25c015fa082d9d1205c11268e4326f0048da0de010e18701c3ae9fbc329f6101"
+  },
+  "watch-breitling": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f8da332eb06dcee61e9034eb6ec41ff44ef92d8d4afe385fcd8be761635dca4d",
+   "draw": "5783ce730d49ab89be8f77739d91a2ccac76768052082573ce1376be7fa98259",
+   "values": "50833359d2ae80bfbb9dde1518ef39c539b75b4c24df6820bca5b63fc54936bb"
+  },
+  "watch-tag-heuer": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "5ddeb04ead72f3de6f40f41c9b1b830a49be3889a80a5d5f244df236b27b273a",
+   "draw": "c2f73faa30d1997dfecf897ecd5991e46b3e6bf560eae3d1d08a94eba049ea85",
+   "values": "a4463bff03dd7c6d85c132ad72d8389e9514a5c81800b4ef104207bccb59a89b"
+  },
+  "watch-panerai": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6023517f4797e3b38b7b7ea19a7da74f2f3cb8341b4eae6fcc0e51032965d5d5",
+   "draw": "073689922d79207aecc4d37bfe7a69be70a10ac3ca1311dbdba0a7b09d904c8e",
+   "values": "b87f05ca6e06422b513ea9a3ded650f327ed82fa8f3fb4df1ef5bb74ddaccf03"
+  },
+  "watch-hublot": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "de900c83ee70463d6710d70306c046f6b4de124b6d77769ce6ac0591970e28cb",
+   "draw": "db1fa2c77a4a6317d3fa96cfb7b2b15c79e328f9184e0a39b37ab3ecec4df8f1",
+   "values": "3259a71316953205d5943cb2743b630ca406f32dd8ae1def7085d432d4313346"
+  },
+  "watch-zenith": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "213d7c3792b70c58342d627c802525727287bfab55e64e751537d148f2e6db3b",
+   "draw": "33b3632f3ba93ec9202fdad67ea21668d5fca2f18bdd4ca67fdce764c796c341",
+   "values": "4608672e79e836a71e6be4c1d31863073e241c82e5564fc722bae5e6a522bf24"
+  },
+  "watch-blancpain": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "bec576ef0f030ea0fb7ec9f6e94cd7df5e864d45206fb0dedee3c7df696530a6",
+   "draw": "cf14c7a7285bba8414537c2f0c6873c418ae4720684ff758650a07e9af9ada1e",
+   "values": "6f2c49a1d912f071c6d0f381b7db30543015764363c0945652f00f21bd4ec1bc"
+  },
+  "watch-breguet": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "1064ba2cb227bda993482c6fcec407ac97a2df8c75f2ac94c926348248d8e0b6",
+   "draw": "63b0f457eea03263b97588fa0ee1b862d966845debc0fe6935e5245f09be3310",
+   "values": "2cb48e5d7ae3274db3d3246547a238856343fd9ac10365478b7c53fa43518dd0"
+  },
+  "watch-grand-seiko": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "8c6fc843b2919756ba2be43b67b5148b9e1b3b9f68f18b57333050a8b6f382f0",
+   "draw": "d13fb5411d05b5a983fbcb52aae391bb4f9360d192b4b7b8432fee4e814d9237",
+   "values": "f5c73d1cd354265a2e80b64e0a1944efe74f34e4df61d191482750344ad14630"
+  },
+  "watch-tudor": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6527350f87f3f6c96e93bdda02d3bc1cd0edad7f7528509c82711808eb6453e1",
+   "draw": "30ba8779bf7b7890fb8aac5865303ba136f6dccae3a506a4dbe904108c8b91db",
+   "values": "c23d3e8a9fd5d20fa6869a1bedc3e252c5cf336a1e13410c2a2ca2ef3edf1b16"
+  },
+  "watch-longines": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "2683e301da953d83020536e4900a2bab9a1d7fbea7c5eb96317481b4df8ef6bd",
+   "draw": "e619b0a8a662e11b1851a406dabb257df1c7a4237b066853019ccef1f2ae645b",
+   "values": "1a6e557442692814990599bd02ce79f0e9103ac443068e8d054e5cf5c0aa4ce3"
+  },
+  "watch-seiko": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0c90bbe42a84977b7086f77f3d892bfce28e7437ae1535c087e90d8fc0c331bb",
+   "draw": "45b60ac500662c8d454c00c76ad6e9ea6c65eba548b05b6f2453f61121a42285",
+   "values": "8d1ac55a06fa72711d5bb8f7ea22e4679ef3bce8fedeb947cafc39d6b3d5e63c"
+  },
+  "bag-hermes": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "45f12ddb0387f87a10d3dd9e84052fca20acd0ef1f40fc277195ab0516256771",
+   "draw": "7ed24e4e99e892089475f644487c495d85d58586e947de31d51120de6e5695d3",
+   "values": "24096cf787d99bd5374bc68e3ca65efd3e665935b8391d1d965f19ffdb6133d0"
+  },
+  "bag-chanel": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6e9cc8306769cdf80fb762fe8b06a6b79e8e56ca3d5c6b78a3f863b8410630cf",
+   "draw": "9f9e344fce83134b12ef98ff49f9ae28cc3c13daa221e13974711c12bd8abc3d",
+   "values": "a0376ebfb86a74571fbfcb820dc978768abd069cd3f7ca57b1bea1969f18c270"
+  },
+  "bag-dior": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "64f7f2de63417a33918178329a3cad3f2587cda52e21a86b11a7ebabb65d8500",
+   "draw": "de551c28391119a80d1dfac3449167e6700e3a1123f7e31982104215b21d7016",
+   "values": "0cb72b97aa94a3601abbbee506b45b14e28fa5895008b87fd6abd777037a91c3"
+  },
+  "bag-louis-vuitton": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "676967bfd04ed38c8e58b16e0cf6d818b12d9db2a281ec46de939b280c7b54f3",
+   "draw": "22d35494b4f02d4e1d1aa49a844b72a2fd7d0064f7c9321f925d802a89240947",
+   "values": "3369406e1e43f2becf3deab404910ec49a2a2b7c952a1297df0ab1a1bc4a42da"
+  },
+  "bag-gucci": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ab16e9a47e95a35e3f176b9815bb456991c52b08e049d4fc4a4e8631053510e4",
+   "draw": "441ac2e7cd46719f5d52cba8ca218b0b18a615ccf73db1a262ce9faff1ef9ccb",
+   "values": "c8a3ba8f29e07bd3274d8c32970fd2dbef26252342b27efc6062e36642fffcf9"
+  },
+  "bag-prada": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9f500ce62216df6fe81b879630b86986fbb4a5ee41cb0b76a73c6bee9edd1644",
+   "draw": "31442055bfdf8f40c839a0867624723fdde81d8b070e69c7785338a575bf523f",
+   "values": "e99073450f960475ea54b27b0ccf757500028a355deac2b9c8b8b81035718f85"
+  },
+  "bag-miu-miu": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "28535df7d3eb048a8775c854e45a7363b72aca3065100e91494d003001b41c55",
+   "draw": "f74871038e1ec4404de1d45b116b2f085d36ee8bab44b34de0d3f3785187f05a",
+   "values": "51b746325521bd0e2bd22a7e00d3bb837b6eea7b3956de0a91341b99c1f451e9"
+  },
+  "bag-saint-laurent": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9cf5617dad40d212207dbfd128b550cb6cc2b843770afd420bfce0daa342a071",
+   "draw": "d7c33ee66e1d8f0d95b2a4dc8f34fca19273c76d84503798ed95a2dbec97baad",
+   "values": "d8ebdc0ffa3342104fe7902d465231ab81e9705871c6c0eea923662b20148b0a"
+  },
+  "bag-celine": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "55bcb73ad6ae8d30fbab0e4d577afbdd6dd1874eb25fc0b71044c151dc170a49",
+   "draw": "c82185f1eaa92fa2bb2a511dfeecc998fc3b302dfd3f130bb42947f3794d66cc",
+   "values": "6f3a5802207186d67b3e0bb7289af1a5a58c6038aded46f65de9d0f6d9666388"
+  },
+  "bag-loewe": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "de53a1c73684005918893c9526ad4594dcd61a6bf2511d5913327984cdc1fd4d",
+   "draw": "39b6ea6f1baa4adf9ff2458400f329c5495299de40defb9db136d0ac84150af7",
+   "values": "58bbeacaa3a0435b4f1ac9dcdbc631d0bc78c5e92de2f24cbcc6dc9c4dfe9822"
+  },
+  "bag-bottega-veneta": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "91ee7617e2a7ac83701f8ab7a70c2876ad0ef6fbfe9b3fcd2e42c4f495c1f731",
+   "draw": "405e92cf25ecc6fe52982c68c505ae012779f875422fdb8aad6123eb42ad532a",
+   "values": "d3fdb1031d741fef3e78924400ef898b1b3f8b62fd761666e887e5edffd9572e"
+  },
+  "bag-fendi": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "456c9675904a451be08548cb2f5b17f215febd9b1792a909d40fab9347de23a8",
+   "draw": "9c2681dbab431fc7c3fa5de36c9b65d35a4ce9c17979da66cd5ae52919ccc19c",
+   "values": "ef19f5413dcadfb38acc9c033293bed6cd6d988515820d5aa9674ea04981e979"
+  },
+  "bag-balenciaga": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "002c95ea3c60c360d3b93c10ee23c29193ab9071c46b3d7adf7a5dca83d3a53e",
+   "draw": "53eb4045ea38f7dab0b51f135d1a43c4bbf6cb3c2497054a44c664ca561d1e50",
+   "values": "3414f3e6ae28a89bd0fecfa6a70bcd1c9bcc23ca816714a014d1f0f0bd2441f2"
+  },
+  "bag-givenchy": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "74e642d0bf2c876c07a451065d3c8a2e344b10a7bb319e03f5981849768c8149",
+   "draw": "0cc51752927aae93aaba1cba5f454532110c1cceda9fa77397717fe0cd306b60",
+   "values": "a45b1a7862b075357759ef1d6790fe0f3bf065560edcf78e2160d767299b55c9"
+  },
+  "bag-valentino-garavani": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9aeccca56ed7e941f6e615a13ad0375dd4c333ff6713e6f861ef63ef3392f42e",
+   "draw": "565f51f5b456a3b7d2929ca87370e566e9fa59096e2dfb5b557c8d0fe0b8ae24",
+   "values": "b990514321f0711c58bd6a637acfa2e96ec2abf326d357f237d4e4e18fd096b1"
+  },
+  "bag-ferragamo": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "a1914645c2255a788cc408430cda44718a7e9d928b42bff11ca66ac4530a665a",
+   "draw": "3bf78c8dddeff0087ed703325b96873c9d9233c990055f393262fb5d3fbb7d3a",
+   "values": "28531f601693ddaecf87e89da2712824ab9a86c59dfba13fb6896e16db3c312e"
+  },
+  "bag-delvaux": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "5f62020be64d99532fa926cb019fc1d7e14682edfc23c87f623fcb7bfbe92bfb",
+   "draw": "1026083e5b9c3a4ab6ed68fd370d394417693c91f11e4cfe0da76a58ec222ecf",
+   "values": "807beeb88d0b61e6805085ffc67c11fa06c6e328391347a1ad7139e41d058bab"
+  },
+  "bag-goyard": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "e5f77fe517c261e35973cfe80b1ceab278fcb0c185dc51f3c84280049e4789be",
+   "draw": "c89195864e15dbfa1972353f92229d91000c7f148227e324d7b755df71e7f6e3",
+   "values": "de440662316500f63d32741d2b5ed969afeeca28afc6225e12ea5624f37dc9c7"
+  },
+  "bag-chloe": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "26a7e5ac9988c55c2b3c82af98eda09cfee2b2e8edf55ebb4be465c6b3685a6c",
+   "draw": "316a4e547908f51b70b3993d030c943b7e2f57bcc99f12dd207093b7c9298a8f",
+   "values": "52cbb774617e47fdcea7f2e37be780b9a40ea840ae23575b2cd138daa252e63b"
+  },
+  "bag-mulberry": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "a8e571aa771b3e4a4f82a0123e25023ec9253a8120a0fd1a8d9a866b6431db92",
+   "draw": "0d5b6b27b192574b1b3f34ac9bcb9f568f54388a1f681b1bd5815c8da7047ca1",
+   "values": "82dda91edb42bf68e599ad9f44afc748d9bf2e46909c836df2e429ce0dda44eb"
+  },
+  "jewelry-cartier": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ef1d6a6763b8a2c703a20f2868374c8c7ea017d9468939e8e2453a48bef9cf02",
+   "draw": "db821ad1a451dc7749643602057ac31aa7d90ec6373adf6f02390d499ee19a36",
+   "values": "e88a59bf8fd8d45db5624e7f3e9ffdea13912f5adc46f811ab832f4dfe46c8a1"
+  },
+  "jewelry-tiffany": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f3ffabcd928360747dcb57d1d144df8a926ca41fcce9869a1ce4a6e8c0facd86",
+   "draw": "b014d09221ea0000818db0ecca13cf7ce3453b3f3821d00b127d980a149446cc",
+   "values": "980ff90393d741c6fd09021debad70778dc83eca896022ae6fa9e5e816a9ccf2"
+  },
+  "jewelry-van-cleef-arpels": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "2f0ecdb1b4f22684be2da04a71c868038ca988ef8632036929407a99dee86d0b",
+   "draw": "d49c49ae2ca4b56a7497c92f19643e1d974e5d2af9ecc7ff176e0b893913a1a1",
+   "values": "ca8a3fa9f688c004bf9bd81b5f585a918de208acd079c7dd30a088c936410839"
+  },
+  "jewelry-bvlgari": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6731c9be6cf9eefbeb79c37e9cbe0276312d55e7b7c74d9b4e66babdccd14117",
+   "draw": "fdef8c17c055a33950f2472d904442c722a287a99efa028f8c84c1b0d6b70234",
+   "values": "2177fbb775651303957cd39e6c4fee2d1a5eb47567a56411a99ce94d21d662a9"
+  },
+  "jewelry-chaumet": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "a9bd2cfd796c062c92e64f56723463ccee771f3cdddca09155361115675362bc",
+   "draw": "191a8636017ec0e40fafe58e4444babf425346180331533a34f30ec36fdccfbc",
+   "values": "d757742c4bba8cd5a669f7963176816d869ef8f3ccd411748f6376ac4cf0d8f8"
+  },
+  "jewelry-boucheron": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "7581edee65bcbef1c5fafdac2c71f5570d2b992019f2732534bd2e46d7eb5fa7",
+   "draw": "cd019ef322a77397573c3b1f02f2d9c994909f8981873c6c47b01c3d4c2f1a1a",
+   "values": "eee646320998c83d993710305afda32898251237f5eb75f68757143c74d9036d"
+  },
+  "jewelry-chopard": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9cae8fadcd816a87c50e2b1e090f2069024f5cfd6df89b26109ccd6e11861dff",
+   "draw": "3e4e2fbdbf02237b845ca6a8b516ef06eb31e91431ba74f85ed433890ee8efdf",
+   "values": "7e2c00f08fe08203da2110af356135beb3a0196d0144e6f3d13adcee2c962283"
+  },
+  "jewelry-piaget": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "be6b92aa1f38ff94e4aebc3edf35cff52b8dbe88c042796d784a836bd22dad99",
+   "draw": "3f9eb6b9037e7eaa27afcfd240f3e6b4b4f32792875a2fab043d5b1b0e088fb4",
+   "values": "1b4fb091576701c472a867ac48315b3fe8331638057ea124b3cef4a00d03d63c"
+  },
+  "jewelry-graff": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "fecae9736af2d8fdfbfe63f4a4bc9872eb7fecbd5d46f30226ddd39a3e0632b3",
+   "draw": "c20455731b6431725118b5a4b1c927aa41afee390d4fa01ca462c1c8f9bf0aae",
+   "values": "7ae0a9bb12ccfe6bf6a856d59e76dad2faa06b47a6439b03b02949882ae97037"
+  },
+  "jewelry-harry-winston": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9959afb9378e2cddec6a0456dbd4647448a3ead653a9b1a28e790fa9693b2fd5",
+   "draw": "7871a9f73f42f05858af06103817409dea484058f7ddaf5f88b4bdc89e06bd08",
+   "values": "763f849ae65758869e8ae3ac060925cc2740057ffae95b5a98ceec567d04711c"
+  },
+  "jewelry-messika": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "11e702f6af4345d9cb42ddcc209546f0c0989bdf3c42de70a2f25d913a155d92",
+   "draw": "6c0c65686c5fdc305efda0e56737142e0d81af867bc4ba41f92b729fdbbc3912",
+   "values": "d153496dbe404da067006edc7f70822477045e0118352b17b32c479b46c5cfdd"
+  },
+  "jewelry-fred": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "937dd9ae4c0cfe989070aa51af68b37a67ca22d5019c40b12a6f6fc62e1fd6a9",
+   "draw": "e03ab8c158f43e9f4a392ef95a5c3c436c13ebf0cfa29bb1e32ace5187602687",
+   "values": "94bf544850521500509eb66ab01fbb67bd75468c40c6c7c9f57da0e3191d57bb"
+  },
+  "jewelry-pomellato": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "435f52d433d241de236e8ede0ca491227fa7646982ce1fe29b95f5a6395fcac0",
+   "draw": "cdaf1b279451eef99ebc23f28ba21cfb153e17baec93be122075cb325d791c0f",
+   "values": "4e762f8979f1b95e6ff988710c80de36a25c8d8e53e129fc38849ead54f49dd7"
+  },
+  "jewelry-buccellati": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "745fc9acc26315c2e0b8d9716087fb1e72a6fc6b8c7a78dd33be1d86677bc049",
+   "draw": "a3a9e7ccf4b8e17a9adf95b23f7c4026138bbf50a2ac4e50323ec98fc18de2ed",
+   "values": "9a24c06d7633cca5f4e6cffd341f944a17796bceeba618ae60be7c98f18cfd0f"
+  },
+  "jewelry-damiani": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "86dddf429ed89eabdfa3b87d49a01499356628fbf5dd28d06e26a7162a40b335",
+   "draw": "d3f62ff6e76bbab22376e195e87660556895c5624ada96c88863d916a0dd87df",
+   "values": "59d65765fd0018682a2959680be95bae65a3e0e3839d86b3cb833f72029e9f7c"
+  },
+  "jewelry-repossi": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "351fae82dc367561362d31ee2654410f021ab6403382cf282fe0dba03e36becb",
+   "draw": "01b0dfa7eeca9ee59b664a1a4a49913b9f00a7fed2352e838759c2273cc9ed98",
+   "values": "bc7e788168b20f9d4351a6961bc2f9aed275600f028fb7b9509eafa14f47b51b"
+  },
+  "jewelry-tasaki": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "cccda15550a068f97f4a12c26014dc93a670a3d7a8b80f47740c328cb3ed15bd",
+   "draw": "9bed8e8ebca439a1102788b2182129bbf8b78be59915470c6de9a0e66cfd812a",
+   "values": "8ee11c677063ccf23018a81cdcab0d0e114af5a7b17c4de0d7b73cd10ec2bc77"
+  },
+  "jewelry-mikimoto": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f46328aaf038b1be71cadc6475ef7d26fbddc4967bd5331733b508be74d15388",
+   "draw": "f6a17686dc970a184d43976dbb4e2335df2dd9636494770b80194a2f4b0d341d",
+   "values": "b4df67abc9b9a81ea5636750bb515609caa93d68e8c90a8e67a0f9616ca195cb"
+  },
+  "jewelry-david-yurman": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "b563634c9e4a9f2bbf36ca29806e9b9b8962cfb4aadfe178710228d78560a155",
+   "draw": "ac5f3b156bb9537836b52e5d7d39eb3dd30f2b60e5eae27e2823e133fbf579fe",
+   "values": "603a83e7870b1041805bf3ac17f90f376e76ede16f9de9c14bf1758d910693b1"
+  },
+  "jewelry-swarovski": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "adb599090e34f06e1c107404266e8138b4ab4c09753bd8190e2ff2075a530724",
+   "draw": "b78134dfebcfd71c0e3ab0d73ec1011984a0c362bc27535fc0cfbfe1f05854b1",
+   "values": "8aa8624b90e0ee7656715ebcdbe13a7e5d17fc3e317a08d37f8f4d51a7e309db"
+  },
+  "fashion-nike": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ed6be67238cd23ad8214a0ebe436c6b100256b9a0e626d34e5bd6c3844227249",
+   "draw": "7048254b19f0935e73e0c378ffb1c591e16b18ced3ef3e1d6d56caf75504eac5",
+   "values": "c90d6c972b8b6701592b8e85d9c3c24c7a6066a4cbf4f94ba3ad95e8d200cf57"
+  },
+  "fashion-adidas": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "fcab903f5fb1d9b7a15b96e654c0511f87628b9c380585a67d6bb03ae05ac677",
+   "draw": "c45f0c48a00a27d490168cb7275ca1503bae744696befc333a05d4f0e492ba9e",
+   "values": "1ea066c1bf222bac4b0ac8a98c2c93c885742af86fc595db0de521d5c145553f"
+  },
+  "fashion-new-balance": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "d59911469c9ea47a2c4898e2862659716107af97dd79a97929797d3ba27086bd",
+   "draw": "60163965b3b8ac8135717011578b6bc418ecce90c5dd0e66227710b4a5905635",
+   "values": "b4521ab5bca2e6abd3aed62f8839cfb1b0aba7e7537ce5df16f8db62d59b3128"
+  },
+  "fashion-asics": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0da6c0a6fa23b75dd0e5225c13a93a962f6a7f8fc28d6b4edcfd2dc57730ab39",
+   "draw": "0acfc2545353b2e9c068b3f9ebd5e2fac36baa7433b792a3fb4a2184bc111356",
+   "values": "08221f0e326eae09224916eb0484c50a2829ef2cf3056bb2c40a9a7dfd44ff2a"
+  },
+  "fashion-salomon": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9ad541f4e3ea2b67747e5c9af83ba704b180468d2a2ae9b591531dd188039bab",
+   "draw": "f708678bb29bd2d506bd2d6a66c282ecc434e4bd9a64c673988c091eb67cca00",
+   "values": "dc7d91a3f279dd01de3000ec5c2b3c47e65f2b99171c8b48e65317338a6561e3"
+  },
+  "fashion-on": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "bc85410424d0e8dfa0b99af8aa39754af6a969a0f23599295283404b0cb80b76",
+   "draw": "2cd1c918a2a12525b360b038828b9635d22d61465b62602a90f6d65e6b48fdf2",
+   "values": "b56c0fe9e2580d4e7e16ef7d6c9affd1e2aa6ba91ceb9ebfd231abb5da695e6b"
+  },
+  "fashion-hoka": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ca13180f2671873056a158d3072a3dc120ecba6fc4bba8c52b7955943bb2b703",
+   "draw": "9df44b758c6975b4bbc3b2bd894b60d0605b9f65a71b4ee5efb44610cb9237c1",
+   "values": "211e2e55206eed9804da5e410f3fce8b2c5d0152fe3a3166dae59d65d22f37e4"
+  },
+  "fashion-jordan": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "b0c924ebe36e17c87576448940ed91002e1fa7ecc339d1bcfce541e899f0d440",
+   "draw": "e4fa3bb7bb8a06c1a6691e07dfade684264605d893ec10ee63070822b993e23b",
+   "values": "c95efaeb2cfe3ecfcfe1b4e24a6603c07c616754a19a3b5b3541caf62d4248fa"
+  },
+  "fashion-converse": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "c96041e0d6dc551d58c5e2d9b3935b891a2299e9a40304a093d9f13b4fd1cf0a",
+   "draw": "8eae5e6c3deb5c5df6af4a4268c7a7e9c0f686fbcb85204413d7c3d5590d4e09",
+   "values": "451d3af20118b72dbf2175971f2307f14dab5b46cce1f4444572c33478059306"
+  },
+  "fashion-vans": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "590c504d577c13fee7b380d720b03967090b9403c3e16a8ec10d5b4afc27cea8",
+   "draw": "15e5350bebaa1313565baccb1022bdf949b2922f964f2271a457680ec6fa1a05",
+   "values": "b4698b73e864674a2c73e9cbfcc4f93530500d802db80d2f9b6f0241152d3f14"
+  },
+  "fashion-dr-martens": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0476ccd36c19ec9c5212bfb5610ac4cf14226f0ff6bd19e8b142934105a69e2e",
+   "draw": "f8466d5b2d8c93c0f95d166d39a936ac4ef3e4e4a9076bec65a574b78bfce969",
+   "values": "5b7497de7da66c5610c15c28776f7dfe1ffa5923903e408df64c5062aee707a7"
+  },
+  "fashion-timberland": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "330418d1cda82588172b1a3d0a66686f025579162f516c5fed61432fde93db0c",
+   "draw": "1e3bcafef80c90ced1234832c06ae2fe6a329ce54f1f3b8c90c15184461eb064",
+   "values": "922074a29862b4d0948e5941b13fce43af1e570d0c65a4a35bb26511306ac830"
+  },
+  "fashion-birkenstock": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "4f0db7af7080c6b723ab54a9d5a6f85f7e1390b782fa8b78f197acee1f873787",
+   "draw": "47a0771ffb88aeab4749c7adfeee9aaf624e91fe7856b5267ef912cfdc9d3694",
+   "values": "f4d04f6ca1d1098d53ac055d241a9c64aafbeb8eca646cd23b0b4ab48f7abc63"
+  },
+  "fashion-ugg": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ed7ddcbcab68ce661499436695a65d2be03d7522d7c820070abf239d12341084",
+   "draw": "16bf535e94ad516558d29d6df07479f3d3f2ee285627d965995c509744ddbd43",
+   "values": "9461367eab560c614c3f701a7e6b52b6dd47810904202d72048513f431b965af"
+  },
+  "fashion-moncler": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "e7818db6d6cbf781d18218b2d1d12818f1c93976681a9a041da68a0373a4590b",
+   "draw": "c09d4645338359e5a605c28cb162cd97303d2ca903f242bc58d55a4dba5829d3",
+   "values": "1b8b850a3cd7bb1f62ea92f90035580cd8566f6636d0d8bc4bf297338dcbf2af"
+  },
+  "fashion-canada-goose": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "599d5248244ff962d8a0e3c5022f5b438eea0beb4d990d0f09cbafe15d58e894",
+   "draw": "fbcdcc0af45635e1dd9453795d6be17ac881a9e3e9739e3c1880c2c68d08e945",
+   "values": "b24440fbc2f1180a03f5b3a5d782cb439b3ea777c908175664ae3988b28f8803"
+  },
+  "fashion-burberry": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "dfba34f3b1c1e16dbc37d99ac11af964e88a5a871329c3835127f69185104ec9",
+   "draw": "22dd4c8eaddda508d5ab293ab0925c2c5ef1b74c92d4a903ec8966fa29f13274",
+   "values": "fb1b8963a382c45fa244ab5d870e68a2e33cd13a948184768b63d559ffe78502"
+  },
+  "fashion-arcteryx": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ef4b4f932992a0220e118279aa6a1fa6f2d775b040cdb81ed4328ed9b831c475",
+   "draw": "b1a60a0906fdce3a8fc20659bc839b5d41a7704aaf0fd7ba1c412b9c24958f2a",
+   "values": "8156410121c54460282bbf9fa3ccd384a9f3b80141d19f26ce6d7ae6fd76e539"
+  },
+  "fashion-the-north-face": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "244d51b0288ab2e4c6d94b88a83393256c169e284bc629f7a0aa402b4030a83d",
+   "draw": "9418c13ce2f5a164563187d0e8777302ef128197a46e03f5ef8cb743a579d424",
+   "values": "7303180fc9bf207f3fa33fbe7355ade10621d46d49b84ffe0de0bef1c984108b"
+  },
+  "fashion-patagonia": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "3cca5558c143a7bb479d8d4df4ac1cf0cfb5edcd185c1454f6b281c04f4e1ba9",
+   "draw": "f756008206c15907c3203967d5b95459e7bcfce95c152cfcab404b0eaf242af6",
+   "values": "160a44276aa7c82dc8503d911c89559ce647ad33571e579d1078bfe9c55c13f3"
+  },
+  "mobile-apple": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "847fbcc490c2dbb522caf3f42571b8260bb56052fcaad92b976158aba5dfac1b",
+   "draw": "9dd50838cfdf19521634e6be3271cd093e2b0ef1a8d8d1c66624ea8eef762976",
+   "values": "d614170a4c78bbdcfa95a2ee01bf25d2d1c71aa07752e4897679a07458e335be"
+  },
+  "mobile-samsung": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "8c4449812ea94da1a299a995cce611dfac9783eb6c1639c0da8cf0d70ca3f043",
+   "draw": "a33abe7964a6bc01b3dbc320c113662b0315e058c7a36620668b10c53f4c2537",
+   "values": "bb340164aeea84a08ec793d25cf97ce5e74ccdaba21db1cc9a4e54cf28945067"
+  },
+  "mobile-google": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "27840ceb18f2f1d91a55ea9e2f8b9f571c5bfc2c40821808c29e054df5dfb529",
+   "draw": "e9b1baa4dadbdc638de43a5390812d4275a08870f8f6a60a8bbd769de25c18ac",
+   "values": "355099a6aa4608b5e800e457ec4617442789ffd65ebe6030373fd184f715c8d4"
+  },
+  "mobile-xiaomi": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "fc193935f0e66ce0a37e6dae5b7d458b65711798208e15363e74bea3978d5d61",
+   "draw": "d9c91a375810828d4f56c3ff99907eea7f32f103a4f64fa0da08cb9d76136636",
+   "values": "c5986ab587836f24a61a01b4e5e0ef9d8e7a1b4470940fbf9c67bb69f5ca0863"
+  },
+  "mobile-oppo": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "c283319576d8070af3ef827ef326ca8ec5e520ca528fe55b61a4c88b06c1c274",
+   "draw": "522e3e5855a2247f8b228cbf0130d439c443b5a7ec981aa7d019b1cf9abb32d5",
+   "values": "1788b5fe44ec158ef97efb08b5dc836d3867d70565abcc6bd33dd4df71cb17fa"
+  },
+  "mobile-oneplus": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "c50499042ecb00b6eb5be8b797e394bc9364554dec6ac2750119bbd59bda7120",
+   "draw": "cb4102fdc419a6daa6526165c0c5312d7d879ae4839963e810551cc156384981",
+   "values": "2f2dedb79dd613f1d0b4cc51b550d5afe1d60870d660eb5cf41dff4a36bc726c"
+  },
+  "mobile-vivo": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "28197ea47e9979e7078c31a662c653a72a1dfbd0893b437c275806442850d0d3",
+   "draw": "4249318c3c7f3c1eba9671f132e9b530741a3daecaf459245b16b70d081615e4",
+   "values": "e61824d21517e6b6581c2e4243c31d0d274ad30e7acdd896bb21c848331c09c9"
+  },
+  "mobile-honor": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "fc184e6ee4a9dbfb557430d61b7147d7a237ce5795bc069693fe8b0a679123ad",
+   "draw": "000462710e6487aabcd0e079a1e4444cd7475469bb59620e2c0a29a7d11a909b",
+   "values": "59b433bc415d253a189474ee8804acbec16c275df4963bd323c1bce7bd32cb0a"
+  },
+  "mobile-motorola": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9ae8972a98cd2940241089d6bc61978ddf13ad8af06bdd5f602ff2514c1f776b",
+   "draw": "f1e2e83766f639863032e2497e933c186c1a922d340052f10d56440646bc8c7a",
+   "values": "007be13b1329d039aa38f81cd2cde1623397fe4e6e027929dc28cf4cbf89d231"
+  },
+  "mobile-nothing": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "36b376880974f87256e0560760505abce3f3b1e6435aa579930e76a158c007f0",
+   "draw": "1751341dd96a21fd1b8de2b9641c2b820ab1fa70b34fb7a247a444c9f2aa4b4f",
+   "values": "5fe82a91e504f48db96f07a2cd13ab6e93071c63c4081a02ef722214e9ad1720"
+  },
+  "mobile-sony": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ba99d30972472be1ab61e29ebb3f0a5597e719e57c958074b602935307dacfa5",
+   "draw": "304fd5cb02d7c007c23e621a51569078b45be7827ec4277a3b555c4fbf0607b1",
+   "values": "721a129a10c1e24a13466a2286cfb1b7cc0cba2ba1e901e4d84fd3cdbdc598d7"
+  },
+  "mobile-asus": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "882f3dfdc1a386a08843814ffa43845b34fa480a66bd9ed388b20abca21b70cf",
+   "draw": "0d70a91ade7159bad807960375672502eef585df597cae2d3600bc8484d5c00d",
+   "values": "5e2d23073e6e3e2a6fe11a50d78aa3f65005fbf718e1000781cf173df4dc7719"
+  },
+  "mobile-redmagic": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "fa20627b346192e1c6aa34b6b99f348ec6358da9ff23e39e8642afde1d15f7e7",
+   "draw": "8a800b5fa979199b3cb4bc455d672e24467900387f2ce30229348bc281f21382",
+   "values": "8bcb083008e73785aa9d59e5c2992477a199ff7b7525b21d45a222bf59e73b47"
+  },
+  "mobile-huawei": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "a72c5932df00aff190b4a672907b61cb0ebe01196cbbe94a9500576e3aafb726",
+   "draw": "b0f0a02b258d06d8ca8408764a5ff350d26bb8b730a787956fcb9fb7abf9216e",
+   "values": "74ef46009105a098b616a5511ceccea1f5e7de4a6e1cb0ac499f4d59eebab1ba"
+  },
+  "mobile-lenovo": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "b4fc4ac671f08dc94bf0865c9fbd8fbcdac8734a81c9f49aea1561d923a1678d",
+   "draw": "152a4ea13127a5b5907e6bfc9d61b30538ed9c2ad530c24594345df3e6e721da",
+   "values": "49f9c0d9650e890f76de90fa4bf810021b7872b55485a651c9b2de40a0dfa69a"
+  },
+  "mobile-hmd": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f629feb72d7c64da11429009d2e7bcea5695845d641b761c80473192a2690346",
+   "draw": "014ee35d54ed82d62ec8824ccd1ebe9473f522ec57d301e535b903b5cba3844b",
+   "values": "b13b56e517caff4166a796dff8cf09c870b1976d78fdb24b8bac2da24cc4d113"
+  },
+  "mobile-realme": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "1f0caa973b74cda452e3cf21bd47b489d023074d6f9c8bcaee9cb1e0961e9f8e",
+   "draw": "0e2da22b72fdba11f2a19ec92878f3e6a1c0e0a4d1a4e0bb7ba304f07e7a6dd1",
+   "values": "6593836b8d24ec3ee7ede15048409292de94043ae1cfed0152cce3404b915e22"
+  },
+  "mobile-tecno": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "50cd398600133499f38619fd44f3af8abd892125c7351943d16d7916d99820b0",
+   "draw": "c63eb24961c796636adc38ca20c16967c53bdf12f8eee70ed57d3cd7e8103017",
+   "values": "67bdb249adab314e625095b6e6baa9b33902cca1947166cd2bff85582c16573a"
+  },
+  "mobile-infinix": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "370a427c70219290f9c3e08a68eec08b1bcd87c604b2e65690640a44f25e8243",
+   "draw": "4816bfbb972f797859a60a7d76751bc9692f37340712e16fea784ff9ec4f0d3a",
+   "values": "5225a96fbcfb857a57b0e56d2feb0c67e3c70cd17179e752095556a4b7f8cca6"
+  },
+  "mobile-anker": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "18effa8a194785bcb823bda4830901d37057a2431d51e1d6b2745dbbcecb4739",
+   "draw": "f3ffe092ffbe899684eedad77384ea2752c8c7b9a6f2cc40ee5127d9f6e4a7b0",
+   "values": "89d8a00d01e5718c22fc0df229a6600ffd911ef55e839c0c4ec4ab1780c9f8f1"
+  },
+  "computer-apple": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "7a46ba667bff42772275e208737fe576dd5199705bab49407fa89449b4bffcb7",
+   "draw": "e8923a5b7e20abd882dd3de938343f3906c9eb561e2e454316b8a6a34d7a1381",
+   "values": "b259f6b8fb16b36e5950d1287bb6284334cab474eddbc8c67b8aaff7175133ff"
+  },
+  "computer-samsung": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "dbc067fd29bc52b97e629dae0d5bf2610948e2c7ecb69cb98c29f3b029e2e8ca",
+   "draw": "b92da30e21c3c9f02f4f514c10876e1516eef7684114979b31fdd966a74d505e",
+   "values": "cb5e34be13320bddf79fef891123a4df46c37fb58dc5613a462c627e7a28a4f4"
+  },
+  "computer-lg": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6cc2cc1b69cf2d53515dbc119cc860b2c4d42b6f057637ad70430d335a5b7128",
+   "draw": "5ca5f501338d9294489757bd5f90c21aadb2b82fddca2ef48b6f0ab3e287cf0d",
+   "values": "2a9c1d0081953b6370cc5baa4de8314118e8da0f2590b6bed1cb1a4ceae33453"
+  },
+  "computer-dell": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "dc3997c5c4ad16929de3e232e28b293ca721e1dc3870f8253a621779fb717da2",
+   "draw": "fcfe5acc8096e868aee23b60407baa08b0d7ac65d38aa9fe8e089986cacdc67e",
+   "values": "0d08baca17d4d161189265a461208744d39e63727b56c106c78ea5fe62b045d4"
+  },
+  "computer-hp": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "380149f1d854a0697fc000b8bb94080c11d4d4bc0d0c5ac0e2547ad01afd95a5",
+   "draw": "f15750efe5291cd92de2ff6f9c098f82b10b301e3d3415b1191bbcb9739d295d",
+   "values": "561035e42f52ef518236689f9ebb373ceb9c9a1d3ac1bf7fcd308797e1c24f3e"
+  },
+  "computer-lenovo": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9e069d787947caa8ef755be1507249acf4bc1b8677739b7603846b7b81921348",
+   "draw": "22adcf0326773f7cbaa79bced8af6642312d7077938c3ed5c6f75c78886f71db",
+   "values": "c60b8e9ce529e1ceeb6ff368b95045dc3f8f4421e88bcd55a6b17056f4176809"
+  },
+  "computer-asus": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "360d14c0c4f2b744b046e3d8bdefd22f3e67fc6b1d369e05c6f787f622908ed5",
+   "draw": "85d827e0b0f453fa8a487acd7ff19eecd57a74405007f5316a0cee1fff924a27",
+   "values": "e0a225ddff1110722ba8ea8a8e7f52b6de31c75b183dbac1cfd2bd0fa6c8113e"
+  },
+  "computer-acer": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0a7bd5ed527b6b8a353b4f747cc42eb61017f4c543eabe3a07771bcd760b0b2a",
+   "draw": "40f536a8a984c38bb0452c255fe3d3ef5d606f66eda2bb5845cd7c8a157a04ad",
+   "values": "15d1a8dc68862f4f51ee420e8b90bdeed0ec7e0c0de0d9231d709b04c2bdf135"
+  },
+  "computer-msi": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "18bca1e88e57bebcdf39002316697ced98cb87e97fa7c7b4d7361815f73e7c41",
+   "draw": "374489d47781226f874283e8a56c346360800b6fd2ab866407f9ab299146fe70",
+   "values": "738b25e330677e2bc96cdab8c631786220069f424438a045620442b9971edf66"
+  },
+  "computer-microsoft": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "1f368e5ea2093f02955f89e97d41b4392f388b05babaf2b1b182de3c98b930e8",
+   "draw": "175537a9f999b465d5a923277031b0bc0fbde73b6034c5e9dc5e824528e45573",
+   "values": "4c0a3167f56889f5dc2161af4f1f9ebf273c4a210512c439c0710dd9eda53674"
+  },
+  "computer-razer": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "49a181ad8490bf5ba2132f35334c1df74f8d5d1f183d9b816f7ec096f16480cc",
+   "draw": "68f170becc6249d0a823aeae508ad917cd06313921bf93c4aa4a63039ee39159",
+   "values": "76b4324c7369b175869643d0dfa7befa8a42c4e1d0697c29db7a619e08463433"
+  },
+  "computer-gigabyte": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "49a3d192eb7cf7d0ad024b9f3bd223a2cbc7a62f6c7d465dab26eb0f30f99922",
+   "draw": "74b2f6fc8c201daeca8f75abcb63a2edea11b51af7b3eec34a23c9a4395f46b7",
+   "values": "58fa569f0e66b14b8d8d5a745ebe08e32018184645831d1bd2f4919c85843bd5"
+  },
+  "computer-intel": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "962214b3f2b72b4872f3b571294e1b38b3b3327f5d7c09a66f0c5415987d55fd",
+   "draw": "946fd514ffed9e1df630e8843b73704ad4018cf868d2d8dcc93b2d24b1c7abec",
+   "values": "9c077f671c7b485eddba166ac7545b88a821d18bed940fd887c7ddc3ba4497d7"
+  },
+  "computer-amd": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "702e1e45d0e05bd0d1e214802f593090ba685989ff147652385345efd91d1ec9",
+   "draw": "7ef67c22a38d7a0d3edd20338f35baf62946d6a47a64e3b0b25ba935bdeea2ef",
+   "values": "2187fa9cf83fb1b0ae18d427688927a8a71f11ebde214acedfbc6cd27c60f57d"
+  },
+  "computer-nvidia": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "abe93cb4a4c4069462e08542a717331e74f87de5e9a36bca7e447c5eca738798",
+   "draw": "f67ebaaffc94bb41fc98a38bccc90f8b9d33ebdfd02f46eb881c6771f207b469",
+   "values": "9341a2dc8018afbca84f27db7b0134d278bc88291c2dce93f1f589a569f57fcd"
+  },
+  "computer-corsair": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "b6572d6a65a1ad270b73cfe4ada8112eb6cb54d27bc0005b5785aa6292de5d6d",
+   "draw": "240dda41f26deb2a41541adc5fda95b557d053c5acf45bb5d6889d875946788e",
+   "values": "04292dd0fb5807f3c1390327c10d56767d958ab70aff525ccd66948ecc86c776"
+  },
+  "computer-logitech": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "08d0549ee2ce25510c76ea1e9d288ff76259c40e6424bb38d31411f925eace5f",
+   "draw": "2f58d6fdf886723b5f05a60fdbd53255e5c86e41eb35d5dfd5ab657dcaa93659",
+   "values": "1bcc15a21d8564917a4097a4958acbe2771e745c355f61474ec70c089abf0adf"
+  },
+  "computer-keychron": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "c1ddec3515634e7c4483b2c5610a3ced2d26d6def2cf02d35e52553b88ed8014",
+   "draw": "97c798aac484bce25cb88be830c49882014416ceb4e3bbacf1c1a69690c2926c",
+   "values": "fc630402de6100c7fe154f66ab95aebf219329cc58b7a31019cf81f3ff36f6cb"
+  },
+  "computer-benq": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "52e2153007dc88f1c4846950bd7ba4059365e7c3cd92a562fc50ccd31893bdba",
+   "draw": "1e19768398ea1147c616b49545319ddb99727f0178f288d61ba00822721e1778",
+   "values": "5387ecdd0bcaec54f759988cf210ef49d9922427c71d58d4a64b1d54c92afae7"
+  },
+  "computer-eizo": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "7ba47c37f53b44272752eb6614356ead094a06c43b4b0e1a07680cd83d011aef",
+   "draw": "ccbea97975d8e8d9f24d47440c70587a37cfe1bfa6e921a688d1a986ddc2efb3",
+   "values": "6f3a11b68937229aab1d78fb7380f5b95c6f4ebdaea0071340b7325446171d70"
+  },
+  "gaming-playstation": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0d9a3f5517eb98362a168ca371f26c37b74d963ddad0d6438e2ca6db92d4d29f",
+   "draw": "5d8a7d272665e2ddd5d7fce63bf89a18b53df07fd554d46d074ee0bef00043f8",
+   "values": "ad7a2a6037c3e25ea27880c4e98bb2d6f16f9c52210442b694942df59542a7b7"
+  },
+  "gaming-xbox": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "712a9ff0a3f4b417689a625637865ed199af6973c0cc9de382a4c1cace863905",
+   "draw": "e6dac40a9507b1c04d2c85eba0bd5666b27fbf5a445425c439875b5113d66d41",
+   "values": "2955af4bb54c68be24946df0292650cba402d2f456826b32fb827deb4f1394fd"
+  },
+  "gaming-nintendo": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f0e1cd14eb00fc4b886cd783bf5ffae8f8cdb277438fedd2a999de7cf0002143",
+   "draw": "6c0cf9e678cdd067a0fc13bbf745e13400e4b6c6e3d428bdabbe1b0560daa0ec",
+   "values": "d9f26fcd129a80d18e58e0354a2c88830e6891b5775d6db126f5f177d620e962"
+  },
+  "gaming-valve": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "7b49fc74bdc42a087523c598c26f08cf6c5b257c3fcf305c7be1f5fb6f7f71ac",
+   "draw": "a2edb2a5ec0d3afafabd92507f755b3b71e6024e2133fff6ccd97c3357f48510",
+   "values": "86b9c171085d55db45724aea48257bd900f0721c07352ca5c2f3223386c1f68c"
+  },
+  "gaming-asus": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f7703551a46ecc9b68d6ea15a8effca51b3c0612efa0ec12d7dc2d06e400ae4a",
+   "draw": "30fe072526bc857ef2f404ea5379a9780dbbbeeabf38cf518dd1a8da3ce0c0aa",
+   "values": "a763bd536abce6d2729fab582df8b69a72d3ffc8e9e0583cdec14c4433cc8e93"
+  },
+  "gaming-msi": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "61c4db105ea9dcf8646464046bae12a607768c9b60aa7b32c5466e7c307473db",
+   "draw": "01b2c4eaa3843b1b88110437d159721fb81cb073c2086b50b13245f6d4c7f2bc",
+   "values": "980627348fe89974af0866bba0ad8664b439d8578360fbe3a05506e01a06fe34"
+  },
+  "gaming-razer": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0d16db91a78a2f61f7558820190d88da4e8dc742741fcf4418c77510deca42b7",
+   "draw": "f46b47784c182a8b2b9f94537f854a8e7119c3a998e9ffed6232e2fb4bcdd81b",
+   "values": "7e82a4e130a90b417c4b039461326f9109892e514042e57796876b13247ae55d"
+  },
+  "gaming-logitech": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "3476030c5144ea9a48fea3669b784fcb1c903c0682a3b79c7374a39ebec7e25e",
+   "draw": "83d8909f7484e6d0d3738e96ed5e00850e658368d4208515b05d45e923fadbd6",
+   "values": "95d20f0e12888fa1cbf9566aee1a3f1652fb871d508d53a1e371532b4b306943"
+  },
+  "gaming-steelseries": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0bcf5ab4107145c424f499562ee0cf9926e15066ed54bb0cf0e1fbd6f4810b40",
+   "draw": "1727583878911bb82333580d4b0bc44a2e93e30d7d03baa5224c510bac7a8a70",
+   "values": "d2e77c439379e21f18a0728a236cbeb4f53b38a828e0afd8fc97a4de33ac511c"
+  },
+  "gaming-corsair": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ad0db9ec022b4b5608839ae7e43f3f5f488640a45193773a392b79225224e747",
+   "draw": "5075d4f10b9133b4911415dfe197f4bbe731be51210ecefd6a5d399ca49cb223",
+   "values": "973039d59a3d21f4ca0b794c69862077c8e65001e138815f7b7cd8b9a7cb9ca4"
+  },
+  "gaming-hyperx": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6f2668d48a4461c96db2a8f0a398c07a961d054e9a4ec79366b41cc626e67be8",
+   "draw": "6c76e1b77d1b30d8ff41682b36557f98b8ec93311923b29e1de91293a1be2ae4",
+   "values": "b6fb2c34442ddfa4421ec1669b8bf84424fbccf4b4437af7997f61648b0c956e"
+  },
+  "gaming-turtle-beach": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "8238967dc86da3e3d78d54d7637c93ac5b9a61acde48fd01bbd88e2ff9b2096a",
+   "draw": "673a6c12de127e76b086d275d9f1f35a188f32783808e1aaa4e2becc56549131",
+   "values": "84d4a6eed0ebc5c90720e80c1ea0c446192e8c47f60f84a3affd34dac040dab5"
+  },
+  "gaming-8bitdo": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "48d71bb628b8f5580f092522e11784516d6db450021f429e236c6c758a32f4c9",
+   "draw": "9585af1524f690cb8ac4ce9cce80fa2f97c4b61d2ad7ebd2c5e28c0d7346c10b",
+   "values": "ce2fb468bdeb40e4a80960fe827ac9c3caf3cf0cd01b1f3451000e79f7c2ec20"
+  },
+  "gaming-scuf": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "867b9e12b004ef57e13051cf47dda18783b885a7db5486acb795978235d25fb1",
+   "draw": "8c8e6b01b5535d723044eb2646444b25dbb5feaa33bf840b6766fa2ae5314cb3",
+   "values": "ce8cc0f3c5f95160c641e353968233876f9c1e9ab79496ce6cbe2689e5808a5d"
+  },
+  "gaming-thrustmaster": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "3b3f1dad89061e26b2e139da05deaa29e40a26d0ebaebf27d0b1529674945e4e",
+   "draw": "36994cf47e9a278a3b9e4d3aecd12398a5d9e3561ca75b3e61ff6ff5556dbff2",
+   "values": "c05f8a22882cef4a5bc2443ba5dff5795f0e0f3532651faf2a6b54c9887ca9aa"
+  },
+  "gaming-fanatec": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "a50eb02dd46fdcc4335cfbf797ce9ab0d09902c760e78d9d1456574f98fb3f78",
+   "draw": "6c0c2768bab5398bc453a2b203dd5800d565330446fffa603a3ea310dd5741fc",
+   "values": "ebe1a989a03c767ede9934fc5b93f3e4520d81278edfb7dce3d230c0059d43ec"
+  },
+  "gaming-moza": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0312b3c9d0dfb8bfc71b3bdd2ed5da592fae71b2845d5bb40b53ab0e96ed4fa0",
+   "draw": "a3abbc9e5253a3fc5067b2e37e272d57773e4f339e6d630040980c5f52073501",
+   "values": "ee240e0afa134667414c5ebafca912f1968e3a8b55a6b567c45e5adcf6616b3f"
+  },
+  "gaming-elgato": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9bc3f9066ffb31cea9449e7f65a80339dc88c141c0539b1d6f9896e25faa2b07",
+   "draw": "c327a73ca3ddefd2eba3b4760554ce7d80080323d6c9f13abf8cc5105bc8435e",
+   "values": "80715e6432b4aad637c67556d2137ddf4ba5431d0188dec60764a0d16e653464"
+  },
+  "gaming-avermedia": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6bba5b8f7a37099b34e726f2c0d58f71b4776fe9c0ef3e73d3435b807019c49e",
+   "draw": "6dbd9178995d759e2f820f99b0eab1f0d58182f4dc6c16c0a2d71642422485ee",
+   "values": "8af99963be7657dcf90e9f274aa169fa56ff18035929808b5277fd0840e5e454"
+  },
+  "gaming-victrix": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "fe22cb1749ba9f4eb478000551adb1a254ed9b1b5b84e1c371d6eac81914cd9b",
+   "draw": "a2fa479489d98baf687e894ed0c0fb33ac4b784205a606d73d3a828083e4a154",
+   "values": "67045f58eaf8db7f08e653563840d5e6cb0de13cc362fbbac7519f21752d36d2"
+  },
+  "audio-sony": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "88831fa043bb8bc22fa42d8b4480f516767d34a7b5c7c375643eaa3b8a675e7d",
+   "draw": "324944c84bc51845834d7d82952fbdb836cd0bfcf47ae4e43b72e12e7ff75cb8",
+   "values": "ffc9b6f4bdadaccfcf1e55a32b681489b0c955eb02109d8c985673472895164d"
+  },
+  "audio-bose": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "064a06e8ec8f3ad6afa6c1b131980d10c5c46ff147476970866daf0e4063e260",
+   "draw": "eb83d00762d0cecbefff25b358ce46789f09fbd1bb7d806bf46a8adbbe7dfaa5",
+   "values": "bc125aaffedc2dfd260cca5a6084c2b83188ca2401e74355966f63e86adcffe0"
+  },
+  "audio-sennheiser": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "bb95d203177f96e84c4094a7f139a8c00cd61a746d9ac4b506d715d21dba6edb",
+   "draw": "3e31bf8410a17aee0c47582f5abc887867f1b342ffa15d90fc08855922b37cb6",
+   "values": "4c493a0862a9d52cc7b8f13259c7146f8c96346ae50a91d0936c53ee56c1f249"
+  },
+  "audio-bang-olufsen": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "3afed77eb7335d5ea3e5d493c6f33c20a8b38de6c9d86b691f59f00a201884b2",
+   "draw": "c58599500f5029bd316454c170f16d52fefbbb09e5e71bdc8484ac57268146be",
+   "values": "39ce6c8f5e73f8ebf176db8eba4a192bd4e6a83ef1b1c2b14428ff292d62ebe3"
+  },
+  "audio-bowers-wilkins": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f8554c9927c6e9de167c87062da15cbba8a76c1d366e2308073c6fc7a652b0d0",
+   "draw": "e5a9746da55327191d0fc41a4932bf85889ba81e428880f9e5ff529ed251695f",
+   "values": "c3be6ebffefd4e361a82e9ae92596bf263924a9be356e6f475d2db8102075c71"
+  },
+  "audio-kef": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "c909751b5bd98b5754ee4bf55fba356f3b67ef458a32122d5d92ab7a523343b5",
+   "draw": "10586e4a4d8ea5abc1008e8c379115eb118ad40805f76ef8f9a22c40f896f5e0",
+   "values": "9cdee2798248b2452672689e9cd0930f0396a45b58c6524b80109714678c8699"
+  },
+  "audio-devialet": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "2282d6bc9da59af7be8e8465cc711ae2864af0a49ec908c065e8611b07eb51d3",
+   "draw": "5dada35440d8c46134748cddfbe861011b1b93cb13220edf7c0b95eee09d668f",
+   "values": "caad7c3c7db6bf74b1da3d53e9060ee032ed0006c5a47f687ac920ddc525c9b6"
+  },
+  "audio-sonos": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6e2ab47ff95a046ee041cf4d182a35bca314603229ff849f5be1664c42a4397b",
+   "draw": "72d69e82e7713c412eb0d59db0c17841744b165c72e23ffb5c12e5f5be3c5d25",
+   "values": "f0b8fb536e55fbcc62126b641ac217c4e36a4caed773395062f5112d3a11522e"
+  },
+  "audio-marshall": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6d6ef1239a7b6a5bb9f8264bd6da9c4d9acaeb426dd0ee41cf5b60f33bda8cf4",
+   "draw": "0669d85a5cc816742c51297c50d2c44ebbec4327599e66f90697f6b296c6d87a",
+   "values": "e5f7523806c7f7cae041103ccd3ed6f583a5248be23ff5e2730a2c832b59b2f4"
+  },
+  "audio-jbl": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "fe8ba9a23527e214e3962b1f7c13325a71ed5887eadea479ded93eee3d4c340b",
+   "draw": "c4f6008e5f784b626b548be83710d04189b34157d60c36b06ae094a0d4fb1dc1",
+   "values": "7e5c03eaa81838d6480b86ead85138b7473fbc9cb3ec97ce9bfab2a972f25f1c"
+  },
+  "audio-harman-kardon": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "e17c6577a76d6feeee3a87958892db8513734fa7e551db1574d9a14561a8103f",
+   "draw": "e74f818f70bf34dea332fdc16b0a289a07a6de8b5c02f4c83c1ed730900113bb",
+   "values": "5f15d0c9d2ad7db21b075cab3572b217c17a2f39104435eda14cf50116b31506"
+  },
+  "audio-audio-technica": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "8ca6520923cd4693212bd725848c174b360f94b85d1106c8fb0961d0e86f6b2e",
+   "draw": "b100b8beeb1e2147b810f50e935c336982890d03c3a137f1f3efcff2be16269f",
+   "values": "5f5061481dda7c8bacbab2baa3056b01a71176b38e72792b4e674ea41691f17a"
+  },
+  "audio-shure": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9b597cfbbecd836ddb93cd8c87248ef3b2d54b73c92589db9bfd57567d621374",
+   "draw": "9f7354efdd71daef569baabced9b9dbc6455ab3c89eab38951420e50ae3fad3b",
+   "values": "0a633c702502d14f5933c14f0aadfb31a322922f9fb7735e505e3f8af3a06f73"
+  },
+  "audio-focal": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "db563499cdb3ea3741e5af3011b393742f409a92f9005e5be8661fea14c95c7f",
+   "draw": "fc63ce2fc96cce17fa88ec6a90a1288f590dc6cf335c2f55bda0b58202850fdb",
+   "values": "e195544e02043fcdeae94d6cf8c966c8e2cc85adfde153095faf63fc6f4cefaf"
+  },
+  "audio-beyerdynamic": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "d90e48857509c6371d4e6d1b9439409ba1a55acc35f890f81e2ff3c364a49766",
+   "draw": "b7853d7791f81d42434e3c7b09ccce8abffd37bf3af2ee92310d3a6216137337",
+   "values": "2913057ba10d27652fdce3ba2247658b73538d3551b7ad4861ff80219f56c66b"
+  },
+  "audio-audeze": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6b73319a205a52c467f0f0254da05fe8690e3a359b30be9b500ae66fe8cecdb4",
+   "draw": "0ff27b9994a277a773574694d76eedcb8cbc3b5f43d200c210f62b961e83a9ef",
+   "values": "e6c7b5056357727b32a75356d5ee2a9aa4a354f380c8b2d606aab4ebcd353b81"
+  },
+  "audio-akg": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0e79778734ed2263d5172ecb9f8880ac2ce541865731bfaaffce7052cbcb0386",
+   "draw": "58da05a61bc2c39251a0db845d079544f35604280635aa8910bda8c09feb8041",
+   "values": "fd8a6ed708e6ada56fffe12c08df691585a2373a6756e874e6398683340662c2"
+  },
+  "audio-technics": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "c9bdebb557ab27ecf4522a63e97885bdc24b01af1cfef6d7ef7d7c24c2c410ba",
+   "draw": "c99fa82b38b3546793fe89d760b78721d1b814d57744960dca6faf766aa2442e",
+   "values": "7eade397f1988d5bfb76c7ccccf8e6e9124e6e07a68965162bf9e577feb7f4bd"
+  },
+  "audio-yamaha": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9b22243e02d69872d320d011ef0f851e31b63ee0b5ebbdcc3503cff92c6ee1c4",
+   "draw": "e70183b4b9e04700f45d4b8f44b0694fa99fea848be00d28bb3eba711a6d0964",
+   "values": "a5863083e970ee73e6af5e45f7fc7d14e2116787c0b66a93045db47134373b64"
+  },
+  "audio-fiio": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "e0dbe55ac5132f7829df3796f6f4e75e7eaf39ebd7c21e071a0cad3c41463a5c",
+   "draw": "786ebc53ff99be2d55344357861cc43d95c056521bbf7919656d9c0208bd14b6",
+   "values": "841eaf779581ed88d033012973d85dad3cc45707d95700da7136b62555e04d0d"
+  },
+  "camera-canon": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "2c97ad1b288db6d95964eaf427f515d5ce5ca6ce287939f91bb494c6a103e1fc",
+   "draw": "47a6608c7f50b629a294adf15be95d2165bf011cca7883d9bb829564a8da5a92",
+   "values": "f07f53328cf4b110a7e704f9a7b463f7b301ff85e6ff817493a6b8565acec4cf"
+  },
+  "camera-nikon": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f2268337bbb50bc90bc158c67de60812835fba8baf8ff4b5e5bf9e19f41630f8",
+   "draw": "3b78a1f502991f44b534260e79e3f1ff848d985ff231870127de0ad97d50c8c1",
+   "values": "64ede7fc86e1bd8ccd01fba81092c0636d0395d32bf4cc86b3e0a1be18b6a188"
+  },
+  "camera-sony": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "c931eb96b6fd3a9d55459e644cc304e4d763ff62c2cb244fef7d4ee30a5e2d1f",
+   "draw": "c84fd7f410142ebdb95b650970845687da249754959e0ca96bd6641055156647",
+   "values": "a119eeda5e9a46c87a30c913f267e70f7b77d1b86b9e94541d201ed373b55275"
+  },
+  "camera-fujifilm": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "3b83afbe9c8aeb9afaf0642a059ac026c649d5e942ec914c2f5f130ad9e32255",
+   "draw": "2cb1e995f7599c61075aa469dae866ffef09339076e844e7b758c3254f3221e2",
+   "values": "0ba24d47db5f4d13fc83895039f7fcc3668b262ac497877be58e1d19ea6fd2ee"
+  },
+  "camera-panasonic": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "74cd51bd897e63775e50adbef5f78fec8c79b2da8ccd062e460a3573f3e2287b",
+   "draw": "47ab386615a91f53ca7e4963f072f4fb7cc4318c53d57edcfa3e9f8aa4395bf6",
+   "values": "a16d1efffdb11177a31b037f024a96f21dc88f7251a4a7fa4d26359fe40994e5"
+  },
+  "camera-om-system": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "34e13c17cf4d7aa4cd4a5d85c7cc8b2679c568b54a276979b9fc45c2f47810bd",
+   "draw": "6cdb1974d18c149d201de232b7ec076cea9f01620987b89e915886b04465ad2e",
+   "values": "04d5a2180673566e7e27ee5760143d1c0a2ae5fa7471961b6e3355ccf1b9e3a2"
+  },
+  "camera-pentax": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "39a53d6eceb3e842411acc8bb848b26ad25033a1b46f4be184a0714bd44eee22",
+   "draw": "e1bdf3cc4bfbb1fa98f75a8007e52f8c687d06c3f30a81a56386ae88b7e3fb25",
+   "values": "f56d86ab0853753adf2fd78322adce42ac3292d3b2027f4572acee50f09076fb"
+  },
+  "camera-ricoh": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f74cdb95379c6c833e424d316eef1f8031fce0162cb3f077f0c7c9b5f6875164",
+   "draw": "37e8df895beb169df65cecceb7a35c140a96a4668580bd1a91d1c2e42c81b488",
+   "values": "45420b07c8669fab2ebc8aae1aebc8adcd380f8d3170f6050642c5a20fc6ef09"
+  },
+  "camera-leica": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ee13559f34cc3587ee5f288b44935e55749f77f1a7f8ac11f81a280b2a023dd2",
+   "draw": "8f5922d019e4729a7bf87df92591b6417eca00d3673fa03e6ebae29348252eaa",
+   "values": "c4bd36858357f6705d136face314c7cb88ea27b795c457630df0f55e60860949"
+  },
+  "camera-hasselblad": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0f106d9eb596a92e460da1c53b0ad4f43ea9dfbd4e76e71200b34917d2abdfa5",
+   "draw": "fa05e5e5918becb9b2049eeeb9ec5ead6ddf72d6b7f294dc8270d156d576cd8f",
+   "values": "d4a8c92ff778934f5906c444ee3445cee8c303027dd5fa7552642dda6802b837"
+  },
+  "camera-phase-one": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "30c1855cbcd2b9e1b733b7fcad872b3b4b5847f5cd1a5e653c454e7ee5f2bdc4",
+   "draw": "48437fcd3a0c14d421eb463c7ea860d8a392820a3acb7cbc6f6ac8ca533971dc",
+   "values": "05fc17c35bc9bacae42d9470584a1ce58066216cf827a56b0c359b8eab4becff"
+  },
+  "camera-gopro": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "55ea35c021e4ad06a14a10eb8f7537f3016195fb3299489467746495565ff607",
+   "draw": "cc213d18987f989ef4c6181b364aeb5799ddda221803f2dfdb6a0dd6d3772915",
+   "values": "2e6283e50de4ab4200fb37eb26ef2edd2cbf53b5cea0cd78b2757d78053841bc"
+  },
+  "camera-dji": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "bb0007b9ca010f446aa917ee6b5e9af14cf03e51f7519fd4d962fbaa6bbef411",
+   "draw": "48264713299f73894bd819f7f82fe0175c96eaeabd5882c4fb0647e72aa9fad8",
+   "values": "05c94c137376986bdf2f211eb9cc3bd8350d603958da172f954723b11b6b5386"
+  },
+  "camera-insta360": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "e4b0eac7a088437753242db603f9d84182e1379eea815d7ad726e24e38638517",
+   "draw": "4b5f455eac57e6f9da14c77e29b1f51699541a6d6305b9d85cb2127b07eca63c",
+   "values": "a44f44c8d6142726f2e6425c609902aecef1d33c2d24d30023ef2744692b514f"
+  },
+  "camera-sigma": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0bdec0e73e29c9cb8554da7ad66e40205a67318db54a784e1a6cf20f6b7fb309",
+   "draw": "4039688f9c8806197926b443508c42bc3ce5033d4e341f441e4aea3c7ab347fb",
+   "values": "2cce87c9647f7d75925449f9d8eaee439211995ea36e101ab787269e0ed23879"
+  },
+  "camera-tamron": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "4b665db19e2c9dd912ecde22b947a6b7b65b60dcf2cdaae83968858ca75d03d0",
+   "draw": "5af1ccc718c5aa5ad87c7188b4e253efbba4a7764734c279663145c1e7958748",
+   "values": "552ead4ad197e957fb42676557dc1ead17b7f4cfdab1ad673c9c46bea5ee5752"
+  },
+  "camera-zeiss": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6a24afee99420f1b75db59b459f350b7c1e1f2f1dbe25f8169252efcb1f38a84",
+   "draw": "dd763f7a3fde88a3faf4316d3405e481788b470535cd590192deef93e363ed8e",
+   "values": "f343ccd722c1e1639ad116ab103ba7e1aa9298c4a52fc6f34af37128cdb6ad8a"
+  },
+  "camera-samyang": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "c6093e9b1fd5378815902f9f94530411e8281673f9ac2a92ac1757efb5f81f07",
+   "draw": "1c53967a6e394941d852eb45833316dda424e9fabe7525c56eb6b53f367e9a95",
+   "values": "6af5303b959623a347891036c4b778e54922771d72047a2d71bf375b4b6d85a3"
+  },
+  "camera-godox": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "d3fba22a23099e9f1932339871f5dbaf87d3d91a66243e5b885e8585e1b21db2",
+   "draw": "c465efc33526e6e12eeecde25112e5e65583bf507199e23d8488ac4d288a97aa",
+   "values": "bb43af2bd31656e4b035b19c135ad361e0c6d521306cf5aa6b216442c4fbab79"
+  },
+  "camera-profoto": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ca64071b5c17c86018de17759bce743d50800692a1983e60e2b0b2f1c1686730",
+   "draw": "5465db655bf4a105c6cfbdd74a2042e7fc8046a86310f01fccb4b555898445bf",
+   "values": "d78983487f196d18e0d2339d3ce6e87d1f43c8c840f0a1c53625c27c8b8be73d"
+  },
+  "home-lg": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "d7cd072ab017bb1669fe739b63554e1e92e75210f397ed9bb5cb52803bf67a4c",
+   "draw": "9efbaf5b31cded7f0a106dea4ab534e92e9beef79e77f620e1f6e48b1f873d98",
+   "values": "735de263c6f82d7041275664c6bdf8596137c5dadbf023cd127e8ee520ea9dcf"
+  },
+  "home-samsung": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "54eaa9bf5170fdcc2c5054371cd412dec2567a8d5d3eccfd61a622d3c2087738",
+   "draw": "c43f7adebe186529d546f9692963885f085b2d536b7930aa5d5d8bd3b71f2e46",
+   "values": "74e81e23be58f97741d594dd9d59c6eca1b70861117caad8370337e52f564861"
+  },
+  "home-miele": {
+   "price": 500,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "bf58487c8232e47e416ba77cb2145d2985ca0f6b7dc9093237beabf2c9e35c92",
+   "draw": "e229f125bd9e66bead026398884271d5ffcbfff11dd0385fefb0114b043ef860",
+   "values": "8c970ed03c29cee8cf958b2200ef587e963c9dd18e010d81db1c8cc0e34c3cd9"
+  },
+  "home-dyson": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "b654c562e7151f090af3022f36df416bb3fbfe7901eb2ba973ef555bff5acf89",
+   "draw": "ba6067ded00b089d3af4936055fa93f619389e4cd60ea74336434fc60355b337",
+   "values": "ce1ab52a5dda9598225c2564b812eb005320c0033d1874b5b88f0dd1f2e87641"
+  },
+  "home-roborock": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "4795fb17418b52c274ed47b70db2cb4708b0bae12562f82f55583a930c502bdb",
+   "draw": "5807ec519bec134831404422840bc80f65d70445760286ea5e002600abeed62d",
+   "values": "d24c6e80a75216c9f736ee8d8ccceebeab0742fcb4be5982779be99ab9c7b481"
+  },
+  "home-dreame": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "88a287706bd507dd5c968c933720e73a31300ddb4b910997bd3601b16d475674",
+   "draw": "db7c885b80fb742efe9b931efefc7898e14e64b7abfbf4707a416011878107fc",
+   "values": "c71dd6fe8d6600cef88a7c79a795a9648e1d79871b6258afe621dcb693d7835c"
+  },
+  "home-irobot": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "45721905e62552deed5ac096742eab5f034fb8b659b78c3d92848ffa7dea816f",
+   "draw": "af76ca7316e8476769363515c015cbd91961230791975e1e1eda04ed88ad1dba",
+   "values": "bd08a0d57c2794be1f5a844f19dfce73f8ea9950e7e112909fe27094087b6685"
+  },
+  "home-ecovacs": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "628e27e643c3431873af666e09b03791e9424bd2c524038aac03f593982fca59",
+   "draw": "53ff50f8b0d31db780faaade50ed3fd54ac77a3169270b59b3ed4335f277035d",
+   "values": "ff041419e89e0d196efe37b9a8a0d3183beda2a7cd724254d01252f7c1cb3b7f"
+  },
+  "home-shark": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "52662fdd744b066808197a0ca53637c5b2d61e6add1ed14f9ba645fb7ae529a7",
+   "draw": "8d2114c741959f1b243403843b0ee644469a21b331ff650a0aa94ab4a635fb94",
+   "values": "79e61790b039776c27293af0feebe56f507c6eca00400a6835e10ece2b1b059f"
+  },
+  "home-ninja": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "133551061c0b8e9398885f416da010eddea754cf9b7b71e989ee6949db1209cc",
+   "draw": "21b26a46c8acb5687f41b17d1d122387ad34721d8e7bb0821440b927cc0aa942",
+   "values": "e01567394e57717368543062579e905e774fd15052cbf215a59f582ddddfc03e"
+  },
+  "home-breville": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ba6481c14ec079bcc7d64622421a708aea918af962103493a94b79c343a6189e",
+   "draw": "eb024d842f21979cd0df74730418656ebc4c3fc9c723c3bb70ebccf917f46e96",
+   "values": "38ed03fe42faee24b9860625eac12be253cac6502e91f6fc287e792628cec00e"
+  },
+  "home-delonghi": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "128ea1dcaf5c5f030b803ebbe96d233e76cc702d96b63d81084aef232be7bd8d",
+   "draw": "b0348df361fbb754b6cf405c518314aca2ca5cd9c56b27c5a566d6283e255136",
+   "values": "849ab135c321c817d62a638a308d51e2f530f9a3da6f3e312c899cba1dbd6441"
+  },
+  "home-smeg": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "299e02eb230e1299fb5949a8416df6c75b1a95756b1c394ec9c2f062d4ba7289",
+   "draw": "24e2ef8c272d50aae0b614f8c2fc9a9c7c5f6a88a3b9b414d60b7448792ba218",
+   "values": "bf60107888d11999ef02f1e00db90651d0da9100bae53168febbeb050be3233f"
+  },
+  "home-philips": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "e5a46507a597cb8dcb05bfde06d1e460094c38bf2c0264c1f62a08ef510b2df1",
+   "draw": "b830794397abcc4d280d222d97185751514f2b2d4a7ecfa285248307fa406f27",
+   "values": "2e1e15670eef69ae94aca52325baaadcf860fa58d52f44feeef7026bb9b310a8"
+  },
+  "home-braun": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "2f720e355c95273d5cf6e39730f538f0926461b734d3b38a296d167b7bec5166",
+   "draw": "a3089bfc3dd534072678dcaafe7e59cb63e25d302fdb5cb5a791ce866263c24a",
+   "values": "19a492697b0c0369f0a9086a9965bc8166c49a5ad22feeb7fe45841be15f844d"
+  },
+  "home-panasonic": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "8a68c094ba9be8d394ee9437340fc3d0769619cea99c67156f62741a13ca132f",
+   "draw": "ebe1cb37a5e072bdb3e38a073bd72bfa81d7a81661751f42facb38321c1583f2",
+   "values": "51ce6d9999f03c54d5c6c1dc9d2f6b6a02544232636fe67020e44b52d6623419"
+  },
+  "home-balmuda": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "7af83ef0f7d2e92ddf74d9604e2b1fb016e6a829e3e2310beddebcc18ced4d71",
+   "draw": "929ec00f304fca1746ce4b04a2d08023004330100258ef2f7e9729a40dba9067",
+   "values": "e42c4ad1fe75bed7391e44f3856a7d1fc4076c694296d3fe4409b64c36aa8d81"
+  },
+  "home-cuckoo": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "65a999082457d01bf7c1e471ca02b91e6c83562d93e743c9cf09d6632fa314ca",
+   "draw": "a85e755e6b8c91b07c3f2df3c2984d3a1519656cd02a0f53b0e890e225b2d15c",
+   "values": "10d4e056625ca9c5da5fc2631cf6e9db92aa6f45bdefd78e186e162fdc237dd5"
+  },
+  "home-coway": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "56f28c3208848288adae9f1638a74383bd574224613597d9baaf29d1c695ef25",
+   "draw": "840224f4e91f783fd031fcb0e113770b2df660e81aafe4f8a54823b1e4c7e17a",
+   "values": "68087b3105baf8e279826fb722d656ac372a4d533dc42afa0c5b4631c75acd16"
+  },
+  "home-xiaomi": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "e9e4175e53181330034b6f53c109063fc667e006388e1017f9c780ec48e64807",
+   "draw": "935acd1676e86cc39d2d86c7bf832aefd4f94547c50457104f64a4cae60ab953",
+   "values": "4b41dcde96180a200b811f339c3ca9b943d5053b9dcc32c438b4a874132eede8"
+  },
+  "pokemon-charizard": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "cff19d4103a28307cb2c1be819504d2c449de766b737d3ec0659c4b30a2bc1cf",
+   "draw": "774d4e14633e44c5af2f39a88875d8deb0c0f61cde25a1d1399ef610c798bf87",
+   "values": "e732b082f820c73d7fb7180d028c2dec38b11847907ffd5d8785ca997476e471"
+  },
+  "pokemon-pikachu": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "fbd32ceff0ad2dd98dbc1cedaf7dd6d1803e72893d89c195cd83a4cc71109c84",
+   "draw": "44aa962c1d1dc5ccc2ace36030a802e18bb2109d7573d7e425d409d523e25971",
+   "values": "fbd2a3ab9a34e03a265cad8c01c56dfc648d53a156014ef0aa6e9cd9a40f96e3"
+  },
+  "pokemon-blastoise": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "4c7745c4be0d6b87de6f2a105c24b14695de6bed93c4da0383f18ed0604bd04e",
+   "draw": "2b5ee116c3944c6eb34a43680b2656949c59e48444d1e5146b186af41ba22eec",
+   "values": "1a1382eb6562cb98ae657239f8e2fbc767e651380a4c86922e157d8573dccc3e"
+  },
+  "pokemon-venusaur": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6a15e9626f0018763dc4cc8420e670c91cbad7bb1e62cadbe2e279bc5b9cd387",
+   "draw": "7246f14b4338f40890e0e42beca6e59c0df0925da06db999accbdfc084581d68",
+   "values": "03f43fffe1569b88b87b2e2727129362371ff0d551403d677f784eb21fa42627"
+  },
+  "pokemon-mew": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "d61d660a72b1cff9809f6214c665d7595cb79e7db228c73f1c43cb37171f03d2",
+   "draw": "8c7982dc7dda16f27e11a350b8f1da5628788a2815d521be7bf7359ccdbffb32",
+   "values": "696dd55320601728cdc6361f174c3ba9c06c53031beda8e139c5e458fb5b2470"
+  },
+  "pokemon-mewtwo": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "3e6bd2e3b3a838b917bdbe155a98604f80687b957234e2e3faa02e4ae2d5d50c",
+   "draw": "5b32a024cf1ed40c992ae729baadd51719c0ddec3faac8c78c80d069ca7d77aa",
+   "values": "c8ed8695d5c650254e8e26f858da3608ac12b2f56e02725feb9a611785edc505"
+  },
+  "pokemon-umbreon": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9bad3e5b762f8139886b2a444ec1465448c1be694ef2c8d25079f31a83b86bd0",
+   "draw": "f080e71bbd00cec9ae00ee6a6cabb558a96e72f3af3d5792c6f5b56cdc429641",
+   "values": "0b2ee5bf03b667420ceb0334f1b0985291b178fb2db35e56e22c65048bae079c"
+  },
+  "pokemon-espeon": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9e36ebb6701d2a0af5310710b5fd27d566b58889cbd839fb565014d656694bf6",
+   "draw": "d62743c22056f821832a2c22fe708ec5a35fb69bb11b176044826e2892a31399",
+   "values": "3bbc5a1c71b0b0c353570416aff69017afd8b35f69781a541d2244e172fd1ad3"
+  },
+  "pokemon-sylveon": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "774dbb40d14c8cdaa26249c193b7b73c62428ee527dbc0eee498c3bc660af6f8",
+   "draw": "3faef7f25351ed217c566c2b7429b907bae430f78f8b7e7607ea47684cb17abf",
+   "values": "3cdd590dd9c5fa290db04b12734fed82a0e1528a8b311ed26c61526b7873b940"
+  },
+  "pokemon-leafeon": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "368c102db5ee421d74ea82988f0a2d3d16e493f11ec2d9f3fbce919c24c0b54e",
+   "draw": "1244c2d2e0073bdc4720ee9461e028afb61f287faa148353671c144f23075ad4",
+   "values": "00741cb1a796f27442fc18e1b22a3b85d7603e339dcbe1488be494a14885a401"
+  },
+  "pokemon-glaceon": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "09740949f54fb399269d1250bb2c3915ad05f926a4120b89bfe4c2d8d6b67a2a",
+   "draw": "8b4bd05bc59538190d67b93b1e3bb280c487b5b1d6f141f61d0100ac4ea39435",
+   "values": "93ede87e43e987e6e6589f7a6de6b1503be806d24252977954bd6e2b690636fd"
+  },
+  "pokemon-rayquaza": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "d22390b518ef216e4def8e39bf3d06d32cc89091a8a8dbfb5591bf9481a4d67c",
+   "draw": "ced94aab6c20dce34b1146ae8b562a2baead213288e9d9c5d844b6baa214f017",
+   "values": "9009cd8b18545786598628d26b2734a13ba678f8a9da88f3302105bc4b853765"
+  },
+  "pokemon-gengar": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ea022e320c6a741a5934186bfd0d5d2e401162a5789528fc935efeb46b91fb80",
+   "draw": "2ff79d767abc5295014bdb541bd96fb50227ffcd91ce195bba597179341428ba",
+   "values": "dd1ca9e388325cc7c64caa2e1e335dfc0cbb0c1d88a008db824d79650e7b8df8"
+  },
+  "pokemon-lugia": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "48f235c5e58be2e5f6b48e971cc1aeb51c47f74ecb9c16154a3cca883b1ff9b8",
+   "draw": "4cbb914d77b9130155a04153de4f928dd676fa908a78b1520f958d69e00a2fc4",
+   "values": "749b58f39f8fdab67eb1a9d62c28f4046ce358e536af75a295f3e50b1a07c7ea"
+  },
+  "pokemon-giratina": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ff7c4f6c1ea7055d552323a5a268b9b6fa369f0a6966241d28e40d19218eddf5",
+   "draw": "a765407c54a0b2aa2be89782734c62987a01e6202359d2a98b0b580832ceccbb",
+   "values": "b9b8dcbc8d1e246f2edd1baa256f493c3ead60416b5a0e9244c4ddeb02134e4d"
+  },
+  "pokemon-dragonite": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "43ed5c90cdfba63cefe32f0bb2fe7a8807a576ba55b78fc407910160a29ad8f3",
+   "draw": "5671169a429171c40dff7c508fb1460036b7f55310b80c3a2e83337cf6ca7e65",
+   "values": "83cfa0bc1da924570b6115e11e7e52d9d27aedd377bf5da864cf4b639674662a"
+  },
+  "pokemon-snorlax": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "bab27b6d8b85332b708771377c65e35abaea3d41e02735289e788d209fe0b9c2",
+   "draw": "6027e399d524c95e881cbc601cadcfdef0384dd69ea245e6e7cc650aee248d50",
+   "values": "c8079bd9d52300286e39429007600fce385f135aa21738635e7b7c5115c8be32"
+  },
+  "pokemon-alakazam": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "914572917fdab890d7401206a442a849fe6a78a04d7fd03c83a4e8ace93ac145",
+   "draw": "1ff01b55236b29b1ae6cadb7b4f36cd19adcf935b325d1677d6dc553618e17d7",
+   "values": "618d498d2d0e9cd60fd5484f70e393bb0ad412a92fdddf19a6a2fdcf52882a27"
+  },
+  "pokemon-zapdos": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f440e48f63582227201fa7dfc57fa2631c8d941d430283ff7bd4f7f85550d5ee",
+   "draw": "9cfd0c1adace15e0bdf6475c0c86aa0f6fcbcf24764548b3b16cd8f46d55a2f9",
+   "values": "dde44186007b44d6b30d2fbb9906f78c52f70a9178003f5e0762dd6a2b25af70"
+  },
+  "pokemon-magikarp": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "45caee25ecaf368f2fd147b6c7f847d2c6085aab11072f37536e48f8c1d4bb29",
+   "draw": "68044ad456dd802723176f3deb10b188af45bc2ecc243b576547ee503ad2f709",
+   "values": "1aa3ffe355d6923212d31b888e2c465f7263dd4c1ee072087849cbd7554d8ebb"
+  },
+  "toy-lego": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "50ffc2ca49c7868e14de86353533ef2012b9115c49b4a4bb91649b8453d7d029",
+   "draw": "e9b71daf0e1c715b646dffeca91afe02c6faea3a541ba43729928a37da6866d2",
+   "values": "1bdeb8904fbbadf3a9425886bf8f6837c3fbf63b37c3bf8d67f5d82616a8cb42"
+  },
+  "toy-bandai": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "4cf5553231e47cc20d8f06755658bf5acd71713736629095becdad9be0ab27a6",
+   "draw": "018399ad7fc031ff9ec654c43933142c888da5f7b3df9c2686e87625a7186581",
+   "values": "25718a31089c69e5edf4f953285887646799636045e1c97bd3e9347ac1dae5ea"
+  },
+  "toy-hot-wheels": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "fde149596315906414b3203abc2cda8a3fb64652563d933c3907953a7bba5e7c",
+   "draw": "d4f513863e489582cca7f8e9bdab458d14de0bd33ff776658161b7fc1f2d6bbd",
+   "values": "5d3073b97c25e6dbf648ad56919eae8d5c65ef193e6a1402541118a2b1118409"
+  },
+  "toy-barbie": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "8695d6396e95f66c351d2aa443be98fb77af2289e2029fff440e691856dfb57c",
+   "draw": "c10aaa23b5739499a4f52be6f0f329ad96d82ed435195fbe6b7e175f4660ee7a",
+   "values": "81bc1edf7fdd54047e04775d028a2af7bf87a7fc7eb89bf3e311f410ce90414c"
+  },
+  "toy-sylvanian-families": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "3fbcfeff79e847f546e3c35c2e3f14f6c192060b3d51d87557f14842a14114f7",
+   "draw": "be591a81d771683fc719c59a7ae203949980456b8f1b3adb061a24f2ab030aac",
+   "values": "c52bed6a0b91ccce0990fe1b013a9f9ef3b3bd2c489c5b5018e1e43da75c4884"
+  },
+  "toy-pop-mart": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0ffe4e4de48d48256f36656f3cc3464141f39791e05a75d71c3f843202cc52ae",
+   "draw": "2d32e9b2dcc6dc4b817ae10f1b8fc76603b5fbefe9f19eecece894a8d40cfdd7",
+   "values": "fd78c6e6c39eaefe7301ff33f409c547513080a38135a39f58d51693895b2d36"
+  },
+  "toy-smiski": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "491928b909f8e48c55d0abab38a0e8d6e6a9c5924ef4db90299f4c1fad653853",
+   "draw": "df633dd85dddc9d40cea01507debee01a3046a76f0d97f23838aaf40acd0df0e",
+   "values": "0598530efdf11ba5f23a7572ad93f12c00c963d34badf2c5495d32ac52d9a49f"
+  },
+  "toy-jellycat": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f2320100382fe91e90b87add7fe7c9fa410991a28606c1292c7d37272ec76171",
+   "draw": "260923fc06f15557297b1528f5df0c0ecea89929b2458ea42d75f672b9402cfc",
+   "values": "4cca21d9551b25a0337ce9487b3c634a8f76816e17491e91d32a44d8aec64767"
+  },
+  "toy-playmobil": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "060d4da1e0a35726031171b420d6d4af784d06716b3b5475b67c09857c28ef0e",
+   "draw": "e6c91b565f545bb87b57492f4455b2828a1aa49e7c6496d5655403eb28888617",
+   "values": "e53290e39f0e94fc4243c45572b121b121277b1d0bc131a309ab4514991f996e"
+  },
+  "toy-brio": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "8e24d09fda5b177e00bd1048d455d88db7fc69d16987c9e64dd1028182fd4d7d",
+   "draw": "2aeced62e2f996e50bffc225697063597ecbf3d2d318d8d58206f2c5398ab545",
+   "values": "b256e8f4bfc0e5a1d1bbbb893d15603518d4194c738c172a28bd5eb3c7f3c2b0"
+  },
+  "toy-schleich": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "21606ac52c25eafc7c2e84ec975b548039b6c76f0f747f17fe4ac67c2ba6d523",
+   "draw": "9a17a659a8c6156e6298a0c63b17e7adc67ed33e2d3bc62766e917838d77f0be",
+   "values": "c262a381081351230a3df2f55b9c0c547b641a7f938be45c8e4dbc7ff5c62812"
+  },
+  "toy-ravensburger": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0774ab9d21fc51f2d27fb9a4e2bf2363cff82822fa4b02eb3b82215469876b0b",
+   "draw": "e140080cda6c0e46f949cd1adb1a8cdb1f22fd270372ca887fd82f19ab2c6442",
+   "values": "3736df6eeb1380c00c0f56bdec0fdf012c7c13d80a1db45034b03686d0c543a1"
+  },
+  "toy-siku": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "70b51af0605fdbfc830d22a48c56bd29e6270e30083611ddd8fc9c967956a0ae",
+   "draw": "24fa91261de0164eff6879f99020eb8a95394ad22857897d9001ece26b271736",
+   "values": "489f95b4872120a54df072b8d77822f37c7edb7ea24814dae5e602be3178e232"
+  },
+  "toy-tomica": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "758a256a108e26c9e527f0f7305fae4d734df93d34f3b9763bbaae9fd474ea7c",
+   "draw": "3c81496fc554f06c94840620e85ac92bc56bd5ab7e293c39d35f433ad8f525cc",
+   "values": "4381a7c5ee152f2dfa3d2a1183ecca4d80fbd7ae33444d7c5150f39b78af5723"
+  },
+  "toy-tamiya": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "271dce9f26103378e1beebc4c75da4afbd9be3282232dfd7721f5a347273c238",
+   "draw": "75e6e30a8a7db3e88cd1522a98b1e31fae0700c9f25c54412df854333df66e2b",
+   "values": "ebf7481a4db088e1045b3eb0b91d327400a674020aa3d72ceded5c016ff0db09"
+  },
+  "toy-good-smile": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "4005c9ffe7fb3a2547a4ff51e2ce7ec3188e1a719f9100a34fd6bb38b4333391",
+   "draw": "1c6c32d31137cee60f69d722b9e1f15491c0fe550ebff9fe0ed85cc36969621b",
+   "values": "72a1c2d76e9f0107828f9fbe1e486c45e5ee0ea92f1d3adc7ea3422022949dc4"
+  },
+  "toy-nerf": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "49d0eceeb12d459b735ffd257aec518047e7c9aa00f5ffaf88096b82a5e37a4c",
+   "draw": "9d44f8084523121d830674b274fc807bdaaf0154bebf0d57a22c82ed3347bb42",
+   "values": "071b5d087d5aae404b4da7cabae6a6dd3d6947ddecb0ac7f88e4a0cd6afc8698"
+  },
+  "toy-steiff": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ba0a2a286a525b6f3b7d0e929bcdfaa6f1bfbf316bcd7d935970df8dbf6477d2",
+   "draw": "886d218c8553562df4ad4fc81b29fe492aa1c79e07edba06807eed8d6a68baff",
+   "values": "b7236415ab19371ffb2dd3f507d24be95a7a209ba02178867730ab10e1f7ce8d"
+  },
+  "toy-maileg": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "59207c6f307577428c784837ddcfa11be21e047c8458cc78317ed426a98b132f",
+   "draw": "db8b4c29be18eeffcea9df19154952d23accfa4d8a0bee489c1e26d6b8c82848",
+   "values": "1044be6f8719ac50de76f55f6a7b0132eb92e6998f3578d8fbfd9dbadffd2a86"
+  },
+  "toy-mega": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "82fb24091807e6886b9692e65362f1dbd5d9d01e0e3604cbcfa1d279853e8851",
+   "draw": "1b036786ba0a2c9bb3022c1480f6d4a14711e2d3b9b7d653962755c689e7a2b2",
+   "values": "b4377a0a1a5fc34870f3b1e409f9e2b03daad6b2d13640c765ddaa031c644cfc"
+  },
+  "outdoor-snow-peak": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "17a80e411c7649906bf663e77319c6cb723b7ec3f64065f7cd544addd924cad5",
+   "draw": "b07cedb06800554c8ae9b598f52c463a983fc7e60aef0bc40276e7778971ed7a",
+   "values": "5505f020149c28d730d5ad2616e2330c77a811ade90bf6b889a64c395863a111"
+  },
+  "outdoor-helinox": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "c77b90060a14b53eb854790ded09c624d34a3e770b332a5f18b53d1ac4e320a2",
+   "draw": "53ca72d2815fc6de2e1d0658bee8f668b261cf938fb0b73133b7d742727d2250",
+   "values": "19a2405574e64c1e7f1b006a94099a443d8687b82b7c2498d0febd50a51e9dec"
+  },
+  "outdoor-yeti": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "593b2a6ae2a9a1e3658b4168e685840d48f0b139576427e8a06f6e5904042b22",
+   "draw": "40d33f7ab54c9676494908c7d027259de2838b4ca6d7ccd405e055564a093a8d",
+   "values": "46d0d25383102a0e568fd76bfccbd4b6931e71cf2ed01da18a0c135c191e5a84"
+  },
+  "outdoor-msr": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "adec5bf331cea70870f4290f48093c0e8f1e8389448fdd6cb1e334435dd11972",
+   "draw": "a858cc334c2d0ce45b66bd902d4ce797d47fd4b34e38879c22117d94f9272f4b",
+   "values": "103017fce1838640e89b2749c059dea716919cb0fb7ca15ba4e4c9ee2206978e"
+  },
+  "outdoor-therm-a-rest": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "c3b22392a315abd1859ca061f06469ede02f08f5b268a20ccf362b2106adf233",
+   "draw": "28351e098e424a898d0fff5cd0d1b9c127746bae195c0cf2c68b5b0fa3110f9b",
+   "values": "38b60d1af8519ff06c2a2816b6a9e4f606d5868d1c3cc6ec3c75c7596079dd8e"
+  },
+  "outdoor-coleman": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "fedbea5599a2c0406c16962897a7794560d603d58bd8e8f3cda6bb9b37da29b5",
+   "draw": "a935dcc5c3017139e0e0fab481a679e55be432187f3d0f198dafee2af03d0012",
+   "values": "ff485302683902e6f2ebb4a733b00bbac9898a608aea247f6a5799fd36875bab"
+  },
+  "outdoor-stanley": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "51429ede95fb2f058a8b23f2fc9f5885fe8e4aa080f5719ee1253fd9eb1b2721",
+   "draw": "867d40217211be4755da7d27508df441b8e9c98642ee78378da499963f9708c7",
+   "values": "7a7695052217b3aa3b52c4d74876ec02af3b2806ce0067c0abb36fadb7167258"
+  },
+  "outdoor-petzl": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "c494d6c4451302e3f716e671d359ad536c812755509f6751236edaeafec6a247",
+   "draw": "6759981736fae517196281d842296fe26c111d1fba58a5327bb1d3fdf4428f22",
+   "values": "399ebfe7bbae6a468ada6920f03cc20cf30f19b6aa7b02f08e6cad264bdc034d"
+  },
+  "outdoor-leatherman": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0e378829afb6c3f003163169db0e7974df0437b6a2b1e7e4cad74fa1c74a21e2",
+   "draw": "318bddb321da6241ab20a5d69c590e3e76eef87338d61041af51e25212738c5f",
+   "values": "f59846a264560ec5e5e32c20868981205f3295a0061bdd80fc018adcaa40b23e"
+  },
+  "outdoor-biolite": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "798bb2311c2d39914906ad7b71246803442b936ceb73e5e7dae6413d0934268e",
+   "draw": "55d7cec20072aba48200607370d48acea7aa5221d4dde0310b792a5f48e3288e",
+   "values": "2e5be0d6f09a234230ccae781427b8e92c2a9c31ce85056a2ba5066b9e2be879"
+  },
+  "outdoor-nemo": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "e6cf14c0ed5f7c65d6d231f58ffa0c631bd19da05034ae4d59dd8cfa99da83ce",
+   "draw": "21d43287808476143d7ecefb0eac8838c489736f47f17c79505565ea9681374a",
+   "values": "056014d2ba6eaa895b283400c008cd54c266977637faa81a2d0c1e2bcdf4d104"
+  },
+  "outdoor-hilleberg": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f491a7565c525d351991695a2008bb173fb06f493236592336857ab8a519e3ef",
+   "draw": "7d5352f62d86ae33037b9be3d8da88417a395c31700af7c3c5c9e9e6b40bc76b",
+   "values": "6ae89c5ce0aba706b0b30649d36c020b321316bea76f8dd06d258a7f2fe14b18"
+  },
+  "outdoor-big-agnes": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "a87efa6845b66c635f0611cae5e90794a60d068b3277972a5f17703817621ba6",
+   "draw": "910b4654102eb31177da9336495ba95f4acacb1090053ecc682f16c64bdee202",
+   "values": "8830485c74f47fbfb5cd2819a29f20a363fab56055854680295198ba64891550"
+  },
+  "outdoor-sea-to-summit": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "2954db89f78fcfe0397d02a511a18435a1558b75c3cd44c67c2727d10ae501bf",
+   "draw": "f21ef7ae04812df19dc09f7f2a3266bb7f28239dc6c6b277a25dc1144e61ef08",
+   "values": "1f2dab19065f6090c5a79f1627d20f988f2ba5d934eca61b1298bcc527edd577"
+  },
+  "outdoor-osprey": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "e213a587362bb10279aefc2e40eb5fc95d1951dfa00486ec3d9afc932ecb345f",
+   "draw": "1c32933cde1289351b70fadcaa5fcada51c4868b359028480eece3fa4dff8482",
+   "values": "431c6d7d4538e72495131969fb43e747fe0b31a4a8af05af07bebe39065b63d0"
+  },
+  "outdoor-deuter": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "7179fb6a52070a3f8ece0ffc90a2bbffafe7524af73a5a145ecc5aa3cc78d3f5",
+   "draw": "dac6487718c149aa4e3ae7eed9c0f5e0f9cc3b35cf21e17c96dd9d62d95c566d",
+   "values": "98015e380dbf08abec8fee47513a5b1634c760a81dc7e33a2089de4b73dd6905"
+  },
+  "outdoor-gregory": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "52cfb490a2bb0c0d725189adee5ee87fe9122c3fe4e5c36d042cb1c52b974ab7",
+   "draw": "9895bdb186ccff8b83889766d0e31d655b745bdfc4145da4d03c03827ea20ae8",
+   "values": "c0a1352c4adb963316bfa3b1dfa5e2b42af34a8879df09c0bbe12bda044cb027"
+  },
+  "outdoor-black-diamond": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "6e4e7a11b7ea30fb797caf6b35dbd2baeef711b5282a97665458ab279419d77d",
+   "draw": "015f600a65c2d88a8df475e7ddcbee47d381a222ef6ab0ea3f80b86b30a4d4cb",
+   "values": "2fe2315442e329ba7b969c974f861e52b4eb5fd2124bfca4645d7bf5d5ed350a"
+  },
+  "outdoor-montbell": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f2e46837ec2aee54e479c0f073f0ce7114c4c5e3b4573332348d17555826b7fa",
+   "draw": "68aa2699982b6aa4149103e21c545720f30c5ae8dc6130b6550a9aa3e6eb18fd",
+   "values": "b93378837ddb04b6a5a275514872fede620fa67e705ec7c9e95b53d5e85c6af9"
+  },
+  "outdoor-dometic": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "632aee1202688456cad8ecda87a13fd9ec7f8799d5b3b4c57add753e37c04793",
+   "draw": "1984d43c87122b7736cc5738fb9d2adef6d067ca160024aab0da8f7d984e68de",
+   "values": "b63067c01d6ea971d15e35bc66673de34d488d9cdc7eaded7d4e5caab9a48338"
+  },
+  "sport-wilson": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "9f1b786539e520b354498b8513edd03c261cbfb5e9c4023d28b38f7d7d6af9ad",
+   "draw": "6b5e379abef02c81bf37cffc40aa850199f597f01eb3103dc56ece38e9d97351",
+   "values": "c9d5be6482aa1a2a672da751d92cb43b0d145ca1ccd64e42eb429fadd9b79d09"
+  },
+  "sport-babolat": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "8f7493f6f7c5bf416d51bf243fce65e1fa66a3d2709b5e10fd0647e45ff02262",
+   "draw": "f06f1a12ba19efd713261a5a316a7dcf4715f016326926ee7f7cc0b643a4e120",
+   "values": "6693a088bba04ce340d6e6bf417fb06eeb885e64563a967e4cec39a2fa21158c"
+  },
+  "sport-yonex": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "18b9d828b36e0b451f596b3c02f1705e4cf66ed9713da469c46a26cbe4333340",
+   "draw": "4be358f45b638e945dc749d9cb555a62a14bfdf86a22b62f4379d4b5efd99586",
+   "values": "de5106a98bdd89c6d161b98d395fec15ce3a3891c89a5435c4577575bb9b44f6"
+  },
+  "sport-head": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "484cf30c591974c4c1946f70f1df6e3b57c7bb5c4dc8a4a7e3f9eb61e667a725",
+   "draw": "13973654904ffa040b6cdab8de09de69bc285c5f75fd917bf7ffb5ee2c2b2f50",
+   "values": "6b25fe424526c4571f84d32207940c1e1ba50cbc869354bddad16387f59d2ed8"
+  },
+  "sport-adidas": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "5ef46e3e8c7c7a9544c9ee4a670a76969cff9b9b567c91ce02e9a4bfc4245f06",
+   "draw": "941eb72bb8ec8065cc3b1ff20db0131dc7212001c3338095bf9cee99f6398e33",
+   "values": "5718abea48885fa87b6607e274e91b10e8723a35df017517fffd8bc5384c6392"
+  },
+  "sport-mikasa": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "14543b31862663932148af6838adfd47b5d1a6028856a9b01dfbd2914ad65bca",
+   "draw": "7e710ca64b1b0d2b9dd99cb0397f440d72369e8fcfed5d84fd9406dbc0e2fbf2",
+   "values": "39c5e398ff29bb21aa09de1e09922ea57c55b85f6722bd9be0e3374f1474faa6"
+  },
+  "sport-titleist": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "3e02b50444365dc4a8c504f6eacc49141417aadcbc5f0c13389388611a0d6b3e",
+   "draw": "979d758495556e04195ffa3961b798f7b4c9094e60dfd4a1884827d54c02b5c7",
+   "values": "d82aef4288285611f143c4c2d044240ffaefecc413923615ddf64a6c9dfa0841"
+  },
+  "sport-scotty-cameron": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "a15b6fac0595200d8d8bf7abde791c260658d1f1b2ea924fc36a8401bff6901f",
+   "draw": "729fc0fbe7e1b9129f4353503d9f6c8ab4ee8ae8296d02397b30b99998464acd",
+   "values": "91341f8ea9477e9e20bedc460b8e52c8fa8d4d58c560d95f8d6e86e0ee2bbd77"
+  },
+  "sport-garmin": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "8c28dd0adc8219dc26d79560f7e88159305c8fa20e2cdf2bb440bdc1b6a89b97",
+   "draw": "abb774e74b20c885cc4cb698d58eaa1fafe95ff013b6f7dedfa3a7b72cdd90ed",
+   "values": "a9454434760f8ca02e500901d19f6466a99455a2f7bab684e53ecc8d83a71b89"
+  },
+  "sport-polar": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "feaf419efd7de77680c4f884b551ed725f77bf05c9d40b305bb96f6a5e913cc3",
+   "draw": "a5570bbc6fab8d40320008e65cfb0ad782a1dfc9ef4ad1afe211baf39407e3bb",
+   "values": "689d33d9ac26fe63b99ba597a2552093b15cd445fe6d669b4995242315dfa0fa"
+  },
+  "sport-rogue": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "b2ecda911b6a1017d20615e7c08cef79d2702c5fe05149bff52ac38a3afc2091",
+   "draw": "fcbba693cb3a7f8f4d2455e3b5f45355b1426d8a71f1d3d2a9f7f273465d3913",
+   "values": "36952178c379af0c6d9ee3ea0c7011f2e756bb9f14c1a8fd58fe6fbbe4f39c63"
+  },
+  "sport-eleiko": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "71a9da4d8c98e45a17761bd03bde9c58035813e272b187e0f2fb8cefaf8605be",
+   "draw": "3bcc50041a52187da26f7c8902cbd6b0e3927268be1d90068c6f075ab28b38bf",
+   "values": "9b2ee839d4a8c849a3430cd55e5ef16032830af8f40368ec3477c65fead35aca"
+  },
+  "sport-concept2": {
+   "price": 250,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "64c2e369671d900e070cd53795651c42709886f8e844ff73ab7d802f3491d29f",
+   "draw": "be4d56e933b5e9e666602d2be10972501e1dea8b0871ee892738549f5eec1061",
+   "values": "5b223ee3056044aff58c56c665701895c017ca8eb6fa1cd26ef111eba2b137a2"
+  },
+  "sport-manduka": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "cecc8eb9be7047d453e455576f67f35866974f29f9597a36600c8cfb2d173f5a",
+   "draw": "ecfdbbd9636d485c80cc1399196f6a81f27b827aac774bfecd11c02257009160",
+   "values": "d366a41a528fbf1dad0134c469c400595f9ee25b3a8108d664e03e0ed095568a"
+  },
+  "sport-bala": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ba9c97f4e7a70acd655e3d1940ac9f23c4194d1dd1ef08780b0e321431ae8499",
+   "draw": "bbb166af7a61f52d80060c3a43e5b41b6f67a73a651594684745fab6845147bf",
+   "values": "8f9fb1fe6c964559218e1c793def3b649f28b4d5d27a471b4d972f7adcbd3eae"
+  },
+  "sport-trx": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "eb3b48390c77b3a75c0bd7d0479c99afea61cc1e50eef2d88e60a56b54267b31",
+   "draw": "8160e214bf3a8bd52440dbb25ae41bcc3dd24bb39878d721ec08bf6c29f0a44c",
+   "values": "0ff3cf3a71e26d6230021823a30b1f3641c8945bbe3b46f4b12bd96ad22760b1"
+  },
+  "sport-therabody": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "47f296adea0a94c7be2c88ad14ba23cc1ec977bddca6e2fce6807fc457712cb6",
+   "draw": "d63ba3991d06ba2275d8eca552ff66cf5e7bc91669cd60cfad5725fb1deea960",
+   "values": "e4684ddb52118e63973b44b7be9b41a3fdcc9680607ff63c3fdd7d43d4012aaf"
+  },
+  "sport-hyperice": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f14b641bc887ebdbe12aac07d436d0b7e3d3340c8f74a38d65ccd85a61320d1a",
+   "draw": "7335e5d14d153db7b3b6f38edfc4fafbca87f04317d2f5c75829adffe78a8645",
+   "values": "8e332cdba0ee19d629964808d3e933572e9861bb2b3735f90ade248c8679edfa"
+  },
+  "sport-hayabusa": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "4ea4da0b80de64123040a68f6eca97cc718c5dc36c4f76f568e14d222b5ad306",
+   "draw": "3405618f1d652a8bd2ba2df39e07b456e5f1661caebeaf7e88c4bac0e8961521",
+   "values": "4f33bf074738253b494e13c7ba77a9bfd31c68176a77f6d63030b2a9291fe888"
+  },
+  "sport-speedo": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "cc4547569ec658a2ab285410d549655c8f370dfd6809b636a758177ebcd7d9d8",
+   "draw": "c3d3b3d6e003663aa75d84784d455b45d6d76a574e7d7e433c5f2a3de34a7184",
+   "values": "94703d06b3932ea677479d0cd2aa6f8c725bb91b12b170954586ecd5407b1e20"
+  },
+  "beauty-chanel": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "ff43751c8000296b3a356ac62f40dc16e0dfd0e2d38ba10a68c28b626e7d7760",
+   "draw": "6eef18d12867cd856c0d251169c10714a3641d8d703cf2405c65742733d0d057",
+   "values": "10b30965731985942ff04fce99fb302e1e081e773bcb3f8ea6421f9ac29d90f6"
+  },
+  "beauty-dior": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "e8b36f20748743317047a309c7e43d09d9daa73cd26ca1edb642307f483863db",
+   "draw": "63c6ed219703b3f3224b271f0ada851f981484b0eb90e24819481d5b3d19efbd",
+   "values": "12734ca7a11ad22bb7f7830e3ce9f2f73912c2a90f141f0661be332dcf056d37"
+  },
+  "beauty-jo-malone": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "169917b6c45136c144fdb2aa394b60f19fee44aac4fab42d318f30e9b04a84e2",
+   "draw": "3d8aa72fc9523842ed122d2752fcc18306ec2edd589ecbdd6367344604d6355e",
+   "values": "520f53c48b73cd9e04a824f6451dc6b09b5ebdad49787535437550147ca54d76"
+  },
+  "beauty-le-labo": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "0b24a2aff1191fe07c4a426b13002e71727c6ca52a54e7bd040befd99621fe37",
+   "draw": "8d2365b211dff9919efb6baaf4375b5fe3f95c82704daea768ce40dd4d23fca6",
+   "values": "923c1f079691d1c9198886a21fc4bda7d931cdf65999f073e58bd545697d4c68"
+  },
+  "beauty-maison-francis-kurkdjian": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f55534e8b75be03c3a86c0b57d43df3cc20dff0a99f0b7f1badb59b8d14e69aa",
+   "draw": "dc5cd4e56fe2eb12802a59582a09d819afe79838052f0304e953ddf4fb297a93",
+   "values": "f44de3cc15a608bccf20c7bb79d4c321edf9a24c4b6dd815e6002e0156757055"
+  },
+  "beauty-tom-ford": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "81a5ceafff2279dd04ee2fd979e01cedadcd2521357adaebb058b5b522e3b5c7",
+   "draw": "504a85e5da4b7e33ac18bba76e4ea4ebb1fbe1b0e43394bf46bcfda7d8b06c73",
+   "values": "4846fb4a77d87562aae7b67fd4bd3cf8b975ddc51de49aeab6094fd55c323f19"
+  },
+  "beauty-byredo": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "2302375db5e9232d59a998e69f6432ab02ec465922b0c6777c280b6ee06572a0",
+   "draw": "eb6f9d3272c2bd8171ebfac74fb04ec6af627d18af6d8cd1799dd8e71d97c098",
+   "values": "53287940cdfbacc81225a86e247e2f34624e9c3164ef14f140695da0a33e5c94"
+  },
+  "beauty-diptyque": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "15f3f7d098f86a4347ac5268a1b4d20b77c7a22c5b0b3386d9bd6b528b4dad8b",
+   "draw": "4f9d78d446032cd53cafd28617ccf3f85d071bc790edf8ff2e4274d92f7beecc",
+   "values": "44551896b25e31d3fc7aa78debc7e87b80e50d68e038dcafdb6de17f7cec33dd"
+  },
+  "beauty-creed": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "fc185c7a08d43c8872bf1bbc651ba5d15e1c24be816bfbbea93cbb1620c8c165",
+   "draw": "34f3b4fd754e98d9ae63e55e990c73cc579e32169a87e4d1d08accee62324668",
+   "values": "33c45ccab1f24f2be21aceb1f91c954d8860968426a9e2b2d180ffe1063154be"
+  },
+  "beauty-ysl": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "e9e0b748daa9eb42778cee26872cfc6114d95411719dd2a399bbc64c7566e00e",
+   "draw": "195386bfaaab2998457ee9f43736d0a9774ef941c9124809ab132ea913ec2224",
+   "values": "e31c5fe1d4271c0ad6c147ab6fb898119580ea14e3365e8e9d654d98c6fb417d"
+  },
+  "beauty-prada": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "08fd2f36854d75ceb027a4cb2939dfa1598f87038e5dd7d94705da51b3db9d1e",
+   "draw": "9eda3b4c5fc266e8253f5e827631b59d8b11ace72aaa2d20f2d590b23fd88b35",
+   "values": "76d8c8416e1b437d6655c5ebdb9aa119e55bcc8efe5acfc4b003656ad8c61ff9"
+  },
+  "beauty-maison-margiela": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "2023a71eacf4ed09f87835fe180b3c21f7b00ed0a9bc1fe23f8296e8d82de314",
+   "draw": "0ac36caff2b4ce1336c3bfe3b46f904309a8d442ca532df24836a8918cdc3343",
+   "values": "31a795861d1f14fb32e871a71dcc34bd245ed81f1afdd88cdd4f06287fd7ce93"
+  },
+  "beauty-aesop": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "f7d5c5f97f3b3e7a8d06d1072360d858c2e014fb93a41b36cd0aab89f58877f9",
+   "draw": "3e85f1223993a0853410301d50df20f5b36c26ba6121b7cba3782163b941f4b7",
+   "values": "c9397e403068ec377f78427206a4216b7bc44aa784db7bde5e1697db77b0fb9d"
+  },
+  "beauty-loccitane": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "95a69f35f000e453f072007c08473ff4146dae7aea062a1fc0eb1e14eb0ff4c5",
+   "draw": "b17e5094dbe87ffedcc4921f293ba460a356b6fe0e5238383a06477e0081d08e",
+   "values": "f20f3416a8599192304b4a623d2b81d121305e06fcff1e2debba2844619a2887"
+  },
+  "beauty-kiehls": {
+   "price": 20,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "b1fa36705f098b0aefbea2ac88879e25cc0f0d31c13966beadaed1fb507e7165",
+   "draw": "3cb32bd76c4124f2b3c4c90974fa23c80766e7c7929e6580642163b995fb4574",
+   "values": "c20b8b053c41fb26d2054c92f12a96512ec4c839301309bbb602b972a0e39eee"
+  },
+  "beauty-estee-lauder": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "181790d4684370b32927db8751023aabbe1d2dc3afc89eed37c007476581c052",
+   "draw": "8d4192ae94339e89456b4d9bd954c821fbc56b9527b5bdc7a000063809b9935e",
+   "values": "90b5ebc3fd00d4b18df031764b8b708b4a0315746adf49b02158838c37bad9ab"
+  },
+  "beauty-lancome": {
+   "price": 50,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "8d291abb2bc0747a97559f965e0c1604d1dbf1fcad4b7b575597e7ab8bd47ad7",
+   "draw": "a77aa970a613051764321191295ace227fbebcc5feea2397c5cb712617f55f28",
+   "values": "56d9bb0540b5151032d7d1153e183f007bb84092c2b875b14e5c6abd7d3f52f8"
+  },
+  "beauty-sk-ii": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "98070750506c1b302e8bf7c0131cf65eeeb84d1978faa687017c504bfaa6b96b",
+   "draw": "51adb6199e6a8bd955a38e61168ee1c2ed85a0dde22ffd3548540ae3b2487049",
+   "values": "a7648a4d8454166ccfce83c8e3903862b10307cf2a158e0b55f88ef1a6958569"
+  },
+  "beauty-la-mer": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "8911875e83472e1d2089c1108d6f0f59ff99f15c8607e93b56dfde687da44e72",
+   "draw": "8dff0a7674592503ceea83883ffd2688b8384c11b7362f9ab53d8659be03af0b",
+   "values": "c3d8d22241becae1d136002a1c75001855f2153b4879508fc857345986fa487c"
+  },
+  "beauty-dyson": {
+   "price": 100,
+   "items": 100,
+   "rateSum": 1000000,
+   "table": "d596f8f5036fb18a529ce9f52fcf7a4d599196731ed45aedcb0ab5488d07f6b5",
+   "draw": "50293dc56171e261cee1c9fe46cf9d96599d0e1e45c6cb085b549ca8757d087d",
+   "values": "e4d5403ee3a988eb47a257c20a0de791eb4b34612499a402d43f2eaa11ee763a"
+  }
+ }
+}

@@ -1,0 +1,1067 @@
+{
+ "meta": {
+  "baselineCommit": "63445c7fa094125bfb1c60d7fccd17dd4005c07d",
+  "note": "기준 커밋에서 한 번 만든 값이다. 검사가 실패해도 다시 만들어 통과시키지 않는다."
+ },
+ "serverSeed": "parity-audit-server-seed-0001",
+ "serverSeedHash": "24bb857459d501933bf8e8e3081536e482a8360e894a3ed4e8929e0b1c2759ff",
+ "clientSeed": "parity-audit-client-seed",
+ "boxes": {
+  "gaming-playstation": [
+   {
+    "nonce": 0,
+    "roll": 867322,
+    "itemId": "gaming-p-skull-and-co-d-pad-button-cap-set-for-joy-con",
+    "value": 7.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 1,
+    "roll": 228990,
+    "itemId": "gaming-playstation-uncharted-legacy-of-thieves-collection-ps5",
+    "value": 49.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 2,
+    "roll": 618869,
+    "itemId": "gaming-p-glorious-g-floats-mouse-feet",
+    "value": 9.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 3,
+    "roll": 616908,
+    "itemId": "gaming-p-glorious-g-floats-mouse-feet",
+    "value": 9.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 4,
+    "roll": 902854,
+    "itemId": "gaming-p-amazon-basics-high-speed-hdmi-cable-6ft",
+    "value": 7.49,
+    "kind": "physical"
+   },
+   {
+    "nonce": 5,
+    "roll": 673959,
+    "itemId": "gaming-p-sandisk-ultra-microsdxc-64gb",
+    "value": 9.49,
+    "kind": "physical"
+   },
+   {
+    "nonce": 6,
+    "roll": 453594,
+    "itemId": "gaming-playstation-ps5-vertical-stand",
+    "value": 29.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 7,
+    "roll": 713947,
+    "itemId": "gaming-p-amfilm-tempered-glass-screen-protector-for-nintendo",
+    "value": 8.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 8,
+    "roll": 537116,
+    "itemId": "gaming-playstation-playstation-link-usb-adapter",
+    "value": 24.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 9,
+    "roll": 124755,
+    "itemId": "gaming-p-flydigi-vader-4-pro-controller",
+    "value": 79.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 10,
+    "roll": 317071,
+    "itemId": "gaming-playstation-horizon-zero-dawn-remastered-ps5",
+    "value": 49.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 11,
+    "roll": 514534,
+    "itemId": "gaming-p-skull-and-co-neogrip-for-nintendo-switch-oled",
+    "value": 27.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 12,
+    "roll": 71943,
+    "itemId": "gaming-playstation-pulse-3d-wireless-headset",
+    "value": 99.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 13,
+    "roll": 386367,
+    "itemId": "gaming-p-glorious-panda-switches-36-pack",
+    "value": 29.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 14,
+    "roll": 397746,
+    "itemId": "gaming-p-glorious-xxl-extended-mouse-pad-18x36",
+    "value": 29.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 15,
+    "roll": 758824,
+    "itemId": "gaming-p-hori-screen-protective-filter-for-nintendo-switch",
+    "value": 8.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 16,
+    "roll": 98183,
+    "itemId": "gaming-playstation-disc-drive-for-ps5-digital-edition-consoles",
+    "value": 79.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 17,
+    "roll": 719201,
+    "itemId": "gaming-p-cable-matters-usb-c-to-usb-c-100w-cable-6-6ft",
+    "value": 8.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 18,
+    "roll": 466030,
+    "itemId": "gaming-playstation-ps5-media-remote",
+    "value": 29.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 19,
+    "roll": 624832,
+    "itemId": "gaming-p-noctua-nt-h1-thermal-compound-3-5g",
+    "value": 9.95,
+    "kind": "physical"
+   },
+   {
+    "nonce": 20,
+    "roll": 52036,
+    "itemId": "gaming-p-rode-nt-usb-plus-usb-condenser-microphone",
+    "value": 169,
+    "kind": "physical"
+   },
+   {
+    "nonce": 21,
+    "roll": 750170,
+    "itemId": "gaming-p-hori-screen-protective-filter-for-nintendo-switch",
+    "value": 8.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 22,
+    "roll": 136130,
+    "itemId": "gaming-p-gamesir-g8-galileo-mobile-controller",
+    "value": 79.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 23,
+    "roll": 909777,
+    "itemId": "gaming-p-arctic-mx-4-thermal-compound-4g",
+    "value": 6.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 24,
+    "roll": 297345,
+    "itemId": "gaming-playstation-the-last-of-us-part-ii-remastered-ps5",
+    "value": 49.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 25,
+    "roll": 825106,
+    "itemId": "gaming-p-corepad-skatez-pro-mouse-feet",
+    "value": 7.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 26,
+    "roll": 644159,
+    "itemId": "gaming-p-noctua-nt-h1-thermal-compound-3-5g",
+    "value": 9.95,
+    "kind": "physical"
+   },
+   {
+    "nonce": 27,
+    "roll": 607815,
+    "itemId": "gaming-p-glorious-g-floats-mouse-feet",
+    "value": 9.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 28,
+    "roll": 540591,
+    "itemId": "gaming-playstation-playstation-link-usb-adapter",
+    "value": 24.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 29,
+    "roll": 476413,
+    "itemId": "gaming-playstation-ps5-media-remote",
+    "value": 29.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 30,
+    "roll": 373152,
+    "itemId": "gaming-p-glorious-elements-ice-mouse-pad",
+    "value": 29.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 31,
+    "roll": 263113,
+    "itemId": "gaming-playstation-marvel-s-spider-man-miles-morales-ps5",
+    "value": 49.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 32,
+    "roll": 831576,
+    "itemId": "gaming-p-corepad-skatez-pro-mouse-feet",
+    "value": 7.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 33,
+    "roll": 634995,
+    "itemId": "gaming-p-noctua-nt-h1-thermal-compound-3-5g",
+    "value": 9.95,
+    "kind": "physical"
+   },
+   {
+    "nonce": 34,
+    "roll": 441878,
+    "itemId": "gaming-playstation-ps5-vertical-stand",
+    "value": 29.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 35,
+    "roll": 961525,
+    "itemId": "gaming-p-playvital-thumb-grip-caps-for-ps5-controller",
+    "value": 6.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 36,
+    "roll": 413935,
+    "itemId": "gaming-p-glorious-xxl-extended-mouse-pad-18x36",
+    "value": 29.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 37,
+    "roll": 373096,
+    "itemId": "gaming-p-glorious-elements-ice-mouse-pad",
+    "value": 29.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 38,
+    "roll": 152526,
+    "itemId": "gaming-p-gulikit-kk3-max-controller",
+    "value": 79.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 39,
+    "roll": 257562,
+    "itemId": "gaming-playstation-marvel-s-spider-man-miles-morales-ps5",
+    "value": 49.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 40,
+    "roll": 924636,
+    "itemId": "gaming-p-arctic-mx-4-thermal-compound-4g",
+    "value": 6.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 41,
+    "roll": 572080,
+    "itemId": "gaming-playstation-dualsense-edge-stick-module",
+    "value": 19.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 42,
+    "roll": 743990,
+    "itemId": "gaming-p-cable-matters-usb-c-to-usb-c-100w-cable-6-6ft",
+    "value": 8.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 43,
+    "roll": 341186,
+    "itemId": "gaming-playstation-helldivers-2-ps5",
+    "value": 39.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 44,
+    "roll": 657376,
+    "itemId": "gaming-p-sandisk-ultra-microsdxc-64gb",
+    "value": 9.49,
+    "kind": "physical"
+   },
+   {
+    "nonce": 45,
+    "roll": 546169,
+    "itemId": "gaming-playstation-playstation-link-usb-adapter",
+    "value": 24.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 46,
+    "roll": 989734,
+    "itemId": "gaming-p-sandisk-ultra-microsdhc-32gb",
+    "value": 6.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 47,
+    "roll": 444587,
+    "itemId": "gaming-playstation-ps5-vertical-stand",
+    "value": 29.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 48,
+    "roll": 105520,
+    "itemId": "gaming-p-endgame-gear-xm2we-wireless-gaming-mouse",
+    "value": 79.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 49,
+    "roll": 532107,
+    "itemId": "gaming-playstation-playstation-link-usb-adapter",
+    "value": 24.99,
+    "kind": "physical"
+   }
+  ],
+  "watch-rolex": [
+   {
+    "nonce": 0,
+    "roll": 867322,
+    "itemId": "watch-p-xiaomi-smart-band-8",
+    "value": 34.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 1,
+    "roll": 228990,
+    "itemId": "watch-p-bergeon-7825-spring-bar-tweezers",
+    "value": 155,
+    "kind": "physical"
+   },
+   {
+    "nonce": 2,
+    "roll": 618869,
+    "itemId": "watch-p-casio-edifice-efr-s108d-1av",
+    "value": 130,
+    "kind": "physical"
+   },
+   {
+    "nonce": 3,
+    "roll": 616908,
+    "itemId": "watch-p-casio-edifice-efr-s108d-1av",
+    "value": 130,
+    "kind": "physical"
+   },
+   {
+    "nonce": 4,
+    "roll": 902854,
+    "itemId": "watch-p-casio-a168wa-1",
+    "value": 31.95,
+    "kind": "physical"
+   },
+   {
+    "nonce": 5,
+    "roll": 673959,
+    "itemId": "watch-p-hirsch-robby-performance-strap-20mm",
+    "value": 129,
+    "kind": "physical"
+   },
+   {
+    "nonce": 6,
+    "roll": 453594,
+    "itemId": "watch-p-bergeon-30081-s09-screwdrivers-set-rotating-stand",
+    "value": 145,
+    "kind": "physical"
+   },
+   {
+    "nonce": 7,
+    "roll": 713947,
+    "itemId": "watch-p-mvmt-classic-45mm",
+    "value": 128,
+    "kind": "physical"
+   },
+   {
+    "nonce": 8,
+    "roll": 537116,
+    "itemId": "watch-p-timex-waterbury-classic-40mm",
+    "value": 139,
+    "kind": "physical"
+   },
+   {
+    "nonce": 9,
+    "roll": 124755,
+    "itemId": "watch-p-tissot-prx-quartz-40mm-t1374101104100",
+    "value": 395,
+    "kind": "physical"
+   },
+   {
+    "nonce": 10,
+    "roll": 317071,
+    "itemId": "watch-p-g-shock-gw-m5610u-1",
+    "value": 150,
+    "kind": "physical"
+   },
+   {
+    "nonce": 11,
+    "roll": 514534,
+    "itemId": "watch-p-timex-waterbury-classic-40mm",
+    "value": 139,
+    "kind": "physical"
+   },
+   {
+    "nonce": 12,
+    "roll": 71943,
+    "itemId": "watch-p-google-pixel-watch-3-45mm",
+    "value": 399.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 13,
+    "roll": 386367,
+    "itemId": "watch-p-garmin-vivosmart-5",
+    "value": 149.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 14,
+    "roll": 397746,
+    "itemId": "watch-p-garmin-vivosmart-5",
+    "value": 149.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 15,
+    "roll": 758824,
+    "itemId": "watch-p-forstner-komfit-jb-mesh-bracelet",
+    "value": 125,
+    "kind": "physical"
+   },
+   {
+    "nonce": 16,
+    "roll": 98183,
+    "itemId": "watch-p-apple-watch-series-11-42mm",
+    "value": 399,
+    "kind": "physical"
+   },
+   {
+    "nonce": 17,
+    "roll": 719201,
+    "itemId": "watch-p-mvmt-classic-45mm",
+    "value": 128,
+    "kind": "physical"
+   },
+   {
+    "nonce": 18,
+    "roll": 466030,
+    "itemId": "watch-p-bergeon-30081-s09-screwdrivers-set-rotating-stand",
+    "value": 145,
+    "kind": "physical"
+   },
+   {
+    "nonce": 19,
+    "roll": 624832,
+    "itemId": "watch-p-casio-edifice-efr-s108d-1av",
+    "value": 130,
+    "kind": "physical"
+   },
+   {
+    "nonce": 20,
+    "roll": 52036,
+    "itemId": "watch-p-citizen-promaster-skyhawk-a-t-jy8078-52l",
+    "value": 750,
+    "kind": "physical"
+   },
+   {
+    "nonce": 21,
+    "roll": 750170,
+    "itemId": "watch-p-forstner-komfit-jb-mesh-bracelet",
+    "value": 125,
+    "kind": "physical"
+   },
+   {
+    "nonce": 22,
+    "roll": 136130,
+    "itemId": "watch-p-tissot-prx-quartz-40mm-t1374101104100",
+    "value": 395,
+    "kind": "physical"
+   },
+   {
+    "nonce": 23,
+    "roll": 909777,
+    "itemId": "watch-p-casio-a168wa-1",
+    "value": 31.95,
+    "kind": "physical"
+   },
+   {
+    "nonce": 24,
+    "roll": 297345,
+    "itemId": "watch-p-g-shock-ga-b2100-1a",
+    "value": 155,
+    "kind": "physical"
+   },
+   {
+    "nonce": 25,
+    "roll": 825106,
+    "itemId": "watch-p-casio-a700w-1a",
+    "value": 39.95,
+    "kind": "physical"
+   },
+   {
+    "nonce": 26,
+    "roll": 644159,
+    "itemId": "watch-p-hirsch-robby-performance-strap-20mm",
+    "value": 129,
+    "kind": "physical"
+   },
+   {
+    "nonce": 27,
+    "roll": 607815,
+    "itemId": "watch-p-casio-edifice-efr-s108d-1av",
+    "value": 130,
+    "kind": "physical"
+   },
+   {
+    "nonce": 28,
+    "roll": 540591,
+    "itemId": "watch-p-timex-waterbury-classic-40mm",
+    "value": 139,
+    "kind": "physical"
+   },
+   {
+    "nonce": 29,
+    "roll": 476413,
+    "itemId": "watch-p-bergeon-30081-s09-screwdrivers-set-rotating-stand",
+    "value": 145,
+    "kind": "physical"
+   },
+   {
+    "nonce": 30,
+    "roll": 373152,
+    "itemId": "watch-p-garmin-vivosmart-5",
+    "value": 149.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 31,
+    "roll": 263113,
+    "itemId": "watch-p-bergeon-7825-spring-bar-tweezers",
+    "value": 155,
+    "kind": "physical"
+   },
+   {
+    "nonce": 32,
+    "roll": 831576,
+    "itemId": "watch-p-dumont-no-3-dumoxel-tweezers",
+    "value": 36.95,
+    "kind": "physical"
+   },
+   {
+    "nonce": 33,
+    "roll": 634995,
+    "itemId": "watch-p-hirsch-robby-performance-strap-20mm",
+    "value": 129,
+    "kind": "physical"
+   },
+   {
+    "nonce": 34,
+    "roll": 441878,
+    "itemId": "watch-p-g-shock-gbd-200-1",
+    "value": 149,
+    "kind": "physical"
+   },
+   {
+    "nonce": 35,
+    "roll": 961525,
+    "itemId": "watch-p-casio-mrw-200h-1bv",
+    "value": 27.95,
+    "kind": "physical"
+   },
+   {
+    "nonce": 36,
+    "roll": 413935,
+    "itemId": "watch-p-g-shock-gbd-200-1",
+    "value": 149,
+    "kind": "physical"
+   },
+   {
+    "nonce": 37,
+    "roll": 373096,
+    "itemId": "watch-p-garmin-vivosmart-5",
+    "value": 149.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 38,
+    "roll": 152526,
+    "itemId": "watch-p-citizen-promaster-dive-bn0151-09l",
+    "value": 375,
+    "kind": "physical"
+   },
+   {
+    "nonce": 39,
+    "roll": 257562,
+    "itemId": "watch-p-bergeon-7825-spring-bar-tweezers",
+    "value": 155,
+    "kind": "physical"
+   },
+   {
+    "nonce": 40,
+    "roll": 924636,
+    "itemId": "watch-p-moebius-9010-synthetic-watch-oil-2ml",
+    "value": 31.95,
+    "kind": "physical"
+   },
+   {
+    "nonce": 41,
+    "roll": 572080,
+    "itemId": "watch-p-isofrane-1968-rubber-strap-20mm",
+    "value": 135,
+    "kind": "physical"
+   },
+   {
+    "nonce": 42,
+    "roll": 743990,
+    "itemId": "watch-p-forstner-komfit-jb-mesh-bracelet",
+    "value": 125,
+    "kind": "physical"
+   },
+   {
+    "nonce": 43,
+    "roll": 341186,
+    "itemId": "watch-p-g-shock-gw-m5610u-1",
+    "value": 150,
+    "kind": "physical"
+   },
+   {
+    "nonce": 44,
+    "roll": 657376,
+    "itemId": "watch-p-hirsch-robby-performance-strap-20mm",
+    "value": 129,
+    "kind": "physical"
+   },
+   {
+    "nonce": 45,
+    "roll": 546169,
+    "itemId": "watch-p-isofrane-1968-rubber-strap-20mm",
+    "value": 135,
+    "kind": "physical"
+   },
+   {
+    "nonce": 46,
+    "roll": 989734,
+    "itemId": "watch-p-polywatch-glass-polish",
+    "value": 25.95,
+    "kind": "physical"
+   },
+   {
+    "nonce": 47,
+    "roll": 444587,
+    "itemId": "watch-p-g-shock-gbd-200-1",
+    "value": 149,
+    "kind": "physical"
+   },
+   {
+    "nonce": 48,
+    "roll": 105520,
+    "itemId": "watch-p-apple-watch-series-11-42mm",
+    "value": 399,
+    "kind": "physical"
+   },
+   {
+    "nonce": 49,
+    "roll": 532107,
+    "itemId": "watch-p-timex-waterbury-classic-40mm",
+    "value": 139,
+    "kind": "physical"
+   }
+  ],
+  "pokemon-charizard": [
+   {
+    "nonce": 0,
+    "roll": 867322,
+    "itemId": "pokemon-p-ug-precise-fit-100",
+    "value": 5.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 1,
+    "roll": 228990,
+    "itemId": "pokemon-charizard-charizard-vmax-daa-020-189",
+    "value": 45,
+    "kind": "physical"
+   },
+   {
+    "nonce": 2,
+    "roll": 618869,
+    "itemId": "pokemon-p-ds-perfect-fit-sealable-100",
+    "value": 6.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 3,
+    "roll": 616908,
+    "itemId": "pokemon-p-bp-jtg",
+    "value": 7,
+    "kind": "physical"
+   },
+   {
+    "nonce": 4,
+    "roll": 902854,
+    "itemId": "pokemon-p-up-graded-card-sleeves-100",
+    "value": 5.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 5,
+    "roll": 673959,
+    "itemId": "pokemon-p-bp-obf",
+    "value": 6.5,
+    "kind": "physical"
+   },
+   {
+    "nonce": 6,
+    "roll": 453594,
+    "itemId": "pokemon-p-vx-9-pocket-exo-tec-zip-binder",
+    "value": 27.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 7,
+    "roll": 713947,
+    "itemId": "pokemon-p-bp-scr",
+    "value": 6,
+    "kind": "physical"
+   },
+   {
+    "nonce": 8,
+    "roll": 537116,
+    "itemId": "pokemon-charizard-sitting-cuties-plush",
+    "value": 14.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 9,
+    "roll": 124755,
+    "itemId": "pokemon-p-etb-fst",
+    "value": 80,
+    "kind": "physical"
+   },
+   {
+    "nonce": 10,
+    "roll": 317071,
+    "itemId": "pokemon-p-bp-hif",
+    "value": 28,
+    "kind": "physical"
+   },
+   {
+    "nonce": 11,
+    "roll": 514534,
+    "itemId": "pokemon-charizard-funko-pop-843",
+    "value": 15,
+    "kind": "physical"
+   },
+   {
+    "nonce": 12,
+    "roll": 71943,
+    "itemId": "pokemon-charizard-charizard-g-lv-x-suv-143-147",
+    "value": 110,
+    "kind": "physical"
+   },
+   {
+    "nonce": 13,
+    "roll": 386367,
+    "itemId": "pokemon-p-wartortle-mew-171-165",
+    "value": 28,
+    "kind": "physical"
+   },
+   {
+    "nonce": 14,
+    "roll": 397746,
+    "itemId": "pokemon-p-wartortle-mew-171-165",
+    "value": 28,
+    "kind": "physical"
+   },
+   {
+    "nonce": 15,
+    "roll": 758824,
+    "itemId": "pokemon-p-bp-tef",
+    "value": 6,
+    "kind": "physical"
+   },
+   {
+    "nonce": 16,
+    "roll": 98183,
+    "itemId": "pokemon-charizard-ex-super-premium-collection",
+    "value": 100,
+    "kind": "physical"
+   },
+   {
+    "nonce": 17,
+    "roll": 719201,
+    "itemId": "pokemon-p-bp-scr",
+    "value": 6,
+    "kind": "physical"
+   },
+   {
+    "nonce": 18,
+    "roll": 466030,
+    "itemId": "pokemon-p-vx-9-pocket-exo-tec-zip-binder",
+    "value": 27.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 19,
+    "roll": 624832,
+    "itemId": "pokemon-p-ds-perfect-fit-sealable-100",
+    "value": 6.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 20,
+    "roll": 52036,
+    "itemId": "pokemon-charizard-charizard-ex-paf-234-091",
+    "value": 190,
+    "kind": "physical"
+   },
+   {
+    "nonce": 21,
+    "roll": 750170,
+    "itemId": "pokemon-p-bp-tef",
+    "value": 6,
+    "kind": "physical"
+   },
+   {
+    "nonce": 22,
+    "roll": 136130,
+    "itemId": "pokemon-p-etb-fst",
+    "value": 80,
+    "kind": "physical"
+   },
+   {
+    "nonce": 23,
+    "roll": 909777,
+    "itemId": "pokemon-p-up-graded-card-sleeves-100",
+    "value": 5.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 24,
+    "roll": 297345,
+    "itemId": "pokemon-p-gg-prime-album-18-pocket",
+    "value": 29.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 25,
+    "roll": 825106,
+    "itemId": "pokemon-p-ds-perfect-fit-clear-100",
+    "value": 5.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 26,
+    "roll": 644159,
+    "itemId": "pokemon-p-ds-perfect-fit-sealable-100",
+    "value": 6.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 27,
+    "roll": 607815,
+    "itemId": "pokemon-p-bp-jtg",
+    "value": 7,
+    "kind": "physical"
+   },
+   {
+    "nonce": 28,
+    "roll": 540591,
+    "itemId": "pokemon-charizard-sitting-cuties-plush",
+    "value": 14.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 29,
+    "roll": 476413,
+    "itemId": "pokemon-p-dragonair-mew-181-165",
+    "value": 25,
+    "kind": "physical"
+   },
+   {
+    "nonce": 30,
+    "roll": 373152,
+    "itemId": "pokemon-p-ivysaur-mew-167-165",
+    "value": 28,
+    "kind": "physical"
+   },
+   {
+    "nonce": 31,
+    "roll": 263113,
+    "itemId": "pokemon-charizard-ex-premium-collection",
+    "value": 45,
+    "kind": "physical"
+   },
+   {
+    "nonce": 32,
+    "roll": 831576,
+    "itemId": "pokemon-p-ug-precise-fit-100",
+    "value": 5.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 33,
+    "roll": 634995,
+    "itemId": "pokemon-p-ds-perfect-fit-sealable-100",
+    "value": 6.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 34,
+    "roll": 441878,
+    "itemId": "pokemon-p-bp-evo",
+    "value": 28,
+    "kind": "physical"
+   },
+   {
+    "nonce": 35,
+    "roll": 961525,
+    "itemId": "pokemon-p-up-regular-toploaders-25",
+    "value": 5.49,
+    "kind": "physical"
+   },
+   {
+    "nonce": 36,
+    "roll": 413935,
+    "itemId": "pokemon-charizard-charizard-evo-11-108",
+    "value": 28,
+    "kind": "physical"
+   },
+   {
+    "nonce": 37,
+    "roll": 373096,
+    "itemId": "pokemon-p-ivysaur-mew-167-165",
+    "value": 28,
+    "kind": "physical"
+   },
+   {
+    "nonce": 38,
+    "roll": 152526,
+    "itemId": "pokemon-p-origin-forme-palkia-v-asr-167-189",
+    "value": 80,
+    "kind": "physical"
+   },
+   {
+    "nonce": 39,
+    "roll": 257562,
+    "itemId": "pokemon-charizard-ex-premium-collection",
+    "value": 45,
+    "kind": "physical"
+   },
+   {
+    "nonce": 40,
+    "roll": 924636,
+    "itemId": "pokemon-p-kmc-perfect-fit-100",
+    "value": 5.49,
+    "kind": "physical"
+   },
+   {
+    "nonce": 41,
+    "roll": 572080,
+    "itemId": "pokemon-charizard-sitting-cuties-plush",
+    "value": 14.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 42,
+    "roll": 743990,
+    "itemId": "pokemon-p-bp-scr",
+    "value": 6,
+    "kind": "physical"
+   },
+   {
+    "nonce": 43,
+    "roll": 341186,
+    "itemId": "pokemon-p-charmeleon-mew-169-165",
+    "value": 28,
+    "kind": "physical"
+   },
+   {
+    "nonce": 44,
+    "roll": 657376,
+    "itemId": "pokemon-p-ds-perfect-fit-sealable-100",
+    "value": 6.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 45,
+    "roll": 546169,
+    "itemId": "pokemon-charizard-sitting-cuties-plush",
+    "value": 14.99,
+    "kind": "physical"
+   },
+   {
+    "nonce": 46,
+    "roll": 989734,
+    "itemId": "pokemon-p-up-regular-toploaders-25",
+    "value": 5.49,
+    "kind": "physical"
+   },
+   {
+    "nonce": 47,
+    "roll": 444587,
+    "itemId": "pokemon-p-bp-evo",
+    "value": 28,
+    "kind": "physical"
+   },
+   {
+    "nonce": 48,
+    "roll": 105520,
+    "itemId": "pokemon-charizard-ex-super-premium-collection",
+    "value": 100,
+    "kind": "physical"
+   },
+   {
+    "nonce": 49,
+    "roll": 532107,
+    "itemId": "pokemon-charizard-funko-pop-843",
+    "value": 15,
+    "kind": "physical"
+   }
+  ]
+ }
+}

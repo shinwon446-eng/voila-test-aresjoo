@@ -1,0 +1,1206 @@
+{
+ "meta": {
+  "baselineCommit": "63445c7fa094125bfb1c60d7fccd17dd4005c07d",
+  "note": "기준 커밋에서 한 번 만든 값이다. 검사가 실패해도 다시 만들어 통과시키지 않는다."
+ },
+ "refundRate": 0.95,
+ "take": [
+  {
+   "valueUsdt": 0.01,
+   "takeAmount": 0.01,
+   "sellPhysical": 0.01,
+   "sellDigital": 0.01,
+   "sellCash": 0.01
+  },
+  {
+   "valueUsdt": 0.05,
+   "takeAmount": 0.05,
+   "sellPhysical": 0.05,
+   "sellDigital": 0.05,
+   "sellCash": 0.05
+  },
+  {
+   "valueUsdt": 0.99,
+   "takeAmount": 0.94,
+   "sellPhysical": 0.94,
+   "sellDigital": 0.94,
+   "sellCash": 0.99
+  },
+  {
+   "valueUsdt": 1,
+   "takeAmount": 0.95,
+   "sellPhysical": 0.95,
+   "sellDigital": 0.95,
+   "sellCash": 1
+  },
+  {
+   "valueUsdt": 1.01,
+   "takeAmount": 0.96,
+   "sellPhysical": 0.96,
+   "sellDigital": 0.96,
+   "sellCash": 1.01
+  },
+  {
+   "valueUsdt": 3.33,
+   "takeAmount": 3.16,
+   "sellPhysical": 3.16,
+   "sellDigital": 3.16,
+   "sellCash": 3.33
+  },
+  {
+   "valueUsdt": 9.99,
+   "takeAmount": 9.49,
+   "sellPhysical": 9.49,
+   "sellDigital": 9.49,
+   "sellCash": 9.99
+  },
+  {
+   "valueUsdt": 19.99,
+   "takeAmount": 18.99,
+   "sellPhysical": 18.99,
+   "sellDigital": 18.99,
+   "sellCash": 19.99
+  },
+  {
+   "valueUsdt": 20,
+   "takeAmount": 19,
+   "sellPhysical": 19,
+   "sellDigital": 19,
+   "sellCash": 20
+  },
+  {
+   "valueUsdt": 49.99,
+   "takeAmount": 47.49,
+   "sellPhysical": 47.49,
+   "sellDigital": 47.49,
+   "sellCash": 49.99
+  },
+  {
+   "valueUsdt": 100,
+   "takeAmount": 95,
+   "sellPhysical": 95,
+   "sellDigital": 95,
+   "sellCash": 100
+  },
+  {
+   "valueUsdt": 129.99,
+   "takeAmount": 123.49,
+   "sellPhysical": 123.49,
+   "sellDigital": 123.49,
+   "sellCash": 129.99
+  },
+  {
+   "valueUsdt": 549,
+   "takeAmount": 521.55,
+   "sellPhysical": 521.55,
+   "sellDigital": 521.55,
+   "sellCash": 549
+  },
+  {
+   "valueUsdt": 749.99,
+   "takeAmount": 712.49,
+   "sellPhysical": 712.49,
+   "sellDigital": 712.49,
+   "sellCash": 749.99
+  },
+  {
+   "valueUsdt": 1000,
+   "takeAmount": 950,
+   "sellPhysical": 950,
+   "sellDigital": 950,
+   "sellCash": 1000
+  },
+  {
+   "valueUsdt": 2499.5,
+   "takeAmount": 2374.53,
+   "sellPhysical": 2374.53,
+   "sellDigital": 2374.53,
+   "sellCash": 2499.5
+  },
+  {
+   "valueUsdt": 12345.67,
+   "takeAmount": 11728.39,
+   "sellPhysical": 11728.39,
+   "sellDigital": 11728.39,
+   "sellCash": 12345.67
+  },
+  {
+   "valueUsdt": 24999.99,
+   "takeAmount": 23749.99,
+   "sellPhysical": 23749.99,
+   "sellDigital": 23749.99,
+   "sellCash": 24999.99
+  },
+  {
+   "valueUsdt": 99999.99,
+   "takeAmount": 94999.99,
+   "sellPhysical": 94999.99,
+   "sellDigital": 94999.99,
+   "sellCash": 99999.99
+  },
+  {
+   "valueUsdt": 1234567.89,
+   "takeAmount": 1172839.5,
+   "sellPhysical": 1172839.5,
+   "sellDigital": 1172839.5,
+   "sellCash": 1234567.89
+  }
+ ],
+ "withdraw": {
+  "minUsdt": 20,
+  "fees": {
+   "TRC20": 1,
+   "BEP20": 0.5
+  },
+  "netReceive": [
+   {
+    "network": "TRC20",
+    "amountUsdt": 0,
+    "net": 0
+   },
+   {
+    "network": "TRC20",
+    "amountUsdt": 0.5,
+    "net": 0
+   },
+   {
+    "network": "TRC20",
+    "amountUsdt": 1,
+    "net": 0
+   },
+   {
+    "network": "TRC20",
+    "amountUsdt": 19.99,
+    "net": 18.99
+   },
+   {
+    "network": "TRC20",
+    "amountUsdt": 20,
+    "net": 19
+   },
+   {
+    "network": "TRC20",
+    "amountUsdt": 20.01,
+    "net": 19.01
+   },
+   {
+    "network": "TRC20",
+    "amountUsdt": 21,
+    "net": 20
+   },
+   {
+    "network": "TRC20",
+    "amountUsdt": 100,
+    "net": 99
+   },
+   {
+    "network": "TRC20",
+    "amountUsdt": 1234.56,
+    "net": 1233.56
+   },
+   {
+    "network": "TRC20",
+    "amountUsdt": 10000,
+    "net": 9999
+   },
+   {
+    "network": "BEP20",
+    "amountUsdt": 0,
+    "net": 0
+   },
+   {
+    "network": "BEP20",
+    "amountUsdt": 0.5,
+    "net": 0
+   },
+   {
+    "network": "BEP20",
+    "amountUsdt": 1,
+    "net": 0.5
+   },
+   {
+    "network": "BEP20",
+    "amountUsdt": 19.99,
+    "net": 19.49
+   },
+   {
+    "network": "BEP20",
+    "amountUsdt": 20,
+    "net": 19.5
+   },
+   {
+    "network": "BEP20",
+    "amountUsdt": 20.01,
+    "net": 19.51
+   },
+   {
+    "network": "BEP20",
+    "amountUsdt": 21,
+    "net": 20.5
+   },
+   {
+    "network": "BEP20",
+    "amountUsdt": 100,
+    "net": 99.5
+   },
+   {
+    "network": "BEP20",
+    "amountUsdt": 1234.56,
+    "net": 1234.06
+   },
+   {
+    "network": "BEP20",
+    "amountUsdt": 10000,
+    "net": 9999.5
+   }
+  ],
+  "maxWithdrawable": [
+   {
+    "balanceUsdt": -5,
+    "max": 0
+   },
+   {
+    "balanceUsdt": 0,
+    "max": 0
+   },
+   {
+    "balanceUsdt": 0.004,
+    "max": 0
+   },
+   {
+    "balanceUsdt": 0.005,
+    "max": 0.01
+   },
+   {
+    "balanceUsdt": 19.999,
+    "max": 20
+   },
+   {
+    "balanceUsdt": 250.555,
+    "max": 250.56
+   },
+   {
+    "balanceUsdt": 10000,
+    "max": 10000
+   }
+  ],
+  "validate": [
+   {
+    "network": "TRC20",
+    "address": "T111111111111111111111111111111111",
+    "amountUsdt": 100,
+    "balanceUsdt": 500,
+    "errors": []
+   },
+   {
+    "network": "TRC20",
+    "address": "T111111111111111111111111111111111",
+    "amountUsdt": 19.99,
+    "balanceUsdt": 500,
+    "errors": [
+     "min"
+    ]
+   },
+   {
+    "network": "TRC20",
+    "address": "T111111111111111111111111111111111",
+    "amountUsdt": 20,
+    "balanceUsdt": 20,
+    "errors": []
+   },
+   {
+    "network": "TRC20",
+    "address": "T111111111111111111111111111111111",
+    "amountUsdt": 500.01,
+    "balanceUsdt": 500,
+    "errors": [
+     "insufficient"
+    ]
+   },
+   {
+    "network": "TRC20",
+    "address": "T111111111111111111111111111111111",
+    "amountUsdt": 5,
+    "balanceUsdt": 1,
+    "errors": [
+     "min",
+     "insufficient"
+    ]
+   },
+   {
+    "network": "TRC20",
+    "address": "T111111111111111111111111111111111",
+    "amountUsdt": 0,
+    "balanceUsdt": 500,
+    "errors": [
+     "nan"
+    ]
+   },
+   {
+    "network": "TRC20",
+    "address": "T111111111111111111111111111111111",
+    "amountUsdt": "NaN",
+    "balanceUsdt": 500,
+    "errors": [
+     "nan"
+    ]
+   },
+   {
+    "network": "TRC20",
+    "address": "not-an-address",
+    "amountUsdt": 100,
+    "balanceUsdt": 500,
+    "errors": [
+     "address"
+    ]
+   },
+   {
+    "network": "TRC20",
+    "address": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "amountUsdt": 100,
+    "balanceUsdt": 500,
+    "errors": [
+     "address"
+    ]
+   },
+   {
+    "network": "BEP20",
+    "address": "0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "amountUsdt": 100,
+    "balanceUsdt": 500,
+    "errors": []
+   },
+   {
+    "network": "BEP20",
+    "address": "T111111111111111111111111111111111",
+    "amountUsdt": 100,
+    "balanceUsdt": 500,
+    "errors": [
+     "address"
+    ]
+   },
+   {
+    "network": "BEP20",
+    "address": "",
+    "amountUsdt": 10,
+    "balanceUsdt": 5,
+    "errors": [
+     "address",
+     "min",
+     "insufficient"
+    ]
+   }
+  ]
+ },
+ "debit": [
+  {
+   "amountUsdt": 1,
+   "cryptoBalance": 10000,
+   "cardBalance": 0,
+   "split": {
+    "fromCrypto": 1,
+    "fromCard": 0,
+    "source": "crypto",
+    "ratio": {
+     "crypto": 1,
+     "card": 0
+    }
+   }
+  },
+  {
+   "amountUsdt": 50,
+   "cryptoBalance": 10000,
+   "cardBalance": 0,
+   "split": {
+    "fromCrypto": 50,
+    "fromCard": 0,
+    "source": "crypto",
+    "ratio": {
+     "crypto": 1,
+     "card": 0
+    }
+   }
+  },
+  {
+   "amountUsdt": 100,
+   "cryptoBalance": 60,
+   "cardBalance": 100,
+   "split": {
+    "fromCrypto": 60,
+    "fromCard": 40,
+    "source": "mixed",
+    "ratio": {
+     "crypto": 0.6,
+     "card": 0.4
+    }
+   }
+  },
+  {
+   "amountUsdt": 100,
+   "cryptoBalance": 0,
+   "cardBalance": 100,
+   "split": {
+    "fromCrypto": 0,
+    "fromCard": 100,
+    "source": "card",
+    "ratio": {
+     "crypto": 0,
+     "card": 1
+    }
+   }
+  },
+  {
+   "amountUsdt": 100,
+   "cryptoBalance": 100,
+   "cardBalance": 0,
+   "split": {
+    "fromCrypto": 100,
+    "fromCard": 0,
+    "source": "crypto",
+    "ratio": {
+     "crypto": 1,
+     "card": 0
+    }
+   }
+  },
+  {
+   "amountUsdt": 100,
+   "cryptoBalance": 99.99,
+   "cardBalance": 0.01,
+   "split": {
+    "fromCrypto": 99.99,
+    "fromCard": 0.01,
+    "source": "mixed",
+    "ratio": {
+     "crypto": 0.9999,
+     "card": 0.0001
+    }
+   }
+  },
+  {
+   "amountUsdt": 100,
+   "cryptoBalance": 50,
+   "cardBalance": 49.99,
+   "split": null
+  },
+  {
+   "amountUsdt": 0.25,
+   "cryptoBalance": 0.25,
+   "cardBalance": 0,
+   "split": {
+    "fromCrypto": 0.25,
+    "fromCard": 0,
+    "source": "crypto",
+    "ratio": {
+     "crypto": 1,
+     "card": 0
+    }
+   }
+  },
+  {
+   "amountUsdt": 1,
+   "cryptoBalance": 0.25,
+   "cardBalance": 0,
+   "split": null
+  },
+  {
+   "amountUsdt": 33.33,
+   "cryptoBalance": 10,
+   "cardBalance": 100,
+   "split": {
+    "fromCrypto": 10,
+    "fromCard": 23.33,
+    "source": "mixed",
+    "ratio": {
+     "crypto": 0.30003,
+     "card": 0.69997
+    }
+   }
+  },
+  {
+   "amountUsdt": 0,
+   "cryptoBalance": 100,
+   "cardBalance": 100,
+   "split": null
+  },
+  {
+   "amountUsdt": -5,
+   "cryptoBalance": 100,
+   "cardBalance": 100,
+   "split": null
+  },
+  {
+   "amountUsdt": 250,
+   "cryptoBalance": 249.99,
+   "cardBalance": 0.01,
+   "split": {
+    "fromCrypto": 249.99,
+    "fromCard": 0.01,
+    "source": "mixed",
+    "ratio": {
+     "crypto": 0.99996,
+     "card": 0.00004
+    }
+   }
+  },
+  {
+   "amountUsdt": 500,
+   "cryptoBalance": 0.01,
+   "cardBalance": 499.99,
+   "split": {
+    "fromCrypto": 0.01,
+    "fromCard": 499.99,
+    "source": "mixed",
+    "ratio": {
+     "crypto": 0.00002,
+     "card": 0.99998
+    }
+   }
+  },
+  {
+   "amountUsdt": 5,
+   "cryptoBalance": 2.5,
+   "cardBalance": 2.5,
+   "split": {
+    "fromCrypto": 2.5,
+    "fromCard": 2.5,
+    "source": "mixed",
+    "ratio": {
+     "crypto": 0.5,
+     "card": 0.5
+    }
+   }
+  },
+  {
+   "amountUsdt": 1,
+   "cryptoBalance": 0.33,
+   "cardBalance": 0.67,
+   "split": {
+    "fromCrypto": 0.33,
+    "fromCard": 0.67,
+    "source": "mixed",
+    "ratio": {
+     "crypto": 0.33,
+     "card": 0.67
+    }
+   }
+  }
+ ],
+ "refund": [
+  {
+   "amountUsdt": 95,
+   "ratio": {
+    "crypto": 1,
+    "card": 0
+   },
+   "to": {
+    "toCrypto": 95,
+    "toCard": 0
+   }
+  },
+  {
+   "amountUsdt": 95,
+   "ratio": {
+    "crypto": 0,
+    "card": 1
+   },
+   "to": {
+    "toCrypto": 0,
+    "toCard": 95
+   }
+  },
+  {
+   "amountUsdt": 95,
+   "ratio": {
+    "crypto": 0.6,
+    "card": 0.4
+   },
+   "to": {
+    "toCrypto": 57,
+    "toCard": 38
+   }
+  },
+  {
+   "amountUsdt": 521.55,
+   "ratio": {
+    "crypto": 0.333333,
+    "card": 0.666667
+   },
+   "to": {
+    "toCrypto": 173.85,
+    "toCard": 347.7
+   }
+  },
+  {
+   "amountUsdt": 0.01,
+   "ratio": {
+    "crypto": 0.5,
+    "card": 0.5
+   },
+   "to": {
+    "toCrypto": 0.01,
+    "toCard": 0
+   }
+  },
+  {
+   "amountUsdt": 0.05,
+   "ratio": {
+    "crypto": 0.5,
+    "card": 0.5
+   },
+   "to": {
+    "toCrypto": 0.03,
+    "toCard": 0.02
+   }
+  },
+  {
+   "amountUsdt": 950,
+   "ratio": {
+    "crypto": 0.999999,
+    "card": 0.000001
+   },
+   "to": {
+    "toCrypto": 950,
+    "toCard": 0
+   }
+  },
+  {
+   "amountUsdt": 0,
+   "ratio": {
+    "crypto": 1,
+    "card": 0
+   },
+   "to": {
+    "toCrypto": 0,
+    "toCard": 0
+   }
+  },
+  {
+   "amountUsdt": 10,
+   "ratio": {
+    "crypto": 0.25,
+    "card": 0.75
+   },
+   "to": {
+    "toCrypto": 2.5,
+    "toCard": 7.5
+   }
+  }
+ ],
+ "tier": [
+  {
+   "price": 1,
+   "value": 0.05,
+   "tier": "curated"
+  },
+  {
+   "price": 1,
+   "value": 0.25,
+   "tier": "curated"
+  },
+  {
+   "price": 1,
+   "value": 0.94,
+   "tier": "curated"
+  },
+  {
+   "price": 1,
+   "value": 0.95,
+   "tier": "curated"
+  },
+  {
+   "price": 1,
+   "value": 0.96,
+   "tier": "curated"
+  },
+  {
+   "price": 1,
+   "value": 1,
+   "tier": "curated"
+  },
+  {
+   "price": 1,
+   "value": 1.05,
+   "tier": "curated"
+  },
+  {
+   "price": 1,
+   "value": 1.99,
+   "tier": "curated"
+  },
+  {
+   "price": 1,
+   "value": 2,
+   "tier": "executive"
+  },
+  {
+   "price": 1,
+   "value": 5.99,
+   "tier": "executive"
+  },
+  {
+   "price": 1,
+   "value": 6,
+   "tier": "prestige"
+  },
+  {
+   "price": 1,
+   "value": 19.99,
+   "tier": "prestige"
+  },
+  {
+   "price": 1,
+   "value": 20,
+   "tier": "royal"
+  },
+  {
+   "price": 1,
+   "value": 100,
+   "tier": "royal"
+  },
+  {
+   "price": 1,
+   "value": 1000,
+   "tier": "royal"
+  },
+  {
+   "price": 5,
+   "value": 0.25,
+   "tier": "curated"
+  },
+  {
+   "price": 5,
+   "value": 1.25,
+   "tier": "curated"
+  },
+  {
+   "price": 5,
+   "value": 4.7,
+   "tier": "curated"
+  },
+  {
+   "price": 5,
+   "value": 4.75,
+   "tier": "curated"
+  },
+  {
+   "price": 5,
+   "value": 4.8,
+   "tier": "curated"
+  },
+  {
+   "price": 5,
+   "value": 5,
+   "tier": "curated"
+  },
+  {
+   "price": 5,
+   "value": 5.25,
+   "tier": "curated"
+  },
+  {
+   "price": 5,
+   "value": 9.95,
+   "tier": "curated"
+  },
+  {
+   "price": 5,
+   "value": 10,
+   "tier": "executive"
+  },
+  {
+   "price": 5,
+   "value": 29.95,
+   "tier": "executive"
+  },
+  {
+   "price": 5,
+   "value": 30,
+   "tier": "prestige"
+  },
+  {
+   "price": 5,
+   "value": 99.95,
+   "tier": "prestige"
+  },
+  {
+   "price": 5,
+   "value": 100,
+   "tier": "royal"
+  },
+  {
+   "price": 5,
+   "value": 500,
+   "tier": "royal"
+  },
+  {
+   "price": 5,
+   "value": 5000,
+   "tier": "royal"
+  },
+  {
+   "price": 50,
+   "value": 2.5,
+   "tier": "curated"
+  },
+  {
+   "price": 50,
+   "value": 12.5,
+   "tier": "curated"
+  },
+  {
+   "price": 50,
+   "value": 47,
+   "tier": "curated"
+  },
+  {
+   "price": 50,
+   "value": 47.5,
+   "tier": "curated"
+  },
+  {
+   "price": 50,
+   "value": 48,
+   "tier": "curated"
+  },
+  {
+   "price": 50,
+   "value": 50,
+   "tier": "curated"
+  },
+  {
+   "price": 50,
+   "value": 52.5,
+   "tier": "curated"
+  },
+  {
+   "price": 50,
+   "value": 99.5,
+   "tier": "curated"
+  },
+  {
+   "price": 50,
+   "value": 100,
+   "tier": "executive"
+  },
+  {
+   "price": 50,
+   "value": 299.5,
+   "tier": "executive"
+  },
+  {
+   "price": 50,
+   "value": 300,
+   "tier": "prestige"
+  },
+  {
+   "price": 50,
+   "value": 999.5,
+   "tier": "prestige"
+  },
+  {
+   "price": 50,
+   "value": 1000,
+   "tier": "royal"
+  },
+  {
+   "price": 50,
+   "value": 5000,
+   "tier": "royal"
+  },
+  {
+   "price": 50,
+   "value": 50000,
+   "tier": "royal"
+  },
+  {
+   "price": 100,
+   "value": 5,
+   "tier": "curated"
+  },
+  {
+   "price": 100,
+   "value": 25,
+   "tier": "curated"
+  },
+  {
+   "price": 100,
+   "value": 94,
+   "tier": "curated"
+  },
+  {
+   "price": 100,
+   "value": 95,
+   "tier": "curated"
+  },
+  {
+   "price": 100,
+   "value": 96,
+   "tier": "curated"
+  },
+  {
+   "price": 100,
+   "value": 100,
+   "tier": "curated"
+  },
+  {
+   "price": 100,
+   "value": 105,
+   "tier": "curated"
+  },
+  {
+   "price": 100,
+   "value": 199,
+   "tier": "curated"
+  },
+  {
+   "price": 100,
+   "value": 200,
+   "tier": "executive"
+  },
+  {
+   "price": 100,
+   "value": 599,
+   "tier": "executive"
+  },
+  {
+   "price": 100,
+   "value": 600,
+   "tier": "prestige"
+  },
+  {
+   "price": 100,
+   "value": 1999,
+   "tier": "prestige"
+  },
+  {
+   "price": 100,
+   "value": 2000,
+   "tier": "royal"
+  },
+  {
+   "price": 100,
+   "value": 10000,
+   "tier": "royal"
+  },
+  {
+   "price": 100,
+   "value": 100000,
+   "tier": "royal"
+  },
+  {
+   "price": 250,
+   "value": 12.5,
+   "tier": "curated"
+  },
+  {
+   "price": 250,
+   "value": 62.5,
+   "tier": "curated"
+  },
+  {
+   "price": 250,
+   "value": 235,
+   "tier": "curated"
+  },
+  {
+   "price": 250,
+   "value": 237.5,
+   "tier": "curated"
+  },
+  {
+   "price": 250,
+   "value": 240,
+   "tier": "curated"
+  },
+  {
+   "price": 250,
+   "value": 250,
+   "tier": "curated"
+  },
+  {
+   "price": 250,
+   "value": 262.5,
+   "tier": "curated"
+  },
+  {
+   "price": 250,
+   "value": 497.5,
+   "tier": "curated"
+  },
+  {
+   "price": 250,
+   "value": 500,
+   "tier": "executive"
+  },
+  {
+   "price": 250,
+   "value": 1497.5,
+   "tier": "executive"
+  },
+  {
+   "price": 250,
+   "value": 1500,
+   "tier": "prestige"
+  },
+  {
+   "price": 250,
+   "value": 4997.5,
+   "tier": "prestige"
+  },
+  {
+   "price": 250,
+   "value": 5000,
+   "tier": "royal"
+  },
+  {
+   "price": 250,
+   "value": 25000,
+   "tier": "royal"
+  },
+  {
+   "price": 250,
+   "value": 250000,
+   "tier": "royal"
+  },
+  {
+   "price": 500,
+   "value": 25,
+   "tier": "curated"
+  },
+  {
+   "price": 500,
+   "value": 125,
+   "tier": "curated"
+  },
+  {
+   "price": 500,
+   "value": 470,
+   "tier": "curated"
+  },
+  {
+   "price": 500,
+   "value": 475,
+   "tier": "curated"
+  },
+  {
+   "price": 500,
+   "value": 480,
+   "tier": "curated"
+  },
+  {
+   "price": 500,
+   "value": 500,
+   "tier": "curated"
+  },
+  {
+   "price": 500,
+   "value": 525,
+   "tier": "curated"
+  },
+  {
+   "price": 500,
+   "value": 995,
+   "tier": "curated"
+  },
+  {
+   "price": 500,
+   "value": 1000,
+   "tier": "executive"
+  },
+  {
+   "price": 500,
+   "value": 2995,
+   "tier": "executive"
+  },
+  {
+   "price": 500,
+   "value": 3000,
+   "tier": "prestige"
+  },
+  {
+   "price": 500,
+   "value": 9995,
+   "tier": "prestige"
+  },
+  {
+   "price": 500,
+   "value": 10000,
+   "tier": "royal"
+  },
+  {
+   "price": 500,
+   "value": 50000,
+   "tier": "royal"
+  },
+  {
+   "price": 500,
+   "value": 500000,
+   "tier": "royal"
+  }
+ ],
+ "burst": {
+  "id": "wave-burst",
+  "share": 0.1,
+  "seed": 10,
+  "slots": 6250,
+  "perPrice": [
+   {
+    "price": 1,
+    "seed": 10,
+    "step": 0.1
+   },
+   {
+    "price": 5,
+    "seed": 50,
+    "step": 0.5
+   },
+   {
+    "price": 50,
+    "seed": 500,
+    "step": 5
+   },
+   {
+    "price": 100,
+    "seed": 1000,
+    "step": 10
+   },
+   {
+    "price": 250,
+    "seed": 2500,
+    "step": 25
+   },
+   {
+    "price": 500,
+    "seed": 5000,
+    "step": 50
+   }
+  ]
+ },
+ "boxes": [
+  {
+   "slug": "gaming-playstation",
+   "price": 50,
+   "guaranteedMin": 6.99,
+   "ceiling": 24999.99,
+   "cashReturn": 0.940495753,
+   "retailReturn": 0.9900004136
+  },
+  {
+   "slug": "watch-rolex",
+   "price": 250,
+   "guaranteedMin": 25.95,
+   "ceiling": 400000,
+   "cashReturn": 0.9404982561,
+   "retailReturn": 0.9899996935
+  },
+  {
+   "slug": "pokemon-charizard",
+   "price": 50,
+   "guaranteedMin": 5.49,
+   "ceiling": 250000,
+   "cashReturn": 0.9405007712,
+   "retailReturn": 0.9900001806
+  }
+ ]
+}

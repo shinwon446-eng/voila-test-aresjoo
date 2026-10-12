@@ -125,7 +125,7 @@ export function WalletScreen() {
                   {rows.slice(0, shown).map((tx) => (
                     <li key={tx.id}>
                       <button type="button" className="v-itemrow" onClick={() => { setOpenId(tx.id); setCancelFailed(false); }}>
-                        <span className="v-itemrow-body"><span className="v-card-title">{kind(tx)}</span><span className="v-small">{[date(tx.at), statusOf(tx), isUndebitedWithdrawal(tx) ? t("wallet.notDebitedTag") : ""].filter(Boolean).join(", ")}</span></span>
+                        <span className="v-itemrow-body"><span className="v-card-title">{kind(tx)}</span><span className="v-small">{date(tx.at)}{statusOf(tx) ? (date(tx.at) ? ", " : "") + statusOf(tx) : ""}{isUndebitedWithdrawal(tx) ? (date(tx.at) || statusOf(tx) ? ", " : "") + t("wallet.notDebitedTag") : ""}</span></span>
                         <span className="v-num">{signed(tx)}</span>
                       </button>
                     </li>

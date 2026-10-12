@@ -19,8 +19,9 @@
 // 시각은 날짜가 아니라 "몇 분 전"으로 쥔다. 샘플의 "4일 전" 은 시계를 읽지 않고 씨앗에서만 나오므로
 //   미리 그려 둔 HTML(정적 내보내기)과 브라우저가 그린 것이 언제나 같다(V5). 그래서 샘플은 언제 봐도 오늘 기준으로 같은 거리에 있다.
 // 말 조각과 조각마다의 조건은 lib/reviewSampleText.ts 에 있다. 조건(돈 이야기, 미개봉, 배송)은 그 건의 상품과 결과가 맞을 때만 통과한다.
+// 이 사이트에 없는 일은 샘플도 말하지 않는다: 디지털 상품은 USDT로 받기만 있으므로 썼다, 등록했다는 말이 없고, 차와 큰 가전에 설치나 인도 절차를 말하지 않는다.
 import { BOXES, BOX_BY_SLUG, REFUND_RATE, type ProductBox, type ProductItem } from "./products";
-import { ARRIVAL, BANNED, BOX_HINTS, CLOSE, DIGITAL, EN, FLOW, GOT, GRIPE, ITEM, ITEM_NAMED, KIND_FACTS, LEAD, MID, MID_CLOSE, NEG, NEG_CLOSE, NICK, SHIP, SLANG, TAIL, TOPICS, USE, USE_GIFT, ZH, fact, type Frag, type Kind, type Topic } from "./reviewSampleText";
+import { ARRIVAL, BANNED, BOX_HINTS, CLOSE, DIGITAL, EN, FLOW, GOT, GRIPE, ITEM, ITEM_NAMED, KIND_FACTS, LEAD, MID, MID_CLOSE, NEG, NEG_CLOSE, NICK, PART, PAR_BAND, SHIP, SLANG, TAIL, TOPICS, USE, USE_GIFT, ZH, fact, type Frag, type Kind, type Topic } from "./reviewSampleText";
 
 export const SAMPLE_MIN = 80;
 export const SAMPLE_MAX = 400;
@@ -197,13 +198,16 @@ const topicCache = new Map<string, number>();
  * 그 상품의 종류(TOPICS 의 순번). 맞는 종류가 없으면 -1.
  * 먼저 상품 그 자체를 본다: 박스를 가리지 않는 줄(cats 에 *)을 이름으로 맞춘다. 향수는 가방 박스에서도 향수이고, 등급 카드와 차는 옛 박스에서도 카드와 차다.
  * 그다음에 박스의 힌트(제 카테고리, 옛 박스는 BOX_HINTS)에 맞는 줄을 본다. "남은 것" 줄(이름을 가리지 않는 줄)은 첫 힌트의 것만 받는다.
+ * 상표나 본품의 낱말이 이름에 들었다고 그 종류가 되지는 않는다: 본품을 말하는 종류(+whole)는 부속품의 이름(PART)을 건너뛴다.
  */
 function topicIndexOf(box: ProductBox, item: ProductItem): number {
   const hints = BOX_HINTS[box.slug] ?? [box.category];
   const key = hints.join(",") + "|" + item.id;
   const cached = topicCache.get(key);
   if (cached !== undefined) return cached;
-  const fits = (topic: Topic) => item.value >= topic.min && item.value <= topic.max && topic.re.test(item.name);
+  // 본품을 말하는 종류는 부속품, 보관 용품, 관리 용품의 이름을 받지 않는다(레고 수납함은 조립 세트가 아니다)
+  const part = PART.test(item.name);
+  const fits = (topic: Topic) => item.value >= topic.min && item.value <= topic.max && !(topic.whole && part) && topic.re.test(item.name);
   let found = TOPICS.findIndex((topic) => topic.cats.includes("*") && fits(topic));
   if (found < 0) found = TOPICS.findIndex((topic) => (topic.re.source === "." ? topic.cats.includes(hints[0]) : topic.cats.some((cat) => hints.includes(cat))) && fits(topic));
   topicCache.set(key, found);
@@ -217,7 +221,7 @@ export function kindOf(box: ProductBox, item: ProductItem): Kind {
   return index >= 0 ? TOPICS[index].kind : "goods";
 }
 
-const F = { parcel: fact("parcel"), gift: fact("gift"), money: fact("money"), loss: fact("loss"), large: fact("large"), small: fact("small"), common: fact("common"), r3: fact("r3"), r4: fact("r4"), r5: fact("r5") };
+const F = { parcel: fact("parcel"), gift: fact("gift"), money: fact("money"), par: fact("par"), loss: fact("loss"), large: fact("large"), small: fact("small"), common: fact("common"), r3: fact("r3"), r4: fact("r4"), r5: fact("r5") };
 
 // ── 조각 꺼내기 ────────────────────────────────────────────────
 interface Deck { order: number[]; at: number; cycle: number }
@@ -311,11 +315,12 @@ function koText(ask: Ask): Draft {
   /** 물건에 대한 한 조각: 종류에 맞는 말, 이름을 넣은 말, 어느 상품에나 맞는 말 */
   const thing = (): boolean => {
     const u = r();
-    // 디지털 상품(상품권)은 물건이 없다: 그 종류의 말만 쓴다
+    // 디지털 상품은 물건도 배송도 없다: 그 종류의 말(나왔다, USDT로 받았다)만 쓴다
+    if (kind === "digital") return put("thing", topicKey, topic!.lines, { must: true });
     // 종류에 맞는 말은 한 글에 한 번만 한다("미개봉으로 소장하려구요" 뒤에 "애랑 같이 깠어요" 가 오지 않게)
-    if (topic && !topical && u < (kind === "digital" ? 0.7 : 0.42) && put("thing", topicKey, topic.lines)) { topical = true; return true; }
-    if (topic && topic.nouns.length > 0 && (kind === "digital" || u < 0.6)) { const noun = pickOne(topic.nouns, r); if (put("thing", "named", ITEM_NAMED, { fill: (text) => text.replace("{item}", noun) })) return true; }
-    return kind === "digital" ? put("thing", topicKey, topic!.lines, { must: true }) : put("thing", "item", ITEM, { must: true });
+    if (topic && !topical && u < 0.42 && put("thing", topicKey, topic.lines)) { topical = true; return true; }
+    if (topic && topic.nouns.length > 0 && u < 0.6) { const noun = pickOne(topic.nouns, r); if (put("thing", "named", ITEM_NAMED, { fill: (text) => text.replace("{item}", noun) })) return true; }
+    return put("thing", "item", ITEM, { must: true });
   };
   const got = () => put("got", "got-" + outcome, GOT[outcome]);
   /** 쓰임 한 조각. 누구에게 줬다는 말은 종류에 맞는 말을 하지 않은 글에만 붙인다(그 말이 "매일 들고 다녀요" 일 수 있다) */
@@ -341,7 +346,8 @@ function koText(ask: Ask): Draft {
     tailOdds = 0;
   } else if (rating >= 4) {
     const u = wide ? 0.8 : outcome === "big" && r() < 0.6 ? 0.3 : r();
-    if (kind === "digital") { if (u < 0.4) thing(); else if (u < 0.7) { got(); thing(); } else { if (wide) got(); thing(); close(); } }
+    // 디지털 상품: USDT로 받았다는 한 줄만으로 글을 끝내지 않는다(나온 것이나 맺음말이 함께 간다)
+    if (kind === "digital") { if (u < 0.5) { got(); thing(); } else { if (wide || u > 0.85) got(); thing(); close(); } if (roles.length < 2) close(); }
     else if (u < 0.2) thing();
     else if (u < 0.46) { got(); after(); }
     else if (u < 0.6) { thing(); side(); lead(); }
@@ -520,8 +526,11 @@ export function sampleReviews(boxSlug: string, limit = Infinity): ReviewSample[]
     const topic = kind === "digital" ? DIGITAL[index] : index >= 0 && TOPICS[index].lines.length > 0 ? TOPICS[index] : null;
     let has = KIND_FACTS[kind];
     if (!(topic && topic.nouns.length > 0 && item.value >= 40)) has &= ~F.gift;
-    // 받을 금액은 lib/takeBatch 의 takeAmountOf 와 같은 식이다. 박스 가격 이상일 때만 본전, 이득 같은 말이 통과한다
-    has |= +(item.value * REFUND_RATE).toFixed(2) >= core.box.price ? F.money : F.loss;
+    // 받을 금액은 lib/takeBatch 의 takeAmountOf 와 같은 식이다. 박스 가격 이상일 때만 이득, 손해가 아니다 같은 말이 통과하고,
+    // 박스 가격의 100%에서 110% 사이(PAR_BAND)일 때만 딱 본전, 본전치기 같은 말이 통과한다
+    const take = +(item.value * REFUND_RATE).toFixed(2);
+    has |= take >= core.box.price ? F.money : F.loss;
+    if (take >= core.box.price * PAR_BAND[0] && take <= core.box.price * PAR_BAND[1]) has |= F.par;
     has |= outcome === "big" || outcome === "good" ? F.large : F.small;
     if (item.dropRate >= core.topRate) has |= F.common;
     if (rating === 3) has |= F.r3; else if (rating === 4) has |= F.r4; else if (rating === 5) has |= F.r5;

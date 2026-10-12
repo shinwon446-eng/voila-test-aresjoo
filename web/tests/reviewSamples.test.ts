@@ -1,7 +1,8 @@
 // 샘플 후기(lib/reviewSamples, flow/MELT_SPEC.md V1~V6): 박스마다 80~400건, 결정적, 한 박스 안에서 겹치지 않는 글, 카탈로그 사진, 스위치
 // 글의 뜻도 본다. 주소로 열 수 있는 모든 박스(BOXES, 홈에서 내린 옛 박스 포함)의 모든 건에서:
 //   돈 이야기는 그 건에서 참일 때만, 미개봉과 새제품은 그런 상품에만, 상품과 맞지 않는 말(향수를 가방이라 부르기)이 없는지,
-//   별점과 글의 결, 점수를 말하는 줄과 별점, 다시 열겠다는 말이 없는지, 가까운 열 건의 조각, 다시 쓰는 손님의 몫, 좋아요의 분포
+//   별점과 글의 결, 점수를 말하는 줄과 별점, 다시 열겠다는 말이 없는지, 가까운 열 건의 조각, 다시 쓰는 손님의 몫, 좋아요의 분포,
+//   본전이라는 말과 받을 금액의 띠, 이 사이트에 없는 수령 길(코드 발송, 설치, 문의 창구)을 말하지 않는지, 상표만 보고 본품의 말을 붙이지 않는지
 // 상품의 종류는 생성기의 판정(kindOf)을 믿지 않고 상품 이름으로 따로 가려서도 본다.
 //   npm test
 import test from "node:test";
@@ -11,7 +12,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import { BOXES, BOX_BY_SLUG, HOME_BOXES, type ProductBox, type ProductItem } from "../lib/products";
-import { BANNED, CLOSE, EN, GOT, GRIPE, ITEM, MID, MID_CLOSE, NEG, NEG_CLOSE, SHIP, USE, USE_GIFT, ZH, type Frag } from "../lib/reviewSampleText";
+import { BANNED, CLOSE, EN, GOT, PAR_BAND, GRIPE, ITEM, MID, MID_CLOSE, NEG, NEG_CLOSE, SHIP, USE, USE_GIFT, ZH, type Frag } from "../lib/reviewSampleText";
 import { BIG_FLOOR, BUILT_CAP, FRONT, NEAR, RETURNING_SHARE, SAMPLE_MAX, SAMPLE_MIN, allRatingSummary, builtCount, kindOf, newestSamples, ratingSummary, sampleCount, sampleParts, sampleReviews, sampleShapes, summarizeRatings, type ReviewSample } from "../lib/reviewSamples";
 import { takeAmountOf } from "../lib/takeBatch";
 
@@ -178,26 +179,37 @@ test("샘플 후기: 박스마다 5~8% 는 다시 쓰는 손님의 글이고(같
   }
 });
 
-test("샘플 후기: 돈 이야기(본전, 손해가 아니다, 이득)는 받을 금액이 박스 가격 이상인 건에만 나오고, 몇 번 열었다는 말과 한 글에 들지 않는다", () => {
-  // 띄어쓰기를 뺀 소문자 글에서 찾는다
-  const CLAIM = /본전|손해|이득|남는장사|박스값|굳었|득템|쏠쏠|꽤하네요|worthit|fortheprice|值了|值得/;
+test("샘플 후기: 돈 이야기는 그 건에서 참이다. 낸 것보다 많이 받았다는 말은 받을 금액이 박스 가격 이상인 건에만, 딱 본전이라는 말은 박스 가격의 100%에서 110% 사이인 건에만(세 언어)", () => {
+  assert.deepEqual(PAR_BAND, [1, 1.1]);
+  // 띄어쓰기를 뺀 소문자 글에서 찾는다.
+  // PAR: 정확히 또는 거의 본전이라는 말. MORE: 낸 것보다 많이 받았다, 손해가 아니다, 값을 한다는 말. SHORT: 못 미친다는 말
+  const PAR = /딱본전|본전이네요|본전치기|본전은건졌|박스값정도|breakeven|brokeeven|回本|保本/;
+  const MORE = /하고도남|뽑고도남|이득|남는장사|굳었|득템|쏠쏠|꽤하네요|손해는아니|손해안본|worthit|fortheprice|值了|值得|赚/;
   const SHORT = /박스값엔못미치|돈아깝/;
+  const ANY = /본전|손해|이득|박스값|굳었|득템|쏠쏠|꽤하네요|worth|fortheprice|值/;
   const COUNT = /번열|번만에|번째|첫판|여러개열|작은건usdt|thirdbox|twoboxes|onthesmallones|第三次|开了两个|小的领了/;
-  let claims = 0, shorts = 0, near = 0;
+  let par = 0, more = 0, shorts = 0, near = 0, wide = 0;
   eachSample((row) => {
-    const { box, item, flat } = row, take = takeAmountOf({ valueUsdt: item.value });
+    const { box, item, flat } = row, take = takeAmountOf({ valueUsdt: item.value }), x = take / box.price;
     if (SHORT.test(flat)) { shorts += 1; assert.ok(take < box.price, mark(row)); }
-    else if (CLAIM.test(flat)) {
-      claims += 1;
-      assert.ok(take >= box.price, mark(row));
+    else if (PAR.test(flat)) {
+      par += 1;
+      assert.ok(x >= PAR_BAND[0] && x <= PAR_BAND[1], `받을 금액 ${take} / 박스 ${box.price}: ${mark(row)}`);
+    } else if (MORE.test(flat)) {
+      more += 1;
+      assert.ok(take >= box.price, `받을 금액 ${take} / 박스 ${box.price}: ${mark(row)}`);
       // 상품가가 박스 가격의 0.7배에서 1.5배 사이인 건에서 틀리던 자리다
       if (item.value < box.price * 1.5) near += 1;
-    }
-    if (COUNT.test(flat)) assert.ok(!CLAIM.test(flat) && !SHORT.test(flat), mark(row));
+      if (x > PAR_BAND[1]) wide += 1;
+    } else assert.doesNotMatch(flat, ANY, `어느 뜻인지 정하지 않은 돈 이야기: ${mark(row)}`);
+    if (COUNT.test(flat)) assert.ok(!ANY.test(flat), mark(row));
   });
-  assert.ok(claims > 500 && shorts > 0 && near > 0, `${claims} / ${shorts} / ${near}`);
+  assert.ok(par > 100 && more > 500 && shorts > 0 && near > 0 && wide > 0, `${par} / ${more} / ${shorts} / ${near} / ${wide}`);
   // 파운더가 짚은 세 건: 받을 금액이 박스 가격에 못 미치면 본전이라는 말이 나올 수 없다
   for (const [value, price] of [[379.99, 500], [399, 500], [229.99, 250]]) assert.ok(takeAmountOf({ valueUsdt: value }) < price);
+  // 검수에서 짚인 건: 50달러 박스에서 70달러 상품의 받을 금액은 66.50달러라 본전의 띠 밖이다
+  assert.equal(takeAmountOf({ valueUsdt: 70 }), 66.5);
+  assert.ok(66.5 / 50 > PAR_BAND[1]);
 });
 
 test("샘플 후기: 미개봉, 밀봉, 봉인은 밀봉 상품에만, 새제품은 새 제품에만 쓴다", () => {
@@ -205,16 +217,16 @@ test("샘플 후기: 미개봉, 밀봉, 봉인은 밀봉 상품에만, 새제품
   let sealed = 0, fresh = 0;
   eachSample((row) => {
     const kind = kindOf(row.box, row.item);
-    if (SEALED.test(row.flat)) { sealed += 1; assert.ok(kind === "sealed" || kind === "pack", `(${kind}) ${mark(row)}`); }
+    if (SEALED.test(row.flat)) { sealed += 1; assert.ok(kind === "sealed" || kind === "cosmetic" || kind === "pack", `(${kind}) ${mark(row)}`); }
     if (FRESH.test(row.flat)) { fresh += 1; assert.ok(kind !== "single" && kind !== "vehicle" && kind !== "digital", `(${kind}) ${mark(row)}`); }
   });
   assert.ok(sealed > 100 && fresh > 100, `${sealed} / ${fresh}`);
 });
 
-test("샘플 후기: 상품과 맞지 않는 말이 없다(상품의 종류를 이름으로 따로 가려서 본다. 옛 박스도 같다)", () => {
+test("샘플 후기: 이름으로 따로 가린 여덟 가지 상품(낱장 카드, 차와 바이크, 향수, 시계 부속품, 씻어내는 것, 보냉이 안 되는 병, 싼 가방)에 그 상품과 맞지 않는 말이 없다(옛 박스도 같다)", () => {
   // 생성기의 종류 판정을 쓰지 않는다: 이름과 박스만으로 그 상품이 무엇인지 정하고, 그 상품에 나오면 안 되는 말을 찾는다
   const PARCEL = /배송|택배|포장|상자|뽁뽁이|완충재|통관|문앞|shipping|box|customs|packag|物流|包装|盒子|箱/;
-  const seen = { card: 0, graded: 0, car: 0, bike: 0, perfume: 0, watchPart: 0, rinse: 0, bottle: 0, ticket: 0, cheapBag: 0, old: 0 };
+  const seen = { card: 0, graded: 0, car: 0, bike: 0, perfume: 0, watchPart: 0, rinse: 0, bottle: 0, cheapBag: 0, old: 0 };
   eachSample((row) => {
     const { box, item, flat, r } = row, name = item.name;
     const carBox = box.category === "car" || /^jackpot-(?:car|supercar)$/.test(box.slug), cardBox = box.category === "pokemon" || box.slug === "vault-pokemon";
@@ -243,12 +255,6 @@ test("샘플 후기: 상품과 맞지 않는 말이 없다(상품의 종류를 �
       seen.watchPart += 1;
       assert.doesNotMatch(flat, /시계|손목|차고|실착|오차/, mark(row));
     }
-    // 상품권이 아닌 디지털 상품(참가권, 시공권, 게임)은 상품권이라고 부르지 않는다
-    if (item.kind === "digital" && !/기프트카드|상품권/.test(name)) {
-      seen.ticket += 1;
-      assert.doesNotMatch(flat, /상품권|기프트카드|잔액|결제할때/, mark(row));
-      if (/참가권|시공권|케어/.test(name)) assert.doesNotMatch(flat, /코드|내려받/, mark(row));
-    }
     // 가방 박스의 싼 가방(천 가방, 나일론 백팩)에는 가죽과 더스트백 이야기가 붙지 않는다
     if ((box.category === "bag" || box.slug === "vault-handbag") && item.value < 100) {
       seen.cheapBag += 1;
@@ -265,7 +271,83 @@ test("샘플 후기: 상품과 맞지 않는 말이 없다(상품의 종류를 �
       assert.doesNotMatch(flat, /얼음|보냉|텀블러/, mark(row));
     }
   });
-  assert.ok(seen.card > 1000 && seen.graded > 100 && seen.car > 20 && seen.bike > 20 && seen.perfume > 500 && seen.watchPart > 100 && seen.rinse > 50 && seen.bottle > 20 && seen.ticket > 20 && seen.cheapBag > 500 && seen.old > 100, JSON.stringify(seen));
+  assert.ok(seen.card > 1000 && seen.graded > 100 && seen.car > 20 && seen.bike > 20 && seen.perfume > 500 && seen.watchPart > 100 && seen.rinse > 50 && seen.bottle > 20 && seen.cheapBag > 500 && seen.old > 100, JSON.stringify(seen));
+});
+
+test("샘플 후기: 상표나 본품의 낱말이 이름에 들었다고 본품의 말을 하지 않는다. 아래 표의 조합(레고 수납함, 인형 상표의 책, 신발 상표의 관리 용품, 본품 이름 뒤에 부속품 낱말이 붙은 것)에서 본다", () => {
+  // 생성기의 판정(kindOf, PART)을 쓰지 않는다. 이름만으로 "상표나 본품 낱말이 들었지만 본품이 아닌 상품"을 가려, 본품의 말이 나오지 않는지 본다.
+  // 이름을 넣어 부르는 줄("레고 나왔네요")을 띄어쓰기 없는 글에서 찾는 식
+  const called = (nouns: string) => `(?:${nouns})(?:나왔네요|뽑았어요|잘받았|받았습니다|하나생겼|득템했|실물좋|상태좋|마음에들|갖고싶었|인증합|잘도착|사려던|받고기분|깨끗하게|필요했는데|잘쓸게)|드디어(?:${nouns})받았`;
+  // 본품 이름 뒤에 붙어 부속품이나 보관 용품을 만드는 낱말(뒤에 크기나 개수가 올 수 있다)
+  const TAIL = /(?:받침대|번지|거치대|크래들|클립|암|어댑터|충전 그립|충전 거치대|충전 스테이션|그립 테이프|캡 세트|커버|스탠드|케이스|호퍼|마커|라켓 백|브래킷|배터리)(?:\s(?:\d\S*|세트|풀사이즈|프로|LP|V\d+|플러스))*$/;
+  // [무엇인지, 박스의 카테고리(null 이면 어디서나), 이름이 맞아야 하는 식, 본품이 아니라는 식, 나오면 안 되는 본품의 말]
+  const TABLE: [string, string | null, RegExp, RegExp, RegExp][] = [
+    ["세트 번호가 없는 레고(수납함, 게임)", null, /^레고 /, /^(?!.*\d{4,6}$)/, new RegExp("조립|만들|부품누락|완성하니|" + called("레고"))],
+    ["인형 상표의 책, 딸랑이, 열쇠고리, 가방 장식, 타는 것", null, /젤리캣|슈타이프/, /보드북|(?:^|\s)북(?:\s|$)|책|백 참|래틀|수더|키링|라이딩/, new RegExp("안고자|부들부들|침대옆|이름도지어|" + called("인형"))],
+    ["마일레그의 인형 집과 가구", null, /마일레그/, /미니어처|하우스|침대|키친|매치박스|캐슬|욕실|다리미|세트/, new RegExp("안고자|부들부들|침대옆|생각보다크네요|" + called("인형"))],
+    ["신발 상표의 관리 용품과 소품", "fashion", /나이키|아디다스|뉴발란스|아식스|살로몬|호카|컨버스|반스|닥터마틴|팀버랜드|버켄스탁|어그/, /플라스크|신발끈|이어머프|실드|프루퍼|프로텍터|리펠런트|실러|(?:^|\s)밤(?:\s|$)|양말|삭스|모자|백팩/, new RegExp("신고|신어|착화|발편|끈묶|신발장|" + called("신발"))],
+    ["피규어 상표의 진열 용품과 부속품", null, /팝마트|스미스키|넨도로이드|굿스마일|펀코|베어브릭/, /컨테이너|스탠드|파츠|파우치|케이스/, new RegExp("도색|디테일|캐릭터|세워놨|" + called("피규어"))],
+    ["시계 상표의 체중계, 심박계, 줄", null, /코로스|위딩스|폴라|픽셀 워치|갤럭시 워치|애플 ?워치/, /체중계|스케일|심박|밴드$|스트랩|충전/, new RegExp("알림바로|수면측정|걸음수|러닝기록|운동할때차|" + called("워치"))],
+    ["폰 이름이 든 배터리와 부속품", null, /아이폰|갤럭시 [SZA]\d|픽셀 \d|샤오미 \d/, /배터리$|케이스|필름|충전기|케이블|포토그래피 키트 레전드|거치대|스트랩/, new RegExp("개통|유심|자급제|새폰|폰바꿀|세컨폰|핸드폰|" + called("폰"))],
+    ["액션캠 상표의 웹캠, 스피커폰, 짐벌", null, /인스타360|고프로/, /Wave|Link|Flow|마이크|어댑터|배터리|마운트|케이스/, new RegExp("물놀이|자전거탈때|브이로그|손떨림|" + called("액션캠"))],
+    ["아르마니 바비(RC 상표 아르마와 글자가 겹친다)", null, /아르마니/, /./, /굴려|조립|만드는맛|같이만들/],
+    ["타미야의 움직이지 않는 조립 모형", null, /^타미야 1\/\d+ (?!RC)/, /./, /굴려/],
+    ["청소기가 아닌 로봇", null, /로봇/, /잔디|쿠킹|창문|공기청정|스테이션/, new RegExp("먼지통|바닥이깨끗|맵핑|문턱|" + called("로봇청소기"))],
+    ["커피 기구의 세정제와 저울", null, /커피|에스프레소|네스프레소/, /디스케일|케어 키트|저울|스케일/, /커피맛|홈카페|내려마셔|원두|내려드려|커피향/],
+    ["전동칫솔의 교체 헤드", null, /칫솔/, /헤드/, new RegExp("양치|뽀득|진동세기|손양치|충전오래|" + called("칫솔"))],
+    ["가전 묶음(커피머신이 든 세트)", null, /^VOILA .*세트/, /./, /커피맛|홈카페|내려마셔|원두/],
+    ["가방의 보관 용품(더스트백, 정리함)", null, /가방|백(?:\s|$)/, /더스트백|정리함|보관용|인서트|오거나이저/, new RegExp("들고나가|들고다녀|각잡혀|수납생각보다|" + called("가방|백"))],
+    ["키보드의 받침대", null, /키보드/, TAIL, new RegExp("타건|키감|치는맛|타자|" + called("키보드"))],
+    ["마우스의 번지, 독, 클립", null, /마우스/, /번지|클립|마우스 독|마우스 매트/, new RegExp("클릭감|손에착|그립감|센서|" + called("마우스"))],
+    ["마이크의 암과 어댑터", null, /마이크/, TAIL, new RegExp("목소리|녹음해|잡음|방송용|" + called("마이크"))],
+    ["헤드폰의 거치대", null, /헤드폰/, TAIL, new RegExp("착용감|해상도|이어패드|음악들을|" + called("헤드폰"))],
+    ["컨트롤러의 충전기와 그립", null, /컨트롤러|조이콘|듀얼센스/, TAIL, new RegExp("버튼감|쏠림|스틱부드|2인용|" + called("컨트롤러"))],
+    ["스피커와 태블릿의 충전 받침", null, /스피커|태블릿/, /크래들|충전 스피커 독/, new RegExp("소리짱짱|저음|볼륨|화면크고|넷플릭스|필기용|" + called("스피커|태블릿|패드"))],
+    ["그릴의 덮개와 받침", null, /그릴/, TAIL, /요리할맛|집밥|주방에두니|매일써요/],
+    ["공이 아닌 것(공 주머니, 표시, 기계)", "sport", /볼(?:\s|$)/, /호퍼|마커|머신|마사지|케틀|슬램|월 볼|스태빌리티|필라테스|더블 엔드/, new RegExp("탄성|공원가서|바운드|" + called("공"))],
+    ["라켓 가방", "sport", /라켓|퓨어 에어로/, /백(?:\s|$)|백팩/, new RegExp("쳐보니|스윙이|컨트롤잘|타구감|" + called("라켓"))],
+    ["조명의 받침과 배터리", "camera", /라이트|플래시/, TAIL, /광량|색이고르게|스튜디오세팅/],
+    ["마사지건의 배터리와 부속품", "sport", /테라|하이퍼|베놈/, /배터리|케이스|리필|어플리케이터|마이크로커런트 링/, new RegExp("뭉친데|어깨뭉칠|진동세기|" + called("마사지건"))],
+    ["운동 밴드가 아닌 밴드(머리띠, 시계 줄)", "sport", /밴드/, /헤드밴드|손목 ?밴드|워치 밴드|암밴드/, /홈트|홈짐|운동미룰|거실에두고/],
+  ];
+  const seen = TABLE.map(() => 0);
+  eachSample((row) => {
+    const name = row.item.name;
+    TABLE.forEach(([what, category, has, notWhole, forbidden], k) => {
+      if ((category && row.box.category !== category) || !has.test(name) || !notWhole.test(name)) return;
+      seen[k] += 1;
+      assert.doesNotMatch(row.flat, forbidden, `${what}: ${mark(row)}`);
+    });
+  });
+  // 표의 줄마다 실제로 그런 상품의 글이 있다(없는 조합을 검사했다고 하지 않는다)
+  TABLE.forEach(([what], k) => assert.ok(seen[k] > 0, `${what}: 그런 상품의 글이 없다`));
+  // 검수에서 짚인 건: 레고 수납함
+  assert.ok(allShots().some(({ rows }) => rows.some((row) => row.item.name === "레고 스토리지 브릭 8")), "레고 스토리지 브릭 8 의 글이 없다");
+});
+
+test("샘플 후기: 이 사이트에 없는 수령 길을 말하지 않는다. 디지털 상품은 나왔다, USDT로 받았다, 값이 어땠다, 만족했다는 말만 하고(썼다, 등록했다, 도착했다가 없다), 어느 글에도 설치, 수거, 인도 절차, 문의 창구, 무료 배송이 없다", () => {
+  // 디지털 상품(상품권, 게임 코드, 참가권, 보증 연장): 보관함에 USDT로 받기만 있다(components/inventory/InventoryScreen)
+  const inventory = fs.readFileSync(new URL("../components/inventory/InventoryScreen.tsx", import.meta.url), "utf8");
+  assert.match(inventory, /product\?\.kind === "physical" && <TextLink onClick=\{\(\) => setShipIds/, "배송 신청은 실물에만 있다는 전제가 바뀌었다");
+  const USED = /썼|써버|써보|쓸게|쓰고|쓰는|쓰려|쓸데|쓸일|결제|등록|코드|내려받|다운|도착|배송|택배|포장|상자|박스(?!값)|선물|보내줬|드렸|(?<!알려)줬|예약|날짜|안내|개시|실물|물건|당근|집에|달릴|할게생|redeem|used|arrived|shipping|到货|已经在用/;
+  const seen = { digital: 0, card: 0, game: 0, other: 0, taken: 0 };
+  eachSample((row) => {
+    const { item, flat, r } = row;
+    if (item.kind === "digital") {
+      seen.digital += 1;
+      if (/기프트카드|상품권/.test(item.name)) seen.card += 1; else if (/디지털$/.test(item.name)) seen.game += 1; else seen.other += 1;
+      assert.equal(r.lang, "ko", mark(row));
+      assert.doesNotMatch(flat, USED, mark(row));
+      // 받았다는 말은 USDT로(잔액으로) 받았다는 말뿐이다
+      if (/usdt로받|잔액으로받|잔액에바로/.test(flat)) seen.taken += 1;
+      assert.doesNotMatch(flat.replace(/usdt로받[았으고]|잔액으로받아|좋은거받으세요/g, ""), /받았|받아|받고|받으/, mark(row));
+      // 상품권이 아닌 것을 상품권이라 부르지 않는다
+      if (!/기프트카드|상품권/.test(item.name)) assert.doesNotMatch(flat, /상품권|기프트카드/, mark(row));
+    }
+    // 어느 상품에도: 설치해 주는 기사, 쓰던 것의 수거, 서류와 인도 절차, 문의 창구, 무료 배송(켜고 끄는 행사다)
+    assert.doesNotMatch(flat, /기사님|수거|탁송|서류|넘겨받|벽걸이로달아|설치까지|설치날짜|문의|답변|고객센터|상담|배송비|무료배송|support|customerservice|shippingfee|freeshipping|客服|免运费|包邮/, mark(row));
+  });
+  assert.ok(seen.digital > 300 && seen.card > 100 && seen.game > 20 && seen.other > 20 && seen.taken > 100, JSON.stringify(seen));
 });
 
 test("샘플 후기: 별점과 글의 결이 맞는다(별 하나와 둘은 까닭 한 가지, 셋은 그저 그렇다, 넷은 좋았고 작은 아쉬움 하나까지, 다섯은 좋았다)", () => {
@@ -313,7 +395,7 @@ test("샘플 후기: 점수를 말하는 줄은 그 건의 별점과 같다(만�
 });
 
 test("샘플 후기: 별점은 받은 것과 받는 과정에 대한 만족이다(작고 흔한 상품도 별 다섯이 나오고, 큰 상품도 받는 과정이 불편했으면 별 셋이다)", () => {
-  const ARRIVAL = /배송|포장|박스|상자|통관|문의|날짜|일정|안내|걸렸|shipping|box|customs|weeks|arrive|物流|盒子|外箱|等了|清关/;
+  const ARRIVAL = /배송|포장|박스|상자|통관|걸렸|기다|shipping|box|customs|weeks|arrive|物流|盒子|外箱|等了|清关/;
   let small = 0, smallFive = 0, big = 0, bigThree = 0;
   eachSample((row) => {
     const { box, item, r, shape, flat } = row, x = item.value / box.price;

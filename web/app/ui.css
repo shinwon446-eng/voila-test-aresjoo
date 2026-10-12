@@ -227,7 +227,8 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-item-photo { position: relative; aspect-ratio: 4 / 3; background: var(--v-photo); }
 .v-item-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .v-item-body { padding: 10px 12px 12px; }
-.v-item-name { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; color: var(--v-title); font-size: var(--v-fs-small); line-height: 1.4; word-break: keep-all; overflow-wrap: anywhere; }
+/* 이름은 두 줄 높이로 고정한다(한 줄짜리 이름의 타일이 옆 타일보다 낮아지지 않게) */
+.v-item-name { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; min-height: 2.8em; color: var(--v-title); font-size: var(--v-fs-small); line-height: 1.4; word-break: keep-all; overflow-wrap: anywhere; }
 .v-item-meta { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; column-gap: 8px; margin-top: 4px; color: var(--v-mute); font-size: 13px; }
 .v-item-meta > :first-child { color: var(--v-sub); }
 .v-items--l .v-item-name { font-size: var(--v-fs-body); }
@@ -246,7 +247,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-strip-value { display: block; color: var(--v-sub); font-size: var(--v-fs-small); }
 @media (min-width: 768px) { .v-strip > li { flex-basis: 22%; } }
 /* 상품 타일은 단추다(눌러서 상품 시트) */
-button.v-item { display: block; width: 100%; padding: 0; border: 0; color: inherit; text-align: left; cursor: pointer; }
+button.v-item { display: block; width: 100%; height: 100%; padding: 0; border: 0; color: inherit; text-align: left; cursor: pointer; }
 button.v-item .v-item-photo, button.v-item .v-item-body { display: block; }
 button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 0; background: none; color: inherit; cursor: pointer; }
 .v-sheet-photo { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--v-r-card); background: var(--v-photo); }

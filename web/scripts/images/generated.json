@@ -11899,6 +11899,10 @@
     "file": "computer-apple-macbook-pro-14-m4-max-36gb-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-apple-macbook-pro-14-m4-pro-24gb-512gb": {
+    "file": "computer-apple-macbook-pro-14-m4-pro-24gb-512gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-apple-macbook-pro-16-m4-max-128gb-8tb": {
     "file": "computer-apple-macbook-pro-16-m4-max-128gb-8tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -11921,6 +11925,10 @@
   },
   "computer-apple-pro-display-xdr-nano-texture": {
     "file": "computer-apple-pro-display-xdr-nano-texture.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-apple-studio-display-nano-texture": {
+    "file": "computer-apple-studio-display-nano-texture.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-asus-ascent-gx10": {

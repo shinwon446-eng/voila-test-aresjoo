@@ -1323,6 +1323,14 @@
     "file": "audio-yamaha-yh-5000se.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-balenciaga-bb-2-0-earrings": {
+    "file": "bag-balenciaga-bb-2-0-earrings.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-balenciaga-bb-hourglass-thin-belt": {
+    "file": "bag-balenciaga-bb-hourglass-thin-belt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-balenciaga-bel-air-small-carry-all-bag": {
     "file": "bag-balenciaga-bel-air-small-carry-all-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -1331,8 +1339,16 @@
     "file": "bag-balenciaga-crush-medium-chain-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-balenciaga-crush-small-chain-bag": {
+    "file": "bag-balenciaga-crush-small-chain-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-balenciaga-hourglass-medium-handbag": {
     "file": "bag-balenciaga-hourglass-medium-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-balenciaga-le-cagole-bracelet": {
+    "file": "bag-balenciaga-le-cagole-bracelet.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-balenciaga-le-cagole-medium-shoulder-bag": {
@@ -1349,6 +1365,14 @@
   },
   "bag-balenciaga-le-city-medium-bag": {
     "file": "bag-balenciaga-le-city-medium-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-balenciaga-le-city-small-bag": {
+    "file": "bag-balenciaga-le-city-small-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-balenciaga-macro-logo-wool-scarf": {
+    "file": "bag-balenciaga-macro-logo-wool-scarf.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-balenciaga-monaco-medium-chain-bag": {
@@ -1369,6 +1393,26 @@
   },
   "bag-balenciaga-rodeo-small-handbag": {
     "file": "bag-balenciaga-rodeo-small-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-bottega-veneta-candy-cassette": {
+    "file": "bag-bottega-veneta-candy-cassette.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-bottega-veneta-candy-jodie": {
+    "file": "bag-bottega-veneta-candy-jodie.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-bottega-veneta-cassette-trifold-zip-wallet": {
+    "file": "bag-bottega-veneta-cassette-trifold-zip-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-bottega-veneta-drop-earrings-silver": {
+    "file": "bag-bottega-veneta-drop-earrings-silver.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-bottega-veneta-intrecciato-zip-around-wallet": {
+    "file": "bag-bottega-veneta-intrecciato-zip-around-wallet.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-bottega-veneta-large-andiamo": {
@@ -1395,6 +1439,14 @@
     "file": "bag-bottega-veneta-mini-jodie-crocodile.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-bottega-veneta-mini-loop-camera-bag": {
+    "file": "bag-bottega-veneta-mini-loop-camera-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-bottega-veneta-mini-pouch": {
+    "file": "bag-bottega-veneta-mini-pouch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-bottega-veneta-sardine": {
     "file": "bag-bottega-veneta-sardine.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -1419,6 +1471,14 @@
     "file": "bag-bottega-veneta-small-jodie.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-celine-ava-bag-triomphe-canvas": {
+    "file": "bag-celine-ava-bag-triomphe-canvas.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-celine-chain-shoulder-bag-triomphe-shiny-calfskin": {
+    "file": "bag-celine-chain-shoulder-bag-triomphe-shiny-calfskin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-celine-classique-16-bag-niloticus-crocodile": {
     "file": "bag-celine-classique-16-bag-niloticus-crocodile.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -1431,20 +1491,48 @@
     "file": "bag-celine-classique-triomphe-bag-shiny-calfskin.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-celine-compact-wallet-with-coin-triomphe-shiny-calfskin": {
+    "file": "bag-celine-compact-wallet-with-coin-triomphe-shiny-calfskin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-celine-large-zipped-wallet-triomphe-canvas": {
+    "file": "bag-celine-large-zipped-wallet-triomphe-canvas.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-celine-medium-classic-bag-box-calfskin": {
     "file": "bag-celine-medium-classic-bag-box-calfskin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-celine-medium-lola-bag": {
+    "file": "bag-celine-medium-lola-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-celine-medium-triomphe-belt": {
+    "file": "bag-celine-medium-triomphe-belt.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-celine-micro-luggage": {
     "file": "bag-celine-micro-luggage.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-celine-mini-vertical-cabas-triomphe-canvas": {
+    "file": "bag-celine-mini-vertical-cabas-triomphe-canvas.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-celine-nano-luggage": {
     "file": "bag-celine-nano-luggage.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-celine-oval-purse-cuir-triomphe": {
+    "file": "bag-celine-oval-purse-cuir-triomphe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-celine-small-16-bag-satinated-calfskin": {
     "file": "bag-celine-small-16-bag-satinated-calfskin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-celine-small-trifold-wallet-triomphe-canvas": {
+    "file": "bag-celine-small-trifold-wallet-triomphe-canvas.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-celine-teen-classic-bag-box-calfskin": {
@@ -1463,8 +1551,16 @@
     "file": "bag-celine-teen-triomphe-bag-shiny-calfskin.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-celine-triomphe-baseball-cap": {
+    "file": "bag-celine-triomphe-baseball-cap.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-celine-triomphe-shoulder-bag-shiny-calfskin": {
     "file": "bag-celine-triomphe-shoulder-bag-shiny-calfskin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-19-card-holder": {
+    "file": "bag-chanel-19-card-holder.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-chanel-19-handbag": {
@@ -1479,6 +1575,14 @@
     "file": "bag-chanel-19-maxi-handbag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-chanel-19-small-flap-wallet": {
+    "file": "bag-chanel-19-small-flap-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-19-wallet-on-chain": {
+    "file": "bag-chanel-19-wallet-on-chain.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-chanel-2-55-handbag-aged-calfskin": {
     "file": "bag-chanel-2-55-handbag-aged-calfskin.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -1487,8 +1591,40 @@
     "file": "bag-chanel-2-55-large-handbag-aged-calfskin.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-chanel-2-55-mini-handbag-aged-calfskin": {
+    "file": "bag-chanel-2-55-mini-handbag-aged-calfskin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-22-handbag": {
+    "file": "bag-chanel-22-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-22-large-handbag": {
+    "file": "bag-chanel-22-large-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-22-mini-handbag": {
+    "file": "bag-chanel-22-mini-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-22-small-handbag": {
+    "file": "bag-chanel-22-small-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-chanel-25-large-handbag": {
     "file": "bag-chanel-25-large-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-25-medium-handbag": {
+    "file": "bag-chanel-25-medium-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-25-small-handbag": {
+    "file": "bag-chanel-25-small-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-31-mini-shopping-bag": {
+    "file": "bag-chanel-31-mini-shopping-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-chanel-boy-chanel-handbag": {
@@ -1503,20 +1639,108 @@
     "file": "bag-chanel-boy-chanel-small-handbag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-chanel-boy-chanel-wallet-on-chain": {
+    "file": "bag-chanel-boy-chanel-wallet-on-chain.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-chanel-classic-11-12-handbag-grained-calfskin": {
     "file": "bag-chanel-classic-11-12-handbag-grained-calfskin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-classic-card-holder": {
+    "file": "bag-chanel-classic-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-classic-clutch-with-chain": {
+    "file": "bag-chanel-classic-clutch-with-chain.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-classic-flap-card-holder": {
+    "file": "bag-chanel-classic-flap-card-holder.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-chanel-classic-large-handbag-grained-calfskin": {
     "file": "bag-chanel-classic-large-handbag-grained-calfskin.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-chanel-classic-long-flap-wallet": {
+    "file": "bag-chanel-classic-long-flap-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-classic-long-zipped-wallet": {
+    "file": "bag-chanel-classic-long-zipped-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-chanel-classic-maxi-handbag-grained-calfskin": {
     "file": "bag-chanel-classic-maxi-handbag-grained-calfskin.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-chanel-classic-passport-holder": {
+    "file": "bag-chanel-classic-passport-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-classic-phone-holder-with-chain": {
+    "file": "bag-chanel-classic-phone-holder-with-chain.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-classic-small-flap-wallet": {
+    "file": "bag-chanel-classic-small-flap-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-chanel-classic-small-handbag-lambskin": {
     "file": "bag-chanel-classic-small-handbag-lambskin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-classic-wallet-on-chain-grained-calfskin": {
+    "file": "bag-chanel-classic-wallet-on-chain-grained-calfskin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-classic-zipped-coin-purse": {
+    "file": "bag-chanel-classic-zipped-coin-purse.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-coco-mademoiselle-eau-de-parfum-100ml": {
+    "file": "bag-chanel-coco-mademoiselle-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-la-creme-main-hand-cream": {
+    "file": "bag-chanel-la-creme-main-hand-cream.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-le-vernis-nail-colour": {
+    "file": "bag-chanel-le-vernis-nail-colour.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-mini-flap-bag-rectangular-lambskin": {
+    "file": "bag-chanel-mini-flap-bag-rectangular-lambskin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-mini-flap-bag-square-lambskin": {
+    "file": "bag-chanel-mini-flap-bag-square-lambskin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-mini-flap-bag-with-top-handle": {
+    "file": "bag-chanel-mini-flap-bag-with-top-handle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-n-5-eau-de-parfum-100ml": {
+    "file": "bag-chanel-n-5-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-n-5-eau-de-parfum-35ml": {
+    "file": "bag-chanel-n-5-eau-de-parfum-35ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-rouge-coco-lipstick": {
+    "file": "bag-chanel-rouge-coco-lipstick.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-silk-twill-bandeau": {
+    "file": "bag-chanel-silk-twill-bandeau.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-chanel-silk-twill-square-scarf-90": {
+    "file": "bag-chanel-silk-twill-square-scarf-90.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-chloe-banana-bag": {
@@ -1599,6 +1823,10 @@
     "file": "bag-delvaux-lingot-pm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-delvaux-pin-toy": {
+    "file": "bag-delvaux-pin-toy.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-delvaux-tempete-gm": {
     "file": "bag-delvaux-tempete-gm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -1615,16 +1843,96 @@
     "file": "bag-delvaux-tempete-small.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-dior-30-montaigne-5-gusset-card-holder": {
+    "file": "bag-dior-30-montaigne-5-gusset-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-dior-30-montaigne-bag": {
     "file": "bag-dior-30-montaigne-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-30-montaigne-dahlia-wallet": {
+    "file": "bag-dior-30-montaigne-dahlia-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-30-montaigne-east-west-bag-with-chain": {
+    "file": "bag-dior-30-montaigne-east-west-bag-with-chain.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-30-montaigne-reversible-belt-35mm": {
+    "file": "bag-dior-30-montaigne-reversible-belt-35mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-addict-lip-glow": {
+    "file": "bag-dior-addict-lip-glow.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-backstage-rosy-glow-blush": {
+    "file": "bag-dior-backstage-rosy-glow-blush.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-bobby-east-west-bag": {
+    "file": "bag-dior-bobby-east-west-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-book-tote-large": {
+    "file": "bag-dior-book-tote-large.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-book-tote-mini": {
+    "file": "bag-dior-book-tote-mini.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-book-tote-small": {
+    "file": "bag-dior-book-tote-small.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-caro-dahlia-wallet": {
+    "file": "bag-dior-caro-dahlia-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-caro-five-slot-card-holder": {
+    "file": "bag-dior-caro-five-slot-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-caro-macrocannage-pouch": {
+    "file": "bag-dior-caro-macrocannage-pouch.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-dior-caro-medium-bag": {
     "file": "bag-dior-caro-medium-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-dior-caro-small-bag": {
+    "file": "bag-dior-caro-small-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-caro-zipped-pouch-with-chain": {
+    "file": "bag-dior-caro-zipped-pouch-with-chain.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-jadore-eau-de-parfum-100ml": {
+    "file": "bag-dior-jadore-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-dior-lady-d-joy-medium-bag": {
     "file": "bag-dior-lady-d-joy-medium-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-lady-d-joy-micro-bag": {
+    "file": "bag-dior-lady-d-joy-micro-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-lady-dior-lotus-wallet": {
+    "file": "bag-dior-lady-dior-lotus-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-lady-dior-phone-holder": {
+    "file": "bag-dior-lady-dior-phone-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-lady-dior-pouch": {
+    "file": "bag-dior-lady-dior-pouch.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-dior-large-lady-dior-bag": {
@@ -1655,12 +1963,56 @@
     "file": "bag-dior-mini-lady-dior-bag-crocodile.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-dior-mini-saddle-bag-with-strap": {
+    "file": "bag-dior-mini-saddle-bag-with-strap.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-miss-dior-eau-de-parfum-50ml": {
+    "file": "bag-dior-miss-dior-eau-de-parfum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-mitzah-silk-twill-scarf": {
+    "file": "bag-dior-mitzah-silk-twill-scarf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-oblique-silk-twill-square-scarf-90": {
+    "file": "bag-dior-oblique-silk-twill-square-scarf-90.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-rouge-dior-lipstick": {
+    "file": "bag-dior-rouge-dior-lipstick.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-dior-saddle-bag-with-strap": {
     "file": "bag-dior-saddle-bag-with-strap.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-dior-saddle-belt-20mm": {
+    "file": "bag-dior-saddle-belt-20mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-saddle-lotus-wallet": {
+    "file": "bag-dior-saddle-lotus-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-saddle-pouch-with-chain": {
+    "file": "bag-dior-saddle-pouch-with-chain.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-dior-small-lady-dior-my-abcdior-bag": {
     "file": "bag-dior-small-lady-dior-my-abcdior-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-toujours-medium-bag": {
+    "file": "bag-dior-toujours-medium-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-toujours-small-bag": {
+    "file": "bag-dior-toujours-small-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-dior-tribales-earrings": {
+    "file": "bag-dior-tribales-earrings.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-fendi-baguette": {
@@ -1677,6 +2029,14 @@
   },
   "bag-fendi-cmon-medium": {
     "file": "bag-fendi-cmon-medium.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-fendi-f-is-fendi-card-holder": {
+    "file": "bag-fendi-f-is-fendi-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-fendi-ff-silk-wrappy": {
+    "file": "bag-fendi-ff-silk-wrappy.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-fendi-first-medium": {
@@ -1719,6 +2079,10 @@
     "file": "bag-ferragamo-fiamma-small-crossbody-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-ferragamo-gancini-compact-wallet": {
+    "file": "bag-ferragamo-gancini-compact-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-ferragamo-hug-medium-handbag": {
     "file": "bag-ferragamo-hug-medium-handbag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -1729,6 +2093,14 @@
   },
   "bag-ferragamo-hug-small-handbag": {
     "file": "bag-ferragamo-hug-small-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-ferragamo-printed-silk-foulard-90": {
+    "file": "bag-ferragamo-printed-silk-foulard-90.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-ferragamo-reversible-and-adjustable-gancini-belt": {
+    "file": "bag-ferragamo-reversible-and-adjustable-gancini-belt.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-ferragamo-studio-bag-medium": {
@@ -1759,6 +2131,14 @@
     "file": "bag-ferragamo-wanda-small-handbag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-givenchy-4g-reversible-belt": {
+    "file": "bag-givenchy-4g-reversible-belt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-givenchy-4g-zipped-wallet": {
+    "file": "bag-givenchy-4g-zipped-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-givenchy-medium-4g-bag-with-chain": {
     "file": "bag-givenchy-medium-4g-bag-with-chain.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -1781,6 +2161,10 @@
   },
   "bag-givenchy-mini-antigona-bag": {
     "file": "bag-givenchy-mini-antigona-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-givenchy-mini-g-tote-shopping-bag": {
+    "file": "bag-givenchy-mini-g-tote-shopping-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-givenchy-small-antigona-bag": {
@@ -1831,6 +2215,10 @@
     "file": "bag-goyard-minaudiere-trunk-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-goyard-monte-carlo-pm-clutch": {
+    "file": "bag-goyard-monte-carlo-pm-clutch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-goyard-rouette-structure-pm": {
     "file": "bag-goyard-rouette-structure-pm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -1853,6 +2241,10 @@
   },
   "bag-goyard-vendome-pm": {
     "file": "bag-goyard-vendome-pm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-aphrodite-small-shoulder-bag": {
+    "file": "bag-gucci-aphrodite-small-shoulder-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-gucci-bamboo-1947-medium-top-handle-bag": {
@@ -1883,8 +2275,44 @@
     "file": "bag-gucci-diana-small-tote-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-gucci-dionysus-gg-super-mini-bag": {
+    "file": "bag-gucci-dionysus-gg-super-mini-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-gg-marmont-card-case": {
+    "file": "bag-gucci-gg-marmont-card-case.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-gg-marmont-mini-shoulder-bag": {
+    "file": "bag-gucci-gg-marmont-mini-shoulder-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-gg-marmont-small-camera-bag": {
+    "file": "bag-gucci-gg-marmont-small-camera-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-gg-marmont-super-mini-bag": {
+    "file": "bag-gucci-gg-marmont-super-mini-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-gg-marmont-zip-around-wallet": {
+    "file": "bag-gucci-gg-marmont-zip-around-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-gg-silk-neck-bow": {
+    "file": "bag-gucci-gg-silk-neck-bow.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-horsebit-1955-mini-bag": {
+    "file": "bag-gucci-horsebit-1955-mini-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-gucci-horsebit-1955-shoulder-bag": {
     "file": "bag-gucci-horsebit-1955-shoulder-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-horsebit-1955-wallet-with-chain": {
+    "file": "bag-gucci-horsebit-1955-wallet-with-chain.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-gucci-horsebit-chain-medium-shoulder-bag": {
@@ -1895,12 +2323,64 @@
     "file": "bag-gucci-horsebit-chain-small-shoulder-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-gucci-interlocking-g-stud-earrings-silver": {
+    "file": "bag-gucci-interlocking-g-stud-earrings-silver.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-gucci-jackie-1961-medium-shoulder-bag": {
     "file": "bag-gucci-jackie-1961-medium-shoulder-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-gucci-jackie-1961-small-shoulder-bag": {
+    "file": "bag-gucci-jackie-1961-small-shoulder-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-gucci-jackie-1961-small-shoulder-bag-crocodile": {
     "file": "bag-gucci-jackie-1961-small-shoulder-bag-crocodile.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-ophidia-gg-belt-bag": {
+    "file": "bag-gucci-ophidia-gg-belt-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-ophidia-gg-medium-tote": {
+    "file": "bag-gucci-ophidia-gg-medium-tote.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-ophidia-gg-mini-bag": {
+    "file": "bag-gucci-ophidia-gg-mini-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-ophidia-gg-small-shoulder-bag": {
+    "file": "bag-gucci-ophidia-gg-small-shoulder-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-ophidia-gg-small-top-handle-bag": {
+    "file": "bag-gucci-ophidia-gg-small-top-handle-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-gucci-ophidia-gg-zip-around-wallet": {
+    "file": "bag-gucci-ophidia-gg-zip-around-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-aline-mini-bag": {
+    "file": "bag-hermes-aline-mini-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-bandana-55-silk-scarf": {
+    "file": "bag-hermes-bandana-55-silk-scarf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-bastia-coin-purse": {
+    "file": "bag-hermes-bastia-coin-purse.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-bearn-compact-wallet": {
+    "file": "bag-hermes-bearn-compact-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-bearn-wallet": {
+    "file": "bag-hermes-bearn-wallet.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-hermes-birkin-20-faubourg-sellier": {
@@ -1943,8 +2423,104 @@
     "file": "bag-hermes-birkin-35-togo.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-hermes-bolide-1923-25": {
+    "file": "bag-hermes-bolide-1923-25.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-bride-a-brac-case-pm": {
+    "file": "bag-hermes-bride-a-brac-case-pm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-calvi-card-holder": {
+    "file": "bag-hermes-calvi-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-calvi-duo-card-holder": {
+    "file": "bag-hermes-calvi-duo-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-carmen-uno-dos-key-ring": {
+    "file": "bag-hermes-carmen-uno-dos-key-ring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-carre-70-silk-scarf": {
+    "file": "bag-hermes-carre-70-silk-scarf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-carre-90-silk-twill-scarf": {
+    "file": "bag-hermes-carre-90-silk-twill-scarf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-cashmere-and-silk-shawl-140": {
+    "file": "bag-hermes-cashmere-and-silk-shawl-140.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-citizen-twill-card-holder": {
+    "file": "bag-hermes-citizen-twill-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-clic-h-bracelet": {
+    "file": "bag-hermes-clic-h-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-collier-de-chien-bracelet": {
+    "file": "bag-hermes-collier-de-chien-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-constance-18-epsom": {
+    "file": "bag-hermes-constance-18-epsom.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-hermes-constance-18-matte-alligator": {
     "file": "bag-hermes-constance-18-matte-alligator.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-constance-slim-wallet": {
+    "file": "bag-hermes-constance-slim-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-constance-to-go-wallet": {
+    "file": "bag-hermes-constance-to-go-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-dogon-duo-wallet": {
+    "file": "bag-hermes-dogon-duo-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-evelyne-iii-16-tpm": {
+    "file": "bag-hermes-evelyne-iii-16-tpm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-evelyne-iii-29-pm": {
+    "file": "bag-hermes-evelyne-iii-29-pm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-evelyne-iii-33-gm": {
+    "file": "bag-hermes-evelyne-iii-33-gm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-garden-party-30-negonda": {
+    "file": "bag-hermes-garden-party-30-negonda.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-garden-party-36-negonda": {
+    "file": "bag-hermes-garden-party-36-negonda.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-h-belt-buckle-and-reversible-leather-strap-32mm": {
+    "file": "bag-hermes-h-belt-buckle-and-reversible-leather-strap-32mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-herbag-zip-31": {
+    "file": "bag-hermes-herbag-zip-31.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-in-the-loop-18": {
+    "file": "bag-hermes-in-the-loop-18.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-kelly-18-belt": {
+    "file": "bag-hermes-kelly-18-belt.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-hermes-kelly-25-himalaya-niloticus-crocodile": {
@@ -1971,8 +2547,96 @@
     "file": "bag-hermes-kelly-32-retourne-togo.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-hermes-kelly-double-tour-bracelet": {
+    "file": "bag-hermes-kelly-double-tour-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-kelly-elan": {
+    "file": "bag-hermes-kelly-elan.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-kelly-pochette-swift": {
+    "file": "bag-hermes-kelly-pochette-swift.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-kelly-to-go-wallet": {
+    "file": "bag-hermes-kelly-to-go-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-les-mains-hermes-nail-enamel": {
+    "file": "bag-hermes-les-mains-hermes-nail-enamel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-hermes-lindy-26-clemence": {
     "file": "bag-hermes-lindy-26-clemence.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-maxi-twilly-slim-silk-scarf": {
+    "file": "bag-hermes-maxi-twilly-slim-silk-scarf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-mini-constance-belt-buckle-and-reversible-leather-str": {
+    "file": "bag-hermes-mini-constance-belt-buckle-and-reversible-leather-str.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-mini-kelly-ii-epsom": {
+    "file": "bag-hermes-mini-kelly-ii-epsom.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-mini-lindy": {
+    "file": "bag-hermes-mini-lindy.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-oran-nano-charm": {
+    "file": "bag-hermes-oran-nano-charm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-picotin-lock-18": {
+    "file": "bag-hermes-picotin-lock-18.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-picotin-lock-22": {
+    "file": "bag-hermes-picotin-lock-22.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-rodeo-pegase-pm-charm": {
+    "file": "bag-hermes-rodeo-pegase-pm-charm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-rodeo-pm-charm": {
+    "file": "bag-hermes-rodeo-pm-charm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-rose-hermes-rosy-lip-enhancer": {
+    "file": "bag-hermes-rose-hermes-rosy-lip-enhancer.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-rouge-hermes-satin-lipstick": {
+    "file": "bag-hermes-rouge-hermes-satin-lipstick.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-roulis-mini-18": {
+    "file": "bag-hermes-roulis-mini-18.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-silkin-classic-long-wallet": {
+    "file": "bag-hermes-silkin-classic-long-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-silkin-compact-wallet": {
+    "file": "bag-hermes-silkin-compact-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-tarmac-passport-holder": {
+    "file": "bag-hermes-tarmac-passport-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-hermes-twilly-silk-scarf": {
+    "file": "bag-hermes-twilly-silk-scarf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-loewe-anagram-wallet-on-chain": {
+    "file": "bag-loewe-anagram-wallet-on-chain.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-loewe-compact-hammock-bag": {
@@ -1981,6 +2645,14 @@
   },
   "bag-loewe-flamenco-purse": {
     "file": "bag-loewe-flamenco-purse.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-loewe-fold-shopper": {
+    "file": "bag-loewe-fold-shopper.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-loewe-hammock-nugget": {
+    "file": "bag-loewe-hammock-nugget.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-loewe-large-puzzle-bag": {
@@ -1995,12 +2667,36 @@
     "file": "bag-loewe-medium-puzzle-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-loewe-medium-puzzle-fold-tote": {
+    "file": "bag-loewe-medium-puzzle-fold-tote.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-loewe-medium-squeeze-bag": {
     "file": "bag-loewe-medium-squeeze-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-loewe-mini-flamenco-clutch": {
+    "file": "bag-loewe-mini-flamenco-clutch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-loewe-mini-gate-dual-bag": {
+    "file": "bag-loewe-mini-gate-dual-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-loewe-mini-puzzle-bag": {
     "file": "bag-loewe-mini-puzzle-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-loewe-mini-puzzle-fold-tote": {
+    "file": "bag-loewe-mini-puzzle-fold-tote.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-loewe-small-cubi-bag-anagram-jacquard": {
+    "file": "bag-loewe-small-cubi-bag-anagram-jacquard.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-loewe-small-goya-bag": {
+    "file": "bag-loewe-small-goya-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-loewe-small-hammock-bag": {
@@ -2023,12 +2719,36 @@
     "file": "bag-loewe-small-squeeze-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-loewe-tomato-leaves-medium-scented-candle": {
+    "file": "bag-loewe-tomato-leaves-medium-scented-candle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-loewe-tomato-leaves-small-scented-candle": {
+    "file": "bag-loewe-tomato-leaves-small-scented-candle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-adjustable-shoulder-strap-16mm-monogram": {
+    "file": "bag-louis-vuitton-adjustable-shoulder-strap-16mm-monogram.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-alma-bb-epi": {
+    "file": "bag-louis-vuitton-alma-bb-epi.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-alma-bb-monogram": {
+    "file": "bag-louis-vuitton-alma-bb-monogram.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-louis-vuitton-alzer-60": {
     "file": "bag-louis-vuitton-alzer-60.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-louis-vuitton-bisten-60": {
     "file": "bag-louis-vuitton-bisten-60.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-boulogne": {
+    "file": "bag-louis-vuitton-boulogne.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-louis-vuitton-capucines-bb": {
@@ -2059,16 +2779,140 @@
     "file": "bag-louis-vuitton-cotteville-40.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-louis-vuitton-coussin-pm": {
+    "file": "bag-louis-vuitton-coussin-pm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-dauphine-mm": {
+    "file": "bag-louis-vuitton-dauphine-mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-diane": {
+    "file": "bag-louis-vuitton-diane.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-essential-v-necklace": {
+    "file": "bag-louis-vuitton-essential-v-necklace.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-felicie-pochette": {
+    "file": "bag-louis-vuitton-felicie-pochette.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-horizon-55-rolling-luggage": {
+    "file": "bag-louis-vuitton-horizon-55-rolling-luggage.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-keepall-bandouliere-55": {
+    "file": "bag-louis-vuitton-keepall-bandouliere-55.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-key-pouch-monogram": {
+    "file": "bag-louis-vuitton-key-pouch-monogram.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-loop": {
+    "file": "bag-louis-vuitton-loop.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-lv-iconic-20mm-reversible-belt": {
+    "file": "bag-louis-vuitton-lv-iconic-20mm-reversible-belt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-lv-iconic-earrings": {
+    "file": "bag-louis-vuitton-lv-iconic-earrings.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-lv-initiales-30mm-reversible-belt": {
+    "file": "bag-louis-vuitton-lv-initiales-30mm-reversible-belt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-louis-vuitton-malle-courrier-lozine-110": {
     "file": "bag-louis-vuitton-malle-courrier-lozine-110.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-monogram-square-90-silk-scarf": {
+    "file": "bag-louis-vuitton-monogram-square-90-silk-scarf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-nano-speedy": {
+    "file": "bag-louis-vuitton-nano-speedy.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-neonoe-mm": {
+    "file": "bag-louis-vuitton-neonoe-mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-neverfull-inside-out-mm": {
+    "file": "bag-louis-vuitton-neverfull-inside-out-mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-neverfull-mm-monogram": {
+    "file": "bag-louis-vuitton-neverfull-mm-monogram.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-noe": {
+    "file": "bag-louis-vuitton-noe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-onthego-gm": {
+    "file": "bag-louis-vuitton-onthego-gm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-onthego-mm": {
+    "file": "bag-louis-vuitton-onthego-mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-passport-cover-monogram": {
+    "file": "bag-louis-vuitton-passport-cover-monogram.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-petit-sac-plat": {
+    "file": "bag-louis-vuitton-petit-sac-plat.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-louis-vuitton-petite-malle": {
     "file": "bag-louis-vuitton-petite-malle.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-louis-vuitton-pochette-accessoires": {
+    "file": "bag-louis-vuitton-pochette-accessoires.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-romy-card-holder": {
+    "file": "bag-louis-vuitton-romy-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-rosalie-coin-purse": {
+    "file": "bag-louis-vuitton-rosalie-coin-purse.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-side-trunk-pm": {
+    "file": "bag-louis-vuitton-side-trunk-pm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-speedy-25": {
+    "file": "bag-louis-vuitton-speedy-25.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-speedy-bandouliere-25": {
+    "file": "bag-louis-vuitton-speedy-bandouliere-25.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-louis-vuitton-speedy-p9-bandouliere-25": {
     "file": "bag-louis-vuitton-speedy-p9-bandouliere-25.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-twist-mm": {
+    "file": "bag-louis-vuitton-twist-mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-victorine-wallet": {
+    "file": "bag-louis-vuitton-victorine-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-louis-vuitton-zippy-coin-purse": {
+    "file": "bag-louis-vuitton-zippy-coin-purse.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-miu-miu-arcadie-leather-bag": {
@@ -2095,12 +2939,24 @@
     "file": "bag-miu-miu-beau-leather-bowling-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-miu-miu-enameled-metal-hair-clips": {
+    "file": "bag-miu-miu-enameled-metal-hair-clips.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-miu-miu-ivy-leather-bag": {
     "file": "bag-miu-miu-ivy-leather-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-miu-miu-joie-nappa-leather-bag": {
     "file": "bag-miu-miu-joie-nappa-leather-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-miu-miu-matelasse-nappa-leather-card-holder": {
+    "file": "bag-miu-miu-matelasse-nappa-leather-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-miu-miu-patent-leather-hair-clip": {
+    "file": "bag-miu-miu-patent-leather-hair-clip.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-miu-miu-pocket-nappa-leather-bag": {
@@ -2167,20 +3023,352 @@
     "file": "bag-mulberry-zipped-bayswater.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-p-3-1-phillip-lim-pashli-medium-satchel": {
+    "file": "bag-p-3-1-phillip-lim-pashli-medium-satchel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-a-p-c-demi-lune-bag": {
+    "file": "bag-p-a-p-c-demi-lune-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-a-p-c-grace-small-bag": {
+    "file": "bag-p-a-p-c-grace-small-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-alaia-le-coeur-bag": {
+    "file": "bag-p-alaia-le-coeur-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-alaia-le-teckel-small": {
+    "file": "bag-p-alaia-le-teckel-small.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-alexander-mcqueen-classic-skull-silk-scarf": {
+    "file": "bag-p-alexander-mcqueen-classic-skull-silk-scarf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-alexander-mcqueen-the-peak-bag-small": {
+    "file": "bag-p-alexander-mcqueen-the-peak-bag-small.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-apple-brand-garde-rain-and-stain-repellent": {
+    "file": "bag-p-apple-brand-garde-rain-and-stain-repellent.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-aspinal-of-london-midi-mayfair-bag": {
+    "file": "bag-p-aspinal-of-london-midi-mayfair-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-away-the-bigger-carry-on": {
+    "file": "bag-p-away-the-bigger-carry-on.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-away-the-carry-on": {
+    "file": "bag-p-away-the-carry-on.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-away-the-carry-on-aluminum-edition": {
+    "file": "bag-p-away-the-carry-on-aluminum-edition.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-away-the-everywhere-bag": {
+    "file": "bag-p-away-the-everywhere-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-baggu-big-baggu": {
+    "file": "bag-p-baggu-big-baggu.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-baggu-cloud-bag": {
+    "file": "bag-p-baggu-cloud-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-baggu-duck-bag": {
+    "file": "bag-p-baggu-duck-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-baggu-fanny-pack": {
+    "file": "bag-p-baggu-fanny-pack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-baggu-flat-pouch-set": {
+    "file": "bag-p-baggu-flat-pouch-set.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-baggu-medium-nylon-crescent-bag": {
+    "file": "bag-p-baggu-medium-nylon-crescent-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-baggu-puffy-laptop-sleeve-16-inch": {
+    "file": "bag-p-baggu-puffy-laptop-sleeve-16-inch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-baggu-small-nylon-crescent-bag": {
+    "file": "bag-p-baggu-small-nylon-crescent-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-baggu-standard-baggu": {
+    "file": "bag-p-baggu-standard-baggu.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-beis-the-carry-on-roller": {
+    "file": "bag-p-beis-the-carry-on-roller.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-beis-the-cosmetic-case": {
+    "file": "bag-p-beis-the-cosmetic-case.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-bickmore-bick-4-leather-conditioner-16-oz": {
+    "file": "bag-p-bickmore-bick-4-leather-conditioner-16-oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-bulgari-serpenti-forever-card-holder": {
+    "file": "bag-p-bulgari-serpenti-forever-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-bulgari-serpenti-forever-compact-wallet": {
+    "file": "bag-p-bulgari-serpenti-forever-compact-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-p-bulgari-serpenti-forever-top-handle-small-crocodile": {
     "file": "bag-p-bulgari-serpenti-forever-top-handle-small-crocodile.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-burberry-check-card-case": {
+    "file": "bag-p-burberry-check-card-case.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-calpak-hue-carry-on-luggage": {
+    "file": "bag-p-calpak-hue-carry-on-luggage.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-calpak-luka-duffel": {
+    "file": "bag-p-calpak-luka-duffel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-calpak-packing-cubes-5-piece-set": {
+    "file": "bag-p-calpak-packing-cubes-5-piece-set.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-cartier-c-de-cartier-mini-bag": {
+    "file": "bag-p-cartier-c-de-cartier-mini-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-cartier-must-de-cartier-card-holder": {
+    "file": "bag-p-cartier-must-de-cartier-card-holder.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-p-cartier-panthere-de-cartier-chain-bag-small-niloticus-croc": {
     "file": "bag-p-cartier-panthere-de-cartier-chain-bag-small-niloticus-croc.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-p-chamberlains-leather-milk-straight-cleaner-no-2-6-oz": {
+    "file": "bag-p-chamberlains-leather-milk-straight-cleaner-no-2-6-oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-coach-brooklyn-shoulder-bag-28": {
+    "file": "bag-p-coach-brooklyn-shoulder-bag-28.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-coach-brooklyn-shoulder-bag-39": {
+    "file": "bag-p-coach-brooklyn-shoulder-bag-39.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-coach-essential-card-case": {
+    "file": "bag-p-coach-essential-card-case.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-coach-leather-cleaner": {
+    "file": "bag-p-coach-leather-cleaner.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-coach-leather-moisturizer": {
+    "file": "bag-p-coach-leather-moisturizer.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-coach-rogue-25": {
+    "file": "bag-p-coach-rogue-25.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-coach-tabby-shoulder-bag-20": {
+    "file": "bag-p-coach-tabby-shoulder-bag-20.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-collonil-1909-leather-lotion-100ml": {
+    "file": "bag-p-collonil-1909-leather-lotion-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-collonil-1909-supreme-creme-de-luxe-100ml": {
+    "file": "bag-p-collonil-1909-supreme-creme-de-luxe-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-collonil-carbon-pro-300ml": {
+    "file": "bag-p-collonil-carbon-pro-300ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-collonil-waterstop-spray-200ml": {
+    "file": "bag-p-collonil-waterstop-spray-200ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-comme-des-garcons-wallet-sa2100-classic-leather-zip-wallet": {
+    "file": "bag-p-comme-des-garcons-wallet-sa2100-classic-leather-zip-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-comme-des-garcons-wallet-sa6400-card-holder": {
+    "file": "bag-p-comme-des-garcons-wallet-sa6400-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-cuyana-classic-easy-tote": {
+    "file": "bag-p-cuyana-classic-easy-tote.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-dagne-dover-hunter-toiletry-bag-small": {
+    "file": "bag-p-dagne-dover-hunter-toiletry-bag-small.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-dagne-dover-landon-carryall-medium": {
+    "file": "bag-p-dagne-dover-landon-carryall-medium.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-demellier-the-nano-montreal": {
+    "file": "bag-p-demellier-the-nano-montreal.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-demellier-the-new-york": {
+    "file": "bag-p-demellier-the-new-york.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-dolce-and-gabbana-dauphine-calfskin-card-holder": {
+    "file": "bag-p-dolce-and-gabbana-dauphine-calfskin-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-p-dolce-and-gabbana-sicily-medium-handbag-crocodile": {
     "file": "bag-p-dolce-and-gabbana-sicily-medium-handbag-crocodile.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-p-dolce-and-gabbana-sicily-small-handbag": {
+    "file": "bag-p-dolce-and-gabbana-sicily-small-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-eagle-creek-pack-it-reveal-cube-set-xs-s-m": {
+    "file": "bag-p-eagle-creek-pack-it-reveal-cube-set-xs-s-m.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-eastpak-padded-pakr-backpack": {
+    "file": "bag-p-eastpak-padded-pakr-backpack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-fjallraven-kanken": {
+    "file": "bag-p-fjallraven-kanken.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-fjallraven-kanken-laptop-15-inch": {
+    "file": "bag-p-fjallraven-kanken-laptop-15-inch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-fjallraven-kanken-mini": {
+    "file": "bag-p-fjallraven-kanken-mini.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-p-giorgio-armani-la-prima-medium-crocodile": {
     "file": "bag-p-giorgio-armani-la-prima-medium-crocodile.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-herschel-supply-co-chapter-travel-kit": {
+    "file": "bag-p-herschel-supply-co-chapter-travel-kit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-jacquemus-le-bambino": {
+    "file": "bag-p-jacquemus-le-bambino.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-jacquemus-le-bambino-long": {
+    "file": "bag-p-jacquemus-le-bambino-long.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-jacquemus-le-chiquito": {
+    "file": "bag-p-jacquemus-le-chiquito.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-jacquemus-le-chiquito-moyen": {
+    "file": "bag-p-jacquemus-le-chiquito-moyen.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-jansport-superbreak-backpack": {
+    "file": "bag-p-jansport-superbreak-backpack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-jellycat-amuseable-coffee-to-go-bag-charm": {
+    "file": "bag-p-jellycat-amuseable-coffee-to-go-bag-charm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-jellycat-bashful-bunny-bag-charm": {
+    "file": "bag-p-jellycat-bashful-bunny-bag-charm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-jil-sander-cannolo-mini": {
+    "file": "bag-p-jil-sander-cannolo-mini.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-jil-sander-cannolo-small": {
+    "file": "bag-p-jil-sander-cannolo-small.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-kate-spade-new-york-knott-medium-satchel": {
+    "file": "bag-p-kate-spade-new-york-knott-medium-satchel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-khaite-lotus-mini": {
+    "file": "bag-p-khaite-lotus-mini.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-khaite-olivia-medium-hobo": {
+    "file": "bag-p-khaite-olivia-medium-hobo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-l-l-bean-boat-and-tote-extra-large": {
+    "file": "bag-p-l-l-bean-boat-and-tote-extra-large.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-l-l-bean-boat-and-tote-large": {
+    "file": "bag-p-l-l-bean-boat-and-tote-large.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-l-l-bean-boat-and-tote-medium": {
+    "file": "bag-p-l-l-bean-boat-and-tote-medium.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-l-l-bean-boat-and-tote-small": {
+    "file": "bag-p-l-l-bean-boat-and-tote-small.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-leather-honey-leather-conditioner-8-oz": {
+    "file": "bag-p-leather-honey-leather-conditioner-8-oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-lemaire-croissant-coin-purse": {
+    "file": "bag-p-lemaire-croissant-coin-purse.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-longchamp-le-pliage-original-handbag-s": {
+    "file": "bag-p-longchamp-le-pliage-original-handbag-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-longchamp-le-pliage-original-tote-bag-l": {
+    "file": "bag-p-longchamp-le-pliage-original-tote-bag-l.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-longchamp-le-pliage-original-tote-bag-m": {
+    "file": "bag-p-longchamp-le-pliage-original-tote-bag-m.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-longchamp-le-pliage-original-travel-bag-s": {
+    "file": "bag-p-longchamp-le-pliage-original-travel-bag-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-longchamp-le-pliage-xtra-handbag-s": {
+    "file": "bag-p-longchamp-le-pliage-xtra-handbag-s.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-p-loro-piana-extra-pocket-l19-crocodile": {
@@ -2191,12 +3379,120 @@
     "file": "bag-p-loro-piana-extra-pocket-l19-ostrich.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-p-lululemon-everywhere-belt-bag-1l": {
+    "file": "bag-p-lululemon-everywhere-belt-bag-1l.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-lululemon-everywhere-belt-bag-large-2l": {
+    "file": "bag-p-lululemon-everywhere-belt-bag-large-2l.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-madewell-the-transport-tote": {
+    "file": "bag-p-madewell-the-transport-tote.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-maison-margiela-5ac-classique-micro": {
+    "file": "bag-p-maison-margiela-5ac-classique-micro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-maison-margiela-four-stitches-card-holder": {
+    "file": "bag-p-maison-margiela-four-stitches-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-mansur-gavriel-bucket-bag": {
+    "file": "bag-p-mansur-gavriel-bucket-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-marc-jacobs-the-canvas-large-tote-bag": {
+    "file": "bag-p-marc-jacobs-the-canvas-large-tote-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-marc-jacobs-the-canvas-medium-tote-bag": {
+    "file": "bag-p-marc-jacobs-the-canvas-medium-tote-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-marc-jacobs-the-canvas-small-tote-bag": {
+    "file": "bag-p-marc-jacobs-the-canvas-small-tote-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-marc-jacobs-the-leather-large-tote-bag": {
+    "file": "bag-p-marc-jacobs-the-leather-large-tote-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-p-marc-jacobs-the-leather-medium-tote-bag": {
     "file": "bag-p-marc-jacobs-the-leather-medium-tote-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-p-marc-jacobs-the-leather-small-tote-bag": {
+    "file": "bag-p-marc-jacobs-the-leather-small-tote-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-marc-jacobs-the-snapshot": {
+    "file": "bag-p-marc-jacobs-the-snapshot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-max-mara-pasticcino-bag-small": {
+    "file": "bag-p-max-mara-pasticcino-bag-small.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-max-mara-whitney-bag-medium": {
+    "file": "bag-p-max-mara-whitney-bag-medium.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-mcm-stark-backpack-small-visetos": {
+    "file": "bag-p-mcm-stark-backpack-small-visetos.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-michael-kors-marilyn-medium-saffiano-leather-satchel": {
+    "file": "bag-p-michael-kors-marilyn-medium-saffiano-leather-satchel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-moynat-gabrielle-pm": {
+    "file": "bag-p-moynat-gabrielle-pm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-moynat-oh-tote-ruban-mm": {
+    "file": "bag-p-moynat-oh-tote-ruban-mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-polene-cyme": {
+    "file": "bag-p-polene-cyme.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-polene-numero-dix": {
+    "file": "bag-p-polene-numero-dix.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-p-polene-numero-un": {
     "file": "bag-p-polene-numero-un.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-polene-numero-un-nano": {
+    "file": "bag-p-polene-numero-un-nano.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-pop-mart-the-monsters-exciting-macaron-vinyl-face-blind-bo": {
+    "file": "bag-p-pop-mart-the-monsters-exciting-macaron-vinyl-face-blind-bo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-pop-mart-the-monsters-have-a-seat-vinyl-plush-blind-box": {
+    "file": "bag-p-pop-mart-the-monsters-have-a-seat-vinyl-plush-blind-box.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-proenza-schouler-ps1-medium": {
+    "file": "bag-p-proenza-schouler-ps1-medium.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-rabanne-1969-bag": {
+    "file": "bag-p-rabanne-1969-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-ralph-lauren-polo-id-calfskin-medium-saddle-bag": {
+    "file": "bag-p-ralph-lauren-polo-id-calfskin-medium-saddle-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-ralph-lauren-polo-id-calfskin-small-saddle-bag": {
+    "file": "bag-p-ralph-lauren-polo-id-calfskin-small-saddle-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-p-ralph-lauren-ricky-27-alligator": {
@@ -2207,12 +3503,152 @@
     "file": "bag-p-ralph-lauren-ricky-33-alligator.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-p-rimowa-essential-cabin": {
+    "file": "bag-p-rimowa-essential-cabin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-rimowa-leather-luggage-tag": {
+    "file": "bag-p-rimowa-leather-luggage-tag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-rimowa-original-cabin": {
+    "file": "bag-p-rimowa-original-cabin.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-rimowa-original-check-in-l": {
+    "file": "bag-p-rimowa-original-check-in-l.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-saphir-medaille-dor-renovateur-75ml": {
+    "file": "bag-p-saphir-medaille-dor-renovateur-75ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-saphir-medaille-dor-reptan-50ml": {
+    "file": "bag-p-saphir-medaille-dor-reptan-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-saphir-medaille-dor-super-invulner-250ml": {
+    "file": "bag-p-saphir-medaille-dor-super-invulner-250ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-smythson-panama-marshall-travel-wallet": {
+    "file": "bag-p-smythson-panama-marshall-travel-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-smythson-panama-passport-cover": {
+    "file": "bag-p-smythson-panama-passport-cover.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-staud-tommy-beaded-bag": {
+    "file": "bag-p-staud-tommy-beaded-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-stella-mccartney-falabella-fold-over-tote": {
+    "file": "bag-p-stella-mccartney-falabella-fold-over-tote.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-stoney-clover-lane-classic-mini-pouch": {
+    "file": "bag-p-stoney-clover-lane-classic-mini-pouch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-stoney-clover-lane-classic-small-pouch": {
+    "file": "bag-p-stoney-clover-lane-classic-small-pouch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-strathberry-east-west-mini": {
+    "file": "bag-p-strathberry-east-west-mini.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-strathberry-midi-tote": {
+    "file": "bag-p-strathberry-midi-tote.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-telfar-large-shopping-bag": {
+    "file": "bag-p-telfar-large-shopping-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-telfar-medium-shopping-bag": {
+    "file": "bag-p-telfar-medium-shopping-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-telfar-small-shopping-bag": {
+    "file": "bag-p-telfar-small-shopping-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-the-row-bindle-three": {
+    "file": "bag-p-the-row-bindle-three.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-the-row-half-moon-bag": {
+    "file": "bag-p-the-row-half-moon-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-the-row-margaux-15": {
+    "file": "bag-p-the-row-margaux-15.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-p-the-row-margaux-17": {
     "file": "bag-p-the-row-margaux-17.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-p-the-row-park-tote-three": {
+    "file": "bag-p-the-row-park-tote-three.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-the-row-slouchy-banana-two": {
+    "file": "bag-p-the-row-slouchy-banana-two.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-tods-di-bag-mini": {
+    "file": "bag-p-tods-di-bag-mini.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-tory-burch-ella-tote": {
+    "file": "bag-p-tory-burch-ella-tote.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-tory-burch-kira-chevron-card-case": {
+    "file": "bag-p-tory-burch-kira-chevron-card-case.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-tory-burch-kira-chevron-small-convertible-shoulder-bag": {
+    "file": "bag-p-tory-burch-kira-chevron-small-convertible-shoulder-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-tory-burch-lee-radziwill-double-bag": {
+    "file": "bag-p-tory-burch-lee-radziwill-double-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-tory-burch-lee-radziwill-petite-double-bag": {
+    "file": "bag-p-tory-burch-lee-radziwill-petite-double-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-toteme-t-lock-clutch": {
+    "file": "bag-p-toteme-t-lock-clutch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-toteme-t-lock-top-handle-bag": {
+    "file": "bag-p-toteme-t-lock-top-handle-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-tumi-voyageur-celina-backpack": {
+    "file": "bag-p-tumi-voyageur-celina-backpack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-tumi-voyageur-just-in-case-tote": {
+    "file": "bag-p-tumi-voyageur-just-in-case-tote.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-p-valextra-iside-medium-alligator": {
     "file": "bag-p-valextra-iside-medium-alligator.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-vera-bradley-large-travel-duffel-bag": {
+    "file": "bag-p-vera-bradley-large-travel-duffel-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-p-versace-la-medusa-medium-handbag": {
+    "file": "bag-p-versace-la-medusa-medium-handbag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-prada-arque-leather-shoulder-bag": {
@@ -2221,6 +3657,10 @@
   },
   "bag-prada-cleo-brushed-leather-shoulder-bag-with-flap": {
     "file": "bag-prada-cleo-brushed-leather-shoulder-bag-with-flap.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-prada-crochet-tote-bag": {
+    "file": "bag-prada-crochet-tote-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-prada-galleria-saffiano-leather-mini-bag": {
@@ -2247,12 +3687,40 @@
     "file": "bag-prada-medium-galleria-saffiano-leather-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-prada-medium-re-nylon-backpack": {
+    "file": "bag-prada-medium-re-nylon-backpack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-prada-medium-supernova-handbag": {
     "file": "bag-prada-medium-supernova-handbag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-prada-panier-medium-saffiano-leather-bag": {
     "file": "bag-prada-panier-medium-saffiano-leather-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-prada-re-edition-1978-small-re-nylon-two-handle-bag": {
+    "file": "bag-prada-re-edition-1978-small-re-nylon-two-handle-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-prada-re-edition-2005-re-nylon-bag": {
+    "file": "bag-prada-re-edition-2005-re-nylon-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-prada-re-edition-2005-saffiano-leather-bag": {
+    "file": "bag-prada-re-edition-2005-saffiano-leather-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-prada-re-nylon-scrunchie": {
+    "file": "bag-prada-re-nylon-scrunchie.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-prada-saffiano-leather-card-holder": {
+    "file": "bag-prada-saffiano-leather-card-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-prada-satin-mini-bag-with-crystals": {
+    "file": "bag-prada-satin-mini-bag-with-crystals.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-prada-small-buckle-leather-handbag-with-belt": {
@@ -2263,12 +3731,48 @@
     "file": "bag-prada-small-galleria-saffiano-leather-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-prada-small-padded-re-nylon-shoulder-bag": {
+    "file": "bag-prada-small-padded-re-nylon-shoulder-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-prada-small-re-nylon-backpack": {
+    "file": "bag-prada-small-re-nylon-backpack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-prada-soft-padded-nappa-leather-mini-bag": {
+    "file": "bag-prada-soft-padded-nappa-leather-mini-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-prada-triangle-leather-mini-bag": {
+    "file": "bag-prada-triangle-leather-mini-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-saint-laurent-cassandre-matelasse-envelope-chain-wallet": {
+    "file": "bag-saint-laurent-cassandre-matelasse-envelope-chain-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-saint-laurent-icare-maxi-shopping-bag": {
     "file": "bag-saint-laurent-icare-maxi-shopping-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-saint-laurent-jamie-4-3-pochon": {
+    "file": "bag-saint-laurent-jamie-4-3-pochon.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-saint-laurent-jamie-4-3-small-bag": {
     "file": "bag-saint-laurent-jamie-4-3-small-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-saint-laurent-le-5-a-7-mini-bag": {
+    "file": "bag-saint-laurent-le-5-a-7-mini-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-saint-laurent-lou-camera-bag": {
+    "file": "bag-saint-laurent-lou-camera-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-saint-laurent-lou-mini-bag": {
+    "file": "bag-saint-laurent-lou-mini-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-saint-laurent-loulou-medium-bag": {
@@ -2283,12 +3787,20 @@
     "file": "bag-saint-laurent-loulou-small-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-saint-laurent-loulou-toy-bag": {
+    "file": "bag-saint-laurent-loulou-toy-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-saint-laurent-manhattan-small-shoulder-bag": {
     "file": "bag-saint-laurent-manhattan-small-shoulder-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-saint-laurent-niki-medium-bag": {
     "file": "bag-saint-laurent-niki-medium-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-saint-laurent-rive-gauche-tote-bag": {
+    "file": "bag-saint-laurent-rive-gauche-tote-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-saint-laurent-sac-de-jour-baby": {
@@ -2303,12 +3815,24 @@
     "file": "bag-saint-laurent-sac-de-jour-small.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-saint-laurent-shopping-e-w-tote": {
+    "file": "bag-saint-laurent-shopping-e-w-tote.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-saint-laurent-solferino-small-satchel": {
     "file": "bag-saint-laurent-solferino-small-satchel.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-saint-laurent-sunset-medium-bag": {
     "file": "bag-saint-laurent-sunset-medium-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-saint-laurent-uptown-chain-wallet": {
+    "file": "bag-saint-laurent-uptown-chain-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-saint-laurent-uptown-pouch": {
+    "file": "bag-saint-laurent-uptown-pouch.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "bag-valentino-garavani-large-roman-stud-the-shoulder-bag": {
@@ -2335,6 +3859,14 @@
     "file": "bag-valentino-garavani-medium-vlogo-moon-hobo-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-valentino-garavani-rockstud-calfskin-crossbody-clutch": {
+    "file": "bag-valentino-garavani-rockstud-calfskin-crossbody-clutch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-valentino-garavani-rockstud-continental-wallet": {
+    "file": "bag-valentino-garavani-rockstud-continental-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-valentino-garavani-rockstud23-e-w-shoulder-bag": {
     "file": "bag-valentino-garavani-rockstud23-e-w-shoulder-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2357,6 +3889,14 @@
   },
   "bag-valentino-garavani-small-vsling-handbag": {
     "file": "bag-valentino-garavani-small-vsling-handbag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-valentino-garavani-vlogo-signature-continental-wallet": {
+    "file": "bag-valentino-garavani-vlogo-signature-continental-wallet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "bag-valentino-garavani-vlogo-signature-wallet-on-chain": {
+    "file": "bag-valentino-garavani-vlogo-signature-wallet-on-chain.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-aesop-brass-oil-burner": {
@@ -4587,6 +6127,10 @@
     "file": "car-aston-martin-db12-volante.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-aston-martin-db5-junior": {
+    "file": "car-aston-martin-db5-junior.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-aston-martin-dbs-2023": {
     "file": "car-aston-martin-dbs-2023.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4605,6 +6149,10 @@
   },
   "car-aston-martin-dbx707": {
     "file": "car-aston-martin-dbx707.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-aston-martin-lego-technic-valkyrie-42208": {
+    "file": "car-aston-martin-lego-technic-valkyrie-42208.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-aston-martin-v12-speedster": {
@@ -4719,6 +6267,14 @@
     "file": "car-audi-q7-55-tfsi.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-audi-q8": {
+    "file": "car-audi-q8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-audi-q8-e-tron-2024": {
+    "file": "car-audi-q8-e-tron-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-audi-r8-gt-rwd-2023": {
     "file": "car-audi-r8-gt-rwd-2023.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4733,6 +6289,10 @@
   },
   "car-audi-rs-3": {
     "file": "car-audi-rs-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-audi-rs-5-sportback-2025": {
+    "file": "car-audi-rs-5-sportback-2025.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-audi-rs-6-avant-gt": {
@@ -4771,6 +6331,14 @@
     "file": "car-audi-s5-sportback.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-audi-s6-sportback-e-tron": {
+    "file": "car-audi-s6-sportback-e-tron.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-audi-s7": {
+    "file": "car-audi-s7.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-audi-s8": {
     "file": "car-audi-s8.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4783,12 +6351,24 @@
     "file": "car-audi-sq6-e-tron.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-audi-sq7": {
+    "file": "car-audi-sq7.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-audi-sq8": {
     "file": "car-audi-sq8.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-audi-sq8-e-tron-2024": {
+    "file": "car-audi-sq8-e-tron-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-audi-tt-coupe-2023": {
     "file": "car-audi-tt-coupe-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bentley-6-in-1-stroller-trike": {
+    "file": "car-bentley-6-in-1-stroller-trike.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-bentley-bentayga-azure": {
@@ -4943,12 +6523,28 @@
     "file": "car-bmw-840i-coupe.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-bmw-advanced-car-eye-3-0-pro": {
+    "file": "car-bmw-advanced-car-eye-3-0-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-baby-racer-iii": {
+    "file": "car-bmw-baby-racer-iii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-bmw-i4-edrive40": {
     "file": "car-bmw-i4-edrive40.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-bmw-i4-m50": {
+    "file": "car-bmw-i4-m50.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-bmw-i5-edrive40": {
     "file": "car-bmw-i5-edrive40.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-i5-m60-xdrive": {
+    "file": "car-bmw-i5-m60-xdrive.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-bmw-i7-edrive50": {
@@ -4969,6 +6565,10 @@
   },
   "car-bmw-ix-xdrive50-2025": {
     "file": "car-bmw-ix-xdrive50-2025.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-lego-technic-m-1000-rr-42130": {
+    "file": "car-bmw-lego-technic-m-1000-rr-42130.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-bmw-m2": {
@@ -4995,12 +6595,20 @@
     "file": "car-bmw-m3-cs-2024.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-bmw-m3-sedan": {
+    "file": "car-bmw-m3-sedan.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-bmw-m340i-sedan": {
     "file": "car-bmw-m340i-sedan.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-bmw-m4-competition-xdrive-coupe": {
     "file": "car-bmw-m4-competition-xdrive-coupe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-m4-coupe": {
+    "file": "car-bmw-m4-coupe.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-bmw-m4-cs": {
@@ -5055,8 +6663,16 @@
     "file": "car-bmw-motorrad-g-310-r.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-bmw-motorrad-k-1600-gtl": {
+    "file": "car-bmw-motorrad-k-1600-gtl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-bmw-motorrad-m-1000-rr": {
     "file": "car-bmw-motorrad-m-1000-rr.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-motorrad-m-1000-xr": {
+    "file": "car-bmw-motorrad-m-1000-xr.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-bmw-motorrad-r-12-ninet": {
@@ -5107,12 +6723,28 @@
     "file": "car-bmw-x5-m60i.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-bmw-x5-xdrive40i": {
+    "file": "car-bmw-x5-xdrive40i.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-x5-xdrive50e": {
+    "file": "car-bmw-x5-xdrive50e.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-bmw-x6-m-competition": {
     "file": "car-bmw-x6-m-competition.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-bmw-x6-xdrive40i": {
+    "file": "car-bmw-x6-xdrive40i.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-bmw-x7-m60i": {
     "file": "car-bmw-x7-m60i.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-bmw-x7-xdrive40i": {
+    "file": "car-bmw-x7-xdrive40i.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-bmw-xm-2024": {
@@ -5151,12 +6783,28 @@
     "file": "car-cadillac-ct4-v.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-cadillac-ct4-v-blackwing": {
+    "file": "car-cadillac-ct4-v-blackwing.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-cadillac-ct5-luxury": {
     "file": "car-cadillac-ct5-luxury.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-cadillac-ct5-premium-luxury": {
+    "file": "car-cadillac-ct5-premium-luxury.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-ct5-v": {
+    "file": "car-cadillac-ct5-v.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-cadillac-ct5-v-blackwing": {
     "file": "car-cadillac-ct5-v-blackwing.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-ct6-luxury-2020": {
+    "file": "car-cadillac-ct6-luxury-2020.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-cadillac-ct6-v-2020": {
@@ -5191,8 +6839,20 @@
     "file": "car-cadillac-escalade-v.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-cadillac-lyriq-luxury-1": {
+    "file": "car-cadillac-lyriq-luxury-1.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-lyriq-sport-3": {
+    "file": "car-cadillac-lyriq-sport-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-cadillac-lyriq-v": {
     "file": "car-cadillac-lyriq-v.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-optiq": {
+    "file": "car-cadillac-optiq.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-cadillac-vistiq": {
@@ -5205,6 +6865,18 @@
   },
   "car-cadillac-xt5-luxury": {
     "file": "car-cadillac-xt5-luxury.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-xt5-sport": {
+    "file": "car-cadillac-xt5-sport.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-xt6-luxury": {
+    "file": "car-cadillac-xt6-luxury.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-cadillac-xt6-sport": {
+    "file": "car-cadillac-xt6-sport.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-carplay-adapter": {
@@ -5231,12 +6903,24 @@
     "file": "car-ford-bronco-badlands.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-ford-bronco-base": {
+    "file": "car-ford-bronco-base.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-bronco-big-bend": {
+    "file": "car-ford-bronco-big-bend.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-ford-bronco-outer-banks": {
     "file": "car-ford-bronco-outer-banks.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-ford-bronco-raptor": {
     "file": "car-ford-bronco-raptor.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-bronco-sport-badlands": {
+    "file": "car-ford-bronco-sport-badlands.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-ford-bronco-sport-big-bend": {
@@ -5247,16 +6931,60 @@
     "file": "car-ford-bronco-stroppe-edition.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-ford-charge-station-pro": {
+    "file": "car-ford-charge-station-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-connected-charge-station": {
+    "file": "car-ford-connected-charge-station.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-ford-escape-active": {
     "file": "car-ford-escape-active.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-escape-plug-in-hybrid": {
+    "file": "car-ford-escape-plug-in-hybrid.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-expedition-active": {
+    "file": "car-ford-expedition-active.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-ford-expedition-king-ranch": {
     "file": "car-ford-expedition-king-ranch.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-ford-expedition-platinum": {
+    "file": "car-ford-expedition-platinum.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-ford-expedition-tremor": {
     "file": "car-ford-expedition-tremor.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-explorer-active": {
+    "file": "car-ford-explorer-active.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-explorer-platinum": {
+    "file": "car-ford-explorer-platinum.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-explorer-st": {
+    "file": "car-ford-explorer-st.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-f-150-king-ranch": {
+    "file": "car-ford-f-150-king-ranch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-f-150-lariat": {
+    "file": "car-ford-f-150-lariat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-f-150-lightning-flash": {
+    "file": "car-ford-f-150-lightning-flash.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-ford-f-150-lightning-lariat": {
@@ -5267,6 +6995,14 @@
     "file": "car-ford-f-150-lightning-platinum.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-ford-f-150-lightning-xlt": {
+    "file": "car-ford-f-150-lightning-xlt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-f-150-platinum": {
+    "file": "car-ford-f-150-platinum.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-ford-f-150-raptor": {
     "file": "car-ford-f-150-raptor.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -5275,12 +7011,76 @@
     "file": "car-ford-f-150-raptor-r.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-ford-f-150-tremor": {
+    "file": "car-ford-f-150-tremor.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-f-150-xl": {
+    "file": "car-ford-f-150-xl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-ford-f-150-xlt": {
     "file": "car-ford-f-150-xlt.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-ford-gt-2022": {
     "file": "car-ford-gt-2022.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-lego-speed-champions-mustang-dark-horse-76920": {
+    "file": "car-ford-lego-speed-champions-mustang-dark-horse-76920.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-lego-technic-2022-ford-gt-42154": {
+    "file": "car-ford-lego-technic-2022-ford-gt-42154.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-lego-technic-bronco-suv-42213": {
+    "file": "car-ford-lego-technic-bronco-suv-42213.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-lego-technic-f-150-raptor-42126": {
+    "file": "car-ford-lego-technic-f-150-raptor-42126.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-lego-technic-mustang-shelby-gt500-42138": {
+    "file": "car-ford-lego-technic-mustang-shelby-gt500-42138.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-maverick-lariat": {
+    "file": "car-ford-maverick-lariat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-maverick-lobo": {
+    "file": "car-ford-maverick-lobo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-maverick-tremor": {
+    "file": "car-ford-maverick-tremor.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-maverick-xl": {
+    "file": "car-ford-maverick-xl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-maverick-xlt": {
+    "file": "car-ford-maverick-xlt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-mobile-power-cord": {
+    "file": "car-ford-mobile-power-cord.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-mustang-dark-horse": {
+    "file": "car-ford-mustang-dark-horse.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-mustang-ecoboost-fastback": {
+    "file": "car-ford-mustang-ecoboost-fastback.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-mustang-ecoboost-premium": {
+    "file": "car-ford-mustang-ecoboost-premium.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-ford-mustang-gt-fastback": {
@@ -5295,8 +7095,56 @@
     "file": "car-ford-mustang-gtd.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-ford-mustang-mach-e-gt": {
+    "file": "car-ford-mustang-mach-e-gt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-mustang-mach-e-premium": {
+    "file": "car-ford-mustang-mach-e-premium.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-mustang-mach-e-rally": {
+    "file": "car-ford-mustang-mach-e-rally.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-mustang-mach-e-select": {
+    "file": "car-ford-mustang-mach-e-select.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-ford-mustang-shelby-gt500-2022": {
     "file": "car-ford-mustang-shelby-gt500-2022.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-performance-eluminator-crate-motor": {
+    "file": "car-ford-performance-eluminator-crate-motor.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-performance-godzilla-crate-engine": {
+    "file": "car-ford-performance-godzilla-crate-engine.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-performance-megazilla-crate-engine": {
+    "file": "car-ford-performance-megazilla-crate-engine.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-ranger-lariat": {
+    "file": "car-ford-ranger-lariat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-ranger-raptor": {
+    "file": "car-ford-ranger-raptor.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-ranger-xl": {
+    "file": "car-ford-ranger-xl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-ranger-xlt": {
+    "file": "car-ford-ranger-xlt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-ford-super-duty-f-250-lariat": {
+    "file": "car-ford-super-duty-f-250-lariat.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-ford-super-duty-f-250-xl": {
@@ -5391,6 +7239,22 @@
     "file": "car-genesis-gv80-coupe-3-5t-e-supercharger.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-hyundai-elantra-hybrid-blue": {
+    "file": "car-hyundai-elantra-hybrid-blue.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-elantra-n": {
+    "file": "car-hyundai-elantra-n.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-elantra-n-line": {
+    "file": "car-hyundai-elantra-n-line.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-elantra-se": {
+    "file": "car-hyundai-elantra-se.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-hyundai-ioniq-5-limited-awd": {
     "file": "car-hyundai-ioniq-5-limited-awd.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -5415,6 +7279,10 @@
     "file": "car-hyundai-ioniq-6-limited-awd.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-hyundai-ioniq-6-se-standard-range": {
+    "file": "car-hyundai-ioniq-6-se-standard-range.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-hyundai-ioniq-9-performance-calligraphy": {
     "file": "car-hyundai-ioniq-9-performance-calligraphy.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -5425,6 +7293,14 @@
   },
   "car-hyundai-kona-electric-limited": {
     "file": "car-hyundai-kona-electric-limited.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-kona-electric-se": {
+    "file": "car-hyundai-kona-electric-se.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-kona-n-line": {
+    "file": "car-hyundai-kona-n-line.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-hyundai-kona-se": {
@@ -5443,16 +7319,68 @@
     "file": "car-hyundai-palisade-calligraphy.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-hyundai-palisade-se": {
+    "file": "car-hyundai-palisade-se.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-hyundai-palisade-xrt-pro": {
     "file": "car-hyundai-palisade-xrt-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-santa-cruz-se": {
+    "file": "car-hyundai-santa-cruz-se.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-santa-cruz-xrt": {
+    "file": "car-hyundai-santa-cruz-xrt.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-hyundai-santa-fe-calligraphy": {
     "file": "car-hyundai-santa-fe-calligraphy.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-hyundai-santa-fe-hybrid-sel": {
+    "file": "car-hyundai-santa-fe-hybrid-sel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-santa-fe-se": {
+    "file": "car-hyundai-santa-fe-se.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-sonata-hybrid-sel": {
+    "file": "car-hyundai-sonata-hybrid-sel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-sonata-n-line": {
+    "file": "car-hyundai-sonata-n-line.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-sonata-se": {
+    "file": "car-hyundai-sonata-se.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-tucson-hybrid-blue": {
+    "file": "car-hyundai-tucson-hybrid-blue.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-tucson-limited": {
+    "file": "car-hyundai-tucson-limited.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-tucson-plug-in-hybrid-sel": {
+    "file": "car-hyundai-tucson-plug-in-hybrid-sel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-tucson-se": {
+    "file": "car-hyundai-tucson-se.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-hyundai-venue-limited": {
     "file": "car-hyundai-venue-limited.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-hyundai-venue-se": {
+    "file": "car-hyundai-venue-se.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-inflator": {
@@ -5465,6 +7393,10 @@
   },
   "car-kia-carnival-hybrid-lxs": {
     "file": "car-kia-carnival-hybrid-lxs.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-carnival-lx": {
+    "file": "car-kia-carnival-lx.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-kia-carnival-sx-prestige": {
@@ -5507,8 +7439,20 @@
     "file": "car-kia-forte-lx-2024.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-kia-k4-gt-line-turbo": {
+    "file": "car-kia-k4-gt-line-turbo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-kia-k4-lx": {
     "file": "car-kia-k4-lx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-k5-gt": {
+    "file": "car-kia-k5-gt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-k5-lxs": {
+    "file": "car-kia-k5-lxs.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-kia-k900-2020": {
@@ -5523,8 +7467,28 @@
     "file": "car-kia-niro-hybrid-lx.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-kia-niro-plug-in-hybrid-ex": {
+    "file": "car-kia-niro-plug-in-hybrid-ex.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-rio-lx-2023": {
+    "file": "car-kia-rio-lx-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-kia-seltos-lx": {
     "file": "car-kia-seltos-lx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-seltos-sx-turbo": {
+    "file": "car-kia-seltos-sx-turbo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-sorento-hybrid-ex": {
+    "file": "car-kia-sorento-hybrid-ex.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-sorento-lx": {
+    "file": "car-kia-sorento-lx.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-kia-sorento-plug-in-hybrid-ex": {
@@ -5543,6 +7507,14 @@
     "file": "car-kia-soul-lx.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-kia-sportage-hybrid-lx": {
+    "file": "car-kia-sportage-hybrid-lx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-sportage-lx": {
+    "file": "car-kia-sportage-lx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-kia-sportage-plug-in-hybrid-x-line": {
     "file": "car-kia-sportage-plug-in-hybrid-x-line.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -5555,8 +7527,20 @@
     "file": "car-kia-stinger-gt2-2023.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-kia-telluride-ex": {
+    "file": "car-kia-telluride-ex.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-kia-telluride-lx": {
+    "file": "car-kia-telluride-lx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-kia-telluride-sx-prestige-x-pro": {
     "file": "car-kia-telluride-sx-prestige-x-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-defender-110-s-p300": {
+    "file": "car-land-rover-defender-110-s-p300.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-land-rover-defender-110-v8": {
@@ -5577,6 +7561,10 @@
   },
   "car-land-rover-defender-130-v8": {
     "file": "car-land-rover-defender-130-v8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-defender-90-s-p300": {
+    "file": "car-land-rover-defender-90-s-p300.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-land-rover-defender-90-v8": {
@@ -5615,6 +7603,14 @@
     "file": "car-land-rover-discovery-metropolitan-edition.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-land-rover-discovery-s-p300": {
+    "file": "car-land-rover-discovery-s-p300.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-discovery-sport-dynamic-se": {
+    "file": "car-land-rover-discovery-sport-dynamic-se.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-land-rover-discovery-sport-s": {
     "file": "car-land-rover-discovery-sport-s.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -5633,6 +7629,14 @@
   },
   "car-land-rover-range-rover-autobiography-p530": {
     "file": "car-land-rover-range-rover-autobiography-p530.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-range-rover-evoque-dynamic-se": {
+    "file": "car-land-rover-range-rover-evoque-dynamic-se.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-land-rover-range-rover-evoque-s": {
+    "file": "car-land-rover-range-rover-evoque-s.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-land-rover-range-rover-se-p400": {
@@ -5675,6 +7679,10 @@
     "file": "car-land-rover-range-rover-velar-s-p250.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-lexus-es-300h": {
+    "file": "car-lexus-es-300h.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-lexus-es-350": {
     "file": "car-lexus-es-350.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -5683,8 +7691,24 @@
     "file": "car-lexus-gx-550-luxury-plus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-lexus-gx-550-overtrail": {
+    "file": "car-lexus-gx-550-overtrail.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-gx-550-premium": {
+    "file": "car-lexus-gx-550-premium.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-lexus-is-300": {
     "file": "car-lexus-is-300.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-is-350-f-sport": {
+    "file": "car-lexus-is-350-f-sport.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-is-500-f-sport-performance": {
+    "file": "car-lexus-is-500-f-sport-performance.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-lexus-lc-500": {
@@ -5731,12 +7755,60 @@
     "file": "car-lexus-nx-250.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-lexus-nx-350": {
+    "file": "car-lexus-nx-350.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-nx-350h": {
+    "file": "car-lexus-nx-350h.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-nx-450h-plus": {
+    "file": "car-lexus-nx-450h-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-rc-300": {
+    "file": "car-lexus-rc-300.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-rc-350-f-sport": {
+    "file": "car-lexus-rc-350-f-sport.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-rc-f": {
+    "file": "car-lexus-rc-f.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-lexus-rc-f-final-edition": {
     "file": "car-lexus-rc-f-final-edition.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-lexus-rx-350": {
+    "file": "car-lexus-rx-350.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-rx-350h": {
+    "file": "car-lexus-rx-350h.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-lexus-rx-450h-plus": {
     "file": "car-lexus-rx-450h-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-rx-500h-f-sport-performance": {
+    "file": "car-lexus-rx-500h-f-sport-performance.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-rz-300e": {
+    "file": "car-lexus-rz-300e.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-rz-450e": {
+    "file": "car-lexus-rz-450e.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lexus-tx-350": {
+    "file": "car-lexus-tx-350.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-lexus-tx-500h-f-sport-performance": {
@@ -5763,6 +7835,10 @@
     "file": "car-lincoln-aviator-grand-touring-2023.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-lincoln-aviator-premiere": {
+    "file": "car-lincoln-aviator-premiere.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-lincoln-aviator-reserve": {
     "file": "car-lincoln-aviator-reserve.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -5775,8 +7851,44 @@
     "file": "car-lincoln-continental-coach-door-edition-2020.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-lincoln-continental-reserve-2020": {
+    "file": "car-lincoln-continental-reserve-2020.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-continental-standard-2020": {
+    "file": "car-lincoln-continental-standard-2020.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-corsair-grand-touring": {
+    "file": "car-lincoln-corsair-grand-touring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-corsair-premiere": {
+    "file": "car-lincoln-corsair-premiere.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-corsair-reserve": {
+    "file": "car-lincoln-corsair-reserve.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-mkz-reserve-2020": {
+    "file": "car-lincoln-mkz-reserve-2020.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-mkz-standard-2020": {
+    "file": "car-lincoln-mkz-standard-2020.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-lincoln-nautilus-black-label": {
     "file": "car-lincoln-nautilus-black-label.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-nautilus-premiere": {
+    "file": "car-lincoln-nautilus-premiere.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-lincoln-nautilus-reserve": {
+    "file": "car-lincoln-nautilus-reserve.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-lincoln-navigator-black-label": {
@@ -5885,6 +7997,10 @@
   },
   "car-maserati-quattroporte-modena-2024": {
     "file": "car-maserati-quattroporte-modena-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-maserati-quattroporte-trofeo-2023": {
+    "file": "car-maserati-quattroporte-trofeo-2023.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-maybach-57-2012": {
@@ -6187,6 +8303,14 @@
     "file": "car-p-ducati-panigale-v2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-p-ducati-panigale-v4-r": {
+    "file": "car-p-ducati-panigale-v4-r.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-p-ducati-panigale-v4-s": {
+    "file": "car-p-ducati-panigale-v4-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-p-ducati-scrambler-icon": {
     "file": "car-p-ducati-scrambler-icon.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -6299,6 +8423,10 @@
     "file": "car-p-harley-davidson-nightster.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-p-harley-davidson-pan-america-1250-special": {
+    "file": "car-p-harley-davidson-pan-america-1250-special.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-p-harley-davidson-sportster-s": {
     "file": "car-p-harley-davidson-sportster-s.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -6391,6 +8519,10 @@
     "file": "car-p-kawasaki-klx110r.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-p-kawasaki-ninja-500": {
+    "file": "car-p-kawasaki-ninja-500.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-p-kawasaki-ninja-zx-10r": {
     "file": "car-p-kawasaki-ninja-zx-10r.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -6421,6 +8553,14 @@
   },
   "car-p-ktm-1390-super-duke-r-evo": {
     "file": "car-p-ktm-1390-super-duke-r-evo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-p-ktm-390-duke": {
+    "file": "car-p-ktm-390-duke.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-p-kuat-piston-pro-x": {
+    "file": "car-p-kuat-piston-pro-x.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-p-kuat-sherpa-2-0": {
@@ -6611,8 +8751,16 @@
     "file": "car-p-rad-radrunner-3-plus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-p-ram-1500-rho": {
+    "file": "car-p-ram-1500-rho.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-p-rivian-r1s-dual": {
     "file": "car-p-rivian-r1s-dual.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-p-rivian-r1t-dual": {
+    "file": "car-p-rivian-r1t-dual.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-p-rockford-fosgate-p300-12": {
@@ -6625,6 +8773,10 @@
   },
   "car-p-segway-ninebot-e2-plus": {
     "file": "car-p-segway-ninebot-e2-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-p-segway-ninebot-max-g2": {
+    "file": "car-p-segway-ninebot-max-g2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-p-segway-ninebot-zt3-pro": {
@@ -6667,6 +8819,10 @@
     "file": "car-p-subaru-brz-premium.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-p-subaru-impreza-base": {
+    "file": "car-p-subaru-impreza-base.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-p-subaru-wrx-premium": {
     "file": "car-p-subaru-wrx-premium.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -6677,6 +8833,10 @@
   },
   "car-p-super73-rx": {
     "file": "car-p-super73-rx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-p-super73-s2": {
+    "file": "car-p-super73-s2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-p-suzuki-hayabusa": {
@@ -6723,6 +8883,10 @@
     "file": "car-p-thule-wingbar-evo.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-p-traxxas-x-maxx-8s": {
+    "file": "car-p-traxxas-x-maxx-8s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-p-triumph-bonneville-t120": {
     "file": "car-p-triumph-bonneville-t120.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -6749,6 +8913,10 @@
   },
   "car-p-vespa-gts-300": {
     "file": "car-p-vespa-gts-300.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-p-vespa-primavera-150": {
+    "file": "car-p-vespa-primavera-150.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-p-vespa-primavera-50": {
@@ -7459,12 +9627,20 @@
     "file": "car-tesla-ccs-combo-1-adapter.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-tesla-cyberquad-for-kids": {
+    "file": "car-tesla-cyberquad-for-kids.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-tesla-cybertruck-awd": {
     "file": "car-tesla-cybertruck-awd.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-tesla-cybertruck-awd-foundation-series": {
     "file": "car-tesla-cybertruck-awd-foundation-series.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-cybertruck-basecamp-tent": {
+    "file": "car-tesla-cybertruck-basecamp-tent.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-tesla-cybertruck-cyberbeast": {
@@ -7475,8 +9651,20 @@
     "file": "car-tesla-cybertruck-cyberbeast-foundation-series.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-tesla-cybertruck-for-kids": {
+    "file": "car-tesla-cybertruck-for-kids.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-tesla-cybertruck-long-range": {
     "file": "car-tesla-cybertruck-long-range.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-cyberwhistle": {
+    "file": "car-tesla-cyberwhistle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-decanter": {
+    "file": "car-tesla-decanter.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-tesla-diecast-1-18-cybertruck": {
@@ -7489,6 +9677,14 @@
   },
   "car-tesla-diecast-1-18-model-s": {
     "file": "car-tesla-diecast-1-18-model-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-diecast-1-18-model-y": {
+    "file": "car-tesla-diecast-1-18-model-y.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-gen-2-nema-14-50-adapter": {
+    "file": "car-tesla-gen-2-nema-14-50-adapter.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-tesla-gen-2-nema-adapter-bundle": {
@@ -7509,6 +9705,26 @@
   },
   "car-tesla-model-3-all-weather-interior-liners": {
     "file": "car-tesla-model-3-all-weather-interior-liners.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-3-long-range-awd": {
+    "file": "car-tesla-model-3-long-range-awd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-3-long-range-rwd": {
+    "file": "car-tesla-model-3-long-range-rwd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-3-performance": {
+    "file": "car-tesla-model-3-performance.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-3-standard": {
+    "file": "car-tesla-model-3-standard.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-3-y-key-fob": {
+    "file": "car-tesla-model-3-y-key-fob.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-tesla-model-s-awd": {
@@ -7535,12 +9751,40 @@
     "file": "car-tesla-model-y-all-weather-interior-liners.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-tesla-model-y-glass-roof-sunshade": {
+    "file": "car-tesla-model-y-glass-roof-sunshade.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-tesla-model-y-launch-series": {
     "file": "car-tesla-model-y-launch-series.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-tesla-model-y-long-range-awd": {
+    "file": "car-tesla-model-y-long-range-awd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-y-long-range-rwd": {
+    "file": "car-tesla-model-y-long-range-rwd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-y-performance": {
+    "file": "car-tesla-model-y-performance.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-tesla-model-y-roof-rack": {
     "file": "car-tesla-model-y-roof-rack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-y-standard": {
+    "file": "car-tesla-model-y-standard.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-model-y-tow-package": {
+    "file": "car-tesla-model-y-tow-package.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-my-first-model-y": {
+    "file": "car-tesla-my-first-model-y.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-tesla-roadster-2010": {
@@ -7549,6 +9793,18 @@
   },
   "car-tesla-roadster-sport-2010": {
     "file": "car-tesla-roadster-sport-2010.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-sae-j1772-adapter": {
+    "file": "car-tesla-sae-j1772-adapter.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-tire-repair-kit": {
+    "file": "car-tesla-tire-repair-kit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-tesla-universal-wall-connector": {
+    "file": "car-tesla-universal-wall-connector.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-tesla-wall": {
@@ -7569,6 +9825,10 @@
   },
   "car-thule-rack": {
     "file": "car-thule-rack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-4runner-sr5": {
+    "file": "car-toyota-4runner-sr5.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-toyota-4runner-trailhunter": {
@@ -7615,8 +9875,24 @@
     "file": "car-toyota-crown-platinum.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-toyota-crown-signia-limited": {
+    "file": "car-toyota-crown-signia-limited.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-crown-signia-xle": {
+    "file": "car-toyota-crown-signia-xle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-crown-xle": {
+    "file": "car-toyota-crown-xle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-toyota-gr-corolla-core": {
     "file": "car-toyota-gr-corolla-core.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-gr-corolla-premium-plus": {
+    "file": "car-toyota-gr-corolla-premium-plus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-toyota-gr-supra-3-0": {
@@ -7635,6 +9911,14 @@
     "file": "car-toyota-grand-highlander-hybrid-max-platinum.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-toyota-grand-highlander-xle": {
+    "file": "car-toyota-grand-highlander-xle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-highlander-hybrid-xle": {
+    "file": "car-toyota-highlander-hybrid-xle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-toyota-highlander-le": {
     "file": "car-toyota-highlander-le.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -7651,6 +9935,10 @@
     "file": "car-toyota-lego-technic-fast-furious-supra-mk4-42204.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-toyota-mirai-xle": {
+    "file": "car-toyota-mirai-xle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-toyota-prius-le": {
     "file": "car-toyota-prius-le.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -7663,8 +9951,20 @@
     "file": "car-toyota-rav4-hybrid-le.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-toyota-rav4-hybrid-xse": {
+    "file": "car-toyota-rav4-hybrid-xse.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-toyota-rav4-le": {
     "file": "car-toyota-rav4-le.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-rav4-plug-in-hybrid-se": {
+    "file": "car-toyota-rav4-plug-in-hybrid-se.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-toyota-rav4-plug-in-hybrid-xse": {
+    "file": "car-toyota-rav4-plug-in-hybrid-xse.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-toyota-sequoia-capstone": {
@@ -7695,6 +9995,10 @@
     "file": "car-toyota-tacoma-trailhunter.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-toyota-tacoma-trd-off-road": {
+    "file": "car-toyota-tacoma-trd-off-road.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-toyota-tacoma-trd-pro": {
     "file": "car-toyota-tacoma-trd-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -7711,6 +10015,10 @@
     "file": "car-toyota-tundra-capstone.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-toyota-tundra-limited": {
+    "file": "car-toyota-tundra-limited.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-toyota-tundra-sr": {
     "file": "car-toyota-tundra-sr.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -7721,6 +10029,10 @@
   },
   "car-vanmoof": {
     "file": "car-vanmoof.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-volvo-ec40-single-motor-core": {
+    "file": "car-volvo-ec40-single-motor-core.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-volvo-ex30-cross-country": {
@@ -7735,6 +10047,10 @@
     "file": "car-volvo-ex30-twin-motor-performance-plus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "car-volvo-ex40-single-motor-core": {
+    "file": "car-volvo-ex40-single-motor-core.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "car-volvo-ex90-twin-motor-performance-ultra": {
     "file": "car-volvo-ex90-twin-motor-performance-ultra.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -7745,6 +10061,14 @@
   },
   "car-volvo-s60-b5-core-2024": {
     "file": "car-volvo-s60-b5-core-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-volvo-s60-t8-core-2024": {
+    "file": "car-volvo-s60-t8-core-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-volvo-s90-b6-plus": {
+    "file": "car-volvo-s90-b6-plus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-volvo-s90-t8-ultra": {
@@ -7777,6 +10101,14 @@
   },
   "car-volvo-xc60-b5-core": {
     "file": "car-volvo-xc60-b5-core.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-volvo-xc60-b5-ultra": {
+    "file": "car-volvo-xc60-b5-ultra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "car-volvo-xc60-t8-core": {
+    "file": "car-volvo-xc60-t8-core.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "car-volvo-xc60-t8-polestar-engineered": {

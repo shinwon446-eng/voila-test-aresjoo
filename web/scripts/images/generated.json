@@ -2331,6 +2331,10 @@
     "file": "beauty-aesop-eremia-eau-de-parfum-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-aesop-gloam-eau-de-parfum-50ml": {
+    "file": "beauty-aesop-gloam-eau-de-parfum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-aesop-karst-eau-de-parfum-50ml": {
     "file": "beauty-aesop-karst-eau-de-parfum-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2339,12 +2343,44 @@
     "file": "beauty-aesop-miraceti-eau-de-parfum-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-aesop-ouranon-eau-de-parfum-50ml": {
+    "file": "beauty-aesop-ouranon-eau-de-parfum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-byredo-bal-dafrique-eau-de-parfum-100ml": {
+    "file": "beauty-byredo-bal-dafrique-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-byredo-bibliotheque-eau-de-parfum-100ml": {
+    "file": "beauty-byredo-bibliotheque-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-byredo-blanche-eau-de-parfum-100ml": {
+    "file": "beauty-byredo-blanche-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-byredo-casablanca-lily-extrait-de-parfum-50ml": {
     "file": "beauty-byredo-casablanca-lily-extrait-de-parfum-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-byredo-gypsy-water-eau-de-parfum-100ml": {
+    "file": "beauty-byredo-gypsy-water-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-byredo-la-tulipe-eau-de-parfum-100ml": {
+    "file": "beauty-byredo-la-tulipe-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-byredo-mojave-ghost-eau-de-parfum-100ml": {
+    "file": "beauty-byredo-mojave-ghost-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-byredo-reine-de-nuit-extrait-de-parfum-50ml": {
     "file": "beauty-byredo-reine-de-nuit-extrait-de-parfum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-byredo-rose-of-no-mans-land-eau-de-parfum-100ml": {
+    "file": "beauty-byredo-rose-of-no-mans-land-eau-de-parfum-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-byredo-rouge-chaotique-extrait-de-parfum-50ml": {
@@ -2355,8 +2391,28 @@
     "file": "beauty-byredo-sellier-extrait-de-parfum-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-byredo-vanille-antique-extrait-de-parfum-50ml": {
+    "file": "beauty-byredo-vanille-antique-extrait-de-parfum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-chanel-coco-mademoiselle-eau-de-parfum-200ml": {
+    "file": "beauty-chanel-coco-mademoiselle-eau-de-parfum-200ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-chanel-les-exclusifs-de-chanel-coromandel-edp-75ml": {
+    "file": "beauty-chanel-les-exclusifs-de-chanel-coromandel-edp-75ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-chanel-les-exclusifs-de-chanel-sycomore-edp-200ml": {
     "file": "beauty-chanel-les-exclusifs-de-chanel-sycomore-edp-200ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-chanel-les-exclusifs-de-chanel-sycomore-edp-75ml": {
+    "file": "beauty-chanel-les-exclusifs-de-chanel-sycomore-edp-75ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-chanel-n-5-eau-de-parfum-200ml": {
+    "file": "beauty-chanel-n-5-eau-de-parfum-200ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-chanel-n-5-parfum-30ml": {
@@ -2387,6 +2443,10 @@
     "file": "beauty-chanel-sublimage-lextrait-de-creme-50g.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-creed-aventus-eau-de-parfum-100ml": {
+    "file": "beauty-creed-aventus-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-creed-aventus-eau-de-parfum-250ml": {
     "file": "beauty-creed-aventus-eau-de-parfum-250ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2395,16 +2455,52 @@
     "file": "beauty-creed-aventus-eau-de-parfum-500ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-creed-centaurus-eau-de-parfum-100ml": {
+    "file": "beauty-creed-centaurus-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-creed-delphinus-eau-de-parfum-100ml": {
+    "file": "beauty-creed-delphinus-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-creed-green-irish-tweed-eau-de-parfum-500ml": {
     "file": "beauty-creed-green-irish-tweed-eau-de-parfum-500ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-creed-royal-exclusives-pure-white-cologne-edp-75ml": {
+    "file": "beauty-creed-royal-exclusives-pure-white-cologne-edp-75ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-creed-royal-exclusives-spice-and-wood-eau-de-parfum-75ml": {
+    "file": "beauty-creed-royal-exclusives-spice-and-wood-eau-de-parfum-75ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-creed-royal-exclusives-white-amber-eau-de-parfum-75ml": {
+    "file": "beauty-creed-royal-exclusives-white-amber-eau-de-parfum-75ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-creed-silver-mountain-water-eau-de-parfum-500ml": {
     "file": "beauty-creed-silver-mountain-water-eau-de-parfum-500ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-dior-jadore-eau-de-parfum-150ml": {
+    "file": "beauty-dior-jadore-eau-de-parfum-150ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-dior-la-collection-privee-ambre-nuit-eau-de-parfum-125ml": {
+    "file": "beauty-dior-la-collection-privee-ambre-nuit-eau-de-parfum-125ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-dior-la-collection-privee-gris-dior-eau-de-parfum-125ml": {
+    "file": "beauty-dior-la-collection-privee-gris-dior-eau-de-parfum-125ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-dior-la-collection-privee-gris-dior-eau-de-parfum-250ml": {
     "file": "beauty-dior-la-collection-privee-gris-dior-eau-de-parfum-250ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-dior-la-collection-privee-oud-ispahan-eau-de-parfum-125ml": {
+    "file": "beauty-dior-la-collection-privee-oud-ispahan-eau-de-parfum-125ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-dior-lor-de-vie-la-creme-50ml": {
@@ -2417,6 +2513,22 @@
   },
   "beauty-dior-prestige-la-creme-texture-essentielle-50ml": {
     "file": "beauty-dior-prestige-la-creme-texture-essentielle-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-dior-prestige-la-micro-huile-de-rose-advanced-serum-30ml": {
+    "file": "beauty-dior-prestige-la-micro-huile-de-rose-advanced-serum-30ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-dior-prestige-la-micro-huile-de-rose-advanced-serum-50ml": {
+    "file": "beauty-dior-prestige-la-micro-huile-de-rose-advanced-serum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-dior-sauvage-eau-de-parfum-200ml": {
+    "file": "beauty-dior-sauvage-eau-de-parfum-200ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-dior-sauvage-elixir-100ml": {
+    "file": "beauty-dior-sauvage-elixir-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-diptyque-baies-giant-candle-1500g": {
@@ -2467,6 +2579,10 @@
     "file": "beauty-estee-lauder-re-nutriv-ultimate-lift-regenerat-creme-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-jo-malone-lime-basil-and-mandarin-cologne-100ml": {
+    "file": "beauty-jo-malone-lime-basil-and-mandarin-cologne-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-jo-malone-lime-basil-and-mandarin-deluxe-candle-600g": {
     "file": "beauty-jo-malone-lime-basil-and-mandarin-deluxe-candle-600g.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2491,16 +2607,40 @@
     "file": "beauty-kiehls-clearly-corrective-dark-spot-solution-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-kiehls-clearly-corrective-dark-spot-solution-50ml": {
+    "file": "beauty-kiehls-clearly-corrective-dark-spot-solution-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-kiehls-creme-de-corps-1l": {
+    "file": "beauty-kiehls-creme-de-corps-1l.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-kiehls-micro-dose-anti-aging-retinol-serum-50ml": {
     "file": "beauty-kiehls-micro-dose-anti-aging-retinol-serum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-kiehls-midnight-recovery-concentrate-50ml": {
+    "file": "beauty-kiehls-midnight-recovery-concentrate-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-kiehls-powerful-strength-vitamin-c-serum-50ml": {
+    "file": "beauty-kiehls-powerful-strength-vitamin-c-serum-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-kiehls-powerful-strength-vitamin-c-serum-75ml": {
     "file": "beauty-kiehls-powerful-strength-vitamin-c-serum-75ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-kiehls-super-multi-corrective-cream-50ml": {
+    "file": "beauty-kiehls-super-multi-corrective-cream-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-kiehls-super-multi-corrective-cream-75ml": {
     "file": "beauty-kiehls-super-multi-corrective-cream-75ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-kiehls-ultra-facial-cream-125ml": {
+    "file": "beauty-kiehls-ultra-facial-cream-125ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-la-mer-creme-de-la-mer-250ml": {
@@ -2523,6 +2663,10 @@
     "file": "beauty-lancome-absolue-lextrait-cream-elixir-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-lancome-absolue-revitalizing-eye-cream-20ml": {
+    "file": "beauty-lancome-absolue-revitalizing-eye-cream-20ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-lancome-absolue-rich-cream-60ml": {
     "file": "beauty-lancome-absolue-rich-cream-60ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2535,12 +2679,44 @@
     "file": "beauty-lancome-advanced-genifique-serum-115ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-lancome-advanced-genifique-serum-50ml": {
+    "file": "beauty-lancome-advanced-genifique-serum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-lancome-renergie-hcf-triple-serum-50ml": {
+    "file": "beauty-lancome-renergie-hcf-triple-serum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-lancome-tresor-eau-de-parfum-100ml": {
+    "file": "beauty-lancome-tresor-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-le-labo-another-13-eau-de-parfum-500ml": {
     "file": "beauty-le-labo-another-13-eau-de-parfum-500ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-le-labo-citron-28-eau-de-parfum-100ml": {
+    "file": "beauty-le-labo-citron-28-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-le-labo-citron-28-eau-de-parfum-50ml": {
+    "file": "beauty-le-labo-citron-28-eau-de-parfum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-le-labo-concrete-candle-santal-26-12kg": {
+    "file": "beauty-le-labo-concrete-candle-santal-26-12kg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-le-labo-gaiac-10-eau-de-parfum-100ml": {
     "file": "beauty-le-labo-gaiac-10-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-le-labo-gaiac-10-eau-de-parfum-50ml": {
+    "file": "beauty-le-labo-gaiac-10-eau-de-parfum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-le-labo-poivre-23-eau-de-parfum-50ml": {
+    "file": "beauty-le-labo-poivre-23-eau-de-parfum-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-le-labo-santal-33-eau-de-parfum-500ml": {
@@ -2549,6 +2725,18 @@
   },
   "beauty-le-labo-the-noir-29-eau-de-parfum-500ml": {
     "file": "beauty-le-labo-the-noir-29-eau-de-parfum-500ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-le-labo-tubereuse-40-eau-de-parfum-50ml": {
+    "file": "beauty-le-labo-tubereuse-40-eau-de-parfum-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-le-labo-vanille-44-eau-de-parfum-100ml": {
+    "file": "beauty-le-labo-vanille-44-eau-de-parfum-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-le-labo-vanille-44-eau-de-parfum-50ml": {
+    "file": "beauty-le-labo-vanille-44-eau-de-parfum-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-loccitane-immortelle-divine-cream-50ml": {
@@ -2567,6 +2755,18 @@
     "file": "beauty-loccitane-immortelle-overnight-reset-oil-in-serum-50ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-loccitane-loccitan-eau-de-toilette-100ml": {
+    "file": "beauty-loccitane-loccitan-eau-de-toilette-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-loccitane-verbena-eau-de-toilette-100ml": {
+    "file": "beauty-loccitane-verbena-eau-de-toilette-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-maison-francis-kurkdjian-724-eau-de-parfum-200ml": {
+    "file": "beauty-maison-francis-kurkdjian-724-eau-de-parfum-200ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-maison-francis-kurkdjian-baccarat-rouge-540-edp-200ml": {
     "file": "beauty-maison-francis-kurkdjian-baccarat-rouge-540-edp-200ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2575,12 +2775,24 @@
     "file": "beauty-maison-francis-kurkdjian-baccarat-rouge-540-extrait-200ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-maison-francis-kurkdjian-baccarat-rouge-540-extrait-70ml": {
+    "file": "beauty-maison-francis-kurkdjian-baccarat-rouge-540-extrait-70ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-maison-francis-kurkdjian-grand-soir-eau-de-parfum-200ml": {
+    "file": "beauty-maison-francis-kurkdjian-grand-soir-eau-de-parfum-200ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-maison-francis-kurkdjian-oud-satin-mood-extrait-70ml": {
     "file": "beauty-maison-francis-kurkdjian-oud-satin-mood-extrait-70ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-maison-francis-kurkdjian-oud-silk-mood-extrait-70ml": {
     "file": "beauty-maison-francis-kurkdjian-oud-silk-mood-extrait-70ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-maison-margiela-replica-autumn-vibes-edt-100ml": {
+    "file": "beauty-maison-margiela-replica-autumn-vibes-edt-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-maison-margiela-replica-beach-walk-eau-de-toilette-100ml": {
@@ -2595,12 +2807,36 @@
     "file": "beauty-maison-margiela-replica-by-the-fireplace-edt-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-maison-margiela-replica-coffee-break-edt-100ml": {
+    "file": "beauty-maison-margiela-replica-coffee-break-edt-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-maison-margiela-replica-jazz-club-eau-de-toilette-100ml": {
     "file": "beauty-maison-margiela-replica-jazz-club-eau-de-toilette-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-maison-margiela-replica-lazy-sunday-morning-edt-100ml": {
     "file": "beauty-maison-margiela-replica-lazy-sunday-morning-edt-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-maison-margiela-replica-matcha-meditation-edt-100ml": {
+    "file": "beauty-maison-margiela-replica-matcha-meditation-edt-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-maison-margiela-replica-on-a-date-eau-de-toilette-100ml": {
+    "file": "beauty-maison-margiela-replica-on-a-date-eau-de-toilette-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-maison-margiela-replica-sailing-day-eau-de-toilette-100ml": {
+    "file": "beauty-maison-margiela-replica-sailing-day-eau-de-toilette-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-maison-margiela-replica-under-the-lemon-trees-edt-100ml": {
+    "file": "beauty-maison-margiela-replica-under-the-lemon-trees-edt-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-maison-margiela-replica-when-the-rain-stops-edt-100ml": {
+    "file": "beauty-maison-margiela-replica-when-the-rain-stops-edt-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-prada-augmented-skin-the-cream-60ml": {
@@ -2619,6 +2855,14 @@
     "file": "beauty-prada-paradoxe-eau-de-parfum-intense-90ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-sk-ii-facial-treatment-essence-330ml": {
+    "file": "beauty-sk-ii-facial-treatment-essence-330ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-sk-ii-genoptics-ultraura-essence-50ml": {
+    "file": "beauty-sk-ii-genoptics-ultraura-essence-50ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-sk-ii-genoptics-ultraura-essence-75ml": {
     "file": "beauty-sk-ii-genoptics-ultraura-essence-75ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2629,6 +2873,10 @@
   },
   "beauty-sk-ii-lxp-ultimate-revival-essence-150ml": {
     "file": "beauty-sk-ii-lxp-ultimate-revival-essence-150ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-sk-ii-lxp-ultimate-revival-eye-cream-15g": {
+    "file": "beauty-sk-ii-lxp-ultimate-revival-eye-cream-15g.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-sk-ii-lxp-ultimate-revival-serum-50ml": {
@@ -2671,12 +2919,28 @@
     "file": "beauty-ysl-le-vestiaire-des-parfums-babycat-eau-de-parfum-125ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "beauty-ysl-le-vestiaire-des-parfums-babycat-eau-de-parfum-75ml": {
+    "file": "beauty-ysl-le-vestiaire-des-parfums-babycat-eau-de-parfum-75ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-ysl-le-vestiaire-des-parfums-blouse-eau-de-parfum-125ml": {
+    "file": "beauty-ysl-le-vestiaire-des-parfums-blouse-eau-de-parfum-125ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-ysl-le-vestiaire-des-parfums-lavalliere-edp-125ml": {
+    "file": "beauty-ysl-le-vestiaire-des-parfums-lavalliere-edp-125ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "beauty-ysl-le-vestiaire-des-parfums-tuxedo-eau-de-parfum-125ml": {
     "file": "beauty-ysl-le-vestiaire-des-parfums-tuxedo-eau-de-parfum-125ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-ysl-le-vestiaire-des-parfums-tuxedo-eau-de-parfum-250ml": {
     "file": "beauty-ysl-le-vestiaire-des-parfums-tuxedo-eau-de-parfum-250ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "beauty-ysl-le-vestiaire-des-parfums-tuxedo-eau-de-parfum-75ml": {
+    "file": "beauty-ysl-le-vestiaire-des-parfums-tuxedo-eau-de-parfum-75ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "beauty-ysl-or-rouge-la-creme-50ml": {
@@ -12367,16 +12631,32 @@
     "file": "outdoor-deuter-astro-pro-800-sleeping-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "outdoor-deuter-duffel-pro-movo-90": {
+    "file": "outdoor-deuter-duffel-pro-movo-90.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "outdoor-deuter-durascent-44-plus-10": {
     "file": "outdoor-deuter-durascent-44-plus-10.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-deuter-futura-air-trek-60-plus-10": {
+    "file": "outdoor-deuter-futura-air-trek-60-plus-10.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "outdoor-deuter-kid-comfort": {
     "file": "outdoor-deuter-kid-comfort.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "outdoor-deuter-kid-comfort-active": {
+    "file": "outdoor-deuter-kid-comfort-active.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "outdoor-deuter-kid-comfort-pro": {
     "file": "outdoor-deuter-kid-comfort-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-dometic-9100-power-patio-awning-16-ft": {
+    "file": "outdoor-dometic-9100-power-patio-awning-16-ft.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "outdoor-dometic-cfx3-100-powered-cooler": {
@@ -12393,6 +12673,10 @@
   },
   "outdoor-dometic-crx-110-refrigerator": {
     "file": "outdoor-dometic-crx-110-refrigerator.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-dometic-dmc4101-10-cu-ft-12v-refrigerator": {
+    "file": "outdoor-dometic-dmc4101-10-cu-ft-12v-refrigerator.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "outdoor-dometic-hub-2-redux-inflatable-shelter": {
@@ -12423,6 +12707,14 @@
     "file": "outdoor-gregory-baltoro-100-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "outdoor-gregory-baltoro-65": {
+    "file": "outdoor-gregory-baltoro-65.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-gregory-baltoro-75": {
+    "file": "outdoor-gregory-baltoro-75.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "outdoor-gregory-baltoro-85-pro": {
     "file": "outdoor-gregory-baltoro-85-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -12437,6 +12729,14 @@
   },
   "outdoor-gregory-deva-60": {
     "file": "outdoor-gregory-deva-60.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-gregory-deva-70": {
+    "file": "outdoor-gregory-deva-70.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-gregory-deva-80-pro": {
+    "file": "outdoor-gregory-deva-80-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "outdoor-gregory-kalmia-60": {
@@ -12595,8 +12895,20 @@
     "file": "outdoor-leatherman-wave-alpha.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "outdoor-montbell-moonlight-tent-2": {
+    "file": "outdoor-montbell-moonlight-tent-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "outdoor-montbell-moonlight-tent-4": {
     "file": "outdoor-montbell-moonlight-tent-4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-montbell-permafrost-down-parka": {
+    "file": "outdoor-montbell-permafrost-down-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-montbell-plasma-1000-alpine-down-parka": {
+    "file": "outdoor-montbell-plasma-1000-alpine-down-parka.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "outdoor-montbell-seamless-down-hugger-800-0": {
@@ -12621,6 +12933,10 @@
   },
   "outdoor-montbell-seamless-down-hugger-wr-900-3": {
     "file": "outdoor-montbell-seamless-down-hugger-wr-900-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-montbell-stellaridge-tent-3": {
+    "file": "outdoor-montbell-stellaridge-tent-3.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "outdoor-montbell-stellaridge-tent-4": {
@@ -12683,8 +12999,36 @@
     "file": "outdoor-nemo-chogori-3p-mountaineering-tent.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "outdoor-nemo-dagger-osmo-2p-tent": {
+    "file": "outdoor-nemo-dagger-osmo-2p-tent.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-nemo-dagger-osmo-3p-tent": {
+    "file": "outdoor-nemo-dagger-osmo-3p-tent.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-nemo-hornet-elite-osmo-1p-tent": {
+    "file": "outdoor-nemo-hornet-elite-osmo-1p-tent.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-nemo-hornet-elite-osmo-2p-tent": {
+    "file": "outdoor-nemo-hornet-elite-osmo-2p-tent.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-nemo-kunai-2p-tent": {
+    "file": "outdoor-nemo-kunai-2p-tent.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "outdoor-nemo-kunai-3p-tent": {
     "file": "outdoor-nemo-kunai-3p-tent.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-nemo-sonic-0-sleeping-bag-regular": {
+    "file": "outdoor-nemo-sonic-0-sleeping-bag-regular.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-nemo-sonic-20-sleeping-bag-regular": {
+    "file": "outdoor-nemo-sonic-20-sleeping-bag-regular.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "outdoor-nemo-wagontop-6p-tent": {
@@ -12791,8 +13135,28 @@
     "file": "outdoor-petzl-volta-92-mm-rope-60-m.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "outdoor-sea-to-summit-alto-tr2-plus-tent": {
+    "file": "outdoor-sea-to-summit-alto-tr2-plus-tent.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-sea-to-summit-alto-tr2-tent": {
+    "file": "outdoor-sea-to-summit-alto-tr2-tent.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-sea-to-summit-ikos-tr3-tent": {
+    "file": "outdoor-sea-to-summit-ikos-tr3-tent.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-sea-to-summit-spark-down-sleeping-bag-0f-regular": {
+    "file": "outdoor-sea-to-summit-spark-down-sleeping-bag-0f-regular.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "outdoor-sea-to-summit-spark-down-sleeping-bag-15f-regular": {
     "file": "outdoor-sea-to-summit-spark-down-sleeping-bag-15f-regular.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-sea-to-summit-spark-pro-down-sleeping-bag-15f-regular": {
+    "file": "outdoor-sea-to-summit-spark-pro-down-sleeping-bag-15f-regular.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "outdoor-sea-to-summit-spark-pro-down-sleeping-bag-30f-regular": {
@@ -12805,6 +13169,10 @@
   },
   "outdoor-sea-to-summit-telos-tr2-plus-tent": {
     "file": "outdoor-sea-to-summit-telos-tr2-plus-tent.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-sea-to-summit-telos-tr2-tent": {
+    "file": "outdoor-sea-to-summit-telos-tr2-tent.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "outdoor-sea-to-summit-telos-tr3-plus-tent": {
@@ -12967,6 +13335,14 @@
     "file": "outdoor-yeti-roadie-48-wheeled-cooler.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "outdoor-yeti-roadie-60-wheeled-cooler": {
+    "file": "outdoor-yeti-roadie-60-wheeled-cooler.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-yeti-tundra-110-hard-cooler": {
+    "file": "outdoor-yeti-tundra-110-hard-cooler.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "outdoor-yeti-tundra-125-hard-cooler": {
     "file": "outdoor-yeti-tundra-125-hard-cooler.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -12985,6 +13361,14 @@
   },
   "outdoor-yeti-tundra-350-hard-cooler": {
     "file": "outdoor-yeti-tundra-350-hard-cooler.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-yeti-tundra-75-hard-cooler": {
+    "file": "outdoor-yeti-tundra-75-hard-cooler.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "outdoor-yeti-tundra-haul-wheeled-cooler": {
+    "file": "outdoor-yeti-tundra-haul-wheeled-cooler.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "outdoor-yeti-v-series-stainless-steel-cooler": {
@@ -13079,12 +13463,28 @@
     "file": "sc-triumph-speed-triple.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-adidas-adipower-weightlifting-3": {
+    "file": "sport-adidas-adipower-weightlifting-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-adidas-adizero-adios-pro-4": {
+    "file": "sport-adidas-adizero-adios-pro-4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-adidas-adizero-adios-pro-evo-1": {
     "file": "sport-adidas-adizero-adios-pro-evo-1.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-adidas-adizero-prime-x-2-strung": {
     "file": "sport-adidas-adizero-prime-x-2-strung.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-adidas-copa-pure-3-elite-fg": {
+    "file": "sport-adidas-copa-pure-3-elite-fg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-adidas-f50-elite-fg": {
+    "file": "sport-adidas-f50-elite-fg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-adidas-f50-elite-laceless-fg": {
@@ -13107,6 +13507,10 @@
     "file": "sport-adidas-predator-elite-laceless-fg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-adidas-terrex-agravic-speed-ultra": {
+    "file": "sport-adidas-terrex-agravic-speed-ultra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-babolat-air-viper-2024": {
     "file": "sport-babolat-air-viper-2024.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13117,6 +13521,10 @@
   },
   "sport-babolat-pure-aero-98-2023": {
     "file": "sport-babolat-pure-aero-98-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-babolat-pure-aero-rafa-2023": {
+    "file": "sport-babolat-pure-aero-rafa-2023.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-babolat-pure-aero-rafa-origin-2023": {
@@ -13151,8 +13559,20 @@
     "file": "sport-babolat-technical-viper-2024.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-bala-beam-15lb": {
+    "file": "sport-bala-beam-15lb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-bala-beam-25lb": {
+    "file": "sport-bala-beam-25lb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-bala-mom-and-me-kit": {
     "file": "sport-bala-mom-and-me-kit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-bala-pilates-method-heavy": {
+    "file": "sport-bala-pilates-method-heavy.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-bala-power-kit": {
@@ -13161,6 +13581,22 @@
   },
   "sport-bala-powerhouse-performance-kit": {
     "file": "sport-bala-powerhouse-performance-kit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-bala-strongest-self-kit": {
+    "file": "sport-bala-strongest-self-kit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-bala-the-everyday-dress": {
+    "file": "sport-bala-the-everyday-dress.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-bala-the-heavy-kit": {
+    "file": "sport-bala-the-heavy-kit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-bala-the-starter-kit": {
+    "file": "sport-bala-the-starter-kit.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-bala-the-weight-kit": {
@@ -13307,8 +13743,16 @@
     "file": "sport-hyperice-elite-pack.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-hyperice-hyperboot": {
+    "file": "sport-hyperice-hyperboot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-hyperice-legacy-pack": {
     "file": "sport-hyperice-legacy-pack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-hyperice-normatec-3-control-unit": {
+    "file": "sport-hyperice-normatec-3-control-unit.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-hyperice-normatec-3-full-body": {
@@ -13323,8 +13767,24 @@
     "file": "sport-hyperice-normatec-3-lower-body.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-hyperice-normatec-elite-hips": {
+    "file": "sport-hyperice-normatec-elite-hips.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-hyperice-normatec-elite-legs": {
     "file": "sport-hyperice-normatec-elite-legs.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-hyperice-warm-up-pack": {
+    "file": "sport-hyperice-warm-up-pack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-hyperice-x-2-knee": {
+    "file": "sport-hyperice-x-2-knee.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-hyperice-x-2-shoulder": {
+    "file": "sport-hyperice-x-2-shoulder.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-manduka-pro-6mm": {
@@ -13341,6 +13801,14 @@
   },
   "sport-manduka-pro-squared-6mm": {
     "file": "sport-manduka-pro-squared-6mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-manduka-shala-travel-yoga-rug": {
+    "file": "sport-manduka-shala-travel-yoga-rug.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-manduka-vahni-legging": {
+    "file": "sport-manduka-vahni-legging.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-mikasa-bv550c": {
@@ -13363,16 +13831,32 @@
     "file": "sport-mikasa-v200w-cev.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-mikasa-v300w": {
+    "file": "sport-mikasa-v300w.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-mikasa-v320w": {
     "file": "sport-mikasa-v320w.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-mikasa-vls300": {
+    "file": "sport-mikasa-vls300.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-mikasa-vq2000": {
     "file": "sport-mikasa-vq2000.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-mikasa-vt500w": {
+    "file": "sport-mikasa-vt500w.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-mikasa-wp440c": {
     "file": "sport-mikasa-wp440c.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-mikasa-wp550c": {
+    "file": "sport-mikasa-wp550c.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-p-alterg-via-400": {
@@ -13487,12 +13971,44 @@
     "file": "sport-p-woodway-curve.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-polar-grit-x-pro": {
+    "file": "sport-polar-grit-x-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-polar-grit-x-pro-titan": {
+    "file": "sport-polar-grit-x-pro-titan.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-polar-grit-x2": {
+    "file": "sport-polar-grit-x2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-polar-grit-x2-pro": {
     "file": "sport-polar-grit-x2-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-polar-grit-x2-pro-titan": {
     "file": "sport-polar-grit-x2-pro-titan.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-polar-ignite-3": {
+    "file": "sport-polar-ignite-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-polar-ignite-3-braided-yarn": {
+    "file": "sport-polar-ignite-3-braided-yarn.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-polar-ignite-3-titanium": {
+    "file": "sport-polar-ignite-3-titanium.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-polar-vantage-m3": {
+    "file": "sport-polar-vantage-m3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-polar-vantage-v2": {
+    "file": "sport-polar-vantage-v2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-polar-vantage-v3": {
@@ -13533,6 +14049,22 @@
   },
   "sport-scotty-cameron-circle-t-timeless-newport-2-gss": {
     "file": "sport-scotty-cameron-circle-t-timeless-newport-2-gss.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-scotty-cameron-jet-set-newport-2": {
+    "file": "sport-scotty-cameron-jet-set-newport-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-scotty-cameron-monoblok-6-5": {
+    "file": "sport-scotty-cameron-monoblok-6-5.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-scotty-cameron-phantom-11-long-design-2024": {
+    "file": "sport-scotty-cameron-phantom-11-long-design-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-scotty-cameron-t22-newport-2": {
+    "file": "sport-scotty-cameron-t22-newport-2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-speedo-lzr-elite-2-jammer": {
@@ -13615,8 +14147,16 @@
     "file": "sport-titleist-gt2-driver.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-titleist-gt280-mini-driver": {
+    "file": "sport-titleist-gt280-mini-driver.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-titleist-gt3-driver": {
     "file": "sport-titleist-gt3-driver.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-titleist-gt4-driver": {
+    "file": "sport-titleist-gt4-driver.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-titleist-linkslegend-members-bag": {
@@ -13643,6 +14183,10 @@
     "file": "sport-titleist-tour-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-titleist-tsr2-driver": {
+    "file": "sport-titleist-tsr2-driver.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-trx-a-frame-ybell-rack": {
     "file": "sport-trx-a-frame-ybell-rack.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13651,8 +14195,16 @@
     "file": "sport-trx-aion-mens-weighted-vest.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-trx-home2-system": {
+    "file": "sport-trx-home2-system.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-trx-pro4-system": {
     "file": "sport-trx-pro4-system.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-trx-rip-trainer-basic-kit": {
+    "file": "sport-trx-rip-trainer-basic-kit.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-trx-tactical-gym": {
@@ -13711,8 +14263,16 @@
     "file": "sport-yonex-astrox-100zz.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "sport-yonex-ezone-100-2025": {
+    "file": "sport-yonex-ezone-100-2025.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "sport-yonex-ezone-98-2025": {
     "file": "sport-yonex-ezone-98-2025.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "sport-yonex-percept-97": {
+    "file": "sport-yonex-percept-97.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "sport-yonex-precision-9-0-stringing-machine": {
@@ -14071,6 +14631,10 @@
     "file": "toy-maileg-princess-and-the-pea-big-sister-mouse.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "toy-maileg-royal-coach-mouse": {
+    "file": "toy-maileg-royal-coach-mouse.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "toy-maileg-safari-friends-big-elephant": {
     "file": "toy-maileg-safari-friends-big-elephant.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -14101,6 +14665,10 @@
   },
   "toy-mega-pokemon-ho-oh": {
     "file": "toy-mega-pokemon-ho-oh.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "toy-mega-pokemon-ultimate-jungle-expedition": {
+    "file": "toy-mega-pokemon-ultimate-jungle-expedition.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "toy-mega-showcase-halo-energy-sword": {
@@ -14423,8 +14991,16 @@
     "file": "toy-smiski-yoga-series-assort-box.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "toy-steiff-british-collectors-teddy-bear-2024": {
+    "file": "toy-steiff-british-collectors-teddy-bear-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "toy-steiff-karl-lagerfeld-teddy-bear": {
     "file": "toy-steiff-karl-lagerfeld-teddy-bear.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "toy-steiff-queen-elizabeth-ii-platinum-jubilee-bear": {
+    "file": "toy-steiff-queen-elizabeth-ii-platinum-jubilee-bear.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "toy-steiff-studio-giraffe-150": {

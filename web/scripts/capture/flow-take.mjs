@@ -31,7 +31,7 @@ async function session({ balance = 10000, preset = "inventory", path = "/ko/inve
     const isWallet = (k) => k === "gachaflix.wallet" || (k.startsWith("voila.browser-wallet.") && !k.endsWith(".guest"));
     const inventoryKey = Object.keys(state.values).find(isInventory); const walletKey = Object.keys(state.values).find(isWallet);
     const inv = JSON.parse(state.values[inventoryKey]); const wal = JSON.parse(state.values[walletKey]);
-    mutate(inv.state, wal.state);
+    mutate(inv.state, wal.state, state.values, Object.keys(state.values).filter(isWallet));
     for (const k of Object.keys(state.values)) { if (isInventory(k)) state.values[k] = JSON.stringify(inv); if (isWallet(k)) state.values[k] = JSON.stringify(wal); }
   }
   await installState(context, state, new URL(base).origin);
@@ -283,11 +283,16 @@ await run("g", async () => {
   await s.context.close();
 });
 
-// h: 장부가 어긋난 상품(flow/REVIEW_codex-2.md 4.3, 5.2). 받은 상태인데 입금 내역이 없는 상품과, 보관 중인데 입금 내역이 있는 상품.
+// h: 장부가 어긋난 상품(flow/REVIEW_codex-2.md 4.3, 5.2, REVIEW_codex-3.md 3.1).
+//    첫 상품: 받다가 멈춘 흔적. 받은 상태로 저장됐는데 입금 내역이 없고 확인 대기 표시가 남아 있다.
+//    둘째 상품: 보관 중인데 그 상품을 가리키는 입금 내역이 있다.
 //    어느 화면도 "USDT로 받음"이나 "받은 금액"이라고 적지 않고, 받을 수 있는 것으로 세지 않고, 받기 단추를 주지 않는다
-const broken = (inventory, wallet) => {
+const broken = (inventory, wallet, values, walletKeys) => {
   const now = new Date().toISOString();
   const [first, second] = inventory.items;
+  // 확인 대기 표시(lib/takeBatch): 계정의 지갑 저장 키에 묶인 작은 키. 표시를 적을 때의 저장된 지갑도 함께 적혀 있다
+  const mark = JSON.stringify([{ ids: [first.id], c: wallet.cryptoBalance, d: wallet.cardBalance ?? 0, n: wallet.transactions.length, l: wallet.transactions[0]?.id ?? null }]);
+  for (const key of walletKeys) values["voila.take-unconfirmed." + key] = mark;
   Object.assign(first, { status: "SOLD", soldForUsdt: 950, soldAt: now, openingId: "op_capture_broken" });
   Object.assign(second, { openingId: "op_capture_broken" });
   wallet.transactions.unshift({ id: "capture-sellback", type: "sellback", amountUsdt: 521.55, at: now, ref: second.id, itemIds: [second.id] });
@@ -317,7 +322,7 @@ await run("h", async () => {
   await s.context.close();
 
   // 잔액이 모자란 자리: 어긋난 상품은 받을 수 있는 금액에 세지 않는다
-  s = await session({ mutate: (inventory, wallet) => { broken(inventory, wallet); for (const item of inventory.items) delete item.openingId; wallet.balance = 0.25; wallet.cryptoBalance = 0.25; }, path: "/ko/box/vault-gold" });
+  s = await session({ mutate: (inventory, wallet, values, walletKeys) => { broken(inventory, wallet, values, walletKeys); for (const item of inventory.items) delete item.openingId; wallet.balance = 0.25; wallet.cryptoBalance = 0.25; }, path: "/ko/box/vault-gold" });
   await s.page.waitForSelector(".v-openbar .v-btn:not([disabled])"); await s.shot("h6-short");
   const bar = (await s.page.locator(".v-openbar").innerText()).replace(/\s+/g, " ");
   check("h", "부족한 자리: 받을 수 있는 상품이 없으므로 주 단추는 충전이고 USDT로 받기 링크와 한 줄이 없다", (await s.page.locator(".v-openbar .v-btn").allInnerTexts()).join("|") === "USDT 충전하기" && (await s.page.locator(".v-openbar .v-link").count()) === 0 && !bar.includes("USDT로 받으면"), bar);
@@ -353,6 +358,27 @@ await run("h", async () => {
   const l = await s.ledger();
   check("h", "돈은 움직이지 않았다", near(l.balance, 10000) && l.sellbacks.length === 0 && l.held === 2);
   await s.context.close();
+});
+
+// i: 이 일을 만들기 전에 정상으로 받은 기록(flow/REVIEW_codex-3.md 3.2, 4절). 확인 대기 표시가 없으면 받은 것이다.
+//    옛 자동 받기는 거래 기록에 상품 종류만 적었다(ref 가 "상품 종류:auto", 보관 상품 id 없음). 그래도 USDT로 받음과 받은 금액을 그대로 보여 준다
+await run("i", async () => {
+  const legacy = (ref) => (inventory, wallet) => {
+    const now = new Date().toISOString();
+    Object.assign(inventory.items[0], { status: "SOLD", soldForUsdt: 950, soldAt: now });
+    wallet.transactions.unshift({ id: "capture-old-sellback", type: "sellback", amountUsdt: 950, at: now, ...(ref ? { ref } : {}) });
+    wallet.balance = +(wallet.balance + 950).toFixed(2); wallet.cryptoBalance = +(wallet.cryptoBalance + 950).toFixed(2);
+  };
+  for (const [name, ref] of [["옛 자동 받기", "da-iphone16:auto"], ["보관 상품 id 가 적힌 옛 받기", "capture-item-1"], ["아무 id 도 없는 옛 기록", null]]) {
+    const s = await session({ mutate: legacy(ref) });
+    await s.page.locator(".v-chip").nth(2).click(); await s.page.waitForSelector(".v-itemrow"); await s.page.waitForTimeout(200);
+    const row = (await s.page.locator(".v-itemrow").first().innerText()).replace(/\s+/g, " ");
+    await s.page.locator(".v-itemrow").first().click(); await s.page.waitForSelector(".v-sheet .v-rows"); await s.page.waitForTimeout(300);
+    if (ref === "da-iphone16:auto") await s.shot("i1-legacy-auto-take");
+    const t = await sheetText(s.page); const l = await s.ledger();
+    check("i", name + ": 받은 것 목록과 상세가 USDT로 받음과 받은 금액 $950 을 그대로 보여 주고, 확인 필요도 받기 단추도 없다", row.includes("USDT로 받음") && row.includes("$950") && !row.includes("확인 필요") && t.includes("상태 USDT로 받음") && t.includes("받은 금액 $950") && !t.includes("확인 필요") && !t.includes("처리 상태를 확인하지 못했습니다") && (await s.page.locator(".v-sheet [data-take-primary]").count()) === 0 && near(l.balance, 10950) && l.sellbacks.length === 1, row + " / " + t);
+    await s.context.close();
+  }
 });
 
 const failed = results.filter((r) => !r.pass);

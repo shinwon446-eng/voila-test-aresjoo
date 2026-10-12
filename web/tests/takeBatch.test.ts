@@ -218,18 +218,6 @@ test("출금 칸: 시트를 두 번 열어 나눠 받으면 앞서 넣은 몫에
   assert.equal(wallet().cryptoBalance, 124);
 });
 
-test("판정은 입금 내역을 본다: 받은 상태인데 받기 거래 기록이 없으면 이미 받았다고 하지 않는다", async () => {
-  const [a] = seed([{ value: 100 }]);
-  useInventoryStore.setState((s) => ({ items: s.items.map((o) => ({ ...o, status: "SOLD" as const, soldForUsdt: 95 })) }));
-  const out = await settleTakeMany([a.id]);
-  assert.equal(out.status, "unknown");
-  assert.deepEqual(out.unknown, [a.id]);
-  assert.deepEqual(out.already, []);
-  assert.deepEqual(out.left, []);
-  assert.equal(wallet().balance, 0);
-  assert.deepEqual(await settleTake(a.id), { status: "unknown" });
-});
-
 test("출금 칸: 카드로만 낸 상품은 채우지 않고, 지금 출금할 수 있는 잔액을 넘지 않는다", async () => {
   const [card] = seed([{ value: 50, ratio: CARD }], { crypto: 30 });
   const out = await settleTakeMany([card.id]);
@@ -241,4 +229,18 @@ test("출금 칸: 카드로만 낸 상품은 채우지 않고, 지금 출금할 
   assert.equal(withdrawPrefillUsdt({ toCrypto: 95 }, 0), 0);
   assert.equal(withdrawPrefillUsdt({ toCrypto: Number.NaN }, 100), 0);
   assert.equal(withdrawPrefillUsdt({ toCrypto: -5 }, 100), 0);
+});
+
+test("옛 기록을 낮추지 않는다: 받은 상태이고 확인 대기 표시가 없으면, 그 상품을 가리키는 내역이 없어도 받은 것이다(다시 지급하지 않는다)", async () => {
+  const [a] = seed([{ value: 100 }], { crypto: 95 });
+  useInventoryStore.setState((s) => ({ items: s.items.map((o) => ({ ...o, status: "SOLD" as const, soldForUsdt: 95 })) }));
+  const out = await settleTakeMany([a.id]);
+  assert.equal(out.status, "settled");
+  assert.deepEqual(out.already, [{ id: a.id, amountUsdt: 95 }]);
+  assert.deepEqual(out.taken, []);
+  assert.deepEqual(out.unknown, []);
+  assert.equal(out.amountUsdt, 0);
+  assert.equal(wallet().balance, 95);
+  assert.deepEqual(await settleTake(a.id), { status: "settled", amountUsdt: 95, already: true });
+  assert.equal(wallet().balance, 95);
 });

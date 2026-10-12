@@ -16,7 +16,7 @@ import { Check, Minus } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { REFUND_RATE } from "@/lib/products";
 import { productOf } from "@/lib/vault";
-import { heldForTake, mergeOutcomes, settleTakeMany, takeAmountOf, takeLedgerOf, takeQuote, type BatchOutcome, type TakeLedger } from "@/lib/takeBatch";
+import { heldForTake, mergeOutcomes, reviewTakeMarks, settleTakeMany, takeAmountOf, takeLedgerOf, takeQuote, type BatchOutcome, type TakeLedger } from "@/lib/takeBatch";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useAuthStore } from "@/stores/authStore";
@@ -30,11 +30,20 @@ type Step = "pick" | "confirm" | "result";
 /**
  * 받기가 확정됐는지를 보는 판정 자료(lib/takeBatch 의 takeStateOf 에 넘긴다): 지갑의 받기 거래 기록과 확인 대기 표시.
  * 받는 일, 미리 보는 금액, 보관함과 결과 화면의 상태 표시가 같은 기준을 쓰게 한다.
+ * 화면이 보는 거래 기록은 기억 속의 것이라, 확인 대기 표시가 남은 상품은 기억 속 기록이 뭐라고 하든 "확인 필요"로 보인다.
  * 장부가 바뀔 때(거래 기록이나 보관함이 바뀔 때)마다 다시 읽는다. 받는 일은 끝날 때 두 스토어를 저장된 장부에 맞추므로 표시도 함께 새로 읽힌다.
+ * 화면이 뜰 때와 창으로 돌아올 때 남은 표시를 다시 보고(끝이 확인된 것은 지운다) 기억 속 장부를 저장된 장부에 맞춘다. 돈은 움직이지 않는다.
  */
 export function useTakeLedger(): TakeLedger {
   const transactions = useWalletStore((s) => s.transactions);
   const items = useInventoryStore((s) => s.items);
+  useEffect(() => {
+    const review = () => { if (document.visibilityState !== "hidden") void reviewTakeMarks(); };
+    review();
+    window.addEventListener("focus", review);
+    document.addEventListener("visibilitychange", review);
+    return () => { window.removeEventListener("focus", review); document.removeEventListener("visibilitychange", review); };
+  }, []);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   return useMemo(() => takeLedgerOf(transactions), [transactions, items]);
 }
@@ -83,6 +92,8 @@ export function TakeSheet({ open, ids, preselect, onClose, onTaken, doneLabel }:
   useEffect(() => {
     setPicked(new Set(open ? preselectRef.current ?? [] : [])); setStep("pick"); setOutcome(null); setBusy(false); setGone(false);
     lock.current = false; total.current = null; generation.current += 1;
+    // 열 때 남은 확인 대기 표시를 다시 본다(아무것도 들어오지 않은 것이 확인된 상품은 다시 고를 수 있게 된다)
+    if (open) void reviewTakeMarks();
   }, [open, accountId]);
 
   const scopeKey = ids ? ids.join(",") : null;

@@ -3,6 +3,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import { execFileSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 import { BOX_BY_SLUG, HOME_BOXES, getBoxBySlug } from "../lib/products";
 import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, stamp } from "../lib/reviewFeed";
 import { allRatingSummary, newestSamples, ratingSummary, sampleCount, sampleReviews } from "../lib/reviewSamples";
@@ -173,6 +175,39 @@ test("박스 찾기(F-07): 객체에 원래 있는 이름(constructor, __proto__
   assert.equal(Object.keys(BOX_BY_SLUG).length > 300, true);
   // 모아 보기는 주소의 글자를 이 표에서 찾는다
   assert.match(read("../components/box/ReviewsScreen.tsx"), /const askedBox = asked \? BOX_BY_SLUG\[asked\] \?\? null : null;/);
+});
+
+test("샘플을 끈 빌드(F-04): 화면은 문(lib/reviewSampleGate)을 거쳐서만 생성기를 부르고, 끈 때에는 생성기와 말뭉치를 읽지도 않는다", () => {
+  // 1) 화면 쪽 파일은 생성기와 말뭉치를 직접 가져오지 않는다. 한 군데라도 직접 가져오면 끈 빌드의 묶음에 다시 실린다
+  const root = new URL("../", import.meta.url);
+  const files: string[] = [];
+  const walk = (dir: string) => { for (const entry of fs.readdirSync(new URL(dir, root), { withFileTypes: true })) { if (entry.isDirectory()) walk(dir + entry.name + "/"); else if (/\.tsx?$/.test(entry.name)) files.push(dir + entry.name); } };
+  for (const dir of ["app/", "components/", "stores/", "lib/"]) walk(dir);
+  assert.ok(files.length > 100, String(files.length));
+  const direct = files.filter((file) => !["lib/reviewSamples.ts", "lib/reviewSampleText.ts", "lib/reviewSampleGate.ts"].includes(file) && /from "[^"]*\/reviewSample(?:s|Text)"/.test(fs.readFileSync(new URL(file, root), "utf8")));
+  assert.deepEqual(direct, []);
+  // 2) 문은 스위치를 묶는 도구가 빌드할 때 값을 아는 꼴로 본다: 조건이 그 자리에 그대로 있고, 생성기는 그 가지 안의 require 로만 온다
+  const gate = read("../lib/reviewSampleGate.ts");
+  assert.match(gate, /const gen: typeof Samples \| null = process\.env\.NEXT_PUBLIC_SAMPLE_REVIEWS === "off" \|\| process\.env\.NEXT_PUBLIC_SAMPLE_REVIEWS === "0" \|\| process\.env\.NEXT_PUBLIC_SAMPLE_REVIEWS === "false" \? null : \(require\("\.\/reviewSamples"\) as typeof Samples\);/);
+  assert.match(gate, /^import type \* as Samples from "\.\/reviewSamples";$/m);
+  assert.doesNotMatch(gate, /^import \{[^}]*\} from "\.\/reviewSample(?:s|Text)";$/m);
+  // 3) 실제로 돌려 본다: 스위치를 끄고 문을 읽으면 생성기와 말뭉치 파일은 읽히지 않고, 샘플은 없고, 별점은 실제 후기만 센다. 켜면 생성기와 같은 답이다
+  const code = `const g = require("./lib/reviewSampleGate.ts"); const loaded = Object.keys(require.cache).filter((k) => /reviewSample(?:s|Text)\\.ts$/.test(k)).length; console.log(JSON.stringify({ loaded, rows: g.sampleReviews(${JSON.stringify(SLUG)}, 5).length, newest: g.newestSamples(5).length, box: g.ratingSummary(${JSON.stringify(SLUG)}, [5, 4]), all: g.allRatingSummary([3]).count }));`;
+  const run = (value: string | null) => {
+    const env: NodeJS.ProcessEnv = { ...process.env };
+    if (value === null) delete env.NEXT_PUBLIC_SAMPLE_REVIEWS; else env.NEXT_PUBLIC_SAMPLE_REVIEWS = value;
+    return JSON.parse(execFileSync(process.execPath, [...process.execArgv, "-e", code], { cwd: fileURLToPath(root), env, encoding: "utf8" }).trim().split("\n").pop()!) as { loaded: number; rows: number; newest: number; box: { count: number; avg: number | null }; all: number };
+  };
+  for (const value of ["off", "0", "false"]) {
+    const off = run(value);
+    assert.deepEqual({ loaded: off.loaded, rows: off.rows, newest: off.newest, count: off.box.count, avg: off.box.avg, all: off.all }, { loaded: 0, rows: 0, newest: 0, count: 2, avg: 4.5, all: 1 }, value);
+  }
+  const on = run(null);
+  assert.equal(on.loaded, 2);
+  assert.equal(on.rows, 5);
+  assert.equal(on.newest, 5);
+  assert.equal(on.box.count, ratingSummary(SLUG, [5, 4]).count);
+  assert.equal(on.all, allRatingSummary([3]).count);
 });
 
 test("더 보기 뒤(F-05): 초점은 새로 생긴 첫 글로 가고, 늘어난 건수는 알림 영역에 적는다(브라우저에서의 확인은 scripts/capture/flow-reviews-nav.mjs)", () => {

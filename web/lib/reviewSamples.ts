@@ -2,6 +2,7 @@
 // 정식 서비스 전의 시험 사이트라 샘플로 채운다(2026-10-11, 2026-10-12 파운더). 정식 서비스에서는 반드시 꺼야 한다:
 //   빌드할 때 NEXT_PUBLIC_SAMPLE_REVIEWS=off 를 준다(0, false 도 같다). 주지 않으면 켜져 있다.
 //   끄면 샘플은 한 건도 나오지 않고, 별점과 후기 수는 이 기기에서 실제로 쓴 후기만으로 센다.
+//   끈 빌드에는 이 파일과 말뭉치가 묶음에 들어가지도 않는다: 화면은 lib/reviewSampleGate 를 거쳐서만 여기를 부른다(직접 import 하지 않는다).
 // 박스마다 80건 이상 400건 이하. 박스가 320개라 6만 건이 넘으니 파일로 두지 않고 박스 번호를 씨앗으로 그때그때 만든다. 같은 박스는 언제나 같은 후기다.
 // 별점의 뜻(여기 한 곳에만 적는다): 받은 것(나온 상품과 그 물건)과 받는 과정(배송, 포장, 응대)에 대한 만족을 한 점수로 매긴 것이다.
 //   큰 것이 나오면 점수가 오르기 쉽지만 뽑기 운만의 점수는 아니다: 흔하고 작은 상품도 잘 받았으면 별 다섯이 나오고,
@@ -21,6 +22,7 @@
 // 말 조각과 조각마다의 조건은 lib/reviewSampleText.ts 에 있다. 조건(돈 이야기, 미개봉, 배송)은 그 건의 상품과 결과가 맞을 때만 통과한다.
 // 이 사이트에 없는 일은 샘플도 말하지 않는다: 디지털 상품은 USDT로 받기만 있으므로 썼다, 등록했다는 말이 없고, 차와 큰 가전에 설치나 인도 절차를 말하지 않는다.
 import { BOXES, BOX_BY_SLUG, REFUND_RATE, type ProductBox, type ProductItem } from "./products";
+import { summarizeRatings, summaryOf, type RatingSummary } from "./reviewRating";
 import { ARRIVAL, BANNED, BOX_HINTS, CLOSE, DIGITAL, EN, FLOW, GOT, GRIPE, ITEM, ITEM_NAMED, KIND_FACTS, LEAD, MID, MID_CLOSE, NEG, NEG_CLOSE, NICK, PART, PAR_BAND, SHIP, SLANG, TAIL, TOPICS, USE, USE_GIFT, ZH, fact, type Frag, type Kind, type Topic } from "./reviewSampleText";
 
 export const SAMPLE_MIN = 80;
@@ -48,26 +50,8 @@ export interface ReviewSample {
   lang: "ko" | "en" | "zh";
 }
 
-export interface RatingSummary {
-  count: number;
-  /** 평균(소수 첫째 자리). 후기가 없으면 null */
-  avg: number | null;
-  /** [1점, 2점, 3점, 4점, 5점] */
-  dist: [number, number, number, number, number];
-}
-
-const summaryOf = (dist: RatingSummary["dist"]): RatingSummary => {
-  const count = dist.reduce((a, b) => a + b, 0);
-  const sum = dist.reduce((a, n, i) => a + n * (i + 1), 0);
-  return { count, avg: count ? Math.round((sum / count) * 10) / 10 : null, dist };
-};
-
-/** 점수들의 요약. 1 에서 5 사이의 정수만 센다 */
-export function summarizeRatings(ratings: readonly number[]): RatingSummary {
-  const dist: RatingSummary["dist"] = [0, 0, 0, 0, 0];
-  for (const r of ratings) if (Number.isInteger(r) && r >= 1 && r <= 5) dist[r - 1] += 1;
-  return summaryOf(dist);
-}
+// 별점 요약의 꼴과 셈은 lib/reviewRating 에 있다(샘플을 끈 빌드도 쓴다). 여기서 부르던 곳을 위해 그대로 다시 내보낸다
+export { summarizeRatings, type RatingSummary };
 
 // ── 씨앗에서 나오는 수 ─────────────────────────────────────────
 /** 글자열을 32비트 수로(FNV-1a). 어느 기기에서나 같은 값이다 */

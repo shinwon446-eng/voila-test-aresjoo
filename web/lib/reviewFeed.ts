@@ -1,10 +1,12 @@
 // 후기 화면들이 같이 쓰는 셈: 별점 집계(샘플 위에 실제 후기를 더한 것)와 "몇 분 전" 의 구간.
 // 박스 카드, 박스 화면, 모아 보기가 모두 여기의 한 가지 집계를 쓴다. 그래서 카드와 상세의 별점과 후기 수가 어긋나지 않고,
 // 샘플 스위치를 꺼도(lib/reviewSamples 머리) 실제 후기가 있는 박스의 카드에는 별점이 남는다.
+// 샘플은 lib/reviewSampleGate 를 거쳐 받는다(샘플을 끈 빌드에 생성기와 말뭉치가 실리지 않게).
 // 화면과 떨어진 순수한 함수만 둔다(tests/reviewFeed.test.ts).
 import { BOX_BY_SLUG } from "./products";
 import { isExampleReview } from "./community";
-import { allRatingSummary, ratingSummary, type RatingSummary } from "./reviewSamples";
+import type { RatingSummary } from "./reviewRating";
+import { allRatingSummary, ratingSummary } from "./reviewSampleGate";
 
 /** 집계에 드는 실제 후기: 운영팀의 예시가 아니고, 지금 있는 박스의 것 */
 export const isRealReview = (review: { id: string; source?: string; boxSlug: string }): boolean => !isExampleReview(review) && !!BOX_BY_SLUG[review.boxSlug];

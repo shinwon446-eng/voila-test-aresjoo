@@ -20,7 +20,7 @@ import { Button, Chips, Empty, ScreenHead } from "@/components/ui/kit";
 import { RatingInline, useRealRatings } from "@/components/box/BoxReviews";
 import { HeroBanner } from "@/components/home/HeroBanner";
 import { boxRating } from "@/lib/reviewFeed";
-import type { RatingSummary } from "@/lib/reviewSamples";
+import type { RatingSummary } from "@/lib/reviewRating";
 
 type Category = BoxCategory | "all";
 const SEARCH_MAX = 30;

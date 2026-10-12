@@ -6,7 +6,7 @@
  * 계산은 전부 이 브라우저에서 한다. 직접 넣은 값은 지금의 확률표로 맞춰 보므로, 그 사실을 한 줄로 말한다.
  * 이 테스트 사이트는 값을 이 브라우저에서 만들고 저장하며 블록체인에 올리지 않는다. 화면도 그렇게 적는다(서버가 정한다고 적지 않는다).
  */
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { BOXES, BOX_BY_SLUG, dropTable, type ProductBox } from "@/lib/products";
@@ -54,16 +54,21 @@ export function VerifyScreen() {
   const date = (value: string) => (Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat(locale, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(value)) : "");
   const nameOf = (o: OwnedItem) => { const p = products.get(o.itemId); return p ? itemName(p) : o.itemId; };
 
+  // 지금 화면의 입력. 계산이 끝났을 때 시작할 때의 입력과 견줘, 그 사이에 바뀌었으면 그 계산의 결과를 버린다
+  const inputs = useRef("");
+  inputs.current = JSON.stringify([serverSeed, lockedHash, clientSeed, nonce, boxSlug]);
   const compute = async () => {
     const n = Number(nonce);
     if (!serverSeed.trim() || !clientSeed.trim() || !Number.isInteger(n) || n < 0) { setFailed(true); setManual(null); return; }
+    const started = inputs.current;
     setBusy(true); setFailed(false);
     try {
       const box = BOXES.find((b) => b.slug === boxSlug) as ProductBox;
       const [hash, result] = await Promise.all([hashServerSeed(serverSeed.trim()), calculateRollResult(serverSeed.trim(), clientSeed.trim(), n)]);
+      if (inputs.current !== started) return;
       const item = determineItem(result.roll, dropTable(box));
       setManual({ hash, hashMatch: lockedHash.trim() ? lockedHash.trim().toLowerCase() === hash : null, roll: result.roll, itemName: itemName(item) });
-    } catch { setFailed(true); setManual(null); }
+    } catch { if (inputs.current === started) { setFailed(true); setManual(null); } }
     finally { setBusy(false); }
   };
 

@@ -4,7 +4,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { HOME_BOXES } from "../lib/products";
-import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings } from "../lib/reviewFeed";
+import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, stamp } from "../lib/reviewFeed";
 import { allRatingSummary, newestSamples, ratingSummary, sampleCount, sampleReviews } from "../lib/reviewSamples";
 
 const read = (path: string) => fs.readFileSync(new URL(path, import.meta.url), "utf8");
@@ -93,6 +93,24 @@ test("후기 목록의 차례(F-02): 내 후기가 며칠이 지나도 맨 앞�
   assert.deepEqual(feedOrder(mine, box, 0), []);
   // 화면이 이 차례를 쓴다
   assert.match(read("../components/box/BoxReviews.tsx"), /cards: feedOrder\(mine, cards, shown\)/);
+});
+
+test("내 후기의 시각(F-03): 상세에는 쓴 날짜와 시각을 그대로 적고, 목록의 행과 샘플은 몇 분 전으로 적는다", () => {
+  // 기기 시간대의 YYYY.MM.DD HH:mm
+  assert.equal(stamp("2026-09-02T12:00:00"), "2026.09.02 12:00");
+  assert.equal(stamp("2026-01-05T03:07:59"), "2026.01.05 03:07");
+  assert.equal(stamp(new Date(2026, 11, 31, 23, 59).toISOString()), "2026.12.31 23:59");
+  // 읽을 수 없는 값은 받은 그대로
+  assert.equal(stamp("모름"), "모름");
+  const reviews = read("../components/box/BoxReviews.tsx");
+  // 상세: 내 후기는 stamp, 샘플은 ago
+  assert.match(reviews, /card\.mine && card\.at \? stamp\(card\.at\) : ago\(card\.ageMin\)/);
+  // 목록의 행은 누구의 글이든 몇 분 전
+  assert.match(reviews, /className="v-rv-ago v-small v-num">\{ago\(card\.ageMin\)\}/);
+  // 샘플에는 쓴 시각이 없다
+  assert.match(reviews, /ageMin: s\.ageMin, at: null,/);
+  // 나온 상품 화면이 쓰던 길도 그대로다
+  assert.match(read("../components/box/WinsScreen.tsx"), /import \{ stamp \} from "\.\/BoxReviews";/);
 });
 
 test("후기 시각: 몇 분 전, 몇 시간 전, 며칠 전의 경계", () => {

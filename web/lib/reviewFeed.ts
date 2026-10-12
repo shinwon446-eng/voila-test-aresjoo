@@ -40,6 +40,17 @@ export function feedOrder<T extends { ageMin: number }>(mine: readonly T[], samp
   return [...[...mine].sort((a, b) => a.ageMin - b.ageMin), ...samples].slice(0, Math.max(0, shown));
 }
 
+const two = (n: number) => String(n).padStart(2, "0");
+/**
+ * 기기 시간대의 YYYY.MM.DD HH:mm. 실제 기록의 시각을 적을 때 쓴다: 내 후기의 상세, 나온 상품.
+ * 샘플 후기에는 쓰지 않는다(샘플은 날짜가 없고 "몇 분 전"만 있다).
+ */
+export function stamp(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  return `${d.getFullYear()}.${two(d.getMonth() + 1)}.${two(d.getDate())} ${two(d.getHours())}:${two(d.getMinutes())}`;
+}
+
 /** "몇 분 전" 의 구간과 그 안의 수. 화면은 이 열쇠로 문구(reviews.agoNow ...)를 고른다 */
 export type AgoKey = "agoNow" | "agoMin" | "agoHour" | "agoDay" | "agoMonth" | "agoYear";
 export function agoOf(ageMin: number): { key: AgoKey; n: number } {

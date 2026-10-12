@@ -15,7 +15,7 @@
  * 지금 보이는 글의 대부분은 lib/reviewSamples 가 만든 샘플이다(정식 서비스 전의 시험 사이트, 스위치는 그 파일 머리에 있다).
  *   샘플의 사진은 손님이 찍은 것이 아니라 카탈로그의 그 상품 사진이다. 후기 글은 쓴 사람의 말 그대로 둔다(번역하지 않는다).
  * 시각: 샘플은 "몇 분 전"을 씨앗에서 받아 그대로 적는다(시계를 읽지 않으므로 미리 그린 HTML 과 브라우저가 같다).
- *   내 후기는 쓴 시각과 지금의 차이로 적는다. 내 후기는 브라우저의 저장소에서 화면이 뜬 뒤에야 들어오므로 미리 그린 HTML 에는 없다.
+ *   내 후기는 목록의 행에는 쓴 시각과 지금의 차이로("3일 전"), 상세에는 쓴 날짜와 시각 그대로("2026.09.02 12:00") 적는다. 내 후기는 브라우저의 저장소에서 화면이 뜬 뒤에야 들어오므로 미리 그린 HTML 에는 없다.
  *   화면을 오래 열어 두어도 내 후기의 "방금 전" 이 멈추지 않게, 내 후기가 있을 때만 1분마다와 탭으로 돌아올 때 지금을 다시 읽는다.
  * 사진: 샘플 후기에 붙은 사진은 카탈로그의 그 상품 사진이라, 사진이 붙은 샘플의 상품 카드에는 같은 사진을 작게 또 두지 않는다(이름과 상품가만).
  *   사진이 없는 후기와 내 후기(내가 올린 사진)의 상품 카드에는 카탈로그 사진이나 그 자리의 그림을 둔다.
@@ -24,7 +24,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Package, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { BOX_BY_SLUG, type ProductBox, type ProductItem } from "@/lib/products";
-import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, type RealRatings } from "@/lib/reviewFeed";
+import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, stamp, type RealRatings } from "@/lib/reviewFeed";
 import { newestSamples, sampleReviews, type RatingSummary } from "@/lib/reviewSamples";
 import { useCurrency } from "@/lib/useCurrency";
 import { useProductText } from "@/lib/useProductText";
@@ -98,21 +98,18 @@ export interface ReviewCardData {
   /** 후기에 붙은 사진. 내 후기는 올린 사진, 샘플은 카탈로그의 그 상품 사진. 없으면 null */
   photo: string | null;
   author: string;
-  /** 몇 분 전에 쓴 것인지. 목록은 이 값이 작은 것부터다 */
+  /** 몇 분 전에 쓴 것인지. 목록의 행에는 이 값으로 "3일 전"을 적는다 */
   ageMin: number;
+  /** 쓴 시각(ISO). 내 후기에만 있다: 상세에 날짜와 시각을 적는다. 샘플은 날짜가 없어 null */
+  at: string | null;
   likes: number;
   /** 내 후기의 그 개봉을 직접 계산해 보는 주소. 개봉 기록이 없으면 null */
   verifyHref: string | null;
   mine: boolean;
 }
 
-const two = (n: number) => String(n).padStart(2, "0");
-/** 기기 시간대의 YYYY.MM.DD HH:mm (나온 상품 화면이 쓴다) */
-export function stamp(iso: string): string {
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return iso;
-  return `${d.getFullYear()}.${two(d.getMonth() + 1)}.${two(d.getDate())} ${two(d.getHours())}:${two(d.getMinutes())}`;
-}
+/** 기기 시간대의 YYYY.MM.DD HH:mm (나온 상품 화면도 여기서 가져다 쓴다) */
+export { stamp };
 
 /** "5시간 전", "4일 전". 분 단위의 나이를 받아 적는다(시계를 읽지 않는다). 구간은 lib/reviewFeed 의 agoOf */
 export function useAgo(): (ageMin: number) => string {
@@ -151,7 +148,7 @@ function useMyReviewCards(published: Published, boxSlug: string | null): ReviewC
       const record = owned.find((o) => o.id === r.ownedId);
       const verifyHref = record?.fair?.serverSeed ? "/verify?" + new URLSearchParams({ s: record.fair.serverSeed, h: record.fair.serverSeedHash, c: record.fair.clientSeed, n: String(record.fair.nonce), box: box.slug }).toString() : null;
       const at = Date.parse(r.at);
-      out.push({ id: r.id, boxSlug: box.slug, rating: r.rating, text: r.text, item: box.items.find((i) => i.id === r.itemId), photo: r.photo ?? null, author: r.authorName?.trim() || me?.nickname?.trim() || t("reviews.me"), ageMin: Number.isFinite(at) ? Math.max(0, (now - at) / 60000) : 0, likes: 0, verifyHref, mine: true });
+      out.push({ id: r.id, boxSlug: box.slug, rating: r.rating, text: r.text, item: box.items.find((i) => i.id === r.itemId), photo: r.photo ?? null, author: r.authorName?.trim() || me?.nickname?.trim() || t("reviews.me"), ageMin: Number.isFinite(at) ? Math.max(0, (now - at) / 60000) : 0, at: Number.isFinite(at) ? r.at : null, likes: 0, verifyHref, mine: true });
     }
     return out;
   }, [published, owned, me, boxSlug, t, now]);
@@ -179,7 +176,7 @@ export function useReviewFeed(boxSlug: string | null, shown: number): ReviewFeed
   const real = useMemo(() => realRatings(published), [published]);
   return useMemo(() => {
     const samples = boxSlug ? sampleReviews(boxSlug, shown) : newestSamples(shown);
-    const cards: ReviewCardData[] = samples.map((s) => ({ id: s.id, boxSlug: s.boxSlug, rating: s.rating, text: s.text, item: BOX_BY_SLUG[s.boxSlug]?.items.find((i) => i.id === s.itemId), photo: s.photo, author: s.author, ageMin: s.ageMin, likes: s.likes, verifyHref: null, mine: false }));
+    const cards: ReviewCardData[] = samples.map((s) => ({ id: s.id, boxSlug: s.boxSlug, rating: s.rating, text: s.text, item: BOX_BY_SLUG[s.boxSlug]?.items.find((i) => i.id === s.itemId), photo: s.photo, author: s.author, ageMin: s.ageMin, at: null, likes: s.likes, verifyHref: null, mine: false }));
     const summary = boxSlug ? boxRating(boxSlug, real) : allRating(real);
     return { cards: feedOrder(mine, cards, shown), total: summary.count, summary };
   }, [mine, real, boxSlug, shown]);
@@ -238,7 +235,7 @@ export function ReviewList({ feed, onMore, onOpen, grid, heading }: { feed: Revi
 }
 
 /**
- * 후기 상세: 쓴 사람과 시각, 내용 전체, 붙인 사진, 상품과 박스, 내 후기라면 그 개봉의 검증.
+ * 후기 상세: 쓴 사람과 시각(내 후기는 날짜와 시각, 샘플은 몇 분 전), 내용 전체, 붙인 사진, 상품과 박스, 내 후기라면 그 개봉의 검증.
  * here 는 이 상세가 뜬 박스 화면의 박스다: 그 박스의 후기에는 "박스 보기" 를 두지 않는다(이미 그 화면이다).
  */
 export function ReviewSheet({ card, onClose, here }: { card: ReviewCardData | null; onClose: () => void; here?: string }) {
@@ -251,7 +248,8 @@ export function ReviewSheet({ card, onClose, here }: { card: ReviewCardData | nu
     <Sheet open={!!card} onClose={onClose} title={t("reviews.detail")} closeLabel={t("common.close")}>
       {card && (
         <>
-          <div className="v-rvdetail-head"><Stars n={card.rating} /><span className="v-small">{card.author}</span><span className="v-small v-num">{ago(card.ageMin)}</span></div>
+          {/* 내 후기는 쓴 날짜와 시각을 적는다(실제 기록이다). 샘플은 날짜가 없어 "몇 분 전"만 적는다 */}
+          <div className="v-rvdetail-head"><Stars n={card.rating} /><span className="v-small">{card.author}</span><span className="v-small v-num" data-review-at>{card.mine && card.at ? stamp(card.at) : ago(card.ageMin)}</span></div>
           <p className="v-rvdetail-text v-rv-fulltext">{card.text}</p>
           {card.photo && <div className="v-sheet-photo"><img src={card.photo} alt={card.item ? t("reviews.photoOf", { item: itemName(card.item) }) : t("reviews.photo")} /></div>}
           {(card.item || box) && (

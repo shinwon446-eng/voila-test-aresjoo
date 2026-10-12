@@ -10,6 +10,7 @@ import { useWalletStore, type Transaction } from "@/stores/walletStore";
 import { useAuthStore } from "@/stores/authStore";
 import { useFlow } from "@/stores/flowStore";
 import { api } from "@/lib/api";
+import { accountTransactions } from "@/lib/browserWallet";
 import { EXPLORERS, explorerTxUrl } from "@/lib/withdrawal";
 import { holdCountdown } from "@/lib/withdrawHold";
 import type { Network } from "@/lib/depositAddress";
@@ -63,7 +64,8 @@ export function WalletScreen() {
   // 남은 대기 시간은 화면이 뜬 뒤에만 흐른다
   useEffect(() => { setNow(Date.now()); const id = window.setInterval(() => setNow(Date.now()), 60000); return () => window.clearInterval(id); }, []);
 
-  const rows = useMemo(() => transactions.filter((x) => !!user && x.accountId === user.id).sort((a, b) => Date.parse(b.at) - Date.parse(a.at)), [transactions, user]);
+  // 이 계정의 장부에 든 거래는 계정 번호가 없어도 보여 준다(박스 열기와 USDT로 받기는 번호 없이 적힌다). 다른 계정의 것은 섞이지 않는다
+  const rows = useMemo(() => (user ? accountTransactions(transactions, user.id) : []).sort((a, b) => Date.parse(b.at) - Date.parse(a.at)), [transactions, user]);
   const current = rows.find((x) => x.id === openId) ?? null;
   const date = (value: string) => new Intl.DateTimeFormat(locale, { year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(value));
   const kind = (tx: Transaction) => t("wallet.type." + tx.type);

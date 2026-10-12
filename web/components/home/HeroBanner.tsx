@@ -126,9 +126,10 @@ export function HeroBanner() {
     return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", fit); };
   }, [running, balls, reduced]);
 
+  // 훅은 조건부 return 보다 앞에서 부른다(훅의 순서는 렌더마다 같아야 한다)
+  const freeLeft = useWalletStore((s) => s.freeOpens?.[GIFT_BOX_SLUG] ?? 0);
   if (!box) return null;
   const signedIn = ready && !!user;
-  const freeLeft = useWalletStore((s) => s.freeOpens?.[GIFT_BOX_SLUG] ?? 0);
   const hasFree = signedIn && freeLeft > 0;
   const shown = reduced ? "sweep" : phase;
   const photos = CARD_FILES.map((name) => (HERO_FILES.includes(name) ? HERO_ASSETS + name : null));

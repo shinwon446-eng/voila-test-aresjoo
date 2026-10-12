@@ -104,3 +104,49 @@ test("E-06 계정별 장부가 아닐 때(서버 계정의 공용 장부 키)는
   try { assert.deepEqual(types(wallet.accountTransactions(ofA, A)), ["bonus"]); }
   finally { useWalletStore.persist.setOptions({ name: keyOf(A) }); }
 });
+
+// R2-F-08(migration-audit 의 qa/R2_CYCLE3_claude.md F-08): E-06 으로 계정 번호 없는 줄을 보여 주게 되면서, 원본이 숨겨 주던 깨진 저장값
+// (시각이 없거나 틀린 줄 등)이 지갑 화면에 닿아 화면 전체가 오류 화면이 됐다. 내역의 줄을 만드는 함수가 그런 줄을 견딘다.
+//   읽을 수 있는 줄(아는 종류, 유한한 숫자 금액)만 남긴다. 금액이나 종류를 읽을 수 없는 줄은 뺀다(무엇이 얼마였는지 적을 수 없다).
+//   시각만 깨진 줄은 남긴다(돈이 움직인 기록이다). 맨 뒤에 놓이고, 화면은 시각 자리를 비운다. 저장된 값은 고쳐 쓰지 않는다.
+test("R2-F-08 깨진 줄이 섞인 장부: 읽을 수 있는 줄만 최신순으로 남기고, 저장된 값은 건드리지 않는다", async () => {
+  await playAsA();
+  const normal = useWalletStore.getState().transactions;
+  const raw = (row: Record<string, unknown>) => row as unknown as Transaction;
+  const broken = [
+    raw({ id: "bad-date", type: "open", amountUsdt: -5, at: "not-a-date" }),
+    raw({ id: "no-date", type: "sellback", amountUsdt: 3 }),
+    raw({ id: "text-amount", type: "open", amountUsdt: "abc", at: "2026-10-01T00:00:00.000Z" }),
+    raw({ id: "no-amount", type: "open", at: "2026-10-01T00:00:00.000Z" }),
+    raw({ id: "nan-amount", type: "sellback", amountUsdt: Number.NaN, at: "2026-10-01T00:00:00.000Z" }),
+    raw({ id: "unknown-type", type: "mystery", amountUsdt: 7, at: "2026-10-01T00:00:00.000Z" }),
+    raw({ id: "no-type", amountUsdt: 7, at: "2026-10-01T00:00:00.000Z" }),
+    raw({ id: "odd-status", type: "withdraw", accountId: A, amountUsdt: -9, status: "WEIRD", at: "2020-01-01T00:00:00.000Z" }),
+    raw({ id: "other-account", type: "open", accountId: B, amountUsdt: -1, at: "not-a-date" }),
+  ];
+  const ledger = [broken[0], ...normal, ...broken.slice(1)];
+  const before = JSON.stringify(ledger);
+  const rows = wallet.walletHistoryRows(ledger, A);
+  // 보통의 줄 셋은 빠짐없이 남는다
+  for (const x of normal) assert.ok(rows.some((r) => r.id === x.id), "보통의 줄이 빠졌다: " + x.type);
+  // 시각만 깨진 줄과 상태가 낯선 줄은 남는다(종류와 금액은 읽을 수 있다)
+  for (const id of ["bad-date", "no-date", "odd-status"]) assert.ok(rows.some((r) => r.id === id), id + " 가 빠졌다");
+  // 금액이나 종류를 읽을 수 없는 줄, 다른 계정의 줄은 없다
+  for (const id of ["text-amount", "no-amount", "nan-amount", "unknown-type", "no-type", "other-account"]) assert.ok(!rows.some((r) => r.id === id), id + " 가 남았다");
+  assert.equal(rows.length, normal.length + 3);
+  // 최신순. 시각을 읽을 수 없는 줄은 맨 뒤다
+  const times = rows.map((r) => Date.parse(r.at));
+  const dated = times.filter((x) => Number.isFinite(x));
+  assert.deepEqual(dated, [...dated].sort((a, b) => b - a), "최신순이 아니다");
+  assert.deepEqual(rows.slice(-2).map((r) => r.id).sort(), ["bad-date", "no-date"], "시각 없는 줄이 맨 뒤가 아니다");
+  assert.ok(times.slice(0, -2).every((x) => Number.isFinite(x)));
+  // 건넨 장부는 한 글자도 바뀌지 않았다(줄을 고치거나 순서를 바꾸지 않는다)
+  assert.equal(JSON.stringify(ledger), before);
+});
+
+test("R2-F-08 보통의 장부에서는 전과 같은 줄이 전과 같은 순서로 나온다", async () => {
+  const all = await playAsA();
+  const expected = wallet.accountTransactions(all, A).sort((a, b) => Date.parse(b.at) - Date.parse(a.at)).map((x) => x.id);
+  assert.deepEqual(wallet.walletHistoryRows(all, A).map((x) => x.id), expected);
+  assert.equal(expected.length, 3);
+});

@@ -78,6 +78,58 @@ try {
   await context.close();
 } catch (e) { check("시나리오 실행", false, String(e).slice(0, 300)); }
 
+// 깨진 저장값(migration-audit 의 qa/R2_CYCLE3_claude.md F-08): 시각이 없거나 틀린 줄, 금액이 숫자가 아닌 줄, 모르는 종류의 줄, 낯선 상태의 줄이
+// 보통의 줄 사이에 섞여 있어도 지갑 화면이 오류 화면이 되지 않는다. 읽을 수 있는 줄은 보이고, 저장된 값은 그대로다.
+try {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, locale: "ko-KR", reducedMotion: "reduce" });
+  const state = await makeState("funded", "ko");
+  const key = "voila.browser-wallet.capture-account";
+  const wallet = JSON.parse(state.values[key]);
+  const day = (n) => new Date(Date.now() - n * 86400000).toISOString();
+  const seeded = [
+    { id: "ok-open", type: "open", amountUsdt: -3, at: day(1), ref: "dollar-gaming x1" },
+    { id: "bad-date", type: "open", amountUsdt: -5, at: "not-a-date", ref: "dollar-gaming x1" },
+    { id: "ok-take", type: "sellback", amountUsdt: 12.5, at: day(2), ref: "ok-item", itemIds: ["ok-item"] },
+    { id: "no-date", type: "sellback", amountUsdt: 3, ref: "old-item", itemIds: ["old-item"] },
+    { id: "text-amount", type: "open", amountUsdt: "abc", at: day(3), ref: "dollar-gaming x1" },
+    { id: "no-amount", type: "open", at: day(3), ref: "dollar-gaming x1" },
+    { id: "unknown-type", type: "mystery", amountUsdt: 7, at: day(3) },
+    { id: "odd-status", type: "withdraw", accountId: "capture-account", amountUsdt: -9, status: "WEIRD", at: day(4) },
+  ];
+  wallet.state.transactions = [...seeded, ...wallet.state.transactions];
+  state.values[key] = JSON.stringify(wallet);
+  await installState(context, state, new URL(base).origin);
+  const page = await context.newPage();
+  const errors = [];
+  page.on("console", (m) => { if (m.type() === "error") errors.push(m.text().slice(0, 200)); });
+  page.on("pageerror", (e) => errors.push("pageerror: " + String(e).slice(0, 200)));
+  await page.goto(base + "/ko/wallet", { waitUntil: "networkidle" }); await page.waitForTimeout(800);
+  if (out) await page.screenshot({ path: `${out}/wallet-history-malformed.png`, fullPage: true });
+  const text = (await page.locator("body").innerText()).replace(/\s+/g, " ");
+  check("깨진 줄이 있어도 지갑 화면이 뜬다(오류 화면이 아니다)", !text.includes("화면을 불러오지 못했습니다") && (await page.locator('section[aria-labelledby="wallet-history"]').count()) === 1, text.slice(0, 160));
+  const rows = await page.locator('section[aria-labelledby="wallet-history"] .v-itemrow').evaluateAll((els) => els.map((e) => ({ kind: e.querySelector(".v-card-title")?.textContent?.trim(), meta: e.querySelector(".v-small")?.textContent?.trim(), amount: e.querySelector(".v-num")?.textContent?.trim() })));
+  const has = (kind, amount) => rows.some((r) => r.kind === kind && r.amount === amount);
+  check("보통의 줄은 그대로 보인다(보너스, 박스 열기, USDT로 받기)", has("보너스", "+$10,000") && has("박스 열기", "-$3") && has("USDT로 받기", "+$12.5"), JSON.stringify(rows));
+  check("시각만 깨진 줄은 보이고(종류와 금액은 읽을 수 있다) 시각 자리는 비어 있다", rows.some((r) => r.kind === "박스 열기" && r.amount === "-$5" && r.meta === "") && rows.some((r) => r.kind === "USDT로 받기" && r.amount === "+$3" && r.meta === ""), JSON.stringify(rows));
+  check("시각 없는 줄은 맨 뒤에 놓인다", rows.slice(-2).every((r) => r.meta === "") && rows.slice(0, -2).every((r) => r.meta !== ""), JSON.stringify(rows.map((r) => r.meta)));
+  check("낯선 상태의 줄은 보이되 상태 글은 적지 않는다(문구 키가 그대로 드러나지 않는다)", rows.some((r) => r.kind === "출금" && r.amount === "-$9" && !/WEIRD|wallet\.status/.test(r.meta)), JSON.stringify(rows.find((r) => r.kind === "출금")));
+  check("금액이나 종류를 읽을 수 없는 줄은 내역에 넣지 않는다(줄 여섯, NaN 이나 문구 키가 보이지 않는다)", rows.length === 6 && !/NaN|mystery|wallet\.type|wallet\.status/.test(text), `줄 ${rows.length}개`);
+  // 시각 없는 줄과 낯선 상태의 줄을 눌러도 시트가 열린다
+  await page.locator('section[aria-labelledby="wallet-history"] .v-itemrow', { hasText: "-$5" }).click(); await page.waitForSelector(".v-sheet");
+  let sheet = (await page.locator(".v-sheet").innerText()).replace(/\s+/g, " ");
+  check("시각 없는 줄의 시트가 열린다(제목과 금액)", sheet.includes("박스 열기") && sheet.includes("금액 -$5"), sheet.slice(0, 100));
+  await page.locator(".v-sheet-close").click(); await page.waitForSelector(".v-sheet", { state: "detached" });
+  await page.locator('section[aria-labelledby="wallet-history"] .v-itemrow', { hasText: "-$9" }).click(); await page.waitForSelector(".v-sheet");
+  sheet = (await page.locator(".v-sheet").innerText()).replace(/\s+/g, " ");
+  check("낯선 상태의 줄의 시트가 열린다(상태 행은 적지 않는다)", sheet.includes("출금") && sheet.includes("금액 -$9") && !/WEIRD|wallet\.status/.test(sheet), sheet.slice(0, 100));
+  // 저장된 값은 고쳐 쓰지 않는다: 깨진 줄도 심은 그대로 남아 있다
+  const kept = await page.evaluate(() => { const keys = []; for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i)); return JSON.parse(localStorage.getItem(keys.find((k) => k && k.endsWith("voila.browser-wallet.capture-account")))).state.transactions; });
+  const same = seeded.every((s) => { const k = kept.find((x) => x.id === s.id); return !!k && JSON.stringify(k) === JSON.stringify(s); });
+  check("저장된 장부의 줄은 깨진 것까지 심은 그대로다", same && kept.length === seeded.length + 1, `저장 ${kept.length}건`);
+  check("콘솔 오류 없음(깨진 줄)", errors.length === 0, errors.join(" | "));
+  await context.close();
+} catch (e) { check("깨진 줄 시나리오 실행", false, String(e).slice(0, 300)); }
+
 await browser.close();
 const failed = results.filter((r) => !r.pass);
 if (out) fs.writeFileSync(`${out}/wallet-history-results.json`, JSON.stringify(results, null, 2));

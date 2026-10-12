@@ -10,7 +10,7 @@ import { isUndebitedWithdrawal, useWalletStore, type Transaction } from "@/store
 import { useAuthStore } from "@/stores/authStore";
 import { useFlow } from "@/stores/flowStore";
 import { api, WithdrawalUnknown } from "@/lib/api";
-import { accountTransactions } from "@/lib/browserWallet";
+import { walletHistoryRows } from "@/lib/browserWallet";
 import { EXPLORERS, explorerTxUrl } from "@/lib/withdrawal";
 import { holdCountdown } from "@/lib/withdrawHold";
 import type { Network } from "@/lib/depositAddress";
@@ -20,6 +20,8 @@ import { Confirm, Sheet } from "@/components/ui/Sheet";
 
 const PAGE = 30;
 const OPEN_STATUSES = ["PENDING", "PENDING_ADMIN_REVIEW", "PENDING_72H_HOLD", "BROADCASTING"];
+/** 화면에 이름이 있는 상태 전부(messages 의 wallet.status) */
+const STATUSES: string[] = [...OPEN_STATUSES, "COMPLETED", "CANCELLED", "FAILED"];
 
 export function WalletScreen() {
   const t = useTranslations("v");
@@ -69,12 +71,16 @@ export function WalletScreen() {
   useEffect(() => { setNow(Date.now()); const id = window.setInterval(() => setNow(Date.now()), 60000); return () => window.clearInterval(id); }, []);
 
   // 이 계정의 장부에 든 거래는 계정 번호가 없어도 보여 준다(박스 열기와 USDT로 받기는 번호 없이 적힌다). 다른 계정의 것은 섞이지 않는다
-  const rows = useMemo(() => (user ? accountTransactions(transactions, user.id) : []).sort((a, b) => Date.parse(b.at) - Date.parse(a.at)), [transactions, user]);
+  // 읽을 수 없는 줄(모르는 종류, 숫자가 아닌 금액)은 lib/browserWallet 의 walletHistoryRows 가 걸러 준다. 깨진 저장값 한 줄 때문에 화면이 죽지 않게
+  const rows = useMemo(() => (user ? walletHistoryRows(transactions, user.id) : []), [transactions, user]);
   const current = rows.find((x) => x.id === openId) ?? null;
-  const date = (value: string) => new Intl.DateTimeFormat(locale, { year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(value));
+  // 시각을 읽을 수 없는 줄은 시각 자리를 비운다(Intl 은 틀린 시각에 예외를 던진다)
+  const date = (value: string) => (Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat(locale, { year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(value)) : "");
   const kind = (tx: Transaction) => t("wallet.type." + tx.type);
   const signed = (tx: Transaction) => (tx.amountUsdt > 0 ? "+" : "") + fmt(tx.amountUsdt);
-  const statusOf = (tx: Transaction) => (tx.status && tx.status !== "COMPLETED" ? t("wallet.status." + tx.status) : "");
+  // 이름이 있는 상태만 적는다. 저장값의 낯선 상태는 적지 않는다
+  const known = (tx: Transaction) => !!tx.status && STATUSES.includes(tx.status);
+  const statusOf = (tx: Transaction) => (known(tx) && tx.status !== "COMPLETED" ? t("wallet.status." + tx.status) : "");
   const holdText = (tx: Transaction) => {
     if (tx.status !== "PENDING_72H_HOLD" || !tx.unlockAt || now === null) return "";
     const c = holdCountdown(tx.unlockAt, now);
@@ -119,7 +125,7 @@ export function WalletScreen() {
                   {rows.slice(0, shown).map((tx) => (
                     <li key={tx.id}>
                       <button type="button" className="v-itemrow" onClick={() => { setOpenId(tx.id); setCancelFailed(false); }}>
-                        <span className="v-itemrow-body"><span className="v-card-title">{kind(tx)}</span><span className="v-small">{date(tx.at)}{statusOf(tx) ? ", " + statusOf(tx) : ""}{isUndebitedWithdrawal(tx) ? ", " + t("wallet.notDebitedTag") : ""}</span></span>
+                        <span className="v-itemrow-body"><span className="v-card-title">{kind(tx)}</span><span className="v-small">{[date(tx.at), statusOf(tx), isUndebitedWithdrawal(tx) ? t("wallet.notDebitedTag") : ""].filter(Boolean).join(", ")}</span></span>
                         <span className="v-num">{signed(tx)}</span>
                       </button>
                     </li>
@@ -131,14 +137,14 @@ export function WalletScreen() {
           </>
         )}
 
-      <Sheet open={!!current && !cancelling} onClose={() => setOpenId(null)} title={current ? kind(current) : ""} desc={current ? date(current.at) : undefined} closeLabel={t("common.close")}>
+      <Sheet open={!!current && !cancelling} onClose={() => setOpenId(null)} title={current ? kind(current) : ""} desc={current ? date(current.at) || undefined : undefined} closeLabel={t("common.close")}>
         {current && (
           <>
             <Rows>
               <Row label={t("wallet.amount")}>{signed(current)}</Row>
               {/* 차감하지 않은 출금 요청: 장부 금액은 0 이고, 신청했던 금액은 따로 적는다 */}
               {isUndebitedWithdrawal(current) && <Row label={t("wallet.requested")}>{fmt(current.requestedUsdt ?? 0)}</Row>}
-              {current.status &&<Row label={t("inv.status")}>{t("wallet.status." + current.status)}</Row>}
+              {known(current) && <Row label={t("inv.status")}>{t("wallet.status." + current.status)}</Row>}
               {current.network && <Row label={t("charge.network")}>{current.network}</Row>}
               {typeof current.feeUsdt === "number" && <Row label={t("wallet.fee")}>{fmt(current.feeUsdt)}</Row>}
               {typeof current.netUsdt === "number" && <Row label={t("wallet.net")}>{fmt(current.netUsdt)}</Row>}

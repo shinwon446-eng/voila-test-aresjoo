@@ -1,5 +1,6 @@
-// 후기 쓰기 시트의 초안(migration-audit/PARITY_ISSUES.md E-15): 상품이 바뀌거나 시트가 닫히면 초안이 비워지고,
-// 늦게 끝난 사진 줄이기가 새 사진이나 다음 초안을 덮지 않는다. 보통의 길(쓰고 올리기)은 그대로다.
+// 후기 쓰기 시트의 초안(migration-audit/PARITY_ISSUES.md E-15, CYCLE3_claude.md C3-04).
+// 초안은 그것을 쓰던 상품의 것이다: 다른 상품으로 열면 비어 있고, 같은 상품을 닫았다 다시 열면(닫기 단추, Esc, 바깥 누름) 그대로 남는다.
+// 올린 뒤에는 비워진다. 입력 검증에 걸려도 쓰던 글은 남는다. 늦게 끝난 사진 줄이기가 새 사진이나 다른 상품의 초안을 덮지 않는다.
 //   CAPTURE_BASE=http://localhost:3003 node scripts/capture/flow-review-draft.mjs [출력 폴더]
 // 심는 상태는 states.mjs 의 inventory(보관 상품 둘, 둘 다 후기를 쓸 수 있다).
 // 사진 줄이기를 늦추려고 이 브라우저 안에서만 HTMLImageElement.decode 를 감싼다(앱 소스는 건드리지 않는다).
@@ -63,12 +64,43 @@ await run("a", async () => {
   await s.openReview(1); await s.page.waitForTimeout(200);
   const other = await s.draft(); await s.shot("a2-second-item");
   check("a", "다른 상품의 후기 시트는 빈 초안으로 열린다(별점 5, 글 없음, 사진 없음)", same(other, 5, "", null), JSON.stringify(other));
+  // 둘째 상품에 쓰다 닫고 첫 상품으로 돌아가도 둘째의 글이 넘어오지 않는다(첫 상품의 옛 초안은 다른 상품을 열 때 비워졌다)
   await s.page.locator("textarea.v-input").fill("둘째 상품에 쓰던 글입니다.");
   await s.closeAll();
-  await s.openReview(1); await s.page.waitForTimeout(200);
-  const again = await s.draft();
-  check("a", "같은 상품이라도 닫았다 다시 열면 빈 초안이다", same(again, 5, "", null), JSON.stringify(again));
+  await s.openReview(0); await s.page.waitForTimeout(200);
+  const back = await s.draft();
+  check("a", "다시 첫 상품으로 열어도 둘째 상품의 글이 넘어오지 않는다(빈 초안)", same(back, 5, "", null), JSON.stringify(back));
   check("a", "콘솔 오류 없음", s.errors.length === 0, s.errors.join(" | "));
+  await s.context.close();
+});
+
+// e: 같은 상품의 시트를 닫았다 다시 열면 쓰던 초안이 그대로 남는다(C3-04). 닫는 길 셋: 닫기 단추, Esc, 바깥 누름
+await run("e", async () => {
+  const s = await session();
+  const TEXT = "쓰다가 잘못 눌러 닫아도 남아 있어야 하는 글입니다.";
+  await s.openReview(0);
+  await s.page.locator(".v-sheet .v-chip").nth(2).click();
+  await s.page.locator("textarea.v-input").fill(TEXT);
+  await s.pickPhoto("red"); await s.page.waitForSelector(".v-review-photo img"); await s.page.waitForTimeout(200);
+  const paths = [
+    ["닫기 단추", () => s.page.locator(".v-sheet-close").click()],
+    ["Esc", () => s.page.keyboard.press("Escape")],
+    ["바깥 누름", () => s.page.mouse.click(8, 8)],
+  ];
+  for (const [name, close] of paths) {
+    await close(); await s.page.waitForSelector("textarea.v-input", { state: "detached", timeout: 5000 });
+    // 상품 상세로 돌아와 있다. 같은 상품의 후기 쓰기를 다시 연다
+    await s.page.getByText("후기 쓰기", { exact: true }).click(); await s.page.waitForSelector("textarea.v-input"); await s.page.waitForTimeout(250);
+    const kept = await s.draft();
+    check("e", `닫는 길 ${name}: 닫았다 같은 상품을 다시 열면 별점, 글, 사진이 그대로다`, same(kept, 3, TEXT, "red"), JSON.stringify(kept));
+  }
+  await s.shot("e1-draft-kept");
+  // 상품 상세까지 닫았다가 목록에서 같은 상품을 다시 열어도 남아 있다
+  await s.closeAll();
+  await s.openReview(0); await s.page.waitForTimeout(250);
+  const kept = await s.draft();
+  check("e", "상품 상세까지 닫았다 목록에서 같은 상품을 다시 열어도 그대로다", same(kept, 3, TEXT, "red"), JSON.stringify(kept));
+  check("e", "콘솔 오류 없음", s.errors.length === 0, s.errors.join(" | "));
   await s.context.close();
 });
 
@@ -107,6 +139,12 @@ await run("c", async () => {
 await run("d", async () => {
   const s = await session();
   await s.openReview(0);
+  // 입력 검증에 걸리면(글이 너무 짧다) 그 자리에 한 줄이 뜨고, 쓰던 글과 별점은 남는다
+  await s.page.locator(".v-sheet .v-chip").nth(1).click();
+  await s.page.locator("textarea.v-input").fill("짧음");
+  await s.page.getByRole("button", { name: "후기 올리기" }).click(); await s.page.waitForTimeout(250);
+  const rejected = await s.draft();
+  check("d", "글이 짧아 올리지 못하면 한 줄로 알리고, 쓰던 글과 별점은 남는다", same(rejected, 2, "짧음", null) && (await s.page.locator(".v-sheet .v-line--fail").count()) === 1 && (await s.mine()).length === 0, JSON.stringify(rejected));
   await s.page.locator(".v-sheet .v-chip").nth(3).click();
   await s.page.locator("textarea.v-input").fill("배송 잘 받았습니다. 상자 상태도 좋았습니다.");
   await s.pickPhoto("blue"); await s.page.waitForSelector(".v-review-photo img"); await s.page.waitForTimeout(200);

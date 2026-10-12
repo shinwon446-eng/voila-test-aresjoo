@@ -40,9 +40,12 @@ export function ReviewSheet({ item, itemName, onClose, onDone }: { item: OwnedIt
   const generation = useRef(0);
   const alive = useRef(true);
   useEffect(() => { alive.current = true; return () => { alive.current = false; }; }, []);
-  // 상품이 바뀌거나 시트가 닫히면 초안(별점, 글, 사진, 실패 한 줄)을 비운다. 다른 상품의 후기로 넘어가지 않게
-  const itemId = item?.id ?? null;
-  useEffect(() => { generation.current += 1; setRating(5); setText(""); setPhoto(undefined); setFailed(null); }, [itemId]);
+  // 초안(별점, 글, 사진, 실패 한 줄)은 그것을 쓰던 상품의 것이다. 시트가 다른 상품으로 열리면 비운다(앞 상품의 글이 넘어가지 않게).
+  // 닫았다가 같은 상품으로 다시 열면 그대로 둔다: Esc 나 바깥을 잘못 눌러 닫아도 쓰던 글을 잃지 않는다(원본과 같다).
+  // 렌더 중에 맞춘다(effect 로 미루면 앞 상품의 글이 한 번 그려진다)
+  const [draftFor, setDraftFor] = useState<string | null>(null);
+  const clear = () => { generation.current += 1; setRating(5); setText(""); setPhoto(undefined); setFailed(null); };
+  if (item && item.id !== draftFor) { setDraftFor(item.id); clear(); }
 
   const pick = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -55,7 +58,7 @@ export function ReviewSheet({ item, itemName, onClose, onDone }: { item: OwnedIt
     if (!item) return;
     if (text.trim().length < REVIEW_MIN_CHARS) { setFailed("short"); return; }
     setBusy(true);
-    try { add({ ownedId: item.id, boxSlug: item.boxSlug, itemId: item.itemId, text, rating, photo, bonusUsdt: 0 }); setText(""); setPhoto(undefined); onDone(); }
+    try { add({ ownedId: item.id, boxSlug: item.boxSlug, itemId: item.itemId, text, rating, photo, bonusUsdt: 0 }); clear(); setDraftFor(null); onDone(); }
     catch { setFailed("save"); }
     finally { setBusy(false); }
   };

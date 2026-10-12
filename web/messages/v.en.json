@@ -496,6 +496,7 @@
     "codeRule": "Enter the 6-digit authenticator code.",
     "passwordNeedsApp": "Connect an authenticator app first, then change your password.",
     "passwordWrong": "The current password is not right. After {n} wrong tries, password change locks.",
+    "passwordLocked": "Password change is locked after {n} wrong tries of the current password. Log out, then set a new password with Reset password on the login sheet to unlock it.",
     "codeWrong": "The authenticator code is not right.",
     "passwordSame": "The new password is the same as the current one. Enter a different password.",
     "passwordSave": "Change password",

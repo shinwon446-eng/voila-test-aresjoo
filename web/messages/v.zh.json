@@ -496,6 +496,7 @@
     "codeRule": "请输入 6 位验证器验证码。",
     "passwordNeedsApp": "请先连接验证器应用，然后再修改密码。",
     "passwordWrong": "当前密码不正确。输错 {n} 次后，密码修改将被锁定。",
+    "passwordLocked": "当前密码已输错 {n} 次，密码修改已锁定。请退出登录后，在登录界面通过重设密码设置新密码，即可解除锁定。",
     "codeWrong": "验证器验证码不正确。",
     "passwordSame": "新密码与当前密码相同。请输入不同的密码。",
     "passwordSave": "修改密码",

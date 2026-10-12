@@ -63,6 +63,9 @@ export function PasswordSheet({ open, onClose }: { open: boolean; onClose: () =>
   const failureText = (cause: unknown) => {
     const reason = cause instanceof AccountActionError ? cause.reason : null;
     if (reason === "password_mismatch") return t("account.passwordWrong", { n: PASSWORD_FAILURE_LIMIT });
+    // 현재 비밀번호를 여러 번 틀려 잠긴 계정: 맞는 값을 넣어도 서비스가 받지 않는다. 잠겼다고 말하고, 이 앱에 있는 빠져나갈 길을 알린다
+    // (로그인 시트의 비밀번호 재설정을 마치면 서비스가 틀린 횟수를 0 으로 되돌린다. 이메일 코드로 잠금만 푸는 화면은 지금 없다)
+    if (reason === "password_locked") return t("account.passwordLocked", { n: PASSWORD_FAILURE_LIMIT });
     if (reason === "code_invalid") return t("account.codeWrong");
     if (reason === "password_reused") return t("account.passwordSame");
     if (reason === "password_invalid") return t("account.passwordRule");

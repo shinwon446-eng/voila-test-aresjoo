@@ -20,6 +20,7 @@ const NEW_PASSWORD = "Changed-only-456789";
 const WRONG_PASSWORD = "현재 비밀번호가 맞지 않습니다. 5번 틀리면 비밀번호 바꾸기가 잠깁니다.";
 const WRONG_CODE = "인증 앱 코드가 맞지 않습니다.";
 const SAME_PASSWORD = "새 비밀번호가 현재 비밀번호와 같습니다. 다른 비밀번호를 넣습니다.";
+const LOCKED = "현재 비밀번호를 5번 틀려 비밀번호 바꾸기가 잠겼습니다. 로그아웃한 뒤 로그인 화면의 비밀번호 재설정으로 새 비밀번호를 정하면 풀립니다.";
 const hashOf = (password, salt) => pbkdf2Sync(password, salt, 210000, 32, "sha256").toString("hex");
 
 /** 인증 앱이 보여 줄 6자리(RFC 6238, 30초, SHA-1) */
@@ -174,6 +175,67 @@ await run("e", async () => {
   const auth = await s.page.evaluate(() => { const st = window.__authStore.getState(); return { user: st.user?.id ?? null, sessionLost: st.sessionLost }; });
   check("e", "비밀번호는 바뀌었다(요청한 계정의 것)", after.passwordHash === hashOf(NEW_PASSWORD, after.salt));
   check("e", "그 사이에 들어온 다른 계정의 로그인은 그대로다(세션 끝남으로 바뀌지 않는다)", auth.user === "other-account" && auth.sessionLost === false, JSON.stringify(auth));
+  await s.context.close();
+});
+
+// g: 현재 비밀번호를 다섯 번 틀리면 비밀번호 바꾸기가 잠긴다(C3-02). 시트가 잠겼다고 말하고, 이 앱에 있는 빠져나갈 길을 알린다:
+//    로그아웃한 뒤 로그인 화면의 비밀번호 재설정. 그 길을 실제로 끝까지 가서 잠금이 풀리는지 본다.
+//    (이 시험 장부의 비밀번호 재설정은 인증 코드를 자릿수로만 본다. 잠금의 규칙과 횟수는 계정 서비스의 것 그대로다.)
+await run("g", async () => {
+  const s = await session("security");
+  const RESET_PASSWORD = "Reset-only-123456789";
+  const before = await s.saved();
+  await s.openSheet();
+  for (let i = 1; i <= 5; i++) {
+    await s.fill({ current: "Wrong-password-000000", next: NEW_PASSWORD, code: totp(s.state.account.secret) });
+    await s.press();
+    const lines = await s.failLines(); const now = await s.saved();
+    if (i < 5) check("g", `틀린 현재 비밀번호 ${i}번째: 맞지 않는다는 한 줄, 횟수 ${i}`, lines.length === 1 && lines[0] === WRONG_PASSWORD && now.failures === i, JSON.stringify({ lines, failures: now.failures }));
+    else check("g", "다섯 번째: 잠겼다고 말하고 빠져나갈 길을 알린다", lines.length === 1 && lines[0] === LOCKED && now.failures === 5, JSON.stringify({ lines, failures: now.failures }));
+  }
+  await s.shot("g1-locked");
+  await s.fill({ current: credentials.password, next: NEW_PASSWORD, code: totp(s.state.account.secret) });
+  await s.press();
+  let lines = await s.failLines(); let now = await s.saved();
+  check("g", "잠긴 뒤에는 맞는 값을 넣어도 같은 한 줄이다(뭉뚱그린 글이 아니다). 바뀌지 않는다", lines.length === 1 && lines[0] === LOCKED && now.passwordHash === before.passwordHash && now.failures === 5, JSON.stringify(lines));
+  // 새로 고쳐도 잠겨 있고, 같은 한 줄이 나온다
+  await s.page.reload({ waitUntil: "networkidle" });
+  await s.openSheet();
+  await s.fill({ current: credentials.password, next: NEW_PASSWORD, code: totp(s.state.account.secret) });
+  await s.press();
+  lines = await s.failLines();
+  check("g", "새로 고친 뒤에도 잠겨 있고 같은 한 줄이다", lines.length === 1 && lines[0] === LOCKED && (await s.saved()).failures === 5, JSON.stringify(lines));
+  // 빠져나갈 길: 로그아웃한 뒤 로그인 화면의 비밀번호 재설정
+  await s.page.locator(".v-sheet-close").click(); await s.page.waitForSelector(".v-sheet", { state: "detached" });
+  await s.page.getByRole("button", { name: "로그아웃", exact: true }).click();
+  await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(600); await s.page.locator('[role="alertdialog"] .v-btn').click();
+  await s.page.waitForSelector('[role="alertdialog"]', { state: "detached", timeout: 8000 });
+  await s.page.locator("main").getByRole("button", { name: "로그인", exact: true }).click();
+  const submit = () => s.page.locator(".v-sheet form .v-btn").click();
+  await s.page.getByLabel("이메일 주소", { exact: true }).fill(credentials.email); await submit();
+  await s.page.getByLabel("비밀번호", { exact: true }).waitFor({ timeout: 8000 });
+  await s.page.locator(".v-sheet").getByRole("button", { name: "비밀번호 재설정", exact: true }).click();
+  await s.page.getByLabel("이메일 주소", { exact: true }).waitFor({ timeout: 8000 });
+  await s.page.getByLabel("이메일 주소", { exact: true }).fill(credentials.email); await submit();
+  await s.page.getByLabel("인증 코드", { exact: true }).waitFor({ timeout: 8000 });
+  await s.page.getByLabel("인증 코드", { exact: true }).fill("123456"); await s.page.locator('.v-sheet form input[type="password"]').fill(RESET_PASSWORD); await submit();
+  await s.page.locator(".v-sheet").getByRole("button", { name: "이메일로 로그인", exact: true }).waitFor({ timeout: 20000 }); await s.shot("g2-reset-done");
+  now = await s.saved();
+  check("g", "비밀번호 재설정을 마치면 틀린 횟수가 0 으로 돌아간다(잠금이 풀린다)", now.failures === 0 && now.passwordHash === hashOf(RESET_PASSWORD, now.salt), JSON.stringify({ failures: now.failures }));
+  await s.page.locator(".v-sheet").getByRole("button", { name: "이메일로 로그인", exact: true }).click();
+  await s.page.getByLabel("이메일 주소", { exact: true }).waitFor({ timeout: 8000 });
+  await s.page.getByLabel("이메일 주소", { exact: true }).fill(credentials.email); await submit();
+  await s.page.getByLabel("비밀번호", { exact: true }).waitFor({ timeout: 8000 });
+  await s.page.getByLabel("비밀번호", { exact: true }).fill(RESET_PASSWORD); await submit();
+  await s.page.waitForSelector(".v-sheet", { state: "detached", timeout: 20000 }); await s.page.waitForTimeout(500);
+  check("g", "재설정한 비밀번호로 로그인된다", (await s.saved()).session);
+  // 풀린 뒤에는 비밀번호 바꾸기가 끝까지 간다
+  await s.openSheet();
+  await s.fill({ current: RESET_PASSWORD, next: NEW_PASSWORD, code: totp(s.state.account.secret) });
+  await s.press();
+  now = await s.saved(); const text = await s.sheet();
+  check("g", "풀린 뒤에는 비밀번호 바꾸기가 끝까지 간다", text.includes("비밀번호를 바꿨습니다") && now.passwordHash === hashOf(NEW_PASSWORD, now.salt), text.slice(0, 80));
+  check("g", "콘솔 오류 없음", s.errors.length === 0, s.errors.join(" | "));
   await s.context.close();
 });
 

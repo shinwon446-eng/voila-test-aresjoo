@@ -49,7 +49,9 @@ test("E-08 확인창: 확정 단추는 뜬 직후의 잠금을 거치고, 잠금
   assert.doesNotMatch(confirm, /<Button onClick=\{onConfirm\}/, "확정 단추가 잠금 없이 onConfirm 을 부른다");
   assert.match(confirm, /<Button onClick=\{confirm\} busy=\{busy\} busyLabel=\{busyLabel\}>/);
   // 길이는 결과 화면과 같은 상수를 쓴다(lib/openingFlow 의 OPENING_ARM_DELAY_MS)
-  assert.match(confirm, /Date\.now\(\) - shownAt\.current >= OPENING_ARM_DELAY_MS/);
+  // 잠금은 흐른 시간(performance.now)으로 잰다. 기기의 시각(Date.now)으로 재면 시각이 뒤로 갔을 때 잠금이 그만큼 늘어난다(R2-P1-01)
+  assert.match(confirm, /performance\.now\(\) - shownAt\.current >= OPENING_ARM_DELAY_MS/);
+  assert.doesNotMatch(confirm.replace(/\/\/.*$/gm, ""), /Date\.now/, "확인창이 기기의 시각으로 시간을 잰다");
   assert.match(src, /import \{ OPENING_ARM_DELAY_MS \} from "@\/lib\/openingFlow";/);
   // 취소는 잠그지 않는다
   assert.match(confirm, /<TextLink onClick=\{\(\) => \{ if \(!busy\) onCancel\(\); \}\}>/);

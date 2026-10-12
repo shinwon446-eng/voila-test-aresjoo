@@ -35,10 +35,11 @@ export function Confirm({ open, onCancel, onConfirm, title, desc, confirmLabel, 
   useModal(open, () => { if (!busy) onCancel(); }, panel);
   // 확인창이 뜬 직후에는 확정 단추가 눌리지 않는다. 모바일에서 확정 단추가 앞 시트의 주 단추와 같은 자리에 와서,
   // 같은 자리를 빠르게 두 번 누른 둘째 누름이 확인창을 읽기 전에 확정이 되던 것을 막는다(결과 화면의 잠금과 같은 장치, 같은 길이).
-  // 단추를 disabled 로 만들지 않는다: 모양과 초점은 그대로이고 그동안의 누름만 버린다. 취소와 Esc 는 잠그지 않는다
+  // 단추를 disabled 로 만들지 않는다: 모양과 초점은 그대로이고 그동안의 누름만 버린다. 취소와 Esc 는 잠그지 않는다.
+  // 잠금은 흐른 시간(performance.now)으로 잰다. 기기의 시각으로 재면, 확인창이 떠 있는 동안 시각이 뒤로 갔을 때 그만큼 잠금이 늘어나 확정이 눌리지 않는다
   const shownAt = useRef<number | null>(null);
-  if (!open) shownAt.current = null; else if (shownAt.current === null) shownAt.current = Date.now();
-  const confirm = () => { if (shownAt.current !== null && Date.now() - shownAt.current >= OPENING_ARM_DELAY_MS) onConfirm(); };
+  if (!open) shownAt.current = null; else if (shownAt.current === null) shownAt.current = performance.now();
+  const confirm = () => { if (shownAt.current !== null && performance.now() - shownAt.current >= OPENING_ARM_DELAY_MS) onConfirm(); };
   if (!open) return null;
   return (
     <div className="v-scrim" onMouseDown={(e) => { if (e.target === e.currentTarget && !busy) onCancel(); }}>

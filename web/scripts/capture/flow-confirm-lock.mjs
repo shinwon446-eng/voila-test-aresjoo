@@ -146,6 +146,65 @@ await run("e", async () => {
   await s.context.close();
 });
 
+// f, g: 잠금은 흐른 시간으로 잰다. 기기의 시각이 바뀌어도 늘거나 줄지 않는다(migration-audit/R2_CYCLE3_codex.md P1-01).
+/** 확인창이 실제로 나타난 순간을 흐른 시간(performance.now)으로 적어 둔다 */
+const watchDialog = (page) => page.evaluate(() => {
+  window.__shownAt = null;
+  new MutationObserver(() => { if (window.__shownAt === null && document.querySelector('[role="alertdialog"]')) window.__shownAt = performance.now(); }).observe(document.body, { childList: true, subtree: true });
+});
+/** 이 화면의 시각(Date.now)을 ms 만큼 옮긴다. 흐른 시간(performance.now)은 건드리지 않는다 */
+const shiftClock = (page, ms) => page.evaluate((ms) => { const real = Date.now.bind(Date); Date.now = () => real() + ms; }, ms);
+
+// f: 확인창이 뜬 뒤 시각이 60초 뒤로 가도, 실제로 0.45초를 기다린 누름은 확정이다(받기와 로그아웃)
+await run("f", async () => {
+  let s = await session();
+  const at = await s.openItem();
+  await s.page.touchscreen.tap(at.x, at.y); await s.page.waitForSelector(CONFIRM);
+  await shiftClock(s.page, -60000);
+  await s.page.waitForTimeout(450);
+  await s.page.locator(CONFIRM).click();
+  const closed = await s.page.waitForSelector('[role="alertdialog"]', { state: "detached", timeout: 4000 }).then(() => true, () => false);
+  await s.page.waitForTimeout(400);
+  const l = await s.ledger();
+  check("f", "시각이 60초 뒤로 간 뒤에도 0.45초 기다린 확정은 받아진다(받기)", closed && l.sold === 1 && l.sellbacks.length === 1, JSON.stringify(l));
+  await s.context.close();
+  s = await session({ path: "/ko/account" });
+  await s.page.getByRole("button", { name: "로그아웃", exact: true }).click(); await s.page.waitForSelector(CONFIRM);
+  await shiftClock(s.page, -60000);
+  await s.page.waitForTimeout(450);
+  await s.page.locator(CONFIRM).click();
+  const out = await s.page.waitForSelector('[role="alertdialog"]', { state: "detached", timeout: 4000 }).then(() => true, () => false);
+  await s.page.waitForTimeout(400);
+  check("f", "시각이 60초 뒤로 간 뒤에도 0.45초 기다린 확정은 받아진다(로그아웃)", out && !(await s.ledger()).session);
+  await s.context.close();
+});
+
+// g: 확인창이 뜬 직후 시각이 60초 앞으로 가도, 실제로 0.1초밖에 지나지 않은 누름은 확정이 아니다(잠금이 줄지 않는다)
+await run("g", async () => {
+  const s = await session();
+  const at = await s.openItem();
+  await watchDialog(s.page);
+  await s.page.touchscreen.tap(at.x, at.y); await s.page.waitForSelector(CONFIRM);
+  // 시각을 앞으로 옮기고, 확인창이 뜬 지 0.1초가 되는 때에 확정 단추를 누른다. 누른 때의 실제 경과를 돌려받는다
+  const pressedAt = await s.page.evaluate(async (sel) => {
+    const real = Date.now.bind(Date); Date.now = () => real() + 60000;
+    const wait = 100 - (performance.now() - window.__shownAt);
+    if (wait > 0) await new Promise((done) => setTimeout(done, wait));
+    document.querySelector(sel).click();
+    return Math.round(performance.now() - window.__shownAt);
+  }, CONFIRM);
+  await s.page.waitForTimeout(250);
+  let l = await s.ledger();
+  check("g", "누름은 확인창이 뜬 지 0.35초가 되기 전이었다", pressedAt < 350, pressedAt + "ms");
+  check("g", "시각이 60초 앞으로 갔어도 그 누름은 확정이 아니다(받아지지 않고 확인창이 떠 있다)", l.sold === 0 && l.sellbacks.length === 0 && (await s.dialogOpen()), JSON.stringify(l));
+  await s.page.waitForTimeout(AFTER_LOCK); await s.page.locator(CONFIRM).click();
+  await s.page.waitForSelector('[role="alertdialog"]', { state: "detached", timeout: 8000 }); await s.page.waitForTimeout(400);
+  l = await s.ledger();
+  check("g", "잠금이 지난 뒤의 누름은 확정이다(한 번만 받아진다)", l.sold === 1 && l.sellbacks.length === 1, JSON.stringify(l));
+  check("g", "콘솔 오류 없음", s.errors.length === 0, s.errors.join(" | "));
+  await s.context.close();
+});
+
 await browser.close();
 const failed = results.filter((r) => !r.pass);
 if (out) fs.writeFileSync(`${out}/confirm-lock-results.json`, JSON.stringify(results, null, 2));

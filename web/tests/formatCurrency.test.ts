@@ -86,3 +86,41 @@ test("splitCurrency — 숫자·단위 분리가 formatCurrency 와 같은 문�
   assert.deepEqual(splitCurrency(80, "KRW"), { prefix: "₩", number: "110,000", suffix: "" });
   assert.deepEqual(splitNative(70000, "KRW"), { prefix: "₩", number: "70,000", suffix: "" });
 });
+
+// E-14(migration-audit/PARITY_ISSUES.md): 달러 표기에서 음수의 빼기 표시가 통화 기호 뒤에 왔다($-50). 지갑 내역의 박스 열기와 출금 줄이 그렇게 보였다.
+const all = (v: number, c: (typeof CURRENCIES)[number]) => [formatCurrency(v, c), formatNative(v, c), formatCurrencyCompact(v, c)].join("|");
+const u = (text: string) => text.replace(/ /g, " ");
+
+test("E-14 음수는 빼기 표시가 통화 기호 앞에 온다: -$50, -₩60,000, -50 USDT", () => {
+  assert.equal(formatCurrency(-50, "USD"), "-$50");
+  assert.equal(formatCurrency(-1, "USD"), "-$1");
+  assert.equal(formatCurrency(-0.5, "USD"), "-$0.5");
+  assert.equal(formatCurrency(-1234.567, "USD"), "-$1,234.57");
+  assert.equal(formatCurrency(-95700, "USD"), "-$95,700");
+  // 이미 그 통화 단위인 금액(환산 없음)도 같다. 원화는 여기서 기호 뒤에 빼기가 왔다(₩-50)
+  assert.equal(formatNative(-50, "USD"), "-$50");
+  assert.equal(formatNative(-70000, "KRW"), "-₩70,000");
+  // 좁은 자리 표기는 음수를 줄이지 않고 보통 표기를 그대로 쓴다
+  assert.equal(formatCurrencyCompact(-50, "USD"), "-$50");
+  assert.equal(formatCurrencyCompact(-95700, "USD"), "-$95,700");
+  // 원화 환산과 USDT 는 원래 빼기가 앞에 있었다. 그대로다
+  assert.equal(formatCurrency(-50, "KRW"), "-₩60,000");
+  assert.equal(formatCurrency(-1, "KRW"), "-₩1,380");
+  assert.equal(formatCurrency(-50, "USDT"), u("-50 USDT"));
+  assert.equal(formatNative(-20, "USDT"), u("-20 USDT"));
+  // 어느 통화, 어느 표기에서도 기호 바로 뒤에 빼기가 오지 않는다
+  for (const c of CURRENCIES) for (const v of [-0.001, -0.5, -1, -50, -1234.567, -95700]) assert.doesNotMatch(all(v, c), /[$₩]-/, `${c} ${v}: ${all(v, c)}`);
+  // 빼기 표시의 자리만 옮긴다. 반올림해 0 이 되는 음수에 붙던 빼기 표시도 그대로 남는다($-0 이던 것이 -$0)
+  assert.equal(formatCurrency(-0.001, "USD"), "-$0");
+});
+
+test("E-14 양수와 0 의 표기는 고치기 전과 한 글자도 다르지 않다(기준 커밋의 출력)", () => {
+  const values = [0, 0.01, 0.5, 1, 7.2, 14.49, 80, 999.99, 1234.5, 12900, 95700, 1250000];
+  // 보통 표기 | 환산 없는 표기 | 좁은 자리 표기. 고치기 전의 lib/formatCurrency.ts 를 돌려 얻은 값이다
+  const before: Record<(typeof CURRENCIES)[number], string[]> = {
+    USDT: ["0 USDT|0 USDT|0 USDT", "0.01 USDT|0.01 USDT|0.01 USDT", "0.5 USDT|0.5 USDT|0.5 USDT", "1 USDT|1 USDT|1 USDT", "7.2 USDT|7.2 USDT|7.2 USDT", "14.49 USDT|14.49 USDT|14.49 USDT", "80 USDT|80 USDT|80 USDT", "999.99 USDT|999.99 USDT|999.99 USDT", "1,234.5 USDT|1,234.5 USDT|1,234.5 USDT", "12,900 USDT|12,900 USDT|13K USDT", "95,700 USDT|95,700 USDT|96K USDT", "1,250,000 USDT|1,250,000 USDT|1M USDT"].map(u),
+    USD: ["$0|$0|$0", "$0.01|$0.01|$0.01", "$0.5|$0.5|$0.5", "$1|$1|$1", "$7.2|$7.2|$7.2", "$14.49|$14.49|$14.49", "$80|$80|$80", "$999.99|$999.99|$999.99", "$1,234.5|$1,234.5|$1,234.5", "$12,900|$12,900|$13K", "$95,700|$95,700|$96K", "$1,250,000|$1,250,000|$1M"],
+    KRW: ["₩0|₩0|₩0", "₩14|₩0|₩14", "₩690|₩1|₩690", "₩1,380|₩1|₩1,380", "₩9,936|₩7|₩9,936", "₩10,000|₩14|₩2만", "₩110,000|₩80|₩11만", "₩1,370,000|₩1,000|₩138만", "₩1,700,000|₩1,235|₩170만", "₩17,800,000|₩12,900|₩1780만", "₩132,060,000|₩95,700|₩1억", "₩1,725,000,000|₩1,250,000|₩17억"],
+  };
+  for (const c of CURRENCIES) assert.deepEqual(values.map((v) => all(v, c)), before[c], c);
+});

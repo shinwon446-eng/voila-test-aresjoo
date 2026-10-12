@@ -15,10 +15,13 @@ import { DEFAULT_RATES, type Currency } from "@/stores/currencyStore";
 /** 숫자와 단위 사이는 줄바꿈 금지 공백, "1 / USDT" 로 쪼개지지 않는다 */
 export const NBSP = " ";
 
+/** 음수의 빼기 표시는 통화 기호 앞에 둔다(-$50). 숫자에 붙은 채로 기호 뒤에 오지 않게 한다($-50). 양수와 0 은 그대로다 */
+const signFirst = (symbol: string, n: string) => (n.startsWith("-") ? `-${symbol}${n.slice(1)}` : `${symbol}${n}`);
+
 const SPEC: Record<Currency, { decimals: number; render: (n: string) => string }> = {
   USDT: { decimals: 2, render: (n) => `${n}${NBSP}USDT` },
-  USD: { decimals: 2, render: (n) => `$${n}` },
-  KRW: { decimals: 0, render: (n) => `₩${n}` },
+  USD: { decimals: 2, render: (n) => signFirst("$", n) },
+  KRW: { decimals: 0, render: (n) => signFirst("₩", n) },
 };
 
 /** 자릿수 표기, 최소 0, 최대 decimals. "32.00" 같은 꼬리 0 은 붙이지 않는다. */

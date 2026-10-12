@@ -60,6 +60,9 @@ try {
   const rows = await rowsOf(); if (out) await page.screenshot({ path: `${out}/wallet-history.png`, fullPage: true });
   const kinds = rows.map((r) => r.kind);
   check("내역에 박스 열기 줄이 나온다(금액은 음수)", rows.some((r) => r.kind === "박스 열기" && r.amount.includes("-")), JSON.stringify(rows));
+  // E-14: 음수의 빼기 표시는 통화 기호 앞에 온다(-$1). 기호 뒤에 오지 않는다($-1)
+  const negative = rows.filter((r) => r.amount.includes("-"));
+  check("음수 금액은 빼기 표시가 통화 기호 앞에 온다", negative.length > 0 && negative.every((r) => /^-\$\d/.test(r.amount)), JSON.stringify(rows.map((r) => r.amount)));
   check("내역에 USDT로 받기 줄이 나온다(받은 금액 그대로)", rows.some((r) => r.kind === "USDT로 받기" && (r.amount === "+$950" || r.amount === "+$521.55")), JSON.stringify(rows));
   check("보너스 줄은 그대로 있다", rows.filter((r) => r.kind === "보너스" && r.amount === "+$10,000").length === 1, JSON.stringify(rows));
   check("내역의 줄 수가 이 계정의 장부에 든 거래 수와 같다", rows.length === ledger.tx.length, `화면 ${rows.length}줄, 장부 ${ledger.tx.length}건: ${kinds.join(", ")}`);
@@ -70,7 +73,7 @@ try {
   await page.locator('section[aria-labelledby="wallet-history"] .v-itemrow', { hasText: "박스 열기" }).first().click();
   await page.waitForSelector(".v-sheet"); if (out) await page.screenshot({ path: `${out}/wallet-history-open-row.png` });
   const sheet = (await page.locator(".v-sheet").innerText()).replace(/\s+/g, " ");
-  check("박스 열기 줄을 누르면 그 거래의 시트가 열린다(제목과 금액)", sheet.includes("박스 열기") && sheet.includes("금액"), sheet.slice(0, 120));
+  check("박스 열기 줄을 누르면 그 거래의 시트가 열린다(제목과 금액, 금액도 -$ 꼴)", sheet.includes("박스 열기") && /금액 -\$\d/.test(sheet) && !sheet.includes("$-"), sheet.slice(0, 120));
   check("콘솔 오류 없음", errors.length === 0, errors.join(" | "));
   await context.close();
 } catch (e) { check("시나리오 실행", false, String(e).slice(0, 300)); }

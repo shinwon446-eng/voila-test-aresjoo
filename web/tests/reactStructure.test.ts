@@ -41,3 +41,16 @@ for (const path of ["components/box/Reveal.tsx", "components/inventory/Inventory
     assert.ok(awaits[0][1].startsWith("if (!alive.current) return;"), "받기 응답 바로 뒤에 화면이 남아 있는지 보지 않는다: " + awaits[0][1]);
   });
 }
+
+test("E-08 확인창: 확정 단추는 뜬 직후의 잠금을 거치고, 잠금의 길이는 결과 화면의 잠금과 같다", () => {
+  const src = read("components/ui/Sheet.tsx");
+  const confirm = src.slice(src.indexOf("export function Confirm("));
+  // 확정 단추가 onConfirm 을 곧바로 부르지 않는다(잠금을 거치는 confirm 을 부른다). 단추를 disabled 로 잠그지 않는다(모양이 달라진다)
+  assert.doesNotMatch(confirm, /<Button onClick=\{onConfirm\}/, "확정 단추가 잠금 없이 onConfirm 을 부른다");
+  assert.match(confirm, /<Button onClick=\{confirm\} busy=\{busy\} busyLabel=\{busyLabel\}>/);
+  // 길이는 결과 화면과 같은 상수를 쓴다(lib/openingFlow 의 OPENING_ARM_DELAY_MS)
+  assert.match(confirm, /Date\.now\(\) - shownAt\.current >= OPENING_ARM_DELAY_MS/);
+  assert.match(src, /import \{ OPENING_ARM_DELAY_MS \} from "@\/lib\/openingFlow";/);
+  // 취소는 잠그지 않는다
+  assert.match(confirm, /<TextLink onClick=\{\(\) => \{ if \(!busy\) onCancel\(\); \}\}>/);
+});

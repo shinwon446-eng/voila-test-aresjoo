@@ -104,7 +104,8 @@ for (let n = 1; n <= opens; n++) {
   await target.click();
   // 큰 금액 확인창이 뜨면 확인을 누른다
   const confirm = page.locator('[role="alertdialog"] .v-btn');
-  if (await confirm.count().catch(() => 0)) { await shot(`${id}-confirm`); await confirm.first().click(); }
+  // 확인창은 뜬 뒤 0.35초 동안 확정 단추가 눌리지 않는다(components/ui/Sheet.tsx 의 Confirm). 그보다 길게 기다린 뒤 누른다
+  if (await confirm.count().catch(() => 0)) { await shot(`${id}-confirm`); await page.waitForTimeout(500); await confirm.first().click(); }
   const start = Date.now();
   if (flag("skip")) { await page.waitForTimeout(250); await page.mouse.click(width / 2, height / 2); }
   if (!flag("cast") && (n === 1 || flag("allframes"))) {

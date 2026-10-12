@@ -54,7 +54,8 @@ async function session({ balance = 10000, preset = "inventory", path = "/ko/inve
     await p.waitForSelector(".v-sheet [data-take-row]"); await p.waitForTimeout(300);
     if (all) await p.locator(".v-sheet [data-take-all]").click(); else await p.locator(".v-sheet [data-take-row]").first().click();
     await p.locator("[data-take-submit]").click();
-    await p.waitForSelector('[role="alertdialog"] .v-btn'); await p.waitForTimeout(300);
+    // 확인창은 뜬 뒤 0.35초 동안 확정 단추가 눌리지 않는다(components/ui/Sheet.tsx 의 Confirm). 그보다 길게 기다린 뒤 누른다
+    await p.waitForSelector('[role="alertdialog"] .v-btn'); await p.waitForTimeout(500);
     await p.evaluate((n) => { const b = document.querySelector('[role="alertdialog"] .v-btn'); for (let i = 0; i < n; i++) b.click(); }, clicks);
   };
   return { context, page, open, ledger, takeInSheet, errors, shot: (name, p = page) => p.screenshot({ path: `${out}/${name}.png` }) };
@@ -77,7 +78,7 @@ await run("a", async () => {
   check("a", "하나만 고르면 머리 행은 일부만 고른 상태다", (await s.page.locator("[data-take-all]").getAttribute("aria-checked")) === "mixed" && (await s.page.locator("[data-take-submit]").innerText()).startsWith("USDT로 받기 (1개, "));
   await s.page.locator("[data-take-all]").click(); await s.shot("a3-all-selected");
   check("a", "전체 선택하면 주 단추에 개수와 금액이 적힌다", (await s.page.locator("[data-take-submit]").innerText()) === "USDT로 받기 (2개, $1,471.55)" && (await s.page.locator("[data-take-all]").getAttribute("aria-checked")) === "true");
-  await s.page.locator("[data-take-submit]").click(); await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(300); await s.shot("a4-confirm");
+  await s.page.locator("[data-take-submit]").click(); await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(500); await s.shot("a4-confirm");
   const confirm = await s.page.locator('[role="alertdialog"]').innerText();
   check("a", "확인창의 글(금액 뒤에 조사가 없다)", confirm.includes("상품 대신 잔액으로 받습니다. 받을 금액 $1,471.55. 받은 뒤에는 배송으로 바꿀 수 없습니다.") && confirm.includes("USDT로 받기 ($1,471.55)") && confirm.includes("취소"), confirm.replace(/\s+/g, " "));
   const cancelW = await widthOf(s.page.locator('[role="alertdialog"] .v-link'));
@@ -85,7 +86,7 @@ await run("a", async () => {
   const before = await s.ledger();
   await s.page.locator('[role="alertdialog"] .v-link').click();
   check("a", "취소하면 돈이 움직이지 않는다", near((await s.ledger()).balance, before.balance) && (await s.ledger()).held === 2);
-  await s.page.locator("[data-take-submit]").click(); await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(300);
+  await s.page.locator("[data-take-submit]").click(); await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(500);
   await s.page.evaluate(() => { const b = document.querySelector('[role="alertdialog"] .v-btn'); b.click(); b.click(); b.click(); });
   await s.page.waitForSelector("[data-take-done]", { timeout: 5000 }); await s.shot("a5-done");
   const l = await s.ledger();
@@ -198,7 +199,7 @@ await run("e", async () => {
   await s.page.locator(".v-sheet .v-links .v-link").first().click(); await s.page.waitForTimeout(500); await s.shot("e2-ship-sheet");
   check("e", "배송 받기 링크는 배송 시트를 연다(가는 길은 여기 하나)", (await sheetText(s.page)).includes("배송 신청"));
   await s.page.locator(".v-sheet-close").last().click(); await s.page.waitForTimeout(300);
-  await s.page.locator(".v-sheet [data-take-primary]").click(); await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(300);
+  await s.page.locator(".v-sheet [data-take-primary]").click(); await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(500);
   await s.page.evaluate(() => { const b = document.querySelector('[role="alertdialog"] .v-btn'); b.click(); b.click(); });
   await s.page.waitForFunction(() => !document.querySelector(".v-scrim"), null, { timeout: 5000 }); await s.shot("e3-item-taken");
   let l = await s.ledger();
@@ -209,7 +210,7 @@ await run("e", async () => {
   s = await session();
   await setFault(s.page, "settle-unknown");
   await s.page.locator(".v-itemrow").first().click(); await s.page.waitForSelector(".v-sheet [data-take-primary]"); await s.page.waitForTimeout(300);
-  await s.page.locator(".v-sheet [data-take-primary]").click(); await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(300);
+  await s.page.locator(".v-sheet [data-take-primary]").click(); await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(500);
   await s.page.locator('[role="alertdialog"] .v-btn').click();
   await s.page.waitForSelector(".v-sheet .v-line--fail", { timeout: 5000 }); await s.shot("e4-item-unknown");
   l = await s.ledger(); const t = await sheetText(s.page);
@@ -345,7 +346,7 @@ await run("h", async () => {
   s = await session();
   await setFault(s.page, "settle-unknown");
   await s.page.locator(".v-itemrow").first().click(); await s.page.waitForSelector(".v-sheet [data-take-primary]"); await s.page.waitForTimeout(300);
-  await s.page.locator(".v-sheet [data-take-primary]").click(); await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(300);
+  await s.page.locator(".v-sheet [data-take-primary]").click(); await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(500);
   await s.page.locator('[role="alertdialog"] .v-btn').click(); await s.page.waitForSelector(".v-sheet .v-line--fail", { timeout: 5000 });
   await setFault(s.page, null);
   await s.page.locator(".v-sheet-close").click(); await s.page.waitForTimeout(300);

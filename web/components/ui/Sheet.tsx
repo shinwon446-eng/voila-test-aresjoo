@@ -7,6 +7,7 @@
 import { useRef, type ReactNode } from "react";
 import { X } from "lucide-react";
 import { useModal } from "@/lib/useModal";
+import { OPENING_ARM_DELAY_MS } from "@/lib/openingFlow";
 import { Button, TextLink } from "@/components/ui/kit";
 
 export function Sheet({ open, onClose, title, desc, closeLabel, wide, children, locked }: { open: boolean; onClose: () => void; title: ReactNode; desc?: ReactNode; closeLabel: string; wide?: boolean; children: ReactNode; locked?: boolean }) {
@@ -32,6 +33,12 @@ export function Sheet({ open, onClose, title, desc, closeLabel, wide, children, 
 export function Confirm({ open, onCancel, onConfirm, title, desc, confirmLabel, cancelLabel, busy, busyLabel }: { open: boolean; onCancel: () => void; onConfirm: () => void; title: ReactNode; desc?: ReactNode; confirmLabel: string; cancelLabel: string; busy?: boolean; busyLabel?: string }) {
   const panel = useRef<HTMLDivElement>(null);
   useModal(open, () => { if (!busy) onCancel(); }, panel);
+  // 확인창이 뜬 직후에는 확정 단추가 눌리지 않는다. 모바일에서 확정 단추가 앞 시트의 주 단추와 같은 자리에 와서,
+  // 같은 자리를 빠르게 두 번 누른 둘째 누름이 확인창을 읽기 전에 확정이 되던 것을 막는다(결과 화면의 잠금과 같은 장치, 같은 길이).
+  // 단추를 disabled 로 만들지 않는다: 모양과 초점은 그대로이고 그동안의 누름만 버린다. 취소와 Esc 는 잠그지 않는다
+  const shownAt = useRef<number | null>(null);
+  if (!open) shownAt.current = null; else if (shownAt.current === null) shownAt.current = Date.now();
+  const confirm = () => { if (shownAt.current !== null && Date.now() - shownAt.current >= OPENING_ARM_DELAY_MS) onConfirm(); };
   if (!open) return null;
   return (
     <div className="v-scrim" onMouseDown={(e) => { if (e.target === e.currentTarget && !busy) onCancel(); }}>
@@ -41,7 +48,7 @@ export function Confirm({ open, onCancel, onConfirm, title, desc, confirmLabel, 
           {desc && <p className="v-desc">{desc}</p>}
           {/* 주 단추 하나, 취소는 밑줄 링크(보조 행동 규칙) */}
           <div className="v-confirm-actions">
-            <Button onClick={onConfirm} busy={busy} busyLabel={busyLabel}>{confirmLabel}</Button>
+            <Button onClick={confirm} busy={busy} busyLabel={busyLabel}>{confirmLabel}</Button>
             <div className="v-links"><TextLink onClick={() => { if (!busy) onCancel(); }}>{cancelLabel}</TextLink></div>
           </div>
         </div>

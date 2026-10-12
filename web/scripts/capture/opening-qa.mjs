@@ -58,12 +58,13 @@ async function session({ slug = "dollar-apple", fixture = "single:low", view = "
   const shot = (name) => page.screenshot({ path: `${out}/${name}-${view}.png` });
   const openBtn = () => page.locator("[data-open-primary]").first();
   const settled = () => page.waitForSelector(".v-op[data-opening-state='settled']", { timeout: 15000 });
-  const confirmIfAsked = async () => { const c = page.locator('[role="alertdialog"] .v-btn'); if (await c.count()) await c.first().click(); };
+  // 확인창은 뜬 뒤 0.35초 동안 확정 단추가 눌리지 않는다(components/ui/Sheet.tsx 의 Confirm). 그보다 길게 기다린 뒤 누른다
+  const confirmIfAsked = async () => { const c = page.locator('[role="alertdialog"] .v-btn'); if (await c.count()) { await page.waitForTimeout(500); await c.first().click(); } };
   const text = () => page.evaluate(() => (document.querySelector(".v-op, .v-reveal")?.innerText || "").replace(/\s+/g, " "));
   const closeResult = async () => { await page.locator(".v-op-tool, .v-reveal .v-sheet-close").last().click(); await page.waitForSelector(".v-op, .v-reveal", { state: "detached" }); };
   /** 결과 자리의 주 단추 "USDT로 받기"를 누르고 확인창에서 확정한다(확정 단추를 clicks 번 누른다). 받는 방법을 고르는 단계는 없다(flow/MELT_SPEC.md S2) */
   const takeUsdt = async (clicks = 1) => {
-    await page.locator(".v-op-actions [data-take-primary]").click(); await page.waitForSelector('[role="alertdialog"] .v-btn'); await page.waitForTimeout(350);
+    await page.locator(".v-op-actions [data-take-primary]").click(); await page.waitForSelector('[role="alertdialog"] .v-btn'); await page.waitForTimeout(500);
     await page.evaluate((n) => { const b = document.querySelector('[role="alertdialog"] .v-btn'); for (let i = 0; i < n; i++) b.click(); }, clicks);
   };
   return { context, page, fx, price, errors, ledger, shot, openBtn, settled, confirmIfAsked, text, closeResult, takeUsdt, state, w, h };
@@ -177,7 +178,7 @@ await run("s4", async () => {
   await s.openBtn().click(); await s.settled(); await s.page.waitForTimeout(500); await s.shot("12b-item");
   // 주 단추가 곧 USDT로 받기다. 확인창을 한 번 거친다(받는 방법을 고르는 단계는 없다)
   await s.page.locator(".v-op-actions [data-take-primary]").click();
-  await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(350); await s.shot("13a-take-confirm");
+  await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(500); await s.shot("13a-take-confirm");
   await s.page.evaluate(() => { const b = document.querySelector('[role="alertdialog"] .v-btn'); b.click(); b.click(); });
   await s.page.waitForFunction(() => /USDT로 받았습니다/.test(document.querySelector(".v-op")?.innerText || ""), null, { timeout: 5000 });
   await s.page.waitForTimeout(700); await s.shot("13-instant-usdt-conversion");
@@ -206,7 +207,7 @@ await run("s5", async () => {
   await s.openBtn().click(); await s.settled(); l = await s.ledger();
   check("s5", "자동 받기 끔(기본): 상품을 그대로 보관한다", near(l.balance, START - s.price) && l.items[0].status === "IN_STORAGE", `balance ${l.balance}`);
   await s.page.locator(".v-op-tool").first().click(); await s.page.waitForSelector(".v-op-toggle"); await s.page.waitForTimeout(350); await s.shot("19-opening-settings");
-  await s.page.locator(".v-op-toggle").nth(2).click(); await s.page.waitForSelector('[role="alertdialog"]'); await s.page.waitForTimeout(350); await s.shot("20-auto-take-confirm");
+  await s.page.locator(".v-op-toggle").nth(2).click(); await s.page.waitForSelector('[role="alertdialog"]'); await s.page.waitForTimeout(500); await s.shot("20-auto-take-confirm");
   const on = await s.page.evaluate(() => Object.values(JSON.parse(localStorage.getItem("gachaflix.settings") || "{}")?.state?.autoTakeBy ?? {}).some(Boolean));
   check("s5", "자동 받기는 확인을 누르기 전에는 켜지지 않는다", on !== true, String(on));
   await s.page.locator('[role="alertdialog"] .v-btn').click(); await s.page.waitForTimeout(300);
@@ -369,7 +370,7 @@ await run("s11", async () => {
   await s.page.locator(".v-sheet [data-take-row]").first().click();
   check("s11", "선택 시트: 고른 것을 빼면 주 단추가 눌리지 않는다", (await s.page.locator("[data-take-submit]").isDisabled()) === (kept.length === 1));
   await s.page.locator(".v-sheet [data-take-row]").first().click(); await s.page.locator("[data-take-submit]").click();
-  await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(300); await s.shot("25a-multi-confirm");
+  await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(500); await s.shot("25a-multi-confirm");
   await s.page.evaluate(() => { const b = document.querySelector('[role="alertdialog"] .v-btn'); b.click(); b.click(); });
   await s.page.waitForSelector("[data-take-done]", { timeout: 5000 }); await s.shot("25b-multi-received");
   check("s11", "선택 시트: 받은 금액을 한 줄로 말한다", (await s.page.locator(".v-sheet").innerText()).includes("잔액에 " + usdt(keptSell) + " 넣었습니다."));
@@ -399,7 +400,7 @@ await run("s11", async () => {
     const start = await f.ledger();
     await f.page.evaluate((v) => sessionStorage.setItem("voila.opening.fault", v), fault);
     await f.page.locator(".v-resultrow button[aria-haspopup='dialog']").first().click(); await f.page.waitForSelector(".v-sheet [data-take-primary]"); await f.page.waitForTimeout(300);
-    await f.page.locator(".v-sheet [data-take-primary]").click(); await f.page.waitForSelector('[role="alertdialog"] .v-btn'); await f.page.waitForTimeout(300);
+    await f.page.locator(".v-sheet [data-take-primary]").click(); await f.page.waitForSelector('[role="alertdialog"] .v-btn'); await f.page.waitForTimeout(500);
     await f.page.locator('[role="alertdialog"] .v-btn').click();
     await f.page.waitForSelector(".v-sheet .v-line--fail", { timeout: 5000 }); await f.shot("26b-item-" + fault);
     const end = await f.ledger(); const sheet = (await f.page.locator(".v-sheet").innerText()).replace(/\s+/g, " ");

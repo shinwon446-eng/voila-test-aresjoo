@@ -8,10 +8,11 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
+import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import { BOXES, BOX_BY_SLUG, HOME_BOXES, type ProductBox, type ProductItem } from "../lib/products";
 import { BANNED, CLOSE, EN, GOT, GRIPE, ITEM, MID, MID_CLOSE, NEG, NEG_CLOSE, SHIP, USE, USE_GIFT, ZH, type Frag } from "../lib/reviewSampleText";
-import { BIG_FLOOR, BUILT_CAP, NEAR, RETURNING_SHARE, SAMPLE_MAX, SAMPLE_MIN, allRatingSummary, builtCount, kindOf, newestSamples, ratingSummary, sampleCount, sampleParts, sampleReviews, sampleShapes, summarizeRatings, type ReviewSample } from "../lib/reviewSamples";
+import { BIG_FLOOR, BUILT_CAP, FRONT, NEAR, RETURNING_SHARE, SAMPLE_MAX, SAMPLE_MIN, allRatingSummary, builtCount, kindOf, newestSamples, ratingSummary, sampleCount, sampleParts, sampleReviews, sampleShapes, summarizeRatings, type ReviewSample } from "../lib/reviewSamples";
 import { takeAmountOf } from "../lib/takeBatch";
 
 const PROBE = ["watch-rolex", "pokemon-charizard", "beauty-dior"];
@@ -137,6 +138,27 @@ test(`샘플 후기: 한 박스의 연속 ${NEAR}건 안에서는 같은 조각�
     });
   }
   assert.ok(parts > 100000, `조각 ${parts}개`);
+});
+
+test("샘플 후기: 어느 박스든 가장 새 글은 한국어이고, 처음 보이는 다섯 건 가운데 한국어가 아닌 글은 많아야 하나다", () => {
+  // 박스 화면이 처음 보여 주는 건수와 같은 수다
+  assert.equal(FRONT, 5);
+  assert.match(fs.readFileSync(new URL("../components/box/BoxReviews.tsx", import.meta.url), "utf8"), /export const BOX_REVIEWS_FIRST = 5;/);
+  let front = 0, frontForeign = 0, all = 0, allForeign = 0;
+  for (const { box, list } of allShots()) {
+    assert.equal(list[0].lang, "ko", `${box.slug}: 가장 새 글이 ${list[0].lang}`);
+    const foreign = list.slice(0, FRONT).filter((r) => r.lang !== "ko").length;
+    assert.ok(foreign <= 1, `${box.slug}: 처음 ${FRONT}건 가운데 외국어 ${foreign}건`);
+    // 첫 화면에는 같은 별명이 두 번 보이지 않는다(다시 쓰는 손님의 글은 그 뒤에 온다)
+    assert.equal(new Set(list.slice(0, FRONT).map((r) => r.author)).size, Math.min(FRONT, list.length), box.slug);
+    front += Math.min(FRONT, list.length); frontForeign += foreign;
+    all += list.length; allForeign += list.filter((r) => r.lang !== "ko").length;
+  }
+  // 앞에서 뺀 외국어 글은 뒤로 옮겼을 뿐이다: 전체의 외국어 몫은 그대로(약 15%)이고, 맨 앞에도 외국어 글이 남아 있다
+  assert.ok(allForeign / all > 0.1 && allForeign / all < 0.2, `외국어 ${allForeign / all}`);
+  assert.ok(frontForeign > 100 && frontForeign / front < 0.2, `맨 앞의 외국어 ${frontForeign} / ${front}`);
+  // 모아 보기의 맨 위도 한국어다(어느 박스의 가장 새 글이므로)
+  assert.equal(newestSamples(1)[0].lang, "ko");
 });
 
 test("샘플 후기: 박스마다 5~8% 는 다시 쓰는 손님의 글이고(같은 별명, 같은 언어), 그 사람의 글은 붙어 나오지 않는다", () => {

@@ -434,6 +434,12 @@ function drawIndex(state: Built, slug: string, key: string, size: number): numbe
   return deck.order[deck.at++];
 }
 
+/**
+ * 박스 화면이 처음 보여 주는 건수(components/box/BoxReviews 의 BOX_REVIEWS_FIRST 와 같다).
+ * 박스의 가장 새 글 FRONT 건 가운데 한국어가 아닌 글은 많아야 하나이고, 가장 새 글은 한국어다:
+ * 한국어 사이트의 첫 화면에 보이는 후기 다섯 건이 대부분 외국어이면 어색하다. 박스 전체의 언어별 건수는 그대로 둔다.
+ */
+export const FRONT = 5;
 /** 다시 쓰는 손님의 글이 전체에서 차지하는 몫의 아래와 위 */
 export const RETURNING_SHARE: [number, number] = [0.05, 0.08];
 
@@ -442,20 +448,34 @@ export const RETURNING_SHARE: [number, number] = [0.05, 0.08];
  * 모든 별명이 한 번씩만 나오면 다시 오는 손님이 한 명도 없는 곳처럼 보인다. 그래서 전체의 5~8% 는 앞에서 글을 쓴 사람이 같은 별명으로 다시 쓴 글이다(언어도 같다).
  * 다시 쓴 글은 그 사람의 앞 글과 붙어 나오지 않는다: 다시 쓴 글의 앞뒤 건은 언제나 처음 쓰는 사람이고, 앞 글은 두 건 이상 앞에서 고른다(되도록 더 멀리서).
  * 영어와 중국어 줄은 택배로 받은 이야기라 택배로 오지 않는 상품(상품권, 차, 큰 가전)에는 쓰지 않는다.
+ * 맨 앞 FRONT 건에 외국어 글이 넘치면, 넘치는 글의 언어를 그 뒤의 한국어 글(택배로 오는 상품의 것)과 맞바꾼다. 점수와 상품은 건드리지 않는다.
  */
 function castOf(core: Core, slug: string, state: Built): Cast {
   const n = core.count, next = rng(hash(`cast|${SALT}|${slug}`));
-  const lang = new Uint8Array(n), first = [n, n, n];
+  const lang = new Uint8Array(n), parcel = new Uint8Array(n), first = [n, n, n];
   for (let i = 0; i < n; i++) {
-    const u = next(), parcel = (KIND_FACTS[kindOf(core.box, core.items[core.pick[i]])] & F.parcel) !== 0;
-    lang[i] = u < 0.85 || !parcel ? 0 : u < 0.93 ? 1 : 2;
-    if (first[lang[i]] === n) first[lang[i]] = i;
+    const u = next();
+    parcel[i] = (KIND_FACTS[kindOf(core.box, core.items[core.pick[i]])] & F.parcel) !== 0 ? 1 : 0;
+    lang[i] = u < 0.85 || !parcel[i] ? 0 : u < 0.93 ? 1 : 2;
   }
+  // 맨 앞 FRONT 건: 가장 새 글은 한국어, 외국어 글은 하나까지. 맞바꿀 자리는 따로 둔 씨앗으로 골라, 바꿀 것이 없는 박스는 전과 같다
+  const swapAt = rng(hash(`front|${SALT}|${slug}`));
+  let foreign = 0;
+  for (let i = 0; i < Math.min(FRONT, n); i++) {
+    if (lang[i] === 0) continue;
+    if (i > 0 && foreign === 0) { foreign = 1; continue; }
+    const later: number[] = [];
+    for (let j = FRONT; j < n; j++) if (lang[j] === 0 && parcel[j]) later.push(j);
+    if (later.length > 0) lang[pickOne(later, swapAt)] = lang[i];
+    lang[i] = 0;
+  }
+  for (let i = n - 1; i >= 0; i--) first[lang[i]] = i;
   let left = Math.min(Math.floor(n * RETURNING_SHARE[1]), Math.max(Math.ceil(n * RETURNING_SHARE[0]), Math.round(n * (RETURNING_SHARE[0] + (RETURNING_SHARE[1] - RETURNING_SHARE[0]) * next()))));
   const again = new Uint8Array(n);
   for (const i of shuffle(Array.from({ length: n }, (_, k) => k), next)) {
     if (left === 0) break;
-    if (first[lang[i]] > i - 2 || again[i - 1] || again[i + 1]) continue;
+    // 처음 보이는 FRONT 건에는 다시 쓰는 손님을 두지 않는다(첫 화면에 같은 별명이 두 번 보이지 않게)
+    if (i < FRONT || first[lang[i]] > i - 2 || again[i - 1] || again[i + 1]) continue;
     again[i] = 1;
     left -= 1;
   }

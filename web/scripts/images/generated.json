@@ -13167,6 +13167,10 @@
     "file": "fashion-adidas-yeezy-slide.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-arcteryx-aerios-gtx": {
+    "file": "fashion-arcteryx-aerios-gtx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-arcteryx-aerios-mid-gtx": {
     "file": "fashion-arcteryx-aerios-mid-gtx.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13193,6 +13197,10 @@
   },
   "fashion-arcteryx-beta-insulated-jacket": {
     "file": "fashion-arcteryx-beta-insulated-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-arcteryx-beta-sl-jacket": {
+    "file": "fashion-arcteryx-beta-sl-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-arcteryx-covert-cardigan": {
@@ -13243,12 +13251,20 @@
     "file": "fashion-arcteryx-veilance-field-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-arcteryx-veilance-mionn-jacket": {
+    "file": "fashion-arcteryx-veilance-mionn-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-arcteryx-veilance-monitor-coat": {
     "file": "fashion-arcteryx-veilance-monitor-coat.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-arcteryx-veilance-monitor-down-coat": {
     "file": "fashion-arcteryx-veilance-monitor-down-coat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-arcteryx-vertex-speed": {
+    "file": "fashion-arcteryx-vertex-speed.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-asics-accelerate-waterproof-2-0-jacket": {
@@ -13455,6 +13471,10 @@
     "file": "fashion-birkenstock-boston-chunky.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-birkenstock-boston-shearling": {
+    "file": "fashion-birkenstock-boston-shearling.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-birkenstock-buckley-moccasin": {
     "file": "fashion-birkenstock-buckley-moccasin.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13523,6 +13543,10 @@
     "file": "fashion-birkenstock-madrid-big-buckle.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-birkenstock-madrid-birko-flor": {
+    "file": "fashion-birkenstock-madrid-birko-flor.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-birkenstock-madrid-eva": {
     "file": "fashion-birkenstock-madrid-eva.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13541,6 +13565,10 @@
   },
   "fashion-birkenstock-milano-birko-flor": {
     "file": "fashion-birkenstock-milano-birko-flor.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-birkenstock-naples": {
+    "file": "fashion-birkenstock-naples.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-birkenstock-proenza-schouler-x-birkenstock-arizona": {
@@ -13575,6 +13603,10 @@
     "file": "fashion-birkenstock-stussy-x-birkenstock-boston.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-birkenstock-super-birki-clog": {
+    "file": "fashion-birkenstock-super-birki-clog.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-birkenstock-tokio-super-grip": {
     "file": "fashion-birkenstock-tokio-super-grip.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13593,6 +13625,10 @@
   },
   "fashion-birkenstock-water-and-stain-repellent": {
     "file": "fashion-birkenstock-water-and-stain-repellent.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-birkenstock-zermatt-shearling-slipper": {
+    "file": "fashion-birkenstock-zermatt-shearling-slipper.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-birkenstock-zurich-suede-leather": {
@@ -13643,6 +13679,10 @@
     "file": "fashion-burberry-diamond-quilted-barn-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-burberry-diamond-quilted-gilet": {
+    "file": "fashion-burberry-diamond-quilted-gilet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-burberry-diamond-quilted-thermoregulated-jacket": {
     "file": "fashion-burberry-diamond-quilted-thermoregulated-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13653,6 +13693,10 @@
   },
   "fashion-burberry-ekd-cashmere-sweater": {
     "file": "fashion-burberry-ekd-cashmere-sweater.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-burberry-ekd-cotton-hoodie": {
+    "file": "fashion-burberry-ekd-cotton-hoodie.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-burberry-leather-creeper-shoes": {
@@ -13699,6 +13743,14 @@
     "file": "fashion-burberry-wool-duffle-coat.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-canada-goose-arctic-down-mitts": {
+    "file": "fashion-canada-goose-arctic-down-mitts.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-canada-goose-aviator-hat": {
+    "file": "fashion-canada-goose-aviator-hat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-canada-goose-carson-parka": {
     "file": "fashion-canada-goose-carson-parka.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13741,6 +13793,10 @@
   },
   "fashion-canada-goose-glacier-trail-sneaker-high": {
     "file": "fashion-canada-goose-glacier-trail-sneaker-high.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-canada-goose-huron-crewneck": {
+    "file": "fashion-canada-goose-huron-crewneck.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-canada-goose-huron-hoody": {
@@ -14115,6 +14171,10 @@
     "file": "fashion-dr-martens-mm6-maison-margiela-x-dr-martens-1460.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-dr-martens-myles-slides": {
+    "file": "fashion-dr-martens-myles-slides.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-dr-martens-penton-bex-loafers": {
     "file": "fashion-dr-martens-penton-bex-loafers.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -14145,6 +14205,10 @@
   },
   "fashion-dr-martens-vegan-jadon-ii-mono": {
     "file": "fashion-dr-martens-vegan-jadon-ii-mono.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-dr-martens-voss-ii-sandals": {
+    "file": "fashion-dr-martens-voss-ii-sandals.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-dr-martens-wonder-balsam-85ml": {
@@ -14515,6 +14579,10 @@
     "file": "fashion-jordan-jordan-sport-dri-fit-diamond-shorts.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-jordan-jordan-tatum-3": {
+    "file": "fashion-jordan-jordan-tatum-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-jordan-kaws-x-air-jordan-4-retro-cool-grey": {
     "file": "fashion-jordan-kaws-x-air-jordan-4-retro-cool-grey.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -14635,6 +14703,10 @@
     "file": "fashion-moncler-khloe-long-down-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-moncler-lans-short-down-jacket": {
+    "file": "fashion-moncler-lans-short-down-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-moncler-logo-baseball-cap": {
     "file": "fashion-moncler-logo-baseball-cap.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -14705,6 +14777,10 @@
   },
   "fashion-moncler-suyen-long-parka": {
     "file": "fashion-moncler-suyen-long-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-moncler-tibb-down-vest": {
+    "file": "fashion-moncler-tibb-down-vest.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-moncler-tricolor-logo-socks": {
@@ -15547,6 +15623,10 @@
     "file": "fashion-p-brooks-ghost-16.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-p-brooks-hyperion-elite-4": {
+    "file": "fashion-p-brooks-hyperion-elite-4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-p-brunello-cucinelli-shearling-bomber-jacket": {
     "file": "fashion-p-brunello-cucinelli-shearling-bomber-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -15581,6 +15661,10 @@
   },
   "fashion-p-carhartt-wip-acrylic-watch-hat": {
     "file": "fashion-p-carhartt-wip-acrylic-watch-hat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-carhartt-wip-og-detroit-jacket": {
+    "file": "fashion-p-carhartt-wip-og-detroit-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-p-celine-medium-triomphe-belt": {
@@ -15881,6 +15965,10 @@
   },
   "fashion-p-kiwi-horsehair-shine-brush": {
     "file": "fashion-p-kiwi-horsehair-shine-brush.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-kiwi-shoe-polish-paste-black-1-125oz": {
+    "file": "fashion-p-kiwi-shoe-polish-paste-black-1-125oz.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-p-l-l-bean-bean-boots-8": {
@@ -16195,6 +16283,10 @@
     "file": "fashion-p-puma-suede-classic-xxi.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-p-rab-microlight-alpine-jacket": {
+    "file": "fashion-p-rab-microlight-alpine-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-p-rab-neutrino-pro-down-jacket": {
     "file": "fashion-p-rab-neutrino-pro-down-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -16287,6 +16379,10 @@
     "file": "fashion-p-skechers-go-walk-7.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-p-smartwool-classic-thermal-merino-base-layer-crew": {
+    "file": "fashion-p-smartwool-classic-thermal-merino-base-layer-crew.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-p-smartwool-hike-classic-edition-full-cushion-crew-socks": {
     "file": "fashion-p-smartwool-hike-classic-edition-full-cushion-crew-socks.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -16309,6 +16405,10 @@
   },
   "fashion-p-sorel-joan-of-arctic-boot": {
     "file": "fashion-p-sorel-joan-of-arctic-boot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-sperry-authentic-original-2-eye-boat-shoe": {
+    "file": "fashion-p-sperry-authentic-original-2-eye-boat-shoe.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-p-stance-icon-crew-socks": {
@@ -16431,12 +16531,20 @@
     "file": "fashion-p-zegna-triple-stitch-sneaker.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-patagonia-fitz-roy-down-hoody": {
+    "file": "fashion-patagonia-fitz-roy-down-hoody.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-patagonia-frozen-range-parka": {
     "file": "fashion-patagonia-frozen-range-parka.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-patagonia-grade-vii-down-parka": {
     "file": "fashion-patagonia-grade-vii-down-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-patagonia-insulated-powder-town-jacket": {
+    "file": "fashion-patagonia-insulated-powder-town-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-patagonia-jackson-glacier-parka": {
@@ -16455,6 +16563,10 @@
     "file": "fashion-patagonia-r4-yulex-regulator-front-zip-hooded-full-suit.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-patagonia-snowdrifter-jacket": {
+    "file": "fashion-patagonia-snowdrifter-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-patagonia-stormshadow-parka": {
     "file": "fashion-patagonia-stormshadow-parka.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -16469,6 +16581,10 @@
   },
   "fashion-patagonia-tres-3-in-1-parka": {
     "file": "fashion-patagonia-tres-3-in-1-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-patagonia-triolet-jacket": {
+    "file": "fashion-patagonia-triolet-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-patagonia-untracked-bibs": {
@@ -16665,6 +16781,22 @@
   },
   "fashion-salomon-xt-wings-2": {
     "file": "fashion-salomon-xt-wings-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-the-north-face-altamesa-500": {
+    "file": "fashion-the-north-face-altamesa-500.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-the-north-face-apex-bionic-3-jacket": {
+    "file": "fashion-the-north-face-apex-bionic-3-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-the-north-face-chilkat-v-400-waterproof-boots": {
+    "file": "fashion-the-north-face-chilkat-v-400-waterproof-boots.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-the-north-face-denali-jacket": {
+    "file": "fashion-the-north-face-denali-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-the-north-face-gore-tex-mountain-jacket": {
@@ -16927,12 +17059,20 @@
     "file": "fashion-ugg-ca805-v2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-ugg-chunky-rib-beanie": {
+    "file": "fashion-ugg-chunky-rib-beanie.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-ugg-classic-dipper": {
     "file": "fashion-ugg-classic-dipper.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-ugg-classic-mini-ii": {
     "file": "fashion-ugg-classic-mini-ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-classic-short-new-heights": {
+    "file": "fashion-ugg-classic-short-new-heights.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-ugg-classic-tall-ii": {
@@ -16955,6 +17095,10 @@
     "file": "fashion-ugg-dakota-slipper.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-ugg-drizlita-rain-boot": {
+    "file": "fashion-ugg-drizlita-rain-boot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-ugg-duffield-ii-robe": {
     "file": "fashion-ugg-duffield-ii-robe.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -16969,6 +17113,10 @@
   },
   "fashion-ugg-goldenglow-sandal": {
     "file": "fashion-ugg-goldenglow-sandal.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-goldenstar-clog": {
+    "file": "fashion-ugg-goldenstar-clog.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-ugg-jeremy-scott-x-ugg-flames-classic-short": {
@@ -16995,6 +17143,10 @@
     "file": "fashion-ugg-palace-x-ugg-tasman.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-ugg-pom-pom-fleece-lined-crew-sock": {
+    "file": "fashion-ugg-pom-pom-fleece-lined-crew-sock.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-ugg-robinson-robe": {
     "file": "fashion-ugg-robinson-robe.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -17007,12 +17159,32 @@
     "file": "fashion-ugg-scuffette-ii.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-ugg-sheepskin-bluetooth-earmuff": {
+    "file": "fashion-ugg-sheepskin-bluetooth-earmuff.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-sheepskin-care-kit": {
+    "file": "fashion-ugg-sheepskin-care-kit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-sheepskin-earmuff": {
+    "file": "fashion-ugg-sheepskin-earmuff.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-ugg-sheepskin-turn-cuff-glove": {
     "file": "fashion-ugg-sheepskin-turn-cuff-glove.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-ugg-tasman": {
     "file": "fashion-ugg-tasman.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-tasman-weather-hybrid": {
+    "file": "fashion-ugg-tasman-weather-hybrid.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-tazz": {
+    "file": "fashion-ugg-tazz.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-ugg-tazzle": {

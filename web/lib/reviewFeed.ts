@@ -31,6 +31,15 @@ export function allRating(real: RealRatings): RatingSummary {
   return allRatingSummary(all);
 }
 
+/**
+ * 목록의 차례: 내 후기가 먼저(내 것 가운데 새것부터), 그다음에 샘플(새것부터). 앞에서 shown 건만 보여 준다.
+ * 내가 쓴 후기는 며칠이 지나도 샘플 사이에 묻히지 않는다(샘플은 박스마다 몇 시간 전의 글이 있어, 나이로 섞으면 사흘 된 내 글이 천 번째 뒤로 간다).
+ * 건수와 별점에는 내 후기가 한 번만 들어간다(boxRating, allRating).
+ */
+export function feedOrder<T extends { ageMin: number }>(mine: readonly T[], samples: readonly T[], shown: number): T[] {
+  return [...[...mine].sort((a, b) => a.ageMin - b.ageMin), ...samples].slice(0, Math.max(0, shown));
+}
+
 /** "몇 분 전" 의 구간과 그 안의 수. 화면은 이 열쇠로 문구(reviews.agoNow ...)를 고른다 */
 export type AgoKey = "agoNow" | "agoMin" | "agoHour" | "agoDay" | "agoMonth" | "agoYear";
 export function agoOf(ageMin: number): { key: AgoKey; n: number } {

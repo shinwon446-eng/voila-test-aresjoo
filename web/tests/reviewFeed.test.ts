@@ -4,8 +4,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { HOME_BOXES } from "../lib/products";
-import { MORE_COUNT_MAX, agoOf, allRating, boxRating, isRealReview, realRatings } from "../lib/reviewFeed";
-import { allRatingSummary, ratingSummary, sampleCount } from "../lib/reviewSamples";
+import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings } from "../lib/reviewFeed";
+import { allRatingSummary, newestSamples, ratingSummary, sampleCount, sampleReviews } from "../lib/reviewSamples";
 
 const read = (path: string) => fs.readFileSync(new URL(path, import.meta.url), "utf8");
 const SLUG = HOME_BOXES[0].slug, OTHER = HOME_BOXES[1].slug;
@@ -68,6 +68,31 @@ test("후기 집계: 박스 카드와 박스 화면과 모아 보기는 같은 �
   // 박스 화면과 모아 보기
   assert.doesNotMatch(reviews, /ratingSummary\(/);
   assert.match(reviews, /boxSlug \? boxRating\(boxSlug, real\) : allRating\(real\)/);
+});
+
+test("후기 목록의 차례(F-02): 내 후기가 며칠이 지나도 맨 앞이고(내 것 가운데 새것부터), 그 뒤에 샘플이 새것부터 온다", () => {
+  const day = 1440;
+  // 쓴 지 40일, 14분, 3일 된 내 후기
+  const mine = [{ id: "m40", ageMin: 40 * day, mine: true }, { id: "m0", ageMin: 14, mine: true }, { id: "m3", ageMin: 3 * day, mine: true }];
+  // 박스 화면: 그 박스의 샘플
+  const box = sampleReviews(SLUG, 30).map((s) => ({ id: s.id, ageMin: s.ageMin, mine: false }));
+  assert.ok(box[0].ageMin < 3 * day, "이 박스의 가장 새 샘플이 사흘보다 새롭다(나이로 섞으면 내 글이 밀린다)");
+  const first = feedOrder(mine, box, 5);
+  assert.deepEqual(first.map((c) => c.id), ["m0", "m3", "m40", box[0].id, box[1].id]);
+  // 더 펴도 내 후기는 앞의 세 자리이고 샘플의 차례는 그대로다
+  const more = feedOrder(mine, box, 25);
+  assert.equal(more.length, 25);
+  assert.deepEqual(more.slice(0, 3).map((c) => c.id), ["m0", "m3", "m40"]);
+  assert.deepEqual(more.slice(3).map((c) => c.id), box.slice(0, 22).map((c) => c.id));
+  // 모아 보기: 사흘 된 내 후기도 첫 화면에 있다(나이로 섞으면 수백 건 뒤다)
+  const all = newestSamples(20).map((s) => ({ id: s.id, ageMin: s.ageMin, mine: false }));
+  assert.ok(all[19].ageMin < 3 * day);
+  assert.deepEqual(feedOrder(mine, all, 20).slice(0, 3).map((c) => c.id), ["m0", "m3", "m40"]);
+  // 내 후기가 없으면 샘플 그대로, 0건을 달라면 빈 목록
+  assert.deepEqual(feedOrder([], box, 5), box.slice(0, 5));
+  assert.deepEqual(feedOrder(mine, box, 0), []);
+  // 화면이 이 차례를 쓴다
+  assert.match(read("../components/box/BoxReviews.tsx"), /cards: feedOrder\(mine, cards, shown\)/);
 });
 
 test("후기 시각: 몇 분 전, 몇 시간 전, 며칠 전의 경계", () => {

@@ -3,7 +3,7 @@
  * 박스의 별점과 후기(2026-10-11 파운더: 박스마다 별점과 후기를 보여 준다).
  *  - RatingInline: 홈 카드와 박스 화면 제목 아래의 한 줄(별 하나, 평균, 후기 수)
  *  - RatingBlock: 평균과 분포
- *  - useReviewFeed: 후기 목록의 재료. 샘플과 이 기기에서 쓴 후기를 새것부터 한 줄로 섞는다
+ *  - useReviewFeed: 후기 목록의 재료. 이 기기에서 쓴 후기를 앞에 두고 그 뒤에 샘플을 새것부터 잇는다
  *  - ReviewCard, ReviewList, ReviewSheet: 후기 한 건, 목록(전체 N건, 처음 몇 건과 더 보기), 그 상세
  *  - useRealRatings: 실제 후기의 점수를 박스마다 모은 것. 박스 카드와 박스 화면이 같은 집계(lib/reviewFeed)를 쓴다
  *  - BoxReviews: 박스 화면의 후기 영역(평균과 분포, 목록)
@@ -24,7 +24,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Package, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { BOX_BY_SLUG, type ProductBox, type ProductItem } from "@/lib/products";
-import { MORE_COUNT_MAX, agoOf, allRating, boxRating, isRealReview, realRatings, type RealRatings } from "@/lib/reviewFeed";
+import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, type RealRatings } from "@/lib/reviewFeed";
 import { newestSamples, sampleReviews, type RatingSummary } from "@/lib/reviewSamples";
 import { useCurrency } from "@/lib/useCurrency";
 import { useProductText } from "@/lib/useProductText";
@@ -169,7 +169,8 @@ export function useRealRatings(): RealRatings {
 export interface ReviewFeed { cards: ReviewCardData[]; total: number; summary: RatingSummary }
 
 /**
- * 후기 목록: 새것부터 shown 건, 전체 건수, 별점 요약. boxSlug 가 null 이면 박스를 가리지 않는다(모아 보기).
+ * 후기 목록: 앞에서 shown 건, 전체 건수, 별점 요약. boxSlug 가 null 이면 박스를 가리지 않는다(모아 보기).
+ * 차례는 내 후기가 먼저(새것부터), 그다음에 샘플(새것부터)이다(lib/reviewFeed 의 feedOrder). 내 후기는 며칠이 지나도 맨 앞에 있다.
  * 샘플은 보이는 만큼만 만든다. 건수와 별점 요약은 박스 목록의 카드와 같은 셈이다(lib/reviewFeed 의 boxRating).
  */
 export function useReviewFeed(boxSlug: string | null, shown: number): ReviewFeed {
@@ -180,7 +181,7 @@ export function useReviewFeed(boxSlug: string | null, shown: number): ReviewFeed
     const samples = boxSlug ? sampleReviews(boxSlug, shown) : newestSamples(shown);
     const cards: ReviewCardData[] = samples.map((s) => ({ id: s.id, boxSlug: s.boxSlug, rating: s.rating, text: s.text, item: BOX_BY_SLUG[s.boxSlug]?.items.find((i) => i.id === s.itemId), photo: s.photo, author: s.author, ageMin: s.ageMin, likes: s.likes, verifyHref: null, mine: false }));
     const summary = boxSlug ? boxRating(boxSlug, real) : allRating(real);
-    return { cards: [...mine, ...cards].sort((a, b) => a.ageMin - b.ageMin).slice(0, shown), total: summary.count, summary };
+    return { cards: feedOrder(mine, cards, shown), total: summary.count, summary };
   }, [mine, real, boxSlug, shown]);
 }
 

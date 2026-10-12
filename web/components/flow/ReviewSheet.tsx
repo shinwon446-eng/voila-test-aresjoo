@@ -3,7 +3,7 @@
  * 후기 쓰기 시트. 받은 상품(보관함의 실제 개봉 기록)에만 쓴다. 가짜 후기가 생길 길이 없다.
  * 결정 하나: 보내기. 별점은 알약 다섯, 글 한 칸, 사진 한 장(선택). 실패는 그 자리 한 줄.
  */
-import { useState, type ChangeEvent } from "react";
+import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { useTranslations } from "next-intl";
 import { REVIEW_MAX_CHARS, REVIEW_MIN_CHARS } from "@/lib/community";
 import { useCommunityStore } from "@/stores/communityStore";
@@ -36,11 +36,20 @@ export function ReviewSheet({ item, itemName, onClose, onDone }: { item: OwnedIt
   const [photo, setPhoto] = useState<string | undefined>();
   const [failed, setFailed] = useState<"short" | "photo" | "save" | null>(null);
   const [busy, setBusy] = useState(false);
+  // 사진 줄이기의 세대 번호: 가장 나중에 고른 사진의 결과만 받는다. 초안을 비울 때도 올려서 앞서 시작한 것을 버린다
+  const generation = useRef(0);
+  const alive = useRef(true);
+  useEffect(() => { alive.current = true; return () => { alive.current = false; }; }, []);
+  // 상품이 바뀌거나 시트가 닫히면 초안(별점, 글, 사진, 실패 한 줄)을 비운다. 다른 상품의 후기로 넘어가지 않게
+  const itemId = item?.id ?? null;
+  useEffect(() => { generation.current += 1; setRating(5); setText(""); setPhoto(undefined); setFailed(null); }, [itemId]);
 
   const pick = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    try { setPhoto(await shrink(file)); setFailed(null); } catch { setFailed("photo"); }
+    const mine = ++generation.current;
+    const current = () => alive.current && mine === generation.current;
+    try { const shrunk = await shrink(file); if (!current()) return; setPhoto(shrunk); setFailed(null); } catch { if (current()) setFailed("photo"); }
   };
   const send = () => {
     if (!item) return;

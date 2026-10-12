@@ -247,7 +247,8 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-strip-value { display: block; color: var(--v-sub); font-size: var(--v-fs-small); }
 @media (min-width: 768px) { .v-strip > li { flex-basis: 22%; } }
 /* 상품 타일은 단추다(눌러서 상품 시트) */
-button.v-item { display: block; width: 100%; height: 100%; padding: 0; border: 0; color: inherit; text-align: left; cursor: pointer; }
+.v-items > li { display: flex; } /* 타일이 칸 높이를 끝까지 채운다(퍼센트 높이에 기대지 않는다) */
+button.v-item { display: block; width: 100%; padding: 0; border: 0; color: inherit; text-align: left; cursor: pointer; }
 button.v-item .v-item-photo, button.v-item .v-item-body { display: block; }
 button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 0; background: none; color: inherit; cursor: pointer; }
 .v-sheet-photo { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--v-r-card); background: var(--v-photo); }

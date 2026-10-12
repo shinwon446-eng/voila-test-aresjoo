@@ -17,7 +17,7 @@
  *   내 후기는 쓴 시각과 지금의 차이로 적는다. 내 후기는 브라우저의 저장소에서 화면이 뜬 뒤에야 들어오므로 미리 그린 HTML 에는 없다.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Star } from "lucide-react";
+import { Package, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { BOX_BY_SLUG, type ProductBox, type ProductItem } from "@/lib/products";
 import { isExampleReview } from "@/lib/community";
@@ -173,7 +173,8 @@ export function ReviewCard({ card, onOpen }: { card: ReviewCardData; onOpen: (ca
         {card.photo && <span className="v-rv-photo"><img src={card.photo} alt={t("reviews.photo")} loading="lazy" decoding="async" /></span>}
         {card.item && (
           <span className="v-rv-item">
-            {thumb && <span className="v-rv-thumb"><img src={thumb} alt="" loading="lazy" decoding="async" /></span>}
+            {/* 사진이 없는 상품도 사진 자리를 비우지 않는다(2026-10-12 파운더, 나온 상품의 행과 같다) */}
+            <span className="v-rv-thumb">{thumb ? <img src={thumb} alt="" loading="lazy" decoding="async" /> : <span className="v-item-glyph" aria-hidden><Package size={18} strokeWidth={1.4} /></span>}</span>
             <span className="v-rv-itembody"><span className="v-rv-itemname">{itemName(card.item)}</span><span className="v-small v-num">{t("take.ref", { amount: fmt(card.item.value) })}</span></span>
           </span>
         )}

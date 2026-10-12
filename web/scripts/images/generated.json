@@ -263,8 +263,20 @@
     "file": "audio-akg-c12-vr-tube-condenser-microphone.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-akg-c214-matched-pair": {
+    "file": "audio-akg-c214-matched-pair.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-akg-c314": {
+    "file": "audio-akg-c314.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-akg-c414-xls-st-matched-pair-condenser-microphones": {
     "file": "audio-akg-c414-xls-st-matched-pair-condenser-microphones.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-akg-c451-b": {
+    "file": "audio-akg-c451-b.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-akg-drum-set-premium-drum-microphone-set": {
@@ -273,6 +285,10 @@
   },
   "audio-akg-k812-open-back-reference-headphones": {
     "file": "audio-akg-k812-open-back-reference-headphones.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-akg-n5005": {
+    "file": "audio-akg-n5005.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-audeze-crbn": {
@@ -295,16 +311,56 @@
     "file": "audio-audio-technica-at-art1000-direct-power-stereo-moving-coil.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-audio-technica-at-art20-moving-coil-cartridge": {
+    "file": "audio-audio-technica-at-art20-moving-coil-cartridge.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-audio-technica-at-art9xi-moving-coil-cartridge": {
+    "file": "audio-audio-technica-at-art9xi-moving-coil-cartridge.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-audio-technica-at-ha5050h-hybrid-headphone-amplifier": {
     "file": "audio-audio-technica-at-ha5050h-hybrid-headphone-amplifier.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-audio-technica-at-lpa2": {
+    "file": "audio-audio-technica-at-lpa2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-audio-technica-at5040": {
     "file": "audio-audio-technica-at5040.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-audio-technica-ath-adx5000": {
+    "file": "audio-audio-technica-ath-adx5000.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-audio-technica-ath-adx7000": {
+    "file": "audio-audio-technica-ath-adx7000.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-audio-technica-ath-awas": {
+    "file": "audio-audio-technica-ath-awas.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-audio-technica-ath-awkt": {
+    "file": "audio-audio-technica-ath-awkt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-audio-technica-ath-w2022-60th-anniversary-headphones": {
     "file": "audio-audio-technica-ath-w2022-60th-anniversary-headphones.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-audio-technica-ath-wb2022-wireless-wooden-headphones": {
+    "file": "audio-audio-technica-ath-wb2022-wireless-wooden-headphones.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bang-olufsen-beolab-18": {
+    "file": "audio-bang-olufsen-beolab-18.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bang-olufsen-beolab-19": {
+    "file": "audio-bang-olufsen-beolab-19.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-bang-olufsen-beolab-28": {
@@ -315,16 +371,64 @@
     "file": "audio-bang-olufsen-beolab-50.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-bang-olufsen-beolab-8-wireless-speaker-each": {
+    "file": "audio-bang-olufsen-beolab-8-wireless-speaker-each.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-bang-olufsen-beolab-90": {
     "file": "audio-bang-olufsen-beolab-90.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bang-olufsen-beosound-2": {
+    "file": "audio-bang-olufsen-beosound-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bang-olufsen-beosound-a9-5th-gen": {
+    "file": "audio-bang-olufsen-beosound-a9-5th-gen.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bang-olufsen-beosound-balance": {
+    "file": "audio-bang-olufsen-beosound-balance.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bang-olufsen-beosound-stage": {
+    "file": "audio-bang-olufsen-beosound-stage.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bang-olufsen-beosound-theatre": {
+    "file": "audio-bang-olufsen-beosound-theatre.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-bang-olufsen-beosystem-9000c-music-system": {
     "file": "audio-bang-olufsen-beosystem-9000c-music-system.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-beyerdynamic-a-20": {
+    "file": "audio-beyerdynamic-a-20.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-beyerdynamic-dt-1770-pro-mkii": {
+    "file": "audio-beyerdynamic-dt-1770-pro-mkii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-beyerdynamic-dt-1990-pro-mkii-open-back-studio-headphones": {
+    "file": "audio-beyerdynamic-dt-1990-pro-mkii-open-back-studio-headphones.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-beyerdynamic-m-130": {
+    "file": "audio-beyerdynamic-m-130.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-beyerdynamic-m-160": {
+    "file": "audio-beyerdynamic-m-160.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-beyerdynamic-mc-840": {
     "file": "audio-beyerdynamic-mc-840.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-beyerdynamic-mc-930": {
+    "file": "audio-beyerdynamic-mc-930.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-beyerdynamic-t1-3rd-generation": {
@@ -335,12 +439,24 @@
     "file": "audio-beyerdynamic-t5-3rd-generation.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-beyerdynamic-xelento-remote-2nd-generation": {
+    "file": "audio-beyerdynamic-xelento-remote-2nd-generation.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-beyerdynamic-xelento-wireless-2nd-generation-bluetooth-in": {
     "file": "audio-beyerdynamic-xelento-wireless-2nd-generation-bluetooth-in.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-bose-a30-aviation-headset": {
     "file": "audio-bose-a30-aviation-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bose-bass-module-500": {
+    "file": "audio-bose-bass-module-500.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bose-bass-module-700": {
+    "file": "audio-bose-bass-module-700.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-bose-l1-pro16-portable-line-array-system": {
@@ -351,8 +467,36 @@
     "file": "audio-bose-l1-pro32-with-sub2-portable-line-array-system.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-bose-l1-pro8-portable-line-array-system": {
+    "file": "audio-bose-l1-pro8-portable-line-array-system.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-bose-lifestyle-650-home-entertainment-system": {
     "file": "audio-bose-lifestyle-650-home-entertainment-system.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bose-s1-pro-plus-wireless-pa-system": {
+    "file": "audio-bose-s1-pro-plus-wireless-pa-system.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bose-smart-soundbar": {
+    "file": "audio-bose-smart-soundbar.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bose-smart-ultra-soundbar": {
+    "file": "audio-bose-smart-ultra-soundbar.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bose-surround-speakers-700": {
+    "file": "audio-bose-surround-speakers-700.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bose-wave-music-system-iv": {
+    "file": "audio-bose-wave-music-system-iv.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bowers-wilkins-702-s3-signature": {
+    "file": "audio-bowers-wilkins-702-s3-signature.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-bowers-wilkins-801-d4": {
@@ -367,6 +511,22 @@
     "file": "audio-bowers-wilkins-802-d4.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-bowers-wilkins-803-d4": {
+    "file": "audio-bowers-wilkins-803-d4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bowers-wilkins-804-d4": {
+    "file": "audio-bowers-wilkins-804-d4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bowers-wilkins-805-d4": {
+    "file": "audio-bowers-wilkins-805-d4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-bowers-wilkins-805-d4-signature": {
+    "file": "audio-bowers-wilkins-805-d4-signature.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-bowers-wilkins-nautilus": {
     "file": "audio-bowers-wilkins-nautilus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -375,8 +535,16 @@
     "file": "audio-devialet-astra.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-devialet-dione-opera-de-paris": {
+    "file": "audio-devialet-dione-opera-de-paris.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-devialet-expert-1000-pro-dual-mono-amplifier": {
     "file": "audio-devialet-expert-1000-pro-dual-mono-amplifier.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-devialet-expert-140-pro": {
+    "file": "audio-devialet-expert-140-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-devialet-expert-220-pro": {
@@ -385,6 +553,22 @@
   },
   "audio-devialet-expert-250-pro": {
     "file": "audio-devialet-expert-250-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-devialet-phantom-i-103-db": {
+    "file": "audio-devialet-phantom-i-103-db.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-devialet-phantom-i-108-db": {
+    "file": "audio-devialet-phantom-i-108-db.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-devialet-phantom-i-108-db-opera-de-paris": {
+    "file": "audio-devialet-phantom-i-108-db-opera-de-paris.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-devialet-phantom-ultimate-108-db": {
+    "file": "audio-devialet-phantom-ultimate-108-db.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-fiio-k19": {
@@ -411,8 +595,16 @@
     "file": "audio-focal-grande-utopia-em-evo.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-focal-kanta-n2": {
+    "file": "audio-focal-kanta-n2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-focal-maestro-utopia-evo": {
     "file": "audio-focal-maestro-utopia-evo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-focal-sopra-n1": {
+    "file": "audio-focal-sopra-n1.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-focal-stella-utopia-em-evo": {
@@ -433,6 +625,18 @@
   },
   "audio-harman-kardon-enchant-1300": {
     "file": "audio-harman-kardon-enchant-1300.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-jbl-4349-studio-monitor-loudspeakers-pair": {
+    "file": "audio-jbl-4349-studio-monitor-loudspeakers-pair.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-jbl-4367-studio-monitor-loudspeakers-pair": {
+    "file": "audio-jbl-4367-studio-monitor-loudspeakers-pair.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-jbl-hdi-3800": {
+    "file": "audio-jbl-hdi-3800.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-jbl-project-everest-dd67000": {
@@ -459,20 +663,56 @@
     "file": "audio-kef-blade-two-meta.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-kef-ls50-wireless-ii": {
+    "file": "audio-kef-ls50-wireless-ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-kef-muon": {
     "file": "audio-kef-muon.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-kef-r5-meta": {
+    "file": "audio-kef-r5-meta.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-kef-r7-meta": {
+    "file": "audio-kef-r7-meta.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-kef-reference-5-meta": {
     "file": "audio-kef-reference-5-meta.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-kef-reference-8b": {
+    "file": "audio-kef-reference-8b.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-marshall-1959hw-handwired-guitar-amplifier-head": {
     "file": "audio-marshall-1959hw-handwired-guitar-amplifier-head.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-marshall-1960a-4x12-guitar-speaker-cabinet": {
+    "file": "audio-marshall-1960a-4x12-guitar-speaker-cabinet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-marshall-1962-bluesbreaker": {
     "file": "audio-marshall-1962-bluesbreaker.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-marshall-bromley-750": {
+    "file": "audio-marshall-bromley-750.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-marshall-dsl20cr": {
+    "file": "audio-marshall-dsl20cr.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-marshall-dsl40cr": {
+    "file": "audio-marshall-dsl40cr.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-marshall-heston-120": {
+    "file": "audio-marshall-heston-120.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-marshall-jcm800-2203": {
@@ -481,6 +721,10 @@
   },
   "audio-marshall-jtm45-2245": {
     "file": "audio-marshall-jtm45-2245.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-marshall-studio-classic-sc20h": {
+    "file": "audio-marshall-studio-classic-sc20h.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-p-audio-research-reference-160s": {
@@ -591,6 +835,22 @@
     "file": "audio-sennheiser-ambeo-soundbar-max.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-sennheiser-ambeo-soundbar-mini": {
+    "file": "audio-sennheiser-ambeo-soundbar-mini.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-sennheiser-ambeo-soundbar-plus": {
+    "file": "audio-sennheiser-ambeo-soundbar-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-sennheiser-ambeo-sub": {
+    "file": "audio-sennheiser-ambeo-sub.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-sennheiser-hd-800-s": {
+    "file": "audio-sennheiser-hd-800-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-sennheiser-hd-820": {
     "file": "audio-sennheiser-hd-820.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -601,6 +861,22 @@
   },
   "audio-sennheiser-he-1": {
     "file": "audio-sennheiser-he-1.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-sennheiser-ie-600": {
+    "file": "audio-sennheiser-ie-600.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-sennheiser-ie-900": {
+    "file": "audio-sennheiser-ie-900.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-sennheiser-md-441-u": {
+    "file": "audio-sennheiser-md-441-u.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-sennheiser-mkh-416-shotgun-microphone": {
+    "file": "audio-sennheiser-mkh-416-shotgun-microphone.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-shure-ad4d-two-channel-digital-wireless-receiver": {
@@ -659,6 +935,10 @@
     "file": "audio-sony-mdr-z1r-signature-series-headphones.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-sony-nw-wm1am2-walkman-digital-audio-player": {
+    "file": "audio-sony-nw-wm1am2-walkman-digital-audio-player.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-sony-nw-wm1zm2-walkman-signature-series-digital-audio-play": {
     "file": "audio-sony-nw-wm1zm2-walkman-signature-series-digital-audio-play.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -679,6 +959,10 @@
     "file": "audio-sony-ta-zh1es-signature-series-headphone-amplifier.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-technics-sb-g90m2": {
+    "file": "audio-technics-sb-g90m2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-technics-sb-r1-reference-speaker-system-pair": {
     "file": "audio-technics-sb-r1-reference-speaker-system-pair.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -689,6 +973,18 @@
   },
   "audio-technics-sl-1000r-reference-direct-drive-turntable-system": {
     "file": "audio-technics-sl-1000r-reference-direct-drive-turntable-system.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-technics-sl-1200g-direct-drive-turntable": {
+    "file": "audio-technics-sl-1200g-direct-drive-turntable.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-technics-sp-10r-direct-drive-turntable-motor-unit": {
+    "file": "audio-technics-sp-10r-direct-drive-turntable-motor-unit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-technics-su-r1-network-audio-control-player": {
+    "file": "audio-technics-su-r1-network-audio-control-player.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-technics-su-r1000-reference-stereo-integrated-amplifier": {
@@ -2227,8 +2523,32 @@
     "file": "camera-canon-cine-servo-25-250mm-t2-95-3-95.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "camera-canon-eos-1d-x-mark-iii": {
+    "file": "camera-canon-eos-1d-x-mark-iii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-canon-eos-c300-mark-iii": {
+    "file": "camera-canon-eos-c300-mark-iii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-canon-eos-c400": {
+    "file": "camera-canon-eos-c400.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-canon-eos-c500-mark-ii": {
+    "file": "camera-canon-eos-c500-mark-ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-canon-rf-100-300mm-f2-8-l-is-usm": {
+    "file": "camera-canon-rf-100-300mm-f2-8-l-is-usm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "camera-canon-rf-1200mm-f8-l-is-usm": {
     "file": "camera-canon-rf-1200mm-f8-l-is-usm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-canon-rf-400mm-f2-8-l-is-usm": {
+    "file": "camera-canon-rf-400mm-f2-8-l-is-usm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "camera-canon-rf-600mm-f4-l-is-usm": {
@@ -2263,6 +2583,10 @@
     "file": "camera-fujifilm-gfx100-ii.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "camera-fujifilm-gfx100rf": {
+    "file": "camera-fujifilm-gfx100rf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "camera-fujifilm-gfx100s-ii": {
     "file": "camera-fujifilm-gfx100s-ii.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2287,12 +2611,28 @@
     "file": "camera-godox-knowled-p1200r-hard.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "camera-gopro-fluid-pro-ai-gimbal": {
+    "file": "camera-gopro-fluid-pro-ai-gimbal.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-gopro-hero": {
+    "file": "camera-gopro-hero.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-gopro-hero11-black-mini": {
+    "file": "camera-gopro-hero11-black-mini.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "camera-gopro-hero13-black": {
     "file": "camera-gopro-hero13-black.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "camera-gopro-hero13-black-creator-edition": {
     "file": "camera-gopro-hero13-black-creator-edition.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-gopro-macro-lens-mod": {
+    "file": "camera-gopro-macro-lens-mod.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "camera-gopro-max": {
@@ -2331,6 +2671,18 @@
     "file": "camera-insta360-x5-essentials-bundle.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "camera-leica-apo-summicron-m-35mm-f-2-asph": {
+    "file": "camera-leica-apo-summicron-m-35mm-f-2-asph.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-leica-m11-d": {
+    "file": "camera-leica-m11-d.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-leica-m11-monochrom": {
+    "file": "camera-leica-m11-monochrom.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "camera-leica-noctilux-m-50mm-f-0-95-asph": {
     "file": "camera-leica-noctilux-m-50mm-f-0-95-asph.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2341,6 +2693,10 @@
   },
   "camera-leica-s3": {
     "file": "camera-leica-s3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-leica-summilux-m-21mm-f-1-4-asph": {
+    "file": "camera-leica-summilux-m-21mm-f-1-4-asph.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "camera-leica-summilux-m-90mm-f-1-5-asph": {
@@ -2363,6 +2719,10 @@
     "file": "camera-nikon-nikkor-z-600mm-f-4-tc-vr-s.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "camera-om-system-m-zuiko-digital-ed-12-100mm-f4-0-is-pro": {
+    "file": "camera-om-system-m-zuiko-digital-ed-12-100mm-f4-0-is-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "camera-om-system-m-zuiko-digital-ed-150-400mm-f4-5-tc1-25x-is-pr": {
     "file": "camera-om-system-m-zuiko-digital-ed-150-400mm-f4-5-tc1-25x-is-pr.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2375,8 +2735,20 @@
     "file": "camera-om-system-m-zuiko-digital-ed-300mm-f4-0-is-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "camera-om-system-m-zuiko-digital-ed-45mm-f1-2-pro": {
+    "file": "camera-om-system-m-zuiko-digital-ed-45mm-f1-2-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "camera-om-system-m-zuiko-digital-ed-50-200mm-f2-8-is-pro": {
     "file": "camera-om-system-m-zuiko-digital-ed-50-200mm-f2-8-is-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-om-system-m-zuiko-digital-ed-7-14mm-f2-8-pro": {
+    "file": "camera-om-system-m-zuiko-digital-ed-7-14mm-f2-8-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-om-system-m-zuiko-digital-ed-90mm-f3-5-macro-is-pro": {
+    "file": "camera-om-system-m-zuiko-digital-ed-90mm-f3-5-macro-is-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "camera-p-angenieux-ez-1-30-90mm-t2": {
@@ -2611,6 +2983,10 @@
     "file": "camera-sigma-aizu-prime-line-50mm-t1-3-lf.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "camera-sigma-cine-18-35mm-t2": {
+    "file": "camera-sigma-cine-18-35mm-t2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "camera-sony-burano": {
     "file": "camera-sony-burano.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -2621,6 +2997,14 @@
   },
   "camera-sony-fe-600mm-f4-gm-oss": {
     "file": "camera-sony-fe-600mm-f4-gm-oss.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-sony-fx3": {
+    "file": "camera-sony-fx3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "camera-sony-rx1r-iii": {
+    "file": "camera-sony-rx1r-iii.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "camera-sony-venice-2-8k": {
@@ -3895,6 +4279,10 @@
     "file": "cm-zeiss-wipes.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-acer-predator-cg48": {
+    "file": "computer-acer-predator-cg48.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-acer-predator-helios-16-ai-rtx-5080": {
     "file": "computer-acer-predator-helios-16-ai-rtx-5080.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -3907,6 +4295,10 @@
     "file": "computer-acer-predator-helios-18-ph18-72.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-acer-predator-helios-neo-16-ai": {
+    "file": "computer-acer-predator-helios-neo-16-ai.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-acer-predator-orion-5000": {
     "file": "computer-acer-predator-orion-5000.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -3915,12 +4307,32 @@
     "file": "computer-acer-predator-orion-7000-po7-655.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-acer-predator-spatiallabs-view-27": {
+    "file": "computer-acer-predator-spatiallabs-view-27.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-acer-predator-triton-14-ai": {
     "file": "computer-acer-predator-triton-14-ai.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-acer-predator-x45": {
+    "file": "computer-acer-predator-x45.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-acer-predator-z57": {
     "file": "computer-acer-predator-z57.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-acer-swift-x-14-sfx14-72g": {
+    "file": "computer-acer-swift-x-14-sfx14-72g.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-amd-alveo-v80": {
+    "file": "computer-amd-alveo-v80.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-amd-epyc-9554": {
+    "file": "computer-amd-epyc-9554.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-amd-epyc-9654": {
@@ -3945,6 +4357,22 @@
   },
   "computer-amd-threadripper-9980x": {
     "file": "computer-amd-threadripper-9980x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-amd-threadripper-pro-7985wx": {
+    "file": "computer-amd-threadripper-pro-7985wx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-amd-threadripper-pro-7995wx": {
+    "file": "computer-amd-threadripper-pro-7995wx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-amd-threadripper-pro-9985wx": {
+    "file": "computer-amd-threadripper-pro-9985wx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-amd-threadripper-pro-9995wx": {
+    "file": "computer-amd-threadripper-pro-9995wx.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-apple-mac-pro-m2-ultra-192gb-8tb": {
@@ -4051,6 +4479,34 @@
     "file": "computer-benq-board-pro-rp8604.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-benq-instashow-wdc20": {
+    "file": "computer-benq-instashow-wdc20.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-benq-mobiuz-ex271uz": {
+    "file": "computer-benq-mobiuz-ex271uz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-benq-mobiuz-ex321ux": {
+    "file": "computer-benq-mobiuz-ex321ux.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-benq-pd2730s": {
+    "file": "computer-benq-pd2730s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-benq-pd3220u": {
+    "file": "computer-benq-pd3220u.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-benq-pd3225u": {
+    "file": "computer-benq-pd3225u.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-benq-pd3226g": {
+    "file": "computer-benq-pd3226g.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-benq-sw272u": {
     "file": "computer-benq-sw272u.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4059,12 +4515,28 @@
     "file": "computer-benq-sw321c.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-benq-zowie-xl2586x-plus": {
+    "file": "computer-benq-zowie-xl2586x-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-corsair-ai-workstation-300-128gb": {
     "file": "computer-corsair-ai-workstation-300-128gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-corsair-ai-workstation-300-64gb": {
     "file": "computer-corsair-ai-workstation-300-64gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-corsair-dominator-titanium-192gb": {
+    "file": "computer-corsair-dominator-titanium-192gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-corsair-elgato-stream-deck-studio": {
+    "file": "computer-corsair-elgato-stream-deck-studio.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-corsair-mp600-pro-xt-8tb": {
+    "file": "computer-corsair-mp600-pro-xt-8tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-corsair-one-i500-rtx-4080-super": {
@@ -4079,8 +4551,24 @@
     "file": "computer-corsair-platform-6-elevate.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-corsair-ws-ddr5-rdimm-128gb": {
+    "file": "computer-corsair-ws-ddr5-rdimm-128gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-corsair-xeneon-27qhd240-oled": {
+    "file": "computer-corsair-xeneon-27qhd240-oled.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-corsair-xeneon-34wqhd240-c": {
+    "file": "computer-corsair-xeneon-34wqhd240-c.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-corsair-xeneon-flex-45wqhd240": {
     "file": "computer-corsair-xeneon-flex-45wqhd240.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-dell-16-premium-rtx-5070": {
+    "file": "computer-dell-16-premium-rtx-5070.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-dell-alienware-16-area-51-rtx-5080": {
@@ -4089,6 +4577,10 @@
   },
   "computer-dell-alienware-18-area-51-rtx-5090": {
     "file": "computer-dell-alienware-18-area-51-rtx-5090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-dell-alienware-area-51-desktop-rtx-5080": {
+    "file": "computer-dell-alienware-area-51-desktop-rtx-5080.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-dell-alienware-area-51-desktop-rtx-5090": {
@@ -4105,6 +4597,14 @@
   },
   "computer-dell-precision-7960-tower-w7-rtx-a5000": {
     "file": "computer-dell-precision-7960-tower-w7-rtx-a5000.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-dell-ultrasharp-u3224kb": {
+    "file": "computer-dell-ultrasharp-u3224kb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-dell-ultrasharp-u4025qw": {
+    "file": "computer-dell-ultrasharp-u4025qw.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-dell-ultrasharp-up3221q": {
@@ -4203,8 +4703,32 @@
     "file": "computer-gigabyte-rtx-5090-windforce-oc.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-hp-dreamcolor-z31x": {
+    "file": "computer-hp-dreamcolor-z31x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-hp-elitebook-ultra-g1i-14": {
+    "file": "computer-hp-elitebook-ultra-g1i-14.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-hp-omen-45l-rtx-5090": {
     "file": "computer-hp-omen-45l-rtx-5090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-hp-omen-max-16-rtx-5080": {
+    "file": "computer-hp-omen-max-16-rtx-5080.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-hp-omen-max-16-rtx-5090": {
+    "file": "computer-hp-omen-max-16-rtx-5090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-hp-z2-mini-g1a": {
+    "file": "computer-hp-z2-mini-g1a.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-hp-z4-g5-w3-rtx-a2000": {
+    "file": "computer-hp-z4-g5-w3-rtx-a2000.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-hp-z6-g5-a-tr-pro-7975wx": {
@@ -4215,12 +4739,24 @@
     "file": "computer-hp-z8-fury-g5-w7-rtx-a4000.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-hp-zbook-fury-16-g11-i7-rtx-2000-ada": {
+    "file": "computer-hp-zbook-fury-16-g11-i7-rtx-2000-ada.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-hp-zbook-fury-16-g11-i9-rtx-5000-ada": {
     "file": "computer-hp-zbook-fury-16-g11-i9-rtx-5000-ada.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-hp-zbook-ultra-g1a-14": {
+    "file": "computer-hp-zbook-ultra-g1a-14.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-intel-gaudi-3-hl-338": {
     "file": "computer-intel-gaudi-3-hl-338.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-intel-optane-p5800x-1-6tb": {
+    "file": "computer-intel-optane-p5800x-1-6tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-intel-xeon-6780e": {
@@ -4229,6 +4765,10 @@
   },
   "computer-intel-xeon-6980p": {
     "file": "computer-intel-xeon-6980p.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-intel-xeon-gold-6548y-plus": {
+    "file": "computer-intel-xeon-gold-6548y-plus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-intel-xeon-max-9480": {
@@ -4247,8 +4787,20 @@
     "file": "computer-intel-xeon-platinum-8592-plus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-intel-xeon-w7-3465x": {
+    "file": "computer-intel-xeon-w7-3465x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-intel-xeon-w9-3495x": {
+    "file": "computer-intel-xeon-w9-3495x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-intel-xeon-w9-3595x": {
     "file": "computer-intel-xeon-w9-3595x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-keychron-lemokey-l3": {
+    "file": "computer-keychron-lemokey-l3.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-keychron-lemokey-l5-he-8k": {
@@ -4257,6 +4809,10 @@
   },
   "computer-keychron-q1-he": {
     "file": "computer-keychron-q1-he.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-keychron-q1-max": {
+    "file": "computer-keychron-q1-max.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-keychron-q12-max": {
@@ -4291,8 +4847,20 @@
     "file": "computer-keychron-q6-max.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-lenovo-legion-9i-gen-10-rtx-5090": {
+    "file": "computer-lenovo-legion-9i-gen-10-rtx-5090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-lenovo-legion-9i-gen-9-rtx-4090": {
+    "file": "computer-lenovo-legion-9i-gen-9-rtx-4090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-lenovo-legion-pro-7i-gen-10-rtx-5080": {
     "file": "computer-lenovo-legion-pro-7i-gen-10-rtx-5080.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-lenovo-legion-pro-7i-gen-10-rtx-5090": {
+    "file": "computer-lenovo-legion-pro-7i-gen-10-rtx-5090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-lenovo-legion-tower-7i-gen-10-rtx-5080": {
@@ -4301,6 +4869,10 @@
   },
   "computer-lenovo-thinkbook-plus-gen-6-rollable": {
     "file": "computer-lenovo-thinkbook-plus-gen-6-rollable.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-lenovo-thinkpad-p1-gen-7-rtx-3000-ada": {
+    "file": "computer-lenovo-thinkpad-p1-gen-7-rtx-3000-ada.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-lenovo-thinkpad-p16-gen-2-rtx-5000-ada": {
@@ -4331,8 +4903,24 @@
     "file": "computer-lg-gram-17-17z90s.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-lg-gram-pro-16-16z90sp": {
+    "file": "computer-lg-gram-pro-16-16z90sp.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-lg-gram-pro-16-16z90tp": {
+    "file": "computer-lg-gram-pro-16-16z90tp.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-lg-gram-pro-17-17z90tp": {
     "file": "computer-lg-gram-pro-17-17z90tp.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-lg-gram-pro-2-in-1-16t90tp": {
+    "file": "computer-lg-gram-pro-2-in-1-16t90tp.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-lg-ultrafine-6k-32u990a": {
+    "file": "computer-lg-ultrafine-6k-32u990a.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-lg-ultrafine-oled-pro-27ep950": {
@@ -4347,6 +4935,14 @@
     "file": "computer-lg-ultragear-45gs95qe.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-lg-ultragear-45gx950a": {
+    "file": "computer-lg-ultragear-45gx950a.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-lg-ultrawide-40wp95c": {
+    "file": "computer-lg-ultrawide-40wp95c.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-logitech-g-pro-racing-wheel": {
     "file": "computer-logitech-g-pro-racing-wheel.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4359,12 +4955,20 @@
     "file": "computer-logitech-rally-bar.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-logitech-rally-bar-huddle": {
+    "file": "computer-logitech-rally-bar-huddle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-logitech-rally-bar-mini": {
     "file": "computer-logitech-rally-bar-mini.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-logitech-rally-board-65": {
     "file": "computer-logitech-rally-board-65.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-logitech-rally-camera": {
+    "file": "computer-logitech-rally-camera.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-logitech-rally-plus": {
@@ -4379,6 +4983,14 @@
     "file": "computer-logitech-rs50-system.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-logitech-scribe": {
+    "file": "computer-logitech-scribe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-logitech-sight": {
+    "file": "computer-logitech-sight.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-microsoft-surface-hub-3-50": {
     "file": "computer-microsoft-surface-hub-3-50.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4389,6 +5001,14 @@
   },
   "computer-microsoft-surface-hub-3-pack": {
     "file": "computer-microsoft-surface-hub-3-pack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-microsoft-surface-laptop-7-13-8-x-elite-16gb-512gb": {
+    "file": "computer-microsoft-surface-laptop-7-13-8-x-elite-16gb-512gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-microsoft-surface-laptop-7-15-x-elite-16gb-256gb": {
+    "file": "computer-microsoft-surface-laptop-7-15-x-elite-16gb-256gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-microsoft-surface-laptop-7-15-x-elite-32gb-1tb": {
@@ -4405,6 +5025,10 @@
   },
   "computer-microsoft-surface-laptop-studio-2-rtx-4060-64gb": {
     "file": "computer-microsoft-surface-laptop-studio-2-rtx-4060-64gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-microsoft-surface-pro-11-x-elite-oled-16gb-512gb": {
+    "file": "computer-microsoft-surface-pro-11-x-elite-oled-16gb-512gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-microsoft-surface-pro-11-x-elite-oled-32gb-1tb": {
@@ -4431,8 +5055,16 @@
     "file": "computer-msi-meg-vision-x-ai-2nd-rtx-5090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-msi-mpg-infinite-x3-ai-rtx-5080": {
+    "file": "computer-msi-mpg-infinite-x3-ai-rtx-5080.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-msi-prestige-16-ai-studio-b1v": {
     "file": "computer-msi-prestige-16-ai-studio-b1v.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-msi-raider-18-hx-ai-rtx-5080": {
+    "file": "computer-msi-raider-18-hx-ai-rtx-5080.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-msi-raider-18-hx-ai-rtx-5090": {
@@ -4503,6 +5135,22 @@
     "file": "computer-nvidia-rtx-pro-6000-blackwell.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-razer-blade-14-2025-rtx-5070": {
+    "file": "computer-razer-blade-14-2025-rtx-5070.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-razer-blade-16-2025-rtx-5070": {
+    "file": "computer-razer-blade-16-2025-rtx-5070.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-razer-blade-16-2025-rtx-5070-ti": {
+    "file": "computer-razer-blade-16-2025-rtx-5070-ti.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-razer-blade-16-2025-rtx-5080": {
+    "file": "computer-razer-blade-16-2025-rtx-5080.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-razer-blade-16-2025-rtx-5090": {
     "file": "computer-razer-blade-16-2025-rtx-5090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4511,12 +5159,28 @@
     "file": "computer-razer-blade-18-2024-rtx-4090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-razer-blade-18-2025-rtx-5070-ti": {
+    "file": "computer-razer-blade-18-2025-rtx-5070-ti.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-razer-blade-18-2025-rtx-5080": {
     "file": "computer-razer-blade-18-2025-rtx-5080.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-razer-blade-18-2025-rtx-5090": {
     "file": "computer-razer-blade-18-2025-rtx-5090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-razer-kraken-v4-pro": {
+    "file": "computer-razer-kraken-v4-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-razer-nommo-v2-pro": {
+    "file": "computer-razer-nommo-v2-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-razer-raptor-27": {
+    "file": "computer-razer-raptor-27.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-samsung-bm1743-61tb": {
@@ -4533,6 +5197,10 @@
   },
   "computer-samsung-galaxy-book4-ultra-u9-rtx4070": {
     "file": "computer-samsung-galaxy-book4-ultra-u9-rtx4070.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-samsung-galaxy-book5-pro-16": {
+    "file": "computer-samsung-galaxy-book5-pro-16.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-samsung-galaxy-book5-pro-360": {
@@ -4557,6 +5225,10 @@
   },
   "computer-samsung-pm1743-15tb": {
     "file": "computer-samsung-pm1743-15tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-samsung-viewfinity-s9-27-s90pc": {
+    "file": "computer-samsung-viewfinity-s9-27-s90pc.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "cs-8bitdo-adapter2": {
@@ -5711,6 +6383,10 @@
     "file": "gaming-8bitdo-8bitdo-arcade-stick-for-xbox.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-8bitdo-8bitdo-pro-3-bluetooth-gamepad": {
+    "file": "gaming-8bitdo-8bitdo-pro-3-bluetooth-gamepad.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-8bitdo-8bitdo-retro-mechanical-keyboard": {
     "file": "gaming-8bitdo-8bitdo-retro-mechanical-keyboard.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -5719,20 +6395,72 @@
     "file": "gaming-8bitdo-8bitdo-retro-mechanical-keyboard-xbox-edition.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-8bitdo-8bitdo-ultimate-2-bluetooth-controller": {
+    "file": "gaming-8bitdo-8bitdo-ultimate-2-bluetooth-controller.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-8bitdo-8bitdo-ultimate-3-mode-controller-for-xbox-rare": {
+    "file": "gaming-8bitdo-8bitdo-ultimate-3-mode-controller-for-xbox-rare.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-8bitdo-8bitdo-ultimate-bluetooth-controller-with": {
+    "file": "gaming-8bitdo-8bitdo-ultimate-bluetooth-controller-with.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-asus-asus-rog-astral-geforce-rtx-5090-oc-edition": {
+    "file": "gaming-asus-asus-rog-astral-geforce-rtx-5090-oc-edition.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-asus-asus-rog-flow-z13-2025-gz302": {
+    "file": "gaming-asus-asus-rog-flow-z13-2025-gz302.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-asus-asus-rog-matrix-geforce-rtx-5090-30th-anniversary": {
     "file": "gaming-asus-asus-rog-matrix-geforce-rtx-5090-30th-anniversary.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-asus-asus-rog-matrix-platinum-geforce-rtx-4090": {
+    "file": "gaming-asus-asus-rog-matrix-platinum-geforce-rtx-4090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-asus-asus-rog-strix-geforce-rtx-4090-oc-edition": {
+    "file": "gaming-asus-asus-rog-strix-geforce-rtx-4090-oc-edition.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-asus-asus-rog-strix-scar-16-2025-rtx-5080": {
+    "file": "gaming-asus-asus-rog-strix-scar-16-2025-rtx-5080.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-asus-asus-rog-strix-scar-18-2025-rtx-5090": {
     "file": "gaming-asus-asus-rog-strix-scar-18-2025-rtx-5090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-asus-asus-rog-swift-pg32uqx-32-inch-4k-mini-led-monitor": {
+    "file": "gaming-asus-asus-rog-swift-pg32uqx-32-inch-4k-mini-led-monitor.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-asus-asus-rog-xg-mobile-2025-rtx-5090": {
+    "file": "gaming-asus-asus-rog-xg-mobile-2025-rtx-5090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-asus-asus-rog-zephyrus-duo-16-2023-rtx-4090": {
     "file": "gaming-asus-asus-rog-zephyrus-duo-16-2023-rtx-4090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-asus-asus-rog-zephyrus-g14-2025-rtx-5070-ti": {
+    "file": "gaming-asus-asus-rog-zephyrus-g14-2025-rtx-5070-ti.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-asus-asus-rog-zephyrus-g16-2025-rtx-5080": {
     "file": "gaming-asus-asus-rog-zephyrus-g16-2025-rtx-5080.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-avermedia-avermedia-extremecap-uvc-bu110": {
+    "file": "gaming-avermedia-avermedia-extremecap-uvc-bu110.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-avermedia-avermedia-live-gamer-4k-2-1-gc575": {
+    "file": "gaming-avermedia-avermedia-live-gamer-4k-2-1-gc575.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-avermedia-avermedia-live-gamer-4k-gc573": {
@@ -5743,12 +6471,48 @@
     "file": "gaming-avermedia-avermedia-live-gamer-bolt-gc555.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-avermedia-avermedia-live-gamer-duo-gc570d": {
+    "file": "gaming-avermedia-avermedia-live-gamer-duo-gc570d.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-avermedia-avermedia-live-gamer-ultra-2-1-gc553g2": {
     "file": "gaming-avermedia-avermedia-live-gamer-ultra-2-1-gc553g2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-avermedia-avermedia-live-gamer-ultra-gc553": {
+    "file": "gaming-avermedia-avermedia-live-gamer-ultra-gc553.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-avermedia-avermedia-live-gamer-ultra-s-gc553pro": {
+    "file": "gaming-avermedia-avermedia-live-gamer-ultra-s-gc553pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-avermedia-avermedia-live-streamer-311-kit-bo311": {
+    "file": "gaming-avermedia-avermedia-live-streamer-311-kit-bo311.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-avermedia-avermedia-live-streamer-cam-513-pw513": {
+    "file": "gaming-avermedia-avermedia-live-streamer-cam-513-pw513.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-avermedia-avermedia-live-streamer-nexus-ax310": {
     "file": "gaming-avermedia-avermedia-live-streamer-nexus-ax310.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-avermedia-avermedia-x-tra-go-gc515": {
+    "file": "gaming-avermedia-avermedia-x-tra-go-gc515.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-corsair-corsair-9000d-rgb-airflow-case": {
+    "file": "gaming-corsair-corsair-9000d-rgb-airflow-case.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-corsair-corsair-ax1600i-power-supply": {
+    "file": "gaming-corsair-corsair-ax1600i-power-supply.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-corsair-corsair-hx1500i-power-supply": {
+    "file": "gaming-corsair-corsair-hx1500i-power-supply.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-corsair-corsair-one-i500-rtx-4080-super": {
@@ -5759,12 +6523,28 @@
     "file": "gaming-corsair-corsair-one-i500-rtx-4090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-corsair-corsair-platform-4-desk": {
+    "file": "gaming-corsair-corsair-platform-4-desk.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-corsair-corsair-platform-6-desk": {
     "file": "gaming-corsair-corsair-platform-6-desk.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-corsair-corsair-platform-6-elevate-desk": {
     "file": "gaming-corsair-corsair-platform-6-elevate-desk.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-corsair-corsair-tc500-luxe-gaming-chair": {
+    "file": "gaming-corsair-corsair-tc500-luxe-gaming-chair.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-corsair-corsair-virtuoso-max-wireless-headset": {
+    "file": "gaming-corsair-corsair-virtuoso-max-wireless-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-corsair-corsair-xeneon-27qhd240-oled-monitor": {
+    "file": "gaming-corsair-corsair-xeneon-27qhd240-oled-monitor.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-corsair-corsair-xeneon-flex-45wqhd240-oled-monitor": {
@@ -5775,6 +6555,10 @@
     "file": "gaming-elgato-elgato-4k-pro-capture-card.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-elgato-elgato-4k-x-capture-card": {
+    "file": "gaming-elgato-elgato-4k-x-capture-card.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-elgato-elgato-4k60-s-plus-capture-card": {
     "file": "gaming-elgato-elgato-4k60-s-plus-capture-card.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -5783,20 +6567,68 @@
     "file": "gaming-elgato-elgato-facecam-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-elgato-elgato-game-capture-4k60-pro-mk-2": {
+    "file": "gaming-elgato-elgato-game-capture-4k60-pro-mk-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-elgato-elgato-key-light": {
+    "file": "gaming-elgato-elgato-key-light.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-elgato-elgato-prompter": {
     "file": "gaming-elgato-elgato-prompter.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-elgato-elgato-stream-deck-plus": {
+    "file": "gaming-elgato-elgato-stream-deck-plus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-elgato-elgato-stream-deck-studio": {
     "file": "gaming-elgato-elgato-stream-deck-studio.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-elgato-elgato-stream-deck-xl": {
+    "file": "gaming-elgato-elgato-stream-deck-xl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-elgato-elgato-thunderbolt-3-dock": {
+    "file": "gaming-elgato-elgato-thunderbolt-3-dock.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-elgato-elgato-thunderbolt-3-pro-dock": {
     "file": "gaming-elgato-elgato-thunderbolt-3-pro-dock.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-fanatec-fanatec-clubsport-dd": {
+    "file": "gaming-fanatec-fanatec-clubsport-dd.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-fanatec-fanatec-clubsport-dd-plus": {
+    "file": "gaming-fanatec-fanatec-clubsport-dd-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-fanatec-fanatec-clubsport-pedals-v3-inverted": {
+    "file": "gaming-fanatec-fanatec-clubsport-pedals-v3-inverted.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-fanatec-fanatec-csl-dd-8-nm": {
+    "file": "gaming-fanatec-fanatec-csl-dd-8-nm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-fanatec-fanatec-csl-dd-ready2race-bundle-5-nm": {
+    "file": "gaming-fanatec-fanatec-csl-dd-ready2race-bundle-5-nm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-fanatec-fanatec-gran-turismo-dd-extreme": {
     "file": "gaming-fanatec-fanatec-gran-turismo-dd-extreme.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-fanatec-fanatec-gran-turismo-dd-pro-5-nm": {
+    "file": "gaming-fanatec-fanatec-gran-turismo-dd-pro-5-nm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-fanatec-fanatec-gran-turismo-dd-pro-8-nm": {
+    "file": "gaming-fanatec-fanatec-gran-turismo-dd-pro-8-nm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-fanatec-fanatec-podium-racing-wheel-f1": {
@@ -5807,8 +6639,20 @@
     "file": "gaming-fanatec-fanatec-podium-steering-wheel-bmw-m4-gt3.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-fanatec-fanatec-podium-wheel-base-dd1": {
+    "file": "gaming-fanatec-fanatec-podium-wheel-base-dd1.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-fanatec-fanatec-podium-wheel-base-dd2": {
     "file": "gaming-fanatec-fanatec-podium-wheel-base-dd2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-hyperx-hyperx-alloy-rise-75-wireless-keyboard": {
+    "file": "gaming-hyperx-hyperx-alloy-rise-75-wireless-keyboard.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-hyperx-hyperx-alloy-rise-keyboard": {
+    "file": "gaming-hyperx-hyperx-alloy-rise-keyboard.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-hyperx-hyperx-armada-25-fhd-gaming-monitor": {
@@ -5823,12 +6667,64 @@
     "file": "gaming-hyperx-hyperx-cloud-alpha-2-wireless-headset.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-hyperx-hyperx-cloud-alpha-wireless-headset": {
+    "file": "gaming-hyperx-hyperx-cloud-alpha-wireless-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-hyperx-hyperx-cloud-iii-s-wireless-headset": {
+    "file": "gaming-hyperx-hyperx-cloud-iii-s-wireless-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-hyperx-hyperx-cloud-mix-headset": {
+    "file": "gaming-hyperx-hyperx-cloud-mix-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-hyperx-hyperx-cloud-orbit-s-headset": {
     "file": "gaming-hyperx-hyperx-cloud-orbit-s-headset.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-hyperx-hyperx-procast-microphone": {
+    "file": "gaming-hyperx-hyperx-procast-microphone.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-hyperx-hyperx-quadcast-2-s-microphone": {
+    "file": "gaming-hyperx-hyperx-quadcast-2-s-microphone.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-hyperx-hyperx-vision-s-webcam": {
+    "file": "gaming-hyperx-hyperx-vision-s-webcam.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-logitech-herman-miller-x-logitech-g-embody-gaming-chair": {
     "file": "gaming-logitech-herman-miller-x-logitech-g-embody-gaming-chair.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-logitech-logitech-g-astro-a50-gen-5-lightspeed-wireless": {
+    "file": "gaming-logitech-logitech-g-astro-a50-gen-5-lightspeed-wireless.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-logitech-logitech-g-astro-a50-x-lightspeed-wireless": {
+    "file": "gaming-logitech-logitech-g-astro-a50-x-lightspeed-wireless.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-logitech-logitech-g-cloud-gaming-handheld": {
+    "file": "gaming-logitech-logitech-g-cloud-gaming-handheld.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-logitech-logitech-g-g29-driving-force-racing-wheel": {
+    "file": "gaming-logitech-logitech-g-g29-driving-force-racing-wheel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-logitech-logitech-g-g920-driving-force-racing-wheel": {
+    "file": "gaming-logitech-logitech-g-g920-driving-force-racing-wheel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-logitech-logitech-g-g923-trueforce-racing-wheel-and": {
+    "file": "gaming-logitech-logitech-g-g923-trueforce-racing-wheel-and.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-logitech-logitech-g-pro-racing-pedals": {
+    "file": "gaming-logitech-logitech-g-pro-racing-pedals.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-logitech-logitech-g-pro-racing-wheel": {
@@ -5837,6 +6733,10 @@
   },
   "gaming-logitech-logitech-g-rs50-system": {
     "file": "gaming-logitech-logitech-g-rs50-system.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-logitech-logitech-g-rs50-wheel-base": {
+    "file": "gaming-logitech-logitech-g-rs50-wheel-base.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-logitech-playseat-trophy-logitech-g-edition": {
@@ -5875,12 +6775,28 @@
     "file": "gaming-moza-moza-r5-bundle.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-moza-moza-vision-gs-steering-wheel": {
+    "file": "gaming-moza-moza-vision-gs-steering-wheel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-msi-msi-geforce-rtx-4090-24g-suprim-x": {
     "file": "gaming-msi-msi-geforce-rtx-4090-24g-suprim-x.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-msi-msi-geforce-rtx-5080-16g-suprim-soc": {
     "file": "gaming-msi-msi-geforce-rtx-5080-16g-suprim-soc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-msi-msi-geforce-rtx-5090-32g-gaming-trio-oc": {
+    "file": "gaming-msi-msi-geforce-rtx-5090-32g-gaming-trio-oc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-msi-msi-geforce-rtx-5090-32g-suprim-liquid-soc": {
+    "file": "gaming-msi-msi-geforce-rtx-5090-32g-suprim-liquid-soc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-msi-msi-geforce-rtx-5090-32g-suprim-soc": {
+    "file": "gaming-msi-msi-geforce-rtx-5090-32g-suprim-soc.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-msi-msi-meg-trident-x2-14th-rtx-4090": {
@@ -5907,12 +6823,32 @@
     "file": "gaming-msi-msi-titan-18-hx-ai-a2xw-rtx-5090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-msi-msi-vector-16-hx-ai-a2xw-rtx-5080": {
+    "file": "gaming-msi-msi-vector-16-hx-ai-a2xw-rtx-5080.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-nintendo-joy-con-2-pair": {
+    "file": "gaming-nintendo-joy-con-2-pair.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-nintendo-nintendo-sound-clock-alarmo": {
+    "file": "gaming-nintendo-nintendo-sound-clock-alarmo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-nintendo-nintendo-switch": {
+    "file": "gaming-nintendo-nintendo-switch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-nintendo-nintendo-switch-2": {
     "file": "gaming-nintendo-nintendo-switch-2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-nintendo-nintendo-switch-2-all-in-one-carrying-case": {
     "file": "gaming-nintendo-nintendo-switch-2-all-in-one-carrying-case.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-nintendo-nintendo-switch-2-dock-set": {
+    "file": "gaming-nintendo-nintendo-switch-2-dock-set.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-nintendo-nintendo-switch-2-mario-kart-world-bundle": {
@@ -5925,6 +6861,10 @@
   },
   "gaming-nintendo-nintendo-switch-2-pro-controller": {
     "file": "gaming-nintendo-nintendo-switch-2-pro-controller.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-nintendo-nintendo-switch-lite": {
+    "file": "gaming-nintendo-nintendo-switch-lite.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-nintendo-nintendo-switch-oled-model": {
@@ -5995,6 +6935,10 @@
     "file": "gaming-razer-razer-blade-18-2025-rtx-5070-ti.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-razer-razer-edge-wifi-gaming-tablet": {
+    "file": "gaming-razer-razer-edge-wifi-gaming-tablet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-razer-razer-enki-pro-gaming-chair": {
     "file": "gaming-razer-razer-enki-pro-gaming-chair.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -6009,6 +6953,14 @@
   },
   "gaming-razer-razer-iskur-v2-gaming-chair": {
     "file": "gaming-razer-razer-iskur-v2-gaming-chair.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-razer-razer-kraken-v4-pro-headset": {
+    "file": "gaming-razer-razer-kraken-v4-pro-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-razer-razer-leviathan-v2-pro-soundbar": {
+    "file": "gaming-razer-razer-leviathan-v2-pro-soundbar.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-razer-razer-nommo-v2-pro-speakers": {
@@ -6059,6 +7011,10 @@
     "file": "gaming-steelseries-steelseries-apex-pro-tkl-wireless-2023.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-steelseries-steelseries-apex-pro-tkl-wireless-gen-3": {
+    "file": "gaming-steelseries-steelseries-apex-pro-tkl-wireless-gen-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-steelseries-steelseries-arctis-9-wireless": {
     "file": "gaming-steelseries-steelseries-arctis-9-wireless.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -6073,6 +7029,10 @@
   },
   "gaming-steelseries-steelseries-arctis-nova-pro-wireless": {
     "file": "gaming-steelseries-steelseries-arctis-nova-pro-wireless.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-steelseries-steelseries-arena-7-speakers": {
+    "file": "gaming-steelseries-steelseries-arena-7-speakers.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-steelseries-steelseries-arena-9-speakers": {
@@ -6091,6 +7051,10 @@
     "file": "gaming-thrustmaster-thrustmaster-t-gt-ii.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-thrustmaster-thrustmaster-t598": {
+    "file": "gaming-thrustmaster-thrustmaster-t598.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-thrustmaster-thrustmaster-t818-direct-drive-wheel-base": {
     "file": "gaming-thrustmaster-thrustmaster-t818-direct-drive-wheel-base.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -6099,12 +7063,24 @@
     "file": "gaming-thrustmaster-thrustmaster-t818-ferrari-sf1000-simulator.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-thrustmaster-thrustmaster-tca-yoke-pack-boeing-edition": {
+    "file": "gaming-thrustmaster-thrustmaster-tca-yoke-pack-boeing-edition.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-thrustmaster-thrustmaster-tpr-pendular-rudder-pedals": {
     "file": "gaming-thrustmaster-thrustmaster-tpr-pendular-rudder-pedals.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-thrustmaster-thrustmaster-ts-pc-racer": {
+    "file": "gaming-thrustmaster-thrustmaster-ts-pc-racer.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-thrustmaster-thrustmaster-ts-xw-racer-sparco-p310": {
     "file": "gaming-thrustmaster-thrustmaster-ts-xw-racer-sparco-p310.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-thrustmaster-thrustmaster-tx-racing-wheel-leather-edition": {
+    "file": "gaming-thrustmaster-thrustmaster-tx-racing-wheel-leather-edition.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-thrustmaster-thrustmaster-viper-tqs-mission-pack": {
@@ -6113,6 +7089,10 @@
   },
   "gaming-turtle-beach-turtle-beach-atlas-air-wireless-headset": {
     "file": "gaming-turtle-beach-turtle-beach-atlas-air-wireless-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-turtle-beach-turtle-beach-racer-wireless-racing-wheel": {
+    "file": "gaming-turtle-beach-turtle-beach-racer-wireless-racing-wheel.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-turtle-beach-turtle-beach-stealth-700-gen-2-max-wireless": {
@@ -6149,6 +7129,14 @@
   },
   "gaming-turtle-beach-turtle-beach-velocityone-stand": {
     "file": "gaming-turtle-beach-turtle-beach-velocityone-stand.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-turtle-beach-turtle-beach-vulcan-ii-max-keyboard": {
+    "file": "gaming-turtle-beach-turtle-beach-vulcan-ii-max-keyboard.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-valve-steam-deck-docking-station": {
+    "file": "gaming-valve-steam-deck-docking-station.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-valve-steam-deck-lcd-256gb": {
@@ -6195,6 +7183,30 @@
     "file": "gaming-valve-valve-index-vr-kit.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-victrix-victrix-pro-af-anc-wireless-headset": {
+    "file": "gaming-victrix-victrix-pro-af-anc-wireless-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-victrix-victrix-pro-af-wired-headset": {
+    "file": "gaming-victrix-victrix-pro-af-wired-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-victrix-victrix-pro-bfg-reloaded-wireless-controller-2": {
+    "file": "gaming-victrix-victrix-pro-bfg-reloaded-wireless-controller-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-victrix-victrix-pro-bfg-reloaded-wireless-controller-for": {
+    "file": "gaming-victrix-victrix-pro-bfg-reloaded-wireless-controller-for.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-victrix-victrix-pro-bfg-wireless-controller-for": {
+    "file": "gaming-victrix-victrix-pro-bfg-wireless-controller-for.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-victrix-victrix-pro-bfg-wireless-controller-for-xbox": {
+    "file": "gaming-victrix-victrix-pro-bfg-wireless-controller-for-xbox.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-victrix-victrix-pro-fs-12-arcade-fight-stick-for": {
     "file": "gaming-victrix-victrix-pro-fs-12-arcade-fight-stick-for.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -6211,8 +7223,36 @@
     "file": "gaming-victrix-victrix-pro-fs-arcade-fight-stick-for-xbox.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-victrix-victrix-pro-ko-leverless-fight-stick-for": {
+    "file": "gaming-victrix-victrix-pro-ko-leverless-fight-stick-for.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-victrix-victrix-pro-ko-leverless-fight-stick-for-xbox": {
+    "file": "gaming-victrix-victrix-pro-ko-leverless-fight-stick-for-xbox.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-xbox-doom-the-dark-ages-collector-s-bundle-xbox-series-x": {
+    "file": "gaming-xbox-doom-the-dark-ages-collector-s-bundle-xbox-series-x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-xbox-indiana-jones-and-the-great-circle-collector-s": {
+    "file": "gaming-xbox-indiana-jones-and-the-great-circle-collector-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-xbox-starfield-constellation-edition-xbox-series-x": {
     "file": "gaming-xbox-starfield-constellation-edition-xbox-series-x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-xbox-xbox-adaptive-controller": {
+    "file": "gaming-xbox-xbox-adaptive-controller.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-xbox-xbox-elite-wireless-controller-series-2": {
+    "file": "gaming-xbox-xbox-elite-wireless-controller-series-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-xbox-xbox-elite-wireless-controller-series-2-core": {
+    "file": "gaming-xbox-xbox-elite-wireless-controller-series-2-core.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-xbox-xbox-series-s-1tb": {
@@ -6233,6 +7273,10 @@
   },
   "gaming-xbox-xbox-series-x-2tb-galaxy-black-special-edition": {
     "file": "gaming-xbox-xbox-series-x-2tb-galaxy-black-special-edition.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-xbox-xbox-wireless-headset": {
+    "file": "gaming-xbox-xbox-wireless-headset.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gd-bar-100g": {
@@ -8523,8 +9567,16 @@
     "file": "mobile-anker-solix-c1000.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-anker-solix-c1000-gen-2": {
+    "file": "mobile-anker-solix-c1000-gen-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-anker-solix-c300": {
     "file": "mobile-anker-solix-c300.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-anker-solix-c800-plus": {
+    "file": "mobile-anker-solix-c800-plus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-anker-solix-f1200": {
@@ -8691,6 +9743,10 @@
     "file": "mobile-google-pixel-9-pro-xl-256gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-hmd-crest-5g": {
+    "file": "mobile-hmd-crest-5g.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-hmd-crest-max-5g": {
     "file": "mobile-hmd-crest-max-5g.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -8725,6 +9781,10 @@
   },
   "mobile-hmd-offgrid": {
     "file": "mobile-hmd-offgrid.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-hmd-pulse-pro": {
+    "file": "mobile-hmd-pulse-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-hmd-skyline-12-256": {
@@ -8779,6 +9839,18 @@
     "file": "mobile-honor-magic8-pro-12-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-huawei-mate-70-rs-ultimate-design-16-512": {
+    "file": "mobile-huawei-mate-70-rs-ultimate-design-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-huawei-mate-x6-12-512": {
+    "file": "mobile-huawei-mate-x6-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-huawei-mate-x7-16-512": {
+    "file": "mobile-huawei-mate-x7-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-huawei-mate-xt-ultimate-design-16-1tb": {
     "file": "mobile-huawei-mate-xt-ultimate-design-16-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -8807,6 +9879,10 @@
     "file": "mobile-huawei-pura-70-ultra-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-huawei-pura-80-ultra-16-512": {
+    "file": "mobile-huawei-pura-80-ultra-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-huawei-watch-ultimate-design": {
     "file": "mobile-huawei-watch-ultimate-design.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -8815,12 +9891,20 @@
     "file": "mobile-infinix-gt-20-pro-5g-8-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-infinix-gt-30-5g-8-128": {
+    "file": "mobile-infinix-gt-30-5g-8-128.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-infinix-gt-30-pro-5g-8-256": {
     "file": "mobile-infinix-gt-30-pro-5g-8-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-infinix-note-40-pro-5g-8-256": {
     "file": "mobile-infinix-note-40-pro-5g-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-infinix-note-40-pro-8-256": {
+    "file": "mobile-infinix-note-40-pro-8-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-infinix-note-40-pro-plus-5g-12-256": {
@@ -8995,6 +10079,18 @@
     "file": "mobile-nothing-phone-3a-pro-12-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-oneplus-12-12-256": {
+    "file": "mobile-oneplus-12-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-oneplus-12-16-512": {
+    "file": "mobile-oneplus-12-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-oneplus-13-12-256": {
+    "file": "mobile-oneplus-13-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-oneplus-13-16-512": {
     "file": "mobile-oneplus-13-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -9147,8 +10243,20 @@
     "file": "mobile-realme-14-pro-plus-5g-8-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-realme-gt-6-12-256": {
+    "file": "mobile-realme-gt-6-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-realme-gt-6-16-512": {
+    "file": "mobile-realme-gt-6-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-realme-gt-6t-8-128": {
     "file": "mobile-realme-gt-6t-8-128.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-realme-gt-7-12-256": {
+    "file": "mobile-realme-gt-7-12-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-realme-gt-7-16-512": {
@@ -9161,6 +10269,10 @@
   },
   "mobile-realme-gt-7-pro-16-512": {
     "file": "mobile-realme-gt-7-pro-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-realme-gt-7t-12-256": {
+    "file": "mobile-realme-gt-7t-12-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-realme-gt-8-pro-12-256": {
@@ -9271,6 +10383,10 @@
     "file": "mobile-sony-ier-z1r.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-sony-walkman-nw-wm1am2": {
+    "file": "mobile-sony-walkman-nw-wm1am2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-sony-walkman-nw-wm1zm2": {
     "file": "mobile-sony-walkman-nw-wm1zm2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -9283,8 +10399,20 @@
     "file": "mobile-sony-xperia-1-v-12-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-sony-xperia-1-vi-12-256": {
+    "file": "mobile-sony-xperia-1-vi-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-sony-xperia-1-vii-12-256": {
     "file": "mobile-sony-xperia-1-vii-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-sony-xperia-5-iv-8-128": {
+    "file": "mobile-sony-xperia-5-iv-8-128.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-sony-xperia-5-v-8-128": {
+    "file": "mobile-sony-xperia-5-v-8-128.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-sony-xperia-pro-512gb": {

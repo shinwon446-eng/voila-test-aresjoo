@@ -119,14 +119,16 @@ export function WithdrawScreen() {
       if (useAuthStore.getState().user?.id !== user.id) return;
       const wallet = useWalletStore.getState();
       if (wallet.transactions.some((x) => x.serverId === result.id)) { setStage({ kind: "form" }); return; }
-      // 서비스가 금액을 먼저 묶어 둔 뒤에 접수를 알려 준다
-      if (!["CANCELLED", "FAILED"].includes(result.status)) wallet.debitCrypto(draft.amountUsdt);
-      wallet.addTransaction({ type: "withdraw", accountId: user.id, serverId: result.id,
+      // 서비스가 금액을 먼저 묶어 둔 뒤에 접수를 알려 준다. 잔액에서 실제로 차감한 경우에만 출금 내역이 생긴다
+      const recorded = wallet.recordWithdrawal({ type: "withdraw", accountId: user.id, serverId: result.id,
         amountUsdt: -draft.amountUsdt, ref: `${draft.network}:${draft.address}`, network: draft.network,
         address: draft.address, feeUsdt: WITHDRAW_NETWORK_BY_KEY[draft.network].feeUsdt,
         netUsdt: netReceive(draft.amountUsdt, draft.network), authMethod: proof.method,
         unlockAt: result.unlockAt, emailMasked: proof.emailMasked, status: result.status, txHash: result.txHash });
       requestDraft.current = "";
+      // 접수를 기다리는 사이에 잔액이 줄어 차감하지 못했다: 내역을 만들지 않고 서비스의 접수를 거둔 뒤,
+      // 위의 사전 검사와 같은 자리(입력 화면의 "잔액보다 많이 넣었습니다" 한 줄)에서 알린다
+      if (!recorded) { void api.cancelWithdrawal(result.id).catch(() => {}); setStage({ kind: "form" }); setTouched(true); return; }
       setStage({ kind: "done", status: result.status, net: netReceive(draft.amountUsdt, draft.network), network: draft.network });
     } catch (cause) {
       setError(te(cause instanceof AccountError ? cause.code : "network"));

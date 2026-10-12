@@ -59,6 +59,11 @@ export interface Transaction {
   unlockAt?: number;
   /** 인증에 쓴 이메일(마스킹), 원문은 저장하지 않는다 */
   emailMasked?: string;
+  /**
+   * 출금 내역을 만들 때 잔액에서 실제로 차감했는지. false 인 건은 취소되거나 실패해도 환불하지 않는다(차감한 적 없는 금액이 잔액에 생기지 않게).
+   * 없으면(이 칸이 생기기 전의 기록) 전처럼 차감한 것으로 본다.
+   */
+  debited?: boolean;
   /** 카드 결제 영수증 번호, PG 가 준 값만 들어간다 */
   receipt?: string;
   /**
@@ -100,6 +105,11 @@ interface WalletState {
    * 대기 상태가 아니거나 이미 취소된 건이면 아무것도 하지 않고 false, 중복 환불이 일어날 수 없다.
    */
   cancelHeldWithdrawal: (id: string) => boolean;
+  /**
+   * 접수된 출금을 장부에 적는다. 아직 끝나지 않은 건은 암호화폐 잔액에서 실제로 차감한 경우에만 내역을 만든다.
+   * 차감하지 못하면 아무것도 바꾸지 않고 null 을 돌려준다. 서비스가 이미 취소나 실패로 돌려준 건은 차감 없이 내역만 남긴다.
+   */
+  recordWithdrawal: (tx: Omit<Transaction, "id" | "at" | "debited">) => Transaction | null;
   /** 차감(암호화폐 우선 → 모자라면 카드 결합). 부족하면 false 를 돌려주고 아무것도 바꾸지 않는다. */
   debit: (usdt: number) => boolean;
   /** 차감 + 이번 지출의 족보(비율)를 돌려준다, 개봉이 쓴다. 부족하면 null. */
@@ -197,7 +207,8 @@ export const useWalletStore = create<WalletState>()(
       syncWithdrawal: (id, status, patch) => set(s => {
         const tx = s.transactions.find(x => x.id === id);
         if (!tx || tx.type !== "withdraw" || ["COMPLETED", "CANCELLED", "FAILED"].includes(tx.status ?? "")) return {};
-        const refund = ["CANCELLED", "FAILED"].includes(status) ? Math.abs(tx.amountUsdt) : 0;
+        // 환불은 실제로 차감한 기록에만 한다
+        const refund = tx.debited !== false && ["CANCELLED", "FAILED"].includes(status) ? Math.abs(tx.amountUsdt) : 0;
         return { ...sync(+(s.cryptoBalance + refund).toFixed(2), s.cardBalance), transactions: s.transactions.map(x => x.id === id ? { ...x, ...patch, status } : x) };
       }),
       setTransactionStatus: (id, status, patch) =>
@@ -221,12 +232,17 @@ export const useWalletStore = create<WalletState>()(
         const tx = get().transactions.find((x) => x.id === id);
         // 대기 중인 출금만 되돌린다, 이미 CANCELLED 거나 송금이 시작된 건은 손대지 않는다
         if (!tx || tx.type !== "withdraw" || tx.status !== "PENDING_72H_HOLD") return false;
-        const refund = Math.abs(tx.amountUsdt);
+        const refund = tx.debited === false ? 0 : Math.abs(tx.amountUsdt);
         set((s) => ({
           ...sync(+(s.cryptoBalance + refund).toFixed(2), s.cardBalance),
           transactions: s.transactions.map((x) => (x.id === id ? { ...x, status: "CANCELLED" as TxStatus } : x)),
         }));
         return true;
+      },
+      recordWithdrawal: (tx) => {
+        const open = !["CANCELLED", "FAILED"].includes(tx.status ?? "");
+        if (open && !get().debitCrypto(Math.abs(tx.amountUsdt))) return null;
+        return get().addTransaction({ ...tx, debited: open });
       },
       debit: (usdt) => get().debitSplit(usdt) !== null,
       debitCrypto: (usdt) => {

@@ -24,6 +24,8 @@ export function AuthHost() {
   }, []);
   useEffect(() => {
     if (browserAccountsEnabled()) restoreBrowserAssets(userId ?? null);
+    // 지갑을 기다리는 구독은 계정이 바뀌거나 화면이 사라지면 푼다(앞 계정의 지급이 뒤늦게 돌지 않게)
+    let unsubscribe = () => {};
     if (userId) {
       // Credit only after switching/restoring the account's wallet namespace.
       const grant = () => {
@@ -36,7 +38,6 @@ export function AuthHost() {
       const wallet = useWalletStore.getState();
       if (wallet.hydrated) grant();
       else {
-        let unsubscribe = () => {};
         unsubscribe = useWalletStore.subscribe((state) => {
           if (!state.hydrated) return;
           unsubscribe();
@@ -45,6 +46,7 @@ export function AuthHost() {
       }
       void useSecurityStore.getState().refresh(userId);
     }
+    return () => unsubscribe();
   }, [userId]);
 
   return <LoginSheet />;

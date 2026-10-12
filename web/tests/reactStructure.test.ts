@@ -16,3 +16,15 @@ test("E-19 HeroBanner: 조건부 return 뒤에 훅을 부르지 않는다", () =
   // 옮긴 훅이 조건 앞에 그대로 있다
   assert.match(src.slice(0, guard), /const freeLeft = useWalletStore\(/);
 });
+
+test("E-25 AuthHost: 지갑을 기다리는 구독을 effect 의 정리 함수에서 푼다", () => {
+  const src = read("components/auth/AuthHost.tsx");
+  const subscribe = src.indexOf("unsubscribe = useWalletStore.subscribe(");
+  const end = src.indexOf("}, [userId]);");
+  assert.ok(subscribe > 0 && end > subscribe, "구독하는 effect 를 찾지 못했다");
+  // 구독 뒤, 같은 effect 가 끝나기 전에 정리 함수를 돌려준다
+  assert.match(src.slice(subscribe, end), /return \(\) => unsubscribe\(\);/, "effect 가 구독을 푸는 정리 함수를 돌려주지 않는다");
+  // 구독을 푸는 함수는 effect 의 바깥 범위에 있어야 정리 함수가 볼 수 있다
+  const declared = src.indexOf("let unsubscribe = () => {};");
+  assert.ok(declared > 0 && declared < src.indexOf("if (userId) {"), "unsubscribe 가 계정 분기 안에 갇혀 있다");
+});

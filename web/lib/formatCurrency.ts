@@ -97,14 +97,23 @@ const PARTS: Record<Currency, { prefix: string; suffix: string }> = {
   KRW: { prefix: "₩", suffix: "" },
 };
 
+/**
+ * 나눈 표기도 통합 표기와 같은 글자가 되게 한다: 음수의 빼기 표시는 통화 기호 앞(먼저 그려지는 prefix)에 둔다(-$ 와 50).
+ * 기호가 없는 통화(USDT)는 빼기 표시가 숫자에 붙은 그대로다. 양수와 0 은 그대로다.
+ */
+const partsOf = (currency: Currency, number: string): MoneyParts => {
+  const { prefix, suffix } = PARTS[currency];
+  return prefix && number.startsWith("-") ? { prefix: `-${prefix}`, number: number.slice(1), suffix } : { prefix, number, suffix };
+};
+
 export function splitNative(amountInCurrency: number, currency: Currency): MoneyParts {
   const { decimals } = SPEC[currency];
-  return { ...PARTS[currency], number: digitsOf(amountInCurrency, decimals) };
+  return partsOf(currency, digitsOf(amountInCurrency, decimals));
 }
 
 export function splitCurrency(baseUsdtAmount: number, selectedCurrency: Currency, rates: Record<Currency, number> = DEFAULT_RATES): MoneyParts {
   const amount = convertFromUsdt(baseUsdtAmount, selectedCurrency, rates);
   // 원화는 formatCurrency 와 같은 글자가 나와야 한다(만원 아래 버림)
-  if (selectedCurrency === "KRW") return { ...PARTS.KRW, number: formatWonTruncated(amount).replace("₩", "") };
+  if (selectedCurrency === "KRW") return partsOf("KRW", formatWonTruncated(amount).replace("₩", ""));
   return splitNative(amount, selectedCurrency);
 }

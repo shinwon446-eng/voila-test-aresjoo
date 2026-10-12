@@ -124,3 +124,41 @@ test("E-14 양수와 0 의 표기는 고치기 전과 한 글자도 다르지 �
   };
   for (const c of CURRENCIES) assert.deepEqual(values.map((v) => all(v, c)), before[c], c);
 });
+
+// R2-P2-01(migration-audit/R2_CYCLE3_codex.md): E-14 가 통합 표기의 빼기 표시만 옮겨서, 숫자와 단위를 나눈 표기(Money 가 쓴다)를 합치면
+// $-50 이고 통합 표기는 -$50 이 됐다. 원본에서는 둘이 같았다. 나눈 표기도 빼기 표시를 통화 기호 앞(먼저 그려지는 prefix)에 둔다.
+/** Money 가 그리는 차례대로 합친다: 기호, 숫자, 단위 */
+const joined = (p: { prefix: string; number: string; suffix: string }) => `${p.prefix}${p.number}${p.suffix ? ` ${p.suffix}` : ""}`;
+const parts = (p: { prefix: string; number: string; suffix: string }) => `${p.prefix}|${p.number}|${p.suffix}`;
+
+test("R2-P2-01 음수의 나눈 표기: 빼기 표시가 통화 기호 앞에 오고, 합치면 통합 표기와 같다", () => {
+  // 달러(환산)
+  assert.deepEqual(splitCurrency(-50, "USD"), { prefix: "-$", number: "50", suffix: "" });
+  assert.deepEqual(splitCurrency(-1234.567, "USD"), { prefix: "-$", number: "1,234.57", suffix: "" });
+  // 원화(환산, 만원 아래 버림)
+  assert.deepEqual(splitCurrency(-50, "KRW"), { prefix: "-₩", number: "60,000", suffix: "" });
+  assert.deepEqual(splitCurrency(-0.5, "KRW"), { prefix: "-₩", number: "690", suffix: "" });
+  // 이미 그 통화 단위인 금액(환산 없음)
+  assert.deepEqual(splitNative(-70000, "KRW"), { prefix: "-₩", number: "70,000", suffix: "" });
+  assert.deepEqual(splitNative(-50, "USD"), { prefix: "-$", number: "50", suffix: "" });
+  // USDT 는 기호가 없다. 빼기 표시는 숫자에 붙은 그대로다(-50 USDT)
+  assert.deepEqual(splitCurrency(-50, "USDT"), { prefix: "", number: "-50", suffix: "USDT" });
+  assert.deepEqual(splitNative(-20, "USDT"), { prefix: "", number: "-20", suffix: "USDT" });
+  // 어느 통화에서도 나눈 것을 합치면 통합 표기와 글자까지 같다. 기호 바로 뒤에 빼기가 오지 않는다
+  for (const c of CURRENCIES) for (const v of [-0.001, -0.5, -1, -50, -1234.567, -95700, 0, 1, 80, 1234.5]) {
+    assert.equal(joined(splitCurrency(v, c)), formatCurrency(v, c), `환산 ${c} ${v}`);
+    assert.equal(joined(splitNative(v, c)), formatNative(v, c), `환산 없음 ${c} ${v}`);
+    assert.doesNotMatch(joined(splitCurrency(v, c)) + joined(splitNative(v, c)), /[$₩]-/, `${c} ${v}`);
+  }
+});
+
+test("R2-P2-01 양수와 0 의 나눈 표기는 고치기 전과 한 글자도 다르지 않다", () => {
+  const values = [0, 0.01, 0.5, 1, 7.2, 14.49, 80, 999.99, 1234.5, 12900, 95700, 1250000];
+  // 환산한 것(기호|숫자|단위) / 환산 없는 것. 고치기 전의 lib/formatCurrency.ts 를 돌려 얻은 값이다
+  const before: Record<(typeof CURRENCIES)[number], string[]> = {
+    USDT: ["|0|USDT / |0|USDT", "|0.01|USDT / |0.01|USDT", "|0.5|USDT / |0.5|USDT", "|1|USDT / |1|USDT", "|7.2|USDT / |7.2|USDT", "|14.49|USDT / |14.49|USDT", "|80|USDT / |80|USDT", "|999.99|USDT / |999.99|USDT", "|1,234.5|USDT / |1,234.5|USDT", "|12,900|USDT / |12,900|USDT", "|95,700|USDT / |95,700|USDT", "|1,250,000|USDT / |1,250,000|USDT"],
+    USD: ["$|0| / $|0|", "$|0.01| / $|0.01|", "$|0.5| / $|0.5|", "$|1| / $|1|", "$|7.2| / $|7.2|", "$|14.49| / $|14.49|", "$|80| / $|80|", "$|999.99| / $|999.99|", "$|1,234.5| / $|1,234.5|", "$|12,900| / $|12,900|", "$|95,700| / $|95,700|", "$|1,250,000| / $|1,250,000|"],
+    KRW: ["₩|0| / ₩|0|", "₩|14| / ₩|0|", "₩|690| / ₩|1|", "₩|1,380| / ₩|1|", "₩|9,936| / ₩|7|", "₩|10,000| / ₩|14|", "₩|110,000| / ₩|80|", "₩|1,370,000| / ₩|1,000|", "₩|1,700,000| / ₩|1,235|", "₩|17,800,000| / ₩|12,900|", "₩|132,060,000| / ₩|95,700|", "₩|1,725,000,000| / ₩|1,250,000|"],
+  };
+  for (const c of CURRENCIES) assert.deepEqual(values.map((v) => parts(splitCurrency(v, c)) + " / " + parts(splitNative(v, c))), before[c], c);
+});

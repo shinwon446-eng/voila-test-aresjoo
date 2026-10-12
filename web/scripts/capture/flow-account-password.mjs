@@ -16,6 +16,10 @@ const browser = await chromium.launch({ channel: "chrome", headless: true });
 const results = [];
 const check = (scenario, name, pass, detail = "") => { results.push({ scenario, name, pass: !!pass, detail }); console.log((pass ? "PASS " : "FAIL ") + scenario + " " + name + (detail ? "  " + detail : "")); };
 const NEW_PASSWORD = "Changed-only-456789";
+// 실패의 까닭마다 다른 한 줄(migration-audit 의 CYCLE3_claude.md C3-02, C3-03)
+const WRONG_PASSWORD = "현재 비밀번호가 맞지 않습니다. 5번 틀리면 비밀번호 바꾸기가 잠깁니다.";
+const WRONG_CODE = "인증 앱 코드가 맞지 않습니다.";
+const SAME_PASSWORD = "새 비밀번호가 현재 비밀번호와 같습니다. 다른 비밀번호를 넣습니다.";
 const hashOf = (password, salt) => pbkdf2Sync(password, salt, 210000, 32, "sha256").toString("hex");
 
 /** 인증 앱이 보여 줄 6자리(RFC 6238, 30초, SHA-1) */
@@ -48,7 +52,9 @@ async function session(preset) {
   };
   const press = async () => { await page.locator(".v-sheet .v-btn").click(); await page.waitForFunction(() => !document.querySelector(".v-sheet .v-btn")?.hasAttribute("data-busy"), null, { timeout: 20000 }); await page.waitForTimeout(300); };
   const sheet = async () => ((await page.locator(".v-sheet").count()) ? (await page.locator(".v-sheet").innerText()).replace(/\s+/g, " ") : "");
-  return { context, page, errors, state, saved, openSheet, fill, press, sheet, shot: (name) => (out ? page.screenshot({ path: `${out}/${name}.png` }) : null) };
+  /** 시트의 실패 한 줄들(보통 하나) */
+  const failLines = () => page.locator(".v-sheet .v-line--fail").evaluateAll((els) => els.map((e) => e.textContent.replace(/\s+/g, " ").trim()));
+  return { context, page, errors, state, saved, openSheet, fill, press, sheet, failLines, shot: (name) => (out ? page.screenshot({ path: `${out}/${name}.png` }) : null) };
 }
 const run = async (id, fn) => { try { await fn(); } catch (e) { check(id, "시나리오 실행", false, String(e).slice(0, 240)); } };
 
@@ -86,7 +92,8 @@ await run("b", async () => {
   await s.press(); await s.shot("b1-wrong-current");
   const after = await s.saved();
   check("b", "틀린 현재 비밀번호: 바뀌지 않고 로그인도 그대로다", after.passwordHash === before.passwordHash && after.session && after.sessionVersion === before.sessionVersion);
-  check("b", "그 자리에 실패 한 줄이 뜬다", (await s.page.locator(".v-sheet .v-line--fail").count()) === 1, await s.sheet());
+  const lines = await s.failLines();
+  check("b", "현재 비밀번호가 맞지 않는다고 그 자리 한 줄로 알린다(몇 번 틀리면 잠기는지도)", lines.length === 1 && lines[0] === WRONG_PASSWORD, JSON.stringify(lines));
   check("b", "틀린 횟수가 1 로 적힌다", after.failures === 1, String(after.failures));
   await s.context.close();
 });
@@ -102,7 +109,22 @@ await run("c", async () => {
   await s.press();
   const after = await s.saved();
   check("c", "틀린 인증 앱 코드: 바뀌지 않고 로그인도 그대로다", after.passwordHash === before.passwordHash && after.session && after.sessionVersion === before.sessionVersion);
-  check("c", "그 자리에 실패 한 줄이 뜬다", (await s.page.locator(".v-sheet .v-line--fail").count()) === 1, await s.sheet());
+  const lines = await s.failLines();
+  check("c", "인증 앱 코드가 맞지 않는다고 그 자리 한 줄로 알린다(현재 비밀번호가 틀렸을 때와 다른 글)", lines.length === 1 && lines[0] === WRONG_CODE, JSON.stringify(lines));
+  check("c", "현재 비밀번호는 맞았으므로 틀린 횟수가 늘지 않는다", after.failures === 0, String(after.failures));
+  await s.context.close();
+});
+
+// f: 새 비밀번호가 현재 비밀번호와 같으면 그렇다고 알린다(자산이나 거래 이야기가 나오지 않는다)
+await run("f", async () => {
+  const s = await session("security");
+  const before = await s.saved();
+  await s.openSheet();
+  await s.fill({ current: credentials.password, next: credentials.password, code: totp(s.state.account.secret) });
+  await s.press(); await s.shot("f1-same-password");
+  const after = await s.saved(); const lines = await s.failLines();
+  check("f", "새 비밀번호가 현재와 같다고 그 자리 한 줄로 알린다", lines.length === 1 && lines[0] === SAME_PASSWORD, JSON.stringify(lines));
+  check("f", "바뀌지 않고, 로그인도 그대로이고, 틀린 횟수도 늘지 않는다", after.passwordHash === before.passwordHash && after.session && after.failures === 0);
   await s.context.close();
 });
 

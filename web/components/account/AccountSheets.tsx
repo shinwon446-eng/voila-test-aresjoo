@@ -5,7 +5,7 @@
  */
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { AccountActionError, AccountError, changeAccountPasswordWithOtp, deleteAccount, isSocialAccount, validPassword, verifyCurrentPassword } from "@/lib/account";
+import { AccountActionError, AccountError, PASSWORD_FAILURE_LIMIT, changeAccountPasswordWithOtp, deleteAccount, isSocialAccount, validPassword, verifyCurrentPassword } from "@/lib/account";
 import { useAuthStore } from "@/stores/authStore";
 import { Button, Field, Line } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
@@ -59,6 +59,15 @@ export function PasswordSheet({ open, onClose }: { open: boolean; onClose: () =>
   // 바꾼 뒤: 서비스가 이 계정의 세션을 모두 끝내므로, 시트는 바꿨다고 말하고 로그인으로 가는 단추 하나만 둔다
   const [done, setDone] = useState(false);
   useEffect(() => { if (open) { setDone(false); setError(""); } }, [open]);
+  /** 실패의 까닭마다 맞는 한 줄. 계정 서비스가 까닭을 알려 주지 않은 실패(연결 끊김 등)는 종류별 글 그대로다 */
+  const failureText = (cause: unknown) => {
+    const reason = cause instanceof AccountActionError ? cause.reason : null;
+    if (reason === "password_mismatch") return t("account.passwordWrong", { n: PASSWORD_FAILURE_LIMIT });
+    if (reason === "code_invalid") return t("account.codeWrong");
+    if (reason === "password_reused") return t("account.passwordSame");
+    if (reason === "password_invalid") return t("account.passwordRule");
+    return errorText(ta, cause);
+  };
   const save = async () => {
     if (!validPassword(next)) { setError(t("account.passwordRule")); return; }
     // 이 요청을 시작한 계정. 끝났을 때 이 탭의 계정이 그대로일 때만 세션을 끝난 것으로 맞춘다
@@ -78,7 +87,7 @@ export function PasswordSheet({ open, onClose }: { open: boolean; onClose: () =>
       // 기다리는 사이에 다른 계정으로 바뀌었으면 그 계정의 로그인은 건드리지 않는다(끝난 것은 비밀번호를 바꾼 계정의 세션이다)
       if (useAuthStore.getState().user?.id === accountId) markSessionLost();
     }
-    catch (cause) { setError(errorText(ta, cause)); }
+    catch (cause) { setError(failureText(cause)); }
     finally { setBusy(false); }
   };
   if (done) return (

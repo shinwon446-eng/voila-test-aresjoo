@@ -635,8 +635,28 @@
     "file": "audio-sonos-ultimate-immersive-set-with-arc-ultra.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-sony-bravia-theater-bar-9": {
+    "file": "audio-sony-bravia-theater-bar-9.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-sony-bravia-theater-quad-home-theater-speaker-system": {
+    "file": "audio-sony-bravia-theater-quad-home-theater-speaker-system.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-sony-dmp-z1-signature-series-digital-music-player": {
     "file": "audio-sony-dmp-z1-signature-series-digital-music-player.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-sony-ier-m9": {
+    "file": "audio-sony-ier-m9.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-sony-ier-z1r-signature-series-in-ear-headphones": {
+    "file": "audio-sony-ier-z1r-signature-series-in-ear-headphones.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-sony-mdr-z1r-signature-series-headphones": {
+    "file": "audio-sony-mdr-z1r-signature-series-headphones.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-sony-nw-wm1zm2-walkman-signature-series-digital-audio-play": {
@@ -647,8 +667,16 @@
     "file": "audio-sony-sa-z1-signature-series-near-field-powered-speaker-sys.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "audio-sony-str-az5000es": {
+    "file": "audio-sony-str-az5000es.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "audio-sony-str-az7000es": {
     "file": "audio-sony-str-az7000es.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "audio-sony-ta-zh1es-signature-series-headphone-amplifier": {
+    "file": "audio-sony-ta-zh1es-signature-series-headphone-amplifier.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "audio-technics-sb-r1-reference-speaker-system-pair": {
@@ -3879,8 +3907,20 @@
     "file": "computer-acer-predator-helios-18-ph18-72.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-acer-predator-orion-5000": {
+    "file": "computer-acer-predator-orion-5000.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-acer-predator-orion-7000-po7-655": {
     "file": "computer-acer-predator-orion-7000-po7-655.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-acer-predator-triton-14-ai": {
+    "file": "computer-acer-predator-triton-14-ai.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-acer-predator-z57": {
+    "file": "computer-acer-predator-z57.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-amd-epyc-9654": {
@@ -3899,6 +3939,14 @@
     "file": "computer-amd-epyc-9965.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-amd-threadripper-7980x": {
+    "file": "computer-amd-threadripper-7980x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-amd-threadripper-9980x": {
+    "file": "computer-amd-threadripper-9980x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-apple-mac-pro-m2-ultra-192gb-8tb": {
     "file": "computer-apple-mac-pro-m2-ultra-192gb-8tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -3907,16 +3955,56 @@
     "file": "computer-apple-mac-pro-rack-m2-ultra.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-apple-mac-pro-tower-m2-ultra": {
+    "file": "computer-apple-mac-pro-tower-m2-ultra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-apple-mac-studio-m3-ultra-512gb-16tb": {
     "file": "computer-apple-mac-studio-m3-ultra-512gb-16tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-apple-mac-studio-m3-ultra-96gb-1tb": {
+    "file": "computer-apple-mac-studio-m3-ultra-96gb-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-apple-macbook-pro-14-m4-max-36gb-1tb": {
+    "file": "computer-apple-macbook-pro-14-m4-max-36gb-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-apple-macbook-pro-16-m4-max-128gb-8tb": {
     "file": "computer-apple-macbook-pro-16-m4-max-128gb-8tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-apple-macbook-pro-16-m4-max-36gb-1tb": {
+    "file": "computer-apple-macbook-pro-16-m4-max-36gb-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-apple-macbook-pro-16-m4-max-48gb-1tb": {
+    "file": "computer-apple-macbook-pro-16-m4-max-48gb-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-apple-macbook-pro-16-m4-pro-24gb-512gb": {
+    "file": "computer-apple-macbook-pro-16-m4-pro-24gb-512gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-apple-pro-display-xdr": {
+    "file": "computer-apple-pro-display-xdr.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-apple-pro-display-xdr-nano-texture": {
+    "file": "computer-apple-pro-display-xdr-nano-texture.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-asus-ascent-gx10": {
+    "file": "computer-asus-ascent-gx10.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-asus-proart-cinema-pq07": {
     "file": "computer-asus-proart-cinema-pq07.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-asus-proart-display-oled-pa32dc": {
+    "file": "computer-asus-proart-display-oled-pa32dc.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-asus-proart-display-pa32kcx": {
@@ -3927,8 +4015,32 @@
     "file": "computer-asus-proart-display-pa32ucg-k.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-asus-proart-display-pa32ucxr": {
+    "file": "computer-asus-proart-display-pa32ucxr.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-asus-proart-p16-h7606": {
+    "file": "computer-asus-proart-p16-h7606.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-asus-rog-astral-rtx-5090-oc": {
+    "file": "computer-asus-rog-astral-rtx-5090-oc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-asus-rog-strix-scar-16-2025-rtx-5080": {
+    "file": "computer-asus-rog-strix-scar-16-2025-rtx-5080.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-asus-rog-strix-scar-18-2025-rtx-5090": {
     "file": "computer-asus-rog-strix-scar-18-2025-rtx-5090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-asus-rog-zephyrus-g14-2025-rtx-5070-ti": {
+    "file": "computer-asus-rog-zephyrus-g14-2025-rtx-5070-ti.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-asus-tuf-rtx-5090": {
+    "file": "computer-asus-tuf-rtx-5090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-benq-board-pro-rp6504": {
@@ -3951,6 +4063,10 @@
     "file": "computer-corsair-ai-workstation-300-128gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-corsair-ai-workstation-300-64gb": {
+    "file": "computer-corsair-ai-workstation-300-64gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-corsair-one-i500-rtx-4080-super": {
     "file": "computer-corsair-one-i500-rtx-4080-super.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -3959,12 +4075,28 @@
     "file": "computer-corsair-one-i500-rtx-4090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-corsair-platform-6-elevate": {
+    "file": "computer-corsair-platform-6-elevate.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-corsair-xeneon-flex-45wqhd240": {
     "file": "computer-corsair-xeneon-flex-45wqhd240.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-dell-alienware-16-area-51-rtx-5080": {
+    "file": "computer-dell-alienware-16-area-51-rtx-5080.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-dell-alienware-18-area-51-rtx-5090": {
+    "file": "computer-dell-alienware-18-area-51-rtx-5090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-dell-alienware-area-51-desktop-rtx-5090": {
     "file": "computer-dell-alienware-area-51-desktop-rtx-5090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-dell-alienware-m18-r2-rtx-4090": {
+    "file": "computer-dell-alienware-m18-r2-rtx-4090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-dell-precision-7875-tower-tr-pro-7975wx": {
@@ -3979,12 +4111,40 @@
     "file": "computer-dell-ultrasharp-up3221q.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-dell-xps-16-9640-u9-rtx-4070-64gb": {
+    "file": "computer-dell-xps-16-9640-u9-rtx-4070-64gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-eizo-coloredge-cg2700s": {
+    "file": "computer-eizo-coloredge-cg2700s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-eizo-coloredge-cg2700x": {
+    "file": "computer-eizo-coloredge-cg2700x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-eizo-coloredge-cg279x": {
+    "file": "computer-eizo-coloredge-cg279x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-eizo-coloredge-cg319x": {
+    "file": "computer-eizo-coloredge-cg319x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-eizo-coloredge-prominence-cg3146": {
     "file": "computer-eizo-coloredge-prominence-cg3146.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-eizo-foris-nova": {
+    "file": "computer-eizo-foris-nova.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-eizo-radiforce-rx1270": {
     "file": "computer-eizo-radiforce-rx1270.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-eizo-radiforce-rx370": {
+    "file": "computer-eizo-radiforce-rx370.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-eizo-radiforce-rx670": {
@@ -3995,8 +4155,24 @@
     "file": "computer-eizo-raptor-sq2826.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-gigabyte-aero-16-oled-2023": {
+    "file": "computer-gigabyte-aero-16-oled-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-gigabyte-aero-x16-rtx-5070": {
+    "file": "computer-gigabyte-aero-x16-rtx-5070.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-gigabyte-aorus-17x-azg": {
     "file": "computer-gigabyte-aorus-17x-azg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-gigabyte-aorus-elite-16-rtx-5070-ti": {
+    "file": "computer-gigabyte-aorus-elite-16-rtx-5070-ti.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-gigabyte-aorus-master-16-rtx-5080": {
+    "file": "computer-gigabyte-aorus-master-16-rtx-5080.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-gigabyte-aorus-master-16-rtx-5090": {
@@ -4007,8 +4183,24 @@
     "file": "computer-gigabyte-aorus-master-18-rtx-5090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-gigabyte-aorus-rtx-5090-master": {
+    "file": "computer-gigabyte-aorus-rtx-5090-master.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-gigabyte-aorus-rtx-5090-xtreme-waterforce": {
+    "file": "computer-gigabyte-aorus-rtx-5090-xtreme-waterforce.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-gigabyte-radeon-pro-w7900-ai-top-48g": {
     "file": "computer-gigabyte-radeon-pro-w7900-ai-top-48g.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-gigabyte-rtx-5090-gaming-oc": {
+    "file": "computer-gigabyte-rtx-5090-gaming-oc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-gigabyte-rtx-5090-windforce-oc": {
+    "file": "computer-gigabyte-rtx-5090-windforce-oc.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-hp-omen-45l-rtx-5090": {
@@ -4031,6 +4223,10 @@
     "file": "computer-intel-gaudi-3-hl-338.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-intel-xeon-6780e": {
+    "file": "computer-intel-xeon-6780e.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-intel-xeon-6980p": {
     "file": "computer-intel-xeon-6980p.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4043,6 +4239,30 @@
     "file": "computer-intel-xeon-platinum-8490h.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-intel-xeon-platinum-8580": {
+    "file": "computer-intel-xeon-platinum-8580.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-intel-xeon-platinum-8592-plus": {
+    "file": "computer-intel-xeon-platinum-8592-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-intel-xeon-w9-3595x": {
+    "file": "computer-intel-xeon-w9-3595x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-keychron-lemokey-l5-he-8k": {
+    "file": "computer-keychron-lemokey-l5-he-8k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-keychron-q1-he": {
+    "file": "computer-keychron-q1-he.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-keychron-q12-max": {
+    "file": "computer-keychron-q12-max.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-keychron-q16-he-8k": {
     "file": "computer-keychron-q16-he-8k.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4051,12 +4271,36 @@
     "file": "computer-keychron-q3-he.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-keychron-q3-max": {
+    "file": "computer-keychron-q3-max.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-keychron-q5-he": {
     "file": "computer-keychron-q5-he.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-keychron-q5-max": {
+    "file": "computer-keychron-q5-max.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-keychron-q6-he": {
     "file": "computer-keychron-q6-he.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-keychron-q6-max": {
+    "file": "computer-keychron-q6-max.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-lenovo-legion-pro-7i-gen-10-rtx-5080": {
+    "file": "computer-lenovo-legion-pro-7i-gen-10-rtx-5080.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-lenovo-legion-tower-7i-gen-10-rtx-5080": {
+    "file": "computer-lenovo-legion-tower-7i-gen-10-rtx-5080.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-lenovo-thinkbook-plus-gen-6-rollable": {
+    "file": "computer-lenovo-thinkbook-plus-gen-6-rollable.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-lenovo-thinkpad-p16-gen-2-rtx-5000-ada": {
@@ -4075,8 +4319,16 @@
     "file": "computer-lenovo-thinkstation-px.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-lenovo-thinkvision-27-3d": {
+    "file": "computer-lenovo-thinkvision-27-3d.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-lg-31hn713d": {
     "file": "computer-lg-31hn713d.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-lg-gram-17-17z90s": {
+    "file": "computer-lg-gram-17-17z90s.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-lg-gram-pro-17-17z90tp": {
@@ -4089,6 +4341,18 @@
   },
   "computer-lg-ultrafine-oled-pro-32ep950": {
     "file": "computer-lg-ultrafine-oled-pro-32ep950.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-lg-ultragear-45gs95qe": {
+    "file": "computer-lg-ultragear-45gs95qe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-logitech-g-pro-racing-wheel": {
+    "file": "computer-logitech-g-pro-racing-wheel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-logitech-meetup-2": {
+    "file": "computer-logitech-meetup-2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-logitech-rally-bar": {
@@ -4107,6 +4371,14 @@
     "file": "computer-logitech-rally-plus.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-logitech-roommate": {
+    "file": "computer-logitech-roommate.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-logitech-rs50-system": {
+    "file": "computer-logitech-rs50-system.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-microsoft-surface-hub-3-50": {
     "file": "computer-microsoft-surface-hub-3-50.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4115,8 +4387,28 @@
     "file": "computer-microsoft-surface-hub-3-85.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-microsoft-surface-hub-3-pack": {
+    "file": "computer-microsoft-surface-hub-3-pack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-microsoft-surface-laptop-7-15-x-elite-32gb-1tb": {
+    "file": "computer-microsoft-surface-laptop-7-15-x-elite-32gb-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-microsoft-surface-laptop-studio-2-base": {
+    "file": "computer-microsoft-surface-laptop-studio-2-base.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-microsoft-surface-laptop-studio-2-rtx-4050": {
+    "file": "computer-microsoft-surface-laptop-studio-2-rtx-4050.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-microsoft-surface-laptop-studio-2-rtx-4060-64gb": {
     "file": "computer-microsoft-surface-laptop-studio-2-rtx-4060-64gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-microsoft-surface-pro-11-x-elite-oled-32gb-1tb": {
+    "file": "computer-microsoft-surface-pro-11-x-elite-oled-32gb-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-microsoft-surface-studio-2-plus": {
@@ -4127,20 +4419,52 @@
     "file": "computer-msi-creator-16-ai-studio-a1v.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-msi-creator-z17-hx-studio-a13v": {
+    "file": "computer-msi-creator-z17-hx-studio-a13v.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-msi-crosshair-16-hx-ai": {
+    "file": "computer-msi-crosshair-16-hx-ai.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-msi-meg-vision-x-ai-2nd-rtx-5090": {
     "file": "computer-msi-meg-vision-x-ai-2nd-rtx-5090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-msi-prestige-16-ai-studio-b1v": {
+    "file": "computer-msi-prestige-16-ai-studio-b1v.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-msi-raider-18-hx-ai-rtx-5090": {
     "file": "computer-msi-raider-18-hx-ai-rtx-5090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-msi-rtx-5090-gaming-trio-oc": {
+    "file": "computer-msi-rtx-5090-gaming-trio-oc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-msi-rtx-5090-suprim-liquid-soc": {
+    "file": "computer-msi-rtx-5090-suprim-liquid-soc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-msi-titan-18-hx-ai-rtx-5090": {
     "file": "computer-msi-titan-18-hx-ai-rtx-5090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-msi-vector-16-hx-ai-rtx-5080": {
+    "file": "computer-msi-vector-16-hx-ai-rtx-5080.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-nvidia-a100-80gb": {
+    "file": "computer-nvidia-a100-80gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-nvidia-dgx-a100-320gb": {
     "file": "computer-nvidia-dgx-a100-320gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-nvidia-dgx-spark": {
+    "file": "computer-nvidia-dgx-spark.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-nvidia-dgx-station-a100-160gb": {
@@ -4153,6 +4477,30 @@
   },
   "computer-nvidia-h100-80gb": {
     "file": "computer-nvidia-h100-80gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-nvidia-l40s": {
+    "file": "computer-nvidia-l40s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-nvidia-rtx-5000-ada": {
+    "file": "computer-nvidia-rtx-5000-ada.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-nvidia-rtx-6000-ada": {
+    "file": "computer-nvidia-rtx-6000-ada.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-nvidia-rtx-a6000": {
+    "file": "computer-nvidia-rtx-a6000.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-nvidia-rtx-pro-5000-blackwell": {
+    "file": "computer-nvidia-rtx-pro-5000-blackwell.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-nvidia-rtx-pro-6000-blackwell": {
+    "file": "computer-nvidia-rtx-pro-6000-blackwell.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-razer-blade-16-2025-rtx-5090": {
@@ -4175,12 +4523,36 @@
     "file": "computer-samsung-bm1743-61tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-samsung-galaxy-book4-pro-360": {
+    "file": "computer-samsung-galaxy-book4-pro-360.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-samsung-galaxy-book4-ultra-u7-rtx4050": {
+    "file": "computer-samsung-galaxy-book4-ultra-u7-rtx4050.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-samsung-galaxy-book4-ultra-u9-rtx4070": {
     "file": "computer-samsung-galaxy-book4-ultra-u9-rtx4070.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "computer-samsung-galaxy-book5-pro-360": {
+    "file": "computer-samsung-galaxy-book5-pro-360.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-samsung-odyssey-3d-27-g90xf": {
+    "file": "computer-samsung-odyssey-3d-27-g90xf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "computer-samsung-odyssey-ark-55-2nd-gen": {
     "file": "computer-samsung-odyssey-ark-55-2nd-gen.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-samsung-odyssey-neo-g9-57-g95nc": {
+    "file": "computer-samsung-odyssey-neo-g9-57-g95nc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "computer-samsung-odyssey-oled-g9-49-g95sc": {
+    "file": "computer-samsung-odyssey-oled-g9-49-g95sc.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "computer-samsung-pm1743-15tb": {
@@ -4371,28 +4743,92 @@
     "file": "da-watchse.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-adidas-adizero-adios-pro-evo-1": {
+    "file": "fashion-adidas-adizero-adios-pro-evo-1.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-bad-bunny-x-adidas-forum-buckle-low-the-first-caf": {
+    "file": "fashion-adidas-bad-bunny-x-adidas-forum-buckle-low-the-first-caf.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-balenciaga-x-adidas-triple-s": {
+    "file": "fashion-adidas-balenciaga-x-adidas-triple-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-adidas-chanel-x-pharrell-x-adidas-nmd-hu": {
     "file": "fashion-adidas-chanel-x-pharrell-x-adidas-nmd-hu.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-gucci-x-adidas-gazelle": {
+    "file": "fashion-adidas-gucci-x-adidas-gazelle.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-adidas-pharrell-x-adidas-nmd-hu-human-race-yellow": {
     "file": "fashion-adidas-pharrell-x-adidas-nmd-hu-human-race-yellow.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-adidas-prada-for-adidas-luna-rossa-21": {
+    "file": "fashion-adidas-prada-for-adidas-luna-rossa-21.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-prada-for-adidas-superstar": {
+    "file": "fashion-adidas-prada-for-adidas-superstar.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-yeezy-boost-350-pirate-black-2015": {
+    "file": "fashion-adidas-yeezy-boost-350-pirate-black-2015.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-adidas-yeezy-boost-350-turtle-dove": {
     "file": "fashion-adidas-yeezy-boost-350-turtle-dove.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-yeezy-boost-350-v2-beluga": {
+    "file": "fashion-adidas-yeezy-boost-350-v2-beluga.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-adidas-yeezy-boost-750-og-light-brown": {
     "file": "fashion-adidas-yeezy-boost-750-og-light-brown.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-arcteryx-alpha-parka": {
+    "file": "fashion-arcteryx-alpha-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-arcteryx-alpha-sv-jacket": {
+    "file": "fashion-arcteryx-alpha-sv-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-arcteryx-beams-x-arcteryx-beta-jacket": {
     "file": "fashion-arcteryx-beams-x-arcteryx-beta-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-arcteryx-macai-jacket": {
+    "file": "fashion-arcteryx-macai-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-arcteryx-palace-x-arcteryx-alpha-sv-jacket": {
     "file": "fashion-arcteryx-palace-x-arcteryx-alpha-sv-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-arcteryx-rush-jacket": {
+    "file": "fashion-arcteryx-rush-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-arcteryx-sabre-jacket": {
+    "file": "fashion-arcteryx-sabre-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-arcteryx-sabre-sv-jacket": {
+    "file": "fashion-arcteryx-sabre-sv-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-arcteryx-therme-parka": {
+    "file": "fashion-arcteryx-therme-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-arcteryx-veilance-field-jacket": {
+    "file": "fashion-arcteryx-veilance-field-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-arcteryx-veilance-monitor-coat": {
@@ -4403,6 +4839,18 @@
     "file": "fashion-arcteryx-veilance-monitor-down-coat.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-asics-cecilie-bahnsen-x-asics-gt-2160": {
+    "file": "fashion-asics-cecilie-bahnsen-x-asics-gt-2160.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-asics-gel-quantum-kinetic": {
+    "file": "fashion-asics-gel-quantum-kinetic.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-asics-hal-studios-x-asics-gel-1130": {
+    "file": "fashion-asics-hal-studios-x-asics-gel-1130.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-asics-jjjjound-x-asics-gel-kayano-14": {
     "file": "fashion-asics-jjjjound-x-asics-gel-kayano-14.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4411,12 +4859,32 @@
     "file": "fashion-asics-kiko-kostadinov-x-asics-gel-burz-1.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-asics-metaspeed-edge-paris": {
+    "file": "fashion-asics-metaspeed-edge-paris.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-asics-metaspeed-edge-tokyo": {
+    "file": "fashion-asics-metaspeed-edge-tokyo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-asics-metaspeed-ray": {
     "file": "fashion-asics-metaspeed-ray.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-asics-metaspeed-sky-paris": {
+    "file": "fashion-asics-metaspeed-sky-paris.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-asics-metaspeed-sky-tokyo": {
+    "file": "fashion-asics-metaspeed-sky-tokyo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-asics-ronnie-fieg-x-asics-gel-lyte-iii-salmon-toe": {
     "file": "fashion-asics-ronnie-fieg-x-asics-gel-lyte-iii-salmon-toe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-asics-vivienne-westwood-x-asics-gel-kayano-27-ltx": {
+    "file": "fashion-asics-vivienne-westwood-x-asics-gel-kayano-27-ltx.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-birkenstock-dior-by-birkenstock-milano-sandal": {
@@ -4427,12 +4895,48 @@
     "file": "fashion-birkenstock-dior-by-birkenstock-tokio-mule.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-birkenstock-fear-of-god-x-birkenstock-los-feliz": {
+    "file": "fashion-birkenstock-fear-of-god-x-birkenstock-los-feliz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-birkenstock-jil-sander-x-birkenstock-arizona": {
+    "file": "fashion-birkenstock-jil-sander-x-birkenstock-arizona.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-birkenstock-manolo-blahnik-x-birkenstock-arizona": {
     "file": "fashion-birkenstock-manolo-blahnik-x-birkenstock-arizona.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-birkenstock-manolo-blahnik-x-birkenstock-boston": {
     "file": "fashion-birkenstock-manolo-blahnik-x-birkenstock-boston.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-birkenstock-proenza-schouler-x-birkenstock-arizona": {
+    "file": "fashion-birkenstock-proenza-schouler-x-birkenstock-arizona.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-birkenstock-rick-owens-x-birkenstock-arizona": {
+    "file": "fashion-birkenstock-rick-owens-x-birkenstock-arizona.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-birkenstock-rick-owens-x-birkenstock-boston": {
+    "file": "fashion-birkenstock-rick-owens-x-birkenstock-boston.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-birkenstock-rick-owens-x-birkenstock-rotterdam": {
+    "file": "fashion-birkenstock-rick-owens-x-birkenstock-rotterdam.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-birkenstock-stussy-x-birkenstock-boston": {
+    "file": "fashion-birkenstock-stussy-x-birkenstock-boston.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-birkenstock-valentino-garavani-x-birkenstock-arizona": {
+    "file": "fashion-birkenstock-valentino-garavani-x-birkenstock-arizona.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-burberry-camden-heritage-car-coat": {
+    "file": "fashion-burberry-camden-heritage-car-coat.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-burberry-cashmere-trench-coat": {
@@ -4443,16 +4947,76 @@
     "file": "fashion-burberry-leather-trench-coat.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-burberry-long-chelsea-heritage-trench-coat": {
+    "file": "fashion-burberry-long-chelsea-heritage-trench-coat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-burberry-long-kensington-heritage-trench-coat": {
+    "file": "fashion-burberry-long-kensington-heritage-trench-coat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-burberry-long-waterloo-heritage-trench-coat": {
     "file": "fashion-burberry-long-waterloo-heritage-trench-coat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-burberry-mid-length-kensington-heritage-trench-coat": {
+    "file": "fashion-burberry-mid-length-kensington-heritage-trench-coat.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-burberry-shearling-aviator-jacket": {
     "file": "fashion-burberry-shearling-aviator-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-burberry-short-kensington-heritage-trench-coat": {
+    "file": "fashion-burberry-short-kensington-heritage-trench-coat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-burberry-westminster-heritage-trench-coat": {
+    "file": "fashion-burberry-westminster-heritage-trench-coat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-burberry-wool-cashmere-tailored-coat": {
+    "file": "fashion-burberry-wool-cashmere-tailored-coat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-burberry-wool-duffle-coat": {
+    "file": "fashion-burberry-wool-duffle-coat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-canada-goose-carson-parka": {
+    "file": "fashion-canada-goose-carson-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-canada-goose-chateau-parka": {
+    "file": "fashion-canada-goose-chateau-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-canada-goose-citadel-parka": {
+    "file": "fashion-canada-goose-citadel-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-canada-goose-expedition-parka": {
+    "file": "fashion-canada-goose-expedition-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-canada-goose-kensington-parka": {
+    "file": "fashion-canada-goose-kensington-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-canada-goose-langford-parka": {
+    "file": "fashion-canada-goose-langford-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-canada-goose-mystique-parka": {
     "file": "fashion-canada-goose-mystique-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-canada-goose-resolute-parka": {
+    "file": "fashion-canada-goose-resolute-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-canada-goose-shelburne-parka": {
+    "file": "fashion-canada-goose-shelburne-parka.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-canada-goose-snow-mantra-parka": {
@@ -4465,6 +5029,26 @@
   },
   "fashion-canada-goose-y-project-x-canada-goose-chilliwack-bomber": {
     "file": "fashion-canada-goose-y-project-x-canada-goose-chilliwack-bomber.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-converse-addict-chuck-taylor-canvas-hi": {
+    "file": "fashion-converse-addict-chuck-taylor-canvas-hi.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-converse-carhartt-wip-x-converse-chuck-70": {
+    "file": "fashion-converse-carhartt-wip-x-converse-chuck-70.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-converse-comme-des-garcons-play-x-converse-chuck-70-high": {
+    "file": "fashion-converse-comme-des-garcons-play-x-converse-chuck-70-high.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-converse-fear-of-god-essentials-x-converse-chuck-70": {
+    "file": "fashion-converse-fear-of-god-essentials-x-converse-chuck-70.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-converse-kim-jones-x-converse-chuck-70": {
+    "file": "fashion-converse-kim-jones-x-converse-chuck-70.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-converse-kith-x-coca-cola-x-converse-chuck-70": {
@@ -4481,6 +5065,50 @@
   },
   "fashion-converse-off-white-x-converse-chuck-taylor-all-star-vulc": {
     "file": "fashion-converse-off-white-x-converse-chuck-taylor-all-star-vulc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-converse-rick-owens-drkshdw-x-converse-drkstar-chuck-70": {
+    "file": "fashion-converse-rick-owens-drkshdw-x-converse-drkstar-chuck-70.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-converse-rick-owens-drkshdw-x-converse-turbodrk-chuck-70": {
+    "file": "fashion-converse-rick-owens-drkshdw-x-converse-turbodrk-chuck-70.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-converse-rick-owens-drkshdw-x-converse-turbowpn": {
+    "file": "fashion-converse-rick-owens-drkshdw-x-converse-turbowpn.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-dr-martens-1460-vintage-made-in-england": {
+    "file": "fashion-dr-martens-1460-vintage-made-in-england.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-dr-martens-2976-vintage-made-in-england": {
+    "file": "fashion-dr-martens-2976-vintage-made-in-england.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-dr-martens-a-cold-wall-x-dr-martens-1460": {
+    "file": "fashion-dr-martens-a-cold-wall-x-dr-martens-1460.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-dr-martens-bape-x-dr-martens-1460": {
+    "file": "fashion-dr-martens-bape-x-dr-martens-1460.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-dr-martens-comme-des-garcons-x-dr-martens-1461": {
+    "file": "fashion-dr-martens-comme-des-garcons-x-dr-martens-1461.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-dr-martens-jadon-hi": {
+    "file": "fashion-dr-martens-jadon-hi.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-dr-martens-mm6-maison-margiela-x-dr-martens-1460": {
+    "file": "fashion-dr-martens-mm6-maison-margiela-x-dr-martens-1460.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-dr-martens-raf-simons-x-dr-martens-1460-remastered": {
+    "file": "fashion-dr-martens-raf-simons-x-dr-martens-1460-remastered.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-dr-martens-rick-owens-x-dr-martens-1460-bex": {
@@ -4503,6 +5131,14 @@
     "file": "fashion-hoka-cielo-x1-2-0.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-hoka-kaha-3-gtx": {
+    "file": "fashion-hoka-kaha-3-gtx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-hoka-mafate-x": {
+    "file": "fashion-hoka-mafate-x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-hoka-marni-x-hoka-bondi-b3ls": {
     "file": "fashion-hoka-marni-x-hoka-bondi-b3ls.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4511,12 +5147,40 @@
     "file": "fashion-hoka-moncler-x-hoka-mafate-speed-2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-hoka-rocket-x-2": {
+    "file": "fashion-hoka-rocket-x-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-hoka-rocket-x-3": {
+    "file": "fashion-hoka-rocket-x-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-hoka-satisfy-x-hoka-mafate-speed-4-lite": {
     "file": "fashion-hoka-satisfy-x-hoka-mafate-speed-4-lite.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-hoka-skyward-x": {
+    "file": "fashion-hoka-skyward-x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-hoka-tecton-x-3": {
+    "file": "fashion-hoka-tecton-x-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-hoka-tor-ultra-hi": {
+    "file": "fashion-hoka-tor-ultra-hi.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-hoka-tor-ultra-lo": {
+    "file": "fashion-hoka-tor-ultra-lo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-jordan-1-high-chicago-1985": {
     "file": "fashion-jordan-1-high-chicago-1985.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-jordan-1-retro-high-og-chicago-2015": {
+    "file": "fashion-jordan-1-retro-high-og-chicago-2015.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-jordan-4-retro-eminem-carhartt": {
@@ -4531,8 +5195,56 @@
     "file": "fashion-jordan-dior-x-air-jordan-1-high-og.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-jordan-dior-x-air-jordan-1-low-og": {
+    "file": "fashion-jordan-dior-x-air-jordan-1-low-og.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-jordan-fragment-x-air-jordan-1-retro-high-og": {
+    "file": "fashion-jordan-fragment-x-air-jordan-1-retro-high-og.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-jordan-kaws-x-air-jordan-4-retro-cool-grey": {
+    "file": "fashion-jordan-kaws-x-air-jordan-4-retro-cool-grey.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-jordan-off-white-x-air-jordan-1-retro-high-og-chicago": {
+    "file": "fashion-jordan-off-white-x-air-jordan-1-retro-high-og-chicago.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-jordan-off-white-x-air-jordan-1-retro-high-og-unc": {
+    "file": "fashion-jordan-off-white-x-air-jordan-1-retro-high-og-unc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-jordan-off-white-x-air-jordan-1-retro-high-og-white": {
+    "file": "fashion-jordan-off-white-x-air-jordan-1-retro-high-og-white.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-jordan-travis-scott-x-fragment-x-air-jordan-1-retro-high": {
+    "file": "fashion-jordan-travis-scott-x-fragment-x-air-jordan-1-retro-high.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-moncler-cluny-parka": {
+    "file": "fashion-moncler-cluny-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-moncler-hermine-long-down-jacket": {
+    "file": "fashion-moncler-hermine-long-down-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-moncler-karakorum-ripstop-short-down-jacket": {
+    "file": "fashion-moncler-karakorum-ripstop-short-down-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-moncler-karakorum-tech-jersey-down-jacket": {
     "file": "fashion-moncler-karakorum-tech-jersey-down-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-moncler-khloe-long-down-jacket": {
+    "file": "fashion-moncler-khloe-long-down-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-moncler-maya-70-short-down-jacket": {
+    "file": "fashion-moncler-maya-70-short-down-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-moncler-moncler-plus-rick-owens-cyclopic-down-jacket": {
@@ -4543,16 +5255,56 @@
     "file": "fashion-moncler-moncler-plus-rick-owens-radiance-convertible-dow.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-moncler-montcla-short-down-jacket": {
+    "file": "fashion-moncler-montcla-short-down-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-moncler-montgetech-grenoble-ski-jacket": {
+    "file": "fashion-moncler-montgetech-grenoble-ski-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-moncler-parana-long-down-jacket": {
     "file": "fashion-moncler-parana-long-down-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-moncler-suyen-long-parka": {
+    "file": "fashion-moncler-suyen-long-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-1300jp": {
+    "file": "fashion-new-balance-1300jp.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-action-bronson-x-new-balance-990v6-baklava": {
+    "file": "fashion-new-balance-action-bronson-x-new-balance-990v6-baklava.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-aime-leon-dore-x-new-balance-1300": {
+    "file": "fashion-new-balance-aime-leon-dore-x-new-balance-1300.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-aime-leon-dore-x-new-balance-993": {
+    "file": "fashion-new-balance-aime-leon-dore-x-new-balance-993.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-jjjjound-x-new-balance-990v3": {
+    "file": "fashion-new-balance-jjjjound-x-new-balance-990v3.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-new-balance-jjjjound-x-new-balance-992-grey": {
     "file": "fashion-new-balance-jjjjound-x-new-balance-992-grey.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-new-balance-joe-freshgoods-x-new-balance-990v3-outside-c": {
+    "file": "fashion-new-balance-joe-freshgoods-x-new-balance-990v3-outside-c.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-new-balance-joe-freshgoods-x-new-balance-992-no-emotions": {
     "file": "fashion-new-balance-joe-freshgoods-x-new-balance-992-no-emotions.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-joe-freshgoods-x-new-balance-993-performance": {
+    "file": "fashion-new-balance-joe-freshgoods-x-new-balance-993-performance.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-new-balance-miu-miu-x-new-balance-530-sl": {
@@ -4563,8 +5315,40 @@
     "file": "fashion-new-balance-miu-miu-x-new-balance-574.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-new-balance-salehe-bembury-x-new-balance-2002r-peace-be": {
+    "file": "fashion-new-balance-salehe-bembury-x-new-balance-2002r-peace-be.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-air-yeezy-1-zen-grey": {
+    "file": "fashion-nike-air-yeezy-1-zen-grey.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-air-yeezy-2-red-october": {
+    "file": "fashion-nike-air-yeezy-2-red-october.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-air-yeezy-2-solar-red": {
+    "file": "fashion-nike-air-yeezy-2-solar-red.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-louis-vuitton-x-nike-air-force-1-low-by-virgil-ablo": {
+    "file": "fashion-nike-louis-vuitton-x-nike-air-force-1-low-by-virgil-ablo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-mag-back-to-the-future-2011": {
+    "file": "fashion-nike-mag-back-to-the-future-2011.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-nike-mag-back-to-the-future-2016": {
     "file": "fashion-nike-mag-back-to-the-future-2016.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-off-white-x-nike-air-force-1-low-mca-university-blu": {
+    "file": "fashion-nike-off-white-x-nike-air-force-1-low-mca-university-blu.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-sb-dunk-low-diamond-supply-co-tiffany-2005": {
+    "file": "fashion-nike-sb-dunk-low-diamond-supply-co-tiffany-2005.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-nike-sb-dunk-low-freddy-krueger": {
@@ -4579,8 +5363,24 @@
     "file": "fashion-nike-sb-dunk-low-staple-nyc-pigeon.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-nike-tom-sachs-x-nikecraft-mars-yard-2-0": {
+    "file": "fashion-nike-tom-sachs-x-nikecraft-mars-yard-2-0.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-on-challenger-puffer-jacket": {
     "file": "fashion-on-challenger-puffer-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-on-cloudboom-echo-3": {
+    "file": "fashion-on-cloudboom-echo-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-on-cloudboom-strike": {
+    "file": "fashion-on-cloudboom-strike.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-on-cloudboom-strike-ls": {
+    "file": "fashion-on-cloudboom-strike-ls.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-on-loewe-x-on-cloudtilt": {
@@ -4595,6 +5395,26 @@
     "file": "fashion-on-loewe-x-on-cloudventure.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-on-storm-jacket": {
+    "file": "fashion-on-storm-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-on-ultra-jacket": {
+    "file": "fashion-on-ultra-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-on-waterproof-anorak": {
+    "file": "fashion-on-waterproof-anorak.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-on-weather-jacket": {
+    "file": "fashion-on-weather-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-on-zero-jacket": {
+    "file": "fashion-on-zero-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-patagonia-frozen-range-parka": {
     "file": "fashion-patagonia-frozen-range-parka.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4603,16 +5423,80 @@
     "file": "fashion-patagonia-grade-vii-down-parka.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-patagonia-jackson-glacier-parka": {
+    "file": "fashion-patagonia-jackson-glacier-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-patagonia-powslayer-bibs": {
+    "file": "fashion-patagonia-powslayer-bibs.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-patagonia-powslayer-jacket": {
+    "file": "fashion-patagonia-powslayer-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-patagonia-r4-yulex-regulator-front-zip-hooded-full-suit": {
+    "file": "fashion-patagonia-r4-yulex-regulator-front-zip-hooded-full-suit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-patagonia-stormshadow-parka": {
     "file": "fashion-patagonia-stormshadow-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-patagonia-super-free-alpine-jacket": {
+    "file": "fashion-patagonia-super-free-alpine-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-patagonia-swiftcurrent-expedition-zip-front-waders": {
     "file": "fashion-patagonia-swiftcurrent-expedition-zip-front-waders.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-patagonia-tres-3-in-1-parka": {
+    "file": "fashion-patagonia-tres-3-in-1-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-patagonia-untracked-bibs": {
+    "file": "fashion-patagonia-untracked-bibs.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-patagonia-untracked-jacket": {
+    "file": "fashion-patagonia-untracked-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-salomon-11-by-boris-bidjan-saberi-x-salomon-bamba-2-high": {
     "file": "fashion-salomon-11-by-boris-bidjan-saberi-x-salomon-bamba-2-high.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-salomon-comme-des-garcons-x-salomon-sr90": {
+    "file": "fashion-salomon-comme-des-garcons-x-salomon-sr90.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-salomon-dialogue-dual-boa-snowboard-boots": {
+    "file": "fashion-salomon-dialogue-dual-boa-snowboard-boots.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-salomon-jjjjound-x-salomon-xt-6": {
+    "file": "fashion-salomon-jjjjound-x-salomon-xt-6.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-salomon-malamute-dual-boa-snowboard-boots": {
+    "file": "fashion-salomon-malamute-dual-boa-snowboard-boots.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-salomon-mm6-maison-margiela-x-salomon-cross-low": {
+    "file": "fashion-salomon-mm6-maison-margiela-x-salomon-cross-low.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-salomon-palace-x-salomon-xt-wings-2": {
+    "file": "fashion-salomon-palace-x-salomon-xt-wings-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-salomon-s-lab-phantasm-2": {
+    "file": "fashion-salomon-s-lab-phantasm-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-salomon-s-lab-ultra-glide": {
+    "file": "fashion-salomon-s-lab-ultra-glide.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-salomon-s-pro-alpha-120-ski-boots": {
@@ -4631,8 +5515,28 @@
     "file": "fashion-the-north-face-gucci-x-the-north-face-down-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-the-north-face-gucci-x-the-north-face-hiking-boots": {
+    "file": "fashion-the-north-face-gucci-x-the-north-face-hiking-boots.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-the-north-face-himalayan-suit": {
     "file": "fashion-the-north-face-himalayan-suit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-the-north-face-kaws-x-the-north-face-retro-1996-nuptse-j": {
+    "file": "fashion-the-north-face-kaws-x-the-north-face-retro-1996-nuptse-j.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-the-north-face-summit-series-amk-l6-cloud-down-belay-par": {
+    "file": "fashion-the-north-face-summit-series-amk-l6-cloud-down-belay-par.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-the-north-face-summit-series-tsirku-gore-tex-pro-jacket": {
+    "file": "fashion-the-north-face-summit-series-tsirku-gore-tex-pro-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-the-north-face-summit-series-verbier-gore-tex-jacket": {
+    "file": "fashion-the-north-face-summit-series-verbier-gore-tex-jacket.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-the-north-face-supreme-x-the-north-face-by-any-means-nup": {
@@ -4641,6 +5545,34 @@
   },
   "fashion-the-north-face-supreme-x-the-north-face-leaves-nuptse-ja": {
     "file": "fashion-the-north-face-supreme-x-the-north-face-leaves-nuptse-ja.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-the-north-face-supreme-x-the-north-face-mountain-parka": {
+    "file": "fashion-the-north-face-supreme-x-the-north-face-mountain-parka.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-the-north-face-supreme-x-the-north-face-paper-print-nupt": {
+    "file": "fashion-the-north-face-supreme-x-the-north-face-paper-print-nupt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-the-north-face-supreme-x-the-north-face-statue-of-libert": {
+    "file": "fashion-the-north-face-supreme-x-the-north-face-statue-of-libert.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-timberland-40-below-super-boot": {
+    "file": "fashion-timberland-40-below-super-boot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-timberland-a-cold-wall-x-timberland-future73-6-inch-boot": {
+    "file": "fashion-timberland-a-cold-wall-x-timberland-future73-6-inch-boot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-timberland-bape-x-timberland-6-inch-boot": {
+    "file": "fashion-timberland-bape-x-timberland-6-inch-boot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-timberland-clot-x-timberland-future73-timberloop-6-inch": {
+    "file": "fashion-timberland-clot-x-timberland-future73-timberloop-6-inch.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-timberland-jimmy-choo-x-timberland-6-inch-crystal-cuff-b": {
@@ -4659,8 +5591,52 @@
     "file": "fashion-timberland-off-white-x-timberland-6-inch-velvet-boot.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-timberland-premium-6-inch-shearling-lined-waterproof-boo": {
+    "file": "fashion-timberland-premium-6-inch-shearling-lined-waterproof-boo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-timberland-stussy-x-timberland-6-inch-boot": {
+    "file": "fashion-timberland-stussy-x-timberland-6-inch-boot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-timberland-supreme-x-timberland-3-eye-classic-lug-shoe": {
+    "file": "fashion-timberland-supreme-x-timberland-3-eye-classic-lug-shoe.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-timberland-supreme-x-timberland-6-inch-premium-waterproo": {
+    "file": "fashion-timberland-supreme-x-timberland-6-inch-premium-waterproo.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-adirondack-boot-iii": {
+    "file": "fashion-ugg-adirondack-boot-iii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-bailey-bow-ii": {
+    "file": "fashion-ugg-bailey-bow-ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-bailey-button-ii": {
+    "file": "fashion-ugg-bailey-button-ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-bape-x-ugg-tasman": {
+    "file": "fashion-ugg-bape-x-ugg-tasman.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-butte-boot": {
+    "file": "fashion-ugg-butte-boot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-classic-tall-ii": {
+    "file": "fashion-ugg-classic-tall-ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-ugg-gallery-dept-x-ugg-tasman": {
     "file": "fashion-ugg-gallery-dept-x-ugg-tasman.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-ugg-jeremy-scott-x-ugg-flames-classic-short": {
+    "file": "fashion-ugg-jeremy-scott-x-ugg-flames-classic-short.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-ugg-jimmy-choo-x-ugg-mace-boot": {
@@ -4671,8 +5647,16 @@
     "file": "fashion-ugg-palace-x-ugg-tasman.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-ugg-telfar-x-ugg-logo-mini-boot": {
+    "file": "fashion-ugg-telfar-x-ugg-logo-mini-boot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-ugg-y-project-x-ugg-classic-thigh-high-boot": {
     "file": "fashion-ugg-y-project-x-ugg-classic-thigh-high-boot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-vans-aura-pro-snowboard-boots": {
+    "file": "fashion-vans-aura-pro-snowboard-boots.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-vans-fear-of-god-x-vans-era-95-dx": {
@@ -4683,12 +5667,40 @@
     "file": "fashion-vans-fear-of-god-x-vans-sk8-hi-38-dx.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-vans-golf-wang-x-vans-old-skool": {
+    "file": "fashion-vans-golf-wang-x-vans-old-skool.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-vans-infuse-snowboard-boots": {
     "file": "fashion-vans-infuse-snowboard-boots.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-vans-invado-og-snowboard-boots": {
+    "file": "fashion-vans-invado-og-snowboard-boots.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-vans-jjjjound-x-vans-vault-sk8-mid-vlt-lx": {
+    "file": "fashion-vans-jjjjound-x-vans-vault-sk8-mid-vlt-lx.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-vans-nasa-x-vans-sk8-hi-46-mte-dx-space-voyager": {
+    "file": "fashion-vans-nasa-x-vans-sk8-hi-46-mte-dx-space-voyager.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-vans-takashi-murakami-x-vans-vault-classic-slip-on-skull": {
     "file": "fashion-vans-takashi-murakami-x-vans-vault-classic-slip-on-skull.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-vans-ultrarange-exo-hi-gore-tex-mte-3": {
+    "file": "fashion-vans-ultrarange-exo-hi-gore-tex-mte-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-vans-verse-snowboard-boots": {
+    "file": "fashion-vans-verse-snowboard-boots.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-vans-wtaps-x-vans-vault-og-sk8-hi-lx": {
+    "file": "fashion-vans-wtaps-x-vans-vault-og-sk8-hi-lx.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-8bitdo-8bitdo-arcade-stick": {
@@ -4747,6 +5759,10 @@
     "file": "gaming-corsair-corsair-one-i500-rtx-4090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-corsair-corsair-platform-6-desk": {
+    "file": "gaming-corsair-corsair-platform-6-desk.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-corsair-corsair-platform-6-elevate-desk": {
     "file": "gaming-corsair-corsair-platform-6-elevate-desk.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4755,12 +5771,20 @@
     "file": "gaming-corsair-corsair-xeneon-flex-45wqhd240-oled-monitor.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-elgato-elgato-4k-pro-capture-card": {
+    "file": "gaming-elgato-elgato-4k-pro-capture-card.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-elgato-elgato-4k60-s-plus-capture-card": {
     "file": "gaming-elgato-elgato-4k60-s-plus-capture-card.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-elgato-elgato-facecam-pro": {
     "file": "gaming-elgato-elgato-facecam-pro.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-elgato-elgato-prompter": {
+    "file": "gaming-elgato-elgato-prompter.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-elgato-elgato-stream-deck-studio": {
@@ -4819,6 +5843,18 @@
     "file": "gaming-logitech-playseat-trophy-logitech-g-edition.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-moza-moza-crp-pedals": {
+    "file": "gaming-moza-moza-crp-pedals.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-moza-moza-gs-v2p-gt-wheel": {
+    "file": "gaming-moza-moza-gs-v2p-gt-wheel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-moza-moza-r12-wheel-base": {
+    "file": "gaming-moza-moza-r12-wheel-base.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-moza-moza-r16-v2-wheel-base": {
     "file": "gaming-moza-moza-r16-v2-wheel-base.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4835,12 +5871,32 @@
     "file": "gaming-moza-moza-r25-ultra-wheel-base.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-moza-moza-r5-bundle": {
+    "file": "gaming-moza-moza-r5-bundle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-msi-msi-geforce-rtx-4090-24g-suprim-x": {
+    "file": "gaming-msi-msi-geforce-rtx-4090-24g-suprim-x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-msi-msi-geforce-rtx-5080-16g-suprim-soc": {
+    "file": "gaming-msi-msi-geforce-rtx-5080-16g-suprim-soc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-msi-msi-meg-trident-x2-14th-rtx-4090": {
     "file": "gaming-msi-msi-meg-trident-x2-14th-rtx-4090.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-msi-msi-meg-x870e-godlike-motherboard": {
+    "file": "gaming-msi-msi-meg-x870e-godlike-motherboard.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-msi-msi-raider-18-hx-ai-a2xw-rtx-5090": {
     "file": "gaming-msi-msi-raider-18-hx-ai-a2xw-rtx-5090.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-msi-msi-stealth-16-ai-studio-a1v-rtx-4070": {
+    "file": "gaming-msi-msi-stealth-16-ai-studio-a1v-rtx-4070.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-msi-msi-titan-18-hx-a14v-rtx-4090": {
@@ -4855,6 +5911,10 @@
     "file": "gaming-nintendo-nintendo-switch-2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-nintendo-nintendo-switch-2-all-in-one-carrying-case": {
+    "file": "gaming-nintendo-nintendo-switch-2-all-in-one-carrying-case.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-nintendo-nintendo-switch-2-mario-kart-world-bundle": {
     "file": "gaming-nintendo-nintendo-switch-2-mario-kart-world-bundle.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4863,8 +5923,24 @@
     "file": "gaming-nintendo-nintendo-switch-2-pokemon-legends-z-a-bundle.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-nintendo-nintendo-switch-2-pro-controller": {
+    "file": "gaming-nintendo-nintendo-switch-2-pro-controller.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-nintendo-nintendo-switch-oled-model": {
     "file": "gaming-nintendo-nintendo-switch-oled-model.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-playstation-death-stranding-2-on-the-beach-collector-s": {
+    "file": "gaming-playstation-death-stranding-2-on-the-beach-collector-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-playstation-dualsense-edge-wireless-controller": {
+    "file": "gaming-playstation-dualsense-edge-wireless-controller.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-playstation-ghost-of-yotei-collector-s-edition-ps5": {
+    "file": "gaming-playstation-ghost-of-yotei-collector-s-edition-ps5.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-playstation-playstation-5-console-1tb": {
@@ -4883,6 +5959,26 @@
     "file": "gaming-playstation-playstation-5-pro-2tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-playstation-playstation-portal-remote-player": {
+    "file": "gaming-playstation-playstation-portal-remote-player.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-playstation-playstation-vr2": {
+    "file": "gaming-playstation-playstation-vr2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-playstation-pulse-3d-wireless-headset": {
+    "file": "gaming-playstation-pulse-3d-wireless-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-playstation-pulse-elite-wireless-headset": {
+    "file": "gaming-playstation-pulse-elite-wireless-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-playstation-pulse-explore-wireless-earbuds": {
+    "file": "gaming-playstation-pulse-explore-wireless-earbuds.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-razer-razer-blade-14-2025-rtx-5060": {
     "file": "gaming-razer-razer-blade-14-2025-rtx-5060.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -4897,6 +5993,34 @@
   },
   "gaming-razer-razer-blade-18-2025-rtx-5070-ti": {
     "file": "gaming-razer-razer-blade-18-2025-rtx-5070-ti.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-razer-razer-enki-pro-gaming-chair": {
+    "file": "gaming-razer-razer-enki-pro-gaming-chair.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-razer-razer-fujin-mesh-gaming-chair": {
+    "file": "gaming-razer-razer-fujin-mesh-gaming-chair.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-razer-razer-fujin-pro-mesh-gaming-chair": {
+    "file": "gaming-razer-razer-fujin-pro-mesh-gaming-chair.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-razer-razer-iskur-v2-gaming-chair": {
+    "file": "gaming-razer-razer-iskur-v2-gaming-chair.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-razer-razer-nommo-v2-pro-speakers": {
+    "file": "gaming-razer-razer-nommo-v2-pro-speakers.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-scuf-scuf-envision-wired-pc-controller": {
+    "file": "gaming-scuf-scuf-envision-wired-pc-controller.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-scuf-scuf-infinity4ps-pro-controller-for-ps4": {
+    "file": "gaming-scuf-scuf-infinity4ps-pro-controller-for-ps4.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-scuf-scuf-instinct-pro-controller-for-xbox": {
@@ -4919,8 +6043,32 @@
     "file": "gaming-steelseries-steelseries-alias-pro-microphone.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-steelseries-steelseries-apex-pro-gen-3": {
+    "file": "gaming-steelseries-steelseries-apex-pro-gen-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-steelseries-steelseries-apex-pro-mini-wireless": {
+    "file": "gaming-steelseries-steelseries-apex-pro-mini-wireless.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-steelseries-steelseries-apex-pro-tkl-gen-3": {
+    "file": "gaming-steelseries-steelseries-apex-pro-tkl-gen-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-steelseries-steelseries-apex-pro-tkl-wireless-2023": {
+    "file": "gaming-steelseries-steelseries-apex-pro-tkl-wireless-2023.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-steelseries-steelseries-arctis-9-wireless": {
+    "file": "gaming-steelseries-steelseries-arctis-9-wireless.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-steelseries-steelseries-arctis-nova-elite": {
     "file": "gaming-steelseries-steelseries-arctis-nova-elite.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-steelseries-steelseries-arctis-nova-pro": {
+    "file": "gaming-steelseries-steelseries-arctis-nova-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-steelseries-steelseries-arctis-nova-pro-wireless": {
@@ -4929,6 +6077,14 @@
   },
   "gaming-steelseries-steelseries-arena-9-speakers": {
     "file": "gaming-steelseries-steelseries-arena-9-speakers.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-thrustmaster-thrustmaster-ava-f-a-18-super-hornet-flight": {
+    "file": "gaming-thrustmaster-thrustmaster-ava-f-a-18-super-hornet-flight.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-thrustmaster-thrustmaster-hotas-warthog": {
+    "file": "gaming-thrustmaster-thrustmaster-hotas-warthog.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-thrustmaster-thrustmaster-t-gt-ii": {
@@ -4943,12 +6099,36 @@
     "file": "gaming-thrustmaster-thrustmaster-t818-ferrari-sf1000-simulator.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-thrustmaster-thrustmaster-tpr-pendular-rudder-pedals": {
+    "file": "gaming-thrustmaster-thrustmaster-tpr-pendular-rudder-pedals.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-thrustmaster-thrustmaster-ts-xw-racer-sparco-p310": {
     "file": "gaming-thrustmaster-thrustmaster-ts-xw-racer-sparco-p310.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-thrustmaster-thrustmaster-viper-tqs-mission-pack": {
+    "file": "gaming-thrustmaster-thrustmaster-viper-tqs-mission-pack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-turtle-beach-turtle-beach-atlas-air-wireless-headset": {
+    "file": "gaming-turtle-beach-turtle-beach-atlas-air-wireless-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-turtle-beach-turtle-beach-stealth-700-gen-2-max-wireless": {
+    "file": "gaming-turtle-beach-turtle-beach-stealth-700-gen-2-max-wireless.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-turtle-beach-turtle-beach-stealth-700-gen-3-wireless": {
+    "file": "gaming-turtle-beach-turtle-beach-stealth-700-gen-3-wireless.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-turtle-beach-turtle-beach-stealth-pro-wireless-headset": {
     "file": "gaming-turtle-beach-turtle-beach-stealth-pro-wireless-headset.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-turtle-beach-turtle-beach-stealth-ultra-wireless": {
+    "file": "gaming-turtle-beach-turtle-beach-stealth-ultra-wireless.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-turtle-beach-turtle-beach-velocityone-flight": {
@@ -4963,12 +6143,48 @@
     "file": "gaming-turtle-beach-turtle-beach-velocityone-race-wheel-and.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-turtle-beach-turtle-beach-velocityone-rudder-pedals": {
+    "file": "gaming-turtle-beach-turtle-beach-velocityone-rudder-pedals.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-turtle-beach-turtle-beach-velocityone-stand": {
+    "file": "gaming-turtle-beach-turtle-beach-velocityone-stand.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-valve-steam-deck-lcd-256gb": {
+    "file": "gaming-valve-steam-deck-lcd-256gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-valve-steam-deck-lcd-512gb": {
+    "file": "gaming-valve-steam-deck-lcd-512gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-valve-steam-deck-lcd-64gb": {
+    "file": "gaming-valve-steam-deck-lcd-64gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-valve-steam-deck-oled-1tb": {
     "file": "gaming-valve-steam-deck-oled-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-valve-steam-deck-oled-1tb-limited-edition-white": {
     "file": "gaming-valve-steam-deck-oled-1tb-limited-edition-white.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-valve-steam-deck-oled-512gb": {
+    "file": "gaming-valve-steam-deck-oled-512gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-valve-valve-index-base-station": {
+    "file": "gaming-valve-valve-index-base-station.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-valve-valve-index-controllers": {
+    "file": "gaming-valve-valve-index-controllers.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-valve-valve-index-headset": {
+    "file": "gaming-valve-valve-index-headset.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-valve-valve-index-headset-plus-controllers": {
@@ -4995,8 +6211,16 @@
     "file": "gaming-victrix-victrix-pro-fs-arcade-fight-stick-for-xbox.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "gaming-xbox-starfield-constellation-edition-xbox-series-x": {
+    "file": "gaming-xbox-starfield-constellation-edition-xbox-series-x.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "gaming-xbox-xbox-series-s-1tb": {
     "file": "gaming-xbox-xbox-series-s-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "gaming-xbox-xbox-series-s-512gb": {
+    "file": "gaming-xbox-xbox-series-s-512gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "gaming-xbox-xbox-series-x-1tb": {
@@ -7283,8 +8507,24 @@
     "file": "mb-wacom-intuos-pro.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-anker-521-portable-power-station": {
+    "file": "mobile-anker-521-portable-power-station.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-anker-535-portable-power-station": {
+    "file": "mobile-anker-535-portable-power-station.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-anker-prime-power-bank-26250-300w": {
+    "file": "mobile-anker-prime-power-bank-26250-300w.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-anker-solix-c1000": {
     "file": "mobile-anker-solix-c1000.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-anker-solix-c300": {
+    "file": "mobile-anker-solix-c300.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-anker-solix-f1200": {
@@ -7299,8 +8539,48 @@
     "file": "mobile-anker-solix-f3800.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-anker-solix-ps100-solar-panel": {
+    "file": "mobile-anker-solix-ps100-solar-panel.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-anker-soundcore-sleep-a30": {
+    "file": "mobile-anker-soundcore-sleep-a30.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-apple-ipad-pro-11-m5-wifi-2tb": {
+    "file": "mobile-apple-ipad-pro-11-m5-wifi-2tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-apple-ipad-pro-13-m5-cellular-2tb": {
+    "file": "mobile-apple-ipad-pro-13-m5-cellular-2tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-apple-ipad-pro-13-m5-cellular-2tb-nano": {
     "file": "mobile-apple-ipad-pro-13-m5-cellular-2tb-nano.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-apple-ipad-pro-13-m5-wifi-1tb": {
+    "file": "mobile-apple-ipad-pro-13-m5-wifi-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-apple-ipad-pro-13-m5-wifi-2tb": {
+    "file": "mobile-apple-ipad-pro-13-m5-wifi-2tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-apple-iphone-16-pro-max-1tb": {
+    "file": "mobile-apple-iphone-16-pro-max-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-apple-iphone-17-pro-1tb": {
+    "file": "mobile-apple-iphone-17-pro-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-apple-iphone-17-pro-max-1tb": {
+    "file": "mobile-apple-iphone-17-pro-max-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-apple-iphone-17-pro-max-2tb": {
+    "file": "mobile-apple-iphone-17-pro-max-2tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-apple-vision-pro-m5-1tb": {
@@ -7315,6 +8595,10 @@
     "file": "mobile-apple-vision-pro-m5-512gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-asus-proart-pz13-16-1tb": {
+    "file": "mobile-asus-proart-pz13-16-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-asus-rog-flow-z13-2025-ai-max-390-32-1tb": {
     "file": "mobile-asus-rog-flow-z13-2025-ai-max-390-32-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -7323,12 +8607,48 @@
     "file": "mobile-asus-rog-flow-z13-2025-ai-max-plus-395-32-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-asus-rog-phone-7-ultimate-16-512": {
+    "file": "mobile-asus-rog-phone-7-ultimate-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-asus-rog-phone-8-12-256": {
+    "file": "mobile-asus-rog-phone-8-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-asus-rog-phone-8-pro-16-512": {
+    "file": "mobile-asus-rog-phone-8-pro-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-asus-rog-phone-8-pro-edition-24-1tb": {
     "file": "mobile-asus-rog-phone-8-pro-edition-24-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-asus-rog-phone-9-12-256": {
+    "file": "mobile-asus-rog-phone-9-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-asus-rog-phone-9-pro-16-512": {
+    "file": "mobile-asus-rog-phone-9-pro-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-asus-rog-phone-9-pro-edition-24-1tb": {
     "file": "mobile-asus-rog-phone-9-pro-edition-24-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-asus-zenfone-11-ultra-16-512": {
+    "file": "mobile-asus-zenfone-11-ultra-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-asus-zenfone-12-ultra-16-512": {
+    "file": "mobile-asus-zenfone-12-ultra-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-google-pixel-10-pro-1tb": {
+    "file": "mobile-google-pixel-10-pro-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-google-pixel-10-pro-512gb": {
+    "file": "mobile-google-pixel-10-pro-512gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-google-pixel-10-pro-fold-1tb": {
@@ -7343,12 +8663,56 @@
     "file": "mobile-google-pixel-10-pro-fold-512gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-google-pixel-10-pro-xl-1tb": {
+    "file": "mobile-google-pixel-10-pro-xl-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-google-pixel-10-pro-xl-256gb": {
+    "file": "mobile-google-pixel-10-pro-xl-256gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-google-pixel-10-pro-xl-512gb": {
+    "file": "mobile-google-pixel-10-pro-xl-512gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-google-pixel-9-pro-fold-256gb": {
+    "file": "mobile-google-pixel-9-pro-fold-256gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-google-pixel-9-pro-fold-512gb": {
     "file": "mobile-google-pixel-9-pro-fold-512gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-google-pixel-9-pro-xl-128gb": {
+    "file": "mobile-google-pixel-9-pro-xl-128gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-google-pixel-9-pro-xl-256gb": {
+    "file": "mobile-google-pixel-9-pro-xl-256gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-hmd-crest-max-5g": {
+    "file": "mobile-hmd-crest-max-5g.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-hmd-fusion-8-256": {
     "file": "mobile-hmd-fusion-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-hmd-nokia-g400-5g": {
+    "file": "mobile-hmd-nokia-g400-5g.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-hmd-nokia-g42-5g-6-128": {
+    "file": "mobile-hmd-nokia-g42-5g-6-128.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-hmd-nokia-t20-4-64": {
+    "file": "mobile-hmd-nokia-t20-4-64.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-hmd-nokia-t21-4-128": {
+    "file": "mobile-hmd-nokia-t21-4-128.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-hmd-nokia-xr20-6-128": {
@@ -7359,8 +8723,28 @@
     "file": "mobile-hmd-nokia-xr21-8-128.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-hmd-offgrid": {
+    "file": "mobile-hmd-offgrid.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-hmd-skyline-12-256": {
     "file": "mobile-hmd-skyline-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-honor-200-pro-12-512": {
+    "file": "mobile-honor-200-pro-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-honor-400-pro-12-512": {
+    "file": "mobile-honor-400-pro-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-honor-magic-v-flip-12-256": {
+    "file": "mobile-honor-magic-v-flip-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-honor-magic-v-flip-2-12-512": {
+    "file": "mobile-honor-magic-v-flip-2-12-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-honor-magic-v2-rsr-porsche-design-16-1tb": {
@@ -7375,8 +8759,24 @@
     "file": "mobile-honor-magic-v5-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-honor-magic6-pro-12-512": {
+    "file": "mobile-honor-magic6-pro-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-honor-magic6-rsr-porsche-design-24-1tb": {
     "file": "mobile-honor-magic6-rsr-porsche-design-24-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-honor-magic7-pro-12-512": {
+    "file": "mobile-honor-magic7-pro-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-honor-magic7-rsr-porsche-design-24-1tb": {
+    "file": "mobile-honor-magic7-rsr-porsche-design-24-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-honor-magic8-pro-12-512": {
+    "file": "mobile-honor-magic8-pro-12-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-huawei-mate-xt-ultimate-design-16-1tb": {
@@ -7391,12 +8791,52 @@
     "file": "mobile-huawei-mate-xts-ultimate-design-16-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-huawei-mate-xts-ultimate-design-16-256": {
+    "file": "mobile-huawei-mate-xts-ultimate-design-16-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-huawei-mate-xts-ultimate-design-16-512": {
+    "file": "mobile-huawei-mate-xts-ultimate-design-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-huawei-pura-70-pro-12-512": {
+    "file": "mobile-huawei-pura-70-pro-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-huawei-pura-70-ultra-16-512": {
+    "file": "mobile-huawei-pura-70-ultra-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-huawei-watch-ultimate-design": {
     "file": "mobile-huawei-watch-ultimate-design.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-infinix-gt-20-pro-5g-8-256": {
+    "file": "mobile-infinix-gt-20-pro-5g-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-infinix-gt-30-pro-5g-8-256": {
+    "file": "mobile-infinix-gt-30-pro-5g-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-infinix-note-40-pro-5g-8-256": {
+    "file": "mobile-infinix-note-40-pro-5g-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-infinix-note-40-pro-plus-5g-12-256": {
+    "file": "mobile-infinix-note-40-pro-plus-5g-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-infinix-note-50-pro-plus-5g-12-256": {
     "file": "mobile-infinix-note-50-pro-plus-5g-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-infinix-zero-30-5g-8-256": {
+    "file": "mobile-infinix-zero-30-5g-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-infinix-zero-40-4g-8-256": {
+    "file": "mobile-infinix-zero-40-4g-8-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-infinix-zero-40-5g-12-256": {
@@ -7411,8 +8851,28 @@
     "file": "mobile-infinix-zero-ultra-5g-8-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-lenovo-ideapad-duet-5-chromebook-8-128": {
+    "file": "mobile-lenovo-ideapad-duet-5-chromebook-8-128.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-lenovo-legion-tab-gen-3-12-256": {
+    "file": "mobile-lenovo-legion-tab-gen-3-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-lenovo-smart-paper": {
+    "file": "mobile-lenovo-smart-paper.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-lenovo-tab-extreme-12-256": {
     "file": "mobile-lenovo-tab-extreme-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-lenovo-tab-p11-pro-gen-2-8-256": {
+    "file": "mobile-lenovo-tab-p11-pro-gen-2-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-lenovo-tab-p12-pro-8-256": {
+    "file": "mobile-lenovo-tab-p12-pro-8-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-lenovo-thinkpad-x1-fold-16-gen-1": {
@@ -7423,8 +8883,48 @@
     "file": "mobile-lenovo-thinkpad-x12-detachable-gen-2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-lenovo-yoga-tab-11-1-12-256": {
+    "file": "mobile-lenovo-yoga-tab-11-1-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-lenovo-yoga-tab-13-8-128": {
+    "file": "mobile-lenovo-yoga-tab-13-8-128.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-lenovo-yoga-tab-plus-16-256": {
+    "file": "mobile-lenovo-yoga-tab-plus-16-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-lenovo-yoga-tab-plus-16-512": {
     "file": "mobile-lenovo-yoga-tab-plus-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-motorola-edge-2024": {
+    "file": "mobile-motorola-edge-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-motorola-edge-2025": {
+    "file": "mobile-motorola-edge-2025.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-motorola-edge-50-pro-12-512": {
+    "file": "mobile-motorola-edge-50-pro-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-motorola-edge-50-ultra-16-1tb": {
+    "file": "mobile-motorola-edge-50-ultra-16-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-motorola-edge-60-pro-12-512": {
+    "file": "mobile-motorola-edge-60-pro-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-motorola-razr-2024": {
+    "file": "mobile-motorola-razr-2024.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-motorola-razr-2025": {
+    "file": "mobile-motorola-razr-2025.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-motorola-razr-50-ultra-12-512": {
@@ -7443,12 +8943,40 @@
     "file": "mobile-motorola-razr-ultra-2025-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-motorola-thinkphone-8-256": {
+    "file": "mobile-motorola-thinkphone-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-nothing-cmf-phone-2-pro-8-256": {
+    "file": "mobile-nothing-cmf-phone-2-pro-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-nothing-headphone-1": {
+    "file": "mobile-nothing-headphone-1.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-nothing-phone-1-8-256": {
+    "file": "mobile-nothing-phone-1-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-nothing-phone-2-12-256": {
     "file": "mobile-nothing-phone-2-12-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-nothing-phone-2-12-512": {
     "file": "mobile-nothing-phone-2-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-nothing-phone-2-8-128": {
+    "file": "mobile-nothing-phone-2-8-128.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-nothing-phone-2a-12-256": {
+    "file": "mobile-nothing-phone-2a-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-nothing-phone-2a-plus-12-256": {
+    "file": "mobile-nothing-phone-2a-plus-12-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-nothing-phone-3-12-256": {
@@ -7459,12 +8987,32 @@
     "file": "mobile-nothing-phone-3-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-nothing-phone-3a-12-256": {
+    "file": "mobile-nothing-phone-3a-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-nothing-phone-3a-pro-12-256": {
+    "file": "mobile-nothing-phone-3a-pro-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-oneplus-13-16-512": {
     "file": "mobile-oneplus-13-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-oneplus-15-12-256": {
+    "file": "mobile-oneplus-15-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-oneplus-15-16-512": {
     "file": "mobile-oneplus-15-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-oneplus-15r-12-256": {
+    "file": "mobile-oneplus-15r-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-oneplus-15r-16-512": {
+    "file": "mobile-oneplus-15r-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-oneplus-open-16-512": {
@@ -7475,20 +9023,60 @@
     "file": "mobile-oneplus-open-apex-edition-16-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-oneplus-pad-3-12-256": {
+    "file": "mobile-oneplus-pad-3-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-oneplus-pad-3-16-512": {
+    "file": "mobile-oneplus-pad-3-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-oppo-find-n3-16-512": {
     "file": "mobile-oppo-find-n3-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-oppo-find-n3-flip-12-256": {
+    "file": "mobile-oppo-find-n3-flip-12-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-oppo-find-n5-16-512": {
     "file": "mobile-oppo-find-n5-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-oppo-find-x7-ultra-16-512": {
+    "file": "mobile-oppo-find-x7-ultra-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-oppo-find-x8-12-256": {
+    "file": "mobile-oppo-find-x8-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-oppo-find-x8-pro-16-512": {
     "file": "mobile-oppo-find-x8-pro-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-oppo-find-x8-ultra-12-256": {
+    "file": "mobile-oppo-find-x8-ultra-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-oppo-find-x8-ultra-16-1tb": {
+    "file": "mobile-oppo-find-x8-ultra-16-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-oppo-find-x8-ultra-16-512": {
+    "file": "mobile-oppo-find-x8-ultra-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-oppo-find-x9-12-256": {
+    "file": "mobile-oppo-find-x9-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-oppo-find-x9-pro-16-512": {
     "file": "mobile-oppo-find-x9-pro-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-oppo-reno14-pro-5g-12-512": {
+    "file": "mobile-oppo-reno14-pro-5g-12-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-p-garmin-marq-commander-gen-2-carbon": {
@@ -7547,6 +9135,22 @@
     "file": "mobile-p-wacom-mobilestudio-pro-16-gen-2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-realme-12-pro-plus-5g-8-256": {
+    "file": "mobile-realme-12-pro-plus-5g-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-realme-13-pro-plus-5g-8-256": {
+    "file": "mobile-realme-13-pro-plus-5g-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-realme-14-pro-plus-5g-8-256": {
+    "file": "mobile-realme-14-pro-plus-5g-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-realme-gt-6t-8-128": {
+    "file": "mobile-realme-gt-6t-8-128.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-realme-gt-7-16-512": {
     "file": "mobile-realme-gt-7-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -7563,12 +9167,32 @@
     "file": "mobile-realme-gt-8-pro-12-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-redmagic-10-air-16-512": {
+    "file": "mobile-redmagic-10-air-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-redmagic-10-pro-16-512": {
+    "file": "mobile-redmagic-10-pro-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-redmagic-10-pro-24-1tb": {
     "file": "mobile-redmagic-10-pro-24-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-redmagic-10s-pro-12-256": {
+    "file": "mobile-redmagic-10s-pro-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-redmagic-10s-pro-16-512": {
+    "file": "mobile-redmagic-10s-pro-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-redmagic-10s-pro-24-1tb": {
     "file": "mobile-redmagic-10s-pro-24-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-redmagic-11-pro-12-256": {
+    "file": "mobile-redmagic-11-pro-12-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-redmagic-11-pro-16-512": {
@@ -7577,6 +9201,50 @@
   },
   "mobile-redmagic-11-pro-24-1tb": {
     "file": "mobile-redmagic-11-pro-24-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-redmagic-9-pro-16-512": {
+    "file": "mobile-redmagic-9-pro-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-redmagic-9s-pro-16-512": {
+    "file": "mobile-redmagic-9s-pro-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-redmagic-astra-gaming-tablet-16-512": {
+    "file": "mobile-redmagic-astra-gaming-tablet-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-samsung-galaxy-s24-ultra-512gb": {
+    "file": "mobile-samsung-galaxy-s24-ultra-512gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-samsung-galaxy-s25-ultra-1tb": {
+    "file": "mobile-samsung-galaxy-s25-ultra-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-samsung-galaxy-s25-ultra-256gb": {
+    "file": "mobile-samsung-galaxy-s25-ultra-256gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-samsung-galaxy-s25-ultra-512gb": {
+    "file": "mobile-samsung-galaxy-s25-ultra-512gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-samsung-galaxy-tab-s10-ultra-512gb": {
+    "file": "mobile-samsung-galaxy-tab-s10-ultra-512gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-samsung-galaxy-tab-s11-ultra-1tb": {
+    "file": "mobile-samsung-galaxy-tab-s11-ultra-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-samsung-galaxy-tab-s11-ultra-512gb": {
+    "file": "mobile-samsung-galaxy-tab-s11-ultra-512gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-samsung-galaxy-tab-s9-ultra-1tb": {
+    "file": "mobile-samsung-galaxy-tab-s9-ultra-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-samsung-galaxy-z-fold7-1tb": {
@@ -7595,6 +9263,10 @@
     "file": "mobile-samsung-galaxy-z-trifold-512gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-sony-ier-m9": {
+    "file": "mobile-sony-ier-m9.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-sony-ier-z1r": {
     "file": "mobile-sony-ier-z1r.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -7603,12 +9275,52 @@
     "file": "mobile-sony-walkman-nw-wm1zm2.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-sony-xperia-1-iv-12-512": {
+    "file": "mobile-sony-xperia-1-iv-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-sony-xperia-1-v-12-256": {
+    "file": "mobile-sony-xperia-1-v-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-sony-xperia-1-vii-12-256": {
+    "file": "mobile-sony-xperia-1-vii-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-sony-xperia-pro-512gb": {
     "file": "mobile-sony-xperia-pro-512gb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-sony-xperia-pro-i-512gb": {
     "file": "mobile-sony-xperia-pro-i-512gb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-tecno-camon-30-premier-5g-12-512": {
+    "file": "mobile-tecno-camon-30-premier-5g-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-tecno-camon-30-pro-5g-12-512": {
+    "file": "mobile-tecno-camon-30-pro-5g-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-tecno-camon-40-premier-5g-12-256": {
+    "file": "mobile-tecno-camon-40-premier-5g-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-tecno-camon-40-pro-5g-8-256": {
+    "file": "mobile-tecno-camon-40-pro-5g-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-tecno-camon-40-pro-8-256": {
+    "file": "mobile-tecno-camon-40-pro-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-tecno-phantom-v-flip-5g-8-256": {
+    "file": "mobile-tecno-phantom-v-flip-5g-8-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-tecno-phantom-v-flip2-5g-8-256": {
+    "file": "mobile-tecno-phantom-v-flip2-5g-8-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-tecno-phantom-v-fold-5g-12-512": {
@@ -7627,6 +9339,10 @@
     "file": "mobile-tecno-phantom-x2-pro-5g-12-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-tecno-pova-7-ultra-5g-12-256": {
+    "file": "mobile-tecno-pova-7-ultra-5g-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-vivo-x-fold3-pro-16-512": {
     "file": "mobile-vivo-x-fold3-pro-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -7635,8 +9351,40 @@
     "file": "mobile-vivo-x-fold5-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-vivo-x100-pro-16-512": {
+    "file": "mobile-vivo-x100-pro-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-vivo-x100-ultra-12-256": {
+    "file": "mobile-vivo-x100-ultra-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-vivo-x100-ultra-16-1tb": {
+    "file": "mobile-vivo-x100-ultra-16-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-vivo-x200-pro-16-512": {
+    "file": "mobile-vivo-x200-pro-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-vivo-x200-ultra-12-256": {
+    "file": "mobile-vivo-x200-ultra-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-vivo-x200-ultra-16-1tb": {
+    "file": "mobile-vivo-x200-ultra-16-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-vivo-x200-ultra-16-1tb-photographer-kit": {
     "file": "mobile-vivo-x200-ultra-16-1tb-photographer-kit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-vivo-x200-ultra-16-512": {
+    "file": "mobile-vivo-x200-ultra-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-vivo-x300-12-256": {
+    "file": "mobile-vivo-x300-12-256.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-vivo-x300-pro-16-512": {
@@ -7647,16 +9395,48 @@
     "file": "mobile-xiaomi-14-ultra-16-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-xiaomi-15-12-256": {
+    "file": "mobile-xiaomi-15-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-xiaomi-15-12-512": {
+    "file": "mobile-xiaomi-15-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-xiaomi-15-ultra-16-512": {
     "file": "mobile-xiaomi-15-ultra-16-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-xiaomi-15t-pro-12-1tb": {
+    "file": "mobile-xiaomi-15t-pro-12-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-xiaomi-15t-pro-12-256": {
+    "file": "mobile-xiaomi-15t-pro-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-xiaomi-15t-pro-12-512": {
+    "file": "mobile-xiaomi-15t-pro-12-512.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-xiaomi-17-pro-max-16-1tb": {
+    "file": "mobile-xiaomi-17-pro-max-16-1tb.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "mobile-xiaomi-mix-flip-12-512": {
     "file": "mobile-xiaomi-mix-flip-12-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "mobile-xiaomi-mix-fold-4-12-256": {
+    "file": "mobile-xiaomi-mix-fold-4-12-256.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "mobile-xiaomi-mix-fold-4-16-1tb": {
     "file": "mobile-xiaomi-mix-fold-4-16-1tb.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "mobile-xiaomi-pad-6s-pro-12-4-12-512": {
+    "file": "mobile-xiaomi-pad-6s-pro-12-4-12-512.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "outdoor-big-agnes-guard-station-4-tent": {

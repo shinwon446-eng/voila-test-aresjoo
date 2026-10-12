@@ -164,9 +164,6 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-rvbar { display: block; overflow: hidden; height: 6px; border-radius: 3px; background: var(--v-pill-hover); }
 .v-rvbar > i { display: block; height: 100%; border-radius: 3px; background: var(--v-sub); }
 .v-rvstrip { display: flex; min-width: 0; flex-direction: column; gap: 12px; }
-/* 후기 모아보기의 격자: 카드 폭을 줄 세우는 대신 칸에 맞춘다 */
-.v-rvgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
-.v-rvgrid > .v-rvcard { flex: none; }
 /* 옆으로 넘기는 줄의 단추(components/ui/ScrollRow.tsx): 마우스를 쓰는 화면에서만 나온다. 손가락으로는 민다 */
 .v-hscroll { position: relative; min-width: 0; }
 .v-hscroll-btn { position: absolute; top: 50%; z-index: 2; display: none; width: 40px; height: 40px; translate: 0 -50%; align-items: center; justify-content: center; border: 1px solid var(--v-outline); border-radius: var(--v-r-pill); background: var(--v-pill); color: var(--v-title); cursor: pointer; }
@@ -174,18 +171,8 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-hscroll-btn[data-dir="prev"] { left: 8px; }
 .v-hscroll-btn[data-dir="next"] { right: 8px; }
 @media (hover: hover) and (pointer: fine) { .v-hscroll-btn { display: inline-flex; } }
-.v-rvrow { display: flex; gap: 12px; margin: 0 calc(var(--v-gutter) * -1); padding: 0 var(--v-gutter); overflow-x: auto; list-style: none; scroll-snap-type: x proximity; scroll-padding-inline: var(--v-gutter); scrollbar-width: none; }
-.v-rvrow::-webkit-scrollbar { display: none; }
-.v-rvcard { display: flex; flex: 0 0 min(72%, 280px); flex-direction: column; overflow: hidden; border-radius: var(--v-r-card); background: var(--v-card); scroll-snap-align: start; }
-.v-rvcard-photo { position: relative; display: block; aspect-ratio: 16 / 10; background: var(--v-photo); }
-.v-rvcard-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.v-rvcard-body { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px 16px; }
-.v-rvcard-text { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; min-height: calc(var(--v-fs-body) * 1.5 * 3); margin: 6px 0 8px; color: var(--v-text); font-size: var(--v-fs-body); line-height: 1.5; word-break: keep-all; }
-.v-rvcard .v-small { white-space: normal; }
-/* 후기 카드는 통째로 단추다: 누르면 후기 상세가 뜬다 */
-.v-rvcard-btn { display: flex; width: 100%; height: 100%; flex-direction: column; text-align: left; color: inherit; }
+/* 후기 글이 넉 줄을 넘겨 잘렸을 때 붙는 "더 보기"(app/reviews.css 의 후기 행이 쓴다) */
 .v-rvcard-more { align-self: flex-start; margin: -4px 0 8px; color: var(--v-sub); font-size: var(--v-fs-small); text-decoration: underline; text-underline-offset: 3px; }
-.v-rvcard-item { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-top: 6px; color: var(--v-text); }
 .v-rvdetail-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
 .v-rvdetail-text { color: var(--v-text); font-size: var(--v-fs-body); line-height: 1.6; white-space: pre-wrap; word-break: keep-all; }
 /* 박스 화면 맨 위의 대표 상품 하나: 큰 사진, 이름과 가격. 누르면 구성품으로 내려간다 */
@@ -340,7 +327,6 @@ button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 
   .v-boxlayout { display: grid; grid-template-columns: minmax(0, 1fr) 380px; align-items: start; gap: 28px 48px; padding-bottom: 0; }
   .v-boxlayout-main > header, .v-boxlayout-main > .v-ratinglink, .v-boxlayout-hero, .v-boxlayout-reviews, .v-boxlayout-contents, .v-boxlayout-odds, .v-boxlayout-notes { grid-column: 1; }
   .v-boxlayout-main > .v-ratinglink { justify-self: start; }
-  .v-boxlayout-reviews .v-rvrow { margin: 0; padding: 0; }
   .v-boxside { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; grid-column: 2; grid-row: 1 / span 6; }
   .v-openbar { position: static; border-top: 0; padding: 0; }
   .v-openbar .v-chips--scroll { flex-wrap: wrap; margin-inline: 0; padding-inline: 0; }

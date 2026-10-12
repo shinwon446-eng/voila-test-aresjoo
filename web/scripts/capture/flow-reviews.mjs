@@ -1,4 +1,4 @@
-// 샘플 후기(flow/MELT_SPEC.md V) 화면을 찍는다: 박스 화면의 후기 영역(처음 10건, 더 보기, 상세)과 후기 모아 보기. 화면 판정은 사람이 한다.
+// 샘플 후기(flow/MELT_SPEC.md V) 화면을 찍는다: 박스 화면의 후기 영역(처음 다섯 건, 더 보기, 상세)과 후기 모아 보기. 화면 판정은 사람이 한다.
 //   node scripts/capture/flow-reviews.mjs <출력 폴더> [mobile|desktop|둘 다 쉼표로] [박스 slug 들, 쉼표로] [ko|en|zh]
 // 떠 있는 개발 서버(3002)를 쓴다. 가로로 넘치는지(docW 와 winW), 콘솔 오류(서버가 그린 것과 브라우저가 그린 것이 어긋나면 여기 뜬다)를 함께 적는다.
 import { chromium } from "playwright";

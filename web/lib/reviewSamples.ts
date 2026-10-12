@@ -12,13 +12,15 @@
 //   1) 뼈대(coreOf): 건수, 건마다의 상품과 별점과 그 까닭과 몇 분 전인지. 숫자만 다루므로 싸다. 박스 목록의 별점과 후기 수는 여기까지만 쓴다.
 //   2) 쓴 사람(castOf): 건마다의 언어와 별명. 박스에 처음 글을 만들 때 한 번에 정한다(다시 쓰는 손님이 있다).
 //   3) 글(sampleReviews): 글, 좋아요 수, 붙은 사진. 화면에 보이는 만큼만 앞에서부터 만든다.
+// 샘플이 있는 박스는 주소로 열 수 있는 모든 박스(BOXES)다. 홈에서 내린 옛 박스도 주소로 열리므로 같은 규칙으로 만들고, 모아 보기도 그 전부를 센다.
+// 뼈대는 모든 박스의 것을 쥐고 있지만(숫자뿐이라 작다) 글은 최근에 쓴 박스 BUILT_CAP 개의 것만 쥔다. 밀려난 박스는 다시 만들어도 같은 글이 나온다.
 // 상품은 그 박스의 구성품에서 고른다(흔한 것이 많고 비싼 것은 드물게, USDT 결과는 고르지 않는다).
 // 사진 후기의 사진은 손님이 찍은 사진이 아니라 카탈로그에 올려 둔 그 상품의 사진이다(lib/productImages 의 경로 그대로).
 // 시각은 날짜가 아니라 "몇 분 전"으로 쥔다. 샘플의 "4일 전" 은 시계를 읽지 않고 씨앗에서만 나오므로
 //   미리 그려 둔 HTML(정적 내보내기)과 브라우저가 그린 것이 언제나 같다(V5). 그래서 샘플은 언제 봐도 오늘 기준으로 같은 거리에 있다.
 // 말 조각과 조각마다의 조건은 lib/reviewSampleText.ts 에 있다. 조건(돈 이야기, 미개봉, 배송)은 그 건의 상품과 결과가 맞을 때만 통과한다.
-import { BOX_BY_SLUG, HOME_BOXES, REFUND_RATE, type ProductBox, type ProductItem } from "./products";
-import { ARRIVAL, BANNED, CLOSE, EN, FLOW, GIFT, GOT, GRIPE, ITEM, ITEM_NAMED, KIND_FACTS, LEAD, MID, MID_CLOSE, NEG, NEG_CLOSE, NICK, SHIP, SLANG, TAIL, TOPICS, USE, USE_GIFT, ZH, fact, type Frag, type Kind, type Topic } from "./reviewSampleText";
+import { BOXES, BOX_BY_SLUG, REFUND_RATE, type ProductBox, type ProductItem } from "./products";
+import { ARRIVAL, BANNED, BOX_HINTS, CLOSE, DIGITAL, EN, FLOW, GOT, GRIPE, ITEM, ITEM_NAMED, KIND_FACTS, LEAD, MID, MID_CLOSE, NEG, NEG_CLOSE, NICK, SHIP, SLANG, TAIL, TOPICS, USE, USE_GIFT, ZH, fact, type Frag, type Kind, type Topic } from "./reviewSampleText";
 
 export const SAMPLE_MIN = 80;
 export const SAMPLE_MAX = 400;
@@ -95,8 +97,14 @@ const SALT = "11";
 
 // ── 1) 뼈대 ─────────────────────────────────────────────────
 type Outcome = "big" | "good" | "even" | "low";
+/**
+ * 큰 결과(big)의 바닥: 상품가가 이 값(USDT)에 못 미치면 배수가 아무리 커도 큰 결과로 치지 않는다.
+ * 1달러 박스에서는 20달러짜리 케이블도 20배라서, 배수만 보면 "인생 첫 당첨" 같은 말이 붙는다.
+ * 8배가 넘는 건을 상품가로 세어 보고 정했다: 20달러 박스의 160~300달러 상품과 1~5달러 박스의 작은 상품이 여기서 걸러진다.
+ */
+export const BIG_FLOOR = 300;
 /** 박스 가격 대비 상품가로 본 결과의 크기 */
-const outcomeOf = (value: number, price: number): Outcome => { const x = value / price; return x >= 8 ? "big" : x >= 1.5 ? "good" : x >= 0.7 ? "even" : "low"; };
+const outcomeOf = (value: number, price: number): Outcome => { const x = value / price; return x >= 8 && value >= BIG_FLOOR ? "big" : x >= 1.5 ? "good" : x >= 0.7 ? "even" : "low"; };
 /**
  * 받은 것(나온 상품과 그 물건)에 대한 만족의 누적 확률: [5점까지, 4점까지, 3점까지, 2점까지]. 나머지가 1점.
  * 큰 것이 나오면 높게 주기 쉽다. 그래도 흔하고 작은 상품(low)의 절반은 잘 받았으면 별 다섯이다.
@@ -185,12 +193,19 @@ export function ratingSummary(boxSlug: string, extra: readonly number[] = []): R
 
 // ── 상품의 됨됨이와 그 건의 사실 ───────────────────────────────────
 const topicCache = new Map<string, number>();
-/** 그 상품의 종류(TOPICS 의 순번). 맞는 종류가 없으면 -1 */
+/**
+ * 그 상품의 종류(TOPICS 의 순번). 맞는 종류가 없으면 -1.
+ * 먼저 상품 그 자체를 본다: 박스를 가리지 않는 줄(cats 에 *)을 이름으로 맞춘다. 향수는 가방 박스에서도 향수이고, 등급 카드와 차는 옛 박스에서도 카드와 차다.
+ * 그다음에 박스의 힌트(제 카테고리, 옛 박스는 BOX_HINTS)에 맞는 줄을 본다. "남은 것" 줄(이름을 가리지 않는 줄)은 첫 힌트의 것만 받는다.
+ */
 function topicIndexOf(box: ProductBox, item: ProductItem): number {
-  const key = box.category + "|" + item.id;
+  const hints = BOX_HINTS[box.slug] ?? [box.category];
+  const key = hints.join(",") + "|" + item.id;
   const cached = topicCache.get(key);
   if (cached !== undefined) return cached;
-  const found = TOPICS.findIndex((topic) => topic.cats.includes(box.category) && item.value >= topic.min && item.value <= topic.max && topic.re.test(item.name));
+  const fits = (topic: Topic) => item.value >= topic.min && item.value <= topic.max && topic.re.test(item.name);
+  let found = TOPICS.findIndex((topic) => topic.cats.includes("*") && fits(topic));
+  if (found < 0) found = TOPICS.findIndex((topic) => (topic.re.source === "." ? topic.cats.includes(hints[0]) : topic.cats.some((cat) => hints.includes(cat))) && fits(topic));
   topicCache.set(key, found);
   return found;
 }
@@ -202,13 +217,30 @@ export function kindOf(box: ProductBox, item: ProductItem): Kind {
   return index >= 0 ? TOPICS[index].kind : "goods";
 }
 
-const F = { parcel: fact("parcel"), gift: fact("gift"), money: fact("money"), loss: fact("loss"), large: fact("large"), small: fact("small"), common: fact("common"), r4: fact("r4"), r5: fact("r5") };
+const F = { parcel: fact("parcel"), gift: fact("gift"), money: fact("money"), loss: fact("loss"), large: fact("large"), small: fact("small"), common: fact("common"), r3: fact("r3"), r4: fact("r4"), r5: fact("r5") };
 
 // ── 조각 꺼내기 ────────────────────────────────────────────────
 interface Deck { order: number[]; at: number; cycle: number }
 interface Cast { lang: Uint8Array; who: Uint16Array; names: string[] }
-interface Built { list: ReviewSample[]; shapes: string[]; texts: Set<string>; decks: Map<string, Deck>; cast: Cast | null }
+/** 한 박스의 연속 NEAR 건 안에서는 같은 조각이 다시 나오지 않는다 */
+export const NEAR = 10;
+/**
+ * 박스 하나의 글과 그 글을 만들던 자리. parts 는 건마다 쓴 조각(말끝을 바꿔 치기 전의 원래 줄), near 는 바로 앞 NEAR-1 건에서 쓴 조각이다.
+ */
+interface Built { list: ReviewSample[]; shapes: string[]; parts: string[][]; near: Map<string, number>; texts: Set<string>; decks: Map<string, Deck>; cast: Cast | null }
+/** 글을 쥐고 있는 박스의 수. 넘으면 가장 오래 안 쓴 박스의 글을 버린다(박스 334개의 글 8만 건을 다 쥐지 않는다) */
+export const BUILT_CAP = 40;
 const built = new Map<string, Built>();
+/** 지금 글을 쥐고 있는 박스의 수(검사용) */
+export const builtCount = (): number => built.size;
+/** 그 박스의 글 자리. 없으면 새로 만들고, 쓴 차례를 맨 뒤로 옮긴다 */
+function builtOf(slug: string): Built {
+  let state = built.get(slug);
+  if (state) built.delete(slug); else state = { list: [], shapes: [], parts: [], near: new Map(), texts: new Set(), decks: new Map(), cast: null };
+  built.set(slug, state);
+  if (built.size > BUILT_CAP) built.delete(built.keys().next().value as string);
+  return state;
+}
 
 /**
  * 조각 묶음에서 ok 에 맞는 다음 한 줄. 박스마다 묶음을 섞어 놓고 차례로 꺼낸다(다 쓰면 다시 섞는다).
@@ -242,25 +274,30 @@ function draw(state: Built, slug: string, key: string, pool: readonly Frag[], ok
 const pickOne = <V,>(list: readonly V[], r: () => number): V => list[Math.floor(r() * list.length)];
 
 interface Ask { state: Built; slug: string; r: () => number; rating: number; why: number; outcome: Outcome; kind: Kind; topic: Topic | null; topicKey: string; has: number; wide: boolean }
-interface Draft { text: string; shape: string }
+interface Draft { text: string; shape: string; frags: string[] }
 
 /**
  * 글 한 건을 짓는 붓. put 은 묶음에서 이 건에 맞는 한 줄을 꺼내 글에 잇는다(맞는 줄이 없으면 잇지 않고 false).
- * 맞는 줄: 조건(need)이 이 건의 사실에 모두 들고, 이 글이 이미 말한 거리를 또 말하지 않고, 앞말이 필요한 줄(after)은 그 거리가 나온 뒤에만.
+ * 맞는 줄: 조건(need)이 이 건의 사실에 모두 들고, 이 글이 이미 말한 거리를 또 말하지 않고, 앞말이 필요한 줄(after)은 그 거리가 나온 뒤에만,
+ *   그리고 바로 앞 NEAR-1 건과 이 글에서 아직 쓰지 않은 줄이다(가까운 글에 같은 조각이 되풀이되지 않게).
+ * must 는 그 자리가 비면 글이 안 되는 조각이다: 안 쓴 줄이 없으면 가까운 데서 쓴 줄이라도 쓴다(그런 박스는 검사가 잡는다. 그 묶음을 늘린다).
  */
 function penOf(ask: Ask) {
-  const roles: string[] = [], parts: string[] = [];
+  const roles: string[] = [], parts: string[] = [], frags: string[] = [];
   let said = 0;
-  const fits = (frag: Frag) => (frag.need & ~ask.has) === 0 && (frag.about & said) === 0 && (frag.after === 0 || (frag.after & said) !== 0);
-  const put = (role: string, key: string, pool: readonly Frag[], also?: (frag: Frag) => boolean, fill?: (text: string) => string): boolean => {
-    const frag = draw(ask.state, ask.slug, key, pool, also ? (x) => fits(x) && also(x) : fits);
+  const fits = (frag: Frag) => (frag.need & ~ask.has) === 0 && (frag.about & said) === 0 && (frag.after === 0 || (frag.after & said) !== 0) && !frags.includes(frag.text);
+  const fresh = (frag: Frag) => fits(frag) && !ask.state.near.has(frag.text);
+  const put = (role: string, key: string, pool: readonly Frag[], opt: { also?: (frag: Frag) => boolean; fill?: (text: string) => string; must?: boolean } = {}): boolean => {
+    const { also, fill, must } = opt;
+    const frag = draw(ask.state, ask.slug, key, pool, also ? (x) => fresh(x) && also(x) : fresh) ?? (must ? draw(ask.state, ask.slug, key, pool, also ? (x) => fits(x) && also(x) : fits) : null);
     if (!frag) return false;
     said |= frag.about;
     roles.push(role);
+    frags.push(frag.text);
     parts.push(fill ? fill(frag.text) : frag.text);
     return true;
   };
-  return { roles, parts, put };
+  return { roles, parts, frags, put };
 }
 
 /** 점수의 까닭에 맞는 줄: 받는 과정 때문에 깎인 건은 받는 과정을 말하는 줄만, 아니면 그런 줄을 뺀 나머지 */
@@ -269,7 +306,7 @@ const causeOf = (why: number) => (why === WHY_ARRIVAL ? (frag: Frag) => (frag.ab
 /** 한국어 글 한 건. 조각을 하나에서 셋까지 잇는다. wide 는 겹치는 글을 피하려고 조각을 하나 더 잇는 것이다 */
 function koText(ask: Ask): Draft {
   const { r, rating, why, outcome, kind, topic, topicKey, has, wide } = ask;
-  const { roles, parts, put } = penOf(ask);
+  const { roles, parts, frags, put } = penOf(ask);
   let topical = false;
   /** 물건에 대한 한 조각: 종류에 맞는 말, 이름을 넣은 말, 어느 상품에나 맞는 말 */
   const thing = (): boolean => {
@@ -277,8 +314,8 @@ function koText(ask: Ask): Draft {
     // 디지털 상품(상품권)은 물건이 없다: 그 종류의 말만 쓴다
     // 종류에 맞는 말은 한 글에 한 번만 한다("미개봉으로 소장하려구요" 뒤에 "애랑 같이 깠어요" 가 오지 않게)
     if (topic && !topical && u < (kind === "digital" ? 0.7 : 0.42) && put("thing", topicKey, topic.lines)) { topical = true; return true; }
-    if (topic && topic.nouns.length > 0 && (kind === "digital" || u < 0.6)) { const noun = pickOne(topic.nouns, r); if (put("thing", "named", ITEM_NAMED, undefined, (text) => text.replace("{item}", noun))) return true; }
-    return kind === "digital" ? put("thing", topicKey, topic!.lines) : put("thing", "item", ITEM);
+    if (topic && topic.nouns.length > 0 && (kind === "digital" || u < 0.6)) { const noun = pickOne(topic.nouns, r); if (put("thing", "named", ITEM_NAMED, { fill: (text) => text.replace("{item}", noun) })) return true; }
+    return kind === "digital" ? put("thing", topicKey, topic!.lines, { must: true }) : put("thing", "item", ITEM, { must: true });
   };
   const got = () => put("got", "got-" + outcome, GOT[outcome]);
   /** 쓰임 한 조각. 누구에게 줬다는 말은 종류에 맞는 말을 하지 않은 글에만 붙인다(그 말이 "매일 들고 다녀요" 일 수 있다) */
@@ -289,19 +326,25 @@ function koText(ask: Ask): Draft {
   const after = () => (outcome !== "big" && r() < 0.35 && use()) || thing();
   /** 물건 말고 곁들이는 한 조각: 배송이나 쓰임. 둘 다 맞지 않는 상품이면 물건 이야기를 한다 */
   const side = () => ((outcome === "big" || r() < 0.5) && ship()) || (outcome !== "big" && use()) || thing();
+  /** 물건 이야기 둘이 이어졌을 때, 이름을 넣은 줄("골프공 나왔네요")이 뒤에 있으면 앞으로 옮긴다("아빠 드렸어요 골프공 나왔네요" 가 되지 않게) */
+  const lead = () => {
+    if (roles.length !== 2 || roles[0] !== "thing" || roles[1] !== "thing" || !frags[1].includes("{item}") || frags[0].includes("{item}")) return;
+    [parts[0], parts[1]] = [parts[1], parts[0]];
+    [frags[0], frags[1]] = [frags[1], frags[0]];
+  };
   let tails: readonly string[] = TAIL.pos, tailOdds = 0.42;
   if (rating >= 4 && why === WHY_ARRIVAL) {
     // 별 넷의 작은 아쉬움: 좋았던 조각 뒤에 아쉬운 한 줄. 맺음말과 웃음은 붙이지 않는다
     const lead = (has & F.large) !== 0 && (wide || r() < 0.35) && got();
     if (!lead || wide) thing();
-    put("gripe", "gripe", GRIPE);
+    put("gripe", "gripe", GRIPE, { must: true });
     tailOdds = 0;
   } else if (rating >= 4) {
     const u = wide ? 0.8 : outcome === "big" && r() < 0.6 ? 0.3 : r();
     if (kind === "digital") { if (u < 0.4) thing(); else if (u < 0.7) { got(); thing(); } else { if (wide) got(); thing(); close(); } }
     else if (u < 0.2) thing();
     else if (u < 0.46) { got(); after(); }
-    else if (u < 0.6) { thing(); side(); }
+    else if (u < 0.6) { thing(); side(); lead(); }
     else if (u < 0.76) { thing(); close(); }
     else if (u < 0.83) { got(); if (!ship()) thing(); close(); }
     // 서비스의 흐름을 말하는 줄은 드물게, 물건 이야기와 함께만
@@ -311,11 +354,11 @@ function koText(ask: Ask): Draft {
     // 크게 놀란 웃음은 나온 것을 말한 글에만
     if (outcome === "big" && roles[0] === "got" && r() < 0.6) tails = TAIL.big;
   } else if (rating === 3) {
-    if (!put("mid", "mid", MID, causeOf(why))) put("mid", "mid", MID);
+    put("mid", "mid", MID, { also: causeOf(why), must: true });
     if (wide || r() < 0.4) put("midc", "midc", MID_CLOSE);
     tails = TAIL.mid; tailOdds = 0.28;
   } else {
-    if (!put("neg", "neg", NEG, causeOf(why))) put("neg", "neg", NEG);
+    put("neg", "neg", NEG, { also: causeOf(why), must: true });
     if (wide || r() < 0.35) put("negc", "negc", NEG_CLOSE);
     tails = TAIL.neg; tailOdds = 0.45;
   }
@@ -334,25 +377,25 @@ function koText(ask: Ask): Draft {
   else if (r() < tailOdds) { text += " " + pickOne(tails, r); tailed = true; }
   // 감탄으로 여는 글은 좋은 결과에만
   if (rating === 5 && (has & F.large) !== 0 && r() < 0.1 && !/^(드디어|오|와|헐|크)/.test(text)) text = pickOne(LEAD, r) + " " + text;
-  return { text, shape: roles.join(" ") + (tailed ? " tail" : "") };
+  return { text, shape: roles.join(" ") + (tailed ? " tail" : ""), frags };
 }
 
 /** 영어와 중국어 글 한 건: 물건을 말하는 한 줄, 가끔 맺음말이나 배송이나 서비스의 흐름 한 줄이 붙는다 */
 function foreignText(ask: Ask, lang: "en" | "zh"): Draft {
   const { r, rating, why, wide } = ask, words = lang === "en" ? EN : ZH;
-  const { roles, parts, put } = penOf(ask);
+  const { roles, parts, frags, put } = penOf(ask);
   const good = rating >= 4 && why !== WHY_ARRIVAL;
   if (good) {
-    put("thing", lang + "-pos", words.pos);
+    put("thing", lang + "-pos", words.pos, { must: true });
     const u = r();
     if (wide || u < 0.45) put("close", lang + "-close", words.close); else if (u < 0.63) put("ship", lang + "-ship", words.ship); else if (u < 0.7) put("flow", lang + "-flow", words.flow);
   } else if (rating >= 4) {
     if (wide) put("thing", lang + "-pos", words.pos);
-    put("gripe", lang + "-gripe", words.gripe);
+    put("gripe", lang + "-gripe", words.gripe, { must: true });
   } else {
     const pool = rating === 3 ? words.mid : words.neg, role = rating === 3 ? "mid" : "neg";
-    if (!put(role, lang + "-" + role, pool, causeOf(why))) put(role, lang + "-" + role, pool);
-    if (wide) put(role, lang + "-" + role, pool, causeOf(why));
+    put(role, lang + "-" + role, pool, { also: causeOf(why), must: true });
+    if (wide) put(role, lang + "-" + role, pool, { also: causeOf(why) });
   }
   let text = parts[0];
   if (parts.length > 1) text += (lang === "zh" ? "，" : roles[1] === "close" && r() < 0.5 ? ", " : ". ") + parts[1];
@@ -360,7 +403,7 @@ function foreignText(ask: Ask, lang: "en" | "zh"): Draft {
   const tail = good ? pickOne(words.tail, r) : "";
   if (tail) text += (lang === "en" ? " " : "") + tail;
   if (lang === "en" && r() < 0.3) text = text.toLowerCase();
-  return { text, shape: roles.join(" ") + (tail ? " tail" : "") };
+  return { text, shape: roles.join(" ") + (tail ? " tail" : ""), frags };
 }
 
 // ── 2) 쓴 사람 ────────────────────────────────────────────────
@@ -444,34 +487,38 @@ function castOf(core: Core, slug: string, state: Built): Cast {
 export function sampleReviews(boxSlug: string, limit = Infinity): ReviewSample[] {
   const core = sampleReviewsOn() ? coreOf(boxSlug) : null;
   if (!core) return [];
-  let state = built.get(boxSlug);
-  if (!state) { state = { list: [], shapes: [], texts: new Set(), decks: new Map(), cast: null }; built.set(boxSlug, state); }
+  const state = builtOf(boxSlug);
   const cast = state.cast ?? (state.cast = castOf(core, boxSlug, state));
   const want = Math.min(core.count, Math.max(0, limit));
   for (let i = state.list.length; i < want; i++) {
     const item = core.items[core.pick[i]], rating = core.rating[i] as ReviewSample["rating"];
     const r = rng(hash(`text|${SALT}|${boxSlug}|${i}`));
     const lang = LANGS[cast.lang[i]], kind = kindOf(core.box, item), outcome = outcomeOf(item.value, core.box.price);
-    const index = kind === "digital" ? -1 : topicIndexOf(core.box, item);
+    // 디지털 상품은 이름으로 가린 그 종류의 말만 한다(상품권, 게임, 그 밖의 것)
+    const index = kind === "digital" ? DIGITAL.findIndex((topic) => topic.re.test(item.name)) : topicIndexOf(core.box, item);
     // 종류의 줄이 비어 있으면 "이 종류는 따로 할 말이 없다"는 뜻이다(됨됨이만 쓴다)
-    const topic = kind === "digital" ? GIFT : index >= 0 && TOPICS[index].lines.length > 0 ? TOPICS[index] : null;
+    const topic = kind === "digital" ? DIGITAL[index] : index >= 0 && TOPICS[index].lines.length > 0 ? TOPICS[index] : null;
     let has = KIND_FACTS[kind];
     if (!(topic && topic.nouns.length > 0 && item.value >= 40)) has &= ~F.gift;
     // 받을 금액은 lib/takeBatch 의 takeAmountOf 와 같은 식이다. 박스 가격 이상일 때만 본전, 이득 같은 말이 통과한다
     has |= +(item.value * REFUND_RATE).toFixed(2) >= core.box.price ? F.money : F.loss;
     has |= outcome === "big" || outcome === "good" ? F.large : F.small;
     if (item.dropRate >= core.topRate) has |= F.common;
-    if (rating === 4) has |= F.r4; else if (rating === 5) has |= F.r5;
-    const ask: Ask = { state, slug: boxSlug, r, rating, why: core.why[i], outcome, kind, topic, topicKey: "topic" + index, has, wide: false };
+    if (rating === 3) has |= F.r3; else if (rating === 4) has |= F.r4; else if (rating === 5) has |= F.r5;
+    const ask: Ask = { state, slug: boxSlug, r, rating, why: core.why[i], outcome, kind, topic, topicKey: (kind === "digital" ? "digital" : "topic") + index, has, wide: false };
     // 같은 글이 이미 있으면 다른 조각으로 다시 짓는다(글자를 덧붙여 다르게 만들지 않는다). 마흔 번을 넘기면 조각을 하나 더 잇는다.
     // 그래도 겹치는 박스가 생기면 검사가 잡는다: 그때는 그 상품 종류의 조각 묶음을 늘린다
-    let draft: Draft = { text: "", shape: "" };
+    let draft: Draft = { text: "", shape: "", frags: [] };
     for (let tries = 0; tries < 80; tries++) {
       ask.wide = tries >= 40;
       draft = lang === "ko" ? koText(ask) : foreignText(ask, lang);
       if (!state.texts.has(draft.text) && !BANNED.has(draft.text)) break;
     }
     state.texts.add(draft.text);
+    // 이 건에서 쓴 조각을 적어 두고, NEAR 건보다 멀어진 건의 조각은 다시 쓸 수 있게 푼다
+    state.parts.push(draft.frags);
+    for (const frag of draft.frags) state.near.set(frag, (state.near.get(frag) ?? 0) + 1);
+    if (i >= NEAR - 1) for (const frag of state.parts[i - (NEAR - 1)]) { const n = state.near.get(frag)! - 1; if (n > 0) state.near.set(frag, n); else state.near.delete(frag); }
     const photo = item.image.src && r() < (outcome === "big" ? 0.8 : 0.55) ? item.image.src : null;
     // 좋아요: 절반 넘게 0 이고 나머지도 대부분 한두 개다. 사진이 붙었거나 큰 결과이거나 오래된 글이면 조금 더 많다.
     // 무게를 낮게 잡아 위쪽 끝(99)에 닿는 글이 없게 한다: 끝에서 잘린 글이 그 값에 몰리면 안 된다(검사가 본다)
@@ -492,13 +539,19 @@ export function sampleShapes(boxSlug: string): readonly string[] {
   return built.get(boxSlug)?.shapes ?? [];
 }
 
+/** 건마다 쓴 조각(말끝을 바꿔 치기 전의 원래 줄). 검사가 가까운 글에 같은 조각이 되풀이되는지 볼 때만 쓴다 */
+export function sampleParts(boxSlug: string): readonly (readonly string[])[] {
+  sampleReviews(boxSlug);
+  return built.get(boxSlug)?.parts ?? [];
+}
+
 // ── 모아 보기(/reviews): 박스를 가리지 않고 새것부터 ─────────────────
 let order: Float64Array | null = null;
-/** 홈에 나오는 모든 박스의 샘플을 새것부터 줄 세운 것. 뼈대의 "몇 분 전"만 쓰므로 글은 만들지 않는다 */
+/** 모든 박스(BOXES)의 샘플을 새것부터 줄 세운 것. 뼈대의 "몇 분 전"만 쓰므로 글은 만들지 않는다. 박스는 512개, 박스마다 512건까지 담는 열쇠다 */
 function newestOrder(): Float64Array {
   if (order) return order;
   const keys: number[] = [];
-  HOME_BOXES.forEach((box, b) => { const core = coreOf(box.slug); if (core) for (let i = 0; i < core.count; i++) keys.push(core.age[i] * 262144 + b * 512 + i); });
+  BOXES.forEach((box, b) => { const core = coreOf(box.slug); if (core) for (let i = 0; i < core.count; i++) keys.push(core.age[i] * 262144 + b * 512 + i); });
   order = Float64Array.from(keys).sort();
   return order;
 }
@@ -508,19 +561,19 @@ export function newestSamples(limit: number): ReviewSample[] {
   if (!sampleReviewsOn()) return [];
   const keys = newestOrder(), out: ReviewSample[] = [];
   for (let k = 0; k < keys.length && out.length < limit; k++) {
-    const rest = keys[k] % 262144, slug = HOME_BOXES[Math.floor(rest / 512)].slug, i = rest % 512;
+    const rest = keys[k] % 262144, slug = BOXES[Math.floor(rest / 512)].slug, i = rest % 512;
     out.push(sampleReviews(slug, i + 1)[i]);
   }
   return out;
 }
 
 let totals: RatingSummary | null = null;
-/** 홈에 나오는 모든 박스의 별점 요약(모아 보기의 머리). extra 는 이 기기에서 실제로 쓴 후기의 점수들 */
+/** 모든 박스(BOXES)의 별점 요약(모아 보기의 머리). newestSamples 와 같은 모집단이다. extra 는 이 기기에서 실제로 쓴 후기의 점수들 */
 export function allRatingSummary(extra: readonly number[] = []): RatingSummary {
   if (!sampleReviewsOn()) return summarizeRatings(extra);
   if (!totals) {
     const dist: RatingSummary["dist"] = [0, 0, 0, 0, 0];
-    for (const box of HOME_BOXES) coreOf(box.slug)?.summary.dist.forEach((n, i) => { dist[i] += n; });
+    for (const box of BOXES) coreOf(box.slug)?.summary.dist.forEach((n, i) => { dist[i] += n; });
     totals = summaryOf(dist);
   }
   if (extra.length === 0) return totals;

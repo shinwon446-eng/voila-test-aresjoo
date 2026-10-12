@@ -161,3 +161,30 @@ test("나온 상품과 검증 문구: 언어가 섞이지 않는다", () => {
     assert.ok(!hangul.test(Z[key]), `zh ${key}: ${Z[key]}`);
   }
 });
+
+// ── 후기 화면(reviews 묶음과 박스의 별점 문구): 같은 검사를 여기까지 넓힌다
+const reviewKeys = (key: string) => key.startsWith("reviews.") || /^box\.(rating|starsOf|reviews|noReviews)/.test(key);
+
+test("후기 문구: 세 언어가 같은 값을 받고, 느낌표, 물음표, 긴 줄표, 가운뎃점이 없다", () => {
+  const keys = Object.keys(K).filter(reviewKeys);
+  assert.ok(keys.length >= 30, `키 ${keys.length}개`);
+  for (const key of keys) {
+    assert.deepEqual(args(E[key]), args(K[key]), key);
+    assert.deepEqual(args(Z[key]), args(K[key]), key);
+    for (const table of [K, E, Z]) assert.doesNotMatch(table[key], /[!?！？—–·・‧•]/, key);
+  }
+});
+
+test("후기 문구: 언어가 섞이지 않고, 상품가는 용어집의 말 그대로다", () => {
+  const hangul = /[가-힣]/, han = /[一-鿿]/;
+  for (const key of Object.keys(K).filter(reviewKeys)) {
+    assert.ok(!han.test(K[key]), `ko ${key}: ${K[key]}`);
+    assert.ok(!hangul.test(E[key]) && !han.test(E[key]), `en ${key}: ${E[key]}`);
+    assert.ok(!hangul.test(Z[key]), `zh ${key}: ${Z[key]}`);
+    assert.ok(!K[key].includes("참고가"), key);
+  }
+  assert.equal(K["reviews.itemPrice"], "상품가");
+  assert.equal(E["reviews.itemPrice"], "Item value");
+  assert.equal(Z["reviews.itemPrice"], "商品价值");
+  assert.equal(K["reviews.moreListPlain"], "후기 더 보기");
+});

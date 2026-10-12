@@ -17,9 +17,10 @@ import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useInventoryStore } from "@/stores/inventoryStore";
 import { Button, Chips, Empty, ScreenHead } from "@/components/ui/kit";
-import { RatingInline } from "@/components/box/BoxReviews";
+import { RatingInline, useRealRatings } from "@/components/box/BoxReviews";
 import { HeroBanner } from "@/components/home/HeroBanner";
-import { ratingSummary } from "@/lib/reviewSamples";
+import { boxRating } from "@/lib/reviewFeed";
+import type { RatingSummary } from "@/lib/reviewSamples";
 
 type Category = BoxCategory | "all";
 const SEARCH_MAX = 30;
@@ -44,6 +45,8 @@ export function BoxList() {
   const tc = useTranslations("categories");
   const { boxTitle, itemName } = useProductText();
   const { fmt } = useCurrency();
+  // 실제 후기의 점수는 여기서 한 번만 모아 카드에 나눠 준다
+  const real = useRealRatings();
   const [category, setCategory] = useState<Category>("all");
   const [query, setQuery] = useState("");
   const [shown, setShown] = useState(PAGE);
@@ -101,7 +104,7 @@ export function BoxList() {
         <>
           <Chips scroll label={t("home.filter")} value={category} onChange={(key) => { setCategory(key); setShown(PAGE); }} options={[{ value: "all" as Category, label: t("home.all") }, ...HOME_CATEGORIES.map((key) => ({ value: key as Category, label: isV2(key) ? t("cat." + key) : tc(key) }))]} />
           <ul className="v-boxgrid">
-            {boxes.slice(0, shown).map((box, i) => { const lead = leadOf(box); return <li key={box.id}><BoxCard box={box} title={boxTitle(box)} price={fmt(box.price)} noRating={t("home.noRating")} photo={lead?.image.src ?? null} leadName={lead ? itemName(lead) : ""} eager={i < 6} /></li>; })}
+            {boxes.slice(0, shown).map((box, i) => { const lead = leadOf(box); return <li key={box.id}><BoxCard box={box} rating={boxRating(box.slug, real)} title={boxTitle(box)} price={fmt(box.price)} noRating={t("home.noRating")} photo={lead?.image.src ?? null} leadName={lead ? itemName(lead) : ""} eager={i < 6} /></li>; })}
           </ul>
           {boxes.length > shown && <Button quiet onClick={() => setShown((n) => n + PAGE)}>{t("home.more", { n: boxes.length - shown })}</Button>}
         </>
@@ -113,8 +116,8 @@ export function BoxList() {
 /** 카드에 올리는 대표 실물 하나: 사진이 있는 것 가운데 값이 가장 큰 것. 사진이 하나도 없으면 값이 가장 큰 실물(이름만 쓴다) */
 const leadOf = (box: ProductBox): ProductItem | undefined => faceOf(box);
 
-function BoxCard({ box, title, price, noRating, photo, leadName, eager }: { box: ProductBox; title: string; price: string; noRating: string; photo: string | null; leadName: string; eager: boolean }) {
-  const rating = ratingSummary(box.slug);
+/** rating 은 박스 화면과 같은 집계다(lib/reviewFeed 의 boxRating: 샘플 위에 실제 후기를 더한 것) */
+function BoxCard({ box, rating, title, price, noRating, photo, leadName, eager }: { box: ProductBox; rating: RatingSummary; title: string; price: string; noRating: string; photo: string | null; leadName: string; eager: boolean }) {
   return (
     <Link href={"/box/" + box.slug} className="v-boxcard">
       {/* 사진이 없는 박스도 같은 자리에 같은 크기의 칸을 둔다(카드 높이가 들쭉날쭉하지 않게). 그 칸에는 대표 상품의 이름을 적는다 */}

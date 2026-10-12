@@ -3,7 +3,7 @@
  * 박스 화면. 결정 하나: 몇 개를 열지, 그리고 열기.
  * 첫 화면에서 무엇을 받을 수 있는지(실물 사진 띠), 얼마인지(사실 4행), 어떤 확률인지(구간별 4행)를 안다.
  * 그 아래 구성품 전체: 사진 있는 상품은 타일, 없는 상품은 행. 누르면 상품 시트(사진, 정가, 확률, 받는 방법, 이 상품이 든 다른 박스).
- * 후기 절은 실제 개봉 기록에 묶인 후기만 보여 준다. 없으면 없다고 말한다(가짜 후기, 가짜 당첨 소식 없음).
+ * 후기 절은 정식 서비스 전까지 샘플 후기로 채운다(2026-10-12 파운더, lib/reviewSamples 의 스위치로 끈다). 이 기기에서 쓴 후기는 같은 목록에 섞인다.
  * 아래에 붙은 막대에 수량과 주 단추 하나가 있다. 막히면 그 단추가 다음 행동으로 바뀐다:
  *   로그인 전 → "로그인하고 열기" / 잔액 부족 → 한 줄 안내와 "USDT 충전하기" / 충분 → "N개 열기, 금액"
  *   잔액이 모자란데 보관 중인 상품을 전부 받아 모자란 만큼이 채워지면 주 단추는 "USDT로 받기"(선택 시트)이고 충전은 밑줄 링크다.
@@ -31,8 +31,7 @@ import { useCurrency } from "@/lib/useCurrency";
 import { useAuthStore } from "@/stores/authStore";
 import { useWalletStore } from "@/stores/walletStore";
 import { BURST, burstGauge, burstSeed } from "@/lib/burst";
-import { BoxReviews, RatingInline, useReviewCards } from "@/components/box/BoxReviews";
-import { summarizeRatings } from "@/lib/reviewSamples";
+import { BoxReviews, RatingInline, useBoxRating } from "@/components/box/BoxReviews";
 import { useFlow } from "@/stores/flowStore";
 import { useInventoryStore } from "@/stores/inventoryStore";
 import { Button, Chips, Empty, Line, Row, Rows, ScreenHead, TextLink } from "@/components/ui/kit";
@@ -103,9 +102,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const regionNames = useMemo(() => new Intl.DisplayNames([locale], { type: "region" }), [locale]);
   const current = itemId ? table.find((i) => i.id === itemId) ?? null : null;
   const elsewhere = useMemo(() => (current ? BOXES.filter((b) => b.slug !== box.slug && b.items.some((i) => i.id === current.id)) : []), [current, box.slug]);
-  // 이 박스의 후기: 실제 개봉 기록에 묶인 것만. 예시 후기는 보여 주지 않는다
-  const reviewCards = useReviewCards(box.slug);
-  const rating = useMemo(() => summarizeRatings(reviewCards.map((c) => c.rating)), [reviewCards]);
+  // 이 박스의 별점 한 줄. 아래 후기 영역의 목록과 같은 수다(샘플과 이 기기에서 쓴 후기, lib/reviewSamples)
+  const rating = useBoxRating(box.slug);
   // 커버가 대표 실물의 사진이면 "연출 이미지" 안내가 필요 없다
 
   useEffect(() => { void useOpeningJournal.persist.rehydrate(); }, []);
@@ -185,7 +183,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
       ) : box.image.src && (
         <div className="v-boxlayout-hero"><div className="v-boxhero"><img src={box.image.src} alt="" /></div></div>
       )}
-      <BoxReviews box={box} cards={reviewCards} />
+      <BoxReviews box={box} />
       <aside className="v-boxside">
       {/* 열기 옆에는 고르는 데 쓰는 세 줄만 둔다(2026-10-11 파운더: 오른쪽이 읽히지 않는다). 나머지 숫자는 화면 아래의 확률 요약에 있다 */}
       <Rows label={t("box.facts")}>

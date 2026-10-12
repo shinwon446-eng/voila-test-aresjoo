@@ -594,7 +594,16 @@
     "box": "박스",
     "verifyNote": "미리 잠근 해시와 개봉 기록을 대조합니다.",
     "noRecord": "연결된 개봉 기록이 없습니다.",
-    "toBox": "{box} 보기"
+    "toBox": "{box} 보기",
+    "total": "전체 {n}건",
+    "moreList": "후기 더 보기 ({n}건 남음)",
+    "likes": "좋아요 {n}",
+    "agoNow": "방금 전",
+    "agoMin": "{n}분 전",
+    "agoHour": "{n}시간 전",
+    "agoDay": "{n}일 전",
+    "agoMonth": "{n}개월 전",
+    "agoYear": "{n}년 전"
   },
   "wins": {
     "title": "나온 상품",

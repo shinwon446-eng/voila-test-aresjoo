@@ -594,7 +594,16 @@
     "box": "Box",
     "verifyNote": "Checks the pre-locked hash against the opening record.",
     "noRecord": "No opening record is linked.",
-    "toBox": "See {box}"
+    "toBox": "See {box}",
+    "total": "{n} in total",
+    "moreList": "More reviews ({n} left)",
+    "likes": "{n, plural, one {# like} other {# likes}}",
+    "agoNow": "Just now",
+    "agoMin": "{n} min ago",
+    "agoHour": "{n, plural, one {# hour} other {# hours}} ago",
+    "agoDay": "{n, plural, one {# day} other {# days}} ago",
+    "agoMonth": "{n, plural, one {# month} other {# months}} ago",
+    "agoYear": "{n, plural, one {# year} other {# years}} ago"
   },
   "wins": {
     "title": "Recent results",

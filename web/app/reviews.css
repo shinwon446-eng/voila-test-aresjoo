@@ -1,0 +1,36 @@
+/*
+ * 후기 목록(components/box/BoxReviews 의 ReviewList, ReviewCard): 박스 화면의 후기 영역과 후기 모아 보기가 같이 쓴다.
+ * 한 건은 줄로 나눈 행이다(별점과 별명과 몇 시간 전, 글, 붙은 사진, 상품 카드, 좋아요 수). 면은 상품 카드에만 쓴다.
+ * 색은 tokens.css 의 변수만 쓴다. 띄어쓰기 없이 길게 쓴 글도 칸 밖으로 넘치지 않게 어디서든 줄을 바꾼다.
+ */
+.v-rvfeed { display: flex; min-width: 0; flex-direction: column; gap: 4px; }
+.v-rv-total { color: var(--v-sub); font-size: var(--v-fs-small); line-height: 1.5; }
+.v-rvlist { margin: 0; padding: 0; list-style: none; }
+.v-rv { min-width: 0; border-top: 1px solid var(--v-divider); }
+.v-rv:first-child { border-top: 0; }
+.v-rv-btn { display: flex; width: 100%; min-width: 0; flex-direction: column; align-items: stretch; gap: 8px; padding: 16px 0; color: inherit; text-align: left; }
+.v-rv-head { display: flex; min-width: 0; align-items: center; gap: 8px; }
+.v-rv-author { overflow: hidden; min-width: 0; color: var(--v-text); font-size: var(--v-fs-small); line-height: 1.5; text-overflow: ellipsis; white-space: nowrap; }
+.v-rv-ago { flex: none; margin-left: auto; }
+.v-rv-text { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 4; color: var(--v-text); font-size: var(--v-fs-body); line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
+.v-rv-btn > .v-rvcard-more { margin: -4px 0 0; }
+.v-rv-fulltext { overflow-wrap: anywhere; }
+/* 붙은 사진: 카탈로그 사진과 같은 4:3 */
+.v-rv-photo { position: relative; display: block; overflow: hidden; width: 120px; aspect-ratio: 4 / 3; border-radius: 12px; background: var(--v-photo); }
+.v-rv-photo img, .v-rv-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* 상품 카드: 작은 사진, 이름 한 줄, 상품가. 사진이 없는 상품은 글만 둔다(빈 사진 칸을 두지 않는다) */
+.v-rv-item { display: flex; min-width: 0; align-items: center; gap: 10px; border-radius: 14px; background: var(--v-card); padding: 8px 14px 8px 8px; }
+.v-rv-item:not(:has(.v-rv-thumb)) { padding-left: 14px; }
+.v-rv-thumb { position: relative; overflow: hidden; width: 44px; height: 44px; flex: none; border-radius: 10px; background: var(--v-photo); }
+.v-rv-itembody { display: flex; min-width: 0; flex: 1; flex-direction: column; }
+.v-rv-itemname { overflow: hidden; color: var(--v-title); font-size: var(--v-fs-small); line-height: 1.45; text-overflow: ellipsis; white-space: nowrap; }
+.v-rv-btn:hover .v-rv-itemname { text-decoration: underline; text-underline-offset: 3px; }
+.v-rv-morebtn { margin-top: 8px; }
+/* 모아 보기의 별점 분포: 건수가 네 자리를 넘으면 숫자 칸을 넓힌다 */
+.v-rvbars--wide > li { grid-template-columns: 12px minmax(0, 1fr) 56px; }
+@media (min-width: 1024px) {
+  /* 넓은 화면의 모아 보기는 두 줄로 놓는다. 첫 줄의 두 건에는 윗줄을 긋지 않는다 */
+  .v-rvlist--grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px; }
+  .v-rvlist--grid > .v-rv:nth-child(2) { border-top: 0; }
+  .v-rv-morebtn { width: auto; align-self: flex-start; }
+}

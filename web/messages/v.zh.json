@@ -594,7 +594,16 @@
     "box": "盲盒",
     "verifyNote": "将预先锁定的哈希与开箱记录进行比对。",
     "noRecord": "没有关联的开箱记录。",
-    "toBox": "查看{box}"
+    "toBox": "查看{box}",
+    "total": "共 {n} 条",
+    "moreList": "更多评价（剩余 {n} 条）",
+    "likes": "{n} 个赞",
+    "agoNow": "刚刚",
+    "agoMin": "{n} 分钟前",
+    "agoHour": "{n} 小时前",
+    "agoDay": "{n} 天前",
+    "agoMonth": "{n} 个月前",
+    "agoYear": "{n} 年前"
   },
   "wins": {
     "title": "开出的商品",

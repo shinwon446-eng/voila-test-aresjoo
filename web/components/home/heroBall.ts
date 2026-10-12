@@ -77,17 +77,27 @@ export function createBallPainter(): BallPainter | null {
   if (typeof document === "undefined") return null;
   const canvas = document.createElement("canvas");
   const gl = canvas.getContext("webgl", { alpha: true, premultipliedAlpha: true, antialias: false });
-  if (!gl || !gl.getExtension("OES_standard_derivatives")) return null;
+  if (!gl) return null;
+  // 준비가 실패한 길에서만: 그때까지 만든 셰이더와 프로그램을 지우고 컨텍스트를 놓는다(성공한 길의 정리는 dispose 가 한다)
+  const giveUp = (program: WebGLProgram | null = null, ...shaders: (WebGLShader | null)[]) => {
+    for (const shader of shaders) if (shader) gl.deleteShader(shader);
+    if (program) gl.deleteProgram(program);
+    gl.getExtension("WEBGL_lose_context")?.loseContext();
+    return null;
+  };
+  if (!gl.getExtension("OES_standard_derivatives")) return giveUp();
   const compile = (type: number, source: string) => {
     const shader = gl.createShader(type);
     if (!shader) return null;
     gl.shaderSource(shader, source); gl.compileShader(shader);
-    return gl.getShaderParameter(shader, gl.COMPILE_STATUS) ? shader : null;
+    if (gl.getShaderParameter(shader, gl.COMPILE_STATUS)) return shader;
+    gl.deleteShader(shader);
+    return null;
   };
   const vs = compile(gl.VERTEX_SHADER, VERT), fs = compile(gl.FRAGMENT_SHADER, FRAG), program = gl.createProgram();
-  if (!vs || !fs || !program) return null;
+  if (!vs || !fs || !program) return giveUp(program, vs, fs);
   gl.attachShader(program, vs); gl.attachShader(program, fs); gl.linkProgram(program);
-  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return null;
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return giveUp(program, vs, fs);
   gl.useProgram(program);
   gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
   gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);

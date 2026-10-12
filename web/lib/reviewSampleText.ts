@@ -3,8 +3,79 @@
 // 말투의 기준(2026-10-12 파운더): 다른 서비스 후기 화면의 손님들처럼 짧고 꾸밈없는 말. 그 화면의 별명과 글은 그대로 옮기지 않는다(BANNED 로 막는다).
 // 조각에는 긴 줄표, 가운뎃점, 느낌표를 쓰지 않는다(tests/reviewSamples.test.ts 가 만든 글 전체를 검사한다).
 // 조각은 서로 붙어도 말이 되게 쓴다: 한 조각은 한 가지만 말한다(나온 것, 물건, 배송, 쓰임, 맺음말).
+// 조각마다 쓸 수 있는 조건을 줄 끝에 적는다(아래 Frag). 박스의 카테고리가 아니라 그 건의 상품과 결과와 별점을 보고 고른다.
+// 넣지 않는 말: 또 열게 부추기거나 잃은 것을 되찾으려는 말(중독된다, 월급날 다시 온다, 다음엔 잘 나오겠지, 될 때까지). 별명에도 넣지 않는다.
 
-const L = (text: string): string[] => text.split("\n").map((line) => line.trim()).filter(Boolean);
+/**
+ * 조각 한 줄: 글과 그 글을 쓸 수 있는 조건. 조건은 줄 끝에 낱말로 적고 L 이 떼어 낸다. 적지 않은 줄은 어느 건에나 쓴다.
+ *   @이름  그 사실이 맞는 건에만 쓴다(여럿이면 모두 맞아야 한다).
+ *     상품: @parcel 택배로 온다  @handed 날짜를 잡아 넘겨받는다(차, 큰 가전)  @made 정품, 마감, 품질을 말할 만한 공산품이다
+ *           @boxed 구성품이 든 제품 상자가 있다(전자제품, 가전)  @new 새 제품이라고 할 수 있다  @sealed 밀봉된 채로 온다
+ *           @use 쓰는 물건이다  @gift 선물이 될 만하다
+ *     결과: @money 받을 금액(상품가 × REFUND_RATE)이 박스 가격 이상이다  @loss 그에 못 미친다
+ *           @large 상품가가 박스 가격의 1.5배 이상이다  @small 그 아래다  @common 그 박스에서 가장 흔한 상품이다
+ *     별점: @r4 별 넷  @r5 별 다섯
+ *   #이름  이 줄이 말하는 거리. 한 글에 같은 거리를 말하는 줄은 하나만 들어간다(반대말과 겹치는 말이 한 글에 들지 않는다).
+ *     #pack 포장과 상자  #time 배송에 걸린 날  #cs 문의 응대  #hand 넘겨받는 일정  #luck 나온 것이 아쉽다  #sum 돈 셈  #who 누가 쓰는지
+ *   ^이름  앞에서 그 거리를 말한 글에만 붙는다(여럿이면 하나만 맞아도 된다).
+ * 적지 않아도 따라오는 것: #pack 과 #time 은 @parcel, #hand 는 @handed, @money 와 @loss 는 #sum.
+ * #sum 은 본전, 이득 같은 돈 이야기와 몇 번 열었다는 말에 붙인다: 모두 얼마를 썼는지 모르므로 둘을 한 글에 넣지 않는다.
+ */
+export interface Frag { text: string; need: number; about: number; after: number }
+
+const FACTS = ["parcel", "handed", "made", "boxed", "new", "sealed", "use", "gift", "money", "loss", "large", "small", "common", "r4", "r5"];
+const TALKS = ["pack", "time", "cs", "hand", "luck", "sum", "who"];
+const bitsOf = (list: string[], names: string): number => names.split(" ").filter(Boolean).reduce((bits, name) => {
+  const k = list.indexOf(name);
+  if (k < 0) throw new Error("reviewSampleText: 모르는 조건 " + name);
+  return bits | (1 << k);
+}, 0);
+/** 사실의 이름들을 비트로("parcel boxed") */
+export const fact = (names: string): number => bitsOf(FACTS, names);
+/** 거리의 이름들을 비트로("pack time") */
+export const talk = (names: string): number => bitsOf(TALKS, names);
+/** 받는 과정을 말하는 거리: 포장, 배송에 걸린 날, 문의 응대, 넘겨받는 일정 */
+export const ARRIVAL = talk("pack time cs hand");
+
+const TAG = /^[@#^][a-z0-9]+$/;
+function fragOf(line: string): Frag {
+  const words = line.split(/\s+/).filter(Boolean);
+  let need = 0, about = 0, after = 0;
+  while (words.length > 1 && TAG.test(words[words.length - 1])) {
+    const word = words.pop()!;
+    if (word[0] === "@") need |= fact(word.slice(1)); else if (word[0] === "#") about |= talk(word.slice(1)); else after |= talk(word.slice(1));
+  }
+  if (about & talk("pack time")) need |= fact("parcel");
+  if (about & talk("hand")) need |= fact("handed");
+  if (need & fact("money loss")) about |= talk("sum");
+  return { text: words.join(" "), need, about, after };
+}
+/** 한 줄에 한 조각. every 는 그 묶음의 모든 줄에 붙는 조건이다 */
+const L = (text: string, every = ""): Frag[] => text.split("\n").map((line) => line.trim()).filter(Boolean).map((line) => fragOf(line + " " + every));
+
+/**
+ * 상품의 됨됨이. 종류(TOPICS)마다 하나이고, 조각의 조건 가운데 상품에 달린 것이 여기서 정해진다.
+ * 종류에 따로 적지 않으면 goods 다. gift 는 부르는 말이 있고 상품가가 40달러 이상일 때만 남는다(lib/reviewSamples).
+ */
+export type Kind = "goods" | "sealed" | "plain" | "pack" | "single" | "bulky" | "vehicle" | "digital";
+export const KIND_FACTS: Record<Kind, number> = {
+  /** 보통의 새 상품 */
+  goods: fact("parcel made new use gift"),
+  /** 밀봉된 채로 오는 새 상품: 전자제품, 향수, 화장품 */
+  sealed: fact("parcel made boxed new use gift sealed"),
+  /** 쓴다고 말하지 않는 새 상품: 입고 신고 차는 것, 인형, 피규어 */
+  plain: fact("parcel made new gift"),
+  /** 밀봉된 채로 모으는 것: 카드 부스터 박스와 팩, 레고 */
+  pack: fact("parcel new sealed"),
+  /** 낱장 카드와 등급 카드. 미개봉도 새제품도 아니다 */
+  single: fact("parcel"),
+  /** 날짜를 잡아 받는 큰 가전과 운동 기구 */
+  bulky: fact("handed made boxed new use"),
+  /** 차와 바이크 */
+  vehicle: fact("handed"),
+  /** 옛 박스의 상품권 */
+  digital: 0,
+};
 
 /** 파운더가 보여 준 화면의 글과 별명. 조합하다 우연히 같아지면 다시 만든다 */
 export const BANNED: ReadonlySet<string> = new Set([
@@ -25,7 +96,7 @@ export const GOT = {
     친구들한테 캡쳐 다 돌렸어요
     가족들이 아직도 안믿어요
     이게 되네요 진짜
-    몇번 열지도 않았는데 큰게 나왔어요
+    몇번 열지도 않았는데 큰게 나왔어요 #sum
     자기전에 하나 열었다가 잠 다 깼네요
     화면 보고 한참 멍때렸어요
     내가 이런게 될줄이야
@@ -40,95 +111,99 @@ export const GOT = {
   `),
   good: L(`
     이번엔 잘 나왔어요
-    오랜만에 건졌네요
-    박스값은 하고도 남네요
+    박스값은 하고도 남네요 @money
     기대 안했는데 괜찮은게 나왔어요
-    몇번만에 쓸만한거 나왔습니다
-    이정도면 득템이죠
-    본전 뽑고도 남았어요
-    세번째에 나왔어요
+    몇번만에 쓸만한거 나왔습니다 #sum
+    이정도면 득템이죠 @money
+    본전 뽑고도 남았어요 @money
+    세번째에 나왔어요 #sum
     생각지도 못한게 나왔네요
     이번판은 성공입니다
     갖고싶던건데 여기서 뽑았네요
     살까말까 하던건데 나와버렸어요
     장바구니에 담아뒀던건데 이렇게 받네요
     열어본 보람이 있네요
-    간만에 손맛 봤어요
     이번엔 운이 좀 따랐네요
     제값 주고 사긴 아까웠는데 잘됐어요
-    다섯번 열어서 이거 하나 건졌어요
+    다섯번 열어서 이거 하나 건졌어요 #sum
     퇴근길에 하나 열었는데 괜찮게 나왔네요
-    첫판에 바로 나왔어요
+    첫판에 바로 나왔어요 #sum
     이게 나올줄은 몰랐네요
-    돈주고 살뻔했는데 굳었어요
-    두번째 열었을때 나왔습니다
+    돈주고 살뻔했는데 굳었어요 @money
+    두번째 열었을때 나왔습니다 #sum
     점심시간에 열었다가 기분 좋아졌네요
   `),
+  /** 본전, 손해가 아니다 같은 말은 받을 금액이 박스 가격 이상인 건에만(@money). 상품가가 박스 가격의 0.7배에서 1.05배 사이면 본전이 아니다 */
   even: L(`
-    딱 본전이네요
+    딱 본전이네요 @money
     무난하게 나왔어요
     나쁘지 않게 나왔습니다
-    박스값 정도 나왔네요
-    큰건 아니어도 손해는 아니네요
+    박스값 정도 나왔네요 @money
+    큰건 아니어도 손해는 아니네요 @money
     그럭저럭 괜찮게 나왔어요
-    본전치기 했습니다
+    본전치기 했습니다 @money
     평타는 쳤네요
     이정도면 선방했어요
     대박은 아니지만 만족해요
-    쏠쏠하게 나왔네요
+    쏠쏠하게 나왔네요 @money
     기대만큼은 나왔어요
-    본전은 건졌습니다
-    손해 안본게 어디에요
+    본전은 건졌습니다 @money
+    손해 안본게 어디에요 @money
+    중간은 가네요
+    무난한게 나왔네요
+    평범하게 나왔어요
+    딱 중간쯤 나왔네요
   `),
-  /** "지만"으로 끝나는 줄은 뒤에 한 조각이 더 붙는다 */
+  /** "지만"으로 끝나는 줄은 뒤에 한 조각이 더 붙는다. 아쉬움이 묻은 줄은 별 넷에만(@r4) */
   low: L(`
     큰건 아니지만
-    원하던건 아니었지만
-    노리던건 못뽑았지만
-    기대했던건 아니지만
+    원하던건 아니었지만 @r4
+    노리던건 못뽑았지만 @r4
+    기대했던건 아니지만 @r4
     자잘한거 나왔지만
-    박스값엔 못미치지만
-    제일 흔한게 나오긴 했지만
+    박스값엔 못미치지만 @r4 @loss
+    제일 흔한게 나오긴 했지만 @common
     소소하게 나왔어요
     이번엔 작은게 나왔네요
-    작은거라도 실물이라 좋네요
-    큰거 노렸는데 이게 나왔어요
-    대박은 다음 기회에
+    작은거라도 실물이라 좋네요 @parcel
+    큰거 노렸는데 이게 나왔어요 @r4
     이번판은 소소합니다
     꽝인줄 알았는데 받아보니 괜찮네요
-    작은거지만 없는것보단 낫죠
-    소소한것도 모으니 쏠쏠하네요
+    작은거지만 없는것보단 낫죠 @r4
+    소소한게 나왔네요
+    큰건 못뽑았지만 @r4
+    작은거 나왔는데 쓸만하네요 @use
   `),
 };
 
 /** 물건 그 자체 */
 export const ITEM = L(`
-  정품 맞네요
+  정품 맞네요 @made
   상태 좋아요
-  새제품으로 왔어요
+  새제품으로 왔어요 @new
   사진이랑 똑같아요
   실물이 더 낫네요
-  미개봉으로 왔습니다
+  미개봉으로 왔습니다 @sealed
   하자 없이 깨끗해요
-  생각보다 퀄리티 좋네요
-  물건 좋습니다
+  생각보다 퀄리티 좋네요 @made
+  물건 좋습니다 @parcel
   받아보니 마음에 들어요
-  제품 이상 없어요
-  구성품 빠짐없이 다 왔어요
+  제품 이상 없어요 @made
+  구성품 빠짐없이 다 왔어요 @boxed
   흠집 하나 없네요
-  박스 상태도 깨끗해요
-  비닐도 안뜯긴 새거에요
+  박스 상태도 깨끗해요 @boxed #pack
+  비닐도 안뜯긴 새거에요 @sealed
   화면에서 본 그대로네요
   실물 보니 더 마음에 드네요
-  생각보다 고급져요
-  마감 좋네요
-  퀄리티 괜찮습니다
+  생각보다 고급져요 @made
+  마감 좋네요 @made
+  퀄리티 괜찮습니다 @made
   기대 이상이에요
-  물건 확실하네요
-  매장에서 보던 그거 맞아요
-  정품 인증 확인했어요
+  물건 확실하네요 @parcel
+  매장에서 보던 그거 맞아요 @made
+  정품 인증 확인했어요 @made
   받자마자 확인했는데 멀쩡해요
-  제품은 말할것도 없이 좋아요
+  제품은 말할것도 없이 좋아요 @made
   만족스럽습니다
   맘에 쏙 들어요
   아주 좋습니다
@@ -136,14 +211,14 @@ export const ITEM = L(`
   넘 좋네요
   완전 만족
   대만족입니다
-  물건 받고 기분 좋아졌어요
+  물건 받고 기분 좋아졌어요 @parcel
   생각했던거보다 훨씬 좋아요
   검색해보니 가격도 맞더라구요
-  시세 찾아보니 꽤 하네요
+  시세 찾아보니 꽤 하네요 @money @parcel
   실물 영접했습니다
   잘 받았습니다
   잘 받았어요
-  물건 잘 받았습니다
+  물건 잘 받았습니다 @parcel
   너무 좋아요
   괜찮네요
   좋습니다
@@ -155,57 +230,57 @@ export const ITEM = L(`
 export const ITEM_NAMED = L(`
   {item} 잘 받았어요
   {item} 나왔네요
-  {item} 잘 쓸게요
+  {item} 잘 쓸게요 @use
   {item} 필요했는데 잘됐네요
   {item} 하나 생겼네요
-  {item} 득템했어요
+  {item} 득템했어요 @money
   {item} 받았습니다
-  {item} 실물 좋네요
-  {item} 상태 좋아요
+  {item} 실물 좋네요 @parcel
+  {item} 상태 좋아요 @parcel
   {item} 마음에 들어요
   {item} 갖고싶었는데 드디어 생겼네요
   드디어 {item} 받았어요
   {item} 뽑았어요
   {item} 인증합니다
-  {item} 잘 도착했어요
-  {item} 사려던 참이었는데 굳었네요
+  {item} 잘 도착했어요 @parcel
+  {item} 사려던 참이었는데 굳었네요 @money
   {item} 받고 기분 좋네요
-  {item} 깨끗하게 잘 왔어요
+  {item} 깨끗하게 잘 왔어요 @parcel
 `);
 
-/** 배송과 포장 */
+/** 배송과 포장. 택배로 오는 상품에만 */
 export const SHIP = L(`
-  배송 빨라요
-  포장 꼼꼼해요
-  배송 4일 걸렸어요
-  일주일 안에 받았어요
-  뽁뽁이 엄청 감아서 왔네요
-  배송 신청하고 5일만에 도착했어요
-  생각보다 빨리 왔어요
-  포장 튼튼하게 해서 보내주셨어요
-  안전하게 잘 도착했습니다
-  배송도 무난했어요
-  택배 상자 열어보니 포장이 삼중이네요
-  파손 없이 잘 왔어요
-  주말 끼고도 금방 왔네요
-  배송 조회 계속 눌러봤는데 사흘만에 왔어요
-  박스 안에 완충재 꽉 채워져 있었어요
+  배송 빨라요 #time
+  포장 꼼꼼해요 #pack
+  배송 4일 걸렸어요 #time
+  일주일 안에 받았어요 #time
+  뽁뽁이 엄청 감아서 왔네요 #pack
+  배송 신청하고 5일만에 도착했어요 #time
+  생각보다 빨리 왔어요 #time
+  포장 튼튼하게 해서 보내주셨어요 #pack
+  안전하게 잘 도착했습니다 #pack
+  배송도 무난했어요 #time
+  택배 상자 열어보니 포장이 삼중이네요 #pack
+  파손 없이 잘 왔어요 #pack
+  주말 끼고도 금방 왔네요 #time
+  배송 조회 계속 눌러봤는데 사흘만에 왔어요 #time
+  박스 안에 완충재 꽉 채워져 있었어요 #pack
   문앞에 잘 놓고 가셨어요
-  해외배송이라 걱정했는데 멀쩡하게 왔어요
-  엿새만에 받았습니다
+  해외배송이라 걱정했는데 멀쩡하게 왔어요 #pack
+  엿새만에 받았습니다 #time
   배송 안내도 바로바로 와서 좋았어요
-  열흘은 걸릴줄 알았는데 금방 왔어요
-  포장 뜯는데 한참 걸렸어요 그만큼 꼼꼼해요
-  이중박스로 왔어요
+  열흘은 걸릴줄 알았는데 금방 왔어요 #time
+  포장 뜯는데 한참 걸렸어요 그만큼 꼼꼼해요 #pack
+  이중박스로 왔어요 #pack
   배송비 안받는게 좋네요
-  주소 넣고 며칠 안돼서 도착했어요
-  배송 일주일 걸렸어요
-  포장 상태 좋았습니다
+  주소 넣고 며칠 안돼서 도착했어요 #time
+  배송 일주일 걸렸어요 #time
+  포장 상태 좋았습니다 #pack
   배송 잘 받았어요
-  꼼꼼하게 싸서 보내주셨네요
-`);
+  꼼꼼하게 싸서 보내주셨네요 #pack
+`, "@parcel");
 
-/** 받아서 어떻게 했는지: 어느 상품에나 맞는 말 */
+/** 받아서 어떻게 했는지: 쓰는 물건이면 어느 상품에나 맞는 말 */
 export const USE = L(`
   잘 쓰고 있어요
   매일 써요
@@ -213,7 +288,6 @@ export const USE = L(`
   필요했던건데 마침 잘됐어요
   안그래도 사려던거였어요
   집에 하나 있는데 하나 더 생겼네요
-  회사에 갖다놨어요
   당분간 살일 없겠네요
   잘 쓰겠습니다
   잘쓸게요
@@ -221,12 +295,13 @@ export const USE = L(`
   쓸때마다 기분 좋아요
   두고두고 쓸듯
   있으면 쓰는거라 좋아요
-  마침 떨어져가던 참이었어요
   요긴하게 쓰고 있습니다
   쓸데가 많네요
   바로 개시했어요
-`);
-/** 누구에게 줬다는 말. 선물이 될 만한 상품에만 붙인다(lib/reviewSamples 의 giftable) */
+  잘 쓰고 있습니다
+  요즘 제일 자주 손이 가요
+`, "@use #who");
+/** 누구에게 줬다는 말. 선물이 될 만한 상품에만 붙인다 */
 export const USE_GIFT = L(`
   선물로 줬더니 좋아하네요
   엄마 드렸어요
@@ -246,7 +321,7 @@ export const USE_GIFT = L(`
   이미 있는거라 선물하려구요
   선물용으로 딱이에요
   형한테 자랑했더니 달래요
-`);
+`, "@gift #who");
 
 /** 맺음말 */
 export const CLOSE = L(`
@@ -254,22 +329,15 @@ export const CLOSE = L(`
   감사해요
   번창하세요
   또 올게요
-  또 열러 갑니다
-  다음엔 더 큰거 노려봅니다
   추천해요
   믿고 엽니다
   다음에 또 이용할게요
-  자주 올거같아요
-  한번 더 갑니다
+  한번 더 열어볼게요
   다음 박스도 기대중
   주변에도 알려줬어요
   친구도 가입시켰어요
-  담엔 대박 나길
   계속 이용할게요
   재밌네요 이거
-  은근 중독되네요
-  다음달에 또 올게요
-  월급날 다시 옵니다
   수고하세요
   많이 파세요
   잘 받았다고 글 남겨요
@@ -278,12 +346,16 @@ export const CLOSE = L(`
   굿입니다
   좋은 물건 감사해요
   덕분에 잘 받았습니다
-  다음엔 저 위에꺼 뽑아볼게요
-  이맛에 엽니다
-  득템
+  기분 좋게 받았어요
+  다들 좋은거 받으세요
+  별 다섯개 드려요 @r5
+  득템 @money
 `);
 
-/** 이 서비스의 흐름에 맞는 말: USDT로 받기, 보관함, 개봉 결과 검증, 구성품과 확률 */
+/**
+ * 이 서비스의 흐름에 맞는 말: USDT로 받기, 보관함, 개봉 결과 검증, 구성품과 확률.
+ * 적은 몫으로만 쓰고, 이 줄만으로 글을 끝내지 않는다(물건을 말하는 조각이 함께 간다).
+ */
 export const FLOW = L(`
   USDT로 받을까 하다가 그냥 배송 받았어요
   저번껀 USDT로 받았는데 이번엔 실물로 받아봤어요
@@ -295,128 +367,144 @@ export const FLOW = L(`
   충전하고 바로 열었는데 결과 바로 나와서 좋네요
   USDT 충전이 처음이라 헤맸는데 금방 들어오네요
   배송 받을지 USDT로 받을지 하루 고민했어요
-  작은건 USDT로 받고 이것만 배송시켰어요
-  여러개 열어서 나머진 USDT로 받고 이건 실물로 받았어요
+  작은건 USDT로 받고 이것만 배송시켰어요 #sum @large
+  여러개 열어서 나머진 USDT로 받고 이건 실물로 받았어요 #sum
   배송 신청할때 주소만 넣으면 끝이라 편했어요
   USDT로 받을까 했는데 실물이 낫겠다 싶어서 받았어요
   결과 검증 해보는거 신기하네요 처음 봤어요
   열기 전에 잠가둔 값이랑 맞는지 확인해봤어요
   보관함에 며칠 묵혀뒀다가 배송 눌렀어요
   검증까지 해보고 배송 신청했습니다
-`);
+`, "@parcel");
 
-/** 별 넷의 작은 아쉬움. 배송 조각 자리에 온다 */
+/** 별 넷의 작은 아쉬움: 받는 과정에서 조금 아쉬웠던 것. 좋았던 한 조각 뒤에 온다 */
 export const GRIPE = L(`
-  배송이 좀 걸린거 빼곤 좋아요
-  박스가 살짝 눌려와서 별 하나 뺐어요
-  배송만 좀 더 빨랐으면 좋겠네요
-  포장박스가 좀 찌그러져 왔어요 내용물은 멀쩡해요
-  배송 조회가 좀 늦게 뜨네요
-  받는데 열흘 걸렸어요
-  통관때문에 며칠 더 걸렸네요
-  겉박스 모서리가 좀 찍혀있었어요
-  배송은 생각보다 오래 걸렸어요
-  조금만 더 빨리 왔으면 별 다섯개인데
-  기다리다 목빠지는줄 알았어요
-  배송이 느린건 좀 아쉬워요
-  택배 상자가 좀 지저분하게 왔어요
+  배송이 좀 걸린거 빼곤 좋아요 #time
+  박스가 살짝 눌려와서 별 하나 뺐어요 #pack
+  배송만 좀 더 빨랐으면 좋겠네요 #time
+  포장박스가 좀 찌그러져 왔어요 내용물은 멀쩡해요 #pack
+  배송 조회가 좀 늦게 뜨네요 #time
+  받는데 열흘 걸렸어요 #time
+  통관때문에 며칠 더 걸렸네요 #time
+  겉박스 모서리가 좀 찍혀있었어요 #pack
+  배송은 생각보다 오래 걸렸어요 #time
+  조금만 더 빨리 왔으면 별 다섯개인데 #time
+  기다리다 목빠지는줄 알았어요 #time
+  배송이 느린건 좀 아쉬워요 #time
+  택배 상자가 좀 지저분하게 왔어요 #pack
+  문의 답이 하루 늦게 온거 빼곤 좋아요 #cs
+  받는 날짜가 한번 밀린거 빼곤 좋아요 #hand
+  일정 잡는데 좀 걸린게 아쉬워요 #hand
+  넘겨받는 날 안내가 좀 늦게 왔어요 #hand
 `);
 
-/** 별 셋: 그 줄 하나로 말이 끝난다. 뒤에 MID_CLOSE 가 붙을 수 있다 */
+/**
+ * 별 셋: 그 줄 하나로 말이 끝난다. 뒤에 MID_CLOSE 가 붙을 수 있다.
+ * 받는 과정(ARRIVAL)을 말하는 줄은 그 때문에 별이 깎인 건에, 나머지는 받은 것이 그저 그랬던 건에 쓴다.
+ */
 export const MID = L(`
   그냥 그래요
   무난합니다
   그럭저럭이네요
-  원하던건 아니라서 별 셋
-  쓸일은 없을거같은데 일단 받았어요
-  물건은 괜찮은데 배송이 너무 오래 걸렸어요
-  USDT로 받을걸 그랬나 싶네요
-  기대가 너무 컸나봐요
-  받긴 잘 받았는데 쓸데가 없네요
+  원하던건 아니라서 별 셋 #luck
+  쓸일은 없을거같은데 일단 받았어요 #luck
+  기대가 너무 컸나봐요 #luck @small
+  받긴 잘 받았는데 쓸데가 없네요 #luck
   보통이에요
   나쁘진 않은데 좋지도 않아요
-  배송 2주 가까이 걸렸어요 물건은 정상이에요
-  이미 있는거라 애매하네요
-  상자가 많이 찌그러져서 왔어요 안에는 괜찮았어요
-  그냥저냥 쓸만해요
-  생각보다 작네요
-  사진보다 실물이 좀 별로에요
-  필요한 사람 줘야겠어요
-  당근에 올릴까 고민중
-  큰거 기대했는데 아쉽네요 물건 자체는 멀쩡해요
-  배송 기다리다 지쳤어요
-  딱 가격만큼이에요
-  쓸만은 한데 굳이 싶네요
-  취향은 아닌데 일단 써볼게요
-  선물용으로 돌려야겠네요
+  이미 있는거라 애매하네요 #luck
+  그냥저냥 쓸만해요 @use
+  생각보다 작네요 @made
+  사진보다 실물이 좀 별로에요 @parcel
+  필요한 사람 줘야겠어요 #luck #who
+  당근에 올릴까 고민중 #luck
+  큰거 기대했는데 아쉽네요 물건 자체는 멀쩡해요 #luck @small @parcel
+  쓸만은 한데 굳이 싶네요 @use
+  취향은 아닌데 일단 써볼게요 #luck @use
+  선물용으로 돌려야겠네요 #luck #who
   기대 안하고 받으면 괜찮아요
-  또 이거 나왔네요 집에 두개째
-  박스에 스티커 자국이 있네요 내용물은 새거에요
-  원하던건 아니었는데 그럭저럭 괜찮은거 같기도 해요
-  막상 받아보니 쓸일이 있을까 싶네요
-  물건은 멀쩡한데 감흥이 없네요
-  배송이 느려서 별 두개 뺐어요
+  또 이거 나왔네요 집에 두개째 #luck
+  원하던건 아니었는데 그럭저럭 괜찮은거 같기도 해요 #luck
+  막상 받아보니 쓸일이 있을까 싶네요 #luck
+  물건은 멀쩡한데 감흥이 없네요 @parcel
+  물건은 괜찮은데 배송이 너무 오래 걸렸어요 #time
+  배송 2주 가까이 걸렸어요 물건은 정상이에요 #time
+  상자가 많이 찌그러져서 왔어요 안에는 괜찮았어요 #pack
+  배송 기다리다 지쳤어요 물건은 괜찮네요 #time
+  박스에 스티커 자국이 있네요 내용물은 새거에요 #pack @new
+  배송이 느려서 별 두개 뺐어요 물건은 좋아요 #time
+  받는데 보름 걸렸어요 물건은 이상 없어요 #time
+  겉상자가 젖어서 왔어요 안에는 멀쩡했어요 #pack
+  포장이 헐거워서 안에서 굴러다녔어요 흠집은 없네요 #pack
+  배송 조회가 며칠째 그대로라 걱정했어요 받고 보니 정상이에요 #time
+  통관에서 일주일 묶여있었어요 물건은 괜찮아요 #time
+  문의 답이 늦어서 답답했어요 받은건 괜찮아요 #cs
+  받기로 한 날짜가 두번 밀렸어요 받은건 멀쩡해요 #hand
+  일정 잡는데 한참 걸렸어요 받고 나니 좋긴 하네요 #hand
+  안내가 늦어서 답답했어요 받은건 마음에 들어요 #hand
 `);
 export const MID_CLOSE = L(`
-  다음엔 좋은거 나오겠죠
-  다음을 기약합니다
-  한번 더 열어봐야겠어요
-  그래도 실물이라 다행이에요
-  담엔 큰거 나오길
+  한번 더 열어봐야겠어요 ^luck
+  그래도 실물이라 다행이에요 ^luck @parcel
   그래도 받긴 잘 받았어요
-  다음판에 기대해봅니다
-  일단 써보고 다시 올게요
   좀더 지켜볼게요
-  그래도 포장은 꼼꼼했어요
+  그래도 포장은 꼼꼼했어요 #pack
+  USDT로 받을걸 그랬나 싶네요 @parcel
+  다음엔 배송이 좀 빨랐으면 해요 ^time
+  포장만 좀 신경써주면 좋겠어요 ^pack
 `);
 
-/** 별 둘과 하나 */
+/** 별 둘과 하나: 낮은 점수의 까닭 한 줄. 받는 과정을 말하는 줄과 받은 것을 말하는 줄을 MID 처럼 가려 쓴다 */
 export const NEG = L(`
-  배송 2주 넘게 걸렸어요
-  박스 다 찌그러져서 왔네요
-  계속 작은것만 나와요
-  열번 열었는데 다 자잘한거네요
-  문의 답변이 느려요
+  계속 작은것만 나와요 #luck @loss
+  열번 열었는데 다 자잘한거네요 #luck @loss
   생각한거랑 달라요
   이건 좀 실망이에요
-  그냥 USDT로 받을걸 후회중
-  포장이 너무 허술해요
-  배송이 너무 느려요 잊고있었네요
-  필요없는게 나와서 처치곤란
-  몇번을 열어도 본전이 안나오네요
-  겉박스가 터져서 왔어요
-  기대한 제가 잘못이죠
-  이번엔 별로네요
-  다신 안열려다 또 열었는데 역시나
-  오래 기다린거에 비해 별로에요
-  돈 아깝다는 생각이 드네요
-  박스 모서리 다 뭉개져서 선물도 못하겠어요
-  구성품 하나가 흔들려서 왔어요 쓰는덴 문제없지만
-  배송 문의했는데 한참 뒤에 답왔어요
-  받는데 3주 걸렸어요 너무하네요
-  상자 열어보니 완충재가 하나도 없네요
-  이걸 어디다 쓰라는건지
+  필요없는게 나와서 처치곤란 #luck
+  기대한 제가 잘못이죠 #luck
+  이번엔 별로네요 #luck
+  돈 아깝다는 생각이 드네요 @loss
+  이걸 어디다 쓰라는건지 #luck
+  사진이랑 느낌이 많이 달라요 @parcel
+  받고 보니 쓸데가 하나도 없네요 #luck
+  기대에 한참 못미쳐요 #luck
+  마음에 드는게 안나와요 #luck
+  배송 2주 넘게 걸렸어요 #time
+  박스 다 찌그러져서 왔네요 #pack
+  문의 답변이 느려요 #cs
+  포장이 너무 허술해요 #pack
+  배송이 너무 느려요 잊고있었네요 #time
+  겉박스가 터져서 왔어요 #pack
+  오래 기다린거에 비해 별로에요 #time @small
+  박스 모서리 다 뭉개져서 선물도 못하겠어요 #pack
+  배송 문의했는데 한참 뒤에 답왔어요 #cs @parcel
+  받는데 3주 걸렸어요 너무하네요 #time
+  상자 열어보니 완충재가 하나도 없네요 #pack
+  받기로 한 날짜가 세번이나 밀렸어요 #hand
+  일정 문의해도 답이 한참 없었어요 #hand
+  넘겨받는 날까지 안내가 거의 없었어요 #hand
 `);
 export const NEG_CLOSE = L(`
-  다음엔 잘 나오겠죠
-  개선 부탁드려요
-  배송 좀 신경써주세요
-  당분간 쉬어야겠어요
-  한번만 더 해보고 접을게요
-  포장 좀 신경써주세요
-  다음엔 USDT로 받으려구요
+  개선 부탁드려요 ^pack ^time ^cs ^hand
+  배송 좀 신경써주세요 ^time
+  당분간 쉬어야겠어요 ^luck
+  포장 좀 신경써주세요 ^pack
+  다음엔 USDT로 받으려구요 @parcel
+  답변 좀 빨리 주세요 ^cs
+  일정 안내 좀 제대로 해주세요 ^hand
+  기대가 컸던만큼 아쉽네요 ^luck
 `);
 
-/** 글 끝에 붙는 말 */
+/** 글 끝에 붙는 말. 웃음은 좋은 글에만 붙는다(아쉬운 말 뒤에는 붙이지 않는다) */
 export const TAIL = {
   pos: ["ㅎㅎ", "ㅎㅎ", "ㅎㅎㅎ", "ㅋㅋ", "ㅋㅋ", "ㅋㅋㅋ", "^^", "^^", "~", "~~", "ㅎ", "굿", "굿굿", "bb", "ㅎㅎ 굿", "최고", "짱", "ㅋ"],
   big: ["ㅠㅠ", "ㅋㅋㅋㅋ", "ㅎㅎㅎ", "ㄷㄷ", "ㅠㅠㅠ", "대박", "ㅋㅋㅋ", "미쳤다", "와"],
-  mid: ["ㅎ", "..", "ㅠ", "흠", "ㅎㅎ..", "음"],
+  mid: ["..", "ㅠ", "흠", "음", "...", "ㅠㅠ"],
   neg: ["ㅠㅠ", "ㅜㅜ", "ㅡㅡ", "..", "하", "ㅠ", "에휴"],
 };
 /** 글 머리에 드물게 붙는 말 */
 export const LEAD = ["오", "와", "우와", "헐", "와우", "오오", "크"];
-/** 드물게 바꿔 치는 말끝(빨리 친 글처럼) */
+/** 드물게 바꿔 치는 말끝(빨리 친 글처럼). 별 넷과 다섯의 글에만 쓴다 */
 export const SLANG: [RegExp, string[]][] = [
   [/감사합니다$/, ["감사합니당", "감사함다", "감사합니다요"]],
   [/감사해요$/, ["감사해용", "감사해여"]],
@@ -430,125 +518,220 @@ export const SLANG: [RegExp, string[]][] = [
   [/쓸게요$/, ["쓸게용", "쓸께요"]],
 ];
 
-/** 영어 손님(서비스가 여러 나라에서 쓰인다). 앞 조각과 뒤 조각을 잇는다 */
+/**
+ * 영어 손님(서비스가 여러 나라에서 쓰인다). 택배로 받은 이야기라 택배로 오는 상품에만 쓴다.
+ * pos 는 물건과 나온 것을 말하는 한 줄이고, 그 뒤에 close(맺음말), ship(배송), flow(서비스의 흐름) 가운데 하나가 붙을 수 있다.
+ * ship 과 flow 만으로 글을 끝내지 않는다. gripe 는 별 넷의 작은 아쉬움, mid 는 별 셋, neg 는 별 둘과 하나다.
+ */
 export const EN = {
   pos: L(`
-    Arrived safe and sound
-    Got it in about a week
-    Legit item, sealed box
-    Did not expect to actually win this
-    Works perfectly
+    Legit item, sealed box @sealed
+    Did not expect to actually win this @large
+    Works perfectly @use
     Exactly as pictured
-    Shipping took 6 days to my place
-    Packaging was solid
-    Brand new and sealed
+    Brand new and sealed @sealed
     Honestly better than I expected
-    Third box and I pulled this
-    Not the big prize but still happy
-    Real deal, checked the serial
-    Came faster than I thought
+    Third box and I pulled this #sum
+    Not the big prize but still happy @small
+    Real deal, checked the serial @sealed
     Pretty happy with this one
-    Was about to take the USDT but glad I had it shipped
-    Checked the result on the verify page and it matched
-    No shipping fee which is nice
-    Gave it to my brother, he loves it
-    Smaller prize this time but cant complain
-    Item is genuine, no complaints
-    Took a while to arrive but all good
-    Solid pull for the price
-    Good condition, nothing missing
-    Showed up well packed
-    Finally hit something decent
-    Took USDT on the small ones and shipped this
+    Gave it to my brother, he loves it @gift #who
+    Smaller prize this time but cant complain @small
+    Item is genuine, no complaints @made
+    Solid pull for the price @money @large
+    Good condition, nothing missing @boxed
+    Hit something decent this time @large
     Looks even better in person
-    Opened two boxes and got this on the second
+    Opened two boxes and got this on the second #sum
+    Using it every day now @use #who
+    Wife took it from me right away @gift #who
+    Great gift for my dad @gift #who
+    Really nice in hand
+    Looks great, very pleased
+    Matches the listing, all good
+    Nicer than the photos
+    Clean, no marks on it
+    Happy with how it turned out
+  `),
+  ship: L(`
+    Arrived safe and sound #pack
+    Got it in about a week #time
+    Shipping took 6 days to my place #time
+    Packaging was solid #pack
+    Came faster than I thought #time
+    No shipping fee which is nice
+    Showed up well packed #pack
     Smooth from opening to delivery
-    Using it every day now
-    Wife took it from me right away
-    Great gift for my dad
     No issues with customs on my end
   `),
+  flow: L(`
+    Was about to take the USDT but glad I had it shipped
+    Checked the result on the verify page and it matched
+    Took USDT on the small ones and shipped this #sum @large
+  `),
+  gripe: L(`
+    Took a while to arrive but all good #time
+    Box was a bit dented, item is perfect #pack
+    Shipping was slower than I hoped, item is great #time
+    Outer box had a few dings, no damage inside #pack
+    Tracking updated late, otherwise great #time
+    Arrived a few days late, item itself is great #time
+    Tape on the box was peeling, contents fine #pack
+  `),
   mid: L(`
-    Shipping was slow, item is fine
-    Not what I wanted but ok
-    Box came dented, product was fine
+    Shipping was slow, item is fine #time
+    Not what I wanted but ok #luck
+    Box came dented, product was fine #pack
     It is alright, nothing special
-    Took almost two weeks to get here
-    Decent, already had one though
-    Fine I guess, will probably gift it
-    Expected more but it works
+    Took almost two weeks to get here, item is ok #time
+    Decent, already had one though #luck
+    Fine I guess, will probably gift it #luck #who
+    Expected more but it works #luck @small @use
+    Okay for what it is
+    Not really my thing but it is fine #luck
+    Average, does the job @use
+    Meh, it is fine
+    Customs held it for a week, item is fine #time
+    Nothing wrong with it, just not excited #luck
+    So so, might give it away #luck #who
   `),
   neg: L(`
-    Keeps giving me the small stuff
-    Waited three weeks for this
-    Outer box was crushed
-    Should have taken the USDT instead
-    Support took days to answer
-    Not worth the wait
+    Keeps giving me the small stuff #luck @loss
+    Waited three weeks for this #time
+    Outer box was crushed #pack
+    Support took days to answer #cs
+    Way too long of a wait #time
+    Not what the page made me expect
+    Disappointed with this one #luck
+    No use for this at all #luck
+    Padding was missing, box rattled the whole way #pack
+    Looks cheaper than in the photos
+    Not happy with this one
+    Did not need this at all #luck
+    Expected a lot better than this #luck
   `),
-  close: ["thanks", "will open again", "recommended", "10/10", "would do it again", "cheers", "happy with it", "nice one", "good stuff", "thank you", "will be back", "worth it", "no regrets", "love it"],
+  close: L(`
+    thanks
+    will open again
+    recommended
+    10/10
+    would do it again
+    cheers
+    happy with it
+    nice one
+    good stuff
+    thank you
+    will be back
+    worth it @money
+    no regrets
+    love it
+  `),
   tail: ["lol", "haha", ":)", "", "", ""],
 };
 
-/** 중국어 손님 */
+/** 중국어 손님. 묶음의 뜻은 EN 과 같다 */
 export const ZH = {
   pos: L(`
-    收到了，包装很好
-    正品，全新未拆
-    没想到真的开出来了
-    物流大概一周
+    正品，全新未拆 @sealed
+    没想到真的开出来了 @large
     东西不错，很满意
     和图片一样
-    第三次就开到了
-    虽然不是大奖但也不错
-    发货挺快的
-    已经在用了，很好
-    送给女朋友了，她很喜欢
-    本来想领USDT，最后还是选了配送
-    验证了一下开箱结果，是对的
-    免运费这点很好
-    这次运气不错
-    质量很好，值了
-    包了好几层，没有破损
-    序列号查过了，是正品
-    小奖也开心
-    等了十天，东西没问题
+    第三次就开到了 #sum
+    虽然不是大奖但也不错 @small
+    已经在用了，很好 @use #who
+    送给女朋友了，她很喜欢 @gift #who
+    这次运气不错 @large
+    质量很好，值了 @money
+    序列号查过了，是正品 @sealed
+    小奖也开心 @small
     比想象中好
     实物比图片好看
-    六天到货，很快
-    给爸妈用的，他们很喜欢
-    开了两个，这个最满意
-    小的领了USDT，这个选了配送
-    包装很用心
-    一直想买的，居然开到了
-    全新未拆封，放心
+    给爸妈用的，他们很喜欢 @gift #who
+    开了两个，这个最满意 #sum
+    一直想买的，居然开到了 @large
+    全新未拆封，放心 @sealed
+    拿到手很喜欢
+    做工不错 @made
+    和描述一致，没问题
+    东西很新，没有划痕
+    看着比图片还好
+  `),
+  ship: L(`
+    收到了，包装很好 #pack
+    物流大概一周 #time
+    发货挺快的 #time
+    免运费这点很好
+    包了好几层，没有破损 #pack
+    六天到货，很快 #time
+    包装很用心 #pack
     清关也没遇到问题
   `),
+  flow: L(`
+    本来想领USDT，最后还是选了配送
+    验证了一下开箱结果，是对的
+    小的领了USDT，这个选了配送 #sum @large
+  `),
+  gripe: L(`
+    等了十天，东西没问题 #time
+    物流有点慢，东西很好 #time
+    盒子有点压到，里面完好 #pack
+    外箱有点脏，东西没事 #pack
+    晚到了几天，东西很满意 #time
+    物流信息更新慢，其他都好 #time
+    盒子边角有点磕到，东西完好 #pack
+  `),
   mid: L(`
-    物流太慢了，东西还行
-    不是想要的，一般般
-    盒子压扁了，里面没事
+    物流太慢了，东西还行 #time
+    不是想要的，一般般 #luck
+    盒子压扁了，里面没事 #pack
     还可以吧，没什么感觉
-    等了快两周
-    家里已经有一个了
-    凑合用吧
-    期待太高了
+    等了快两周，东西正常 #time
+    家里已经有一个了 #luck
+    凑合用吧 @use
+    期待太高了 #luck @small
+    一般般，没有惊喜
+    不太喜欢，先留着 #luck
+    中规中矩
+    清关卡了一周，东西没问题 #time
+    东西没问题，就是没什么用 #luck
+    马马虎虎，可能送人 #luck #who
   `),
   neg: L(`
-    一直开小的
-    等了三个星期
-    外箱都压坏了
-    早知道就领USDT了
-    客服回复太慢
-    不值得等这么久
+    一直开小的 #luck @loss
+    等了三个星期 #time
+    外箱都压坏了 #pack
+    客服回复太慢 #cs
+    等太久了，体验不好 #time
+    和页面上看到的不一样
+    有点失望 #luck
+    完全用不上 #luck
+    里面没有缓冲，一路晃过来 #pack
+    不怎么样
+    根本不需要这个 #luck
+    比想象中差很多 #luck
+    实物看起来很廉价
   `),
-  close: ["谢谢", "下次再来", "推荐", "好评", "继续开", "满意", "赞", "还会再来", "很开心", "值得", "不错不错", "给个好评", "会推荐给朋友"],
+  close: L(`
+    谢谢
+    下次再来
+    推荐
+    好评
+    满意
+    赞
+    还会再来
+    很开心
+    值得 @money
+    不错不错
+    给个好评
+    会推荐给朋友
+  `),
   tail: ["哈哈", "～", "", "", "", "哈哈哈"],
 };
 
-/** 별명의 재료 */
+/** 별명의 재료. 조건이 없는 낱말의 목록이다 */
+const W = (text: string): string[] => text.split("\n").map((line) => line.trim()).filter(Boolean);
 export const NICK = {
-  a: L(`
+  a: W(`
     행복한
     소소한
     느긋한
@@ -598,7 +781,7 @@ export const NICK = {
     배부른
     낮잠자는
   `),
-  b: L(`
+  b: W(`
     고양이
     강아지
     토끼
@@ -670,26 +853,26 @@ export const NICK = {
     고래
     오리
   `),
-  whole: L(`
-    오늘도뽑는다
-    또열었다
-    이번엔되겠지
+  whole: W(`
+    주말엔집콕
+    동네산책
+    고양이두마리
     운빨만렙
-    언젠간대박
-    한방을노린다
-    뽑기에진심
+    강아지아빠
+    책읽는저녁
+    자전거출근
     택배는사랑
-    월급은스쳐갈뿐
+    요리는어려워
     퇴근하고싶다
     집에가고싶다
     내일은맑음
     커피한잔할래
     여유로운주말
     일상의쉼표
-    인생은한방
+    텃밭가꾸기
     티끌모아태산
-    지갑이얇다
-    통장이텅장
+    드라이브좋아
+    영화보는밤
     살까말까
     일단열어봄
     믿고여는사람
@@ -699,9 +882,9 @@ export const NICK = {
     늘처음처럼
     웃으면복이와
     좋은게좋은거
-    가즈아
-    될때까지간다
-    다음엔나도
+    일요일아침
+    따뜻한국밥
+    김치찌개
     오늘의운세
     행운이온다
     복받으세요
@@ -753,8 +936,8 @@ export const NICK = {
     구경만하다가
     눈팅하다가입
     첫후기입니다
-    용돈모아열기
-    보너스받은날
+    옥수수수염차
+    빨래하는날
     연차쓰고싶다
     월요일싫어
     금요일좋아
@@ -782,7 +965,7 @@ export const NICK = {
     찐감자
     꿀호떡
   `),
-  id: L(`
+  id: W(`
     minsu
     jihoon
     yuna
@@ -814,7 +997,7 @@ export const NICK = {
     cloud
     wave
   `),
-  en: L(`
+  en: W(`
     jake
     mike
     sara
@@ -842,7 +1025,7 @@ export const NICK = {
     owen
   `),
   enTail: ["_t", "88", "x", "_k", "1990", "_m", "", "", "07", "_dev", "22", "_j", "99", "_r", "3"],
-  zh: L(`
+  zh: W(`
     小明
     阿杰
     小雨
@@ -866,7 +1049,7 @@ export const NICK = {
     欧皇附体
     运气王
     小确幸
-    咸鱼翻身
+    周末看电影
     今天也要加油
     不想上班
     奶茶续命
@@ -885,44 +1068,50 @@ export const NICK = {
  * 상품 종류에 맞는 말. 박스의 카테고리가 cats 에 들고 상품 이름이 re 에 맞는 첫 줄이 그 상품의 종류다(위에서부터 본다).
  * min, max 는 상품가(USDT)의 범위다. lines 가 비어 있으면 "이 종류는 따로 할 말이 없다"는 뜻이고 뒤의 줄로 넘어가지 않는다(부속품이 본품의 말을 받지 않게).
  * nouns 는 손님이 그 상품을 부르는 말이다(ITEM_NAMED 의 {item} 자리).
+ * cats 에서 +로 시작하는 낱말은 카테고리가 아니라 그 종류의 됨됨이(Kind)다("pokemon +single"). 적지 않으면 goods 다.
+ * 누구에게 줬다는 줄에는 #who 를 붙인다(쓰임 조각과 한 글에 들지 않게).
  */
-export interface Topic { cats: string[]; re: RegExp; min: number; max: number; nouns: string[]; lines: string[] }
-const T = (cats: string, re: RegExp, nouns: string, lines: string, min = 0, max = Infinity): Topic => ({ cats: cats.split(" "), re, min, max, nouns: nouns ? nouns.split(" ") : [], lines: L(lines) });
+export interface Topic { cats: string[]; kind: Kind; re: RegExp; min: number; max: number; nouns: string[]; lines: Frag[] }
+const T = (cats: string, re: RegExp, nouns: string, lines: string, min = 0, max = Infinity): Topic => {
+  const words = cats.split(" "), kind = (words.find((word) => word[0] === "+")?.slice(1) ?? "goods") as Kind;
+  if (!(kind in KIND_FACTS)) throw new Error("reviewSampleText: 모르는 됨됨이 " + kind);
+  return { cats: words.filter((word) => word[0] !== "+"), kind, re, min, max, nouns: nouns ? nouns.split(" ") : [], lines: L(lines) };
+};
 const ANY = /./;
 
 const JEWEL = `
   반짝반짝 이뻐요
-  여자친구 줬더니 좋아하네요
+  여자친구 줬더니 좋아하네요 #who
   보증서 같이 왔어요
   케이스도 고급져요
   실물이 훨씬 이쁘네요
   매일 하고 다녀요
-  기념일 선물 해결했네요
+  기념일 선물 해결했네요 #who
   빛 받으면 진짜 예뻐요
-  와이프 생일선물로 줬어요
-  엄마 드렸더니 계속 거울 보세요
-  포장부터 고급스러워요
+  와이프 생일선물로 줬어요 #who
+  엄마 드렸더니 계속 거울 보세요 #who
+  포장부터 고급스러워요 #pack
   사진으로는 다 안담기네요
 `;
 const PLUSH = `
   촉감 부들부들해요
   애가 안고 자요
   너무 귀여워요
-  조카 선물로 줬어요
+  조카 선물로 줬어요 #who
   실물이 훨씬 귀엽네요
   침대 옆에 앉혀놨어요
-  딸이 이름도 지어줬어요
+  딸이 이름도 지어줬어요 #who
   보자마자 웃음나요
   생각보다 크네요 귀여워요
 `;
 const BAG = `
   가방 실물 깡패네요
   더스트백까지 다 왔어요
-  와이프 줬더니 난리났어요
+  와이프 줬더니 난리났어요 #who
   가죽 냄새부터 다르네요
   수납 생각보다 잘돼요
   매일 들고 다녀요
-  엄마 드렸어요 너무 좋아하세요
+  엄마 드렸어요 너무 좋아하세요 #who
   각 잡혀서 왔어요
   들고 나가면 다들 물어봐요
   색이 사진보다 고급져요
@@ -949,7 +1138,7 @@ const SPARE = `
   딱 맞아요
   언젠간 쓸일 있겠죠
   쓰던게 낡아서 마침 잘됐어요
-  어차피 사야되는거라 이득이에요
+  어차피 사야되는거라 잘됐어요
 `;
 
 export const TOPICS: Topic[] = [
@@ -996,7 +1185,7 @@ export const TOPICS: Topic[] = [
     책상에 올리니 꽉 차네요
   `),
   T("computer gaming", /타워|데스크톱|미니 PC|올인원|아이맥|맥 미니|맥 스튜디오|맥 프로|NUC|핸드헬드|클로 /, "", ""),
-  T("computer mobile gaming", /맥북|랩톱|노트북|씽크패드|그램 (?:프로|\d)|젠북|비보북|서피스 랩톱|크롬북|아이디어패드|요가 (?:슬림|프로|\d)|에이서 스위프트|아스파이어|블레이드 \d|스텔스 \d|제피러스|갤럭시 북|메이트북|옴니북|RTX \d{4}$|Core Ultra|Ryzen (?:AI )?\d|Snapdragon X/, "노트북", `
+  T("computer mobile gaming +sealed", /맥북|랩톱|노트북|씽크패드|그램 (?:프로|\d)|젠북|비보북|서피스 랩톱|크롬북|아이디어패드|요가 (?:슬림|프로|\d)|에이서 스위프트|아스파이어|블레이드 \d|스텔스 \d|제피러스|갤럭시 북|메이트북|옴니북|RTX \d{4}$|Core Ultra|Ryzen (?:AI )?\d|Snapdragon X/, "노트북", `
     노트북 미개봉이에요
     가볍고 빠르네요
     업무용으로 잘 쓰고 있어요
@@ -1006,14 +1195,14 @@ export const TOPICS: Topic[] = [
     쓰던거 느려서 바꾸려던 참이었어요
     배터리 오래가네요
   `, 400),
-  T("computer gaming", /메인보드|지포스|라데온|^(?:인텔|AMD) (?:코어|제온|라이젠|스레드리퍼|아크|에픽)|파워서플라이|SSD|수랭|CPU 쿨러|그래픽카드|DDR\d/, "", `
+  T("computer gaming +sealed", /메인보드|지포스|라데온|^(?:인텔|AMD) (?:코어|제온|라이젠|스레드리퍼|아크|에픽)|파워서플라이|SSD|수랭|CPU 쿨러|그래픽카드|DDR\d/, "", `
     컴 맞출때 쓰려구요
     봉인씰 그대로 왔어요
     조립해서 잘 쓰고 있어요
     정상 작동 확인했어요
     본체 업그레이드 했습니다
     이참에 컴퓨터 새로 맞춥니다
-    부품값 굳었네요
+    부품값 굳었네요 @money
     장착하고 바로 인식됐어요
   `),
   T("computer", /공유기|라우터|메시 와이파이|액세스 포인트/, "", `
@@ -1037,7 +1226,7 @@ export const TOPICS: Topic[] = [
 
   // ── 오디오
   T("audio", /이어팁|이어패드|이어쿠션|교체용|케이블|스탠드|마운트|어댑터|카트리지|케이스|브래킷|파우치|행거/, "", SPARE),
-  T("audio mobile gaming computer", /^(?!.*(?:케이스|이어팁|스트랩|커버)).*(?:이어폰|이어버드|(?:^|\s)버즈|이어버즈|게임버즈|에어팟(?! 맥스)|인이어)/, "이어폰", `
+  T("audio mobile gaming computer +sealed", /^(?!.*(?:케이스|이어팁|스트랩|커버)).*(?:이어폰|이어버드|(?:^|\s)버즈|이어버즈|게임버즈|에어팟(?! 맥스)|인이어)/, "이어폰", `
     음질 좋네요
     출퇴근길 필수템 됐어요
     귀에 잘 맞아요
@@ -1049,7 +1238,7 @@ export const TOPICS: Topic[] = [
     쓰던거 한쪽 잃어버렸는데 타이밍 좋네요
     하루종일 끼고 있어요
   `),
-  T("audio mobile gaming computer", /헤드폰|에어팟 맥스/, "헤드폰", `
+  T("audio mobile gaming computer +sealed", /헤드폰|에어팟 맥스/, "헤드폰", `
     소리 좋네요
     착용감 편해요
     해상도가 다르네요
@@ -1127,7 +1316,7 @@ export const TOPICS: Topic[] = [
     재택할때 유용하네요
     끊김 없이 잘돼요
   `),
-  T("gaming", /플레이스테이션 5|PS5 (?:프로|슬림|디스크|디지털)|닌텐도 스위치 (?:2|OLED|라이트)(?! .*(?:케이스|컨트롤러|독|충전|보호|파우치|그립))|Xbox 시리즈 [XS](?! .*(?:용|컨트롤러))|스팀 ?덱 (?:OLED|LCD|\d)|ROG (?:Xbox )?Ally|리전 고|닌텐도 스위치$/, "게임기", `
+  T("gaming +sealed", /플레이스테이션 5|PS5 (?:프로|슬림|디스크|디지털)|닌텐도 스위치 (?:2|OLED|라이트)(?! .*(?:케이스|컨트롤러|독|충전|보호|파우치|그립))|Xbox 시리즈 [XS](?! .*(?:용|컨트롤러))|스팀 ?덱 (?:OLED|LCD|\d)|ROG (?:Xbox )?Ally|리전 고|닌텐도 스위치$/, "게임기", `
     주말 순삭 예정입니다
     애들이 난리났어요
     게임 타이틀 사러 갑니다
@@ -1146,7 +1335,7 @@ export const TOPICS: Topic[] = [
     하나 더 필요했는데 잘됐어요
     여행갈때 챙기려구요
     사무실에 두고 써요
-    어차피 사야됐던거라 이득
+    어차피 사야됐던거라 잘됐네요
     발열 없이 잘돼요
     쓰던게 느려서 바꾸려던 참이었어요
   `),
@@ -1180,7 +1369,7 @@ export const TOPICS: Topic[] = [
     기분전환용으로 좋네요
     쓰던 줄이 낡아서 마침 잘됐어요
   `, 0, 700),
-  T("mobile watch sport", /애플 ?워치 (?:울트라|SE|시리즈|에르메스|\d)|갤럭시 워치|픽셀 워치|화웨이 워치|샤오미 워치|레드미 워치|원플러스 워치|워치 (?:GT|핏|S\d|X\d|D\d)|스마트 ?밴드|미 밴드|밴드 \d(?!\d*mm)|핏빗|어메이즈핏|비보스마트|비보액티브|vivosmart|vivoactive|포러너|가민 (?:피닉스|페닉스|베뉴|인스팅트|에픽스)|순토 (?:레이스|버티컬|\d)|밴티지|그릿 X|페이서/, "워치", `
+  T("mobile watch sport +sealed", /애플 ?워치 (?:울트라|SE|시리즈|에르메스|\d)|갤럭시 워치|픽셀 워치|화웨이 워치|샤오미 워치|레드미 워치|원플러스 워치|워치 (?:GT|핏|S\d|X\d|D\d)|스마트 ?밴드|미 밴드|밴드 \d(?!\d*mm)|핏빗|어메이즈핏|비보스마트|비보액티브|vivosmart|vivoactive|포러너|가민 (?:피닉스|페닉스|베뉴|인스팅트|에픽스)|순토 (?:레이스|버티컬|\d)|밴티지|그릿 X|페이서/, "워치", `
     운동할때 차요
     알림 바로바로 와서 편해요
     수면 측정 신기하네요
@@ -1190,21 +1379,21 @@ export const TOPICS: Topic[] = [
     러닝 기록 재는 용도로 써요
     화면 선명해요
   `, 20),
-  T("mobile computer", /아이패드|태블릿|갤럭시 탭|패드 (?:\d|프로|에어|SE|고|미니)|서피스 프로|메이트패드|리전 탭|탭 [SPAM]\d|픽셀 태블릿/, "태블릿 패드", `
+  T("mobile computer +sealed", /아이패드|태블릿|갤럭시 탭|패드 (?:\d|프로|에어|SE|고|미니)|서피스 프로|메이트패드|리전 탭|탭 [SPAM]\d|픽셀 태블릿/, "태블릿 패드", `
     화면 크고 좋아요
     애가 뺏어갔어요
     영상 보는 용도로 딱이에요
     미개봉 맞습니다
     침대에서 넷플릭스 봅니다
     필기용으로 쓰려구요
-    부모님 드렸더니 유튜브만 보세요
+    부모님 드렸더니 유튜브만 보세요 #who
     가볍고 빠릿해요
   `, 120),
-  T("mobile", /아이폰|갤럭시 [SZA]\d|갤럭시 Z|픽셀 \d|샤오미 \d|레드미|포코|원플러스 \d|파인드|리노|엑스페리아|젠폰|ROG 폰|레드매직|폰 \(|모토 [GE]|레이저 \d|엣지 \d|메이트 [X\d]|퓨라|노바 \d|매직 ?[V\d]|아너 \d|리얼미|카몬|팬텀|스파크|포바|핫 \d|제로 \d|비보 [XVY]|베르투|노키아|HMD|\d+GB\+\d+(?:GB|TB)/, "폰 핸드폰", `
+  T("mobile +sealed", /아이폰|갤럭시 [SZA]\d|갤럭시 Z|픽셀 \d|샤오미 \d|레드미|포코|원플러스 \d|파인드|리노|엑스페리아|젠폰|ROG 폰|레드매직|폰 \(|모토 [GE]|레이저 \d|엣지 \d|메이트 [X\d]|퓨라|노바 \d|매직 ?[V\d]|아너 \d|리얼미|카몬|팬텀|스파크|포바|핫 \d|제로 \d|비보 [XVY]|베르투|노키아|HMD|\d+GB\+\d+(?:GB|TB)/, "폰 핸드폰", `
     미개봉 새폰 왔어요
     폰 바꿀때 됐는데 딱이네요
     개통 잘 됩니다
-    부모님 폰 바꿔드렸어요
+    부모님 폰 바꿔드렸어요 #who
     유심 꽂으니 바로 되네요
     카메라 잘나오네요
     쓰던폰 액정 깨졌는데 타이밍 좋네요
@@ -1221,7 +1410,7 @@ export const TOPICS: Topic[] = [
     보증서랑 박스 다 들어있어요
     묵직하니 좋네요
     초침 가는거 계속 보게 되네요
-    아버지 드렸더니 매일 차고 다니세요
+    아버지 드렸더니 매일 차고 다니세요 #who
     실착하니 더 이쁘네요
     줄 줄이러 시계방 다녀왔어요
     오차 거의 없이 잘 가요
@@ -1232,27 +1421,27 @@ export const TOPICS: Topic[] = [
 
   // ── 가방, 주얼리
   T("bag jewelry", /크렘|크림|클리너|클로스|폼|브러시|스프레이|케어|박스|트레이(?!드)|스탠드|폴리싱|루페|퍼퓸|뚜왈렛|인서트|오거나이저|레인커버|세척기|워시|컨디셔너|로션|립|네일|블러쉬|큐브|여권|헤드밴드|선글라스|볼펜|컵|테스터|캔들|주얼리 (?:롤|케이스)/, "", "", 0, 800),
-  T("bag fashion", /스카프|트윌리|머플러|(?:^|\s)숄(?:\s|$)|까레/, "스카프", `
+  T("bag fashion +plain", /스카프|트윌리|머플러|(?:^|\s)숄(?:\s|$)|까레/, "스카프", `
     색감 이쁘네요
     촉감 부드러워요
     선물하기 좋아요
-    엄마 드렸어요 좋아하세요
-    박스 포장 고급져요
+    엄마 드렸어요 좋아하세요 #who
+    박스 포장 고급져요 #pack
     둘러보니 분위기가 달라지네요
   `),
-  T("bag fashion jewelry", /(?<!위드 )벨트(?! ?백)/, "벨트", `
+  T("bag fashion jewelry +plain", /(?<!위드 )벨트(?! ?백)/, "벨트", `
     버클 고급져요
     가죽 탄탄하네요
     매는 순간 달라보여요
     정장에 잘 어울려요
-    남편 줬어요 잘 하고 다녀요
+    남편 줬어요 잘 하고 다녀요 #who
     쓰던 벨트 버렸어요
   `, 0, 2500),
   // 가방 이름에 든 "브레이슬릿", "스터드" 는 장신구가 아니다(브레이슬릿 호보백, 락스터드 백)
-  T("bag jewelry", /^(?!.*(?:백|토트|호보|클러치|사첼)(?:\s|$)).*(?:네크리스|목걸이|펜던트|스트랜드|초커)/, "목걸이", JEWEL),
-  T("bag jewelry", /^(?!.*(?:백|토트|호보|클러치|사첼)(?:\s|$)).*(?:브레이슬릿|팔찌|뱅글|커프)/, "팔찌", JEWEL),
-  T("bag jewelry", /^(?!.*(?:백|토트|호보|클러치|사첼)(?:\s|$)).*(?:이어링|귀걸이|스터드 이어|이어 스터드|후프)/, "귀걸이", JEWEL),
-  T("jewelry", /(?:^|\s)링(?:\s|$)|반지|솔리테어|웨딩 밴드|인게이지먼트|밴드 링|다이아몬드 밴드|이터니티/, "반지", JEWEL),
+  T("bag jewelry +plain", /^(?!.*(?:백|토트|호보|클러치|사첼)(?:\s|$)).*(?:네크리스|목걸이|펜던트|스트랜드|초커)/, "목걸이", JEWEL),
+  T("bag jewelry +plain", /^(?!.*(?:백|토트|호보|클러치|사첼)(?:\s|$)).*(?:브레이슬릿|팔찌|뱅글|커프)/, "팔찌", JEWEL),
+  T("bag jewelry +plain", /^(?!.*(?:백|토트|호보|클러치|사첼)(?:\s|$)).*(?:이어링|귀걸이|스터드 이어|이어 스터드|후프)/, "귀걸이", JEWEL),
+  T("jewelry +plain", /(?:^|\s)링(?:\s|$)|반지|솔리테어|웨딩 밴드|인게이지먼트|밴드 링|다이아몬드 밴드|이터니티/, "반지", JEWEL),
   T("bag", /^(?!.*(?:백|토트|호보|클러치|사첼)(?:\s|$)).*(?:월렛|지갑|카드 ?홀더|카드 ?케이스)/, "지갑", `
     지갑 바꿀때 됐는데 잘됐네요
     카드 딱 맞게 들어가요
@@ -1273,10 +1462,10 @@ export const TOPICS: Topic[] = [
   T("fashion outdoor sport", /양말|삭스|삭(?:\s|$)|캡(?:\s|$)|비니|모자|햇(?:\s|$)|장갑|왁스|컨디셔너|크림|폴리시|브러시|슈트리|인솔|깔창|슈레이스|스프레이|클리너|키트|지갑|게이터|워머|\d켤레/, "", "", 0, 400),
   T("fashion", /백팩|가방|백(?:\s|$)|타월|보틀|글러브|선글라스|고글/, "", ""),
   // 옷 이름은 낱말 단위로만 맞춘다("인피니트"의 니트, "알파카"의 파카, "올코트"의 코트가 옷이 되지 않게)
-  T("fashion outdoor sport", /^(?!.*(?:침낭|더플|텐트|블랭킷|퀼트)).*(?:^|\s)(?:재킷|파카|다운|패딩|플리스|눕시|후디|스웨터|베스트|풀오버|아노락|가디건|카디건|니트|집업|윈드브레이커|점퍼)(?:\s|$)/, "옷", OUTER),
+  T("fashion outdoor sport +plain", /^(?!.*(?:침낭|더플|텐트|블랭킷|퀼트)).*(?:^|\s)(?:재킷|파카|다운|패딩|플리스|눕시|후디|스웨터|베스트|풀오버|아노락|가디건|카디건|니트|집업|윈드브레이커|점퍼)(?:\s|$)/, "옷", OUTER),
   // 코트는 패션 박스에서만 옷이다(아웃도어의 코트는 야전침대, 스포츠의 올코트는 신발이다)
-  T("fashion", /(?:^|\s)(?:코트|트렌치코트)(?:\s|$)/, "옷 코트", OUTER),
-  T("fashion outdoor sport", /(?:^|\s)(?:티셔츠|반팔|셔츠|쇼츠|팬츠|바지|레깅스|수트|저지|타이츠|스커트|드레스|조거|브라|스웨트셔츠|청바지)(?:\s|$)/, "옷", `
+  T("fashion +plain", /(?:^|\s)(?:코트|트렌치코트)(?:\s|$)/, "옷 코트", OUTER),
+  T("fashion outdoor sport +plain", /(?:^|\s)(?:티셔츠|반팔|셔츠|쇼츠|팬츠|바지|레깅스|수트|저지|타이츠|스커트|드레스|조거|브라|스웨트셔츠|청바지)(?:\s|$)/, "옷", `
     핏 이쁘네요
     택 그대로 달려왔어요
     원단 좋네요
@@ -1286,7 +1475,7 @@ export const TOPICS: Topic[] = [
     마감 꼼꼼해요
     세탁해도 멀쩡하네요
   `),
-  T("fashion", /스니커즈|부츠|러너|샌들|슬라이드|로퍼|클로그|펌프스|덩크|조던|에어 ?포스|에어 ?맥스|올스타|척 ?테일러|척 70|올드스쿨|6인치|첼시|1460|1461|아리조나|보스턴|뮬|슬리퍼|운동화|러닝화|트레일|젤-|스피드크로스|XT-6|클리프톤|본디|클라우드|이지 ?부스트|삼바|가젤|슈퍼스타|스탠 스미스|캠퍼스|\d{3,4}v?\d?(?:\s|$)|레트로|엔돌핀|에스칼란테|론 피크|클래식 (?:미니|울트라 미니|쇼트|톨)|타스만|SK8|어센틱|에라|슬립온|하이(?:\s|$)|로우(?:\s|$)|미드(?:\s|$)|마하|카야노|님버스|노바블라스트|페가수스|베이퍼|줌 |옥스퍼드|더비|젤[- ]|부스트|프레시폼|나이키|아디다스|뉴발란스|아식스|살로몬|호카|컨버스|반스|닥터마틴|팀버랜드|버켄스탁|어그|리복|브룩스|사코니|알트라|머렐|푸마|스포르티바|미즈노|크록스|이지 \d/, "신발", `
+  T("fashion +plain", /스니커즈|부츠|러너|샌들|슬라이드|로퍼|클로그|펌프스|덩크|조던|에어 ?포스|에어 ?맥스|올스타|척 ?테일러|척 70|올드스쿨|6인치|첼시|1460|1461|아리조나|보스턴|뮬|슬리퍼|운동화|러닝화|트레일|젤-|스피드크로스|XT-6|클리프톤|본디|클라우드|이지 ?부스트|삼바|가젤|슈퍼스타|스탠 스미스|캠퍼스|\d{3,4}v?\d?(?:\s|$)|레트로|엔돌핀|에스칼란테|론 피크|클래식 (?:미니|울트라 미니|쇼트|톨)|타스만|SK8|어센틱|에라|슬립온|하이(?:\s|$)|로우(?:\s|$)|미드(?:\s|$)|마하|카야노|님버스|노바블라스트|페가수스|베이퍼|줌 |옥스퍼드|더비|젤[- ]|부스트|프레시폼|나이키|아디다스|뉴발란스|아식스|살로몬|호카|컨버스|반스|닥터마틴|팀버랜드|버켄스탁|어그|리복|브룩스|사코니|알트라|머렐|푸마|스포르티바|미즈노|크록스|이지 \d/, "신발", `
     발 편하네요
     신발 박스채로 왔어요
     색 이쁘게 잘 빠졌어요
@@ -1331,7 +1520,7 @@ export const TOPICS: Topic[] = [
     쓰던게 낡아서 마침 잘됐어요
     정품이라 믿고 써요
   `),
-  T("camera", /드론|매빅|아바타|인스파이어|플립|네오(?:\s|$)|미니 \d|에어 \dS?/, "드론", `
+  T("camera +sealed", /드론|매빅|아바타|인스파이어|플립|네오(?:\s|$)|미니 \d|에어 \dS?/, "드론", `
     날려봤는데 재밌어요
     영상 깔끔하게 나와요
     조종 쉬워요
@@ -1347,7 +1536,7 @@ export const TOPICS: Topic[] = [
     영상 찍는 재미가 생겼어요
     무게 균형 잡는게 금방 돼요
   `, 0, 1500),
-  T("camera", /고프로|히어로|인스타360|오즈모|액션|포켓 \d|에이스 프로|GO \d|아카소/, "액션캠", `
+  T("camera +sealed", /고프로|히어로|인스타360|오즈모|액션|포켓 \d|에이스 프로|GO \d|아카소/, "액션캠", `
     여행 영상 찍으려구요
     화질 좋네요
     손떨림 보정 잘돼요
@@ -1356,7 +1545,7 @@ export const TOPICS: Topic[] = [
     물놀이 갈때 챙기려구요
     자전거 탈때 달고 타요
   `, 120, 1500),
-  T("camera", /EOS|알파|[αA]\d|X-[A-Z]\d|X100|GFX|Z ?\d|Zf|라이카 (?:Q|M|SL|D-Lux|소포트|CL)|X2D|907X|GR III|K-\d|루믹스|OM-\d|파워샷|사이버샷|ZV-|FX\d|인스탁스|폴라로이드|카메라|바디|IQ4|XF|XT|Alpha|LUMIX|V-RAPTOR|KOMODO|VENICE|BURANO|H6D|Tough|WG-|GR IV|ZR(?:\s|$)/, "카메라", `
+  T("camera +sealed", /EOS|알파|[αA]\d|X-[A-Z]\d|X100|GFX|Z ?\d|Zf|라이카 (?:Q|M|SL|D-Lux|소포트|CL)|X2D|907X|GR III|K-\d|루믹스|OM-\d|파워샷|사이버샷|ZV-|FX\d|인스탁스|폴라로이드|카메라|바디|IQ4|XF|XT|Alpha|LUMIX|V-RAPTOR|KOMODO|VENICE|BURANO|H6D|Tough|WG-|GR IV|ZR(?:\s|$)/, "카메라", `
     사진 찍을맛 나네요
     여행갈때 들고 가려구요
     셔터 소리 좋아요
@@ -1373,7 +1562,7 @@ export const TOPICS: Topic[] = [
     여분으로 쟁여뒀어요
     교체할때 됐는데 잘됐네요
     소모품이라 있으면 좋죠
-    어차피 사야되는거라 이득이에요
+    어차피 사야되는거라 잘됐어요
     정품이라 믿고 써요
     딱 맞게 들어가요
   `, 0, 150),
@@ -1414,30 +1603,37 @@ export const TOPICS: Topic[] = [
     매일 써요
     써보니 왜 사는지 알겠네요
     집밥 해먹는 횟수가 늘었어요
-    엄마 드렸더니 좋아하세요
+    엄마 드렸더니 좋아하세요 #who
     자취방 필수템이네요
     조작 간단해서 좋아요
     쓰던게 오래돼서 마침 잘됐어요
   `),
-  T("home", /냉장고|세탁기|건조기|식기세척기|레인지|에어컨|안마의자|워시타워|의류관리기/, "", `
+  T("home +bulky", /냉장고|세탁기|건조기|식기세척기|레인지|에어컨|안마의자|워시타워|의류관리기/, "", `
     집에 들여놓으니 든든하네요
     살림이 편해졌어요
     조용하게 잘 돌아가요
-    부모님댁에 놔드렸어요
+    부모님댁에 놔드렸어요 #who
     이사 앞두고 있었는데 타이밍 좋네요
     쓰던게 오래돼서 마침 잘됐어요
     크기 보고 놀랐어요
     가전은 역시 새거네요
+    설치까지 깔끔하게 해주고 가셨어요
+    자리 잡고 수평까지 맞춰주셨어요
+    쓰던건 수거해 가셔서 편했어요
+    설치 기사님이 사용법도 알려주셨어요
   `, 300),
-  T("home", /TV|올레드|브라비아|QLED|OLED|마이크로 LED|더 프레임|(?:[4-9]\d|1\d\d)인치/, "TV 티비", `
+  T("home +bulky", /TV|올레드|브라비아|QLED|OLED|마이크로 LED|더 프레임|(?:[4-9]\d|1\d\d)인치/, "TV 티비", `
     화질 미쳤어요
     거실이 꽉 차네요
     영화볼맛 납니다
     설치하고 한참 쳐다봤어요
-    부모님댁에 놔드렸어요
+    부모님댁에 놔드렸어요 #who
     넷플릭스 보는 시간이 늘었네요
     화면 크니까 속이 시원해요
     색감 좋아요
+    설치까지 깔끔하게 해주고 가셨어요
+    벽걸이로 달아주셨는데 깔끔하네요
+    설치 기사님이 설정까지 봐주셨어요
   `, 300),
   T("home", /공기청정기|퓨리파이어|에어메가|가습기|제습기|선풍기|서큘레이터|히터/, "", `
     틀어놓으니 공기가 다르네요
@@ -1445,7 +1641,7 @@ export const TOPICS: Topic[] = [
     안방에 놨어요
     밤에 틀어도 안시끄러워요
     디자인 깔끔해서 어디 둬도 괜찮네요
-    애기방에 놔줬어요
+    애기방에 놔줬어요 #who
     계절 바뀌기 전에 잘 받았네요
     켜놓고 자니 좋아요
   `),
@@ -1453,8 +1649,8 @@ export const TOPICS: Topic[] = [
     절삭력 좋아요
     피부 자극 없네요
     아침 시간이 줄었어요
-    남편 줬더니 좋아해요
-    아빠 드렸어요
+    남편 줬더니 좋아해요 #who
+    아빠 드렸어요 #who
     깔끔하게 잘 밀려요
     충전 오래가요
     세척 편해요
@@ -1479,7 +1675,7 @@ export const TOPICS: Topic[] = [
   `, 80),
 
   // ── 포켓몬 카드, 장난감
-  T("toy car pokemon gaming", /레고|메가 ?블록|나노블록/, "레고", `
+  T("toy car pokemon gaming +pack", /레고|메가 ?블록|나노블록|조립 세트/, "레고", `
     조립하는 재미가 있네요
     애랑 주말에 같이 만들었어요
     박스 크기에 놀랐어요
@@ -1487,22 +1683,22 @@ export const TOPICS: Topic[] = [
     부품 누락 없어요
     만드는데 이틀 걸렸네요
     완성하니 뿌듯해요
-    박스 찌그러짐 없이 왔어요
+    박스 찌그러짐 없이 왔어요 #pack
     조립하다 시간 가는줄 몰랐어요
   `),
-  T("toy pokemon", /인형|젤리캣|슈타이프|테디|플러시|봉제|버니|어뮤저블|배시풀|마일레그|큐티즈|스퀴시멜로우/, "인형", PLUSH),
-  T("toy pokemon gaming", /피규어|넨도로이드|건담|핫토이|베어브릭|팝마트|블라인드|라부부|스미스키|몰리|카우스|굿스마일|펀코|프라모델|피그마|스태츄/, "피규어", `
+  T("toy pokemon +plain", /인형|젤리캣|슈타이프|테디|플러시|봉제|버니|어뮤저블|배시풀|마일레그|큐티즈|스퀴시멜로우/, "인형", PLUSH),
+  T("toy pokemon gaming +plain", /피규어|넨도로이드|건담|핫토이|베어브릭|팝마트|블라인드|라부부|스미스키|몰리|카우스|굿스마일|펀코|프라모델|모델 키트|피그마|스태츄/, "피규어", `
     디테일 좋네요
     장식장에 세워놨어요
     도색 깔끔해요
-    박스 상태도 좋아요
+    박스 상태도 좋아요 #pack
     원하던 캐릭터라 더 좋네요
     책상 위에 올려놨어요
     컬렉션이 하나 늘었네요
     보고만 있어도 기분 좋아요
     실물이 사진보다 낫네요
   `),
-  T("pokemon", /슬리브|탑로더|바인더|덱 박스|플레이매트|프로텍터|스탠드|케이스|포트폴리오/, "", `
+  T("pokemon", /슬리브|탑로더|바인더|앨범|페이지|홀더|세이버|덱 박스|플레이매트|프로텍터|스탠드|케이스|포트폴리오/, "", `
     카드 보관할때 쓰려구요
     어차피 필요한거라 좋아요
     넉넉하게 들어있네요
@@ -1510,7 +1706,7 @@ export const TOPICS: Topic[] = [
     수집하는 사람한텐 필수죠
     소모품이라 많을수록 좋아요
   `, 0, 120),
-  T("pokemon", /PSA|BGS|CGC/, "카드", `
+  T("pokemon +single", /PSA|BGS|CGC/, "카드", `
     케이스 흠집 없어요
     등급 케이스째로 잘 왔어요
     라벨 번호 조회해봤어요 맞네요
@@ -1521,21 +1717,10 @@ export const TOPICS: Topic[] = [
     장식장 제일 윗칸에 올려놨어요
     홀로 반짝이는거 계속 보게 되네요
   `),
-  T("pokemon", /부스터|박스|팩(?:\s|$)|틴(?:\s|$)|번들|컬렉션|트레이너|덱|블리스터|세트$/, "", `
-    밀봉 그대로 왔어요
-    뜯을지 말지 고민중이에요
-    아까워서 못뜯겠네요
-    애랑 같이 깠어요 재밌네요
-    깠는데 괜찮은거 나왔어요
-    미개봉으로 소장하려구요
-    씰 상태 깨끗해요
-    찌그러진데 없이 왔어요
-    진열장에 올려놨어요
-    까는 재미가 있네요
-  `),
-  T("pokemon", ANY, "카드", `
+  // 낱장 카드: 이름에 카드 번호(4/102, SV49/SV94)나 프로모가 들어 있다. 세트 이름의 "컬렉션" 때문에 밀봉 상품으로 넘어가지 않게 먼저 가린다
+  T("pokemon +single", /\d\/[A-Z]*\d|프로모|콜 오브 레전드 SL\d/, "카드", `
     카드 상태 좋아요
-    슬리브랑 탑로더에 넣어서 왔어요
+    슬리브랑 탑로더에 넣어서 왔어요 #pack
     센터링 괜찮네요
     바인더에 고이 모셔놨어요
     실물 영롱하네요
@@ -1544,12 +1729,26 @@ export const TOPICS: Topic[] = [
     스크래치 없이 깨끗해요
     등급 보내볼까 고민중이에요
   `),
-  T("toy", /에어브러시|수납함|니퍼|도료|접착제|컴프레서|페인트|붓|매트|툴|스탠드|케이스|트랙 팩|배터리|충전기/, "", ""),
-  T("toy", /^(?!.*(?:타미야|트랙사스|로시|RC|미니사구|아르마)).*1[:/]\d+/, "모형", `
+  T("pokemon +pack", /^포켓몬 카드 게임 |부스터|박스|팩(?:\s|$)|틴(?:\s|$)|번들|컬렉션|트레이너|덱|블리스터|세트$/, "", `
+    밀봉 그대로 왔어요
+    뜯을지 말지 고민중이에요
+    아까워서 못뜯겠네요
+    애랑 같이 깠어요 재밌네요
+    깠는데 괜찮은거 나왔어요
+    미개봉으로 소장하려구요
+    씰 상태 깨끗해요
+    찌그러진데 없이 왔어요 #pack
+    진열장에 올려놨어요
+    까는 재미가 있네요
+  `),
+  // 남은 것은 무엇인지 모른다: 카드라고도 밀봉 상품이라고도 하지 않는다
+  T("pokemon", ANY, "", ""),
+  T("toy", /에어브러시|수납함|수납장|선반|니퍼|나이프|도료|신너|스프레이|서페이서|마크 세터|컬러 .*세트|접착제|컴프레서|페인트|붓|브러시|마커|매트|툴|스탠드|액션 베이스|케이스|트랙 팩|배터리|충전기/, "", ""),
+  T("toy +plain", /^(?!.*(?:타미야|트랙사스|로시|RC|미니사구|아르마)).*1[:/]\d+/, "모형", `
     디테일 좋네요
     장식장에 세워놨어요
     도색 깔끔해요
-    박스 상태도 좋아요
+    박스 상태도 좋아요 #pack
     컬렉션이 하나 늘었네요
     보고만 있어도 기분 좋아요
     실물이 사진보다 낫네요
@@ -1562,7 +1761,16 @@ export const TOPICS: Topic[] = [
     디테일 살아있네요
     어릴때 생각나네요
   `, 0, 3000),
-  T("toy", /퍼즐|라벤스부르거|보드게임|그래비트랙스|러시 아워/, "", `
+  T("toy", /보드게임|카탄|티켓 투 라이드|윙스팬|커넥트 4|젠가|스팟잇|스킵보|카드 게임|페이즈 10/, "보드게임", `
+    가족끼리 한판 했어요
+    주말에 시간 잘 가네요
+    애들이랑 하기 좋아요
+    집콕할때 딱이에요
+    친구들 왔을때 꺼내면 좋아요
+    규칙 금방 익혔어요
+    한판만 하려다 세판 했네요
+  `, 0, 500),
+  T("toy", /퍼즐|라벤스부르거|그래비트랙스|러시 아워/, "", `
     가족끼리 한판 했어요
     주말에 시간 잘 가네요
     맞추는 재미가 있어요
@@ -1570,17 +1778,17 @@ export const TOPICS: Topic[] = [
     은근 어렵네요 재밌어요
     집콕할때 딱이에요
   `, 0, 500),
-  T("toy", ANY, "장난감", `
+  T("toy +plain", ANY, "장난감", `
     애가 좋아해요
-    조카 줬더니 신났네요
+    조카 줬더니 신났네요 #who
     아들이 하루종일 갖고 놀아요
-    딸 생일선물 해결했어요
-    어린이날 선물 미리 챙겼네요
+    딸 생일선물 해결했어요 #who
+    어린이날 선물 미리 챙겼네요 #who
     튼튼하게 잘 만들었네요
     색감 이쁘고 마감 좋아요
     조카가 놓질 않아요
     집에 가자마자 뜯어달래요
-  `, 0, 400),
+  `, 0, 60),
 
   // ── 아웃도어
   T("outdoor", /텐트|타프|쉘터/, "텐트", `
@@ -1669,12 +1877,12 @@ export const TOPICS: Topic[] = [
     라운딩 나가서 써봤어요
     어차피 잃어버릴거 넉넉하게 챙겨요
     타구감 좋네요
-    아빠 드렸어요
+    아빠 드렸어요 #who
     필드 나갈때 챙겨요
   `),
   T("sport", /스트링(?! 머신)|오버그립|그립 ?테이프|댐퍼|댐프|셔틀콕|바테이프|\d+개입|캔(?:\s|$)|튜브|어태치먼트|교체용/, "", `
     소모품이라 넉넉하면 좋죠
-    어차피 사야되는거라 이득이에요
+    어차피 사야되는거라 잘됐어요
     쟁여뒀어요
     운동 갈때 챙겨요
     동호회 사람들이랑 나눠 썼어요
@@ -1686,7 +1894,7 @@ export const TOPICS: Topic[] = [
     연습장 가서 쳐봤어요
     손맛 좋습니다
     필드 나갈 날만 기다려요
-    아버지 드렸더니 좋아하세요
+    아버지 드렸더니 좋아하세요 #who
     스코어 줄일 일만 남았네요
   `, 100),
   T("sport", /라켓(?! 백)|패들|퓨어 (?:스트라이크|에어로|드라이브)|이존|브이코어|아스트록스|아크세이버|나노플레어|붐 (?:MP|프로)|스피드 (?:MP|프로)|래디컬|프로 스태프|클래시|RF 01|시프트 \d/, "라켓", `
@@ -1732,7 +1940,7 @@ export const TOPICS: Topic[] = [
     강습 갈때 챙겨요
     시야 넓어서 좋아요
   `),
-  T("sport", /트레드밀|로잉|로워|에르그|스테퍼|일립티컬|실내 ?자전거|바이크에르그/, "", `
+  T("sport +bulky", /트레드밀|로잉|로워|에르그|스테퍼|일립티컬|실내 ?자전거|바이크에르그/, "", `
     집에서 운동하니 편하네요
     매일 30분씩 타요
     조립 생각보다 쉬웠어요
@@ -1740,6 +1948,8 @@ export const TOPICS: Topic[] = [
     헬스장 끊을까 고민중이에요
     거실 한켠을 차지했네요
     땀 제대로 납니다
+    기사님이 자리까지 옮겨주고 가셨어요
+    설치 날짜 맞춰서 잘 받았어요
   `, 300),
   T("sport", /요가|매트|블록|폼롤러|덤벨|케틀벨|바벨|플레이트|벤치|TRX|줄넘기|웨이트|밴드|발라|메디신 볼|파워 ?랙/, "", `
     홈트할때 써요
@@ -1760,33 +1970,33 @@ export const TOPICS: Topic[] = [
     거실에 놨어요
     침대 옆에 뒀어요 향 좋네요
   `),
-  T("beauty", /^(?!.*(?:코롱|퍼퓸|뚜왈렛|빠르펭|엑스트레|바카라)).*(?:립스틱|루쥬|립 ?글로우|립 ?틴트|립글로스|팔레트|파운데이션|마스카라|쿠션|블러셔|블러쉬|아이섀도|컨실러|하이라이터|파우더|틴트|아이라이너)/, "", `
+  T("beauty +sealed", /^(?!.*(?:코롱|퍼퓸|뚜왈렛|빠르펭|엑스트레|바카라)).*(?:립스틱|루쥬|립 ?글로우|립 ?틴트|립글로스|팔레트|파운데이션|마스카라|쿠션|블러셔|블러쉬|아이섀도|컨실러|하이라이터|파우더|틴트|아이라이너)/, "", `
     색 이쁘네요
     발색 좋아요
     데일리로 쓰기 좋아요
     케이스가 고급져요
     파우치에 넣고 다녀요
     지속력 괜찮아요
-    여자친구 줬어요 좋아하네요
+    여자친구 줬어요 좋아하네요 #who
     색이 사진이랑 같아요
   `),
-  T("beauty", /^(?!.*(?:퍼퓸|뚜왈렛|코롱)).*(?:바디|핸드|로션|워시|샤워|샴푸|컨디셔너|(?:^|\s)솝(?:\s|$)|비누|립 ?밤|밤(?:\s|$)|데오)/, "", `
+  T("beauty +sealed", /^(?!.*(?:퍼퓸|뚜왈렛|코롱)).*(?:바디|핸드|로션|워시|샤워|샴푸|컨디셔너|(?:^|\s)솝(?:\s|$)|비누|립 ?밤|밤(?:\s|$)|데오)/, "", `
     향 좋아요
     촉촉해요
     향이 오래가요
     끈적임 없어요
     선물하기 좋아요
     매일 써요
-    엄마 드렸어요
-    원래 쓰던건데 득템이네요
+    엄마 드렸어요 #who
+    원래 쓰던건데 득템이네요 @money
   `),
-  T("beauty", /퍼퓸|뚜왈렛|코롱|빠르펭|파르펭|오 드|오드 |엑스트레|향수/, "향수", `
+  T("beauty +sealed", /퍼퓸|뚜왈렛|코롱|빠르펭|파르펭|오 드|오드 |엑스트레|향수/, "향수", `
     향 너무 좋아요
     지속력 괜찮네요
     뿌리고 나갔더니 향수 뭐냐고 물어봐요
     잔향이 좋네요
     박스 실링 그대로 왔어요
-    남편 줬는데 잘 뿌리고 다녀요
+    남편 줬는데 잘 뿌리고 다녀요 #who
     시향 못해보고 받았는데 취향이네요
     병이 이뻐서 화장대에 올려놨어요
     데일리로 뿌리기 좋아요
@@ -1796,17 +2006,17 @@ export const TOPICS: Topic[] = [
     첫향보다 잔향이 더 좋네요
     용량 넉넉해서 오래 쓰겠어요
   `),
-  T("beauty", /크림|세럼|에센스|오일|클렌저|클렌징|마스크|토너|스킨|앰플|트리트먼트|컨센트레이트|모이스처|선크림|자외선|크렘|로씨옹/, "", `
+  T("beauty +sealed", /크림|세럼|에센스|오일|클렌저|클렌징|마스크|토너|스킨|앰플|트리트먼트|컨센트레이트|모이스처|선크림|자외선|크렘|로씨옹/, "", `
     발림성 좋아요
     촉촉하네요
     유통기한 넉넉해요
     피부에 잘 맞아요
-    엄마 드렸어요
-    원래 쓰던건데 득템이네요
+    엄마 드렸어요 #who
+    원래 쓰던건데 득템이네요 @money
     흡수 빨라요
     자극 없이 순해요
     아껴 바르고 있어요
-    백화점 가격 생각하면 이득이죠
+    백화점 가격 생각하면 이득이죠 @money
     다음날 피부가 다르네요
     용량 넉넉해요
   `),
@@ -1821,8 +2031,10 @@ export const TOPICS: Topic[] = [
     타는 재미가 있네요
     조립하고 동네 한바퀴 돌았어요
   `, 300, 20000),
-  T("car", /타이어|부가티 베이비|퍼슈트/, "", ""),
-  T("car", /KTM|두카티|야마하|가와사키|할리|모토라드|트라이엄프|베스파|인디언|스즈키|아프릴리아|혼다 (?:아프리카|레블|슈퍼 커브|CB|CRF|골드윙|몽키|그롬|트랜잘프)/, "바이크", `
+  T("car", /타이어|부가티 베이비|퍼슈트|체스트|러기지/, "", ""),
+  // 트레일러는 넘겨받지만 시동을 걸지는 않는다
+  T("car +vehicle", /트레일러/, "", ""),
+  T("car +vehicle", /KTM|두카티|야마하|가와사키|할리|모토라드|트라이엄프|베스파|인디언|스즈키|아프릴리아|혼다 (?:아프리카|레블|슈퍼 커브|CB|CRF|골드윙|몽키|그롬|트랜잘프)/, "바이크", `
     주말에 타고 나갔다왔어요
     엔진 소리 좋네요
     헬멧부터 사러 갑니다
@@ -1830,6 +2042,9 @@ export const TOPICS: Topic[] = [
     실물 보니까 실감나네요
     친구들이 부러워해요
     받는 날 잠을 못잤어요
+    넘겨받은 날 바로 한바퀴 돌았어요
+    서류까지 꼼꼼하게 챙겨주셨어요
+    넘겨받을때 설명을 잘 해주셨어요
   `, 1500),
   T("car", /충전기/, "충전기", `
     충전 잘돼요
@@ -1839,7 +2054,7 @@ export const TOPICS: Topic[] = [
     방전 걱정 덜었네요
     정상 작동 확인했어요
   `),
-  T("car", ANY, "차", `
+  T("car +vehicle", ANY, "차", `
     아직도 실감이 안나요
     주차장에 세워두고 계속 보러 가요
     가족들이 안믿어요
@@ -1851,6 +2066,10 @@ export const TOPICS: Topic[] = [
     동네 한바퀴 돌고 왔어요
     보험 알아보는중이에요
     키 받는데 손이 떨렸어요
+    넘겨받는 날 한참 구경만 했어요
+    서류까지 꼼꼼하게 챙겨주셨어요
+    탁송 기사님이 설명도 잘 해주셨어요
+    세차부터 하고 왔어요
   `, 15000),
   T("car sport outdoor", /헬멧/, "헬멧", `
     핏 좋아요
@@ -1874,20 +2093,20 @@ export const TOPICS: Topic[] = [
     튼튼해서 안심돼요
     마침 필요했는데 잘됐어요
     쿠션 푹신해요
-    조카네 줬어요
+    조카네 줬어요 #who
   `),
   T("car", /노코|점프|세차|왁스|디테일|타월|방향제|거치대|매트|커버|오거나이저|공기압|인플레이터|컴프레서|진공|워셔|클리너|키트|스크레이퍼/, "", `
     차에 넣어두니 든든하네요
     트렁크에 넣어뒀어요
     차에 두고 쓰려구요
     운전하는 사람한텐 필수죠
-    아버지 차에 넣어드렸어요
+    아버지 차에 넣어드렸어요 #who
     있으면 언젠간 쓰죠
   `, 0, 600),
 ];
 
 /** 옛 박스의 디지털 상품(상품권). 배송이 없으니 배송 조각은 붙이지 않는다 */
-export const GIFT: Topic = T("*", ANY, "상품권 기프트카드", `
+export const GIFT: Topic = T("* +digital", ANY, "상품권 기프트카드", `
   코드 바로 왔어요
   등록하니 잔액 바로 들어오네요
   기다릴 필요 없이 바로 받아서 좋아요
@@ -1895,5 +2114,5 @@ export const GIFT: Topic = T("*", ANY, "상품권 기프트카드", `
   바로 써버렸어요
   결제할때 잘 썼습니다
   코드 입력하니 정상 등록됐어요
-  선물로 보내줬어요
+  선물로 보내줬어요 #who
 `);

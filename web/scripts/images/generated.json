@@ -2071,6 +2071,10 @@
     "file": "bag-chloe-medium-woody-tote-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "bag-chloe-mini-woody-tote-bag": {
+    "file": "bag-chloe-mini-woody-tote-bag.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "bag-chloe-nano-woody-tote-bag": {
     "file": "bag-chloe-nano-woody-tote-bag.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -12919,8 +12923,32 @@
     "file": "da-watchse.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-adidas-adilette-aqua-slides": {
+    "file": "fashion-adidas-adilette-aqua-slides.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-adistar-3": {
+    "file": "fashion-adidas-adistar-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-adidas-adizero-adios-pro-evo-1": {
     "file": "fashion-adidas-adizero-adios-pro-evo-1.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-adizero-adios-pro-evo-2": {
+    "file": "fashion-adidas-adizero-adios-pro-evo-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-adizero-evo-sl": {
+    "file": "fashion-adidas-adizero-evo-sl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-adizero-prime-x-2-strung": {
+    "file": "fashion-adidas-adizero-prime-x-2-strung.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-ae-1": {
+    "file": "fashion-adidas-ae-1.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-adidas-bad-bunny-x-adidas-forum-buckle-low-the-first-caf": {
@@ -12931,12 +12959,40 @@
     "file": "fashion-adidas-balenciaga-x-adidas-triple-s.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-adidas-campus-00s": {
+    "file": "fashion-adidas-campus-00s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-adidas-chanel-x-pharrell-x-adidas-nmd-hu": {
     "file": "fashion-adidas-chanel-x-pharrell-x-adidas-nmd-hu.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-adidas-cushioned-crew-socks-3-pack": {
+    "file": "fashion-adidas-cushioned-crew-socks-3-pack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-cushioned-crew-socks-6-pack": {
+    "file": "fashion-adidas-cushioned-crew-socks-6-pack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-d-o-n-issue-6": {
+    "file": "fashion-adidas-d-o-n-issue-6.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-f50-elite-fg-football-boots": {
+    "file": "fashion-adidas-f50-elite-fg-football-boots.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-gazelle": {
+    "file": "fashion-adidas-gazelle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-adidas-gucci-x-adidas-gazelle": {
     "file": "fashion-adidas-gucci-x-adidas-gazelle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-handball-spezial": {
+    "file": "fashion-adidas-handball-spezial.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-adidas-pharrell-x-adidas-nmd-hu-human-race-yellow": {
@@ -12951,6 +13007,42 @@
     "file": "fashion-adidas-prada-for-adidas-superstar.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-adidas-predator-elite-fg-football-boots": {
+    "file": "fashion-adidas-predator-elite-fg-football-boots.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-relaxed-strap-back-hat": {
+    "file": "fashion-adidas-relaxed-strap-back-hat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-samba-og": {
+    "file": "fashion-adidas-samba-og.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-stan-smith": {
+    "file": "fashion-adidas-stan-smith.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-supernova-rise-2": {
+    "file": "fashion-adidas-supernova-rise-2.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-superstar": {
+    "file": "fashion-adidas-superstar.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-trefoil-beanie": {
+    "file": "fashion-adidas-trefoil-beanie.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-wales-bonner-x-adidas-samba": {
+    "file": "fashion-adidas-wales-bonner-x-adidas-samba.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-y-3-qasa-high": {
+    "file": "fashion-adidas-y-3-qasa-high.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-adidas-yeezy-boost-350-pirate-black-2015": {
     "file": "fashion-adidas-yeezy-boost-350-pirate-black-2015.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -12963,8 +13055,32 @@
     "file": "fashion-adidas-yeezy-boost-350-v2-beluga.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-adidas-yeezy-boost-350-v2-bred": {
+    "file": "fashion-adidas-yeezy-boost-350-v2-bred.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-yeezy-boost-350-v2-zebra": {
+    "file": "fashion-adidas-yeezy-boost-350-v2-zebra.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-yeezy-boost-700-wave-runner": {
+    "file": "fashion-adidas-yeezy-boost-700-wave-runner.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-adidas-yeezy-boost-750-og-light-brown": {
     "file": "fashion-adidas-yeezy-boost-750-og-light-brown.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-yeezy-foam-runner": {
+    "file": "fashion-adidas-yeezy-foam-runner.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-yeezy-qntm": {
+    "file": "fashion-adidas-yeezy-qntm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-adidas-yeezy-slide": {
+    "file": "fashion-adidas-yeezy-slide.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-arcteryx-alpha-parka": {
@@ -13015,12 +13131,28 @@
     "file": "fashion-arcteryx-veilance-monitor-down-coat.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-asics-accelerate-waterproof-2-0-jacket": {
+    "file": "fashion-asics-accelerate-waterproof-2-0-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-asics-cecilie-bahnsen-x-asics-gt-2160": {
     "file": "fashion-asics-cecilie-bahnsen-x-asics-gt-2160.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-asics-gel-kayano-14": {
+    "file": "fashion-asics-gel-kayano-14.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-asics-gel-nimbus-9": {
+    "file": "fashion-asics-gel-nimbus-9.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-asics-gel-quantum-kinetic": {
     "file": "fashion-asics-gel-quantum-kinetic.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-asics-gel-trabuco-13": {
+    "file": "fashion-asics-gel-trabuco-13.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-asics-hal-studios-x-asics-gel-1130": {
@@ -13451,6 +13583,10 @@
     "file": "fashion-new-balance-1300jp.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-new-balance-2002r": {
+    "file": "fashion-new-balance-2002r.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-new-balance-action-bronson-x-new-balance-990v6-baklava": {
     "file": "fashion-new-balance-action-bronson-x-new-balance-990v6-baklava.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13461,6 +13597,26 @@
   },
   "fashion-new-balance-aime-leon-dore-x-new-balance-993": {
     "file": "fashion-new-balance-aime-leon-dore-x-new-balance-993.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-fresh-foam-x-860v14": {
+    "file": "fashion-new-balance-fresh-foam-x-860v14.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-fresh-foam-x-880v15": {
+    "file": "fashion-new-balance-fresh-foam-x-880v15.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-fresh-foam-x-hierro-v8": {
+    "file": "fashion-new-balance-fresh-foam-x-hierro-v8.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-fuelcell-rebel-v4": {
+    "file": "fashion-new-balance-fuelcell-rebel-v4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-fuelcell-supercomp-elite-v4": {
+    "file": "fashion-new-balance-fuelcell-supercomp-elite-v4.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-new-balance-jjjjound-x-new-balance-990v3": {
@@ -13483,6 +13639,30 @@
     "file": "fashion-new-balance-joe-freshgoods-x-new-balance-993-performance.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-new-balance-made-in-uk-1500": {
+    "file": "fashion-new-balance-made-in-uk-1500.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-made-in-uk-920": {
+    "file": "fashion-new-balance-made-in-uk-920.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-made-in-uk-991": {
+    "file": "fashion-new-balance-made-in-uk-991.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-made-in-usa-990v3": {
+    "file": "fashion-new-balance-made-in-usa-990v3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-made-in-usa-990v4": {
+    "file": "fashion-new-balance-made-in-usa-990v4.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-new-balance-made-in-usa-990v6": {
+    "file": "fashion-new-balance-made-in-usa-990v6.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-new-balance-miu-miu-x-new-balance-530-sl": {
     "file": "fashion-new-balance-miu-miu-x-new-balance-530-sl.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13493,6 +13673,30 @@
   },
   "fashion-new-balance-salehe-bembury-x-new-balance-2002r-peace-be": {
     "file": "fashion-new-balance-salehe-bembury-x-new-balance-2002r-peace-be.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-acg-therma-fit-adv-lunar-lake-puffer-jacket": {
+    "file": "fashion-nike-acg-therma-fit-adv-lunar-lake-puffer-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-air-max-270": {
+    "file": "fashion-nike-air-max-270.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-air-max-95": {
+    "file": "fashion-nike-air-max-95.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-air-max-97": {
+    "file": "fashion-nike-air-max-97.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-air-max-plus": {
+    "file": "fashion-nike-air-max-plus.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-air-more-uptempo-96": {
+    "file": "fashion-nike-air-more-uptempo-96.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-nike-air-yeezy-1-zen-grey": {
@@ -13507,6 +13711,58 @@
     "file": "fashion-nike-air-yeezy-2-solar-red.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-nike-alphafly-3": {
+    "file": "fashion-nike-alphafly-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-blazer-mid-77-vintage": {
+    "file": "fashion-nike-blazer-mid-77-vintage.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-calm-slide": {
+    "file": "fashion-nike-calm-slide.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-club-unstructured-futura-wash-cap": {
+    "file": "fashion-nike-club-unstructured-futura-wash-cap.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-cortez": {
+    "file": "fashion-nike-cortez.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-dri-fit-legend-t-shirt": {
+    "file": "fashion-nike-dri-fit-legend-t-shirt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-elite-crew-basketball-socks": {
+    "file": "fashion-nike-elite-crew-basketball-socks.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-everyday-cushioned-training-crew-socks-3-pack": {
+    "file": "fashion-nike-everyday-cushioned-training-crew-socks-3-pack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-everyday-plus-cushioned-training-crew-socks-6-pack": {
+    "file": "fashion-nike-everyday-plus-cushioned-training-crew-socks-6-pack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-invincible-3": {
+    "file": "fashion-nike-invincible-3.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-kd17": {
+    "file": "fashion-nike-kd17.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-killshot-2-leather": {
+    "file": "fashion-nike-killshot-2-leather.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-lebron-xxii": {
+    "file": "fashion-nike-lebron-xxii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-nike-louis-vuitton-x-nike-air-force-1-low-by-virgil-ablo": {
     "file": "fashion-nike-louis-vuitton-x-nike-air-force-1-low-by-virgil-ablo.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13519,8 +13775,36 @@
     "file": "fashion-nike-mag-back-to-the-future-2016.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-nike-metcon-9": {
+    "file": "fashion-nike-metcon-9.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-nike-off-white-x-nike-air-force-1-low-mca-university-blu": {
     "file": "fashion-nike-off-white-x-nike-air-force-1-low-mca-university-blu.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-off-white-x-nike-air-force-1-low-the-ten": {
+    "file": "fashion-nike-off-white-x-nike-air-force-1-low-the-ten.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-off-white-x-nike-air-max-90-the-ten": {
+    "file": "fashion-nike-off-white-x-nike-air-max-90-the-ten.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-off-white-x-nike-air-presto-the-ten": {
+    "file": "fashion-nike-off-white-x-nike-air-presto-the-ten.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-off-white-x-nike-blazer-mid-the-ten": {
+    "file": "fashion-nike-off-white-x-nike-blazer-mid-the-ten.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-off-white-x-nike-dunk-low-pine-green": {
+    "file": "fashion-nike-off-white-x-nike-dunk-low-pine-green.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-sb-dunk-low-ben-and-jerrys-chunky-dunky": {
+    "file": "fashion-nike-sb-dunk-low-ben-and-jerrys-chunky-dunky.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-nike-sb-dunk-low-diamond-supply-co-tiffany-2005": {
@@ -13531,6 +13815,10 @@
     "file": "fashion-nike-sb-dunk-low-freddy-krueger.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-nike-sb-dunk-low-grateful-dead-bears-green": {
+    "file": "fashion-nike-sb-dunk-low-grateful-dead-bears-green.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-nike-sb-dunk-low-paris": {
     "file": "fashion-nike-sb-dunk-low-paris.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -13539,8 +13827,40 @@
     "file": "fashion-nike-sb-dunk-low-staple-nyc-pigeon.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "fashion-nike-sb-dunk-low-strangelove": {
+    "file": "fashion-nike-sb-dunk-low-strangelove.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-sportswear-club-fleece-pullover-hoodie": {
+    "file": "fashion-nike-sportswear-club-fleece-pullover-hoodie.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-tech-fleece-windrunner-full-zip-hoodie": {
+    "file": "fashion-nike-tech-fleece-windrunner-full-zip-hoodie.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "fashion-nike-tom-sachs-x-nikecraft-mars-yard-2-0": {
     "file": "fashion-nike-tom-sachs-x-nikecraft-mars-yard-2-0.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-travis-scott-x-nike-sb-dunk-low": {
+    "file": "fashion-nike-travis-scott-x-nike-sb-dunk-low.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-victori-one-slide": {
+    "file": "fashion-nike-victori-one-slide.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-vomero-18": {
+    "file": "fashion-nike-vomero-18.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-zoom-fly-6": {
+    "file": "fashion-nike-zoom-fly-6.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-nike-zoom-vomero-5": {
+    "file": "fashion-nike-zoom-vomero-5.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-on-challenger-puffer-jacket": {
@@ -13589,6 +13909,190 @@
   },
   "fashion-on-zero-jacket": {
     "file": "fashion-on-zero-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-belstaff-trialmaster-waxed-cotton-jacket": {
+    "file": "fashion-p-belstaff-trialmaster-waxed-cotton-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-bombas-ankle-socks-4-pack": {
+    "file": "fashion-p-bombas-ankle-socks-4-pack.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-brioni-brunico-suit": {
+    "file": "fashion-p-brioni-brunico-suit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-brioni-vanquish-ii-suit": {
+    "file": "fashion-p-brioni-vanquish-ii-suit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-brunello-cucinelli-shearling-bomber-jacket": {
+    "file": "fashion-p-brunello-cucinelli-shearling-bomber-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-brunello-cucinelli-suede-bomber-jacket": {
+    "file": "fashion-p-brunello-cucinelli-suede-bomber-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-carhartt-loose-fit-firm-duck-double-front-utility-work": {
+    "file": "fashion-p-carhartt-loose-fit-firm-duck-double-front-utility-work.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-champion-reverse-weave-crewneck-sweatshirt": {
+    "file": "fashion-p-champion-reverse-weave-crewneck-sweatshirt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-champion-reverse-weave-hoodie": {
+    "file": "fashion-p-champion-reverse-weave-hoodie.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-chanel-slingbacks": {
+    "file": "fashion-p-chanel-slingbacks.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-columbia-newton-ridge-plus-ii-waterproof-hiking-boot": {
+    "file": "fashion-p-columbia-newton-ridge-plus-ii-waterproof-hiking-boot.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-columbia-pfg-bahama-ii-long-sleeve-shirt": {
+    "file": "fashion-p-columbia-pfg-bahama-ii-long-sleeve-shirt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-columbia-steens-mountain-2-0-full-zip-fleece-jacket": {
+    "file": "fashion-p-columbia-steens-mountain-2-0-full-zip-fleece-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-crocs-classic-lined-clog": {
+    "file": "fashion-p-crocs-classic-lined-clog.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-crocs-echo-clog": {
+    "file": "fashion-p-crocs-echo-clog.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-currex-runpro-insoles": {
+    "file": "fashion-p-currex-runpro-insoles.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-dior-b23-high-top-sneaker": {
+    "file": "fashion-p-dior-b23-high-top-sneaker.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-fjallraven-expedition-pack-down-hoodie": {
+    "file": "fashion-p-fjallraven-expedition-pack-down-hoodie.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-hermes-jumping-boots": {
+    "file": "fashion-p-hermes-jumping-boots.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-iron-heart-ih-634s-21oz-selvedge-denim-jeans": {
+    "file": "fashion-p-iron-heart-ih-634s-21oz-selvedge-denim-jeans.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-kangol-tropic-504-ventair-cap": {
+    "file": "fashion-p-kangol-tropic-504-ventair-cap.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-kiton-k-50-suit": {
+    "file": "fashion-p-kiton-k-50-suit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-kiton-vicuna-sport-coat": {
+    "file": "fashion-p-kiton-vicuna-sport-coat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-loro-piana-cashmere-overcoat": {
+    "file": "fashion-p-loro-piana-cashmere-overcoat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-loro-piana-vicuna-overcoat": {
+    "file": "fashion-p-loro-piana-vicuna-overcoat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-louis-vuitton-x-kanye-west-don": {
+    "file": "fashion-p-louis-vuitton-x-kanye-west-don.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-louis-vuitton-x-supreme-box-logo-hooded-sweatshirt": {
+    "file": "fashion-p-louis-vuitton-x-supreme-box-logo-hooded-sweatshirt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-lululemon-pace-breaker-short-7": {
+    "file": "fashion-p-lululemon-pace-breaker-short-7.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-lululemon-swiftly-tech-short-sleeve-shirt-2-0": {
+    "file": "fashion-p-lululemon-swiftly-tech-short-sleeve-shirt-2-0.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-mammut-eigerjoch-pro-in-hooded-jacket": {
+    "file": "fashion-p-mammut-eigerjoch-pro-in-hooded-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-marmot-guides-down-hoody": {
+    "file": "fashion-p-marmot-guides-down-hoody.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-max-mara-ludmilla-icon-coat": {
+    "file": "fashion-p-max-mara-ludmilla-icon-coat.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-melin-hydro-a-game-cap": {
+    "file": "fashion-p-melin-hydro-a-game-cap.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-merrell-hydro-moc": {
+    "file": "fashion-p-merrell-hydro-moc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-montbell-plasma-1000-down-jacket": {
+    "file": "fashion-p-montbell-plasma-1000-down-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-mountain-hardwear-ghost-whisperer-hoody": {
+    "file": "fashion-p-mountain-hardwear-ghost-whisperer-hoody.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-oofos-ooriginal-sandal": {
+    "file": "fashion-p-oofos-ooriginal-sandal.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-prada-re-nylon-hooded-down-jacket": {
+    "file": "fashion-p-prada-re-nylon-hooded-down-jacket.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-ralph-lauren-purple-label-gregory-hand-tailored-wool-s": {
+    "file": "fashion-p-ralph-lauren-purple-label-gregory-hand-tailored-wool-s.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-red-wing-iron-ranger-8111": {
+    "file": "fashion-p-red-wing-iron-ranger-8111.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-saint-laurent-court-classic-sl-06-sneakers": {
+    "file": "fashion-p-saint-laurent-court-classic-sl-06-sneakers.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-saphir-medaille-dor-creme-1925-75ml": {
+    "file": "fashion-p-saphir-medaille-dor-creme-1925-75ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-teva-original-universal-sandal": {
+    "file": "fashion-p-teva-original-universal-sandal.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-thom-browne-classic-cashmere-4-bar-v-neck-cardigan": {
+    "file": "fashion-p-thom-browne-classic-cashmere-4-bar-v-neck-cardigan.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-tods-gommino-driving-shoes": {
+    "file": "fashion-p-tods-gommino-driving-shoes.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "fashion-p-vuori-kore-short": {
+    "file": "fashion-p-vuori-kore-short.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "fashion-patagonia-frozen-range-parka": {
@@ -16575,6 +17079,14 @@
     "file": "home-xiaomi-tv-s-mini-led-75-2025.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-boucheron-ambre-dalexandrie-edp-125ml": {
+    "file": "jewelry-boucheron-ambre-dalexandrie-edp-125ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-boucheron-facette-wedding-band-pt": {
+    "file": "jewelry-boucheron-facette-wedding-band-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-boucheron-iris-de-syracuse-edp-125ml": {
     "file": "jewelry-boucheron-iris-de-syracuse-edp-125ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -16595,6 +17107,10 @@
     "file": "jewelry-boucheron-neroli-dispahan-edp-125ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-boucheron-oud-de-carthage-edp-125ml": {
+    "file": "jewelry-boucheron-oud-de-carthage-edp-125ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-boucheron-pivoine-solitaire-ring-pt-100ct": {
     "file": "jewelry-boucheron-pivoine-solitaire-ring-pt-100ct.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -16611,8 +17127,20 @@
     "file": "jewelry-boucheron-plume-de-paon-question-mark-necklace-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-boucheron-plume-de-paon-ring-small-wg-dia": {
+    "file": "jewelry-boucheron-plume-de-paon-ring-small-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-boucheron-quatre-black-edition-small-ring": {
+    "file": "jewelry-boucheron-quatre-black-edition-small-ring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-boucheron-quatre-black-edition-wedding-band": {
     "file": "jewelry-boucheron-quatre-black-edition-wedding-band.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-boucheron-quatre-blue-edition-small-ring": {
+    "file": "jewelry-boucheron-quatre-blue-edition-small-ring.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-boucheron-quatre-classique-bangle": {
@@ -16639,12 +17167,20 @@
     "file": "jewelry-boucheron-quatre-classique-single-clip-earring.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-boucheron-quatre-classique-small-ring": {
+    "file": "jewelry-boucheron-quatre-classique-small-ring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-boucheron-quatre-classique-small-ring-dia": {
     "file": "jewelry-boucheron-quatre-classique-small-ring-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-boucheron-quatre-classique-wedding-band": {
     "file": "jewelry-boucheron-quatre-classique-wedding-band.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-boucheron-quatre-clou-de-paris-wedding-band-yg": {
+    "file": "jewelry-boucheron-quatre-clou-de-paris-wedding-band-yg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-boucheron-quatre-edp-100ml": {
@@ -16655,12 +17191,24 @@
     "file": "jewelry-boucheron-quatre-en-rose-edp-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-boucheron-quatre-grosgrain-wedding-band-yg": {
+    "file": "jewelry-boucheron-quatre-grosgrain-wedding-band-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-boucheron-quatre-radiant-edition-small-ring-wg-dia": {
     "file": "jewelry-boucheron-quatre-radiant-edition-small-ring-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-boucheron-quatre-radiant-edition-wedding-band-wg-dia": {
     "file": "jewelry-boucheron-quatre-radiant-edition-wedding-band-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-boucheron-quatre-red-edition-small-ring": {
+    "file": "jewelry-boucheron-quatre-red-edition-small-ring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-boucheron-quatre-white-edition-small-ring": {
+    "file": "jewelry-boucheron-quatre-white-edition-small-ring.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-boucheron-rose-disparta-edp-125ml": {
@@ -16671,8 +17219,16 @@
     "file": "jewelry-boucheron-santal-de-kandy-edp-125ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-boucheron-serpent-bangle-s-motif-yg-dia": {
+    "file": "jewelry-boucheron-serpent-bangle-s-motif-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-boucheron-serpent-bracelet-s-motif-yg-dia": {
     "file": "jewelry-boucheron-serpent-bracelet-s-motif-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-boucheron-serpent-bracelet-xs-motif-yg-dia": {
+    "file": "jewelry-boucheron-serpent-bracelet-xs-motif-yg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-boucheron-serpent-ear-studs-s-motif-yg-dia": {
@@ -16691,6 +17247,10 @@
     "file": "jewelry-boucheron-serpent-pendant-s-motif-yg-mop.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-boucheron-serpent-pendant-xs-motif-yg-dia": {
+    "file": "jewelry-boucheron-serpent-pendant-xs-motif-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-boucheron-serpent-ring-l-motif-yg-pave-dia": {
     "file": "jewelry-boucheron-serpent-ring-l-motif-yg-pave-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -16699,12 +17259,80 @@
     "file": "jewelry-boucheron-serpent-ring-s-motif-yg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-boucheron-serpent-ring-xs-motif-yg-dia": {
+    "file": "jewelry-boucheron-serpent-ring-xs-motif-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-boucheron-serpent-toi-et-moi-ring-s-motif-yg-dia": {
     "file": "jewelry-boucheron-serpent-toi-et-moi-ring-s-motif-yg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-boucheron-tubereuse-de-madras-edp-125ml": {
+    "file": "jewelry-boucheron-tubereuse-de-madras-edp-125ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-blossoms-daisy-bracelet-ss-dia": {
+    "file": "jewelry-buccellati-blossoms-daisy-bracelet-ss-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-blossoms-daisy-button-earrings-ss": {
+    "file": "jewelry-buccellati-blossoms-daisy-button-earrings-ss.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-blossoms-gardenia-pendant-ss": {
+    "file": "jewelry-buccellati-blossoms-gardenia-pendant-ss.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-blossoms-gardenia-ring-ss-brown-dia": {
+    "file": "jewelry-buccellati-blossoms-gardenia-ring-ss-brown-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-etoilee-ring-yg-dia": {
+    "file": "jewelry-buccellati-etoilee-ring-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-hawaii-bracelet-yg": {
+    "file": "jewelry-buccellati-hawaii-bracelet-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-hawaii-long-necklace-yg": {
+    "file": "jewelry-buccellati-hawaii-long-necklace-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-hawaii-pendant-earrings-yg": {
+    "file": "jewelry-buccellati-hawaii-pendant-earrings-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-buccellati-macri-ab-bracelet-yg-dia": {
     "file": "jewelry-buccellati-macri-ab-bracelet-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-macri-ab-ring-yg-dia": {
+    "file": "jewelry-buccellati-macri-ab-ring-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-macri-classica-bracelet-yg": {
+    "file": "jewelry-buccellati-macri-classica-bracelet-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-macri-classica-bracelet-yg-dia": {
+    "file": "jewelry-buccellati-macri-classica-bracelet-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-macri-classica-button-earrings-yg-dia": {
+    "file": "jewelry-buccellati-macri-classica-button-earrings-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-macri-classica-pendant-yg-dia": {
+    "file": "jewelry-buccellati-macri-classica-pendant-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-macri-classica-ring-yg": {
+    "file": "jewelry-buccellati-macri-classica-ring-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-macri-classica-ring-yg-dia": {
+    "file": "jewelry-buccellati-macri-classica-ring-yg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-buccellati-macri-cuff-bracelet-yg-dia": {
@@ -16715,6 +17343,46 @@
     "file": "jewelry-buccellati-macri-giglio-bracelet-yg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-buccellati-macri-hoop-earrings-yg-dia": {
+    "file": "jewelry-buccellati-macri-hoop-earrings-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-oak-leaf-dish-small-ss": {
+    "file": "jewelry-buccellati-oak-leaf-dish-small-ss.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-opera-bracelet-yg": {
+    "file": "jewelry-buccellati-opera-bracelet-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-opera-button-earrings-yg": {
+    "file": "jewelry-buccellati-opera-button-earrings-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-opera-pendant-yg": {
+    "file": "jewelry-buccellati-opera-pendant-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-opera-ring-yg": {
+    "file": "jewelry-buccellati-opera-ring-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-opera-tulle-bracelet-yg-mop": {
+    "file": "jewelry-buccellati-opera-tulle-bracelet-yg-mop.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-opera-tulle-button-earrings-yg-mop": {
+    "file": "jewelry-buccellati-opera-tulle-button-earrings-yg-mop.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-opera-tulle-pendant-earrings-yg-mop": {
+    "file": "jewelry-buccellati-opera-tulle-pendant-earrings-yg-mop.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-opera-tulle-pendant-yg-mop": {
+    "file": "jewelry-buccellati-opera-tulle-pendant-yg-mop.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-buccellati-opera-tulle-sautoir-yg-mop": {
     "file": "jewelry-buccellati-opera-tulle-sautoir-yg-mop.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -16723,8 +17391,20 @@
     "file": "jewelry-buccellati-ramage-bracelet-yg-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-buccellati-ramage-button-earrings-yg-wg-dia": {
+    "file": "jewelry-buccellati-ramage-button-earrings-yg-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-ramage-ring-yg-wg": {
+    "file": "jewelry-buccellati-ramage-ring-yg-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-buccellati-rombi-bracelet-yg-wg-dia": {
     "file": "jewelry-buccellati-rombi-bracelet-yg-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-rombi-eternelle-ring-yg-wg-dia": {
+    "file": "jewelry-buccellati-rombi-eternelle-ring-yg-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-buccellati-rombi-pendant-earrings-yg-wg-dia": {
@@ -16735,12 +17415,20 @@
     "file": "jewelry-buccellati-rombi-sautoir-yg-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-buccellati-scallop-shell-dish-small-ss": {
+    "file": "jewelry-buccellati-scallop-shell-dish-small-ss.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-buccellati-tulle-bracelet-yg-wg-dia": {
     "file": "jewelry-buccellati-tulle-bracelet-yg-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-buccellati-tulle-cuff-bracelet-wg-dia": {
     "file": "jewelry-buccellati-tulle-cuff-bracelet-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-buccellati-tulle-eternelle-ring-yg-wg-dia": {
+    "file": "jewelry-buccellati-tulle-eternelle-ring-yg-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-buccellati-tulle-pendant-earrings-wg-dia": {
@@ -16795,6 +17483,18 @@
     "file": "jewelry-bvlgari-bzero1-necklace-rg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-bvlgari-bzero1-necklace-rg-pave-dia": {
+    "file": "jewelry-bvlgari-bzero1-necklace-rg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-bvlgari-bzero1-ring-1-band-rg": {
+    "file": "jewelry-bvlgari-bzero1-ring-1-band-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-bvlgari-bzero1-ring-1-band-rg-pave-dia": {
+    "file": "jewelry-bvlgari-bzero1-ring-1-band-rg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-bvlgari-bzero1-ring-four-band-rg": {
     "file": "jewelry-bvlgari-bzero1-ring-four-band-rg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -16807,12 +17507,20 @@
     "file": "jewelry-bvlgari-bzero1-rock-ring-two-band-rg-black-ceramic.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-bvlgari-bzero1-soft-bracelet-rg": {
+    "file": "jewelry-bvlgari-bzero1-soft-bracelet-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-bvlgari-dedicata-a-venezia-1503-solitaire-ring-pt-100ct": {
     "file": "jewelry-bvlgari-dedicata-a-venezia-1503-solitaire-ring-pt-100ct.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-bvlgari-divas-dream-bracelet-rg-mop": {
     "file": "jewelry-bvlgari-divas-dream-bracelet-rg-mop.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-bvlgari-divas-dream-earrings-rg-mop-dia": {
+    "file": "jewelry-bvlgari-divas-dream-earrings-rg-mop-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-bvlgari-divas-dream-necklace-rg-carnelian-dia": {
@@ -16855,6 +17563,10 @@
     "file": "jewelry-bvlgari-fiorever-necklace-wg-fp-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-bvlgari-fiorever-ring-rg-dia": {
+    "file": "jewelry-bvlgari-fiorever-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-bvlgari-griffe-solitaire-ring-pt-100ct": {
     "file": "jewelry-bvlgari-griffe-solitaire-ring-pt-100ct.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -16871,6 +17583,10 @@
     "file": "jewelry-bvlgari-le-gemme-tygar-edp-100ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-bvlgari-marry-me-wedding-band-pt": {
+    "file": "jewelry-bvlgari-marry-me-wedding-band-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-bvlgari-monete-necklace-rg-antique-coin": {
     "file": "jewelry-bvlgari-monete-necklace-rg-antique-coin.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -16885,6 +17601,10 @@
   },
   "jewelry-bvlgari-save-the-children-bracelet-ss-black-ceramic": {
     "file": "jewelry-bvlgari-save-the-children-bracelet-ss-black-ceramic.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-bvlgari-save-the-children-necklace-ss-onyx": {
+    "file": "jewelry-bvlgari-save-the-children-necklace-ss-onyx.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-bvlgari-save-the-children-ring-ss-black-ceramic": {
@@ -16927,12 +17647,20 @@
     "file": "jewelry-bvlgari-viper-earrings-wg-fp-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-bvlgari-viper-necklace-rg-dp-dia": {
+    "file": "jewelry-bvlgari-viper-necklace-rg-dp-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-bvlgari-viper-necklace-wg-fp-dia": {
     "file": "jewelry-bvlgari-viper-necklace-wg-fp-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-bvlgari-viper-ring-one-coil-rg": {
     "file": "jewelry-bvlgari-viper-ring-one-coil-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-bvlgari-viper-ring-one-coil-rg-dp-dia": {
+    "file": "jewelry-bvlgari-viper-ring-one-coil-rg-dp-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-bvlgari-viper-ring-one-coil-wg-fp-dia": {
@@ -17223,12 +17951,28 @@
     "file": "jewelry-chaumet-bee-de-chaumet-bracelet-wg-full-pave-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-chaumet-bee-de-chaumet-earrings-rg": {
+    "file": "jewelry-chaumet-bee-de-chaumet-earrings-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chaumet-bee-de-chaumet-necklace-rg-dia": {
+    "file": "jewelry-chaumet-bee-de-chaumet-necklace-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-chaumet-bee-de-chaumet-pendant-rg-dia": {
     "file": "jewelry-chaumet-bee-de-chaumet-pendant-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-chaumet-bee-de-chaumet-pendant-wg-pave-dia": {
+    "file": "jewelry-chaumet-bee-de-chaumet-pendant-wg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-chaumet-bee-de-chaumet-ring-rg": {
     "file": "jewelry-chaumet-bee-de-chaumet-ring-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chaumet-bee-de-chaumet-ring-rg-half-pave-dia": {
+    "file": "jewelry-chaumet-bee-de-chaumet-ring-rg-half-pave-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-chaumet-bee-de-chaumet-ring-wg-full-pave-dia": {
@@ -17259,6 +18003,10 @@
     "file": "jewelry-chaumet-jdl-harmony-bracelet-small-rg-mop.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-chaumet-jdl-harmony-pendant-medium-rg-dia": {
+    "file": "jewelry-chaumet-jdl-harmony-pendant-medium-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-chaumet-jdl-harmony-pendant-small-rg-mop": {
     "file": "jewelry-chaumet-jdl-harmony-pendant-small-rg-mop.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -17271,12 +18019,20 @@
     "file": "jewelry-chaumet-jdl-ring-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-chaumet-jos-aigrette-earrings-wg-dia": {
+    "file": "jewelry-chaumet-jos-aigrette-earrings-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-chaumet-jos-aigrette-imperiale-ring-pt-dia": {
     "file": "jewelry-chaumet-jos-aigrette-imperiale-ring-pt-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-chaumet-jos-aigrette-pendant-wg-dia": {
     "file": "jewelry-chaumet-jos-aigrette-pendant-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chaumet-jos-aigrette-ring-wg-akoya-pearl-dia": {
+    "file": "jewelry-chaumet-jos-aigrette-ring-wg-akoya-pearl-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-chaumet-jos-aigrette-ring-wg-dia": {
@@ -17303,6 +18059,18 @@
     "file": "jewelry-chaumet-laurier-pendant-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-chaumet-laurier-ring-rg-dia": {
+    "file": "jewelry-chaumet-laurier-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chaumet-liens-evidence-bracelet-rg": {
+    "file": "jewelry-chaumet-liens-evidence-bracelet-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chaumet-liens-evidence-bracelet-rg-dia": {
+    "file": "jewelry-chaumet-liens-evidence-bracelet-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-chaumet-liens-evidence-bracelet-wg-full-pave-dia": {
     "file": "jewelry-chaumet-liens-evidence-bracelet-wg-full-pave-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -17311,12 +18079,24 @@
     "file": "jewelry-chaumet-liens-evidence-ring-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-chaumet-liens-evidence-ring-wg-full-pave-dia": {
+    "file": "jewelry-chaumet-liens-evidence-ring-wg-full-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-chaumet-liens-evidence-wedding-band-rg": {
     "file": "jewelry-chaumet-liens-evidence-wedding-band-rg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-chaumet-torsade-de-chaumet-ring-wg-dia": {
     "file": "jewelry-chaumet-torsade-de-chaumet-ring-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chaumet-triomphe-de-chaumet-solitaire-ring-pt-050ct": {
+    "file": "jewelry-chaumet-triomphe-de-chaumet-solitaire-ring-pt-050ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-amber-malaki-edp-80ml": {
+    "file": "jewelry-chopard-amber-malaki-edp-80ml.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-chopard-black-incense-malaki-edp-80ml": {
@@ -17331,8 +18111,24 @@
     "file": "jewelry-chopard-chopard-for-ever-solitaire-ring-pt-200ct.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-chopard-chopardissimo-ring-rg": {
+    "file": "jewelry-chopard-chopardissimo-ring-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-chopard-classic-racing-ballpoint-pen": {
     "file": "jewelry-chopard-classic-racing-ballpoint-pen.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-happy-chopard-felicia-roses-edp-100ml": {
+    "file": "jewelry-chopard-happy-chopard-felicia-roses-edp-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-happy-chopard-lemon-dulci-edp-100ml": {
+    "file": "jewelry-chopard-happy-chopard-lemon-dulci-edp-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-happy-dia-icons-bracelet-rg-dia": {
+    "file": "jewelry-chopard-happy-dia-icons-bracelet-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-chopard-happy-dia-icons-ear-pins-rg-dia": {
@@ -17341,6 +18137,10 @@
   },
   "jewelry-chopard-happy-dia-icons-heart-pendant-wg-3-dia": {
     "file": "jewelry-chopard-happy-dia-icons-heart-pendant-wg-3-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-happy-dia-icons-pendant-rg-dia": {
+    "file": "jewelry-chopard-happy-dia-icons-pendant-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-chopard-happy-dia-icons-ring-rg-dia": {
@@ -17359,8 +18159,28 @@
     "file": "jewelry-chopard-happy-hearts-bangle-rg-mop-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-chopard-happy-hearts-bracelet-rg-malachite-dia": {
+    "file": "jewelry-chopard-happy-hearts-bracelet-rg-malachite-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-happy-hearts-bracelet-rg-mop-dia": {
+    "file": "jewelry-chopard-happy-hearts-bracelet-rg-mop-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-chopard-happy-hearts-earrings-rg-mop-dia": {
     "file": "jewelry-chopard-happy-hearts-earrings-rg-mop-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-happy-hearts-pendant-rg-mop-dia": {
+    "file": "jewelry-chopard-happy-hearts-pendant-rg-mop-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-happy-hearts-ring-rg-mop-dia": {
+    "file": "jewelry-chopard-happy-hearts-ring-rg-mop-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-happy-hearts-sautoir-rg-mop-dia": {
+    "file": "jewelry-chopard-happy-hearts-sautoir-rg-mop-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-chopard-happy-spirit-pendant-wg-dia": {
@@ -17379,8 +18199,16 @@
     "file": "jewelry-chopard-ice-cube-bangle-wg-full-set-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-chopard-ice-cube-earrings-rg": {
+    "file": "jewelry-chopard-ice-cube-earrings-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-chopard-ice-cube-pendant-rg": {
     "file": "jewelry-chopard-ice-cube-pendant-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-ice-cube-pendant-rg-dia": {
+    "file": "jewelry-chopard-ice-cube-pendant-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-chopard-ice-cube-ring-rg": {
@@ -17389,6 +18217,10 @@
   },
   "jewelry-chopard-ice-cube-ring-rg-full-set-dia": {
     "file": "jewelry-chopard-ice-cube-ring-rg-full-set-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-ice-cube-ring-rg-half-set-dia": {
+    "file": "jewelry-chopard-ice-cube-ring-rg-half-set-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-chopard-imperiale-cocktail-earrings-rg-amethyst-dia": {
@@ -17455,6 +18287,18 @@
     "file": "jewelry-chopard-my-happy-hearts-single-earring-rg-mop.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-chopard-oud-malaki-edp-80ml": {
+    "file": "jewelry-chopard-oud-malaki-edp-80ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-precious-lace-mini-froufrou-earrings-wg-dia": {
+    "file": "jewelry-chopard-precious-lace-mini-froufrou-earrings-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-chopard-rose-malaki-edp-80ml": {
+    "file": "jewelry-chopard-rose-malaki-edp-80ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-damiani-abbraccio-ring-rg-dia": {
     "file": "jewelry-damiani-abbraccio-ring-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -17471,8 +18315,64 @@
     "file": "jewelry-damiani-belle-epoque-cross-necklace-medium-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-damiani-belle-epoque-cross-necklace-small-wg-dia": {
+    "file": "jewelry-damiani-belle-epoque-cross-necklace-small-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-belle-epoque-cross-necklace-xs-wg-dia": {
+    "file": "jewelry-damiani-belle-epoque-cross-necklace-xs-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-belle-epoque-earrings-wg-dia": {
+    "file": "jewelry-damiani-belle-epoque-earrings-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-damiani-belle-epoque-reel-necklace-wg-dia": {
     "file": "jewelry-damiani-belle-epoque-reel-necklace-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-belle-epoque-ring-wg-dia": {
+    "file": "jewelry-damiani-belle-epoque-ring-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-dicon-bangle-rg-dia": {
+    "file": "jewelry-damiani-dicon-bangle-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-dicon-bracelet-ceramic-rg-dia": {
+    "file": "jewelry-damiani-dicon-bracelet-ceramic-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-dicon-earrings-rg-dia": {
+    "file": "jewelry-damiani-dicon-earrings-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-dicon-necklace-ceramic-rg-dia": {
+    "file": "jewelry-damiani-dicon-necklace-ceramic-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-dicon-necklace-rg-dia": {
+    "file": "jewelry-damiani-dicon-necklace-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-dicon-ring-ceramic-rg-dia": {
+    "file": "jewelry-damiani-dicon-ring-ceramic-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-dicon-ring-rg-dia": {
+    "file": "jewelry-damiani-dicon-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-dside-bracelet-rg-dia": {
+    "file": "jewelry-damiani-dside-bracelet-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-dside-ring-rg-dia": {
+    "file": "jewelry-damiani-dside-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-dside-wedding-band-yg-dia": {
+    "file": "jewelry-damiani-dside-wedding-band-yg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-damiani-eden-bracelet-wg-dia": {
@@ -17483,12 +18383,44 @@
     "file": "jewelry-damiani-eden-ring-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-damiani-fiocco-earrings-wg-dia": {
+    "file": "jewelry-damiani-fiocco-earrings-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-fiocco-necklace-wg-dia": {
+    "file": "jewelry-damiani-fiocco-necklace-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-fiocco-ring-wg-dia": {
+    "file": "jewelry-damiani-fiocco-ring-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-damiani-gomitolo-ring-rg-brown-dia": {
     "file": "jewelry-damiani-gomitolo-ring-rg-brown-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-damiani-luce-necklace-wg-dia": {
+    "file": "jewelry-damiani-luce-necklace-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-luce-stud-earrings-wg-dia": {
+    "file": "jewelry-damiani-luce-stud-earrings-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-damiani-luce-tennis-bracelet-wg-dia-300ct": {
     "file": "jewelry-damiani-luce-tennis-bracelet-wg-dia-300ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-margherita-bracelet-wg-dia": {
+    "file": "jewelry-damiani-margherita-bracelet-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-margherita-earrings-wg-dia": {
+    "file": "jewelry-damiani-margherita-earrings-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-margherita-necklace-wg-dia": {
+    "file": "jewelry-damiani-margherita-necklace-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-damiani-margherita-ring-wg-dia": {
@@ -17503,20 +18435,96 @@
     "file": "jewelry-damiani-mimosa-earrings-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-damiani-mimosa-necklace-wg-dia": {
+    "file": "jewelry-damiani-mimosa-necklace-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-damiani-mimosa-ring-wg-dia": {
     "file": "jewelry-damiani-mimosa-ring-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-minou-earrings-wg-dia": {
+    "file": "jewelry-damiani-minou-earrings-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-minou-engagement-ring-wg-030ct": {
+    "file": "jewelry-damiani-minou-engagement-ring-wg-030ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-minou-necklace-wg-dia": {
+    "file": "jewelry-damiani-minou-necklace-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-minou-ring-wg-dia": {
+    "file": "jewelry-damiani-minou-ring-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-damiani-notte-di-san-lorenzo-necklace-wg-dia": {
+    "file": "jewelry-damiani-notte-di-san-lorenzo-necklace-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-albion-pendant-ss-bt-dia-11mm": {
+    "file": "jewelry-david-yurman-albion-pendant-ss-bt-dia-11mm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-david-yurman-albion-ring-ss-bt-dia-11mm": {
     "file": "jewelry-david-yurman-albion-ring-ss-bt-dia-11mm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-david-yurman-box-chain-br-ss-5mm": {
+    "file": "jewelry-david-yurman-box-chain-br-ss-5mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-box-chain-necklace-ss-27mm": {
+    "file": "jewelry-david-yurman-box-chain-necklace-ss-27mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-buckle-classic-cable-br-ss-18k-5mm": {
+    "file": "jewelry-david-yurman-buckle-classic-cable-br-ss-18k-5mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-david-yurman-cable-classics-br-18k-4mm": {
     "file": "jewelry-david-yurman-cable-classics-br-18k-4mm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-david-yurman-cable-classics-br-ss-18k-5mm": {
+    "file": "jewelry-david-yurman-cable-classics-br-ss-18k-5mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-cable-classics-br-ss-18k-7mm": {
+    "file": "jewelry-david-yurman-cable-classics-br-ss-18k-7mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-cable-classics-br-ss-amethyst-14k-5mm": {
+    "file": "jewelry-david-yurman-cable-classics-br-ss-amethyst-14k-5mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-david-yurman-cable-classics-br-ss-bt-dia-7mm": {
     "file": "jewelry-david-yurman-cable-classics-br-ss-bt-dia-7mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-cable-edge-band-ring-ss": {
+    "file": "jewelry-david-yurman-cable-edge-band-ring-ss.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-cablespira-br-ss-18k-4mm": {
+    "file": "jewelry-david-yurman-cablespira-br-ss-18k-4mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-cc-heart-necklace-ss-pave-dia": {
+    "file": "jewelry-david-yurman-cc-heart-necklace-ss-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-chat-pb-ring-ss-bt-dia-11mm": {
+    "file": "jewelry-david-yurman-chat-pb-ring-ss-bt-dia-11mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-chatelaine-ring-ss-bt-8mm": {
+    "file": "jewelry-david-yurman-chatelaine-ring-ss-bt-8mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-chatelaine-stud-earrings-ss-bt-8mm": {
+    "file": "jewelry-david-yurman-chatelaine-stud-earrings-ss-bt-8mm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-david-yurman-crossover-br-ss-pave-dia": {
@@ -17527,16 +18535,68 @@
     "file": "jewelry-david-yurman-crossover-ring-18k-pave-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-david-yurman-crossover-ring-ss-pave-dia": {
+    "file": "jewelry-david-yurman-crossover-ring-ss-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-curb-chain-br-ss-8mm": {
+    "file": "jewelry-david-yurman-curb-chain-br-ss-8mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-david-yurman-dy-elements-disc-18k-onyx-mop-pave-dia": {
     "file": "jewelry-david-yurman-dy-elements-disc-18k-onyx-mop-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-dy-madison-chain-br-ss-85mm": {
+    "file": "jewelry-david-yurman-dy-madison-chain-br-ss-85mm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-david-yurman-dy-madison-chain-necklace-18k-6mm": {
     "file": "jewelry-david-yurman-dy-madison-chain-necklace-18k-6mm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-david-yurman-dy-madison-chain-necklace-ss-85mm": {
+    "file": "jewelry-david-yurman-dy-madison-chain-necklace-ss-85mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-helena-end-station-br-ss-18k-dia-4mm": {
+    "file": "jewelry-david-yurman-helena-end-station-br-ss-18k-dia-4mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-petite-albion-pendant-ss-bt-dia-7mm": {
+    "file": "jewelry-david-yurman-petite-albion-pendant-ss-bt-dia-7mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-petite-albion-ring-ss-bt-dia-7mm": {
+    "file": "jewelry-david-yurman-petite-albion-ring-ss-bt-dia-7mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-petite-chat-pb-stud-earrings-ss-bt-dia-7mm": {
+    "file": "jewelry-david-yurman-petite-chat-pb-stud-earrings-ss-bt-dia-7mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-petite-x-br-ss-18k-4mm": {
+    "file": "jewelry-david-yurman-petite-x-br-ss-18k-4mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-petite-x-br-ss-pave-dia-4mm": {
+    "file": "jewelry-david-yurman-petite-x-br-ss-pave-dia-4mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-renaissance-br-ss-bt-14k-5mm": {
+    "file": "jewelry-david-yurman-renaissance-br-ss-bt-14k-5mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-david-yurman-sculpted-cable-band-ring-18k-46mm": {
     "file": "jewelry-david-yurman-sculpted-cable-band-ring-18k-46mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-sculpted-cable-band-ring-ss-46mm": {
+    "file": "jewelry-david-yurman-sculpted-cable-band-ring-ss-46mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-sculpted-cable-contour-br-ss-pave-dia": {
+    "file": "jewelry-david-yurman-sculpted-cable-contour-br-ss-pave-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-david-yurman-sculpted-cable-cuff-br-18k-45mm": {
@@ -17547,8 +18607,36 @@
     "file": "jewelry-david-yurman-sculpted-cable-cuff-br-18k-full-pave-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-david-yurman-sculpted-cable-cuff-br-ss-45mm": {
+    "file": "jewelry-david-yurman-sculpted-cable-cuff-br-ss-45mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-spiritual-beads-br-ss-black-onyx-6mm": {
+    "file": "jewelry-david-yurman-spiritual-beads-br-ss-black-onyx-6mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-david-yurman-stax-cl-br-18k-pave-dia": {
     "file": "jewelry-david-yurman-stax-cl-br-18k-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-stax-three-row-cl-br-18k-pave-dia": {
+    "file": "jewelry-david-yurman-stax-three-row-cl-br-18k-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-david-yurman-thoroughbred-loop-br-ss-18k": {
+    "file": "jewelry-david-yurman-thoroughbred-loop-br-ss-18k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-80-cord-bracelet-medium-rg": {
+    "file": "jewelry-fred-80-cord-bracelet-medium-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-chance-infinie-bracelet-medium-rg-dia": {
+    "file": "jewelry-fred-chance-infinie-bracelet-medium-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-chance-infinie-necklace-small-rg-dia": {
+    "file": "jewelry-fred-chance-infinie-necklace-small-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-fred-chance-infinie-ring-rg-dia": {
@@ -17583,6 +18671,18 @@
     "file": "jewelry-fred-force-10-bracelet-large-wg-fp-dia-wg-cable.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-fred-force-10-bracelet-large-yg-sc": {
+    "file": "jewelry-fred-force-10-bracelet-large-yg-sc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-bracelet-medium-rg-hp-dia-sc": {
+    "file": "jewelry-fred-force-10-bracelet-medium-rg-hp-dia-sc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-bracelet-medium-rg-sc": {
+    "file": "jewelry-fred-force-10-bracelet-medium-rg-sc.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-fred-force-10-bracelet-medium-wg-fp-dia-sc": {
     "file": "jewelry-fred-force-10-bracelet-medium-wg-fp-dia-sc.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -17591,20 +18691,108 @@
     "file": "jewelry-fred-force-10-buckle-large-wg-fp-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-fred-force-10-buckle-large-yg": {
+    "file": "jewelry-fred-force-10-buckle-large-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-fred-force-10-buckle-medium-rg": {
     "file": "jewelry-fred-force-10-buckle-medium-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-buckle-medium-rg-hp-dia": {
+    "file": "jewelry-fred-force-10-buckle-medium-rg-hp-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-fred-force-10-buckle-medium-wg-fp-dia": {
     "file": "jewelry-fred-force-10-buckle-medium-wg-fp-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-fred-force-10-cable-steel-extra-large": {
+    "file": "jewelry-fred-force-10-cable-steel-extra-large.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-cable-steel-large": {
+    "file": "jewelry-fred-force-10-cable-steel-large.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-cable-steel-medium": {
+    "file": "jewelry-fred-force-10-cable-steel-medium.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-necklace-small-rg": {
+    "file": "jewelry-fred-force-10-necklace-small-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-ring-large-rg": {
+    "file": "jewelry-fred-force-10-ring-large-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-ring-medium-rg": {
+    "file": "jewelry-fred-force-10-ring-medium-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-ring-medium-rg-hp-dia": {
+    "file": "jewelry-fred-force-10-ring-medium-rg-hp-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-ring-small-rg": {
+    "file": "jewelry-fred-force-10-ring-small-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-fred-force-10-rise-bracelet-rg": {
     "file": "jewelry-fred-force-10-rise-bracelet-rg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-fred-force-10-stud-earrings-small-rg": {
+    "file": "jewelry-fred-force-10-stud-earrings-small-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-sunglasses": {
+    "file": "jewelry-fred-force-10-sunglasses.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-textile-cord-large": {
+    "file": "jewelry-fred-force-10-textile-cord-large.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-force-10-textile-cord-medium": {
+    "file": "jewelry-fred-force-10-textile-cord-medium.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-pain-de-sucre-ring-medium-rg-amethyst": {
+    "file": "jewelry-fred-pain-de-sucre-ring-medium-rg-amethyst.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-pretty-woman-bracelet-mini-rg-dia": {
+    "file": "jewelry-fred-pretty-woman-bracelet-mini-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-fred-pretty-woman-necklace-large-wg-fp-dia": {
     "file": "jewelry-fred-pretty-woman-necklace-large-wg-fp-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-pretty-woman-necklace-mini-rg-dia": {
+    "file": "jewelry-fred-pretty-woman-necklace-mini-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-pretty-woman-ring-mini-rg-dia": {
+    "file": "jewelry-fred-pretty-woman-ring-mini-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-pretty-woman-stud-earrings-mini-rg-dia": {
+    "file": "jewelry-fred-pretty-woman-stud-earrings-mini-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-success-bracelet-small-rg-dia": {
+    "file": "jewelry-fred-success-bracelet-small-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-success-necklace-small-rg-dia": {
+    "file": "jewelry-fred-success-necklace-small-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-fred-success-ring-large-rg-dia": {
+    "file": "jewelry-fred-success-ring-large-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-fred-success-ring-small-rg-dia": {
@@ -17615,24 +18803,84 @@
     "file": "jewelry-graff-bfly-silhouette-dia-bangle-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-graff-bfly-silhouette-dia-bracelet-wg": {
+    "file": "jewelry-graff-bfly-silhouette-dia-bracelet-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-bfly-silhouette-dia-pendant-mini-wg": {
+    "file": "jewelry-graff-bfly-silhouette-dia-pendant-mini-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-bfly-silhouette-dia-ring-wg": {
+    "file": "jewelry-graff-bfly-silhouette-dia-ring-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-graff-bfly-silhouette-dia-stud-earrings-mini-wg": {
     "file": "jewelry-graff-bfly-silhouette-dia-stud-earrings-mini-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-bombe-pave-dia-ring-wg": {
+    "file": "jewelry-graff-bombe-pave-dia-ring-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-classic-butterfly-dia-ring-wg": {
+    "file": "jewelry-graff-classic-butterfly-dia-ring-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-graff-classic-butterfly-dia-stud-earrings-wg": {
     "file": "jewelry-graff-classic-butterfly-dia-stud-earrings-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-graff-classic-butterfly-pave-dia-pendant-small-wg": {
+    "file": "jewelry-graff-classic-butterfly-pave-dia-pendant-small-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-graff-gateway-dia-ring-wg": {
+    "file": "jewelry-graff-graff-gateway-dia-ring-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-graff-icon-round-dia-engagement-ring-pt-100ct": {
     "file": "jewelry-graff-icon-round-dia-engagement-ring-pt-100ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-icon-round-dia-pendant-wg-050ct": {
+    "file": "jewelry-graff-icon-round-dia-pendant-wg-050ct.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-graff-inspired-by-twombly-dia-ring-wg": {
     "file": "jewelry-graff-inspired-by-twombly-dia-ring-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-graff-kiss-dia-ring-wg": {
+    "file": "jewelry-graff-kiss-dia-ring-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-graff-kiss-dia-stud-earrings-wg": {
     "file": "jewelry-graff-kiss-dia-stud-earrings-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-kiss-pave-dia-pendant-wg": {
+    "file": "jewelry-graff-kiss-pave-dia-pendant-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-lesedi-la-rona-i-edp-100ml": {
+    "file": "jewelry-graff-lesedi-la-rona-i-edp-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-lesedi-la-rona-iii-edp-100ml": {
+    "file": "jewelry-graff-lesedi-la-rona-iii-edp-100ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-lg-signature-band-wg": {
+    "file": "jewelry-graff-lg-signature-band-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-lg-signature-band-wg-pave-dia": {
+    "file": "jewelry-graff-lg-signature-band-wg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-lg-signature-bangle-rg": {
+    "file": "jewelry-graff-lg-signature-bangle-rg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-graff-lg-signature-bangle-wg-pave-dia": {
@@ -17647,6 +18895,10 @@
     "file": "jewelry-graff-new-dawn-pave-dia-pendant-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-graff-night-moon-dia-pendant-wg": {
+    "file": "jewelry-graff-night-moon-dia-pendant-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-graff-promise-round-dia-engagement-ring-pt-100ct": {
     "file": "jewelry-graff-promise-round-dia-engagement-ring-pt-100ct.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -17657,6 +18909,10 @@
   },
   "jewelry-graff-promise-round-dia-engagement-ring-pt-300ct": {
     "file": "jewelry-graff-promise-round-dia-engagement-ring-pt-300ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-round-dia-eternity-ring-pt-200ct-tw": {
+    "file": "jewelry-graff-round-dia-eternity-ring-pt-200ct-tw.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-graff-round-dia-line-bracelet-pt-1000ct-tw": {
@@ -17675,8 +18931,28 @@
     "file": "jewelry-graff-spiral-dia-band-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-graff-spiral-pave-dia-pendant-wg": {
+    "file": "jewelry-graff-spiral-pave-dia-pendant-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-threads-dia-pendant-wg": {
+    "file": "jewelry-graff-threads-dia-pendant-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-tildas-bow-dia-stud-earrings-wg": {
+    "file": "jewelry-graff-tildas-bow-dia-stud-earrings-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-graff-tildas-bow-pave-dia-bangle-wg": {
     "file": "jewelry-graff-tildas-bow-pave-dia-bangle-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-tildas-bow-pave-dia-pendant-mini-wg": {
+    "file": "jewelry-graff-tildas-bow-pave-dia-pendant-mini-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-tildas-bow-pave-dia-ring-wg": {
+    "file": "jewelry-graff-tildas-bow-pave-dia-ring-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-graff-wild-flower-dia-bracelet-wg": {
@@ -17687,8 +18963,20 @@
     "file": "jewelry-graff-wild-flower-dia-pendant-small-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-graff-wild-flower-dia-ring-wg": {
+    "file": "jewelry-graff-wild-flower-dia-ring-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-graff-wild-flower-dia-stud-earrings-small-wg": {
+    "file": "jewelry-graff-wild-flower-dia-stud-earrings-small-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-harry-winston-belle-rb-er-pt-100ct": {
     "file": "jewelry-harry-winston-belle-rb-er-pt-100ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-classic-winston-er-tb-pt-100ct": {
+    "file": "jewelry-harry-winston-classic-winston-er-tb-pt-100ct.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-harry-winston-classic-winston-er-tb-pt-200ct": {
@@ -17707,8 +18995,32 @@
     "file": "jewelry-harry-winston-forget-me-not-dia-pendant-pt.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-harry-winston-hw-logo-bangle-rg": {
+    "file": "jewelry-harry-winston-hw-logo-bangle-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-hw-logo-dia-pendant-wg": {
+    "file": "jewelry-harry-winston-hw-logo-dia-pendant-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-hw-logo-dia-ring-wg": {
+    "file": "jewelry-harry-winston-hw-logo-dia-ring-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-hw-logo-wedding-band-pt": {
+    "file": "jewelry-harry-winston-hw-logo-wedding-band-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-lily-cluster-dia-bracelet-mini-pt": {
+    "file": "jewelry-harry-winston-lily-cluster-dia-bracelet-mini-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-harry-winston-lily-cluster-dia-earrings-large-pt": {
     "file": "jewelry-harry-winston-lily-cluster-dia-earrings-large-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-lily-cluster-dia-earrings-mini-pt": {
+    "file": "jewelry-harry-winston-lily-cluster-dia-earrings-mini-pt.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-harry-winston-lily-cluster-dia-earrings-small-pt": {
@@ -17717,6 +19029,34 @@
   },
   "jewelry-harry-winston-lily-cluster-dia-pendant-large-pt": {
     "file": "jewelry-harry-winston-lily-cluster-dia-pendant-large-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-lily-cluster-dia-pendant-mini-pt": {
+    "file": "jewelry-harry-winston-lily-cluster-dia-pendant-mini-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-lily-cluster-dia-pendant-small-pt": {
+    "file": "jewelry-harry-winston-lily-cluster-dia-pendant-small-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-lily-cluster-dia-ring-mini-pt": {
+    "file": "jewelry-harry-winston-lily-cluster-dia-ring-mini-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-loop-full-motif-dia-earrings-small-pt": {
+    "file": "jewelry-harry-winston-loop-full-motif-dia-earrings-small-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-loop-full-motif-dia-pendant-small-pt": {
+    "file": "jewelry-harry-winston-loop-full-motif-dia-pendant-small-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-micropave-dia-band-ring-pt": {
+    "file": "jewelry-harry-winston-micropave-dia-band-ring-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-prong-set-rb-dia-band-ring-pt": {
+    "file": "jewelry-harry-winston-prong-set-rb-dia-band-ring-pt.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-harry-winston-rb-dia-line-bracelet-pt-1000ct-tw": {
@@ -17739,8 +19079,24 @@
     "file": "jewelry-harry-winston-sunflower-dia-earstuds-small-pt.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-harry-winston-sunflower-dia-pendant-petite-pt": {
+    "file": "jewelry-harry-winston-sunflower-dia-pendant-petite-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-sunflower-dia-ring-petite-pt": {
+    "file": "jewelry-harry-winston-sunflower-dia-ring-petite-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-harry-winston-the-one-rb-er-pt-100ct": {
     "file": "jewelry-harry-winston-the-one-rb-er-pt-100ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-traffic-accent-dia-ring-pt": {
+    "file": "jewelry-harry-winston-traffic-accent-dia-ring-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-traffic-dia-pendant-pt": {
+    "file": "jewelry-harry-winston-traffic-dia-pendant-pt.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-harry-winston-winston-cluster-dia-earrings-large-pt": {
@@ -17751,6 +19107,22 @@
     "file": "jewelry-harry-winston-winston-cluster-dia-earrings-small-pt.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-harry-winston-winston-cluster-dia-pendant-small-pt": {
+    "file": "jewelry-harry-winston-winston-cluster-dia-pendant-small-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-harry-winston-winston-gates-dia-pendant-pt": {
+    "file": "jewelry-harry-winston-winston-gates-dia-pendant-pt.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-d-vibes-sm-bangle-rg-dia": {
+    "file": "jewelry-messika-d-vibes-sm-bangle-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-d-vibes-sm-ring-rg-dia": {
+    "file": "jewelry-messika-d-vibes-sm-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-messika-desert-bloom-multi-row-bangle-wg-dia": {
     "file": "jewelry-messika-desert-bloom-multi-row-bangle-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -17759,12 +19131,32 @@
     "file": "jewelry-messika-desert-bloom-necklace-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-messika-gatsby-xs-ring-rg-dia": {
+    "file": "jewelry-messika-gatsby-xs-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-glamazone-ring-rg-pave-dia": {
+    "file": "jewelry-messika-glamazone-ring-rg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-messika-imperial-move-pave-necklace-rg-dia": {
     "file": "jewelry-messika-imperial-move-pave-necklace-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-messika-joy-coeur-necklace-wg-015ct": {
+    "file": "jewelry-messika-joy-coeur-necklace-wg-015ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-joy-xs-necklace-wg-dia": {
+    "file": "jewelry-messika-joy-xs-necklace-wg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-messika-lucky-move-mm-necklace-rg-pave-dia": {
     "file": "jewelry-messika-lucky-move-mm-necklace-rg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-lucky-move-pm-bracelet-rg-mop": {
+    "file": "jewelry-messika-lucky-move-pm-bracelet-rg-mop.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-messika-lucky-move-pm-necklace-rg-malachite": {
@@ -17775,8 +19167,36 @@
     "file": "jewelry-messika-lucky-move-pm-necklace-rg-mop.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-messika-lucky-move-sm-necklace-rg-malachite": {
+    "file": "jewelry-messika-lucky-move-sm-necklace-rg-malachite.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-lucky-move-sm-necklace-rg-mop": {
+    "file": "jewelry-messika-lucky-move-sm-necklace-rg-mop.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-messika-care-s-cord-bracelet-rg-dia": {
+    "file": "jewelry-messika-messika-care-s-cord-bracelet-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-messika-move-10th-necklace-rg-dia": {
     "file": "jewelry-messika-move-10th-necklace-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-classique-bracelet-rg-dia": {
+    "file": "jewelry-messika-move-classique-bracelet-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-classique-necklace-rg-dia": {
+    "file": "jewelry-messika-move-classique-necklace-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-classique-pave-necklace-rg-dia": {
+    "file": "jewelry-messika-move-classique-pave-necklace-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-classique-pave-ring-rg-dia": {
+    "file": "jewelry-messika-move-classique-pave-ring-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-messika-move-classique-ring-rg-dia": {
@@ -17785,6 +19205,10 @@
   },
   "jewelry-messika-move-joaillerie-pave-bangle-rg-dia": {
     "file": "jewelry-messika-move-joaillerie-pave-bangle-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-joaillerie-ring-rg-pave-dia": {
+    "file": "jewelry-messika-move-joaillerie-ring-rg-pave-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-messika-move-link-bracelet-rg-dia": {
@@ -17799,12 +19223,68 @@
     "file": "jewelry-messika-move-noa-pave-bangle-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-messika-move-noa-ring-rg-dia": {
+    "file": "jewelry-messika-move-noa-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-messika-move-romane-bangle-rg-dia": {
     "file": "jewelry-messika-move-romane-bangle-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-messika-move-romane-necklace-rg-dia": {
+    "file": "jewelry-messika-move-romane-necklace-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-romane-ring-large-rg-dia": {
+    "file": "jewelry-messika-move-romane-ring-large-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-romane-ring-small-rg-dia": {
+    "file": "jewelry-messika-move-romane-ring-small-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-messika-move-titanium-bracelet-dia": {
     "file": "jewelry-messika-move-titanium-bracelet-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-titanium-necklace-dia": {
+    "file": "jewelry-messika-move-titanium-necklace-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-uno-bracelet-rg-dia": {
+    "file": "jewelry-messika-move-uno-bracelet-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-uno-hoop-earrings-small-rg-dia": {
+    "file": "jewelry-messika-move-uno-hoop-earrings-small-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-uno-necklace-rg-dia": {
+    "file": "jewelry-messika-move-uno-necklace-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-uno-pave-necklace-rg-dia": {
+    "file": "jewelry-messika-move-uno-pave-necklace-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-uno-pave-ring-rg-dia": {
+    "file": "jewelry-messika-move-uno-pave-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-uno-ring-rg-dia": {
+    "file": "jewelry-messika-move-uno-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-move-uno-stud-earrings-rg-dia": {
+    "file": "jewelry-messika-move-uno-stud-earrings-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-my-twin-toi-and-moi-necklace-rg-dia": {
+    "file": "jewelry-messika-my-twin-toi-and-moi-necklace-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-messika-my-twin-toi-and-moi-ring-rg-dia": {
+    "file": "jewelry-messika-my-twin-toi-and-moi-ring-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-messika-my-twin-trilogy-necklace-rg-dia": {
@@ -17819,8 +19299,28 @@
     "file": "jewelry-messika-so-move-xl-pave-necklace-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-mikimoto-akoya-bracelet-7in-7x65mm-a-18k-wg": {
+    "file": "jewelry-mikimoto-akoya-bracelet-7in-7x65mm-a-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-akoya-pendant-7mm-a-18k-wg": {
+    "file": "jewelry-mikimoto-akoya-pendant-7mm-a-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-akoya-pendant-8mm-a-18k-wg": {
+    "file": "jewelry-mikimoto-akoya-pendant-8mm-a-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-akoya-strand-16in-65x6mm-a-18k-wg": {
+    "file": "jewelry-mikimoto-akoya-strand-16in-65x6mm-a-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-mikimoto-akoya-strand-18in-75x7mm-a-18k-wg": {
     "file": "jewelry-mikimoto-akoya-strand-18in-75x7mm-a-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-akoya-strand-18in-7x65mm-a-18k-wg": {
+    "file": "jewelry-mikimoto-akoya-strand-18in-7x65mm-a-18k-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-mikimoto-akoya-strand-18in-85x8mm-aa-18k-wg": {
@@ -17839,6 +19339,30 @@
     "file": "jewelry-mikimoto-akoya-strand-18in-9x85mm-aa-18k-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-mikimoto-akoya-stud-earrings-6mm-a-18k-wg": {
+    "file": "jewelry-mikimoto-akoya-stud-earrings-6mm-a-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-akoya-stud-earrings-75mm-aa-18k-wg": {
+    "file": "jewelry-mikimoto-akoya-stud-earrings-75mm-aa-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-akoya-stud-earrings-7mm-a-18k-wg": {
+    "file": "jewelry-mikimoto-akoya-stud-earrings-7mm-a-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-akoya-stud-earrings-85mm-aa-18k-wg": {
+    "file": "jewelry-mikimoto-akoya-stud-earrings-85mm-aa-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-akoya-stud-earrings-8mm-a-18k-wg": {
+    "file": "jewelry-mikimoto-akoya-stud-earrings-8mm-a-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-akoya-stud-earrings-8mm-aaa-18k-wg": {
+    "file": "jewelry-mikimoto-akoya-stud-earrings-8mm-aaa-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-mikimoto-bss-pearl-strand-18in-11x9mm-a-18k-wg": {
     "file": "jewelry-mikimoto-bss-pearl-strand-18in-11x9mm-a-18k-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -17847,12 +19371,76 @@
     "file": "jewelry-mikimoto-bss-pearl-strand-18in-13x10mm-a-18k-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-mikimoto-bss-pearl-stud-earrings-9mm-a-18k-wg": {
+    "file": "jewelry-mikimoto-bss-pearl-stud-earrings-9mm-a-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-cherry-blossom-earrings-akoya-dia-18k-wg": {
+    "file": "jewelry-mikimoto-cherry-blossom-earrings-akoya-dia-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-cherry-blossom-pendant-akoya-dia-18k-wg": {
+    "file": "jewelry-mikimoto-cherry-blossom-pendant-akoya-dia-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-classic-elegance-stud-earrings-akoya-dia-18k-wg": {
+    "file": "jewelry-mikimoto-classic-elegance-stud-earrings-akoya-dia-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-mikimoto-gss-pearl-strand-18in-13x11mm-a-18k-yg": {
     "file": "jewelry-mikimoto-gss-pearl-strand-18in-13x11mm-a-18k-yg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-mikimoto-les-petales-ring-akoya-dia-18k-rg": {
+    "file": "jewelry-mikimoto-les-petales-ring-akoya-dia-18k-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-m-code-bracelet-akoya-18k-yg": {
+    "file": "jewelry-mikimoto-m-code-bracelet-akoya-18k-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-m-code-earrings-akoya-18k-yg": {
+    "file": "jewelry-mikimoto-m-code-earrings-akoya-18k-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-m-code-necklace-akoya-18k-yg": {
+    "file": "jewelry-mikimoto-m-code-necklace-akoya-18k-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-m-code-ring-akoya-18k-yg": {
+    "file": "jewelry-mikimoto-m-code-ring-akoya-18k-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-m-collection-pendant-akoya-dia-18k-wg": {
+    "file": "jewelry-mikimoto-m-collection-pendant-akoya-dia-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-mikimoto-international-pearl-ballpoint-pen": {
+    "file": "jewelry-mikimoto-mikimoto-international-pearl-ballpoint-pen.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-mikimoto-international-pearl-bookmark": {
+    "file": "jewelry-mikimoto-mikimoto-international-pearl-bookmark.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-morning-dew-earrings-akoya-dia-18k-wg": {
+    "file": "jewelry-mikimoto-morning-dew-earrings-akoya-dia-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-morning-dew-pendant-akoya-dia-18k-wg": {
+    "file": "jewelry-mikimoto-morning-dew-pendant-akoya-dia-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-pearls-in-motion-necklace-akoya-18k-wg": {
+    "file": "jewelry-mikimoto-pearls-in-motion-necklace-akoya-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-mikimoto-pearls-in-motion-necklace-bss-pearl-18k-wg": {
     "file": "jewelry-mikimoto-pearls-in-motion-necklace-bss-pearl-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-wss-pearl-pendant-11mm-a-dia-18k-wg": {
+    "file": "jewelry-mikimoto-wss-pearl-pendant-11mm-a-dia-18k-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-mikimoto-wss-pearl-strand-18in-12x10mm-a-18k-wg": {
@@ -17865,6 +19453,10 @@
   },
   "jewelry-mikimoto-wss-pearl-strand-18in-16x13mm-aa-18k-wg": {
     "file": "jewelry-mikimoto-wss-pearl-strand-18in-16x13mm-aa-18k-wg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-mikimoto-wss-pearl-stud-earrings-11mm-a-18k-wg": {
+    "file": "jewelry-mikimoto-wss-pearl-stud-earrings-11mm-a-18k-wg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-alex-and-ani-path-of-life-charm-bangle": {
@@ -17883,6 +19475,10 @@
     "file": "jewelry-p-baublebar-mini-alidia-ring.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-baublebar-pisa-bracelet": {
+    "file": "jewelry-p-baublebar-pisa-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-bausch-lomb-hastings-triplet-10x": {
     "file": "jewelry-p-bausch-lomb-hastings-triplet-10x.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -17891,12 +19487,36 @@
     "file": "jewelry-p-belomo-10x-triplet-loupe.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-blue-nile-diamond-eternity-ring-1ct": {
+    "file": "jewelry-p-blue-nile-diamond-eternity-ring-1ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-blue-nile-diamond-eternity-ring-2ct": {
+    "file": "jewelry-p-blue-nile-diamond-eternity-ring-2ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-blue-nile-diamond-stud-earrings-1ct": {
     "file": "jewelry-p-blue-nile-diamond-stud-earrings-1ct.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-blue-nile-diamond-stud-earrings-half-ct": {
+    "file": "jewelry-p-blue-nile-diamond-stud-earrings-half-ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-blue-nile-diamond-tennis-bracelet-1ct": {
     "file": "jewelry-p-blue-nile-diamond-tennis-bracelet-1ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-boodles-raindance-classic-ring": {
+    "file": "jewelry-p-boodles-raindance-classic-ring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-bottega-veneta-drop-earrings-silver": {
+    "file": "jewelry-p-bottega-veneta-drop-earrings-silver.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-cape-cod-polishing-cloths-tin": {
+    "file": "jewelry-p-cape-cod-polishing-cloths-tin.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-catbird-sweet-nothing-bracelet": {
@@ -17915,6 +19535,10 @@
     "file": "jewelry-p-chanel-coco-crush-bracelet.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-chanel-coco-crush-bracelet-diamonds": {
+    "file": "jewelry-p-chanel-coco-crush-bracelet-diamonds.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-chanel-coco-crush-bracelet-full-pave": {
     "file": "jewelry-p-chanel-coco-crush-bracelet-full-pave.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -17927,8 +19551,24 @@
     "file": "jewelry-p-chanel-coco-crush-single-earring.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-chanel-eternal-no5-ring": {
+    "file": "jewelry-p-chanel-eternal-no5-ring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-chanel-extrait-de-camelia-necklace": {
     "file": "jewelry-p-chanel-extrait-de-camelia-necklace.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-chanel-ultra-ring-medium": {
+    "file": "jewelry-p-chanel-ultra-ring-medium.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-connoisseurs-dazzle-drops-advanced": {
+    "file": "jewelry-p-connoisseurs-dazzle-drops-advanced.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-cuyana-leather-jewelry-case": {
+    "file": "jewelry-p-cuyana-leather-jewelry-case.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-de-beers-arpeggia-five-line-necklace": {
@@ -17983,8 +19623,28 @@
     "file": "jewelry-p-dinh-van-le-cube-diamant-necklace.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-dinh-van-menottes-r10-bracelet": {
+    "file": "jewelry-p-dinh-van-menottes-r10-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-dinh-van-menottes-r8-cord-bracelet": {
+    "file": "jewelry-p-dinh-van-menottes-r8-cord-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-dinh-van-menottes-r8-ring": {
+    "file": "jewelry-p-dinh-van-menottes-r8-ring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-dior-bois-de-rose-ring-diamonds": {
+    "file": "jewelry-p-dior-bois-de-rose-ring-diamonds.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-dior-clair-d-lune-bracelet": {
     "file": "jewelry-p-dior-clair-d-lune-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-dior-clair-d-lune-earrings": {
+    "file": "jewelry-p-dior-clair-d-lune-earrings.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-dior-clair-d-lune-necklace": {
@@ -17993,6 +19653,10 @@
   },
   "jewelry-p-dior-jadior-bracelet-set": {
     "file": "jewelry-p-dior-jadior-bracelet-set.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-dior-mimirose-necklace": {
+    "file": "jewelry-p-dior-mimirose-necklace.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-dior-my-dior-bracelet": {
@@ -18005,6 +19669,10 @@
   },
   "jewelry-p-dior-petit-cd-stud-earrings": {
     "file": "jewelry-p-dior-petit-cd-stud-earrings.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-dior-rose-des-vents-necklace": {
+    "file": "jewelry-p-dior-rose-des-vents-necklace.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-dior-tribales-earrings": {
@@ -18063,6 +19731,10 @@
     "file": "jewelry-p-georg-jensen-torun-bangle.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-goddards-silver-polish-foam-6oz": {
+    "file": "jewelry-p-goddards-silver-polish-foam-6oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-gorjana-parker-necklace": {
     "file": "jewelry-p-gorjana-parker-necklace.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -18073,6 +19745,14 @@
   },
   "jewelry-p-gorjana-venice-mini-bracelet": {
     "file": "jewelry-p-gorjana-venice-mini-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-gucci-gg-running-ring-18k": {
+    "file": "jewelry-p-gucci-gg-running-ring-18k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-gucci-gg-running-stud-earrings-18k": {
+    "file": "jewelry-p-gucci-gg-running-stud-earrings-18k.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-gucci-icon-ring-18k": {
@@ -18087,20 +19767,72 @@
     "file": "jewelry-p-gucci-interlocking-g-stud-earrings-silver.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-gucci-link-to-love-bracelet": {
+    "file": "jewelry-p-gucci-link-to-love-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-gucci-link-to-love-ring": {
+    "file": "jewelry-p-gucci-link-to-love-ring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-gucci-link-to-love-studded-ring": {
     "file": "jewelry-p-gucci-link-to-love-studded-ring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-gucci-trademark-heart-bracelet-silver": {
+    "file": "jewelry-p-gucci-trademark-heart-bracelet-silver.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-gucci-trademark-heart-necklace-silver": {
+    "file": "jewelry-p-gucci-trademark-heart-necklace-silver.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-gucci-trademark-heart-ring-silver": {
     "file": "jewelry-p-gucci-trademark-heart-ring-silver.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-hagerty-pearl-clean-6oz": {
+    "file": "jewelry-p-hagerty-pearl-clean-6oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-hagerty-silver-foam-7oz": {
+    "file": "jewelry-p-hagerty-silver-foam-7oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-hagerty-silversmiths-gloves": {
     "file": "jewelry-p-hagerty-silversmiths-gloves.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-hagerty-silversmiths-polish-8oz": {
+    "file": "jewelry-p-hagerty-silversmiths-polish-8oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-hearts-on-fire-temptation-bracelet-5ct": {
+    "file": "jewelry-p-hearts-on-fire-temptation-bracelet-5ct.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-hermes-behapi-double-tour-bracelet": {
+    "file": "jewelry-p-hermes-behapi-double-tour-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-hermes-chaine-dancre-bracelet-medium-silver": {
+    "file": "jewelry-p-hermes-chaine-dancre-bracelet-medium-silver.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-hermes-chaine-dancre-bracelet-small-silver": {
     "file": "jewelry-p-hermes-chaine-dancre-bracelet-small-silver.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-hermes-chaine-dancre-enchainee-ring-silver": {
+    "file": "jewelry-p-hermes-chaine-dancre-enchainee-ring-silver.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-hermes-clic-clac-h-bracelet": {
+    "file": "jewelry-p-hermes-clic-clac-h-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-hermes-clic-h-bracelet": {
+    "file": "jewelry-p-hermes-clic-h-bracelet.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-hermes-collier-de-chien-bracelet-diamonds": {
@@ -18115,8 +19847,16 @@
     "file": "jewelry-p-hermes-farandole-necklace-80.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-hermes-finesse-bracelet": {
+    "file": "jewelry-p-hermes-finesse-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-hermes-jumbo-bracelet": {
     "file": "jewelry-p-hermes-jumbo-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-hermes-kelly-clochette-pendant": {
+    "file": "jewelry-p-hermes-kelly-clochette-pendant.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-hermes-kelly-double-tour-bracelet": {
@@ -18163,6 +19903,14 @@
     "file": "jewelry-p-john-hardy-classic-chain-bracelet-11mm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-john-hardy-classic-chain-bracelet-5mm": {
+    "file": "jewelry-p-john-hardy-classic-chain-bracelet-5mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-john-hardy-classic-chain-bracelet-7-5mm": {
+    "file": "jewelry-p-john-hardy-classic-chain-bracelet-7-5mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-john-hardy-classic-chain-small-hoop-earrings": {
     "file": "jewelry-p-john-hardy-classic-chain-small-hoop-earrings.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -18185,6 +19933,10 @@
   },
   "jewelry-p-kendra-scott-danielle-drop-earrings": {
     "file": "jewelry-p-kendra-scott-danielle-drop-earrings.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-kendra-scott-elaina-chain-bracelet": {
+    "file": "jewelry-p-kendra-scott-elaina-chain-bracelet.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-kendra-scott-elisa-pendant-necklace": {
@@ -18211,8 +19963,16 @@
     "file": "jewelry-p-lalique-cabochon-ring.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-lokai-classic-bracelet": {
+    "file": "jewelry-p-lokai-classic-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-louis-vuitton-color-blossom-bb-star-pendant": {
     "file": "jewelry-p-louis-vuitton-color-blossom-bb-star-pendant.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-louis-vuitton-empreinte-bangle": {
+    "file": "jewelry-p-louis-vuitton-empreinte-bangle.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-louis-vuitton-empreinte-bangle-pave": {
@@ -18227,8 +19987,16 @@
     "file": "jewelry-p-louis-vuitton-essential-v-necklace.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-louis-vuitton-essential-v-stud-earrings": {
+    "file": "jewelry-p-louis-vuitton-essential-v-stud-earrings.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-louis-vuitton-idylle-blossom-pendant": {
     "file": "jewelry-p-louis-vuitton-idylle-blossom-pendant.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-louis-vuitton-louise-hoop-earrings-gm": {
+    "file": "jewelry-p-louis-vuitton-louise-hoop-earrings-gm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-louis-vuitton-lv-volt-one-small-pendant": {
@@ -18247,12 +20015,24 @@
     "file": "jewelry-p-mark-graham-small-travel-jewelry-case.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-mejuri-croissant-dome-ring-14k": {
+    "file": "jewelry-p-mejuri-croissant-dome-ring-14k.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-mejuri-croissant-dome-ring-vermeil": {
+    "file": "jewelry-p-mejuri-croissant-dome-ring-vermeil.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-mejuri-dome-ring-vermeil": {
     "file": "jewelry-p-mejuri-dome-ring-vermeil.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-mejuri-jewelry-box": {
     "file": "jewelry-p-mejuri-jewelry-box.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-mejuri-travel-case": {
+    "file": "jewelry-p-mejuri-travel-case.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-monica-vinader-alta-capture-charm-necklace": {
@@ -18279,6 +20059,10 @@
     "file": "jewelry-p-pandora-band-of-hearts-ring.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-pandora-care-kit": {
+    "file": "jewelry-p-pandora-care-kit.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-pandora-classic-cable-chain-necklace": {
     "file": "jewelry-p-pandora-classic-cable-chain-necklace.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -18287,12 +20071,24 @@
     "file": "jewelry-p-pandora-clear-heart-solitaire-ring.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-pandora-era-lab-grown-diamond-pendant-silver": {
+    "file": "jewelry-p-pandora-era-lab-grown-diamond-pendant-silver.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-pandora-moments-heart-clasp-bracelet": {
     "file": "jewelry-p-pandora-moments-heart-clasp-bracelet.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-pandora-moments-snake-chain-bracelet": {
+    "file": "jewelry-p-pandora-moments-snake-chain-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-pandora-moments-studded-chain-bracelet": {
     "file": "jewelry-p-pandora-moments-studded-chain-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-pandora-princess-tiara-crown-ring": {
+    "file": "jewelry-p-pandora-princess-tiara-crown-ring.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-pandora-sparkling-infinity-collier-necklace": {
@@ -18335,6 +20131,14 @@
     "file": "jewelry-p-presidium-gem-tester-ii.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-presidium-synthetic-diamond-screener-ii": {
+    "file": "jewelry-p-presidium-synthetic-diamond-screener-ii.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-pura-vida-wave-ring": {
+    "file": "jewelry-p-pura-vida-wave-ring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-qeelin-petite-wulu-necklace": {
     "file": "jewelry-p-qeelin-petite-wulu-necklace.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -18343,8 +20147,20 @@
     "file": "jewelry-p-roberto-coin-tiny-treasures-diamond-cross.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-shinery-radiance-towelettes": {
+    "file": "jewelry-p-shinery-radiance-towelettes.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-shinery-radiance-wash-8oz": {
     "file": "jewelry-p-shinery-radiance-wash-8oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-simple-shine-jewelry-cleaner-8oz": {
+    "file": "jewelry-p-simple-shine-jewelry-cleaner-8oz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-smythson-panama-3-drawer-jewellery-box": {
+    "file": "jewelry-p-smythson-panama-3-drawer-jewellery-box.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-smythson-panama-jewellery-roll": {
@@ -18379,6 +20195,22 @@
     "file": "jewelry-p-tory-burch-kira-pendant-necklace.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-tory-burch-kira-stud-earring": {
+    "file": "jewelry-p-tory-burch-kira-stud-earring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-tory-burch-miller-stud-earring": {
+    "file": "jewelry-p-tory-burch-miller-stud-earring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-town-talk-silver-sparkle-225ml": {
+    "file": "jewelry-p-town-talk-silver-sparkle-225ml.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-umbra-anigram-ring-holder": {
+    "file": "jewelry-p-umbra-anigram-ring-holder.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-umbra-stowit-jewelry-box": {
     "file": "jewelry-p-umbra-stowit-jewelry-box.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -18411,8 +20243,24 @@
     "file": "jewelry-p-vivienne-westwood-mini-bas-relief-pendant.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-p-vivienne-westwood-nano-solitaire-earrings": {
+    "file": "jewelry-p-vivienne-westwood-nano-solitaire-earrings.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-p-vivienne-westwood-one-row-pearl-choker": {
     "file": "jewelry-p-vivienne-westwood-one-row-pearl-choker.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-vivienne-westwood-three-row-pearl-choker": {
+    "file": "jewelry-p-vivienne-westwood-three-row-pearl-choker.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-vlando-macaron-travel-jewelry-box": {
+    "file": "jewelry-p-vlando-macaron-travel-jewelry-box.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-wolf-caroline-large-jewelry-case": {
+    "file": "jewelry-p-wolf-caroline-large-jewelry-case.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-wolf-caroline-medium-jewelry-case": {
@@ -18425,6 +20273,14 @@
   },
   "jewelry-p-wolf-caroline-zip-travel-case": {
     "file": "jewelry-p-wolf-caroline-zip-travel-case.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-wolf-palermo-large-jewelry-box": {
+    "file": "jewelry-p-wolf-palermo-large-jewelry-box.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-p-wolf-palermo-medium-jewelry-box": {
+    "file": "jewelry-p-wolf-palermo-medium-jewelry-box.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-p-wolf-palermo-zip-case": {
@@ -18455,16 +20311,48 @@
     "file": "jewelry-piaget-piaget-passion-solitaire-ring-pt-300ct.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-piaget-piaget-rose-bracelet-rg-dia": {
+    "file": "jewelry-piaget-piaget-rose-bracelet-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-piaget-rose-earrings-rg-dia": {
+    "file": "jewelry-piaget-piaget-rose-earrings-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-piaget-piaget-rose-earrings-wg-pave-dia": {
     "file": "jewelry-piaget-piaget-rose-earrings-wg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-piaget-rose-pendant-rg-dia": {
+    "file": "jewelry-piaget-piaget-rose-pendant-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-piaget-piaget-rose-pendant-wg-pave-dia": {
     "file": "jewelry-piaget-piaget-rose-pendant-wg-pave-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-piaget-piaget-rose-ring-rg-dia": {
+    "file": "jewelry-piaget-piaget-rose-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-piaget-piaget-rose-ring-wg-pave-dia": {
     "file": "jewelry-piaget-piaget-rose-ring-wg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-piaget-sunlight-earrings-rg-dia": {
+    "file": "jewelry-piaget-piaget-sunlight-earrings-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-piaget-sunlight-pendant-rg-dia": {
+    "file": "jewelry-piaget-piaget-sunlight-pendant-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-piaget-sunlight-pendant-wg-pave-dia": {
+    "file": "jewelry-piaget-piaget-sunlight-pendant-wg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-piaget-sunlight-ring-rg-dia": {
+    "file": "jewelry-piaget-piaget-sunlight-ring-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-piaget-possession-bangle-rg-dia": {
@@ -18473,6 +20361,18 @@
   },
   "jewelry-piaget-possession-bangle-wg-full-pave-dia": {
     "file": "jewelry-piaget-possession-bangle-wg-full-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-possession-bracelet-rg-dia": {
+    "file": "jewelry-piaget-possession-bracelet-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-possession-decor-palace-ring-rg-dia": {
+    "file": "jewelry-piaget-possession-decor-palace-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-possession-earrings-rg-dia": {
+    "file": "jewelry-piaget-possession-earrings-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-piaget-possession-open-bangle-rg-carnelian-dia": {
@@ -18487,8 +20387,36 @@
     "file": "jewelry-piaget-possession-open-bangle-rg-malachite-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-piaget-possession-open-ring-rg-carnelian-dia": {
+    "file": "jewelry-piaget-possession-open-ring-rg-carnelian-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-possession-open-ring-rg-dia": {
+    "file": "jewelry-piaget-possession-open-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-possession-open-ring-rg-malachite-dia": {
+    "file": "jewelry-piaget-possession-open-ring-rg-malachite-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-possession-pendant-rg-dia": {
+    "file": "jewelry-piaget-possession-pendant-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-possession-pendant-rg-malachite-dia": {
+    "file": "jewelry-piaget-possession-pendant-rg-malachite-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-possession-pendant-rg-pave-dia": {
+    "file": "jewelry-piaget-possession-pendant-rg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-piaget-possession-ring-rg-1-dia": {
     "file": "jewelry-piaget-possession-ring-rg-1-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-piaget-possession-ring-rg-dia": {
+    "file": "jewelry-piaget-possession-ring-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-piaget-possession-ring-rg-pave-dia": {
@@ -18499,12 +20427,24 @@
     "file": "jewelry-piaget-possession-wedding-band-rg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-pomellato-brera-bracelet-rg": {
+    "file": "jewelry-pomellato-brera-bracelet-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-pomellato-brera-necklace-rg": {
     "file": "jewelry-pomellato-brera-necklace-rg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-pomellato-brera-ring-rg": {
+    "file": "jewelry-pomellato-brera-ring-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-pomellato-catene-bracelet-rg": {
     "file": "jewelry-pomellato-catene-bracelet-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-catene-earrings-rg": {
+    "file": "jewelry-pomellato-catene-earrings-rg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-pomellato-catene-necklace-rg": {
@@ -18515,8 +20455,16 @@
     "file": "jewelry-pomellato-catene-necklace-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-pomellato-catene-ring-rg": {
+    "file": "jewelry-pomellato-catene-ring-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-pomellato-fantina-bracelet-rg": {
     "file": "jewelry-pomellato-fantina-bracelet-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-fantina-ring-rg": {
+    "file": "jewelry-pomellato-fantina-ring-rg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-pomellato-iconica-bangle-bold-rg-full-pave-dia": {
@@ -18535,16 +20483,144 @@
     "file": "jewelry-pomellato-iconica-bangle-slim-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-pomellato-iconica-hoop-earrings-rg": {
+    "file": "jewelry-pomellato-iconica-hoop-earrings-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-iconica-ring-bold-rg": {
+    "file": "jewelry-pomellato-iconica-ring-bold-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-iconica-ring-medium-rg": {
+    "file": "jewelry-pomellato-iconica-ring-medium-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-iconica-ring-slim-rg": {
+    "file": "jewelry-pomellato-iconica-ring-slim-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-iconica-ring-slim-rg-dia": {
+    "file": "jewelry-pomellato-iconica-ring-slim-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-mama-pendant-rg-amethyst": {
+    "file": "jewelry-pomellato-mama-pendant-rg-amethyst.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-mama-ring-rg-amethyst": {
+    "file": "jewelry-pomellato-mama-ring-rg-amethyst.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-mama-ring-rg-london-blue-topaz": {
+    "file": "jewelry-pomellato-mama-ring-rg-london-blue-topaz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-mama-stud-earrings-rg-amethyst": {
+    "file": "jewelry-pomellato-mama-stud-earrings-rg-amethyst.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-bracelet-rg-blue-topaz": {
+    "file": "jewelry-pomellato-nudo-bracelet-rg-blue-topaz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-classic-pendant-rg-blue-topaz": {
+    "file": "jewelry-pomellato-nudo-classic-pendant-rg-blue-topaz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-classic-ring-rg-blue-topaz": {
+    "file": "jewelry-pomellato-nudo-classic-ring-rg-blue-topaz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-pomellato-nudo-classic-ring-rg-blue-topaz-dia": {
     "file": "jewelry-pomellato-nudo-classic-ring-rg-blue-topaz-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-classic-ring-rg-prasiolite": {
+    "file": "jewelry-pomellato-nudo-classic-ring-rg-prasiolite.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-drop-earrings-rg-blue-topaz": {
+    "file": "jewelry-pomellato-nudo-drop-earrings-rg-blue-topaz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-gele-ring-rg-blue-topaz-mop": {
+    "file": "jewelry-pomellato-nudo-gele-ring-rg-blue-topaz-mop.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-maxi-ring-rg-blue-topaz": {
+    "file": "jewelry-pomellato-nudo-maxi-ring-rg-blue-topaz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-petit-earrings-rg-blue-topaz": {
+    "file": "jewelry-pomellato-nudo-petit-earrings-rg-blue-topaz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-petit-pendant-rg-blue-topaz": {
+    "file": "jewelry-pomellato-nudo-petit-pendant-rg-blue-topaz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-petit-ring-rg-amethyst": {
+    "file": "jewelry-pomellato-nudo-petit-ring-rg-amethyst.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-petit-ring-rg-blue-topaz": {
+    "file": "jewelry-pomellato-nudo-petit-ring-rg-blue-topaz.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-petit-ring-rg-blue-topaz-dia": {
+    "file": "jewelry-pomellato-nudo-petit-ring-rg-blue-topaz-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-nudo-petit-solitaire-ring-rg-dia": {
+    "file": "jewelry-pomellato-nudo-petit-solitaire-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-pom-pom-dot-bracelet-rg-mop-dia": {
+    "file": "jewelry-pomellato-pom-pom-dot-bracelet-rg-mop-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-pom-pom-dot-ring-rg-mop-dia": {
+    "file": "jewelry-pomellato-pom-pom-dot-ring-rg-mop-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-pomellato-together-bangle-rg": {
+    "file": "jewelry-pomellato-pomellato-together-bangle-rg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-pomellato-pomellato-together-bangle-rg-dia": {
     "file": "jewelry-pomellato-pomellato-together-bangle-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-pomellato-pomellato-together-earrings-rg": {
+    "file": "jewelry-pomellato-pomellato-together-earrings-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-pomellato-together-ring-rg": {
+    "file": "jewelry-pomellato-pomellato-together-ring-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-pomellato-together-ring-rg-dia": {
+    "file": "jewelry-pomellato-pomellato-together-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-sabbia-bracelet-rg-brown-dia": {
+    "file": "jewelry-pomellato-sabbia-bracelet-rg-brown-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-sabbia-earrings-rg-dia": {
+    "file": "jewelry-pomellato-sabbia-earrings-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-sabbia-pendant-rg-dia": {
+    "file": "jewelry-pomellato-sabbia-pendant-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-pomellato-sabbia-ring-rg-brown-dia": {
     "file": "jewelry-pomellato-sabbia-ring-rg-brown-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-pomellato-sabbia-ring-rg-dia": {
+    "file": "jewelry-pomellato-sabbia-ring-rg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-pomellato-tango-bracelet-rg": {
@@ -18555,16 +20631,80 @@
     "file": "jewelry-pomellato-tango-ring-rg-brown-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-repossi-antifer-bracelet-2-rows-rg": {
+    "file": "jewelry-repossi-antifer-bracelet-2-rows-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-repossi-antifer-bracelet-4-rows-rg-pave-dia": {
     "file": "jewelry-repossi-antifer-bracelet-4-rows-rg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-antifer-heart-ring-rg": {
+    "file": "jewelry-repossi-antifer-heart-ring-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-antifer-ring-1-row-rg": {
+    "file": "jewelry-repossi-antifer-ring-1-row-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-antifer-ring-2-rows-rg": {
+    "file": "jewelry-repossi-antifer-ring-2-rows-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-antifer-ring-2-rows-rg-pave-dia": {
+    "file": "jewelry-repossi-antifer-ring-2-rows-rg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-antifer-ring-4-rows-rg": {
+    "file": "jewelry-repossi-antifer-ring-4-rows-rg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-repossi-antifer-ring-4-rows-rg-pave-dia": {
     "file": "jewelry-repossi-antifer-ring-4-rows-rg-pave-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-repossi-berbere-bracelet-rg": {
+    "file": "jewelry-repossi-berbere-bracelet-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-repossi-berbere-bracelet-rg-pave-dia": {
     "file": "jewelry-repossi-berbere-bracelet-rg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-berbere-chromatic-ring-rg-lacquer": {
+    "file": "jewelry-repossi-berbere-chromatic-ring-rg-lacquer.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-berbere-ear-cuff-1-row-rg": {
+    "file": "jewelry-repossi-berbere-ear-cuff-1-row-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-berbere-ear-cuff-3-rows-rg": {
+    "file": "jewelry-repossi-berbere-ear-cuff-3-rows-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-berbere-ear-cuff-5-rows-rg-pave-dia": {
+    "file": "jewelry-repossi-berbere-ear-cuff-5-rows-rg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-berbere-module-ring-2-rows-rg": {
+    "file": "jewelry-repossi-berbere-module-ring-2-rows-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-berbere-module-ring-3-rows-rg": {
+    "file": "jewelry-repossi-berbere-module-ring-3-rows-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-berbere-module-ring-4-rows-rg": {
+    "file": "jewelry-repossi-berbere-module-ring-4-rows-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-berbere-ring-1-row-rg": {
+    "file": "jewelry-repossi-berbere-ring-1-row-rg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-berbere-ring-1-row-rg-pave-dia": {
+    "file": "jewelry-repossi-berbere-ring-1-row-rg-pave-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-repossi-blast-ring-rg-dia": {
@@ -18579,8 +20719,28 @@
     "file": "jewelry-repossi-brevis-ring-wg-3-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-repossi-la-ligne-c-bracelet-rg-dia": {
+    "file": "jewelry-repossi-la-ligne-c-bracelet-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-la-ligne-c-pendant-rg-dia": {
+    "file": "jewelry-repossi-la-ligne-c-pendant-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-la-ligne-c-ring-rg-dia": {
+    "file": "jewelry-repossi-la-ligne-c-ring-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-la-ligne-c-ring-rg-pave-dia": {
+    "file": "jewelry-repossi-la-ligne-c-ring-rg-pave-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-repossi-serti-inverse-bracelet-rg-dia": {
     "file": "jewelry-repossi-serti-inverse-bracelet-rg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-repossi-serti-inverse-ring-rg-pear-dia": {
+    "file": "jewelry-repossi-serti-inverse-ring-rg-pear-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-repossi-serti-sur-vide-bracelet-wg-dia": {
@@ -18595,12 +20755,24 @@
     "file": "jewelry-repossi-serti-sur-vide-ring-wg-3-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-repossi-serti-sur-vide-ring-wg-pear-dia": {
+    "file": "jewelry-repossi-serti-sur-vide-ring-wg-pear-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-repossi-serti-sur-vide-ring-wg-pear-dia-200ct": {
     "file": "jewelry-repossi-serti-sur-vide-ring-wg-pear-dia-200ct.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-repossi-serti-sur-vide-single-earring-wg-3-dia": {
     "file": "jewelry-repossi-serti-sur-vide-single-earring-wg-3-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-annual-edition-little-star-ornament-2025": {
+    "file": "jewelry-swarovski-annual-edition-little-star-ornament-2025.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-attract-stud-earrings-round-cut": {
+    "file": "jewelry-swarovski-attract-stud-earrings-round-cut.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-swarovski-cd-eternity-stud-earrings-lgd-1ct-tw-14k-wg": {
@@ -18619,12 +20791,80 @@
     "file": "jewelry-swarovski-chroma-necklace.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-swarovski-constella-ring-round-cut": {
+    "file": "jewelry-swarovski-constella-ring-round-cut.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-constella-stud-earrings-round-cut": {
+    "file": "jewelry-swarovski-constella-stud-earrings-round-cut.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-crystal-shimmer-ballpoint-pen": {
+    "file": "jewelry-swarovski-crystal-shimmer-ballpoint-pen.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-crystalline-aura-watch": {
+    "file": "jewelry-swarovski-crystalline-aura-watch.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-crystalline-ballpoint-pen": {
+    "file": "jewelry-swarovski-crystalline-ballpoint-pen.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-gema-bracelet-mixed-cuts": {
+    "file": "jewelry-swarovski-gema-bracelet-mixed-cuts.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-gema-drop-earrings-mixed-cuts": {
+    "file": "jewelry-swarovski-gema-drop-earrings-mixed-cuts.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-gema-necklace-mixed-cuts": {
+    "file": "jewelry-swarovski-gema-necklace-mixed-cuts.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-harmonia-choker": {
+    "file": "jewelry-swarovski-harmonia-choker.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-swarovski-harmonia-necklace": {
     "file": "jewelry-swarovski-harmonia-necklace.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-swarovski-lucent-ballpoint-pen": {
+    "file": "jewelry-swarovski-lucent-ballpoint-pen.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-lucent-bangle": {
+    "file": "jewelry-swarovski-lucent-bangle.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-matrix-tennis-bracelet-round-cut": {
+    "file": "jewelry-swarovski-matrix-tennis-bracelet-round-cut.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-matrix-tennis-necklace-round-cut": {
+    "file": "jewelry-swarovski-matrix-tennis-necklace-round-cut.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-mesmera-bangle-mixed-cuts": {
+    "file": "jewelry-swarovski-mesmera-bangle-mixed-cuts.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-swarovski-mesmera-necklace-mixed-cuts": {
     "file": "jewelry-swarovski-mesmera-necklace-mixed-cuts.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-millenia-ballpoint-pen": {
+    "file": "jewelry-swarovski-millenia-ballpoint-pen.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-millenia-cocktail-ring-octagon-cut": {
+    "file": "jewelry-swarovski-millenia-cocktail-ring-octagon-cut.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-millenia-hoop-earrings-octagon-cut": {
+    "file": "jewelry-swarovski-millenia-hoop-earrings-octagon-cut.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-swarovski-millenia-necklace-octagon-cut": {
@@ -18639,12 +20879,60 @@
     "file": "jewelry-swarovski-octea-lux-sport-watch.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-swarovski-ortyx-necklace-triangle-cut": {
+    "file": "jewelry-swarovski-ortyx-necklace-triangle-cut.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-signum-swan-figurine-small": {
+    "file": "jewelry-swarovski-signum-swan-figurine-small.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-subtle-bracelet": {
+    "file": "jewelry-swarovski-subtle-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-tennis-deluxe-bracelet": {
+    "file": "jewelry-swarovski-tennis-deluxe-bracelet.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-swarovski-vittore-ring": {
+    "file": "jewelry-swarovski-vittore-ring.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-abstract-star-earrings-yg-dia": {
+    "file": "jewelry-tasaki-abstract-star-earrings-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-abstract-star-ring-yg-dia": {
+    "file": "jewelry-tasaki-abstract-star-ring-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-akoya-pearl-bracelet-yg-70mm": {
+    "file": "jewelry-tasaki-akoya-pearl-bracelet-yg-70mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-akoya-pearl-pendant-yg-80mm": {
+    "file": "jewelry-tasaki-akoya-pearl-pendant-yg-80mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-akoya-pearl-strand-necklace-70-75mm": {
+    "file": "jewelry-tasaki-akoya-pearl-strand-necklace-70-75mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-tasaki-akoya-pearl-strand-necklace-80-85mm": {
     "file": "jewelry-tasaki-akoya-pearl-strand-necklace-80-85mm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-tasaki-akoya-pearl-strand-necklace-90-95mm": {
     "file": "jewelry-tasaki-akoya-pearl-strand-necklace-90-95mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-akoya-pearl-stud-earrings-yg-70mm": {
+    "file": "jewelry-tasaki-akoya-pearl-stud-earrings-yg-70mm.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-akoya-pearl-stud-earrings-yg-80mm": {
+    "file": "jewelry-tasaki-akoya-pearl-stud-earrings-yg-80mm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-tasaki-arlequin-ring-yg-akoya-pearl": {
@@ -18655,16 +20943,40 @@
     "file": "jewelry-tasaki-balance-class-ring-yg-akoya-pearl.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-tasaki-balance-era-ring-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-balance-era-ring-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-tasaki-balance-luxe-ring-yg-south-sea-pearl": {
     "file": "jewelry-tasaki-balance-luxe-ring-yg-south-sea-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-balance-neo-earrings-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-balance-neo-earrings-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-balance-neo-ring-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-balance-neo-ring-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-balance-plus-ring-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-balance-plus-ring-yg-akoya-pearl.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-tasaki-balance-signature-bracelet-yg-akoya-pearl": {
     "file": "jewelry-tasaki-balance-signature-bracelet-yg-akoya-pearl.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-tasaki-balance-signature-earrings-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-balance-signature-earrings-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-tasaki-balance-signature-necklace-yg-akoya-pearl": {
     "file": "jewelry-tasaki-balance-signature-necklace-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-balance-signature-ring-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-balance-signature-ring-yg-akoya-pearl.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-tasaki-balance-signature-ring-yg-akoya-pearl-pave-dia": {
@@ -18675,12 +20987,56 @@
     "file": "jewelry-tasaki-black-south-sea-pearl-strand-necklace-10-12mm.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-tasaki-comet-plus-earrings-sakura-gold-akoya-pearl-dia": {
+    "file": "jewelry-tasaki-comet-plus-earrings-sakura-gold-akoya-pearl-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-comet-plus-necklace-sakura-gold-akoya-pearl-dia": {
+    "file": "jewelry-tasaki-comet-plus-necklace-sakura-gold-akoya-pearl-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-comet-plus-ring-sakura-gold-akoya-pearl-dia": {
+    "file": "jewelry-tasaki-comet-plus-ring-sakura-gold-akoya-pearl-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-tasaki-danger-earrings-yg-akoya-pearl": {
     "file": "jewelry-tasaki-danger-earrings-yg-akoya-pearl.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-tasaki-danger-fang-ring-yg-akoya-pearl": {
     "file": "jewelry-tasaki-danger-fang-ring-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-danger-horn-ring-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-danger-horn-ring-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-danger-necklace-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-danger-necklace-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-danger-ring-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-danger-ring-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-kugel-earrings-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-kugel-earrings-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-kugel-necklace-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-kugel-necklace-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-kugel-ring-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-kugel-ring-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-rr-neo-earrings-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-rr-neo-earrings-yg-akoya-pearl.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-tasaki-rr-signature-ring-yg-akoya-pearl": {
+    "file": "jewelry-tasaki-rr-signature-ring-yg-akoya-pearl.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-tasaki-south-sea-pearl-strand-necklace-11-14mm": {
@@ -19027,6 +21383,10 @@
     "file": "jewelry-van-cleef-arpels-lotus-btf-ring-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-van-cleef-arpels-magic-alh-earrings-3-motifs-yg-mop": {
+    "file": "jewelry-van-cleef-arpels-magic-alh-earrings-3-motifs-yg-mop.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-van-cleef-arpels-magic-alh-long-nk-1-motif-yg-mop": {
     "file": "jewelry-van-cleef-arpels-magic-alh-long-nk-1-motif-yg-mop.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
@@ -19067,8 +21427,16 @@
     "file": "jewelry-van-cleef-arpels-perlee-signature-ring-yg.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-van-cleef-arpels-perlee-sweet-clovers-br-yg-dia": {
+    "file": "jewelry-van-cleef-arpels-perlee-sweet-clovers-br-yg-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-van-cleef-arpels-rose-de-noel-clip-small-yg-mop-dia": {
     "file": "jewelry-van-cleef-arpels-rose-de-noel-clip-small-yg-mop-dia.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-van-cleef-arpels-socrate-btf-ring-wg-dia": {
+    "file": "jewelry-van-cleef-arpels-socrate-btf-ring-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-van-cleef-arpels-sweet-alh-br-yg-carnelian": {
@@ -19151,12 +21519,24 @@
     "file": "jewelry-van-cleef-arpels-vintage-alh-long-nk-20-motifs-yg-onyx.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-van-cleef-arpels-vintage-alh-nk-10-motifs-guil-yg": {
+    "file": "jewelry-van-cleef-arpels-vintage-alh-nk-10-motifs-guil-yg.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-van-cleef-arpels-vintage-alh-nk-10-motifs-wg-dia": {
     "file": "jewelry-van-cleef-arpels-vintage-alh-nk-10-motifs-wg-dia.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
+  "jewelry-van-cleef-arpels-vintage-alh-nk-10-motifs-yg-malachite": {
+    "file": "jewelry-van-cleef-arpels-vintage-alh-nk-10-motifs-yg-malachite.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
   "jewelry-van-cleef-arpels-vintage-alh-nk-10-motifs-yg-mop": {
     "file": "jewelry-van-cleef-arpels-vintage-alh-nk-10-motifs-yg-mop.png",
+    "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
+  },
+  "jewelry-van-cleef-arpels-vintage-alh-nk-10-motifs-yg-onyx": {
+    "file": "jewelry-van-cleef-arpels-vintage-alh-nk-10-motifs-yg-onyx.png",
     "credit": "생성 이미지 (Codex 이미지 생성), 참고용"
   },
   "jewelry-van-cleef-arpels-vintage-alh-pendant-guil-yg": {

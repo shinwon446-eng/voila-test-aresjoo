@@ -194,6 +194,8 @@ export function ratingSummary(boxSlug: string, extra: readonly number[] = []): R
 
 // ── 상품의 됨됨이와 그 건의 사실 ───────────────────────────────────
 const topicCache = new Map<string, number>();
+/** 본품의 낱말 뒤가 이렇게 이어지면 "그 본품에 쓰는 것"이다: 바로 "용", 또는 모델을 가리는 말(숫자, 괄호, 세대, 프로와 에어 같은 말) 뒤의 "용" */
+const FOR_IT = /^(?:\s(?:\d+세대|\d+|프로|에어|미니|맥스|울트라|플러스|시리즈|\([^)]*\)?|[A-Z]\d[^\s)]*\)?))*용(?:\s|$)/;
 /**
  * 그 상품의 종류(TOPICS 의 순번). 맞는 종류가 없으면 -1.
  * 먼저 상품 그 자체를 본다: 박스를 가리지 않는 줄(cats 에 *)을 이름으로 맞춘다. 향수는 가방 박스에서도 향수이고, 등급 카드와 차는 옛 박스에서도 카드와 차다.
@@ -205,13 +207,22 @@ function topicIndexOf(box: ProductBox, item: ProductItem): number {
   const key = hints.join(",") + "|" + item.id;
   const cached = topicCache.get(key);
   if (cached !== undefined) return cached;
-  // 본품을 말하는 종류는 부속품, 보관 용품, 관리 용품의 이름을 받지 않는다(레고 수납함은 조립 세트가 아니다)
+  // 본품을 말하는 종류는 부속품, 보관 용품, 관리 용품의 이름을 받지 않는다(레고 수납함은 조립 세트가 아니다).
+  // 본품의 낱말 바로 뒤에 "용"이 붙은 이름도 받지 않는다: 그 본품에 쓰는 물건이다("컨트롤러용 청소 천", "듀얼센스용 충전 스테이션", "오븐용 도마").
+  // 낱말과 "용" 사이에 모델을 가리는 말이 끼어도 같다("아이패드 10세대용", "아이패드 프로 13 (M4)용"). 다른 낱말이 끼면 아니다("컨트롤러 Xbox용"은 컨트롤러다)
   const part = PART.test(item.name);
-  const fits = (topic: Topic) => item.value >= topic.min && item.value <= topic.max && !(topic.whole && part) && topic.re.test(item.name);
+  const forIt = (topic: Topic) => { const m = topic.re.exec(item.name); return !!m && FOR_IT.test(item.name.slice(m.index + m[0].length)); };
+  const fits = (topic: Topic) => item.value >= topic.min && item.value <= topic.max && (topic.re.test(item.name) ? !(topic.whole && (part || forIt(topic))) : !!topic.en && topic.en.test(item.nameEn));
   let found = TOPICS.findIndex((topic) => topic.cats.includes("*") && fits(topic));
   if (found < 0) found = TOPICS.findIndex((topic) => (topic.re.source === "." ? topic.cats.includes(hints[0]) : topic.cats.some((cat) => hints.includes(cat))) && fits(topic));
   topicCache.set(key, found);
   return found;
+}
+
+/** 그 상품이 받는 종류(TOPICS 의 한 줄). 맞는 종류가 없으면 null. 검사와 점검이 생성기의 판정을 그대로 볼 때만 쓴다 */
+export function topicOf(box: ProductBox, item: ProductItem): Topic | null {
+  const index = item.kind === "digital" ? -1 : topicIndexOf(box, item);
+  return index >= 0 ? TOPICS[index] : null;
 }
 
 /** 그 상품의 됨됨이(택배로 오는지, 밀봉 상품인지, 낱장 카드인지). 조각의 조건이 이것을 본다 */

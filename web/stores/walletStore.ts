@@ -108,6 +108,7 @@ interface WalletState {
   /**
    * 접수된 출금을 장부에 적는다. 아직 끝나지 않은 건은 암호화폐 잔액에서 실제로 차감한 경우에만 내역을 만든다.
    * 차감하지 못하면 아무것도 바꾸지 않고 null 을 돌려준다. 서비스가 이미 취소나 실패로 돌려준 건은 차감 없이 내역만 남긴다.
+   * 같은 접수 번호(serverId)의 내역이 이미 있으면 그것을 돌려주고 아무것도 바꾸지 않는다.
    */
   recordWithdrawal: (tx: Omit<Transaction, "id" | "at" | "debited">) => Transaction | null;
   /** 차감(암호화폐 우선 → 모자라면 카드 결합). 부족하면 false 를 돌려주고 아무것도 바꾸지 않는다. */
@@ -240,7 +241,10 @@ export const useWalletStore = create<WalletState>()(
         return true;
       },
       recordWithdrawal: (tx) => {
-        const open = !["CANCELLED", "FAILED"].includes(tx.status ?? "");
+        // 같은 접수 번호는 한 번만 적는다: 이미 있는 내역을 돌려주고 아무것도 바꾸지 않는다(두 번 차감하지 않는다)
+        const existing = tx.serverId ? get().transactions.find((x) => x.type === "withdraw" && x.serverId === tx.serverId) : undefined;
+        if (existing) return existing;
+        const open =!["CANCELLED", "FAILED"].includes(tx.status ?? "");
         if (open && !get().debitCrypto(Math.abs(tx.amountUsdt))) return null;
         return get().addTransaction({ ...tx, debited: open });
       },

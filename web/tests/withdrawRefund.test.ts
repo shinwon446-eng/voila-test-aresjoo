@@ -80,6 +80,26 @@ test("E-01 서비스가 이미 취소나 실패로 돌려준 건은 차감하지
   }
 });
 
+test("C1 guard A 같은 접수 번호로 두 번 적어도 한 번만 차감하고 내역도 하나다", () => {
+  reset(100);
+  const first = now().recordWithdrawal(draft(30));
+  const again = now().recordWithdrawal(draft(30));
+  assert.ok(first && again);
+  assert.equal(again.id, first.id, "둘째 호출은 이미 있는 내역을 돌려준다");
+  assert.equal(now().cryptoBalance, 70, "같은 접수를 두 번 차감했다");
+  assert.equal(now().transactions.filter((x) => x.type === "withdraw").length, 1);
+  // 접수 번호가 다르면 다른 출금이다
+  const other = now().recordWithdrawal({ ...draft(30), serverId: "srv-other" });
+  assert.ok(other && other.id !== first.id);
+  assert.equal(now().cryptoBalance, 40);
+  // 이미 끝난(취소된) 같은 접수 번호를 다시 넘겨도 새로 차감하거나 내역을 더하지 않는다
+  now().syncWithdrawal(first.id, "CANCELLED");
+  assert.equal(now().cryptoBalance, 70);
+  assert.equal(now().recordWithdrawal(draft(30))?.id, first.id);
+  assert.equal(now().cryptoBalance, 70);
+  assert.equal(now().transactions.filter((x) => x.type === "withdraw").length, 2);
+});
+
 test("E-01 표시가 없는 옛 출금 기록은 전처럼 차감한 것으로 보고 환불한다(저장된 기록을 바꾸지 않는다)", () => {
   reset(100);
   assert.equal(now().debitCrypto(30), true);

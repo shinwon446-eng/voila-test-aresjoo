@@ -45,7 +45,7 @@ for cat in "$@"; do
       # Codex 가 결과 글 없이 끝난 묶음도 만들어 둔 원본은 변환한다
       [ -s "qa/codex/gen-out-$t.md" ] || echo "(결과 글 없이 끝남)" > "qa/codex/gen-out-$t.md"
     done
-    bash web/scripts/images/gen-review.sh qa/catalog2/sheets "${part[@]}" 2>&1 | grep -E "원본 없음|failed|empty" > "qa/codex/pool-$label-part.log"
+    bash web/scripts/images/gen-review.sh qa/catalog2/sheets "${part[@]}" 2>&1 | grep -E "원본 없음|failed$|empty$" > "qa/codex/pool-$label-part.log"
     miss=$(grep -c "원본 없음" "qa/codex/pool-$label-part.log"); cat "qa/codex/pool-$label-part.log" >> "$misslog"
     new=$(git status --short web/public/assets/photography | wc -l)
     if [ "$new" -gt 0 ]; then

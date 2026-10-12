@@ -489,6 +489,7 @@
     "passwordNew": "New password",
     "passwordRule": "The new password needs 12 to 128 characters.",
     "codeRule": "Enter the 6-digit authenticator code.",
+    "passwordNeedsApp": "Connect an authenticator app first, then change your password.",
     "passwordSave": "Change password",
     "closeTitle": "Delete account",
     "closeDesc": "Deleting removes the account, its records, any remaining balance and items in the vault. Take what you want before deleting.",

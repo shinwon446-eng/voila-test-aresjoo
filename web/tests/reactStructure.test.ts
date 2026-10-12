@@ -54,3 +54,15 @@ test("E-08 확인창: 확정 단추는 뜬 직후의 잠금을 거치고, 잠금
   // 취소는 잠그지 않는다
   assert.match(confirm, /<TextLink onClick=\{\(\) => \{ if \(!busy\) onCancel\(\); \}\}>/);
 });
+
+test("E-03 계정 화면의 비밀번호 바꾸기: 현재 비밀번호 확인을 먼저 거친 뒤에 바꾸기 요청을 보낸다", () => {
+  const src = read("components/account/AccountSheets.tsx");
+  const sheet = src.slice(src.indexOf("export function PasswordSheet("), src.indexOf("export function CloseAccountSheet("));
+  const verify = sheet.indexOf("await verifyCurrentPassword(current, user?.id)");
+  const change = sheet.indexOf("await changeAccountPasswordWithOtp(current, next, code, user?.id)");
+  // 계정 서비스(lib/browserAccount 의 /account/password/change)는 확인을 거친 계정만 받는다. 순서가 바뀌거나 확인이 빠지면 언제나 거절된다
+  assert.ok(verify > 0, "현재 비밀번호 확인이 없다");
+  assert.ok(change > verify, "바꾸기 요청이 확인보다 먼저다");
+  // 바꾼 뒤에는 이 탭의 세션도 끝난 것으로 맞춘다(서비스가 모든 세션을 끝낸다)
+  assert.ok(sheet.indexOf("markSessionLost();") > change, "바꾼 뒤에 세션을 정리하지 않는다");
+});

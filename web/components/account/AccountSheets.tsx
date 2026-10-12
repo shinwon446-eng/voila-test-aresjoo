@@ -5,7 +5,7 @@
  */
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { AccountActionError, AccountError, changeAccountPasswordWithOtp, deleteAccount, isSocialAccount, validPassword } from "@/lib/account";
+import { AccountActionError, AccountError, changeAccountPasswordWithOtp, deleteAccount, isSocialAccount, validPassword, verifyCurrentPassword } from "@/lib/account";
 import { useAuthStore } from "@/stores/authStore";
 import { Button, Field, Line } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
@@ -54,14 +54,35 @@ export function PasswordSheet({ open, onClose }: { open: boolean; onClose: () =>
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const social = isSocialAccount(user?.provider);
+  const markSessionLost = useAuthStore((s) => s.markSessionLost);
+  const openLogin = useAuthStore((s) => s.openAuthModal);
+  // 바꾼 뒤: 서비스가 이 계정의 세션을 모두 끝내므로, 시트는 바꿨다고 말하고 로그인으로 가는 단추 하나만 둔다
+  const [done, setDone] = useState(false);
+  useEffect(() => { if (open) { setDone(false); setError(""); } }, [open]);
   const save = async () => {
     if (!validPassword(next)) { setError(t("account.passwordRule")); return; }
-    if (!/^\d{6}$/.test(code)) { setError(t("account.codeRule")); return; }
     setBusy(true); setError("");
-    try { await changeAccountPasswordWithOtp(current, next, code, user?.id); setCurrent(""); setNext(""); setCode(""); onClose(); }
+    try {
+      // 계정 서비스는 현재 비밀번호를 먼저 확인한 계정의 변경만 받는다(lib/account 의 verifyCurrentPassword).
+      // 이 확인을 건너뛰고 바꾸기 요청만 보내서, 맞는 값을 넣어도 언제나 거절됐다
+      const verified = await verifyCurrentPassword(current, user?.id);
+      if (!verified.matched) throw new AccountActionError(verified.locked ? "password_locked" : "password_mismatch", verified.failures);
+      // 이 시트는 인증 앱 코드로 확인한다. 인증 앱을 연결하지 않은 계정에 서비스가 요구하는 이메일 코드는 이 시트에서 받을 길이 없다
+      if (!verified.twoFactorEnabled) { setError(t("account.passwordNeedsApp")); return; }
+      if (!/^\d{6}$/.test(code)) { setError(t("account.codeRule")); return; }
+      await changeAccountPasswordWithOtp(current, next, code, user?.id);
+      setCurrent(""); setNext(""); setCode(""); setDone(true);
+      // 이 탭도 로그인이 끝난 상태로 맞춘다(새 비밀번호로 다시 로그인한다)
+      markSessionLost();
+    }
     catch (cause) { setError(errorText(ta, cause)); }
     finally { setBusy(false); }
   };
+  if (done) return (
+    <Sheet open={open} onClose={onClose} title={t("login.doneTitle")} closeLabel={t("common.close")}>
+      <Button onClick={() => { onClose(); openLogin("login"); }}>{t("login.loginLink")}</Button>
+    </Sheet>
+  );
   return (
     <Sheet open={open} onClose={onClose} title={t("account.password")} desc={social ? t("account.passwordSocial") : t("account.passwordDesc")} closeLabel={t("common.close")}>
       {!social && (

@@ -489,6 +489,7 @@
     "passwordNew": "新密码",
     "passwordRule": "新密码需 12 到 128 个字符。",
     "codeRule": "请输入 6 位验证器验证码。",
+    "passwordNeedsApp": "请先连接验证器应用，然后再修改密码。",
     "passwordSave": "修改密码",
     "closeTitle": "注销账户",
     "closeDesc": "注销后账户、记录、剩余余额和仓库中的商品都会删除。请在注销前领取。",

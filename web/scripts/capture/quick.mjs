@@ -1,6 +1,7 @@
 // 작업 중 빠른 확인용 촬영. 정식 검수는 capture.mjs 와 계획 파일로 한다.
 //   node scripts/capture/quick.mjs <출력 폴더> <이름=경로[#동작]> ...
-//   동작: open(열기 단추를 눌러 결과까지), login(로그인 시트), charge(충전 시트), menu(메뉴 시트), state=member(시험 계정과 잔액을 심고 시작)
+//   동작: open(열기 단추를 눌러 결과까지), login(로그인 시트), balance(머리줄의 잔액 시트), charge(충전 시트), menu(메뉴 시트), member(화면의 가입 흐름으로 시험 계정을 만든다),
+//         state:<프리셋>(states.mjs 의 상태를 심고 시작), bal:<금액>(심은 계정의 잔액을 바꾼다), row(첫 상품 행), click:<글자>(그 글자를 누른다)
 //   예: node scripts/capture/quick.mjs ../qa/work home=/ko box=/ko/box/dollar-apple result=/ko/box/dollar-apple#member,open
 import { chromium } from "playwright";
 import fs from "node:fs";
@@ -22,7 +23,15 @@ for (const [view, opts] of VIEWS) {
     const actions = actionText.split(",").filter(Boolean);
     const context = await browser.newContext({ ...opts, locale: process.env.QUICK_LOCALE === "en" ? "en-US" : process.env.QUICK_LOCALE === "zh" ? "zh-CN" : "ko-KR", reducedMotion: actions.includes("motion") ? "no-preference" : "reduce" });
     const preset = actions.find((a) => a.startsWith("state:"))?.slice(6);
-    if (preset) await installState(context, await makeState(preset, "ko"), new URL(base).origin);
+    if (preset) {
+      const state = await makeState(preset, "ko");
+      // bal:<금액> 은 심은 계정의 잔액을 바꾼다(잔액이 모자란 상태를 보관 상품과 함께 만들 때)
+      const bal = actions.find((a) => a.startsWith("bal:"))?.slice(4);
+      if (bal !== undefined) for (const key of Object.keys(state.values).filter((k) => k === "gachaflix.wallet" || (k.startsWith("voila.browser-wallet.") && !k.endsWith(".guest")))) {
+        const v = JSON.parse(state.values[key]); v.state.balance = +bal; v.state.cryptoBalance = +bal; state.values[key] = JSON.stringify(v);
+      }
+      await installState(context, state, new URL(base).origin);
+    }
     const page = await context.newPage();
     const errors = [];
     page.on("console", (m) => { if (m.type() === "error") errors.push(m.text().slice(0, 160)); });
@@ -39,7 +48,9 @@ for (const [view, opts] of VIEWS) {
       await page.waitForTimeout(800);
     }
     if (actions.includes("login")) { await page.getByRole("button", { name: /로그인|Log in|登录/ }).first().click(); await page.waitForTimeout(500); }
-    if (actions.includes("charge")) { await page.getByRole("button", { name: /잔액|Balance|余额|USDT 충전하기/ }).first().click(); await page.waitForTimeout(1500); }
+    // 머리줄의 잔액은 이제 잔액 시트를 연다(flow/MELT_SPEC.md S6). 충전 시트는 화면의 "USDT 충전하기" 로 연다
+    if (actions.includes("balance")) { await page.locator("[data-balance-open]").click(); await page.waitForTimeout(700); }
+    if (actions.includes("charge")) { await page.getByRole("button", { name: /USDT 충전하기|Add USDT|充值 USDT/ }).first().click(); await page.waitForTimeout(1500); }
     if (actions.includes("menu")) { await page.locator(".v-menu-btn").click(); await page.waitForTimeout(400); }
     if (actions.includes("qty5")) { await page.locator(".v-openbar .v-chip").nth(1).click(); await page.waitForTimeout(200); }
     if (actions.includes("open")) { await page.locator(".v-openbar .v-btn").click(); await page.waitForSelector(".v-reveal-result", { timeout: 15000 }); await page.waitForTimeout(1800); }

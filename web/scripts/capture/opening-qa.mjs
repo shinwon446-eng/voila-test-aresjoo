@@ -61,11 +61,10 @@ async function session({ slug = "dollar-apple", fixture = "single:low", view = "
   const confirmIfAsked = async () => { const c = page.locator('[role="alertdialog"] .v-btn'); if (await c.count()) await c.first().click(); };
   const text = () => page.evaluate(() => (document.querySelector(".v-op, .v-reveal")?.innerText || "").replace(/\s+/g, " "));
   const closeResult = async () => { await page.locator(".v-op-tool, .v-reveal .v-sheet-close").last().click(); await page.waitForSelector(".v-op, .v-reveal", { state: "detached" }); };
-  /** 받는 방법 시트에서 USDT 를 골라 확정한다(단추를 clicks 번 누른다) */
+  /** 결과 자리의 주 단추 "USDT로 받기"를 누르고 확인창에서 확정한다(확정 단추를 clicks 번 누른다). 받는 방법을 고르는 단계는 없다(flow/MELT_SPEC.md S2) */
   const takeUsdt = async (clicks = 1) => {
-    await page.getByRole("button", { name: /받는 방법 선택/ }).click(); await page.waitForSelector(".v-op-choice"); await page.waitForTimeout(350);
-    await page.locator(".v-op-choice").last().click();
-    await page.evaluate((n) => { const b = document.querySelector(".v-sheet .v-btn"); for (let i = 0; i < n; i++) b.click(); }, clicks);
+    await page.locator(".v-op-actions [data-take-primary]").click(); await page.waitForSelector('[role="alertdialog"] .v-btn'); await page.waitForTimeout(350);
+    await page.evaluate((n) => { const b = document.querySelector('[role="alertdialog"] .v-btn'); for (let i = 0; i < n; i++) b.click(); }, clicks);
   };
   return { context, page, fx, price, errors, ledger, shot, openBtn, settled, confirmIfAsked, text, closeResult, takeUsdt, state, w, h };
 }
@@ -116,7 +115,7 @@ await run("s2", async () => {
     if (kind === "low") check("s2", "low: 줄었다고 적는다", t.includes("잔액 " + usdt(s.price - s.fx.value) + " 감소") && !/증가/.test(t), t.slice(0, 90));
     if (kind === "x1") check("s2", "x1: 낸 값과 같으면 변화 없음이라고 적는다", /잔액 변화 없음/.test(t) && !/증가|감소/.test(t), t.slice(0, 90));
     if (kind === "x2" || kind === "x8") check("s2", `${kind}: 늘었다고 적는다`, t.includes("잔액 " + usdt(s.fx.value - s.price) + " 증가") && !/감소/.test(t), t.slice(0, 90));
-    if (kind === "itemTop") check("s2", "itemTop: 보관 상태와 받는 방법 선택", /보관함에 넣었습니다/.test(t) && /받는 방법 선택/.test(t), t.slice(0, 110));
+    if (kind === "itemTop") check("s2", "itemTop: 보관 상태와 주 단추 USDT로 받기, 배송 링크는 없다", /보관함에 넣었습니다/.test(t) && /USDT로 받기 \(/.test(t) && /보관함에 두기/.test(t) && !/받는 방법 선택|배송 받기/.test(t), t.slice(0, 160));
     check("s2", `${kind}: 가로 넘침 없음`, await s.page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     await s.context.close();
   }
@@ -176,17 +175,16 @@ await run("s3", async () => {
 await run("s4", async () => {
   const s = await session({ fixture: "single:itemLow" });
   await s.openBtn().click(); await s.settled(); await s.page.waitForTimeout(500); await s.shot("12b-item");
-  await s.page.getByRole("button", { name: /받는 방법 선택/ }).click();
-  await s.page.waitForSelector(".v-op-choice"); await s.page.waitForTimeout(350); await s.shot("13a-receive-method");
-  await s.page.locator(".v-op-choice").last().click();
-  await s.shot("13b-receive-usdt-selected");
-  await s.page.evaluate(() => { const b = document.querySelector(".v-sheet .v-btn"); b.click(); b.click(); });
+  // 주 단추가 곧 USDT로 받기다. 확인창을 한 번 거친다(받는 방법을 고르는 단계는 없다)
+  await s.page.locator(".v-op-actions [data-take-primary]").click();
+  await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(350); await s.shot("13a-take-confirm");
+  await s.page.evaluate(() => { const b = document.querySelector('[role="alertdialog"] .v-btn'); b.click(); b.click(); });
   await s.page.waitForFunction(() => /USDT로 받았습니다/.test(document.querySelector(".v-op")?.innerText || ""), null, { timeout: 5000 });
   await s.page.waitForTimeout(700); await s.shot("13-instant-usdt-conversion");
   const l = await s.ledger(); const t = await s.text(); const expect = r2(START - s.price + s.fx.sell);
   check("s4", `참고가 ${s.fx.value} 상품을 ${s.fx.sell} USDT 로 받는다: 잔액 ${expect}`, near(l.balance, expect), String(l.balance));
   check("s4", "받기를 두 번 눌러도 한 번만 더해진다", l.sellbacks === 1 && l.items[0].status === "SOLD", `sellbacks ${l.sellbacks} status ${l.items[0]?.status}`);
-  check("s4", "받은 뒤 가장 큰 글자는 실제로 받은 금액이고 잔액 변화를 적는다", /받은 금액/.test(t) && t.includes(usdt(s.fx.sell) + " " + usdt(s.price) + " 사용") && t.includes("잔액 " + usdt(Math.abs(s.fx.sell - s.price)) + (s.fx.sell > s.price ? " 증가" : " 감소")), t.slice(0, 120));
+  check("s4", "받은 뒤 제목은 실제로 받은 금액의 결과 문장이고 쓴 금액과 잔액 변화를 적는다", t.includes("잔액에 " + usdt(s.fx.sell) + " 넣었습니다") && t.includes(usdt(s.price) + " 사용") && t.includes("잔액 " + usdt(Math.abs(s.fx.sell - s.price)) + (s.fx.sell > s.price ? " 증가" : " 감소")), t.slice(0, 120));
   check("s4", "받은 뒤 주 단추는 한 번 더 열기", await s.page.locator("[data-open-again]").count() === 1);
   await s.shot("14-updated-balance");
   await s.context.close();
@@ -202,7 +200,7 @@ await run("s5", async () => {
   s = await session({ fixture: "single:itemTop", settings: { autoTake: true } });
   await s.openBtn().click(); await s.settled(); await s.page.waitForTimeout(400);
   l = await s.ledger(); t = await s.text();
-  check("s5", "자동 받기 켬: 낸 값의 20배 이상은 자동으로 받지 않고 보관한다", near(l.balance, START - s.price) && l.items[0].status === "IN_STORAGE" && /받는 방법 선택/.test(t), `balance ${l.balance} status ${l.items[0]?.status}`);
+  check("s5", "자동 받기 켬: 낸 값의 20배 이상은 자동으로 받지 않고 보관한다", near(l.balance, START - s.price) && l.items[0].status === "IN_STORAGE" && /USDT로 받기 \(/.test(t), `balance ${l.balance} status ${l.items[0]?.status}`);
   await s.context.close();
   s = await session({ fixture: "single:itemLow" });
   await s.openBtn().click(); await s.settled(); l = await s.ledger();
@@ -361,9 +359,21 @@ await run("s11", async () => {
   const expect = r2(START - cost + credited);
   check("s11", "5개 열기: 구매 한 건, 기록 다섯, 잔액이 맞다", l.opens === 1 && l.items.length === 5 && near(l.balance, expect), `balance ${l.balance} expect ${expect} items ${l.items.length}`);
   check("s11", "5개 열기: 잔액에 들어온 것과 보관 상품을 나눠 적는다", t.includes("잔액에 반영 " + usdt(credited)) && t.includes(`보관 상품 ${kept.length}개 참고가 ${usdt(keptRef)}`) && t.includes("잔액 변화 " + usdt(Math.abs(change)) + (change < 0 ? " 감소" : " 증가")), t.slice(0, 170));
-  // 받을 상품을 이 자리에서 받는다(보관함으로 가지 않는다)
-  await s.page.getByRole("button", { name: /받을 상품 받기/ }).click(); await s.page.waitForSelector(".v-sheet"); await s.page.waitForTimeout(300); await s.shot("25-multi-receive");
-  await s.page.locator(".v-sheet").getByText(/USDT로 받기/).first().click(); await s.page.locator('[role="alertdialog"] .v-btn').click();
+  // 받을 상품을 이 자리에서 받는다(보관함으로 가지 않는다): 주 단추는 미리 고른 것의 개수와 금액을 적고, 방금 나온 것을 미리 고른 선택 시트를 연다(R4).
+  // 박스 가격의 20배 이상인 상품은 미리 고르지 않는다(이 고정값의 상품은 10배라 미리 골라진다). 받기, 확인 한 번
+  const keptSell = r2(kept.reduce((a, x) => a + x.sell, 0));
+  check("s11", "주 단추에 미리 고른 개수와 금액이 적힌다", (await s.page.locator("[data-take-batch]").innerText()) === `USDT로 받기 (${kept.length}개, ${usdt(keptSell)})`, await s.page.locator("[data-take-batch]").innerText());
+  await s.page.locator("[data-take-batch]").click(); await s.page.waitForSelector(".v-sheet [data-take-row]"); await s.page.waitForTimeout(300); await s.shot("25-multi-receive");
+  const rows = await s.page.locator(".v-sheet [data-take-row]").count();
+  check("s11", "선택 시트: 방금 나온 상품만 담고, 미리 골라져 있다(사람이 뺄 수 있다)", rows === kept.length && (await s.page.locator(".v-sheet [data-take-row][aria-checked='true']").count()) === kept.length && (await s.page.locator("[data-take-submit]").innerText()) === `USDT로 받기 (${kept.length}개, ${usdt(keptSell)})`, `rows ${rows}`);
+  await s.page.locator(".v-sheet [data-take-row]").first().click();
+  check("s11", "선택 시트: 고른 것을 빼면 주 단추가 눌리지 않는다", (await s.page.locator("[data-take-submit]").isDisabled()) === (kept.length === 1));
+  await s.page.locator(".v-sheet [data-take-row]").first().click(); await s.page.locator("[data-take-submit]").click();
+  await s.page.waitForSelector('[role="alertdialog"] .v-btn'); await s.page.waitForTimeout(300); await s.shot("25a-multi-confirm");
+  await s.page.evaluate(() => { const b = document.querySelector('[role="alertdialog"] .v-btn'); b.click(); b.click(); });
+  await s.page.waitForSelector("[data-take-done]", { timeout: 5000 }); await s.shot("25b-multi-received");
+  check("s11", "선택 시트: 받은 금액을 한 줄로 말한다", (await s.page.locator(".v-sheet").innerText()).includes("잔액에 " + usdt(keptSell) + " 넣었습니다."));
+  await s.page.locator("[data-take-done]").click();
   await s.page.waitForFunction(() => /USDT로 받음/.test(document.querySelector(".v-reveal")?.innerText || ""), null, { timeout: 5000 });
   let m = await s.ledger(); const t2 = await s.text(); const sell = r2(kept.reduce((a, x) => a + x.sell, 0)); const change2 = r2(credited + sell - cost);
   check("s11", "여러 개 결과에서 상품을 USDT 로 받는다: 잔액과 요약이 함께 바뀐다", near(m.balance, r2(expect + sell)) && t2.includes("잔액에 반영 " + usdt(credited + sell)) && t2.includes("잔액 변화 " + usdt(Math.abs(change2)) + (change2 < 0 ? " 감소" : " 증가")), `balance ${m.balance} ${t2.slice(0, 120)}`);
@@ -380,6 +390,25 @@ await run("s11", async () => {
   m = await s.ledger();
   check("s11", "여러 개 결과를 닫은 뒤 박스 화면에서 다시 열린다", m.opens === 3 && m.items.length === 11, `opens ${m.opens} items ${m.items.length}`);
   await s.context.close();
+
+  // 여러 개 결과의 상품 상세에서 받기가 실패하거나 처리 상태를 알 수 없으면, 그 상세 안에 한 줄로 알린다(시트 뒤의 목록에 적으면 가려진다, R9)
+  for (const [fault, line] of [["settle-failed", "USDT로 받지 못했습니다. 상품은 보관함에 있습니다."], ["settle-unknown", "처리 상태를 확인하지 못했습니다. 보관함과 지갑 내역에서 확인할 수 있습니다."]]) {
+    const f = await session({ fixture: "seq:withItem" });
+    await f.page.locator(".v-openbar .v-chip").nth(1).click(); await f.page.locator("[data-open-primary]").click();
+    await f.page.waitForSelector(".v-reveal-result", { timeout: 15000 }); await f.page.waitForTimeout(900);
+    const start = await f.ledger();
+    await f.page.evaluate((v) => sessionStorage.setItem("voila.opening.fault", v), fault);
+    await f.page.locator(".v-resultrow button[aria-haspopup='dialog']").first().click(); await f.page.waitForSelector(".v-sheet [data-take-primary]"); await f.page.waitForTimeout(300);
+    await f.page.locator(".v-sheet [data-take-primary]").click(); await f.page.waitForSelector('[role="alertdialog"] .v-btn'); await f.page.waitForTimeout(300);
+    await f.page.locator('[role="alertdialog"] .v-btn').click();
+    await f.page.waitForSelector(".v-sheet .v-line--fail", { timeout: 5000 }); await f.shot("26b-item-" + fault);
+    const end = await f.ledger(); const sheet = (await f.page.locator(".v-sheet").innerText()).replace(/\s+/g, " ");
+    // 받지 못한 상품은 다시 받을 수 있다(받기 단추가 남는다). 처리 상태를 알 수 없는 상품은 받기 단추를 주지 않고 지갑 내역으로 가는 길을 준다
+    const takeButtons = await f.page.locator(".v-sheet [data-take-primary]").count();
+    const actionsOk = fault === "settle-failed" ? takeButtons === 1 : takeButtons === 0 && sheet.includes("지갑 내역");
+    check("s11", `상품 상세의 ${fault}: 상세 안에 한 줄, 돈은 그대로`, sheet.includes(line) && near(end.balance, start.balance) && end.sellbacks === start.sellbacks && actionsOk,`balance ${start.balance} → ${end.balance}, sellbacks ${end.sellbacks}, ${sheet.slice(0, 140)}`);
+    await f.context.close();
+  }
 
   // 여러 개 열기의 연출 중에 새로 고치면 같은 결과를 다시 보여 준다
   const r = await session({ fixture: "seq:mixed" });

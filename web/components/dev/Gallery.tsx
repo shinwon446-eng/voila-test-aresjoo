@@ -18,10 +18,26 @@ import { useToast } from "@/components/ui/toast";
 import { Reveal } from "@/components/box/Reveal";
 import { VerifySheet } from "@/components/flow/VerifySheet";
 import { ShipSheet } from "@/components/flow/ShipSheet";
+import type { ChainRecord } from "@/lib/chainRecord";
+import { ChainRecordView } from "@/components/verify/ChainRecord";
+import { VerifyMethod } from "@/components/verify/VerifyMethod";
 
 const FAIL_LINES = ["box.openFail", "charge.addressFail", "ship.errRecipient", "ship.errPhone", "ship.errPostal", "ship.errAddress", "ship.errPccc", "ship.errResidentId", "ship.failed", "inv.cancelFailed", "verify.bad", "verify.failed"] as const;
 const STATUS_LINES = ["charge.preparing", "charge.waiting", "inv.waitingTracking", "inv.loginLine", "verify.ok", "state.offline"] as const;
 const EMPTY_LINES = ["inv.empty.held", "inv.empty.shipping", "inv.empty.done"] as const;
+/**
+ * "블록체인 기록" 부품의 상태 다섯(flow/MELT_SPEC.md S9). 이 갤러리 안에서만 쓰는 고정 자료다.
+ * 체인 이름과 기록 주소는 실제 것이 아니고(이름부터 fixture 라고 적었다) 바깥 주소도 예시 도메인이다.
+ * 사용자 화면은 lib/chainRecord 의 chainRecordOf 만 쓰고 그 결과는 언제나 none 이다. 이 자료를 다른 파일로 내보내지 않는다.
+ */
+const FIXTURE_CHAIN = { chain: "Fixture chain (gallery only)", address: "fixture-record-not-a-real-transaction-0000", url: "https://example.com/" };
+const CHAIN_FIXTURES: { label: string; record: ChainRecord }[] = [
+  { label: "none: every real record on this test site", record: { state: "none" } },
+  { label: "pending: fixture", record: { state: "pending", ...FIXTURE_CHAIN } },
+  { label: "confirmed: fixture", record: { state: "confirmed", ...FIXTURE_CHAIN } },
+  { label: "mismatch: fixture", record: { state: "mismatch", ...FIXTURE_CHAIN } },
+  { label: "error: fixture", record: { state: "error" } },
+];
 
 export function Gallery() {
   const t = useTranslations("v");
@@ -77,6 +93,11 @@ export function Gallery() {
 
       {section("Empty", EMPTY_LINES.map((key) => <Empty key={key}>{t(key)}</Empty>))}
       {section("Skeleton", <Skeleton height={120} label={t("common.loading")} />)}
+
+      {section("Chain record, fixture data: " + CHAIN_FIXTURES.length, CHAIN_FIXTURES.map((f) => (
+        <div key={f.label} className="v-stack v-stack--sm"><p className="v-small">{f.label}</p><ChainRecordView record={f.record} onRetry={() => undefined} /></div>
+      )))}
+      {section("Verify method", <VerifyMethod />)}
 
       {section("Toast", <Button quiet onClick={() => toast(t("common.copied"))}>{t("common.copied")}</Button>)}
 

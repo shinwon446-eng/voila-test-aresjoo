@@ -40,6 +40,11 @@ export interface Transaction {
   at: string;
   /** 부가 정보, PG 거래 id, 네트워크, 박스 slug 등 */
   ref?: string;
+  /**
+   * USDT로 받기(sellback) 한 건이 어느 보관 상품의 것인지(보관함 기록의 id). 돈은 움직이지 않는 기록 칸이다.
+   * 받은 뒤 장부를 다시 읽어 "상품은 받은 상태이고 그 상품의 입금 내역이 있다"를 대조하는 데 쓴다(lib/takeBatch). 옛 기록에는 없고 ref 에 쉼표로 이어 적혀 있다.
+   */
+  itemIds?: string[];
   /** 출금 네트워크 수수료(USDT) */
   feeUsdt?: number;
   /** 수수료를 뺀 실수령액(USDT), 화면에서 가장 크게 보여 주는 값 */

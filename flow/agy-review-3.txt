@@ -1,0 +1,109 @@
+관점 3(상호작용 상태와 자료 처리, 견고함)에 따라 커밋되지 않은 변경 사항을 검토한 결과입니다.
+
+---
+
+### 1. 선택 시트 (`TakeSheet.tsx`, `takeBatch.ts`)
+
+#### 1.1. 로딩 상태
+- **상태 처리**: 
+  - 실행 시 `lock.current = true; setBusy(true);`로 동기 잠금과 비동기 상태를 동시에 겁니다([TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L72-L73)).
+  - 확인 창([TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L125))과 결과 시트([TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L128)) 모두 `busy` 상태를 전달받아 버튼에 "확인 중" 문구를 표시하고, `locked={busy}`로 오버레이 닫기를 막으며, 보조 링크 클릭도 차단합니다([TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L157)).
+- **지적**: 
+  - [TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L37)는 `useInventoryStore((s) => s.items)`만 읽고 `hydrated` 상태를 확인하지 않습니다.
+  - 다른 화면([WinsScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/box/WinsScreen.tsx#L47), [VerifyScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/verify/VerifyScreen.tsx#L76))은 `hydrated` 전 스켈레톤을 띄우지만, `TakeSheet`는 저장소 복원이 끝나기 전에 시트가 열리면 일시적으로 `candidates.length === 0`이 되어 빈 목록("USDT로 받을 상품이 없습니다.")이 깜빡일 수 있습니다.
+
+#### 1.2. 빈 목록
+- **상태 처리**: `candidates.length === 0`일 때 `<Empty>{t("take.empty")}</Empty>`와 닫기 단추가 바르게 렌더링됩니다([TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L91-L95), `qa/work/melt2/d4-short-no-items.png`). 문제 없습니다.
+
+#### 1.3. 실패
+- **상태 처리**: `outcome.status === "failed"`일 때 빨간색 경고 한 줄(`<Line fail>{t("take.failed")}</Line>`)이 표시되고, 다시 시도 단추와 닫기 링크가 제공됩니다([TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L135-L158), `qa/work/melt2/c3-failed.png`). 문제 없습니다.
+
+#### 1.4. 일부만 됨 (partial)
+- **상태 처리**: 개발 모드 고장 주입(`devOpeningFault`의 `settle-partial`)이나 처리 중 일부 실패 시, `outcome.status === "partial"`로 분기됩니다. 받은 상품 목록(금액 포함)과 남은 상품 목록(참고가 포함)이 분리되어 표시되고, 남은 항목만 다시 시도할 수 있도록 `retryIds`를 계산합니다([TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L85), [TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L136-L153), `qa/work/melt2/c1-partial.png`, `c2-partial-retried.png`).
+- **자료 병합**: [takeBatch.ts](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/lib/takeBatch.ts#L136-L147)의 `mergeOutcomes`에서 1차 시도 결과와 2차 시도 결과의 `taken`, `already`, 수령 금액(`amountUsdt`, `toCrypto`, `toCard`)이 오차 없이 누적 합산됩니다. 견고합니다.
+
+#### 1.5. 두 탭
+- **상태 처리**: 
+  - 다른 탭에서 동일 상품이 먼저 처리된 경우, [takeBatch.ts](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/lib/takeBatch.ts#L112)의 `withLedgerLock` 내부에서 `await refresh()`를 통해 저장소를 다시 읽어옵니다.
+  - 이미 팔린 상품은 `status === "SOLD"`로 확인되어 `already`로 분류되고 `takeUsdt`에서 제외됩니다([takeBatch.ts](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/lib/takeBatch.ts#L115-L117)).
+  - 화면에는 "이미 USDT로 받은 상품입니다. 잔액에 다시 넣지 않았습니다."라는 안내가 표시되며 잔액이 중복 지급되지 않습니다([TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L133), `qa/work/melt2/b1-other-tab.png`). 문제 없습니다.
+
+#### 1.6. 연타
+- **상태 처리**:
+  - 컴포넌트 레벨: `TakeSheet.tsx` 43줄과 72줄에서 `lock.current = true` 동기 플래그로 연타 호출을 즉시 차단합니다.
+  - 라이브러리 레벨: [takeBatch.ts](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/lib/takeBatch.ts#L101-L105)에서 동일한 아이템 ID 조합에 대해 `inflight` Map으로 동일한 Promise를 반환하고, Web Locks(`withLedgerLock`)로 직렬화합니다. 이중 호출 위험이 없습니다.
+
+#### 1.7. 계정 바뀜
+- **지적**:
+  - [TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L47-L50)의 초기화 `useEffect` 의존성 배열이 `[open]`만 바라봅니다.
+  - 시트가 열려 있는 상태에서 다른 탭이나 메뉴를 통해 계정이 바뀌거나 로그아웃되었을 때, `picked` (선택된 상품 ID Set), `step`, `outcome`, `total.current`가 초기화되지 않습니다.
+  - [takeBatch.ts](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/lib/takeBatch.ts#L99-L103)의 `inflight` Map 키 역시 아이템 ID 목록만으로 구성되어 계정 식별자가 없습니다.
+
+#### 1.8. 뒤로 가기 및 확인창 예외 상태
+- **지적 (중대 결함)**:
+  - [TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L125)에서 `step === "confirm"` 상태로 확인 창이 열려 있을 때, 다른 탭에서 해당 상품이 모두 처리되면 `selected`가 비워집니다.
+  - 이 상태에서 사용자가 확인 단추를 누르면 `run(selected.map((item) => item.id))`이 빈 배열 `[]`로 호출됩니다.
+  - [TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L72)의 `if (lock.current || !target.length) return;`에 걸려 아무런 상태 변경이나 안내 없이 조용히 무시됩니다.
+  - 확인 모달이 닫히지도 않고, 에러 문구도 나오지 않으며, 확인 단추가 완전히 먹통이 됩니다.
+
+---
+
+### 2. 묶음 받기 (`settleTakeMany`)의 잠금과 중복 방지 (`takeBatch.ts`)
+
+- **잠금 구조**: 
+  - `inflight` 캐싱 -> Web Locks(`voila-ledger:${key}`) 획득 -> 저장소 쓰기 검증(`assertLedgerWritable`) -> 최신 장부 수화(`refresh`) -> 계정 일치 검증(`assertSameLedger`) -> `takeUsdt` 실행 순으로 체계적으로 보호됩니다([takeBatch.ts](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/lib/takeBatch.ts#L112), [ledgerLock.ts](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/lib/ledgerLock.ts#L50)).
+- **중복 지급 방지**:
+  - `takeUsdt`([claim.ts](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/lib/claim.ts#L18))는 `inventoryStore.sell`이 실제로 `IN_STORAGE` 상태에서 `SOLD`로 바꾼 아이템 ID에 대해서만 지갑 잔액을 올리고 거래 기록을 남깁니다.
+  - `settleTakeMany`는 실행 전 `IN_STORAGE`인 상품만 추려 넘기고, 이미 `SOLD`인 상품은 `already`로만 기록합니다([takeBatch.ts](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/lib/takeBatch.ts#L115-L117)).
+  - 동시성 및 중복 지급 방지는 빈틈없이 단단하게 구현되어 있습니다.
+
+---
+
+### 3. 출금 칸을 채우는 값 (`WithdrawScreen.tsx`, `takeBatch.ts`)
+
+- **계산 로직**:
+  - [takeBatch.ts](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/lib/takeBatch.ts#L153-L157)의 `withdrawPrefillUsdt`는 새로 받은 금액 중 출금 가능한 암호화폐 몫(`outcome.toCrypto`)과 현재 출금 가능 잔액(`cryptoBalanceUsdt`) 중 작은 값을 취합니다. 카드 충전 몫이나 기존 잔액을 임의로 합산하지 않습니다.
+- **안내 문구**:
+  - 새로 들어온 출금 가능 금액이 있으면 안내 한 줄을 띄우고, 카드 충전 몫만 있어 출금 잔액에 반영되지 않은 경우 `take.prefillNone` 문구를 정확히 안내합니다([WithdrawScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/wallet/WithdrawScreen.tsx#L240), `qa/work/melt2/g3-prefilled.png`).
+- **지적**:
+  - [WithdrawScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/wallet/WithdrawScreen.tsx#L89)의 `if (!out.taken.length) return;` 방어 코드 때문에, 1차 부분 실패 후 2차 재시도에서 이미 `already`로 잡혔거나 다른 탭에서 방금 처리되어 `out.taken`이 빈 배열이고 `out.already`만 존재하는 경우, 프리필과 `setReceived` 호출이 일절 실행되지 않고 누락됩니다.
+  - 사용자가 출금 화면에서 상품을 한 번 받고(예: $10 프리필), 보관함에 남은 상품이 있어 "보관함의 상품을 USDT로 받아 출금하기"를 다시 열어 두 번째 상품(예: $15)을 받으면, 기존 $10에 합산되지 않고 마지막 $15로 덮어씌워집니다.
+
+---
+
+### 4. 받은 뒤 다음 열기를 스스로 실행하지 않는지 (Loop 방지)
+
+- **검토 결과 (문제 없음)**:
+  - [Opening.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/box/Opening.tsx#L148-L157): 단일 받기(`take`) 후 상태만 `settled`로 바꿀 뿐 `onAgain()`을 호출하지 않습니다. 다음 열기 버튼(`again`, 186줄)은 사용자가 직접 눌러야만 동작합니다.
+  - [Opening.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/box/Opening.tsx#L161-L165): 설정의 자동 받기(`autoTake`) 역시 USDT 환전만 수행할 뿐 `onAgain()`을 트리거하지 않습니다.
+  - [Reveal.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/box/Reveal.tsx#L130): 묶음 받기 완료 콜백 `batchTaken`은 받은 내역을 영수증 상태에만 반영할 뿐 다음 개봉을 실행하지 않습니다.
+  - [BoxScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/box/BoxScreen.tsx#L312): 잔액 부족 자리에서 `TakeSheet`가 닫힐 때 수량과 박스는 유지되고 열기 함수는 실행되지 않습니다.
+  - [BalanceSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/BalanceSheet.tsx#L58): 잔액 시트 및 선택 시트 어디에도 다음 개봉을 자동으로 부르는 코드가 없습니다.
+  - 명세의 Loop 금지 원칙을 완전히 준수하고 있습니다.
+
+---
+
+### 5. 기타 상호작용 및 UI 견고함 지적
+
+- **`Reveal.tsx` 개별 상품 시트 실패 피드백 가림**:
+  - [Reveal.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/box/Reveal.tsx#L127)에서 개별 상품 받기 실패 시 `setTakeFailed(true)`를 호출하지만, 에러 문구(`Line fail`, 225줄)는 시트 뒤편 결과 화면에 렌더링됩니다.
+  - 이때 개별 상품 시트([Reveal.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/box/Reveal.tsx#L269))가 열려 있는 상태이므로 에러 메시지가 시트에 가려져 사용자에게 보이지 않습니다.
+
+---
+
+### 고칠 것 (중요한 순서)
+
+1. **[TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L72) 확인 단계 먹통 수정**:
+   `step === "confirm"` 상태에서 다른 탭 등의 변화로 `selected`가 비워졌을 때, `run`이 조용히 리턴되지 않고 `step`을 `result` 또는 `pick`으로 전환하여 사용자에게 상품이 이미 처리되었음을 안내하도록 수정해야 합니다.
+
+2. **[TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L47-L50) 계정 변경 시 로컬 상태 초기화**:
+   시트가 열려 있는 동안 계정 전환이 발생했을 때 이전 계정의 `picked`, `outcome`, `total.current`가 남지 않도록 사용자 ID(`user?.id`) 변경을 의존성 배열에 추가하여 상태를 리셋해야 합니다.
+
+3. **[WithdrawScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/wallet/WithdrawScreen.tsx#L89) 출금 프리필 조건 보완**:
+   `if (!out.taken.length) return;` 조건을 점검하여, 묶음 시트에서 재시도 등으로 `out.taken`이 0이지만 누적 결과(`out.toCrypto`)가 유효하게 존재하는 경우에도 출금 입력 칸과 안내문이 채워지도록 보완해야 합니다.
+
+4. **[TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L37) 저장소 수화(Hydration) 확인 추가**:
+   `useInventoryStore((s) => s.hydrated)`를 확인하여, 저장소가 로드되기 전 시트가 열렸을 때 일시적으로 빈 목록이 노출되는 깜빡임을 방지해야 합니다.
+
+5. **[Reveal.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/box/Reveal.tsx#L275) 개별 상품 시트 내부 실패 문구 표시**:
+   개별 상품 받기 실패 시 뒤편 목록 화면에만 에러를 띄우지 않고, 열려 있는 개별 상품 시트 내부에도 실패 상태를 즉시 알릴 수 있도록 피드백 위치를 정리해야 합니다.

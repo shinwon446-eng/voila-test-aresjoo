@@ -5,7 +5,10 @@
  * 다른 상품을 스쳐 보이지 않고, 낮은 결과와 높은 결과를 바꿔 보이는 일도 없다. 값의 크기는 색이 아니라 글자 크기로 나타낸다.
  *   연출 약 1.5초(상자가 숨을 들이쉬고 뚜껑이 벌어짐) → 결과. 화면을 누르면 바로 결과.
  *   움직임 줄이기 설정이면 연출 없이 결과만.
- * 결과를 받은 자리에서 끝낸다: 하나든 여럿이든 여기서 배송 받기, USDT로 받기, 검증. 보관함은 나중에 다시 찾는 목록이다.
+ * 결과를 받은 자리에서 끝낸다: 하나든 여럿이든 여기서 USDT로 받기와 검증(flow/MELT_SPEC.md S3).
+ *   주 단추는 "USDT로 받기 (받을 상품 n개)"이고 방금 나온 상품만 담은 선택 시트를 연다. 행을 누르면 그 상품 하나를 받는다.
+ *   배송은 이 화면에 없다. 보관함의 상품 상세에서 신청한다.
+ *   받을 것이 없고 다음 열기에 잔액이 모자라면 그 자리에서 푼다(S4). 다음 열기는 언제나 사람이 누른다.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { X } from "lucide-react";
@@ -13,17 +16,20 @@ import { useTranslations } from "next-intl";
 import { dropTable, formatRate, sellValueOf, type ProductBox, isLadderBox } from "@/lib/products";
 import type { OpeningResult } from "@/lib/opening";
 import { settleTake } from "@/lib/openingSettle";
-import { OPENING_ARM_DELAY_MS, openingChange, timesOf } from "@/lib/openingFlow";
+import { OPENING_ARM_DELAY_MS, TONE_TOP_MULTIPLE, openingChange, timesOf } from "@/lib/openingFlow";
 import { OpeningBox } from "@/components/box/Opening";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useModal } from "@/lib/useModal";
 import { useWalletStore } from "@/stores/walletStore";
+import { useInventoryStore } from "@/stores/inventoryStore";
+import { useFlow } from "@/stores/flowStore";
+import { shortfallOf, takeQuote, takeStateOf, type BatchOutcome } from "@/lib/takeBatch";
 import { burstGauge } from "@/lib/burst";
 import { Button, ButtonLink, Line, Row, Rows, TextLink } from "@/components/ui/kit";
-import { Confirm, Sheet } from "@/components/ui/Sheet";
+import { Sheet } from "@/components/ui/Sheet";
 import { VerifySheet, type VerifyRecord } from "@/components/flow/VerifySheet";
-import { ShipSheet } from "@/components/flow/ShipSheet";
+import { TakeConfirm, TakeSheet, useTakeLedger } from "@/components/flow/TakeSheet";
 
 /** 여러 개를 열 때의 연출: 한 개 열기와 같은 상자, 같은 길이(lib/openingFlow 의 기본값). 결과의 크기와 무관하다. */
 const STAGE = { anticipation: 520, impact: 150, exit: 170 };
@@ -54,9 +60,13 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
   // 받기 대상: 단일 결과는 그 결과, 여럿이면 목록에서 고른 행
   const [picked, setPicked] = useState<OpeningResult | null>(null);
   const [taking, setTaking] = useState<OpeningResult | null>(null);
-  const [shipIds, setShipIds] = useState<string[] | null>(null);
+  // 선택 시트: fresh 는 방금 나온 것만, held 는 보관 중인 상품 전부(잔액이 모자랄 때)
+  const [batch, setBatch] = useState<"fresh" | "held" | null>(null);
   const [taken, setTaken] = useState<Record<string, number>>(initialTaken ?? {});
-  const [shipped, setShipped] = useState<Record<string, true>>(initialShipped ?? {});
+  // 배송은 이 화면에서 신청하지 않는다. 다시 보는 결과 가운데 이미 배송을 신청한 상품만 여기에 있다
+  const shipped: Record<string, true> = initialShipped ?? {};
+  const owned = useInventoryStore((s) => s.items);
+  const openCharge = useFlow((s) => s.openCharge);
   const skip = () => { onSkip?.(); setDone(true); };
   // 다음 구매를 처리하는 동안에는 닫히지 않는다. 연출 중 Esc 는 닫기가 아니라 결과 바로 보기다
   const close = () => { if (!againBusy) onClose(); };
@@ -101,31 +111,56 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
   // 지갑 잔액의 앞뒤를 빼지 않는다(다른 거래가 섞이지 않게).
   const credited = results.map((r) => (r.item.kind === "cash" ? r.item.value : taken[r.ownedId] ?? 0));
   const creditedSum = +credited.reduce((sum, v) => sum + v, 0).toFixed(2);
-  const kept = results.filter((r) => r.item.kind !== "cash" && taken[r.ownedId] === undefined);
+  // 받기가 확정됐는지는 받는 일과 같은 기준으로 본다. 장부가 어긋난 상품은 받았다고도 보관 중이라고도 세지 않는다
+  const ledger = useTakeLedger();
+  const unconfirmedIds = new Set(owned.filter((o) => takeStateOf(o, ledger) === "unconfirmed").map((o) => o.id));
+  const unconfirmed = (r: OpeningResult) => r.item.kind !== "cash" && taken[r.ownedId] === undefined && unconfirmedIds.has(r.ownedId);
+  const kept = results.filter((r) => r.item.kind !== "cash" && taken[r.ownedId] === undefined && !unconfirmed(r));
   const keptRef = +kept.reduce((sum, r) => sum + r.item.value, 0).toFixed(2);
   const waiting = kept.filter((r) => !shipped[r.ownedId]);
   const change = openingChange(cost, credited).diff;
   // 방금 연 결과라서 지금의 확률표가 곧 구매 당시의 확률표다
   const verify = (r: OpeningResult) => setVerifying({ itemId: r.item.id, fair: { serverSeed: r.serverSeed, serverSeedHash: r.serverSeedHash, clientSeed: r.clientSeed, nonce: r.nonce, roll: r.roll, dropTable: table.map(({ id, dropRate }) => ({ id, dropRate })) } });
-  const [takeFailed, setTakeFailed] = useState(false);
+  // 상품 하나를 받지 못했을 때: 그 상품의 상세 시트 안에 한 줄로 알린다(시트 뒤의 목록에 적으면 가려서 보이지 않는다)
+  const [takeNote, setTakeNote] = useState<"failed" | "unknown" | null>(null);
+  const pick = (r: OpeningResult | null) => { setTakeNote(null); setPicked(r); };
   const take = async () => {
     if (!taking) return;
-    const target = taking; setTaking(null); setTakeFailed(false);
+    const target = taking; setTaking(null); setTakeNote(null);
     const out = await settleTake(target.ownedId);
     // 받았으면 시트를 닫고 결과 목록으로 돌아간다(요약과 그 행이 바뀐 것이 곧 확인이다)
     if (out.status === "settled") { setTaken((m) => ({ ...m, [target.ownedId]: out.amountUsdt })); setPicked(null); }
-    else setTakeFailed(true);
+    else setTakeNote(out.status === "failed" ? "failed" : "unknown");
   };
-  const againButton = canAgain ? <Button data-open-again onClick={onAgain} busy={againBusy} busyLabel={t("box.opening")} disabled={!armed}>{again}</Button> : <Button onClick={close} disabled={!armed}>{t("common.close")}</Button>;
+  // 주 단추가 여는 선택 시트는 방금 나온 것을 미리 고른 채로 열린다(사람이 뺄 수 있다). 참고가가 박스 가격의 20배 이상인 상품은
+  // 미리 고르지 않는다. 단추의 개수와 금액은 미리 고른 것의 합이다(flow/MELT_SPEC.md R4).
+  // 자동 받기 설정과 같은 배수(20)를 쓰지만 기준은 같지 않다: 여기는 참고가를 박스 가격에 견주고, 자동 받기(lib/openingFlow 의
+  // autoTakeApplies)는 받는 금액(참고가의 95%)을 견준다. 그래서 참고가가 20배에서 약 21.05배 사이인 상품은 자동 받기에는 들지만 여기서는 미리 골라지지 않는다.
+  const presetIds = waiting.filter((r) => r.item.value < box.price * TONE_TOP_MULTIPLE).map((r) => r.ownedId);
+  const preset = takeQuote(owned.filter((o) => presetIds.includes(o.id)), ledger);
+  // 선택 시트에서 받은 것을 이 화면의 영수증에 옮긴다(실제로 받은 금액 그대로). 이 개봉의 상품이 아닌 것은 요약에 쓰이지 않는다
+  const batchTaken = (out: BatchOutcome) => setTaken((m) => { const next = { ...m }; for (const x of [...out.already, ...out.taken]) next[x.id] = x.amountUsdt; return next; });
+  // 다음 열기에 잔액이 모자랄 때 말할 숫자: 더 필요한 금액, 보관 중인 상품 수, 그것을 전부 받으면 들어오는 금액
+  const need = shortfallOf(balance, nextCost ?? cost, owned, ledger);
+  // 한 번 더 열기 자리. 잔액이 모자라면 그 자리에서 푼다: 보관 중인 상품을 전부 받아 모자란 만큼이 채워질 때만 USDT로 받기가 주 단추다.
+  // 채워지지 않으면 충전이 주 단추이고 USDT로 받기는 링크다(R3). 어느 쪽도 다음 열기를 실행하지 않는다
+  const takeFirst = !canAgain && need.heldCount > 0 && need.covers;
+  const againButton = canAgain ? <Button data-open-again onClick={onAgain} busy={againBusy} busyLabel={t("box.opening")} disabled={!armed}>{again}</Button>
+    : takeFirst ? <Button data-short-take aria-haspopup="dialog" onClick={() => setBatch("held")} disabled={!armed}>{t("take.title")}</Button>
+    : <Button data-short-charge onClick={openCharge} disabled={!armed}>{t("box.charge")}</Button>;
+  const shortLine = !canAgain && need.missing > 0 ? <Line>{t("box.short", { balance: fmt(balance), missing: fmt(need.missing) })}</Line> : null;
+  const shortHint = !canAgain && need.heldCount > 0 ? <p className="v-take-hint">{t("take.heldHint", { n: need.heldCount, amount: fmt(need.maxReceivable) })}</p> : null;
+  const chargeLink = canAgain || need.heldCount === 0 ? null
+    : takeFirst ? <TextLink onClick={() => { if (armed) openCharge(); }}>{t("box.charge")}</TextLink>
+    : <TextLink onClick={() => { if (armed) setBatch("held"); }}>{t("take.title")}</TextLink>;
   const settledOf = (r: OpeningResult) => r.item.kind === "cash" || taken[r.ownedId] !== undefined;
   const cashLike = single && settledOf(single);
   const allCash = results.length > 1 && results.every((r) => r.item.kind === "cash");
-  // 받기 행동 묶음. 단일 결과 화면과 여럿 결과의 상품 시트가 같은 것을 쓴다
+  // 받기 행동 묶음. 단일 결과 화면과 여럿 결과의 상품 시트가 같은 것을 쓴다. 주 단추는 USDT로 받기, 보조는 검증 하나(배송 링크 없음)
   const actionsFor = (r: OpeningResult) => {
     const amount = fmt(sellValueOf(r.item));
     if (shipped[r.ownedId]) return { main: <ButtonLink href="/inventory">{t("reveal.toInventory")}</ButtonLink>, links: [<TextLink key="v" onClick={() => verify(r)}>{t("nav.verify")}</TextLink>] };
-    if (r.item.kind === "physical") return { main: <Button onClick={() => setShipIds([r.ownedId])}>{t("reveal.ship")}</Button>, links: [<TextLink key="t" onClick={() => setTaking(r)}>{t("reveal.take", { amount })}</TextLink>, <TextLink key="v" onClick={() => verify(r)}>{t("nav.verify")}</TextLink>] };
-    return { main: <Button onClick={() => setTaking(r)}>{t("reveal.take", { amount })}</Button>, links: [<TextLink key="v" onClick={() => verify(r)}>{t("nav.verify")}</TextLink>] };
+    return { main: <Button data-take-primary onClick={() => setTaking(r)}>{t("reveal.take", { amount })}</Button>, links: [<TextLink key="v" onClick={() => verify(r)}>{t("nav.verify")}</TextLink>] };
   };
 
   return (
@@ -203,10 +238,9 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
                     {isLadderBox(box) && <Row label={t("box.burst")}>{fmt(gauge)}</Row>}
                     <Row label={t("op.changeLabel")}>{change < 0 ? t("op.changeDown", { diff: fmt(Math.abs(change)) }) : change > 0 ? t("op.changeUp", { diff: fmt(change) }) : t("op.changeSame")}</Row>
                   </Rows>
-                  {takeFailed && <Line fail>{t("op.failed")}</Line>}
                   <ul className="v-rows" aria-label={t("reveal.results")}>
                     {lines.map(({ r, count }, i) => {
-                      const state = r.item.kind === "cash" ? t("op.tagCash") : shipped[r.ownedId] ? t("reveal.shippedTag") : taken[r.ownedId] !== undefined ? t("reveal.takenTag") : t("op.tagKept");
+                      const state = r.item.kind === "cash" ? t("op.tagCash") : shipped[r.ownedId] ? t("reveal.shippedTag") : taken[r.ownedId] !== undefined ? t("reveal.takenTag") : unconfirmed(r) ? t("take.unconfirmed") : t("op.tagKept");
                       const open = r.item.kind !== "cash" && !shipped[r.ownedId] && taken[r.ownedId] === undefined;
                       const times = timesOf(r.item.value, box.price);
                       const label = <span>{itemName(r.item)}<span className="v-small">, {state}{times !== null ? ", " + t("op.timesShort", { n: times }) : ""}{count > 1 ? ", " + t("op.countTimes", { n: count }) : ""}</span></span>;
@@ -215,9 +249,9 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
                           {count > 1 ? (
                             <div className="v-row">{label}<span className="v-num">{fmt(r.item.value)}</span></div>
                           ) : (
-                            <button type="button" className="v-row v-row--link v-row--button" onClick={() => { if (!armed) return; if (open) setPicked(r); else verify(r); }} aria-label={itemName(r.item) + ", " + state}>
+                            <button type="button" className="v-row v-row--link v-row--button" aria-haspopup="dialog" onClick={() => { if (!armed) return; if (open) pick(r); else verify(r); }} aria-label={itemName(r.item) + ", " + state}>
                               {label}
-                              <span className="v-num">{fmt(taken[r.ownedId] ?? r.item.value)}{open ? " ›" : ""}</span>
+                              <span className="v-num">{fmt(taken[r.ownedId] ?? r.item.value)}{open && <span aria-hidden> ›</span>}</span>
                             </button>
                           )}
                         </li>
@@ -226,9 +260,20 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
                   </ul>
                 </div>
                 <div className="v-reveal-actions">
-                  {/* 받을 상품이 남아 있으면 그것부터 이 자리에서 받는다. 다 받았으면 한 번 더 열기 */}
-                  {waiting.length > 0 ? <Button onClick={() => setPicked(waiting[0])} disabled={!armed}>{t("op.receiveNext", { n: waiting.length })}</Button> : againButton}
-                  <div className="v-links">{waiting.length > 0 && canAgain && <TextLink onClick={() => { if (armed && !againBusy) onAgain(); }}>{again}</TextLink>}<TextLink onClick={() => { if (armed) close(); }}>{t("op.backToBox")}</TextLink></div>
+                  {/* 받을 상품이 남아 있으면 주 단추는 USDT로 받기다(방금 나온 것만 담은 선택 시트). 다 받았으면 한 번 더 열기 */}
+                  {waiting.length > 0 ? (
+                    <>
+                      <Button data-take-batch aria-haspopup="dialog" onClick={() => setBatch("fresh")} disabled={!armed}>{preset.count > 0 ? t("take.submit", { n: preset.count, amount: fmt(preset.totalUsdt) }) : t("take.title")}</Button>
+                      <div className="v-links"><TextLink onClick={() => { if (armed) close(); }}>{t("take.keep")}</TextLink>{canAgain && <TextLink onClick={() => { if (armed && !againBusy) onAgain(); }}>{again}</TextLink>}</div>
+                    </>
+                  ) : (
+                    <>
+                      {shortLine}
+                      {againButton}
+                      {shortHint}
+                      <div className="v-links">{chargeLink}<TextLink onClick={() => { if (armed) close(); }}>{t("op.backToBox")}</TextLink></div>
+                    </>
+                  )}
                 </div>
               </>
             )}
@@ -236,19 +281,24 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
         </>
       )}
       {/* 여럿 가운데 고른 상품: 결과 자리에서 바로 받는다 */}
-      <Sheet open={!!picked && !taking && !shipIds && !verifying} onClose={() => setPicked(null)} title={picked ? itemName(picked.item) : ""} closeLabel={t("common.close")}>
+      <Sheet open={!!picked && !taking && !verifying} onClose={() => pick(null)} title={picked ? itemName(picked.item) : ""} closeLabel={t("common.close")}>
         {picked && (() => { const a = actionsFor(picked); return (
           <>
             {picked.item.image.src && <div className="v-sheet-photo"><img src={picked.item.image.src} alt="" /></div>}
             <Rows><Row label={t("reveal.value")}>{fmt(picked.item.value)}</Row><Row label={t("reveal.odds")}>{formatRate(picked.item.dropRate)}</Row></Rows>
-            {taken[picked.ownedId] !== undefined ? <p className="v-body">{t("reveal.takenDesc")}</p> : a.main}
-            <div className="v-links">{taken[picked.ownedId] !== undefined ? <TextLink onClick={() => verify(picked)}>{t("nav.verify")}</TextLink> : a.links}</div>
+            {/* 장부가 어긋난 상품: 받았다고도 보관 중이라고도 하지 않는다. 받기 단추를 주지 않고(다시 지급하지 않는다) 지갑 내역으로 가는 길을 준다 */}
+            {unconfirmed(picked) && <Line fail>{t("take.unknown")}</Line>}
+            {takeNote === "failed" && !unconfirmed(picked) && taken[picked.ownedId] === undefined && <Line fail>{t("take.failed")}</Line>}
+            {taken[picked.ownedId] !== undefined ? <p className="v-body">{t("reveal.takenDesc")}</p> : unconfirmed(picked) ? null : a.main}
+            <div className="v-links">{taken[picked.ownedId] !== undefined ? <TextLink onClick={() => verify(picked)}>{t("nav.verify")}</TextLink> : unconfirmed(picked) ? <><TextLink href="/wallet">{t("balanceSheet.history")}</TextLink><TextLink onClick={() => verify(picked)}>{t("nav.verify")}</TextLink></> : a.links}</div>
           </>
         ); })()}
       </Sheet>
       <VerifySheet record={verifying} onClose={() => setVerifying(null)} />
-      <ShipSheet ownedIds={shipIds} onClose={() => setShipIds(null)} onDone={() => { for (const id of shipIds ?? []) setShipped((m) => ({ ...m, [id]: true })); setShipIds(null); setPicked(null); }} />
-      {taking && <Confirm open onCancel={() => setTaking(null)} onConfirm={take} title={t("reveal.takeTitle")} desc={t("reveal.takeDesc", { name: itemName(taking.item), amount: fmt(sellValueOf(taking.item)) })} confirmLabel={t("reveal.take", { amount: fmt(sellValueOf(taking.item)) })} cancelLabel={t("common.cancel")} />}
+      {/* 여럿을 한 번에: 방금 나온 것만(fresh), 또는 잔액이 모자랄 때 보관 중인 상품 전부(held). 받은 뒤에도 다음 열기는 사람이 누른다 */}
+      <TakeSheet open={batch !== null} ids={batch === "fresh" ? waiting.map((r) => r.ownedId) : undefined} preselect={batch === "fresh" ? presetIds : undefined} onClose={() => setBatch(null)} onTaken={batchTaken} />
+      {/* 상품 하나: 선택 시트와 같은 확인 한 번 */}
+      <TakeConfirm open={!!taking} amountUsdt={taking ? sellValueOf(taking.item) : 0} onCancel={() => setTaking(null)} onConfirm={take} />
     </div>
   );
 }

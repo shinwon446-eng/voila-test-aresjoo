@@ -36,7 +36,9 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-nav a:hover, .v-nav a[aria-current="page"] { color: var(--v-title); }
 .v-headbtn { display: inline-flex; min-width: var(--v-touch); height: var(--v-touch); align-items: center; justify-content: center; gap: 8px; border-radius: var(--v-r-pill); background: var(--v-pill); padding: 0 14px; color: var(--v-text); font-size: var(--v-fs-small); white-space: nowrap; transition: background var(--v-fast); }
 .v-headbtn:hover { background: var(--v-pill-hover); }
-@media (min-width: 768px) { .v-nav { display: flex; } .v-header-in { height: 64px; } .v-menu-btn { display: none; } }
+@media (min-width: 768px) { .v-header-in { height: 64px; } }
+/* 메뉴가 일곱 개(나온 상품)라 영어는 768 폭에서 한 줄에 들어가지 않고 두 줄로 꺾인다. 한 줄에 들어가는 900 부터 펼치고, 그 아래는 메뉴 단추를 쓴다 */
+@media (min-width: 900px) { .v-nav { display: flex; } .v-menu-btn { display: none; } }
 
 /* ── 글 */
 .v-title { color: var(--v-title); font-size: var(--v-fs-title); font-weight: 400; line-height: 1.25; text-wrap: balance; word-break: keep-all; }
@@ -62,7 +64,8 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-btn--quiet { background: var(--v-pill); color: var(--v-text); }
 .v-btn--quiet:hover { background: var(--v-pill-hover); }
 .v-btn--auto { width: auto; }
-.v-link { display: inline-flex; min-height: var(--v-touch); align-items: center; border: 0; background: none; padding: 0; font-family: inherit; cursor: pointer; color: var(--v-sub); font-size: var(--v-fs-small); text-decoration: underline; text-underline-offset: 3px; }
+/* 두 글자짜리 링크(취소, 출금)도 누르는 자리는 가로세로 44px 이상이다. 글자는 왼쪽에 그대로 있고 밑줄도 글자에만 그어진다 */
+.v-link { display: inline-flex; min-width: var(--v-touch); min-height: var(--v-touch); align-items: center; border: 0; background: none; padding: 0; font-family: inherit; cursor: pointer; color: var(--v-sub); font-size: var(--v-fs-small); text-decoration: underline; text-underline-offset: 3px; }
 .v-link:hover { color: var(--v-title); }
 .v-links { display: flex; flex-wrap: wrap; column-gap: 20px; }
 
@@ -105,7 +108,8 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 /* ── 상태 한 줄 */
 .v-line { color: var(--v-text); font-size: var(--v-fs-body); line-height: 1.5; }
 .v-line--fail { color: var(--v-fail); }
-.v-empty { padding: 40px 0; color: var(--v-sub); text-align: center; }
+/* 가운데 놓인 빈 목록의 글은 줄 길이를 고르게 나눈다(중국어에서 마지막 줄에 한 글자만 남지 않게) */
+.v-empty { padding: 40px 0; color: var(--v-sub); text-align: center; text-wrap: balance; }
 .v-skel { border-radius: var(--v-r-card); background: var(--v-pill); }
 @media (prefers-reduced-motion: no-preference) { .v-skel { animation: v-pulse 1.4s ease-in-out infinite; } }
 @keyframes v-pulse { 50% { opacity: 0.55; } }
@@ -191,15 +195,7 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-mainitem-body { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; color: var(--v-text); font-size: var(--v-fs-section); }
 .v-mainitem-name { color: var(--v-title); }
 .v-boxlayout-contents { scroll-margin-top: 80px; }
-/* 나온 상품: 실제 개봉 기록의 줄. 사진, 이름과 값, 박스와 시각, 검증으로 가는 길 */
-.v-wins { display: flex; flex-direction: column; margin: 0; padding: 0; border-radius: var(--v-r-card); background: var(--v-card); list-style: none; }
-.v-win { display: flex; align-items: center; gap: 14px; padding: 14px 16px; }
-.v-win + .v-win { border-top: 1px solid var(--v-divider); }
-.v-win-photo { position: relative; flex: none; width: 64px; height: 64px; overflow: hidden; border-radius: 14px; background: var(--v-photo); }
-.v-win-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.v-win-body { display: flex; flex: 1; min-width: 0; flex-direction: column; gap: 2px; color: var(--v-text); }
-.v-win-verify { display: inline-flex; flex: none; min-height: var(--v-touch); align-items: center; border-radius: var(--v-r-pill); background: var(--v-pill); padding: 0 16px; color: var(--v-text); font-size: var(--v-fs-small); }
-.v-win-verify:hover { background: var(--v-pill-hover); }
+/* 나온 상품의 줄은 보관함과 같은 상품 행(.v-itemrows)을 쓴다. 따로 둔 모양은 없다 */
 /* 사진이 없는 박스: 같은 칸에 대표 상품의 이름 */
 .v-boxcard-nophoto { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 16px; color: var(--v-sub); font-size: var(--v-fs-small); line-height: 1.4; text-align: center; word-break: keep-all; }
 .v-boxcard-nophoto > span { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
@@ -353,11 +349,12 @@ button.v-itemrow { width: 100%; border-right: 0; border-bottom: 0; border-left: 
 /* ── 개봉 결과 배치: 모바일은 내용이 위, 단추가 엄지가 닿는 아래 */
 .v-reveal-result { display: flex; min-height: 100dvh; flex-direction: column; }
 .v-reveal-head { display: flex; flex: 1; flex-direction: column; justify-content: center; gap: 16px; }
-.v-reveal-actions { display: flex; flex-direction: column; gap: 4px; }
+/* 결과 목록이 길어도 주 단추는 화면 아래에 붙어 있다(여러 개를 열면 목록이 화면보다 길다) */
+.v-reveal-actions { position: sticky; bottom: 0; z-index: 1; display: flex; flex-direction: column; gap: 4px; margin: 0 calc(var(--v-gutter) * -1) calc((32px + env(safe-area-inset-bottom, 0px)) * -1); padding: 12px var(--v-gutter) calc(16px + env(safe-area-inset-bottom, 0px)); background: var(--v-bg); }
 @media (min-width: 768px) {
   .v-reveal-result { min-height: 0; margin-block: auto; }
   .v-reveal-head { flex: none; }
-  .v-reveal-actions { margin-top: 8px; }
+  .v-reveal-actions { position: static; margin: 8px 0 0; padding: 0; background: none; }
 }
 
 /* 행 전체가 단추일 때 */

@@ -6,6 +6,9 @@
  * 후기 절은 실제 개봉 기록에 묶인 후기만 보여 준다. 없으면 없다고 말한다(가짜 후기, 가짜 당첨 소식 없음).
  * 아래에 붙은 막대에 수량과 주 단추 하나가 있다. 막히면 그 단추가 다음 행동으로 바뀐다:
  *   로그인 전 → "로그인하고 열기" / 잔액 부족 → 한 줄 안내와 "USDT 충전하기" / 충분 → "N개 열기, 금액"
+ *   잔액이 모자란데 보관 중인 상품을 전부 받아 모자란 만큼이 채워지면 주 단추는 "USDT로 받기"(선택 시트)이고 충전은 밑줄 링크다.
+ *   채워지지 않으면 주 단추는 "USDT 충전하기"이고 "USDT로 받기"가 밑줄 링크다(flow/MELT_SPEC.md S4, R3).
+ *   받거나 충전한 뒤에도 박스와 수량은 그대로이고, 열기는 사람이 다시 누른다.
  * 구매 확정 단계는 없다. 큰 금액(50 USDT 이상이거나 10개 이상)만 확인창을 띄운다.
  * 열기부터 결과까지의 상태는 lib/openingFlow 의 상태 기계를 따른다. 새 구매는 READY 와 SETTLED 에서만 시작한다.
  * 결과가 정해지면 보관함 기록마다 개봉의 거래 번호가 붙는다. 연출을 못 보고 떠났다 돌아오면 새로 뽑지 않고 그 기록을 다시 보여 준다(stores/openingJournal).
@@ -35,6 +38,8 @@ import { useInventoryStore } from "@/stores/inventoryStore";
 import { Button, Chips, Empty, Line, Row, Rows, ScreenHead, TextLink } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
 import { Reveal } from "@/components/box/Reveal";
+import { TakeSheet, useTakeLedger } from "@/components/flow/TakeSheet";
+import { currentTakeLedger, shortfallOf, takeAmountOf, takeStateOf } from "@/lib/takeBatch";
 import { Opening } from "@/components/box/Opening";
 import { Link } from "@/i18n/navigation";
 
@@ -76,6 +81,10 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const free = user ? Math.min(qty, freeLeft) : 0;
   const cost = +(box.price * (qty - free)).toFixed(2);
   const short = balance < cost;
+  // 잔액이 모자랄 때: 보관 중인 상품 수와, 그것을 전부 USDT로 받으면 들어오는 금액(보여 주기만 한다)
+  const takeLedger = useTakeLedger();
+  const need = useMemo(() => shortfallOf(balance, cost, owned, takeLedger), [balance, cost, owned, takeLedger]);
+  const [takingHeld, setTakingHeld] = useState(false);
   const table = useMemo(() => dropTable(box), [box]);
   const groups = useMemo(() => TIERS.map((tier) => {
     const items = table.filter((i) => tierOf(i.value, box.price).key === tier.key);
@@ -110,10 +119,13 @@ export function BoxScreen({ box }: { box: ProductBox }) {
   const recover = () => {
     if (!unseen) return;
     const taken: Record<string, number> = {}; const shipped: Record<string, true> = {};
+    // 받은 상품으로 다시 보여 주는 것은 받기가 확정된 것만이다(받은 상태이고 그 상품의 입금 내역이 있다).
+    // 확정되지 않은 상품은 결과 화면이 같은 기준으로 "확인 필요"라고 적는다(lib/takeBatch 의 takeStateOf)
+    const ledger = currentTakeLedger();
     const results = unseen.items.flatMap((o): OpeningResult[] => {
       const item = table.find((i) => i.id === o.itemId);
       if (!item) return [];
-      if (item.kind !== "cash" && o.status === "SOLD" && typeof o.soldForUsdt === "number") taken[o.id] = o.soldForUsdt;
+      if (item.kind !== "cash" && takeStateOf(o, ledger) === "taken" && typeof o.soldForUsdt === "number") taken[o.id] = o.soldForUsdt;
       if (o.status === "SHIPPING_REQUESTED" || o.status === "SHIPPING" || o.status === "DELIVERED") shipped[o.id] = true;
       // 값은 지금 카탈로그가 아니라 그때 보관함에 적힌 값이다
       return [{ ownedId: o.id, settled: item.kind === "cash", item: { ...item, value: o.valueUsdt }, tier: tierOf(o.valueUsdt, box.price), roll: o.fair.roll, hmac: "", nonce: o.fair.nonce, serverSeed: o.fair.serverSeed, serverSeedHash: o.fair.serverSeedHash, clientSeed: o.fair.clientSeed }];
@@ -192,7 +204,9 @@ export function BoxScreen({ box }: { box: ProductBox }) {
           {!ready ? <Button disabled>{t("common.loading")}</Button>
             : !user ? <><Button onClick={() => openLogin("login")}>{t("box.loginToOpen")}</Button><p className="v-small">{t("box.guestNote", { n: qty, amount: fmt(cost) })}</p></>
             : unseen ? <Button data-open-recover onClick={recover}>{t("op.recoverCta")}</Button>
-            : short ? <Button onClick={openCharge}>{t("box.charge")}</Button>
+            : short && need.heldCount > 0 && need.covers ? <><Button data-short-take aria-haspopup="dialog" onClick={() => setTakingHeld(true)}>{t("take.title")}</Button><p className="v-take-hint">{t("take.heldHint", { n: need.heldCount, amount: fmt(need.maxReceivable) })}</p><div className="v-links"><TextLink onClick={openCharge}>{t("box.charge")}</TextLink></div></>
+            : short && need.heldCount > 0 ? <><Button data-short-charge onClick={openCharge}>{t("box.charge")}</Button><p className="v-take-hint">{t("take.heldHint", { n: need.heldCount, amount: fmt(need.maxReceivable) })}</p><div className="v-links"><TextLink onClick={() => setTakingHeld(true)}>{t("take.title")}</TextLink></div></>
+            : short ? <Button data-short-charge onClick={openCharge}>{t("box.charge")}</Button>
             : <Button data-open-primary onClick={press} busy={busy} busyLabel={t("box.opening")}>{cost === 0 ? t("box.openFree", { n: qty }) : t("box.open", { n: qty, amount: fmt(cost) })}</Button>}
         </div>
       </div>
@@ -213,7 +227,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
               <ul className="v-itemrows">
                 {g.items.filter((i) => !i.image.src).map((item) => (
                   <li key={item.id}>
-                    <button type="button" className="v-itemrow" onClick={() => setItemId(item.id)}>
+                    <button type="button" className="v-itemrow" aria-haspopup="dialog" onClick={() => setItemId(item.id)}>
                       <span className="v-itemrow-name">{itemName(item)}</span>
                       <span className="v-itemrow-meta"><span className="v-num">{fmt(item.value)}</span></span>
                     </button>
@@ -247,7 +261,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
           <ul className="v-itemrows">
             {table.map((item) => (
               <li key={item.id}>
-                <button type="button" className="v-itemrow" onClick={() => setItemId(item.id)}>
+                <button type="button" className="v-itemrow" aria-haspopup="dialog" onClick={() => setItemId(item.id)}>
                   <span className="v-itemrow-name">{itemName(item)}</span>
                   <span className="v-itemrow-meta"><span className="v-num">{fmt(item.value)}</span><span className="v-num v-small">{formatRate(item.dropRate)}</span></span>
                 </button>
@@ -273,7 +287,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
               <Row label={t("reveal.value")}>{fmt(current.value)}</Row>
               <Row label={t("reveal.odds")}>{formatRate(current.dropRate)}</Row>
               <Row label={t("box.receive")}>{current.kind === "physical" ? t("box.receivePhysical") : current.kind === "digital" ? t("box.receiveDigital") : t("box.receiveCash")}</Row>
-              {current.kind !== "cash" && <Row label={t("box.takeAmount", { pct: Math.round(REFUND_RATE * 100) })}>{fmt(+(current.value * REFUND_RATE).toFixed(2))}</Row>}
+              {current.kind !== "cash" && <Row label={t("box.takeAmount", { pct: Math.round(REFUND_RATE * 100) })}>{fmt(takeAmountOf({ valueUsdt: current.value }))}</Row>}
               {current.kind !== "cash" && <Row label={t("box.priceBasis")}>{t("box.priceBasisV")}</Row>}
               {current.kind === "physical" && <Row label={t("box.shipFee")}>{t("box.shipFeeV", { n: COUNTRIES.length })}</Row>}
             </Rows>
@@ -300,6 +314,8 @@ export function BoxScreen({ box }: { box: ProductBox }) {
         )}
       </Sheet>
       <Confirm open={confirming} onCancel={cancelConfirm} onConfirm={() => void open(true)} busy={busy} busyLabel={t("box.opening")} title={t("box.confirmTitle", { amount: fmt(cost) })} desc={t("box.confirmDesc")} confirmLabel={t("box.open", { n: qty, amount: fmt(cost) })} cancelLabel={t("common.cancel")} />
+      {/* 잔액이 모자랄 때 여는 선택 시트(보관 중인 상품 전부). 받은 뒤에도 수량은 그대로이고 열기는 사람이 누른다 */}
+      <TakeSheet open={takingHeld && !opened} onClose={() => setTakingHeld(false)} />
       {opened && user && opened.results.length === 1 && <Opening key={opened.round} box={box} result={opened.results[0]} cost={opened.cost} nextCost={cost} accountId={user.id} recovered={opened.recovered} initialTaken={opened.taken?.[opened.results[0].ownedId]} initialShipped={!!opened.shipped?.[opened.results[0].ownedId]} onClose={closeOpening} onAgain={press} againBusy={busy} canAgain={!short} onRevealed={revealed} onFlow={send} />}
       {opened && opened.results.length > 1 && <Reveal key={opened.round} box={box} results={opened.results} cost={opened.cost} nextCost={cost} recovered={opened.recovered} initialTaken={opened.taken} initialShipped={opened.shipped} onClose={closeOpening} onAgain={press} againBusy={busy} canAgain={!short} onRevealed={revealed} onSkip={() => send("SKIP")} />}
     </div>
@@ -308,7 +324,7 @@ export function BoxScreen({ box }: { box: ProductBox }) {
 
 function ItemCard({ item, name, value, onOpen }: { item: ProductItem; name: string; value: string; onOpen: () => void }) {
   return (
-    <button type="button" className="v-item" onClick={onOpen}>
+    <button type="button" className="v-item" aria-haspopup="dialog" onClick={onOpen}>
       <span className="v-item-photo">{item.image.src ? <img src={item.image.src} alt="" loading="lazy" decoding="async" /> : <span className="v-item-glyph" aria-hidden>{item.kind === "cash" ? <Coins size={28} strokeWidth={1.4} /> : item.kind === "digital" ? <CreditCard size={28} strokeWidth={1.4} /> : <Package size={28} strokeWidth={1.4} />}</span>}</span>
       <span className="v-item-body">
         <span className="v-item-name">{name}</span>

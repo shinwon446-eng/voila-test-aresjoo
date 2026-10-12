@@ -10,6 +10,10 @@
  *   - 위의 잔액은 결과가 드러나는 순간 최종 값으로 바뀐다. 중간 값을 세어 올리지 않는다.
  *   - "결과 바로 보기"로 언제든 건너뛴다. 건너뛰어도 결과는 같다. 결과가 뜬 직후 0.35초는 아래 단추가 눌리지 않는다.
  *   - 다음 열기는 언제나 사람이 누른다. 상품을 USDT 로 받는 일은 이 화면 안에서 끝난다.
+ *   - 받은 상품의 주 단추는 "USDT로 받기"다(flow/MELT_SPEC.md S2). 받는 방법을 고르는 단계는 없고, 확인을 한 번 거친다.
+ *     배송은 이 화면에 없다. 보관함의 상품 상세에서 신청한다.
+ *   - 다음 열기에 잔액이 모자라면 그 자리에서 푼다(S4): 보관 중인 상품이 있으면 "USDT로 받기", 없으면 "USDT 충전하기".
+ *     받거나 충전한 뒤에도 다음 열기를 스스로 실행하지 않는다.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { SlidersHorizontal, X } from "lucide-react";
@@ -24,15 +28,18 @@ import { useCurrency } from "@/lib/useCurrency";
 import { useModal } from "@/lib/useModal";
 import { useWalletStore } from "@/stores/walletStore";
 import { BURST, burstGauge } from "@/lib/burst";
-import { useSettingsStore, type ReceiveMethod } from "@/stores/settingsStore";
+import { useSettingsStore } from "@/stores/settingsStore";
+import { useInventoryStore } from "@/stores/inventoryStore";
+import { useFlow } from "@/stores/flowStore";
+import { shortfallOf, takeStateOf } from "@/lib/takeBatch";
 import { BrandLogo } from "@/components/layout/BrandLogo";
 import { Button, Line, TextLink } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
 import { VerifySheet, type VerifyRecord } from "@/components/flow/VerifySheet";
-import { ShipSheet } from "@/components/flow/ShipSheet";
+import { TakeConfirm, TakeSheet, useTakeLedger } from "@/components/flow/TakeSheet";
 
 type Phase = "anticipation" | "impact" | "exit" | "reveal" | "ready";
-type Settle = "idle" | "settling" | "settled" | "pending" | "failed";
+type Settle = "idle" | "settling" | "settled" | "pending" | "failed" | "unknown";
 
 const STAR = "M8 0 10.15 5.85 16 8l-5.85 2.15L8 16l-2.15-5.85L0 8l5.85-2.15Z";
 const Star = ({ className }: { className?: string }) => <svg viewBox="0 0 16 16" className={className} fill="currentColor" aria-hidden><path d={STAR} /></svg>;
@@ -79,23 +86,31 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
   const sound = useSettingsStore((s) => s.openSound);
   const short = useSettingsStore((s) => s.openShort);
   const autoTake = useSettingsStore((s) => !!s.autoTakeBy[accountId]);
-  const lastReceive = useSettingsStore((s) => s.lastReceiveBy[accountId] ?? null);
+  const owned = useInventoryStore((s) => s.items);
+  const openCharge = useFlow((s) => s.openCharge);
   const item = result.item;
   const isCash = item.kind === "cash";
   const tone = toneOf(item, box.price);
   // 연출 길이는 장면이 시작할 때의 설정으로 정한다(도중에 설정을 바꿔도 이 장면은 그대로 끝난다)
   const timeline = useMemo(() => openingTimeline(short), []); // eslint-disable-line react-hooks/exhaustive-deps
   const [phase, setPhase] = useState<Phase>(recovered ? "reveal" : "anticipation");
-  const [settle, setSettle] = useState<Settle>(initialTaken !== undefined ? "settled" : "idle");
+  const [settleState, setSettle] = useState<Settle>(initialTaken !== undefined ? "settled" : "idle");
+  // 받기가 확정됐는지는 받는 일과 같은 기준으로 본다. 이 상품의 장부가 어긋나 있으면(받은 상태인데 입금 내역이 없다 등)
+  // 다시 보는 결과에서도 받았다고도 보관 중이라고도 하지 않고, 처리 상태를 확인하지 못했다고 말한다(받기 단추를 주지 않는다)
+  const ledger = useTakeLedger();
+  const self = owned.find((o) => o.id === result.ownedId);
+  const unconfirmed = !isCash && !!self && takeStateOf(self, ledger) === "unconfirmed";
+  const settle: Settle = settleState === "settling" || settleState === "settled" ? settleState : unconfirmed ? "unknown" : settleState;
   const [taken, setTaken] = useState<number | null>(initialTaken ?? null);
   const [autoTaken, setAutoTaken] = useState(false);
-  const [shipped, setShipped] = useState(!!initialShipped);
+  // 배송은 이 화면에서 신청하지 않는다. 다시 보는 결과가 이미 배송을 신청한 상품일 때만 참이다
+  const shipped = !!initialShipped;
   // 열기 직전 잔액: 이 화면이 뜰 때는 이미 낸 값이 빠지고 USDT 결과가 더해져 있다. 그 둘을 되돌린 값이다(연출 중에만 보인다)
   const [balanceBefore] = useState(() => +(balance + cost - (isCash ? item.value : 0)).toFixed(2));
   const [verifying, setVerifying] = useState<VerifyRecord | null>(null);
-  const [choosing, setChoosing] = useState(false);
-  const [method, setMethod] = useState<ReceiveMethod | null>(null);
-  const [shipping, setShipping] = useState(false);
+  // USDT로 받기 확인창(이 상품 하나)과, 잔액이 모자랄 때 여는 선택 시트(보관 중인 상품 전부)
+  const [asking, setAsking] = useState(false);
+  const [heldTaking, setHeldTaking] = useState(false);
   const [settings, setSettings] = useState(false);
   const soundRef = useRef(sound); soundRef.current = sound;
   const natural = useRef(!recovered);
@@ -140,8 +155,10 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
     setSettle("settling");
     onFlow(retry ? "RETRY" : "SETTLE_START");
     let out: Awaited<ReturnType<typeof settleTake>>;
-    try { out = await settleTake(result.ownedId); } catch { out = { status: "failed" }; }
-    onFlow(out.status === "settled" ? "SETTLE_OK" : out.status === "pending" ? "SETTLE_PENDING" : "SETTLE_ERROR");
+    // 답을 받지 못했으면 받은 것도 받지 못한 것도 단정하지 않는다
+    try { out = await settleTake(result.ownedId); } catch { out = { status: "unknown" }; }
+    // 알 수 없는 상태는 반영을 기다리는 상태와 같이 다룬다(새 구매를 시작하지 않고, 스스로 다시 지급하지 않는다)
+    onFlow(out.status === "settled" ? "SETTLE_OK" : out.status === "failed" ? "SETTLE_ERROR" : "SETTLE_PENDING");
     if (!alive.current) return;
     if (out.status === "settled") { setTaken(out.amountUsdt); setAutoTaken(auto); setSettle("settled"); }
     else setSettle(out.status);
@@ -175,12 +192,16 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
   const ready = phase === "ready";
   const againLabel = (nextCost ?? cost) > 0 ? t("reveal.again", { amount: fmt(nextCost ?? cost) }) : t("reveal.againFree");
   const again = <Button data-open-again onClick={onAgain} busy={againBusy} busyLabel={t("box.opening")} disabled={!ready}>{againLabel}</Button>;
-  const confirmMethod = () => {
-    if (!method || settle === "settling" || settle === "settled") return;
-    useSettingsStore.getState().setLastReceive(accountId, method);
-    setChoosing(false);
-    if (method === "ship") setShipping(true); else void take(false);
+  const confirmTake = () => {
+    setAsking(false);
+    if (settle === "settling" || settle === "settled") return;
+    void take(false);
   };
+  // 다음 열기에 잔액이 모자랄 때 말할 숫자: 더 필요한 금액, 보관 중인 상품 수, 그것을 전부 받으면 들어오는 금액
+  const need = shortfallOf(balance, nextCost ?? cost, owned, ledger);
+  const stuck = done && !canAgain;
+  const verifyLink = <TextLink onClick={() => { if (ready) verify(); }}>{t("nav.verify")}</TextLink>;
+  const backLink = <TextLink onClick={() => { if (ready) close(); }}>{t("op.backToBox")}</TextLink>;
 
   return (
     <div ref={panel} role="dialog" aria-modal="true" aria-label={t("reveal.results")} tabIndex={-1} className="v-op" data-phase={phase} data-tone={tone} data-kind={isCash ? "cash" : "item"} data-short={short || undefined}
@@ -201,8 +222,18 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
         <div className="v-op-result" aria-live="polite" aria-atomic="true" aria-hidden={!revealed}>
           {revealed && (received !== null ? (
             <>
-              <p className="v-op-label">{t(burst ? "op.burstLabel" : "op.cashLabel")}{timesOf(received, cost) !== null ? t("op.times", { n: timesOf(received, cost) }) : ""}</p>
-              <h2 className="v-op-amount v-num">{fmt(received)}</h2>
+              {isCash ? (
+                <>
+                  <p className="v-op-label">{t(burst ? "op.burstLabel" : "op.cashLabel")}{timesOf(received, cost) !== null ? t("op.times", { n: timesOf(received, cost) }) : ""}</p>
+                  <h2 className="v-op-amount v-num">{fmt(received)}</h2>
+                </>
+              ) : (
+                <>
+                  {/* USDT 로 받은 상품: 제목이 결과 문장이다. 금액은 실제로 받은 금액(보관함 기록)이다 */}
+                  <h2 className="v-op-name" data-taken-title>{t("take.doneTitle", { amount: fmt(received) })}</h2>
+                  {timesOf(received, cost) !== null && <p className="v-op-label">{t("op.timesLine", { n: timesOf(received, cost) })}</p>}
+                </>
+              )}
               {net}
               <p className="v-op-meta">{isCash ? t("op.inBalance") : t(autoTaken ? "op.autoTookFrom" : "op.tookFrom", { name: itemName(item), ref: fmt(item.value) })}. {odds}{autoTaken ? ". " + t("op.autoNote") : ""}</p>
             </>
@@ -216,7 +247,8 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
               <h2 className="v-op-name">{itemName(item)}</h2>
               {item.image.src && <p className="v-op-ref v-num">{t("op.refLine", { amount: fmt(item.value) })}</p>}
               {item.image.src && timesOf(item.value, cost) !== null && <p className="v-op-label">{t("op.timesLine", { n: timesOf(item.value, cost) })}</p>}
-              <p className="v-op-line">{shipped ? t("op.shipRequested") : t("op.keptStatus")}{!shipped && !item.image.src ? ". " + t("op.takeWorth", { amount: sellAmount }) : ""}</p>
+              {/* 상태 줄은 보관했다는 말만 한다. 받을 금액은 주 단추와 그 아래 한 줄이 말한다 */}
+              <p className="v-op-line">{shipped ? t("op.shipRequested") : settle === "unknown" ? t("take.unconfirmed") : t("op.keptStatus")}</p>
               <p className="v-op-meta">{odds}. {cost > 0 ? t("op.paid", { price: fmt(cost) }) : t("op.free")}</p>
             </>
           ))}
@@ -233,19 +265,52 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
               {recovered && <p>{t("op.recovered")}</p>}
               {settle === "pending" && <Line>{t("op.pending")}</Line>}
               {settle === "failed" && <Line fail>{t("op.failed")}</Line>}
+              {/* 장부가 어긋났다: 받았다고도, 보관함에 있다고도 말하지 않는다 */}
+              {settle === "unknown" && <Line fail>{t("take.unknown")}</Line>}
+              {/* 다음 열기에 잔액이 모자라면 팝업이 아니라 이 한 줄로 말한다 */}
+              {stuck && need.missing > 0 && <Line>{t("box.short", { balance: fmt(balance), missing: fmt(need.missing) })}</Line>}
             </div>
             <div className="v-op-actions" data-armed={ready || undefined}>
-              {done ? (
+              {done && canAgain && (
                 <>
-                  {canAgain ? again : <Button onClick={close} disabled={!ready}>{t("op.backToBox")}</Button>}
-                  <div className="v-links"><TextLink onClick={() => { if (ready) verify(); }}>{t("nav.verify")}</TextLink>{canAgain && <TextLink onClick={() => { if (ready) close(); }}>{t("op.backToBox")}</TextLink>}</div>
+                  {again}
+                  <div className="v-links">{verifyLink}{backLink}</div>
                 </>
-              ) : (
+              )}
+              {/* 잔액이 모자란 자리: 보관 중인 상품을 전부 받아 모자란 만큼이 채워질 때만 USDT로 받기가 주 단추다.
+                  채워지지 않으면 충전이 주 단추이고 USDT로 받기는 링크다. 어느 쪽도 다음 열기를 실행하지 않는다 */}
+              {stuck && need.heldCount > 0 && need.covers && (
                 <>
-                  {settle === "failed" || settle === "pending"
-                    ? <Button onClick={() => void take(false, true)} disabled={!ready}>{t(settle === "failed" ? "op.retryTake" : "op.recheck", { amount: sellAmount })}</Button>
-                    : <Button onClick={() => { setMethod(item.kind === "physical" ? lastReceive : "usdt"); setChoosing(true); }} disabled={!ready || settle === "settling"} busy={settle === "settling"} busyLabel={t("common.checking")}>{t("op.choose")}</Button>}
-                  <div className="v-links">{canAgain && settle === "idle" && <TextLink onClick={() => { if (ready && !againBusy) onAgain(); }}>{againLabel}</TextLink>}<TextLink onClick={() => { if (ready) verify(); }}>{t("nav.verify")}</TextLink>{settle !== "idle" && <TextLink onClick={() => { if (ready) close(); }}>{t("op.backToBox")}</TextLink>}</div>
+                  <Button data-short-take aria-haspopup="dialog" onClick={() => setHeldTaking(true)} disabled={!ready}>{t("take.title")}</Button>
+                  <p className="v-take-hint">{t("take.heldHint", { n: need.heldCount, amount: fmt(need.maxReceivable) })}</p>
+                  <div className="v-links"><TextLink onClick={() => { if (ready) openCharge(); }}>{t("box.charge")}</TextLink>{verifyLink}</div>
+                </>
+              )}
+              {stuck && need.heldCount > 0 && !need.covers && (
+                <>
+                  <Button data-short-charge onClick={openCharge} disabled={!ready}>{t("box.charge")}</Button>
+                  <p className="v-take-hint">{t("take.heldHint", { n: need.heldCount, amount: fmt(need.maxReceivable) })}</p>
+                  <div className="v-links"><TextLink onClick={() => { if (ready) setHeldTaking(true); }}>{t("take.title")}</TextLink>{verifyLink}</div>
+                </>
+              )}
+              {stuck && need.heldCount === 0 && (
+                <>
+                  <Button data-short-charge onClick={openCharge} disabled={!ready}>{t("box.charge")}</Button>
+                  <div className="v-links">{verifyLink}{backLink}</div>
+                </>
+              )}
+              {!done && (settle === "failed" || settle === "pending" || settle === "unknown") && (
+                <>
+                  <Button onClick={() => void take(false, true)} disabled={!ready}>{t(settle === "failed" ? "op.retryTake" : "op.recheck", { amount: sellAmount })}</Button>
+                  <div className="v-links">{verifyLink}{backLink}</div>
+                </>
+              )}
+              {/* 받은 상품: 주 단추는 USDT로 받기 하나. 받는 방법을 고르는 단계도, 배송 링크도 이 화면에 없다 */}
+              {!done && settle !== "failed" && settle !== "pending" && settle !== "unknown" && (
+                <>
+                  <Button data-take-primary onClick={() => setAsking(true)} disabled={!ready || settle === "settling"} busy={settle === "settling"} busyLabel={t("common.checking")}>{t("reveal.take", { amount: sellAmount })}</Button>
+                  <p className="v-take-hint">{t("take.rateLine", { ref: fmt(item.value), pct: Math.round(REFUND_RATE * 100) })}</p>
+                  <div className="v-links"><TextLink onClick={() => { if (ready && settle !== "settling") close(); }}>{t("take.keep")}</TextLink>{verifyLink}</div>
                 </>
               )}
             </div>
@@ -253,23 +318,12 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
         )}
       </div>
 
-      {/* 받는 방법: 배송과 USDT 를 나란히 놓고 고른 뒤 아래 단추 하나로 확정한다 */}
-      <Sheet open={choosing} onClose={() => setChoosing(false)} title={t("op.chooseTitle")} desc={itemName(item)} closeLabel={t("common.close")}>
-        <div role="radiogroup" aria-label={t("op.chooseTitle")} className="v-op-choices" onKeyDown={(e) => { if (item.kind !== "physical" || !["ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight"].includes(e.key)) return; e.preventDefault(); const next = method === "ship" ? "usdt" : "ship"; setMethod(next); (e.currentTarget.querySelector(`[data-method="${next}"]`) as HTMLElement | null)?.focus(); }}>
-          {item.kind === "physical" && (
-            <button type="button" role="radio" data-method="ship" aria-checked={method === "ship"} tabIndex={method === "usdt" ? -1 : 0} className="v-op-choice" onClick={() => setMethod("ship")}>
-              <span className="v-card-title">{t("reveal.ship")}</span><span className="v-small">{t("op.shipNote")}</span>
-            </button>
-          )}
-          <button type="button" role="radio" data-method="usdt" aria-checked={method === "usdt"} tabIndex={method === "ship" ? -1 : 0} className="v-op-choice" onClick={() => setMethod("usdt")}>
-            <span className="v-card-title">{t("op.takeChoice", { amount: sellAmount })}</span><span className="v-small">{t(item.kind === "physical" ? "op.takeNote" : "op.takeNoteDigital", { ref: fmt(item.value), pct: Math.round(REFUND_RATE * 100) })}</span>
-          </button>
-        </div>
-        <Button onClick={confirmMethod} disabled={!method || (method === "ship" && item.kind !== "physical")}>{method === "usdt" ? t("op.takeConfirm", { amount: sellAmount }) : method === "ship" ? t("op.shipConfirm") : t("op.choosePrompt")}</Button>
-      </Sheet>
+      {/* USDT로 받기: 받으면 배송으로 바꿀 수 없다. 되돌릴 수 없는 행동이라 확인을 한 번 거친다(선택 시트와 같은 글) */}
+      <TakeConfirm open={asking} amountUsdt={round2(sellValueOf(item))} onCancel={() => setAsking(false)} onConfirm={confirmTake} />
+      {/* 잔액이 모자랄 때: 보관 중인 상품 전부에서 골라 받는다. 받은 뒤에도 다음 열기는 사람이 누른다 */}
+      <TakeSheet open={heldTaking} onClose={() => setHeldTaking(false)} />
       <OpeningSettings open={settings} onClose={() => setSettings(false)} accountId={accountId} />
       <VerifySheet record={verifying} onClose={() => setVerifying(null)} />
-      <ShipSheet ownedIds={shipping ? [result.ownedId] : null} onClose={() => setShipping(false)} onDone={() => { setShipped(true); setShipping(false); }} />
     </div>
   );
 }

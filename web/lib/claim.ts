@@ -20,7 +20,8 @@ export function takeUsdt(ownedIds: string[]): { ids: string[]; totalUsdt: number
   if (result.ids.length) {
     const wallet = useWalletStore.getState();
     wallet.creditSplit(result.toCrypto, result.toCard);
-    wallet.addTransaction({ type: "sellback", amountUsdt: result.totalUsdt, ref: result.ids.join(",") });
+    // itemIds 는 기록 칸이다(돈은 움직이지 않는다). 받은 뒤 이 상품의 입금 내역이 있는지 대조하는 데 쓴다(lib/takeBatch)
+    wallet.addTransaction({ type: "sellback", amountUsdt: result.totalUsdt, ref: result.ids.join(","), itemIds: result.ids });
   }
   return { ids: result.ids, totalUsdt: result.totalUsdt };
 }

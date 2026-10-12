@@ -5,6 +5,9 @@
  * 계산과 검증, 신청 순서는 옛 출금 화면 그대로다(lib/withdrawal, lib/security, api.withdraw).
  *   인증을 통과한 뒤에만 잔액을 차감하고 내역을 만든다. 서비스가 준 상태와 거래 번호만 기록한다.
  * 실패와 막힘은 그 화면의 한 줄로 쓴다.
+ * 보관 중인 상품이 있으면 화면 설명 바로 아래에 "보관함의 상품을 USDT로 받아 출금하기" 링크가 있다(flow/MELT_SPEC.md S7, R6).
+ *   선택 시트에서 받은 뒤 이 화면으로 돌아오고, 새로 받은 금액 가운데 출금할 수 있는 몫만 금액 칸에 채운다(사람이 고칠 수 있다).
+ *   출금은 지금처럼 잔액에서 나간다. 받은 것과 출금은 따로 기록되고, 출금을 하지 않아도 받은 것은 잔액에 남는다.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
@@ -22,6 +25,9 @@ import { useAuthStore } from "@/stores/authStore";
 import { Button, ButtonLink, Chips, Field, Line, Row, Rows, ScreenHead, Skeleton, TextLink } from "@/components/ui/kit";
 import { TwoFactorSetup } from "@/components/wallet/TwoFactorSetup";
 import { Sheet } from "@/components/ui/Sheet";
+import { TakeSheet, useTakeLedger } from "@/components/flow/TakeSheet";
+import { heldForTake, withdrawPrefillUsdt, type BatchOutcome } from "@/lib/takeBatch";
+import { useInventoryStore } from "@/stores/inventoryStore";
 
 /** 인증 코드를 몇 번 틀리면 이메일 인증 경로로 보내는가(옛 화면과 같다) */
 const OTP_MAX_ATTEMPTS = 3;
@@ -74,6 +80,25 @@ export function WithdrawScreen() {
   const bad = (key: (typeof errors)[number]) => touched && errors.includes(key);
   const amountOk = !errors.includes("nan") && !errors.includes("min") && !errors.includes("insufficient");
   const setRatio = (ratio: number) => setAmountText((+(maxWithdrawable(balance) * ratio).toFixed(2) * rates[currency]).toFixed(decimals));
+
+  // 보관 중인 상품을 USDT로 받아 출금하기. 받는 일은 선택 시트가 하고, 여기서는 금액 칸만 채운다
+  const takeLedger = useTakeLedger();
+  const heldItems = useInventoryStore((s) => s.items);
+  const heldCount = useMemo(() => heldForTake(heldItems, takeLedger).length, [heldItems, takeLedger]);
+  const [taking, setTaking] = useState(false);
+  // 방금 받은 것: 출금할 수 있는 몫(금액 칸에 넣은 값)과 그렇지 않은 몫이 있었는지
+  const [received, setReceived] = useState<{ prefillUsdt: number } | null>(null);
+  // 이 화면에서 앞서 받아 금액 칸에 넣어 둔 몫. 시트를 다시 열어 더 받으면 여기에 더한다(사람이 금액을 고쳤으면 0 에서 다시 센다)
+  const prefillBase = useRef(0);
+  const openTake = () => { prefillBase.current = received?.prefillUsdt ?? 0; setTaking(true); };
+  const onTaken = (out: BatchOutcome) => {
+    // out 은 이 시트를 연 뒤 받은 것을 모두 합친 결과다(다시 시도한 것 포함). 새로 잔액에 들어온 것이 없으면 채울 것도 없다
+    if (!(out.amountUsdt > 0)) return;
+    // 새로 받은 금액 가운데 출금할 수 있는 몫만. 원래 있던 잔액과 카드로 충전한 몫은 넣지 않는다
+    const prefillUsdt = withdrawPrefillUsdt({ toCrypto: prefillBase.current + out.toCrypto }, useWalletStore.getState().cryptoBalance);
+    setReceived({ prefillUsdt });
+    if (prefillUsdt > 0) setAmountText((prefillUsdt * rates[currency]).toFixed(decimals));
+  };
 
   const beginConfirm = () => {
     setTouched(true);
@@ -212,13 +237,16 @@ export function WithdrawScreen() {
   return (
     <form className="v-stack v-stack--lg" onSubmit={(e) => { e.preventDefault(); beginConfirm(); }} noValidate>
       <ScreenHead title={t("withdraw.title")} desc={t("withdraw.desc")} back="/wallet" backLabel={t("common.back")} />
+      {/* 보관 중인 상품이 있을 때만. 입력 칸 사이가 아니라 화면 설명 바로 아래에 둔다(R6). 받은 뒤 이 화면으로 돌아와 금액을 이어서 넣는다 */}
+      {heldCount > 0 && <div className="v-links v-links--tight"><TextLink onClick={openTake}>{t("take.withdrawLink")}</TextLink></div>}
       <Chips label={t("charge.network")} value={network} onChange={setNetwork} options={WITHDRAW_NETWORKS.map((n) => ({ value: n.key, label: n.token }))} />
       <div className="v-stack">
         <Field label={t("withdraw.address")} autoCapitalize="none" autoCorrect="off" spellCheck={false} placeholder={meta.addressHint} value={address} onChange={(e) => setAddress(e.target.value)} />
         {bad("address") && <Line fail>{t("withdraw.errAddress." + network)}</Line>}
-        <Field label={t("withdraw.amount", { currency })} inputMode="decimal" value={amountText} onChange={(e) => setAmountText(e.target.value.replace(/[^\d.]/g, ""))} />
+        <Field label={t("withdraw.amount", { currency })} inputMode="decimal" value={amountText} onChange={(e) => { setAmountText(e.target.value.replace(/[^\d.]/g, "")); setReceived(null); }} />
+        {received && <p className="v-small">{received.prefillUsdt > 0 ? t("take.prefilled", { amount: fmt(received.prefillUsdt) }) : t("take.prefillNone")}</p>}
         <div className="v-chips">
-          {[0.25, 0.5, 1].map((ratio) => <button key={ratio} type="button" className="v-chip" onClick={() => setRatio(ratio)}>{ratio === 1 ? t("withdraw.all") : Math.round(ratio * 100) + "%"}</button>)}
+          {[0.25, 0.5, 1].map((ratio) => <button key={ratio} type="button" className="v-chip" onClick={() => { setRatio(ratio); setReceived(null); }}>{ratio === 1 ? t("withdraw.all") : Math.round(ratio * 100) + "%"}</button>)}
         </div>
         {bad("nan") && <Line fail>{t("withdraw.errNan")}</Line>}
         {bad("min") && <Line fail>{t("withdraw.errMin", { min: fmt(MIN_WITHDRAW_USDT) })}</Line>}
@@ -231,6 +259,7 @@ export function WithdrawScreen() {
       </Rows>
       {error && <Line fail>{error}</Line>}
       <Button type="submit">{t("withdraw.next")}</Button>
+      <TakeSheet open={taking} onClose={() => setTaking(false)} onTaken={onTaken} doneLabel={t("take.withdrawBack")} />
     </form>
   );
 }

@@ -1,0 +1,28 @@
+/*
+ * USDT로 받기(components/flow/TakeSheet)와 그것을 여는 자리의 모양.
+ * 색은 tokens.css 의 변수만 쓴다. 고른 행은 색이 아니라 체크 표시와 2px 테두리로 나타낸다(DESIGN.md 3장).
+ */
+.v-check { display: inline-flex; width: 24px; height: 24px; flex: none; align-items: center; justify-content: center; border: 2px solid var(--v-outline); border-radius: 8px; color: var(--v-title); transition: border-color var(--v-fast); }
+[aria-checked="true"] > .v-check, [aria-checked="mixed"] > .v-check { border-color: var(--v-selected); }
+/* 목록 카드의 머리 행(전체 선택): 상품 행보다 낮고, 글자는 본문 크기 */
+.v-take-all { min-height: 52px; color: var(--v-text); font-size: var(--v-fs-body); }
+
+/* 목록이 길어도 주 단추는 시트 아래에 붙어 있다. 시트의 아래 여백은 이 막대가 대신 갖고, 옆은 시트 끝까지 덮는다 */
+.v-sheet-body:has(> .v-take-foot) { padding-bottom: 0; }
+.v-take-foot { position: sticky; bottom: 0; display: flex; flex-direction: column; gap: 8px; margin: 0 calc(var(--v-gutter) * -1); border-top: 1px solid var(--v-divider); background: var(--v-bg); padding: 12px var(--v-gutter) calc(16px + env(safe-area-inset-bottom, 0px)); }
+/* PC 는 가운데 창이라 아래 모서리가 둥글다. 막대가 창의 테두리를 덮지 않게 같은 모양으로 깎는다 */
+@media (min-width: 768px) { .v-take-foot { margin: 0 -32px; border-radius: 0 0 calc(var(--v-r-card) - 1px) calc(var(--v-r-card) - 1px); padding: 12px 32px 24px; } }
+
+/* 주 단추 아래의 옅은 한 줄(참고가의 95%, 보관함의 상품으로 받을 수 있는 최대 금액). 긴 금액이나 영어 낱말이 좁은 폭에서 넘치지 않게 한다 */
+.v-take-hint { color: var(--v-mute); font-size: var(--v-fs-small); line-height: 1.5; word-break: keep-all; overflow-wrap: anywhere; }
+.v-op-actions .v-take-hint { text-align: center; text-wrap: balance; }
+/* 낮은 화면(높이 700px 이하): 주 단추 아래에 한 줄이 더해진 만큼 사진을 조금 줄여 위의 잔액 줄과 겹치지 않게 한다 */
+@media (max-height: 700px) { .v-op:has(.v-op-actions .v-take-hint) .v-op-photo { width: min(82%, 400px); } }
+/* 휴대폰의 박스 화면: 잔액이 모자라 한 줄과 링크가 더 붙으면 열기 막대가 높아진다. 꼬리말 아래를 그만큼 더 비운다 */
+@media (max-width: 1023.98px) { .v-app:has(.v-openbar .v-take-hint) .v-footer { padding-bottom: 260px; } }
+
+/* 정보 카드의 행 안에서 시트를 여는 값(보관함 상품 상세의 후기 쓰기). 누르는 자리는 44px 이상 */
+.v-rowlink { display: inline-flex; min-width: var(--v-touch); min-height: var(--v-touch); align-items: center; justify-content: flex-end; gap: 6px; margin: -8px 0; color: var(--v-title); }
+.v-rowlink:hover > :first-child { text-decoration: underline; text-underline-offset: 3px; }
+/* 화면 설명 바로 아래에 붙는 링크 한 줄(출금 화면의 USDT로 받아 출금하기): 설명과 떨어져 보이지 않게 간격을 줄인다 */
+.v-links--tight { margin-top: -20px; margin-bottom: -12px; }

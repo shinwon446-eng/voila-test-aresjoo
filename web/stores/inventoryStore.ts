@@ -30,6 +30,10 @@ export interface OwnedItem {
   fundingRatio?: FundingRatio;
   /** 이 기록을 만든 개봉의 거래 번호(lib/opening). 못 본 결과를 새로 뽑지 않고 다시 보여 주는 데 쓴다. 옛 기록에는 없다. */
   openingId?: string;
+  /** 이 기록을 만든 개봉 때의 박스 1회 가격(정상 가격, 무료 개봉이어도 같다). 나온 상품의 기준(lib/wins)에 쓴다. 옛 기록에는 없다. */
+  boxPriceUsdt?: number;
+  /** 무료 개봉(가입 혜택)으로 나온 기록인지. 옛 기록에는 없다. */
+  freeOpen?: boolean;
   /** SOLD 시 실제 환급액 */
   soldForUsdt?: number;
   soldAt?: string;

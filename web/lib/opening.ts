@@ -87,10 +87,12 @@ async function executeOpening(box: ProductBox, count: number, openingId?: string
       pot = EMPTY_POT;
       return { r: { ...r, item: { ...r.item, value: pay.amount }, tier: tierOf(pay.amount, box.price) }, ratio: pay.ratio };
     });
-    const owned = inventory.add(drawn.map(({ r, ratio }) => ({
+    const owned = inventory.add(drawn.map(({ r, ratio }, i) => ({
       itemId: r.item.id, boxSlug: box.slug, valueUsdt: r.item.value, tier: r.tier.key,
       fair: { serverSeed, serverSeedHash, clientSeed, nonce: r.nonce, roll: r.roll, oddsVersion: oddsVersionOf(box), dropTable: table.map(({ id, dropRate }) => ({ id, dropRate })) },
       fundingRatio: ratio,
+      // 기록용 값 둘(돈은 움직이지 않는다): 그때의 1회 가격과 무료 개봉 여부. 나온 상품의 기준(lib/wins)이 읽는다
+      boxPriceUsdt: box.price, freeOpen: i < free,
       ...(openingId ? { openingId } : {}),
     })));
     if (owned.length !== picked.length) throw new Error("Opening inventory allocation failed");

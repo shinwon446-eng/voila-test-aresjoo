@@ -1,15 +1,20 @@
 "use client";
 /**
- * 보관함. 결정 하나: 어느 상품을 받을지. 상품을 누르면 그 상품의 시트가 열리고 거기서 받는 방법을 고른다.
+ * 보관함. 결정 하나: 어느 상품을 받을지. USDT로 받기가 먼저다(flow/MELT_SPEC.md S5).
+ *   보관 중 목록 위의 주 단추 "USDT로 받기"는 선택 시트를 연다(보관 중인 상품 전부에서 골라 한 번에).
+ *   상품을 누르면 그 상품의 시트: 주 단추 "USDT로 받기 (금액)", 밑줄 링크 "배송 받기"와 "개봉 결과 검증".
+ *   배송을 신청하는 길은 이 시트 하나다. 후기 쓰기는 조건이 될 때 정보 카드의 마지막 행으로 둔다(주 단추 위, 링크 자리를 쓰지 않는다. R5).
  * 통계 칸, 검색, 정렬 셀렉트, 여러 탭은 없다. 상태 셋(보관 중, 배송, 받은 것)만 알약으로 고른다.
  * 실패와 막힘은 팝업이나 토스트가 아니라 그 자리의 한 줄로 쓴다.
  */
 import { useEffect, useMemo, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { BOX_BY_SLUG, REFUND_RATE } from "@/lib/products";
+import { BOX_BY_SLUG } from "@/lib/products";
 import { productOf, processedAt, vaultTab, type VaultTab } from "@/lib/vault";
 import { trackingUrl } from "@/lib/carriers";
-import { cancelShipment, takeUsdt } from "@/lib/claim";
+import { cancelShipment } from "@/lib/claim";
+import { settleTake } from "@/lib/openingSettle";
+import { heldForTake, takeAmountOf, takeStateOf } from "@/lib/takeBatch";
 import { api } from "@/lib/api";
 import { isLive } from "@/lib/runtime";
 import { useProductText } from "@/lib/useProductText";
@@ -21,6 +26,7 @@ import { Confirm, Sheet } from "@/components/ui/Sheet";
 import { ShipSheet } from "@/components/flow/ShipSheet";
 import { VerifySheet, type VerifyRecord } from "@/components/flow/VerifySheet";
 import { ReviewSheet } from "@/components/flow/ReviewSheet";
+import { TakeConfirm, TakeSheet, useTakeLedger } from "@/components/flow/TakeSheet";
 import { canReview } from "@/lib/community";
 import { useCommunityStore } from "@/stores/communityStore";
 
@@ -44,6 +50,9 @@ export function InventoryScreen() {
   const [cancelling, setCancelling] = useState(false);
   const [busy, setBusy] = useState(false);
   const [cancelFailed, setCancelFailed] = useState(false);
+  // 상품 하나를 받지 못했을 때 그 상세 안에 적는 한 줄: 받지 못했다(보관 중), 또는 처리 상태를 확인하지 못했다
+  const [takeNote, setTakeNote] = useState<"failed" | "unknown" | null>(null);
+  const [batch, setBatch] = useState(false);
   const [verifying, setVerifying] = useState<VerifyRecord | null>(null);
   const [reviewing, setReviewing] = useState(false);
   const myReviews = useCommunityStore((s) => s.mine);
@@ -66,11 +75,24 @@ export function InventoryScreen() {
   const current = items.find((item) => item.id === openId) ?? null;
   const product = current ? productOf(current) : undefined;
   const nameOf = (item: OwnedItem) => { const p = productOf(item); return p ? itemName(p) : item.itemId; };
-  const takeAmount = current ? +(current.valueUsdt * REFUND_RATE).toFixed(2) : 0;
-  const statusOf = (item: OwnedItem) => item.status === "IN_STORAGE" ? t("inv.stHeld") : item.status === "SHIPPING_REQUESTED" ? t("inv.stRequested") : item.status === "SHIPPING" ? t("inv.stShipping") : item.status === "DELIVERED" ? t("inv.stDelivered") : t("inv.stTaken");
+  const takeAmount = current ? takeAmountOf(current) : 0;
+  // 받기가 확정됐는지는 받는 일과 같은 기준으로 본다(lib/takeBatch 의 takeStateOf).
+  // 확인되지 않은 상품(받은 상태인데 입금 내역이 없다, 보관 중인데 입금 내역이 있다, 확인 대기 표시가 남았다)은 받았다고도 보관 중이라고도 적지 않는다
+  const ledger = useTakeLedger();
+  const stateOf = (item: OwnedItem) => takeStateOf(item, ledger);
+  const takeable = useMemo(() => heldForTake(items, ledger).length, [items, ledger]);
+  const currentState = current ? stateOf(current) : null;
+  const statusOf = (item: OwnedItem) => stateOf(item) === "unconfirmed" ? t("take.unconfirmed") : item.status === "IN_STORAGE" ? t("inv.stHeld") : item.status === "SHIPPING_REQUESTED" ? t("inv.stRequested") : item.status === "SHIPPING" ? t("inv.stShipping") : item.status === "DELIVERED" ? t("inv.stDelivered") : t("inv.stTaken");
 
-  const closeItem = () => { setOpenId(null); setCancelFailed(false); };
-  const take = () => { if (!current) return; takeUsdt([current.id]); setTaking(false); closeItem(); setTab("done"); };
+  const closeItem = () => { setOpenId(null); setCancelFailed(false); setTakeNote(null); };
+  // 상품 하나를 USDT로 받는다. 묶음 받기와 같은 코드를 거친다(lib/openingSettle → lib/takeBatch: 같은 잠금, 같은 판정)
+  const take = async () => {
+    if (!current || busy) return;
+    setBusy(true); setTakeNote(null);
+    const out = await settleTake(current.id);
+    setBusy(false); setTaking(false);
+    if (out.status === "settled") { closeItem(); setTab("done"); } else setTakeNote(out.status === "failed" ? "failed" : "unknown");
+  };
   const cancel = async () => {
     if (!current || busy) return;
     setBusy(true); setCancelFailed(false);
@@ -93,6 +115,8 @@ export function InventoryScreen() {
         : (
           <>
             <Chips label={t("inv.filter")} value={tab} onChange={setTab} options={(["held", "shipping", "done"] as const).map((key) => ({ value: key, label: t("inv.tab." + key, { n: counts[key] }) }))} />
+            {/* 받을 수 있는 보관 상품이 있을 때만: 골라서 한 번에 USDT로 받는다 */}
+            {tab === "held" && takeable > 0 && <Button data-take-batch aria-haspopup="dialog" onClick={() => setBatch(true)}>{t("take.title")}</Button>}
             {list.length === 0 ? (
               <div className="v-stack"><Empty>{t("inv.empty." + tab)}</Empty>{tab === "held" && <ButtonLink href="/">{t("inv.toBoxes")}</ButtonLink>}</div>
             ) : (
@@ -101,10 +125,10 @@ export function InventoryScreen() {
                   const p = productOf(item);
                   return (
                     <li key={item.id}>
-                      <button type="button" className="v-itemrow" onClick={() => setOpenId(item.id)}>
+                      <button type="button" className="v-itemrow" aria-haspopup="dialog" onClick={() => setOpenId(item.id)}>
                         {p?.image.src && <span className="v-itemrow-photo"><img src={p.image.src} alt="" loading="lazy" decoding="async" /></span>}
-                        <span className="v-itemrow-body"><span className="v-card-title">{nameOf(item)}</span><span className="v-small">{item.status === "IN_STORAGE" ? t("inv.refLine", { amount: fmt(item.valueUsdt) }) : statusOf(item) + (date(processedAt(item)) ? ", " + date(processedAt(item)) : "")}</span></span>
-                        <span className="v-num">{fmt(item.status === "IN_STORAGE" ? +(item.valueUsdt * REFUND_RATE).toFixed(2) : item.status === "SOLD" ? item.soldForUsdt ?? 0 : item.valueUsdt)} ›</span>
+                        <span className="v-itemrow-body"><span className="v-card-title">{nameOf(item)}</span><span className="v-small">{stateOf(item) === "held" ? t("inv.refLine", { amount: fmt(item.valueUsdt) }) : stateOf(item) === "unconfirmed" ? statusOf(item) + ", " + t("inv.refLine", { amount: fmt(item.valueUsdt) }) : statusOf(item) + (date(processedAt(item)) ? ", " + date(processedAt(item)) : "")}</span></span>
+                        <span className="v-num">{stateOf(item) === "unconfirmed" ? "" : fmt(stateOf(item) === "held" ? takeAmountOf(item) : stateOf(item) === "taken" ? item.soldForUsdt ?? 0 : item.valueUsdt)}<span aria-hidden> ›</span></span>
                       </button>
                     </li>
                   );
@@ -123,23 +147,32 @@ export function InventoryScreen() {
               <Row label={t("reveal.value")}>{fmt(current.valueUsdt)}</Row>
               <Row label={t("inv.acquired")}>{date(current.acquiredAt)}</Row>
               {current.status === "IN_STORAGE" && current.autoCashbackAt && <Row label={t("inv.keepUntil")}>{date(current.autoCashbackAt)}</Row>}
-              {current.status === "SOLD" && <Row label={t("inv.takenAmount")}>{fmt(current.soldForUsdt ?? 0)}</Row>}
+              {currentState === "taken" && <Row label={t("inv.takenAmount")}>{fmt(current.soldForUsdt ?? 0)}</Row>}
               {current.shipping?.requestedAt && current.status !== "IN_STORAGE" && <Row label={t("inv.requestedAt")}>{date(current.shipping.requestedAt)}</Row>}
               {current.shipping?.carrier && <Row label={t("inv.carrier")}>{current.shipping.carrier}</Row>}
               {current.shipping?.trackingNumber && <Row label={t("inv.tracking")}>{current.shipping.trackingNumber}</Row>}
+              {/* 후기: 정보 카드의 마지막 행. 자격은 그대로(lib/community 의 canReview). 쓴 뒤에는 같은 행이 올렸다고 말한다 */}
+              {(reviewable || reviewed) && (
+                <div className="v-row">
+                  <dt>{t("review.text")}</dt>
+                  <dd>{reviewable ? <button type="button" className="v-rowlink" aria-haspopup="dialog" onClick={() => setReviewing(true)}><span>{t("inv.writeReview")}</span><span aria-hidden>›</span></button> : t("inv.reviewed")}</dd>
+                </div>
+              )}
             </Rows>
             {current.status === "SHIPPING_REQUESTED" && <Line>{t("inv.waitingTracking")}</Line>}
             {cancelFailed && <Line fail>{t("inv.cancelFailed")}</Line>}
-            {current.status === "IN_STORAGE" && product?.kind === "physical" && <Button onClick={() => setShipIds([current.id])}>{t("reveal.ship")}</Button>}
-            {current.status === "IN_STORAGE" && product?.kind !== "physical" && <Button onClick={() => setTaking(true)}>{t("reveal.take", { amount: fmt(takeAmount) })}</Button>}
+            {/* 확인되지 않은 상품: 상세를 닫았다 다시 열어도 이 한 줄이 남는다. 받기 단추와 배송 링크는 주지 않는다(다시 지급하지 않는다) */}
+            {(currentState === "unconfirmed" || takeNote === "unknown") && <Line fail>{t("take.unknown")}</Line>}
+            {takeNote === "failed" && currentState === "held" && <Line fail>{t("take.failed")}</Line>}
+            {/* 보관 중: 주 단추는 USDT로 받기. 배송은 밑줄 링크이고, 배송을 신청하는 길은 여기 하나다 */}
+            {currentState === "held" && takeNote !== "unknown" && <Button data-take-primary onClick={() => setTaking(true)}>{t("reveal.take", { amount: fmt(takeAmount) })}</Button>}
             {current.status === "SHIPPING_REQUESTED" && <Button onClick={() => setCancelling(true)}>{t("inv.cancelShip")}</Button>}
             {current.status === "SHIPPING" && current.shipping?.carrier && current.shipping.trackingNumber && <a className="v-btn" href={trackingUrl(current.shipping.carrier, current.shipping.trackingNumber)} target="_blank" rel="noreferrer">{t("inv.track")} ↗</a>}
             <div className="v-links">
-              {current.status === "IN_STORAGE" && product?.kind === "physical" && <TextLink onClick={() => setTaking(true)}>{t("reveal.take", { amount: fmt(takeAmount) })}</TextLink>}
+              {currentState === "held" && takeNote !== "unknown" && product?.kind === "physical" && <TextLink onClick={() => setShipIds([current.id])}>{t("reveal.ship")}</TextLink>}
+              {(currentState === "unconfirmed" || takeNote === "unknown") && <TextLink href="/wallet">{t("balanceSheet.history")}</TextLink>}
               <TextLink onClick={() => verify(current)}>{t("nav.verify")}</TextLink>
-              {reviewable && <TextLink onClick={() => setReviewing(true)}>{t("inv.writeReview")}</TextLink>}
             </div>
-            {reviewed && <p className="v-small">{t("inv.reviewed")}</p>}
           </>
         )}
       </Sheet>
@@ -147,7 +180,10 @@ export function InventoryScreen() {
       <ShipSheet ownedIds={shipIds} onClose={() => setShipIds(null)} onDone={() => { setShipIds(null); closeItem(); setTab("shipping"); }} />
       <VerifySheet record={verifying} onClose={() => setVerifying(null)} />
       <ReviewSheet item={reviewing ? current : null} itemName={current ? nameOf(current) : ""} onClose={() => setReviewing(false)} onDone={() => setReviewing(false)} />
-      {current && <Confirm open={taking} onCancel={() => setTaking(false)} onConfirm={take} title={t("reveal.takeTitle")} desc={t("reveal.takeDesc", { name: nameOf(current), amount: fmt(takeAmount) })} confirmLabel={t("reveal.take", { amount: fmt(takeAmount) })} cancelLabel={t("common.cancel")} />}
+      {/* 보관 중인 상품 전부에서 골라 한 번에 받는다. 받은 뒤에도 보관 중 목록에 그대로 있다 */}
+      <TakeSheet open={batch} onClose={() => setBatch(false)} />
+      {/* 상품 하나: 선택 시트와 같은 확인 한 번 */}
+      <TakeConfirm open={!!current && taking} amountUsdt={takeAmount} onCancel={() => setTaking(false)} onConfirm={() => void take()} busy={busy} />
       {current && <Confirm open={cancelling} onCancel={() => setCancelling(false)} onConfirm={cancel} busy={busy} busyLabel={t("common.checking")} title={t("inv.cancelTitle")} desc={t("inv.cancelDesc")} confirmLabel={t("inv.cancelShip")} cancelLabel={t("common.cancel")} />}
     </div>
   );

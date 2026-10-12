@@ -2,7 +2,7 @@
 /**
  * 새 화면의 껍데기: 머리줄(로고, 잔액, 메뉴), 본문, 꼬리말.
  * 본문은 결정 화면이면 가운데 좁은 열(col), 박스 목록이면 넓은 격자(wide).
- * 충전 시트와 토스트는 여기 한 곳에 붙는다. 로그인 시트는 AuthHost 가 전역으로 붙인다.
+ * 충전 시트, 잔액 시트, 토스트는 여기 한 곳에 붙는다. 로그인 시트는 AuthHost 가 전역으로 붙인다.
  */
 import type { ReactNode } from "react";
 import { Menu } from "lucide-react";
@@ -16,6 +16,7 @@ import { useCurrency } from "@/lib/useCurrency";
 import { Sheet } from "@/components/ui/Sheet";
 import { ToastHost } from "@/components/ui/toast";
 import { ChargeSheet } from "@/components/flow/ChargeSheet";
+import { BalanceSheet } from "@/components/flow/BalanceSheet";
 import { OfflineLine, SessionLine } from "@/components/shell/StateScreens";
 
 /** 옮기는 동안 일부 주소는 옛 화면을 가리킨다. 화면을 새로 만들면 여기만 바꾼다. */
@@ -23,6 +24,7 @@ export const NAV = [
   { key: "boxes", href: "/" },
   { key: "inventory", href: "/inventory" },
   { key: "wallet", href: "/wallet" },
+  { key: "wins", href: "/wins" },
   { key: "verify", href: "/verify" },
   { key: "guide", href: "/guide" },
   { key: "account", href: "/account" },
@@ -36,7 +38,7 @@ export function AppShell({ children, wide }: { children: ReactNode; wide?: boole
   const openLogin = useAuthStore((s) => s.openAuthModal);
   const balance = useWalletStore((s) => s.balance);
   const { fmt } = useCurrency();
-  const { menu, openMenu, closeMenu } = useFlow();
+  const { menu, openMenu, closeMenu, openBalance } = useFlow();
 
   return (
     <div className="v-app">
@@ -46,9 +48,10 @@ export function AppShell({ children, wide }: { children: ReactNode; wide?: boole
           <nav className="v-nav" aria-label={t("nav.menu")}>
             {NAV.map((n) => <Link key={n.key} href={n.href} aria-current={pathname === n.href ? "page" : undefined}>{t("nav." + n.key)}</Link>)}
           </nav>
-          {ready && user && <Link href="/wallet" className="v-headbtn v-num">{t("nav.balance", { amount: fmt(balance) })}</Link>}
+          {/* 잔액을 누르면 지갑 화면으로 가지 않고 잔액 시트가 열린다(지갑 화면은 메뉴에서 간다) */}
+          {ready && user && <button type="button" className="v-headbtn v-num" data-balance-open aria-haspopup="dialog" onClick={openBalance}>{t("nav.balance", { amount: fmt(balance) })}</button>}
           {ready && !user && <button type="button" className="v-headbtn" onClick={() => openLogin("login")}>{t("nav.login")}</button>}
-          <button type="button" className="v-headbtn v-menu-btn" onClick={openMenu} aria-label={t("nav.menu")}><Menu size={20} aria-hidden /></button>
+          <button type="button" className="v-headbtn v-menu-btn" onClick={openMenu} aria-label={t("nav.menu")} aria-haspopup="dialog" aria-expanded={menu}><Menu size={20} aria-hidden /></button>
         </div>
       </header>
       <OfflineLine />
@@ -60,6 +63,7 @@ export function AppShell({ children, wide }: { children: ReactNode; wide?: boole
         </nav>
       </Sheet>
       <ChargeSheet />
+      <BalanceSheet />
       <ToastHost />
     </div>
   );

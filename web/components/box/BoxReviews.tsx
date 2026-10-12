@@ -184,9 +184,13 @@ export function BoxReviews({ box, cards }: { box: ProductBox; cards: ReviewCardD
           <RatingBlock summary={summary} />
           <p className="v-small">{t("box.ratingBasis")}</p>
           <ScrollRow className="v-rvrow">{cards.map((c) => <ReviewCard key={c.id} card={c} onOpen={setOpen} />)}</ScrollRow>
-          <div className="v-links"><TextLink href={"/reviews?box=" + box.slug}>{t("box.reviewsAll")}</TextLink></div>
         </>
       )}
+      {/* 후기가 없어도 나온 상품으로 가는 길은 있다(flow/MELT_SPEC.md S8). 후기와 섞지 않고 링크로만 잇는다 */}
+      <div className="v-links">
+        {summary.avg !== null && <TextLink href={"/reviews?box=" + box.slug}>{t("box.reviewsAll")}</TextLink>}
+        <TextLink href="/wins">{t("wins.title")}</TextLink>
+      </div>
       <ReviewSheet card={open} onClose={() => setOpen(null)} />
     </section>
   );

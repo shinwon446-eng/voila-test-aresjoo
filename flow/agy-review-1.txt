@@ -1,0 +1,84 @@
+# 커밋되지 않은 변경 검토 보고서: 관점 1 (시각 위계와 디자인 일관성)
+
+DESIGN.md 3장의 디자인 규칙(주 단추 하나, 보조 링크 최대 둘, 색과 배지와 그림자 없음, 글자 크기 위계, 카드와 행)과 flow/MELT_SPEC.md 명세를 기준으로, 커밋되지 않은 변경 파일 및 화면 스크린샷(`qa/work/melt3`, `qa/work/melt2`)을 검토했습니다.
+
+---
+
+## 1. 구체적 지적 사항 (근거 중심)
+
+### [지적 1] `VerifySheet.tsx`: 주 단추 부재 및 카드 분할로 인한 시각 위계 훼손과 화면 잘림
+* **근거 파일과 줄**: [VerifySheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/VerifySheet.tsx#L31-L93) 31줄~93줄
+* **근거 화면**: `qa/work/melt3/inv-3-verify-sheet-desktop.png`, `qa/work/melt3/inv-3-verify-sheet-mobile.png`
+* **지적 내용**:
+  1. **주 단추 부재**: DESIGN.md 3장은 "화면 하나에 결정 하나... 주 단추 하나", "모달: 안쪽 구조는 화면과 같다"를 규정합니다. 그러나 `VerifySheet`에는 다른 모든 시트(`TakeSheet`, `BalanceSheet`, `ChargeSheet`, `ShipSheet`, 보관함/나온 상품 상세 시트)에 존재하는 52px 흰 알약 주 단추(`Button`)가 전혀 없습니다. 우상단 닫기(X)와 하단 보조 밑줄 링크 2개만 있어 행동의 종결이 모호합니다.
+  2. **카드 구조 복잡화 및 창 높이 초과**: "카드 하나" 원칙과 달리 1단계(미리 잠근 값), 2단계(블록체인 기록), 3단계(다시 계산한 결과)가 각각 독립된 카드로 3개 분할되어 세로로 길게 늘어섭니다. 이로 인해 PC 가운데 창 모달(`inv-3-verify-sheet-desktop.png`)에서 마지막 3단계의 실패 줄과 하단 밑줄 링크가 창 아래로 넘쳐 잘려 보입니다.
+  3. **인라인 아코디언 토글**: 91줄 `{method && <VerifyMethod />}`는 밑줄 링크를 누르면 시트 맨 아래에 또 다른 큰 설명 카드(`<ol className="v-card">`)를 펼칩니다. 기존 모달 시트들은 단일 상태를 유지하거나 화면을 교체하는 흐름인데, 시트 안에서 아코디언 형태로 카드가 덧붙는 패턴은 다른 시트들과 결이 다릅니다.
+
+---
+
+### [지적 2] `InventoryScreen.tsx`: 주 단추와 보조 링크 아래 "후기 쓰기" 행 배치로 인한 위계 역전
+* **근거 파일과 줄**: [InventoryScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/inventory/InventoryScreen.tsx#L153-L161) 153줄~161줄
+* **근거 화면**: `qa/work/melt3/inv-2-item-sheet-mobile.png`
+* **지적 내용**:
+  1. **시각 위계 역전**: 보관함 상품 상세 시트에서 카드(상태/참고가/받은 날) 아래에 주 단추("USDT로 받기 ($950)"), 그 아래에 보조 밑줄 링크 2개("배송 받기", "개봉 결과 검증")가 놓인 뒤, **그 바로 아래에 또다시 짙은 회색의 독립된 1칸 행 카드(`ul.v-rows > button.v-row` "후기 쓰기 ›")가 배치**되어 있습니다.
+  2. **디자인 결 불일치**: DESIGN.md 3장은 "주 단추 하나, 보조는 밑줄 링크 최대 둘"로 시각적 마무리를 짓도록 합니다. 코드 주석(160줄)에 적힌 대로 링크 개수 규칙(최대 둘)을 피하고자 단일 버튼 행동을 `v-rows` 행으로 감싸 넣었으나, 주 단추와 보조 링크보다 아래에 더 큰 탭 면적의 행 버튼이 나타나 주 단추의 시각적 종결감이 깨집니다.
+
+---
+
+### [지적 3] `WithdrawScreen.tsx`: 입력 폼 필드 사이에 삽입된 밑줄 링크
+* **근거 파일과 줄**: [WithdrawScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/wallet/WithdrawScreen.tsx#L236-L240) 236줄~240줄
+* **근거 화면**: `qa/work/melt2/g1-withdraw-form.png`
+* **지적 내용**:
+  1. "받는 주소" 입력 필드(`Field`)와 "금액 (USD)" 입력 필드(`Field`) 사이에 `.v-links` 밑줄 링크("보관함의 상품을 USDT로 받아 출금하기")가 끼어 있습니다.
+  2. DESIGN.md 3장에서 밑줄 링크는 카드나 폼 하단, 또는 주 단추 아래에 위치하는 보조 행동입니다. 입력 폼 한가운데에 독립된 밑줄 링크가 삽입되어 입력 필드 간의 수직 리듬을 깨고, 주소 필드의 오류 라인 바로 밑에 붙어 시각적으로 혼란을 줍니다.
+
+---
+
+### [지적 4] `TakeSheet.tsx`: "전체 선택" 밑줄 링크의 상단 배치 및 체크박스 신규 패턴
+* **근거 파일과 줄**: [TakeSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/TakeSheet.tsx#L98) 98줄, 105줄~115줄, [take.css](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/app/take.css#L5-L13) 5줄~13줄
+* **근거 화면**: `qa/work/melt3/five-3-take-sheet-mobile.png`, `qa/work/melt3/five-3-take-sheet-desktop.png`
+* **지적 내용**:
+  1. **보조 링크 상단 배치**: "전체 선택 / 선택 해제" 밑줄 링크가 시트 헤더(제목과 설명) 바로 아래, 카드 목록 위에 단독으로 놓여 있습니다. VOILA의 모든 화면에서 `.v-links`는 카드 아래 또는 주 단추 아래에 배치되는 관례와 위치적 차이가 있습니다.
+  2. **새 체크박스 UI (`.v-check`)**: DESIGN.md 3장은 "선택지는 알약이고 누르면 곧 선택, 고른 것은 2px #9a9a9a 테두리"를 기본으로 합니다. 다중 선택 시트 구현을 위해 사각형 테두리와 체크 아이콘을 조합한 신규 UI(`.v-check`)가 도입되었는데, 색상 토큰은 맞추었으나 기존의 단순 행 선택 인터랙션과 결이 다른 새 부품입니다.
+
+---
+
+### [지적 5] `BoxScreen.tsx` 및 `take.css`: 잔액 부족 시 모바일 하단 고정 막대 과밀
+* **근거 파일과 줄**: [BoxScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/box/BoxScreen.tsx#L202) 202줄, [take.css](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/app/take.css#L19-L20) 19줄~20줄
+* **근거 화면**: `qa/work/melt3/short-1-short-with-items-mobile.png`
+* **지적 내용**:
+  1. 잔액이 모자란 경우 모바일 하단 열기 막대에 [잔액 부족 안내 한 줄] + [수량 선택 알약 칩 5개] + [주 단추: USDT로 받기] + [힌트 글 한 줄: `.v-take-hint`] + [밑줄 링크: USDT 충전하기]의 5개 층위가 한 영역에 모두 고정됩니다.
+  2. 이로 인해 모바일 화면 높이의 약 35% 이상을 하단 고정 바가 차지하게 되어, 이를 보정하려고 `take.css` 20줄에서 `.v-footer`에 `padding-bottom: 260px`라는 예외적인 큰 여백을 강제했습니다. 시각적으로 하단이 지나치게 무겁고 본문 가림이 큽니다.
+
+---
+
+## 2. 문제가 없는 부분 (규칙 준수 확인)
+
+* **색과 배지와 그림자 없음 (완전 준수)**:
+  * `npm run lint:design` 검사 결과 위반 0건 확인.
+  * 신규 CSS([take.css](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/app/take.css)) 및 컴포넌트 전체에서 임의의 색상 값, 금색/크림색, 배지, 그라데이션, `box-shadow`가 전혀 사용되지 않았습니다.
+  * 빨강(`v-line--fail`, `fail`)은 실패/불일치 상태 안내 한 줄에만 엄격히 제한되어 쓰였습니다.
+* **글자 크기 위계 (완전 준수)**:
+  * Pretendard 토큰(제목 32/28, 설명 18/16, 섹션 18, 본문 16, 보조 14)을 준수하고 있으며, 불필요한 대문자 변환이나 굵기 강조(400 초과)가 없습니다.
+* **주 단추 하나와 보조 링크 최대 둘 (대부분 화면 준수)**:
+  * [BalanceSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/flow/BalanceSheet.tsx): 주 단추 1개, 보조 링크 2개로 완벽히 정돈됨 (`bal-1-balance-sheet-mobile.png`).
+  * [Opening.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/box/Opening.tsx) 및 [Reveal.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/box/Reveal.tsx): 모든 분기 상태(일반, 완료, 잔액부족, 실패)에서 주 단추 1개와 보조 링크 최대 2개 원칙을 철저히 지킴 (`one-2-result-mobile.png`, `five-2-results-mobile.png`). 배송 링크를 결과 화면에서 완전히 제거함.
+  * [WinsScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-test-aresjoo/web/components/box/WinsScreen.tsx): 전용 CSS 클래스(`.v-wins`)를 없애고 보관함과 동일한 표준 행(`v-itemrows`)을 재사용하여 디자인 시스템 일관성을 높임 (`wins-1-list-mobile.png`).
+* **카드와 행 (준수)**:
+  * 통계와 목록은 모두 라벨 왼쪽, 값 오른쪽의 표준 행(`Rows`, `Row`, `v-row`) 구조를 따릅니다.
+
+---
+
+## 3. 고칠 것 (중요한 순서 상위 5개)
+
+1. **`VerifySheet.tsx`의 주 단추 추가 및 3중 카드 구조 간소화**:
+   * 시트 하단에 52px 흰 알약 닫기/확인 주 단추를 추가하여 화면 종결 위계를 맞춥니다.
+   * 1, 2, 3단계 카드를 하나의 통합 카드나 간결한 구조로 묶어 PC 창 모달에서 내용이 잘리지 않도록 높이를 조절하고, `VerifyMethod` 인라인 아코디언 토글 방식을 분리하거나 정리합니다.
+2. **`InventoryScreen.tsx` 상세 시트의 "후기 쓰기" 행 위치 및 위계 조정**:
+   * 주 단추와 보조 링크 아래에 불쑥 놓인 독립된 "후기 쓰기 ›" 행 카드를 상세 정보 카드의 내부 행으로 편입하거나, 주 단추 상단 영역으로 옮겨 주 단추의 최종 종결성을 회복합니다.
+3. **`WithdrawScreen.tsx` 입력 필드 사이 밑줄 링크 재배치**:
+   * 받는 주소 필드와 금액 필드 사이에 끼어 있는 "보관함의 상품을 USDT로 받아 출금하기" 링크를 금액 필드의 상단 라벨 보조 영역이나 별도 안내 카드로 옮겨 폼 필드 간의 수직 리듬을 복원합니다.
+4. **`TakeSheet.tsx`의 "전체 선택" 컨트롤 및 다중 선택 UI 정돈**:
+   * 시트 헤더 바로 아래에 어색하게 떠 있는 "전체 선택" 링크를 카드 목록 헤더 행 안으로 자연스럽게 결합하고, 체크박스 스타일이 알약 선택 시스템의 시각 언어와 겉돌지 않도록 정돈합니다.
+5. **`BoxScreen.tsx` 모바일 잔액 부족 하단 바의 과밀 해소**:
+   * 잔액 부족 시 하단 고정 영역에 쌓이는 요소(안내문, 칩, 주 단추, 힌트, 충전 링크)의 간격을 압축하거나 힌트 문구를 간결화하여, `take.css`의 260px 패딩 강제 적용 문제를 완화합니다.

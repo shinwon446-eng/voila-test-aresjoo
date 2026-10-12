@@ -155,3 +155,19 @@ test("후기 목록: 처음 건수는 화면마다 따로이고, 남은 건수�
   assert.equal(MORE_COUNT_MAX, 999);
   assert.match(reviews, /left > MORE_COUNT_MAX \? t\("reviews\.moreListPlain"\) : t\("reviews\.moreList"/);
 });
+
+test("더 보기 뒤(F-05): 초점은 새로 생긴 첫 글로 가고, 늘어난 건수는 알림 영역에 적는다(브라우저에서의 확인은 scripts/capture/flow-reviews-nav.mjs)", () => {
+  const reviews = read("../components/box/BoxReviews.tsx");
+  // 누른 때의 건수를 적어 두고, 건수가 는 뒤에 그 자리의 글로 초점을 옮긴다(누르지 않고 는 것은 건드리지 않는다)
+  assert.match(reviews, /onClick=\{\(\) => \{ asked\.current = count; onMore\(\); \}\}/);
+  assert.match(reviews, /if \(from === null \|\| count <= from\) return;/);
+  assert.match(reviews, /querySelectorAll<HTMLElement>\("\.v-rv-btn"\)\[from\]/);
+  assert.match(reviews, /first\?\.focus\(\{ preventScroll: true \}\)/);
+  // 알림 영역은 처음부터 있고(나중에 생기면 읽히지 않는다) 공손하게 읽는다
+  assert.match(reviews, /<p className="v-rv-sr" role="status" aria-live="polite" data-reviews-live>\{loaded\}<\/p>/);
+  // 알림 글은 누를 때마다 달라야 다시 읽힌다: 늘어난 건수와 지금 보이는 건수를 함께 적는다
+  for (const locale of ["ko", "en", "zh"]) {
+    const text = (JSON.parse(read(`../messages/v.${locale}.json`)).reviews as Record<string, string>).moreLoaded;
+    assert.ok(text.includes("{n}") && text.includes("{shown}"), `${locale}: ${text}`);
+  }
+});

@@ -611,6 +611,7 @@
     "total": "전체 {n}건",
     "moreList": "후기 더 보기 ({n}건 남음)",
     "moreListPlain": "후기 더 보기",
+    "moreLoaded": "후기 {n}건을 더 불러왔습니다. 지금 {shown}건입니다.",
     "listTitle": "후기 목록",
     "likes": "좋아요 {n}",
     "agoNow": "방금 전",

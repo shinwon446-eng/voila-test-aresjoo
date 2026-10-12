@@ -611,6 +611,7 @@
     "total": "共 {n} 条",
     "moreList": "更多评价（剩余 {n} 条）",
     "moreListPlain": "更多评价",
+    "moreLoaded": "已加载 {n} 条评价，当前显示 {shown} 条。",
     "listTitle": "评价列表",
     "likes": "{n} 个赞",
     "agoNow": "刚刚",

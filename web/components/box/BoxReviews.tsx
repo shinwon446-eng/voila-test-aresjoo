@@ -270,16 +270,35 @@ export function ReviewCard({ card, onOpen }: { card: ReviewCardData; onOpen: (ca
  * 후기 목록: "전체 N건", 새것부터, 더 있으면 더 보기 단추. grid 는 넓은 화면에서 두 줄로 놓는다(모아 보기).
  * heading 은 목록 앞에 두는 제목이다(화면에는 보이지 않고 화면 낭독기의 제목 이동에만 잡힌다). 박스 화면은 영역 제목이 이미 있어 주지 않는다.
  * 남은 건수가 MORE_COUNT_MAX 를 넘으면 더 보기 단추에 수를 적지 않는다.
+ * 더 보기를 누른 뒤: 초점을 새로 생긴 첫 글로 옮긴다. 단추는 끝까지 펴면 사라지므로 단추에 두면 마지막에 초점이 body 로 떨어지고,
+ *   자판으로 읽던 사람은 화면 맨 앞에서 다시 시작하게 된다. 늘어난 건수는 알림 영역(화면에는 보이지 않는다)에 적어 화면 낭독기가 읽게 한다.
+ *   뒤로 와서 되살린 건수(useShownRows)나 화면이 뜬 뒤 들어온 내 후기로 늘어난 것은 누른 것이 아니므로 초점도 알림도 건드리지 않는다.
  */
 export function ReviewList({ feed, onMore, onOpen, grid, heading }: { feed: ReviewFeed; onMore: () => void; onOpen: (card: ReviewCardData) => void; grid?: boolean; heading?: string }) {
   const t = useTranslations("v");
-  const left = feed.total - feed.cards.length;
+  const list = useRef<HTMLUListElement>(null);
+  /** 더 보기를 누른 때에 보이던 건수. 누르지 않았으면 null */
+  const asked = useRef<number | null>(null);
+  const [loaded, setLoaded] = useState("");
+  const count = feed.cards.length;
+  const left = feed.total - count;
+  useEffect(() => {
+    const from = asked.current;
+    if (from === null || count <= from) return;
+    asked.current = null;
+    const first = list.current?.querySelectorAll<HTMLElement>(".v-rv-btn")[from];
+    // 자리는 브라우저가 옮기지 않게 하고(한가운데로 끌어온다), 가려져 있을 때만 보이는 데까지 옮긴다
+    first?.focus({ preventScroll: true });
+    first?.scrollIntoView({ block: "nearest" });
+    setLoaded(t("reviews.moreLoaded", { n: grouped(count - from), shown: grouped(count) }));
+  }, [count, t]);
   return (
     <div className="v-rvfeed">
       {heading && <h2 className="v-rv-sr">{heading}</h2>}
       <p className="v-rv-total v-num">{t("reviews.total", { n: grouped(feed.total) })}</p>
-      <ul className={grid ? "v-rvlist v-rvlist--grid" : "v-rvlist"}>{feed.cards.map((c) => <ReviewCard key={c.id} card={c} onOpen={onOpen} />)}</ul>
-      {left > 0 && <Button quiet className="v-rv-morebtn" data-reviews-more onClick={onMore}>{left > MORE_COUNT_MAX ? t("reviews.moreListPlain") : t("reviews.moreList", { n: grouped(left) })}</Button>}
+      <ul ref={list} className={grid ? "v-rvlist v-rvlist--grid" : "v-rvlist"}>{feed.cards.map((c) => <ReviewCard key={c.id} card={c} onOpen={onOpen} />)}</ul>
+      {left > 0 && <Button quiet className="v-rv-morebtn" data-reviews-more onClick={() => { asked.current = count; onMore(); }}>{left > MORE_COUNT_MAX ? t("reviews.moreListPlain") : t("reviews.moreList", { n: grouped(left) })}</Button>}
+      <p className="v-rv-sr" role="status" aria-live="polite" data-reviews-live>{loaded}</p>
     </div>
   );
 }

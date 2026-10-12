@@ -42,6 +42,7 @@ if (!category) {
     console.log(cat.padEnd(10), "박스", String(boxes).padStart(2), "단계별 사진 없는 상품", [1, 2, 3, 4].map((s) => pick(cat, DEPTH[s]).length).join(" / "));
   }
 } else {
-  const stage = Math.min(4, Math.max(1, Number(stageArg) || 1));
-  for (const item of pick(category, DEPTH[stage])) console.log(`- ${item.id} | ${item.nameEn} (${item.name})`);
+  // 단계 자리에 d30 처럼 적으면 박스마다 그 개수까지(img-plan.mjs 가 박스마다 고르게 채울 때 쓴다)
+  const depth = /^d\d+$/.test(stageArg ?? "") ? Number((stageArg ?? "").slice(1)) : DEPTH[Math.min(4, Math.max(1, Number(stageArg) || 1))];
+  for (const item of pick(category, depth)) console.log(`- ${item.id} | ${item.nameEn} (${item.name})`);
 }

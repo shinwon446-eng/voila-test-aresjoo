@@ -1,0 +1,234 @@
+{
+  "_읽는 법": [
+    "의도된 차이의 규칙이다. classify.mjs(촬영)와 flows-compare.mjs(흐름)가 읽는다. 근거는 migration-audit/MIGRATION_SPEC.md 다.",
+    "촬영 규칙(shots)의 칸: route(로케일 뒤의 경로), group(묶음), key(항목 이름), shot(촬영 이름)은 정규식이고 적힌 것이 전부 맞아야 그 촬영에 쓰인다.",
+    "regions: 달라도 되는 영역(lib/regions.mjs 의 이름, 정규식). textZones: 글이 달라도 되는 구역(lib/measure.mjs 의 TEXT_ZONES, 정규식).",
+    "layout: true 이면 그 차이 때문에 생기는 배치의 변화를 받아들인다(문서 높이, 아래 요소의 자리, 요소 수, 그림 수, 스크롤 자리, 전체 그림의 크기, 첫 요소가 바뀌어 달라진 글꼴 기록).",
+    "target, dialog, scene: true 이면 그 부품, 그 시트, 그 장면 자체가 달라도 된다.",
+    "rewrite: [정규식, 바꿀 글]. 기준 쪽 글에 적용해 결과 쪽 글과 같아지면 그 글의 차이는 이 규칙으로 설명된다.",
+    "규칙에 맞지 않는 차이가 하나라도 남으면 그 촬영은 UNEXPLAINED 다. 목록을 비우려고 규칙을 넓히지 않는다. 규칙을 더할 때는 why 에 눈으로 본 근거를 적는다."
+  ],
+  "shots": [
+    {
+      "id": "W1-box",
+      "why": "MIGRATION_SPEC 1절: 박스 상세의 후기 구역과 제목 아래의 별점 줄. 후기가 구성품 위에 있어 그 아래가 전부 내려간다.",
+      "route": "^/box/",
+      "regions": [
+        "^reviews$",
+        "^reviews-sum$",
+        "^reviews-feed$",
+        "^ratinglink$"
+      ],
+      "textZones": [
+        "^reviews$",
+        "^ratinglink$"
+      ],
+      "layout": true
+    },
+    {
+      "id": "W1-home-cards",
+      "why": "MIGRATION_SPEC 1절: 박스 카드의 별점과 후기 수. 카드마다 한 줄이 늘어 격자와 그 아래가 내려간다.",
+      "route": "^$",
+      "regions": [
+        "^card-rating-\\d+$"
+      ],
+      "textZones": [
+        "^card-rating$"
+      ],
+      "layout": true
+    },
+    {
+      "id": "W1-reviews-page",
+      "why": "MIGRATION_SPEC 1절: /reviews 화면. 요약과 목록이 새 것이고, 박스 알약은 ?box= 로 들어왔을 때만 나온다(총괄 확인).",
+      "route": "^/reviews",
+      "regions": [
+        "^reviews-sum$",
+        "^reviews-feed$",
+        "^chips$",
+        "^empty$",
+        "^links$",
+        "^desc$"
+      ],
+      "textZones": [
+        "^reviews$",
+        "^chips$",
+        "^main$",
+        "^links$"
+      ],
+      "layout": true
+    },
+    {
+      "id": "W1-review-sheet",
+      "why": "MIGRATION_SPEC 1절: 후기 상세 시트.",
+      "key": "^review-card$",
+      "dialog": true,
+      "textZones": [
+        "^sheet$"
+      ]
+    },
+    {
+      "id": "W1-card-primitive",
+      "why": "MIGRATION_SPEC 1절: 박스 카드에 별점 줄이 생겨 카드가 길어졌고, 후기 카드는 새 모양이다.",
+      "group": "^(hover|focus|active)$",
+      "key": "^(boxcard|rvcard)$",
+      "target": true
+    },
+    {
+      "id": "W1-box-first-link",
+      "why": "MIGRATION_SPEC 1절과 총괄의 설명: 박스 화면 본문의 첫 링크가 '후기 모두 보기'가 됐다(기준은 '나온 상품').",
+      "group": "^(hover|focus|active)$",
+      "key": "^link$",
+      "target": true
+    },
+    {
+      "id": "W2-amount-sign",
+      "why": "MIGRATION_SPEC 2절 E-06 과 총괄의 설명: 음수 금액을 $-1 이 아니라 -$1 로 적는다.",
+      "rewrite": [
+        [
+          "([$₩])-(?=\\d)",
+          "-$1"
+        ]
+      ],
+      "dialog": true,
+      "regions": [
+        "."
+      ],
+      "onlyWithRewrite": true
+    },
+    {
+      "id": "W2-wallet-history",
+      "why": "MIGRATION_SPEC 2절 E-06: 지갑 내역에 박스 열기와 받기 거래가 나온다(줄이 늘어난다).",
+      "route": "^/wallet$",
+      "textZones": [
+        "^main$"
+      ],
+      "layout": true
+    },
+    {
+      "id": "W2-password-sheet",
+      "why": "MIGRATION_SPEC 2절 E-03: 계정 화면의 비밀번호 시트가 끝까지 간다(성공 상태, 인증 앱이 없는 계정에 한 줄).",
+      "key": "^account-sheets$",
+      "shot": "^password$",
+      "dialog": true,
+      "textZones": [
+        "^sheet$"
+      ]
+    },
+    {
+      "id": "W2-wallet-history-added",
+      "why": "MIGRATION_SPEC 2절 E-06: 박스를 열고 받은 뒤의 지갑 내역에 열기와 받기 거래가 나온다(줄이 늘고, 연 줄이 다른 거래다). 2차 QA 에서 더한 촬영.",
+      "key": "^wallet-history-open-take$",
+      "textZones": [
+        "^main$",
+        "^sheet$"
+      ],
+      "dialog": true,
+      "layout": true
+    },
+    {
+      "id": "W2-withdraw-record",
+      "why": "결과 브랜치의 출금 기록 고침(총괄의 2차 지시): 접수됐지만 차감하지 못한 요청은 금액 0 의 출금 줄이고 \"차감하지 않음\"과 신청했던 금액을 따로 적는다. 기준 빌드는 requestedUsdt 를 모른다.",
+      "key": "^zero-withdraw$",
+      "textZones": [
+        "^main$",
+        "^sheet$"
+      ],
+      "dialog": true,
+      "layout": true
+    },
+    {
+      "id": "W2-password-flow",
+      "why": "MIGRATION_SPEC 2절 E-03 과 총괄의 2차 지시: 비밀번호 바꾸기가 끝까지 가고(성공 상태), 실패마다 구체적인 한 줄을 적는다. 성공하면 세션이 끝나 뒤의 계정 화면도 로그인 전 상태가 된다. 성공한 뒤에는 로그인 전의 계정 화면이라 로그아웃 링크가 없다(2026-10-13 시험 촬영에서 확인).",
+      "key": "^password-flow$",
+      "textZones": [
+        "^sheet$",
+        "^main$",
+        "^header$",
+        "^page$",
+        "^links$"
+      ],
+      "dialog": true,
+      "layout": true
+    },
+    {
+      "id": "U-wallet-row-separator",
+      "undecided": true,
+      "why": "의도된 차이의 규칙이 아니다. 명세와 총괄이 알려 준 목록에 없는 차이를 덮지 않으려고 적어 둔 항목이다(2026-10-13, f830d9e 에서 처음 나옴. 3c161f2 에는 없었다). 지갑 내역의 \"처리 대기\", \"72시간 보안 대기\" 줄에서 날짜와 상태의 글이 기준은 글 조각 둘(날짜, 그리고 쉼표와 상태)이고 결과는 조각 하나다. 화면에서는 쉼표 자리의 픽셀이 달라진다(ko 폭 390 에서 눈에 띄는 픽셀 29개, en 폭 1440 에서 10개). 이 글이 다른 촬영은 구역을 허락하는 규칙(W2-wallet-history 등)이 있어도 UNEXPLAINED 로 남긴다. 가리는 법: 기준 쪽 줄의 \" , \" 를 \", \" 로 바꿔 쓰면 결과 쪽의 한 줄과 똑같아지는 짝이 있는 촬영만 센다.",
+      "route": "^/wallet$",
+      "undecidedRewrite": [
+        [
+          "(\\S) , (\\S)",
+          "$1, $2"
+        ]
+      ]
+    }
+  ],
+  "flows": {
+    "_읽는 법": [
+      "흐름 비교(flows-compare.mjs)의 칸별 규칙이다. path 는 단계 기록 안의 칸 경로(정규식), scenario 와 step 은 시나리오 이름과 단계 이름(정규식, 없으면 전부).",
+      "저장된 값(storage 아래 전부)은 장부다. 규칙으로 덮지 않고 시나리오마다 따로 적는다. ledgerAllowed 에 적은 경로만 예외이고, 예외에는 근거를 적는다.",
+      "화면의 관찰값은 후기 자리(후기 구역, 별점 줄, 카드의 별점)를 reviewZone 칸에 따로 담는다(lib/observe.mjs). 그래서 W1 은 reviewZone 칸만 허락하면 된다.",
+      "rewrite 가 있는 규칙은 기준 쪽 값을 바꿔 쓴 것이 결과 쪽 값과 똑같을 때만 맞는다."
+    ],
+    "ledgerAllowed": [],
+    "rules": [
+      {
+        "id": "W1-review-zone",
+        "why": "MIGRATION_SPEC 1절: 후기 구역, 박스 제목 아래의 별점 줄, 박스 카드의 별점과 후기 수. reviewZone 칸은 그 자리만 담는다.",
+        "path": "^observed\\.reviewZone(\\.|$)"
+      },
+      {
+        "id": "W1-reviews-page",
+        "why": "MIGRATION_SPEC 1절과 총괄의 확인: /reviews 화면의 요약과 목록이 새 것이고, 박스 알약은 ?box= 로 들어왔을 때만 나온다. 그래서 거르는 길(notes.branch), 주소, 알약, 설명 글, 본문의 글이 달라진다. 알약을 누른 쪽은 포커스가 알약에 남고, 주소로 들어간 쪽은 포커스가 없다(2026-10-13 시험 실행에서 확인).",
+        "scenario": "^J$",
+        "step": "^(시작|박스로 거르기|전체로 돌아오기)$",
+        "path": "^(notes\\.branch|observed\\.(path|chips|desc|buttons|links|counts\\.images|mainOutsideReviews|scrolled|focus))"
+      },
+      {
+        "id": "W1-review-sheet",
+        "why": "MIGRATION_SPEC 1절: 후기 상세 시트. 후기 하나를 열었을 때의 시트와, 그것을 닫은 뒤 포커스가 돌아가는 요소(새 후기 카드). 시트 안의 행(상품, 상품가, 박스)은 열린 후기가 달라서 다르다(2026-10-13 시험 실행에서 확인).",
+        "scenario": "^J$",
+        "step": "^(후기 하나 열기|닫기)$",
+        "path": "^observed\\.(dialogs|rows|focus|chips|desc|buttons|links|counts\\.images|mainOutsideReviews|scrolled|path)"
+      },
+      {
+        "id": "W2-amount-sign",
+        "why": "MIGRATION_SPEC 2절: 음수 금액을 $-1 이 아니라 -$1 로 적는다.",
+        "path": "^observed\\.",
+        "rewrite": [
+          [
+            "([$₩])-(?=\\d)",
+            "-$1"
+          ]
+        ]
+      },
+      {
+        "id": "W2-wallet-history",
+        "why": "MIGRATION_SPEC 2절 E-06: 지갑 내역에 박스 열기와 받기 거래가 나온다(줄이 늘고, 첫 줄이 달라져 그 줄을 열면 다른 거래가 뜬다). 첫 줄을 열어 뜬 시트의 행(금액)도 그 거래의 것이다(기준은 보너스 +$10,000, 결과는 받기 +$950. 2026-10-13 시험 실행에서 확인).",
+        "scenario": "^H$",
+        "step": "^(지갑 내역|내역 행 열기)$",
+        "path": "^observed\\.(itemrows|counts\\.itemrows|mainOutsideReviews|dialogs|rows|focus)"
+      },
+      {
+        "id": "W1-lazy-images",
+        "why": "MIGRATION_SPEC 1절의 결과: 후기 구역이 구성품을 아래로 밀어(390 폭에서 구성품의 첫 사진이 y 1883 에서 3015 로), 화면 가까이에 있어 미리 불리는 lazy 그림이 줄었다. 그래서 그림 요청이 실패하는 단계에서 깨진 그림의 수와 그 콘솔 오류의 수가 다르다. 2026-10-13 tools/_broken.mjs 로 잰 값: gaming-playstation 기준 6(대표 1, 구성품 5) 결과 2(대표 1, 후기 1), car-rolls-royce 기준 13(대표 1, 구성품 12) 결과 6(대표 1, 후기 5). 구성품의 그림은 결과 쪽에서 아직 불리지 않은 상태였다(깨진 것이 아니다).",
+        "scenario": "^L$",
+        "step": "^(끊긴 채로 박스 누르기|다시 연결|그림 요청이 전부 실패할 때)$",
+        "path": "^(observed\\.counts\\.brokenImages|console(\\.|\\[|$))"
+      },
+      {
+        "id": "W1-own-review-note",
+        "why": "MIGRATION_SPEC 1절: 후기 카드가 새 것이다. 시나리오 J2 가 적는 notes.own 가운데 보이는 카드의 수(cards)와 맨 앞 카드의 글(first)은 카드의 꼴에 달려 있어 다르다(기준은 글, 닉네임, 상품, 금액의 차례이고 박스 화면 4장과 후기 화면 29장. 결과는 닉네임, 몇 분 전, 글의 차례이고 5장과 20장. 2026-10-13 시험 실행에서 확인). 내 후기의 차례(ownIndex)는 이 규칙에 넣지 않았다. 두 빌드에서 같아야 한다.",
+        "scenario": "^J2$",
+        "path": "^notes\\.own\\.(cards|first)$"
+      },
+      {
+        "id": "W1-reviews-page-J2",
+        "why": "W1-reviews-page 와 같은 근거를 시나리오 J2 의 후기 화면 단계에 적용한다: /reviews 의 박스 알약은 ?box= 로 들어왔을 때만 나오고(기준 1개, 결과 0개), 화면 머리의 설명 글이 새 것이다(본문에서 후기 자리를 뺀 글의 길이가 ko-390 에서 149 대 44, en-1440 에서 291 대 101. 2026-10-13 시험 실행에서 확인).",
+        "scenario": "^J2$",
+        "step": "^(후기 모두 보기 화면|새로 고친 뒤의 후기 화면|내 후기를 40일 전 것으로 돌리고 후기 화면을 새로 고침)$",
+        "path": "^observed\\.(chips|mainOutsideReviews)(\\.|$)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,443 @@
+=== 00-probe.mjs ===
+INFO probe | 홈 mobile 구조  => {"title":"[TEST · aresjoo] VOILA","lang":"ko","nav":"hidden","menuBtn":"visible","hero":"visible","headBtns":["로그인","메뉴"],"chips":["전체 박스","자동차","시계","여성 가방","주얼리","패션과 신발","모바일","컴퓨터","게임","오디오","카메라","생활가전","포켓몬","토이","캠핑","스포츠","뷰티"],"cards":24,"firstCards":["/voila-test-aresjoo/ko/box/car-rolls-royce/","/voila-test-aresjoo/ko/box/watch-rolex/","/voila-test-aresjoo/ko/box/bag-hermes/","/voila-t
+INFO probe | 홈 desktop 구조  => {"title":"[TEST · aresjoo] VOILA","lang":"ko","nav":"visible","menuBtn":"hidden","hero":"visible","headBtns":["로그인","메뉴"],"chips":["전체 박스","자동차","시계","여성 가방","주얼리","패션과 신발","모바일","컴퓨터","게임","오디오","카메라","생활가전","포켓몬","토이","캠핑","스포츠","뷰티"],"cards":24,"firstCards":["/voila-test-aresjoo/ko/box/car-rolls-royce/","/voila-test-aresjoo/ko/box/watch-rolex/","/voila-test-aresjoo/ko/box/bag-hermes/","/voila-t
+INFO probe | 박스 dollar-apple  => {"url":"https://shinwon446-eng.github.io/voila-test-aresjoo/ko/box/dollar-apple/","title":"1달러 애플 박스","bar":"1개 5개 10개 50개 100개 $1 언박싱"}
+INFO probe | 박스 vault-gold  => {"url":"https://shinwon446-eng.github.io/voila-test-aresjoo/ko/box/vault-gold/","title":"골드 박스","bar":"1개 5개 10개 50개 100개 $50 언박싱"}
+INFO probe | 박스 vault-handbag  => {"url":"https://shinwon446-eng.github.io/voila-test-aresjoo/ko/box/vault-handbag/","title":"가방 박스","bar":"1개 5개 10개 50개 100개 $30 언박싱"}
+INFO probe | 박스 pokemon-charizard  => {"url":"https://shinwon446-eng.github.io/voila-test-aresjoo/ko/box/pokemon-charizard/","title":"리자몽 박스","bar":"이 박스를 무료로 2번 열 수 있습니다. 1개 5개 10개 50개 100개 무료 언박싱"}
+INFO probe | 박스 vault-pokemon  => {"url":"https://shinwon446-eng.github.io/voila-test-aresjoo/ko/box/vault-pokemon/","title":"포켓몬 카드 박스","bar":"1개 5개 10개 50개 100개 $20 언박싱"}
+INFO probe | 지갑(funded)  => 지갑 USDT를 충전하고, 출금하고, 내역을 봅니다. 출금할 수 있는 잔액 $10,000 USDT 충전하기 출금 내역 보너스 2026년 10월 12일 오후 09:20 +$10,000
+INFO probe | 저장 키  => ["claude-b-initialized","gachaflix.community","gachaflix.currency","gachaflix.daily","gachaflix.fair","gachaflix.inventory","gachaflix.locale","gachaflix.settings","gachaflix.telemetry","gachaflix.wallet","voila-auth-v1","voila.browser-accounts.v1","voila.browser-inventory.capture-account","voila.browser-inventory.guest","voila.browser-session.v1","voila.browser-wallet.capture-account","voila.brow
+PASS probe | 콘솔 오류
+base https://shinwon446-eng.github.io/voila-test-aresjoo
+
+00-probe: 1 pass, 0 fail, 9 info
+exit=0
+=== 04-open.mjs ===
+INFO o1 | 단계 기록(누름, 연출, 드러남, 준비)  => [{"t":890,"key":"click","bal":10000,"opens":0,"items":0,"seen":0,"top":null},{"t":894,"key":"none","bal":10000,"opens":0,"items":0,"seen":0,"top":null},{"t":918,"key":"anticipation/opening","bal":9999.05,"opens":1,"items":1,"seen":0,"top":"잔액 $10,000"},{"t":1453,"key":"impact/opening","bal":9999.05,"opens":1,"items":1,"seen":0,"top":"잔액 $10,000"},{"t":1598,"key":"exit/opening","bal":9999.05,"opens
+PASS o1 | 누르는 순간에는 장부가 그대로다(구매 0건)  => {"t":890,"key":"click","bal":10000,"opens":0,"items":0,"seen":0,"top":null}
+PASS o1 | 연출이 시작될 때 이미 구매가 장부에 적혀 있다(구매 1건, 보관함 기록 1건, 봤음 0)  => {"t":918,"key":"anticipation/opening","bal":9999.05,"opens":1,"items":1,"seen":0,"top":"잔액 $10,000"}
+PASS o1 | 결과가 드러난 뒤에 봤음이 적힌다  => {"rev":{"t":1775,"key":"reveal/revealed","bal":9999.05,"opens":1,"items":1,"seen":1,"top":"잔액 $9,999.05"},"rdy":{"t":2125,"key":"ready/settled","bal":9999.05,"opens":1,"items":1,"seen":1,"top":"잔액 $9,999.05"}}
+PASS o1 | 단계 순서 anticipation → impact → exit → reveal → ready
+INFO o1 | 단계 길이(ms): 기대 520, 150, 170, 350  => {"anticipation":535,"impact":145,"exit":177,"arm":350,"pressToAnticipation":28}
+PASS o1 | 연출 중 위의 잔액은 열기 전 잔액, 드러난 뒤에는 최종 잔액  => {"ant":"잔액 $10,000","rdy":"잔액 $9,999.05"}
+PASS o1 | 잔액 10000 - 1 + 0.05 = 9999.05  => 9999.05
+PASS o1 | 구매 거래 1건(금액 -1, ref 에 박스와 거래 번호)  => [{"amount":-1,"ref":"dollar-applex1:op_77a81672-6f87-421e-9bde-e52766ca4c68"}]
+PASS o1 | USDT 결과는 그 자리에서 잔액에(sellback 1건, 보관함 기록은 SOLD)  => {"sb":[{"amount":0.05,"ref":"dollar-apple:cashback x1","itemIds":null}],"items":[{"id":"own_848229c4-b7a3-4948-a765-59db4f30ed77","itemId":"wave-cashback-5","status":"SOLD","value":0.05,"sold":0.05,"openingId":"op_77a81672-6f87-421e-9bde-e52766ca4c68","nonce":1}]}
+PASS o1 | 회차가 1 늘었다  => {"before":1,"after":2}
+INFO o1 | 결과 화면 글  => 잔액 $9,999.05 받은 금액 $0.05 $1 사용 잔액 $0.95 감소 잔액에 반영했습니다. 나올 확률 48.2083% 터짐 게이지 $10.1 한 번 더 언박싱 $1 개봉 결과 검증 박스로 돌아가기
+PASS o1 | USDT 결과의 행동: 한 번 더 언박싱, 개봉 결과 검증, 박스로 돌아가기  => ["한 번 더 언박싱 $1","개봉 결과 검증","박스로 돌아가기"]
+PASS o1 | 준비된 뒤 Esc 는 닫는다, 박스 화면의 열기 단추가 다시 살아 있다
+PASS o1 | 콘솔 오류 없음
+PASS o2 | 같은 순간에 다섯 번 눌러도 구매는 1건  => [{"amount":-1,"ref":"dollar-applex1:op_d663e90f-6214-4c55-831d-8fddfb1a442b"}]
+PASS o2 | 연출 중(anticipation) 재클릭은 구매를 만들지 않는다  => [{"amount":-1,"ref":"dollar-applex1:op_d663e90f-6214-4c55-831d-8fddfb1a442b"}]
+PASS o2 | 연출 중 Esc 는 닫기가 아니라 결과 바로 보기다  => revealed
+PASS o2 | 드러난 직후 한 번 더 열기는 잠겨 있고 눌러도 구매가 나가지 않는다(구매 2건 그대로)  => {"disabled":true,"opens":2}
+PASS o2 | 건너뛰면 결과가 자연 길이(840ms)보다 빨리 뜬다  => 21
+PASS o2 | 한 번 더 열기를 세 번 연달아 눌러도 구매는 1건만 늘어난다(합 3건)  => 3
+PASS o2 | 봤음 표시는 개봉마다 하나(3)  => 3
+PASS o2 | 결과 바로 보기 링크를 누르면 바로 결과  => revealed
+PASS o2 | 열기 단추 더블클릭은 구매 1건  => {"before":4,"after":5}
+PASS o2 | 콘솔 오류 없음
+PASS o3 | 상품 결과: 잔액 9999, 보관함 IN_STORAGE 1건, sellback 없음  => [{"id":"own_2a7bab72-86ed-46fe-8549-95db4c4f0d1d","itemId":"ap-cable-2m","status":"IN_STORAGE","value":20,"sold":null,"openingId":"op_cba44ddc-70f1-4e1c-a278-f8b13bbf7fdc","nonce":1662}]
+PASS o3 | 결과 글(상품, 보관함에 넣었습니다, 주 단추 USDT로 받기 $19)  => 잔액 $9,999 USB-C 충전 케이블 2m 상품가 $20 낸 값의 20배 보관함에 넣었습니다. 나올 확률 0.1105%. $1 사용 터짐 게이지 $10.1 USDT로 받기 ($19) 상품가 $20의 95% 보관함에 두기 개봉 결과 검증
+PASS o3 | 그 자리 검증: 세 단계와 일치 판정  => 개봉 결과 검증 열기 전에 잠가 둔 값으로 번호를 이 브라우저에서 다시 계산합니다. 1. 열기 전에 잠근 값 미리 잠근 값 1f07b3d2c1…a862ad49 이 테스트 사이트는 값을 이 브라우저에서 만들고 저장합니다. 2. 블록체인 기록 상태 블록체인 기록 없음 이 테스트 사이트는 잠근 값을 블록체인에 올리지 않습니다. 블록체인 기록을 붙이면 열기 전에 잠근 값을 기록하고, 이 자리에서 그 기록을 열어 대조합니다. 3. 다시 계산한 결과 공개된 값 opening-fi…ver-seed 내 기기 값 opening-fi…e-client 회차 1,662 확률표 개봉할 때 저장한 표 계산한 번호 3,925 번호가 가리키는 상품 USB-C 충전 케이블 2m 다시 계산한 결과가 받은 상품과 같습니다. 블록체인 검증 방
+PASS o3 | 검증 시트의 Esc 는 시트만 닫는다(결과 화면은 남는다)
+PASS o3 | 받기 확인창 글  => USDT로 받기 상품 대신 잔액으로 받습니다. 받을 금액 $19. 받은 뒤에는 배송으로 바꿀 수 없습니다. USDT로 받기 ($19) 취소
+PASS o3 | 취소하면 돈이 움직이지 않는다
+PASS o3 | 확정을 세 번 눌러도 한 번만 지급: 잔액 10018, sellback 1건(그 상품의 id), SOLD  => {"bal":10018,"sb":[{"amount":19,"ref":"own_2a7bab72-86ed-46fe-8549-95db4c4f0d1d","itemIds":["own_2a7bab72-86ed-46fe-8549-95db4c4f0d1d"]}]}
+PASS o3 | 받은 뒤의 결과 글과 주 단추(한 번 더 언박싱)  => 잔액 $10,018 잔액에 $19 넣었습니다 낸 값의 19배 $1 사용 잔액 $18 증가 USB-C 충전 케이블 2m, 상품가 $20. USDT로 받았습니다. 나올 확률 0.1105% 터짐 게이지 $10.1 한 번 더 언박싱 $1 개봉 결과 검증 박스로 돌아가기
+PASS o3 | 보관함에 두기: 화면이 닫히고 상품은 IN_STORAGE, 잔액 9999  => [{"id":"own_9fc0c775-da12-496c-994a-aef4b2333430","itemId":"da-watchse","status":"IN_STORAGE","value":250,"sold":null,"openingId":"op_59e800b7-84bf-4486-bf5f-ab0e8ee031c9","nonce":355255}]
+PASS o3 | 콘솔 오류 없음
+PASS o4 | 연출 중 새로 고침: 구매 1건과 보관함 기록 1건은 남아 있고 봤음은 0  => {"opens":1,"items":1,"seen":0,"bal":9999}
+PASS o4 | 박스 화면: 보지 못한 결과 한 줄과 주 단추 결과 보기(열기 단추 없음)  => 보지 못한 개봉 결과가 있습니다. 1개 5개 10개 50개 100개 결과 보기
+PASS o4 | 다른 박스 화면: 다른 박스에 보지 못한 결과가 있다는 링크, 열기 단추는 그대로  => 다른 박스에 보지 못한 개봉 결과가 있습니다 1개 5개 10개 50개 100개 $50 언박싱
+PASS o4 | 결과 보기: 연출 없이 바로 결과, 새로 뽑지 않았다는 한 줄  => {"ph":"reveal","t":"잔액 $9,999 USB-C 충전 케이블 2m 상품가 $20 낸 값의 20배 보관함에 넣었습니다. 나올 확률 0.1105%. $1 사용 터짐 게이지 $10.1 아까 연 박스의 결과입니다. 새로 뽑지 않았습니다. USDT로 받기 ($19) 상품가 $20의 95% 보관함에 두기 개봉 결과 검증"}
+PASS o4 | 다시 본 뒤: 구매 1건 그대로, 봤음 1, 회차 그대로  => {"opens":1,"seen":1}
+PASS o4 | 본 뒤 새로 고치면 다시 묻지 않는다
+PASS o4 | 연출 중 뒤로 가기(pokemon-charizard, 무료 언박싱): 홈으로 돌아간다(결과 화면은 주소 기록에 없다)  => https://shinwon446-eng.github.io/voila-test-aresjoo/ko/
+PASS o4 | 뒤로 간 뒤: 구매는 1건 늘어 있고 봤음은 늘지 않았다(잃은 것도 겹친 것도 없다)  => {"opens":[1,2],"items":[1,2],"seen":[1,1]}
+PASS o4 | 앞으로 가면 그 박스 화면이 결과 보기를 준다
+PASS o4 | 다시 본 뒤에도 구매 수는 그대로
+PASS o4 | 콘솔 오류 없음
+PASS o5 | 수량 알약 다섯(1, 5, 10, 50, 100)과 처음 선택 1
+PASS o5 | 5개를 고르면 주 단추가 5개 언박싱 $5  => 5개 언박싱 $5
+PASS o5 | 5개는 확인창 없이 바로 연다(5달러, 10개 미만)
+INFO o5 | 여럿 열기 단계 기록  => [{"t":1573,"key":"click","bal":10000,"opens":0,"items":0,"seen":0,"top":null},{"t":1576,"key":"none","bal":10000,"opens":0,"items":0,"seen":0,"top":null},{"t":1602,"key":"reveal:anticipation","bal":9997.15,"opens":1,"items":5,"seen":0,"top":null},{"t":2126,"key":"reveal:impact","bal":9997.15,"opens":1,"items":5,"seen":0,"top":null},{"t":2276,"key":"reveal:exit","bal":9997.15,"opens":1,"items":5,"s
+PASS o5 | 여럿 열기도 연출이 시작될 때 이미 장부에 적혀 있다(구매 1건, 기록 5건)  => {"t":1602,"key":"reveal:anticipation","bal":9997.15,"opens":1,"items":5,"seen":0,"top":null}
+PASS o5 | 잔액 10000 - 5 + 2.15 = 9997.15, 구매 1건(-5), sellback 1건(cashback x4), 기록 5건  => {"bal":9997.15,"opens":[{"amount":-5,"ref":"dollar-applex5:op_2f70d769-0feb-4aa6-95ab-2ef5c6a059c9"}],"sb":[{"amount":2.15,"ref":"dollar-apple:cashback x4","itemIds":null}]}
+PASS o5 | 결과 요약 글  => 잔액 $9,997.15 5개를 열었습니다 받은 상품은 보관함에 있습니다. 가장 큰 결과 애플 기프트카드 $10 상품가 $10, 10배 쓴 금액 $5 잔액에 반영 $2.15 보관 상품 1개 상품가 $10 터짐 게이지 $10.5 잔액 변화 $2.85 감소 애플 기프트카드 $10, 보관 중, 10배 $10 › 인스턴트 드롭, 잔액 반영, 2배 $2 즉시 캐시백, 잔액 반영, 3번 $0.05 USDT로 받기 (1개, $9.5) 보관함에 두기 한 번 더 언박싱 $5
+PASS o5 | 주 단추는 방금 나온 상품을 미리 고른 USDT로 받기(1개, $9.5)  => USDT로 받기 (1개, $9.5)
+PASS o5 | 결과 행(같은 금액의 USDT 결과는 한 줄로 묶이고 그 줄은 누를 수 없다)  => [{"text":"애플 기프트카드 $10, 보관 중, 10배 $10 ›","button":true},{"text":"인스턴트 드롭, 잔액 반영, 2배 $2","button":true},{"text":"즉시 캐시백, 잔액 반영, 3번 $0.05","button":false}]
+PASS o5 | 상품 행을 누르면 그 상품의 시트(상품가, 확률, USDT로 받기, 검증)  => 애플 기프트카드 $10 상품가 $10 나올 확률 0.8084% USDT로 받기 ($9.5) 개봉 결과 검증
+PASS o5 | 선택 시트는 방금 나온 상품만 담고 미리 골라져 있다
+PASS o5 | 받은 뒤 잔액 9997.15 + 9.5 = 10006.65, sellback 2건  => {"bal":10006.65,"sb":2}
+PASS o5 | 영수증이 바뀐다(잔액에 반영 $11.65, USDT로 받음) 그리고 주 단추가 한 번 더 언박싱  => 잔액 $10,006.65 5개를 열었습니다 받은 상품은 보관함에 있습니다. 가장 큰 결과 애플 기프트카드 $10 상품가 $10, 10배 쓴 금액 $5 잔액에 반영 $11.65 터짐 게이지 $10.5 잔액 변화 $6.65 증가 애플 기프트카드 $10, USDT로 받음, 10배 $9.5 인스턴트 드롭, 잔액 반영, 2배 $2 즉시 캐시백, 잔액 반영, 3번 $0.05 한 번 더 언박싱 $5 박스로 돌아가기
+PASS o5 | 닫은 뒤 수량은 그대로 5개
+PASS o5 | 10개는 확인창이 뜬다($10 결제)  => $10 결제 잔액에서 결제하고 바로 엽니다. 10개 언박싱 $10 취소
+PASS o5 | 확인창에서 Esc: 닫히고 구매 0건
+PASS o5 | 확인창에서 취소: 구매 0건, 열기 단추는 다시 눌린다
+PASS o5 | 확정을 세 번 눌러도 10개 구매 1건: 잔액 10000 - 10 + 0.5, 기록 10건  => {"bal":9990.5,"opens":[{"amount":-10,"ref":"dollar-applex10:op_15eef1f6-126f-4a79-90ec-7fbb12c6b6ad"}]}
+PASS o5 | 전부 USDT 결과면 제목이 잔액에 들어왔다는 문장이고 받을 것이 없다  => 잔액 $9,990.5 $0.5, 잔액에 들어왔습니다 다음 열기에 바로 쓸 수 있습니다. 쓴 금액 $10 잔액에 반영 $0.5 터짐 게이지 $11 잔액 변화 $9.5 감소 즉시 캐시백, 잔액 반영, 10번 $0.05 한 번 더 언박싱 $10 박스로 돌아가기
+PASS o5 | 콘솔 오류 없음
+PASS o6 | 50개(50개 언박싱 $50): 구매 1건(-50), 기록 50건, 잔액 = 10000 - 50 + USDT 결과 합  => {"bal":10035.5,"cash":85.5,"held":1,"sold":49,"sellbacks":1,"nonce":50}
+PASS o6 | 50개: 회차가 50 늘고 기록의 회차는 겹치지 않는다  => 50
+INFO o6 | 50개 결과 요약  => 잔액 $10,035.5 50개를 열었습니다 받은 상품은 보관함에 있습니다. 가장 큰 결과 비츠 솔로 버즈 상품가 $80, 80배 쓴 금액 $50 잔액에 반영 $85.5 보관 상품 1개 상품가 $80 터짐 게이지 $15 잔액 변화 $35.5 증가 비츠 솔로 버즈, 보관 중, 80배 $80 › 인스턴트 드롭, 잔액 반영, 50배 $50 인스턴트 드롭, 잔액 반영, 4배, 6번 $4 인스턴트 드롭, 잔액 반영, 2배, 3번 $2 인스턴트 드롭, 잔액 반영 $1 즉시 캐시백, 잔액 반영, 13번 $0.25 즉시 캐시백, 잔액 반영, 25번
+PASS o6 | 50개 콘솔 오류 없음
+PASS o6 | 100개(100개 언박싱 $100): 구매 1건(-100), 기록 100건, 잔액 = 10000 - 100 + USDT 결과 합  => {"bal":9982.65,"cash":82.65,"held":1,"sold":99,"sellbacks":1,"nonce":100}
+PASS o6 | 100개: 회차가 100 늘고 기록의 회차는 겹치지 않는다  => 100
+INFO o6 | 100개 결과 요약  => 잔액 $9,982.65 100개를 열었습니다 받은 상품은 보관함에 있습니다. 가장 큰 결과 $15 15배 쓴 금액 $100 잔액에 반영 $82.65 보관 상품 1개 상품가 $10 터짐 게이지 $20 잔액 변화 $17.35 감소 인스턴트 드롭, 잔액 반영, 15배 $15 애플 기프트카드 $10, 보관 중, 10배 $10 › 인스턴트 드롭, 잔액 반영, 8배 $8 인스턴트 드롭, 잔액 반영, 4배, 4번 $4 인스턴트 드롭, 잔액 반영, 2배, 15번 $2 인스턴트 드롭, 잔액 반영, 5번 $1 즉시 캐시백, 잔액 반영, 25번 $0.
+PASS o6 | 100개 콘솔 오류 없음
+PASS o7 | 잔액 0.25, 1달러 박스: 한 줄 안내와 주 단추 USDT 충전하기(열기 단추 없음)  => 잔액 $0.25. $0.75 더 필요합니다. 1개 5개 10개 50개 100개 USDT 충전하기
+PASS o7 | 충전하기는 충전 시트를 연다  => USDT 충전 아래 주소로 USDT를 보내면 잔액에 들어옵니다. USDT (TRC-20) USDT (BEP-20) USDT (ERC-20) 주소를 받지 못했습니다. 주소 다시 받기 1 USDT부터 보낼 수 있습니다. 12번 확인되면 잔액에 들어옵니다.
+PASS o7 | 부족한 상태에서는 구매가 나가지 않는다
+PASS o7 | 보관 상품을 받아 채워질 때: 주 단추 USDT로 받기, 최대 금액 한 줄, 충전 링크  => 잔액 $0.25. $4.75 더 필요합니다. 1개 5개 10개 50개 100개 USDT로 받기 보관함의 상품 2개를 USDT로 받으면 최대 $1,471.55까지 들어옵니다. USDT 충전하기
+PASS o7 | 비로그인: 주 단추 로그인하고 언박싱, 수량과 금액 한 줄  => 1개 5개 10개 50개 100개 로그인하고 언박싱 1개, $1. 로그인한 뒤 USDT 잔액으로 결제합니다.
+PASS o7 | 비로그인: 수량을 바꾸면 한 줄이 따라 바뀐다
+PASS o7 | 비로그인: 주 단추는 로그인 시트를 연다(구매 없음)
+PASS o7 | 50달러 박스는 1개도 확인창이 뜬다
+PASS o7 | 확인창 바깥을 누르면 취소된다(구매 0건)
+PASS o7 | 확정하면 구매 1건: 잔액 10000 - 50 + 2.5  => 9952.5
+PASS o7 | 터짐 게이지가 저장된다(옛 박스)  => {"vault-gold":{"crypto":5,"card":0}}
+PASS o8 | 로그인하면 가입 혜택의 무료 개봉 2회가 장부에 생긴다  => {"pokemon-charizard":2}
+PASS o8 | 무료 한 줄과 주 단추 무료 언박싱  => 이 박스를 무료로 2번 열 수 있습니다. 1개 5개 10개 50개 100개 무료 언박싱
+PASS o8 | 5개를 고르면 무료 2개를 뺀 3개 값만 적힌다  => 5개 언박싱 $150
+PASS o8 | 무료 개봉: 잔액 그대로, 구매 거래 금액 0, ref 에 +free1, 남은 무료 1  => {"bal":10000,"opens":[{"amount":0,"ref":"pokemon-charizardx1+free1:op_4875563c-9cfb-4a3d-8a23-e1508c287038"}],"free":{"pokemon-charizard":1}}
+PASS o8 | 결과 글에 무료 개봉이라고 적힌다, 다음 단추는 무료로 한 번 더  => 잔액 $10,000 상품가 $15 펀코 팝 게임즈 포켓몬 리자몽 843 보관함에 넣었습니다. 나올 확률 4.2476%. 무료 개봉 USDT로 받기 ($14.25) 상품가 $15의 95% 보관함에 두기 개봉 결과 검증
+PASS o8 | 콘솔 오류 없음
+PASS o9 | 움직임 줄이기: 연출 단계 없이 바로 결과  => ["click@880","none@884","anticipation/opening@910","reveal/revealed@922","ready/settled@1276"]
+PASS o9 | 개봉 설정: 스위치 셋, 전부 끔
+PASS o9 | 소리와 짧게 보기는 누르면 곧 켜지고 gachaflix.settings 에 저장된다  => {"muted":true,"openSound":true,"openShort":true,"autoTakeBy":{},"lastReceiveBy":{}}
+PASS o9 | 자동 받기는 확인창을 거친다
+PASS o9 | 취소하면 켜지지 않는다  => {}
+PASS o9 | 확정하면 계정별로 저장된다(autoTakeBy[계정])  => {"capture-account":true}
+PASS o9 | 짧게 보기: 드러남까지 약 450ms(220 + 110 + 120)  => 467
+PASS o9 | 자동 받기를 켠 계정: 상품이 나오면 받는다(잔액 10018, sellback 1건)  => {"bal":10018}
+PASS o9 | 자동으로 받았다고 적는다  => 잔액 $10,018 잔액에 $19 넣었습니다 낸 값의 19배 $1 사용 잔액 $18 증가 USB-C 충전 케이블 2m, 상품가 $20. 자동으로 USDT로 받았습니다. 나올 확률 0.1105%. 개봉 설정에서 끌 수 있습니다 터짐 게이지 $10.1 한 번 더 언박싱 $1 개봉 결과 검증 박스로 돌아가기
+PASS o10 | 저장소에 쓸 수 없으면 열지 않는다: 실패 한 줄, 결과 화면 없음  => 열지 못했습니다. 잔액은 그대로입니다. 1개 5개 10개 50개 100개 $1 언박싱
+PASS o10 | 머리줄의 잔액은 그대로  => 잔액 $10,000
+PASS o10 | 저장 공간 안내가 왼쪽 아래에 뜬다(LabBadge)  => 브라우저 저장 공간이 가득 차 이 기기에 기록을 저장하지 못했습니다. 새로고침하면 이번 변경은 사라집니다.
+PASS o10 | 저장된 장부도 그대로(구매 0건, 회차 그대로)  => {"opens":0,"bal":10000,"nonce":[1,1]}
+PASS o10 | 저장소가 돌아오면 다시 눌러 열린다(구매 1건)  => 9999.05
+PASS o10 | 탭 전환(그동안 visibilityState=visible): 돌아오면 결과가 떠 있고 구매 1건, 봤음 1  => {"opens":1,"seen":1}
+
+04-open: 100 pass, 0 fail, 6 info
+exit=0
+=== 09-keys-dblclick.mjs --only k2,k3 ===
+PASS k2 | 수량 알약에서 Space: 선택된다
+PASS k2 | 열기 단추에서 Enter: 구매 1건
+PASS k2 | 결과가 뜨면 포커스는 결과 화면(창 자체)  => DIV.v-op[개봉 결과]:잔액 $9,999 USB-C 충전 케이블 2m 상품가 
+PASS k2 | 결과 화면의 Tab 순서(설정, 닫기, 주 단추, 링크 둘, 다시 설정)  => ["BUTTON.v-op-tool[개봉 설정]:","BUTTON.v-op-tool[닫기]:","BUTTON.v-btn:USDT로 받기 ($19)","BUTTON.v-link:보관함에 두기","BUTTON.v-link:개봉 결과 검증","BUTTON.v-op-tool[개봉 설정]:"]
+PASS k2 | 받기 확인창에서 Enter 를 한 번 더 눌러도 받지 않는다(포커스가 창에 있다)
+PASS k2 | Tab 으로 확정 단추에 간 뒤 Enter: 받는다(한 번)  => 10018
+PASS k2 | Esc: 결과 화면이 닫힌다
+PASS k3 | mobile (1) 10개 열기 단추 더블클릭: 확인창을 건너뛰고 결제되는가  => {"opens":0,"balance":10000,"primary":{"x":16,"y":780,"w":358,"h":52},"confirmBtn":{"x":17,"y":710,"w":356,"h":52},"dialogOpen":1,"reveal":0}
+FAIL k3 | mobile (2) 결과 화면의 USDT로 받기 더블클릭: 확인 없이 받아지는가  => {"sellbacks":1,"balance":10018,"primary":{"x":16,"y":707,"w":358,"h":52},"confirmBtn":null,"overlap":false}
+FAIL k3 | mobile (3) 보관함 상세의 USDT로 받기 더블클릭: 확인 없이 받아지는가  => {"sellbacks":1,"balance":10950,"primary":{"x":17,"y":708,"w":356,"h":52},"confirmBtn":null,"overlap":false}
+PASS k3 | mobile (4) 선택 시트의 USDT로 받기(2개) 더블클릭: 확인 없이 받아지는가  => {"sellbacks":0,"balance":10000,"primary":{"x":17,"y":776,"w":356,"h":52},"confirmBtn":{"x":17,"y":710,"w":356,"h":52},"overlap":false}
+PASS k3 | mobile (5) 후기 올리기를 2번 누름: 후기 하나, 그리고 상품이 USDT로 받아지지 않는다  => {"reviews":1,"sellbacks":0,"balance":10000,"sendBtn":{"x":17,"y":731,"w":356,"h":52},"dialogOpen":1,"sheet":"USDT로 받기 상품 대신 잔액으로 받습니다. 받을 금액 $950. 받은 뒤에는 배송으로 바꿀 수 없습니다. USDT로 받기 ($950) 취소"}
+FAIL k3 | mobile (5) 후기 올리기를 3번 누름: 후기 하나, 그리고 상품이 USDT로 받아지지 않는다  => {"reviews":1,"sellbacks":1,"balance":10950,"sendBtn":{"x":17,"y":731,"w":356,"h":52},"dialogOpen":0,"sheet":""}
+PASS k3 | mobile (6) 여럿 결과의 USDT로 받기를 2번 누름: 확인 없이 받아지지 않는다  => {"sellbacks":1,"balance":9997.15,"primary":{"x":16,"y":728,"w":358,"h":52},"sheet":"USDT로 받기 상품을 고르면 상품가의 95%를 잔액으로 받습니다. 전체 선택 1 / 1 애플 기프트카드 $10 상품가 $10 $9.5 USDT로 받기 (1개, $9.5)","dialogOpen":0}
+PASS k3 | mobile (6) 여럿 결과의 USDT로 받기를 3번 누름: 확인 없이 받아지지 않는다  => {"sellbacks":1,"balance":9997.15,"primary":{"x":16,"y":728,"w":358,"h":52},"sheet":"USDT로 받기 상품을 고르면 상품가의 95%를 잔액으로 받습니다. 전체 선택 1 / 1 애플 기프트카드 $10 상품가 $10 $9.5 USDT로 받기 (1개, $9.5)","dialogOpen":0}
+PASS k3 | desktop (1) 10개 열기 단추 더블클릭: 확인창을 건너뛰고 결제되는가  => {"opens":0,"balance":10000,"primary":{"x":820,"y":323,"w":380,"h":52},"confirmBtn":null,"dialogOpen":0,"reveal":0}
+PASS k3 | desktop (2) 결과 화면의 USDT로 받기 더블클릭: 확인 없이 받아지는가  => {"sellbacks":0,"balance":9999,"primary":{"x":360,"y":763,"w":560,"h":52},"confirmBtn":null,"overlap":false}
+PASS k3 | desktop (3) 보관함 상세의 USDT로 받기 더블클릭: 확인 없이 받아지는가  => {"sellbacks":0,"balance":10000,"primary":{"x":433,"y":556,"w":414,"h":52},"confirmBtn":{"x":433,"y":458,"w":414,"h":52},"overlap":false}
+PASS k3 | desktop (4) 선택 시트의 USDT로 받기(2개) 더블클릭: 확인 없이 받아지는가  => {"sellbacks":0,"balance":10000,"primary":{"x":433,"y":591,"w":414,"h":52},"confirmBtn":null,"overlap":false}
+PASS k3 | desktop (5) 후기 올리기를 2번 누름: 후기 하나, 그리고 상품이 USDT로 받아지지 않는다  => {"reviews":1,"sellbacks":0,"balance":10000,"sendBtn":{"x":433,"y":635,"w":414,"h":52},"dialogOpen":0,"sheet":"아이폰 16 프로 256GB 1달러 애플 박스 상태 보관 중 상품가 $1,000 받은 날 2026년 10월 12일 후기 후기를 올렸습니다 USDT로 받기 ($950) 배송 받기 개봉 결과 검증"}
+PASS k3 | desktop (5) 후기 올리기를 3번 누름: 후기 하나, 그리고 상품이 USDT로 받아지지 않는다  => {"reviews":1,"sellbacks":0,"balance":10000,"sendBtn":{"x":433,"y":635,"w":414,"h":52},"dialogOpen":0,"sheet":"아이폰 16 프로 256GB 1달러 애플 박스 상태 보관 중 상품가 $1,000 받은 날 2026년 10월 12일 후기 후기를 올렸습니다 USDT로 받기 ($950) 배송 받기 개봉 결과 검증"}
+PASS k3 | desktop (6) 여럿 결과의 USDT로 받기를 2번 누름: 확인 없이 받아지지 않는다  => {"sellbacks":1,"balance":9997.15,"primary":{"x":376,"y":762,"w":528,"h":52},"sheet":"","dialogOpen":0}
+PASS k3 | desktop (6) 여럿 결과의 USDT로 받기를 3번 누름: 확인 없이 받아지지 않는다  => {"sellbacks":1,"balance":9997.15,"primary":{"x":376,"y":762,"w":528,"h":52},"sheet":"USDT로 받기 상품을 고르면 상품가의 95%를 잔액으로 받습니다. 전체 선택 1 / 1 애플 기프트카드 $10 상품가 $10 $9.5 USDT로 받기 (1개, $9.5)","dialogOpen":0}
+
+09-keys-dblclick: 20 pass, 3 fail, 0 info
+exit=0
+=== 09b-debug.mjs --only e2,e3 ===
+FAIL e2 | narrow 320x640, 간격 90ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다  => {"taken":1,"balance":10950,"primary":{"x":17,"y":504,"w":286,"h":52},"confirmBtn":{"x":17,"y":506,"w":286,"h":52},"secondTapOn":"USDT로 받기 ($950)"}
+FAIL e2 | narrow 320x640, 간격 250ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다  => {"taken":1,"balance":10950,"primary":{"x":17,"y":504,"w":286,"h":52},"confirmBtn":{"x":17,"y":506,"w":286,"h":52},"secondTapOn":"USDT로 받기 ($950)"}
+FAIL e2 | narrow 320x640, 간격 600ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다  => {"taken":1,"balance":10950,"primary":{"x":17,"y":504,"w":286,"h":52},"confirmBtn":{"x":17,"y":506,"w":286,"h":52},"secondTapOn":"USDT로 받기 ($950)"}
+FAIL e2 | mobile 390x844, 간격 90ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다  => {"taken":1,"balance":10950,"primary":{"x":17,"y":708,"w":356,"h":52},"confirmBtn":{"x":17,"y":710,"w":356,"h":52},"secondTapOn":"USDT로 받기 ($950)"}
+FAIL e2 | mobile 390x844, 간격 250ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다  => {"taken":1,"balance":10950,"primary":{"x":17,"y":708,"w":356,"h":52},"confirmBtn":{"x":17,"y":710,"w":356,"h":52},"secondTapOn":"USDT로 받기 ($950)"}
+FAIL e2 | mobile 390x844, 간격 600ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다  => {"taken":1,"balance":10950,"primary":{"x":17,"y":708,"w":356,"h":52},"confirmBtn":{"x":17,"y":710,"w":356,"h":52},"secondTapOn":"USDT로 받기 ($950)"}
+PASS e2 | tablet 768x1024, 간격 90ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다  => {"taken":0,"balance":10000,"primary":{"x":177,"y":618,"w":414,"h":52},"confirmBtn":{"x":177,"y":520,"w":414,"h":52},"secondTapOn":"v-sheet-body"}
+PASS e2 | tablet 768x1024, 간격 250ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다  => {"taken":0,"balance":10000,"primary":{"x":177,"y":618,"w":414,"h":52},"confirmBtn":{"x":177,"y":520,"w":414,"h":52},"secondTapOn":"v-sheet-body"}
+PASS e2 | tablet 768x1024, 간격 600ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다  => {"taken":0,"balance":10000,"primary":{"x":177,"y":618,"w":414,"h":52},"confirmBtn":{"x":177,"y":520,"w":414,"h":52},"secondTapOn":"v-sheet-body"}
+PASS e2 | desktop 1280x900, 간격 90ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다  => {"taken":0,"balance":10000,"primary":{"x":433,"y":556,"w":414,"h":52},"confirmBtn":{"x":433,"y":458,"w":414,"h":52},"secondTapOn":"v-sheet-body"}
+PASS e2 | desktop 1280x900, 간격 250ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다  => {"taken":0,"balance":10000,"primary":{"x":433,"y":556,"w":414,"h":52},"confirmBtn":{"x":433,"y":458,"w":414,"h":52},"secondTapOn":"v-sheet-body"}
+PASS e2 | desktop 1280x900, 간격 600ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다  => {"taken":0,"balance":10000,"primary":{"x":433,"y":556,"w":414,"h":52},"confirmBtn":{"x":433,"y":458,"w":414,"h":52},"secondTapOn":"v-sheet-body"}
+FAIL e3 | 결과 화면(모바일), 간격 90ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다(상품가 250, 받는 금액 237.5)  => {"taken":1,"balance":10236.5,"primary":{"x":16,"y":707,"w":358,"h":52},"confirmBtn":{"x":17,"y":710,"w":356,"h":52}}
+FAIL e3 | 결과 화면(모바일), 간격 250ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다(상품가 250, 받는 금액 237.5)  => {"taken":1,"balance":10236.5,"primary":{"x":16,"y":707,"w":358,"h":52},"confirmBtn":{"x":17,"y":710,"w":356,"h":52}}
+FAIL e3 | 결과 화면(모바일), 간격 600ms: 같은 자리를 두 번 눌렀을 때 확인 없이 받아지지 않는다(상품가 250, 받는 금액 237.5)  => {"taken":1,"balance":10236.5,"primary":{"x":16,"y":707,"w":358,"h":52},"confirmBtn":{"x":17,"y":710,"w":356,"h":52}}
+
+09b-debug: 6 pass, 9 fail, 0 info
+exit=0
+=== 01-nav.mjs ===
+PASS n1 | 메뉴 단추: aria-haspopup=dialog, aria-expanded=false
+PASS n1 | 메뉴 시트의 행 일곱과 주소  => ["박스 ›→/ko/","보관함 ›→/ko/inventory/","지갑 ›→/ko/wallet/","나온 상품 ›→/ko/wins/","개봉 결과 검증 ›→/ko/verify/","이용 방법 ›→/ko/guide/","계정 ›→/ko/account/"]
+PASS n1 | 열리면 aria-expanded=true, 본문 스크롤이 잠기고, 포커스가 시트로 간다  => {"overflow":"hidden","active":"DIV.v-sheet:메뉴 박스 › 보관함 › 지갑 › 나온 상품 › 개봉 "}
+PASS n1 | Tab 은 시트 안에서 돈다(닫기, 행 일곱, 다시 닫기)  => ["BUTTON.v-sheet-close[닫기]:","A.v-row.v-row--link:박스 ›","A.v-row.v-row--link:보관함 ›","A.v-row.v-row--link:지갑 ›","A.v-row.v-row--link:나온 상품 ›","A.v-row.v-row--link:개봉 결과 검증 ›","A.v-row.v-row--link:이용 방법 ›","A.v-row.v-row--link:계정 ›","BUTTON.v-sheet-close[닫기]:"]
+PASS n1 | Shift+Tab 은 처음에서 끝으로 간다  => A.v-row.v-row--link:계정 ›
+PASS n1 | Esc 로 닫힌다, 스크롤 잠금이 풀리고 포커스가 메뉴 단추로 돌아온다  => {"overflow":"","active":"BUTTON.v-headbtn.v-menu-btn[메뉴]:"}
+PASS n1 | 시트 바깥(어두운 자리)을 누르면 닫힌다
+PASS n1 | X 단추로 닫힌다
+PASS n1 | 행을 누르면 그 화면으로 가고 시트가 닫힌다(이용 방법)  => /ko/guide/
+PASS n1 | 머리줄의 로그인 단추는 로그인 시트를 연다  => 로그인 이메일 주소 이메일로 계속 Google로 계속하기 Apple로 계속하기 Microsoft로 계속하기 이메일로 가입 계속하면 약관과 개인정보 처리방침에 동의합니다.
+PASS n1 | 로고는 박스 목록으로 간다
+PASS n1 | 콘솔 오류 없음
+PASS n1 | PC 머리줄의 링크 일곱, 지금 화면에 aria-current  => ["박스→/ko/*","보관함→/ko/inventory/","지갑→/ko/wallet/","나온 상품→/ko/wins/","개봉 결과 검증→/ko/verify/","이용 방법→/ko/guide/","계정→/ko/account/"]
+PASS n1 | PC 링크 1: /ko/inventory/  => {"path":"/ko/inventory/","current":0}
+PASS n1 | PC 링크 2: /ko/wallet/  => {"path":"/ko/wallet/","current":0}
+PASS n1 | PC 링크 3: /ko/wins/  => {"path":"/ko/wins/","current":0}
+PASS n1 | PC 링크 4: /ko/verify/  => {"path":"/ko/verify/","current":0}
+PASS n1 | PC 링크 5: /ko/guide/  => {"path":"/ko/guide/","current":0}
+PASS n1 | PC 링크 6: /ko/account/  => {"path":"/ko/account/","current":0}
+PASS n1 | PC 링크 0: /ko/  => {"path":"/ko/","current":1}
+INFO n1 | aria-current 는 주소 끝의 빗금 때문에 박스 말고는 붙지 않는지(본 것)  => ["page",null,null,null,null,null,null]
+PASS n1 | 로그인하면 머리줄에 잔액 단추(로그인 단추 대신)  => 잔액 $10,000
+PASS n1 | 잔액 단추는 지갑으로 가지 않고 잔액 시트를 연다  => 잔액 개봉에 쓸 잔액 $10,000 출금할 수 있는 잔액 $10,000 보관 중인 상품 없음 USDT 충전하기 출금 지갑 내역
+PASS n2 | 처음에는 카드 24장과 더 보기 단추(남은 수)  => 박스 더 보기 (296개 남음)
+PASS n2 | 더 보기를 누르면 24장이 늘고 남은 수가 24 준다  => {"cards":48,"left0":296,"left1":272}
+PASS n2 | 분류(시계)를 누르면 그 분류의 박스만 남고 보여 주는 수가 처음으로 돌아간다  => ["watch-rolex/","watch-patek-philippe/","watch-audemars-piguet/","watch-vacheron-constantin/","watch-a-lange-sohne/","watch-omega/"]
+PASS n2 | 전체 박스로 돌아오면 다시 24장
+PASS n2 | 검색어를 넣으면 배너와 분류, 카드가 사라지고 상품 행이 나온다(30행까지)  => {"hits":30}
+PASS n2 | 없는 이름이면 빈 상태 한 줄
+PASS n2 | 공백만 넣으면 검색이 아니다(카드가 그대로)
+PASS n2 | 지우면 배너, 분류, 카드가 돌아온다
+PASS n2 | 영어 이름으로도 찾는다(세 언어의 이름을 본다)
+PASS n2 | 검색 칸의 Enter 는 아무 일도 하지 않는다(폼이 아니다)
+PASS n2 | 상품 행은 그 상품이 든 박스로 간다  => {"path":"/ko/box/watch-rolex/","firstHit":"/voila-test-aresjoo/ko/box/watch-rolex/"}
+PASS n2 | 뒤로 오면 검색어와 분류는 처음 상태다(주소에도 저장소에도 남기지 않는다)
+PASS n2 | 카드는 박스 화면으로 간다  => /ko/box/car-rolls-royce/
+FAIL n2 | 뒤로, 앞으로: 같은 박스 화면
+PASS n2 | 비로그인 배너의 단추는 가입 시트를 연다
+PASS n2 | 가입 시트가 열린다  => 가입 이메일 주소 이메일로 계속 Google로 계속하기 Apple로 계속하기 Microsoft로 계속하기 이메일로 로그인 계속하면 약관과 개인정
+PASS n2 | 콘솔 오류 없음
+PASS n2 | 로그인한 배너: 무료 횟수가 남았으면 무료 언박싱 링크(리자몽 박스)  => 리자몽 박스 무료로 열 수 있는 박스가 2개 남았습니다. 무료 언박싱
+PASS n3 | 심은 통화 USDT 는 달러로 옮겨진다(저장값도 USD)  => {"stored":"USD"}
+PASS n3 | 꼬리말의 통화 단추 글
+PASS n3 | 원화로 보기: 화면의 금액이 원화로 바뀌고 저장된다  => {"btn":"₩1,380 언박싱","bal":"잔액 ₩13,800,000"}
+PASS n3 | 새로 고침 뒤에도 원화  => ₩1,380 언박싱
+PASS n3 | 통화를 바꿔도 장부의 숫자는 USDT 그대로
+PASS n3 | 꼬리말의 언어 링크는 지금 화면의 다른 언어 주소  => ["English→/en/box/dollar-apple/","中文→/zh/box/dollar-apple/"]
+PASS n3 | 영어로: 같은 박스 화면, html lang=en, 통화는 원화 그대로  => {"lang":"en","btn":"Unbox for ₩1,380","stored":"ko"}
+PASS n3 | 언어를 바꿔도 gachaflix.locale 은 바뀌지 않는다(심은 값 ko 그대로)  => ko
+PASS n3 | 중국어로: html lang=zh-Hans
+PASS n3 | 뒤로 가면 영어 화면  => /en/box/dollar-apple/
+PASS n3 | 영어에서 메뉴로 이동하면 영어 주소 그대로(/en/wallet/), 금액은 원화  => Wallet Add USDT, withdraw, and see your history. Withdrawable balance ₩13,800,000 Add USDT Withdraw History Bonus Oct 12, 2026, 09:23 PM +₩13,800,000
+PASS n3 | 루트 주소는 저장된 언어(gachaflix.locale=ko)로 보낸다  => /ko/
+PASS n3 | 루트 주소, 저장된 언어 없음, 브라우저 언어 en  => /en/
+PASS n3 | 루트 주소, 저장된 언어 없음, 브라우저 언어 zh  => /zh/
+PASS n3 | 루트 주소, 저장된 언어 없음, 브라우저 언어 ko  => /ko/
+PASS n4 | 옛 주소 /ko/about/: 옮긴 화면과 단추 하나(이용 방법) → /ko/guide/  => 옮긴 화면 이 주소의 화면은 새 화면으로 옮겼습니다. 이용 방법
+PASS n4 | 옛 주소 /ko/fairness/: 옮긴 화면과 단추 하나(개봉 결과 검증) → /ko/verify/  => 옮긴 화면 이 주소의 화면은 새 화면으로 옮겼습니다. 개봉 결과 검증
+PASS n4 | 옛 주소 /ko/profile/: 옮긴 화면과 단추 하나(계정) → /ko/account/  => 옮긴 화면 이 주소의 화면은 새 화면으로 옮겼습니다. 계정
+PASS n4 | 옛 주소 /ko/community/: 옮긴 화면과 단추 하나(박스) → /ko/  => 옮긴 화면 이 주소의 화면은 새 화면으로 옮겼습니다. 박스
+PASS n4 | 옛 주소 /ko/community/board/: 옮긴 화면과 단추 하나(박스) → /ko/  => 옮긴 화면 이 주소의 화면은 새 화면으로 옮겼습니다. 박스
+PASS n4 | /ko/reviews/ 는 후기 모아보기  => 후기 별점은 상품을 받은 분이 받은 상품과 배송에 매긴 점수입니다. 전체 포켓몬 카드 박스 1달러 애플 박스 자동차 박스 시계 박스 가방 박스 골드 박스 1달러 갤럭시 박스 1달러 게이밍 박스 콘솔 박스 음악 박스 
+FAIL n4 | /ko/dev/gallery/ 는 배포 사이트에 없다(404)  => {"status":200,"text":"로그인 없는 주소 주소가 바뀌었거나 없는 화면입니다. 박스 보기 고객 관계 요약 팔로우하십시오 제품 박스 보관함 지갑 후기 나온 상품 도움 이용 방법 개봉 결과 검증 약관 약관과 정책 설정 English 中文 원화로"}
+PASS n4 | 없는 주소 /ko/no-such-page/: 상태 404, 없는 주소 화면과 박스 보기  => {"text":"없는 주소 주소가 바뀌었거나 없는 화면입니다. 박스 보기","href":"/ko","header":0}
+PASS n4 | 없는 주소 /ko/box/no-such-box/: 상태 404, 없는 주소 화면과 박스 보기  => {"text":"없는 주소 주소가 바뀌었거나 없는 화면입니다. 박스 보기","href":"/ko","header":0}
+PASS n4 | 없는 주소 /xx/: 상태 404, 없는 주소 화면과 박스 보기  => {"text":"없는 주소 주소가 바뀌었거나 없는 화면입니다. 박스 보기","href":"/ko","header":0}
+PASS n4 | 없는 주소 /no-such/: 상태 404, 없는 주소 화면과 박스 보기  => {"text":"없는 주소 주소가 바뀌었거나 없는 화면입니다. 박스 보기","href":"/ko","header":0}
+PASS n4 | 이용 방법: 순서 셋, 알아 둘 값, 링크 둘  => 이용 방법 박스를 고르고, 열고, 받은 상품을 배송 받거나 USDT로 받습니다. 박스 고르기 박스마다 구성품과 구간별 확률, 상품별 확률이 적혀 있습니다. 열기 단추에 적힌 금액이 잔액에서 결제되고 결과가 바로 나옵니다. 받기 받은 상품은 보관함에 들어가고, 배송 받거나 USDT로 받을 수 있습니다. 알아 둘 값 USDT로 받을 때 상품가의 95% 배송비 $0 가장 적은 충전 금액 $1 모든 결과는 열기 전에 잠가 둔 값으로 다시 계산해 볼 수 있습니다. 개봉 
+PASS n4 | 이용 방법의 검증 링크는 옛 주소(/fairness)를 가리킨다(옮긴 화면을 한 번 거친다)  => ["개봉 결과 검증→/ko/fairness/","약관과 정책→/ko/legal/"]
+PASS n4 | 약관과 정책: 문서 행 13개  => 13
+PASS n4 | 문서 행 → 그 문서, 머리의 뒤로와 아래 링크는 목록으로  => /ko/legal/terms/
+PASS n4 | 뒤로 단추는 목록으로 간다
+INFO n4 | 꼬리말의 링크와 단추  => ["고객 관계 요약→/ko/guide/","박스→/ko/","보관함→/ko/inventory/","지갑→/ko/wallet/","후기→/ko/reviews/","나온 상품→/ko/wins/","이용 방법→/ko/guide/","개봉 결과 검증→/ko/verify/","약관과 정책→/ko/legal/","English→/en/legal/","中文→/zh/legal/","원화로 보기→button"]
+PASS n4 | 팔로우 그림 넷은 주소가 없어 누를 수 없다(링크가 아니다)
+INFO n4 | 콘솔 오류(404 요청 제외)  => Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 () | Failed to load resource: the server responded with a status of 404 ()
+PASS n5 | 연결이 끊기면 머리줄 아래 한 줄  => 인터넷 연결이 끊겼습니다. 연결되면 이어집니다.
+PASS n5 | 다시 연결되면 사라진다
+FAIL n5 | 다른 탭에서 로그아웃하면 이 탭에 세션 끝남 한 줄과 로그인 링크
+FAIL n5 | 이 탭의 주 단추는 로그인하고 언박싱으로 바뀐다(잔액 단추 없음)  => 1개 5개 10개 50개 100개 $1 언박싱
+
+01-nav: 72 pass, 4 fail, 3 info
+exit=0
+=== 01b-nav-debug.mjs ===
+INFO d1 | 없는 주소 화면(상태 404)의 박스 보기 링크  => {"href":"/ko","resolved":"https://shinwon446-eng.github.io/ko","landed":"https://shinwon446-eng.github.io/ko","title":"Site not found · GitHub Pages","body":"404 There isn't a GitHub Pages site here. If you're trying to publish one, read the full documentation to learn how to set up GitHub Pages for your repository, "}
+FAIL d1 | 박스 보기 링크가 이 사이트의 박스 목록으로 간다  => https://shinwon446-eng.github.io/ko
+INFO d1 | /ko/dev/gallery/: 상태, 머리줄 유무, 링크  => {"status":200,"header":1,"href":"/voila-test-aresjoo/ko/","text":"없는 주소 주소가 바뀌었거나 없는 화면입니다. 박스 보기"}
+PASS d2 | 카드 → 뒤로 → 앞으로  => {"href":"/voila-test-aresjoo/ko/box/car-rolls-royce/","u1":"https://shinwon446-eng.github.io/voila-test-aresjoo/ko/box/car-rolls-royce/","u2":"https://shinwon446-eng.github.io/voila-test-aresjoo/ko/","cardsBack":24,"u3":"https://shinwon446-eng.github.io/voila-test-aresjoo/ko/box/car-rolls-royce/","title":"롤스로이스 박스"}
+INFO d2 | 목록을 내린 뒤 박스로 갔다가 뒤로: 스크롤 위치(본 것)  => {"y0":1800,"yBox":0,"y1":1253}
+PASS d3 | 다른 탭: 로그아웃이 끝났다(세션 키 없음)  => {"linkText":"로그아웃","otherText":"계정 로그인하면 잔액과 보관함, 보안 설정이 보입니다. 로그인 가입","sess":null}
+INFO d3 | 로그아웃 뒤 토스트(새 화면의 토스트 자리에 뜨는지 본 것)  => {"toast":""}
+INFO d3 | 이 탭이 받은 storage 사건의 키(본 것)  => [{"key":"voila-test-aresjoo:voila.browser-session.v1","has":false}]
+FAIL d3 | storage 사건만으로 세션 끝남 한 줄이 뜬다  => {"line":0,"btn":"$1 언박싱"}
+PASS d3 | 창으로 돌아오면(focus) 세션을 다시 확인해 한 줄이 뜬다  => {"line":"세션이 끝났습니다. 다시 로그인하면 하던 곳에서 이어집니다. 로그인","btn":"로그인하고 언박싱","bal":0}
+PASS d3 | 한 줄의 로그인 링크는 로그인 시트를 연다
+INFO d4 | 다른 탭이 로그아웃한 뒤, 모르는 탭에서 열기를 눌렀을 때(본 것)  => {"stale":"$1 언박싱","state":{"session":null,"account":{"bal":9999.05,"opens":1},"guest":{"bal":0,"opens":0},"op":true,"line":null}}
+
+01b-nav-debug: 4 pass, 2 fail, 6 info
+exit=0
+=== 02-box.mjs ===
+PASS b1 | 머리: 뒤로(박스 목록), 제목, 한 줄  => 1달러 애플 박스 1회 $1, 최고 상품가 $3,500
+PASS b1 | 별점 줄을 누르면 후기 절로 내려간다  => {"y0":0,"y":499,"top":0,"text":"4.3, 후기 3개"}
+PASS b1 | 대표 상품을 누르면 구성품 절로 내려간다  => {"top":0,"name":"애플 비전 프로 $3,500"}
+PASS b1 | 구성품: 사진 있는 상품은 타일, 없는 상품은 행  => {"tiles":38,"rows":16,"tiers":["박스 가격의 20배 이상","박스 가격의 6배 이상 20배 미만","박스 가격의 2배 이상 6배 미만","박스 가격의 2배 미만"]}
+PASS b1 | 타일을 누르면 상품 시트(상품가, 확률, 받는 방법, USDT로 받으면, 상품가 기준, 배송비)  => 애플 비전 프로 상품가 $3,500 나올 확률 0.0001% 받는 방법 배송 받기, 또는 USDT로 받기 USDT로 받으면 (상품가의 95%) $3,325 상품가 기준 2026년 10월 기준 미국 시장가 어림값, 세금 제외 배송비 무료, 배송 가능 나라 13곳(배송 시트에서 고릅니다) 배송 가능 나라 보기
+PASS b1 | 배송 가능 나라 보기: 나라 13곳이 펼쳐지고 링크 글이 닫기로 바뀐다  => 애플 비전 프로 상품가 $3,500 나올 확률 0.0001% 받는 방법 배송 받기, 또는 USDT로 받기 USDT로 받으면 (상품가의 95%) $3,325 상품가 기준 2026년 10월 기준 미국 시장가 어림값, 세금 제외 배송비 무료, 배송 가능 나라 13곳(배송 시트에서 고릅니다) 배송 가능 나라 닫기 대한민국, 미국, 중국, 일본, 싱가포르, 홍콩, 대만, 영국, 독일, 프랑스, 오스트레일리아, 캐나다, 아랍에미리트
+PASS b1 | 다시 누르면 접힌다
+INFO b1 | 이 상품은 다른 박스에 없다(비교 링크 없음)
+PASS b1 | Esc 로 상품 시트가 닫힌다
+PASS b1 | 다시 열면 나라와 비교는 접힌 상태로 시작한다
+PASS b1 | 확률 요약 행과 구간별 확률  => 확률 요약 최고 상품가 $3,500 가장 흔한 결과 $0.05, 48.2083% 실물이 나올 확률 1.1785% 가장 작은 결과 $0.05 낸 값보다 적게 받을 확률 77.3362% 기대 가치 비율 (평균) 99.0%, USDT로 받을 때 기준 박스 가격의 20배 이상 0.4204% 박스 가격의 6배 이상 20배 미만 1.7434% 박스 가격의 2배 이상 6배 미만 15.5% 박스 가격의 2배 미만 82.3362% 상품별 확률 보기
+PASS b1 | 상품별 확률표는 접혀 있다
+PASS b1 | 누르면 펼쳐지고 상품마다 한 행(값과 확률)  => {"rows":54,"first":"애플 비전 프로 $3,500 0.0001%"}
+PASS b1 | 확률표의 행도 상품 시트를 연다
+PASS b1 | summary 에서 Enter 로 접힌다(키보드)
+PASS b1 | 알아둘 것: 펼치면 터짐 게이지 설명, 기대 가치 설명, 검증 링크  => 알아둘 것 열 때마다 박스 가격의 10%가 터짐 게이지에 쌓입니다. 터짐(나올 확률 0.625%)이 나오면 게이지 전부를 USDT로 받고, 게이지는 $10부터 다시 쌓입니다. 터짐이 나올 확률은 게이지가 얼마나 찼는지와 무관하게 늘 같습니다. 게이지는 이 박스와 이 계정의 것이고, 터질 때만 받을 수 있습니다. 기대 가치 비율은 모든 결과를 USDT로 받는
+PASS b1 | 콘솔 오류 없음
+PASS b2 | 후기 띠: 평균과 분포, 카드  => {"cards":3,"sum":"4.3 후기 3개 5 2 4 0 3 1 2 0 1 0"}
+INFO b2 | 옆으로 넘기는 단추: 처음에는 다음만(넘길 것이 있을 때)  => ["next"]
+PASS b2 | 다음 단추는 줄을 옆으로 넘기고 이전 단추가 나타난다  => {"x0":0,"x1":172,"btns":["prev"]}
+PASS b2 | 이전 단추로 돌아오면 이전 단추가 사라진다  => ["next"]
+PASS b2 | 후기 카드를 누르면 후기 상세(쓴 사람, 시각, 내용, 상품, 박스 링크)  => 후기 상세 min*** 2026.10.02 12:32 1달러짜리에서 이게 나올 줄은 몰랐네요. 미개봉 새 제품이었습니다. 상품 애플 TV 4K 현재 상품가 $150 박스 1달러 애플 박스, $1 1달러 애플 박스 보기
+PASS b2 | 예시 후기에는 검증 줄이 없다
+PASS b2 | 후기 모두 보기 링크는 이 박스를 실은 주소  => /voila-test-aresjoo/ko/reviews/?box=dollar-apple
+PASS b2 | 후기 모아보기: 그 박스가 골라져 있고 뒤로는 그 박스로  => {"chip":"1달러 애플 박스","url":"https://shinwon446-eng.github.io/voila-test-aresjoo/ko/reviews/?box=dollar-apple"}
+PASS b2 | 전체를 누르면 모든 박스의 후기, 뒤로는 박스 목록, 주소는 그대로(알약은 주소를 바꾸지 않는다)  => {"n1":3,"n2":28,"url":"https://shinwon446-eng.github.io/voila-test-aresjoo/ko/reviews/?box=dollar-apple"}
+PASS b2 | 새로 고치면 주소의 박스가 다시 골라진다(알약 선택은 저장되지 않는다)
+PASS b2 | 후기 상세의 박스 링크  => /voila-test-aresjoo/ko/box/dollar-apple/
+PASS b2 | 나온 상품 링크
+PASS b2 | 비로그인의 나온 상품: 로그인 한 줄과 단추  => 나온 상품 박스 가격의 2배 이상인 상품이 나오면 새것부터 쌓입니다. 후기를 쓰지 않아도 쌓입니다. 로그인하면 이 기기의 내 기록이 표시됩니다. 로그인
+PASS b2 | 콘솔 오류 없음
+PASS b3 | 실물 전용 박스: 옆 칸에 터짐 게이지 행이 없고, 확률 요약에 기대 가치 두 줄  => {"side":"박스 가격 $250 최대 배수 1,600배 1개 5개 10개 50개 100개 로그인하고 언박싱 1개, $250. 로그인한 뒤 USDT 잔액으로 결제합니다.","odds":"확률 요약 최고 상품가 $400,000 가장 흔한 결과 $129, 4.5633% 실물이 나올 확률 100% 가장 작은 결과 $25.95 낸 값보다 적게 받을 확률 79.1086% 기대 가치 비율 (상품가 기준, 평균) 99.0% 전부 USDT로 받을 때 94.0% 박스 가격의 20배 이상 0.2909% 박스 가격의 6배 이상 20배 미만 1.4453% 박스 가격의 2배 이상 6배 미만 4% 박스 가격의 2배 미만 94.2638% 상품별 확률 보기"}
+PASS b3 | 후기 없는 박스: 없다고 말하고 나온 상품 링크만  => 후기 아직 후기가 없습니다. 실제로 연 기록에만 후기를 쓸 수 있습니다. 나온 상품
+PASS b3 | 별점 줄 없음
+
+02-box: 32 pass, 0 fail, 2 info
+exit=0
+=== 05-take.mjs --only t1,t3,t4,t5,t6 ===
+PASS t1 | 탭 셋과 개수(보관 중 2, 배송 0, 받은 것 0)  => ["보관 중 2","배송 0","받은 것 0"]
+PASS t1 | 행: 이름, 상품가, 받을 금액(95%)  => ["아이폰 16 프로 256GB 상품가 $1,000 $950 ›","에어팟 맥스 USB-C 상품가 $549 $521.55 ›"]
+PASS t1 | 배송 탭: 빈 상태 한 줄, 받기 단추 없음
+PASS t1 | 받은 것 탭: 빈 상태 한 줄
+PASS t1 | 선택 시트: 아무것도 고르지 않았고 주 단추가 눌리지 않는다
+PASS t1 | 하나 고르면 머리 행은 mixed, 주 단추에 1개와 금액  => USDT로 받기 (1개, $950)
+PASS t1 | 행에서 Space 로 선택을 푼다(키보드)
+PASS t1 | 전체 선택: 2개와 합계
+PASS t1 | 확인창이 같은 자리에 뜬다(시트 하나만 보인다)
+PASS t1 | 확인창의 Esc 는 고르는 단계로 돌아간다(고른 것 유지, 돈 그대로)
+PASS t1 | 확정을 네 번 눌러도 지급은 한 번: 잔액 11471.55, sellback 1건(상품 id 둘), SOLD 2  => {"bal":11471.55,"sb":[{"amount":1471.55,"ref":"capture-item-1,capture-item-2","itemIds":["capture-item-1","capture-item-2"]}]}
+PASS t1 | 결과 한 줄  => USDT로 받기 잔액에 $1,471.55 넣었습니다. 닫기
+PASS t1 | 닫으면 보관 중 탭 그대로(빈 상태와 박스 보기 단추), 탭 개수가 바뀐다, 머리줄 잔액도 바뀐다  => ["보관 중 0","배송 0","받은 것 2"]
+PASS t1 | 새로 고침 뒤에도 그대로
+PASS t1 | 받은 것의 상세: USDT로 받음, 받은 금액, 받기 단추 없음, 검증 링크  => 아이폰 16 프로 256GB 1달러 애플 박스 상태 USDT로 받음 상품가 $1,000 받은 날 2026년 10월 12일 받은 금액 $950 후기 후기 쓰기 › 개봉 결과 검증
+PASS t1 | 콘솔 오류 없음
+PASS t3 | 후기 쓰기: 같은 자리에서 후기 시트로(별점 알약 다섯, 5점이 골라져 있다, 글 칸, 사진 칸)  => 후기 쓰기 아이폰 16 프로 256GB을(를) 받은 기록에 묶여 올라갑니다. 1점 2점 3점 4점 5점 후기 사진 (선택) 후기 올리기 실제 개봉 기록과 함께 박스 화면에 보입니다.
+PASS t3 | 빈 글로 올리면 5자 이상이라는 한 줄
+PASS t3 | 글을 고치면 한 줄이 지워진다
+PASS t3 | 4자도 실패
+PASS t3 | 올리면 후기 하나가 저장된다(gachaflix.community), 별점 4  => [{"id":"my_b3f3b0b8-9200-43b8-8dac-d171dec7c20c","rating":4,"owned":"capture-item-1","author":"촬영계정"}]
+PASS t3 | 올린 뒤 상품 상세로 돌아오고 행이 올렸다고 말한다  => 아이폰 16 프로 256GB 1달러 애플 박스 상태 보관 중 상품가 $1,000 받은 날 2026년 10월 12일 후기 후기를 올렸습니다 USDT로 받기 ($950) 배송 받기 개봉 결과 검증
+PASS t3 | 박스 화면의 후기 띠 맨 앞에 내 후기, 후기 수가 4로 는다  => {"first":"claude-b 감사용 후기입니다. 포장이 깔끔했습니다. 촬영계정 아이폰 16 프로 256GB $1,000 2026.10.12 21:25","sum":"4.3 후기 4개 5 2 4 1 3 1 2 0 1 0"}
+PASS t3 | 내 후기의 상세: 검증 줄과 그 개봉의 값을 실은 검증 링크  => {"vhref":"/voila-test-aresjoo/ko/verify/?s=capture-fixture&h=ed6e02138d2dded3d180f31a09ae176a80692b3c86e0a0f352a655140c0bb185&c=capture-client&n=0&box=dollar-apple","t":"후기 상세 촬영계정 2026.10.12 21:25 claude-b 감사용 후기입니다. 포장이 깔끔했습니다. 상품 아이폰 16 프로 256GB 현재 상품가 $1,000 박스 1달러 애플 박스, $1 미리 잠근 해시와 개봉 기록을 대조합니다. 개봉 결과 검증 1달러 애플 박스 보기"}
+PASS t3 | 검증 화면: 값이 미리 채워져 있다(공개된 값, 잠근 값, 내 기기 값, 회차)  => ["capture-fixture","ed6e02138d2dded3d180f31a09ae176a80692b3c86e0a0f352a655140c0bb185","capture-client","0"]
+PASS t3 | 새로 고친 뒤 후기는 저장소에 남아 있다
+PASS t3 | 콘솔 오류 없음
+PASS t4 | 잔액 시트: 행 셋, 주 단추 USDT로 받기, 링크 둘(충전, 출금)  => 잔액 개봉에 쓸 잔액 $10,000 출금할 수 있는 잔액 $10,000 보관 중인 상품 2개 USDT로 받으면 $1,471.55 USDT로 받기 USDT 충전하기 출금
+PASS t4 | USDT로 받기: 같은 자리에서 선택 시트로(시트 하나)
+PASS t4 | 선택 시트를 닫으면 잔액 시트로 돌아가지 않고 전부 닫힌다
+PASS t4 | 충전 링크: 잔액 시트가 닫히고 충전 시트가 뜬다(시트 하나)  => USDT 충전 아래 주소로 USDT를 보내면 잔액에 들어옵니다. USDT (TRC-20) USDT (BEP-20) USDT (ERC-20) 주소
+PASS t4 | 출금 링크: 출금 화면으로 가고 시트가 닫힌다
+PASS t4 | 보관 상품이 없으면 주 단추 USDT 충전하기, 링크 둘(출금, 지갑 내역)
+PASS t4 | 지갑 내역 링크
+PASS t5 | 보관 중인데 입금 내역이 있는 상품: 확인 필요라고 적고 받을 금액을 적지 않는다, 한 번에 받기 단추 없음  => 에어팟 맥스 USB-C 확인 필요, 상품가 $549 ›
+PASS t5 | 그 상세: 확인하지 못했다는 한 줄, 받기 단추와 배송 링크 없음, 지갑 내역과 검증 링크  => 에어팟 맥스 USB-C 1달러 애플 박스 상태 확인 필요 상품가 $549 받은 날 2026년 10월 12일 후기 후기 쓰기 › 처리 상태를 확인하지 못했습니다. 보관함과 지갑 내역에서 확인할 수 있습니다. 지갑 내역 개봉 결과 검증
+PASS t5 | 받은 상태인데 입금 내역이 없는 상품: USDT로 받음도 받은 금액도 적지 않는다  => 아이폰 16 프로 256GB 확인 필요, 상품가 $1,000 ›
+PASS t5 | 잔액 시트: 받을 수 있는 상품으로 세지 않는다  => 잔액 개봉에 쓸 잔액 $10,521.55 출금할 수 있는 잔액 $10,521.55 보관 중인 상품 없음 USDT 충전하기 출금 지갑 내역
+PASS t5 | 돈은 움직이지 않았다(10521.55, sellback 1건)  => 10521.55
+PASS t5 | 확인 대기 표시가 저장소에 그대로 남아 있다  => ["voila.take-unconfirmed.gachaflix.wallet","voila.take-unconfirmed.voila.browser-wallet.capture-account"]
+PASS t6 | 저장소에 쓸 수 없으면 받기를 시작하지 않는다: 받지 못했다는 한 줄과 다시 시도 단추  => USDT로 받기 USDT로 받지 못했습니다. 상품은 보관함에 있습니다. 다시 시도 닫기
+PASS t6 | 저장된 장부와 화면의 잔액 모두 그대로(10000, 보관 2, sellback 0)  => {"bal":10000,"held":2,"mem":"잔액 $10,000"}
+PASS t6 | 저장소가 돌아온 뒤 다시 시도: 한 번만 지급(11471.55, sellback 1건)  => {"bal":11471.55,"sb":1}
+INFO t6 | 받는 도중 저장이 실패했을 때 화면이 말하는 것(본 것)  => {"sheet":"USDT로 받기 USDT로 받지 못했습니다. 상품은 보관함에 있습니다. 다시 시도 닫기","mem":"잔액 $10,000","btns":{"done":0,"retry":1},"saved":{"bal":10000,"held":2,"sold":0,"sellbacks":0}}
+PASS t6 | 받는 도중 저장 실패: 받았다고 말하지 않는다  => USDT로 받기 USDT로 받지 못했습니다. 상품은 보관함에 있습니다. 다시 시도 닫기
+PASS t6 | 받는 도중 저장 실패: 저장된 장부에는 돈이 들어오지 않았다  => {"bal":10000}
+PASS t6 | 저장소가 돌아오고 창으로 돌아온 뒤: 화면의 잔액이 저장된 장부(10000)와 다시 맞는다  => {"mem3":"잔액 $10,000","saved":10000,"held":2}
+
+05-take: 46 pass, 0 fail, 1 info
+exit=0
+=== 06-wallet.mjs --only w1,w2 ===
+PASS w1 | 비로그인 지갑: 로그인 한 줄과 로그인 단추
+PASS w1 | 로그인 단추는 로그인 시트
+PASS w1 | 지갑: 출금할 수 있는 잔액 행, 주 단추 충전, 링크 출금, 내역 한 행(보너스)  => 지갑 USDT를 충전하고, 출금하고, 내역을 봅니다. 출금할 수 있는 잔액 $10,000 USDT 충전하기 출금 내역 보너스 2026년 10월 12일 오후 09:26 +$10,000
+PASS w1 | 충전 시트: 네트워크 알약 셋(TRC-20 이 골라져 있다)
+PASS w1 | 배포 사이트에는 입금 주소가 없다: 주소를 받지 못했다는 한 줄과 주소 다시 받기 단추(QR, 주소, 복사 단추 없음)  => USDT 충전 아래 주소로 USDT를 보내면 잔액에 들어옵니다. USDT (TRC-20) USDT (BEP-20) USDT (ERC-20) 주소를 받지 못했습니다. 주소 다시 받기 1 USDT부터 보낼 수 있습니다. 12번 확인되면 잔액에 들어옵니다.
+PASS w1 | 네트워크를 바꾸면 다시 주소를 청한다(BEP-20 도 받지 못한다)
+PASS w1 | 주소 다시 받기를 눌러도 결과는 같다(실패 한 줄 그대로)
+PASS w1 | 충전 시트를 여닫아도 장부는 그대로
+PASS w1 | 내역 행을 누르면 거래 시트(종류, 시각, 금액)  => 보너스 2026년 10월 12일 오후 09:26 금액 +$10,000
+PASS w1 | 출금 링크
+PASS w1 | 콘솔 오류 없음
+PASS w2 | 저장된 거래는 셋(보너스, 박스 열기, USDT로 받기)  => {"opens":[{"amount":-1,"ref":"dollar-applex1:op_d0d3a7ca-f1c3-4cf3-b997-bb136489ed61"}],"sellbacks":[{"amount":19,"ref":"own_ccbd3517-e42e-4fa2-80eb-ee1332f437a0","itemIds":["own_ccbd3517-e42e-4fa2-80eb-ee1332f437a0"]}]}
+INFO w2 | 지갑 내역에 보이는 행(계정 표시가 있는 거래만 나온다)  => ["보너스 2026년 10월 12일 오후 09:26 +$10,000"]
+FAIL w2 | 박스 열기와 USDT로 받기 거래가 지갑 내역에 보인다  => ["보너스 2026년 10월 12일 오후 09:26 +$10,000"]
+
+06-wallet: 12 pass, 1 fail, 1 info
+exit=0
+=== 07-verify-wins.mjs ===
+PASS v1 | 비로그인 검증 화면: 내 기록 자리에 로그인 한 줄, 직접 계산과 검증 방식은 로그인 없이 쓸 수 있다  => 개봉 결과 검증 열기 전에 잠가 둔 값으로 번호를 이 브라우저에서 다시 계산합니다. 내 개봉 기록 로그인하면 내 개봉 기록을 하나씩 다시 계산할 수 있습니다. 로그인 값을 직접 넣어 계산 결과 화면이나 보관함의 값을 그대로 넣으면 같은 번호가 나옵니다. 공개된 값 미리 잠근 값 (선택) 내 기기 값 회차 포켓몬 카드 박스 1달러 애플 박스 자동차 박스 시계
+PASS v1 | 빈 채로 계산하기: 실패 한 줄
+PASS v1 | 회차가 음수면 실패 한 줄
+PASS v1 | 직접 계산(박스 알약 334개): 해시, 번호, 번호가 가리키는 상품(고정값의 상품과 같다)  => 공개된 값의 해시 1f07b3d2c1…a862ad49 계산한 번호 3,925 번호가 가리키는 상품 USB-C 충전 케이블 2m
+PASS v1 | 잠근 값을 넣으면 같은지 한 행으로 말한다
+PASS v1 | 잠근 값이 다르면 다르다고 말한다
+PASS v1 | 값을 고쳐도 계산하기를 다시 누르기 전에는 앞의 결과가 남아 있다
+PASS v1 | 주소의 값으로 미리 채우고 그 절로 내려간다(박스도 골라진다). 계산은 스스로 하지 않는다  => {"vals":["opening-fixture-server-seed","1f07b3d2c12af1ddfd90ef04b7549bfc622e1011d068d12da334c57ca862ad49","opening-fixture-client","1662"],"pressed":"1달러 애플 박스","top":0}
+PASS v1 | 주소의 박스가 없는 박스면 첫 박스가 골라진 채다
+PASS v1 | 콘솔 오류 없음
+PASS v2 | 내 개봉 기록 행: 상품, 박스, 시각, 회차  => 애플워치 SE 3 1달러 애플 박스, 10월 12일 오후 09:26, 회차 355,255 검증 ›
+PASS v2 | 검증 시트: 세 단계, 저장한 확률표로 계산, 일치 판정  => 라우저에서 만들고 저장합니다. 2. 블록체인 기록 상태 블록체인 기록 없음 이 테스트 사이트는 잠근 값을 블록체인에 올리지 않습니다. 블록체인 기록을 붙이면 열기 전에 잠근 값을 기록하고, 이 자리에서 그 기록을 열어 대조합니다. 3. 다시 계산한 결과 공개된 값 opening-fi…ver-seed 내 기기 값 opening-fi…e-client 회차 355,255 확률표 개봉할 때 저장한 표 계산한 번호 59 번호가 가리키는 상품 애플워치 SE 3 다시 계산한 결과가 받은 상품과 같습니다. 블록체인 검증 방식 값을 직접 넣어 검증
+PASS v2 | 값을 직접 넣어 검증: 시트가 닫히고 같은 화면의 직접 계산 칸이 채워진다  => ["opening-fixture-server-seed","1f07b3d2c12af1ddfd90ef04b7549bfc622e1011d068d12da334c57ca862ad49","opening-fixture-client","355255"]
+PASS v2 | 나온 상품: 범위 한 줄과 줄 하나(상품가 250, 박스, 가린 이름과 시각)  => 나온 상품 박스 가격의 2배 이상인 상품이 나오면 새것부터 쌓입니다. 후기를 쓰지 않아도 쌓입니다. 이 기기에서 이 계정으로 연 기록입니다. 애플워치 SE 3 $250 1달러 애플 박스 촬영***, 2026.10.12 21:26 ›
+PASS v2 | 줄을 누르면 상세(박스, 그때의 1회 가격 $1, 상품가, 배수 250배, 무료 개봉 아니오, 나온 때)  => 애플워치 SE 3 실제 사진이 아니라 생성한 참고 이미지입니다. 받는 상품은 이름에 적힌 모델입니다. 박스 1달러 애플 박스 그때의 1회 가격 $1 상품가 $250 배수 250배 무료 개봉 아니오 나온 때 2026.10.12 21:26 개봉 결과 검증 1달러 애플 박스 보기
+PASS v2 | 상세의 개봉 결과 검증: 같은 자리에서 검증 시트로 바뀐다(시트 하나)
+PASS v2 | 검증 시트를 닫으면 상세로 돌아가지 않고 목록이다
+PASS v2 | 상세의 박스 링크는 그 박스로
+PASS v2 | 콘솔 오류 없음
+PASS v2 | 그때 가격이 없는 옛 기록: 지금의 1회 가격이라고 적고 그 사실을 한 줄로, 무료 개봉은 기록 없음  => 아이폰 16 프로 256GB 박스 1달러 애플 박스 지금의 1회 가격 $1 상품가 $1,000 배수 1,000배 무료 개봉 기록 없음 나온 때 2026.10.12 21:26 이 기록에는 그때 가격이 없어 지금 가격으로 견주었습니다. 개봉 결과 검증 1달러 애플 박스 보기
+PASS v3 | 더 보기로 72장까지 늘리고 분류(여성 가방)를 고른 뒤 박스에 갔다가 뒤로: 목록은 처음 상태(전체 박스, 24장)로 돌아온다  => {"cards":24,"cat":"전체 박스"}
+
+07-verify-wins: 21 pass, 0 fail, 0 info
+exit=0
+=== 10-misc.mjs --only m1,m2,m3 ===
+PASS m1 | 잔액 1 로 1달러 박스를 열어 0.05 를 받은 뒤: 한 번 더 자리에 부족 한 줄과 USDT 충전하기(보관 상품 없음)  => 잔액 $0.05 받은 금액 $0.05 $1 사용 잔액 $0.95 감소 잔액에 반영했습니다. 나올 확률 48.2083% 터짐 게이지 $10.1 잔액 $0.05. $0.95 더 필요합니다. USDT 충전하기 개봉 결과 검증 박스로 돌아가기
+PASS m1 | 결과 화면 위에서 충전 시트가 열린다(결과 화면은 그대로)
+PASS m1 | 충전 시트의 Esc 는 시트만 닫는다
+PASS m1 | 구매는 1건뿐(스스로 다시 열지 않는다)
+PASS m1 | 상품이 나온 결과(잔액 0): 주 단추는 이 상품의 USDT로 받기  => 잔액 $0 USB-C 충전 케이블 2m 상품가 $20 낸 값의 20배 보관함에 넣었습니다. 나올 확률 0.1105%. $1 사용 터짐 게이지 $10.1 USDT로 받기 ($19) 상품가 $20의 95% 보관함에 두기 개봉 결과 검증
+PASS m1 | 받은 뒤(잔액 19): 한 번 더 언박싱이 주 단추가 된다. 스스로 열지 않는다  => 잔액 $19 잔액에 $19 넣었습니다 낸 값의 19배 $1 사용 잔액 $18 증가 USB-C 충전 케이블 2m, 상품가 $20. USDT로 받았습니다. 나올 확률 0.1105% 터짐 게이지 $10.1 한 번 더 언박싱 $1 개봉 결과 검증 박스로 돌아가기
+PASS m2 | 두 탭에서 한 번씩 열면 구매 2건, 기록 2건, 회차가 겹치지 않는다(다른 탭의 화면 잔액은 그때까지 옛 값이었다: 잔액 $10,000)  => {"a":9999.05,"b":9998.3,"nonces":[2,1]}
+PASS m2 | 잔액 = 10000 - 2 + 두 결과의 합  => {"bal":9998.3,"cash":0.3}
+INFO m2 | 첫 탭으로 돌아왔을 때의 화면 잔액(본 것. 저장된 잔액은 9998.3)  => 잔액 $9,999.05
+PASS m3 | 수량은 새로 고치면 1개로 돌아간다(저장하지 않는다)
+PASS m3 | 5개 열기의 연출 중 새로 고침: 구매 1건, 기록 5건, 봤음 0  => {"bal":9997.15}
+PASS m3 | 결과 보기: 같은 다섯 결과의 요약(쓴 금액 $5, 잔액에 반영 $2.15, 보관 상품 1개)  => 잔액 $9,997.15 5개를 열었습니다 받은 상품은 보관함에 있습니다. 가장 큰 결과 애플 기프트카드 $10 상품가 $10, 10배 쓴 금액 $5 잔액에 반영 $2.15 보관 상품 1개 상품가 $10 터짐 게이지 $10.5 잔액 변화 $2.85 감소 애플 기프트카드 $10, 보관 중, 10배 $10 › 인스턴트 드롭, 잔액 반영, 2배 $2 즉시 캐시백, 잔액 반영, 3번 $0.05 USDT로 받기 (1개, $9.5) 보관함에 두기 한 번 더 언박싱 $1
+PASS m3 | 다시 본 뒤에도 구매 1건, 봤음 1
+
+10-misc: 12 pass, 0 fail, 1 info
+exit=0
+=== 12-extra.mjs ===
+PASS x1 | "다른 박스 6개와 비교": 이 박스는 글만, 다른 박스는 링크인 행이 펼쳐지고 링크 글은 사라진다  => {"links":["/ko/box/watch-cartier/","/ko/box/watch-iwc/","/ko/box/watch-zenith/","/ko/box/watch-blancpain/"],"t":"시트에서 고릅니다) 배송 가능 나라 보기 같은 상품의 1회 가격과 확률입니다. 어느 박스든 상품을 바로 사는 것은 아닙니다. 롤렉스 박스, $250 1.4186% 까르띠에 시계 박스, $250 4.4125% IWC 박스, $250 3.7607% 제니스 박스, $250 4.5174% 블랑팡 박스, $250 4.5092% 브레게 박스, $250 3.6162% 세이코 박스, $100 5.5461%"}
+PASS x1 | 비교 행의 링크는 그 박스로 간다(시트는 화면과 함께 사라진다)  => /ko/box/watch-cartier/
+PASS x2 | 배송 프리셋: 보관 중 0, 배송 2  => ["보관 중 0","배송 2","받은 것 0"]
+PASS x2 | 배송 탭의 행(배송 신청함, 배송 중)  => ["아이폰 16 프로 256GB 배송 신청함, 2026년 10월 12일 $1,000 ›","에어팟 맥스 USB-C 배송 중, 2026년 10월 12일 $549 ›"]
+PASS x2 | 배송 중 상세: 택배사와 운송장 행, 주 단추는 밖으로 나가는 배송 조회 링크(새 창)  => {"href":"https://www.dhl.com/kr-ko/home/tracking/tracking-express.html?submit=1&tracking-id=CAPTURE-ONLY","t":"에어팟 맥스 USB-C 1달러 애플 박스 상태 배송 중 상품가 $549 받은 날 2026년 10월 12일 배송 신청일 2026년 10월 12일 택배사 DHL 운송장 번호 CAPTURE-ONLY 후기 후기 쓰기 › 배송 조회 ↗ 개봉 결과 검증"}
+PASS x2 | 배송 신청함 상세: 운송장 안내 한 줄과 배송 신청 취소 단추  => 아이폰 16 프로 256GB 1달러 애플 박스 상태 배송 신청함 상품가 $1,000 받은 날 2026년 10월 12일 배송 신청일 2026년 10월 12일 후기 후기 쓰기 › 운송장 번호는 출고되면 표시됩니다. 배송 신청 취소 개봉 결과 검증
+PASS x2 | 취소는 확인창을 거친다
+PASS x2 | 확정(세 번 눌러도 한 번): 상품이 보관 중으로 돌아오고 보관 중 탭으로 옮겨 간다. 배송비가 0 이라 돈은 움직이지 않는다  => {"statuses":["IN_STORAGE","SHIPPING"],"tabs":["보관 중 1","배송 1","받은 것 0"]}
+PASS x2 | 배송 시트를 열면 지난번에 쓴 주소가 채워져 있다(나라 싱가포르, 통관 칸 없음)  => ["촬영 수령인","+6500000000","000000","Capture fixture address"]
+PASS x2 | 비로그인 보관함: 로그인 한 줄과 로그인 단추(탭 없음)
+PASS x2 | 로그인 단추는 로그인 시트
+PASS x3 | 여럿 열기의 연출 화면: N개 여는 중과 결과 바로 보기
+PASS x3 | 연출 중 Esc: 닫히지 않고 결과로 건너뛴다
+PASS x3 | 결과가 뜬 직후(0.35초 안)의 Esc 는 닫지 않고, 그 뒤의 Esc 는 닫는다  => {"early":1}
+PASS x3 | USDT 결과 행(묶이지 않은 것)을 누르면 그 결과의 검증 시트  => 개봉 결과 검증 열기 전에 잠가 둔 값으로 번호를 이 브라우저에서 다시 계산합니다. 1. 열기 전에 잠근 값
+PASS x3 | 전부 USDT 결과면 주 단추가 한 번 더 언박싱이고, 누르면 같은 수량으로 한 번 더 연다(구매 +1, 기록 +5)  => {"opens":3,"items":15}
+PASS x3 | 박스로 돌아가기: 결과 화면이 닫힌다
+PASS x4 | 사진 칸에 그림 파일을 넣으면 미리 보기가 뜬다(또는 읽지 못했다는 한 줄)  => {"preview":1,"fail":[]}
+PASS x4 | 그림이 아닌 파일: 읽지 못했다는 한 줄  => ["사진을 읽지 못했습니다. 다른 파일을 고릅니다."]
+
+12-extra: 19 pass, 0 fail, 0 info
+exit=0
+ALL DONE

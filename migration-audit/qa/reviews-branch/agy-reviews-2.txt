@@ -1,0 +1,222 @@
+root agent idle; waiting up to 30m0s for 2 background task(s)
+조사 작업을 진행 중입니다. 잠시 후 결과가 반환되면 상세 분석을 이어가겠습니다.
+잠시 대기합니다.
+작업 완료 알림을 기다립니다.
+잠시 대기합니다.
+VOILA 샘플 후기 기능(커밋 63445c7부터 HEAD)에 대한 반응형 동작 및 접근성 코드 검토 결과입니다.
+
+검토 대상 파일:
+1. web/lib/reviewSamples.ts
+2. web/lib/reviewSampleText.ts
+3. web/components/box/BoxReviews.tsx
+4. web/components/box/ReviewsScreen.tsx
+5. web/components/box/BoxScreen.tsx
+6. web/app/reviews.css
+7. web/messages/v.ko.json, v.en.json, v.zh.json
+8. web/tests/reviewSamples.test.ts
+
+참조 자료:
+1. DESIGN.md (18번 원칙: 정식 서비스 전까지 샘플 후기로 채움)
+2. qa/work/reviews-v2 및 qa/work/reviews-v3 스크린샷 일체
+3. http://localhost:3003 구동 환경 실측 데이터
+
+
+1. 너비별 반응형 동작 (320px, 390px, 768px, 1440px) 및 다국어 지원
+
+1) 320px 너비 (초소형 모바일)
+근거: qa/work/reviews-v2/box-mobile-apple-list10-mobile.png, web/app/tokens.css 58행(--v-gutter: 16px)
+- 좌우 여백 16px씩 총 32px를 제외하면 가용 너비는 288px입니다.
+- 가로 넘침(scrollWidth 초과)은 세 언어(ko, en, zh) 모두 발생하지 않았습니다.
+- web/components/box/BoxReviews.tsx 62행 RatingBlock의 별점 막대(v-rvbars)는 평균 점수 영역(88px)과 간격(24px), 패딩(40px)을 빼고 남은 너비가 약 136px입니다. 1점부터 5점까지의 막대 폭이 약 52px에서 76px 수준으로 압축되지만 막대와 숫자가 겹치지 않고 정상 표시됩니다.
+- web/app/reviews.css 12행부터 14행의 카드 상단 헤더(v-rv-head)는 별 5개(약 69px)와 작성 시각(v-rv-ago, flex: none) 사이에서 작성자명(v-rv-author)이 가용 공간에 맞게 말줄임표로 정상 축소됩니다.
+- 다국어 시각 표기(예: 영어 "11 months ago", 중국어 "11 个月前")가 한국어보다 길어지더라도 작성자명이 축소되므로 줄바꿈 깨짐이 없습니다.
+
+2) 390px 너비 (표준 모바일)
+근거: qa/work/reviews-v3/box-mobile.png, box-full-mobile.png
+- 카드 너비 약 358px로 가장 안정적인 1열 레이아웃을 형성합니다.
+- 모바일 하단 플로팅 열기 막대(.v-openbar)가 화면 하단을 덮지만, web/app/ui.css 321행의 패딩 보정으로 푸터와의 겹침이 방지되어 있습니다.
+
+3) 768px 너비 (태블릿)
+근거: web/app/reviews.css 30행
+- reviews.css 30행에 @media (min-width: 1024px) 로 그리드가 선언되어 있어 768px 너비에서는 2열 그리드가 동작하지 않고 1열로 유지됩니다.
+- 가용 너비 736px 전체를 후기 카드 한 줄이 가로로 길게 차지하여, 텍스트와 우측 상품 카드 사이의 여백이 과도하게 벌어지고 화면 활용도가 떨어집니다.
+
+4) 1440px 너비 (데스크톱)
+근거: qa/work/reviews-v2/reviews-all-desktop.png, qa/work/reviews-v3/box-full-desktop.png
+- 후기 모아보기(/reviews) 화면에서는 reviews.css 32행에 따라 2열 그리드(column-gap: 48px)로 정렬됩니다. 첫 번째 줄의 1번째와 2번째 카드 모두 border-top이 0으로 깔끔하게 처리됩니다(reviews.css 33행).
+- 박스 상세 화면(/box/[slug])에서는 좌측 주 본문 열(v-boxlayout-main) 내부에 1열로 배치되며 우측 열에 구매 패널이 고정(sticky) 배치됩니다.
+
+
+2. 긴 상품명의 말줄임 처리 (Text Truncation)
+
+근거:
+- web/components/box/BoxReviews.tsx 178행
+- web/app/reviews.css 25행
+- pokemon-charizard 박스 실측 데이터
+
+1) 후기 카드 내부 상품 카드
+- BoxReviews.tsx 178행의 v-rv-itemname에 reviews.css 25행의 overflow: hidden, text-overflow: ellipsis, white-space: nowrap 이 적용되어 있습니다.
+- 실측 사례: 320px 너비에서 "리자몽 VMAX 다크니스 어블레이즈 020/189" 상품명의 scrollWidth는 251px이고 clientWidth는 212px로 계산되어, 끝부분이 말줄임표로 단정하게 잘립니다. "드래곤 실드 퍼펙트 핏 클리어 슬리브 100매" 역시 238px에서 212px로 정상 말줄임 처리됩니다.
+- 결함: v-rv-itemname 요소에 title 속성이 부여되어 있지 않습니다. 데스크톱 마우스 사용자가 잘린 상품명 위에 커서를 올려도 툴팁으로 전체 이름을 확인할 수 없습니다.
+
+2) 후기 상세 시트(ReviewSheet) 내부 상품명
+- web/components/box/BoxReviews.tsx 216행의 Row 컴포넌트는 web/app/ui.css 89행에 따라 max-width: 70%, white-space: normal, word-break: keep-all 로 동작하여 줄바꿈을 통해 전체 이름을 보여줍니다.
+- 다만 영문 모델 번호나 공백이 없는 긴 단일 식별자가 들어올 경우 overflow-wrap: anywhere 속성이 누락되어 우측으로 넘칠 수 있는 취약점이 있습니다.
+
+3) 후기 본문 4줄 말줄임 판정
+- BoxReviews.tsx 165행: cut 상태는 컴포넌트 마운트 시점에 한 번만 판정됩니다. 창 크기를 변경하거나 기기를 가로로 회전할 때 4줄을 넘겨 잘리는지 여부가 다시 계산되지 않아 "더 보기" 라벨 표시 상태가 갱신되지 않습니다.
+
+
+3. 터치 영역 크기 (Touch Target Sizes)
+
+근거: DESIGN.md 44행 ("터치 영역 44px 이상"), 브라우저 실측 boundingClientRect
+
+1) .v-ratinglink (제목 아래 별점 한 줄 버튼)
+- web/app/ui.css 141행: min-height: var(--v-touch)
+- 실측 크기: 너비 126.8px, 높이 44px로 44px 기준을 충족합니다.
+
+2) .v-rv-btn (후기 행 버튼)
+- web/app/reviews.css 11행: width: 100%, padding: 16px 0
+- 실측 크기: 너비 358px, 높이 120px에서 220px로 44px 기준을 크게 상회합니다.
+
+3) .v-rv-morebtn (후기 더 보기 버튼)
+- web/components/ui/kit.tsx Button 컴포넌트(--v-btn-h: 52px)
+- 실측 크기: 너비 358px, 높이 52px로 충족합니다.
+
+4) .v-links 내부 보조 링크 (.v-link)
+- web/app/ui.css 68행: min-width: var(--v-touch), min-height: var(--v-touch)
+- "후기 모두 보기" 실측 크기: 79.6px x 44px, "나온 상품" 실측 크기: 51.9px x 44px로 모두 44px를 충족합니다.
+
+5) .v-sheet-close (상세 시트 닫기 버튼)
+- web/app/ui.css 121행: width: var(--v-touch), height: var(--v-touch)
+- 실측 크기: 44px x 44px로 충족합니다.
+
+
+4. 후기 행 버튼 시맨틱과 키보드 포커스 (Role, Label, Focus-visible)
+
+근거:
+- web/components/box/BoxReviews.tsx 168행부터 184행
+- web/app/ui.css 15행
+
+1) Role (역할)
+- BoxReviews.tsx 169행에 button type="button" 및 aria-haspopup="dialog" 가 적용되어 있습니다. 카드를 누르면 ReviewSheet 다이얼로그가 열리므로 팝업 다이얼로그 호출용 버튼 역할로 시맨틱이 유효합니다.
+
+2) Accessible Label (접근 가능한 이름)
+- 중대 결함: button 요소에 자체 aria-label이 지정되어 있지 않습니다.
+- W3C 접근 가능한 이름 계산 규칙에 따라 버튼 내부의 모든 텍스트가 공백으로 합쳐져 버튼의 이름으로 낭독됩니다.
+- 실측 예시: "별 5개 일요일아침21 10시간 전 대만족입니다 부모님 선물로 드렸습니다 굿 첨부 사진 애플 아이패드 상품가 $349 좋아요 2"
+- 스크린 리더 사용자가 탭 키로 이동할 때마다 카드의 모든 내용과 부가 설명이 쉼표 없이 장문으로 일괄 낭독되어 심각한 청각 피로를 유발합니다. 또한 이 카드를 눌렀을 때 "후기 상세가 열린다"는 목적 설명이 누락되어 있습니다.
+
+3) Focus-visible (포커스 표시)
+- web/app/ui.css 15행의 전역 :focus-visible 규칙(outline: 2px solid var(--v-title); outline-offset: 2px;)이 적용되어 키보드 탭 이동 시 2px 흰색 외곽선이 뚜렷하게 표시됩니다.
+- 다만 .v-rv-btn이 상하 16px 패딩을 가진 전폭 블록이어서 외곽선이 행 구분선과 맞닿은 큰 직사각형으로 그려집니다. 모서리 라운딩(border-radius)이나 카드 안쪽 여백 조정이 없어 다소 거칠게 보입니다.
+
+
+5. 스크린 리더를 위한 별점 시맨틱 (Star Rating Semantics)
+
+근거: web/components/box/BoxReviews.tsx 38행부터 81행
+
+1) RatingInline (한 줄 별점)
+- BoxReviews.tsx 43행: role="img", aria-label={t("box.ratingAria", { avg, n: summary.count })}
+- 내부 별 아이콘과 텍스트에 aria-hidden이 걸려 있어 "별점 4.5, 후기 240개"로 군더더기 없이 정확하게 음성 출력됩니다.
+
+2) Stars (별 5개 아이콘 묶음)
+- BoxReviews.tsx 53행: role="img", aria-label={t("box.starsOf", { n })}
+- 5개의 Star SVG 모두 aria-hidden 처리되어 "별 4개" 형태로 정확하게 요약됩니다.
+
+3) RatingBlock의 별점 분포 목록 (핵심 접근성 결함)
+- BoxReviews.tsx 74행: ul 요소에 aria-hidden 속성이 지정되어 있습니다.
+- 결과: 스크린 리더는 평균 점수(4.5), 총 후기 수(240개)만 읽고, 5점 152건, 4점 55건, 3점 26건, 2점 5건, 1점 2건이라는 상세 분포 통계를 완전히 무시하고 건너뜁니다.
+- 시각 장애인 사용자는 별점의 분포 상황(만족도 편차)을 전혀 인지할 수 없습니다. 시각적 막대 요소(.v-rvbar)만 숨겨야 하며, ul 및 li의 수치 정보는 스크린 리더에 제공되어야 합니다.
+
+
+6. 사진의 대체 텍스트 (Alt Text of Photos)
+
+근거:
+- web/components/box/BoxReviews.tsx 173행, 177행, 213행
+- web/messages/v.ko.json 591행
+
+1) 상품 썸네일 (BoxReviews.tsx 177행)
+- thumb 이미지에 alt="" 가 적용되어 있습니다. 바로 우측에 상품명 텍스트(v-rv-itemname)가 함께 오므로 스크린 리더의 중복 낭독을 방지하는 모범적인 장식용 이미지 처리 방식입니다.
+
+2) 후기 첨부 사진 (BoxReviews.tsx 173행 및 213행)
+- alt={t("reviews.photo")} 로 지정되어 한국어 "첨부 사진", 영어 "Attached photo", 중국어 "附图" 로 출력됩니다.
+- 결함: DESIGN.md 18번에 명시되어 있듯이, 후기에 표시되는 사진은 일반 고객의 스냅샷이 아니라 카탈로그 상품 사진(studio 배경 규격)입니다.
+- 웹 접근성 지침(WCAG 1.1.1)상 "사진", "이미지" 같은 일반 명사는 부적절한 대체 텍스트로 분류됩니다. 카드에 상품 정보(card.item)가 이미 존재하므로 "롤렉스 서브마리너 사진"과 같이 대상 상품명을 포함한 대체 텍스트를 제공해야 시각 정보를 청각으로 온전하게 전달할 수 있습니다.
+
+
+7. 제목 위계 (Heading Order)
+
+근거:
+- web/components/box/BoxScreen.tsx 173행, 186행, 213행
+- web/components/box/ReviewsScreen.tsx 28행
+- qa/work/reviews-v3/box-full-desktop.png
+
+1) BoxScreen (박스 상세 화면) 제목 위계와 배치 순서 어긋남
+- H1: 박스 이름 (ScreenHead)
+- H2: 후기 (BoxReviews.tsx 243행, id="reviews-title")
+- H2: 구성품 (BoxScreen.tsx 214행, id="box-contents")
+- H3: 20배 이상, 6배 이상, 2배 이상, 2배 미만 (구성품 티어별 소제목)
+- H2: 확률 요약 (BoxScreen.tsx 243행, id="box-odds")
+- H2: 푸터 하위 제목들(제품, 도움, 약관, 설정)
+- 문제점: H1에서 H2, H3로 이어지는 수준 건너뜀은 없으나, 시각적 배치와 문서 구조의 순서가 역전되어 있습니다.
+- BoxScreen.tsx 186행에서 BoxReviews가 구성품 섹션보다 먼저 선언되어 있고, web/app/ui.css 327행에서 order: 3 으로 구성품(order: 4)보다 상단에 놓여 있습니다.
+- 사용자가 상자 상세 페이지를 열었을 때 상자 안의 실제 상품(구성품)을 보기 전에 10건의 대량 샘플 후기 목록을 먼저 스크롤해야 합니다. 스크린 리더로 제목을 탐색할 때도 상품 정보보다 후기 섹션을 먼저 탐색하게 됩니다.
+
+2) ReviewsScreen (후기 모아보기 화면) H2 부재
+- ReviewsScreen.tsx 28행의 ScreenHead에서 H1("후기")만 출력되고, 그 아래 평점 요약 블록이나 후기 목록 영역에 H2 섹션 제목이 없습니다.
+- 화면 내에 다음 헤딩이 푸터의 H2("제품")뿐이어서 제목 기반 화면 탐색이 단절됩니다.
+
+
+8. 동작 줄이기 (Reduced Motion)
+
+근거:
+- web/components/box/BoxScreen.tsx 174행, 178행
+- web/components/box/DetailModal.tsx 233행
+- web/app/ui.css 132행
+
+1) CSS 애니메이션
+- ui.css 132행에 따라 prefers-reduced-motion: no-preference 상태에서만 시트 상승 애니메이션(v-rise)이 실행되므로, 동작 줄이기 설정 시 시트가 즉시 정적으로 나타납니다.
+
+2) 자바스크립트 smooth 스크롤 결함
+- BoxScreen.tsx 174행: document.getElementById("reviews")?.scrollIntoView({ behavior: "smooth", block: "start" })
+- BoxScreen.tsx 178행: document.getElementById("box-contents")?.scrollIntoView({ behavior: "smooth", block: "start" })
+- DetailModal.tsx 233행이나 NetflixHome.tsx 91행에서는 window.matchMedia("(prefers-reduced-motion: reduce)").matches 를 확인하여 auto 와 smooth 를 분기하고 있으나, BoxScreen.tsx 의 후기 링크와 대표 상품 링크는 smooth 스크롤이 무조건 강제 실행됩니다. 동작 줄이기를 요청한 사용자에게 어지러움을 유발할 수 있습니다.
+
+
+9. 개선 제안 우선순위 목록
+
+1순위. RatingBlock 별점 분포(ul)의 aria-hidden 속성 제거 및 목록 접근성 개선
+- 대상: web/components/box/BoxReviews.tsx 74행부터 78행
+- 기대 효과: 시각 장애인 스크린 리더 사용자가 5점부터 1점까지의 별점별 후기 건수 분포를 음성으로 온전하게 확인할 수 있습니다.
+- 회귀 위험: 매우 낮음. 시각적 CSS 스타일이나 레이아웃에는 아무런 영향을 주지 않으며 순수 접근성 트리만 개선됩니다. 막대 그래픽(.v-rvbar)에만 aria-hidden을 유지하면 됩니다.
+
+2순위. BoxScreen 내 부드러운 스크롤의 동작 줄이기 미디어 쿼리 반영
+- 대상: web/components/box/BoxScreen.tsx 174행, 178행
+- 기대 효과: prefers-reduced-motion 설정을 켠 사용자가 별점 링크나 대표 상품 클릭 시 불필요한 화면 애니메이션 없이 해당 섹션으로 즉시 이동합니다.
+- 회귀 위험: 거의 없음. DetailModal.tsx 등 기존 코드베이스에서 이미 검증된 동일 조건 분기 패턴입니다.
+
+3순위. 후기 행 버튼(v-rv-btn)의 축약형 aria-label 및 목적 안내 보강
+- 대상: web/components/box/BoxReviews.tsx 169행
+- 기대 효과: 카드 내부의 긴 본문, 사진 라벨, 가격 등이 한 덩어리로 낭독되는 문제를 해결하고, "홍길동 님의 별점 5점 후기, 상세 보기" 형태로 간결하고 명확한 버튼 목적을 전달합니다.
+- 회귀 위험: 낮음. 화면 표시 텍스트에는 영향이 없고 보조 공학의 낭독 명칭만 정제됩니다.
+
+4순위. 후기 사진 대체 텍스트(alt)에 대상 상품명 반영
+- 대상: web/components/box/BoxReviews.tsx 173행, 213행
+- 기대 효과: 단순 "첨부 사진" 대신 "롤렉스 데이트저스트 41 사진"처럼 실제 카탈로그 상품을 명시함으로써 WCAG 1.1.1 지침을 만족하고 정보 가치를 제공합니다.
+- 회귀 위험: 낮음. i18n 메시지 키를 활용하여 상품명이 있는 경우와 없는 경우를 안전하게 분기할 수 있습니다.
+
+5순위. 상품 카드(v-rv-itemname)에 title 속성 추가
+- 대상: web/components/box/BoxReviews.tsx 178행
+- 기대 효과: 320px 모바일이나 좁은 카드에서 말줄임표 처리된 상품명 전체를 데스크톱 마우스 호버 시 툴팁으로 확인할 수 있습니다.
+- 회귀 위험: 없음. 단순 HTML 표준 속성 추가입니다.
+
+6순위. BoxScreen 내 후기 섹션(BoxReviews)과 구성품 섹션(v-boxlayout-contents) 순서 재정렬 검토
+- 대상: web/components/box/BoxScreen.tsx 186행, web/app/ui.css 327행부터 328행
+- 기대 효과: 랜덤 상자 화면의 본질인 "구성품과 확률"을 후기보다 먼저 노출하여 정보 전달 흐름을 바로잡고, 스크린 리더 사용자가 10건의 후기를 건너뛰지 않고도 구성품을 바로 확인할 수 있습니다.
+- 회귀 위험: 중간. 기존 qa 스크린샷 캡처 및 화면 높이 배치에 영향을 주므로 파운더 또는 기획 확인이 필요합니다.
+
+7순위. ReviewsScreen (/reviews) 화면 내 H2 섹션 제목 보강
+- 대상: web/components/box/ReviewsScreen.tsx 30행 부근
+- 기대 효과: H1 아래에 "후기 목록" 등의 H2 제목을 제공하여 스크린 리더 사용자가 푸터로 건너뛰지 않고 목록 시작 지점으로 빠르게 키보드 탐색할 수 있습니다.
+- 회귀 위험: 낮음. 시각적으로 숨김(sr-only) 처리하거나 기존 섹션 제목 스타일에 맞춰 안전하게 추가할 수 있습니다.

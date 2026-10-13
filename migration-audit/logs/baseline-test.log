@@ -1,0 +1,12 @@
+✔ 실수령액 = 신청액 − 네트워크 수수료, 음수 없음 (0.152ms)
+✔ 검증: 최소 미만·잔액 초과·주소 오류·NaN 을 각각 잡는다 (0.7259ms)
+✔ 전액(MAX) 은 잔액 그대로 — 수수료는 신청액 안에서 차감된다 (0.1117ms)
+✔ 온체인 링크: TronScan / BscScan 형식, TxID 형식 검사 (3.8483ms)
+ℹ tests 398
+ℹ suites 0
+ℹ pass 397
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 2380.9626

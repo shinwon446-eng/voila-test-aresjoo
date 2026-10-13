@@ -1,0 +1,102 @@
+  ▲ Next.js 14.2.35
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Skipping linting
+   Checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/1094) ...
+   Generating static pages (273/1094) 
+   Generating static pages (546/1094) 
+   Generating static pages (820/1094) 
+ ✓ Generating static pages (1094/1094)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+┌ ○ /                                    142 B          87.7 kB
+├ ○ /_not-found                          142 B          87.7 kB
+├ ● /[locale]                            6 kB           1.39 MB
+├   ├ /ko
+├   ├ /en
+├   └ /zh
+├ ● /[locale]/about                      408 B          1.37 MB
+├   ├ /ko/about
+├   ├ /en/about
+├   └ /zh/about
+├ ● /[locale]/account                    4.25 kB        1.37 MB
+├   ├ /ko/account
+├   ├ /en/account
+├   └ /zh/account
+├ ● /[locale]/box/[slug]                 6.85 kB        1.39 MB
+├   ├ /ko/box/vault-pokemon
+├   ├ /ko/box/dollar-apple
+├   ├ /ko/box/jackpot-car
+├   └ [+999 more paths]
+├ ● /[locale]/community                  408 B          1.37 MB
+├   ├ /ko/community
+├   ├ /en/community
+├   └ /zh/community
+├ ● /[locale]/community/board            408 B          1.37 MB
+├   ├ /ko/community/board
+├   ├ /en/community/board
+├   └ /zh/community/board
+├ ● /[locale]/dev/gallery                3.65 kB        1.38 MB
+├   ├ /ko/dev/gallery
+├   ├ /en/dev/gallery
+├   └ /zh/dev/gallery
+├ ● /[locale]/fairness                   408 B          1.37 MB
+├   ├ /ko/fairness
+├   ├ /en/fairness
+├   └ /zh/fairness
+├ ● /[locale]/guide                      813 B          1.37 MB
+├   ├ /ko/guide
+├   ├ /en/guide
+├   └ /zh/guide
+├ ● /[locale]/inventory                  6.26 kB        1.37 MB
+├   ├ /ko/inventory
+├   ├ /en/inventory
+├   └ /zh/inventory
+├ ● /[locale]/legal                      1.53 kB        1.37 MB
+├   ├ /ko/legal
+├   ├ /en/legal
+├   └ /zh/legal
+├ ● /[locale]/legal/[doc]                1.48 kB        1.37 MB
+├   ├ /ko/legal/terms
+├   ├ /ko/legal/privacy
+├   ├ /ko/legal/payments
+├   └ [+36 more paths]
+├ ● /[locale]/profile                    407 B          1.37 MB
+├   ├ /ko/profile
+├   ├ /en/profile
+├   └ /zh/profile
+├ ● /[locale]/reviews                    879 B          1.38 MB
+├   ├ /ko/reviews
+├   ├ /en/reviews
+├   └ /zh/reviews
+├ ● /[locale]/verify                     2.1 kB         1.37 MB
+├   ├ /ko/verify
+├   ├ /en/verify
+├   └ /zh/verify
+├ ● /[locale]/wallet                     2.96 kB        1.37 MB
+├   ├ /ko/wallet
+├   ├ /en/wallet
+├   └ /zh/wallet
+├ ● /[locale]/wallet/withdraw            5.88 kB        1.37 MB
+├   ├ /ko/wallet/withdraw
+├   ├ /en/wallet/withdraw
+├   └ /zh/wallet/withdraw
+├ ● /[locale]/wins                       3.44 kB        1.38 MB
+├   ├ /ko/wins
+├   ├ /en/wins
+├   └ /zh/wins
+└ ○ /icon.svg                            0 B                0 B
++ First Load JS shared by all            87.6 kB
+  ├ chunks/02201b81-6242682f34cfffc4.js  53.6 kB
+  ├ chunks/184-821579e4c1f90d25.js       31.9 kB
+  └ other shared chunks (total)          2.01 kB
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses getStaticProps)
+

@@ -1,0 +1,977 @@
+
+> gacha-theater@0.1.0 test
+> tsx --test tests/**/*.test.ts
+
+✔ 잭팟 총액은 각 박스 최고 상품 가치의 합 — 지어낸 값이 아니다 (0.9454ms)
+✔ 공개 확률 줄 수 = 전 박스 구성품 수 (0.136ms)
+✔ 실질 도전 배수 = 1 / (1 − 환급률) (0.1167ms)
+✔ 도전 배수 범위는 실제 라인업의 최소 보장 환급률에서 나온다 (0.1502ms)
+✔ RTP range reflects the current catalogue's retail expected values (0.3419ms)
+✔ 정책 상수 — 95% 즉시 회수 · 3배 보상 · 24시간 출고 기준 · 사후 변조 가능 결과 0 (0.0825ms)
+✔ closure requires both funding buckets to settle, including cancelling offsets (0.8047ms)
+✔ closure preserves completed history and blocks assets and pending shipments (0.2894ms)
+✔ account configuration rejects cleartext remote services and credentials in URLs (0.3015ms)
+✔ email and password boundaries (0.2036ms)
+✔ nickname availability rules require 2–12 Korean or English letters and numbers (0.8565ms)
+✔ unconfigured account calls never make a request or report success (0.5947ms)
+✔ mutations require server CSRF and cookie credentials, not client-generated identity (21.0284ms)
+✔ server errors and invalid CSRF do not submit a mutation (1.1586ms)
+✔ wallet funds take priority over inventory and show the current amount (1.431ms)
+✔ unfinished deposits or withdrawals block closure before inventory (0.6389ms)
+✔ held and in-transit products block closure; settled products do not (0.2182ms)
+✔ local verification requires the issued six-digit code before expiry (1.0202ms)
+✔ configured clients complete account and withdrawal contracts over real HTTP without browser fallback (777.2988ms)
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+✔ nicknames support Korean and normalize whitespace without allowing markup (3.5754ms)
+✔ account security does not leak across logout, another login, or late responses (1.4155ms)
+✔ USDT settlement credits the confirmed amount exactly once, across duplicate requests (1ms)
+✔ card deposits stay in card funds; failed and invalid settlements do not credit (0.4983ms)
+✔ terminal deposit records cannot regress and double-count totals (0.2728ms)
+✔ held requests survive countdown expiry and server cancellation refunds only once (0.389ms)
+✔ the confirmation gesture unlocks distinct real samples for single, bulk, and jackpot openings (4.2493ms)
+✔ 숫자만 쳐도 국가별 하이픈이 붙는다 (1.0197ms)
+✔ 입력 중에도 끊기고, 자릿수를 넘기면 잘라낸다 (0.3476ms)
+✔ 완성 판정은 그 국가의 유효 자릿수에서만 참 (0.1554ms)
+✔ 마스킹은 앞 그룹과 뒤 4자리만 남긴다 — 가운데는 복원 불가 (0.4628ms)
+✔ 빠른 입력 번호는 실제 사용자의 번호가 아니다 — 0 으로 채워진 자리 (0.6512ms)
+✔ 로케일마다 기본 국가번호가 정해져 있고 전부 선택지 안에 있다 (0.1867ms)
+✔ sign-in entry points remain available without environment keys (0.1227ms)
+✔ a shared API origin also supplies authentication unless explicitly overridden (0.1927ms)
+✔ 로컬 OTP 는 상수가 아니라 매번 새로 만든다 — 실서버에 박힌 코드가 남지 않는다 (1.3963ms)
+✔ 계정 식별명은 안정적이고 개인정보를 담지 않는다 (0.3523ms)
+✔ 로그아웃은 지갑·보관함 persist 키를 건드리지 않는다 (9.6378ms)
+✔ 프리셋: 회전 수 10/25/50/100/∞, 개봉 수량 1/5/10/50/100, 대량 개봉 임계 50 (1.0461ms)
+✔ 잭팟(ROYAL/PRESTIGE) 당첨 시 즉시 정지 — 기본 켜짐, 끄면 계속 (0.2525ms)
+✔ 단일 승리 N배 이상 · 손실 한도 · 회전 수 소진 (0.2286ms)
+✔ 잔고 · 남은 회전 · 순손익 (0.2507ms)
+✔ board validates login, lengths, categories and protected fields (2.9896ms)
+✔ only operators publish or pin announcements; members cannot convert notices (0.6727ms)
+✔ post edits and deletion enforce ownership and reject stale revisions (0.3092ms)
+✔ comments support CRUD without permitting another member to edit or delete them (0.3502ms)
+✔ search, ownership filters, pinned notices and discussion sorting compose (0.281ms)
+✔ browser adapter persists actual posts, rechecks session, rejects unauthorized edits and preserves data on storage failures (106.408ms)
+✔ default browser account supports signup, password login, nickname, OTP, held withdrawals and cancellation (165.0702ms)
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ 게이지: 열 때마다 박스 가격의 10%가 쌓이고, 터지면 시작 금액과 쌓인 금액 전부를 받는다 (3.3172ms)
+✔ 게이지: 카드로 쌓은 몫은 카드 쪽으로만 돌아간다 (0.4853ms)
+✔ 확률표: 박스마다 터짐이 한 칸 있고, 게이지 몫까지 넣어 받는 값 기준 99%다 (1.3004ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ 구매: 터짐이 아니면 게이지만 쌓이고 잔액은 결과만큼만 움직인다 (32.1581ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ 구매: 터지면 그때의 게이지를 받고, 게이지는 비고, 기록에는 실제로 받은 금액이 남는다 (2.8354ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ 구매: 한 묶음 안에서 두 번 터지면 둘째는 다시 쌓인 만큼만 받는다 (1.2706ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ 구매: 실패하면 게이지도 열기 전으로 돌아간다 (1.6444ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+✔ 구매: 카드로 쌓은 게이지가 터지면 그 몫은 카드 잔액으로 간다(USDT 잔액으로 새지 않는다) (1.3828ms)
+✔ 길게 돌리면 표와 게이지를 합쳐 99% 근처로 돌아온다(게이지에 남은 금액 포함) (180.7421ms)
+✔ 국내(KR)는 CJ대한통운, 해외는 DHL (0.6932ms)
+✔ 운송장 형식 검사와 공식 조회 URL (0.4984ms)
+✔ 저장된 기록은 그 기록에 저장된 확률표로 검증한다(부르는 쪽이 지금 표를 실어 보내도) (18.2427ms)
+✔ 저장된 기록에 당시 확률표가 없으면 지금 표로 메우지 않는다(번호까지만 확인) (1.9633ms)
+✔ 같은 개봉의 기록만 찾는다: 회차나 값이 다르면 넘겨받은 대로 쓴다 (0.8521ms)
+✔ 검증할 기록은 보관 상품의 ID 로 고른다: 시드와 회차가 같은 다른 상품의 기록을 집지 않는다 (1.8556ms)
+✔ 실제 개봉 기록의 블록체인 상태는 언제나 기록 없음이다 (0.8825ms)
+✔ 성공 문장은 confirmed 에서만 나온다 (0.3532ms)
+✔ 화면: 실제 기록은 '블록체인 기록 없음'을 그리고, 일치 문장과 기록 주소는 confirmed 고정 자료에서만 보인다 (9.3363ms)
+✔ 문구: 검증의 세 언어 키가 같고, 한국어는 명세의 문장 그대로다 (0.8109ms)
+✔ 문구: 블록체인 기록을 이미 운영하는 것처럼 단정하지 않는다(R13). 세 언어 모두 조건을 밝힌다 (0.9761ms)
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+✔ USDT로 받기는 한 번만 잔액에 들어온다: 같은 상품을 다시 불러도 다시 주지 않는다 (2.4717ms)
+✔ 배송 신청 취소는 신청 상태이고 출고 전인 상품만 받는다 (0.593ms)
+✔ 배송비를 냈는데 환불 근거(신청 번호, 자금 출처)가 없으면 취소를 받지 않는다 (0.2567ms)
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+✔ review value boundary is inclusive at 100 USDT, and invalid values are refused by the store (2.2415ms)
+✔ 후기 보너스 10 USDT, 최소 5자 (0.1497ms)
+✔ stored 100 USDT win can be reviewed without shipping; metadata cannot impersonate another item (0.5659ms)
+✔ toReview: 내 후기 + 보관함 레코드 → 운송장 인증은 발급된 경우에만 (0.2381ms)
+✔ twenty board examples retain explicit provenance, two notices and two to six comments (3.4022ms)
+✔ example initialization is serialized, non-destructive, and does not resurrect deleted history (2.1346ms)
+✔ public feed contains every published review record used by the home carousel (0.3576ms)
+✔ rotation wraps without duplication or timestamp rewriting; relative time reflects elapsed time (11.9948ms)
+✔ cross-tab clearing removes stale member reviews and unsubscribes cleanly (0.3995ms)
+✔ 확률표 합 100, 보상 0.1 ~ 1.0 USDT, 기대값 < 0.3 (0.9639ms)
+✔ 롤 → 보상: 구간 경계가 확률표와 일치한다 (0.2972ms)
+✔ 24h 쿨다운: 처음엔 열 수 있고, 연 뒤 24시간 전까지 잠긴다 (0.5826ms)
+✔ 네트워크 메타: TRC-20 · BEP-20 · ERC-20, TRC-20 추천, 12 컨펌, 최소 1 USDT (1.3058ms)
+✔ 주소 형식 검사 — TRC-20 base58 34자 / BEP-20 0x+40hex (0.3482ms)
+✔ address precedence and receipt validation are independent of API configuration (0.3694ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+✔ three networks: receipt confirmations credit once without an API origin or deposit request button (68.4582ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+✔ a confirmed 1 USDT deposit credits once; smaller or repeated transfers do not (2.4285ms)
+✔ 모든 박스의 가중치 합이 100 (0.9309ms)
+✔ 라인업은 실판매가에서 결정적으로 파생된다 (0.4014ms)
+✔ 모든 박스가 3개 라인업을 모두 포함한다 (0.2332ms)
+✔ 라인별 확률 합이 100% (0.4754ms)
+✔ 부스터: 10회 도달 시 활성화, 발동 후 0으로 리셋 (0.8458ms)
+✔ 부스터: [초대박 라인업] 가중치가 정확히 5배 (0.2945ms)
+✔ 부스터: 확률 상승 — 가중치 5배이므로 확률 배율은 5배 미만 (0.2599ms)
+✔ 등급 배율: 누적 결제액에 따라 Bronze→VIP (0.1181ms)
+✔ 통계: 부스트 표본의 [초대박] 출현율이 공시 확률과 일치 (N=200k) (89.2226ms)
+✔ 데모 노출 상품은 데모 박스의 1등 상품이며 [초대박 라인업]이다 (0.4065ms)
+✔ 카탈로그: 3개 시리즈, 박스마다 가중치 합 100 (0.1899ms)
+✔ 카탈로그: guaranteed_min_value 가 실제 최저 실판매가와 일치 (0.1553ms)
+✔ 카탈로그: probability_pct 가 weight 에서 파생되고 합이 100 (0.1366ms)
+✔ 카탈로그: 필수 메타데이터가 전부 채워져 있다 (0.5757ms)
+✔ 카탈로그: 최저 보장가 회수액이 가격을 넘지 않는다 (무위험 차익 금지) (0.128ms)
+✔ 카탈로그: item_id 전역 고유 (0.0967ms)
+✔ 카피 사전: 지정 문자열이 정확히 일치한다 (0.075ms)
+✔ 카피 사전: 모든 키가 전 로케일을 채우고 이모지가 없다 (0.1899ms)
+✔ 10연속 개봉은 정확히 10개를 반환한다 (0.0778ms)
+✔ saved odds table verifies an item independent of today's catalogue (28.7144ms)
+✔ a changed source fails the stored hash comparison (1.0781ms)
+✔ a changed stored number fails independently of a matching hash (0.9059ms)
+✔ a wrong received item fails the saved table check (1.8351ms)
+✔ legacy records without a snapshot are partial, never verified against current odds (11.1572ms)
+✔ invalid saved probability totals fail instead of silently normalizing (35.2581ms)
+✔ SHA-256 표준 벡터 (FIPS 180-2 'abc') (23.9214ms)
+✔ HMAC-SHA256 표준 벡터 (RFC 4231 Test Case 2) (2.3349ms)
+✔ 서버 시드는 64바이트(128 hex), 클라이언트 시드는 16바이트, 매번 다르다 (1.9149ms)
+✔ 같은 입력은 언제나 같은 roll, nonce 가 바뀌면 다른 roll (26.1876ms)
+✔ 모든 박스의 구간표 칸 합계가 정확히 ROLL_RANGE 이고 모든 항목이 최소 1칸을 받는다 (9.5462ms)
+✔ determineItem 경계: 각 구간의 from/to 는 그 항목, 밖은 이웃 항목 (1.3807ms)
+✔ roll 을 균등하게 훑으면 항목별 빈도가 표기 확률과 정확히 같다 (1130.1111ms)
+✔ verifyRoll 은 해시 일치 여부와 항목까지 한 번에 재현한다 (3.6164ms)
+✔ 정수는 소수점 없이: 80 USDT → 80 USDT / $80, 원화는 만원 아래를 버려 ₩110,000 (25.2214ms)
+✔ 환율: 1 USDT = 1.00 USD = 1,380 KRW (0.1839ms)
+✔ USDT와 USD는 소수 둘째 자리까지, KRW는 정수로 표시한다 (0.5195ms)
+✔ 어떤 통화를 골라도 다른 통화의 기호·단위가 섞이지 않는다 (1.5961ms)
+✔ compact 표기도 통화 하나로만 (0.2152ms)
+✔ formatNative 는 환산 없이 원금액을 그대로 찍는다 — 프리셋 ₩70,000 은 ₩70,000 (0.2944ms)
+✔ splitCurrency — 숫자·단위 분리가 formatCurrency 와 같은 문자열을 재구성한다 (2.0151ms)
+✔ E-14 음수는 빼기 표시가 통화 기호 앞에 온다: -$50, -₩60,000, -50 USDT (3.4459ms)
+✔ E-14 양수와 0 의 표기는 고치기 전과 한 글자도 다르지 않다(기준 커밋의 출력) (2.8157ms)
+✔ R2-P2-01 음수의 나눈 표기: 빼기 표시가 통화 기호 앞에 오고, 합치면 통합 표기와 같다 (9.6791ms)
+✔ R2-P2-01 양수와 0 의 나눈 표기는 고치기 전과 한 글자도 다르지 않다 (14.0707ms)
+✔ 기준값: 40점 심사, 24시간, 500 USDT, 150ms, 3,000 USDT/시간 (0.8444ms)
+✔ 신호가 없으면 0점 · 자동 승인 (0.2587ms)
+✔ ① 첫 입금 24시간 이내 출금 +30 (그것만으로는 자동 승인) (0.1355ms)
+✔ ② 500 USDT 초과 고액 +25 (0.117ms)
+✔ ①+② 합산 55점 → 수동 심사 (0.6849ms)
+✔ ③ 150ms 미만 연속 스핀은 매크로로 보고 +50 (단독으로 심사행) (0.1598ms)
+✔ ③ 사람이 누른 간격(수백 ms~수 초)은 가산 없음 (0.166ms)
+✔ ④ IP 국가 불일치/VPN 은 서버 판정 신호 — 값이 없으면 평가하지 않는다 (0.1ms)
+✔ 1시간 창 밖의 출금은 누적에서 빠진다 (0.5835ms)
+✔ 서킷 브레이커: 1시간 3,000 USDT 초과 시 자동 출금 중지 (0.2439ms)
+✔ 서킷이 열리면 리스크 0점이어도 수동 승인으로 돌린다 (0.1445ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ 가입 혜택: 포켓몬 카드 박스 무료 개봉 두 번, 계정마다 한 번만 (1.1172ms)
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ 무료 개봉: 잔액이 0 이어도 열리고, 돈이 나가지 않고, 횟수가 줄고, 결과는 그대로 받는다 (25.6212ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ 무료 횟수를 다 쓰면 값을 낸다. 한 번에 여러 개를 열면 남는 개수만 값을 낸다 (2.5835ms)
+✔ 무료 횟수가 없고 잔액도 없으면 열리지 않는다 (0.6387ms)
+﹣ 무료 개봉에서 터짐이 나오면 그때의 게이지(시작 금액)를 받는다 (0.1164ms) # 실물 전용 박스에는 터짐이 없다
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+✔ 무료 개봉이 중간에 실패하면 횟수도 열기 전으로 돌아간다 (1.2787ms)
+✔ 암호화폐 잔액을 먼저 소진한다 (3.6967ms)
+✔ 암호화폐가 모자라면 결합 결제(mixed) 로 비율이 남는다 (0.2869ms)
+✔ 암호화폐 잔액이 0 이면 카드 전용 개봉 (0.1461ms)
+✔ 합쳐도 모자라면 차감 계획을 만들지 않는다 (0.1164ms)
+✔ 환급은 족보 비율대로만 — 카드 출처가 암호화폐로 새지 않는다 (6.8187ms)
+✔ 반올림이 생겨도 환급 합계는 보존된다 (0.5756ms)
+✔ 원천 라벨 (0.1809ms)
+✔ 구버전·손상 기록은 crypto 로 본다 (0.2009ms)
+✔ 30개, id 고유, 등급 분포 S5 / A8 / B8 / C9 (0.6725ms)
+✔ 등급 구간이 usdtValue 와 단조이고 겹치지 않는다 (0.2064ms)
+✔ imageSrc 는 /assets/items/<id>.svg 이고 실제 파일이 존재한다 (78.887ms)
+✔ glowColor 는 등급별 팔레트와 일치하고 이름에 이모지·앰퍼샌드가 없다 (0.3375ms)
+✔ E-20 공 그리기 준비가 실패하면(extension) 만든 셰이더와 프로그램을 지우고 컨텍스트를 놓는다 (1.2043ms)
+✔ E-20 공 그리기 준비가 실패하면(vertex) 만든 셰이더와 프로그램을 지우고 컨텍스트를 놓는다 (0.3631ms)
+✔ E-20 공 그리기 준비가 실패하면(fragment) 만든 셰이더와 프로그램을 지우고 컨텍스트를 놓는다 (0.1973ms)
+✔ E-20 공 그리기 준비가 실패하면(program) 만든 셰이더와 프로그램을 지우고 컨텍스트를 놓는다 (0.1675ms)
+✔ E-20 공 그리기 준비가 실패하면(link) 만든 셰이더와 프로그램을 지우고 컨텍스트를 놓는다 (0.2206ms)
+✔ E-20 WebGL 을 못 쓰는 기기에서는 그대로 null 이다 (0.1111ms)
+✔ E-20 성공하는 길의 GL 호출 순서는 고치기 전과 같고, 아무것도 지우지 않는다 (1.0325ms)
+✔ ko / en / zh 키 집합이 완전히 같다 (8.3613ms)
+✔ 지정 문구가 정확히 들어 있다 (CLAUDE.md §2 구어체 카피) (0.3318ms)
+✔ 도박장 용어가 사전에 남아 있지 않다 (CLAUDE.md §2 — 2026-09-28 운영자 지시) (19.7487ms)
+✔ 언어 혼선 없음 — en 에 한글·한자 없음, ko 에 한자 없음, zh 에 한글 없음 (9.1882ms)
+✔ 모든 박스·항목에 세 언어 상품 문자열이 있다 (1.5893ms)
+✔ 플레이스홀더 인자가 세 언어에서 같다 (3.7732ms)
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+✔ stored items are never automatically sold (1.3359ms)
+✔ add → IN_STORAGE, sell → SOLD 환급액 = 가치 × 환급률, 이미 판 것은 다시 못 판다 (1.6086ms)
+✔ requestShipping → SHIPPING_REQUESTED, markShipping → SHIPPING + 운송장. SOLD 는 배송 불가 (0.6619ms)
+✔ 통관 식별자: KR 은 PCCC(P+12자리), CN 은 身份证(18자리), 그 외 없음 (0.3163ms)
+✔ 주소 검증: 필수 필드와 국가별 통관 식별자 (0.2631ms)
+✔ 배송비: 모든 국가에 정액이 있고 KR 이 가장 싸다 (0.1631ms)
+✔ 지갑: 출금 거래는 status 를 갖고 PENDING → BROADCASTING(TxID) → COMPLETED 로 갱신된다 (475.293ms)
+✔ 지갑: 웰컴 보너스는 로컬 데모 계정별 첫 로그인에 1회 지급된다 (0.7873ms)
+✔ ko: every linked policy has content, renders ICU values and carries its version (24.4798ms)
+✔ en: every linked policy has content, renders ICU values and carries its version (22.0439ms)
+✔ zh: every linked policy has content, renders ICU values and carries its version (7.3156ms)
+✔ 핸들 마스킹 — 클라이언트 시드 앞 4자 + *** (0.8024ms)
+✔ 기록이 없으면 비어 있고, 있으면 당첨·출고·환전만 최신순으로 나온다 (11.4576ms)
+✔ 로케일마다 읽히는 통화가 하나씩 정해져 있다 (0.8053ms)
+✔ KRW 환율은 통화 스토어와 같은 값을 쓴다 — 두 군데서 갈리지 않는다 (0.2449ms)
+✔ 전체 표기: 1 USDT → ₩1,380 / $1 / ¥7 (13.7565ms)
+✔ 축약 표기: 만·억(KRW) / 万·亿(CNY) / K·M(USD) (0.544ms)
+✔ 한 통화 안에서 다른 통화 기호가 섞이지 않는다 (1.9401ms)
+✔ 최소 시작 금액은 카탈로그에서 가장 싼 박스 가격이다 (0.1415ms)
+✔ first nickname and elapsed cooldown can be changed (2.8374ms)
+✔ nickname cooldown gives a rounded-up remaining-day count (0.1564ms)
+✔ nickname validation normalizes, constrains and blocks reserved words (0.334ms)
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ 10 purchased results are all allocated before presentation; repeated Skip/X cannot debit or credit again (33.4871ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ physical rewards and the purchase-time probability table survive closing presentation (3.5458ms)
+✔ cancel before purchase confirmation changes neither funds, results nor nonce (0.9891ms)
+✔ insufficient funds and invalid counts never debit or allocate (2.4182ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+✔ concurrent purchases recheck funds at commit and do not overspend (3.0006ms)
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ 톤은 실제로 받는 값에서만 나온다: USDT 는 그 금액, 상품은 USDT 로 받을 때의 금액 (1.3667ms)
+✔ 낸 값보다 적게 받는 결과는 어떤 박스에서도 축하 톤이 되지 않는다 (34.2623ms)
+✔ 차이는 반올림해 본전으로 만들지 않는다: 0.99 를 받으면 0.01 줄었다 (0.9255ms)
+✔ 잔액 변화는 이 개봉의 영수증으로만 계산한다: 보관 중인 상품은 0, USDT 로 받은 상품은 실제 수령액 (0.1768ms)
+✔ 연출 길이는 결과와 무관하다: 결과마다 다르게 기다리게 하지 않는다 (0.1358ms)
+✔ 자동으로 USDT 로 받기: 사용자가 켠 경우에만, 상품에만, 낸 값의 20배 미만에만 (0.1095ms)
+✔ 상태 기계: 구매는 READY 와 SETTLED 에서만 시작하고, 닫으면 어느 표시 상태에서든 다시 열 수 있다 (0.2122ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ USDT 결과를 더한 뒤에 실패하면 차감과 지급과 기록이 전부 되돌려진다(돌려준 값이 더해진 채 남지 않는다) (35.9401ms)
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ 구매 도중 장부(계정)가 바뀌면 차감하지 않고 멈춘다 (2.1422ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+✔ 구매 모듈은 보관함 기록마다 개봉의 거래 번호를 붙인다. 못 본 개봉은 그 기록에서 찾는다 (1.7185ms)
+✔ 배수 표기: 두 배 미만에는 붙이지 않고, 올려 적지 않는다 (4.5676ms)
+✔ 기준값: 기준 커밋 63445c7 에서 만든 파일이다 (4.9542ms)
+✔ 기준값: 카탈로그의 개수와 상수가 기준과 같다 (160.5321ms)
+✔ 기준값: 박스마다 (슬러그, 가격, 상품 id, 확률)의 순서와 값이 기준과 같다 (161.846ms)
+✔ 기준값: 박스마다 확률의 합이 정확히 100% 다 (147.7198ms)
+✔ 기준값: 고정 시드의 추첨 결과(박스 셋, nonce 0 부터 49)가 기준과 같다 (98.9473ms)
+✔ 기준값: 돈 계산(받는 금액, 출금 수수료와 최소 금액, 차감의 원천 나눔, 환급 귀속, 구간, 터짐)이 기준과 같다 (4.6477ms)
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+✔ current password hashes are verified, failures persist, fifth failure locks even correct credentials (274.135ms)
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+✔ fallback OTP must exactly match, new-password rules apply, completion revokes sessions and proofs (332.1435ms)
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+✔ enabled Google OTP validates real TOTP rather than accepting any six digits (324.6781ms)
+✔ Google, Apple and Microsoft providers persist and cannot enter any password mutation route (10.6948ms)
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+✔ codes expire, stop after five errors and cannot cross purpose or account boundaries (189.2916ms)
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+✔ closure rechecks balances and holdings at confirmation and revokes the session on success (28.7291ms)
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'voila-auth-v1', the given storage is currently unavailable.
+✔ nickname timestamp alias works in both directions and failed counts cannot cross accounts (50.145ms)
+✔ HTTP password and closure routes preserve cookie/CSRF contract and typed errors (55.1949ms)
+✔ 실물 전용: 백만 칸을 정확히 쓰고 참고가 기준 기대 비율이 99%다 (2.6561ms)
+✔ 실물 전용: USDT 결과도 터짐도 없고, 전부 USDT 로 바꾸면 참고가 기준의 95%다 (0.6703ms)
+✔ 실물 전용: 낸 값 이상이 나올 확률은 사다리의 목표와 가깝고, 구간 안에서는 싼 상품이 더 자주 나온다 (0.5122ms)
+✔ 실물 전용: 높은 구간이 빈 박스도 99%를 맞춘다(빈 구간을 USDT 로 메우지 않는다) (0.3899ms)
+✔ 실물 전용: 낮은 구간이 한쪽뿐이거나 USDT 상품이 섞이면 거부한다 (0.8665ms)
+✔ 실물 전용: 박스 가격의 10분의 1보다 싼 상품은 거부한다 (0.2279ms)
+✔ 새 카탈로그의 박스는 전부 실물 전용이고 상품이 100개다 (4.1622ms)
+✔ published probability labels retain every configured decimal place (0.7742ms)
+✔ 박스 12종 이상, slug 고유 (0.2637ms)
+✔ 박스마다 항목 7종 이상, item id 는 박스 안에서 고유 (기프트카드·캐시백은 박스 간 공유) (0.2505ms)
+✔ 하이브리드 리워드: 바닥은 USDT 캐시백(100% 적립), 조잡한 저가 실물 꽝 없음, 중위권에 디지털 자산 (14.9299ms)
+✔ 드롭 확률 합계는 박스마다 정확히 100 (1.1229ms)
+✔ 금액은 USDT 소수 둘째 자리까지 — 통화 기호는 데이터에 없다 (0.5442ms)
+✔ 가격 스펙트럼: 1 USDT 박스 3종 이상, 100 USDT 잭팟 2종 이상, 전부 스펙 가격표 안 (0.1738ms)
+✔ 잭팟 배수: 1달러 박스 1,000배 이상, 럭셔리·잭팟 1,300배 이상 항목 존재 (0.3689ms)
+✔ 확률표 사다리: 받는 값 기준 99%, 당첨 구간 아홉, 구간마다 상품이 먼저 (2026-10-11 파운더 결정 둘째) (4.6864ms)
+✔ 최저 구성을 즉시 환급해도 원금을 넘지 못한다 (0.3074ms)
+✔ probabilities remain representable as one-million exact outcome slots (0.3981ms)
+✔ 가장 작은 결과는 낸 값의 0.05배이고 USDT 로 바로 들어온다 (1.3557ms)
+✔ guaranteedMin 은 항목 최저가에서 파생된다 (0.3016ms)
+✔ 4개 행 셀렉터가 전부 채워지고 카테고리 규칙을 지킨다 (0.8267ms)
+✔ 히어로 박스는 1 USDT 박스다 (0.0979ms)
+✔ 카테고리는 필터 목록 안의 값만 쓰고, 필터마다 결과가 있다 (0.1859ms)
+✔ 이미지 경로는 데이터가 아니라 productImages 가 쥔다 (0.3924ms)
+✔ 정렬 키가 원본을 변형하지 않고 올바르게 동작한다 (0.181ms)
+✔ dropTable 은 실판매가 내림차순이며 원본을 변형하지 않는다 (0.3456ms)
+✔ 박스 가격은 세 통화 어느 쪽으로도 혼용 없이 렌더된다 (11.3817ms)
+✔ 카피와 데이터에 이모지가 없다 (0.8646ms)
+✔ 컬렉션 이미지는 유효한 로컬 WebP이며 출처와 imageUrl 별칭을 보존한다 (692.2595ms)
+✔ nickname policy preserves multilingual names and rejects offensive, reserved and invisible forms (3.7275ms)
+✔ avatar contract excludes scriptable, external upload input and oversized content (0.4712ms)
+✔ profile service enforces duplicate and cooldown checks independently of UI, including exact 14-day boundary (6.1666ms)
+✔ HTTP profile errors preserve actionable reason and server unlock date (17.6774ms)
+✔ home proof metrics come from one opening record list — openings, payback and recent stay in step (2.2473ms)
+✔ an opening counts as verified only when hash, roll and prize all recompute (35.6799ms)
+✔ single feed uses actual transactions only, sorts before limiting and keeps actual statuses (0.6537ms)
+✔ server and local records merge without duplicate IDs or chain hashes (0.3389ms)
+✔ API boundary rejects fabricated shapes, invalid dates and amounts; never invents explorer links (0.2085ms)
+✔ 수령인 마스킹 — 한글은 가운데, 영문은 이름 첫 글자 + 성 이니셜 (0.2088ms)
+✔ 지급 피드: withdraw/sellback 만, TxID 는 있는 경우에만 실린다 (0.2229ms)
+✔ 출고 피드: 배송 신청 이후 항목만, 운송장은 발급된 경우에만 (6.0413ms)
+✔ 상금 분배 합계는 총 상금 풀과 같다 (0.7509ms)
+✔ 시즌 구간은 UTC 월요일 00:00 에서 시작해 정확히 7일 (0.5844ms)
+✔ 카운트다운 포맷 — D-일 HH:MM:SS, 음수는 0 으로 (0.1939ms)
+✔ 시즌 밖 기록은 랭킹에 들어오지 않는다 (0.7241ms)
+✔ 바닥 캐시백(하한 미만)은 상위권을 도배하지 못한다 (0.2907ms)
+✔ 랭킹은 배수 내림차순, 동률이면 가치·시각 순 (0.1461ms)
+✔ 남은 자리는 가짜 당첨자 대신 공석으로 열린다 (0.1823ms)
+✔ 내 순위 — 랭크에 있으면 그 순위, 없으면 마지막 뒤, 기록 없으면 null (0.1399ms)
+✔ E-19 HeroBanner: 조건부 return 뒤에 훅을 부르지 않는다 (4.3382ms)
+✔ E-25 AuthHost: 지갑을 기다리는 구독을 effect 의 정리 함수에서 푼다 (0.8942ms)
+✔ E-39 components/box/Reveal.tsx: 화면이 사라진 뒤에 온 받기 응답으로 상태를 바꾸지 않는다 (1.6291ms)
+✔ E-39 components/inventory/InventoryScreen.tsx: 화면이 사라진 뒤에 온 받기 응답으로 상태를 바꾸지 않는다 (1.9845ms)
+✔ E-08 확인창: 확정 단추는 뜬 직후의 잠금을 거치고, 잠금의 길이는 결과 화면의 잠금과 같다 (1.229ms)
+✔ E-03 계정 화면의 비밀번호 바꾸기: 현재 비밀번호 확인을 먼저 거친 뒤에 바꾸기 요청을 보낸다 (0.7993ms)
+✔ 스펙 상수: 80~100칸, cubic-bezier 감속, target 이 끝에서 떨어져 있다 (1.386ms)
+✔ 스트립은 target 에 결과를 심고 나머지는 확률표에서 뽑는다 (1.5392ms)
+✔ 쇼케이스 타일은 감속 구간에만 심기고 결과 칸은 그대로다 (6.1098ms)
+✔ 정지 오프셋에서 인디케이터 아래 칸은 항상 target (뷰포트·지터 무관) (0.2592ms)
+✔ 니어미스: 잭팟을 결과 바로 앞/뒤에 심어도 인디케이터 아래 칸은 결과(target)이고 경계 1~3px 안쪽에 선다 (1.3557ms)
+✔ 후기 집계: 실제 후기만 박스마다 모은다(예시와 없어진 박스의 것은 뺀다) (1.2517ms)
+✔ 후기 집계: 샘플 스위치를 켠 때, 카드와 박스 화면은 샘플 위에 실제 후기를 더한 같은 수다 (25.44ms)
+✔ 후기 집계: 샘플 스위치를 끈 때도, 실제 후기가 있는 박스의 카드에는 별점이 남는다 (0.5921ms)
+✔ 후기 집계: 박스 카드와 박스 화면과 모아 보기는 같은 함수를 쓴다(따로 세는 곳이 없다) (3.4185ms)
+✔ 후기 목록의 차례(F-02): 내 후기가 며칠이 지나도 맨 앞이고(내 것 가운데 새것부터), 그 뒤에 샘플이 새것부터 온다 (54.2892ms)
+✔ 내 후기의 시각(F-03): 상세에는 쓴 날짜와 시각을 그대로 적고, 목록의 행과 샘플은 몇 분 전으로 적는다 (11.1005ms)
+✔ 편 건수(F-01): 박스 화면과 모아 보기가 편 건수와 읽던 자리를 방문 기록의 그 자리에 적고, 그리기 전에 되살린다(브라우저에서의 확인은 scripts/capture/flow-reviews-nav.mjs) (1.8704ms)
+✔ 후기 시각: 몇 분 전, 몇 시간 전, 며칠 전의 경계 (5.7869ms)
+✔ 후기 목록: 처음 건수는 화면마다 따로이고, 남은 건수가 많으면 더 보기 단추에 수를 적지 않는다 (1.4957ms)
+✔ 박스 찾기(F-07): 객체에 원래 있는 이름(constructor, __proto__, toString, hasOwnProperty)은 박스가 아니다. 없는 박스와 같이 다룬다 (5.8471ms)
+✔ 샘플을 끈 빌드(F-04): 화면은 문(lib/reviewSampleGate)을 거쳐서만 생성기를 부르고, 끈 때에는 생성기와 말뭉치를 읽지도 않는다 (813.1701ms)
+✔ 더 보기 뒤(F-05): 초점은 새로 생긴 첫 글로 가고, 늘어난 건수는 알림 영역에 적는다(브라우저에서의 확인은 scripts/capture/flow-reviews-nav.mjs) (2.2973ms)
+✔ 샘플 후기: 모든 박스가 80건 이상 400건 이하이고 홈에서는 싼 박스가 더 많다 (41.9862ms)
+✔ 샘플 후기: 박스 목록의 요약은 글을 만들지 않고도 목록과 같은 수와 같은 분포다 (753.8046ms)
+✔ 샘플 후기: 같은 박스는 언제나 같은 후기다(만드는 순서, 건수, 프로세스와 무관) (326.4315ms)
+✔ 샘플 후기: 글은 최근에 쓴 박스 몇 개의 것만 쥐고, 밀려난 박스는 다시 만들어도 같은 글이다 (90.0207ms)
+✔ 샘플 후기: 한 박스 안에서 같은 글이 두 번 나오지 않고(글자를 덧붙여 다르게 만든 글도 없다), 금지 문자와 베낀 글이 없다 (47.4688ms)
+✔ 샘플 후기: 한 박스의 연속 10건 안에서는 같은 조각이 다시 나오지 않는다 (37.9597ms)
+✔ 샘플 후기: 어느 박스든 가장 새 글은 한국어이고, 처음 보이는 다섯 건 가운데 한국어가 아닌 글은 많아야 하나다 (11.4939ms)
+✔ 샘플 후기: 박스마다 5~8% 는 다시 쓰는 손님의 글이고(같은 별명, 같은 언어), 그 사람의 글은 붙어 나오지 않는다 (19.2556ms)
+✔ 샘플 후기: 돈 이야기는 그 건에서 참이다. 낸 것보다 많이 받았다는 말은 받을 금액이 박스 가격 이상인 건에만, 딱 본전이라는 말은 박스 가격의 100%에서 110% 사이인 건에만(세 언어) (48.0229ms)
+✔ 샘플 후기: 미개봉, 밀봉, 봉인은 밀봉 상품에만, 새제품은 새 제품에만 쓴다 (30.3699ms)
+✔ 샘플 후기: 이름으로 따로 가린 여덟 가지 상품(낱장 카드, 차와 바이크, 향수, 시계 부속품, 씻어내는 것, 보냉이 안 되는 병, 싼 가방)에 그 상품과 맞지 않는 말이 없다(옛 박스도 같다) (16.4666ms)
+✔ 샘플 후기: 상표나 본품의 낱말이 이름에 들었다고 본품의 말을 하지 않는다. 아래 표의 조합(레고 수납함, 인형 상표의 책, 신발 상표의 관리 용품, 본품 이름 뒤에 부속품 낱말이 붙은 것)에서 본다 (77.1341ms)
+✔ 샘플 후기: 게임 타이틀(영어 이름 끝에 기종이 적힌 상품)에는 쓰는 물건의 말, 만듦새의 말, 다른 종류의 말이 없다 (4.0221ms)
+✔ 샘플 후기: 이 사이트에 없는 수령 길을 말하지 않는다. 디지털 상품은 나왔다, USDT로 받았다, 값이 어땠다, 만족했다는 말만 하고(썼다, 등록했다, 도착했다가 없다), 어느 글에도 설치, 수거, 인도 절차, 문의 창구, 무료 배송이 없다 (14.308ms)
+✔ 샘플 후기: 별점과 글의 결이 맞는다(별 하나와 둘은 까닭 한 가지, 셋은 그저 그렇다, 넷은 좋았고 작은 아쉬움 하나까지, 다섯은 좋았다) (212.2712ms)
+✔ 샘플 후기: 점수를 말하는 줄은 그 건의 별점과 같다(만점이라고 쓴 글은 별 다섯뿐이다) (15.1622ms)
+✔ 샘플 후기: 별점은 받은 것과 받는 과정에 대한 만족이다(작고 흔한 상품도 별 다섯이 나오고, 큰 상품도 받는 과정이 불편했으면 별 셋이다) (4.0074ms)
+✔ 샘플 후기: 상품가가 300달러에 못 미치는 건에는 크게 당첨된 듯한 말이 붙지 않는다(1달러 박스의 20달러짜리도 배수는 20배다) (53.2144ms)
+✔ 샘플 후기: 다시 열겠다거나 또 오겠다는 말, 다음 박스를 기다린다는 말, 잃은 것을 되찾으려는 말이 없다(세 언어, 별명 포함) (21.6156ms)
+✔ 샘플 후기: 서비스의 흐름을 말하는 줄은 적은 몫으로 물건 이야기와 함께만 나온다 (6.2535ms)
+✔ 샘플 후기: 한 글 안에서 말이 서로 어긋나거나 겹치지 않는다(뜯지 않았다와 쓰고 있다, 받았다는 인사 두 번, 바라던 것과 아닌 것) (18.4719ms)
+✔ 샘플 후기: 좋아요는 절반 넘게 0 이고 위쪽 끝에 몰리지 않는다 (2.8303ms)
+✔ 샘플 후기: 상품은 그 박스의 구성품이고, 사진은 카탈로그의 그 상품 사진뿐이다 (16.1602ms)
+✔ 샘플 후기: 홈의 박스에서는 흔한 상품이 많고 비싼 상품은 드물다 (4.0808ms)
+✔ 샘플 후기: 모아 보기는 주소로 열 수 있는 모든 박스를 가리지 않고 새것부터다 (85.1304ms)
+✔ 샘플 후기: 스위치를 끄면 한 건도 나오지 않는다 (0.2858ms)
+✔ 요구 배수는 입금액의 100% (1.1232ms)
+✔ 진행률 = min(100, floor(개봉/입금 × 100)) (0.2096ms)
+✔ 입금이 없으면 1 USDT 개봉으로 충족 — 입금 자금이 아닌 잔액은 묶지 않는다 (0.1755ms)
+✔ 충족 판정은 100% 이상에서만 참 (0.1031ms)
+✔ 잔여 개봉액 (0.1397ms)
+✔ 음수·NaN 입력에도 0~100 을 벗어나지 않는다 (0.0942ms)
+✔ 바닥 환전율 90% 이상은 초저위험 — 개봉액의 30%만 인정 (0.1283ms)
+✔ 인정액 = 개봉액 × 가중치 (0.1119ms)
+✔ 필요 롤오버는 크립토 입금액 기준 — 카드 입금분은 빠진다 (0.1292ms)
+✔ 그라인딩 시나리오: 저위험 상자만 돌리면 진행률이 훨씬 느리게 오른다 (0.1663ms)
+✔ security and nickname clients require validated server responses and bind withdrawal proofs (90.5196ms)
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+✔ shipping fee is allocated once across items and repeated cancellation cannot refund twice (3.0106ms)
+✔ dispatch prevents operational cancellation; status and funds remain unchanged (0.4503ms)
+✔ mixed-source batch refunds preserve the original cents in each funding bucket (0.4543ms)
+✔ legacy positive shipping fees without original charge evidence cannot be guessed (0.2268ms)
+✔ free preparation cancellation works and a later request gets a new identity (0.2874ms)
+✔ 휴대폰 자동 하이픈 — 010-XXXX-XXXX (1.1079ms)
+✔ 유니패스 발급 링크와 보상 배수 (0.1763ms)
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+✔ 묶음 받기: 같은 id 가 두 번 들어와도 상품마다 한 번만 지급한다 (5.6036ms)
+✔ 묶음 받기: 같은 묶음을 다시 불러도 다시 주지 않고, 그때 받은 금액을 already 로 답한다 (1.1123ms)
+✔ 묶음 받기: 연달아 눌러 동시에 두 번 불러도 요청은 하나이고 한 번만 지급한다 (0.615ms)
+✔ 묶음 받기: 겹치는 다른 묶음, 한 개 받기와 동시에 불러도 상품마다 한 번만 지급한다 (1.0327ms)
+✔ 묶음 받기: 금액은 상품마다 반올림해 더한다(합계에 95%를 한 번 곱하지 않는다) (0.6634ms)
+✔ 묶음 받기: 카드와 USDT 출처가 섞여도 배분은 takeUsdt 와 같다(카드 몫은 카드 잔액으로만) (0.8528ms)
+✔ 묶음 받기: 보관 중이 아닌 상품은 건드리지 않고 남은 것으로 답한다 (0.7225ms)
+✔ 다시 시도한 결과는 앞의 결과에 이어진다: 받은 것은 쌓이고 남은 것은 마지막 시도의 것 (0.7823ms)
+✔ 잔액이 모자랄 때: 더 필요한 금액과, 보관 중인 상품을 전부 받으면 들어오는 최대 금액 (0.3865ms)
+✔ 미리 보는 금액은 받기 전의 보관함만 본다: 같은 상품이 두 번 들어와도 한 번만 센다 (0.2332ms)
+✔ 출금 칸에는 새로 받은 금액 가운데 출금할 수 있는 몫만 채운다 (0.4083ms)
+✔ 출금 칸: 시트를 두 번 열어 나눠 받으면 앞서 넣은 몫에 더한다(마지막 것으로 덮어쓰지 않는다) (0.3408ms)
+✔ 출금 칸: 카드로만 낸 상품은 채우지 않고, 지금 출금할 수 있는 잔액을 넘지 않는다 (0.2987ms)
+✔ 옛 기록을 낮추지 않는다: 받은 상태이고 확인 대기 표시가 없으면, 그 상품을 가리키는 내역이 없어도 받은 것이다(다시 지급하지 않는다) (0.2926ms)
+✔ 정상 저장: 받았다고 답하고, 받기 거래 기록에 상품 id 가 남는다 (715.0705ms)
+✔ 상품을 받은 상태로 저장할 때 실패: 받지 못했다고 답하고, 그 말이 사실이다(상품은 보관 중, 입금 없음). 다시 시도하면 한 번만 받는다 (1.8179ms)
+✔ 지갑에 넣을 때 실패: 받았다고도, 보관함에 있다고도 답하지 않는다(알 수 없음). 입금 없는 받은 상품을 이미 받았다고 하지 않는다 (1.3379ms)
+✔ 받은 상태 저장이 조용히 무시됨: 다시 불러도 두 번 지급하지 않는다(보관 중인데 입금 내역이 있으면 건드리지 않는다) (1.0883ms)
+✔ 거래 기록을 적을 때 실패: 잔액은 저장됐어도 입금 내역이 없으면 받았다고 하지 않고, 다시 지급하지도 않는다 (0.6614ms)
+✔ 묶음에서 한 상품만 어긋나도 나머지는 정직하게 나눠 답한다 (0.8776ms)
+✔ 옛 받기 기록(itemIds 없이 ref 에 쉼표로 적힌 것)도 입금 내역으로 알아본다 (0.4978ms)
+✔ 보관함 저장이 무시되고 거래 기록도 실패: 잔액은 이미 들어왔으므로 받지 못했다고 하지 않고, 다시 불러도 두 번 지급하지 않는다 (0.9954ms)
+✔ 저장 한도 하나: 한도가 얼마든 한 상품에 95 를 넘겨 지급하지 않고, 답은 저장된 장부와 어긋나지 않는다 (49.6829ms)
+✔ 지갑 쓰기가 빠지고 그 뒤 읽기가 실패: 기억 속 잔액이 95 여도 받았다고 답하지 않는다 (0.803ms)
+✔ 받기 전에 장부를 읽지 못함: 아무것도 실행하지 않고 알 수 없다고 답한다. 읽을 수 있게 되면 한 번만 받는다 (0.5436ms)
+✔ 저장된 장부가 깨져 있거나 있어야 할 기록이 없으면 알 수 없다고 답하고 아무것도 실행하지 않는다 (0.7718ms)
+✔ 보관 중인데 입금 내역이 있는 상품은 받을 수 있는 것으로 세지 않는다: 미리 보는 금액, 부족액, 실제로 받는 것이 같다 (0.6534ms)
+✔ 받기가 확정됐는지: 받는 일, 미리 보기, 화면이 쓰는 한 가지 기준. 의심의 증거는 확인 대기 표시 하나다 (0.133ms)
+✔ 옛 기록 호환: 표의 다섯 줄 모두 받은 것으로 보고, 받은 금액을 그대로 답하고, 새로 지급하지 않는다 (1.6884ms)
+✔ 지갑 쓰기가 빠지고 읽기가 실패한 뒤: 기억 속에는 내역과 잔액이 남아 있어도 화면의 기준은 확인 필요이고, 읽을 수 있게 되면 기억 속 장부를 저장된 장부에 맞춘다 (0.8049ms)
+✔ 깨끗이 실패했는데 표시가 지워지지 않음: 다시 볼 때 풀리고, 그 뒤 한 번만 받는다 (0.7514ms)
+✔ 보관함 쓰기 실패 뒤 읽기까지 실패(또는 탭이 죽음): 받기를 다시 부르면 그 안에서 표시가 풀리고 한 번만 받는다 (0.5474ms)
+✔ 표시가 남았고 잔액이 설명되지 않게 늘어 있음: 몇 번을 다시 봐도 풀지 않는다 (0.7219ms)
+✔ 받는 사이에 다른 탭의 충전 50 이 기록과 함께 들어옴: 잔액의 변화가 기록으로 설명되므로 표시가 풀리고, 상품은 한 번만 받는다 (0.6793ms)
+✔ 표시를 지우지 못했을 뿐 깨끗이 실패한 경우에도, 충전이 겹쳤으면 그 자리에서 받지 못했다고 답한다(표시가 지워질 때) (0.2925ms)
+✔ 정상으로 받았는데 표시만 지우지 못함: 받았다고 답하고, 다시 볼 때 표시가 지워지고, 두 번 지급하지 않는다 (0.4044ms)
+✔ 옛 형식의 표시(id 만 적은 것): 받은 것이 확인되면 지우고, 보관 중인 것은 잔액으로 설명할 자료가 없어 그대로 둔다 (0.4745ms)
+✔ 등급은 4단계이며 배수 내림차순, 최하위가 0 에서 닫힌다 (1.4795ms)
+✔ 승인된 등급 색이 그대로 쓰인다 (0.3025ms)
+✔ glow 는 hex 를 rgba 로 정확히 변환한다 (0.1387ms)
+✔ tierOf 는 경계값에서 상위 등급을 택한다 (0.1395ms)
+✔ tierIndex 는 상위 등급이 더 작다 (0.1236ms)
+✔ 박스마다 등급 분포 합계는 정확히 100, 빈 구간 없음 (0.6377ms)
+✔ 등급 분포는 상위부터 내림차순이며 중복이 없다 (0.4692ms)
+✔ 보장 박스가 아닌 모든 박스는 최소 2개 등급에 걸쳐 있다 (0.2217ms)
+✔ boxTopTier / boxFloorTier 가 실제 최고·최저 항목과 일치한다 (0.5968ms)
+✔ 모든 박스의 최저 등급은 CURATED 이고 가장 작은 결과는 0.05배 (0.2295ms)
+✔ 모든 박스에 EXECUTIVE 이상 등급이 존재한다 — 상위 구성이 없는 박스는 없다 (0.1946ms)
+✔ 본전 이상 확률은 0 이상 100 미만이며 실제 항목 합계와 같다 (0.3512ms)
+✔ 본전 이상 확률: 바닥이 가격 미만이면 100 미만, 바닥 = 가격(잭팟)이면 100 (0.1322ms)
+✔ formatMultiple 은 자리수에 따라 소수를 접는다 (0.0749ms)
+✔ Base32 왕복 — RFC 6238 시드가 정확히 복원된다 (1.5969ms)
+✔ Base32 는 잘못된 문자를 거절한다 (0.462ms)
+✔ RFC 6238 Appendix B 테스트 벡터 (SHA-1, 8자리) (36.5825ms)
+✔ 6자리 코드는 같은 벡터의 뒤 6자리다 (1.461ms)
+✔ 검증은 ±30초(한 칸)까지만 통과시킨다 (7.1528ms)
+✔ 형식이 틀린 입력은 계산 없이 거절한다 — '6자리면 통과' 같은 관문이 아니다 (3.8179ms)
+✔ otpauth URI 는 Google Authenticator 규격을 따른다 (0.4579ms)
+✔ 새 시크릿은 매번 다르고 Base32 로 디코딩된다 (0.6541ms)
+✔ 카운터와 남은 시간 (0.146ms)
+✔ v 문구: 세 언어의 키가 서로 같다 (1.9757ms)
+✔ USDT로 받기 문구: 세 언어가 같은 값을 받는다 (1.3578ms)
+✔ USDT로 받기 문구: 느낌표, 물음표, 긴 줄표, 가운뎃점이 없다 (0.7851ms)
+✔ USDT로 받기 문구: 한국어는 명세에 적힌 글 그대로다 (0.3716ms)
+✔ USDT로 받기 문구: 한국어는 금액 뒤에 조사를 붙이지 않는다(원화 표시에서 틀린다, R1) (1.6041ms)
+✔ USDT로 받기 문구: 금지 표현이 없고 언어가 섞이지 않는다 (3.1654ms)
+✔ 받는 방법을 고르는 단계의 문구는 남아 있지 않다 (0.3161ms)
+✔ 나온 상품과 검증 문구: 세 언어가 같은 값과 같은 표시를 받는다 (1.0485ms)
+✔ 나온 상품과 검증 문구: 느낌표, 물음표, 긴 줄표, 가운뎃점이 없다 (0.4409ms)
+✔ 나온 상품과 검증 문구: 금지 표현이 없다 (2.6199ms)
+✔ 나온 상품과 검증 문구: 언어가 섞이지 않는다 (0.305ms)
+✔ 후기 문구: 세 언어가 같은 값을 받고, 느낌표, 물음표, 긴 줄표, 가운뎃점이 없다 (0.6013ms)
+✔ 후기 문구: 언어가 섞이지 않고, 상품가는 용어집의 말 그대로다 (0.2354ms)
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.community', the given storage is currently unavailable.
+✔ active shipments and confirmed deliveries never appear in the financial archive (0.7765ms)
+✔ archive ordering uses processing dates and does not invent missing dates (0.1873ms)
+✔ resale estimates sum individual rounded refunds, excluding processed records (0.1963ms)
+✔ reviews require a valuable won item, independently of shipping status (0.2235ms)
+✔ saving beyond 20 reviews retains history; duplicates do not produce another record or reward (2.7996ms)
+✔ storage failure does not silently overwrite or discard existing reviews (0.304ms)
+✔ invalid ratings and missing edits cannot be reported as saved (0.1661ms)
+✔ E-06 이 계정의 장부에 든 박스 열기와 USDT로 받기 거래가 내역에 나온다(계정 번호가 없어도) (72.1416ms)
+✔ E-06 다른 계정으로 바뀌면 앞 계정의 거래는 하나도 보이지 않는다 (2.148ms)
+✔ E-06 다른 계정 번호가 적힌 거래는 이 계정의 장부에 들어 있어도 보이지 않는다 (0.7717ms)
+✔ E-06 계정별 장부가 아닐 때(서버 계정의 공용 장부 키)는 전처럼 계정 번호가 같은 거래만 보인다 (0.7084ms)
+✔ R2-F-08 깨진 줄이 섞인 장부: 읽을 수 있는 줄만 최신순으로 남기고, 저장된 값은 건드리지 않는다 (0.9276ms)
+✔ R2-F-08 보통의 장부에서는 전과 같은 줄이 전과 같은 순서로 나온다 (0.7537ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+✔ balance 는 항상 cryptoBalance + cardBalance (472.3822ms)
+✔ 개봉 차감은 암호화폐부터 — 모자라면 카드와 결합되고 비율이 남는다 (1.3694ms)
+✔ 카드 잔액은 온체인 출금으로 절대 빠져나가지 않는다 (1.0982ms)
+✔ 카드깡 경로 차단: 카드 충전 → 개봉 → 환전하면 환급금은 100% 카드 잔액으로 돌아온다 (1.6531ms)
+✔ 결합 개봉의 환급금은 족보 비율대로 나뉜다 (0.9773ms)
+✔ 구버전 기록(족보 없음)은 crypto 로 간주된다 (1.1306ms)
+✔ 롤오버 누계: 입금은 요구액, 개봉은 소진액으로 잡힌다 (0.8238ms)
+✔ 안티 그라인딩: 저위험 상자 개봉은 30% 만 롤오버에 잡힌다 (0.6444ms)
+✔ 카드 입금은 필요 롤오버(크립토 기준)를 늘리지 않는다 (0.6232ms)
+✔ 배송비 같은 비개봉 지출(rolloverUsdt: 0)은 롤오버를 채우지 않는다 (0.5999ms)
+✔ 신규 지갑은 잔고 0 에서 시작한다 — 체험용 가상 잔고를 주지 않는다 (0.3024ms)
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.fair', the given storage is currently unavailable.
+✔ 기준의 경계: 1회 가격의 1.999배는 들지 않고 정확히 2배는 든다 (1.7026ms)
+✔ 그때의 가격으로 견준다: 기록에 적힌 가격이 지금 가격보다 먼저다 (0.2816ms)
+✔ 그때 가격이 없는 옛 기록은 지금 가격으로 견주고 그렇게 했다고 표시한다 (0.2819ms)
+✔ 무료 개봉도 정상 가격으로 본다(낸 돈 0 이 분모가 아니다) (0.168ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.inventory', the given storage is currently unavailable.
+✔ 개봉이 기록에 그때의 1회 가격과 무료 여부를 적는다(돈은 그대로) (8.6193ms)
+✔ USDT 로 받았거나 배송을 신청한 뒤에도 줄은 남는다 (0.8779ms)
+✔ 로그인하지 않았으면 줄이 없다 (0.169ms)
+✔ 새것부터, 나온 때가 같으면 순서가 고정된다(넣는 순서와 무관) (0.2366ms)
+✔ 실제 기록만 오른다: 빈 보관함은 빈 목록이고, 줄은 넘겨준 기록에서만 나온다 (0.2097ms)
+✔ 무료 개봉 여부를 모르는 옛 기록도 줄에 남고, 모른다는 것(null)이 그대로 전해진다 (0.2036ms)
+✔ 이름은 앞 두 글자만 남기고 가린다 (0.1387ms)
+✔ 문구: 나온 상품의 세 언어 키가 같고, 한국어는 명세의 문장 그대로다 (0.8442ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+✔ 대기는 정확히 72시간이다 (1.0728ms)
+✔ 남은 시간은 0 아래로 내려가지 않고, 해제 판정은 정확히 0 에서 참 (0.1918ms)
+✔ 카운트다운 쪼개기 — 71시간 59분 (0.661ms)
+✔ 진행률은 0~1 로 묶인다 (0.1818ms)
+✔ 이메일 마스킹 — 가운데는 복원할 수 없다 (0.2483ms)
+✔ 확인 대기(PENDING) 입금은 롤오버 요구액을 올리지 않는다 (1.2919ms)
+✔ 입금이 확정되는 순간에만 요구액이 오르고, 두 번 오르지 않는다 (0.4782ms)
+✔ 상태 없는 입금(구버전 기록)은 예전처럼 즉시 집계된다 (0.1625ms)
+✔ 72시간 대기 출금 취소 — 잔액이 정확히 되돌아오고 상태는 CANCELLED (0.4398ms)
+✔ 대기 중이 아닌 출금은 취소되지 않는다 — 이미 전송된 건을 되돌리지 않는다 (0.413ms)
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+[zustand persist middleware] Unable to update item 'gachaflix.wallet', the given storage is currently unavailable.
+✔ E-01 차감하지 못한 접수는 장부 금액 0 인 줄로 남는다: 접수 번호는 지키고, 잔액은 바뀌지 않는다(잔액 0, 신청 30) (1.9358ms)
+✔ E-01 카드로 충전한 몫만 있으면 차감하지 못한다(출금은 암호화폐 잔액에서만 나간다): 금액 0 인 줄, 카드 잔액 그대로 (0.1978ms)
+✔ E-01 차감하지 못한 접수는 취소되거나 실패해도 환불하지 않는다(감사의 재현: 0 이 30 이 되던 것) (0.7246ms)
+✔ C1-P1-01 취소가 실패해 줄이 열린 채 남아도, 나중의 취소나 서비스의 완료가 잔액을 바꾸지 않는다 (0.3578ms)
+✔ C3-P1-02 새 코드가 적은 차감하지 않은 줄을 원본의 환불 식이 읽어도 환불은 0 이다 (0.358ms)
+✔ C3-P1-02 새 코드가 적은 보통의 출금은 원본의 환불 식으로도 차감한 만큼만 돌아온다(양쪽이 같은 식이다) (0.1891ms)
+✔ E-01 보통의 길: 차감하고 내역을 만들며, 취소하면 차감한 만큼만 한 번 돌아온다 (0.1838ms)
+✔ E-01 보통의 길: 72시간 대기 건의 본인 취소도 차감한 만큼만 한 번 돌아온다 (0.1549ms)
+✔ E-01 서비스가 이미 취소나 실패로 돌려준 건은 원본처럼 차감하지 않고 내역만 남기며, 환불도 없다 (0.2078ms)
+✔ E-01 옛 출금 기록(이 변경 전에 저장된 것)은 전처럼 읽히고 전처럼 환불한다 (0.2038ms)
+✔ C1 guard A 같은 계정의 같은 접수 번호는 두 번 적어도 한 번만 차감하고 내역도 하나다 (0.2757ms)
+✔ C3-P2-02 접수 번호가 같아도 계정이 다르면 다른 출금이다(한 장부에 두 계정의 줄이 있을 때) (0.1333ms)
+✔ C3-P1-01 서비스가 모르는 접수: 차감하지 않은 줄은 환불 없이 실패로 닫힌다. 차감한 출금은 건드리지 않는다 (0.195ms)
+✔ C3-P1-01 조회와 취소: 서비스가 그 번호를 모른다는 답과 일시적인 실패를 구별한다 (32.8639ms)
+✔ 차감하지 않은 요청으로 읽는 것은 신청 금액 표시가 있는 출금 줄뿐이다 (0.2284ms)
+✔ 네트워크 수수료: TRC-20 1.00 / BEP-20 0.50 USDT, 최소 20 USDT (0.6232ms)
+✔ 주소 형식: TRC-20 은 T + base58 33자, BEP-20 은 0x + hex 40자 (0.2739ms)
+✔ 실수령액 = 신청액 − 네트워크 수수료, 음수 없음 (0.1172ms)
+✔ 검증: 최소 미만·잔액 초과·주소 오류·NaN 을 각각 잡는다 (0.6407ms)
+✔ 전액(MAX) 은 잔액 그대로 — 수수료는 신청액 안에서 차감된다 (0.1139ms)
+✔ 온체인 링크: TronScan / BscScan 형식, TxID 형식 검사 (11.1903ms)
+ℹ tests 482
+ℹ suites 0
+ℹ pass 481
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 3763.9689

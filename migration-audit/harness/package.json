@@ -1,0 +1,11 @@
+{
+  "name": "voila-parity-harness",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "VOILA 동등성 감사용 검증 도구. web/ 과 따로 설치한다.",
+  "dependencies": {
+    "pixelmatch": "^6.0.0",
+    "pngjs": "^7.0.0"
+  }
+}

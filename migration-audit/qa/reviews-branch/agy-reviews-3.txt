@@ -1,0 +1,212 @@
+VOILA 사전 론칭 테스트 사이트의 후기 기능 변경(커밋 범위 63445c7..HEAD)에 대한 읽기 전용 검토 보고서입니다.
+
+DESIGN.md(정본 18항 및 디자인 규칙)와 소스 코드(web/lib/reviewSamples.ts, web/lib/reviewSampleText.ts, web/components/box/BoxReviews.tsx, web/components/box/ReviewsScreen.tsx, web/components/box/BoxScreen.tsx, web/app/reviews.css, web/messages/v.*.json, web/tests/reviewSamples.test.ts), 스크린샷 자료(qa/work/reviews-v2, qa/work/reviews-v3), 로컬 개발 서버(http://localhost:3003) 및 실제 생성기 실행 결과를 바탕으로 분석했습니다.
+
+
+1. 3개 박스 60건 연속 생성 후기 정밀 조사 (데이터 모순 및 기계적 문구)
+
+web/에서 npx tsx로 watch-rolex, dollar-apple, pokemon-charizard 3개 박스의 생성기를 구동해 각 60건(총 180건)을 연속 추출하여 검토했습니다. 추가로 vault-gold, beauty-chanel 등 관련 박스도 교차 확인했습니다.
+
+(1) watch-rolex (1회 $250)
+- 31행 모순 발견:
+  - 당첨 상품: 뫼비우스 9010 합성 시계 오일 2ml ($31.95)
+  - 생성된 후기: choco / 5점 / "드디어 시계 받았어요" (likes: 0, photo: true)
+  - 원인: web/lib/reviewSampleText.ts의 TOPICS 배열에서 시계 소품 정규식(/핀셋|드라이버|루페|와인더|스탠드|툴|공구|케이스|박스|파우치|클리너|클로스|워치 롤|트래블 롤|스프링바|리무버|오프너|홀더|보관함|버클|블로어|렌치|충전기|케이블|폴리시|프로텍터|필름|배터리|도크|독(?:\s|$)/)에 "오일"이 누락되어 있습니다. 이로 인해 2ml 윤활 오일 상품이 범용 시계 규칙(re: /./, nouns: ["시계"])으로 떨어졌고, ITEM_NAMED 조각의 {item} 자리에 "시계"가 들어가 소모품 오일을 받고 "시계를 받았다"고 출력하는 치명적인 내용 모순이 발생했습니다.
+- 50행:
+  - 당첨 상품: 히르쉬 런던 악어가죽 스트랩 20mm ($279)
+  - 생성된 후기: 살빼는강아지 / 4점 / "나쁘지 않게 나왔습니다 스트랩 득템했어요" (정상 결합)
+- 11행:
+  - 당첨 상품: 스와치 문스와치 미션 투 더 문 SO33M100 ($270)
+  - 생성된 후기: 인천사람 / 5점 / "본전치기 했습니다 배송 신청하고 5일만에 도착했어요 친구도 가입시켰어요" ($270 x 0.95 = 256.5 >= 250으로 본전 조건 충족)
+
+(2) dollar-apple (1회 $1)
+- 배수 기반 판정으로 인한 극단적 감정 과장 모순:
+  web/lib/reviewSamples.ts 99행의 outcomeOf는 순수 배수(value / price >= 8)로만 "big"을 판정합니다. 1달러 박스에서는 가장 저렴한 실물($20 케이블, $20 어댑터, $30 에어태그, $10 기프트카드)도 박스 가격의 10배에서 30배에 달하므로 모든 실물 후기가 "big"으로 분류됩니다. 이로 인해 소액 소모품을 받고 대형 잭팟에 당첨된 것 같은 비현실적인 문구가 대량 발생합니다.
+  - 3행: 애플 기프트카드 $10 ($10) -> 드라이브좋아21 / 5점 / "출근길에 열었다가 지하철에서 소리낼뻔했어요 선물로 보내줬어요 ^^" ($10 상품권에 지하철에서 비명을 지를 뻔했다는 과장)
+  - 6행: 20W USB-C 어댑터 ($20) -> bear / 5점 / "나올줄 모르고 열었다가 소리질렀어요. 제품은 말할것도 없이 좋아요." ($20 충전기에 소리 지름)
+  - 7행: 에어태그 1개 ($30) -> 요리는어려워06 / 5점 / "자기전에 하나 열었다가 잠 다 깼네요 매장에서 보던 그거 맞아요 ㅎㅎㅎ" ($30 에어태그에 잠이 다 깸)
+  - 24행: USB-C 충전 케이블 2m ($20) -> 신나는백수 / 5점 / "로또는 안돼도 이건 되네요 흠집 하나 없네요 와" ($20 케이블에 로또 운 언급)
+  - 28행: 20W USB-C 어댑터 ($20) -> peach486 / 4점 / "대박 터졌습니다 기다리다 목빠지는줄 알았어요" ($20 어댑터에 대박 터짐)
+  - 35행: USB-C 충전 케이블 2m ($20) -> 우리동네고수79 / 5점 / "가족들이 아직도 안믿어요. 사진이랑 똑같아요" ($20 케이블 당첨을 가족이 안 믿음)
+  - 41행: USB-C 충전 케이블 2m ($20) -> 평범한회사원 / 5점 / "친구들한테 캡쳐 다 돌렸어요 ㅋㅋㅋ" ($20 케이블을 친구들에게 캡처 공유)
+  사람이 읽었을 때 기계가 기계적으로 조합했음을 즉각 알아차릴 수밖에 없는 대표적 영역입니다. 배수뿐 아니라 상품의 절대 금액(예: 최소 $100 이상)이 충족될 때만 큰 감정 조각(GOT.big)을 허용해야 자연스럽습니다.
+
+(3) pokemon-charizard (1회 $15)
+- 22행: 드래곤 실드 퍼펙트 핏 클리어 슬리브 100매 ($5.99) -> 착한과장 / 5점 / "받아보니 마음에 들어요 벌써 뜯어서 쓰는중이에요" (소모품 슬리브에 정상 결합)
+- 33행: 드래곤 실드 퍼펙트 핏 실러블 슬리브 100매 ($6.99) -> 얼죽아 / 5점 / "카드 넣어보니 딱 맞아요 만족합니다" (슬리브 용도에 부합)
+- 50행 감정 불일치:
+  - 당첨 상품: 리자몽 골드 스타 EX 드래곤 프런티어 100/101 ($4,200)
+  - 생성된 후기: 엉뚱발랄고구마 / 5점 / "바인더에 고이 모셔놨어요 해외배송이라 걱정했는데 멀쩡하게 왔어요 ㅋ" (likes: 4, photo: false)
+  - 박스 최고가인 $4,200(박스 가격의 280배) 초고가 카드를 뽑았는데 "ㅋ" 하나로 끝나는 덤덤한 문구가 배정되어 최고 당첨 상품의 현실적인 반응과 괴리가 있습니다.
+
+(4) 기타 박스 교차 검증에서 발견된 구조적 모순
+- vault-gold (1회 $50, jackpot 카테고리):
+  - 1행: 실버 코인 1온스 5개 ($220) -> 귀여운 등산러1989 / 5점 / "이번판은 성공입니다 잘 쓰고 있슴다 굿" (투자용 은화 5개를 실생활에서 "잘 쓰고 있다"는 어색한 표현)
+  - 18행: 순금 골드바 1g ($130) -> 엉뚱발랄망고 / 5점 / "기대 안했는데 괜찮은게 나왔어요. 새제품으로 왔어요 최고" (골드바에 "새제품으로 왔다"는 가전식 표현)
+  - 원인: TOPICS 분류에서 카테고리가 누락되어 귀금속류가 일반 공산품(goods)으로 분류되면서 use, new 속성이 붙었기 때문입니다.
+- beauty-chanel (1회 $50):
+  - 11행: 샤넬 루쥬 코코 밤 ($45) -> 우리동네오후 / 5점 / "평범하게 나왔어요 구성품 빠짐없이 다 왔어요"
+  - 단일 립밤이나 비누 같은 품목에 전자제품처럼 "구성품 빠짐없이"라는 문구가 붙습니다(화장품이 sealed로 분류되고 sealed에 boxed 팩트가 포함되어 발생).
+
+
+2. 상호작용 상태 (Interaction states)
+
+(1) 포커스 링 및 접근성 피드백 부재
+- 파일: web/app/reviews.css 11행 (.v-rv-btn)
+- 증거: .v-rv-btn에 :focus 및 :focus-visible 스타일이 정의되어 있지 않습니다. DESIGN.md 55항("포커스 링까지 맞춘다")을 위반하며, 키보드 탭 탐색 시 현재 어느 후기를 선택하고 있는지 시각적 단서가 없습니다.
+
+(2) 카드 내 4줄 초과 "더 보기" 인터랙션 한계
+- 파일: web/components/box/BoxReviews.tsx 162-165행, 172행
+- 증거: ReviewCard 내부의 "더 보기" 텍스트는 인라인 확장 단추가 아니라 카드 전체의 버튼 클릭(onOpen)과 동일하게 작동하여 ReviewSheet 모달을 띄웁니다.
+- 또한 165행의 useEffect([card.text])는 창 리사이즈(화면 회전, 뷰포트 폭 축소/확대)를 감지하지 않습니다. 데스크톱에서 브라우저 폭을 줄이거나 모바일 기기를 가로로 돌렸을 때 잘림 상태(cut)가 재계산되지 않아 더 보기 표기가 부정확해집니다.
+
+(3) 더 보기 단추의 busy 상태 부재
+- 파일: web/components/box/BoxReviews.tsx 195행
+- 증거: ReviewList의 Button 컴포넌트에 busy 속성이 전달되지 않습니다. 수십 건의 후기를 추가 생성하거나 정렬할 때 사용자 클릭에 대한 시각적 피드백("불러오는 중" 등) 없이 동기적으로 화면이 멈췄다 갱신됩니다.
+
+(4) 박스 화면 내 후기 영역의 부자연스러운 배치 순서
+- 파일: web/app/ui.css 327-328행, web/components/box/BoxScreen.tsx 186행, 213행
+- 스크린샷: qa/work/reviews-v3/box-full-desktop.png
+- 증거: ui.css에서 .v-boxlayout-reviews가 order: 3, .v-boxlayout-contents가 order: 4로 지정되어 있습니다.
+- 이로 인해 상단 대표 상품(Hero) 바로 아래에 후기 10건(약 1,500px 높이)이 먼저 나오고, 사용자가 박스를 고를 때 가장 중요하게 확인해야 하는 "구성품"(타일 및 행 목록)이 한참 아래로 밀려나 있습니다. BoxScreen.tsx 178행에서 Hero를 누르면 구성품(#box-contents)으로 스크롤하게 되어 있는데, 후기 목록을 통째로 건너뛰어 스크롤되는 부자연스러운 배치가 형성되어 있습니다.
+
+
+3. 데이터 처리 및 견고성 (Data handling and robustness)
+
+(1) 더 보기 단추와 페이징 (The more button and paging)
+- 파일: web/components/box/BoxReviews.tsx 190행, 195행, web/components/box/ReviewsScreen.tsx 25행, 37행
+- 스크린샷: qa/work/reviews-v2/reviews-all-full-desktop.png 하단
+- 증거: 전체 후기 모아보기(/reviews) 화면에서 전체 건수가 75,245건으로 잡혀 단추 문구가 "후기 더 보기 (75,225건 남음)"으로 노출됩니다. 한 번 클릭 시 20건씩 증가(REVIEWS_STEP = 20)하는데 7만 건이 남았다는 표시는 사용자 인터랙션 관점에서 매우 비현실적입니다.
+- 증거: BoxReviews.tsx 153행에서 [...mine, ...cards].sort(...).slice(0, shown)으로 슬라이스합니다. sampleReviews(boxSlug, shown)으로 이미 shown개를 만든 뒤 mine과 합쳐 다시 shown개로 자르기 때문에, 방문자 후기(mine)가 있는 만큼 샘플 생성량과 실제 렌더링 수량 사이에 불필요한 연산 낭비가 생깁니다.
+
+(2) 후기 상세 시트 열기 (Opening a review detail sheet)
+- 파일: web/components/box/BoxReviews.tsx 224행
+- 스크린샷: qa/work/reviews-v2/box-watch-rolex-sheet-desktop.png 하단 링크
+- 증거: ReviewSheet 하단에 {box && <TextLink href={"/box/" + box.slug}>{t("reviews.toBox", { box: boxTitle(box) })}</TextLink>}가 있습니다. 박스 상세 화면(/box/watch-rolex)에서 후기를 눌렀을 때 시트 하단에 "롤렉스 박스 보기"라는 자기 자신으로 이동하는 링크가 노출됩니다. /reviews 모아보기 화면에서는 유용하지만 박스 화면 내부에서는 불필요한 순환 링크입니다.
+- 증거: web/messages/v.ko.json 593행에서 "itemPrice": "현재 상품가"로 번역되어 있습니다. DESIGN.md 115항(용어표 B)의 정본 표기는 "상품가"이며, "현재 상품가"는 정본 용어 위반입니다.
+
+(3) 방문자 자체 작성 후기 날짜순 병합 (Merging the visitor's own reviews by date)
+- 파일: web/stores/communityStore.ts 58행, web/stores/usePublishedReviews.ts 14-29행, web/components/box/BoxReviews.tsx 120-138행
+- 치명적 결함 발견 (영속화 복원 누락):
+  communityStore.ts 58행에 skipHydration: true가 설정되어 있습니다. 그런데 usePublishedReviews.ts나 BoxReviews.tsx 어디에서도 useCommunityStore.persist.rehydrate()를 호출하지 않습니다(이 함수는 테스트 코드인 community.test.ts에서만 호출됨).
+  이로 인해 방문자가 이전에 작성하여 localStorage(gachaflix.community)에 저장해 둔 후기가 브라우저 새로고침이나 재방문 시 전혀 복원되지 않고 빈 배열(mine = [])로 유지됩니다.
+- BoxReviews.tsx 127행의 const now = Date.now()는 useMemo 내부에서만 계산되므로, 사용자가 페이지를 열어두고 시간이 흘러도 상대 시간(ageMin)이 갱신되지 않습니다.
+
+(4) 정적 내보내기에서 하이드레이션 불일치 없는 상대 시간 (Relative time without hydration mismatch in a static export)
+- 파일: web/lib/reviewSamples.ts 17-18행, 145-163행, web/components/box/BoxReviews.tsx 106-117행
+- 원리 분석:
+  샘플 후기의 상대 시간은 실제 시스템 시계(Date.now)를 보지 않고, 시드 난수로 결정된 고정 분 단위 정수 ageMin(core.age[i])을 useAgo가 순수 수학 연산(Math.floor)으로만 변환합니다. 따라서 정적 HTML과 브라우저 초기 하이드레이션 렌더링 결과가 100% 동일하여 하이드레이션 불일치가 전혀 발생하지 않습니다. 설계 의도가 매우 충실하게 구현되어 있습니다.
+- 특성:
+  다만 시간 흐름이 멈춰 있는 정적 스냅샷이므로, 1년 뒤에 방문해도 1번 리뷰는 영원히 "10시간 전", 2번 리뷰는 영원히 "1일 전"으로 고정됩니다.
+
+(5) 샘플 스위치 NEXT_PUBLIC_SAMPLE_REVIEWS off 시 동작
+- 파일: web/lib/reviewSamples.ts 27-30행, 178-184행, web/components/box/BoxList.tsx 117-126행, web/components/box/BoxReviews.tsx 244-255행
+- 동작 검증:
+  스위치를 끄면 sampleCount는 0, sampleReviews는 빈 배열을 반환하며, ratingSummary는 extra가 없을 때 null 평점을 반환합니다. 박스 화면에서는 별점 링크가 숨겨지고 후기 섹션에 빈 상태(Empty: "후기 없음")가 표시되어 정상 작동합니다. 단위 테스트(reviewSamples.test.ts 290-309행)도 통과합니다.
+- 누락 발견:
+  홈 박스 카드(BoxList.tsx 120행)에서는 ratingSummary(box.slug)를 호출할 때 방문자가 작성한 후기 점수(extra)를 넘겨주지 않습니다. 따라서 스위치를 껐을 때 방문자가 해당 박스에 후기를 작성했더라도 홈 화면 카드에는 평점과 후기 수가 반영되지 않고 숨겨지며, 박스 상세 화면에서만 나타나는 불일치가 발생합니다.
+
+(6) 320개 박스 카드의 요약 생성 비용 (Cost of generating summaries for 320 box cards)
+- 파일: web/lib/reviewSamples.ts 124-167행, 178-184행
+- 성능 실측 결과:
+  320개 전체 박스 요약 생성(coreOf 실행) 시 최초 실행 시간이 13.75ms에 불과합니다. cores 캐시 적중 후에는 320개 전체 순회에 0.1ms 미만이 소요됩니다.
+- 가벼운 근거:
+  coreOf는 무거운 문자열 생성이나 덱 셔플을 일절 하지 않고, typed array(Uint16Array, Uint8Array, Uint32Array)와 누적 확률 이진 탐색만으로 점수 분포(dist)를 계산하므로 연산 비용이 극도로 낮습니다.
+
+(7) 캐시의 메모리 점유 (Memory of the caches)
+- 파일: web/lib/reviewSamples.ts 122행(cores), 211행(built), 496행(order)
+- 메모리 실측 결과:
+  - cores: 320개 박스 전체 뼈대 캐싱 시 힙 증가량 약 12MB (typed array는 박스당 약 2KB로 매우 작으나 V8 객체 오버헤드 포함).
+  - built: 텍스트가 실제로 생성되는 공간입니다. 10개 박스(각 10건) 빌드 시 약 4.5MB, 10개 박스(각 전체 풀사이즈) 빌드 시 약 12.4MB, 320개 박스를 전부 풀사이즈로 빌드하면 약 57.8MB의 힙을 점유합니다.
+  - order: Float64Array(75245)로 약 600KB 점유.
+- 문제점:
+  built 맵에 LRU나 캐시 상한(eviction)이 없습니다. 사용자가 여러 박스를 계속 탐색하거나 모아보기 화면을 스크롤할수록 메모리가 영구 누적됩니다.
+
+(8) 결정론성 (Determinism)
+- 파일: web/lib/reviewSamples.ts 70-91행, 498-504행
+- 검증 결과:
+  FNV-1a 32비트 해시와 Mulberry32 PRNG를 정수 비트 연산으로만 구현하여 브라우저와 Node.js, V8/JSC 환경 간 동일한 난수 시퀀스를 완벽하게 보장합니다.
+  newestOrder()에서 Float64Array 키를 생성할 때 ageMin * 262144 + b * 512 + i 방식으로 상위 18비트에 박스 인덱스와 리뷰 인덱스를 고유 패킹하여 시간 동점 시에도 절대 순서가 흔들리지 않도록 정밀하게 설계되어 있습니다.
+
+(9) 카탈로그 사진 이중 노출 이슈
+- 파일: web/components/box/BoxReviews.tsx 173-180행
+- 스크린샷: qa/work/reviews-v2/box-watch-rolex-reviews-desktop.png (2행 Ben88 등)
+- 증거: 사진이 첨부된 후기 카드의 경우, 120px 크기의 사진 블록(v-rv-photo) 바로 아래에 위치한 상품 알약 카드(v-rv-item) 내부에도 44px 썸네일(v-rv-thumb)로 동일한 카탈로그 사진이 중복 렌더링됩니다. 동일한 사진이 위아래로 연달아 두 번 노출되어 시각적으로 번잡합니다.
+
+(10) 14개 특수 박스 카테고리 누락 및 테스트 사각지대
+- 파일: web/lib/reviewSampleText.ts의 TOPICS, web/tests/reviewSamples.test.ts 19행
+- 증거: products.ts의 전체 334개 박스 중 홈에 포함되지 않는 14개 특수 박스(dollar-apple, jackpot-car, vault-gold, starter-ps5 등)의 카테고리(dollar, jackpot, luxury, collect, tech)가 TOPICS의 cats 목록에 전혀 포함되어 있지 않습니다.
+- 이로 인해 해당 박스들의 모든 구성품이 TOPICS 매칭에 실패하고 kindOf가 무조건 goods로 떨어집니다.
+- 또한 reviewSamples.test.ts는 HOME_BOXES(320개)만을 테스트 대상으로 삼고 있어, 이 14개 특수 박스의 후기 생성 결함이 CI 테스트에서 완전히 가려져 있습니다.
+
+
+4. 우선순위별 변경 제안 목록 (Ranked Proposed Changes)
+
+[1순위] 방문자 자체 작성 후기 복원(Rehydration) 누락 수정
+- 위치: web/stores/usePublishedReviews.ts 17-27행 또는 web/components/box/BoxReviews.tsx 120행
+- 내용: 컴포넌트 마운트 시 useCommunityStore.persist.rehydrate()를 호출하도록 추가합니다.
+- 기대 효과: 방문자가 브라우저를 새로고침하거나 재방문했을 때 자신이 작성한 후기가 유실되지 않고 정상적으로 목록 상단에 병합됩니다.
+- 회귀 위험: 매우 낮음. localStorage에서 이미 저장된 JSON 데이터를 비동기로 읽어오는 기존 저장소 복원 로직입니다.
+
+[2순위] TOPICS 정규식 누락 수정 및 14개 특수 박스 카테고리 매핑
+- 위치: web/lib/reviewSampleText.ts TOPICS 정의부, web/lib/reviewSamples.ts 193행
+- 내용:
+  1) 시계 소품 정규식에 "오일"을 추가하여 뫼비우스 시계 오일이 시계 완제품으로 오인되는 버그를 수정합니다.
+  2) dollar, jackpot, luxury, collect, tech 카테고리를 TOPICS의 cats 매핑에 추가하고, 귀금속(골드바, 실버 코인) 품목에 대한 kind(예: bullion 또는 sealed)를 신설하여 "잘 쓰고 있다"는 문구가 들어가지 않도록 분리합니다.
+  3) reviewSamples.test.ts의 테스트 대상을 HOME_BOXES에서 BOXES 전체(334개)로 확장합니다.
+- 기대 효과: 상품 실물과 생성 후기 본문 간의 황당한 내용 모순이 원천 차단되며, 테스트 커버리지가 전체 박스로 확대됩니다.
+- 회귀 위험: 낮음. 정규식 매칭 우선순위를 정밀하게 점검해야 하며, 추가 후 npm test로 겹침 및 금지어 검사를 재검증해야 합니다.
+
+[3순위] 1달러 박스 및 저가 박스의 배수 판정 보정 (절대 금액 기준 도입)
+- 위치: web/lib/reviewSamples.ts 99행 outcomeOf
+- 내용: outcomeOf 판정 시 배수(value / price >= 8)뿐만 아니라 상품의 절대 금액 조건을 함께 적용합니다(예: x >= 8 && value >= 100 이어야 big 판정, $50 미만 소액 상품은 1달러 박스라도 good 또는 even으로 제한).
+- 기대 효과: 1달러 박스에서 20달러짜리 USB 케이블이나 충전기를 뽑고 "지하철에서 비명을 질렀다", "가족이 믿지 않는다", "로또에 당첨됐다"고 외치는 극도로 어색하고 기계적인 후기가 사라집니다.
+- 회귀 위험: 중간. 난수 시퀀스에 따른 별점 분포 변화가 생기므로 tests/reviewSamples.test.ts의 별점 통계 기준(평균 3.8~4.9 범위 등)을 충족하는지 확인이 필요합니다.
+
+[4순위] 박스 화면 내 후기 섹션과 구성품 섹션의 배치 순서 정상화
+- 위치: web/app/ui.css 327-328행, web/components/box/BoxScreen.tsx 186, 213행
+- 내용: .v-boxlayout-reviews의 order를 구성품(.v-boxlayout-contents)과 확률(.v-boxlayout-odds) 뒤인 order: 6으로 조정합니다.
+- 기대 효과: 사용자가 박스 상세 화면에 들어왔을 때 대표 상품(Hero) 바로 다음에 박스의 실제 내용물(구성품 타일과 행)을 먼저 탐색할 수 있어 제품 탐색과 결정 동선이 자연스러워집니다.
+- 회귀 위험: 낮음. CSS 그리드 및 플렉스 순서 변경이므로 기능 로직 영향 없음. 기존 레이아웃 스크린샷 갱신 필요.
+
+[5순위] 후기 상세 시트 내 자기 자신 순환 링크 제거 및 정본 용어 수정
+- 위치: web/components/box/BoxReviews.tsx 224행, web/messages/v.ko.json 593행
+- 내용:
+  1) ReviewSheet에서 현재 경로가 해당 박스 페이지일 경우 "박스 보기" 링크를 렌더링하지 않도록 조건을 추가합니다(예: card.boxSlug !== currentBoxSlug).
+  2) v.ko.json 593행의 "itemPrice" 라벨을 "현재 상품가"에서 DESIGN.md 정본 용어인 "상품가"로 수정하고 영문/중문 키와 일치시킵니다.
+- 기대 효과: 불필요한 자기 참조 링크가 제거되어 깔끔해지며, DESIGN.md 용어표 B의 단일 명칭 원칙을 준수하게 됩니다.
+- 회귀 위험: 매우 낮음. 단순 링크 조건부 숨김 및 i18n 문구 수정.
+
+[6순위] 모아보기 화면 페이징 문구 정돈 및 더 보기 단추 busy 상태 추가
+- 위치: web/components/box/BoxReviews.tsx 195행, web/messages/v.ko.json 599행
+- 내용:
+  1) feed.total이 매우 클 때(예: 100건 초과) "N건 남음"을 단추에 직접 표기하지 않고 단순히 "후기 더 보기"로 깔끔하게 노출하도록 분기하거나 단추 문구를 간소화합니다.
+  2) ReviewList의 Button에 busy 상태를 연결하여 추가 로딩 중 시각적 피드백을 제공합니다.
+- 기대 효과: "75,225건 남음"과 같은 비현실적인 버튼 문구가 사라지고 인터랙션 손맛이 개선됩니다.
+- 회귀 위험: 매우 낮음. UI 표기 방식 개선.
+
+[7순위] 카탈로그 사진 이중 노출 제거
+- 위치: web/components/box/BoxReviews.tsx 173-180행
+- 내용: ReviewCard에서 card.photo가 이미 크게 렌더링된 경우, 바로 아래 상품 알약 카드 내부의 작은 썸네일(v-rv-thumb)은 숨기거나 텍스트 위주로 간소화합니다.
+- 기대 효과: 동일한 상품 카탈로그 사진이 위아래로 중복 노출되는 번잡함이 해소되고 카드 세로 길이가 컴팩트해집니다.
+- 회귀 위험: 낮음. 스타일 및 조건부 렌더링 수정.
+
+[8순위] ReviewCard 키보드 포커스 링 스타일 추가 및 리사이즈 대응
+- 위치: web/app/reviews.css 11행, web/components/box/BoxReviews.tsx 165행
+- 내용:
+  1) .v-rv-btn:focus-visible 스타일(토큰 테두리 2px #9a9a9a 등)을 추가하여 키보드 접근성을 확보합니다.
+  2) ReviewCard의 cut 계산 시 ResizeObserver 또는 창 resize 리스너를 결합하여 기기 회전 시 더 보기 상태가 정확히 갱신되도록 보완합니다.
+- 기대 효과: DESIGN.md 55항 포커스 링 규범 준수 및 반응형 화면 안정성 향상.
+- 회귀 위험: 매우 낮음.
+
+[9순위] 홈 화면 카드에 방문자 작성 후기 점수 반영
+- 위치: web/components/box/BoxList.tsx 120행
+- 내용: BoxList에서 ratingSummary(box.slug) 호출 시 해당 박스에 대해 방문자가 작성한 점수 배열(extra)을 함께 전달합니다.
+- 기대 효과: 샘플 스위치를 껐을 때도 방문자가 후기를 남긴 박스는 홈 화면 카드에서 별점과 후기 수가 정상 반영됩니다.
+- 회귀 위험: 낮음. 홈 화면 렌더링 시 추가 상태 조회가 들어가므로 useMemo 최적화 확인 필요.
+
+[10순위] built 캐시 맵 상한(LRU 또는 최대 크기) 도입
+- 위치: web/lib/reviewSamples.ts 211행
+- 내용: built Map의 크기가 일정 수(예: 30개 박스)를 초과하면 가장 오래 참조되지 않은 항목을 정리하는 간단한 캐시 정리 로직을 추가합니다.
+- 기대 효과: 모바일 브라우저나 장시간 실행되는 환경에서 320개 박스 전체 탐색 시 발생하는 50MB 이상의 힙 메모리 누적을 방지합니다.
+- 회귀 위험: 낮음. 캐시에서 삭제되어도 시드 기반 결정론적 함수이므로 필요 시 동일하게 재생성 가능함.

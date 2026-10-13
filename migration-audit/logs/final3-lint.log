@@ -1,0 +1,19 @@
+
+> gacha-theater@0.1.0 lint:design
+> node scripts/design-lint/lint.mjs --scope new
+
+
+범위: new, 검사 파일: 49
+color-outside-tokens: 0
+weight-over-400: 0
+uppercase: 0
+letter-spacing-positive: 0
+shadow: 0
+gradient: 0
+native-dialog: 0
+copy-emdash: 0
+copy-middledot: 0
+copy-exclamation: 0
+copy-question: 0
+copy-apology: 0
+합계: 0

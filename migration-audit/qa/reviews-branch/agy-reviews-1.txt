@@ -1,0 +1,185 @@
+Wait for the background task to complete.
+63445c7부터 HEAD까지의 변경 범위([`reviewSamples.ts`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/lib/reviewSamples.ts), [`reviewSampleText.ts`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/lib/reviewSampleText.ts), [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx), [`ReviewsScreen.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/ReviewsScreen.tsx), [`BoxScreen.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxScreen.tsx), [`reviews.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css), [`v.ko.json`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/messages/v.ko.json), [`reviewSamples.test.ts`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/tests/reviewSamples.test.ts))와 스크린샷들을 [`DESIGN.md`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/DESIGN.md) 기준으로 검토한 결과입니다.
+
+---
+
+### 1. 박스 상세 화면 전체 위계와 배치 순서
+
+- **관련 파일 및 코드**:
+  - [`BoxScreen.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxScreen.tsx#L177-L215)
+  - [`ui.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L327-L328)
+- **스크린샷 증거**:
+  - `qa/work/reviews-v3/box-full-mobile.png`
+  - `qa/work/reviews-v3/box-full-desktop.png`
+- **현황 및 문제점**:
+  - [`ui.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L327-L328)에서 `.v-boxlayout-reviews`의 order가 3, `.v-boxlayout-contents`의 order가 4로 지정되어 있습니다.
+  - 이로 인해 박스 상세 화면에서 대표 실물 사진(히어로) 바로 아래에 후기 섹션([`BoxReviews`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L236))이 먼저 배치되고, 박스의 본질인 구성품 전체(`v-boxlayout-contents`)와 확률 요약(`v-boxlayout-odds`)이 후기 10건 아래로 밀려나 있습니다.
+  - [`DESIGN.md`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/DESIGN.md#L9) 1장의 핵심 원칙인 "첫 화면에서 무엇을, 얼마에, 어떤 확률로 받는지 안다"와 어긋납니다. 모바일 전체 화면 스크린샷(`box-full-mobile.png`)을 보면, 박스에 무엇이 들었는지 확인하기 위해 10개의 긴 후기 행(약 2,000px 높이)을 스크롤해서 내려가야만 구성품 티어 목록이 시작됩니다.
+  - 히어로 사진 버튼([`BoxScreen.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxScreen.tsx#L178)) 클릭 시 `box-contents`로 스크롤되도록 구현되어 있는데, 정작 화면 순서상 히어로 직후에 후기가 끼어 있어 시각적 흐름이 끊깁니다.
+
+---
+
+### 2. 별점 요약 블록 ([`RatingBlock`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L62-L81))
+
+- **관련 파일 및 코드**:
+  - [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L62-L81), [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L246-L248)
+  - [`ui.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L158-L165)
+  - [`reviews.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L28-L29)
+- **스크린샷 증거**:
+  - `qa/work/reviews-v3/box-mobile.png`
+  - `qa/work/reviews-v3/box-desktop.png`
+  - `qa/work/reviews-v2/reviews-all-desktop.png`
+- **현황 및 문제점**:
+  - **평균 점수 폰트 크기**: [`ui.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L160)의 `.v-rvsum-num`이 `40px`로 선언되어 있습니다. [`DESIGN.md`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/DESIGN.md#L37) 3장의 글자 규칙("제목 32px 400(모바일 28) / 섹션 제목 18px 400")과 비교할 때, 화면 주 제목보다도 큰 크기입니다. 별점 요약 카드가 화면 전체에서 시선을 과도하게 독점합니다.
+  - **설명 문구 고립**: [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L247)의 `<p className="v-small">{t("box.ratingBasis")}</p>`("별점은 상품을 받은 분이 받은 상품과 배송에 매긴 점수입니다.")가 카드 바깥에 별도의 맥락이나 정돈된 간격 없이 애매하게 떨어져 있습니다. 반면 [`ReviewsScreen.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/ReviewsScreen.tsx#L32)에서는 `ScreenHead`의 설명(`desc`)으로 자연스럽게 결합되어 있는 것과 대조됩니다.
+  - **분포 바 시각 처리**: 건수가 적은 구간(예: `box-mobile.png`의 1점 2건, 2점 5건)에서 6px 높이에 `border-radius: 3px`인 바의 채움 영역이 미세한 점처럼 보입니다.
+
+---
+
+### 3. 후기 목록 행 ([`ReviewCard`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L157-L185))
+
+- **관련 파일 및 코드**:
+  - [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L168-L184)
+  - [`reviews.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L11-L16)
+- **스크린샷 증거**:
+  - `qa/work/reviews-v2/box-mobile-apple-list10-mobile.png`
+  - `qa/work/reviews-v2/box-watch-rolex-reviews-mobile.png`
+- **현황 및 문제점**:
+  - **단일 버튼 래핑과 중첩 인터랙션 착시**: 행 전체가 `<button type="button" className="v-rv-btn" onClick={() => onOpen(card)}>`로 구성되어 있습니다. 이 버튼 안에 "더 보기", 첨부 사진, 내부 상품 카드([`v-rv-item`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L22))가 모두 들어 있습니다.
+  - 특히 내부 상품 카드는 사진, 상품명, 상품가가 포함된 독립 카드 형태이며, [`reviews.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L26)에 의해 호버 시 상품명에 밑줄까지 생깁니다. 사용자는 해당 상품의 상세 정보 시트가 열릴 것으로 기대하지만, 실제로는 후기 상세 시트([`ReviewSheet`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L201))가 열려 기대와 동작이 어긋납니다.
+  - 4줄 말줄임([`reviews.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L15))과 "더 보기" 텍스트([`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L172))도 마찬가지로 누르면 텍스트가 인라인으로 펼쳐지는 것이 아니라 시트가 뜹니다.
+
+---
+
+### 4. 상품 카드 ([`v-rv-item`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L22-L26))
+
+- **관련 파일 및 코드**:
+  - [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L174-L180)
+  - [`reviews.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L22-L26)
+- **스크린샷 증거**:
+  - `qa/work/reviews-v2/box-mobile-apple-list10-desktop.png`
+  - `qa/work/reviews-v2/box-watch-rolex-reviews-desktop.png`
+- **현황 및 문제점**:
+  - **데스크톱 너비 과다 확장**: 데스크톱 박스 화면의 메인 열 폭(약 650~700px)에서 `.v-rv-item`이 가로 100%를 전부 채웁니다. 카드의 좌측에 44px 썸네일과 짧은 텍스트 2줄만 위치하고, 우측의 약 80%는 완전히 빈 회색 면(`#303030`)으로 남습니다.
+  - 카드가 불필요하게 좌우로 길쭉한 직사각형 띠 형태가 되어 카드다운 조형감이 떨어집니다.
+
+---
+
+### 5. 사진 크기 및 시각적 중복 ([`v-rv-photo`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L19-L20))
+
+- **관련 파일 및 코드**:
+  - [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L173-L177)
+  - [`reviews.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L19-L20)
+- **스크린샷 증거**:
+  - `qa/work/reviews-v2/box-watch-rolex-reviews-mobile.png` (Ben88 행)
+  - `qa/work/reviews-v3/box-full-mobile.png` (emma_m 행)
+- **현황 및 문제점**:
+  - **동일 카탈로그 이미지 이중 노출**: 샘플 리뷰 규칙([`DESIGN.md`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/DESIGN.md#L98) 18번)에 따라 카탈로그 사진을 후기 첨부 사진으로 사용합니다. 그런데 한 행 안에서 위에는 `120px` 폭의 카탈로그 사진([`v-rv-photo`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L19))이 나오고, 바로 아래 상품 카드([`v-rv-thumb`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L23))에 `44px` 썸네일로 똑같은 사진이 연이어 렌더링됩니다.
+  - 예를 들어 Ben88의 롤렉스 후기(`box-watch-rolex-reviews-mobile.png`)를 보면, 데이트저스트 41 시계 사진이 10px 간격으로 두 번 반복되어 인위적인 생성 데이터의 느낌이 강하게 드러납니다.
+  - 데스크톱 화면에서 120px 사진은 메인 열 폭(약 700px) 대비 너무 작아 좌측 구석에 왜소하게 놓입니다.
+
+---
+
+### 6. 구분선 ([`v-divider`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L9))
+
+- **관련 파일 및 코드**:
+  - [`reviews.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L9-L10, #L32-L33)
+- **스크린샷 증거**:
+  - `qa/work/reviews-v3/box-full-mobile.png`
+  - `qa/work/reviews-v2/reviews-all-desktop.png`
+- **현황 및 문제점**:
+  - 행 사이 구분선(`border-top: 1px solid var(--v-divider)`)은 깔끔하게 적용되어 있습니다.
+  - 다만 후기 섹션 하단의 보조 링크들 아래와 다음 대형 섹션인 구성품(`v-boxlayout-contents`) 사이에는 아무런 경계나 시각적 분리선이 없어 섹션 전환이 다소 모호합니다.
+  - `/reviews` 화면의 데스크톱 2열 그리드([`reviews.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L32))에서는 한 행에 놓인 좌우 두 카드의 콘텐츠 높이(사진 유무, 텍스트 줄 수 차이)가 다를 때, CSS 그리드 행 높이에 맞춰지면서 내용이 짧은 쪽 카드의 아래쪽 구분선까지 불필요한 빈 여백이 발생합니다.
+
+---
+
+### 7. 더 보기 단추 ([`v-rv-morebtn`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L27, #L34))
+
+- **관련 파일 및 코드**:
+  - [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L195)
+  - [`reviews.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L27, #L34)
+- **스크린샷 증거**:
+  - `qa/work/reviews-v3/box-full-mobile.png`
+  - `qa/work/reviews-v3/box-full-desktop.png`
+- **현황 및 문제점**:
+  - **단추 성격**: [`Button quiet`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/ui/kit.tsx#L14)를 사용하여 회색 알약(`var(--v-pill)`)으로 렌더링되므로, 흰색 주 단추 하나만 두는 원칙([`DESIGN.md`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/DESIGN.md#L41))을 훼손하지 않습니다.
+  - **인라인 추가 건수와 스크롤 부담**: 박스 상세 화면에서 이미 10건이 노출되어 있는 상태에서 단추를 누르면 20건([`REVIEWS_STEP = 20`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L35))이 인라인으로 바로 추가됩니다. 30건으로 늘어난 후기는 박스 화면의 아래쪽 구성품과 확률 요약을 완전히 화면 밖으로 밀어내어 핵심 정보를 확인하기 어렵게 만듭니다.
+
+---
+
+### 8. 하단 링크 둘 및 화면 전환
+
+- **관련 파일 및 코드**:
+  - [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L251-L255)
+  - [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L222-L224) (ReviewSheet)
+- **스크린샷 증거**:
+  - `qa/work/reviews-v3/box-full-mobile.png`
+  - `qa/work/reviews-v2/box-mobile-apple-sheet-mobile.png`
+- **현황 및 문제점**:
+  - **성격이 다른 두 링크의 병렬 배치**: 박스 화면 하단에 "후기 모두 보기"와 "나온 상품" 링크가 나란히 놓여 있습니다([`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L253-L254)).
+  - "후기"는 샘플 데이터(80~400건)이고, "나온 상품"([`DESIGN.md`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/DESIGN.md#L95) 15번)은 실제 내 기기에서 당첨된 2배 이상 상품만 기록되는 엄격한 실기록입니다. 두 데이터의 본질이 정반대인데 후기 섹션 하단에 대등한 링크로 묶여 있어 사용자가 "나온 상품" 역시 가상 데이터의 연장으로 오인할 위험이 있습니다.
+  - **상세 시트 링크 래퍼 분리**: [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L222-L224)에서 검증 링크와 박스 링크가 각각 별도의 `<div className="v-links">`로 감싸져 있어, 한 줄 가로 배치가 되지 않고 세로로 불필요하게 쪼개집니다.
+
+---
+
+### 9. 모바일과 데스크톱의 정보 밀도
+
+- **스크린샷 증거**:
+  - `qa/work/reviews-v3/box-full-mobile.png`
+  - `qa/work/reviews-v3/box-full-desktop.png`
+  - `qa/work/reviews-v2/reviews-all-desktop.png`
+- **현황 및 문제점**:
+  - **모바일 박스 화면**: 한 행당 높이가 150px에서 250px에 달합니다. 10건만 노출되어도 약 2,000px 이상의 스크롤 높이를 차지합니다. 여기에 하단 고정 구매 바(`v-openbar`, 약 150px)가 가세하여 실질적으로 한 뷰포트에 1.5건 정도밖에 보이지 않는 매우 느슨한(loose) 밀도를 보입니다.
+  - **데스크톱 박스 화면**: 1열 배치로 인해 좌우 700px 너비 공간에 비해 텍스트와 카드가 얇고 길게 늘어지며, 우측 sticky 사이드바(`v-boxside`)의 세로 높이(약 400px)와 좌측 메인 열의 세로 높이(2,000px 이상) 간의 심한 불균형이 발생합니다.
+  - **모아보기 화면([`/reviews`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/ReviewsScreen.tsx#L19))**: 데스크톱 2열 그리드는 적절한 폭을 형성하지만, 좌우 카드 간 높이 편차로 인한 구분선 정렬 문제가 남아 있습니다.
+
+---
+
+### 10. 용어 일관성
+
+- **관련 파일 및 코드**:
+  - [`v.ko.json`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/messages/v.ko.json#L593)
+  - [`DESIGN.md`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/DESIGN.md#L115) (용어표 B)
+  - 커밋 63445c7 커밋 메시지
+- **스크린샷 증거**:
+  - `qa/work/reviews-v2/box-mobile-apple-sheet-mobile.png`
+- **현황 및 문제점**:
+  - [`ReviewSheet`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L217)에서 상품 기준 값을 표시할 때 `t("reviews.itemPrice")`를 사용하며, 이는 [`v.ko.json`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/messages/v.ko.json#L593)에서 `"현재 상품가"`로 번역되어 있습니다.
+  - 63445c7 커밋과 [`DESIGN.md`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/DESIGN.md#L115) 용어표에서 정한 표준 용어는 `"상품가"`(Item value, 商品价值)이며, 한 대상에 이름 하나 원칙을 지키려면 "현재 상품가"가 아닌 "상품가"로 통일해야 합니다.
+
+---
+
+### 제안 변경 사항 우선순위 목록
+
+#### 1순위. 박스 상세 화면에서 후기 섹션 배치 순서 변경 (위계 정상화)
+- **제안 내용**: [`ui.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L327-L331)의 flex/grid order를 조정하여, 화면 순서를 `헤더 -> 대표 실물 사진(Hero) -> 구성품(Contents) -> 확률 요약(Odds) -> 후기(Reviews) -> 알아둘 것(Notes)` 순서로 변경합니다.
+- **기대 효과**: 사용자가 박스에 들어왔을 때 무엇을 받을 수 있는지(구성품)와 확률을 즉시 확인한 뒤, 구매 직전 신뢰 보조 정보로 후기를 탐색할 수 있게 됩니다. 히어로 사진 클릭 시 곧바로 구성품으로 자연스럽게 이어지며, 2,000px 스크롤 장벽이 해소됩니다.
+- **회귀 위험**: 상단 헤더의 별점 링크(`v-ratinglink`) 클릭 시 `#reviews`로 스크롤되는 거리가 화면 아래쪽으로 길어집니다. 링크 앵커 동작 자체는 정상 작동합니다.
+
+#### 2순위. 첨부 사진 존재 시 내부 상품 카드의 썸네일 중복 노출 제거
+- **제안 내용**: [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L174-L180)에서 후기에 첨부 사진(`card.photo`)이 있을 경우, 아래 상품 카드([`v-rv-item`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L22)) 내의 작은 썸네일([`v-rv-thumb`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L23)) 렌더링을 생략하거나 글자 위주의 간결한 형태로 전환합니다.
+- **기대 효과**: 동일한 카탈로그 이미지가 10px 간격으로 상하 반복 노출되는 기계적 어색함을 해소하고, 사진 후기 행의 세로 높이를 절감하여 목록 밀도를 향상시킵니다.
+- **회귀 위험**: 실제 이용자가 등록한 사진과 카탈로그 썸네일 간의 구분이 모호해질 수 있으므로, `card.mine`이 아닐 때만 적용하거나 구조적 분기 조건을 신중히 설정해야 합니다.
+
+#### 3순위. 박스 상세 화면에서의 후기 노출 건수 축소 및 더 보기 동작 분리
+- **제안 내용**: 박스 상세 화면([`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L238))에서는 초기 노출 건수를 3~5건으로 줄이고, "후기 더 보기" 버튼을 인라인 20건 추가 대신 "후기 모두 보기"(`/reviews?box=...`) 화면으로의 명확한 유도 경로로 정리합니다.
+- **기대 효과**: 박스 상세 페이지의 스크롤 길이를 획기적으로 줄여 핵심 구매 흐름(열기, 구성품 확인)에 집중할 수 있으며, 80~400건의 풍부한 샘플 탐색은 전용 모아보기 화면(`/reviews`)에서 쾌적하게 수행할 수 있습니다.
+- **회귀 위험**: 기존에 박스 화면 안에서 곧바로 10건 이상의 후기를 스크롤하려던 사용 흐름이 페이지 이동으로 바뀝니다. `REVIEWS_FIRST` 상수가 [`ReviewsScreen`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/ReviewsScreen.tsx#L25)과 공유되고 있어 별도 상수로 분리 정의해야 합니다.
+
+#### 4순위. 데스크톱 메인 열의 상품 카드([`v-rv-item`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L22)) 최대 너비 제한
+- **제안 내용**: 데스크톱 미디어 쿼리에서 `.v-rv-item`에 `max-width: 420px;` 또는 `align-self: flex-start;`를 부여하여 좌우로 과도하게 늘어나는 것을 방지합니다.
+- **기대 효과**: 700px 폭의 80%가 빈 회색 직사각형으로 남는 시각적 여백 낭비를 해결하고, 카드다운 단정한 형태를 유지합니다.
+- **회귀 위험**: 모바일 화면에서는 여전히 `width: 100%`가 필요하므로, `min-width: 1024px` 미디어 쿼리 내부로 스타일을 한정해야 합니다.
+
+#### 5순위. 별점 블록([`RatingBlock`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L62)) 평균 점수 폰트 크기 및 설명 문구 정돈
+- **제안 내용**: [`ui.css`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L160)의 `.v-rvsum-num` 폰트 크기를 `40px`에서 `32px` 수준으로 조정하고, [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L247)의 고립된 `ratingBasis` 문구를 별점 요약 카드 상단이나 하단 캡션으로 정돈합니다.
+- **기대 효과**: 화면 전체 제목(32px)보다 큰 폰트로 시선을 뺏던 불균형이 해소되며, 애매하게 부유하던 설명 글이 정돈된 시각 구조 안으로 편입됩니다.
+- **회귀 위험**: `/reviews` 화면에서도 동일한 `RatingBlock`을 공유하므로, 모아보기 상단 헤더와의 조화로운 배치를 함께 확인해야 합니다.
+
+#### 6순위. [`ReviewSheet`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L201) 용어 통일 및 보조 링크 래퍼 단일화
+- **제안 내용**:
+  - [`v.ko.json`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/messages/v.ko.json#L593)의 `"itemPrice"`를 `"현재 상품가"`에서 [`DESIGN.md`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/DESIGN.md#L115) 기준인 `"상품가"`로 변경(영어 `"Item value"`, 중국어 `"商品价值"`로 일치).
+  - [`BoxReviews.tsx`](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L221-L224)의 검증 링크와 박스 링크를 단일 `<div className="v-links">` 안에 함께 묶어 가로 배치되도록 수정.
+- **기대 효과**: 저장소 전반의 용어표 원칙("한 대상에 이름 하나")을 온전히 준수하고, 시트 하단 보조 행동이 자연스러운 1줄 가로 배치로 정돈됩니다.
+- **회귀 위험**: `v.ko.json`, `v.en.json`, `v.zh.json` 세 파일을 동시에 수정해야 하며, 기존 `tests/vMessages.test.ts` 등 문구 관련 단위 테스트의 통과 여부를 검증해야 합니다.

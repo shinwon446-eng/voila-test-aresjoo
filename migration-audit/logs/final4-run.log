@@ -1,0 +1,22 @@
+== 빌드 673665e 07:21
+build exit 0 html 1092
+복사 끝 07:25
+== 지갑 항목 다시 찍기 07:25
+shots exit 0 9, 못 찍음 0 기록: C:\Users\hyun1\dev\VOILA-test-aresjoo\migration-audit\screenshots\after\after-final4\index.json 
+diff exit 0
+classify exit 0
+| identical | 2154 |
+| noise | 60 |
+| intended (구역 확인함) | 428 |
+| intended (구역 확인 못 함) | 249 |
+| background-only | 348 |
+| position-aa | 24 |
+| within-build-variant | 4 |
+| UNEXPLAINED | 0 |
+| not-compared | 6 |
+| not-applicable | 9 |
+== 흐름 07:36
+flows exit 0
+flows-compare exit 0
+9:단계 합계: 같음 300, 의도된 차이 595, 설명 안 됨 0, 장부 다름 0, 검증 불가 60, 한쪽만 실행 0, 오류 0
+== 끝 07:57

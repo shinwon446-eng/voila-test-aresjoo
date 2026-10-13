@@ -1,0 +1,124 @@
+63445c7부터 HEAD까지의 변경 사항을 바탕으로 컴포넌트 아키텍처와 유지보수성 중심의 검토 결과를 정리합니다. DESIGN.md 18항에 명시된 샘플 후기 도입 결정은 유지하면서 코드 구조, 훅 설계, 계층 분리, 잔여 CSS, 테스트 범위를 점검했습니다.
+
+---
+
+### 1. BoxReviews.tsx 및 ReviewsScreen.tsx 컴포넌트 구조
+
+#### 파일별 역할 중복과 역방향 의존
+- [BoxReviews.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L38-L259)는 260줄 안에 5개의 UI 컴포넌트(RatingInline, RatingBlock, ReviewCard, ReviewList, ReviewSheet, BoxReviews), 3개의 훅(useAgo, useMyReviewCards, useReviewFeed), 1개의 날짜 변환 함수(stamp)를 모두 포함하고 있습니다.
+- [ReviewsScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/ReviewsScreen.tsx#L15)는 단독 화면(/reviews)임에도 불구하고 BoxReviews.tsx 내부에서 RatingBlock, ReviewList, ReviewSheet, REVIEWS_FIRST, REVIEWS_STEP, useReviewFeed를 가져와 사용합니다. 하위 섹션 컴포넌트 파일이 상위 전체 화면의 기반 모듈 역할을 겸하고 있어 의존 방향이 뒤바뀌어 있습니다.
+- [WinsScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/WinsScreen.tsx#L2) 2행과 137행, 189행을 보면 나온 상품 화면이 BoxReviews.tsx로부터 날짜 문자열 변환 함수인 stamp를 가져다 쓰고 있습니다. UI 컴포넌트 파일에 유틸리티 함수가 남아 다른 도메인 화면에까지 참조되는 구조적 누수가 존재합니다.
+
+#### ReviewsScreen 상태 동기화 누락
+- [ReviewsScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/ReviewsScreen.tsx#L22-L33) 22행부터 24행을 보면 URL 쿼리 파라미터(asked)를 읽어 useState(askedBox ? askedBox.slug : ALL)로 초기화합니다.
+- 사용자가 브라우저 뒤로 가기나 앞으로 가기를 통해 주소의 box 파라미터가 바뀌어도 useState는 마운트 이후 다시 동기화되지 않습니다.
+- 33행의 칩 선택 시 setPicked로 로컬 상태만 갱신할 뿐 브라우저 주소창의 쿼리 스트링을 변경하지 않아, 전체 탭으로 변경한 뒤 새로고침을 누르면 다시 원래 박스로 돌아가는 문제가 있습니다.
+
+---
+
+### 2. 훅(Hooks)과 렌더링 성능
+
+#### useAgo 훅의 함수 재생성 및 다중 호출
+- [BoxReviews.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L106-L117) 106행의 useAgo는 매 렌더링마다 새로운 익명 함수를 반환합니다.
+- [BoxReviews.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L161) 161행의 ReviewCard 내부에서 const ago = useAgo()를 개별 호출하고 있습니다.
+- qa/work/reviews-v2/box-mobile-apple-list50-desktop.png 스크린샷처럼 50건 이상의 목록이 렌더링될 때 50개의 카드 컴포넌트마다 훅이 호출되고 각자 닫힘 함수를 생성합니다. 상위 ReviewList 수준에서 포맷터를 생성해 전달하거나 메모이제이션하는 것이 안전합니다.
+
+#### 스토어 중복 구독 및 중복 계산
+- [BoxReviews.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L120-L138)의 useMyReviewCards는 usePublishedReviews, useInventoryStore, useAuthStore 3개 스토어를 구독합니다.
+- [BoxScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxScreen.tsx#L106) 106행에서 const rating = useBoxRating(box.slug)를 호출하고, 바로 아래 [BoxReviews.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L239) 239행에서 다시 useReviewFeed(box.slug, shown)를 호출합니다.
+- 동일한 박스 상세 화면을 그리는 동안 상위 화면과 하위 섹션이 3개 스토어를 각각 중복 구독하고 동일한 계산을 두 번 실행합니다.
+
+#### ReviewCard 내부 DOM 측정에 따른 리플로우와 리렌더링
+- [BoxReviews.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L162-L165) 162행부터 165행을 보면 각 카드마다 useRef와 useEffect를 두고 scrollHeight > clientHeight + 1 판정을 수행하여 setCut을 호출합니다.
+- 목록이 50건으로 늘어날 때 50개의 카드가 마운트된 직후 동기식 DOM 측정이 발생하여 강제 리플로우를 일으키며, 잘린 항목마다 두 번째 렌더링이 트리거됩니다.
+- 카드 전체가 button 요소로 감싸져 있어 어디를 눌러도 상세 모달(ReviewSheet)이 열리므로, 별도의 DOM 측정 없이 CSS line-clamp와 고정된 카드 상호작용으로 단순화할 수 있습니다.
+
+---
+
+### 3. 생성기(Generator), 텍스트 데이터, UI 사이의 분리
+
+#### 설계가 잘 된 점
+- [reviewSamples.ts](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/lib/reviewSamples.ts)와 [reviewSampleText.ts](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/lib/reviewSampleText.ts)는 브라우저나 React 의존성 없이 순수 TypeScript 연산으로 구현되어 있습니다.
+- FNV-1a 해시와 Mulberry32 난수를 통해 박스 슬러그 기반의 결정론적 생성을 완벽히 보장합니다.
+- 비트마스크(need, about, after)를 통해 상품 속성과 결과 금액(takeAmountOf 기준)에 맞는 텍스트만 조합되도록 문맥 조건을 엄격하게 격리했습니다.
+
+#### 개선이 필요한 결합 지점
+- stamp 함수의 위치: [BoxReviews.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L99) 99행에 위치한 stamp는 UI 컴포넌트가 아닌 순수 날짜 포맷 함수입니다. web/lib/date.ts 또는 web/lib/format.ts로 이동해야 합니다.
+- 모듈 전역 단일체 캐시의 수명 관리: [reviewSamples.ts](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/lib/reviewSamples.ts) 122행(cores), 211행(built), 496행(order), 517행(totals)은 모듈 전역 변수에 결과를 영구 보관합니다. 테스트 실행 시 환경 변수(NEXT_PUBLIC_SAMPLE_REVIEWS)를 동적으로 전환할 때 캐시를 초기화하는 명시적 리셋 함수가 없어 테스트 간 상태 오염 가능성이 있습니다.
+- 홈 카드와의 평점 계산 불일치: [BoxList.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxList.tsx#L117) 117행은 ratingSummary(box.slug)를 직접 호출하여 이 기기에서 쓴 실제 후기를 포함하지 않습니다. 반면 [BoxScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxScreen.tsx#L106)와 [BoxReviews.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx#L146)는 실제 후기를 합산합니다.
+
+---
+
+### 4. web/app/ui.css 에 남은 이전 후기 카드 미사용 CSS
+
+이전 가로 스크롤 카드 및 구형 목록 디자인에서 쓰이던 다수의 클래스가 [ui.css](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css)에 정리되지 않고 남아 있습니다.
+
+#### 완전히 사용되지 않는 미사용 CSS
+- [ui.css](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L168-L169) 168~169행: `.v-rvgrid`, `.v-rvgrid > .v-rvcard` (구형 후기 모아보기 격자)
+- [ui.css](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L177-L186) 177~186행: `.v-rvrow`, `.v-rvrow::-webkit-scrollbar`, `.v-rvcard`, `.v-rvcard-photo`, `.v-rvcard-photo img`, `.v-rvcard-body`, `.v-rvcard-text`, `.v-rvcard .v-small`, `.v-rvcard-btn` (가로 스크롤 캐러셀 형태의 후기 카드)
+- [ui.css](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L188) 188행: `.v-rvcard-item` (구형 후기 카드 하단 상품 영역)
+- [ui.css](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L259-L261) 259~261행: `.v-review`, `.v-review:first-child`, `.v-review-head` (구형 단순 후기 행)
+- [ui.css](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L343) 343행: `.v-boxlayout-reviews .v-rvrow` (미디어 쿼리 내부의 미사용 여백 초기화)
+
+#### 주의해야 할 분할 의존 클래스
+- `.v-rvcard-more`: [ui.css](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L187) 187행에 기본 글꼴, 밑줄, 색상이 정의되어 있고, [reviews.css](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css#L16) 16행에서는 상단 마진만 덮어쓰고 있습니다. ui.css에서 일괄 삭제하면 스타일이 깨지므로 [reviews.css](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css)로 기본 스타일을 이전해야 합니다.
+- `.v-review-photo`: [ui.css](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css#L262-L263) 262행은 후기 작성 시트인 [web/components/flow/ReviewSheet.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/flow/ReviewSheet.tsx#L65) 65행에서 아직 사용하고 있으므로 삭제 대상이 아닙니다.
+
+---
+
+### 5. web/tests/reviewSamples.test.ts 테스트 커버리지
+
+#### 검증이 철저한 부분
+- 75행: 별도 tsx 프로세스 실행 결과와 SHA-256 해시 비교를 통한 프로세스 무관 결정론 검증
+- 80~166행: 본전, 손해 등 금액 관련 표현이 실제 상품 가치와 박스 가격에 부합하는지 여부(75,245건 전수 검사)
+- 168~194행: 별점과 문장 뉘앙스의 일치 검증(1점, 2점에 긍정 표현 없음, 3점에 중간 톤, 5점에 부정 톤 없음)
+- 290~309행: NEXT_PUBLIC_SAMPLE_REVIEWS 스위치 차단 시 0건 반환 검증
+
+#### 테스트 사각지대
+- 박스 범위의 한계: 대부분의 의미 검증(테스트 1, 2, 4, 5, 6, 8, 9, 10, 11, 13)이 HOME_BOXES(320개)만 순회합니다. BOXES 전체 목록에 포함된 단종 또는 레거시 박스에 대해서는 규칙 정합성 검사가 누락되어 있습니다.
+- 훅 및 포맷터 단위 테스트 부재: useAgo의 분 단위 경계값(0분, 59분, 60분, 1439분, 1440분, 43200분 등) 변환 정확성, stamp 함수의 유효 날짜 및 오류 날짜 처리 테스트가 전혀 없습니다.
+- 실제 후기와 샘플 후기 결합 테스트 부족: useReviewFeed에서 기기 저장소의 작성 후기와 샘플 후기가 날짜순(ageMin 오름차순)으로 바르게 병합 정렬되는지 검증하는 단위 테스트가 없습니다.
+- vMessages.test.ts 검사 누락: [vMessages.test.ts](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/tests/vMessages.test.ts#L17-L37) 17행의 MINE 필터에 reviews 네임스페이스가 포함되지 않아 새로 추가된 다국어 키의 금지 문자(느낌표, 줄표, 가운뎃점) 검사가 자동으로 이루어지지 않고 있습니다.
+
+---
+
+### 6. 동작을 바꾸지 않는 리팩터링 기회
+
+1. 유틸리티 함수 추출: BoxReviews.tsx의 stamp 함수를 독립 파일(web/lib/formatDate.ts 등)로 옮겨 WinsScreen.tsx와의 엉뚱한 결합을 끊습니다.
+2. 후기 공용 컴포넌트 디렉터리 분리: BoxReviews.tsx에서 ReviewCard, ReviewList, ReviewSheet, RatingBlock, RatingInline을 별도 모듈(예: web/components/review/)로 분리하여 ReviewsScreen과 BoxReviews가 동등하게 가져다 쓰는 구조로 개편합니다.
+3. useAgo 포맷 로직 순수화: 훅 내부에서 매번 함수를 새로 짓지 않고, t 번역 함수를 주입받는 순수 헬퍼 또는 useCallback 메모이제이션을 적용합니다.
+4. CSS 잔여 코드 제거 및 토큰 정리: ui.css의 구형 후기 캐러셀 및 카드 스타일을 삭제하고, .v-rvcard-more는 reviews.css 내부로 단일화합니다.
+
+---
+
+### 제안 변경 사항 우선순위 목록
+
+#### 1순위: ui.css 잔여 구형 후기 CSS 정리 및 reviews.css 독립화
+- 대상 파일: [web/app/ui.css](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/ui.css), [web/app/reviews.css](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/app/reviews.css)
+- 내용: ui.css 168~186행(.v-rvgrid, .v-rvrow, .v-rvcard 등)과 259~261행(.v-review, .v-review-head), 343행을 삭제하고, 187행의 .v-rvcard-more 기본 스타일을 reviews.css로 이전합니다.
+- 기대 효과: 불필요한 번들 크기 감소, 코드베이스 혼선 제거, 후기 관련 스타일의 단일 파일 완결성 확보
+- 회귀 위험: 매우 낮음. grep 확인 결과 해당 클래스들은 새 코드에서 참조되지 않으며, ReviewSheet.tsx가 쓰는 .v-review-photo만 유지하면 됩니다.
+
+#### 2순위: stamp 및 날짜 포맷 로직 분리
+- 대상 파일: [web/components/box/BoxReviews.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx), [web/components/box/WinsScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/WinsScreen.tsx)
+- 내용: stamp 함수를 web/lib/formatDate.ts 또는 web/lib/takeBatch.ts 등 공용 라이브러리로 분리하고 양쪽 화면에서 가져옵니다.
+- 기대 효과: 화면 컴포넌트 간 비정상적인 크로스 임포트 제거, 계층 구조 정상화
+- 회귀 위험: 매우 낮음. 단순 함수 이동 및 경로 수정으로 동작 변경이 없습니다.
+
+#### 3순위: BoxReviews.tsx 와 ReviewsScreen.tsx 의 공용 컴포넌트 분리
+- 대상 파일: [web/components/box/BoxReviews.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx), [web/components/box/ReviewsScreen.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/ReviewsScreen.tsx)
+- 내용: RatingInline, RatingBlock, ReviewCard, ReviewList, ReviewSheet를 별도 공유 파일(web/components/review/ReviewItems.tsx 등)로 분리하고, BoxReviews와 ReviewsScreen이 각각 이를 소비하도록 재구성합니다.
+- 기대 효과: 단일 책임 원칙 준수, 파일당 라인 수 축소, 유지보수 시 영향 범위 명확화
+- 회귀 위험: 낮음. 컴포넌트 인터페이스와 CSS 클래스명이 바뀌지 않으므로 시각적 변경 위험이 없습니다.
+
+#### 4순위: ReviewCard 의 동기식 DOM 측정 제거 및 useAgo 메모이제이션
+- 대상 파일: [web/components/box/BoxReviews.tsx](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/components/box/BoxReviews.tsx)
+- 내용: useEffect와 clientHeight 측정 기반의 setCut 로직을 제거하고 CSS line-clamp로 텍스트 축약을 일관되게 처리하며, useAgo 반환 함수를 useCallback으로 감싸거나 ReviewList 레벨에서 단일 주입합니다.
+- 기대 효과: 후기 50건 이상 로딩 시 발생하는 50회의 불필요한 DOM 강제 리플로우와 리렌더링 제거, 부드러운 스크롤 보장
+- 회귀 위험: 낮음. 카드 전체가 버튼으로 동작하여 클릭 시 ReviewSheet가 열리는 흐름이 동일하게 유지됩니다.
+
+#### 5순위: 단위 테스트 확장 (훅 경계값, 박스 전체 범위, vMessages 검사기)
+- 대상 파일: [web/tests/reviewSamples.test.ts](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/tests/reviewSamples.test.ts), [web/tests/vMessages.test.ts](file:///C:/Users/hyun1/dev/VOILA-audit-reviews/web/tests/vMessages.test.ts)
+- 내용: useAgo 분 단위 변환 경계값 테스트 추가, vMessages.test.ts의 MINE 목록에 reviews 네임스페이스를 포함하여 금지 문자 자동 감시 적용, BOXES 전체에 대한 기본 생성 안전성 검증을 추가합니다.
+- 기대 효과: 회귀 테스트 커버리지 강화, 다국어 문구 규범 누락 방지
+- 회귀 위험: 없음. 테스트 코드 추가로 운영 코드에는 영향을 주지 않습니다.

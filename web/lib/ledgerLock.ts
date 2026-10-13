@@ -9,6 +9,7 @@
 import { useFairStore } from "../stores/fairStore";
 import { useInventoryStore } from "../stores/inventoryStore";
 import { useWalletStore } from "../stores/walletStore";
+import { isLedgerSealed, ledgerLockName } from "./compactStorage";
 
 export class LedgerUnavailable extends Error {}
 export class LedgerAccountChanged extends Error {}
@@ -32,6 +33,8 @@ export function assertSameLedger(key: string): void {
 
 /** 저장소에 실제로 써지는지 확인한다. 브라우저가 아니면 통과 */
 export function assertLedgerWritable(): void {
+  // 저장된 장부를 풀지 못했으면(lib/compactStorage 가 덮어쓰지 않고 남겨 둔 장부) 그 위에서 돈을 움직이지 않는다. 이후의 쓰기는 저장되지 않는다
+  if (isLedgerSealed(useWalletStore.persist?.getOptions?.().name) || isLedgerSealed(useInventoryStore.persist?.getOptions?.().name)) throw new LedgerUnavailable("stored ledger is unreadable");
   if (typeof window === "undefined" || typeof localStorage === "undefined") return;
   try {
     const probe = "voila.ledger-probe"; const value = String(Date.now());
@@ -57,5 +60,6 @@ export async function withLedgerLock<T>(work: () => Promise<T> | T): Promise<T> 
   const locks = typeof navigator !== "undefined" ? (navigator as Navigator & { locks?: LockManager }).locks : undefined;
   const run = async () => { assertLedgerWritable(); await refresh(); assertSameLedger(key); return work(); };
   if (!locks || typeof window === "undefined") return run();
-  return locks.request(`voila-ledger:${key}`, run) as Promise<T>;
+  // 잠금의 이름은 옛 형식의 장부를 옮기는 일(lib/compactStorage 의 migrateStoredLedgers)과 함께 쓴다
+  return locks.request(ledgerLockName(key), run) as Promise<T>;
 }

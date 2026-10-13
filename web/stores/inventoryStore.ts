@@ -7,7 +7,8 @@
  * 항목 값은 확정 당시 USDT 로 고정한다, 나중에 시세가 바뀌어도 당첨 시점 가치를 보존한다.
  */
 import { create } from "zustand";
-import { persist, createJSONStorage } from "zustand/middleware";
+import { persist } from "zustand/middleware";
+import { compactLedgerStorage } from "@/lib/compactStorage";
 import type { TierKey } from "@/lib/tiers";
 import type { ShippingAddress } from "@/lib/shipping";
 import type { CarrierKey } from "@/lib/carriers";
@@ -153,7 +154,8 @@ export const useInventoryStore = create<InventoryState>()(
     }),
     {
       name: "gachaflix.inventory",
-      storage: createJSONStorage(() => localStorage),
+      // 저장소에는 줄여서 적는다(확률표는 한 벌만). 기억 속 모양은 그대로다. lib/compactStorage
+      storage: compactLedgerStorage("inventory"),
       partialize: (s) => ({ items: s.items }),
       skipHydration: true,
       onRehydrateStorage: () => () => useInventoryStore.setState({ hydrated: true }),

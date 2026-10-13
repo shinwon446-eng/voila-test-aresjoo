@@ -9,6 +9,7 @@
 import test, { before } from "node:test";
 import assert from "node:assert/strict";
 import type { Transaction } from "../stores/walletStore";
+import { parseLedger } from "../lib/compactStorage";
 
 // 저장소: 기억 속 지도.
 //   fault      걸린 쓰기만 던지거나(throw) 조용히 버린다(ignore, 이 사이트의 저장소 래퍼가 한도 초과에서 하는 일). 여럿을 함께 걸 수 있다
@@ -58,13 +59,15 @@ before(async () => {
   MARKS = "voila.take-unconfirmed." + WALLET;
 });
 
-const saved = <T,>(name: string): T => JSON.parse(disk.get(name) ?? "{}").state as T;
+// 저장된 장부는 줄인 형식일 수 있다(lib/compactStorage). 기억 속 모양으로 풀어서 본다. 옛 형식도 같은 함수가 읽는다
+const stored = (text: string): { state: any } => (parseLedger<any>(text) ?? {}) as { state: any };
+const saved = <T,>(name: string): T => stored(disk.get(name) ?? "{}").state as T;
 const savedItem = (id: string) => saved<{ items: { id: string; status: string; soldForUsdt?: number }[] }>(INVENTORY).items.find((item) => item.id === id);
 const savedWallet = () => saved<{ balance: number; cryptoBalance: number; cardBalance: number; transactions: Transaction[] }>(WALLET);
 const savedSellbacks = () => savedWallet().transactions.filter((tx) => tx.type === "sellback");
-const hasSold = (value: string) => value.includes('"status":"SOLD"');
+const hasSold = (value: string) => stored(value).state.items.some((item: { status: string }) => item.status === "SOLD");
 const hasCredit = (value: string) => JSON.parse(value).state.cryptoBalance > 0;
-const hasSellback = (value: string) => value.includes('"type":"sellback"');
+const hasSellback = (value: string) => stored(value).state.transactions.some((tx: Transaction) => tx.type === "sellback");
 
 /** 참고가 100, USDT 출처, 잔액 0 을 정상으로 저장한 뒤 시작한다 */
 function seed(count = 1): string[] {
@@ -536,7 +539,7 @@ test("받는 사이에 다른 탭의 충전 50 이 기록과 함께 들어옴: �
   const [id] = seed();
   // 보관함 쓰기가 실패하는 그 순간, 다른 작성자가 저장된 지갑에 충전 50 과 그 내역을 적는다
   const deposit = () => {
-    const wallet = JSON.parse(disk.get(WALLET)!);
+    const wallet = stored(disk.get(WALLET)!);
     wallet.state.cryptoBalance = +(wallet.state.cryptoBalance + 50).toFixed(2); wallet.state.balance = +(wallet.state.balance + 50).toFixed(2);
     wallet.state.transactions.unshift({ id: "tx_deposit_other_tab", type: "deposit_usdt", amountUsdt: 50, at: new Date().toISOString(), ref: "other-tab" });
     disk.set(WALLET, JSON.stringify(wallet));
@@ -564,7 +567,7 @@ test("받는 사이에 다른 탭의 충전 50 이 기록과 함께 들어옴: �
 test("표시를 지우지 못했을 뿐 깨끗이 실패한 경우에도, 충전이 겹쳤으면 그 자리에서 받지 못했다고 답한다(표시가 지워질 때)", async () => {
   const [id] = seed();
   const deposit = () => {
-    const wallet = JSON.parse(disk.get(WALLET)!);
+    const wallet = stored(disk.get(WALLET)!);
     wallet.state.cryptoBalance = 50; wallet.state.balance = 50;
     wallet.state.transactions.unshift({ id: "tx_deposit_other_tab", type: "deposit_usdt", amountUsdt: 50, at: new Date().toISOString(), ref: "other-tab" });
     disk.set(WALLET, JSON.stringify(wallet));

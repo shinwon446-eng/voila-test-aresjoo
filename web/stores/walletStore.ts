@@ -6,7 +6,8 @@
  */
 import { create } from "zustand";
 import type { BurstPot } from "../lib/burst";
-import { persist, createJSONStorage } from "zustand/middleware";
+import { persist } from "zustand/middleware";
+import { compactLedgerStorage } from "@/lib/compactStorage";
 import { CRYPTO_ONLY, planDebit, type FundingRatio, type FundingSplit } from "@/lib/funding";
 import { WELCOME_BOX_SLUG } from "@/lib/products";
 
@@ -299,7 +300,8 @@ export const useWalletStore = create<WalletState>()(
     }),
     {
       name: "gachaflix.wallet",
-      storage: createJSONStorage(() => localStorage),
+      // 저장소에는 거래 기록을 줄여서 적는다. 기억 속 모양은 그대로다. lib/compactStorage
+      storage: compactLedgerStorage("wallet"),
       partialize: (s) => ({ balance: s.balance, cryptoBalance: s.cryptoBalance, cardBalance: s.cardBalance, transactions: s.transactions, settledDepositRefs: s.settledDepositRefs, welcomeClaimed: s.welcomeClaimed, totalDeposited: s.totalDeposited, totalDepositedCrypto: s.totalDepositedCrypto, totalDepositedCard: s.totalDepositedCard, totalWagered: s.totalWagered, burst: s.burst ?? {}, freeOpens: s.freeOpens ?? {}, freeOpensGranted: !!s.freeOpensGranted }),
       version: 4,
       // v0 → v1: 출금 상태명 PROCESSING → BROADCASTING

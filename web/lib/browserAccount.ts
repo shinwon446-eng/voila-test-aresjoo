@@ -5,6 +5,7 @@ import { newTotpSecret, verifyTotp } from "./totp";
 import { HOLD_MS, maskEmail } from "./withdrawHold";
 import { NETWORKS, resolveDepositAddress, validDepositReceipt, type DepositReceipt, type DepositNetwork } from "./depositAddress";
 import { DEPOSIT_ADDRESSES } from "./runtime";
+import { parseLedger } from "./compactStorage";
 
 const KEY = "voila.browser-accounts.v1";
 const SESSION = "voila.browser-session.v1";
@@ -24,6 +25,8 @@ type Account = {
   deposits?: DepositReceipt[];
   proofs: Proof[]; withdrawals: Record<string, { id: string; requestId: string; status: string; unlockAt?: number }>;
 };
+// Stored ledgers may be in the compact format (lib/compactStorage); parseLedger returns the in-memory shape for both formats.
+const storedState = (name: string) => parseLedger<Record<string, any>>(localStorage.getItem(name) || "{}")?.state ?? {};
 const read = (): Account[] => JSON.parse(localStorage.getItem(KEY) || "[]");
 const save = (accounts: Account[]) => localStorage.setItem(KEY, JSON.stringify(accounts));
 function providerOf(account: Account): AccountProvider {
@@ -55,8 +58,8 @@ function invalidateAccess(account: Account) {
   account.user.sessionVersion = (account.user.sessionVersion ?? 0) + 1;
 }
 function checkClosureAssets(account: Account) {
-  const wallet = JSON.parse(localStorage.getItem(`voila.browser-wallet.${account.user.id}`) || "{}").state ?? {};
-  const inventory = JSON.parse(localStorage.getItem(`voila.browser-inventory.${account.user.id}`) || "{}").state ?? {};
+  const wallet = storedState(`voila.browser-wallet.${account.user.id}`);
+  const inventory = storedState(`voila.browser-inventory.${account.user.id}`);
   if ((inventory.items !== undefined && !Array.isArray(inventory.items)) || (wallet.transactions !== undefined && !Array.isArray(wallet.transactions))) throw new AccountError("invalid");
   const assets = closureReadiness({ cryptoBalance: wallet.cryptoBalance ?? wallet.balance ?? 0, cardBalance: wallet.cardBalance ?? 0,
     items: inventory.items ?? [], transactions: [...(wallet.transactions ?? []), ...Object.values(account.withdrawals).map(w => ({ ...w, type: "withdraw" }))] });
@@ -172,7 +175,7 @@ async function request(path: string, input?: unknown): Promise<Record<string, un
       persist(); return { accepted: true };
     }
     if (path === "/deposit/check") {
-      const wallet = JSON.parse(localStorage.getItem(`voila.browser-wallet.${account.user.id}`) || "{}").state ?? {};
+      const wallet = storedState(`voila.browser-wallet.${account.user.id}`);
       const receipts = (account.deposits ?? []).filter(r => r.network === network && r.address === address);
       const uncredited = receipts.filter(r => !(wallet.settledDepositRefs ?? []).includes(`deposit_usdt:${network}:${r.txHash}`));
       const required = NETWORKS.find(n => n.key === network)!.confirmations;

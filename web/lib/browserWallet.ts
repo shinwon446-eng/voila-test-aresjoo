@@ -1,5 +1,6 @@
 import { useWalletStore, type Transaction, type TxType } from "@/stores/walletStore";
 import { useInventoryStore } from "@/stores/inventoryStore";
+import { readLedger } from "@/lib/compactStorage";
 
 /**
  * 지갑 내역에 보일 이 계정의 거래. 계정 번호가 적힌 거래는 번호가 같은 것만 보인다.
@@ -34,8 +35,9 @@ export function restoreBrowserAssets(userId: string | null) {
   const suffix = userId ?? "guest";
   const walletName = `voila.browser-wallet.${suffix}`;
   if (useWalletStore.persist.getOptions().name === walletName) return;
+  // Stored ledgers may be in the compact format; readLedger returns the in-memory shape for both formats.
   const restore = (name: string) => {
-    try { return JSON.parse(localStorage.getItem(name) ?? "null")?.state ?? {}; }
+    try { return readLedger(name)?.state ?? {}; }
     catch { return {}; }
   };
   const wallet = restore(walletName);

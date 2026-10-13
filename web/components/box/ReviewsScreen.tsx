@@ -46,7 +46,7 @@ export function ReviewsScreen() {
 
   return (
     <div className="v-stack v-stack--lg">
-      <ScreenHead back={pickedBox ? "/box/" + pickedBox.slug : "/"} backLabel={t("common.back")} title={t("reviews.title")} desc={t("box.ratingBasis")} />
+      <ScreenHead back={pickedBox ? "/box/" + pickedBox.slug : "/"} backLabel={t("common.back")} title={t("reviews.title")} desc={t(pickedBox ? "box.ratingBasis" : "reviews.ratingBasisAll")} />
       {askedBox && <Chips scroll label={t("reviews.filter")} value={picked} onChange={setPicked} options={[{ value: ALL, label: t("reviews.all") }, { value: askedBox.slug, label: boxTitle(askedBox) }]} />}
       <Chips scroll label={t("reviews.sort")} value={sort} onChange={pickSort} options={[{ value: "newest", label: t("reviews.sortNewest") }, { value: "value", label: t("reviews.sortValue") }, { value: "times", label: t("reviews.sortTimes") }]} />
       {feed.total === 0 ? <Empty>{t("box.noReviews")}</Empty> : (

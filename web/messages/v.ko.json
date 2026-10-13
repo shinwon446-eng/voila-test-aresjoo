@@ -666,6 +666,7 @@
     "sortNewest": "최신순",
     "sortValue": "금액 높은 순",
     "sortTimes": "배수 높은 순",
+    "ratingBasisAll": "별점은 박스를 연 분이 나온 결과에 매긴 점수입니다.",
     "cameOut": "나온 상품",
     "timesShort": "{times}배",
     "belowShort": "박스값 미만",

@@ -666,6 +666,7 @@
     "sortNewest": "Newest",
     "sortValue": "Highest value",
     "sortTimes": "Highest multiple",
+    "ratingBasisAll": "The score is what people who opened a box gave to what came out.",
     "cameOut": "What came out",
     "timesShort": "{times}x",
     "belowShort": "under box price",

@@ -87,11 +87,15 @@ export function agoOf(ageMin: number): { key: AgoKey; n: number } {
 export const MORE_COUNT_MAX = 999;
 
 /**
- * 나온 상품의 값이 박스값의 몇 배인지(소수 첫째 자리). 카드의 "값, 박스값의 N배" 줄이 쓴다(2026-10-13 파운더: 얼마짜리가 뽑혔는지 보여야 한다).
+ * 나온 상품의 값이 박스값의 몇 배인지. 카드의 "N배" 줄이 쓴다(2026-10-13 파운더: 얼마짜리가 뽑혔는지 보여야 한다).
+ * 10배 미만은 소수 첫째 자리("0.6", "1.5"), 10배부터는 정수("20", "4200": "4200.0배"는 읽기 나쁘다).
  * 0.05배에 못 미치면 null: 화면은 "박스값 미만"으로 적는다("0.0배"라고 적지 않는다). 박스값이 없으면 null
  */
 export function timesOfBox(value: number, boxPrice: number): string | null {
   if (!(boxPrice > 0) || !Number.isFinite(value)) return null;
-  const times = (value / boxPrice).toFixed(1);
+  const ratio = value / boxPrice;
+  const times = ratio.toFixed(1);
+  // 소수 첫째 자리로 반올림해 10.0 이 되는 것(9.98 등)도 정수로
+  if (Number(times) >= 10) return String(Math.round(ratio));
   return times === "0.0" ? null : times;
 }

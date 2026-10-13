@@ -188,7 +188,10 @@ test("후기 카드: 박스 화면은 원래 화면의 옆으로 넘기는 줄�
   // 몇 배인지: 소수 첫째 자리, 0.05배에 못 미치면 "박스값 미만"
   assert.equal(timesOfBox(6.99, 50), "0.1");
   assert.equal(timesOfBox(279.99, 500), "0.6");
-  assert.equal(timesOfBox(1000, 50), "20.0");
+  assert.equal(timesOfBox(1000, 50), "20");
+  assert.equal(timesOfBox(2100000, 500), "4200");
+  assert.equal(timesOfBox(499, 50), "10");
+  assert.equal(timesOfBox(495, 50), "9.9");
   assert.equal(timesOfBox(2, 50), null);
   assert.equal(timesOfBox(2.5, 50), "0.1");
   assert.equal(timesOfBox(1, 0), null);
@@ -310,7 +313,7 @@ test("모아 보기 화면(정렬): 알약 한 줄(최신순, 금액 높은 순,
   assert.match(reviews, /const feed = useReviewFeed\(box\.slug, shown\);/);
   for (const locale of ["ko", "en", "zh"]) {
     const m = JSON.parse(read(`../messages/v.${locale}.json`)).reviews as Record<string, string>;
-    for (const key of ["sort", "sortNewest", "sortValue", "sortTimes"]) assert.equal(typeof m[key], "string", `${locale} ${key}`);
+    for (const key of ["sort", "sortNewest", "sortValue", "sortTimes", "ratingBasisAll"]) assert.equal(typeof m[key], "string", `${locale} ${key}`);
   }
   assert.deepEqual(["정렬", "최신순", "금액 높은 순", "배수 높은 순"], ["sort", "sortNewest", "sortValue", "sortTimes"].map((key) => (JSON.parse(read("../messages/v.ko.json")).reviews as Record<string, string>)[key]));
 });

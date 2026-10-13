@@ -13,7 +13,7 @@ import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import { BOXES, BOX_BY_SLUG, HOME_BOXES, type ProductBox, type ProductItem } from "../lib/products";
 import { ARRIVAL_OPEN, BANNED, CLOSE, EN, FLOW, GOT, PAR_BAND, GRIPE, ITEM, MID, MID_CLOSE, MID_OPEN, NEG, NEG_CLOSE, NEG_OPEN, SHIP, TOPICS, USE, USE_GIFT, ZH, fact, type Frag } from "../lib/reviewSampleText";
-import { BIG_FLOOR, BUILT_CAP, FRONT, FRONT_ROWS, FRONT_SHIP_FREE, NEAR, RETURNING_SHARE, SAMPLE_MAX, SAMPLE_MIN, SHIPPED_SHARE, SHIP_LOW_CAP, WINDOW, WINDOW_MAX, allRatingSummary, builtCount, kindOf, newestSamples, ratingSummary, sampleCount, sampleParts, sampleReviews, sampleShapes, summarizeRatings, type ReviewSample } from "../lib/reviewSamples";
+import { BIG_FLOOR, BUILT_CAP, FRONT, FRONT_ROWS, FRONT_SHIP_FREE, NEAR, RETURNING_SHARE, SAMPLE_MAX, SAMPLE_MIN, SHIPPED_SHARE, SHIP_LOW_CAP, WINDOW, WINDOW_MAX, allRatingSummary, builtCount, kindOf, newestSamples, ratingSummary, sampleCount, sampleParts, sampleReviews, sampleShapes, sampleSkeleton, sortedSamples, summarizeRatings, type ReviewSample } from "../lib/reviewSamples";
 import { takeAmountOf } from "../lib/takeBatch";
 
 const PROBE = ["watch-rolex", "pokemon-charizard", "beauty-dior"];
@@ -510,6 +510,43 @@ test("샘플 후기: 대부분 USDT로 받는다(2026-10-13 파운더). 배송�
   assert.deepEqual([frontDelivery, frontShipped], [0, 0]);
   // 검수에서 짚인 두 줄은 이제 배송받았다고 말하는 글에만 붙는다
   for (const text of ["포장박스가 좀 찌그러져 왔어요 내용물은 멀쩡해요", "받는데 3주 걸렸어요 너무하네요"]) assert.match(text.replace(/\s/g, ""), DELIVERY, text);
+});
+
+test("모아 보기의 정렬(sortedSamples): 뼈대만으로 줄을 세우고 글은 돌려주는 건만 만든다. 박스 안과 모든 박스에서 값과 배수의 차례가 맞고, 돌려준 건은 그 자리의 후기 그대로다. 스위치를 끄면 빈 목록", () => {
+  const slug = "gaming-playstation", box = BOX_BY_SLUG[slug], items = new Map(box.items.map((item) => [item.id, item]));
+  // 뼈대는 후기와 같은 자리의 상품, 나이, 별점이다
+  const skeleton = sampleSkeleton(slug), all = sampleReviews(slug);
+  assert.equal(skeleton.length, all.length);
+  skeleton.forEach((row, i) => { assert.equal(row.item.id, all[i].itemId); assert.equal(row.ageMin, all[i].ageMin); assert.equal(row.rating, all[i].rating); });
+  const valueOf = (r: ReviewSample) => items.get(r.itemId)!.value;
+  // 새것부터는 지금의 길 그대로
+  assert.deepEqual(sortedSamples("newest", 5, slug), sampleReviews(slug, 5));
+  assert.deepEqual(sortedSamples("newest", 5, null), newestSamples(5));
+  // 한 박스: 값이 높은 것부터, 같으면 새것부터. 맨 앞은 그 박스의 가장 비싼 상품. 돌려준 건은 그 자리의 후기 그대로(같은 id 와 글)
+  const byValue = sortedSamples("value", 30, slug);
+  assert.equal(byValue.length, 30);
+  assert.equal(valueOf(byValue[0]), Math.max(...skeleton.map((row) => row.item.value)));
+  for (let k = 1; k < byValue.length; k++) assert.ok(valueOf(byValue[k - 1]) > valueOf(byValue[k]) || (valueOf(byValue[k - 1]) === valueOf(byValue[k]) && byValue[k - 1].ageMin <= byValue[k].ageMin), `${k}번째`);
+  for (const r of byValue) { const i = Number(r.id.split("-").pop()); assert.deepEqual(r, all[i]); }
+  // 한 박스에서는 박스값이 하나라 배수의 차례는 값의 차례와 같다
+  assert.deepEqual(sortedSamples("times", 30, slug).map((r) => r.id), byValue.map((r) => r.id));
+  // 모든 박스: 값이 높은 것부터. 맨 앞은 모든 박스를 통틀어 가장 비싼 상품. 배수는 값을 박스값으로 나눈 것이 높은 것부터
+  const topValue = sortedSamples("value", 20, null);
+  const maxValue = Math.max(...BOXES.map((b) => Math.max(0, ...sampleSkeleton(b.slug).map((row) => row.item.value))));
+  const value = (r: ReviewSample) => BOX_BY_SLUG[r.boxSlug].items.find((item) => item.id === r.itemId)!.value, ratio = (r: ReviewSample) => value(r) / BOX_BY_SLUG[r.boxSlug].price;
+  assert.equal(topValue.length, 20);
+  assert.equal(value(topValue[0]), maxValue);
+  for (let k = 1; k < topValue.length; k++) assert.ok(value(topValue[k - 1]) >= value(topValue[k]), `${k}번째`);
+  const topTimes = sortedSamples("times", 20, null);
+  const maxRatio = Math.max(...BOXES.map((b) => Math.max(0, ...sampleSkeleton(b.slug).map((row) => row.item.value / b.price))));
+  assert.equal(ratio(topTimes[0]), maxRatio);
+  for (let k = 1; k < topTimes.length; k++) assert.ok(ratio(topTimes[k - 1]) > ratio(topTimes[k]) || (ratio(topTimes[k - 1]) === ratio(topTimes[k]) && value(topTimes[k - 1]) >= value(topTimes[k])), `${k}번째`);
+  for (const r of [...topValue, ...topTimes]) { const i = Number(r.id.split("-").pop()); assert.deepEqual(r, sampleReviews(r.boxSlug)[i]); }
+  // 스위치를 끄면 빈 목록
+  const before = process.env.NEXT_PUBLIC_SAMPLE_REVIEWS;
+  process.env.NEXT_PUBLIC_SAMPLE_REVIEWS = "off";
+  try { assert.deepEqual(sortedSamples("value", 5, null), []); assert.deepEqual(sortedSamples("times", 5, slug), []); assert.deepEqual(sampleSkeleton(slug), []); }
+  finally { if (before === undefined) delete process.env.NEXT_PUBLIC_SAMPLE_REVIEWS; else process.env.NEXT_PUBLIC_SAMPLE_REVIEWS = before; }
 });
 
 test("샘플 후기: 점수를 말하는 줄은 그 건의 별점과 같다(만점이라고 쓴 글은 별 다섯뿐이다)", () => {

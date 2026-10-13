@@ -6,7 +6,7 @@ import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { BOX_BY_SLUG, HOME_BOXES, getBoxBySlug } from "../lib/products";
-import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, stamp, timesOfBox } from "../lib/reviewFeed";
+import { MORE_COUNT_MAX, REVIEW_SORTS, agoOf, allRating, boxRating, compareBy, feedOrder, isRealReview, parseSort, realRatings, stamp, timesOfBox } from "../lib/reviewFeed";
 import { allRatingSummary, newestSamples, ratingSummary, sampleCount, sampleReviews } from "../lib/reviewSamples";
 
 const read = (path: string) => fs.readFileSync(new URL(path, import.meta.url), "utf8");
@@ -94,7 +94,7 @@ test("후기 목록의 차례(F-02): 내 후기가 며칠이 지나도 맨 앞�
   assert.deepEqual(feedOrder([], box, 5), box.slice(0, 5));
   assert.deepEqual(feedOrder(mine, box, 0), []);
   // 화면이 이 차례를 쓴다
-  assert.match(read("../components/box/BoxReviews.tsx"), /cards: feedOrder\(mine, cards, shown\)/);
+  assert.match(read("../components/box/BoxReviews.tsx"), /cards: feedOrder\(mine, cards, shown, sort\)/);
 });
 
 test("내 후기의 시각(F-03): 상세에는 쓴 날짜와 시각을 그대로 적고, 목록의 행과 샘플은 몇 분 전으로 적는다", () => {
@@ -125,7 +125,7 @@ test("편 건수(F-01): 박스 화면과 모아 보기가 편 건수와 읽던 �
   assert.match(reviews, /if \(row && x > 0\) row\.scrollLeft = x;/);
   // 두 화면이 같은 것을 쓰고, 목록의 이름이 서로 다르다. 박스 화면은 줄을 함께 준다
   assert.match(reviews, /useShownRows\("box:" \+ box\.slug, BOX_REVIEWS_FIRST, rowOf\)/);
-  assert.match(screen, /useShownRows\("reviews:" \+ picked, ALL_REVIEWS_FIRST\)/);
+  assert.match(screen, /useShownRows\("reviews:" \+ picked \+ ":" \+ sort, ALL_REVIEWS_FIRST\)/);
   // 처음 그릴 때는 언제나 처음 건수다(미리 그린 HTML 과 같다)
   assert.match(reviews, /const \[shown, setShown\] = useState\(first\);/);
   assert.doesNotMatch(screen, /useState\(ALL_REVIEWS_FIRST\)/);
@@ -266,6 +266,53 @@ test("샘플을 끈 빌드(F-04): 화면은 문(lib/reviewSampleGate)을 거쳐�
   assert.equal(on.newest, 5);
   assert.equal(on.box.count, ratingSummary(SLUG, [5, 4]).count);
   assert.equal(on.all, allRatingSummary([3]).count);
+});
+
+test("모아 보기의 차례: 값이 높은 것부터(같으면 새것부터), 배수가 높은 것부터(같으면 값, 그다음 새것부터), 상품이 없는 건은 맨 뒤, 내 후기가 먼저인 것은 새것부터에서만", () => {
+  const row = (id: string, ageMin: number, value: number | null, times: number | null) => ({ id, ageMin, value, times });
+  const mine = [row("m1", 5000, 20, 0.4), row("m2", 100, 300, 6)];
+  const samples = [row("s1", 10, 500, 10), row("s2", 20, 500, 1), row("s3", 30, null, null), row("s4", 40, 50, 10), row("s5", 50, 20, 0.4)];
+  const ids = (list: { id: string }[]) => list.map((r) => r.id);
+  // 새것부터: 내 후기가 먼저(내 것 가운데 새것부터), 샘플은 받은 차례 그대로
+  assert.deepEqual(ids(feedOrder(mine, samples, 10)), ["m2", "m1", "s1", "s2", "s3", "s4", "s5"]);
+  assert.deepEqual(ids(feedOrder(mine, samples, 10, "newest")), ["m2", "m1", "s1", "s2", "s3", "s4", "s5"]);
+  // 값: 500(새것 s1 이 s2 앞), 300(내 것도 같은 잣대), 50, 20(새것 s5 가 m1 앞), 상품 없는 s3 은 맨 뒤
+  assert.deepEqual(ids(feedOrder(mine, samples, 10, "value")), ["s1", "s2", "m2", "s4", "s5", "m1", "s3"]);
+  // 배수: 10(값이 큰 s1 이 s4 앞), 6, 1, 0.4(새것 s5 가 m1 앞), 상품 없는 s3 은 맨 뒤
+  assert.deepEqual(ids(feedOrder(mine, samples, 10, "times")), ["s1", "s4", "m2", "s2", "s5", "m1", "s3"]);
+  // 앞에서 shown 장만
+  assert.deepEqual(ids(feedOrder(mine, samples, 3, "value")), ["s1", "s2", "m2"]);
+  assert.deepEqual(ids(feedOrder([], [], 3, "times")), []);
+  // 견주는 식 그 자체: 같은 것은 0
+  assert.equal(compareBy("value")(row("a", 1, 10, 1), row("b", 1, 10, 1)), 0);
+  assert.ok(compareBy("times")(row("a", 1, 10, 2), row("b", 1, 100, 1)) < 0);
+  // 주소의 sort: value 와 times 만, 나머지는 새것부터
+  assert.deepEqual(REVIEW_SORTS, ["newest", "value", "times"]);
+  for (const [raw, sort] of [["value", "value"], ["times", "times"], ["newest", "newest"], [null, "newest"], [undefined, "newest"], ["x", "newest"], ["VALUE", "newest"]] as const) assert.equal(parseSort(raw), sort, String(raw));
+});
+
+test("모아 보기 화면(정렬): 알약 한 줄(최신순, 금액 높은 순, 배수 높은 순)이 늘 있고, 고른 차례는 주소의 sort 에 적히며(새것부터는 적지 않는다), 편 장수의 이름에 차례가 든다. 박스 화면의 줄은 차례를 쓰지 않는다", () => {
+  const screen = read("../components/box/ReviewsScreen.tsx"), reviews = read("../components/box/BoxReviews.tsx"), gate = read("../lib/reviewSampleGate.ts");
+  assert.match(screen, /<Chips scroll label=\{t\("reviews\.sort"\)\} value=\{sort\} onChange=\{pickSort\} options=\{\[\{ value: "newest", label: t\("reviews\.sortNewest"\) \}, \{ value: "value", label: t\("reviews\.sortValue"\) \}, \{ value: "times", label: t\("reviews\.sortTimes"\) \}\]\} \/>/);
+  // 처음 차례는 주소에서, 고르면 주소에 적는다(방문 기록의 그 자리는 그대로)
+  assert.match(screen, /useState<ReviewSort>\(\(\) => parseSort\(params\.get\("sort"\)\)\)/);
+  assert.match(screen, /const SORT_PARAM: Record<ReviewSort, string \| null> = \{ newest: null, value: "value", times: "times" \};/);
+  assert.match(screen, /if \(param\) url\.searchParams\.set\("sort", param\); else url\.searchParams\.delete\("sort"\);\s*window\.history\.replaceState\(window\.history\.state, "", url\);/);
+  assert.match(screen, /useShownRows\("reviews:" \+ picked \+ ":" \+ sort, ALL_REVIEWS_FIRST\)/);
+  assert.match(screen, /useReviewFeed\(picked === ALL \? null : picked, shown, sort\)/);
+  // 별점 요약은 차례와 상관없다(집계는 차례를 받지 않는다)
+  assert.match(reviews, /const summary = boxSlug \? boxRating\(boxSlug, real\) : allRating\(real\);/);
+  // 샘플은 문을 거쳐 차례대로 받고, 내 후기도 같은 차례로 줄을 선다
+  assert.match(reviews, /const samples = sortedSamples\(sort, shown, boxSlug\);/);
+  assert.match(reviews, /feedOrder\(mine, cards, shown, sort\)/);
+  assert.match(gate, /export const sortedSamples = \(sort: Samples\.SampleSort, limit: number, boxSlug: string \| null\): Samples\.ReviewSample\[\] => \(gen \? gen\.sortedSamples\(sort, limit, boxSlug\) : \[\]\);/);
+  // 박스 화면의 줄은 그대로다(차례 없이, 새것부터)
+  assert.match(reviews, /const feed = useReviewFeed\(box\.slug, shown\);/);
+  for (const locale of ["ko", "en", "zh"]) {
+    const m = JSON.parse(read(`../messages/v.${locale}.json`)).reviews as Record<string, string>;
+    for (const key of ["sort", "sortNewest", "sortValue", "sortTimes"]) assert.equal(typeof m[key], "string", `${locale} ${key}`);
+  }
+  assert.deepEqual(["정렬", "최신순", "금액 높은 순", "배수 높은 순"], ["sort", "sortNewest", "sortValue", "sortTimes"].map((key) => (JSON.parse(read("../messages/v.ko.json")).reviews as Record<string, string>)[key]));
 });
 
 test("더 보기 뒤(F-05): 모아 보기는 초점을 새로 생긴 첫 장으로 옮기고, 줄은 넘겨서 붙인 것이라 초점을 건드리지 않는다. 늘어난 장수는 둘 다 알림 영역에 적는다(브라우저에서의 확인은 scripts/capture/flow-reviews-nav.mjs)", () => {

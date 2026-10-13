@@ -142,17 +142,19 @@ function spread(pick: Uint16Array, rating: Uint8Array, why: Uint8Array, ship: Ui
   const frontCap = drawn >= FRONT_ROWS ? 1 : 2;
   const front = new Uint16Array(kinds), placed = new Uint16Array(n);
   const order = new Uint16Array(n);
+  // 바로 앞 WINDOW-1 건 안에 상품마다 몇 건이 있는지(자리마다 다시 세지 않고 창을 밀며 센다)
+  const inWin = new Uint16Array(kinds);
   /** 이 자리에 놓을 그 상품의 건: 앞자리에는 배송으로 받지 않은 건을 고른다(없으면 -1) */
   const headOf = (item: number, pos: number): number => (pos < FRONT_SHIP_FREE ? queues[item].findIndex((k) => ship[k] === 0) : 0);
   for (let pos = 0; pos < n; pos++) {
+    if (pos - WINDOW >= 0) inWin[placed[pos - WINDOW]] -= 1;
     let best = -1, bestScore = -Infinity, bestHead = 0;
     for (let item = 0; item < kinds; item++) {
       const left = queues[item].length;
       if (left === 0) continue;
       const head = headOf(item, pos);
       if (head < 0) continue;
-      let inWindow = 0;
-      for (let k = Math.max(0, pos - (WINDOW - 1)); k < pos; k++) if (placed[k] === item) inWindow += 1;
+      const inWindow = inWin[item];
       // 급한 정도: 남은 자리 가운데 이 상품이 차지해야 하는 몫. 몫이 커서 열에 셋으로는 다 못 놓는 상품은 그만큼 더 둔다
       const urgency = left / (n - pos);
       const cap = Math.max(WINDOW_MAX, Math.ceil(urgency * WINDOW));
@@ -165,6 +167,7 @@ function spread(pick: Uint16Array, rating: Uint8Array, why: Uint8Array, ship: Ui
     }
     order[pos] = queues[best].splice(bestHead, 1)[0];
     placed[pos] = best;
+    inWin[best] += 1;
     if (pos < FRONT_ROWS) front[best] += 1;
   }
   const p = pick.slice(), r = rating.slice(), w = why.slice(), s = ship.slice();
@@ -666,6 +669,72 @@ export function newestSamples(limit: number): ReviewSample[] {
   for (let k = 0; k < keys.length && out.length < limit; k++) {
     const rest = keys[k] % 262144, slug = BOXES[Math.floor(rest / 512)].slug, i = rest % 512;
     out.push(sampleReviews(slug, i + 1)[i]);
+  }
+  return out;
+}
+
+// ── 차례 바꾸기(모아 보기의 정렬, 2026-10-14 파운더): 글을 만들지 않고 뼈대만으로 줄을 세운다 ──────────
+/** 모아 보기의 차례: 새것부터(지금의 차례), 상품의 값이 높은 것부터, 박스값의 배수가 높은 것부터 */
+export type SampleSort = "newest" | "value" | "times";
+/** 한 건의 뼈대: 상품, 몇 분 전인지, 별점. 글은 없다(싸다) */
+export interface SampleSkeleton { item: ProductItem; ageMin: number; rating: ReviewSample["rating"] }
+const skeletons = new Map<string, readonly SampleSkeleton[]>();
+/** 이 박스의 뼈대 전부(i 번째가 i 번째 후기). 글을 만들지 않는다. 스위치를 끄면 빈 목록 */
+export function sampleSkeleton(boxSlug: string): readonly SampleSkeleton[] {
+  const core = sampleReviewsOn() ? coreOf(boxSlug) : null;
+  if (!core) return [];
+  let list = skeletons.get(boxSlug);
+  if (!list) {
+    list = Array.from({ length: core.count }, (_, i) => ({ item: core.items[core.pick[i]], ageMin: core.age[i], rating: core.rating[i] as ReviewSample["rating"] }));
+    skeletons.set(boxSlug, list);
+  }
+  return list;
+}
+/**
+ * 값이 높은 것부터, 같으면 새것부터. 배수(값을 박스값으로 나눈 것)가 높은 것부터, 같으면 값이 높은 것, 그다음 새것부터.
+ * 반올림한 글자가 아니라 나눈 값 그대로 견준다(화면의 "N배"는 lib/reviewFeed 의 timesOfBox 가 따로 반올림한다)
+ */
+const higherFirst = (sort: SampleSort, value: Float64Array, times: Float64Array, age: Uint32Array) => (a: number, b: number): number =>
+  (sort === "times" ? times[b] - times[a] : 0) || (value[b] - value[a]) || (age[a] - age[b]) || (a - b);
+const boxOrders = new Map<string, Uint32Array>();
+/** 한 박스의 차례(뼈대의 순번 배열). 박스마다, 차례마다 한 번만 센다 */
+function boxOrder(sort: SampleSort, boxSlug: string): Uint32Array {
+  const key = sort + "|" + boxSlug;
+  let order = boxOrders.get(key);
+  if (order) return order;
+  const list = sampleSkeleton(boxSlug), price = BOX_BY_SLUG[boxSlug]?.price ?? 0;
+  const value = Float64Array.from(list, (row) => row.item.value), times = Float64Array.from(value, (v) => (price > 0 ? v / price : 0)), age = Uint32Array.from(list, (row) => row.ageMin);
+  order = Uint32Array.from({ length: list.length }, (_, i) => i).sort(higherFirst(sort, value, times, age));
+  boxOrders.set(key, order);
+  return order;
+}
+const allOrders = new Map<SampleSort, Uint32Array>();
+/** 모든 박스의 차례(박스 번호 * 512 + 순번의 배열). 차례마다 한 번만 센다 */
+function allOrder(sort: SampleSort): Uint32Array {
+  let order = allOrders.get(sort);
+  if (order) return order;
+  const ids: number[] = [], values: number[] = [], ratios: number[] = [], ages: number[] = [];
+  BOXES.forEach((box, b) => { sampleSkeleton(box.slug).forEach((row, i) => { ids.push(b * 512 + i); values.push(row.item.value); ratios.push(box.price > 0 ? row.item.value / box.price : 0); ages.push(row.ageMin); }); });
+  const value = Float64Array.from(values), times = Float64Array.from(ratios), age = Uint32Array.from(ages);
+  const ranks = Uint32Array.from({ length: ids.length }, (_, k) => k).sort(higherFirst(sort, value, times, age));
+  order = Uint32Array.from(ranks, (k) => ids[k]);
+  allOrders.set(sort, order);
+  return order;
+}
+/**
+ * 차례에 따라 앞에서 limit 건. boxSlug 가 null 이면 모든 박스. 새것부터는 지금의 길(sampleReviews, newestSamples) 그대로다.
+ * 줄은 뼈대만으로 세우고 글은 돌려주는 건만 만든다(한 박스의 글은 앞에서부터 차례로 만들어지므로, 뒤쪽 건을 돌려주려면 그 박스의 앞 건들도 만든다).
+ */
+export function sortedSamples(sort: SampleSort, limit: number, boxSlug: string | null): ReviewSample[] {
+  if (!sampleReviewsOn()) return [];
+  if (sort === "newest") return boxSlug ? sampleReviews(boxSlug, limit) : newestSamples(limit);
+  const out: ReviewSample[] = [];
+  if (boxSlug) {
+    const order = boxOrder(sort, boxSlug);
+    for (let k = 0; k < order.length && out.length < limit; k++) out.push(sampleReviews(boxSlug, order[k] + 1)[order[k]]);
+  } else {
+    const order = allOrder(sort);
+    for (let k = 0; k < order.length && out.length < limit; k++) { const slug = BOXES[Math.floor(order[k] / 512)].slug, i = order[k] % 512; out.push(sampleReviews(slug, i + 1)[i]); }
   }
   return out;
 }

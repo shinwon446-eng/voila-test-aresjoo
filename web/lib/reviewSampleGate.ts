@@ -17,6 +17,8 @@ const gen: typeof Samples | null = process.env.NEXT_PUBLIC_SAMPLE_REVIEWS === "o
 export const sampleReviews = (boxSlug: string, limit?: number): Samples.ReviewSample[] => (gen ? gen.sampleReviews(boxSlug, limit) : []);
 /** 모든 박스의 샘플 후기를 새것부터 limit 건 */
 export const newestSamples = (limit: number): Samples.ReviewSample[] => (gen ? gen.newestSamples(limit) : []);
+/** 차례(새것부터, 값이 높은 것부터, 배수가 높은 것부터)에 따라 앞에서 limit 건. boxSlug 가 null 이면 모든 박스 */
+export const sortedSamples = (sort: Samples.SampleSort, limit: number, boxSlug: string | null): Samples.ReviewSample[] => (gen ? gen.sortedSamples(sort, limit, boxSlug) : []);
 /** 박스의 별점 요약(샘플 위에 실제 후기의 점수 extra 를 더한 것) */
 export const ratingSummary = (boxSlug: string, extra: readonly number[] = []): RatingSummary => (gen ? gen.ratingSummary(boxSlug, extra) : summarizeRatings(extra));
 /** 모든 박스의 별점 요약 */

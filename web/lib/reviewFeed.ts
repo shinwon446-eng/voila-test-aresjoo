@@ -38,8 +38,26 @@ export function allRating(real: RealRatings): RatingSummary {
  * 내가 쓴 후기는 며칠이 지나도 샘플 사이에 묻히지 않는다(샘플은 박스마다 몇 시간 전의 글이 있어, 나이로 섞으면 사흘 된 내 글이 천 번째 뒤로 간다).
  * 건수와 별점에는 내 후기가 한 번만 들어간다(boxRating, allRating).
  */
-export function feedOrder<T extends { ageMin: number }>(mine: readonly T[], samples: readonly T[], shown: number): T[] {
-  return [...[...mine].sort((a, b) => a.ageMin - b.ageMin), ...samples].slice(0, Math.max(0, shown));
+export function feedOrder<T extends Sortable>(mine: readonly T[], samples: readonly T[], shown: number, sort: ReviewSort = "newest"): T[] {
+  if (sort === "newest") return [...[...mine].sort((a, b) => a.ageMin - b.ageMin), ...samples].slice(0, Math.max(0, shown));
+  // 값과 배수의 차례에서는 내 후기도 같은 잣대로 샘플과 함께 줄을 선다
+  return [...mine, ...samples].sort(compareBy(sort)).slice(0, Math.max(0, shown));
+}
+
+/**
+ * 모아 보기의 차례(2026-10-14 파운더: 금액 높은 순, 배수 높은 순, 최신순). 주소의 sort 가 value 나 times 가 아니면 새것부터다.
+ * value 는 나온 상품의 값이 높은 것부터(같으면 새것부터), times 는 값을 박스값으로 나눈 배수가 높은 것부터(같으면 값, 그다음 새것부터).
+ * 상품이 없는 건(값을 모르는 건)은 맨 뒤다. 배수는 반올림한 글자(timesOfBox)가 아니라 나눈 값 그대로 견준다.
+ */
+export type ReviewSort = "newest" | "value" | "times";
+export const REVIEW_SORTS: readonly ReviewSort[] = ["newest", "value", "times"];
+export const parseSort = (raw: string | null | undefined): ReviewSort => (raw === "value" || raw === "times" ? raw : "newest");
+export interface Sortable { ageMin: number; value?: number | null; times?: number | null }
+export function compareBy(sort: ReviewSort): (a: Sortable, b: Sortable) => number {
+  const known = (n: number | null | undefined) => (n === null || n === undefined ? -Infinity : n);
+  if (sort === "newest") return (a, b) => a.ageMin - b.ageMin;
+  if (sort === "value") return (a, b) => known(b.value) - known(a.value) || a.ageMin - b.ageMin;
+  return (a, b) => known(b.times) - known(a.times) || known(b.value) - known(a.value) || a.ageMin - b.ageMin;
 }
 
 const two = (n: number) => String(n).padStart(2, "0");

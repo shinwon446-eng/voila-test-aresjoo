@@ -29,9 +29,9 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, typ
 import { Package, Star, User } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { BOX_BY_SLUG, type ProductBox, type ProductItem } from "@/lib/products";
-import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, stamp, timesOfBox, type RealRatings } from "@/lib/reviewFeed";
+import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, stamp, timesOfBox, type RealRatings, type ReviewSort } from "@/lib/reviewFeed";
 import type { RatingSummary } from "@/lib/reviewRating";
-import { newestSamples, sampleReviews } from "@/lib/reviewSampleGate";
+import { sortedSamples } from "@/lib/reviewSampleGate";
 import { useCurrency } from "@/lib/useCurrency";
 import { useProductText } from "@/lib/useProductText";
 import { useAuthStore } from "@/stores/authStore";
@@ -166,6 +166,9 @@ export interface ReviewCardData {
   /** 내 후기의 그 개봉을 직접 계산해 보는 주소. 개봉 기록이 없으면 null */
   verifyHref: string | null;
   mine: boolean;
+  /** 나온 상품의 값과 박스값의 배수(모아 보기의 차례를 세울 때 견준다, lib/reviewFeed 의 compareBy). 상품이 없으면 null */
+  value: number | null;
+  times: number | null;
 }
 
 /** 기기 시간대의 YYYY.MM.DD HH:mm (나온 상품 화면도 여기서 가져다 쓴다) */
@@ -208,7 +211,8 @@ function useMyReviewCards(published: Published, boxSlug: string | null): ReviewC
       const record = owned.find((o) => o.id === r.ownedId);
       const verifyHref = record?.fair?.serverSeed ? "/verify?" + new URLSearchParams({ s: record.fair.serverSeed, h: record.fair.serverSeedHash, c: record.fair.clientSeed, n: String(record.fair.nonce), box: box.slug }).toString() : null;
       const at = Date.parse(r.at);
-      out.push({ id: r.id, boxSlug: box.slug, rating: r.rating, text: r.text, item: box.items.find((i) => i.id === r.itemId), photo: r.photo ?? null, author: r.authorName?.trim() || me?.nickname?.trim() || t("reviews.me"), ageMin: Number.isFinite(at) ? Math.max(0, (now - at) / 60000) : 0, at: Number.isFinite(at) ? r.at : null, likes: 0, verifyHref, mine: true });
+      const item = box.items.find((i) => i.id === r.itemId);
+      out.push({ id: r.id, boxSlug: box.slug, rating: r.rating, text: r.text, item, photo: r.photo ?? null, author: r.authorName?.trim() || me?.nickname?.trim() || t("reviews.me"), ageMin: Number.isFinite(at) ? Math.max(0, (now - at) / 60000) : 0, at: Number.isFinite(at) ? r.at : null, likes: 0, verifyHref, mine: true, value: item?.value ?? null, times: item && box.price > 0 ? item.value / box.price : null });
     }
     return out;
   }, [published, owned, me, boxSlug, t, now]);
@@ -227,19 +231,23 @@ export interface ReviewFeed { cards: ReviewCardData[]; total: number; summary: R
 
 /**
  * 후기 카드의 재료: 앞에서 shown 장, 전체 건수, 별점 요약. boxSlug 가 null 이면 박스를 가리지 않는다(모아 보기).
- * 차례는 내 후기가 먼저(새것부터), 그다음에 샘플(새것부터)이다(lib/reviewFeed 의 feedOrder). 내 후기는 며칠이 지나도 맨 앞에 있다.
- * 샘플은 보이는 만큼만 만든다. 건수와 별점 요약은 박스 목록의 카드와 같은 셈이다(lib/reviewFeed 의 boxRating).
+ * 차례(sort)는 새것부터가 기본이다: 내 후기가 먼저(새것부터), 그다음에 샘플(새것부터)이다(lib/reviewFeed 의 feedOrder). 내 후기는 며칠이 지나도 맨 앞에 있다.
+ *   값이 높은 것부터와 배수가 높은 것부터(모아 보기)는 샘플을 뼈대로 줄 세워 앞에서 shown 장만 글을 만들고(lib/reviewSamples 의 sortedSamples), 내 후기도 같은 잣대로 함께 줄을 선다.
+ * 건수와 별점 요약은 차례와 상관없이 박스 목록의 카드와 같은 셈이다(lib/reviewFeed 의 boxRating).
  */
-export function useReviewFeed(boxSlug: string | null, shown: number): ReviewFeed {
+export function useReviewFeed(boxSlug: string | null, shown: number, sort: ReviewSort = "newest"): ReviewFeed {
   const published = usePublishedReviews();
   const mine = useMyReviewCards(published, boxSlug);
   const real = useMemo(() => realRatings(published), [published]);
   return useMemo(() => {
-    const samples = boxSlug ? sampleReviews(boxSlug, shown) : newestSamples(shown);
-    const cards: ReviewCardData[] = samples.map((s) => ({ id: s.id, boxSlug: s.boxSlug, rating: s.rating, text: s.text, item: BOX_BY_SLUG[s.boxSlug]?.items.find((i) => i.id === s.itemId), photo: s.photo, author: s.author, ageMin: s.ageMin, at: null, likes: s.likes, verifyHref: null, mine: false }));
+    const samples = sortedSamples(sort, shown, boxSlug);
+    const cards: ReviewCardData[] = samples.map((s) => {
+      const box = BOX_BY_SLUG[s.boxSlug], item = box?.items.find((i) => i.id === s.itemId);
+      return { id: s.id, boxSlug: s.boxSlug, rating: s.rating, text: s.text, item, photo: s.photo, author: s.author, ageMin: s.ageMin, at: null, likes: s.likes, verifyHref: null, mine: false, value: item?.value ?? null, times: item && box && box.price > 0 ? item.value / box.price : null };
+    });
     const summary = boxSlug ? boxRating(boxSlug, real) : allRating(real);
-    return { cards: feedOrder(mine, cards, shown), total: summary.count, summary };
-  }, [mine, real, boxSlug, shown]);
+    return { cards: feedOrder(mine, cards, shown, sort), total: summary.count, summary };
+  }, [mine, real, boxSlug, shown, sort]);
 }
 
 /**

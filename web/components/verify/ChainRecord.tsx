@@ -10,7 +10,8 @@ import { chainView, type ChainRecord } from "@/lib/chainRecord";
 
 const short = (text: string) => (text.length > 24 ? text.slice(0, 12) + "…" + text.slice(-8) : text);
 
-export function ChainRecordView({ record, onRetry }: { record: ChainRecord; onRetry?: () => void }) {
+/** noneBody: 기록이 없을 때의 설명을 부르는 쪽의 말로 바꾼다(업그레이드 결과 검증은 "열기 전" 대신 "걸기 전"이라고 쓴다) */
+export function ChainRecordView({ record, onRetry, noneBody }: { record: ChainRecord; onRetry?: () => void; noneBody?: string }) {
   const t = useTranslations("v");
   const view = chainView(record);
   return (
@@ -22,7 +23,7 @@ export function ChainRecordView({ record, onRetry }: { record: ChainRecord; onRe
       </dl>
       {view.fail ? <p role="alert" className="v-line v-line--fail">{t(view.body)}</p>
         : view.success ? <p className="v-line">{t(view.body)}</p>
-        : <p className="v-small">{t(view.body)}</p>}
+        : <p className="v-small">{view.state === "none" && noneBody ? noneBody : t(view.body)}</p>}
       {(view.url || (view.retry && onRetry)) && (
         <div className="v-links">
           {view.url && <a href={view.url} target="_blank" rel="noreferrer" className="v-link">{t("verify.chain.view")} ↗</a>}

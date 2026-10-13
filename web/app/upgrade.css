@@ -1,0 +1,46 @@
+/*
+ * 업그레이드(components/flow/UpgradeSheet)와 그것을 여는 자리의 모양.
+ * 색은 tokens.css 의 변수만 쓴다. 성공 구간과 표시는 색이 아니라 밝기와 자리로 나타낸다(DESIGN.md 3장).
+ */
+/* 배수 단추 다섯: 좁은 폭에서도 한 줄에 같은 너비로 놓는다 */
+.v-up-chips { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.v-up-chips .v-chip { min-width: 0; padding: 0 4px; }
+/* 맞는 목표가 없는 단추: 누를 수 없다. 이유는 아래 글이 말한다 */
+.v-up-chips .v-chip:disabled { color: var(--v-mute); opacity: 0.5; cursor: default; }
+.v-up-chips .v-chip:disabled:hover { background: var(--v-pill); }
+
+/* 목표 상품이 놓이는 자리. 단추를 고르기 전에도 같은 높이를 잡아 둔다 */
+.v-up-choice { display: flex; min-height: 244px; flex-direction: column; gap: 12px; }
+.v-up-target { display: flex; align-items: center; gap: 14px; border-radius: var(--v-r-card); background: var(--v-card); padding: 12px; }
+.v-up-photo { position: relative; width: 128px; aspect-ratio: 4 / 3; flex: none; overflow: hidden; border-radius: 14px; background: var(--v-photo); }
+.v-up-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.v-up-target-body { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: 2px; }
+.v-up-target-body .v-card-title { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; word-break: keep-all; overflow-wrap: anywhere; }
+
+/* 추첨 막대: 왼쪽부터 확률만큼이 성공 구간, 세로 선이 나온 수의 자리 */
+.v-up-bar { position: relative; padding: 8px 0; }
+.v-up-track { display: block; overflow: hidden; height: 14px; border-radius: 7px; background: var(--v-pill); }
+.v-up-zone { display: block; width: var(--zone); height: 100%; background: var(--v-selected); }
+.v-up-mark { position: absolute; top: 0; bottom: 0; left: var(--at); width: 2px; margin-left: -1px; border-radius: 1px; background: var(--v-title); }
+/* 연출: 0 에서 나온 수의 자리까지, 결과와 상관없이 같은 길이와 같은 곡선(일정한 비율)으로 간다. 길이가 같으니 나온 수가 클수록 빨리 움직인다. 느려지며 멈추는 연출은 쓰지 않는다 */
+@keyframes v-up-move { from { left: 0; } to { left: var(--at); } }
+@media (prefers-reduced-motion: no-preference) { .v-up-bar[data-moving] .v-up-mark { animation: v-up-move var(--dur) linear both; } }
+
+/* 성공한 목표 상품의 사진: 낮은 화면에서 주 단추를 밀어내지 않게 높이를 묶는다 */
+.v-up-won { max-height: 30dvh; }
+
+/* 결과 화면과 상세의 조용한 단추(업그레이드): 주 단추와 붙지 않게 띄운다 */
+.v-op-actions .v-up-entry { margin-top: 8px; }
+/* 결과가 뜬 직후 단추가 잠겨 있는 동안에도 조용한 단추는 주 단추처럼 보이지 않는다 */
+.v-op-actions:not([data-armed]) .v-btn--quiet:disabled { background: var(--v-pill); color: var(--v-text); }
+
+/* 막대의 눈금 양 끝(0 과 100). 나온 수와 성공 확률을 같은 눈금으로 읽게 한다 */
+.v-up-scale { display: flex; justify-content: space-between; margin-top: -4px; }
+/* 잠근 값(해시)과 내 기기 값은 끊을 곳이 없는 긴 글자다. 좁은 폭에서도 넘치지 않게 아무 데서나 줄을 바꾼다 */
+.v-up-hash { overflow-wrap: anywhere; word-break: break-all; }
+/* 낮은 화면(높이 700px 이하): 결과 화면에 조용한 단추(업그레이드)가 한 줄 더해진 만큼 사진을 줄이고 그 단추를 터치 영역의 최소 높이로 둔다.
+   상품 이름과 결과 줄이 아래 단추 묶음이나 위의 잔액 줄과 겹치지 않게 한다 */
+@media (max-height: 700px) {
+  .v-op:has(.v-op-actions .v-up-entry) .v-op-photo { width: min(56%, 260px); }
+  .v-op-actions .v-btn--quiet.v-up-entry { min-height: var(--v-touch); margin-top: 4px; }
+}

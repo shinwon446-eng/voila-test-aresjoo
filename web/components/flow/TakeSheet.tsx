@@ -17,6 +17,7 @@ import { useTranslations } from "next-intl";
 import { REFUND_RATE } from "@/lib/products";
 import { productOf } from "@/lib/vault";
 import { heldForTake, mergeOutcomes, reviewTakeMarks, settleTakeMany, takeAmountOf, takeLedgerOf, takeQuote, type BatchOutcome, type TakeLedger } from "@/lib/takeBatch";
+import { reviewUpgradeMarks } from "@/lib/upgradeSettle";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useAuthStore } from "@/stores/authStore";
@@ -38,7 +39,8 @@ export function useTakeLedger(): TakeLedger {
   const transactions = useWalletStore((s) => s.transactions);
   const items = useInventoryStore((s) => s.items);
   useEffect(() => {
-    const review = () => { if (document.visibilityState !== "hidden") void reviewTakeMarks(); };
+    // 업그레이드의 확인 대기 표시도 같은 때에 다시 본다(lib/upgradeSettle)
+    const review = () => { if (document.visibilityState !== "hidden") { void reviewTakeMarks(); void reviewUpgradeMarks(); } };
     review();
     window.addEventListener("focus", review);
     document.addEventListener("visibilitychange", review);

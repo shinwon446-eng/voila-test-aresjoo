@@ -4,6 +4,7 @@
  *   보관 중 목록 위의 주 단추 "USDT로 받기"는 선택 시트를 연다(보관 중인 상품 전부에서 골라 한 번에).
  *   상품을 누르면 그 상품의 시트: 주 단추 "USDT로 받기 (금액)", 밑줄 링크 "배송 받기"와 "개봉 결과 검증".
  *   배송을 신청하는 길은 이 시트 하나다. 후기 쓰기는 조건이 될 때 정보 카드의 마지막 행으로 둔다(주 단추 위, 링크 자리를 쓰지 않는다. R5).
+ *   보관 중인 상품은 업그레이드에 걸 수도 있다(flow/MELT_SPEC.md U7): 주 단추 아래의 조용한 단추. 걸어서 사라진 상품은 받은 것 탭에 기록으로 남는다.
  * 통계 칸, 검색, 정렬 셀렉트, 여러 탭은 없다. 상태 셋(보관 중, 배송, 받은 것)만 알약으로 고른다.
  * 실패와 막힘은 팝업이나 토스트가 아니라 그 자리의 한 줄로 쓴다.
  */
@@ -15,6 +16,8 @@ import { trackingUrl } from "@/lib/carriers";
 import { cancelShipment } from "@/lib/claim";
 import { settleTake } from "@/lib/openingSettle";
 import { heldForTake, takeAmountOf, takeStateOf } from "@/lib/takeBatch";
+import type { UpgradeRecord } from "@/lib/upgrade";
+import { canStake, upgradeDoubtIds } from "@/lib/upgradeSettle";
 import { api } from "@/lib/api";
 import { isLive } from "@/lib/runtime";
 import { useProductText } from "@/lib/useProductText";
@@ -27,6 +30,7 @@ import { ShipSheet } from "@/components/flow/ShipSheet";
 import { VerifySheet, type VerifyRecord } from "@/components/flow/VerifySheet";
 import { ReviewSheet } from "@/components/flow/ReviewSheet";
 import { TakeConfirm, TakeSheet, useTakeLedger } from "@/components/flow/TakeSheet";
+import { UpgradeSheet, UpgradeVerifySheet } from "@/components/flow/UpgradeSheet";
 import { canReview } from "@/lib/community";
 import { useCommunityStore } from "@/stores/communityStore";
 
@@ -55,6 +59,9 @@ export function InventoryScreen() {
   const [batch, setBatch] = useState(false);
   const [verifying, setVerifying] = useState<VerifyRecord | null>(null);
   const [reviewing, setReviewing] = useState(false);
+  // 업그레이드 시트에 걸 상품, 그리고 업그레이드 결과 검증에 넘길 기록
+  const [upgrading, setUpgrading] = useState<string | null>(null);
+  const [upgradeRecord, setUpgradeRecord] = useState<UpgradeRecord | null>(null);
   const myReviews = useCommunityStore((s) => s.mine);
 
   // 출고된 상품의 운송장은 계정 서비스가 발급한 것만 들어온다(옛 화면과 같은 주기)
@@ -85,7 +92,12 @@ export function InventoryScreen() {
   const stateOf = (item: OwnedItem) => takeStateOf(item, ledger);
   const takeable = useMemo(() => heldForTake(items, ledger).length, [items, ledger]);
   const currentState = current ? stateOf(current) : null;
-  const statusOf = (item: OwnedItem) => stateOf(item) === "unconfirmed" ? t("take.unconfirmed") : item.status === "IN_STORAGE" ? t("inv.stHeld") : item.status === "SHIPPING_REQUESTED" ? t("inv.stRequested") : item.status === "SHIPPING" ? t("inv.stShipping") : item.status === "DELIVERED" ? t("inv.stDelivered") : t("inv.stTaken");
+  // 확인 필요의 까닭이 업그레이드인 상품(업그레이드의 확인 대기 표시가 남았다). 돈이 움직인 일이 아니라 지갑 내역으로 보내지 않는다
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const upgradeDoubt = useMemo(() => upgradeDoubtIds(), [items, ledger]);
+  const statusOf = (item: OwnedItem) => stateOf(item) === "unconfirmed" ? t("take.unconfirmed") : item.status === "IN_STORAGE" ? t("inv.stHeld") : item.status === "SHIPPING_REQUESTED" ? t("inv.stRequested") : item.status === "SHIPPING" ? t("inv.stShipping") : item.status === "DELIVERED" ? t("inv.stDelivered") : item.status === "UPGRADED" ? t("upgrade.usedTag") : t("inv.stTaken");
+  // 이 상품이 얽힌 업그레이드의 기록: 걸어서 사라진 상품은 제 기록, 업그레이드로 들어온 상품은 건 상품에 붙은 기록
+  const upgradeOf = (item: OwnedItem): UpgradeRecord | null => item.upgrade ?? (item.upgradedFrom ? items.find((o) => o.upgrade?.id === item.upgradedFrom?.id)?.upgrade ?? null : null);
 
   const closeItem = () => { setOpenId(null); setCancelFailed(false); setTakeNote(null); };
   // 상품 하나를 USDT로 받는다. 묶음 받기와 같은 코드를 거친다(lib/openingSettle → lib/takeBatch: 같은 잠금, 같은 판정)
@@ -106,7 +118,7 @@ export function InventoryScreen() {
   };
   const verify = (item: OwnedItem) => setVerifying({ itemId: item.itemId, fair: item.fair });
 
-  const sheetOpen = !!current && !shipIds && !taking && !cancelling && !verifying && !reviewing;
+  const sheetOpen = !!current && !shipIds && !taking && !cancelling && !verifying && !reviewing && !upgradeRecord;
   // 후기는 실제 개봉 기록에만. 하나에 하나
   const reviewable = !!current && canReview(current, myReviews);
   const reviewed = !!current && myReviews.some((r) => r.ownedId === current.id);
@@ -143,7 +155,7 @@ export function InventoryScreen() {
           </>
         )}
 
-      <Sheet open={sheetOpen} onClose={closeItem} title={current ? nameOf(current) : ""} desc={current && BOX_BY_SLUG[current.boxSlug] ? boxTitle(BOX_BY_SLUG[current.boxSlug]) : undefined} closeLabel={t("common.close")}>
+      <Sheet open={sheetOpen} onClose={closeItem} title={current ? nameOf(current) : ""} desc={current?.upgradedFrom ? t("upgrade.from") : current && BOX_BY_SLUG[current.boxSlug] ? boxTitle(BOX_BY_SLUG[current.boxSlug]) : undefined} closeLabel={t("common.close")}>
         {current && (
           <>
             <Rows>
@@ -152,6 +164,7 @@ export function InventoryScreen() {
               <Row label={t("inv.acquired")}>{date(current.acquiredAt)}</Row>
               {current.status === "IN_STORAGE" && current.autoCashbackAt && <Row label={t("inv.keepUntil")}>{date(current.autoCashbackAt)}</Row>}
               {currentState === "taken" && <Row label={t("inv.takenAmount")}>{fmt(current.soldForUsdt ?? 0)}</Row>}
+              {current.upgrade && currentState !== "unconfirmed" && <Row label={t("upgrade.result")}>{t(current.upgrade.won ? "upgrade.resultWon" : "upgrade.resultLost")}</Row>}
               {current.shipping?.requestedAt && current.status !== "IN_STORAGE" && <Row label={t("inv.requestedAt")}>{date(current.shipping.requestedAt)}</Row>}
               {current.shipping?.carrier && <Row label={t("inv.carrier")}>{current.shipping.carrier}</Row>}
               {current.shipping?.trackingNumber && <Row label={t("inv.tracking")}>{current.shipping.trackingNumber}</Row>}
@@ -166,16 +179,20 @@ export function InventoryScreen() {
             {current.status === "SHIPPING_REQUESTED" && <Line>{t("inv.waitingTracking")}</Line>}
             {cancelFailed && <Line fail>{t("inv.cancelFailed")}</Line>}
             {/* 확인되지 않은 상품: 상세를 닫았다 다시 열어도 이 한 줄이 남는다. 받기 단추와 배송 링크는 주지 않는다(다시 지급하지 않는다) */}
-            {(currentState === "unconfirmed" || takeNote === "unknown") && <Line fail>{t("take.unknown")}</Line>}
+            {(currentState === "unconfirmed" || takeNote === "unknown") && <Line fail>{t(upgradeDoubt.has(current.id) ? "upgrade.doubt" : "take.unknown")}</Line>}
             {takeNote === "failed" && currentState === "held" && <Line fail>{t("take.failed")}</Line>}
             {/* 보관 중: 주 단추는 USDT로 받기. 배송은 밑줄 링크이고, 배송을 신청하는 길은 여기 하나다 */}
             {currentState === "held" && takeNote !== "unknown" && <Button data-take-primary onClick={() => setTaking(true)}>{t("reveal.take", { amount: fmt(takeAmount) })}</Button>}
+            {/* 업그레이드: 받을 수 있는 상품만 걸 수 있다. 시트를 닫고 업그레이드 시트로 넘어간다(끝나면 목록으로 돌아온다) */}
+            {currentState === "held" && takeNote !== "unknown" && canStake(current, ledger) && <Button quiet data-upgrade-open aria-haspopup="dialog" onClick={() => { setUpgrading(current.id); closeItem(); }}>{t("upgrade.title")}</Button>}
             {current.status === "SHIPPING_REQUESTED" && <Button onClick={() => setCancelling(true)}>{t("inv.cancelShip")}</Button>}
             {current.status === "SHIPPING" && current.shipping?.carrier && current.shipping.trackingNumber && <a className="v-btn" href={trackingUrl(current.shipping.carrier, current.shipping.trackingNumber)} target="_blank" rel="noreferrer">{t("inv.track")} ↗</a>}
             <div className="v-links">
               {currentState === "held" && takeNote !== "unknown" && product?.kind === "physical" && <TextLink onClick={() => setShipIds([current.id])}>{t("reveal.ship")}</TextLink>}
-              {(currentState === "unconfirmed" || takeNote === "unknown") && <TextLink href="/wallet">{t("balanceSheet.history")}</TextLink>}
-              <TextLink onClick={() => verify(current)}>{t("nav.verify")}</TextLink>
+              {(currentState === "unconfirmed" || takeNote === "unknown") && !upgradeDoubt.has(current.id) && <TextLink href="/wallet">{t("balanceSheet.history")}</TextLink>}
+              {/* 업그레이드로 들어온 상품에는 개봉 기록이 없다. 그 추첨을 검증한다. 걸어서 사라진 상품은 개봉과 업그레이드 둘 다 */}
+              {!current.upgradedFrom && <TextLink onClick={() => verify(current)}>{t("nav.verify")}</TextLink>}
+              {upgradeOf(current) && currentState !== "unconfirmed" && <TextLink onClick={() => setUpgradeRecord(upgradeOf(current))}>{t("upgrade.verifyTitle")}</TextLink>}
             </div>
           </>
         )}
@@ -183,6 +200,8 @@ export function InventoryScreen() {
 
       <ShipSheet ownedIds={shipIds} onClose={() => setShipIds(null)} onDone={() => { setShipIds(null); closeItem(); setTab("shipping"); }} />
       <VerifySheet record={verifying} onClose={() => setVerifying(null)} />
+      <UpgradeVerifySheet record={upgradeRecord} onClose={() => setUpgradeRecord(null)} />
+      <UpgradeSheet stakeId={upgrading} onClose={() => setUpgrading(null)} />
       <ReviewSheet item={reviewing ? current : null} itemName={current ? nameOf(current) : ""} onClose={() => setReviewing(false)} onDone={() => setReviewing(false)} />
       {/* 보관 중인 상품 전부에서 골라 한 번에 받는다. 받은 뒤에도 보관 중 목록에 그대로 있다 */}
       <TakeSheet open={batch} onClose={() => setBatch(false)} />

@@ -14,6 +14,8 @@
  *     배송은 이 화면에 없다. 보관함의 상품 상세에서 신청한다.
  *   - 다음 열기에 잔액이 모자라면 그 자리에서 푼다(S4): 보관 중인 상품이 있으면 "USDT로 받기", 없으면 "USDT 충전하기".
  *     받거나 충전한 뒤에도 다음 열기를 스스로 실행하지 않는다.
+ *   - 받은 상품은 업그레이드에 걸 수도 있다(flow/MELT_SPEC.md U7). 주 단추 아래의 조용한 단추가 업그레이드 시트를 연다.
+ *     걸어서 사라진 상품은 받을 수 없다. 그 뒤의 주 단추는 다음 열기다.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { SlidersHorizontal, X } from "lucide-react";
@@ -32,11 +34,13 @@ import { useSettingsStore } from "@/stores/settingsStore";
 import { useInventoryStore } from "@/stores/inventoryStore";
 import { useFlow } from "@/stores/flowStore";
 import { shortfallOf, takeStateOf } from "@/lib/takeBatch";
+import { canStake, reviewUpgradeMarks, upgradeDoubtIds } from "@/lib/upgradeSettle";
 import { BrandLogo } from "@/components/layout/BrandLogo";
 import { Button, Line, TextLink } from "@/components/ui/kit";
 import { Confirm, Sheet } from "@/components/ui/Sheet";
 import { VerifySheet, type VerifyRecord } from "@/components/flow/VerifySheet";
 import { TakeConfirm, TakeSheet, useTakeLedger } from "@/components/flow/TakeSheet";
+import { UpgradeSheet } from "@/components/flow/UpgradeSheet";
 
 type Phase = "anticipation" | "impact" | "exit" | "reveal" | "ready";
 type Settle = "idle" | "settling" | "settled" | "pending" | "failed" | "unknown";
@@ -100,7 +104,9 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
   const ledger = useTakeLedger();
   const self = owned.find((o) => o.id === result.ownedId);
   const unconfirmed = !isCash && !!self && takeStateOf(self, ledger) === "unconfirmed";
-  const settle: Settle = settleState === "settling" || settleState === "settled" ? settleState : unconfirmed ? "unknown" : settleState;
+  // 업그레이드에 걸어 사라진 상품(UPGRADED)은 이 화면에서 끝난 것으로 본다(성공이든 실패든 받을 것이 남지 않았다)
+  const used = self?.status === "UPGRADED" && !unconfirmed;
+  const settle: Settle = used ? "idle" : settleState === "settling" || settleState === "settled" ? settleState : unconfirmed ? "unknown" : settleState;
   const [taken, setTaken] = useState<number | null>(initialTaken ?? null);
   const [autoTaken, setAutoTaken] = useState(false);
   // 배송은 이 화면에서 신청하지 않는다. 다시 보는 결과가 이미 배송을 신청한 상품일 때만 참이다
@@ -111,6 +117,11 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
   // USDT로 받기 확인창(이 상품 하나)과, 잔액이 모자랄 때 여는 선택 시트(보관 중인 상품 전부)
   const [asking, setAsking] = useState(false);
   const [heldTaking, setHeldTaking] = useState(false);
+  const [upgrading, setUpgrading] = useState(false);
+  // 확인 필요의 까닭이 업그레이드인가(업그레이드의 확인 대기 표시가 남았다). 그때의 다시 확인은 받기를 다시 하는 것이 아니라 표시를 다시 보는 것이다
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const upgradeDoubt = useMemo(() => unconfirmed && upgradeDoubtIds().has(result.ownedId), [unconfirmed, ledger, result.ownedId]);
+  const stakeable = !isCash && !!self && canStake(self, ledger);
   const [settings, setSettings] = useState(false);
   const soundRef = useRef(sound); soundRef.current = sound;
   const natural = useRef(!recovered);
@@ -188,7 +199,7 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
   );
   const sellAmount = fmt(round2(sellValueOf(item)));
   const odds = t("op.odds", { pct: formatRate(item.dropRate) });
-  const done = isCash || settle === "settled" || shipped;
+  const done = isCash || settle === "settled" || shipped || used;
   const ready = phase === "ready";
   const againLabel = (nextCost ?? cost) > 0 ? t("reveal.again", { amount: fmt(nextCost ?? cost) }) : t("reveal.againFree");
   const again = <Button data-open-again onClick={onAgain} busy={againBusy} busyLabel={t("box.opening")} disabled={!ready}>{againLabel}</Button>;
@@ -248,7 +259,7 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
               {item.image.src && <p className="v-op-ref v-num">{t("op.refLine", { amount: fmt(item.value) })}</p>}
               {item.image.src && timesOf(item.value, cost) !== null && <p className="v-op-label">{t("op.timesLine", { n: timesOf(item.value, cost) })}</p>}
               {/* 상태 줄은 보관했다는 말만 한다. 받을 금액은 주 단추와 그 아래 한 줄이 말한다 */}
-              <p className="v-op-line">{shipped ? t("op.shipRequested") : settle === "unknown" ? t("take.unconfirmed") : t("op.keptStatus")}</p>
+              <p className="v-op-line">{used ? t("upgrade.usedLine") : shipped ? t("op.shipRequested") : settle === "unknown" ? t("take.unconfirmed") : t("op.keptStatus")}</p>
               <p className="v-op-meta">{odds}. {cost > 0 ? t("op.paid", { price: fmt(cost) }) : t("op.free")}</p>
             </>
           ))}
@@ -266,7 +277,7 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
               {settle === "pending" && <Line>{t("op.pending")}</Line>}
               {settle === "failed" && <Line fail>{t("op.failed")}</Line>}
               {/* 장부가 어긋났다: 받았다고도, 보관함에 있다고도 말하지 않는다 */}
-              {settle === "unknown" && <Line fail>{t("take.unknown")}</Line>}
+              {settle === "unknown" && <Line fail>{t(upgradeDoubt ? "upgrade.doubt" : "take.unknown")}</Line>}
               {/* 다음 열기에 잔액이 모자라면 팝업이 아니라 이 한 줄로 말한다 */}
               {stuck && need.missing > 0 && <Line>{t("box.short", { balance: fmt(balance), missing: fmt(need.missing) })}</Line>}
             </div>
@@ -301,7 +312,7 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
               )}
               {!done && (settle === "failed" || settle === "pending" || settle === "unknown") && (
                 <>
-                  <Button onClick={() => void take(false, true)} disabled={!ready}>{t(settle === "failed" ? "op.retryTake" : "op.recheck", { amount: sellAmount })}</Button>
+                  <Button onClick={() => { if (upgradeDoubt) void reviewUpgradeMarks(); else void take(false, true); }} disabled={!ready}>{t(settle === "failed" ? "op.retryTake" : "op.recheck", { amount: sellAmount })}</Button>
                   <div className="v-links">{verifyLink}{backLink}</div>
                 </>
               )}
@@ -310,6 +321,7 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
                 <>
                   <Button data-take-primary onClick={() => setAsking(true)} disabled={!ready || settle === "settling"} busy={settle === "settling"} busyLabel={t("common.checking")}>{t("reveal.take", { amount: sellAmount })}</Button>
                   <p className="v-take-hint">{t("take.rateLine", { ref: fmt(item.value), pct: Math.round(REFUND_RATE * 100) })}</p>
+                  {stakeable && <Button quiet className="v-up-entry" data-upgrade-open aria-haspopup="dialog" onClick={() => setUpgrading(true)} disabled={!ready || settle === "settling"}>{t("upgrade.title")}</Button>}
                   <div className="v-links"><TextLink onClick={() => { if (ready && settle !== "settling") close(); }}>{t("take.keep")}</TextLink>{verifyLink}</div>
                 </>
               )}
@@ -322,6 +334,8 @@ export function Opening({ box, result, cost, nextCost, accountId, recovered, ini
       <TakeConfirm open={asking} amountUsdt={round2(sellValueOf(item))} onCancel={() => setAsking(false)} onConfirm={confirmTake} />
       {/* 잔액이 모자랄 때: 보관 중인 상품 전부에서 골라 받는다. 받은 뒤에도 다음 열기는 사람이 누른다 */}
       <TakeSheet open={heldTaking} onClose={() => setHeldTaking(false)} />
+      {/* 업그레이드: 이 상품을 걸고 더 비싼 상품에 도전한다. 결과는 시트 안에서 끝난다 */}
+      <UpgradeSheet stakeId={upgrading ? result.ownedId : null} onClose={() => setUpgrading(false)} onBack={close} />
       <OpeningSettings open={settings} onClose={() => setSettings(false)} accountId={accountId} />
       <VerifySheet record={verifying} onClose={() => setVerifying(null)} />
     </div>

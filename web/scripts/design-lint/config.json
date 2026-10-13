@@ -6,6 +6,7 @@
       "app/footer.css",
       "app/scroll-fade.css",
       "app/take.css",
+      "app/upgrade.css",
       "components/box/Opening.tsx",
       "components/ui/kit.tsx",
       "components/ui/Sheet.tsx",

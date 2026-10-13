@@ -14,7 +14,7 @@ const K = flatten(ko), E = flatten(en), Z = flatten(zh);
 /** 문구가 받는 값의 이름들({amount}, {n, plural, ...} 의 n) */
 const args = (text: string) => Array.from(new Set(Array.from(text.matchAll(/\{(\w+)/g), (m) => m[1]))).sort();
 /** USDT로 받기 흐름(S1~S7)이 쓰는 묶음: 선택 시트, 잔액 시트, 개봉 결과(한 개와 여러 개), 보관함, 출금 */
-const MINE = ["take.", "balanceSheet.", "op.", "reveal.", "inv.", "withdraw."];
+const MINE = ["take.", "balanceSheet.", "op.", "reveal.", "inv.", "withdraw.", "upgrade."];
 const mine = (key: string) => MINE.some((prefix) => key.startsWith(prefix));
 
 test("v 문구: 세 언어의 키가 서로 같다", () => {

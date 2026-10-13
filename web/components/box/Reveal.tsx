@@ -9,6 +9,7 @@
  *   주 단추는 "USDT로 받기 (받을 상품 n개)"이고 방금 나온 상품만 담은 선택 시트를 연다. 행을 누르면 그 상품 하나를 받는다.
  *   배송은 이 화면에 없다. 보관함의 상품 상세에서 신청한다.
  *   받을 것이 없고 다음 열기에 잔액이 모자라면 그 자리에서 푼다(S4). 다음 열기는 언제나 사람이 누른다.
+ *   행을 눌러 가는 상품 상세에서 그 상품을 업그레이드에 걸 수도 있다(U7). 걸어서 사라진 상품은 받을 상품에서 빠진다.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { X } from "lucide-react";
@@ -25,11 +26,13 @@ import { useWalletStore } from "@/stores/walletStore";
 import { useInventoryStore } from "@/stores/inventoryStore";
 import { useFlow } from "@/stores/flowStore";
 import { shortfallOf, takeQuote, takeStateOf, type BatchOutcome } from "@/lib/takeBatch";
+import { canStake, upgradeDoubtIds } from "@/lib/upgradeSettle";
 import { burstGauge } from "@/lib/burst";
 import { Button, ButtonLink, Line, Row, Rows, TextLink } from "@/components/ui/kit";
 import { Sheet } from "@/components/ui/Sheet";
 import { VerifySheet, type VerifyRecord } from "@/components/flow/VerifySheet";
 import { TakeConfirm, TakeSheet, useTakeLedger } from "@/components/flow/TakeSheet";
+import { UpgradeSheet } from "@/components/flow/UpgradeSheet";
 
 /** 여러 개를 열 때의 연출: 한 개 열기와 같은 상자, 같은 길이(lib/openingFlow 의 기본값). 결과의 크기와 무관하다. */
 const STAGE = { anticipation: 520, impact: 150, exit: 170 };
@@ -118,7 +121,11 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
   const ledger = useTakeLedger();
   const unconfirmedIds = new Set(owned.filter((o) => takeStateOf(o, ledger) === "unconfirmed").map((o) => o.id));
   const unconfirmed = (r: OpeningResult) => r.item.kind !== "cash" && taken[r.ownedId] === undefined && unconfirmedIds.has(r.ownedId);
-  const kept = results.filter((r) => r.item.kind !== "cash" && taken[r.ownedId] === undefined && !unconfirmed(r));
+  // 업그레이드에 걸어 사라진 상품(UPGRADED). 받을 것도 보관 중인 것도 아니다
+  const usedIds = new Set(owned.filter((o) => o.status === "UPGRADED" && !unconfirmedIds.has(o.id)).map((o) => o.id));
+  const used = (r: OpeningResult) => r.item.kind !== "cash" && usedIds.has(r.ownedId);
+  const [upgrading, setUpgrading] = useState<string | null>(null);
+  const kept = results.filter((r) => r.item.kind !== "cash" && taken[r.ownedId] === undefined && !unconfirmed(r) && !used(r));
   const keptRef = +kept.reduce((sum, r) => sum + r.item.value, 0).toFixed(2);
   const waiting = kept.filter((r) => !shipped[r.ownedId]);
   const change = openingChange(cost, credited).diff;
@@ -244,8 +251,8 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
                   </Rows>
                   <ul className="v-rows" aria-label={t("reveal.results")}>
                     {lines.map(({ r, count }, i) => {
-                      const state = r.item.kind === "cash" ? t("op.tagCash") : shipped[r.ownedId] ? t("reveal.shippedTag") : taken[r.ownedId] !== undefined ? t("reveal.takenTag") : unconfirmed(r) ? t("take.unconfirmed") : t("op.tagKept");
-                      const open = r.item.kind !== "cash" && !shipped[r.ownedId] && taken[r.ownedId] === undefined;
+                      const state = r.item.kind === "cash" ? t("op.tagCash") : shipped[r.ownedId] ? t("reveal.shippedTag") : taken[r.ownedId] !== undefined ? t("reveal.takenTag") : unconfirmed(r) ? t("take.unconfirmed") : used(r) ? t("upgrade.usedTag") : t("op.tagKept");
+                      const open = r.item.kind !== "cash" && !shipped[r.ownedId] && taken[r.ownedId] === undefined && !used(r);
                       const times = timesOf(r.item.value, box.price);
                       const label = <span>{itemName(r.item)}<span className="v-small">, {state}{times !== null ? ", " + t("op.timesShort", { n: times }) : ""}{count > 1 ? ", " + t("op.countTimes", { n: count }) : ""}</span></span>;
                       return (
@@ -291,14 +298,19 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
             {picked.item.image.src && <div className="v-sheet-photo"><img src={picked.item.image.src} alt="" /></div>}
             <Rows><Row label={t("reveal.value")}>{fmt(picked.item.value)}</Row><Row label={t("reveal.odds")}>{formatRate(picked.item.dropRate)}</Row></Rows>
             {/* 장부가 어긋난 상품: 받았다고도 보관 중이라고도 하지 않는다. 받기 단추를 주지 않고(다시 지급하지 않는다) 지갑 내역으로 가는 길을 준다 */}
-            {unconfirmed(picked) && <Line fail>{t("take.unknown")}</Line>}
+            {unconfirmed(picked) && <Line fail>{t(upgradeDoubtIds().has(picked.ownedId) ? "upgrade.doubt" : "take.unknown")}</Line>}
             {takeNote === "failed" && !unconfirmed(picked) && taken[picked.ownedId] === undefined && <Line fail>{t("take.failed")}</Line>}
             {taken[picked.ownedId] !== undefined ? <p className="v-body">{t("reveal.takenDesc")}</p> : unconfirmed(picked) ? null : a.main}
+            {/* 업그레이드: 이 상품을 걸고 더 비싼 상품에 도전한다. 받을 수 있는 상품만 걸 수 있다 */}
+            {taken[picked.ownedId] === undefined && !unconfirmed(picked) && owned.some((o) => o.id === picked.ownedId && canStake(o, ledger)) && (
+              <Button quiet data-upgrade-open aria-haspopup="dialog" onClick={() => { setUpgrading(picked.ownedId); pick(null); }}>{t("upgrade.title")}</Button>
+            )}
             <div className="v-links">{taken[picked.ownedId] !== undefined ? <TextLink onClick={() => verify(picked)}>{t("nav.verify")}</TextLink> : unconfirmed(picked) ? <><TextLink href="/wallet">{t("balanceSheet.history")}</TextLink><TextLink onClick={() => verify(picked)}>{t("nav.verify")}</TextLink></> : a.links}</div>
           </>
         ); })()}
       </Sheet>
       <VerifySheet record={verifying} onClose={() => setVerifying(null)} />
+      <UpgradeSheet stakeId={upgrading} onClose={() => setUpgrading(null)} onBack={close} />
       {/* 여럿을 한 번에: 방금 나온 것만(fresh), 또는 잔액이 모자랄 때 보관 중인 상품 전부(held). 받은 뒤에도 다음 열기는 사람이 누른다 */}
       <TakeSheet open={batch !== null} ids={batch === "fresh" ? waiting.map((r) => r.ownedId) : undefined} preselect={batch === "fresh" ? presetIds : undefined} onClose={() => setBatch(null)} onTaken={batchTaken} />
       {/* 상품 하나: 선택 시트와 같은 확인 한 번 */}

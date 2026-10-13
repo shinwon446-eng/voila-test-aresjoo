@@ -7,6 +7,8 @@
 // 별점의 뜻(여기 한 곳에만 적는다): 받은 것(나온 상품과 그 물건)과 받는 과정(배송, 포장, 응대)에 대한 만족을 한 점수로 매긴 것이다.
 //   큰 것이 나오면 점수가 오르기 쉽지만 뽑기 운만의 점수는 아니다: 흔하고 작은 상품도 잘 받았으면 별 다섯이 나오고,
 //   큰 상품도 받는 과정이 크게 불편했으면 별 셋이 나온다. 뼈대가 건마다 점수와 그 점수의 까닭(why)을 함께 정하고, 글은 그 까닭에 맞는 조각만 쓴다.
+// 글의 목소리(2026-10-13 파운더: 후기는 박스를 깐 것에 대한 것이지 상품 후기가 아니다): 어느 글이든 첫 문장은 개봉과 그 결과를 말한다(몇 번째에 무엇이 나왔는지,
+//   박스값에 견줘 어땠는지, 뽑은 기분). 물건을 썼다거나 배송이 어땠다는 말은 짧은 둘째 조각으로만 붙고 앞에 서지 않는다(한국어, 영어, 중국어 모두).
 // 글의 결(tests/reviewSamples.test.ts 가 모든 박스에서 본다): 별 하나와 둘은 낮은 점수의 까닭 한 가지, 별 셋은 그저 그렇다는 말,
 //   별 넷은 좋았다는 말(받는 과정이 조금 아쉬웠으면 그 한 줄이 끝에 붙는다), 별 다섯은 좋았다는 말뿐이다. 아쉬운 말 뒤에는 웃음을 붙이지 않는다.
 // 세 단계로 만든다:
@@ -23,7 +25,7 @@
 // 이 사이트에 없는 일은 샘플도 말하지 않는다: 디지털 상품은 USDT로 받기만 있으므로 썼다, 등록했다는 말이 없고, 차와 큰 가전에 설치나 인도 절차를 말하지 않는다.
 import { BOXES, BOX_BY_SLUG, REFUND_RATE, type ProductBox, type ProductItem } from "./products";
 import { summarizeRatings, summaryOf, type RatingSummary } from "./reviewRating";
-import { ARRIVAL, BANNED, BOX_HINTS, CLOSE, DIGITAL, EN, FLOW, GOT, GRIPE, ITEM, ITEM_NAMED, KIND_FACTS, LEAD, MID, MID_CLOSE, NEG, NEG_CLOSE, NICK, PART, PAR_BAND, SHIP, SLANG, TAIL, TOPICS, USE, USE_GIFT, ZH, fact, type Frag, type Kind, type Topic } from "./reviewSampleText";
+import { ARRIVAL, ARRIVAL_OPEN, BANNED, BOX_HINTS, CLOSE, DIGITAL, EN, FLOW, GOT, GRIPE, ITEM, ITEM_NAMED, KIND_FACTS, LEAD, MID, MID_CLOSE, MID_OPEN, NEG, NEG_CLOSE, NEG_OPEN, NICK, PART, PAR_BAND, SHIP, SLANG, TAIL, TOPICS, USE, USE_GIFT, ZH, fact, type Frag, type Kind, type Topic } from "./reviewSampleText";
 
 export const SAMPLE_MIN = 80;
 export const SAMPLE_MAX = 400;
@@ -348,7 +350,10 @@ function penOf(ask: Ask) {
 /** 점수의 까닭에 맞는 줄: 받는 과정 때문에 깎인 건은 받는 과정을 말하는 줄만, 아니면 그런 줄을 뺀 나머지 */
 const causeOf = (why: number) => (why === WHY_ARRIVAL ? (frag: Frag) => (frag.about & ARRIVAL) !== 0 : (frag: Frag) => (frag.about & ARRIVAL) === 0);
 
-/** 한국어 글 한 건. 조각을 하나에서 셋까지 잇는다. wide 는 겹치는 글을 피하려고 조각을 하나 더 잇는 것이다 */
+/**
+ * 한국어 글 한 건. 첫 조각은 언제나 개봉과 그 결과를 말하는 줄이고(GOT, MID_OPEN, NEG_OPEN, ARRIVAL_OPEN), 물건이나 쓰임이나 배송 이야기는 짧은 둘째 조각으로만 붙는다.
+ * 조각을 하나에서 셋까지 잇는다. wide 는 겹치는 글을 피하려고 조각을 하나 더 잇는 것이다
+ */
 function koText(ask: Ask): Draft {
   const { r, rating, why, outcome, kind, topic, topicKey, has, wide } = ask;
   const { roles, parts, frags, put } = penOf(ask);
@@ -363,49 +368,46 @@ function koText(ask: Ask): Draft {
     if (topic && topic.nouns.length > 0 && u < 0.6) { const noun = pickOne(topic.nouns, r); if (put("thing", "named", ITEM_NAMED, { fill: (text) => text.replace("{item}", noun) })) return true; }
     return put("thing", "item", ITEM, { must: true });
   };
-  const got = () => put("got", "got-" + outcome, GOT[outcome]);
+  /** 첫 조각: 깐 결과. 묶음이 가까운 글에서 다 쓰였어도 반드시 하나 놓는다 */
+  const got = () => put("got", "got-" + outcome, GOT[outcome], { must: true });
   /** 쓰임 한 조각. 누구에게 줬다는 말은 종류에 맞는 말을 하지 않은 글에만 붙인다(그 말이 "매일 들고 다녀요" 일 수 있다) */
   const use = () => (!topical && r() < 0.45 && put("use", "gift", USE_GIFT)) || put("use", "use", USE);
   const ship = () => put("ship", "ship", SHIP);
   const close = () => put("close", "close", CLOSE);
   // 큰 결과에는 "엄마 드렸어요" 같은 쓰임 조각을 붙이지 않는다
   const after = () => (outcome !== "big" && r() < 0.35 && use()) || thing();
-  /** 물건 말고 곁들이는 한 조각: 배송이나 쓰임. 둘 다 맞지 않는 상품이면 물건 이야기를 한다 */
-  const side = () => ((outcome === "big" || r() < 0.5) && ship()) || (outcome !== "big" && use()) || thing();
-  /** 물건 이야기 둘이 이어졌을 때, 이름을 넣은 줄("골프공 나왔네요")이 뒤에 있으면 앞으로 옮긴다("아빠 드렸어요 골프공 나왔네요" 가 되지 않게) */
-  const lead = () => {
-    if (roles.length !== 2 || roles[0] !== "thing" || roles[1] !== "thing" || !frags[1].includes("{item}") || frags[0].includes("{item}")) return;
-    [parts[0], parts[1]] = [parts[1], parts[0]];
-    [frags[0], frags[1]] = [frags[1], frags[0]];
-  };
+  /** 받는 과정 때문에 깎인 낮은 점수의 첫 조각: 나온 것은 그런대로였다는 말("...나왔는데"). 뒤에 받는 과정의 한 줄이 붙는다 */
+  const arrival = (role: string) => put(role, "open-arrival", ARRIVAL_OPEN, { must: true });
   let tails: readonly string[] = TAIL.pos, tailOdds = 0.42;
   if (rating >= 4 && why === WHY_ARRIVAL) {
-    // 별 넷의 작은 아쉬움: 좋았던 조각 뒤에 아쉬운 한 줄. 맺음말과 웃음은 붙이지 않는다
-    const lead = (has & F.large) !== 0 && (wide || r() < 0.35) && got();
-    if (!lead || wide) thing();
+    // 별 넷의 작은 아쉬움: 깐 결과 뒤에 아쉬운 한 줄("지만"으로 이어지는 여는 줄은 쓰지 않는다). 맺음말과 웃음은 붙이지 않는다
+    put("got", "got-" + outcome, GOT[outcome], { also: (frag) => !frag.text.endsWith("지만"), must: true });
     put("gripe", "gripe", GRIPE, { must: true });
     tailOdds = 0;
   } else if (rating >= 4) {
-    const u = wide ? 0.8 : outcome === "big" && r() < 0.6 ? 0.3 : r();
-    // 디지털 상품: USDT로 받았다는 한 줄만으로 글을 끝내지 않는다(나온 것이나 맺음말이 함께 간다)
-    if (kind === "digital") { if (u < 0.5) { got(); thing(); } else { if (wide || u > 0.85) got(); thing(); close(); } if (roles.length < 2) close(); }
-    else if (u < 0.2) thing();
-    else if (u < 0.46) { got(); after(); }
-    else if (u < 0.6) { thing(); side(); lead(); }
-    else if (u < 0.76) { thing(); close(); }
-    else if (u < 0.83) { got(); if (!ship()) thing(); close(); }
-    // 서비스의 흐름을 말하는 줄은 드물게, 물건 이야기와 함께만
-    else if (u < 0.88 && (has & F.parcel) !== 0) { put("flow", "flow", FLOW); thing(); }
-    else if ((has & F.large) !== 0) got();
-    else { got(); after(); }
-    // 크게 놀란 웃음은 나온 것을 말한 글에만
-    if (outcome === "big" && roles[0] === "got" && r() < 0.6) tails = TAIL.big;
+    got();
+    const u = wide ? 0.9 : outcome === "big" && r() < 0.6 ? 0.2 : r();
+    // 디지털 상품: 나온 것 뒤에 USDT로 받았다는 한 줄, 가끔 맺음말
+    if (kind === "digital") { thing(); if (wide || u > 0.7) close(); }
+    // "지만"으로 끝난 첫 줄 뒤에는 물건이나 쓰임의 한 조각이 온다
+    else if ((frags[0] ?? "").endsWith("지만")) after();
+    else if ((has & F.large) !== 0 && u < 0.3) { /* 나온 것만 말한다 */ }
+    else if (u < 0.55) after();
+    else if (u < 0.72) { if (!ship()) thing(); }
+    // 서비스의 흐름을 말하는 줄은 드물게, 나온 것 뒤에만
+    else if (u < 0.78 && (has & F.parcel) !== 0) put("flow", "flow", FLOW);
+    else close();
+    if (wide && roles.length < 2) thing();
+    // 크게 놀란 웃음은 큰 결과에만
+    if (outcome === "big" && r() < 0.6) tails = TAIL.big;
   } else if (rating === 3) {
-    put("mid", "mid", MID, { also: causeOf(why), must: true });
+    if (why === WHY_ARRIVAL) { arrival("mid"); put("mid", "mid", MID, { also: causeOf(why), must: true }); }
+    else { put("mid", "mid-open", MID_OPEN, { must: true }); if (wide || r() < 0.5) put("mid", "mid", MID, { also: causeOf(why) }); }
     if (wide || r() < 0.4) put("midc", "midc", MID_CLOSE);
     tails = TAIL.mid; tailOdds = 0.28;
   } else {
-    put("neg", "neg", NEG, { also: causeOf(why), must: true });
+    if (why === WHY_ARRIVAL) { arrival("neg"); put("neg", "neg", NEG, { also: causeOf(why), must: true }); }
+    else { put("neg", "neg-open", NEG_OPEN, { must: true }); if (wide || r() < 0.55) put("neg", "neg", NEG, { also: causeOf(why) }); }
     if (wide || r() < 0.35) put("negc", "negc", NEG_CLOSE);
     tails = TAIL.neg; tailOdds = 0.45;
   }
@@ -415,7 +417,8 @@ function koText(ask: Ask): Draft {
     const swap = roles[k] === "gripe" ? undefined : SLANG.find(([re]) => re.test(parts[k]));
     if (swap) parts[k] = parts[k].replace(swap[0], pickOne(swap[1], r));
   }
-  const dotted = r() < 0.2 && !parts.some((part, k) => k < parts.length - 1 && part.endsWith("지만"));
+  // "지만", "는데" 로 이어지는 줄 뒤에는 마침표를 찍지 않는다
+  const dotted = r() < 0.2 && !parts.some((part, k) => k < parts.length - 1 && /(?:지만|는데)$/.test(part));
   let text = parts.join(dotted ? ". " : " ");
   // 짧은 한 줄은 드물게 띄어쓰기 없이
   if (parts.length === 1 && text.length <= 14 && r() < 0.1) text = text.replace(/ /g, "");
@@ -427,22 +430,22 @@ function koText(ask: Ask): Draft {
   return { text, shape: roles.join(" ") + (tailed ? " tail" : ""), frags };
 }
 
-/** 영어와 중국어 글 한 건: 물건을 말하는 한 줄, 가끔 맺음말이나 배송이나 서비스의 흐름 한 줄이 붙는다 */
+/** 영어와 중국어 글 한 건: 깐 결과를 말하는 한 줄이 먼저, 가끔 물건이나 맺음말이나 배송이나 서비스의 흐름 한 줄이 붙는다 */
 function foreignText(ask: Ask, lang: "en" | "zh"): Draft {
   const { r, rating, why, wide } = ask, words = lang === "en" ? EN : ZH;
   const { roles, parts, frags, put } = penOf(ask);
   const good = rating >= 4 && why !== WHY_ARRIVAL;
-  if (good) {
-    put("thing", lang + "-pos", words.pos, { must: true });
-    const u = r();
-    if (wide || u < 0.45) put("close", lang + "-close", words.close); else if (u < 0.63) put("ship", lang + "-ship", words.ship); else if (u < 0.7) put("flow", lang + "-flow", words.flow);
-  } else if (rating >= 4) {
-    if (wide) put("thing", lang + "-pos", words.pos);
-    put("gripe", lang + "-gripe", words.gripe, { must: true });
+  if (rating >= 4) {
+    put("got", lang + "-open", words.open, { must: true });
+    if (!good) put("gripe", lang + "-gripe", words.gripe, { must: true });
+    else {
+      const u = wide ? 0.2 : r();
+      if (u < 0.4) put("thing", lang + "-pos", words.pos); else if (u < 0.62) put("close", lang + "-close", words.close); else if (u < 0.8) put("ship", lang + "-ship", words.ship); else if (u < 0.86) put("flow", lang + "-flow", words.flow);
+    }
   } else {
-    const pool = rating === 3 ? words.mid : words.neg, role = rating === 3 ? "mid" : "neg";
-    put(role, lang + "-" + role, pool, { also: causeOf(why), must: true });
-    if (wide) put(role, lang + "-" + role, pool, { also: causeOf(why) });
+    const role = rating === 3 ? "mid" : "neg", pool = rating === 3 ? words.mid : words.neg;
+    if (why === WHY_ARRIVAL) { put(role, lang + "-open-arrival", words.arrivalOpen, { must: true }); put(role, lang + "-" + role, pool, { also: causeOf(why), must: true }); }
+    else { put(role, lang + "-" + role + "-open", rating === 3 ? words.midOpen : words.negOpen, { must: true }); if (wide || r() < 0.5) put(role, lang + "-" + role, pool, { also: causeOf(why) }); }
   }
   let text = parts[0];
   if (parts.length > 1) text += (lang === "zh" ? "，" : roles[1] === "close" && r() < 0.5 ? ", " : ". ") + parts[1];

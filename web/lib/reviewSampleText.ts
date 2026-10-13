@@ -411,46 +411,82 @@ export const GRIPE = L(`
  * 받는 과정(ARRIVAL)을 말하는 줄은 그 때문에 별이 깎인 건에, 나머지는 받은 것이 그저 그랬던 건에 쓴다.
  */
 export const MID = L(`
-  그냥 그래요
-  무난합니다
-  그럭저럭이네요
-  원하던건 아니라서 별 셋 #luck #want @r3
-  쓸일은 없을거같은데 일단 받았어요 #luck #recv
-  기대가 너무 컸나봐요 #luck @small
-  받긴 잘 받았는데 쓸데가 없네요 #luck #recv
-  보통이에요
-  나쁘진 않은데 좋지도 않아요
-  이미 있는거라 애매하네요 #luck @real
+  쓸일은 없을거같은데 일단 받았어요 #recv
+  받긴 잘 받았는데 쓸데가 없네요 #recv
   그냥저냥 쓸만해요 @use
   생각보다 작네요 @made
   사진보다 실물이 좀 별로에요 @parcel
-  필요한 사람 줘야겠어요 #luck #who @real
-  당근에 올릴까 고민중 #luck @real
-  큰거 기대했는데 아쉽네요 물건 자체는 멀쩡해요 #luck @small @parcel
+  필요한 사람 줘야겠어요 #who @real
+  당근에 올릴까 고민중 @real
   쓸만은 한데 굳이 싶네요 @use
-  취향은 아닌데 일단 써볼게요 #luck @use #want
-  선물용으로 돌려야겠네요 #luck #who @real
+  취향은 아닌데 일단 써볼게요 @use #want
+  선물용으로 돌려야겠네요 #who @real
   기대 안하고 받으면 괜찮아요 @real
-  또 이거 나왔네요 집에 두개째 #luck @real
-  원하던건 아니었는데 그럭저럭 괜찮은거 같기도 해요 #luck #want
-  막상 받아보니 쓸일이 있을까 싶네요 #luck @real
+  막상 받아보니 쓸일이 있을까 싶네요 @real
   물건은 멀쩡한데 감흥이 없네요 @parcel
-  물건은 괜찮은데 배송이 너무 오래 걸렸어요 #time
-  배송 2주 가까이 걸렸어요 물건은 정상이에요 #time
-  상자가 많이 찌그러져서 왔어요 안에는 괜찮았어요 #pack
-  배송 기다리다 지쳤어요 물건은 괜찮네요 #time
-  박스에 스티커 자국이 있네요 내용물은 새거에요 #pack @new
-  배송이 느려서 별 두개 뺐어요 물건은 좋아요 #time @r3
-  받는데 보름 걸렸어요 물건은 이상 없어요 #time
-  겉상자가 젖어서 왔어요 안에는 멀쩡했어요 #pack
-  포장이 헐거워서 안에서 굴러다녔어요 흠집은 없네요 #pack
-  배송 조회가 며칠째 그대로라 걱정했어요 받고 보니 정상이에요 #time
-  통관에서 일주일 묶여있었어요 물건은 괜찮아요 #time
-  받기까지 한참 걸렸어요 받은건 멀쩡해요 #wait
-  오래 기다렸어요 받고 나니 좋긴 하네요 #wait
-  기다리다 지쳤어요 받은건 마음에 들어요 #wait
-  받는데 두 달 가까이 걸렸어요 물건은 이상 없어요 #wait
+  물건 자체는 멀쩡해요 @parcel
+  배송이 너무 오래 걸렸어요 #time
+  배송 2주 가까이 걸렸어요 #time
+  상자가 많이 찌그러져서 왔어요 #pack
+  배송 기다리다 지쳤어요 #time
+  박스에 스티커 자국이 있네요 #pack @new
+  배송이 느려서 별 두개 뺐어요 #time @r3
+  받는데 보름 걸렸어요 #time
+  겉상자가 젖어서 왔어요 #pack
+  포장이 헐거워서 안에서 굴러다녔어요 #pack
+  배송 조회가 며칠째 그대로라 걱정했어요 #time
+  통관에서 일주일 묶여있었어요 #time
+  받기까지 한참 걸렸어요 #wait
+  오래 기다렸어요 #wait
+  기다리다 지쳤어요 #wait
+  받는데 두 달 가까이 걸렸어요 #wait
 `);
+/**
+ * 별 셋의 첫 조각: 깐 결과가 그저 그랬다는 말. 받은 것 때문에 별이 깎인 건에 쓰고, 뒤에 MID 의 물건 이야기 한 줄이 붙을 수 있다.
+ * 후기는 박스를 깐 것에 대한 것이다(2026-10-13 파운더): 어느 글이든 첫 문장은 개봉과 그 결과를 말한다.
+ */
+export const MID_OPEN = L(`
+  그냥 그런게 나왔어요
+  무난한거 나왔네요
+  그럭저럭이네요
+  원하던건 아니라서 별 셋 #want @r3
+  기대가 너무 컸나봐요 @small
+  보통인게 나왔어요
+  나쁘진 않은데 좋지도 않은게 나왔네요
+  이미 있는거라 애매하네요 @real
+  또 이거 나왔네요 집에 두개째 @real
+  원하던건 아니었는데 그럭저럭 괜찮은거 같기도 해요 #want
+  큰거 기대했는데 아쉽네요 @small
+  이번엔 작은거네요 @small
+  박스값보단 못한게 나왔어요 @loss
+  소소한게 나와서 그냥 그래요 @small
+  이번판은 평범해요
+  열어보니 흔한게 나왔네요 @common
+  세번째인데 또 작은거에요 #sum @small
+  딱 본전인게 나왔는데 감흥은 없네요 @par
+  두번째도 그저 그런게 나왔어요 #sum
+  기대 없이 열었는데 역시 그렇네요
+`, "#luck");
+/**
+ * 받는 과정 때문에 별이 깎인 낮은 점수(별 셋 아래)의 첫 조각: 나온 것은 그런대로였다는 말. 뒤에 받는 과정의 한 줄이 반드시 붙는다.
+ * 큰 것이 나왔어도 쓴다("원하던게 나왔는데 박스 다 찌그러져서 왔네요"): 점수는 받는 과정의 것이다.
+ */
+export const ARRIVAL_OPEN = L(`
+  나온건 나쁘지 않았는데
+  물건은 잘 나왔는데
+  세번째에 괜찮은게 나왔는데 #sum
+  박스값은 넘는게 나왔는데 @money
+  원하던게 나왔는데 #want
+  결과는 괜찮았는데
+  이번엔 쓸만한게 나왔는데
+  무난한게 나왔는데
+  소소한게 나왔는데 @small
+  작은거 나왔는데 @small
+  나온건 멀쩡한데
+  뽑은건 괜찮은데
+  첫판에 바로 나왔는데 #sum
+  큰건 아니어도 쓸만한게 나왔는데 @small
+`, "#luck");
 export const MID_CLOSE = L(`
   그래도 실물이라 다행이에요 ^luck @parcel
   그래도 받긴 잘 받았어요 #recv
@@ -460,21 +496,13 @@ export const MID_CLOSE = L(`
   포장만 좀 신경써주면 좋겠어요 ^pack
 `);
 
-/** 별 둘과 하나: 낮은 점수의 까닭 한 줄. 받는 과정을 말하는 줄과 받은 것을 말하는 줄을 MID 처럼 가려 쓴다 */
+/** 별 둘과 하나의 둘째 조각: 낮은 점수의 까닭 한 줄. 받는 과정을 말하는 줄은 그 때문에 깎인 건에, 받은 것을 말하는 줄은 나머지에 */
 export const NEG = L(`
-  계속 작은것만 나와요 #luck @loss
-  열번 열었는데 다 자잘한거네요 #luck @loss
   생각한거랑 달라요 @real
-  이건 좀 실망이에요
-  필요없는게 나와서 처치곤란 #luck @real
-  기대한 제가 잘못이죠 #luck
-  이번엔 별로네요 #luck
-  돈 아깝다는 생각이 드네요 @loss
-  이걸 어디다 쓰라는건지 #luck @real
+  필요없는게 나와서 처치곤란 @real
+  이걸 어디다 쓰라는건지 @real
   사진이랑 느낌이 많이 달라요 @parcel
-  받고 보니 쓸데가 하나도 없네요 #luck @real
-  기대에 한참 못미쳐요 #luck
-  마음에 드는게 안나와요 #luck
+  받고 보니 쓸데가 하나도 없네요 @real
   배송 2주 넘게 걸렸어요 #time
   박스 다 찌그러져서 왔네요 #pack
   포장이 너무 허술해요 #pack
@@ -489,6 +517,25 @@ export const NEG = L(`
   언제 오는지 몰라 한참 답답했어요 #wait
   석 달을 기다렸어요 너무하네요 #wait
 `);
+/** 별 둘과 하나의 첫 조각: 깐 결과가 실망스러웠다는 말. 받은 것 때문에 깎인 건에 쓴다. 다시 열겠다는 말은 없다 */
+export const NEG_OPEN = L(`
+  계속 작은것만 나와요 @loss
+  열번 열었는데 다 자잘한거네요 @loss #sum
+  이건 좀 실망이에요
+  기대한 제가 잘못이죠
+  이번엔 별로네요
+  돈 아깝다는 생각이 드네요 @loss
+  기대에 한참 못미쳐요
+  마음에 드는게 안나와요
+  이번엔 꽝이네요 @loss
+  제일 싼게 나왔네요 @common
+  박스값에 한참 못미치는게 나왔어요 @loss
+  또 제일 흔한거에요 @common
+  열자마자 한숨 나왔어요
+  세번 열어서 다 꽝이에요 #sum @loss
+  기대하고 열었는데 아니네요
+  이번판은 실망이네요
+`, "#luck");
 export const NEG_CLOSE = L(`
   개선 부탁드려요 ^pack ^time ^wait
   배송 좀 신경써주세요 ^time
@@ -528,24 +575,37 @@ export const SLANG: [RegExp, string[]][] = [
  * ship 과 flow 만으로 글을 끝내지 않는다. gripe 는 별 넷의 작은 아쉬움, mid 는 별 셋, neg 는 별 둘과 하나다.
  */
 export const EN = {
+  open: L(`
+    Did not expect to actually win this @large
+    Third box and I pulled this #sum
+    Not the big prize but still happy @small
+    Smaller prize this time but cant complain @small
+    Solid pull for the price @money @large
+    Hit something decent this time @large
+    Opened two boxes and got this on the second #sum
+    Happy with how it turned out
+    Honestly better than I expected
+    Pretty happy with this one
+    Pulled this on my first try #sum
+    Came out on the second box #sum
+    Got something above the box price this time @money
+    Lucky pull this time @large
+    Decent pull for this box
+    Nothing big but a fair pull @small
+    Best pull I have had here @large
+    Took five boxes to get this one #sum
+    Small one this time but fine @small
+    Way more than the box price @money @large
+  `),
   pos: L(`
     Legit item, sealed box @sealed
-    Did not expect to actually win this @large
     Works perfectly @use
     Exactly as pictured
     Brand new and sealed @sealed
-    Honestly better than I expected
-    Third box and I pulled this #sum
-    Not the big prize but still happy @small
-    Pretty happy with this one
     Gave it to my brother, he loves it @gift #who
-    Smaller prize this time but cant complain @small
     Item is genuine, no complaints @made
-    Solid pull for the price @money @large
     Good condition, nothing missing @boxed
-    Hit something decent this time @large
     Looks even better in person
-    Opened two boxes and got this on the second #sum
     Using it every day now @use #who
     Wife took it from me right away @gift #who
     Great gift for my dad @gift #who
@@ -554,7 +614,6 @@ export const EN = {
     Matches the listing, all good
     Nicer than the photos
     Clean, no marks on it
-    Happy with how it turned out
   `),
   ship: L(`
     Arrived safe and sound #pack
@@ -580,36 +639,60 @@ export const EN = {
     Arrived a few days late, item itself is great #time
     Tape on the box was peeling, contents fine #pack
   `),
-  mid: L(`
-    Shipping was slow, item is fine #time
+  midOpen: L(`
     Not what I wanted but ok #luck
-    Box came dented, product was fine #pack
-    It is alright, nothing special
-    Took almost two weeks to get here, item is ok #time
+    It is alright, nothing special #luck
     Decent, already had one though #luck
     Fine I guess, will probably gift it #luck #who
-    Expected more but it works #luck @small @use
-    Okay for what it is
+    Expected more this time #luck @small
+    Okay for what it is #luck
     Not really my thing but it is fine #luck
-    Average, does the job @use
-    Meh, it is fine
-    Customs held it for a week, item is fine #time
+    Meh, it is fine #luck
     Nothing wrong with it, just not excited #luck
     So so, might give it away #luck #who
+    Average pull this time #luck
+    Below the box price this time #luck @loss
+    Second box, still nothing exciting #luck #sum
+  `),
+  arrivalOpen: L(`
+    The pull itself was fine #luck
+    Got a decent one #luck
+    Nothing wrong with what came out #luck
+    What came out was okay #luck
+    Decent pull, that part was fine #luck
+    Happy with the item itself #luck
+  `),
+  mid: L(`
+    Shipping was slow #time
+    Box came dented #pack
+    Took almost two weeks to get here #time
+    Customs held it for a week #time
+    Tracking went quiet, took weeks #time
+    Item is fine though
+    Does the job @use
+    Works, nothing more @use
+    Already have one @real
+  `),
+  negOpen: L(`
+    Keeps giving me the small stuff #luck @loss
+    Disappointed with this one #luck
+    Expected a lot better than this #luck
+    Not happy with this one #luck
+    Worst pull so far #luck @loss
+    Smallest thing in the box again #luck @common
+    Below the box price again #luck @loss
+    Three boxes, nothing good came out #luck #sum @loss
+    Letdown this time #luck
   `),
   neg: L(`
-    Keeps giving me the small stuff #luck @loss
     Waited three weeks for this #time
     Outer box was crushed #pack
     Way too long of a wait #time
-    Not what the page made me expect
-    Disappointed with this one #luck
-    No use for this at all #luck
     Padding was missing, box rattled the whole way #pack
+    Not what the page made me expect
+    No use for this at all @real
+    Did not need this at all @real
     Looks cheaper than in the photos
-    Not happy with this one
-    Did not need this at all #luck
-    Expected a lot better than this #luck
   `),
   close: L(`
     thanks
@@ -632,23 +715,32 @@ export const EN = {
 
 /** 중국어 손님. 묶음의 뜻은 EN 과 같다 */
 export const ZH = {
-  pos: L(`
-    正品，全新未拆 @sealed
+  open: L(`
     没想到真的开出来了 @large
-    东西不错，很满意
-    和图片一样
     第三次就开到了 #sum
     虽然不是大奖但也不错 @small
+    这次运气不错 @large
+    小奖也开心 @small
+    开了两个，这个最满意 #sum
+    一直想买的，居然开到了 @large
+    第一次就开到了 #sum
+    这次开得不错
+    超过箱价了 @money
+    这次是小的，也还行 @small
+    这次开到好东西了 @large
+    开了五个才出这个 #sum
+    比箱价高多了 @money
+  `),
+  pos: L(`
+    正品，全新未拆 @sealed
+    东西不错，很满意
+    和图片一样
     已经在用了，很好 @use #who
     送给女朋友了，她很喜欢 @gift #who
-    这次运气不错 @large
     质量很好，值了 @money
-    小奖也开心 @small
     比想象中好
     实物比图片好看
     给爸妈用的，他们很喜欢 @gift #who
-    开了两个，这个最满意 #sum
-    一直想买的，居然开到了 @large
     全新未拆封，放心 @sealed
     拿到手很喜欢
     做工不错 @made
@@ -679,34 +771,54 @@ export const ZH = {
     物流信息更新慢，其他都好 #time
     盒子边角有点磕到，东西完好 #pack
   `),
-  mid: L(`
-    物流太慢了，东西还行 #time
+  midOpen: L(`
     不是想要的，一般般 #luck
-    盒子压扁了，里面没事 #pack
-    还可以吧，没什么感觉
-    等了快两周，东西正常 #time
-    家里已经有一个了 #luck
-    凑合用吧 @use
+    还可以吧，没什么感觉 #luck
+    家里已经有一个了 #luck @real
     期待太高了 #luck @small
-    一般般，没有惊喜
+    一般般，没有惊喜 #luck
     不太喜欢，先留着 #luck
-    中规中矩
-    清关卡了一周，东西没问题 #time
-    东西没问题，就是没什么用 #luck
+    中规中矩 #luck
     马马虎虎，可能送人 #luck #who
+    这次开得一般 #luck
+    开到小的了 #luck @small
+    没到箱价 #luck @loss
+    第二次还是一般 #luck #sum
+  `),
+  arrivalOpen: L(`
+    开到的东西还行 #luck
+    东西本身没问题 #luck
+    开得不错 #luck
+    开到的不算差 #luck
+    东西是好东西 #luck
+  `),
+  mid: L(`
+    物流太慢了 #time
+    盒子压扁了，里面没事 #pack
+    等了快两周 #time
+    清关卡了一周 #time
+    凑合用吧 @use
+    东西没问题，就是没什么用
+    东西本身还行
+  `),
+  negOpen: L(`
+    一直开小的 #luck @loss
+    有点失望 #luck
+    比想象中差很多 #luck
+    不怎么样 #luck
+    又是最小的 #luck @common
+    这次很亏 #luck @loss
+    开了三次都是小的 #luck #sum @loss
+    这次不行 #luck
   `),
   neg: L(`
-    一直开小的 #luck @loss
     等了三个星期 #time
     外箱都压坏了 #pack
     等太久了，体验不好 #time
-    和页面上看到的不一样
-    有点失望 #luck
-    完全用不上 #luck
     里面没有缓冲，一路晃过来 #pack
-    不怎么样
-    根本不需要这个 #luck
-    比想象中差很多 #luck
+    和页面上看到的不一样
+    完全用不上 @real
+    根本不需要这个 @real
     实物看起来很廉价
   `),
   close: L(`

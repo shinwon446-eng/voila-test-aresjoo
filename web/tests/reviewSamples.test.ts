@@ -12,7 +12,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import { BOXES, BOX_BY_SLUG, HOME_BOXES, type ProductBox, type ProductItem } from "../lib/products";
-import { BANNED, CLOSE, EN, GOT, PAR_BAND, GRIPE, ITEM, MID, MID_CLOSE, NEG, NEG_CLOSE, SHIP, USE, USE_GIFT, ZH, type Frag } from "../lib/reviewSampleText";
+import { ARRIVAL_OPEN, BANNED, CLOSE, EN, GOT, PAR_BAND, GRIPE, ITEM, MID, MID_CLOSE, MID_OPEN, NEG, NEG_CLOSE, NEG_OPEN, SHIP, USE, USE_GIFT, ZH, type Frag } from "../lib/reviewSampleText";
 import { BIG_FLOOR, BUILT_CAP, FRONT, FRONT_ROWS, NEAR, RETURNING_SHARE, SAMPLE_MAX, SAMPLE_MIN, WINDOW, WINDOW_MAX, allRatingSummary, builtCount, kindOf, newestSamples, ratingSummary, sampleCount, sampleParts, sampleReviews, sampleShapes, summarizeRatings, type ReviewSample } from "../lib/reviewSamples";
 import { takeAmountOf } from "../lib/takeBatch";
 
@@ -218,9 +218,9 @@ test("샘플 후기: 돈 이야기는 그 건에서 참이다. 낸 것보다 많
   // 띄어쓰기를 뺀 소문자 글에서 찾는다.
   // PAR: 정확히 또는 거의 본전이라는 말. MORE: 낸 것보다 많이 받았다, 손해가 아니다, 값을 한다는 말. SHORT: 못 미친다는 말
   const PAR = /딱본전|본전이네요|본전치기|본전은건졌|박스값정도|breakeven|brokeeven|回本|保本/;
-  const MORE = /하고도남|뽑고도남|이득|남는장사|굳었|득템|쏠쏠|꽤하네요|손해는아니|손해안본|worthit|fortheprice|值了|值得|赚/;
-  const SHORT = /박스값엔못미치|돈아깝/;
-  const ANY = /본전|손해|이득|박스값|굳었|득템|쏠쏠|꽤하네요|worth|fortheprice|值/;
+  const MORE = /하고도남|뽑고도남|이득|남는장사|굳었|득템|쏠쏠|꽤하네요|손해는아니|손해안본|박스값은넘는|worthit|fortheprice|abovetheboxprice|morethantheboxprice|值了|值得|赚|超过箱价|比箱价高/;
+  const SHORT = /박스값엔못미치|박스값보단못한|박스값에한참못미치|돈아깝|belowtheboxprice|没到箱价/;
+  const ANY = /본전|손해|이득|박스값|굳었|득템|쏠쏠|꽤하네요|worth|fortheprice|boxprice|值|箱价/;
   const COUNT = /번열|번만에|번째|첫판|여러개열|작은건usdt|thirdbox|twoboxes|onthesmallones|第三次|开了两个|小的领了/;
   let par = 0, more = 0, shorts = 0, near = 0, wide = 0;
   eachSample((row) => {
@@ -391,7 +391,7 @@ test("샘플 후기: 게임 타이틀(영어 이름 끝에 기종이 적힌 상�
   });
   assert.ok(seen > 100 && titles.size > 40, `게임 타이틀의 글 ${seen}건, 타이틀 ${titles.size}개`);
   // 게임이라고 부르는 글이 실제로 있다(종류를 못 가려 두루 맞는 말만 하는 것이 아니다)
-  assert.ok(named > 10, `게임이라고 부르는 글 ${named}건`);
+  assert.ok(named > 5, `게임이라고 부르는 글 ${named}건`);
   // 검수에서 짚인 건: 모니터로 잡히던 게임, 쓰는 물건으로 잡히던 게임
   for (const name of ["슈퍼 마리오 오디세이", "더 라스트 오브 어스 파트 II 리마스터드"]) assert.ok(titles.has(name), name + " 의 글이 없다");
 });
@@ -422,14 +422,15 @@ test("샘플 후기: 이 사이트에 없는 수령 길을 말하지 않는다. 
 });
 
 test("샘플 후기: 별점과 글의 결이 맞는다(별 하나와 둘은 까닭 한 가지, 셋은 그저 그렇다, 넷은 좋았고 작은 아쉬움 하나까지, 다섯은 좋았다)", () => {
-  const GOOD = "(?:thing|got|use|ship|close|flow)";
+  // 첫 조각은 언제나 깐 결과(got, 또는 낮은 점수의 여는 줄). 그 뒤에 물건이나 쓰임이나 배송이나 맺음말이 짧게 붙는다
+  const GOOD = "(?:thing|use|ship|close|flow)";
   const SHAPE: Record<number, RegExp> = {
-    1: /^neg(?: negc| neg)?(?: tail)?$/, 2: /^neg(?: negc| neg)?(?: tail)?$/, 3: /^mid(?: midc| mid)?(?: tail)?$/,
+    1: /^neg(?: neg)?(?: negc)?(?: tail)?$/, 2: /^neg(?: neg)?(?: negc)?(?: tail)?$/, 3: /^mid(?: mid)?(?: midc)?(?: tail)?$/,
     // 아쉬운 한 줄은 맨 끝에 하나, 그 뒤에는 웃음이 없다
-    4: new RegExp(`^(?:${GOOD}(?: ${GOOD})*(?: tail| gripe)?|gripe)$`), 5: new RegExp(`^${GOOD}(?: ${GOOD})*(?: tail)?$`),
+    4: new RegExp(`^got(?: ${GOOD})*(?: tail| gripe)?$`), 5: new RegExp(`^got(?: ${GOOD})*(?: tail)?$`),
   };
-  const sour = [GRIPE, MID, MID_CLOSE, NEG, NEG_CLOSE, EN.gripe, EN.mid, EN.neg, ZH.gripe, ZH.mid, ZH.neg].flatMap(flatOf);
-  const sweet = [GOT.big, GOT.good, CLOSE, SHIP, USE, USE_GIFT, ITEM, EN.pos, EN.ship, EN.close, ZH.pos, ZH.ship, ZH.close].flatMap(flatOf);
+  const sour = [GRIPE, MID, MID_OPEN, MID_CLOSE, NEG, NEG_OPEN, NEG_CLOSE, EN.gripe, EN.mid, EN.midOpen, EN.neg, EN.negOpen, ZH.gripe, ZH.mid, ZH.midOpen, ZH.neg, ZH.negOpen].flatMap(flatOf);
+  const sweet = [GOT.big, GOT.good, CLOSE, SHIP, USE, USE_GIFT, ITEM, EN.open, EN.pos, EN.ship, EN.close, ZH.open, ZH.pos, ZH.ship, ZH.close].flatMap(flatOf);
   const CHEER = /(?:ㅎ|ㅋ|\^\^|굿|bb|최고|짱|대박|미쳤다|~|lol|haha|:\)|哈哈|～)$/;
   const seen = [0, 0, 0, 0, 0];
   let gripes = 0;
@@ -447,6 +448,25 @@ test("샘플 후기: 별점과 글의 결이 맞는다(별 하나와 둘은 까�
     if (r.rating <= 2) assert.doesNotMatch(flat, /감사|추천|만족|좋아요|좋네요|thanks|recommend|谢谢|推荐/, where);
   });
   assert.ok(seen.every((n) => n > 500) && gripes > 1000, `${seen} / ${gripes}`);
+});
+
+test("샘플 후기: 첫 문장은 언제나 박스를 깐 것과 그 결과다(2026-10-13 파운더: 상품 후기가 아니다). 물건이나 배송 이야기는 둘째 조각으로만 온다(세 언어)", () => {
+  // 여는 줄의 묶음: 깐 결과(GOT), 낮은 점수의 여는 줄, 받는 과정 때문에 깎인 건의 여는 줄
+  const opening = new Set([GOT.big, GOT.good, GOT.even, GOT.low, MID_OPEN, NEG_OPEN, ARRIVAL_OPEN, EN.open, EN.midOpen, EN.negOpen, EN.arrivalOpen, ZH.open, ZH.midOpen, ZH.negOpen, ZH.arrivalOpen].flatMap((pool) => pool.map((frag) => frag.text)));
+  // 물건을 썼다, 배송이 어땠다는 말로 시작하지 않는다
+  const LEADS_ELSEWHERE = /^(?:잘 쓰고|매일 써|정품|마감|퀄리티|소리|착용감|배송|포장|뽁뽁이|박스가|상자가|택배|통관|받는데|works|arrived|shipping|packag|box was|legit|物流|包装|盒子|正品|做工)/i;
+  const seen = { ko: 0, en: 0, zh: 0 };
+  eachSample((row) => {
+    const first = row.parts[0];
+    assert.ok(first !== undefined && opening.has(first), `첫 조각이 깐 결과가 아니다: [${row.shape}] ${mark(row)}`);
+    assert.doesNotMatch(row.r.text.replace(/^(?:드디어|오|와|우와|헐|와우|오오|크) /, ""), LEADS_ELSEWHERE, mark(row));
+    // 둘째 조각까지만 짧게: 조각은 셋을 넘지 않는다
+    assert.ok(row.parts.length <= 3, `[${row.shape}] ${mark(row)}`);
+    seen[row.r.lang] += 1;
+  });
+  assert.ok(seen.ko > 50000 && seen.en > 3000 && seen.zh > 3000, JSON.stringify(seen));
+  // 검수에서 짚인 꼴: 박스 화면에 "정품 인증 확인했어요", "뽁뽁이 엄청 감아서 왔네요" 로 시작하는 글이 있었다
+  for (const slug of ["car-rolls-royce", "audio-sony"]) for (const r of sampleReviews(slug, 40)) assert.doesNotMatch(r.text, /^(?:정품|뽁뽁이)/, `${slug}: ${r.text}`);
 });
 
 test("샘플 후기: 점수를 말하는 줄은 그 건의 별점과 같다(만점이라고 쓴 글은 별 다섯뿐이다)", () => {

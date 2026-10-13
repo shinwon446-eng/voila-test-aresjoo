@@ -67,3 +67,13 @@ export function agoOf(ageMin: number): { key: AgoKey; n: number } {
 
 /** 더 보기 단추에 남은 건수를 적는 한도. 넘으면 수 없이 적는다("75,225건 남음" 은 읽히지 않는다) */
 export const MORE_COUNT_MAX = 999;
+
+/**
+ * 나온 상품의 값이 박스값의 몇 배인지(소수 첫째 자리). 카드의 "값, 박스값의 N배" 줄이 쓴다(2026-10-13 파운더: 얼마짜리가 뽑혔는지 보여야 한다).
+ * 0.05배에 못 미치면 null: 화면은 "박스값 미만"으로 적는다("0.0배"라고 적지 않는다). 박스값이 없으면 null
+ */
+export function timesOfBox(value: number, boxPrice: number): string | null {
+  if (!(boxPrice > 0) || !Number.isFinite(value)) return null;
+  const times = (value / boxPrice).toFixed(1);
+  return times === "0.0" ? null : times;
+}

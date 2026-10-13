@@ -55,7 +55,7 @@ for (const view of viewArg.split(",")) {
     await shoot(page, ".v-hscroll", `${out}/box-${slug}-row60-${view}.png`);
     console.log(view, slug, "끝까지 두 번", JSON.stringify({ ...(await widths(page)), appended: [after1, after2] }));
     // 읽어 보기 좋게 글만 따로 적는다
-    const lines = await page.evaluate(() => Array.from(document.querySelectorAll(".v-rvcard")).map((li) => [li.querySelector(".v-stars")?.getAttribute("aria-label"), li.querySelector(".v-rvcard-body > .v-small")?.textContent, li.querySelector(".v-rvcard-text")?.textContent, li.querySelector(".v-card-title")?.textContent, li.querySelector(".v-rvcard-body > .v-small.v-num")?.textContent, li.querySelector(".v-rvcard-photo") ? "사진" : ""].join(" | ")));
+    const lines = await page.evaluate(() => Array.from(document.querySelectorAll(".v-rvcard")).map((li) => [li.querySelector(".v-stars")?.getAttribute("aria-label"), li.querySelector(".v-rvcard-who > .v-small:first-child")?.textContent, li.querySelector(".v-rvcard-text")?.textContent, li.querySelector(".v-card-title")?.textContent, li.querySelector(".v-rvcard-value")?.textContent, li.querySelector(".v-rvcard-who > .v-num")?.textContent, li.querySelector(".v-rvcard-thumb img") ? "사진" : "그림"].join(" | ")));
     fs.writeFileSync(`${out}/box-${slug}-${view}-${locale}.txt`, lines.join("\n"));
     // 셋째 장을 눌러 상세
     await page.evaluate(() => { document.querySelector(".v-rvrow").scrollLeft = 0; });
@@ -75,7 +75,7 @@ for (const view of viewArg.split(",")) {
   await minePage.goto(`${base}/${locale}/box/${first}`, { waitUntil: "networkidle" });
   await minePage.locator("#reviews").scrollIntoViewIfNeeded();
   await minePage.waitForTimeout(600);
-  const head = await minePage.evaluate(() => Array.from(document.querySelectorAll(".v-rvcard")).slice(0, 2).map((li) => ({ author: li.querySelector(".v-rvcard-body > .v-small")?.textContent, ago: li.querySelector(".v-rvcard-body > .v-small.v-num")?.textContent, count: document.querySelector(".v-rvsum-avg .v-small")?.textContent })));
+  const head = await minePage.evaluate(() => Array.from(document.querySelectorAll(".v-rvcard")).slice(0, 2).map((li) => ({ author: li.querySelector(".v-rvcard-who > .v-small:first-child")?.textContent, ago: li.querySelector(".v-rvcard-who > .v-num")?.textContent, value: li.querySelector(".v-rvcard-value")?.textContent, count: document.querySelector(".v-rvsum-avg .v-small")?.textContent })));
   await shoot(minePage, "#reviews", `${out}/box-${first}-mine-${view}.png`);
   await minePage.locator(".v-rvcard-btn").first().click();
   await minePage.waitForTimeout(500);

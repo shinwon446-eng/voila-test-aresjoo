@@ -16,7 +16,7 @@ const page = await context.newPage();
 const errors = [];
 page.on("console", (m) => { if (m.type() === "error") errors.push(m.text().slice(0, 200)); });
 page.on("pageerror", (e) => errors.push(String(e.message).slice(0, 200)));
-const state = () => page.evaluate(() => ({ cards: document.querySelectorAll(".v-rvcard").length, y: Math.round(scrollY), x: Math.round(document.querySelector(".v-rvrow")?.scrollLeft ?? 0), last: Array.from(document.querySelectorAll(".v-rvcard .v-rvcard-body > .v-small")).pop()?.textContent }));
+const state = () => page.evaluate(() => ({ cards: document.querySelectorAll(".v-rvcard").length, y: Math.round(scrollY), x: Math.round(document.querySelector(".v-rvrow")?.scrollLeft ?? 0), last: Array.from(document.querySelectorAll(".v-rvcard .v-rvcard-who > .v-small:first-child")).pop()?.textContent }));
 const more = async (n) => { for (let i = 0; i < n; i++) { await page.locator("[data-reviews-more]").click(); await page.waitForTimeout(150); } };
 const same = (a, b) => (a.cards === b.cards && Math.abs(a.y - b.y) <= 4 && Math.abs(a.x - b.x) <= 4 && a.last === b.last ? "같다" : "다르다");
 
@@ -48,7 +48,8 @@ await page.goto(`${base}/ko/box/${slug}`, { waitUntil: "networkidle" });
 await page.locator("#reviews").scrollIntoViewIfNeeded();
 for (let i = 0; i < 2; i++) { await page.evaluate(() => { const row = document.querySelector(".v-rvrow"); row.scrollLeft = row.scrollWidth; }); await page.waitForTimeout(500); }
 await page.evaluate(() => { document.querySelector(".v-rvrow").scrollLeft = 3000; });
-await page.locator("#reviews a[href*='/reviews?box=']").scrollIntoViewIfNeeded();
+// 링크를 화면 가운데에 둔다(아래의 고정 막대에 가려 있으면 누를 때 브라우저가 다시 옮겨 자리가 어긋나 보인다)
+await page.evaluate(() => document.querySelector("#reviews a[href*='/reviews?box=']").scrollIntoView({ block: "center" }));
 await page.waitForTimeout(400);
 const boxBefore = await state();
 await page.locator("#reviews a[href*='/reviews?box=']").click();

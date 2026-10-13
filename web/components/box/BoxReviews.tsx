@@ -29,7 +29,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, typ
 import { Package, Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { BOX_BY_SLUG, type ProductBox, type ProductItem } from "@/lib/products";
-import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, stamp, type RealRatings } from "@/lib/reviewFeed";
+import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, stamp, timesOfBox, type RealRatings } from "@/lib/reviewFeed";
 import type { RatingSummary } from "@/lib/reviewRating";
 import { newestSamples, sampleReviews } from "@/lib/reviewSampleGate";
 import { useCurrency } from "@/lib/useCurrency";
@@ -242,7 +242,11 @@ export function useReviewFeed(boxSlug: string | null, shown: number): ReviewFeed
   }, [mine, real, boxSlug, shown]);
 }
 
-/** 후기 한 장. 사진은 붙은 사진이고, 없으면 그 상품의 카탈로그 사진이다(원래 화면과 같다) */
+/**
+ * 후기 한 장(2026-10-13 파운더): 별점, 글 석 줄, 별명과 몇 시간 전, 그리고 나온 상품의 칸(상품 사진 64px, "나온 상품", 이름, 값과 박스값의 몇 배인지).
+ * 위에 큰 사진을 두지 않는다: 카드의 높이를 사진 없는 카드와 같게 두면서 모든 카드에 상품 사진을 넣는다(사진이 없는 상품은 그 자리의 그림).
+ * 별명과 몇 시간 전은 한 줄에 둔다(사진 칸이 커진 만큼 줄여 높이를 지킨다). 몇 배인지는 지금의 박스값으로 센다(샘플도 지금의 박스값으로 만든다).
+ */
 export function ReviewCard({ card, onOpen }: { card: ReviewCardData; onOpen: (card: ReviewCardData) => void }) {
   const t = useTranslations("v");
   const { fmt } = useCurrency();
@@ -252,18 +256,27 @@ export function ReviewCard({ card, onOpen }: { card: ReviewCardData; onOpen: (ca
   const [cut, setCut] = useState(false);
   // 석 줄을 넘겨 실제로 잘렸을 때만 "더 보기"를 붙인다
   useEffect(() => { const el = text.current; if (el) setCut(el.scrollHeight > el.clientHeight + 1); }, [card.text]);
-  const photo = card.photo ?? card.item?.image.src ?? null;
+  const box = BOX_BY_SLUG[card.boxSlug];
+  const thumb = card.item?.image.src ?? null;
+  const times = card.item && box ? timesOfBox(card.item.value, box.price) : null;
   return (
     <li className="v-rvcard">
       <button type="button" className="v-rvcard-btn" onClick={() => onOpen(card)} aria-haspopup="dialog">
-        {photo && <span className="v-rvcard-photo"><img src={photo} alt="" loading="lazy" decoding="async" /></span>}
         <span className="v-rvcard-body">
           <Stars n={card.rating} />
           <span ref={text} className="v-rvcard-text">{card.text}</span>
           {cut && <span className="v-rvcard-more">{t("reviews.more")}</span>}
-          <span className="v-small">{card.author}</span>
-          {card.item && <span className="v-rvcard-item"><span className="v-card-title">{itemName(card.item)}</span><span className="v-num">{fmt(card.item.value)}</span></span>}
-          <span className="v-small v-num">{ago(card.ageMin)}</span>
+          <span className="v-rvcard-who"><span className="v-small">{card.author}</span><span className="v-small v-num">{ago(card.ageMin)}</span></span>
+          {card.item && box && (
+            <span className="v-rvcard-item">
+              <span className="v-rvcard-thumb">{thumb ? <img src={thumb} alt="" loading="lazy" decoding="async" /> : <span className="v-item-glyph" aria-hidden><Package size={22} strokeWidth={1.4} /></span>}</span>
+              <span className="v-rvcard-itembody">
+                <span className="v-small">{t("reviews.cameOut")}</span>
+                <span className="v-card-title">{itemName(card.item)}</span>
+                <span className="v-rvcard-value v-num">{times ? t("reviews.valueLine", { amount: fmt(card.item.value), times }) : t("reviews.valueBelow", { amount: fmt(card.item.value) })}</span>
+              </span>
+            </span>
+          )}
         </span>
       </button>
     </li>

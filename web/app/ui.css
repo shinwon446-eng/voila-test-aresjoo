@@ -177,15 +177,13 @@ input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-i
 .v-rvrow { display: flex; gap: 12px; margin: 0 calc(var(--v-gutter) * -1); padding: 0 var(--v-gutter); overflow-x: auto; list-style: none; scroll-snap-type: x proximity; scroll-padding-inline: var(--v-gutter); scrollbar-width: none; }
 .v-rvrow::-webkit-scrollbar { display: none; }
 .v-rvcard { display: flex; flex: 0 0 min(72%, 280px); flex-direction: column; overflow: hidden; border-radius: var(--v-r-card); background: var(--v-card); scroll-snap-align: start; }
-.v-rvcard-photo { position: relative; display: block; aspect-ratio: 16 / 10; background: var(--v-photo); }
-.v-rvcard-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .v-rvcard-body { display: flex; flex-direction: column; gap: 2px; padding: 14px 16px 16px; }
-.v-rvcard-text { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; min-height: calc(var(--v-fs-body) * 1.5 * 3); margin: 6px 0 8px; color: var(--v-text); font-size: var(--v-fs-body); line-height: 1.5; word-break: keep-all; }
+.v-rvcard-text { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; min-height: calc(var(--v-fs-body) * 1.5 * 3); margin: 2px 0 2px; color: var(--v-text); font-size: var(--v-fs-body); line-height: 1.5; word-break: keep-all; }
 .v-rvcard .v-small { white-space: normal; }
 /* 후기 카드는 통째로 단추다: 누르면 후기 상세가 뜬다 */
 .v-rvcard-btn { display: flex; width: 100%; height: 100%; flex-direction: column; text-align: left; color: inherit; }
 .v-rvcard-more { align-self: flex-start; margin: -4px 0 8px; color: var(--v-sub); font-size: var(--v-fs-small); text-decoration: underline; text-underline-offset: 3px; }
-.v-rvcard-item { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-top: 6px; color: var(--v-text); }
+.v-rvcard-item { display: flex; align-items: center; gap: 10px; margin-top: 2px; color: var(--v-text); }
 .v-rvdetail-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; }
 .v-rvdetail-text { color: var(--v-text); font-size: var(--v-fs-body); line-height: 1.6; white-space: pre-wrap; word-break: keep-all; }
 /* 박스 화면 맨 위의 대표 상품 하나: 큰 사진, 이름과 가격. 누르면 구성품으로 내려간다 */

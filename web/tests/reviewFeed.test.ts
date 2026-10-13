@@ -6,7 +6,7 @@ import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { BOX_BY_SLUG, HOME_BOXES, getBoxBySlug } from "../lib/products";
-import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, stamp } from "../lib/reviewFeed";
+import { MORE_COUNT_MAX, agoOf, allRating, boxRating, feedOrder, isRealReview, realRatings, stamp, timesOfBox } from "../lib/reviewFeed";
 import { allRatingSummary, newestSamples, ratingSummary, sampleCount, sampleReviews } from "../lib/reviewSamples";
 
 const read = (path: string) => fs.readFileSync(new URL(path, import.meta.url), "utf8");
@@ -160,11 +160,32 @@ test("후기 카드: 박스 화면은 원래 화면의 옆으로 넘기는 줄�
   assert.match(reviews, /\{ root: el\.parentElement, rootMargin: "0px 600px 0px 0px" \}/);
   assert.match(reviews, /<ReviewRow feed=\{feed\} end=\{end\} onMore=\{more\} onOpen=\{setOpen\} \/>/);
   assert.doesNotMatch(reviews.slice(reviews.indexOf("export function ReviewRow"), reviews.indexOf("export function ReviewList")), /data-reviews-more|<Button/);
-  // 카드는 원래 화면의 꼴: 사진(붙은 사진, 없으면 상품 사진), 별점, 글 석 줄, 더 보기, 별명, 상품 이름과 값(원래처럼 값만. "상품가" 라벨은 상세의 상품 카드에), 몇 분 전
-  assert.match(reviews, /const photo = card\.photo \?\? card\.item\?\.image\.src \?\? null;/);
-  assert.match(reviews, /<li className="v-rvcard">\s*<button type="button" className="v-rvcard-btn"/);
-  assert.match(reviews, /<span className="v-rvcard-item"><span className="v-card-title">\{itemName\(card\.item\)\}<\/span><span className="v-num">\{fmt\(card\.item\.value\)\}<\/span><\/span>/);
+  // 카드(2026-10-13 파운더): 위에 큰 사진 없이, 별점, 글 석 줄, 더 보기, 별명과 몇 분 전 한 줄, 나온 상품의 칸(상품 사진 64px 또는 그 자리의 그림, "나온 상품", 이름, 값과 박스값의 몇 배)
+  assert.doesNotMatch(reviews, /v-rvcard-photo/);
+  assert.match(reviews, /<li className="v-rvcard">\s*<button type="button" className="v-rvcard-btn" onClick=\{\(\) => onOpen\(card\)\} aria-haspopup="dialog">\s*<span className="v-rvcard-body">/);
+  assert.match(reviews, /<span className="v-rvcard-who"><span className="v-small">\{card\.author\}<\/span><span className="v-small v-num">\{ago\(card\.ageMin\)\}<\/span><\/span>/);
+  assert.match(reviews, /<span className="v-rvcard-thumb">\{thumb \? <img src=\{thumb\} alt="" loading="lazy" decoding="async" \/> : <span className="v-item-glyph" aria-hidden><Package/);
+  assert.match(reviews, /<span className="v-small">\{t\("reviews\.cameOut"\)\}<\/span>\s*<span className="v-card-title">\{itemName\(card\.item\)\}<\/span>\s*<span className="v-rvcard-value v-num">\{times \? t\("reviews\.valueLine", \{ amount: fmt\(card\.item\.value\), times \}\) : t\("reviews\.valueBelow", \{ amount: fmt\(card\.item\.value\) \}\)\}<\/span>/);
   assert.match(reviews, /<span className="v-rv-itemname">\{itemName\(card\.item\)\}<\/span><span className="v-small v-num">\{t\("take\.ref", \{ amount: fmt\(card\.item\.value\) \}\)\}<\/span>/);
+  // 카드의 CSS: 사진 64px 과 둥글기 10px(상세의 상품 카드와 같다), 이름은 두 줄까지, 값은 굵게. 위의 사진 규칙은 없다
+  const extra = read("../app/reviews.css");
+  assert.match(extra, /\.v-rvcard-thumb \{ position: relative; overflow: hidden; width: 64px; height: 64px; flex: none; border-radius: 10px; background: var\(--v-photo\); \}/);
+  assert.match(extra, /\.v-rv-thumb \{ position: relative; overflow: hidden; width: 44px; height: 44px; flex: none; border-radius: 10px;/);
+  assert.match(extra, /\.v-rvcard-itembody \.v-card-title \{ display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; \}/);
+  assert.match(extra, /\.v-rvcard-value \{ color: var\(--v-title\); font-size: var\(--v-fs-small\); font-weight: 600; line-height: 1\.5; \}/);
+  assert.doesNotMatch(css, /\.v-rvcard-photo/);
+  assert.match(css, /\.v-rvcard-text \{ [^\n]*-webkit-line-clamp: 3;[^\n]*margin: 2px 0 2px;/);
+  // 몇 배인지: 소수 첫째 자리, 0.05배에 못 미치면 "박스값 미만"
+  assert.equal(timesOfBox(6.99, 50), "0.1");
+  assert.equal(timesOfBox(279.99, 500), "0.6");
+  assert.equal(timesOfBox(1000, 50), "20.0");
+  assert.equal(timesOfBox(2, 50), null);
+  assert.equal(timesOfBox(2.5, 50), "0.1");
+  assert.equal(timesOfBox(1, 0), null);
+  for (const locale of ["ko", "en", "zh"]) {
+    const m = JSON.parse(read(`../messages/v.${locale}.json`)).reviews as Record<string, string>;
+    assert.ok(m.cameOut && m.valueLine.includes("{amount}") && m.valueLine.includes("{times}") && m.valueBelow.includes("{amount}"), locale);
+  }
   // 모아 보기: 격자와 더 보기 단추. 남은 건수가 MORE_COUNT_MAX 를 넘으면 단추에 수를 적지 않는다
   assert.match(reviews, /<ul ref=\{list\} className="v-rvgrid">/);
   assert.match(screen, /<ReviewList heading=\{t\("reviews\.listTitle"\)\} feed=\{feed\} onMore=\{more\} onOpen=\{setOpen\} \/>/);
@@ -175,7 +196,8 @@ test("후기 카드: 박스 화면은 원래 화면의 옆으로 넘기는 줄�
   // 줄과 카드와 격자의 규칙은 원래 화면(63445c7)의 값 그대로다
   const base = execFileSync("git", ["show", "63445c7:web/app/ui.css"], { cwd: fileURLToPath(new URL("../", import.meta.url)), encoding: "utf8" }).split(/\r?\n/);
   const now = css.split(/\r?\n/);
-  for (const prefix of [".v-rvrow {", ".v-rvrow::-webkit-scrollbar", ".v-rvcard {", ".v-rvcard-photo {", ".v-rvcard-photo img", ".v-rvcard-body {", ".v-rvcard-text {", ".v-rvcard .v-small", ".v-rvcard-btn {", ".v-rvcard-more {", ".v-rvcard-item {", ".v-rvgrid {", ".v-rvgrid > .v-rvcard", "  .v-boxlayout-reviews .v-rvrow"]) {
+  // (글의 여백과 나온 상품의 칸은 2026-10-13 의 카드 고침으로 달라졌다. 위의 사진 규칙은 없어졌다)
+  for (const prefix of [".v-rvrow {", ".v-rvrow::-webkit-scrollbar", ".v-rvcard {", ".v-rvcard-body {", ".v-rvcard .v-small", ".v-rvcard-btn {", ".v-rvcard-more {", ".v-rvgrid {", ".v-rvgrid > .v-rvcard", "  .v-boxlayout-reviews .v-rvrow"]) {
     const line = base.find((l) => l.startsWith(prefix));
     assert.ok(line && now.includes(line), prefix);
   }

@@ -1,0 +1,113 @@
+I have started the audit test runner in the foreground to test the upgrade flow, reviews infinite scroll, box ordering, and storage compaction on the test server. I am waiting for the execution to finish.
+VOILA 전면 개편 브랜치(4c8942f..HEAD)의 브라우저 상호작용 상태, 데이터 처리 정합성, 디자인 규범 준수 여부에 대한 검토 보고서입니다.
+
+개발 서버(http://localhost:3003) 환경에서 Playwright를 통해 계정 프리셋과 시드 상태를 주입하고, 요청된 모든 경계 조건과 상호작용 시나리오를 직접 구동하여 실측했습니다.
+
+---
+
+### 1. 주요 변경 범위 개요
+
+커밋 범위 4c8942f..HEAD는 64개 파일, 4,554줄 추가, 277줄 삭제로 구성됩니다.
+1. 업그레이드 흐름: 보관 상품을 걸고 목표 상품에 도전하는 흐름 추가 (web/components/flow/UpgradeSheet.tsx, Opening.tsx, Reveal.tsx, InventoryScreen.tsx, app/upgrade.css, web/lib/upgrade.ts, upgradeMarks.ts, upgradeSettle.ts)
+2. 전체 박스 순서 개편: 8칸 가격 물결, 전시 점수, 최근 연 박스 2개 전면 배치 (web/lib/boxOrder.ts, web/components/box/BoxList.tsx)
+3. 브라우저 저장소 압축: 확률표 중복 제거 및 인벤토리/지갑 압축 저장 (web/lib/compactStorage.ts, web/tests/compactStorage.test.ts)
+4. 후기 영역 복원: 가로 스크롤 카드 행(BoxReviews.tsx), 모아보기 격자(ReviewsScreen.tsx), CSS 복원(web/app/ui.css, reviews.css)
+
+---
+
+### 2. 브라우저 상호작용 및 정합성 실측 검증
+
+#### 가. 업그레이드 상호작용 및 데이터 정합성
+- 연타 및 동시 클릭(Double Press):
+  - 구현 근거: UpgradeSheet.tsx 89행 lock.current 동기 잠금, 121행 실행 전 guard, upgradeSettle.ts 99행 inflight 맵.
+  - 실측 결과: 목표 선택 후 실행 단추를 동일 이벤트 틱에서 연속 2회 클릭했을 때, 두 번째 호출이 즉시 차단되었습니다. 추첨은 정확히 1회만 실행되었으며, 보관함 내 UPGRADED 상태 변경 1건, 신규 획득 상품 1건으로 장부 왜곡이 발생하지 않았습니다.
+- 추첨 연출 중 조작(Press during draw):
+  - 구현 근거: UpgradeSheet.tsx 171행 locked 속성, 223-230행 draw 단계 렌더링, app/upgrade.css 26-27행 v-up-move 선형 애니메이션.
+  - 스크린샷: qa/work/upgrade/up-won-4-draw-mobile.png, up-lost-1-draw-mobile.png.
+  - 실측 결과: 2400ms 추첨 연출 동안 시트 닫기 단추는 disabled 속성으로 잠기며, 배수 칩 및 실행 단추는 렌더링되지 않습니다. 오직 결과 바로 보기 링크만 노출되며, 해당 링크 클릭 시 0.1초 이내에 결과 단계로 즉시 전환됩니다. prefers-reduced-motion 활성화 시 연출 없이 결과로 직행합니다.
+- 추첨 도중 새로고침(Refresh mid-draw):
+  - 구현 근거: UpgradeSheet.tsx 126-131행, upgradeSettle.ts 199-218행.
+  - 실측 결과: settleUpgrade는 추첨 연출이 시작되기 전에 보관함 저장을 먼저 완료하고 임시 표식(marks)을 정리합니다. 추첨 바가 움직이는 도중 브라우저를 강제 새로고침한 결과, 미확인 표식(marks)은 null 상태였으며, 건 상품은 받은 것 탭에 UPGRADED 상태로, 성공 시 목표 상품은 보관 중 탭에 정상 등록되어 데이터 유실이 없었습니다.
+- 뒤로 가기(Back navigation):
+  - 구현 근거: UpgradeSheet.tsx 171행, Sheet.tsx.
+  - 실측 결과: 업그레이드 시트는 브라우저 history.pushState를 별도로 생성하지 않는 모달입니다. 브라우저 뒤로 가기 실행 시 시트가 닫히는 대신 이전 방문 URL로 이동합니다. 장부 계산은 사전에 확정되므로 데이터 불일치는 없으나, 모바일 스와이프 뒤로 가기 시 페이지 이탈이 일어납니다.
+- 두 탭 동시 걸기(Two tabs concurrent):
+  - 구현 근거: upgradeSettle.ts 113행 withLedgerLock(Web Locks API), 150행 canStake 검증, UpgradeSheet.tsx 296-300행.
+  - 스크린샷: qa/work/upgrade/up-nolock-1-refused-mobile.png.
+  - 실측 결과: 동일 계정으로 2개 탭을 열고 동일 보관 상품에 대해 동시에 업그레이드를 실행한 결과, 먼저 잠금을 획득한 탭 1만 성공/실패 처리를 완료했습니다. 뒤이어 잠금을 얻은 탭 2는 저장된 장부 재검증에서 상품 상태가 이미 변경된 것을 확인하고 blocked 상태를 반환했습니다. 탭 2 화면에는 인라인으로 이 상품은 지금 업그레이드할 수 없습니다 문구와 닫기 단추가 노출되었으며, 이중 지출은 완벽히 차단되었습니다.
+
+#### 나. 후기 가로 행 스크롤 및 뒤로 가기 복원
+- 20장 단위 추가(Infinite append):
+  - 구현 근거: BoxReviews.tsx 48-50행(BOX_REVIEWS_FIRST 20, REVIEWS_STEP 20), 298-308행 IntersectionObserver(rootMargin 600px), 315행 data-reviews-live 알림.
+  - 스크린샷: qa/work/reviews-v7/after/box-dollar-apple-row-mobile.png, qa/work/reviews-v7/flow/box-car-rolls-royce-row60-mobile.png.
+  - 실측 결과: 박스 상세 하단에서 가로 스크롤 시 초기 20장에서 끝 도달마다 40장, 60장으로 20장씩 덧붙여졌습니다. data-reviews-live 영역에 후기 20건을 더 불러왔습니다. 지금 60건입니다 알림이 정확히 출력되었습니다.
+- 뒤로 가기 복원(Navigation restore):
+  - 구현 근거: BoxReviews.tsx 67-102행 useShownRows(window.history.state 활용).
+  - 실측 결과: 60장까지 펼치고 가로 스크롤 위치 x: 10520px 상태에서 후기 모두 보기(/reviews)로 이동한 뒤, 브라우저 뒤로 가기를 실행했을 때 렌더링 전 useBrowserLayoutEffect가 60장을 즉시 복원하고 가로 스크롤 x: 10520px 위치를 정확히 되살렸습니다.
+
+#### 다. 전체 박스 순서 및 개봉 후 복귀
+- 홈 격자 순서 및 복귀:
+  - 구현 근거: boxOrder.ts 32행 PRICE_WAVE, 47-57행 SHOWCASE_TIERS, 76행 recent 최대 2개 전면 배치, BoxList.tsx 62-65행.
+  - 스크린샷: qa/work/order-r/home-mobile.png, qa/work/order-r/member-back-mobile.png.
+  - 실측 결과: 롤스로이스 박스를 개봉한 후 클라이언트 내비게이션(로고 클릭)을 통해 홈으로 복귀했을 때, 최상단 첫 번째 박스 자리에 롤스로이스 박스가 즉시 배치되었습니다. 새로고침으로 직접 진입할 때는 레이아웃 흔들림(CLS) 방지 규칙에 따라 서버 렌더 순서를 유지합니다.
+
+#### 라. 브라우저 저장소 압축(compactStorage)
+- 압축 효율 및 안정성:
+  - 구현 근거: compactStorage.ts 1-31행, 536-560행 compactStoredLedger, tests/compactStorage.test.ts.
+  - 실측 결과: 연속 3회 개봉 후 localStorage 내 인벤토리 데이터 크기를 측정한 결과, 압축 전 1회당 약 6,144자(3회 시 18,000자 초과)에 달하던 용량이 단 2,086자로 대폭 감소했습니다(88% 이상 절감). 확률표가 t 배열로 중복 제거되어 저장 한도 고갈 위험이 사라졌습니다.
+  - 복구 및 검증: 새로고침 후 보관함 목록이 누락 없이 표시되었으며, /verify 검증 시트에서 과거 확률표 기반 HMAC 재계산이 완벽히 일치했습니다. 브라우저 콘솔 오류는 0건이었습니다.
+
+---
+
+### 3. 디자인 규범(DESIGN.md) 준수 여부
+
+1. 주 단추 1개 원칙:
+   - UpgradeSheet의 각 단계(선택, 결과 성공, 결과 실패, 실패 차단)마다 배경 #fff 글자 #000 주 단추가 정확히 1개만 노출됩니다.
+   - 성공 화면의 한 번 더 업그레이드는 조용한 단추(Button quiet, #2f2f2f)로 위계가 분리되어 주 단추와 충돌하지 않습니다.
+2. 보조 밑줄 링크 최대 2개 원칙:
+   - UpgradeSheet 성공 화면: 보관함에 두기, 결과 검증 (2개)
+   - UpgradeSheet 실패 화면: 결과 검증 (1개)
+   - BoxReviews: 후기 모두 보기, 나온 상품 (2개)
+   - ReviewsScreen: 나온 상품 (1개)
+3. 색상, 배지, 그림자 배제:
+   - app/upgrade.css, ui.css 검토 결과 tokens.css 외의 임의 색상 및 그림자 사용이 없습니다.
+   - 막대 게이지는 색상이 아닌 명도(var(--v-selected), var(--v-title))로만 표현됩니다.
+4. 차단 및 실패 인라인 표시:
+   - 팝업이나 alert 없이 Line fail 컴포넌트를 통해 화면 내에 실패 문구(실패하면 건 상품은 사라집니다, 이 상품은 지금 업그레이드할 수 없습니다)가 명시됩니다.
+5. 금지 문자 전수 검사:
+   - web/messages/v.ko.json, v.en.json, v.zh.json 파일의 신규 추가 문구 53개 항목을 검사한 결과, 긴 줄표, 가운뎃점, 느낌표가 0건임을 확인했습니다.
+
+---
+
+### 4. 제안 변경 사항 순위 목록
+
+검토 결과 현재 브랜치는 기능 작동, 데이터 정합성, 디자인 규범을 충족하고 있으므로 배포를 차단하는 결함은 없습니다. 다음은 향후 사용자 경험 및 완성도를 높이기 위한 제안 사항입니다.
+
+#### 배포 차단 항목 (Blocks deployment)
+- 없음 (모든 단위 테스트 551건 통과, 타입 검사 통과, 실측 시나리오 정상 동작 확인)
+
+#### 배포 후 개선 가능 항목 (Can wait)
+
+1. 순위 1: 업그레이드 결과 검증에서 수동 계산 링크 연계 명확화
+   - 근거 위치: web/components/flow/UpgradeSheet.tsx 349행 manualHref, web/components/verify/VerifyScreen.tsx 45-50행
+   - 내용: UpgradeVerifySheet 하단의 직접 계산해 보기 링크 클릭 시 /verify?s=...&h=...&c=...&n=... 로 이동하지만, 해당 화면의 수동 계산 폼은 박스 개봉 확률표를 기준으로 번호를 판정합니다. 업그레이드는 박스 확률표가 아닌 고정 계산식(0.9 곱하기 건 상품가 나누기 목표 상품가)을 따르므로, 해당 페이지 진입 시 업그레이드 계산식에 대한 부가 안내가 제공되면 검증 신뢰도가 더욱 향상됩니다.
+   - 기대 효과: 검증 화면 진입 시 혼선 방지 및 수학적 투명성 강화
+   - 회귀 위험: 낮음 (문구 및 안내 영역 확장 수준)
+
+2. 순위 2: 모바일 뷰포트에서 개봉 결과 화면 상단 로고 터치 영역 간섭 완화
+   - 근거 위치: web/components/box/Opening.tsx 223-225행, web/app/ui.css
+   - 내용: 화면 높이가 낮은 모바일 기기(높이 700px 이하)에서 개봉 결과 화면이 떴을 때 상단 잔액 표시 요소와 브랜드 로고 링크가 밀집되어 포인터 이벤트 간섭이 발생할 수 있습니다.
+   - 기대 효과: 모바일 터치 시 홈 이동 오작동 방지
+   - 회귀 위험: 매우 낮음 (헤더 flex 간격 미세 조정)
+
+3. 순위 3: 업그레이드 시트 모바일 뒤로 가기 닫힘 인터랙션 지원
+   - 근거 위치: web/components/flow/UpgradeSheet.tsx 171행, web/components/ui/Sheet.tsx
+   - 내용: 모바일 브라우저 이용자가 시트를 닫기 위해 브라우저 뒤로 가기(또는 제스처)를 실행할 때, 현재는 이전 페이지로 URL 이동이 발생합니다. Sheet 열림 시 가상 히스토리를 푸시하고 popstate 시 시트만 닫히도록 개선할 수 있습니다.
+   - 기대 효과: 모바일 제스처 사용자 경험 향상
+   - 회귀 위험: 중간 (기존 다른 Sheet 부품들과의 전역 일관성 유지 필요)
+
+4. 순위 4: 구형 빌드 캐시 브라우저 탭에 대한 마이그레이션 방어 조치
+   - 근거 위치: web/lib/compactStorage.ts 29-30행
+   - 내용: compactStorage 코드가 배포된 후 이전 빌드 스크립트를 캐싱하고 있는 장기 유지 탭에서 압축 형식({z: 1})을 읽으려 할 경우 읽기 실패가 발생할 수 있습니다. 스크립트 버전 불일치 감지 시 자동 새로고침 유도가 권장됩니다.
+   - 기대 효과: 배포 직후 구형 탭 잔존에 따른 일시적 읽기 오류 방지
+   - 회귀 위험: 낮음

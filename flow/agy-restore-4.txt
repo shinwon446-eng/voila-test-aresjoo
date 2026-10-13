@@ -1,0 +1,128 @@
+4c8942f부터 HEAD까지의 변경 사항에 대한 읽기 전용 검토 보고서입니다. DESIGN.md 정본 규범, 컴포넌트 구조, 유지보수성, 중복 로직, 훅 정확성, 테스트 범위 관점에서 분석했습니다.
+
+
+1. 개요 및 변경 범위 분석
+
+검토 대상 커밋 범위: 4c8942f..HEAD (총 64개 파일 변경, 4,554줄 추가, 277줄 삭제)
+핵심 변경 사항:
+- 업그레이드 흐름 추가: web/components/flow/UpgradeSheet.tsx, web/lib/upgrade.ts, upgradeMarks.ts, upgradeSettle.ts, web/app/upgrade.css, Opening.tsx, Reveal.tsx, InventoryScreen.tsx 연동
+- 전체 박스 격자 순서 개편: web/lib/boxOrder.ts, web/components/box/BoxList.tsx
+- 브라우저 저장소 압축: web/lib/compactStorage.ts, inventoryStore.ts, walletStore.ts
+- 후기 영역 가로 카드 행 복원: web/components/box/BoxReviews.tsx, ReviewsScreen.tsx, web/app/ui.css, web/app/reviews.css
+
+
+2. 영역별 상세 검토 및 구체적 근거
+
+가. 업그레이드 흐름 (UpgradeSheet.tsx 및 upgrade*.ts)
+
+(1) 디자인 정본 준수 여부
+- 주 단추: 화면당 흰색 알약 주 단추 하나 규칙을 지키고 있습니다.
+  - 선택 단계(web/components/flow/UpgradeSheet.tsx 216행): 단추를 고르기 전에는 비활성화된 주 단추("배수를 선택합니다"), 단추를 고르면 활성화된 주 단추("업그레이드하기") 하나만 노출됩니다.
+  - 성공 결과 단계(UpgradeSheet.tsx 250행): 주 단추는 "USDT로 받기" 하나이며, 추가 도전은 조용한 단추(quiet, #2f2f2f 바탕)인 "한 번 더 업그레이드"로 분리되어 있습니다(DESIGN.md 17항 및 qa/work/upgrade/up-won-5-result-desktop.png 확인).
+  - 실패 결과 단계(UpgradeSheet.tsx 277행): 주 단추 "박스 보러 가기" 또는 "박스로 돌아가기" 하나만 노출됩니다(qa/work/upgrade/up-lost-2-result-desktop.png 확인).
+- 보조 링크:
+  - 선택 단계: "잠근 값 보기" 1개(UpgradeSheet.tsx 218행).
+  - 성공 단계: "보관함에 두기", "결과 검증" 2개(UpgradeSheet.tsx 252행).
+  - 실패 단계: "결과 검증" 1개(UpgradeSheet.tsx 278행).
+  - 모두 밑줄 링크 최대 둘 규칙을 정확히 만족합니다.
+- 막힘 및 실패 상태 인라인 처리:
+  - 브라우저 기본 대화상자(alert) 없이, Web Locks 미지원 시 "이 브라우저에서는 업그레이드를 할 수 없습니다" 인라인 안내문(UpgradeSheet.tsx 176행, qa/work/upgrade/up-nolock-1-refused-desktop.png), 실패 시 빨간색 안내문(Line fail, UpgradeSheet.tsx 270행)으로 동일 시트 내부에서 완결됩니다.
+- 연출 및 색상 규범:
+  - web/app/upgrade.css에서 토큰 변수만 사용하며 별도 그라데이션, 그림자, 색상 배지가 없습니다.
+  - 성공 구간과 지침 막대(DrawBar)는 밝기와 위치로만 표시하며, UPGRADE_DRAW_MS(2,400ms) 동안 일정한 선형 속도(linear)로 이동하여 멈춥니다(느려짐 감속, 니어미스 기만 연출 배제).
+  - prefers-reduced-motion 환경에서는 연출을 건너뛰고 즉시 결과로 진입합니다(UpgradeSheet.tsx 131행).
+
+(2) 아키텍처 및 책임 분리
+- 순수 계산 분리: web/lib/upgrade.ts는 UI나 저장소를 전혀 참조하지 않는 순수 함수 모듈입니다. 부동소수점 오차를 방지하기 위해 센트 정수 곱셈과 BigInt 나눗셈으로 성공 확률(chanceUnitsOf)과 배수(timesOfUpgrade)를 0.01퍼센트 단위 내림 정수로 처리합니다.
+- 순환 참조 방지: 확인 대기 표시 모듈(web/lib/upgradeMarks.ts)을 별도로 분리하여 takeBatch.ts와 upgradeSettle.ts 사이의 상호 참조 사이클을 원천 차단했습니다.
+- 원자적 장부 반영: web/lib/upgradeSettle.ts의 execute 함수는 추첨 전 저장소 읽기(137행), 회차 예약(161행), 확인 대기 표시 쓰기(187행), 장부 상태 갱신(199행), 저장소 재확인 및 검증(206행), 표시 해제(217행)의 7단계 트랜잭션을 엄격히 수행합니다.
+- 자금 출처 보존: 건 상품의 fundingSource와 fundingRatio를 성공한 목표 상품에 그대로 복제 전달(web/lib/upgradeSettle.ts 195행)하여 카드 충전액으로 생성된 아이템이 출금 가능한 암호화폐 잔액으로 우회 세탁되는 것을 방지했습니다.
+
+(3) 훅 정확성 및 중복 코드 분석
+- 레이아웃 이동 방지: web/app/upgrade.css 13행에서 .v-up-choice에 min-height 244px를 선점하여 배수 칩을 선택하기 전과 후 시트 높이가 덜컥거리지 않도록 처리했습니다.
+- 연타 방지: lock ref(UpgradeSheet.tsx 89행)와 inflight Map(upgradeSettle.ts 99행)을 두어 동기적 더블 클릭과 비동기 요청 중복을 모두 차단했습니다.
+- 중복 관찰 1: UpgradeSheet.tsx(136행부터 145행)의 take 함수와 InventoryScreen.tsx(99행부터 108행)의 take 함수는 settleTake를 호출하고 taking 상태 및 실패, 알 수 없음 노트를 관리하는 흐름이 구조적으로 동일합니다.
+- 중복 관찰 2: UpgradeVerifySheet(UpgradeSheet.tsx 333행부터 392행)는 VerifySheet.tsx와 3단계 검증 구조(잠근 값, 블록체인 기록, 재계산 결과) 및 16진수 문자열 단축 함수(short)가 중복 작성되어 있습니다.
+- 수동 검증 링크 한계: UpgradeVerifySheet 349행의 manualHref는 /verify 경로로 이동하지만, 현재 VerifyScreen.tsx는 박스 개봉 확률표 기반 검증만 지원하고 있어 업그레이드 식(roll과 chanceUnits 비교)을 입력받아 판정하는 UI가 제공되지 않습니다.
+
+
+나. 전체 박스 격자 순서 (boxOrder.ts 및 BoxList.tsx)
+
+(1) 규칙 준수 및 데이터 무결성
+- 8칸 단위 가격 물결: 50, 100, 20, 250, 50, 100, 20, 500 달러 패턴(PRICE_WAVE)을 정확히 구현했습니다(web/lib/boxOrder.ts 32행, web/tests/boxOrder.test.ts 28행 통과).
+- 잔액 연동과 드림 칸: 잔액이 있을 때 8칸 중 7칸은 잔액 이하로 열 수 있는 박스에서 선별하되, 8번째 칸(dream, 94행)은 최고가 500달러 박스를 유지하여 다음 충전 유도를 자연스럽게 제공합니다.
+- 최근 개봉 우선: 사진이 있는 최근 개봉 박스를 최대 2개까지 맨 앞에 배치합니다(boxOrder.ts 76행). 업그레이드로 획득한 아이템은 직접 개봉한 것이 아니므로 fromUpgrade 검사로 최근 개봉에서 제외합니다(BoxList.tsx 37행).
+- 편집자 지정 얼굴: FACE_PICK 매핑(web/lib/products.ts)을 통해 대표 상품 사진이 박스 성격과 어긋나는 경우 카탈로그 순서를 해치지 않고 카드 전면 사진만 교체합니다(애플 모바일은 아이폰, 갤럭시북은 노트북 사진 적용).
+
+(2) 레이아웃 안정성 (화면 덜컥거림 방지)
+- 사이트 첫 진입 시 서버에서 그린 순서 그대로 유지하고, 첫 렌더링 시 계정 장부가 붙더라도 즉시 재배치하지 않습니다(BoxList.tsx 67행부터 77행, if (first) return 처리).
+- 카테고리를 전환하거나 화면 내부에서 다시 들어올 때만 useBrowserLayoutEffect를 통해 그리기 전에 계정 장부를 반영하므로 화면 깜빡임과 레이아웃 점프가 발생하지 않습니다.
+- 성능 최적화: boxOrder 함수 시작 시 faceOf 조회를 Map에 사전 캐싱(boxOrder.ts 69행)하여 후보 박스 정렬 시 중복 이미지 탐색 비용을 제거했습니다.
+
+
+다. 브라우저 저장소 압축 (compactStorage.ts)
+
+(1) 압축률 및 동작 구조
+- 실측 기준 절감 효과: 개봉 1건당 약 6,144글자(드롭 테이블 100줄이 매 건 포함)를 차지하던 데이터를 확률표 공용화(sharedTables), 묶음 속성(groups), UUID의 22자리 Base64 인코딩(packId), ISO 시각의 델타 정수화(msOf)를 통해 건당 약 80자에서 120자 수준으로 50배 이상 축소했습니다.
+- 무손실 보존: 모르는 필드나 비표준 구조는 rest(Record) 객체에 그대로 보존(compactStorage.ts 247행, 321행)하므로, 업그레이드 기록(upgrade, upgradedFrom)이나 부분 출금 신청 필드가 유실 없이 복원됩니다.
+- 봉인 보호 장치(sealed): 줄인 장부를 파싱하지 못했을 때 빈 스토어로 덮어써서 기존 데이터를 영구 삭제하는 사고를 막기 위해 sealed Set에 등록하고 이후 쓰기를 원천 차단합니다(compactStorage.ts 465행, 498행).
+
+(2) 마이그레이션 안전성
+- 백그라운드 전환: 앱 시작 시 migrateStoredLedgers(593행)가 Web Locks를 획득하여 이전 형식 장부를 긴 것부터 안전하게 줄입니다.
+- 확인 대기 표시 존재 시 건너뛰기: 받기나 업그레이드의 unconfirmed 표시가 남아 있는 계정은 markPending(521행) 검사로 마이그레이션 대상에서 제외하여 진행 중인 트랜잭션 충돌을 방지합니다.
+- 낙관적 동시성 검증: compactStoredLedger(546행부터 560행)는 압축된 결과가 원본보다 반드시 짧고(555행), 다시 파싱한 결과가 원본과 완전히 동일하며, 그 사이에 다른 탭의 쓰기가 발생하지 않았을 때만 저장소에 기록합니다.
+
+
+라. 후기 영역 복원 (BoxReviews.tsx 및 ReviewsScreen.tsx)
+
+(1) 가로 스크롤 행 복원 규범
+- 박스 상세 화면: 세로 목록이었던 과도기 형태에서 ScrollRow 기반의 가로 스크롤 행(.v-rvrow)으로 원상 복구되었습니다(web/components/box/BoxReviews.tsx 412행).
+- 실측값 일치: qa/work/reviews-v7/measure.json 기준
+  - 데스크톱 카드 너비 280px, 높이 384px, 반경 26px, 양옆 넘김 버튼 flex(40px 알약).
+  - 모바일 카드 너비 258px, 높이 370px, 반경 20px, 버튼 숨김(display none, 스와이프 전용).
+  - 카드 간격 12px, 스크롤바 숨김, scroll-snap-align 적용 확인.
+- 링크 제한 준수: 박스 후기 영역 하단에 "후기 모두 보기", "나온 상품" 2개 링크만 배치되었습니다.
+
+(2) 무한 증분 및 히스토리 복원
+- IntersectionObserver 연동: 끝 표시 요소(v-rvrow-end li)가 오른쪽 600px 범위에 접근하면 자동으로 20개씩 추가 로드(ReviewRow, 297행부터 308행)합니다.
+- 읽던 위치 보존: useShownRows 훅(67행부터 103행)을 통해 펼쳐진 카드 개수(shown)와 가로 스크롤 위치(x), 세로 스크롤 위치(y)를 window.history.state에 기록하고, 뒤로가기로 돌아왔을 때 레이아웃 이펙트에서 정확히 복원합니다.
+- 접근성 안내: 카드가 증분될 때마다 스크린 리더 전용 라이브 영역(p.v-rv-sr, role status, aria-live polite)에 늘어난 개수 텍스트를 업데이트합니다.
+
+
+3. 테스트 커버리지 및 정적 분석 결과
+
+- 단위 및 통합 테스트: cd web 실행 기준 npm test 통과(총 552개 중 pass 551, skip 1, fail 0).
+- 타입스크립트 검사: npx tsc --noEmit 결과 오류 0건.
+- 디자인 린트: npm run lint:design (--scope new) 결과 위반 0건(색상 토큰, 가운뎃점, 긴 줄표, 느낌표, 물음표 등 금지 규범 완벽 준수).
+
+
+4. 제안 사항 목록 (우선순위 순)
+
+[배포를 막는 항목]
+- 없음. 기존 돈 로직 불변, 테스트 551건 전원 통과, 디자인 린트 0건 위반, 장부 정합성 및 저장 한도 안전장치가 모두 검증되었습니다.
+
+[배포 후 진행 가능한 개선 항목]
+
+1. 업그레이드 수동 검증 링크 대상 화면 보완 또는 링크 제거
+- 위치: web/components/flow/UpgradeSheet.tsx 349행 및 387행
+- 내용: UpgradeVerifySheet 하단의 "값을 직접 넣어 검증" 링크(manualHref)가 /verify로 연결되나, 현재 VerifyScreen.tsx는 박스 개봉 확률표 검증기만 구현되어 있어 업그레이드 번호 판정을 재현할 수 없습니다. /verify에 업그레이드 검증 모드를 추가하거나, 시트 내부에서 이미 3단계 재계산 검증이 완결되므로 해당 외부 링크를 정리하는 것을 권장합니다.
+- 기대 효과: 검증 페이지 이동 시 박스 개봉 결과가 노출되어 사용자가 혼란을 겪는 현상 방지.
+- 회귀 위험: 매우 낮음(시트 내부의 1, 2, 3단계 인라인 검증 기능은 그대로 유지됨).
+
+2. 후기 상세 시트(ReviewSheet)의 링크 컨테이너 병합
+- 위치: web/components/box/BoxReviews.tsx 381행부터 385행
+- 내용: 본인 작성 후기이면서 현재 보고 있는 박스가 아닌 경우, 검증 링크와 박스 보기 링크가 서로 다른 div.v-links에 나뉘어 감싸져 있습니다. 하나의 div.v-links 안에 두 TextLink를 묶도록 정리하는 것이 좋습니다.
+- 기대 효과: CSS flex 간격 규칙 일원화 및 밑줄 링크 최대 둘 그룹핑 일관성 향상.
+- 회귀 위험: 없음(단순 마크업 구조 정리).
+
+3. 후기 카드(ReviewCard) 텍스트 높이 측정 렌더링 최적화
+- 위치: web/components/box/BoxReviews.tsx 251행부터 253행
+- 내용: 카드마다 마운트 시 useEffect에서 scrollHeight와 clientHeight를 읽어 setCut을 호출하고 있습니다. 카드가 20장 이상 렌더링될 때 마운트 직후 레이아웃 측정과 추가 렌더 패스가 발생합니다. 카드를 누르면 어차피 ReviewSheet에서 전체 글을 볼 수 있으므로 인라인 더 보기 판정을 단순화하거나 ResizeObserver를 통한 일괄 처리로 리팩토링할 수 있습니다.
+- 기대 효과: 가로 스크롤 행 초기 진입 및 20장 증분 시 레이아웃 리플로우 감소.
+- 회귀 위험: 낮음(텍스트 시각적 클램프는 CSS line-clamp로 이미 보장됨).
+
+4. 단일 상품 수령(settleTake) 호출 로직의 커스텀 훅 추출
+- 위치: web/components/flow/UpgradeSheet.tsx 136행, web/components/inventory/InventoryScreen.tsx 99행
+- 내용: settleTake 호출, taking 상태 제어, 예외 발생 시 unknown 처리, 결과에 따른 후속 분기 패턴이 중복되어 있습니다. 행동 변화 없이 useSingleTake 같은 작은 훅으로 추출하면 유지보수성이 향상됩니다.
+- 기대 효과: 수령 처리 코드 중복 제거 및 단일 책임 원칙 강화.
+- 회귀 위험: 낮음(기존 상태 변수 전달 형태만 유지하면 동작 동일).

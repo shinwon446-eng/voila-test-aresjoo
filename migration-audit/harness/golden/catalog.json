@@ -8,7 +8,6 @@
   "homeBoxes": 320,
   "itemRows": 32916,
   "uniqueItemIds": 21007,
-  "itemRowsWithPhoto": 13094,
   "byCategory": {
    "audio": 20,
    "bag": 20,
@@ -63,7 +62,6 @@
   "tableOrder": "67fdb233f46f139d7357f53e2337a5386d27368bc13efec4e136ac9c7b425ed6",
   "drawOrder": "3cb5c4cb79815b3f9674c19b1858d031028e609c146e4276fdbbb9685ba785d1",
   "withKindAndValue": "5d6af693c4f89e6d5455014207b8518f0d558d7e5a029779e0106c6ae0b9e4d8",
-  "namesAndPhotos": "1be190bcb6e3a0230778d6ec15250a2a446bb2de6c71e535d75d034527b3c62e",
   "boxOrder": "81bb2c22deda3d392f256c0f70e2d04c1c32b6c596c4ce6134e431c6a47d2749",
   "homeBoxOrder": "0f3ed123b383daf4d1d0660e0a9de37d30cbf565a1cbd8909e8fdb8ff46249d0"
  },

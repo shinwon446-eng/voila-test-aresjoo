@@ -6,12 +6,16 @@
  *
  * 이 검사가 실패하면 카탈로그(박스, 가격, 상품, 확률, 순서)나 추첨, 돈 계산이 기준과 달라졌다는 뜻이다.
  * 기대값을 다시 만들어 통과시키지 않는다. 바뀐 것이 의도한 변경이면 총괄이 근거를 적고 따로 결정한다.
+ *
+ * 예외 하나, 사진에 달린 값(photos.json: 사진이 있는 상품 행의 수, 이름과 사진 경로의 해시)은 따로 본다.
+ * 사진은 일부러 더해지므로 이 값은 움직이는 것이 맞다. 사진을 더한 커밋에서 `generate.ts --photos` 로 같은 커밋에 다시 만든다.
+ * 그 검사가 실패했는데 사진을 더한 적이 없으면 이름이나 사진 경로가 뜻하지 않게 바뀐 것이다.
  */
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { asJson, computeCatalog, computeDraws, computeMoney, type GoldenDeps } from "../../migration-audit/harness/golden/compute";
+import { asJson, computeCatalog, computeDraws, computeMoney, computePhotos, type GoldenDeps } from "../../migration-audit/harness/golden/compute";
 import * as products from "../lib/products";
 import * as fairness from "../lib/fairness";
 import * as takeBatch from "../lib/takeBatch";
@@ -26,12 +30,19 @@ const goldenDir = [path.resolve(process.cwd(), "../migration-audit/harness/golde
 const golden = (name: string) => {
   if (!goldenDir) throw new Error("기준값 폴더(migration-audit/harness/golden)를 찾지 못했다");
   const { meta, ...rest } = JSON.parse(readFileSync(path.join(goldenDir, name), "utf8"));
-  return { meta: meta as { baselineCommit: string }, value: rest };
+  return { meta: meta as { baselineCommit: string; photosCommit?: string }, value: rest };
 };
 const deps: GoldenDeps = { products, fairness, takeBatch, withdrawal, funding, tiers, burst };
 
 test("기준값: 기준 커밋 63445c7 에서 만든 파일이다", () => {
   for (const name of ["catalog.json", "draws.json", "money.json"]) assert.match(golden(name).meta.baselineCommit, /^63445c7/, name);
+});
+
+test("기준값: 사진에 달린 값(사진 있는 상품 행의 수, 이름과 사진 경로)은 사진을 마지막으로 더한 커밋과 같다", () => {
+  // 사진을 더했으면 같은 커밋에서 photos.json 을 다시 만든다(머리 주석). 더한 적이 없는데 실패하면 이름이나 경로가 뜻하지 않게 바뀐 것이다
+  const { meta, value } = golden("photos.json");
+  assert.match(meta.photosCommit ?? "", /^[0-9a-f]{40}$/, "photos.json 에 적은 커밋");
+  assert.deepEqual(asJson(computePhotos(deps)), value);
 });
 
 test("기준값: 카탈로그의 개수와 상수가 기준과 같다", () => {

@@ -65,20 +65,20 @@ export const GOLDEN_NONCES = 50;
  * 카탈로그. 순서가 뜻을 가진다.
  *   tableOrder  box.items 의 순서(카탈로그가 정한 순서)
  *   drawOrder   dropTable(box) 의 순서(값이 큰 것부터. 추첨의 roll 구간이 이 순서로 쌓인다)
- * 해시의 한 줄은 "박스 슬러그|가격|상품 id|확률" 이다. 값과 종류, 이름과 사진 경로는 따로 해시한다(무엇이 바뀌었는지 가르려고).
+ * 해시의 한 줄은 "박스 슬러그|가격|상품 id|확률" 이다. 값과 종류는 따로 해시한다(무엇이 바뀌었는지 가르려고).
+ * 이름과 사진 경로는 사진이 더해지면 움직이므로 여기 넣지 않고 computePhotos 가 따로 센다(photos.json).
  */
 export function computeCatalog(deps: GoldenDeps) {
   const { BOXES, HOME_BOXES, dropTable } = deps.products;
   const line = (box: BoxLike, item: ItemLike) => `${box.slug}|${box.price}|${item.id}|${item.dropRate}`;
   const valueLine = (box: BoxLike, item: ItemLike) => `${line(box, item)}|${item.kind}|${item.value}`;
-  const textLine = (box: BoxLike, item: ItemLike) => `${box.slug}|${item.id}|${item.name ?? ""}|${item.nameEn ?? ""}|${item.nameZh ?? ""}|${item.image?.src ?? ""}`;
-  const table: string[] = [], draw: string[] = [], values: string[] = [], texts: string[] = [];
+  const table: string[] = [], draw: string[] = [], values: string[] = [];
   const perBox: Record<string, { price: number; items: number; rateSum: number; table: string; draw: string; values: string }> = {};
   for (const box of BOXES) {
     const t = box.items.map((item) => line(box, item));
     const d = dropTable(box).map((item) => line(box, item));
     const v = box.items.map((item) => valueLine(box, item));
-    table.push(...t); draw.push(...d); values.push(...v); texts.push(...box.items.map((item) => textLine(box, item)));
+    table.push(...t); draw.push(...d); values.push(...v);
     perBox[box.slug] = {
       price: box.price, items: box.items.length,
       // 확률 합은 0.0001% 칸으로 센다(부동소수 오차 없이 정확히 1,000,000 이어야 한다)
@@ -93,15 +93,29 @@ export function computeCatalog(deps: GoldenDeps) {
       homeBoxes: HOME_BOXES.length,
       itemRows: allItems.length,
       uniqueItemIds: new Set(allItems.map((item) => item.id)).size,
-      itemRowsWithPhoto: allItems.filter((item) => !!item.image?.src).length,
       byCategory: count(BOXES.map((box) => box.category)),
       byScheme: count(BOXES.map((box) => box.scheme ?? "(없음)")),
       byKind: count(allItems.map((item) => item.kind)),
       byPrice: count(BOXES.map((box) => String(box.price))),
     },
     constants: { refundRate: deps.products.REFUND_RATE, catalogOddsVersion: deps.products.CATALOG_ODDS_VERSION, physicalOddsVersion: deps.products.PHYSICAL_ODDS_VERSION, rollRange: deps.fairness.ROLL_RANGE },
-    sha256: { tableOrder: sha(table.join("\n")), drawOrder: sha(draw.join("\n")), withKindAndValue: sha(values.join("\n")), namesAndPhotos: sha(texts.join("\n")), boxOrder: sha(BOXES.map((box) => box.slug).join("\n")), homeBoxOrder: sha(HOME_BOXES.map((box) => box.slug).join("\n")) },
+    sha256: { tableOrder: sha(table.join("\n")), drawOrder: sha(draw.join("\n")), withKindAndValue: sha(values.join("\n")), boxOrder: sha(BOXES.map((box) => box.slug).join("\n")), homeBoxOrder: sha(HOME_BOXES.map((box) => box.slug).join("\n")) },
     perBox,
+  };
+}
+
+/**
+ * 사진에 달린 값(photos.json): 사진이 있는 상품 행의 수와 "박스 슬러그|상품 id|이름 셋|사진 경로" 의 해시.
+ * 카탈로그의 다른 값과 달리 사진은 일부러 더해지므로 이 값은 움직인다. 사진을 더한 커밋에서 같이 다시 만든다(generate.ts --photos).
+ * 상품의 순서, 확률, 값은 여기 들어가지 않는다(그것은 computeCatalog 가 지키고 다시 만들지 않는다).
+ */
+export function computePhotos(deps: GoldenDeps) {
+  const { BOXES } = deps.products;
+  const textLine = (box: BoxLike, item: ItemLike) => `${box.slug}|${item.id}|${item.name ?? ""}|${item.nameEn ?? ""}|${item.nameZh ?? ""}|${item.image?.src ?? ""}`;
+  const allItems = BOXES.flatMap((box) => box.items);
+  return {
+    itemRowsWithPhoto: allItems.filter((item) => !!item.image?.src).length,
+    namesAndPhotos: sha(BOXES.flatMap((box) => box.items.map((item) => textLine(box, item))).join("\n")),
   };
 }
 

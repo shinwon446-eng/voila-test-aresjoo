@@ -189,8 +189,9 @@ await run("d", async () => {
 await run("e", async () => {
   let s = await session();
   await s.page.locator(".v-itemrow").first().click(); await s.page.waitForSelector(".v-sheet [data-take-primary]"); await s.page.waitForTimeout(300); await s.shot("e1-item-sheet");
-  const main = await s.page.locator(".v-sheet .v-btn").allInnerTexts(); const links = await s.page.locator(".v-sheet .v-links .v-link").allInnerTexts();
-  check("e", "주 단추 하나(USDT로 받기), 밑줄 링크 둘(배송 받기, 개봉 결과 검증)", main.length === 1 && main[0] === "USDT로 받기 ($950)" && links.join("|") === "배송 받기|개봉 결과 검증", main.join("|") + " / " + links.join("|"));
+  // 주 단추(흰 알약)는 하나다. 조용한 단추는 업그레이드 하나뿐이다(flow/RESTORE_SPEC.md U7)
+  const main = await s.page.locator(".v-sheet .v-btn:not(.v-btn--quiet)").allInnerTexts(); const quiet = await s.page.locator(".v-sheet .v-btn--quiet").allInnerTexts(); const links = await s.page.locator(".v-sheet .v-links .v-link").allInnerTexts();
+  check("e", "주 단추 하나(USDT로 받기), 밑줄 링크 둘(배송 받기, 개봉 결과 검증)", main.length === 1 && main[0] === "USDT로 받기 ($950)" && quiet.join("|") === "업그레이드" && links.join("|") === "배송 받기|개봉 결과 검증", main.join("|") + " / " + quiet.join("|") + " / " + links.join("|"));
   const review = await s.page.evaluate(() => {
     const card = document.querySelector(".v-sheet .v-rows"); const row = card?.lastElementChild; const link = row?.querySelector(".v-rowlink"); const btn = document.querySelector(".v-sheet .v-btn");
     return { cards: document.querySelectorAll(".v-sheet .v-rows").length, inLastRow: !!link, text: (link?.textContent || "").trim(), above: !!link && !!btn && link.getBoundingClientRect().bottom <= btn.getBoundingClientRect().top, h: link ? Math.round(link.getBoundingClientRect().height) : 0, w: link ? Math.round(link.getBoundingClientRect().width) : 0 };

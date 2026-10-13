@@ -243,7 +243,9 @@ export function useReviewFeed(boxSlug: string | null, shown: number): ReviewFeed
 }
 
 /**
- * 후기 한 장(2026-10-13 파운더): 별점, 글 석 줄, 별명과 몇 시간 전, 그리고 나온 상품의 칸(상품 사진 64px, "나온 상품", 이름, 값과 박스값의 몇 배인지).
+ * 후기 한 장(2026-10-13 파운더): 별점, 글 석 줄, 별명과 몇 시간 전, 그리고 나온 상품의 칸.
+ * 나온 상품의 칸(2026-10-14 파운더가 고른 시안 2): "나온 상품" 한 줄 아래에 상품 사진 64px, 이름(보통 굵기, 두 줄까지), 오른쪽에 값과 박스값의 몇 배인지.
+ * 보관함과 구성품의 상품 줄(.v-itemrow)과 같은 꼴이다. 굵은 글자를 두지 않는다: 이름과 값이 둘 다 굵으면 위의 글과 어울리지 않는다.
  * 위에 큰 사진을 두지 않는다: 카드의 높이를 사진 없는 카드와 같게 두면서 모든 카드에 상품 사진을 넣는다(사진이 없는 상품은 그 자리의 그림).
  * 별명과 몇 시간 전은 한 줄에 둔다(사진 칸이 커진 만큼 줄여 높이를 지킨다). 몇 배인지는 지금의 박스값으로 센다(샘플도 지금의 박스값으로 만든다).
  */
@@ -269,11 +271,14 @@ export function ReviewCard({ card, onOpen }: { card: ReviewCardData; onOpen: (ca
           <span className="v-rvcard-who"><span className="v-small">{card.author}</span><span className="v-small v-num">{ago(card.ageMin)}</span></span>
           {card.item && box && (
             <span className="v-rvcard-item">
-              <span className="v-rvcard-thumb">{thumb ? <img src={thumb} alt="" loading="lazy" decoding="async" /> : <span className="v-item-glyph" aria-hidden><Package size={22} strokeWidth={1.4} /></span>}</span>
-              <span className="v-rvcard-itembody">
-                <span className="v-small">{t("reviews.cameOut")}</span>
-                <span className="v-card-title">{itemName(card.item)}</span>
-                <span className="v-rvcard-value v-num">{times ? t("reviews.valueLine", { amount: fmt(card.item.value), times }) : t("reviews.valueBelow", { amount: fmt(card.item.value) })}</span>
+              <span className="v-small v-rvcard-itemlabel">{t("reviews.cameOut")}</span>
+              <span className="v-rvcard-itemrow">
+                <span className="v-rvcard-thumb">{thumb ? <img src={thumb} alt="" loading="lazy" decoding="async" /> : <span className="v-item-glyph" aria-hidden><Package size={22} strokeWidth={1.4} /></span>}</span>
+                <span className="v-rvcard-itemname">{itemName(card.item)}</span>
+                <span className="v-rvcard-itemmeta">
+                  <span className="v-rvcard-value v-num">{fmt(card.item.value)}</span>
+                  <span className="v-small v-num">{times ? t("reviews.timesShort", { times }) : t("reviews.belowShort")}</span>
+                </span>
               </span>
             </span>
           )}

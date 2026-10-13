@@ -165,14 +165,20 @@ test("후기 카드: 박스 화면은 원래 화면의 옆으로 넘기는 줄�
   assert.match(reviews, /<li className="v-rvcard">\s*<button type="button" className="v-rvcard-btn" onClick=\{\(\) => onOpen\(card\)\} aria-haspopup="dialog">\s*<span className="v-rvcard-body">/);
   assert.match(reviews, /<span className="v-rvcard-who"><span className="v-small">\{card\.author\}<\/span><span className="v-small v-num">\{ago\(card\.ageMin\)\}<\/span><\/span>/);
   assert.match(reviews, /<span className="v-rvcard-thumb">\{thumb \? <img src=\{thumb\} alt="" loading="lazy" decoding="async" \/> : <span className="v-item-glyph" aria-hidden><Package/);
-  assert.match(reviews, /<span className="v-small">\{t\("reviews\.cameOut"\)\}<\/span>\s*<span className="v-card-title">\{itemName\(card\.item\)\}<\/span>\s*<span className="v-rvcard-value v-num">\{times \? t\("reviews\.valueLine", \{ amount: fmt\(card\.item\.value\), times \}\) : t\("reviews\.valueBelow", \{ amount: fmt\(card\.item\.value\) \}\)\}<\/span>/);
+  // 나온 상품의 칸(2026-10-14 시안 2): 레이블 한 줄, 그 아래 사진과 이름과 오른쪽의 값. 이름은 굵은 .v-card-title 이 아니다
+  assert.match(reviews, /<span className="v-small v-rvcard-itemlabel">\{t\("reviews\.cameOut"\)\}<\/span>\s*<span className="v-rvcard-itemrow">\s*<span className="v-rvcard-thumb">/);
+  assert.match(reviews, /<span className="v-rvcard-itemname">\{itemName\(card\.item\)\}<\/span>\s*<span className="v-rvcard-itemmeta">\s*<span className="v-rvcard-value v-num">\{fmt\(card\.item\.value\)\}<\/span>\s*<span className="v-small v-num">\{times \? t\("reviews\.timesShort", \{ times \}\) : t\("reviews\.belowShort"\)\}<\/span>/);
+  assert.doesNotMatch(reviews.slice(reviews.indexOf("export function ReviewCard"), reviews.indexOf("function useLoadedNote")), /v-card-title/);
   assert.match(reviews, /<span className="v-rv-itemname">\{itemName\(card\.item\)\}<\/span><span className="v-small v-num">\{t\("take\.ref", \{ amount: fmt\(card\.item\.value\) \}\)\}<\/span>/);
-  // 카드의 CSS: 사진 64px 과 둥글기 10px(상세의 상품 카드와 같다), 이름은 두 줄까지, 값은 굵게. 위의 사진 규칙은 없다
+  // 카드의 CSS: 사진 64px 과 둥글기 10px(상세의 상품 카드와 같다), 이름은 두 줄까지 보통 굵기, 값은 오른쪽에 본문 크기 보통 굵기. 굵은 글자는 없다. 위의 사진 규칙은 없다
   const extra = read("../app/reviews.css");
   assert.match(extra, /\.v-rvcard-thumb \{ position: relative; overflow: hidden; width: 64px; height: 64px; flex: none; border-radius: 10px; background: var\(--v-photo\); \}/);
   assert.match(extra, /\.v-rv-thumb \{ position: relative; overflow: hidden; width: 44px; height: 44px; flex: none; border-radius: 10px;/);
-  assert.match(extra, /\.v-rvcard-itembody \.v-card-title \{ display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; \}/);
-  assert.match(extra, /\.v-rvcard-value \{ color: var\(--v-title\); font-size: var\(--v-fs-small\); font-weight: 600; line-height: 1\.5; \}/);
+  assert.match(extra, /\.v-rvcard-item \{ flex-direction: column; align-items: stretch; gap: 4px; \}/);
+  assert.match(extra, /\.v-rvcard-itemname \{ display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; flex: 1 1 auto; min-width: 0; color: var\(--v-title\); font-size: var\(--v-fs-small\);/);
+  assert.match(extra, /\.v-rvcard-itemmeta \{ display: flex; flex: 0 0 auto; max-width: 44%; flex-direction: column; align-items: flex-end;/);
+  assert.match(extra, /\.v-rvcard-value \{ color: var\(--v-title\); font-size: var\(--v-fs-body\); font-weight: 500; line-height: 1\.3; \}/);
+  assert.doesNotMatch(extra.slice(extra.indexOf(".v-rvcard-item")), /font-weight: 600/);
   assert.doesNotMatch(css, /\.v-rvcard-photo/);
   assert.match(css, /\.v-rvcard-text \{ [^\n]*-webkit-line-clamp: 3;[^\n]*margin: 2px 0 2px;/);
   // 몇 배인지: 소수 첫째 자리, 0.05배에 못 미치면 "박스값 미만"
@@ -184,7 +190,8 @@ test("후기 카드: 박스 화면은 원래 화면의 옆으로 넘기는 줄�
   assert.equal(timesOfBox(1, 0), null);
   for (const locale of ["ko", "en", "zh"]) {
     const m = JSON.parse(read(`../messages/v.${locale}.json`)).reviews as Record<string, string>;
-    assert.ok(m.cameOut && m.valueLine.includes("{amount}") && m.valueLine.includes("{times}") && m.valueBelow.includes("{amount}"), locale);
+    assert.ok(m.cameOut && m.timesShort.includes("{times}") && !m.timesShort.includes("{amount}") && m.belowShort && !m.belowShort.includes("{amount}"), locale);
+    assert.ok(!("valueLine" in m) && !("valueBelow" in m), locale);
   }
   // 모아 보기: 격자와 더 보기 단추. 남은 건수가 MORE_COUNT_MAX 를 넘으면 단추에 수를 적지 않는다
   assert.match(reviews, /<ul ref=\{list\} className="v-rvgrid">/);

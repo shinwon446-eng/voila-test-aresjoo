@@ -163,10 +163,12 @@ test("후기 카드: 박스 화면은 원래 화면의 옆으로 넘기는 줄�
   // 카드(2026-10-13 파운더): 위에 큰 사진 없이, 별점, 글 석 줄, 더 보기, 별명과 몇 분 전 한 줄, 나온 상품의 칸(상품 사진 64px 또는 그 자리의 그림, "나온 상품", 이름, 값과 박스값의 몇 배)
   assert.doesNotMatch(reviews, /v-rvcard-photo/);
   assert.match(reviews, /<li className="v-rvcard">\s*<button type="button" className="v-rvcard-btn" onClick=\{\(\) => onOpen\(card\)\} aria-haspopup="dialog">\s*<span className="v-rvcard-body">/);
-  assert.match(reviews, /<span className="v-rvcard-who"><span className="v-small">\{card\.author\}<\/span><span className="v-small v-num">\{ago\(card\.ageMin\)\}<\/span><\/span>/);
+  // 별명(사람 그림)과 몇 분 전은 나온 상품의 줄 뒤, 카드의 맨 아래(2026-10-14 파운더)
+  assert.match(reviews, /<span className="v-rvcard-who"><span className="v-small v-rvcard-author"><User size=\{14\} strokeWidth=\{1\.6\} aria-hidden \/>\{card\.author\}<\/span><span className="v-small v-num">\{ago\(card\.ageMin\)\}<\/span><\/span>\s*<\/span>\s*<\/button>/);
   assert.match(reviews, /<span className="v-rvcard-thumb">\{thumb \? <img src=\{thumb\} alt="" loading="lazy" decoding="async" \/> : <span className="v-item-glyph" aria-hidden><Package/);
   // 나온 상품의 칸(2026-10-14 시안 2): 레이블 한 줄, 그 아래 사진과 이름과 오른쪽의 값. 이름은 굵은 .v-card-title 이 아니다
-  assert.match(reviews, /<span className="v-small v-rvcard-itemlabel">\{t\("reviews\.cameOut"\)\}<\/span>\s*<span className="v-rvcard-itemrow">\s*<span className="v-rvcard-thumb">/);
+  assert.match(reviews, /<span className="v-rvcard-item">\s*<span className="v-rv-sr">\{t\("reviews\.cameOut"\)\}<\/span>\s*<span className="v-rvcard-thumb">/);
+  assert.doesNotMatch(reviews, /v-rvcard-itemlabel|v-rvcard-itemrow/);
   assert.match(reviews, /<span className="v-rvcard-itemname">\{itemName\(card\.item\)\}<\/span>\s*<span className="v-rvcard-itemmeta">\s*<span className="v-rvcard-value v-num">\{fmt\(card\.item\.value\)\}<\/span>\s*<span className="v-small v-num">\{times \? t\("reviews\.timesShort", \{ times \}\) : t\("reviews\.belowShort"\)\}<\/span>/);
   assert.doesNotMatch(reviews.slice(reviews.indexOf("export function ReviewCard"), reviews.indexOf("function useLoadedNote")), /v-card-title/);
   assert.match(reviews, /<span className="v-rv-itemname">\{itemName\(card\.item\)\}<\/span><span className="v-small v-num">\{t\("take\.ref", \{ amount: fmt\(card\.item\.value\) \}\)\}<\/span>/);
@@ -174,7 +176,9 @@ test("후기 카드: 박스 화면은 원래 화면의 옆으로 넘기는 줄�
   const extra = read("../app/reviews.css");
   assert.match(extra, /\.v-rvcard-thumb \{ position: relative; overflow: hidden; width: 64px; height: 64px; flex: none; border-radius: 10px; background: var\(--v-photo\); \}/);
   assert.match(extra, /\.v-rv-thumb \{ position: relative; overflow: hidden; width: 44px; height: 44px; flex: none; border-radius: 10px;/);
-  assert.match(extra, /\.v-rvcard-item \{ flex-direction: column; align-items: stretch; gap: 4px; \}/);
+  assert.match(extra, /\.v-rvcard-who \{ display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; \}/);
+  assert.match(extra, /\.v-rvcard-item \{ margin-top: 6px; \}/);
+  assert.match(css, /\.v-rvcard-item \{ display: flex; align-items: center; gap: 10px;/);
   assert.match(extra, /\.v-rvcard-itemname \{ display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; flex: 1 1 auto; min-width: 0; color: var\(--v-title\); font-size: var\(--v-fs-small\);/);
   assert.match(extra, /\.v-rvcard-itemmeta \{ display: flex; flex: 0 0 auto; max-width: 44%; flex-direction: column; align-items: flex-end;/);
   assert.match(extra, /\.v-rvcard-value \{ color: var\(--v-title\); font-size: var\(--v-fs-body\); font-weight: 500; line-height: 1\.3; \}/);

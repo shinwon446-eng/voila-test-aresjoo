@@ -14,14 +14,15 @@
 .v-rv-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .v-rv-itembody { display: flex; min-width: 0; flex: 1; flex-direction: column; }
 .v-rv-itemname { overflow: hidden; color: var(--v-title); font-size: var(--v-fs-small); line-height: 1.45; text-overflow: ellipsis; white-space: nowrap; }
-/* 카드의 별명과 몇 시간 전: 한 줄에 양끝으로 */
-.v-rvcard-who { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+/* 카드의 별명과 몇 시간 전(2026-10-14 파운더): 나온 상품의 줄 아래 맨 밑에, 한 줄에 양끝으로. 별명 왼쪽에 사람 그림 */
+.v-rvcard-who { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; }
+.v-rvcard-author { display: inline-flex; min-width: 0; align-items: center; gap: 5px; }
+.v-rvcard-author > svg { flex: none; }
 /*
- * 카드의 나온 상품 칸(2026-10-14 파운더가 고른 시안 2): "나온 상품" 한 줄, 그 아래 한 줄에 상품 사진 64px(없으면 그 자리의 그림. 둥글기는 상세의 상품 카드와 같다), 이름 두 줄까지, 오른쪽 끝에 값과 몇 배인지.
- * 보관함의 상품 줄(.v-itemrow, .v-itemrow-meta)과 같은 꼴. 굵은 글자는 없다. ui.css 의 .v-rvcard-item 이 세로로 쌓는 바깥 칸이다.
+ * 카드의 나온 상품 줄(2026-10-14 파운더가 고른 시안 2): 글 바로 아래에 상품 사진 64px(없으면 그 자리의 그림. 둥글기는 상세의 상품 카드와 같다), 이름 두 줄까지, 오른쪽 끝에 값과 몇 배인지.
+ * 보관함의 상품 줄(.v-itemrow, .v-itemrow-meta)과 같은 꼴. 굵은 글자는 없다. 줄 자체(flex, 가운데 맞춤, 10px 사이)는 ui.css 의 .v-rvcard-item 이다.
  */
-.v-rvcard-item { flex-direction: column; align-items: stretch; gap: 4px; }
-.v-rvcard-itemrow { display: flex; min-width: 0; align-items: center; gap: 10px; }
+.v-rvcard-item { margin-top: 6px; }
 .v-rvcard-thumb { position: relative; overflow: hidden; width: 64px; height: 64px; flex: none; border-radius: 10px; background: var(--v-photo); }
 .v-rvcard-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .v-rvcard-itemname { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; flex: 1 1 auto; min-width: 0; color: var(--v-title); font-size: var(--v-fs-small); line-height: 1.4; word-break: keep-all; overflow-wrap: anywhere; }

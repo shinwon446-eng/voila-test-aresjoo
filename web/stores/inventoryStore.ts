@@ -12,8 +12,10 @@ import type { TierKey } from "@/lib/tiers";
 import type { ShippingAddress } from "@/lib/shipping";
 import type { CarrierKey } from "@/lib/carriers";
 import { attributeRefunds, normalizeRatio, sourceOf, type FundingRatio, type FundingSource } from "@/lib/funding";
+import type { UpgradeRecord } from "@/lib/upgrade";
 
-export type OwnedStatus = "IN_STORAGE" | "SHIPPING_REQUESTED" | "SHIPPING" | "DELIVERED" | "SOLD";
+/** UPGRADED: 업그레이드에 걸어 사라진 상품(lib/upgradeSettle). 성공이든 실패든 건 상품은 이 상태가 된다. 기록은 남는다 */
+export type OwnedStatus = "IN_STORAGE" | "SHIPPING_REQUESTED" | "SHIPPING" | "DELIVERED" | "SOLD" | "UPGRADED";
 
 export interface OwnedItem {
   id: string;
@@ -42,6 +44,10 @@ export interface OwnedItem {
   autoCashback?: boolean;
   shipping?: { address: ShippingAddress; feeUsdt: number; requestedAt: string; carrier?: CarrierKey; trackingNumber?: string; shippedAt?: string; deliveredAt?: string; requestId?: string; feeFundingRatio?: FundingRatio };
   shippingCancellations?: { requestId?: string; requestedAt: string; cancelledAt: string; feeRefundUsdt: number; toCrypto: number; toCard: number }[];
+  /** 이 상품을 건 업그레이드의 기록(추첨 값, 확률, 결과). 상태가 UPGRADED 인 상품에만 있다 */
+  upgrade?: UpgradeRecord;
+  /** 업그레이드에 성공해 들어온 상품에만 있다: 그 추첨의 번호와 건 상품의 id. 이 상품의 fair 는 박스 개봉이 아니라 그 추첨의 값이다(확률표 없음) */
+  upgradedFrom?: { id: string; stakeOwnedId: string };
 }
 
 interface InventoryState {

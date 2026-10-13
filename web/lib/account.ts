@@ -276,7 +276,7 @@ export function closureReadiness(input: ClosureInput) {
   const shipping = input.items.filter(item => item.status === "SHIPPING_REQUESTED" || item.status === "SHIPPING").length;
   const pending = input.transactions.filter(tx => tx.status && !["COMPLETED", "CANCELLED", "FAILED", "REJECTED"].includes(tx.status)).length;
   // Unknown states and non-finite balances are not assumed settled.
-  const unknown = input.items.some(item => !["IN_STORAGE", "SHIPPING_REQUESTED", "SHIPPING", "DELIVERED", "SOLD", "CANCELLED"].includes(item.status));
+  const unknown = input.items.some(item => !["IN_STORAGE", "SHIPPING_REQUESTED", "SHIPPING", "DELIVERED", "SOLD", "UPGRADED", "CANCELLED"].includes(item.status));
   const balance = input.cryptoBalance + input.cardBalance;
   const hasBalance = !Number.isFinite(balance) || input.cryptoBalance !== 0 || input.cardBalance !== 0;
   return { held, shipping, pending, hasBalance, unknown, eligible: !held && !shipping && !pending && !hasBalance && !unknown };

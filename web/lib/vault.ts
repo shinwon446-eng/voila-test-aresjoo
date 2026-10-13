@@ -5,7 +5,8 @@ export type RecordKind = "held" | "cash" | "sellback" | "requested" | "transit" 
 export const productOf = (item: OwnedItem) => BOX_BY_SLUG[item.boxSlug]?.items.find(p => p.id === item.itemId);
 export function vaultTab(item: OwnedItem): VaultTab {
   if (item.status === "IN_STORAGE") return "held";
-  return item.status === "SOLD" ? "done" : "shipping";
+  // 업그레이드에 걸어 사라진 상품(UPGRADED)도 끝난 기록이다
+  return item.status === "SOLD" || item.status === "UPGRADED" ? "done" : "shipping";
 }
 export function recordKind(item: OwnedItem): RecordKind {
   if (item.status === "SOLD") return productOf(item)?.kind === "cash" ? "cash" : "sellback";
@@ -16,6 +17,7 @@ export function recordKind(item: OwnedItem): RecordKind {
 /** Missing processing dates stay unknown; acquisition is not settlement. */
 export function processedAt(item: OwnedItem): string | undefined {
   if (item.status === "SOLD") return item.soldAt;
+  if (item.status === "UPGRADED") return item.upgrade?.at;
   if (item.status === "DELIVERED") return item.shipping?.deliveredAt;
   if (item.status === "SHIPPING") return item.shipping?.shippedAt;
   if (item.status === "SHIPPING_REQUESTED") return item.shipping?.requestedAt;

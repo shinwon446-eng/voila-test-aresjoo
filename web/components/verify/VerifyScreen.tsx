@@ -50,7 +50,8 @@ export function VerifyScreen() {
   }, [params]);
 
   const products = useMemo(() => new Map(BOXES.flatMap((box) => box.items).map((item) => [item.id, item])), []);
-  const records = useMemo(() => [...items].sort((a, b) => (Date.parse(b.acquiredAt) || 0) - (Date.parse(a.acquiredAt) || 0)), [items]);
+  // 업그레이드로 들어온 상품은 개봉 기록이 아니다(그 추첨은 보관함의 상품 상세에서 검증한다)
+  const records = useMemo(() => items.filter((o) => !o.upgradedFrom).sort((a, b) => (Date.parse(b.acquiredAt) || 0) - (Date.parse(a.acquiredAt) || 0)), [items]);
   const date = (value: string) => (Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat(locale, { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date(value)) : "");
   const nameOf = (o: OwnedItem) => { const p = products.get(o.itemId); return p ? itemName(p) : o.itemId; };
 

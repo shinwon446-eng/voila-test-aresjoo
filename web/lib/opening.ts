@@ -2,7 +2,7 @@ import { dropTable, floorRatio, isLadderBox, oddsVersionOf, type ProductBox, typ
 import { calculateRollResult, determineItem } from "./fairness";
 import { tierOf, type Tier } from "./tiers";
 import { rolloverContribution } from "./rollover";
-import { useFairStore } from "../stores/fairStore";
+import { reserveNonces } from "../stores/fairStore";
 import { useInventoryStore } from "../stores/inventoryStore";
 import { useWalletStore } from "../stores/walletStore";
 import { assertSameLedger, ledgerKey, withLedgerLock } from "./ledgerLock";
@@ -34,7 +34,9 @@ export class InsufficientOpeningBalance extends Error {}
  *  - the ledger (account) is pinned at the start and re-checked after the awaits, so a purchase never lands on another account;
  *  - a failure anywhere after the debit restores the wallet and the inventory to their exact state before it
  *    (an earlier version refunded the price but left an already-credited cashback behind);
- *  - every allocated record carries the opening id, so an unseen result can be shown again without a new draw.
+ *  - every allocated record carries the opening id, so an unseen result can be shown again without a new draw;
+ *  - the nonces are reserved and confirmed in the saved fair store before any roll is computed (stores/fairStore reserveNonces).
+ *    An unconfirmed reservation fails the opening before the debit.
  */
 export function createOpeningPurchase(box: ProductBox, count: number, openingId?: string) {
   let operation: Promise<OpeningResult[]> | undefined;
@@ -51,11 +53,12 @@ async function executeOpening(box: ProductBox, count: number, openingId?: string
   // a balance update in that gap used to let an opening continue with stale
   // state and surface as a generic opening failure.
   if (useWalletStore.getState().balance < plan().cost) throw new InsufficientOpeningBalance();
-  await useFairStore.getState().ensureSeeds();
-  const fair = useFairStore.getState();
-  const { serverSeed, serverSeedHash, clientSeed } = fair;
+  // 회차는 받은 것이 저장된 것까지 확인된 뒤에만 쓴다(stores/fairStore 의 reserveNonces). 확인되지 않으면 열지 않는다.
+  // 아직 값을 내기 전이라 돈도 보관함도 그대로다. 화면은 구매 실패로 알린다(저장되지 않은 회차는 다른 추첨이 다시 받는다. 그 회차로 뽑으면 겹친다)
+  const reserved = await reserveNonces(count);
+  if (!reserved) throw new Error("Opening nonce reservation was not saved");
+  const { serverSeed, serverSeedHash, clientSeed, nonces } = reserved;
   const table = dropTable(box);
-  const nonces = Array.from({ length: count }, () => fair.takeNonce());
   const rolls = await Promise.all(nonces.map((nonce) => calculateRollResult(serverSeed, clientSeed, nonce)));
   const picked = rolls.map((r, i) => {
     const item = determineItem(r.roll, table);

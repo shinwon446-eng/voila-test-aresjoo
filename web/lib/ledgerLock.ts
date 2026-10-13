@@ -17,6 +17,14 @@ export class LedgerAccountChanged extends Error {}
 export const ledgerSource = { key: (): string => useWalletStore.persist?.getOptions?.().name ?? "memory" };
 export const ledgerKey = (): string => ledgerSource.key();
 
+/**
+ * 탭 사이의 잠금(Web Locks)을 쓸 수 있는가. 창이 없는 곳(서버, 테스트)은 한 곳에서만 도니 쓸 수 있는 것으로 본다.
+ * 쓸 수 없으면 withLedgerLock 은 잠금 없이 실행한다. 그 경우 두 탭이 같은 장부를 읽고 따로 쓰는 것을 막지 못한다.
+ * 업그레이드(lib/upgradeSettle)는 그래서 잠금이 없으면 실행하지 않는다. lockSource 는 테스트가 그 경우를 흉내 낼 수 있게 둔 손잡이다
+ */
+export const lockSource = { available: (): boolean => typeof window === "undefined" || (typeof navigator !== "undefined" && !!(navigator as Navigator & { locks?: LockManager }).locks) };
+export const ledgerLockAvailable = (): boolean => lockSource.available();
+
 /** 시작할 때의 장부와 지금 장부가 다르면 던진다 */
 export function assertSameLedger(key: string): void {
   if (ledgerKey() !== key) throw new LedgerAccountChanged("ledger account changed during the operation");

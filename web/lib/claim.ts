@@ -9,6 +9,8 @@ import { accountRequest } from "@/lib/account";
 import { api } from "@/lib/api";
 import { useInventoryStore, type OwnedItem } from "@/stores/inventoryStore";
 import { useWalletStore } from "@/stores/walletStore";
+// lib/takeBatch 도 이 파일의 takeUsdt 를 부른다. 서로 함수 안에서만 쓰므로 불러오는 순서와 무관하다
+import { currentTakeLedger, takeStateOf } from "@/lib/takeBatch";
 
 /**
  * USDT로 받기. 보관함의 sell 이 상품마다 환급액과 자금 출처별 몫을 계산하고(카드 출처는 카드 잔액으로만),
@@ -29,9 +31,12 @@ export function takeUsdt(ownedIds: string[]): { ids: string[]; totalUsdt: number
 /**
  * 배송 신청. 계정 서비스가 상태 전환과 배송비 차감을 한 번에 처리하고, 돌아온 상품과 지갑 값이 모두 맞을 때만 화면에 반영한다.
  * idempotencyKey 는 같은 신청이 두 번 접수되지 않게 한다. 실패하면 아무것도 바꾸지 않고 던진다.
+ * 배송할 수 있는 상품은 받을 수 있는 상품과 같은 기준이다(lib/takeBatch 의 takeStateOf 가 held): 보관 중이고 확인 필요가 아니다.
+ * 받기나 업그레이드의 확인 대기 표시가 남은 상품은 이미 잔액으로 들어왔거나 걸려서 사라졌을 수 있다. 그런 상품은 접수 요청을 보내기 전에 거른다.
  */
 export async function requestShipment(ownedIds: string[], address: ShippingAddress, feeUsdt: number, idempotencyKey: string): Promise<void> {
-  const ids = ownedIds.filter((id) => useInventoryStore.getState().items.some((item) => item.id === id && item.status === "IN_STORAGE"));
+  const ledger = currentTakeLedger();
+  const ids = ownedIds.filter((id) => useInventoryStore.getState().items.some((item) => item.id === id && item.status === "IN_STORAGE" && takeStateOf(item, ledger) === "held"));
   if (!ids.length || ids.length !== ownedIds.length) throw new Error("invalid-shipping-items");
   const result = await accountRequest("/shipping/request", { ownedIds: ids, address, feeUsdt, idempotencyKey }, API_BASE);
   const returned = result.items;

@@ -55,7 +55,8 @@ export function meetsReviewValue(item: Pick<OwnedItem, "valueUsdt">): boolean {
 
 /** Reviews describe a won item; delivery is not a prerequisite. One review per win. */
 export function canReview(item: OwnedItem, reviews: Pick<MyReview, "ownedId">[]): boolean {
-  return meetsReviewValue(item) && ["IN_STORAGE", "SHIPPING_REQUESTED", "SHIPPING", "DELIVERED", "SOLD"].includes(item.status) && !reviews.some(r => r.ownedId === item.id);
+  // 업그레이드로 들어온 상품은 개봉 기록이 아니라 후기 대상이 아니다
+  return !item.upgradedFrom && meetsReviewValue(item) && ["IN_STORAGE", "SHIPPING_REQUESTED", "SHIPPING", "DELIVERED", "SOLD"].includes(item.status) && !reviews.some(r => r.ownedId === item.id);
 }
 
 export interface Review {

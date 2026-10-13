@@ -96,6 +96,8 @@ export function winRows(owned: readonly OwnedItem[], opts: { loggedIn: boolean; 
     // 상품만 오른다. 카탈로그에서 사라진 상품은 이름과 종류를 알 수 없어 올리지 않는다
     const kind = catalog.kindOf(o.boxSlug, o.itemId);
     if (!kind || kind === "cash") continue;
+    // 업그레이드로 들어온 상품은 박스에서 나온 것이 아니다. 오르지 않는다(건 상품의 줄은 그대로 남는다)
+    if (o.upgradedFrom) continue;
     const basis = winPrice(o, catalog);
     if (!basis || !isWin(o.valueUsdt, basis.price)) continue;
     rows.push({ id: o.id, record: o, boxSlug: o.boxSlug, itemId: o.itemId, value: o.valueUsdt, price: basis.price, priceStored: basis.stored, free: wasFreeOpen(o, owned, opts.opens), at: o.acquiredAt });

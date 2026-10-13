@@ -14,6 +14,8 @@
  *     표시 있음 → unconfirmed(아래의 다시 보기에서 풀릴 수 있다)
  *     표시 없음, 입금 내역이 그 상품(보관 상품 id)을 가리킴 → unconfirmed(이미 들어온 상품을 다시 받지 못하게)
  *     표시 없음, 내역 없음 → held(받을 수 있다)
+ *   업그레이드에 걸림(UPGRADED)
+ *     표시 있음(업그레이드의 확인 대기 표시, lib/upgradeMarks) → unconfirmed. 표시 없음 → other
  *   그 밖(배송 신청, 배송 중) → other
  * unconfirmed 인 상품은 받을 수 없고, 금액에 세지 않고, 화면은 "받았다"고도 "보관 중"이라고도 하지 않는다.
  * 입금 내역이 가리키는 상품은 받기 거래 기록(sellback)의 itemIds, 옛 기록은 쉼표로 이어 적은 ref 로 찾는다.
@@ -51,6 +53,7 @@ import { takeUsdt } from "./claim";
 import { attributeRefunds, normalizeRatio } from "./funding";
 import { ledgerKey, withLedgerLock } from "./ledgerLock";
 import { REFUND_RATE } from "./products";
+import { readUpgradeMarks, upgradeHoldIds } from "./upgradeMarks";
 import { useInventoryStore, type OwnedItem } from "../stores/inventoryStore";
 import { useWalletStore, type Transaction } from "../stores/walletStore";
 
@@ -88,6 +91,8 @@ export function takeStateOf(item: Pick<OwnedItem, "id" | "status">, ledger: Take
   const marked = ledger.hold.has(item.id); const paid = ledger.credited.has(item.id);
   if (item.status === "SOLD") return !marked || (ledger.saved === true && paid) ? "taken" : "unconfirmed";
   if (item.status === "IN_STORAGE") return marked || paid ? "unconfirmed" : "held";
+  // 업그레이드에 걸린 상품: 그 추첨의 확인 대기 표시가 남아 있으면 걸렸는지 아직 모른다(lib/upgradeSettle)
+  if (item.status === "UPGRADED") return marked ? "unconfirmed" : "other";
   return "other";
 }
 
@@ -139,11 +144,15 @@ function writeMarks(marks: Mark[]): boolean {
   } catch { return false; }
 }
 const markedIds = (marks: Mark[]): Set<string> => { const out = new Set<string>(); for (const m of marks) for (const id of m.ids) out.add(id); return out; };
+/** 받기의 표시와 업그레이드의 표시(lib/upgradeMarks)를 합친 것. 둘 중 하나라도 남은 상품은 확인 필요다 */
+const holdOf = (marks: Mark[], upgrading: string[]): Set<string> => { const out = markedIds(marks); upgrading.forEach((id) => out.add(id)); return out; };
 
 /** 화면과 미리 보기용 판정 자료: 지금 지갑의 거래 기록과 확인 대기 표시. 표시를 읽지 못하면 빈 것으로 본다(받는 일은 따로 다시 읽고, 못 읽으면 멈춘다) */
 export function takeLedgerOf(transactions: Pick<Transaction, "type" | "itemIds" | "ref">[]): TakeLedger {
   let hold: Set<string>;
   try { hold = markedIds(readMarks()); } catch { hold = new Set(); }
+  // 업그레이드의 확인 대기 표시가 남은 상품도 확인 필요다(lib/upgradeMarks). 받을 수 없고 금액에 세지 않는다
+  try { upgradeHoldIds(readUpgradeMarks()).forEach((id) => hold.add(id)); } catch { /* 받는 일은 따로 다시 읽고, 못 읽으면 멈춘다 */ }
   return { credited: creditedIdsOf(transactions), hold, saved: false };
 }
 export const currentTakeLedger = (): TakeLedger => takeLedgerOf(useWalletStore.getState().transactions);
@@ -230,14 +239,14 @@ export interface BatchOutcome {
 const nothing = (status: BatchStatus, ids: string[]): BatchOutcome => ({ status, taken: [], already: [], left: status === "unknown" ? [] : ids, unknown: status === "unknown" ? ids : [], amountUsdt: 0, toCrypto: 0, toCard: 0 });
 const statusOf = (taken: number, already: number, left: number, unknown: number): BatchStatus => (unknown > 0 ? "unknown" : left === 0 ? "settled" : taken + already > 0 ? "partial" : "failed");
 
-interface SavedLedger { items: OwnedItem[]; transactions: Transaction[]; crypto: number; card: number }
+export interface SavedLedger { items: OwnedItem[]; transactions: Transaction[]; crypto: number; card: number }
 
 /**
  * 저장된 장부를 직접 읽는다. 스토어가 쓰는 그 저장소에서 꺼내 직접 푼다(스토어의 재수화는 읽기 오류를 삼키고 기억 속 상태를 남긴다).
  * 읽지 못하거나, 풀지 못하거나, 있어야 할 기록이 없으면 던진다.
  * 저장소 없이 만들어진 스토어(서버, 저장소 없는 테스트)에서는 기억 속 장부가 곧 장부다.
  */
-async function readSaved(): Promise<SavedLedger> {
+export async function readSaved(): Promise<SavedLedger> {
   const inventory = useInventoryStore.persist; const wallet = useWalletStore.persist;
   if (!inventory || !wallet) {
     const w = useWalletStore.getState();
@@ -250,6 +259,14 @@ async function readSaved(): Promise<SavedLedger> {
   if (!savedInventory || !Array.isArray(savedInventory.items)) throw new Error("saved inventory is missing");
   if (!savedWallet || !Array.isArray(savedWallet.transactions) || !isAmount(savedWallet.cryptoBalance) || !isAmount(savedWallet.cardBalance)) throw new Error("saved wallet is missing");
   return { items: savedInventory.items as OwnedItem[], transactions: savedWallet.transactions as Transaction[], crypto: savedWallet.cryptoBalance, card: savedWallet.cardBalance };
+}
+
+/**
+ * 저장된 장부로 만든 판정 자료. 받는 일과 같은 기준이다. 표시를 읽지 못하면 던진다.
+ * 업그레이드(lib/upgradeSettle)가 걸 수 있는 상품을 받기와 같은 기준으로 고르는 데 쓴다.
+ */
+export function savedTakeLedger(saved: SavedLedger): TakeLedger {
+  return { credited: creditedIdsOf(saved.transactions), hold: holdOf(readMarks(), upgradeHoldIds(readUpgradeMarks())), saved: true };
 }
 
 const snapOf = (saved: SavedLedger): Snap => ({ c: saved.crypto, d: saved.card, n: saved.transactions.length, l: saved.transactions[0]?.id ?? null });
@@ -294,7 +311,7 @@ function reviewMarks(saved: SavedLedger, marks: Mark[]): { marks: Mark[]; change
  * 저장된 장부를 방금 직접 읽는 데 성공했을 때만 부른다: 스토어의 재수화는 읽기에 실패하면 오류를 삼키고 기억 속 상태를 그대로 다시 저장하므로,
  * 읽지 못하는 동안에 부르면 저장되지 않은 기억 속 잔액이 장부에 적힐 수 있다.
  */
-async function syncStores(): Promise<void> {
+export async function syncStores(): Promise<void> {
   try { await Promise.all([useWalletStore.persist?.rehydrate?.(), useInventoryStore.persist?.rehydrate?.()]); } catch { /* 판정은 readSaved 가 한다 */ }
 }
 
@@ -305,7 +322,7 @@ const inflight = new Map<string, Promise<BatchOutcome>>();
  * 겹치는 요청이 끼어들면 서로 옛 장부를 보고 같은 상품을 받으려 할 수 있다. 탭 사이는 장부 잠금(Web Locks)이 맡는다.
  */
 let queue: Promise<unknown> = Promise.resolve();
-function inTurn<T>(work: () => Promise<T>): Promise<T> {
+export function inTurn<T>(work: () => Promise<T>): Promise<T> {
   const next = queue.then(work, work);
   queue = next.catch(() => undefined);
   return next;
@@ -326,8 +343,8 @@ export function settleTakeMany(ownedIds: string[]): Promise<BatchOutcome> {
       if (fault === "settle-pending") return nothing("pending", ids);
       return await inTurn(() => withLedgerLock(async (): Promise<BatchOutcome> => {
         // 1. 저장된 장부와 확인 대기 표시를 직접 읽는다. 읽지 못하면 아무것도 실행하지 않고 알 수 없다고 답한다
-        let before: SavedLedger; let found: Mark[];
-        try { before = await readSaved(); found = readMarks(); } catch { resyncWanted = true; return nothing("unknown", ids); }
+        let before: SavedLedger; let found: Mark[]; let upgrading: string[];
+        try { before = await readSaved(); found = readMarks(); upgrading = upgradeHoldIds(readUpgradeMarks()); } catch { resyncWanted = true; return nothing("unknown", ids); }
         // 2. 남아 있던 표시를 다시 본다. 끝이 확인된 것은 지운다
         const reviewed = reviewMarks(before, found);
         const marks = reviewed.marks;
@@ -337,7 +354,8 @@ export function settleTakeMany(ownedIds: string[]): Promise<BatchOutcome> {
           writeMarks([...marks, { ids, snap: null }]); await syncStores();
           return nothing("unknown", ids);
         }
-        const ledger: TakeLedger = { credited: creditedIdsOf(before.transactions), hold: markedIds(marks), saved: true };
+        // 업그레이드의 확인 대기 표시가 남은 상품도 받지 않는다(걸려서 사라졌는지 아직 모른다)
+        const ledger: TakeLedger = { credited: creditedIdsOf(before.transactions), hold: holdOf(marks, upgrading), saved: true };
         const saved = new Map(before.items.map((item) => [item.id, item]));
         const already: BatchOutcome["already"] = []; const unknown = new Set<string>(); const left = new Set<string>(); const target: string[] = [];
         for (const id of ids) {

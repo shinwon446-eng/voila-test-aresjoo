@@ -49,7 +49,8 @@ async function session({ slug = "dollar-apple", fixture = "single:low", view = "
   await page.goto(`${base}/${locale}/box/${slug}`, { waitUntil: "networkidle" });
   await page.waitForSelector(".v-openbar .v-btn:not([disabled])", { timeout: 15000 });
   const ledger = () => page.evaluate(() => {
-    const read = (k) => { try { return JSON.parse(localStorage.getItem(k) || "null")?.state ?? null; } catch { return null; } };
+    // 저장된 장부는 줄인 형식일 수 있다(lib/compactStorage). 개발 서버가 내주는 손잡이로 기억 속 모양을 읽는다
+    const read = (k) => { try { return window.__voilaLedger ? window.__voilaLedger(k) : JSON.parse(localStorage.getItem(k) || "null")?.state ?? null; } catch { return null; } };
     const keys = []; for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i));
     const pick = (p) => keys.find((k) => k && k.startsWith(p) && !k.endsWith(".guest"));
     const w = read(pick("voila.browser-wallet.") ?? "gachaflix.wallet"); const inv = read(pick("voila.browser-inventory.") ?? "gachaflix.inventory"); const fair = read("gachaflix.fair"); const j = read("voila.opening-journal");

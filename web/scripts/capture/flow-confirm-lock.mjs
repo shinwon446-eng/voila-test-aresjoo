@@ -29,7 +29,8 @@ async function session({ width = 390, height = 844, path = "/ko/inventory" } = {
   await page.goto(base + path, { waitUntil: "networkidle" });
   const ledger = () => page.evaluate(() => {
     const keys = []; for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i));
-    const read = (k) => { try { return JSON.parse(localStorage.getItem(k) || "null")?.state ?? null; } catch { return null; } };
+    // 저장된 장부는 줄인 형식일 수 있다(lib/compactStorage). 개발 서버가 내주는 손잡이로 기억 속 모양을 읽는다
+    const read = (k) => { try { return window.__voilaLedger ? window.__voilaLedger(k) : JSON.parse(localStorage.getItem(k) || "null")?.state ?? null; } catch { return null; } };
     const w = read(keys.find((k) => k && k.includes("voila.browser-wallet.") && !k.endsWith(".guest"))); const inv = read(keys.find((k) => k && k.includes("voila.browser-inventory.") && !k.endsWith(".guest")));
     return { balance: w?.balance ?? null, sellbacks: (w?.transactions ?? []).filter((t) => t.type === "sellback").map((t) => t.amountUsdt), sold: (inv?.items ?? []).filter((i) => i.status === "SOLD").length,
       session: keys.some((k) => k && k.endsWith("voila.browser-session.v1")) };

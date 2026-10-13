@@ -42,7 +42,9 @@ async function session(preset = "funded") {
   const ledger = () => page.evaluate(() => {
     const keys = []; for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i));
     const read = (k) => { try { return JSON.parse(localStorage.getItem(k) || "null"); } catch { return null; } };
-    const w = read(keys.find((k) => k && k.includes("voila.browser-wallet.") && !k.endsWith(".guest")))?.state ?? {};
+    // 저장된 지갑은 줄인 형식일 수 있다(lib/compactStorage). 개발 서버가 내주는 손잡이로 기억 속 모양을 읽는다
+    const walletKey = keys.find((k) => k && k.includes("voila.browser-wallet.") && !k.endsWith(".guest"));
+    const w = (window.__voilaLedger ? window.__voilaLedger(walletKey) : read(walletKey)?.state) ?? {};
     const account = (read(keys.find((k) => k && k.endsWith("voila.browser-accounts.v1"))) ?? [])[0] ?? {};
     return { crypto: w.cryptoBalance ?? null, balance: w.balance ?? null,
       withdraws: (w.transactions ?? []).filter((t) => t.type === "withdraw").map((t) => ({ amountUsdt: t.amountUsdt, requestedUsdt: t.requestedUsdt ?? null, status: t.status, serverId: t.serverId, netUsdt: t.netUsdt ?? null, extra: Object.keys(t).filter((k) => k === "debited") })),
@@ -213,7 +215,8 @@ await run("e", async () => {
   await s.page.evaluate(() => { const keys = []; for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i)); const key = keys.find((k) => k && k.endsWith("voila.browser-accounts.v1")); const accounts = JSON.parse(localStorage.getItem(key)); accounts[0].withdrawals = {}; localStorage.setItem(key, JSON.stringify(accounts)); });
   // 지갑을 연다: 상태 확인이 그 번호를 조회하고, 모른다는 답을 받는다(화면을 새로 불러온 직후의 첫 확인은 장부를 불러오기 전일 수 있어, 10초 뒤의 다음 확인까지 기다린다)
   await s.page.goto(base + "/ko/wallet", { waitUntil: "networkidle" });
-  await s.page.waitForFunction(() => { for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k && k.includes("voila.browser-wallet.") && !k.endsWith(".guest") && localStorage.getItem(k).includes('"status":"FAILED"')) return true; } return false; }, null, { timeout: 15000 }).catch(() => {});
+  // 저장된 장부는 줄인 형식일 수 있어 글자를 찾지 않고 풀어서 본다(lib/compactStorage, 개발 서버의 손잡이)
+  await s.page.waitForFunction(() => { for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k && k.includes("voila.browser-wallet.") && !k.endsWith(".guest") && (window.__voilaLedger?.(k)?.transactions ?? []).some((t) => t?.status === "FAILED")) return true; } return false; }, null, { timeout: 15000 }).catch(() => {});
   await s.page.waitForTimeout(400);
   l = await s.ledger();
   check("e", "서비스가 모르는 접수의 줄은 실패로 닫힌다", l.withdraws.length === 1 && l.withdraws[0].status === "FAILED" && l.withdraws[0].amountUsdt === 0, JSON.stringify(l.withdraws));

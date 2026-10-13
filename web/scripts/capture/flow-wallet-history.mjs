@@ -26,7 +26,8 @@ try {
   page.on("console", (m) => { if (m.type() === "error") errors.push(m.text().slice(0, 160)); });
   const stored = () => page.evaluate(() => {
     const keys = []; for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i));
-    const read = (k) => { try { return JSON.parse(localStorage.getItem(k) || "null")?.state ?? null; } catch { return null; } };
+    // 저장된 장부는 줄인 형식일 수 있다(lib/compactStorage). 개발 서버가 내주는 손잡이로 기억 속 모양을 읽는다
+    const read = (k) => { try { return window.__voilaLedger ? window.__voilaLedger(k) : JSON.parse(localStorage.getItem(k) || "null")?.state ?? null; } catch { return null; } };
     const mine = read(keys.find((k) => k && k.endsWith("voila.browser-wallet.capture-account")));
     const other = localStorage.getItem(keys.find((k) => k && k.endsWith("voila.browser-wallet.other-account")));
     return { tx: (mine?.transactions ?? []).map((t) => ({ type: t.type, amountUsdt: t.amountUsdt, accountId: t.accountId ?? null })), other };
@@ -49,7 +50,8 @@ try {
   await page.waitForSelector(".v-openbar .v-btn:not([disabled])", { timeout: 15000 });
   await page.locator(".v-openbar .v-btn").click();
   // 구매가 장부에 적힐 때까지 기다린다(연출을 끝까지 보지 않아도 거래는 이미 적혀 있다)
-  await page.waitForFunction(() => { for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k && k.endsWith("voila.browser-wallet.capture-account") && localStorage.getItem(k).includes('"type":"open"')) return true; } return false; }, null, { timeout: 20000 });
+  // 저장된 장부는 줄인 형식일 수 있어 글자를 찾지 않고 풀어서 본다(lib/compactStorage, 개발 서버의 손잡이)
+  await page.waitForFunction(() => { for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k && k.endsWith("voila.browser-wallet.capture-account") && (window.__voilaLedger?.(k)?.transactions ?? []).some((t) => t?.type === "open")) return true; } return false; }, null, { timeout: 20000 });
   await page.waitForTimeout(600);
 
   const ledger = await stored();
@@ -123,8 +125,10 @@ try {
   sheet = (await page.locator(".v-sheet").innerText()).replace(/\s+/g, " ");
   check("낯선 상태의 줄의 시트가 열린다(상태 행은 적지 않는다)", sheet.includes("출금") && sheet.includes("금액 -$9") && !/WEIRD|wallet\.status/.test(sheet), sheet.slice(0, 100));
   // 저장된 값은 고쳐 쓰지 않는다: 깨진 줄도 심은 그대로 남아 있다
-  const kept = await page.evaluate(() => { const keys = []; for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i)); return JSON.parse(localStorage.getItem(keys.find((k) => k && k.endsWith("voila.browser-wallet.capture-account")))).state.transactions; });
-  const same = seeded.every((s) => { const k = kept.find((x) => x.id === s.id); return !!k && JSON.stringify(k) === JSON.stringify(s); });
+  const kept = await page.evaluate(() => { const keys = []; for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i)); const key = keys.find((k) => k && k.endsWith("voila.browser-wallet.capture-account")); return (window.__voilaLedger ? window.__voilaLedger(key) : JSON.parse(localStorage.getItem(key)).state).transactions; });
+  // 칸의 순서는 보지 않는다: 줄인 장부(lib/compactStorage)를 풀면 값은 같고 칸의 차례만 다를 수 있다
+  const sorted = (value) => JSON.stringify(value, (_, v) => (v && typeof v === "object" && !Array.isArray(v) ? Object.fromEntries(Object.keys(v).sort().map((key) => [key, v[key]])) : v));
+  const same = seeded.every((s) => { const k = kept.find((x) => x.id === s.id); return !!k && sorted(k) === sorted(s); });
   check("저장된 장부의 줄은 깨진 것까지 심은 그대로다", same && kept.length === seeded.length + 1, `저장 ${kept.length}건`);
   check("콘솔 오류 없음(깨진 줄)", errors.length === 0, errors.join(" | "));
   await context.close();

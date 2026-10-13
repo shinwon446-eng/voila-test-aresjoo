@@ -12,8 +12,8 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import { BOXES, BOX_BY_SLUG, HOME_BOXES, type ProductBox, type ProductItem } from "../lib/products";
-import { ARRIVAL_OPEN, BANNED, CLOSE, EN, GOT, PAR_BAND, GRIPE, ITEM, MID, MID_CLOSE, MID_OPEN, NEG, NEG_CLOSE, NEG_OPEN, SHIP, USE, USE_GIFT, ZH, type Frag } from "../lib/reviewSampleText";
-import { BIG_FLOOR, BUILT_CAP, FRONT, FRONT_ROWS, NEAR, RETURNING_SHARE, SAMPLE_MAX, SAMPLE_MIN, SHIPPED_SHARE, SHIP_LOW_CAP, WINDOW, WINDOW_MAX, allRatingSummary, builtCount, kindOf, newestSamples, ratingSummary, sampleCount, sampleParts, sampleReviews, sampleShapes, summarizeRatings, type ReviewSample } from "../lib/reviewSamples";
+import { ARRIVAL_OPEN, BANNED, CLOSE, EN, FLOW, GOT, PAR_BAND, GRIPE, ITEM, MID, MID_CLOSE, MID_OPEN, NEG, NEG_CLOSE, NEG_OPEN, SHIP, TOPICS, USE, USE_GIFT, ZH, fact, type Frag } from "../lib/reviewSampleText";
+import { BIG_FLOOR, BUILT_CAP, FRONT, FRONT_ROWS, FRONT_SHIP_FREE, NEAR, RETURNING_SHARE, SAMPLE_MAX, SAMPLE_MIN, SHIPPED_SHARE, SHIP_LOW_CAP, WINDOW, WINDOW_MAX, allRatingSummary, builtCount, kindOf, newestSamples, ratingSummary, sampleCount, sampleParts, sampleReviews, sampleShapes, summarizeRatings, type ReviewSample } from "../lib/reviewSamples";
 import { takeAmountOf } from "../lib/takeBatch";
 
 const PROBE = ["watch-rolex", "pokemon-charizard", "beauty-dior"];
@@ -473,7 +473,14 @@ test("샘플 후기: 첫 문장은 언제나 박스를 깐 것과 그 결과다(
 });
 
 test("샘플 후기: 대부분 USDT로 받는다(2026-10-13 파운더). 배송과 포장의 말은 박스마다 10% 안이고 배송받았다는 말과 함께만, 쓰임의 말은 10% 안에 실물에만, 배송 때문에 깎인 낮은 점수는 3% 안(334개 박스)", () => {
-  assert.deepEqual([SHIPPED_SHARE, SHIP_LOW_CAP], [0.09, 0.03]);
+  assert.deepEqual([SHIPPED_SHARE, SHIP_LOW_CAP, FRONT_SHIP_FREE], [0.09, 0.03, 12]);
+  // 배송으로 받은 건에만 붙는 조각(물건, 쓰임, 배송의 말)의 글: 앞자리에는 이것이 하나도 없어야 한다
+  const shippedTexts = new Set<string>();
+  const gather = (pool: readonly Frag[]) => { for (const frag of pool) if ((frag.need & fact("shipped")) !== 0) shippedTexts.add(frag.text); };
+  for (const pool of [GRIPE, ITEM, MID, MID_CLOSE, NEG, NEG_CLOSE, SHIP, USE, USE_GIFT, ARRIVAL_OPEN, FLOW, EN.pos, EN.ship, EN.gripe, EN.mid, EN.neg, EN.flow, EN.arrivalOpen, ZH.pos, ZH.ship, ZH.gripe, ZH.mid, ZH.neg, ZH.flow, ZH.arrivalOpen]) gather(pool);
+  for (const topic of TOPICS) gather(topic.lines);
+  assert.ok(shippedTexts.size > 100, String(shippedTexts.size));
+  let frontDelivery = 0, frontShipped = 0;
   const DELIVERY = /배송|포장|택배|통관|도착|걸렸어요|걸린거|기다렸|기다린|기다리|실물로받|shipp|deliver|arriv|packag|customs|tracking|weeks|配送|物流|包装|到货|寄|等了|清关/;
   const SHIPPED = /배송|실물로받|택배|통관|shipp|deliver|配送|寄|物流|清关/;
   const USAGE = /써요|쓰고있|쓰는중|쓸게요|개시했|쓸듯|쓸거같|써볼|쓸만해요|쓸만은|들고다녀|신고나갔|using|everyday|在用|凑合用/;
@@ -489,10 +496,18 @@ test("샘플 후기: 대부분 USDT로 받는다(2026-10-13 파운더). 배송�
     assert.ok(d <= Math.floor(n * 0.1), `${box.slug}: 배송 이야기 ${d}/${n}`);
     assert.ok(u <= Math.floor(n * 0.1), `${box.slug}: 쓰임 이야기 ${u}/${n}`);
     assert.ok(l <= Math.floor(n * 0.03), `${box.slug}: 배송 때문에 깎인 낮은 점수 ${l}/${n}`);
+    // 줄이 처음 보여 주는 앞자리(FRONT_SHIP_FREE 건)에는 배송으로 받은 건이 없다: 배송 이야기도, 물건과 쓰임의 말도 없다
+    for (const row of rows.slice(0, FRONT_SHIP_FREE)) {
+      if (DELIVERY.test(row.flat)) frontDelivery += 1;
+      if (row.parts.some((part) => shippedTexts.has(part))) frontShipped += 1;
+      assert.doesNotMatch(row.flat, DELIVERY, `${box.slug}: 앞자리에 배송 이야기: ${mark(row)}`);
+      assert.ok(!row.parts.some((part) => shippedTexts.has(part)), `${box.slug}: 앞자리에 배송받은 건: ${mark(row)}`);
+    }
     delivery += d; usage += u; lowDelivery += l; total += n;
   }
   // 아예 없지는 않다: 배송받은 사람도 있다
   assert.ok(delivery / total > 0.02 && delivery / total <= 0.1 && usage > 300 && lowDelivery > 50, `배송 ${delivery} / 쓰임 ${usage} / 배송 탓의 낮은 점수 ${lowDelivery} / 전체 ${total}`);
+  assert.deepEqual([frontDelivery, frontShipped], [0, 0]);
   // 검수에서 짚인 두 줄은 이제 배송받았다고 말하는 글에만 붙는다
   for (const text of ["포장박스가 좀 찌그러져 왔어요 내용물은 멀쩡해요", "받는데 3주 걸렸어요 너무하네요"]) assert.match(text.replace(/\s/g, ""), DELIVERY, text);
 });

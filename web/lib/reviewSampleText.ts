@@ -187,6 +187,12 @@ export const GOT = {
     작은거지만 없는것보단 낫죠 @r4
     소소한게 나왔네요
     큰건 못뽑았지만 @r4
+    소소한거 하나 나왔어요
+    작은거 하나 건졌네요
+    이번건 소소하네요
+    가벼운게 나왔네요
+    이번엔 작은거에요
+    흔한게 나왔지만 @common
     작은거 나왔는데 나쁘진 않네요
   `),
 };
@@ -671,9 +677,9 @@ export const EN = {
     Shipped it, showed up well packed #pack
   `, "@shipped"),
   flow: L(`
-    Was about to take the USDT but glad I had it shipped
+    Was about to take the USDT but glad I had it shipped @shipped
     Checked the result on the verify page and it matched
-    Took USDT on the small ones and shipped this #sum @large
+    Took USDT on the small ones and shipped this #sum @large @shipped
   `),
   gripe: L(`
     Had it shipped, took a while to arrive but all good #time
@@ -822,9 +828,9 @@ export const ZH = {
     选了配送，发货挺快的 #time
   `, "@shipped"),
   flow: L(`
-    本来想领USDT，最后还是选了配送
+    本来想领USDT，最后还是选了配送 @shipped
     验证了一下开箱结果，是对的
-    小的领了USDT，这个选了配送 #sum @large
+    小的领了USDT，这个选了配送 #sum @large @shipped
   `),
   gripe: L(`
     选了配送，等了十天，东西没问题 #time

@@ -13,7 +13,7 @@ import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import { BOXES, BOX_BY_SLUG, HOME_BOXES, type ProductBox, type ProductItem } from "../lib/products";
 import { ARRIVAL_OPEN, BANNED, CLOSE, EN, GOT, PAR_BAND, GRIPE, ITEM, MID, MID_CLOSE, MID_OPEN, NEG, NEG_CLOSE, NEG_OPEN, SHIP, USE, USE_GIFT, ZH, type Frag } from "../lib/reviewSampleText";
-import { BIG_FLOOR, BUILT_CAP, FRONT, FRONT_ROWS, NEAR, RETURNING_SHARE, SAMPLE_MAX, SAMPLE_MIN, WINDOW, WINDOW_MAX, allRatingSummary, builtCount, kindOf, newestSamples, ratingSummary, sampleCount, sampleParts, sampleReviews, sampleShapes, summarizeRatings, type ReviewSample } from "../lib/reviewSamples";
+import { BIG_FLOOR, BUILT_CAP, FRONT, FRONT_ROWS, NEAR, RETURNING_SHARE, SAMPLE_MAX, SAMPLE_MIN, SHIPPED_SHARE, SHIP_LOW_CAP, WINDOW, WINDOW_MAX, allRatingSummary, builtCount, kindOf, newestSamples, ratingSummary, sampleCount, sampleParts, sampleReviews, sampleShapes, summarizeRatings, type ReviewSample } from "../lib/reviewSamples";
 import { takeAmountOf } from "../lib/takeBatch";
 
 const PROBE = ["watch-rolex", "pokemon-charizard", "beauty-dior"];
@@ -218,8 +218,8 @@ test("샘플 후기: 돈 이야기는 그 건에서 참이다. 낸 것보다 많
   // 띄어쓰기를 뺀 소문자 글에서 찾는다.
   // PAR: 정확히 또는 거의 본전이라는 말. MORE: 낸 것보다 많이 받았다, 손해가 아니다, 값을 한다는 말. SHORT: 못 미친다는 말
   const PAR = /딱본전|본전이네요|본전치기|본전은건졌|박스값정도|breakeven|brokeeven|回本|保本/;
-  const MORE = /하고도남|뽑고도남|이득|남는장사|굳었|득템|쏠쏠|꽤하네요|손해는아니|손해안본|박스값은넘는|worthit|fortheprice|abovetheboxprice|morethantheboxprice|值了|值得|赚|超过箱价|比箱价高/;
-  const SHORT = /박스값엔못미치|박스값보단못한|박스값에한참못미치|돈아깝|belowtheboxprice|没到箱价/;
+  const MORE = /하고도남|뽑고도남|이득|남는장사|굳었|득템|쏠쏠|꽤하네요|손해는아니|손해안본|박스값은넘|낸것보다많이|할만했|worthit|fortheprice|abovetheboxprice|morethantheboxprice|gotbackmorethanipaid|值了|值得|赚|超过箱价|比箱价高|比付的多/;
+  const SHORT = /박스값엔못미치|박스값보단못한|박스값에한참못미치|박스값에살짝못미치|박스값생각하면아쉽|돈아깝|belowtheboxprice|undertheboxprice|没到箱价|差一点到箱价|比箱价少/;
   const ANY = /본전|손해|이득|박스값|굳었|득템|쏠쏠|꽤하네요|worth|fortheprice|boxprice|值|箱价/;
   const COUNT = /번열|번만에|번째|첫판|여러개열|작은건usdt|thirdbox|twoboxes|onthesmallones|第三次|开了两个|小的领了/;
   let par = 0, more = 0, shorts = 0, near = 0, wide = 0;
@@ -254,7 +254,8 @@ test("샘플 후기: 미개봉, 밀봉, 봉인은 밀봉 상품에만, 새제품
     if (SEALED.test(row.flat)) { sealed += 1; assert.ok(kind === "sealed" || kind === "cosmetic" || kind === "pack", `(${kind}) ${mark(row)}`); }
     if (FRESH.test(row.flat)) { fresh += 1; assert.ok(kind !== "single" && kind !== "vehicle" && kind !== "digital", `(${kind}) ${mark(row)}`); }
   });
-  assert.ok(sealed > 100 && fresh > 100, `${sealed} / ${fresh}`);
+  // 물건의 말은 배송으로 받은 소수의 글에만 있어 드물다
+  assert.ok(sealed > 10 && fresh > 20, `${sealed} / ${fresh}`);
 });
 
 test("샘플 후기: 이름으로 따로 가린 여덟 가지 상품(낱장 카드, 차와 바이크, 향수, 시계 부속품, 씻어내는 것, 보냉이 안 되는 병, 싼 가방)에 그 상품과 맞지 않는 말이 없다(옛 박스도 같다)", () => {
@@ -391,7 +392,8 @@ test("샘플 후기: 게임 타이틀(영어 이름 끝에 기종이 적힌 상�
   });
   assert.ok(seen > 100 && titles.size > 40, `게임 타이틀의 글 ${seen}건, 타이틀 ${titles.size}개`);
   // 게임이라고 부르는 글이 실제로 있다(종류를 못 가려 두루 맞는 말만 하는 것이 아니다)
-  assert.ok(named > 5, `게임이라고 부르는 글 ${named}건`);
+  // 물건의 말은 배송으로 받은 소수의 글에만 있어 드물다
+  assert.ok(named > 2, `게임이라고 부르는 글 ${named}건`);
   // 검수에서 짚인 건: 모니터로 잡히던 게임, 쓰는 물건으로 잡히던 게임
   for (const name of ["슈퍼 마리오 오디세이", "더 라스트 오브 어스 파트 II 리마스터드"]) assert.ok(titles.has(name), name + " 의 글이 없다");
 });
@@ -411,7 +413,8 @@ test("샘플 후기: 이 사이트에 없는 수령 길을 말하지 않는다. 
       assert.doesNotMatch(flat, USED, mark(row));
       // 받았다는 말은 USDT로(잔액으로) 받았다는 말뿐이다
       if (/usdt로받|잔액으로받|잔액에바로/.test(flat)) seen.taken += 1;
-      assert.doesNotMatch(flat.replace(/usdt로받[았으고]|잔액으로받아|좋은거받으세요/g, ""), /받았|받아|받고|받으/, mark(row));
+      // (USDT로 받았다, 잔액으로 받았다, 받기 눌렀다는 말은 뺀 뒤에 본다)
+      assert.doesNotMatch(flat.replace(/usdt로받\S{0,2}|잔액으로받\S{0,2}|좋은거받으세요|받기(?:누르|눌러|한번|안누르)/g, ""), /받았|받아|받고|받으/, mark(row));
       // 상품권이 아닌 것을 상품권이라 부르지 않는다
       if (!/기프트카드|상품권/.test(item.name)) assert.doesNotMatch(flat, /상품권|기프트카드/, mark(row));
     }
@@ -423,7 +426,7 @@ test("샘플 후기: 이 사이트에 없는 수령 길을 말하지 않는다. 
 
 test("샘플 후기: 별점과 글의 결이 맞는다(별 하나와 둘은 까닭 한 가지, 셋은 그저 그렇다, 넷은 좋았고 작은 아쉬움 하나까지, 다섯은 좋았다)", () => {
   // 첫 조각은 언제나 깐 결과(got, 또는 낮은 점수의 여는 줄). 그 뒤에 물건이나 쓰임이나 배송이나 맺음말이 짧게 붙는다
-  const GOOD = "(?:thing|use|ship|close|flow)";
+  const GOOD = "(?:thing|use|ship|close|flow|did|value)";
   const SHAPE: Record<number, RegExp> = {
     1: /^neg(?: neg)?(?: negc)?(?: tail)?$/, 2: /^neg(?: neg)?(?: negc)?(?: tail)?$/, 3: /^mid(?: mid)?(?: midc)?(?: tail)?$/,
     // 아쉬운 한 줄은 맨 끝에 하나, 그 뒤에는 웃음이 없다
@@ -469,6 +472,31 @@ test("샘플 후기: 첫 문장은 언제나 박스를 깐 것과 그 결과다(
   for (const slug of ["car-rolls-royce", "audio-sony"]) for (const r of sampleReviews(slug, 40)) assert.doesNotMatch(r.text, /^(?:정품|뽁뽁이)/, `${slug}: ${r.text}`);
 });
 
+test("샘플 후기: 대부분 USDT로 받는다(2026-10-13 파운더). 배송과 포장의 말은 박스마다 10% 안이고 배송받았다는 말과 함께만, 쓰임의 말은 10% 안에 실물에만, 배송 때문에 깎인 낮은 점수는 3% 안(334개 박스)", () => {
+  assert.deepEqual([SHIPPED_SHARE, SHIP_LOW_CAP], [0.09, 0.03]);
+  const DELIVERY = /배송|포장|택배|통관|도착|걸렸어요|걸린거|기다렸|기다린|기다리|실물로받|shipp|deliver|arriv|packag|customs|tracking|weeks|配送|物流|包装|到货|寄|等了|清关/;
+  const SHIPPED = /배송|실물로받|택배|통관|shipp|deliver|配送|寄|物流|清关/;
+  const USAGE = /써요|쓰고있|쓰는중|쓸게요|개시했|쓸듯|쓸거같|써볼|쓸만해요|쓸만은|들고다녀|신고나갔|using|everyday|在用|凑合用/;
+  let delivery = 0, usage = 0, lowDelivery = 0, total = 0;
+  for (const { box, rows } of allShots()) {
+    const n = rows.length;
+    let d = 0, u = 0, l = 0;
+    for (const row of rows) {
+      const { flat } = row;
+      if (DELIVERY.test(flat)) { d += 1; assert.match(flat, SHIPPED, `배송받았다는 말 없이 배송 이야기: ${mark(row)}`); if (row.r.rating <= 3) l += 1; }
+      if (USAGE.test(flat)) { u += 1; assert.notEqual(row.item.kind, "digital", mark(row)); }
+    }
+    assert.ok(d <= Math.floor(n * 0.1), `${box.slug}: 배송 이야기 ${d}/${n}`);
+    assert.ok(u <= Math.floor(n * 0.1), `${box.slug}: 쓰임 이야기 ${u}/${n}`);
+    assert.ok(l <= Math.floor(n * 0.03), `${box.slug}: 배송 때문에 깎인 낮은 점수 ${l}/${n}`);
+    delivery += d; usage += u; lowDelivery += l; total += n;
+  }
+  // 아예 없지는 않다: 배송받은 사람도 있다
+  assert.ok(delivery / total > 0.02 && delivery / total <= 0.1 && usage > 300 && lowDelivery > 50, `배송 ${delivery} / 쓰임 ${usage} / 배송 탓의 낮은 점수 ${lowDelivery} / 전체 ${total}`);
+  // 검수에서 짚인 두 줄은 이제 배송받았다고 말하는 글에만 붙는다
+  for (const text of ["포장박스가 좀 찌그러져 왔어요 내용물은 멀쩡해요", "받는데 3주 걸렸어요 너무하네요"]) assert.match(text.replace(/\s/g, ""), DELIVERY, text);
+});
+
 test("샘플 후기: 점수를 말하는 줄은 그 건의 별점과 같다(만점이라고 쓴 글은 별 다섯뿐이다)", () => {
   // 띄어쓰기를 뺀 소문자 글에서 찾는다. [그 말, 그 말이 나올 수 있는 별점]
   const SCORE: [RegExp, number][] = [
@@ -499,7 +527,8 @@ test("샘플 후기: 별점은 받은 것과 받는 과정에 대한 만족이�
     }
   });
   assert.ok(smallFive / small > 0.3 && smallFive / small < 0.6, `작은 결과의 별 다섯 ${smallFive / small}`);
-  assert.ok(bigThree > 20 && bigThree / big < 0.1, `큰 결과의 별 셋 ${bigThree} / ${big}`);
+  // 배송 때문에 깎인 점수는 박스마다 3% 안이라 드물다
+  assert.ok(bigThree > 3 && bigThree / big < 0.05, `큰 결과의 별 셋 ${bigThree} / ${big}`);
 });
 
 test(`샘플 후기: 상품가가 ${BIG_FLOOR}달러에 못 미치는 건에는 크게 당첨된 듯한 말이 붙지 않는다(1달러 박스의 20달러짜리도 배수는 20배다)`, () => {
@@ -535,7 +564,8 @@ test("샘플 후기: 다시 열겠다거나 또 오겠다는 말, 다음 박스�
 });
 
 test("샘플 후기: 서비스의 흐름을 말하는 줄은 적은 몫으로 물건 이야기와 함께만 나온다", () => {
-  const FLOW = /usdt|보관함|검증|확률표|확률다|verifypage|验证/;
+  // (USDT로 받았다, 보관함에 뒀다는 말은 이제 대부분의 글에 있는 둘째 조각이라 여기서 세지 않는다)
+  const FLOW = /검증|확률표|확률다|충전이처음|verifypage|验证/;
   let flow = 0;
   const total = eachSample((row) => {
     if (!FLOW.test(row.flat)) return;
@@ -558,7 +588,7 @@ test("샘플 후기: 한 글 안에서 말이 서로 어긋나거나 겹치지 �
     if (hits > 0) received += 1;
     assert.ok(hits <= 1, mark(row));
   });
-  assert.ok(received > 3000, `받았다는 인사 ${received}건`);
+  assert.ok(received > 500, `받았다는 인사 ${received}건`);
 });
 
 test("샘플 후기: 좋아요는 절반 넘게 0 이고 위쪽 끝에 몰리지 않는다", () => {

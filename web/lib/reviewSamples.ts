@@ -4,11 +4,13 @@
 //   끄면 샘플은 한 건도 나오지 않고, 별점과 후기 수는 이 기기에서 실제로 쓴 후기만으로 센다.
 //   끈 빌드에는 이 파일과 말뭉치가 묶음에 들어가지도 않는다: 화면은 lib/reviewSampleGate 를 거쳐서만 여기를 부른다(직접 import 하지 않는다).
 // 박스마다 80건 이상 400건 이하. 박스가 320개라 6만 건이 넘으니 파일로 두지 않고 박스 번호를 씨앗으로 그때그때 만든다. 같은 박스는 언제나 같은 후기다.
-// 별점의 뜻(여기 한 곳에만 적는다): 받은 것(나온 상품과 그 물건)과 받는 과정(배송, 포장, 응대)에 대한 만족을 한 점수로 매긴 것이다.
-//   큰 것이 나오면 점수가 오르기 쉽지만 뽑기 운만의 점수는 아니다: 흔하고 작은 상품도 잘 받았으면 별 다섯이 나오고,
-//   큰 상품도 받는 과정이 크게 불편했으면 별 셋이 나온다. 뼈대가 건마다 점수와 그 점수의 까닭(why)을 함께 정하고, 글은 그 까닭에 맞는 조각만 쓴다.
+// 별점의 뜻(여기 한 곳에만 적는다): 이 박스를 열어 나온 결과(나온 상품과 그 값, 뽑은 기분)에 대한 만족을 한 점수로 매긴 것이다.
+//   큰 것이 나오면 점수가 오르기 쉽지만 뽑기 운만의 점수는 아니다: 흔하고 작은 상품도 별 다섯이 나온다. 낮은 점수는 박스값에 견줘 작은 결과나 실망스러운 뽑기에서 온다.
+//   이 사이트는 대부분 USDT로 받고 배송받는 사람은 드물다(2026-10-13 파운더): 배송으로 받은 건은 박스마다 SHIPPED_SHARE 안이고, 받는 과정(배송, 포장) 때문에 깎인 점수는
+//   그 가운데서도 SHIP_LOW_CAP 안이다. 뼈대가 건마다 점수와 그 점수의 까닭(why)과 배송 여부(ship)를 함께 정하고, 글은 그에 맞는 조각만 쓴다.
 // 글의 목소리(2026-10-13 파운더: 후기는 박스를 깐 것에 대한 것이지 상품 후기가 아니다): 어느 글이든 첫 문장은 개봉과 그 결과를 말한다(몇 번째에 무엇이 나왔는지,
-//   박스값에 견줘 어땠는지, 뽑은 기분). 물건을 썼다거나 배송이 어땠다는 말은 짧은 둘째 조각으로만 붙고 앞에 서지 않는다(한국어, 영어, 중국어 모두).
+//   박스값에 견줘 어땠는지, 뽑은 기분). 둘째 조각은 받아서 어떻게 했는지(USDT로 받았다, 보관함에 뒀다, 드물게 배송 신청했다)나 값 이야기다.
+//   물건을 보고 썼다는 말과 배송과 포장의 말은 배송으로 받은 건(@shipped)에만 붙고, 어느 글에서도 앞에 서지 않는다(한국어, 영어, 중국어 모두).
 // 글의 결(tests/reviewSamples.test.ts 가 모든 박스에서 본다): 별 하나와 둘은 낮은 점수의 까닭 한 가지, 별 셋은 그저 그렇다는 말,
 //   별 넷은 좋았다는 말(받는 과정이 조금 아쉬웠으면 그 한 줄이 끝에 붙는다), 별 다섯은 좋았다는 말뿐이다. 아쉬운 말 뒤에는 웃음을 붙이지 않는다.
 // 세 단계로 만든다:
@@ -25,7 +27,7 @@
 // 이 사이트에 없는 일은 샘플도 말하지 않는다: 디지털 상품은 USDT로 받기만 있으므로 썼다, 등록했다는 말이 없고, 차와 큰 가전에 설치나 인도 절차를 말하지 않는다.
 import { BOXES, BOX_BY_SLUG, REFUND_RATE, type ProductBox, type ProductItem } from "./products";
 import { summarizeRatings, summaryOf, type RatingSummary } from "./reviewRating";
-import { ARRIVAL, ARRIVAL_OPEN, BANNED, BOX_HINTS, CLOSE, DIGITAL, EN, FLOW, GOT, GRIPE, ITEM, ITEM_NAMED, KIND_FACTS, LEAD, MID, MID_CLOSE, MID_OPEN, NEG, NEG_CLOSE, NEG_OPEN, NICK, PART, PAR_BAND, SHIP, SLANG, TAIL, TOPICS, USE, USE_GIFT, ZH, fact, type Frag, type Kind, type Topic } from "./reviewSampleText";
+import { ARRIVAL, ARRIVAL_OPEN, BANNED, BOX_HINTS, CLOSE, DID_USDT, DID_VAULT, DIGITAL, EN, FLOW, GOT, GRIPE, ITEM, ITEM_NAMED, KIND_FACTS, LEAD, MID, MID_CLOSE, MID_OPEN, NEG, NEG_CLOSE, NEG_OPEN, NICK, PART, PAR_BAND, SHIP, SLANG, TAIL, TOPICS, USE, USE_GIFT, VALUE, ZH, fact, type Frag, type Kind, type Topic } from "./reviewSampleText";
 
 export const SAMPLE_MIN = 80;
 export const SAMPLE_MAX = 400;
@@ -106,14 +108,16 @@ const LIKED_CUT: Record<Outcome, [number, number, number, number]> = {
  * 받는 과정에서 생긴 일의 누적 확률: [크게 불편했다, 조금 아쉬웠다]. 나머지는 잘 받았다. 결과의 크기와 상관없이 같다.
  * 크게 불편했으면 큰 상품이라도 별 셋이고(큰 결과가 그 아래로는 막아 준다) 다른 상품은 별 셋에서 하나까지다. 조금 아쉬웠으면 별 넷을 넘지 못한다.
  */
-const TROUBLE: [number, number] = [0.04, 0.135];
+const TROUBLE: [number, number] = [0.02, 0.045];
+/** 배송으로 받은 건의 몫(박스마다 이 안), 그 가운데 받는 과정 때문에 깎인 낮은 점수(별 셋 아래)와 별 넷의 아쉬움 각각의 한도 */
+export const SHIPPED_SHARE = 0.09, SHIP_LOW_CAP = 0.03;
 /** 점수의 까닭: 따로 없다(좋았다), 받는 과정 때문에 깎였다, 받은 것이 그저 그랬다 */
 const WHY_NONE = 0, WHY_ARRIVAL = 1, WHY_RESULT = 2;
 /** 상품이 뽑히는 무게: 확률을 눌러 쓴다(실제 확률 그대로면 흔한 상품 몇 개만 나오고, 고르게 하면 비싼 것이 너무 자주 나온다) */
 const PICK_POWER = 0.62;
 const DAY = 1440;
 
-interface Core { box: ProductBox; items: ProductItem[]; count: number; pick: Uint16Array; rating: Uint8Array; why: Uint8Array; age: Uint32Array; topRate: number; summary: RatingSummary }
+interface Core { box: ProductBox; items: ProductItem[]; count: number; pick: Uint16Array; rating: Uint8Array; why: Uint8Array; ship: Uint8Array; age: Uint32Array; topRate: number; summary: RatingSummary }
 const cores = new Map<string, Core | null>();
 
 /** 같은 상품이 몰리지 않게 하는 폭: 처음 FRONT_ROWS 건(박스 화면의 줄이 처음 그리는 장수), 연속 WINDOW 건 안에 같은 상품은 WINDOW_MAX 건까지 */
@@ -127,7 +131,7 @@ export const FRONT_ROWS = 20, WINDOW = 10, WINDOW_MAX = 3;
  * 자리마다 남은 것 가운데 규칙에 걸리지 않는 상품을 고르고, 그 가운데 남은 자리에 대한 몫(급한 정도)이 가장 큰 상품을 먼저 놓는다(같으면 원래 차례가 앞선 것).
  *   그래야 끝에 같은 상품만 남아 붙는 일이 없다(몫이 절반을 넘지 않으면 이웃은 언제나 피할 수 있다).
  */
-function spread(pick: Uint16Array, rating: Uint8Array, why: Uint8Array, kinds: number): void {
+function spread(pick: Uint16Array, rating: Uint8Array, why: Uint8Array, ship: Uint8Array, kinds: number): void {
   const n = pick.length;
   const queues: number[][] = Array.from({ length: kinds }, () => []);
   for (let i = 0; i < n; i++) queues[pick[i]].push(i);
@@ -156,8 +160,8 @@ function spread(pick: Uint16Array, rating: Uint8Array, why: Uint8Array, kinds: n
     placed[pos] = best;
     if (pos < FRONT_ROWS) front[best] += 1;
   }
-  const p = pick.slice(), r = rating.slice(), w = why.slice();
-  for (let pos = 0; pos < n; pos++) { pick[pos] = p[order[pos]]; rating[pos] = r[order[pos]]; why[pos] = w[order[pos]]; }
+  const p = pick.slice(), r = rating.slice(), w = why.slice(), s = ship.slice();
+  for (let pos = 0; pos < n; pos++) { pick[pos] = p[order[pos]]; rating[pos] = r[order[pos]]; why[pos] = w[order[pos]]; ship[pos] = s[order[pos]]; }
 }
 
 function coreOf(slug: string): Core | null {
@@ -179,7 +183,10 @@ function coreOf(slug: string): Core | null {
   const lift = (next() - 0.3) * 0.14;
   // 가장 새 글은 15분에서 하루 남짓 전, 가장 오래된 글은 다섯 달에서 열한 달 전
   const span = (150 + next() * 180) * DAY, gap = span / count;
-  const pick = new Uint16Array(count), rating = new Uint8Array(count), why = new Uint8Array(count), age = new Uint32Array(count);
+  const pick = new Uint16Array(count), rating = new Uint8Array(count), why = new Uint8Array(count), ship = new Uint8Array(count), age = new Uint32Array(count);
+  // 받는 과정 때문에 깎인 건은 박스마다 한도 안(낮은 점수와 별 넷의 아쉬움 각각). 한도에 닿으면 그 뒤의 건은 그냥 결과의 점수다
+  const lowCap = Math.floor(count * SHIP_LOW_CAP);
+  let severe = 0, gripes = 0;
   const dist: RatingSummary["dist"] = [0, 0, 0, 0, 0];
   let at = 15 + next() * 1500;
   for (let i = 0; i < count; i++) {
@@ -191,18 +198,22 @@ function coreOf(slug: string): Core | null {
     const liked = u < cut[0] + lift ? 5 : u < cut[1] ? 4 : u < cut[2] ? 3 : u < cut[3] ? 2 : 1;
     let stars = liked, cause = liked <= 3 ? WHY_RESULT : WHY_NONE;
     // 디지털 상품(옛 박스의 상품권)은 받는 과정이 없다
-    if (items[lo].kind !== "digital" && v < TROUBLE[0]) {
+    if (items[lo].kind !== "digital" && v < TROUBLE[0] && severe < lowCap) {
       const w = v / TROUBLE[0];
       stars = outcomes[lo] === "big" ? 3 : Math.min(liked, w < 0.6 ? 3 : w < 0.85 ? 2 : 1);
-      cause = WHY_ARRIVAL;
-    } else if (items[lo].kind !== "digital" && v < TROUBLE[1] && liked >= 4) { stars = 4; cause = WHY_ARRIVAL; }
+      cause = WHY_ARRIVAL; severe += 1; ship[i] = 1;
+    } else if (items[lo].kind !== "digital" && v < TROUBLE[1] && liked >= 4 && gripes < lowCap) { stars = 4; cause = WHY_ARRIVAL; gripes += 1; ship[i] = 1; }
     rating[i] = stars; why[i] = cause; dist[stars - 1] += 1;
     age[i] = Math.round(at);
     at += 3 - Math.log(1 - next()) * gap;
   }
+  // 배송으로 받은 건: 받는 과정을 말한 건에 더해, 실물 상품의 건 가운데 몇을 더 고른다. 다 합쳐 SHIPPED_SHARE 안
+  let shipped = severe + gripes;
+  const quota = Math.floor(count * SHIPPED_SHARE);
+  for (let i = 0; i < count && shipped < quota; i++) if (ship[i] === 0 && items[pick[i]].kind !== "digital" && next() < 0.05) { ship[i] = 1; shipped += 1; }
   // 같은 상품이 몰리지 않게 자리를 바꾼다(나이는 자리에 남는다)
-  spread(pick, rating, why, items.length);
-  const core: Core = { box, items, count, pick, rating, why, age, topRate, summary: summaryOf(dist) };
+  spread(pick, rating, why, ship, items.length);
+  const core: Core = { box, items, count, pick, rating, why, ship, age, topRate, summary: summaryOf(dist) };
   cores.set(slug, core);
   return core;
 }
@@ -264,7 +275,7 @@ export function kindOf(box: ProductBox, item: ProductItem): Kind {
   return index >= 0 ? TOPICS[index].kind : "goods";
 }
 
-const F = { parcel: fact("parcel"), gift: fact("gift"), money: fact("money"), par: fact("par"), loss: fact("loss"), large: fact("large"), small: fact("small"), common: fact("common"), r3: fact("r3"), r4: fact("r4"), r5: fact("r5") };
+const F = { parcel: fact("parcel"), gift: fact("gift"), money: fact("money"), par: fact("par"), loss: fact("loss"), large: fact("large"), small: fact("small"), common: fact("common"), r3: fact("r3"), r4: fact("r4"), r5: fact("r5"), shipped: fact("shipped"), kept: fact("kept") };
 
 // ── 조각 꺼내기 ────────────────────────────────────────────────
 interface Deck { order: number[]; at: number; cycle: number }
@@ -351,58 +362,66 @@ function penOf(ask: Ask) {
 const causeOf = (why: number) => (why === WHY_ARRIVAL ? (frag: Frag) => (frag.about & ARRIVAL) !== 0 : (frag: Frag) => (frag.about & ARRIVAL) === 0);
 
 /**
- * 한국어 글 한 건. 첫 조각은 언제나 개봉과 그 결과를 말하는 줄이고(GOT, MID_OPEN, NEG_OPEN, ARRIVAL_OPEN), 물건이나 쓰임이나 배송 이야기는 짧은 둘째 조각으로만 붙는다.
+ * 한국어 글 한 건. 첫 조각은 언제나 개봉과 그 결과를 말하는 줄이고(GOT, MID_OPEN, NEG_OPEN, ARRIVAL_OPEN),
+ * 둘째 조각은 받아서 어떻게 했는지(USDT, 보관함)나 값 이야기다. 배송으로 받은 건(@shipped)에만 물건, 쓰임, 배송의 말이 붙는다.
  * 조각을 하나에서 셋까지 잇는다. wide 는 겹치는 글을 피하려고 조각을 하나 더 잇는 것이다
  */
 function koText(ask: Ask): Draft {
   const { r, rating, why, outcome, kind, topic, topicKey, has, wide } = ask;
   const { roles, parts, frags, put } = penOf(ask);
+  const shipped = (has & F.shipped) !== 0;
   let topical = false;
-  /** 물건에 대한 한 조각: 종류에 맞는 말, 이름을 넣은 말, 어느 상품에나 맞는 말 */
+  /** 물건에 대한 한 조각(배송으로 받은 건): 종류에 맞는 말, 이름을 넣은 말, 어느 상품에나 맞는 말 */
   const thing = (): boolean => {
     const u = r();
     // 디지털 상품은 물건도 배송도 없다: 그 종류의 말(나왔다, USDT로 받았다)만 쓴다
     if (kind === "digital") return put("thing", topicKey, topic!.lines, { must: true });
     // 종류에 맞는 말은 한 글에 한 번만 한다("미개봉으로 소장하려구요" 뒤에 "애랑 같이 깠어요" 가 오지 않게)
     if (topic && !topical && u < 0.42 && put("thing", topicKey, topic.lines)) { topical = true; return true; }
-    if (topic && topic.nouns.length > 0 && u < 0.6) { const noun = pickOne(topic.nouns, r); if (put("thing", "named", ITEM_NAMED, { fill: (text) => text.replace("{item}", noun) })) return true; }
+    if (topic && topic.nouns.length > 0 && u < 0.6 && named()) return true;
     return put("thing", "item", ITEM, { must: true });
   };
+  /** 이름을 넣은 한 조각("골프공 나왔네요"). 배송으로 받지 않은 건에는 나왔다는 꼴만 맞는다 */
+  const named = (): boolean => { if (!topic || topic.nouns.length === 0) return false; const noun = pickOne(topic.nouns, r); return put("thing", "named", ITEM_NAMED, { fill: (text) => text.replace("{item}", noun) }); };
   /** 첫 조각: 깐 결과. 묶음이 가까운 글에서 다 쓰였어도 반드시 하나 놓는다 */
   const got = () => put("got", "got-" + outcome, GOT[outcome], { must: true });
-  /** 쓰임 한 조각. 누구에게 줬다는 말은 종류에 맞는 말을 하지 않은 글에만 붙인다(그 말이 "매일 들고 다녀요" 일 수 있다) */
+  /** 쓰임 한 조각(배송으로 받은 건). 누구에게 줬다는 말은 종류에 맞는 말을 하지 않은 글에만 붙인다(그 말이 "매일 들고 다녀요" 일 수 있다) */
   const use = () => (!topical && r() < 0.45 && put("use", "gift", USE_GIFT)) || put("use", "use", USE);
   const ship = () => put("ship", "ship", SHIP);
   const close = () => put("close", "close", CLOSE);
-  // 큰 결과에는 "엄마 드렸어요" 같은 쓰임 조각을 붙이지 않는다
-  const after = () => (outcome !== "big" && r() < 0.35 && use()) || thing();
+  /** 받아서 어떻게 했는지: USDT로 받았다(대부분), 보관함에 뒀다 */
+  const did = () => (r() < 0.78 ? put("did", "did-usdt", DID_USDT, { must: true }) : put("did", "did-vault", DID_VAULT)) || put("did", "did-usdt", DID_USDT, { must: true });
+  const value = () => put("value", "value", VALUE);
   /** 받는 과정 때문에 깎인 낮은 점수의 첫 조각: 나온 것은 그런대로였다는 말("...나왔는데"). 뒤에 받는 과정의 한 줄이 붙는다 */
   const arrival = (role: string) => put(role, "open-arrival", ARRIVAL_OPEN, { must: true });
   let tails: readonly string[] = TAIL.pos, tailOdds = 0.42;
   if (rating >= 4 && why === WHY_ARRIVAL) {
-    // 별 넷의 작은 아쉬움: 깐 결과 뒤에 아쉬운 한 줄("지만"으로 이어지는 여는 줄은 쓰지 않는다). 맺음말과 웃음은 붙이지 않는다
+    // 별 넷의 작은 아쉬움: 깐 결과 뒤에 배송의 아쉬운 한 줄("지만"으로 이어지는 여는 줄은 쓰지 않는다). 맺음말과 웃음은 붙이지 않는다
     put("got", "got-" + outcome, GOT[outcome], { also: (frag) => !frag.text.endsWith("지만"), must: true });
     put("gripe", "gripe", GRIPE, { must: true });
     tailOdds = 0;
   } else if (rating >= 4) {
     got();
     const u = wide ? 0.9 : outcome === "big" && r() < 0.6 ? 0.2 : r();
+    const open = frags[0] ?? "";
     // 디지털 상품: 나온 것 뒤에 USDT로 받았다는 한 줄, 가끔 맺음말
     if (kind === "digital") { thing(); if (wide || u > 0.7) close(); }
-    // "지만"으로 끝난 첫 줄 뒤에는 물건이나 쓰임의 한 조각이 온다
-    else if ((frags[0] ?? "").endsWith("지만")) after();
-    else if ((has & F.large) !== 0 && u < 0.3) { /* 나온 것만 말한다 */ }
-    else if (u < 0.55) after();
-    else if (u < 0.72) { if (!ship()) thing(); }
-    // 서비스의 흐름을 말하는 줄은 드물게, 나온 것 뒤에만
-    else if (u < 0.78 && (has & F.parcel) !== 0) put("flow", "flow", FLOW);
+    // 배송으로 받은 건: 배송의 말이나 물건의 말, 가끔 쓰임
+    else if (shipped) { if (u < 0.5) { if (!ship()) thing(); } else thing(); if (r() < 0.35) use(); if (wide) close(); }
+    // 나머지(대부분): USDT로 받았다, 보관함에 뒀다, 값 이야기, 드물게 서비스의 흐름이나 맺음말. 큰 결과는 가끔 나온 것만 말한다
+    else if (open.endsWith("지만")) { if (!(u < 0.55 && value()) && !(u < 0.7 && named())) did(); }
+    else if ((has & F.large) !== 0 && u < 0.22) { /* 나온 것만 말한다 */ }
+    else if (u < 0.56) did();
+    else if (u < 0.7) { if (!value()) did(); }
+    else if (u < 0.78) { if (!named()) did(); }
+    else if (u < 0.84) { if (!put("flow", "flow", FLOW)) did(); }
     else close();
-    if (wide && roles.length < 2) thing();
+    if (wide && roles.length < 2) did();
     // 크게 놀란 웃음은 큰 결과에만
     if (outcome === "big" && r() < 0.6) tails = TAIL.big;
   } else if (rating === 3) {
     if (why === WHY_ARRIVAL) { arrival("mid"); put("mid", "mid", MID, { also: causeOf(why), must: true }); }
-    else { put("mid", "mid-open", MID_OPEN, { must: true }); if (wide || r() < 0.5) put("mid", "mid", MID, { also: causeOf(why) }); }
+    else { put("mid", "mid-open", MID_OPEN, { must: true }); if (wide || r() < 0.55) put("mid", "mid", MID, { also: causeOf(why) }); }
     if (wide || r() < 0.4) put("midc", "midc", MID_CLOSE);
     tails = TAIL.mid; tailOdds = 0.28;
   } else {
@@ -430,17 +449,19 @@ function koText(ask: Ask): Draft {
   return { text, shape: roles.join(" ") + (tailed ? " tail" : ""), frags };
 }
 
-/** 영어와 중국어 글 한 건: 깐 결과를 말하는 한 줄이 먼저, 가끔 물건이나 맺음말이나 배송이나 서비스의 흐름 한 줄이 붙는다 */
+/** 영어와 중국어 글 한 건: 깐 결과를 말하는 한 줄이 먼저, 그 뒤에 받아서 어떻게 했는지나 값 이야기, 배송으로 받은 건에는 물건이나 배송의 한 줄 */
 function foreignText(ask: Ask, lang: "en" | "zh"): Draft {
-  const { r, rating, why, wide } = ask, words = lang === "en" ? EN : ZH;
+  const { r, rating, why, wide, has } = ask, words = lang === "en" ? EN : ZH;
   const { roles, parts, frags, put } = penOf(ask);
-  const good = rating >= 4 && why !== WHY_ARRIVAL;
+  const good = rating >= 4 && why !== WHY_ARRIVAL, shipped = (has & F.shipped) !== 0;
   if (rating >= 4) {
     put("got", lang + "-open", words.open, { must: true });
     if (!good) put("gripe", lang + "-gripe", words.gripe, { must: true });
+    else if (shipped) { const u = r(); if (u < 0.5) put("ship", lang + "-ship", words.ship); else put("thing", lang + "-pos", words.pos); }
     else {
       const u = wide ? 0.2 : r();
-      if (u < 0.4) put("thing", lang + "-pos", words.pos); else if (u < 0.62) put("close", lang + "-close", words.close); else if (u < 0.8) put("ship", lang + "-ship", words.ship); else if (u < 0.86) put("flow", lang + "-flow", words.flow);
+      if (u < 0.5) put("did", lang + "-did", words.did); else if (u < 0.68) put("value", lang + "-value", words.value); else if (u < 0.86) put("close", lang + "-close", words.close); else if (u < 0.9) put("flow", lang + "-flow", words.flow);
+      if (wide && roles.length < 2) put("did", lang + "-did", words.did, { must: true });
     }
   } else {
     const role = rating === 3 ? "mid" : "neg", pool = rating === 3 ? words.mid : words.neg;
@@ -578,6 +599,8 @@ export function sampleReviews(boxSlug: string, limit = Infinity): ReviewSample[]
     has |= outcome === "big" || outcome === "good" ? F.large : F.small;
     if (item.dropRate >= core.topRate) has |= F.common;
     if (rating === 3) has |= F.r3; else if (rating === 4) has |= F.r4; else if (rating === 5) has |= F.r5;
+    // 배송으로 받은 건에만 물건과 배송의 말이, 나머지에는 USDT로 받았다거나 보관함에 뒀다는 말이 온다
+    has |= core.ship[i] ? F.shipped : F.kept;
     const ask: Ask = { state, slug: boxSlug, r, rating, why: core.why[i], outcome, kind, topic, topicKey: (kind === "digital" ? "digital" : "topic") + index, has, wide: false };
     // 같은 글이 이미 있으면 다른 조각으로 다시 짓는다(글자를 덧붙여 다르게 만들지 않는다). 마흔 번을 넘기면 조각을 하나 더 잇는다.
     // 그래도 겹치는 박스가 생기면 검사가 잡는다: 그때는 그 상품 종류의 조각 묶음을 늘린다

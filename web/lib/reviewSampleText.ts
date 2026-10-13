@@ -11,6 +11,7 @@
  * 조각 한 줄: 글과 그 글을 쓸 수 있는 조건. 조건은 줄 끝에 낱말로 적고 L 이 떼어 낸다. 적지 않은 줄은 어느 건에나 쓴다.
  *   @이름  그 사실이 맞는 건에만 쓴다(여럿이면 모두 맞아야 한다).
  *     상품: @real 손에 받는 물건이다(디지털 상품이 아니다)  @parcel 택배 상자로 온다  @bulk 상자로 오지 않는 큰 것이다(차, 큰 가전)
+ *           @shipped 배송으로 받은 건이다(박스마다 SHIPPED_SHARE 안. 물건을 보고 만지고 쓴다는 말, 배송과 포장의 말은 이 건에만)  @kept USDT로 받거나 보관함에 둔 건이다
  *           @made 정품, 마감, 품질을 말할 만한 공산품이다  @boxed 구성품이 든 제품 상자가 있다(전자제품, 가전)  @new 새 제품이라고 할 수 있다
  *           @sealed 밀봉된 채로 온다  @use 쓰는 물건이다  @gift 선물이 될 만하다
  *     결과: @money 받을 금액(상품가 × REFUND_RATE)이 박스 가격 이상이다. 낸 것보다 많이 받았다, 손해가 아니다 같은 말에 붙인다
@@ -30,8 +31,8 @@
  */
 export interface Frag { text: string; need: number; about: number; after: number }
 
-const FACTS = ["real", "parcel", "bulk", "made", "boxed", "new", "sealed", "use", "gift", "money", "par", "loss", "large", "small", "common", "r3", "r4", "r5"];
-const TALKS = ["pack", "time", "wait", "luck", "sum", "who", "recv", "want"];
+const FACTS = ["real", "parcel", "bulk", "made", "boxed", "new", "sealed", "use", "gift", "money", "par", "loss", "large", "small", "common", "r3", "r4", "r5", "shipped", "kept"];
+const TALKS = ["pack", "time", "wait", "luck", "sum", "who", "recv", "want", "did"];
 const bitsOf = (list: string[], names: string): number => names.split(" ").filter(Boolean).reduce((bits, name) => {
   const k = list.indexOf(name);
   if (k < 0) throw new Error("reviewSampleText: 모르는 조건 " + name);
@@ -57,6 +58,8 @@ function fragOf(line: string): Frag {
   if (about & talk("pack time")) need |= fact("parcel");
   if (about & talk("wait")) need |= fact("bulk");
   if (about & talk("recv")) need |= fact("real");
+  // 받는 과정을 말하는 줄은 배송으로 받은 건에만
+  if (about & talk("pack time wait")) need |= fact("shipped");
   if (need & fact("money par loss")) about |= talk("sum");
   return { text: words.join(" "), need, about, after };
 }
@@ -177,18 +180,18 @@ export const GOT = {
     제일 흔한게 나오긴 했지만 @common
     소소하게 나왔어요
     이번엔 작은게 나왔네요
-    작은거라도 실물이라 좋네요 @parcel
+    작은거라도 나온게 어디에요
     큰거 노렸는데 이게 나왔어요 @r4
     이번판은 소소합니다
-    꽝인줄 알았는데 받아보니 괜찮네요 @real
+    꽝인줄 알았는데 열어보니 괜찮네요
     작은거지만 없는것보단 낫죠 @r4
     소소한게 나왔네요
     큰건 못뽑았지만 @r4
-    작은거 나왔는데 쓸만하네요 @use
+    작은거 나왔는데 나쁘진 않네요
   `),
 };
 
-/** 물건 그 자체 */
+/** 물건 그 자체. 배송으로 받은 건에만(물건을 보고 만진 말이다) */
 export const ITEM = L(`
   정품 맞네요 @made
   상태 좋아요
@@ -203,92 +206,64 @@ export const ITEM = L(`
   제품 이상 없어요 @made
   구성품 빠짐없이 다 왔어요 @boxed
   흠집 하나 없네요
-  박스 상태도 깨끗해요 @boxed #pack
   비닐도 안뜯긴 새거에요 @sealed
   화면에서 본 그대로네요
   실물 보니 더 마음에 드네요
   생각보다 고급져요 @made
   마감 좋네요 @made
   퀄리티 괜찮습니다 @made
-  기대 이상이에요
-  물건 확실하네요 @parcel
   매장에서 보던 그거 맞아요 @made
   정품 인증 확인했어요 @made
   받자마자 확인했는데 멀쩡해요
   제품은 말할것도 없이 좋아요 @made
-  만족스럽습니다
-  맘에 쏙 들어요
-  아주 좋습니다
-  좋아요 좋아
-  넘 좋네요
-  완전 만족
-  대만족입니다
   물건 받고 기분 좋아졌어요 @parcel #recv
-  생각했던거보다 훨씬 좋아요
   검색해보니 가격도 맞더라구요
   시세 찾아보니 꽤 하네요 @money @parcel
   실물 영접했습니다
-  잘 받았습니다 #recv
-  잘 받았어요 #recv
   물건 잘 받았습니다 @parcel #recv
-  너무 좋아요
-  괜찮네요
-  좋습니다
-  만족해요
+  물건 확실하네요 @parcel
   이상 없이 잘 왔어요 #recv
-`);
+`, "@shipped");
 
 /** 이름이 붙는 줄. {item} 자리에 그 상품을 부르는 말이 들어간다(조사는 붙이지 않는다) */
 export const ITEM_NAMED = L(`
-  {item} 잘 받았어요 #recv
   {item} 나왔네요
-  {item} 잘 쓸게요 @use
-  {item} 필요했는데 잘됐네요 #want
   {item} 하나 생겼네요
   {item} 득템했어요 @money
-  {item} 받았습니다 #recv
-  {item} 실물 좋네요 @parcel
-  {item} 상태 좋아요 @parcel
-  {item} 마음에 들어요
-  {item} 갖고싶었는데 드디어 생겼네요 #want
-  드디어 {item} 받았어요 #recv
   {item} 뽑았어요
-  {item} 인증합니다
-  {item} 잘 도착했어요 @parcel #recv
+  {item} 필요했는데 잘됐네요 #want
+  {item} 갖고싶었는데 드디어 생겼네요 #want
   {item} 사려던 참이었는데 굳었네요 @money #want
-  {item} 받고 기분 좋네요 #recv
-  {item} 깨끗하게 잘 왔어요 @parcel #recv
+  {item} 잘 받았어요 #recv @shipped
+  {item} 잘 쓸게요 @use @shipped
+  {item} 받았습니다 #recv @shipped
+  {item} 실물 좋네요 @parcel @shipped
+  {item} 상태 좋아요 @parcel @shipped
+  {item} 인증합니다 @shipped
+  {item} 배송으로 잘 받았어요 @parcel #recv @shipped
+  {item} 받고 기분 좋네요 #recv @shipped
+  {item} 깨끗하게 잘 왔어요 @parcel #recv @shipped
 `);
 
-/** 배송과 포장. 택배로 오는 상품에만 */
+/** 배송으로 받았다는 말과 그 배송과 포장. 배송으로 받은 건에만(이 사이트는 대부분 USDT로 받는다): 줄마다 배송으로 받았다고 말한다 */
 export const SHIP = L(`
-  배송 빨라요 #time
-  포장 꼼꼼해요 #pack
-  배송 4일 걸렸어요 #time
-  일주일 안에 받았어요 #time
-  뽁뽁이 엄청 감아서 왔네요 #pack
+  배송 신청했더니 4일만에 왔어요 #time
+  실물로 받고 싶어서 배송 신청했어요 일주일 안에 왔네요 #time
+  이건 배송으로 받았어요 뽁뽁이 엄청 감아서 왔네요 #pack
   배송 신청하고 5일만에 도착했어요 #time
-  생각보다 빨리 왔어요 #time
-  포장 튼튼하게 해서 보내주셨어요 #pack
-  안전하게 잘 도착했습니다 #pack #recv
-  배송도 무난했어요 #time
-  택배 상자 열어보니 포장이 삼중이네요 #pack
-  파손 없이 잘 왔어요 #pack #recv
-  주말 끼고도 금방 왔네요 #time
-  배송 조회 계속 눌러봤는데 사흘만에 왔어요 #time
-  박스 안에 완충재 꽉 채워져 있었어요 #pack
-  문앞에 잘 놓고 가셨어요
+  USDT 대신 배송으로 받았는데 생각보다 빨리 왔어요 #time
+  배송으로 받았어요 포장 튼튼하게 해서 보내주셨어요 #pack
+  배송 신청했는데 주말 끼고도 금방 왔네요 #time
+  이건 실물로 받았어요 박스 안에 완충재 꽉 채워져 있었어요 #pack
   해외배송이라 걱정했는데 멀쩡하게 왔어요 #pack
-  엿새만에 받았습니다 #time #recv
-  열흘은 걸릴줄 알았는데 금방 왔어요 #time
-  포장 뜯는데 한참 걸렸어요 그만큼 꼼꼼해요 #pack
-  이중박스로 왔어요 #pack
-  주소 넣고 며칠 안돼서 도착했어요 #time
-  배송 일주일 걸렸어요 #time
-  포장 상태 좋았습니다 #pack
-  배송 잘 받았어요 #recv
-  꼼꼼하게 싸서 보내주셨네요 #pack
-`, "@parcel");
+  배송 신청하고 엿새만에 받았습니다 #time #recv
+  배송으로 받았어요 이중박스로 왔네요 #pack
+  배송 눌렀더니 주소 넣고 며칠 안돼서 도착했어요 #time
+  실물로 받았는데 배송 일주일 걸렸어요 #time
+  배송으로 받았는데 포장 상태 좋았습니다 #pack
+  배송 눌렀는데 꼼꼼하게 싸서 보내주셨네요 #pack
+  이건 실물로 받기로 했어요 받기까지 좀 걸렸는데 잘 왔어요 #wait
+`, "@shipped");
 
 /** 받아서 어떻게 했는지: 쓰는 물건이면 어느 상품에나 맞는 말 */
 export const USE = L(`
@@ -310,7 +285,7 @@ export const USE = L(`
   바로 개시했어요
   잘 쓰고 있습니다
   요즘 제일 자주 손이 가요
-`, "@use #who");
+`, "@use #who @shipped");
 /** 누구에게 줬다는 말. 선물이 될 만한 상품에만 붙인다 */
 export const USE_GIFT = L(`
   선물로 줬더니 좋아하네요
@@ -331,7 +306,55 @@ export const USE_GIFT = L(`
   이미 있는거라 선물하려구요
   선물용으로 딱이에요
   형한테 자랑했더니 달래요
-`, "@gift #who");
+`, "@gift #who @shipped");
+
+/** 받아서 어떻게 했는지: USDT로 받았다(이 사이트의 대부분). 한 글에 한 줄 */
+export const DID_USDT = L(`
+  바로 USDT로 받았어요
+  받기 누르니 잔액에 바로 들어오네요
+  고민 없이 USDT로 받았어요
+  실물 대신 USDT로 받았어요 @real
+  USDT로 받으니 깔끔하네요
+  받기 눌러서 잔액으로 넣었어요
+  이번것도 USDT로 받았어요
+  받기 누르고 몇 초 만에 잔액 들어왔어요
+  잔액으로 받아서 금방 들어왔어요
+  실물은 필요없어서 USDT로 돌렸어요 @real
+  USDT로 받고 끝냈어요
+  결과 나오자마자 USDT로 받았어요
+  집에 둘 데도 없어서 USDT로 받았어요 @real
+  잔액에 바로 꽂히니 좋네요
+  받기 한 번 누르면 끝이네요
+  이건 USDT로 받는게 맞죠
+  고민하다가 USDT로 받았어요
+  잔액으로 받으니 편하네요
+`, "#did @kept");
+/** 받아서 어떻게 했는지: 보관함에 뒀다 */
+export const DID_VAULT = L(`
+  일단 보관함에 넣어뒀어요
+  보관함에 두고 생각 중이에요
+  아직 보관함에 있어요
+  받기 안 누르고 보관함에 뒀어요
+  보관함에 묵혀두고 있어요
+  USDT로 받을지 좀 더 두고 볼게요
+  보관함에 두고 며칠 고민해보려구요
+  일단 보관함행이에요
+`, "#did @kept");
+/** 값 이야기: 나온 상품의 값과 박스값. 돈의 조건은 GOT 와 같다 */
+export const VALUE = L(`
+  박스값은 넘겼어요 @money
+  낸 것보다 많이 남았어요 @money
+  이 값이면 손해는 아니죠 @money
+  상품가 보니 할 만했네요 @money
+  박스값에 살짝 못 미치네요 @loss
+  박스값 생각하면 아쉽긴 해요 @loss
+  받을 금액 보고 바로 결정했어요
+  확률 생각하면 잘 나온거죠 @large
+  확률표 보고 기대 안했는데 이게 나왔네요 @large
+  이 가격대 박스에서 이정도면 잘 나온거죠 @money
+  상품가 보고 두 번 확인했어요 @large
+  값은 소소해도 나온게 어디에요 @small
+`);
 
 /** 맺음말 */
 export const CLOSE = L(`
@@ -348,7 +371,7 @@ export const CLOSE = L(`
   후기 처음 써봐요
   만족합니다
   굿입니다
-  좋은 물건 감사해요 @real
+  좋은 물건 감사해요 @shipped
   덕분에 잘 받았습니다 #recv
   기분 좋게 받았어요 #recv
   다들 좋은거 받으세요
@@ -364,46 +387,43 @@ export const CLOSE = L(`
  * 적은 몫으로만 쓰고, 이 줄만으로 글을 끝내지 않는다(물건을 말하는 조각이 함께 간다).
  */
 export const FLOW = L(`
-  USDT로 받을까 하다가 그냥 배송 받았어요
-  저번껀 USDT로 받았는데 이번엔 실물로 받아봤어요
-  보관함에 뒀다가 이제야 배송 신청했네요
+  USDT로 받을까 하다가 그냥 배송 받았어요 @shipped
+  저번껀 USDT로 받았는데 이번엔 실물로 받아봤어요 @shipped
+  보관함에 뒀다가 이제야 배송 신청했네요 @shipped
   개봉 결과 검증 눌러봤는데 맞게 나오네요
   검증 화면에서 직접 계산해봤어요 결과 똑같이 나와요
   확률표 보고 열었는데 딱 그 구간에서 나왔어요
   구성품이랑 확률 다 공개돼있어서 믿고 열었어요
   충전하고 바로 열었는데 결과 바로 나와서 좋네요
   USDT 충전이 처음이라 헤맸는데 금방 들어오네요
-  배송 받을지 USDT로 받을지 하루 고민했어요
-  작은건 USDT로 받고 이것만 배송시켰어요 #sum @large
-  여러개 열어서 나머진 USDT로 받고 이건 실물로 받았어요 #sum
-  배송 신청할때 주소만 넣으면 끝이라 편했어요
-  USDT로 받을까 했는데 실물이 낫겠다 싶어서 받았어요
+  작은건 USDT로 받고 이것만 배송시켰어요 #sum @large @shipped
+  여러개 열어서 나머진 USDT로 받고 이건 실물로 받았어요 #sum @shipped
+  배송 신청할때 주소만 넣으면 끝이라 편했어요 @shipped
+  USDT로 받을까 했는데 실물이 낫겠다 싶어서 받았어요 @shipped
   결과 검증 해보는거 신기하네요 처음 봤어요
   열기 전에 잠가둔 값이랑 맞는지 확인해봤어요
-  보관함에 며칠 묵혀뒀다가 배송 눌렀어요
-  검증까지 해보고 배송 신청했습니다
-`, "@parcel");
+  보관함에 며칠 묵혀뒀다가 배송 눌렀어요 @shipped
+  검증까지 해보고 배송 신청했습니다 @shipped
+`);
 
 /** 별 넷의 작은 아쉬움: 받는 과정에서 조금 아쉬웠던 것. 좋았던 한 조각 뒤에 온다 */
 export const GRIPE = L(`
-  배송이 좀 걸린거 빼곤 좋아요 #time
-  박스가 살짝 눌려와서 별 하나 뺐어요 #pack @r4
+  배송 신청했더니 좀 걸린거 빼곤 좋아요 #time
+  배송으로 받았는데 박스가 살짝 눌려와서 별 하나 뺐어요 #pack @r4
   배송만 좀 더 빨랐으면 좋겠네요 #time
-  포장박스가 좀 찌그러져 왔어요 내용물은 멀쩡해요 #pack
+  배송 받았는데 포장박스가 좀 찌그러져 왔어요 내용물은 멀쩡해요 #pack
   배송 조회가 좀 늦게 뜨네요 #time
-  받는데 열흘 걸렸어요 #time
+  배송 신청하고 받는데 열흘 걸렸어요 #time
   통관때문에 며칠 더 걸렸네요 #time
-  겉박스 모서리가 좀 찍혀있었어요 #pack
+  배송으로 받았는데 겉박스 모서리가 좀 찍혀있었어요 #pack
   배송은 생각보다 오래 걸렸어요 #time
-  조금만 더 빨리 왔으면 더 좋았을텐데 #time
-  기다리다 목빠지는줄 알았어요 #time
+  실물로 받았는데 조금만 더 빨리 왔으면 더 좋았을텐데 #time
+  배송 기다리다 목빠지는줄 알았어요 #time
   배송이 느린건 좀 아쉬워요 #time
-  택배 상자가 좀 지저분하게 왔어요 #pack
-  받기까지 좀 오래 걸린거 빼곤 좋아요 #wait
-  생각보다 오래 기다린게 아쉬워요 #wait
-  조금만 더 빨리 받았으면 더 좋았을텐데요 #wait
-  기다린 시간이 좀 길었어요 #wait
-  받는데 한 달 가까이 걸렸어요 #wait
+  배송으로 받았는데 택배 상자가 좀 지저분하게 왔어요 #pack
+  실물로 받기로 했는데 받기까지 좀 오래 걸린거 빼곤 좋아요 #wait
+  실물로 받았는데 생각보다 오래 기다린게 아쉬워요 #wait
+  실물로 받았는데 받기까지 한 달 가까이 걸렸어요 #wait
 `);
 
 /**
@@ -411,35 +431,36 @@ export const GRIPE = L(`
  * 받는 과정(ARRIVAL)을 말하는 줄은 그 때문에 별이 깎인 건에, 나머지는 받은 것이 그저 그랬던 건에 쓴다.
  */
 export const MID = L(`
-  쓸일은 없을거같은데 일단 받았어요 #recv
-  받긴 잘 받았는데 쓸데가 없네요 #recv
-  그냥저냥 쓸만해요 @use
-  생각보다 작네요 @made
-  사진보다 실물이 좀 별로에요 @parcel
-  필요한 사람 줘야겠어요 #who @real
-  당근에 올릴까 고민중 @real
-  쓸만은 한데 굳이 싶네요 @use
-  취향은 아닌데 일단 써볼게요 @use #want
-  선물용으로 돌려야겠네요 #who @real
-  기대 안하고 받으면 괜찮아요 @real
-  막상 받아보니 쓸일이 있을까 싶네요 @real
-  물건은 멀쩡한데 감흥이 없네요 @parcel
-  물건 자체는 멀쩡해요 @parcel
-  배송이 너무 오래 걸렸어요 #time
-  배송 2주 가까이 걸렸어요 #time
-  상자가 많이 찌그러져서 왔어요 #pack
+  쓸일은 없을거같은데 일단 받았어요 #recv @shipped
+  받긴 잘 받았는데 쓸데가 없네요 #recv @shipped
+  그냥저냥 쓸만해요 @use @shipped
+  생각보다 작네요 @made @shipped
+  사진보다 실물이 좀 별로에요 @parcel @shipped
+  필요한 사람 줘야겠어요 #who @real @shipped
+  당근에 올릴까 고민중 @real @shipped
+  쓸만은 한데 굳이 싶네요 @use @shipped
+  취향은 아닌데 일단 써볼게요 @use #want @shipped
+  선물용으로 돌려야겠네요 #who @real @shipped
+  막상 받아보니 쓸일이 있을까 싶네요 @real @shipped
+  물건은 멀쩡한데 감흥이 없네요 @parcel @shipped
+  물건 자체는 멀쩡해요 @parcel @shipped
+  배송 신청했는데 너무 오래 걸렸어요 #time
+  배송으로 받았는데 2주 가까이 걸렸어요 #time
+  배송으로 받았는데 상자가 많이 찌그러져서 왔어요 #pack
   배송 기다리다 지쳤어요 #time
-  박스에 스티커 자국이 있네요 #pack @new
+  배송 받았는데 박스에 스티커 자국이 있네요 #pack @new
   배송이 느려서 별 두개 뺐어요 #time @r3
-  받는데 보름 걸렸어요 #time
-  겉상자가 젖어서 왔어요 #pack
-  포장이 헐거워서 안에서 굴러다녔어요 #pack
+  배송 신청하고 받는데 보름 걸렸어요 #time
+  배송으로 받았는데 겉상자가 젖어서 왔어요 #pack
+  배송 받았는데 포장이 헐거워서 안에서 굴러다녔어요 #pack
   배송 조회가 며칠째 그대로라 걱정했어요 #time
   통관에서 일주일 묶여있었어요 #time
-  받기까지 한참 걸렸어요 #wait
-  오래 기다렸어요 #wait
-  기다리다 지쳤어요 #wait
-  받는데 두 달 가까이 걸렸어요 #wait
+  실물로 받기로 했는데 받기까지 한참 걸렸어요 #wait
+  실물로 받으려고 오래 기다렸어요 #wait
+  실물로 받았는데 받는데 두 달 가까이 걸렸어요 #wait
+  그냥 USDT로 받았어요 #did @kept
+  이정도면 USDT로 받는게 낫죠 #did @kept
+  고민 없이 잔액으로 넣었어요 #did @kept
 `);
 /**
  * 별 셋의 첫 조각: 깐 결과가 그저 그랬다는 말. 받은 것 때문에 별이 깎인 건에 쓰고, 뒤에 MID 의 물건 이야기 한 줄이 붙을 수 있다.
@@ -486,36 +507,42 @@ export const ARRIVAL_OPEN = L(`
   뽑은건 괜찮은데
   첫판에 바로 나왔는데 #sum
   큰건 아니어도 쓸만한게 나왔는데 @small
-`, "#luck");
+`, "#luck @shipped");
 export const MID_CLOSE = L(`
-  그래도 실물이라 다행이에요 ^luck @parcel
-  그래도 받긴 잘 받았어요 #recv
-  그래도 포장은 꼼꼼했어요 #pack
-  USDT로 받을걸 그랬나 싶네요 @parcel
+  그래도 실물이라 다행이에요 ^luck @shipped
+  그래도 받긴 잘 받았어요 #recv @shipped
+  USDT로 받을걸 그랬나 싶네요 @shipped
   배송이 좀 더 빨랐으면 해요 ^time
   포장만 좀 신경써주면 좋겠어요 ^pack
+  그래도 USDT로 바로 받을 수 있어서 다행이에요 #did @kept
+  뭐 이런 날도 있죠
+  기대를 안 하는게 맞나봐요
 `);
 
 /** 별 둘과 하나의 둘째 조각: 낮은 점수의 까닭 한 줄. 받는 과정을 말하는 줄은 그 때문에 깎인 건에, 받은 것을 말하는 줄은 나머지에 */
 export const NEG = L(`
-  생각한거랑 달라요 @real
-  필요없는게 나와서 처치곤란 @real
-  이걸 어디다 쓰라는건지 @real
-  사진이랑 느낌이 많이 달라요 @parcel
-  받고 보니 쓸데가 하나도 없네요 @real
-  배송 2주 넘게 걸렸어요 #time
-  박스 다 찌그러져서 왔네요 #pack
-  포장이 너무 허술해요 #pack
+  생각한거랑 달라요 @real @shipped
+  필요없는게 나와서 처치곤란 @real @shipped
+  이걸 어디다 쓰라는건지 @real @shipped
+  사진이랑 느낌이 많이 달라요 @parcel @shipped
+  받고 보니 쓸데가 하나도 없네요 @real @shipped
+  배송 신청했는데 2주 넘게 걸렸어요 #time
+  배송으로 받았는데 박스 다 찌그러져서 왔네요 #pack
+  배송 받았는데 포장이 너무 허술해요 #pack
   배송이 너무 느려요 잊고있었네요 #time
-  겉박스가 터져서 왔어요 #pack
-  오래 기다린거에 비해 별로에요 #time @small
-  박스 모서리 다 뭉개져서 선물도 못하겠어요 #pack
-  받는데 3주 걸렸어요 너무하네요 #time
-  상자 열어보니 완충재가 하나도 없네요 #pack
-  받기까지 너무 오래 걸렸어요 #wait
-  기다린 시간이 너무 길었어요 #wait
-  언제 오는지 몰라 한참 답답했어요 #wait
-  석 달을 기다렸어요 너무하네요 #wait
+  배송으로 받았는데 겉박스가 터져서 왔어요 #pack
+  배송 오래 기다린거에 비해 별로에요 #time @small
+  배송 받았는데 박스 모서리 다 뭉개져서 선물도 못하겠어요 #pack
+  배송 신청하고 받는데 3주 걸렸어요 너무하네요 #time
+  배송 받은 상자 열어보니 완충재가 하나도 없네요 #pack
+  실물로 받기로 했는데 받기까지 너무 오래 걸렸어요 #wait
+  실물로 받으려고 기다린 시간이 너무 길었어요 #wait
+  실물로 받는데 언제 오는지 몰라 한참 답답했어요 #wait
+  실물로 받는데 석 달을 기다렸어요 너무하네요 #wait
+  USDT로 받고 잊었어요 #did @kept
+  그냥 잔액으로 넣었어요 #did @kept
+  굳이 실물 받을 것도 없어서 USDT로 돌렸어요 #did @real @kept
+  받기 누르고 잊기로 했어요 #did @kept
 `);
 /** 별 둘과 하나의 첫 조각: 깐 결과가 실망스러웠다는 말. 받은 것 때문에 깎인 건에 쓴다. 다시 열겠다는 말은 없다 */
 export const NEG_OPEN = L(`
@@ -541,9 +568,10 @@ export const NEG_CLOSE = L(`
   배송 좀 신경써주세요 ^time
   당분간 쉬어야겠어요 ^luck
   포장 좀 신경써주세요 ^pack
-  USDT로 받을걸 그랬어요 @parcel
+  USDT로 받을걸 그랬어요 @shipped
   진행 상황을 좀 더 알려주면 좋겠어요 ^wait
   기대가 컸던만큼 아쉽네요 ^luck
+  이런 날도 있는거죠 ^luck
 `);
 
 /** 글 끝에 붙는 말. 웃음은 좋은 글에만 붙는다(아쉬운 말 뒤에는 붙이지 않는다) */
@@ -614,31 +642,47 @@ export const EN = {
     Matches the listing, all good
     Nicer than the photos
     Clean, no marks on it
+  `, "@shipped"),
+  did: L(`
+    Took the USDT right away
+    Hit take and the balance updated in seconds
+    Went straight for the USDT
+    USDT it is, no need for the item @real
+    Took the balance, easiest option
+    Swapped it to USDT on the spot
+    Left it in the vault for now
+    Keeping it in the vault while I decide
+    Took the USDT, done in a tap
+  `, "#did @kept"),
+  value: L(`
+    More than the box price @money
+    Got back more than I paid @money
+    A bit under the box price @loss
+    Under the box price this time @loss
+    Fair for a box this price @money
+    Good odds for a pull like this @large
   `),
   ship: L(`
-    Arrived safe and sound #pack
-    Got it in about a week #time
-    Shipping took 6 days to my place #time
-    Packaging was solid #pack
-    Came faster than I thought #time
-    Showed up well packed #pack
-    Smooth from opening to delivery
-    No issues with customs on my end
-  `),
+    Had it shipped, took about a week #time
+    Shipped this one, arrived safe and sound #pack
+    Chose delivery, came in six days #time
+    Went with shipping, packaging was solid #pack
+    Had it delivered, came faster than I thought #time
+    Shipped it, showed up well packed #pack
+  `, "@shipped"),
   flow: L(`
     Was about to take the USDT but glad I had it shipped
     Checked the result on the verify page and it matched
     Took USDT on the small ones and shipped this #sum @large
   `),
   gripe: L(`
-    Took a while to arrive but all good #time
-    Box was a bit dented, item is perfect #pack
-    Shipping was slower than I hoped, item is great #time
-    Outer box had a few dings, no damage inside #pack
-    Tracking updated late, otherwise great #time
-    Arrived a few days late, item itself is great #time
-    Tape on the box was peeling, contents fine #pack
-  `),
+    Had it shipped, took a while to arrive but all good #time
+    Shipped it, box was a bit dented, item is perfect #pack
+    Delivery was slower than I hoped, item is great #time
+    Shipped, outer box had a few dings, no damage inside #pack
+    Had it delivered, tracking updated late, otherwise great #time
+    Shipped it, arrived a few days late, item itself is great #time
+  `, "@shipped"),
   midOpen: L(`
     Not what I wanted but ok #luck
     It is alright, nothing special #luck
@@ -663,15 +707,18 @@ export const EN = {
     Happy with the item itself #luck
   `),
   mid: L(`
-    Shipping was slow #time
-    Box came dented #pack
-    Took almost two weeks to get here #time
-    Customs held it for a week #time
-    Tracking went quiet, took weeks #time
-    Item is fine though
-    Does the job @use
-    Works, nothing more @use
-    Already have one @real
+    Shipped it, shipping was slow #time
+    Had it delivered, box came dented #pack
+    Shipping took almost two weeks #time
+    Shipped it, customs held it for a week #time
+    Shipped it, tracking went quiet, took weeks #time
+    Item is fine though @shipped
+    Does the job @use @shipped
+    Works, nothing more @use @shipped
+    Already have one @real @shipped
+    Just took the USDT #did @kept
+    Vault for now, not sure yet #did @kept
+    Took the balance and moved on #did @kept
   `),
   negOpen: L(`
     Keeps giving me the small stuff #luck @loss
@@ -685,14 +732,16 @@ export const EN = {
     Letdown this time #luck
   `),
   neg: L(`
-    Waited three weeks for this #time
-    Outer box was crushed #pack
-    Way too long of a wait #time
-    Padding was missing, box rattled the whole way #pack
-    Not what the page made me expect
-    No use for this at all @real
-    Did not need this at all @real
-    Looks cheaper than in the photos
+    Shipped it, waited three weeks #time
+    Had it delivered, outer box was crushed #pack
+    Shipping took way too long #time
+    Delivered with no padding, box rattled the whole way #pack
+    Not what the page made me expect @shipped
+    No use for this at all @real @shipped
+    Did not need this at all @real @shipped
+    Looks cheaper than in the photos @shipped
+    Took the USDT and moved on #did @kept
+    Just took the balance and left it there #did @kept
   `),
   close: L(`
     thanks
@@ -747,30 +796,43 @@ export const ZH = {
     和描述一致，没问题
     东西很新，没有划痕
     看着比图片还好
+  `, "@shipped"),
+  did: L(`
+    直接领了USDT
+    点一下就到余额了
+    不要实物，领USDT了 @real
+    先放在保管箱里
+    放保管箱里再想想
+    领USDT最省事
+    马上换成USDT了
+    领了USDT，几秒就到账
+  `, "#did @kept"),
+  value: L(`
+    超过箱价了 @money
+    比付的多 @money
+    差一点到箱价 @loss
+    比箱价少一点 @loss
+    这个价位的盒子开到这个不错 @money
   `),
   ship: L(`
-    收到了，包装很好 #pack
-    物流大概一周 #time
-    发货挺快的 #time
-    包了好几层，没有破损 #pack
-    六天到货，很快 #time
-    包装很用心 #pack
-    清关也没遇到问题
-  `),
+    选了配送，一周到了 #time
+    寄过来了，包装很好 #pack
+    选配送，六天到货 #time
+    寄实物，包了好几层，没有破损 #pack
+    选了配送，发货挺快的 #time
+  `, "@shipped"),
   flow: L(`
     本来想领USDT，最后还是选了配送
     验证了一下开箱结果，是对的
     小的领了USDT，这个选了配送 #sum @large
   `),
   gripe: L(`
-    等了十天，东西没问题 #time
-    物流有点慢，东西很好 #time
-    盒子有点压到，里面完好 #pack
-    外箱有点脏，东西没事 #pack
-    晚到了几天，东西很满意 #time
-    物流信息更新慢，其他都好 #time
-    盒子边角有点磕到，东西完好 #pack
-  `),
+    选了配送，等了十天，东西没问题 #time
+    寄过来盒子有点压到，里面完好 #pack
+    选了配送，物流有点慢，东西很好 #time
+    寄过来外箱有点脏，东西没事 #pack
+    选了配送，晚到了几天，东西很满意 #time
+  `, "@shipped"),
   midOpen: L(`
     不是想要的，一般般 #luck
     还可以吧，没什么感觉 #luck
@@ -793,13 +855,16 @@ export const ZH = {
     东西是好东西 #luck
   `),
   mid: L(`
-    物流太慢了 #time
-    盒子压扁了，里面没事 #pack
-    等了快两周 #time
+    选了配送，物流太慢了 #time
+    寄过来盒子压扁了，里面没事 #pack
+    选了配送，等了快两周 #time
     清关卡了一周 #time
-    凑合用吧 @use
-    东西没问题，就是没什么用
-    东西本身还行
+    凑合用吧 @use @shipped
+    东西没问题，就是没什么用 @shipped
+    东西本身还行 @shipped
+    直接领USDT了 #did @kept
+    先放保管箱 #did @kept
+    领了USDT就算了 #did @kept
   `),
   negOpen: L(`
     一直开小的 #luck @loss
@@ -812,14 +877,16 @@ export const ZH = {
     这次不行 #luck
   `),
   neg: L(`
-    等了三个星期 #time
-    外箱都压坏了 #pack
-    等太久了，体验不好 #time
-    里面没有缓冲，一路晃过来 #pack
-    和页面上看到的不一样
-    完全用不上 @real
-    根本不需要这个 @real
-    实物看起来很廉价
+    选了配送，等了三个星期 #time
+    寄过来外箱都压坏了 #pack
+    选了配送，等太久了 #time
+    寄过来里面没有缓冲，一路晃过来 #pack
+    和页面上看到的不一样 @shipped
+    完全用不上 @real @shipped
+    根本不需要这个 @real @shipped
+    实物看起来很廉价 @shipped
+    领了USDT就算了 #did @kept
+    直接换成USDT了 #did @kept
   `),
   close: L(`
     谢谢
@@ -1192,7 +1259,8 @@ export interface Topic { cats: string[]; kind: Kind; whole: boolean; re: RegExp;
 const T = (cats: string, re: RegExp, nouns: string, lines: string, min = 0, max = Infinity, en: RegExp | null = null): Topic => {
   const words = cats.split(" "), marks = words.filter((word) => word[0] === "+" && word !== "+whole"), kind = (marks[0]?.slice(1) ?? "goods") as Kind;
   if (!(kind in KIND_FACTS)) throw new Error("reviewSampleText: 모르는 됨됨이 " + kind);
-  return { cats: words.filter((word) => word[0] !== "+"), kind, whole: words.includes("+whole"), re, en, min, max, nouns: nouns ? nouns.split(" ") : [], lines: L(lines) };
+  // 종류에 맞는 말은 물건을 보고 쓴 말이라 배송으로 받은 건에만. 디지털 상품의 말(USDT로 받았다)은 그 반대다
+  return { cats: words.filter((word) => word[0] !== "+"), kind, whole: words.includes("+whole"), re, en, min, max, nouns: nouns ? nouns.split(" ") : [], lines: L(lines, kind === "digital" ? "" : "@shipped") };
 };
 const ANY = /./;
 /**
@@ -1215,7 +1283,7 @@ const JEWEL = `
   빛 받으면 진짜 예뻐요
   와이프 생일선물로 줬어요 #who
   엄마 드렸더니 계속 거울 보세요 #who
-  포장부터 고급스러워요 #pack
+  케이스부터 고급스러워요 #pack
   사진으로는 다 안담기네요
 `;
 const PLUSH = `
@@ -1440,7 +1508,7 @@ export const TOPICS: Topic[] = [
     레이싱겜 할맛 나요
     책상에 고정하고 달려봤어요
     이제 장비 탓은 못하겠네요
-    세팅하는데 반나절 걸렸어요 재밌네요
+    세팅하는데 반나절 썼어요 재밌네요
     밟는 느낌이 묵직해요
   `),
   // 게임 타이틀(디스크와 카트리지). 밀봉된 채로 온다. 쓴다, 만듦새가 좋다는 말은 하지 않는다(+pack).
@@ -1591,7 +1659,7 @@ export const TOPICS: Topic[] = [
     촉감 부드러워요
     선물하기 좋아요
     엄마 드렸어요 좋아하세요 #who
-    박스 포장 고급져요 #pack
+    박스부터 고급져요 #pack
     둘러보니 분위기가 달라지네요
   `),
   T("bag fashion jewelry +plain", /(?<!위드 )벨트(?! ?백)/, "벨트", `
@@ -1645,7 +1713,7 @@ export const TOPICS: Topic[] = [
     색이 사진보다 고급져요
     매장에서 볼때보다 더 예쁘네요
     마감이 확실히 다르네요
-    포장부터 고급스러워요 #pack
+    케이스부터 고급스러워요 #pack
   `, 80),
 
   // ── 패션, 아웃도어 옷

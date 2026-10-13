@@ -142,9 +142,8 @@ test(`샘플 후기: 한 박스의 연속 ${NEAR}건 안에서는 같은 조각�
 });
 
 test("샘플 후기: 어느 박스든 가장 새 글은 한국어이고, 처음 보이는 다섯 건 가운데 한국어가 아닌 글은 많아야 하나다", () => {
-  // 박스 화면이 처음 보여 주는 건수와 같은 수다
+  // 박스 화면의 줄에서 처음에 눈에 드는 장수(줄은 스무 장을 그리지만 한 화면에는 한두 장이 보인다). 2차 검수에서 다섯으로 정했다
   assert.equal(FRONT, 5);
-  assert.match(fs.readFileSync(new URL("../components/box/BoxReviews.tsx", import.meta.url), "utf8"), /export const BOX_REVIEWS_FIRST = 5;/);
   let front = 0, frontForeign = 0, all = 0, allForeign = 0;
   for (const { box, list } of allShots()) {
     assert.equal(list[0].lang, "ko", `${box.slug}: 가장 새 글이 ${list[0].lang}`);

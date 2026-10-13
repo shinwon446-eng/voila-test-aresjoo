@@ -107,8 +107,8 @@ test("내 후기의 시각(F-03): 상세에는 쓴 날짜와 시각을 그대로
   const reviews = read("../components/box/BoxReviews.tsx");
   // 상세: 내 후기는 stamp, 샘플은 ago
   assert.match(reviews, /card\.mine && card\.at \? stamp\(card\.at\) : ago\(card\.ageMin\)/);
-  // 목록의 행은 누구의 글이든 몇 분 전
-  assert.match(reviews, /className="v-rv-ago v-small v-num">\{ago\(card\.ageMin\)\}/);
+  // 카드는 누구의 글이든 몇 분 전
+  assert.match(reviews, /<span className="v-small v-num">\{ago\(card\.ageMin\)\}<\/span>/);
   // 샘플에는 쓴 시각이 없다
   assert.match(reviews, /ageMin: s\.ageMin, at: null,/);
   // 나온 상품 화면이 쓰던 길도 그대로다
@@ -117,13 +117,14 @@ test("내 후기의 시각(F-03): 상세에는 쓴 날짜와 시각을 그대로
 
 test("편 건수(F-01): 박스 화면과 모아 보기가 편 건수와 읽던 자리를 방문 기록의 그 자리에 적고, 그리기 전에 되살린다(브라우저에서의 확인은 scripts/capture/flow-reviews-nav.mjs)", () => {
   const reviews = read("../components/box/BoxReviews.tsx"), screen = read("../components/box/ReviewsScreen.tsx");
-  // 적는 곳은 방문 기록의 그 자리다: 뒤로 오면 돌아오고 새 방문에는 없다
-  assert.match(reviews, /window\.history\.replaceState\(\{ \.\.\.state, \[SHOWN_STATE\]: \{ key: listKey, shown: n, y: Math\.round\(window\.scrollY\) \}/);
+  // 적는 곳은 방문 기록의 그 자리다: 뒤로 오면 돌아오고 새 방문에는 없다. 화면의 세로 자리와 줄의 가로 자리를 함께 적는다
+  assert.match(reviews, /window\.history\.replaceState\(\{ \.\.\.state, \[SHOWN_STATE\]: \{ key: listKey, shown: n, y: Math\.round\(window\.scrollY\), x: Math\.round\(rowOf\?\.\(\)\?\.scrollLeft \?\? 0\) \}/);
   assert.match(reviews, /saved\.key === listKey && Number\.isInteger\(saved\.shown\) && saved\.shown > first/);
-  // 되살린 뒤에 읽던 자리로 옮긴다
+  // 되살린 뒤에 읽던 자리로 옮긴다(줄의 가로 자리는 브라우저가 되살리지 않으므로 여기서)
   assert.match(reviews, /window\.scrollTo\(0, y\)/);
-  // 두 화면이 같은 것을 쓰고, 목록의 이름이 서로 다르다
-  assert.match(reviews, /useShownRows\("box:" \+ box\.slug, BOX_REVIEWS_FIRST\)/);
+  assert.match(reviews, /if \(row && x > 0\) row\.scrollLeft = x;/);
+  // 두 화면이 같은 것을 쓰고, 목록의 이름이 서로 다르다. 박스 화면은 줄을 함께 준다
+  assert.match(reviews, /useShownRows\("box:" \+ box\.slug, BOX_REVIEWS_FIRST, rowOf\)/);
   assert.match(screen, /useShownRows\("reviews:" \+ picked, ALL_REVIEWS_FIRST\)/);
   // 처음 그릴 때는 언제나 처음 건수다(미리 그린 HTML 과 같다)
   assert.match(reviews, /const \[shown, setShown\] = useState\(first\);/);
@@ -147,15 +148,39 @@ test("후기 시각: 몇 분 전, 몇 시간 전, 며칠 전의 경계", () => {
   }
 });
 
-test("후기 목록: 처음 건수는 화면마다 따로이고, 남은 건수가 많으면 더 보기 단추에 수를 적지 않는다", () => {
-  const reviews = read("../components/box/BoxReviews.tsx"), screen = read("../components/box/ReviewsScreen.tsx");
-  assert.match(reviews, /export const BOX_REVIEWS_FIRST = 5;/);
+test("후기 카드: 박스 화면은 원래 화면의 옆으로 넘기는 줄이고(처음 스무 장, 끝에 가까워지면 스무 장씩 더 붙인다), 모아 보기는 같은 카드의 격자에 더 보기 단추다", () => {
+  const reviews = read("../components/box/BoxReviews.tsx"), screen = read("../components/box/ReviewsScreen.tsx"), css = read("../app/ui.css");
+  assert.match(reviews, /export const BOX_REVIEWS_FIRST = 20;/);
   assert.match(reviews, /export const ALL_REVIEWS_FIRST = 20;/);
   assert.match(reviews, /export const REVIEWS_STEP = 20;/);
-  assert.match(reviews, /useShownRows\("box:" \+ box\.slug, BOX_REVIEWS_FIRST\)/);
-  assert.match(screen, /useShownRows\("reviews:" \+ picked, ALL_REVIEWS_FIRST\)/);
+  // 박스 화면: 원래 화면과 같은 줄(ScrollRow 의 v-rvrow)에 같은 카드(v-rvcard). 단추는 없고, 줄 끝의 표지가 보이는 자리에서 600px 안에 들면 더 붙인다
+  assert.match(reviews, /<ScrollRow className="v-rvrow">/);
+  assert.match(reviews, /<li ref=\{end\} className="v-rvrow-end" aria-hidden \/>/);
+  assert.match(reviews, /new IntersectionObserver\(/);
+  assert.match(reviews, /\{ root: el\.parentElement, rootMargin: "0px 600px 0px 0px" \}/);
+  assert.match(reviews, /<ReviewRow feed=\{feed\} end=\{end\} onMore=\{more\} onOpen=\{setOpen\} \/>/);
+  assert.doesNotMatch(reviews.slice(reviews.indexOf("export function ReviewRow"), reviews.indexOf("export function ReviewList")), /data-reviews-more|<Button/);
+  // 카드는 원래 화면의 꼴: 사진(붙은 사진, 없으면 상품 사진), 별점, 글 석 줄, 더 보기, 별명, 상품 이름과 값(원래처럼 값만. "상품가" 라벨은 상세의 상품 카드에), 몇 분 전
+  assert.match(reviews, /const photo = card\.photo \?\? card\.item\?\.image\.src \?\? null;/);
+  assert.match(reviews, /<li className="v-rvcard">\s*<button type="button" className="v-rvcard-btn"/);
+  assert.match(reviews, /<span className="v-rvcard-item"><span className="v-card-title">\{itemName\(card\.item\)\}<\/span><span className="v-num">\{fmt\(card\.item\.value\)\}<\/span><\/span>/);
+  assert.match(reviews, /<span className="v-rv-itemname">\{itemName\(card\.item\)\}<\/span><span className="v-small v-num">\{t\("take\.ref", \{ amount: fmt\(card\.item\.value\) \}\)\}<\/span>/);
+  // 모아 보기: 격자와 더 보기 단추. 남은 건수가 MORE_COUNT_MAX 를 넘으면 단추에 수를 적지 않는다
+  assert.match(reviews, /<ul ref=\{list\} className="v-rvgrid">/);
+  assert.match(screen, /<ReviewList heading=\{t\("reviews\.listTitle"\)\} feed=\{feed\} onMore=\{more\} onOpen=\{setOpen\} \/>/);
   assert.equal(MORE_COUNT_MAX, 999);
   assert.match(reviews, /left > MORE_COUNT_MAX \? t\("reviews\.moreListPlain"\) : t\("reviews\.moreList"/);
+  // "전체 N건" 같은 새 글은 없다(건수는 별점 요약의 "후기 N개"에 있다)
+  assert.doesNotMatch(reviews, /reviews\.total|reviews\.likes/);
+  // 줄과 카드와 격자의 규칙은 원래 화면(63445c7)의 값 그대로다
+  const base = execFileSync("git", ["show", "63445c7:web/app/ui.css"], { cwd: fileURLToPath(new URL("../", import.meta.url)), encoding: "utf8" }).split(/\r?\n/);
+  const now = css.split(/\r?\n/);
+  for (const prefix of [".v-rvrow {", ".v-rvrow::-webkit-scrollbar", ".v-rvcard {", ".v-rvcard-photo {", ".v-rvcard-photo img", ".v-rvcard-body {", ".v-rvcard-text {", ".v-rvcard .v-small", ".v-rvcard-btn {", ".v-rvcard-more {", ".v-rvcard-item {", ".v-rvgrid {", ".v-rvgrid > .v-rvcard", "  .v-boxlayout-reviews .v-rvrow"]) {
+    const line = base.find((l) => l.startsWith(prefix));
+    assert.ok(line && now.includes(line), prefix);
+  }
+  // 세로 목록의 규칙은 남아 있지 않다
+  assert.doesNotMatch(read("../app/reviews.css"), /\.v-rvlist|\.v-rv-btn|\.v-rv-text|\.v-rv-total|\.v-rv-photo|\.v-rv-head/);
 });
 
 test("박스 찾기(F-07): 객체에 원래 있는 이름(constructor, __proto__, toString, hasOwnProperty)은 박스가 아니다. 없는 박스와 같이 다룬다", () => {
@@ -210,15 +235,19 @@ test("샘플을 끈 빌드(F-04): 화면은 문(lib/reviewSampleGate)을 거쳐�
   assert.equal(on.all, allRatingSummary([3]).count);
 });
 
-test("더 보기 뒤(F-05): 초점은 새로 생긴 첫 글로 가고, 늘어난 건수는 알림 영역에 적는다(브라우저에서의 확인은 scripts/capture/flow-reviews-nav.mjs)", () => {
+test("더 보기 뒤(F-05): 모아 보기는 초점을 새로 생긴 첫 장으로 옮기고, 줄은 넘겨서 붙인 것이라 초점을 건드리지 않는다. 늘어난 장수는 둘 다 알림 영역에 적는다(브라우저에서의 확인은 scripts/capture/flow-reviews-nav.mjs)", () => {
   const reviews = read("../components/box/BoxReviews.tsx");
-  // 누른 때의 건수를 적어 두고, 건수가 는 뒤에 그 자리의 글로 초점을 옮긴다(누르지 않고 는 것은 건드리지 않는다)
+  // 모아 보기: 누른 때의 장수를 적어 두고, 장수가 는 뒤에 그 자리의 장으로 초점을 옮긴다(누르지 않고 는 것은 건드리지 않는다)
   assert.match(reviews, /onClick=\{\(\) => \{ asked\.current = count; onMore\(\); \}\}/);
   assert.match(reviews, /if \(from === null \|\| count <= from\) return;/);
-  assert.match(reviews, /querySelectorAll<HTMLElement>\("\.v-rv-btn"\)\[from\]/);
+  assert.match(reviews, /querySelectorAll<HTMLElement>\("\.v-rvcard-btn"\)\[from\]/);
   assert.match(reviews, /first\?\.focus\(\{ preventScroll: true \}\)/);
-  // 알림 영역은 처음부터 있고(나중에 생기면 읽히지 않는다) 공손하게 읽는다
-  assert.match(reviews, /<p className="v-rv-sr" role="status" aria-live="polite" data-reviews-live>\{loaded\}<\/p>/);
+  // 줄: 끝에 가까워져 붙인 때만 알린다(뒤로 와서 되살린 장수는 알리지 않는다). 아무것도 없어지지 않으므로 초점은 그대로다
+  const row = reviews.slice(reviews.indexOf("export function ReviewRow"), reviews.indexOf("export function ReviewList"));
+  assert.match(row, /watch\.disconnect\(\);\s*asked\.current = count;\s*onMore\(\);/);
+  assert.doesNotMatch(row, /\.focus\(/);
+  // 알림 영역은 처음부터 있고(나중에 생기면 읽히지 않는다) 공손하게 읽는다. 줄과 격자에 하나씩
+  assert.equal(reviews.split('<p className="v-rv-sr" role="status" aria-live="polite" data-reviews-live>{loaded}</p>').length, 3);
   // 알림 글은 누를 때마다 달라야 다시 읽힌다: 늘어난 건수와 지금 보이는 건수를 함께 적는다
   for (const locale of ["ko", "en", "zh"]) {
     const text = (JSON.parse(read(`../messages/v.${locale}.json`)).reviews as Record<string, string>).moreLoaded;

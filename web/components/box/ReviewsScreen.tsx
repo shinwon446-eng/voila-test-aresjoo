@@ -1,11 +1,11 @@
 "use client";
 /**
  * 후기 모아 보기(2026-10-11 파운더: 박스 화면에서 넘어오는, 후기를 한데 모은 화면).
- * 박스를 가리지 않고 새것부터 보여 준다. 박스 화면의 "후기 모두 보기"로 오면 그 박스가 골라져 있고(주소의 box), 알약으로 전체와 오간다.
+ * 박스를 가리지 않고 새것부터 격자로 보여 준다(카드는 박스 화면의 줄과 같은 것). 박스 화면의 "후기 모두 보기"로 오면 그 박스가 골라져 있고(주소의 box), 알약으로 전체와 오간다.
  * 모으는 박스는 주소로 열 수 있는 모든 박스다(홈에서 내린 옛 박스도 주소로 열리므로 함께 센다. lib/reviewSamples 의 newestSamples).
  * 박스가 수백 개라 박스마다 알약을 두지 않는다. 다른 박스의 후기는 후기를 눌러 뜨는 상세의 "박스 보기"로 간다.
  * 자료는 박스 화면과 같다(components/box/BoxReviews 의 useReviewFeed): 별점과 후기 수는 여기 목록의 후기에서만 센다.
- * 전체 목록은 박스마다의 "몇 분 전"만으로 줄을 세우고, 보이는 건만 글을 만든다(lib/reviewSamples 의 newestSamples).
+ * 전체 목록은 박스마다의 "몇 분 전"만으로 줄을 세우고, 보이는 장만 글을 만든다(lib/reviewSamples 의 newestSamples). 수만 건이라 더 보기 단추로 는다.
  */
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
@@ -36,7 +36,7 @@ export function ReviewsScreen() {
       {feed.total === 0 ? <Empty>{t("box.noReviews")}</Empty> : (
         <>
           <RatingBlock summary={feed.summary} />
-          <ReviewList grid heading={t("reviews.listTitle")} feed={feed} onMore={more} onOpen={setOpen} />
+          <ReviewList heading={t("reviews.listTitle")} feed={feed} onMore={more} onOpen={setOpen} />
         </>
       )}
       <div className="v-links"><TextLink href="/wins">{t("wins.title")}</TextLink></div>

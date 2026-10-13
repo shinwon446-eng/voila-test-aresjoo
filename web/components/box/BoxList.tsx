@@ -5,17 +5,20 @@
  * (2026-10-11 파운더: "정보가 너무 많다"). 대표 상품 이름 셋, 구성품 수, 실물 확률, 가장 흔한 결과는
  * 한 번 눌러 들어가는 박스 화면의 첫 줄과 표에 있다.
  * 상품으로 찾기: 원하는 상품이 어느 박스에 있는지 바로 안다(상품 행 → 그 박스).
- * 최근에 연 박스가 맨 앞에 온다. 남의 당첨 소식, 인기 순위, 타이머는 없다.
+ * 순서는 lib/boxOrder 가 정한다(최근에 직접 연 박스, 값의 물결, 누구나 아는 상품 먼저, 잔액으로 열 수 있는 것 먼저). 남의 당첨 소식, 인기 순위, 타이머는 없다.
  */
-import { useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Search } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { CATEGORY_FILTERS, HOME_BOXES, dropTable, faceOf, isLadderBox, sortBoxes, type BoxCategory, type ProductBox, type ProductItem } from "@/lib/products";
+import { CATEGORY_FILTERS, HOME_BOXES, dropTable, faceOf, isLadderBox, type BoxCategory, type ProductBox, type ProductItem } from "@/lib/products";
+import { boxOrder, type BoxOrderContext } from "@/lib/boxOrder";
 import { CATEGORIES_V2 } from "@/lib/catalogTypes";
 import { useProductText } from "@/lib/useProductText";
 import { useCurrency } from "@/lib/useCurrency";
 import { useInventoryStore } from "@/stores/inventoryStore";
+import { useWalletStore } from "@/stores/walletStore";
+import { useAuthStore } from "@/stores/authStore";
 import { Button, Chips, Empty, ScreenHead } from "@/components/ui/kit";
 import { RatingInline, useRealRatings } from "@/components/box/BoxReviews";
 import { HeroBanner } from "@/components/home/HeroBanner";
@@ -30,15 +33,16 @@ const PAGE = 24;
 const CATEGORY_ORDER: BoxCategory[] = [...CATEGORY_FILTERS.flatMap((c) => (c.key === "all" ? [] : [c.key as BoxCategory])), ...CATEGORIES_V2];
 const HOME_CATEGORIES: BoxCategory[] = CATEGORY_ORDER.filter((key) => HOME_BOXES.some((b) => b.category === key));
 const isV2 = (key: string): boolean => (CATEGORIES_V2 as readonly string[]).includes(key);
-/** 카테고리를 돌아가며 한 박스씩: 1번 카테고리의 첫 박스, 2번의 첫 박스, ... 그다음 둘째 박스들 */
-function interleave(boxes: ProductBox[]): ProductBox[] {
-  const groups = new Map<string, ProductBox[]>();
-  for (const box of boxes) groups.set(box.category, [...(groups.get(box.category) ?? []), box]);
-  const rows = Array.from(groups.values());
-  const out: ProductBox[] = [];
-  for (let i = 0; out.length < boxes.length; i++) for (const row of rows) if (row[i]) out.push(row[i]);
-  return out;
+/** 업그레이드로 생긴 상품인가(그 박스를 직접 연 것이 아니다). 그 칸이 아직 없는 판에서도 같은 뜻으로 읽힌다 */
+const fromUpgrade = (item: object): boolean => "upgradedFrom" in item && Boolean((item as { upgradedFrom?: unknown }).upgradedFrom);
+/** 순서에 쓰는 내 기록과 잔액을 지금의 장부에서 한 번 읽는다. 직접 연 박스만 센다 */
+function readOrderContext(): BoxOrderContext {
+  const opened = new Map<string, number>();
+  for (const item of useInventoryStore.getState().items) if (!fromUpgrade(item)) opened.set(item.boxSlug, Math.max(opened.get(item.boxSlug) ?? 0, Date.parse(item.acquiredAt) || 0));
+  return { opened, balance: useWalletStore.getState().balance };
 }
+/** 서버에서는 그리기 전 효과가 없으니 보통 효과로 둔다(BoxReviews 와 같다) */
+const useBrowserLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 export function BoxList() {
   const t = useTranslations("v");
@@ -50,17 +54,28 @@ export function BoxList() {
   const [category, setCategory] = useState<Category>("all");
   const [query, setQuery] = useState("");
   const [shown, setShown] = useState(PAGE);
-  const owned = useInventoryStore((s) => s.items);
-
-  // 최근에 연 박스를 앞으로. 기록이 없으면 추천 순서 그대로다.
-  const boxes = useMemo(() => {
-    const lastOpened = new Map<string, number>();
-    for (const item of owned) lastOpened.set(item.boxSlug, Math.max(lastOpened.get(item.boxSlug) ?? 0, Date.parse(item.acquiredAt) || 0));
-    const sorted = sortBoxes(category === "all" ? HOME_BOXES : HOME_BOXES.filter((b) => b.category === category), "featured");
-    // "전체"는 카테고리를 돌아가며 한 박스씩 놓는다(첫 화면이 한 카테고리로만 차지 않게). 카테고리 안의 순서는 그대로다
-    const list = category === "all" ? interleave(sorted) : sorted;
-    return [...list].sort((a, b) => (lastOpened.get(b.slug) ?? 0) - (lastOpened.get(a.slug) ?? 0));
-  }, [category, owned]);
+  // 순서의 규칙은 lib/boxOrder 한 곳에 있다. 분류를 고르면 그 분류 안에서 같은 규칙으로 놓는다.
+  // 내 기록과 잔액은 이 화면에 들어올 때와 분류를 바꿀 때 한 번만 읽는다(받기나 충전으로 잔액이 바뀌었다고 보고 있는 카드를 옮기지 않는다).
+  // 계정이 정해진 뒤에만 읽는다. 사이트를 새로 열면 로그인한 계정의 장부가 첫 그림 뒤에 붙고, 그때 카드를 옮기면 화면이 덜컥거린다.
+  // 그래서 새로 연 첫 화면은 기록 없이 놓은 순서(서버가 그린 순서) 그대로 두고, 화면 안에서 다시 들어오거나 분류를 바꾸면 내 순서를 쓴다
+  const [ctx, setCtx] = useState<BoxOrderContext>({});
+  useBrowserLayoutEffect(() => {
+    // 계정이 이미 정해져 있으면 그리기 전에 읽는다(기록 없는 순서가 한 프레임도 보이지 않게)
+    if (useAuthStore.getState().hydrated) setCtx(readOrderContext());
+  }, [category]);
+  // 이 화면을 보는 동안 로그인하거나 나가면 그 계정의 장부로 한 번 다시 놓는다. 새로 연 화면에서 계정이 처음 정해질 때는 옮기지 않는다
+  const accountId = useAuthStore((s) => (s.hydrated ? s.user?.id ?? null : undefined));
+  const seenAccount = useRef(accountId);
+  useEffect(() => {
+    if (accountId === undefined || seenAccount.current === accountId) return;
+    const first = seenAccount.current === undefined;
+    seenAccount.current = accountId;
+    if (first) return;
+    // 계정의 장부는 같은 차례에 AuthHost 가 바꿔 끼운다(레이아웃에서 이 화면보다 뒤라 그 효과가 나중에 돈다). 그 다음에 읽는다
+    const timer = window.setTimeout(() => setCtx(readOrderContext()), 0);
+    return () => window.clearTimeout(timer);
+  }, [accountId]);
+  const boxes = useMemo(() => boxOrder(category === "all" ? HOME_BOXES : HOME_BOXES.filter((b) => b.category === category), ctx), [category, ctx]);
 
   // 상품 검색: 세 언어의 상품 이름이나 박스 이름 어디든 들어 있으면("포켓몬 카드", "자동차"처럼 박스 이름으로 찾으면 그 박스의 상품이 나온다).
   // 같은 상품이 여러 박스에 있으면 박스마다 한 행

@@ -388,12 +388,24 @@ export const isOwnItem = (box: Pick<ProductBox, "slug" | "scheme">, item: Pick<P
  * 사진이 있는 것을 먼저 찾을 때는 withPhoto 를 준다.
  */
 /**
- * 박스의 얼굴 하나(홈 카드와 박스 화면 맨 위). 자기 상품 가운데 사진이 있는 가장 값진 것.
+ * 가장 값진 사진이 박스의 주제와 어긋나는 박스는 얼굴을 따로 정한다(2026-10-12, 편집자 지정. flow/RESTORE_SPEC.md W2).
+ * 애플 모바일 박스의 가장 값진 사진은 헤드셋이고 삼성 갤럭시북 박스의 가장 값진 사진은 기업용 SSD 다.
+ * 적힌 상품이 그 박스의 자기 상품이고 사진이 있을 때만 쓴다. 상품의 순서, 최고 상품가, 확률은 이 지정과 상관없이 그대로다.
+ * 물려받은 이름이 박스 번호로 읽히지 않게 빈 바탕 위에 만든다(BOX_BY_SLUG 와 같다).
+ */
+export const FACE_PICK: Readonly<Record<string, string>> = Object.assign(Object.create(null), {
+  "mobile-apple": "mobile-apple-iphone-17-pro-max-2tb",
+  "computer-samsung": "computer-samsung-galaxy-book4-ultra-u9-rtx4070",
+});
+/**
+ * 박스의 얼굴 하나(홈 카드와 박스 화면 맨 위). 자기 상품 가운데 사진이 있는 가장 값진 것. 따로 정한 얼굴(FACE_PICK)이 있으면 그것이 먼저다.
  * 자기 상품에 사진이 하나도 없으면 가장 값진 자기 상품을 사진 없이 돌려준다(다른 브랜드의 사진을 그 박스의 얼굴로 쓰지 않는다).
  */
 export const faceOf = (box: ProductBox): ProductItem | undefined => {
   const own = box.items.filter((i) => i.kind !== "cash" && isOwnItem(box, i)).sort((a, b) => b.value - a.value);
-  return own.find((i) => i.image.src) ?? own[0];
+  const pickId = FACE_PICK[box.slug];
+  const pick = pickId ? own.find((i) => i.id === pickId && i.image.src) : undefined;
+  return pick ?? own.find((i) => i.image.src) ?? own[0];
 };
 export const faceItems = (box: ProductBox, withPhoto = false): ProductItem[] => {
   const real = box.items.filter((i) => i.kind !== "cash" && (!withPhoto || i.image.src));

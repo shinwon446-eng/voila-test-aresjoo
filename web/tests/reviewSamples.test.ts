@@ -13,7 +13,7 @@ import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import { BOXES, BOX_BY_SLUG, HOME_BOXES, type ProductBox, type ProductItem } from "../lib/products";
 import { BANNED, CLOSE, EN, GOT, PAR_BAND, GRIPE, ITEM, MID, MID_CLOSE, NEG, NEG_CLOSE, SHIP, USE, USE_GIFT, ZH, type Frag } from "../lib/reviewSampleText";
-import { BIG_FLOOR, BUILT_CAP, FRONT, NEAR, RETURNING_SHARE, SAMPLE_MAX, SAMPLE_MIN, allRatingSummary, builtCount, kindOf, newestSamples, ratingSummary, sampleCount, sampleParts, sampleReviews, sampleShapes, summarizeRatings, type ReviewSample } from "../lib/reviewSamples";
+import { BIG_FLOOR, BUILT_CAP, FRONT, FRONT_ROWS, NEAR, RETURNING_SHARE, SAMPLE_MAX, SAMPLE_MIN, WINDOW, WINDOW_MAX, allRatingSummary, builtCount, kindOf, newestSamples, ratingSummary, sampleCount, sampleParts, sampleReviews, sampleShapes, summarizeRatings, type ReviewSample } from "../lib/reviewSamples";
 import { takeAmountOf } from "../lib/takeBatch";
 
 const PROBE = ["watch-rolex", "pokemon-charizard", "beauty-dior"];
@@ -139,6 +139,41 @@ test(`샘플 후기: 한 박스의 연속 ${NEAR}건 안에서는 같은 조각�
     });
   }
   assert.ok(parts > 100000, `조각 ${parts}개`);
+});
+
+test(`샘플 후기: 같은 상품이 몰리지 않는다. 처음 ${FRONT_ROWS}건 안에서는 한 번(뽑힌 가짓수가 적으면 두 번, 붙어서는 아니다), 이웃한 두 건에 같은 상품이 없고, 연속 ${WINDOW}건 안에는 ${WINDOW_MAX}건까지다(한 상품이 열에 셋을 넘게 나오는 박스는 그 상품만 몫에 맞는 수까지)`, () => {
+  assert.deepEqual([FRONT_ROWS, WINDOW, WINDOW_MAX], [20, 10, 3]);
+  const dense: string[] = [];
+  for (const { box, list } of allShots()) {
+    const n = list.length, items = list.map((r) => r.itemId);
+    const count = new Map<string, number>();
+    for (const id of items) count.set(id, (count.get(id) ?? 0) + 1);
+    // 1) 처음 스무 건: 뽑힌 가짓수가 스물에 못 미치면 두 번까지
+    const cap = count.size >= FRONT_ROWS ? 1 : 2;
+    const front = new Map<string, number>();
+    for (const id of items.slice(0, FRONT_ROWS)) front.set(id, (front.get(id) ?? 0) + 1);
+    for (const [id, k] of Array.from(front.entries())) assert.ok(k <= cap, `${box.slug}: 처음 ${FRONT_ROWS}건에 ${id} 가 ${k}번`);
+    // 2) 이웃
+    for (let i = 1; i < n; i++) assert.notEqual(items[i], items[i - 1], `${box.slug}: ${i}번째와 ${i + 1}번째가 같은 상품 ${items[i]}`);
+    // 3) 열 건의 창. 몫이 열에 셋을 넘는 상품은 그 몫을 올림한 수에 하나까지(고르게 흩었다는 뜻)
+    for (let i = 0; i + WINDOW <= n; i++) {
+      const seen = new Map<string, number>();
+      for (const id of items.slice(i, i + WINDOW)) seen.set(id, (seen.get(id) ?? 0) + 1);
+      for (const [id, k] of Array.from(seen.entries())) {
+        const share = count.get(id)! / n;
+        const allowed = share > WINDOW_MAX / WINDOW ? Math.ceil(share * WINDOW) + 1 : WINDOW_MAX;
+        assert.ok(k <= allowed, `${box.slug}: ${i + 1}번째부터 ${WINDOW}건에 ${id} 가 ${k}번(몫 ${(share * 100).toFixed(0)}%)`);
+      }
+    }
+    const top = Math.max(...Array.from(count.values())) / n;
+    if (top > WINDOW_MAX / WINDOW) dense.push(`${box.slug} ${(top * 100).toFixed(0)}%`);
+  }
+  // 한 상품의 몫이 열에 셋을 넘는 박스는 이 넷뿐이다(싼 옛 박스). 뽑는 무게가 바뀌면 여기도 바뀐다
+  assert.deepEqual(dense.sort(), ["dollar-apple 37%", "starter-macbook 38%", "starter-ps5 41%", "vault-handbag 38%"]);
+  // 검수에서 짚인 차 박스: 처음 세 건이 같은 서브우퍼였다. 이제 처음 스무 건이 다 다른 상품이다
+  const car = sampleReviews("car-rolls-royce", FRONT_ROWS);
+  assert.equal(new Set(car.map((r) => r.itemId)).size, FRONT_ROWS);
+  assert.equal(car.filter((r) => r.itemId === car[0].itemId).length, 1);
 });
 
 test("샘플 후기: 어느 박스든 가장 새 글은 한국어이고, 처음 보이는 다섯 건 가운데 한국어가 아닌 글은 많아야 하나다", () => {
@@ -284,7 +319,7 @@ test("샘플 후기: 상표나 본품의 낱말이 이름에 들었다고 본품
     ["세트 번호가 없는 레고(수납함, 게임)", null, /^레고 /, /^(?!.*\d{4,6}$)/, new RegExp("조립|만들|부품누락|완성하니|" + called("레고"))],
     ["인형 상표의 책, 딸랑이, 열쇠고리, 가방 장식, 타는 것", null, /젤리캣|슈타이프/, /보드북|(?:^|\s)북(?:\s|$)|책|백 참|래틀|수더|키링|라이딩/, new RegExp("안고자|부들부들|침대옆|이름도지어|" + called("인형"))],
     ["마일레그의 인형 집과 가구", null, /마일레그/, /미니어처|하우스|침대|키친|매치박스|캐슬|욕실|다리미|세트/, new RegExp("안고자|부들부들|침대옆|생각보다크네요|" + called("인형"))],
-    ["신발 상표의 관리 용품과 소품", "fashion", /나이키|아디다스|뉴발란스|아식스|살로몬|호카|컨버스|반스|닥터마틴|팀버랜드|버켄스탁|어그/, /플라스크|신발끈|이어머프|실드|프루퍼|프로텍터|리펠런트|실러|(?:^|\s)밤(?:\s|$)|양말|삭스|모자|백팩/, new RegExp("신고|신어|착화|발편|끈묶|신발장|" + called("신발"))],
+    ["신발 상표의 관리 용품과 소품", "fashion", /나이키|아디다스|뉴발란스|아식스|살로몬|호카|컨버스|반스|닥터마틴|팀버랜드|버켄스탁|어그/, /플라스크|신발끈|이어머프|실드|프루퍼|프로텍터|리펠런트|실러|(?:^|\s)밤(?:\s|$)|양말|(?<!톰 )삭스|모자|백팩/, new RegExp("신고|신어|착화|발편|끈묶|신발장|" + called("신발"))],
     ["피규어 상표의 진열 용품과 부속품", null, /팝마트|스미스키|넨도로이드|굿스마일|펀코|베어브릭/, /컨테이너|스탠드|파츠|파우치|케이스/, new RegExp("도색|디테일|캐릭터|세워놨|" + called("피규어"))],
     ["시계 상표의 체중계, 심박계, 줄", null, /코로스|위딩스|폴라|픽셀 워치|갤럭시 워치|애플 ?워치/, /체중계|스케일|심박|밴드$|스트랩|충전/, new RegExp("알림바로|수면측정|걸음수|러닝기록|운동할때차|" + called("워치"))],
     ["폰 이름이 든 배터리와 부속품", null, /아이폰|갤럭시 [SZA]\d|픽셀 \d|샤오미 \d/, /배터리$|케이스|필름|충전기|케이블|포토그래피 키트 레전드|거치대|스트랩/, new RegExp("개통|유심|자급제|새폰|폰바꿀|세컨폰|핸드폰|" + called("폰"))],

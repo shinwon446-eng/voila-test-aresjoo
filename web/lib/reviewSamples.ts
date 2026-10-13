@@ -114,6 +114,50 @@ const DAY = 1440;
 interface Core { box: ProductBox; items: ProductItem[]; count: number; pick: Uint16Array; rating: Uint8Array; why: Uint8Array; age: Uint32Array; topRate: number; summary: RatingSummary }
 const cores = new Map<string, Core | null>();
 
+/** 같은 상품이 몰리지 않게 하는 폭: 처음 FRONT_ROWS 건(박스 화면의 줄이 처음 그리는 장수), 연속 WINDOW 건 안에 같은 상품은 WINDOW_MAX 건까지 */
+export const FRONT_ROWS = 20, WINDOW = 10, WINDOW_MAX = 3;
+/**
+ * 같은 상품이 몰려 보이지 않게 건의 차례를 바꾼다(2026-10-13 파운더: 차 박스의 처음 세 건이 같은 서브우퍼에 같은 사진이었다. 기계가 만든 것으로 읽힌다).
+ * 상품을 다시 뽑지 않고 자리만 바꾼다: 상품과 별점과 그 까닭은 함께 움직이고, 나이와 쓴 사람(castOf)은 자리에 남는다. 그래서 건수, 별점 분포, 상품마다의 몫, 나이, 언어의 규칙은 그대로다.
+ *   1) 처음 FRONT_ROWS 건 안에서는 같은 상품이 한 번만 나온다. 뽑힌 상품의 가짓수가 그보다 적은 박스에서는 두 번까지(붙어서는 아니다).
+ *   2) 어디서든 같은 상품이 이웃한 두 건에 나오지 않는다.
+ *   3) 연속 WINDOW 건 안에 같은 상품은 WINDOW_MAX 건까지다. 한 상품의 몫이 그보다 큰 박스(한 상품이 열에 셋을 넘게 나오는 싼 박스 넷)에서는 그 상품만 몫에 맞는 수까지 두어 고르게 흩는다.
+ * 자리마다 남은 것 가운데 규칙에 걸리지 않는 상품을 고르고, 그 가운데 남은 자리에 대한 몫(급한 정도)이 가장 큰 상품을 먼저 놓는다(같으면 원래 차례가 앞선 것).
+ *   그래야 끝에 같은 상품만 남아 붙는 일이 없다(몫이 절반을 넘지 않으면 이웃은 언제나 피할 수 있다).
+ */
+function spread(pick: Uint16Array, rating: Uint8Array, why: Uint8Array, kinds: number): void {
+  const n = pick.length;
+  const queues: number[][] = Array.from({ length: kinds }, () => []);
+  for (let i = 0; i < n; i++) queues[pick[i]].push(i);
+  const drawn = queues.filter((queue) => queue.length > 0).length;
+  const frontCap = drawn >= FRONT_ROWS ? 1 : 2;
+  const front = new Uint16Array(kinds), placed = new Uint16Array(n);
+  const order = new Uint16Array(n);
+  for (let pos = 0; pos < n; pos++) {
+    let best = -1, bestScore = -Infinity;
+    for (let item = 0; item < kinds; item++) {
+      const left = queues[item].length;
+      if (left === 0) continue;
+      let inWindow = 0;
+      for (let k = Math.max(0, pos - (WINDOW - 1)); k < pos; k++) if (placed[k] === item) inWindow += 1;
+      // 급한 정도: 남은 자리 가운데 이 상품이 차지해야 하는 몫. 몫이 커서 열에 셋으로는 다 못 놓는 상품은 그만큼 더 둔다
+      const urgency = left / (n - pos);
+      const cap = Math.max(WINDOW_MAX, Math.ceil(urgency * WINDOW));
+      // 걸리는 규칙마다 크게 깎는다(이웃이 가장 무겁다). 다 걸려도 어느 하나는 놓아야 하므로 가장 덜 걸리는 것을 고른다
+      let score = urgency * 1000 - queues[item][0] / n;
+      if (pos > 0 && placed[pos - 1] === item) score -= 3e6;
+      if (inWindow >= cap) score -= 2e6;
+      if (pos < FRONT_ROWS && front[item] >= frontCap) score -= 1e6;
+      if (score > bestScore) { bestScore = score; best = item; }
+    }
+    order[pos] = queues[best].shift()!;
+    placed[pos] = best;
+    if (pos < FRONT_ROWS) front[best] += 1;
+  }
+  const p = pick.slice(), r = rating.slice(), w = why.slice();
+  for (let pos = 0; pos < n; pos++) { pick[pos] = p[order[pos]]; rating[pos] = r[order[pos]]; why[pos] = w[order[pos]]; }
+}
+
 function coreOf(slug: string): Core | null {
   const cached = cores.get(slug);
   if (cached !== undefined) return cached;
@@ -154,6 +198,8 @@ function coreOf(slug: string): Core | null {
     age[i] = Math.round(at);
     at += 3 - Math.log(1 - next()) * gap;
   }
+  // 같은 상품이 몰리지 않게 자리를 바꾼다(나이는 자리에 남는다)
+  spread(pick, rating, why, items.length);
   const core: Core = { box, items, count, pick, rating, why, age, topRate, summary: summaryOf(dist) };
   cores.set(slug, core);
   return core;

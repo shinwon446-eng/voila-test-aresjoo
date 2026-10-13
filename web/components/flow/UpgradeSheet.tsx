@@ -11,13 +11,17 @@
  *   같은 길이, 같은 움직임 곡선(일정한 비율, 느려지며 멈추지 않는다)으로 가서 그 자리에 멈춘다. 길이가 같으므로 나온 수가 클수록 표시가 빨리 움직인다.
  *   결과에 따라 길이, 곡선, 멈추는 자리를 바꾸지 않는다. 경계는 엄격한 미만이다: 나온 수가 성공 확률보다 작을 때만 성공이고, 그 문장과 두 수를 함께 적는다.
  *   움직임 줄이기 설정이면 연출 없이 결과부터.
+ * 초점과 낭독(flow/agy-restore-2.txt): 결과로 넘어가면 초점을 결과 묶음으로 옮긴다(주 단추를 누르면 그 단추가 사라져 초점이 문서로 떨어지므로).
+ *   결과 묶음은 단추 바로 앞에 있어 Tab 한 번이 주 단추다. 화면 읽기 도구에는 시트가 뜰 때부터 있는 상태 영역(role=status)이 결과 문장을 읽어 준다.
+ *   추첨 중 Esc 는 닫기가 아니라 결과 바로 보기다(개봉 화면과 같다. 장부는 주 단추를 누른 순간 이미 끝났다).
+ *   닫을 때는 돌아갈 보관 상품의 id 를 부른 쪽에 넘긴다(보관함과 여러 개 결과는 상세 시트를 먼저 닫고 이 시트를 열어, 누른 단추가 사라져 있다).
  * 걸기 전에 잠근 값: 고르는 화면의 링크 하나가 이번 추첨에 쓸 잠근 값(해시), 내 기기 값, 다음 회차를 보여 준다. 결과 검증의 같은 줄과 견줄 수 있다.
  * 탭 사이의 잠금(Web Locks)이 없는 브라우저에서는 걸지 않고 그 자리에 글로 알린다(lib/upgradeSettle 의 nolock).
  * 결과: 성공이면 목표 상품(주 단추 "USDT로 받기", 조용한 단추 "한 번 더 업그레이드", 링크 "보관함에 두기"와 "결과 검증").
  *   실패면 실패했고 건 상품이 사라졌다고 그대로 적는다(주 단추는 박스 보러 가기 하나, 링크 "결과 검증").
  *   장부에 적히지 않았으면 결과를 말하지 않는다: 실행하지 못했다(상품은 보관함에 있다), 또는 확인하지 못했다(성공도 실패도 아니다).
  */
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { BOX_BY_SLUG, type ProductItem } from "@/lib/products";
 import { NO_CHAIN_RECORD } from "@/lib/chainRecord";
@@ -52,10 +56,14 @@ function DrawBar({ record, moving }: { record: UpgradeRecord; moving?: boolean }
   );
 }
 
+/** 화면 읽기 도구에만 읽히는 글(reviews.css 의 v-rv-sr 과 같은 모양. 이 시트 안에서만 쓴다) */
+const SR_ONLY: CSSProperties = { position: "absolute", overflow: "hidden", width: 1, height: 1, margin: -1, padding: 0, border: 0, clipPath: "inset(50%)", whiteSpace: "nowrap" };
+
 export function UpgradeSheet({ stakeId, onClose, onBack }: {
   /** 걸 상품의 보관 상품 id. null 이면 닫혀 있다 */
   stakeId: string | null;
-  onClose: () => void;
+  /** 닫는다. landing 은 초점을 돌려보낼 보관 상품의 id 다(성공해 받지 않은 목표 상품이면 그것, 아니면 지금 건 상품) */
+  onClose: (landing?: string) => void;
   /** 박스 화면(개봉 결과)에서 열었으면 그 박스로 돌아가는 일. 실패 화면의 주 단추가 쓴다. 없으면 박스 목록으로 간다 */
   onBack?: () => void;
 }) {
@@ -90,6 +98,8 @@ export function UpgradeSheet({ stakeId, onClose, onBack }: {
   // 요청 세대: 시트를 다시 열었거나 계정이 바뀐 뒤에 돌아온 옛 응답을 이 화면에 적용하지 않는다
   const generation = useRef(0);
   const open = stakeId !== null;
+  // 결과 묶음(단추 앞의 내용). 결과로 넘어가면 여기로 초점을 옮긴다
+  const resultRef = useRef<HTMLDivElement>(null);
 
   const restart = (id: string | null) => {
     setCurrent(id); setChip(null); setStep("pick"); setBusy(false); setOutcome(null); setVerifying(null); setLocked(false);
@@ -116,6 +126,26 @@ export function UpgradeSheet({ stakeId, onClose, onBack }: {
     const timer = window.setTimeout(() => setStep("result"), UPGRADE_DRAW_MS);
     return () => window.clearTimeout(timer);
   }, [step]);
+  // 추첨 중 Esc: 결과 바로 보기(닫기가 아니다). 시트는 추첨 중 잠겨 있어 그 Esc 를 버리므로, 시트의 듣기(document)보다 먼저 받는 창(window)의 잡는 단계에서 가로챈다.
+  // 그 사이에 겹친 창은 없다(잠근 값 보기, 검증, 확인창은 추첨 중에 열리지 않는다)
+  useEffect(() => {
+    if (step !== "draw") return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      event.preventDefault(); event.stopImmediatePropagation();
+      setStep("result");
+    };
+    window.addEventListener("keydown", onKey, true);
+    return () => window.removeEventListener("keydown", onKey, true);
+  }, [step]);
+  // 결과로 넘어가면 초점을 결과 묶음으로. 주 단추를 누르면 그 단추가 사라져 초점이 문서로 떨어지는 것을 막는다. 묶음 바로 뒤가 주 단추라 Tab 한 번이면 닿는다
+  useEffect(() => {
+    if (step !== "result") return;
+    const frame = requestAnimationFrame(() => resultRef.current?.focus({ preventScroll: true }));
+    return () => cancelAnimationFrame(frame);
+  }, [step]);
+  // 닫기: 초점을 돌려보낼 보관 상품을 함께 알린다
+  const close = () => onClose(record?.won && took === null && items.some((item) => item.id === record.target.ownedId) ? record.target.ownedId : current ?? undefined);
 
   const run = async () => {
     if (lock.current || !stake || !selected?.target) return;
@@ -165,23 +195,29 @@ export function UpgradeSheet({ stakeId, onClose, onBack }: {
   const verifyLink = record && <TextLink onClick={() => setVerifying(record)}>{t("upgrade.verify")}</TextLink>;
   const title = step === "result" && record ? t(record.won ? "upgrade.wonTitle" : "upgrade.lostTitle") : t("upgrade.title");
   const desc = step === "pick" ? t("upgrade.desc") : step === "result" && record?.won ? t("upgrade.wonDesc") : undefined;
+  // 화면 읽기 도구가 읽을 결과 문장. 성공과 실패는 제목과 한 줄, 그 밖은 그 자리의 한 줄과 같은 글이다
+  const announce = step !== "result" || !outcome ? "" : record ? title + " " + t(record.won ? "upgrade.wonDesc" : "upgrade.lostDesc") : t(outcome.status === "failed" ? "upgrade.failed" : outcome.status === "nolock" ? "upgrade.noLock" : outcome.status === "blocked" ? "upgrade.blocked" : "upgrade.unknown");
+  // 결과 묶음: 단추 바로 앞의 내용. 초점이 여기로 온다
+  const result = (children: ReactNode) => <div ref={resultRef} tabIndex={-1} data-upgrade-result className="v-stack">{children}</div>;
 
   return (
     <>
-      <Sheet open={open && !verifying && !asking && !locked} onClose={onClose} title={title} desc={desc} closeLabel={t("common.close")} locked={busy || taking || step === "draw"}>
+      <Sheet open={open && !verifying && !asking && !locked} onClose={close} title={title} desc={desc} closeLabel={t("common.close")} locked={busy || taking || step === "draw"}>
+        {/* 결과의 낭독: 시트가 뜰 때부터 있는 상태 영역에 결과 문장이 들어온다(뒤늦게 생긴 영역은 읽히지 않을 수 있다) */}
+        <p role="status" aria-live="polite" aria-atomic="true" style={SR_ONLY} data-upgrade-announce>{announce}</p>
         {/* 거는 동안에는 장부가 먼저 바뀐다. 그 사이에 막힌 화면이 스치지 않게 처리 중에는 고르기 화면을 그대로 둔다 */}
         {/* 탭 사이의 잠금이 없는 브라우저: 걸지 않는다. 추첨도 하지 않는다 */}
         {step === "pick" && !lockOk && (
           <>
             <Line>{t("upgrade.noLock")}</Line>
-            <Button onClick={onClose}>{t("common.close")}</Button>
+            <Button onClick={close}>{t("common.close")}</Button>
           </>
         )}
         {step === "pick" && lockOk && (!stake || (!busy && !canStake(stake, ledger)) ? (
           <>
             {/* 다른 곳에서 먼저 받았거나 걸었거나, 확인 필요 상태다. 걸 수 없다 */}
             <Line>{t("upgrade.blocked")}</Line>
-            <Button onClick={onClose}>{t("common.close")}</Button>
+            <Button onClick={close}>{t("common.close")}</Button>
           </>
         ) : (
           <>
@@ -235,12 +271,14 @@ export function UpgradeSheet({ stakeId, onClose, onBack }: {
           const takeable = !!won && canStake(won, ledger);
           return (
             <>
-              {product?.image.src && <div className="v-sheet-photo v-up-won"><img src={product.image.src} alt="" /></div>}
-              <div>
-                <p className="v-card-title">{product ? itemName(product) : record.target.itemId}</p>
-                <p className="v-small v-num">{t("take.ref", { amount: fmt(record.target.valueUsdt) })}</p>
-              </div>
-              {drawn}
+              {result(<>
+                {product?.image.src && <div className="v-sheet-photo v-up-won"><img src={product.image.src} alt="" /></div>}
+                <div>
+                  <p className="v-card-title">{product ? itemName(product) : record.target.itemId}</p>
+                  <p className="v-small v-num">{t("take.ref", { amount: fmt(record.target.valueUsdt) })}</p>
+                </div>
+                {drawn}
+              </>)}
               <div className="v-take-foot">
                 {took !== null && <Line>{t("take.done", { amount: fmt(took) })}</Line>}
                 {took === null && (takeNote === "unknown" || !takeable) && <Line fail>{t("take.unknown")}</Line>}
@@ -249,11 +287,11 @@ export function UpgradeSheet({ stakeId, onClose, onBack }: {
                   <>
                     <Button data-take-primary onClick={() => setAsking(true)}>{t("reveal.take", { amount: fmt(takeAmountOf(won)) })}</Button>
                     <Button quiet data-upgrade-again onClick={() => restart(won.id)}>{t("upgrade.again")}</Button>
-                    <div className="v-links"><TextLink onClick={onClose}>{t("take.keep")}</TextLink>{verifyLink}</div>
+                    <div className="v-links"><TextLink onClick={close}>{t("take.keep")}</TextLink>{verifyLink}</div>
                   </>
                 ) : (
                   <>
-                    <Button onClick={onClose}>{t("common.close")}</Button>
+                    <Button onClick={close}>{t("common.close")}</Button>
                     <div className="v-links">{verifyLink}</div>
                   </>
                 )}
@@ -266,15 +304,17 @@ export function UpgradeSheet({ stakeId, onClose, onBack }: {
           const product = productAt(record.stake.boxSlug, record.stake.itemId);
           return (
             <>
-              {/* 실패를 돌려 말하지 않는다 */}
-              <Line fail>{t("upgrade.lostDesc")}</Line>
-              <Rows>
-                <Row label={t("upgrade.stake")}>{product ? itemName(product) : record.stake.itemId}</Row>
-                <Row label={t("reveal.value")}>{fmt(record.stake.valueUsdt)}</Row>
-              </Rows>
-              {drawn}
+              {result(<>
+                {/* 실패를 돌려 말하지 않는다. 낭독은 위의 상태 영역이 맡으므로 이 줄은 또 읽히지 않게 한다 */}
+                <Line fail live={false}>{t("upgrade.lostDesc")}</Line>
+                <Rows>
+                  <Row label={t("upgrade.stake")}>{product ? itemName(product) : record.stake.itemId}</Row>
+                  <Row label={t("reveal.value")}>{fmt(record.stake.valueUsdt)}</Row>
+                </Rows>
+                {drawn}
+              </>)}
               {/* 박스 화면에서 열었으면 그 박스로 돌아간다. 보관함에서 열었으면 박스 목록으로 간다 */}
-              {onBack ? <Button data-upgrade-back onClick={() => { onClose(); onBack(); }}>{t("op.backToBox")}</Button> : <ButtonLink href="/">{t("upgrade.toBoxes")}</ButtonLink>}
+              {onBack ? <Button data-upgrade-back onClick={() => { close(); onBack(); }}>{t("op.backToBox")}</Button> : <ButtonLink href="/">{t("upgrade.toBoxes")}</ButtonLink>}
               <div className="v-links">{verifyLink}</div>
             </>
           );
@@ -282,29 +322,29 @@ export function UpgradeSheet({ stakeId, onClose, onBack }: {
 
         {step === "result" && outcome?.status === "failed" && (
           <>
-            <Line fail>{t("upgrade.failed")}</Line>
+            {result(<Line fail live={false}>{t("upgrade.failed")}</Line>)}
             <Button data-upgrade-retry onClick={() => restart(current)}>{t("take.retry")}</Button>
-            <div className="v-links"><TextLink onClick={onClose}>{t("common.close")}</TextLink></div>
+            <div className="v-links"><TextLink onClick={close}>{t("common.close")}</TextLink></div>
           </>
         )}
         {step === "result" && outcome?.status === "nolock" && (
           <>
-            <Line>{t("upgrade.noLock")}</Line>
-            <Button onClick={onClose}>{t("common.close")}</Button>
+            {result(<Line live={false}>{t("upgrade.noLock")}</Line>)}
+            <Button onClick={close}>{t("common.close")}</Button>
           </>
         )}
         {step === "result" && outcome?.status === "blocked" && (
           <>
-            <Line>{t("upgrade.blocked")}</Line>
-            <Button onClick={onClose}>{t("common.close")}</Button>
+            {result(<Line live={false}>{t("upgrade.blocked")}</Line>)}
+            <Button onClick={close}>{t("common.close")}</Button>
           </>
         )}
         {/* 확인하지 못했다: 성공이라고도 실패라고도 하지 않는다. 다시 걸게 하지도 않는다 */}
         {step === "result" && outcome?.status === "unknown" && (
           <>
-            <Line fail>{t("upgrade.unknown")}</Line>
-            <Button onClick={onClose}>{t("common.close")}</Button>
-            <div className="v-links"><TextLink href="/inventory" onClick={onClose}>{t("nav.inventory")}</TextLink></div>
+            {result(<Line fail live={false}>{t("upgrade.unknown")}</Line>)}
+            <Button onClick={close}>{t("common.close")}</Button>
+            <div className="v-links"><TextLink href="/inventory" onClick={close}>{t("nav.inventory")}</TextLink></div>
           </>
         )}
       </Sheet>
@@ -346,7 +386,6 @@ export function UpgradeVerifySheet({ record, onClose }: { record: UpgradeRecord 
   }, [record]);
 
   const done = out && out !== "failed" ? out : null;
-  const manualHref = record ? "/verify?" + new URLSearchParams({ s: record.serverSeed, h: record.serverSeedHash, c: record.clientSeed, n: String(record.nonce) }).toString() : "/verify";
   const wait = t("common.checking");
 
   return (
@@ -384,7 +423,6 @@ export function UpgradeVerifySheet({ record, onClose }: { record: UpgradeRecord 
             <p className="v-small">{t("upgrade.formula")}</p>
           </section>
 
-          <div className="v-links"><TextLink href={manualHref} onClick={onClose}>{t("verify.manual")}</TextLink></div>
         </>
       )}
     </Sheet>

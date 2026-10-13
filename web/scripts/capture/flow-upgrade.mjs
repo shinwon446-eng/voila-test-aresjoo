@@ -8,6 +8,7 @@
 // 확인 필요와 실행하지 못한 상태는 개발 서버에서만 켜지는 시험 스위치(sessionStorage "voila.opening.fault")로 만든다.
 // 탭 사이의 잠금이 없는 브라우저는 페이지가 뜨기 전에 navigator.locks 를 지워 만든다.
 // 확인창(components/ui/Sheet 의 Confirm)은 뜬 뒤 350ms 동안 누름을 받지 않는다. 확인 단추는 600ms 기다린 뒤 누른다.
+// 장면 a11y 는 숫자로 확인한다(초점이 어디에 있는지, 상태 영역이 무엇을 읽는지, 저장된 기록이 같은지). 끝에 합계를 적는다.
 import { chromium } from "playwright";
 import { createHash, createHmac } from "node:crypto";
 import fs from "node:fs";
@@ -23,6 +24,17 @@ const VIEWS = {
 };
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const log = [];
+const checks = [];
+const check = (name, pass, detail = "") => { checks.push({ name, pass: !!pass }); console.log((pass ? "PASS " : "FAIL ") + name + (detail ? "  " + detail : "")); };
+/** 지금 초점이 있는 요소: 태그, 클래스, data 속성 */
+const focusOf = (page) => page.evaluate(() => { const e = document.activeElement; return e ? { tag: e.tagName, cls: e.className, owned: e.getAttribute("data-owned-id"), result: e.hasAttribute("data-upgrade-result"), text: (e.textContent || "").trim().slice(0, 40) } : null; });
+/** 저장된 보관함(줄인 형식이면 개발 서버의 손잡이로 푼다) */
+const storedItems = (page) => page.evaluate(() => {
+  const read = (k) => { try { return window.__voilaLedger ? window.__voilaLedger(k) : JSON.parse(localStorage.getItem(k) || "null")?.state ?? null; } catch { return null; } };
+  const keys = []; for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i));
+  const key = keys.find((k) => k && k.startsWith("voila.browser-inventory.") && !k.endsWith(".guest")) ?? "gachaflix.inventory";
+  return (read(key)?.items ?? []).map((o) => ({ id: o.id, status: o.status, upgrade: o.upgrade ? { id: o.upgrade.id, won: o.upgrade.won, roll: o.upgrade.roll, nonce: o.upgrade.nonce } : null, from: o.upgradedFrom?.id ?? null }));
+});
 
 const SERVER = "capture-upgrade-server-seed"; const CLIENT = "capture-upgrade-client";
 const rollOf = (nonce) => parseInt(createHmac("sha256", SERVER).update(`${CLIENT}:${nonce}`).digest("hex").slice(0, 8), 16) % 1_000_000;
@@ -153,6 +165,74 @@ for (const view of viewArg.split(",")) {
     await page.locator("[data-upgrade-open]").click();
     await shot("1-refused");
   });
+  // 접근성(flow/agy-restore-2.txt): 결과로 넘어가면 초점이 결과 묶음에 있고 다음 Tab 이 주 단추다. 상태 영역이 결과 문장을 읽는다
+  await run(view, "a11y", "inventory", { nonce: WIN }, async (page, shot) => {
+    await openFromInventory(page);
+    await page.locator("[data-upgrade-open]").click();
+    await chip(page, 2).click();
+    await page.locator("[data-upgrade-go]").focus();
+    await page.keyboard.press("Enter");
+    await page.locator("[data-upgrade-result]").waitFor({ timeout: 6000 });
+    await page.waitForTimeout(200);
+    const atResult = await focusOf(page);
+    check(`${view} 결과로 넘어가면 초점이 결과 묶음에 있다`, atResult?.result, JSON.stringify(atResult));
+    const announced = await page.locator("[data-upgrade-announce]").evaluate((e) => ({ role: e.getAttribute("role"), live: e.getAttribute("aria-live"), text: e.textContent }));
+    check(`${view} 상태 영역(role=status, polite)이 결과 문장을 담는다`, announced.role === "status" && announced.live === "polite" && /성공|실패/.test(announced.text), JSON.stringify(announced));
+    await page.keyboard.press("Tab");
+    const next = await focusOf(page);
+    check(`${view} 결과에서 Tab 한 번이면 주 단추다`, next?.tag === "BUTTON" && /v-btn/.test(next.cls) && !/quiet/.test(next.cls) && /USDT로 받기/.test(next.text), JSON.stringify(next));
+    await shot("1-focus-primary");
+    // 닫으면 초점이 보관함의 그 상품 행으로 돌아간다(성공했으니 목표 상품의 행)
+    const stored = await storedItems(page);
+    const target = stored.find((o) => o.from);
+    await page.getByRole("button", { name: "보관함에 두기" }).click();
+    await page.waitForTimeout(400);
+    const back = await focusOf(page);
+    check(`${view} 닫으면 초점이 목표 상품의 행으로 돌아간다`, !!target && back?.cls?.includes("v-itemrow") && back.owned === target.id, JSON.stringify({ back, target: target?.id }));
+    await shot("2-focus-row");
+  });
+  // 추첨 중 Esc: 닫히지 않고 결과로 간다. 장부는 주 단추를 누른 순간 끝났으니 저장된 기록이 그대로다
+  await run(view, "esc", "inventory", { nonce: LOSE }, async (page, shot) => {
+    await openFromInventory(page);
+    await page.locator("[data-upgrade-open]").click();
+    await chip(page, 2).click();
+    await page.locator("[data-upgrade-go]").click();
+    await page.locator(".v-up-bar[data-moving]").waitFor({ timeout: 6000 });
+    const before = await storedItems(page);
+    await page.keyboard.press("Escape");
+    await page.waitForTimeout(250);
+    const sheetOpen = await page.locator(".v-sheet").count();
+    const resultShown = await page.locator("[data-upgrade-result]").count();
+    const moving = await page.locator(".v-up-bar[data-moving]").count();
+    check(`${view} 추첨 중 Esc: 시트는 열린 채 결과로 간다`, sheetOpen === 1 && resultShown === 1 && moving === 0, JSON.stringify({ sheetOpen, resultShown, moving }));
+    const after = await storedItems(page);
+    const rec = (list) => list.find((o) => o.upgrade)?.upgrade ?? null;
+    check(`${view} Esc 전후의 저장된 기록이 같다(같은 추첨, 같은 결과)`, !!rec(before) && JSON.stringify(rec(before)) === JSON.stringify(rec(after)) && rec(after).won === false, JSON.stringify({ before: rec(before), after: rec(after) }));
+    const title = await page.locator(".v-sheet .v-title").innerText();
+    check(`${view} Esc 로 본 결과가 저장된 결과와 같다`, /실패/.test(title), title);
+    await shot("1-after-esc");
+    // 실패한 뒤 닫으면 건 상품의 행이 이 탭에 없다. 고른 탭의 알약으로 돌아간다
+    await page.getByRole("button", { name: "닫기" }).last().click();
+    await page.waitForTimeout(400);
+    const back = await focusOf(page);
+    check(`${view} 실패 뒤 닫으면 초점이 고른 탭의 알약으로 간다`, back?.cls?.includes("v-chip"), JSON.stringify(back));
+  });
+  // 검증 시트: 세 단계뿐이고 /verify 로 가는 링크는 없다(그 화면의 손 계산은 박스 확률표로 판정한다)
+  await run(view, "verify-links", "inventory", { nonce: WIN }, async (page, shot) => {
+    await openFromInventory(page);
+    await page.locator("[data-upgrade-open]").click();
+    await chip(page, 2).click();
+    await page.locator("[data-upgrade-go]").click();
+    await page.locator("[data-upgrade-result]").waitFor({ timeout: 6000 });
+    await page.getByRole("button", { name: "결과 검증" }).click();
+    await page.waitForTimeout(600);
+    const links = await page.locator(".v-sheet a[href]").evaluateAll((all) => all.map((a) => a.getAttribute("href")));
+    const linkCount = await page.locator(".v-sheet .v-link").count();
+    check(`${view} 업그레이드 결과 검증에 /verify 링크가 없고 링크는 둘 이하다`, !links.some((h) => h && h.includes("/verify")) && linkCount <= 2, JSON.stringify({ links, linkCount }));
+    const steps = await page.locator(".v-sheet .v-section").allInnerTexts();
+    check(`${view} 검증 시트의 세 단계가 그대로다`, steps.length === 3, steps.join(" | "));
+    await shot("1-verify");
+  });
   await run(view, "failed", "inventory", {}, async (page, shot) => {
     await openFromInventory(page);
     await setFault(page, "upgrade-failed");
@@ -205,3 +285,6 @@ for (const view of viewArg.split(",")) {
 }
 await browser.close();
 console.log(log.join("\n"));
+const failed = checks.filter((c) => !c.pass).length;
+console.log(`검사 합계 ${checks.length}, 실패 ${failed}`);
+if (failed) process.exitCode = 1;

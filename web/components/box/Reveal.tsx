@@ -125,6 +125,14 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
   const usedIds = new Set(owned.filter((o) => o.status === "UPGRADED" && !unconfirmedIds.has(o.id)).map((o) => o.id));
   const used = (r: OpeningResult) => r.item.kind !== "cash" && usedIds.has(r.ownedId);
   const [upgrading, setUpgrading] = useState<string | null>(null);
+  // 업그레이드 시트가 닫힌 뒤 초점을 돌려보낼 결과 행. 상세 시트를 먼저 닫고 업그레이드 시트를 열어, 누른 단추가 사라져 있다
+  const upgradeReturn = useRef<string | null>(null);
+  useEffect(() => {
+    if (upgrading !== null || !upgradeReturn.current) return;
+    const id = upgradeReturn.current; upgradeReturn.current = null;
+    const frame = requestAnimationFrame(() => (panel.current?.querySelector<HTMLElement>(`.v-resultrow [data-owned-id="${CSS.escape(id)}"]`) ?? panel.current)?.focus({ preventScroll: true }));
+    return () => cancelAnimationFrame(frame);
+  }, [upgrading]);
   const kept = results.filter((r) => r.item.kind !== "cash" && taken[r.ownedId] === undefined && !unconfirmed(r) && !used(r));
   const keptRef = +kept.reduce((sum, r) => sum + r.item.value, 0).toFixed(2);
   const waiting = kept.filter((r) => !shipped[r.ownedId]);
@@ -260,7 +268,7 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
                           {count > 1 ? (
                             <div className="v-row">{label}<span className="v-num">{fmt(r.item.value)}</span></div>
                           ) : (
-                            <button type="button" className="v-row v-row--link v-row--button" aria-haspopup="dialog" onClick={() => { if (!armed) return; if (open) pick(r); else verify(r); }} aria-label={itemName(r.item) + ", " + state}>
+                            <button type="button" className="v-row v-row--link v-row--button" data-owned-id={r.ownedId} aria-haspopup="dialog" onClick={() => { if (!armed) return; if (open) pick(r); else verify(r); }} aria-label={itemName(r.item) + ", " + state}>
                               {label}
                               <span className="v-num">{fmt(taken[r.ownedId] ?? r.item.value)}{open && <span aria-hidden> ›</span>}</span>
                             </button>
@@ -303,7 +311,7 @@ export function Reveal({ box, results, cost, nextCost, recovered, initialTaken, 
             {taken[picked.ownedId] !== undefined ? <p className="v-body">{t("reveal.takenDesc")}</p> : unconfirmed(picked) ? null : a.main}
             {/* 업그레이드: 이 상품을 걸고 더 비싼 상품에 도전한다. 받을 수 있는 상품만 걸 수 있다 */}
             {taken[picked.ownedId] === undefined && !unconfirmed(picked) && owned.some((o) => o.id === picked.ownedId && canStake(o, ledger)) && (
-              <Button quiet data-upgrade-open aria-haspopup="dialog" onClick={() => { setUpgrading(picked.ownedId); pick(null); }}>{t("upgrade.title")}</Button>
+              <Button quiet data-upgrade-open aria-haspopup="dialog" onClick={() => { upgradeReturn.current = picked.ownedId; setUpgrading(picked.ownedId); pick(null); }}>{t("upgrade.title")}</Button>
             )}
             <div className="v-links">{taken[picked.ownedId] !== undefined ? <TextLink onClick={() => verify(picked)}>{t("nav.verify")}</TextLink> : unconfirmed(picked) ? <><TextLink href="/wallet">{t("balanceSheet.history")}</TextLink><TextLink onClick={() => verify(picked)}>{t("nav.verify")}</TextLink></> : a.links}</div>
           </>

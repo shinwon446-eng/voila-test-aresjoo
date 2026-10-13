@@ -62,6 +62,18 @@ export function InventoryScreen() {
   // 업그레이드 시트에 걸 상품, 그리고 업그레이드 결과 검증에 넘길 기록
   const [upgrading, setUpgrading] = useState<string | null>(null);
   const [upgradeRecord, setUpgradeRecord] = useState<UpgradeRecord | null>(null);
+  // 업그레이드 시트가 닫힌 뒤 초점을 돌려보낼 보관 상품. 상세 시트를 먼저 닫고 업그레이드 시트를 열어, 누른 단추가 사라져 있다
+  const upgradeReturn = useRef<string | null>(null);
+  useEffect(() => {
+    if (upgrading !== null || !upgradeReturn.current) return;
+    const id = upgradeReturn.current; upgradeReturn.current = null;
+    // 시트의 정리(초점 돌려주기)가 끝난 다음 그리기에서 옮긴다. 그 상품의 행이 이 탭에 없으면(걸어서 사라졌다) 고른 탭의 알약으로
+    const frame = requestAnimationFrame(() => {
+      const row = document.querySelector<HTMLElement>(`.v-itemrow[data-owned-id="${CSS.escape(id)}"]`);
+      (row ?? document.querySelector<HTMLElement>('.v-chips [aria-pressed="true"]'))?.focus({ preventScroll: true });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [upgrading]);
   const myReviews = useCommunityStore((s) => s.mine);
 
   // 출고된 상품의 운송장은 계정 서비스가 발급한 것만 들어온다(옛 화면과 같은 주기)
@@ -141,7 +153,7 @@ export function InventoryScreen() {
                   const p = productOf(item);
                   return (
                     <li key={item.id}>
-                      <button type="button" className="v-itemrow" aria-haspopup="dialog" onClick={() => setOpenId(item.id)}>
+                      <button type="button" className="v-itemrow" data-owned-id={item.id} aria-haspopup="dialog" onClick={() => setOpenId(item.id)}>
                         {p?.image.src && <span className="v-itemrow-photo"><img src={p.image.src} alt="" loading="lazy" decoding="async" /></span>}
                         <span className="v-itemrow-body"><span className="v-card-title">{nameOf(item)}</span><span className="v-small">{stateOf(item) === "held" ? t("inv.refLine", { amount: fmt(item.valueUsdt) }) : stateOf(item) === "unconfirmed" ? statusOf(item) + ", " + t("inv.refLine", { amount: fmt(item.valueUsdt) }) : statusOf(item) + (date(processedAt(item)) ? ", " + date(processedAt(item)) : "")}</span></span>
                         <span className="v-num">{stateOf(item) === "unconfirmed" ? "" : fmt(stateOf(item) === "held" ? takeAmountOf(item) : stateOf(item) === "taken" ? item.soldForUsdt ?? 0 : item.valueUsdt)}<span aria-hidden> ›</span></span>
@@ -184,7 +196,7 @@ export function InventoryScreen() {
             {/* 보관 중: 주 단추는 USDT로 받기. 배송은 밑줄 링크이고, 배송을 신청하는 길은 여기 하나다 */}
             {currentState === "held" && takeNote !== "unknown" && <Button data-take-primary onClick={() => setTaking(true)}>{t("reveal.take", { amount: fmt(takeAmount) })}</Button>}
             {/* 업그레이드: 받을 수 있는 상품만 걸 수 있다. 시트를 닫고 업그레이드 시트로 넘어간다(끝나면 목록으로 돌아온다) */}
-            {currentState === "held" && takeNote !== "unknown" && canStake(current, ledger) && <Button quiet data-upgrade-open aria-haspopup="dialog" onClick={() => { setUpgrading(current.id); closeItem(); }}>{t("upgrade.title")}</Button>}
+            {currentState === "held" && takeNote !== "unknown" && canStake(current, ledger) && <Button quiet data-upgrade-open aria-haspopup="dialog" onClick={() => { upgradeReturn.current = current.id; setUpgrading(current.id); closeItem(); }}>{t("upgrade.title")}</Button>}
             {current.status === "SHIPPING_REQUESTED" && <Button onClick={() => setCancelling(true)}>{t("inv.cancelShip")}</Button>}
             {current.status === "SHIPPING" && current.shipping?.carrier && current.shipping.trackingNumber && <a className="v-btn" href={trackingUrl(current.shipping.carrier, current.shipping.trackingNumber)} target="_blank" rel="noreferrer">{t("inv.track")} ↗</a>}
             <div className="v-links">
@@ -201,7 +213,7 @@ export function InventoryScreen() {
       <ShipSheet ownedIds={shipIds} onClose={() => setShipIds(null)} onDone={() => { setShipIds(null); closeItem(); setTab("shipping"); }} />
       <VerifySheet record={verifying} onClose={() => setVerifying(null)} />
       <UpgradeVerifySheet record={upgradeRecord} onClose={() => setUpgradeRecord(null)} />
-      <UpgradeSheet stakeId={upgrading} onClose={() => setUpgrading(null)} />
+      <UpgradeSheet stakeId={upgrading} onClose={(landing) => { if (landing) upgradeReturn.current = landing; setUpgrading(null); }} />
       <ReviewSheet item={reviewing ? current : null} itemName={current ? nameOf(current) : ""} onClose={() => setReviewing(false)} onDone={() => setReviewing(false)} />
       {/* 보관 중인 상품 전부에서 골라 한 번에 받는다. 받은 뒤에도 보관 중 목록에 그대로 있다 */}
       <TakeSheet open={batch} onClose={() => setBatch(false)} />
